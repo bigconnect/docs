@@ -10,7 +10,7 @@ description: BigConnect Universal Data Lake
 
 {% page-ref page="administration.md" %}
 
-{% page-ref page="tools/" %}
+{% page-ref page="analytics/" %}
 
 {% page-ref page="reference/" %}
 
