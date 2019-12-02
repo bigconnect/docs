@@ -9,6 +9,7 @@
   * [Universal Data Loading](concepts/universal-data-loading.md)
   * [Auto Enrichment](concepts/auto-enrichment.md)
   * [Extreme analytics](concepts/extreme-analytics.md)
+  * [Security](concepts/security.md)
 * [Installation & Upgrade](installation-and-upgrade.md)
 * [Administration](administration.md)
 * [Analytics](analytics/README.md)
