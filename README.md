@@ -1,10 +1,10 @@
 ---
-description: BigConnect Universal Data Lake
+description: BigConnect Data Lake
 ---
 
 # Intro
 
-BigConnect Universal Data Lake \(BDL\) is a s a secure data platform that offers a broad set of enterprise data services with the key data analytics and artificial intelligence functionality that enterprises require.
+BigConnect Data Lake \(BDL\) is a s a secure data platform that offers a broad set of enterprise data services with the key data analytics and artificial intelligence functionality that enterprises require.
 
 Addressing real-world business problems generally requires handling structured and unstructured information and application of multiple analytic functions working together on the same data; Whether it’s getting customer offers based on behavior, processing real-time IoT data or deriving instant knowledge from video streams, images or text require the application of complex data and processing pipelines, batched or real-time data streaming, applying machine learning algorithms in the process.
 
