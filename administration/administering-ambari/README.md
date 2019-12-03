@@ -10,6 +10,14 @@ Installing Ambari creates the default user `admin/admin`. This Ambari-level admi
 
 {% page-ref page="managing-cluster-roles/" %}
 
+{% page-ref page="managing-local-users/" %}
+
+{% page-ref page="local-group-membership/" %}
+
+{% page-ref page="agents.md" %}
+
+
+
 **Related information**
 
 [Installing, Configuring, and Deploying a Cluster](../../installation-and-upgrade/installation/installing-bigconnect.md)

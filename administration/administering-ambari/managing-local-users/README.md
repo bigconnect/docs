@@ -1,4 +1,4 @@
-# Managing local users
+# Local users
 
 As an Ambari administrator, you can create and manage users and groups available to Ambari. You can also import user and group information into Ambari from external LDAP systems.
 

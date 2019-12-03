@@ -1,4 +1,4 @@
-# Managing cluster roles
+# Cluster roles
 
 Ambari-level administrators can assign user and group access to Ambari-, Cluster-, Host-, Service-, and User- \(view-only\) level permissions.
 
