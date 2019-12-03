@@ -8,7 +8,11 @@ It is completely extensible and can be extended to suit any use case, using comm
 
 Customizations are in the form of plugins that can be developed both for the back-end and the front-end.
 
+{% page-ref page="explorer-features.md" %}
 
+{% page-ref page="explorer-architecture-and-concepts.md" %}
+
+{% page-ref page="explorer-first-steps.md" %}
 
 
 

@@ -1,8 +1,8 @@
-# Architecture and Concepts
+# Explorer Architecture and Concepts
 
 A high level overview of a production architecture is presented below. This is an ideal deployment scenario, with dedicated machines for each Explorer \(Web Console\), Data Workers, Job Workers, Queues and Data Ingestion.
 
-![](../../.gitbook/assets/image%20%2841%29.png)
+![](../../.gitbook/assets/image%20%2846%29.png)
 
 There are different types of BigConnect nodes:
 

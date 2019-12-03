@@ -45,7 +45,7 @@ For a new cluster, the Cluster Install wizard displays a Welcome page.
 From the Ambari Welcome page, choose **Launch Install Wizard**.  
 
 
-![Ambari Cluster Install Wizard](../../.gitbook/assets/image%20%2814%29.png)
+![Ambari Cluster Install Wizard](../../.gitbook/assets/image%20%2815%29.png)
 
 ### 6. Name Your Cluster
 
@@ -117,7 +117,7 @@ The Cluster Install wizard assigns the slave components, such as DataNodes, Node
 
 The Customize Services step presents you with a set of tabs that let you review and modify your cluster setup. The Cluster Install wizard attempts to set reasonable defaults for each of the options. You are **strongly encouraged** to review these settings as your requirements might be more advanced.
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](../../.gitbook/assets/image%20%288%29.png)
 
 Ambari will group the commonly customized configuration elements together into four categories: Credentials, Databases, Directories, and Accounts. All other configuration will be available in the All Configurations section of the Installation Wizard.
 

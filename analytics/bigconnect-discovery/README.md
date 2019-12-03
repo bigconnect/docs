@@ -4,9 +4,9 @@ Metatron Discovery is a solution that analyzes data ingested into the Metatron s
 
 This section introduces the technical background and structure of Metatron Discovery, and the Druid engine powering Metatron.
 
-{% page-ref page="overview/" %}
+{% page-ref page="discovery-overview/" %}
 
-{% page-ref page="data-management.md" %}
+{% page-ref page="discovery-data-management.md" %}
 
 
 

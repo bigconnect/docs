@@ -18,7 +18,7 @@ After you create a cluster, the **Dashboard** option displays. Use the **Dashboa
 
 After you create a cluster, the **Ambari Admin &gt; Cluster Management &gt; Cluster Information** page displays the cluster name and blueprint information for the cluster you just created. You can export \(download\) the Ambari blueprint.
 
-![](../../../.gitbook/assets/image%20%2819%29.png)
+![](../../../.gitbook/assets/image%20%2821%29.png)
 
 **Versions** displays current component version information, and the option to register versions stored in specific repositorites.
 
