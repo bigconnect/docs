@@ -12,7 +12,7 @@ Ambari Web displays the **Dashboard** page as the home page.
 
 The **Metrics** option displays by default. On the **Metrics** page, multiple widgets represent operating status information of services in your cluster. Most widgets display a single metric; for example, **HDFS Disk Usage** represented by a load chart and a percentage figure:
 
-![Ambari Metrics page](../../../../.gitbook/assets/image%20%2817%29.png)
+![Ambari Metrics page](../../../../.gitbook/assets/image%20%2826%29.png)
 
 Example Metrics Widgets and Descriptions:
 
