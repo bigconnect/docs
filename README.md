@@ -16,15 +16,3 @@ The platform and all its components are open, extensible, massively scalable and
 
 It is best suited to help solve problems where there is no straightforward solution and no obvious “correct” answer.
 
-{% page-ref page="concepts/" %}
-
-{% page-ref page="installation-and-upgrade.md" %}
-
-{% page-ref page="administration.md" %}
-
-{% page-ref page="analytics/" %}
-
-{% page-ref page="reference/" %}
-
-
-
