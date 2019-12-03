@@ -21,7 +21,7 @@ Ambari Server has not received a heartbeat from that host for more than 3 minute
 **Green**  
 Normal running state.  
   
-**Maintenace Mode**  
+**Maintenance Mode**  
 Black, medical-bag icon indicates a host in maintenance mode.  
   
 **Alert**  
@@ -30,8 +30,9 @@ Red square with white number indicates the number of alerts generated on a host.
 **Example**  
 A red icon overrides an orange icon, which overrides a yellow icon. In other words, a host that has a master component down is accompanied by a red icon, even though it might have slave component or connection issues as well. Hosts in maintenance mode or are experiencing alerts, are accompanied by an icon to the right of the host name.
 
-The following example **Hosts** page shows three hosts, one having a master component down, one having a slave component down, one running normally, and two with alerts:  
-![](https://docs.cloudera.com/HDPDocuments/Ambari-2.7.3.0/managing-and-monitoring-ambari/how-to/images/amb_hosts_home.png)  
-  
+The following example **Hosts** page shows three hosts, one having a master component down, one having a slave component down, one running normally, and two with alerts:
+
+![](../../../../.gitbook/assets/image%20%2826%29.png)
+
 **Parent topic:** [Managing Hosts](https://app.gitbook.com/@bigconnect-1/s/bigconnect-data-lake/~/drafts/-LvBHp9a6uIdEM8gIjtB/administration/administering-ambari/managing-and-monitoring-a-cluster/managing-hosts)
 
