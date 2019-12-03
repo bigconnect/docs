@@ -1,5 +1,7 @@
 # Operating Systems
 
+### Versions
+
 <table>
   <thead>
     <tr>
@@ -44,5 +46,20 @@
         <br />7.8, 7.1, 7.0 (Wheezy)</td>
     </tr>
   </tbody>
-</table>
+</table>### System Settings
+
+#### Maximum Open Files
+
+The recommended maximum number of open file descriptors is 10000, or more. To check the current value set for the maximum number of open file descriptors, execute the following shell commands on each host:
+
+```text
+ulimit -Sn
+ulimit -Hn
+```
+
+If the output is not greater than 10000, run the following command to set it to a suitable default:
+
+```text
+ulimit -n 10000
+```
 

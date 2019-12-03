@@ -43,6 +43,40 @@ As you create the architecture of your cluster, you will need to allocate servic
       <td style="text-align:left">1 for log files</td>
     </tr>
   </tbody>
+</table>### Ambari
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Component</th>
+      <th style="text-align:left">Minimum Memory</th>
+      <th style="text-align:center">Min CPU Cores</th>
+      <th style="text-align:left">Disks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><b>Server</b>
+      </td>
+      <td style="text-align:left">
+        <p>1-10 managed hosts: 1 GB</p>
+        <p>50 managed hosts: 4GB</p>
+        <p>100-300 managed hosts: 4GB</p>
+        <p>500 managed hosts: 8GB</p>
+        <p>1000 managed hosts: 12GB</p>
+        <p>2000 managed hosts: 16GB</p>
+      </td>
+      <td style="text-align:center">4</td>
+      <td style="text-align:left">10 - 500 GB</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Agent</b>
+      </td>
+      <td style="text-align:left">1GB</td>
+      <td style="text-align:center">1</td>
+      <td style="text-align:left">1 for log files</td>
+    </tr>
+  </tbody>
 </table>### BigConnect
 
 <table>
