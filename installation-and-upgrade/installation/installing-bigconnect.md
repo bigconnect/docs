@@ -45,7 +45,7 @@ For a new cluster, the Cluster Install wizard displays a Welcome page.
 From the Ambari Welcome page, choose **Launch Install Wizard**.  
 
 
-![Ambari Cluster Install Wizard](../../.gitbook/assets/image%20%287%29.png)
+![Ambari Cluster Install Wizard](../../.gitbook/assets/image%20%288%29.png)
 
 ### 6. Name Your Cluster
 
