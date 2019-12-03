@@ -12,5 +12,9 @@ An Ambari-level Administrator can access the Ambari Admin page using the default
 
 {% page-ref page="export-an-ambari-blueprint.md" %}
 
+{% page-ref page="rename-a-cluster.md" %}
+
+{% page-ref page="register-a-remote-cluster.md" %}
+
 
 
