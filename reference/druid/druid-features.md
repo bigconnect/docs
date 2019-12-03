@@ -4,7 +4,7 @@
 
 Data tables in Druid \(called data sources\) are collections of timestamped events designed for OLAP queries. A data source is composed of three distinct types of columns \(here we use an example dataset from online advertising\).
 
-![Source: http://druid.io](../../.gitbook/assets/image%20%2853%29.png)
+![Source: http://druid.io](../../.gitbook/assets/image%20%2855%29.png)
 
 * **Timestamp column:** Druid treats timestamp separately in a data source because all its queries center around the time axis \(If non-time series data is ingested in batch, all records are timestamped with the current time for use in Druid\).
 * **Dimension columns:** Dimensions are string attributes of an event, and the columns most commonly used in filtering the data. Four dimensions are involved in the example dataset: publisher, advertiser, gender, and country. They each represent an axis of the data chosen to slice across.
