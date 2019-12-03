@@ -1,4 +1,12 @@
 # Modifying the cluster dashboard
 
-[https://docs.cloudera.com/HDPDocuments/Ambari-2.7.3.0/managing-and-monitoring-ambari/content/amb\_modifying\_the\_cluster\_dashboard.html](https://docs.cloudera.com/HDPDocuments/Ambari-2.7.3.0/managing-and-monitoring-ambari/content/amb_modifying_the_cluster_dashboard.html)
+You can modify the content of the Ambari Cluster dashboard in the following ways:
+
+{% page-ref page="replace-a-removed-widget.md" %}
+
+{% page-ref page="reset-the-dashboard.md" %}
+
+{% page-ref page="customize-metrics-display.md" %}
+
+
 
