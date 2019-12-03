@@ -105,8 +105,9 @@
   * [Web Data](data-pipelines/web-data.md)
   * [Social Data](data-pipelines/social-data.md)
   * [Cloud Data](data-pipelines/cloud-data.md)
-  * [Network Data](data-pipelines/network-data.md)
 * [Reference](reference/README.md)
+  * [Cypher Language](reference/cypher-language.md)
+  * [SQL Language](reference/sql-language.md)
   * [Data Collector](reference/data-collector.md)
   * [ElasticSearch](reference/elasticsearch.md)
   * [Kafka](reference/kafka.md)
@@ -119,7 +120,5 @@
   * [Druid](reference/druid.md)
   * [Spark](reference/spark.md)
   * [Search](reference/search.md)
-  * [SQL Language](reference/sql-language.md)
-  * [Cypher Language](reference/cypher-language.md)
 * [Release Notes](release-notes.md)
 
