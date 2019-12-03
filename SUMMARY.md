@@ -211,6 +211,7 @@
       * [Discovery Components](analytics/bigconnect-discovery/discovery-overview/discovery-components.md)
       * [Discovery Engine: Druid](analytics/bigconnect-discovery/discovery-overview/discovery-druid.md)
     * [Discovery Data Management](analytics/bigconnect-discovery/discovery-data-management/README.md)
+      * [Discovery Data Sources](analytics/bigconnect-discovery/discovery-data-management/discovery-data-sources.md)
       * [Data Monitoring](analytics/bigconnect-discovery/discovery-data-management/discovery-data-monitoring.md)
     * [Discovery Workspaces](analytics/bigconnect-discovery/discovery-workspaces.md)
     * [Discovery Workbooks](analytics/bigconnect-discovery/discovery-workbooks.md)
