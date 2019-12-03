@@ -22,6 +22,8 @@
       * [Firewall](installation-and-upgrade/installation/prepare-the-environment/firewall.md)
       * [Operational Database](installation-and-upgrade/installation/prepare-the-environment/operational-database.md)
       * [Other tasks](installation-and-upgrade/installation/prepare-the-environment/other-tasks.md)
+    * [Installing BigConnect](installation-and-upgrade/installation/installing-bigconnect.md)
+    * [Start services](installation-and-upgrade/installation/start-services.md)
 * [Administration](administration.md)
 * [Analytics](analytics/README.md)
   * [BigConnect Explorer](analytics/bigconnect-explorer.md)
