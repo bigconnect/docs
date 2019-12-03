@@ -1,0 +1,2 @@
+# NameNode high availability alerts
+

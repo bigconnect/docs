@@ -1,0 +1,2 @@
+# HBase service alerts
+

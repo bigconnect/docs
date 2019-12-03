@@ -1,0 +1,2 @@
+# Ambari metrics alerts
+

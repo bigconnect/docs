@@ -1,0 +1,2 @@
+# Enabling AMS high availability
+

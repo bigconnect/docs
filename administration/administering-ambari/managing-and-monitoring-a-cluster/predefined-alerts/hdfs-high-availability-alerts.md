@@ -1,0 +1,2 @@
+# HDFS high availability alerts
+

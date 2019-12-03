@@ -1,0 +1,2 @@
+# Adjust Smart Config settings
+
