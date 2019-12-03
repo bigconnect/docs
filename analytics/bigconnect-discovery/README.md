@@ -6,7 +6,7 @@ This section introduces the technical background and structure of Metatron Disco
 
 {% page-ref page="discovery-overview/" %}
 
-{% page-ref page="discovery-data-management.md" %}
+{% page-ref page="discovery-data-management/" %}
 
 
 

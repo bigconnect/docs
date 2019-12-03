@@ -2,7 +2,7 @@
 
 BigConnect Discovery performs analytics on its ingested data sources or other external data sources using various analytical tools and outputs analytical results in charts and reports. To utilize this system, you must understand its overall structure shown below:
 
-![](../../../.gitbook/assets/image%20%2853%29.png)
+![](../../../.gitbook/assets/image%20%2856%29.png)
 
 ### Data Preparation
 
@@ -14,11 +14,11 @@ Data Preparation refines data from source data to be ingested into BigConnect. S
 
 ### Data Storage
 
-Data Storage manages data ingested into the Druid engine for analysis and visualization. See [Discovery Data Management](../discovery-data-management.md) for more details.
+Data Storage manages data ingested into the Druid engine for analysis and visualization. See [Discovery Data Management](../discovery-data-management/) for more details.
 
 ![](../../../.gitbook/assets/datasource.jpg)
 
-![](../../../.gitbook/assets/image%20%2843%29.png)
+![](../../../.gitbook/assets/image%20%2846%29.png)
 
 ### Data analysis and visualization
 
@@ -36,11 +36,25 @@ Workbook supports working on, sharing, and making a presentation with dashboards
 
 ![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/dashboard.jpg)
 
-![](../../../.gitbook/assets/image%20%287%29.png)
+![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/image%20%287%29.png)
 
-![](../../../.gitbook/assets/image%20%2835%29.png)
+![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/image%20%2837%29.png)
 
 #### Notebook
 
-Notebook enables advanced analytics based on machine learning. See [Discovery Notebooks](../discovery-notebooks.md) for more details.
+Notebooks enables advanced analytics based on machine learning by using Jupyter Notebooks. See [Discovery Notebooks](../discovery-notebooks.md) for more details.
+
+#### Workbench
+
+The Workbench enables SQL data analytics. See [Discovery Workbench](../discovery-workbench.md) for more details.
+
+![BigConnect Discovery Data Workbench](../../../.gitbook/assets/sql.jpg)
+
+### Data Monitoring
+
+This function monitors data use based on data query statistics and query logs. See [Discovery Data Monitoring](../discovery-data-management/discovery-data-monitoring.md) for more details.
+
+![BigConnect Discovery Data Monitoring](../../../.gitbook/assets/monitoring.jpg)
+
+
 
