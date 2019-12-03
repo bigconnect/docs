@@ -2,7 +2,7 @@
 
 BigConnect Discovery performs analytics on its ingested data sources or other external data sources using various analytical tools and outputs analytical results in charts and reports. To utilize this system, you must understand its overall structure shown below:
 
-![](../../../.gitbook/assets/image%20%2856%29.png)
+![](../../../.gitbook/assets/image%20%2863%29.png)
 
 ### Data Preparation
 
@@ -18,7 +18,7 @@ Data Storage manages data ingested into the Druid engine for analysis and visual
 
 ![](../../../.gitbook/assets/datasource.jpg)
 
-![](../../../.gitbook/assets/image%20%2846%29.png)
+![](../../../.gitbook/assets/image%20%2849%29.png)
 
 ### Data analysis and visualization
 
@@ -36,9 +36,9 @@ Workbook supports working on, sharing, and making a presentation with dashboards
 
 ![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/dashboard.jpg)
 
-![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/image%20%287%29.png)
+![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/image%20%288%29.png)
 
-![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/image%20%2837%29.png)
+![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/image%20%2840%29.png)
 
 #### Notebook
 

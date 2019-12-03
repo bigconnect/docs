@@ -313,8 +313,8 @@
   * [HDFS](reference/hdfs.md)
   * [Druid](reference/druid/README.md)
     * [Druid Features](reference/druid/druid-features.md)
-    * [Clustering](reference/druid/clustering/README.md)
-      * [Real-time nodes](reference/druid/clustering/real-time-nodes.md)
+    * [Druid Clustering](reference/druid/druid-clustering.md)
+    * [Druid Performance](reference/druid/druid-performance.md)
   * [Spark](reference/spark.md)
 * [Release Notes](release-notes.md)
 
