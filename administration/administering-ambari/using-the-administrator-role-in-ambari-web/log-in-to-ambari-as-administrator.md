@@ -1,3 +1,9 @@
+---
+description: >-
+  After installing Ambari, you can log in to Ambari as administrator using the
+  default credentials: username/password = admin/admin
+---
+
 # Log In to Ambari as administrator
 
 After installing Ambari, you can log in to Ambari as administrator using the default credentials: username/password = admin/admin

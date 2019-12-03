@@ -10,5 +10,7 @@ An Ambari-level Administrator can access the Ambari Admin page using the default
 
 {% page-ref page="using-ambari-blueprints.md" %}
 
+{% page-ref page="export-an-ambari-blueprint.md" %}
+
 
 

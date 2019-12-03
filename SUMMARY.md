@@ -31,6 +31,7 @@
       * [Using the Ambari Admin page](administration/administering-ambari/using-the-administrator-role-in-ambari-web/using-the-ambari-admin-page.md)
       * [Create a cluster](administration/administering-ambari/using-the-administrator-role-in-ambari-web/create-a-cluster.md)
       * [Using Ambari Blueprints](administration/administering-ambari/using-the-administrator-role-in-ambari-web/using-ambari-blueprints.md)
+      * [Export an Ambari Blueprint](administration/administering-ambari/using-the-administrator-role-in-ambari-web/export-an-ambari-blueprint.md)
 * [Analytics](analytics/README.md)
   * [BigConnect Explorer](analytics/bigconnect-explorer.md)
   * [BigConnect Discovery](analytics/bigconnect-discovery.md)
