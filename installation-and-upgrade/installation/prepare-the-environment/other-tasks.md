@@ -7,7 +7,7 @@ description: 'SELinux, PackageKit,  check umask etc.'
 1.You must disable SELinux for the Ambari setup to function. On each host in your cluster, enter:
 
 ```text
-setenforce 0
+# setenforce 0
 ```
 
 {% hint style="info" %}
@@ -33,18 +33,18 @@ Ambari, HDP, and HDF support umask values of 022 \(0022 is functionally equivale
 Setting the umask for your current login session: 
 
 ```text
-umask 0022
+$ umask 0022
 ```
 
 Checking your current umask:
 
 ```text
-umask
+$ umask
 ```
 
 Permanently changing the umask for all interactive users:
 
 ```text
-echo umask 0022 >> /etc/profile
+$ echo umask 0022 >> /etc/profile
 ```
 

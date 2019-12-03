@@ -7,28 +7,28 @@ To install the NTP service and ensure it's ensure it's started on boot, run the 
 **RHEL/CentOS/Oracle 7**
 
 ```text
-yum install -y ntp
-systemctl enable ntpd
+# yum install -y ntp
+# systemctl enable ntpd
 ```
 
 **SLES**
 
 ```text
-zypper install ntp
-chkconfig ntp on
+# zypper install ntp
+# chkconfig ntp on
 ```
 
 **Ubuntu**
 
 ```text
-apt-get install ntp
-update-rc.d ntp defaults
+# apt-get install ntp
+# update-rc.d ntp defaults
 ```
 
 **Debian**
 
 ```text
-apt-get install ntp
-update-rc.d ntp defaults
+# apt-get install ntp
+# update-rc.d ntp defaults
 ```
 

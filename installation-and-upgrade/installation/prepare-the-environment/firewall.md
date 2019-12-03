@@ -5,42 +5,42 @@ For Ambari to communicate during setup with the hosts it deploys to and manages,
 **RHEL/CentOS/Oracle/Amazon Linux**
 
 ```text
-systemctl disable firewalld
-service firewalld stop
+# systemctl disable firewalld
+# service firewalld stop
 ```
 
 **SLES**
 
 ```text
-rcSuSEfirewall2 stop
-chkconfig SuSEfirewall2_setup off
+# rcSuSEfirewall2 stop
+# chkconfig SuSEfirewall2_setup off
 ```
 
 **Ubuntu**
 
 ```text
-sudo ufw disable
-sudo iptables -X
-sudo iptables -t nat -F
-sudo iptables -t nat -X
-sudo iptables -t mangle -F
-sudo iptables -t mangle -X
-sudo iptables -P INPUT ACCEPT
-sudo iptables -P FORWARD ACCEPT
-sudo iptables -P OUTPUT ACCEPT
+$ sudo ufw disable
+$ sudo iptables -X
+$ sudo iptables -t nat -F
+$ sudo iptables -t nat -X
+$ sudo iptables -t mangle -F
+$ sudo iptables -t mangle -X
+$ sudo iptables -P INPUT ACCEPT
+$ sudo iptables -P FORWARD ACCEPT
+$ sudo iptables -P OUTPUT ACCEPT
 ```
 
 **Debian**
 
 ```text
-sudo iptables -X
-sudo iptables -t nat -F
-sudo iptables -t nat -X
-sudo iptables -t mangle -F
-sudo iptables -t mangle -X
-sudo iptables -P INPUT ACCEPT
-sudo iptables -P FORWARD ACCEPT
-sudo iptables -P OUTPUT ACCEPT
+$ sudo iptables -X
+$ sudo iptables -t nat -F
+$ sudo iptables -t nat -X
+$ sudo iptables -t mangle -F
+$ sudo iptables -t mangle -X
+$ sudo iptables -P INPUT ACCEPT
+$ sudo iptables -P FORWARD ACCEPT
+$ sudo iptables -P OUTPUT ACCEPT
 ```
 
 You can restart iptables after setup is complete. If the security protocols in your environment prevent disabling iptables, you can proceed with iptables enabled, if all required ports are open and available.

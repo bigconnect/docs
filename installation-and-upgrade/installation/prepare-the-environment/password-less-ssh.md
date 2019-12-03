@@ -11,7 +11,7 @@ Steps:
 1. Generate public and private SSH keys on the Ambari Server host.
 
 ```text
-ssh-keygen
+$ ssh-keygen
 ```
 
 2. Copy the SSH Public Key \(id\_rsa.pub\) to the root account on your target hosts.
@@ -24,20 +24,20 @@ ssh-keygen
 3. Add the SSH Public Key to the authorized\_keys file on your target hosts.
 
 ```text
-cat id_rsa.pub >> authorized_keys
+$ cat id_rsa.pub >> authorized_keys
 ```
 
 4. Depending on your version of SSH, you may need to set permissions on the .ssh directory \(to 700\) and the authorized\_keys file in that directory \(to 600\) on the target hosts.
 
 ```text
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/authorized_keys
+$ chmod 700 ~/.ssh
+$ chmod 600 ~/.ssh/authorized_keys
 ```
 
 5. From the Ambari Server, make sure you can connect to each host in the cluster using SSH, without having to enter a password.
 
 ```text
-ssh root@<remote.target.host>
+$ ssh root@<remote.target.host>
 ```
 
 where `<remote.target.host>` has the value of each host name in your cluster.

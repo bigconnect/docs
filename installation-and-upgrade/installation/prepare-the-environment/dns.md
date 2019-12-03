@@ -11,7 +11,7 @@ Hadoop relies heavily on DNS, and as such performs many DNS lookups during norma
 1.Using a text editor, open the hosts file on every host in your cluster. For example:
 
 ```text
-vi /etc/hosts
+$ vi /etc/hosts
 ```
 
 2. Add a line for each host in your cluster. The line should consist of the IP address and the FQDN. For example:
@@ -32,7 +32,7 @@ _127.0.0.1   localhost.localdomain     localhost
 1.Confirm that the hostname is set by running the following command:
 
 ```text
-hostname -f
+$ hostname -f
 ```
 
 This should return the `<fully.qualified.domain.name>`  you've just set in the previous section
@@ -48,7 +48,7 @@ hostname <fully.qualified.domain.name>
 1. Using a text editor, open the network configuration file on every host and set the desired network configuration for each host. For example:
 
 ```text
-vi /etc/sysconfig/network
+$ vi /etc/sysconfig/network
 ```
 
 2. Modify the HOSTNAME property to set the fully qualified domain name.
