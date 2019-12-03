@@ -32,7 +32,7 @@ A red icon overrides an orange icon, which overrides a yellow icon. In other wor
 
 The following example **Hosts** page shows three hosts, one having a master component down, one having a slave component down, one running normally, and two with alerts:
 
-![](../../../../.gitbook/assets/image%20%2855%29.png)
+![](../../../../.gitbook/assets/image%20%2856%29.png)
 
 **Parent topic:** [Managing Hosts](https://app.gitbook.com/@bigconnect-1/s/bigconnect-data-lake/~/drafts/-LvBHp9a6uIdEM8gIjtB/administration/administering-ambari/managing-and-monitoring-a-cluster/managing-hosts)
 

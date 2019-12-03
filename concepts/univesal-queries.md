@@ -2,7 +2,7 @@
 
 The Data Model can be queried in three ways: with SQL queries like any typical database, with Cypher queries like any typical graph structure or by using textual queries.
 
-![Univesal Queries in BigConnect](../.gitbook/assets/image%20%2830%29.png)
+![Univesal Queries in BigConnect](../.gitbook/assets/image%20%2831%29.png)
 
 ### SQL Queries
 

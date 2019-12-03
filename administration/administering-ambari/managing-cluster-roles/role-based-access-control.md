@@ -6,9 +6,9 @@ Use these tables to determine what permissions each role includes. For example: 
 
 ![Service-Level Permissions](../../../.gitbook/assets/image%20%2824%29.png)
 
-![Host-Level Permissions](../../../.gitbook/assets/image%20%2848%29.png)
+![Host-Level Permissions](../../../.gitbook/assets/image%20%2849%29.png)
 
-![Cluster-Level Permissions](../../../.gitbook/assets/image%20%2850%29.png)
+![Cluster-Level Permissions](../../../.gitbook/assets/image%20%2851%29.png)
 
-![Ambari-Level Permissions](../../../.gitbook/assets/image%20%2841%29.png)
+![Ambari-Level Permissions](../../../.gitbook/assets/image%20%2842%29.png)
 
