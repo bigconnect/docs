@@ -12,7 +12,5 @@
 
 {% page-ref page="auto-enrichment.md" %}
 
-{% page-ref page="extreme-analytics.md" %}
-
 
 
