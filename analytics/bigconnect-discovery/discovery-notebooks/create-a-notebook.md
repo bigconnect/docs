@@ -16,7 +16,7 @@ Once the notebook server has been set up, you can create a notebook. A notebook 
 
 4. Enter the information about the notebook that you want to use as an analytics tool for data. The **server type** can only be selected for a notebook server connected at the initial notebook server setup. If **Jupyter** is selected, “R” or “Python” can be selected for analysis, whereas “Spark” \(Scala\) is used when **Zeppelin** is selected.
 
-![](../../../.gitbook/assets/image%20%28162%29.png)
+![](../../../.gitbook/assets/image%20%28170%29.png)
 
 5. Once a notebook has been created, you can find it in the workspace.
 

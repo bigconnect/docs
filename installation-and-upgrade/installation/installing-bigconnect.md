@@ -1,4 +1,4 @@
-# Installing BigConnect
+# Installing BigConnect Data Lake
 
 ### 1. Download installation kit
 

@@ -19,7 +19,7 @@ Before deleting a host, you must:
 2. On the **Host** page, click **Host Actions**. 
 3. Click **Delete Host**.
 
-![](../../../../.gitbook/assets/image%20%28149%29.png)
+![](../../../../.gitbook/assets/image%20%28156%29.png)
 
 The host is removed from the cluster**.**
 

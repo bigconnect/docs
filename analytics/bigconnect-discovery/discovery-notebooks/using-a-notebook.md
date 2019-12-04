@@ -32,5 +32,5 @@ Once you write a notebook code, you can return the results by calling a REST API
 
 Once you enter API information and click **Done**, the API is created to provide a REST API URL as shown below. Click **Result** to view the URL execution results in a popup window.
 
-![](../../../.gitbook/assets/image%20%28104%29.png)
+![](../../../.gitbook/assets/image%20%28105%29.png)
 

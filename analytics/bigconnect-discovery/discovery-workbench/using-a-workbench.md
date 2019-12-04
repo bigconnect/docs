@@ -18,7 +18,7 @@ This section displays basic information on the active workbench.
 
 This section provides a UI to conveniently insert the name of a database, table, or column in the query editor.
 
-![](../../../.gitbook/assets/image%20%28172%29.png)
+![](../../../.gitbook/assets/image%20%28181%29.png)
 
 1. **Database name:** Displays the name of the selected database. By default, the first database of the data connection used by the workbench is selected. Click on it to list all databases included in the data connection. Select a database in the list to replace the currently selected database.
 2. **Schema browser:** A popup browser displaying the table list of the selected database, and information of all the columns and records in each table.
@@ -100,7 +100,7 @@ The extra tools section provides useful tools for the workbench.
 
 If a certain type of statement is repeatedly used with a different value for each query run, set the variable element as a “global variable” for convenient use.
 
-![](../../../.gitbook/assets/image%20%28119%29.png)
+![](../../../.gitbook/assets/image%20%28123%29.png)
 
 * **Variable type:** You can select either a calendar or text type.
 * **Add new variable:** Select the variable type you want and click “Add new variable.” A new global variable will be added in the query editor.
@@ -111,7 +111,7 @@ If a certain type of statement is repeatedly used with a different value for eac
 
 Used to move to another workbench. Click the target workbench to move to.
 
-![](../../../.gitbook/assets/image%20%28148%29.png)
+![](../../../.gitbook/assets/image%20%28154%29.png)
 
 * **Search for workbench:** Search for a workbench stored in the workspace.
 * **Workbench list:** Displays all workbenches stored in the workspace. Click a workbench in the list to move to that workbench.

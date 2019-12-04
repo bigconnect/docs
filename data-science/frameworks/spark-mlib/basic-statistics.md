@@ -88,7 +88,7 @@ Hypothesis testing is a powerful tool in statistics to determine whether a resul
 
 `ChiSquareTest` conducts Pearson’s independence test for every feature against the label. For each feature, the \(feature, label\) pairs are converted into a contingency matrix for which the Chi-squared statistic is computed. All label and feature values must be categorical.
 
-Refer to the [`ChiSquareTest` Scala docs](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.ml.stat.ChiSquareTest$) for details on the API.
+Refer to the [`ChiSquareTest`](https://spark.apache.org/docs/2.4.4/api/scala/index.html#org.apache.spark.ml.stat.ChiSquareTest$) Scala docs for details on the API.
 
 {% tabs %}
 {% tab title="Scala" %}
@@ -173,9 +173,7 @@ print("statistics: " + str(r.statistics))
 
 We provide vector column summary statistics for `Dataframe` through `Summarizer`. Available metrics are the column-wise max, min, mean, variance, and number of nonzeros, as well as the total count.
 
-The following example demonstrates using [`Summarizer`](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.ml.stat.Summarizer$) to compute the mean and variance for a vector column of the input dataframe, with and without a weight column.
-
-Refer to the [`Summarizer` Python docs](https://spark.apache.org/docs/latest/api/python/index.html#pyspark.ml.stat.Summarizer$) for details on the Python API.
+The following example demonstrates using [`Summarizer`](https://spark.apache.org/docs/2.4.4/api/scala/index.html#org.apache.spark.ml.stat.Summarizer$) to compute the mean and variance for a vector column of the input dataframe, with and without a weight column.
 
 {% tabs %}
 {% tab title="Scala" %}
