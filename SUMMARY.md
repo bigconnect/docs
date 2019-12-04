@@ -254,7 +254,6 @@
       * [Classification and regression](data-science/frameworks/spark-mlib/classification-and-regression/README.md)
         * [Classification](data-science/frameworks/spark-mlib/classification-and-regression/classification.md)
         * [Regression](data-science/frameworks/spark-mlib/classification-and-regression/regression.md)
-        * [Linear methods](data-science/frameworks/spark-mlib/classification-and-regression/linear-methods.md)
         * [Decision trees](data-science/frameworks/spark-mlib/classification-and-regression/decision-trees.md)
         * [Tree Ensembles](data-science/frameworks/spark-mlib/classification-and-regression/tree-ensembles.md)
       * [Clustering](data-science/frameworks/spark-mlib/clustering.md)
