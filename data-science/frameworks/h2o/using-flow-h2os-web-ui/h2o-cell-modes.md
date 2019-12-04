@@ -6,7 +6,7 @@ There are two modes for cells: Edit and Command.
 
 In edit mode, the cell is yellow with a blinking bar to indicate where text can be entered and there is an orange flag to the left of the cell.
 
-![](../../../../.gitbook/assets/image%20%2859%29.png)
+![](../../../../.gitbook/assets/image%20%2870%29.png)
 
 ## Using Command Mode
 
@@ -19,27 +19,27 @@ In command mode, the flag is yellow. The flag also indicates the cell’s format
 > * clicking the **Run** button ![Flow - Run Button](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/_images/Flow_RunButton.png) or
 > * pressing **Ctrl+Enter**
 
-![](../../../../.gitbook/assets/image%20%2823%29.png)
+![](../../../../.gitbook/assets/image%20%2830%29.png)
 
 * **CS**: Code \(default\)
 
-![](../../../../.gitbook/assets/image%20%28148%29.png)
+![](../../../../.gitbook/assets/image%20%28175%29.png)
 
 * **RAW**: Raw format \(for code comments\)
 
-![](../../../../.gitbook/assets/image%20%28116%29.png)
+![](../../../../.gitbook/assets/image%20%28138%29.png)
 
 * **H\[1-6\]**: Heading level \(where 1 is a first-level heading\)
 
-![](../../../../.gitbook/assets/image%20%28142%29.png)
+![](../../../../.gitbook/assets/image%20%28168%29.png)
 
 **NOTE**: If there is an error in the cell, the flag is red.
 
-![](../../../../.gitbook/assets/image%20%2833%29.png)
+![](../../../../.gitbook/assets/image%20%2840%29.png)
 
 If the cell is executing commands, the flag is teal. The flag returns to yellow when the task is complete.
 
-![](../../../../.gitbook/assets/image%20%2880%29.png)
+![](../../../../.gitbook/assets/image%20%2893%29.png)
 
 ## Changing Cell Formats
 
@@ -61,7 +61,7 @@ To change the cell’s format \(for example, from code to Markdown\), make sure 
 
 The series of buttons at the top of the page below the menus run cells in a flow.
 
-![](../../../../.gitbook/assets/image%20%28297%29.png)
+![](../../../../.gitbook/assets/image%20%28340%29.png)
 
 * To run all cells in the flow, click the **Flow** menu, then click **Run All Cells**.
 * To run the current cell and all subsequent cells, click the **Flow** menu, then click **Run All Cells Below**.
@@ -79,13 +79,13 @@ The series of buttons at the top of the page below the menus run cells in a flow
 
 When you run the flow, a progress bar indicates the current status of the flow. You can cancel the currently running flow by clicking the **Stop** button in the progress bar.
 
-![](../../../../.gitbook/assets/image%20%2883%29.png)
+![](../../../../.gitbook/assets/image%20%2896%29.png)
 
 When the flow is complete, a message displays in the upper right.
 
-![](../../../../.gitbook/assets/image%20%28118%29.png)
+![](../../../../.gitbook/assets/image%20%28140%29.png)
 
-![](../../../../.gitbook/assets/image%20%28292%29.png)
+![](../../../../.gitbook/assets/image%20%28335%29.png)
 
 {% hint style="info" %}
 If there is an error in the flow, H2O Flow stops at the cell that contains the error.

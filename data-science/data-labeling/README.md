@@ -8,33 +8,49 @@ Prodigy puts the model in the loop, so that it can actively participate in the t
 
 Prodigy's web app lets you annotate text, entities, classification and images straight from your browser – even on mobile devices. Its modern UI keeps you focused and only asks you for one binary decision at a time. As you click or swipe through the examples, annotations are sent back to Prodigy via a REST API. Prodigy can update your model in real-time and choose the most important questions to ask next.
 
-#### Annotation interfaces
+## Annotate plain text
 
-Choose from a variety of user interfaces to present your annotation tasks. Create custom HTML views for even more flexibility.
+![](../../.gitbook/assets/image%20%28102%29.png)
 
-Annotate plain text
+## Annotate and correct named entities
 
-[https://prodi.gy/features/\#interfaces](https://prodi.gy/features/#interfaces)
+![](../../.gitbook/assets/image%20%28307%29.png)
 
-Annotate and correct named entities
+## Annotate and correct part-of-speech tags
 
-Annotate and correct part-of-speech tags
+![](../../.gitbook/assets/image%20%28198%29.png)
 
-Annotate syntactic dependencies and semantic relations
+## Annotate syntactic dependencies and semantic relations
 
-Annotate labelled text or images
+![](../../.gitbook/assets/image%20%28292%29.png)
 
-Annotate images, bounding boxes and image segments
+## Annotate labelled text or images
 
-Select one or more answers or pick the odd one out
+![](../../.gitbook/assets/image%20%28264%29.png)
 
-Compare two annotations
+## Annotate images, bounding boxes and image segments
 
-Compare texts with a visual diff
+![](../../.gitbook/assets/image%20%28341%29.png)
 
-Annotate any HTML content
+## Select one or more answers or pick the odd one out
 
-Embed dynamic content
+![](../../.gitbook/assets/image%20%28111%29.png)
+
+## Compare two annotations
+
+![](../../.gitbook/assets/image%20%28136%29.png)
+
+## Compare texts with a visual diff
+
+![](../../.gitbook/assets/image%20%28119%29.png)
+
+## Annotate any HTML content
+
+![](../../.gitbook/assets/image%20%28137%29.png)
+
+## Embed dynamic content
+
+![](../../.gitbook/assets/image%20%2811%29.png)
 
 
 

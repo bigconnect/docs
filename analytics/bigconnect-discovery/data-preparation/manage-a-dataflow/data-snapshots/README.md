@@ -6,23 +6,23 @@ Below are instructions on creating a snapshot:
 
 1 Click the **Data Snapshot** button on the upper right of the [Edit rules](../dataflow-rules.md) window.
 
-![](../../../../../.gitbook/assets/image%20%2892%29.png)
+![](../../../../../.gitbook/assets/image%20%28108%29.png)
 
 2. When a popup is displayed to set snapshot options, select either FileSystem or HIVE \(STAGING\_DB\) under Snapshot type.
 
-![](../../../../../.gitbook/assets/image%20%28207%29.png)
+![](../../../../../.gitbook/assets/image%20%28238%29.png)
 
 If FileSystem is selected as the snapshot location, the snapshot will be created as **CSV** or **JSON**.
 
-![](../../../../../.gitbook/assets/image%20%28210%29.png)
+![](../../../../../.gitbook/assets/image%20%28241%29.png)
 
 The HIVE option is available only when STAGING\_DB is enabled. A snapshot is created in the table when you designate a schema name and table name.
 
-![](../../../../../.gitbook/assets/image%20%28293%29.png)
+![](../../../../../.gitbook/assets/image%20%28336%29.png)
 
 3. When the snapshot is created, you can view the snapshot status and related information in the same window.
 
-![](../../../../../.gitbook/assets/image%20%28288%29.png)
+![](../../../../../.gitbook/assets/image%20%28329%29.png)
 
 
 

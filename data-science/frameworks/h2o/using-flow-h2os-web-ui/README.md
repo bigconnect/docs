@@ -10,6 +10,26 @@ H2O Flow sends commands to H2O as a sequence of executable cells. The cells can 
 
 While H2O Flow supports REST API, R scripts, and CoffeeScript, no programming experience is required to run H2O Flow. You can click your way through any H2O operation without ever writing a single line of code. You can even disable the input cells to run H2O Flow using only the GUI. H2O Flow is designed to guide you every step of the way, by providing input prompts, interactive help, and example flows.
 
+{% page-ref page="h2o-how-to-use-the-interface.md" %}
+
+{% page-ref page="h2o-using-flows.md" %}
+
+{% page-ref page="h2o-cell-modes.md" %}
+
+{% page-ref page="h2o-data.md" %}
+
+{% page-ref page="h2o-viewing-jobs.md" %}
+
+{% page-ref page="h2o-models.md" %}
+
+{% page-ref page="partial-dependence-plots.md" %}
+
+{% page-ref page="h2o-predictions.md" %}
+
+{% page-ref page="h2o-frames.md" %}
+
+
+
 
 
 ### 
