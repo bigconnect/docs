@@ -17,7 +17,10 @@ The **Widget Browser** also supports creating and deleting new service widgets.
 * Enter a name and description for the widget. 
 * Optionally, click **Share** to share the widget. Sharing the widget makes the widget available to all Ambari users for this cluster. After a widget is shared, other Ambari Admins or Cluster Operators can modify or delete the widget.
 
-| ![Note](https://docs.cloudera.com/common/themes/pre-hdp-3.1/images/admon/note.png) |  |
-| :--- | :--- |
-|      Note |  Share cannot be undone. |
+{% hint style="info" %}
+**Note**  
+Share cannot be undone.
+{% endhint %}
+
+
 

@@ -381,8 +381,6 @@ Then the output of `FeatureHasher.transform` on this DataFrame is:
 
 The resulting feature vectors could then be passed to a learning algorithm.
 
-
-
 {% tabs %}
 {% tab title="Scala" %}
 ```scala

@@ -7,7 +7,7 @@ When you restart multiple components, use _rolling restarts_ to distribute the t
 
 {% hint style="danger" %}
 **Important**  
-Rolling restarts of DataNodes should be performed only during cluster maintenance.  
+Rolling restarts of DataNodes should be performed only during cluster maintenance.
 {% endhint %}
 
 **Steps**
