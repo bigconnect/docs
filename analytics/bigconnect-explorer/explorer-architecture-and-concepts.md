@@ -2,7 +2,7 @@
 
 A high level overview of a production architecture is presented below. This is an ideal deployment scenario, with dedicated machines for each Explorer \(Web Console\), Data Workers, Job Workers, Queues and Data Ingestion.
 
-![](../../.gitbook/assets/image%20%2868%29.png)
+![](../../.gitbook/assets/image%20%2889%29.png)
 
 There are different types of BigConnect nodes:
 

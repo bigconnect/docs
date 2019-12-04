@@ -217,6 +217,8 @@
     * [Discovery Workspaces](analytics/bigconnect-discovery/discovery-workspaces.md)
     * [Discovery Workbooks](analytics/bigconnect-discovery/discovery-workbooks/README.md)
       * [Discovery Dashboards](analytics/bigconnect-discovery/discovery-workbooks/discovery-dashboards.md)
+      * [Discovery Charts](analytics/bigconnect-discovery/discovery-workbooks/discovery-charts.md)
+      * [Discovery Filters](analytics/bigconnect-discovery/discovery-workbooks/discovery-filters.md)
     * [Discovery Notebooks](analytics/bigconnect-discovery/discovery-notebooks.md)
     * [Discovery Workbench](analytics/bigconnect-discovery/discovery-workbench.md)
     * [Discovery Data Preparation](analytics/bigconnect-discovery/data-preparation.md)
