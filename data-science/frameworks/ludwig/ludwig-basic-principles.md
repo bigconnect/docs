@@ -110,7 +110,7 @@ predictions = model.predict(test_dataframe)
 model.close()
 ```
 
-`model_definition` is a dictionary contaning the same information of the YAML file. More details are provided in the [User Guide](ludwig-user-guide.md) and in the [API documentation](ludwig-developer-guide.md).
+`model_definition` is a dictionary contaning the same information of the YAML file. More details are provided in the [User Guide](ludwig-user-guide/) and in the [API documentation](ludwig-developer-guide.md).
 
 ## Extensibility
 
