@@ -1,4 +1,4 @@
-# ML Pipelines
+# Spark ML Pipelines
 
 In this section, we introduce the concept of _**ML Pipelines**_. ML Pipelines provide a uniform set of high-level APIs built on top of [DataFrames](https://spark.apache.org/docs/2.4.4/sql-programming-guide.html) that help users create and tune practical machine learning pipelines.
 

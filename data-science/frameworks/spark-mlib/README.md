@@ -12,5 +12,21 @@ MLlib is Spark’s machine learning \(ML\) library. Its goal is to make practica
 
 {% page-ref page="data-sources.md" %}
 
+{% page-ref page="ml-pipelines.md" %}
+
+{% page-ref page="extracting-transforming-and-selecting-features/" %}
+
+{% page-ref page="classification-and-regression/" %}
+
+{% page-ref page="clustering.md" %}
+
+{% page-ref page="collaborative-filtering.md" %}
+
+{% page-ref page="frequent-pattern-mining.md" %}
+
+{% page-ref page="model-selection-and-tuning.md" %}
+
+
+
 
 

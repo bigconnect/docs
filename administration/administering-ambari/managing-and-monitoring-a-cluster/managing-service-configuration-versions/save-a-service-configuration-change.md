@@ -14,9 +14,9 @@ Any change that you make to a configuration property creates a new configuration
 
    | **Option** | **To:** |
    | :--- | :--- |
-   | Cancel | continue editing |
-   | Discard | leave the control without making any changes |
-   | Save | confirm your change |
+   | **Cancel** | continue editing |
+   | **Discard** | leave the control without making any changes |
+   | **Save** | confirm your change |
 
 **Result**  
 After saving your change\(s\), a new service configuration version appears in **Configs**.  
