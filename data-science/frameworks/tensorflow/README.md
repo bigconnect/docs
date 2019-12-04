@@ -12,7 +12,7 @@ TensorFlow makes it easy for beginners and experts to create machine learning mo
 
 {% page-ref page="data-input-pipelines/" %}
 
-{% page-ref page="saving-models.md" %}
+{% page-ref page="saving-models/" %}
 
 {% page-ref page="accelerators/" %}
 

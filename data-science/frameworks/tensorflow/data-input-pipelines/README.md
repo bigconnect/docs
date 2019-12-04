@@ -722,5 +722,367 @@ decoded = dataset.map(tf_parse)
 image_batch, text_batch = next(iter(decoded.batch(10)))
 ```
 
+### Time series windowing
 
+For an end to end time series example see: [Time series forecasting](https://www.tensorflow.org/tutorials/text/time_series).
+
+Time series data is often organized with the time axis intact.
+
+Use a simple [`Dataset.range`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#range) to demonstrate:
+
+```python
+range_ds = tf.data.Dataset.range(100000)
+```
+
+Typically, models based on this sort of data will want a contiguous time slice.
+
+The simplest approach would be to batch the data:
+
+**Using batch**
+
+```python
+batches = range_ds.batch(10, drop_remainder=True)
+
+for batch in batches.take(5):
+  print(batch.numpy())
+```
+
+Or to make dense predictions one step into the future, you might shift the features and labels by one step relative to each other:
+
+```python
+def dense_1_step(batch):
+  # Shift features and labels one step relative to each other.
+  return batch[:-1], batch[1:]
+
+predict_dense_1_step = batches.map(dense_1_step)
+
+for features, label in predict_dense_1_step.take(3):
+  print(features.numpy(), " => ", label.numpy())
+```
+
+To predict a whole window instead of a fixed offset you can split the batches into two parts:
+
+```python
+batches = range_ds.batch(15, drop_remainder=True)
+
+def label_next_5_steps(batch):
+  return (batch[:-5],   # Take the first 5 steps
+          batch[-5:])   # take the remainder
+
+predict_5_steps = batches.map(label_next_5_steps)
+
+for features, label in predict_5_steps.take(3):
+  print(features.numpy(), " => ", label.numpy())
+```
+
+To allow some overlap between the features of one batch and the labels of another, use [`Dataset.zip`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#zip):
+
+```python
+feature_length = 10
+label_length = 5
+
+features = range_ds.batch(feature_length, drop_remainder=True)
+labels = range_ds.batch(feature_length).skip(1).map(lambda labels: labels[:-5])
+
+predict_5_steps = tf.data.Dataset.zip((features, labels))
+
+for features, label in predict_5_steps.take(3):
+  print(features.numpy(), " => ", label.numpy())
+```
+
+**Using window**
+
+While using [`Dataset.batch`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#batch) works, there are situations where you may need finer control. The [`Dataset.window`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#window) method gives you complete control, but requires some care: it returns a `Dataset` of `Datasets`. See [Dataset structure](https://www.tensorflow.org/guide/data#dataset_structure) for details.
+
+```python
+window_size = 5
+
+windows = range_ds.window(window_size, shift=1)
+for sub_ds in windows.take(5):
+  print(sub_ds)
+```
+
+The [`Dataset.flat_map`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#flat_map) method can take a dataset of datasets and flatten it into a single dataset:
+
+```python
+ for x in windows.flat_map(lambda x: x).take(30):
+   print(x.numpy(), end=' ')
+```
+
+In nearly all cases, you will want to `.batch` the dataset first:
+
+```python
+def sub_to_batch(sub):
+  return sub.batch(window_size, drop_remainder=True)
+
+for example in windows.flat_map(sub_to_batch).take(5):
+  print(example.numpy())
+```
+
+Now, you can see that the `shift` argument controls how much each window moves over.
+
+Putting this together you might write this function:
+
+```python
+def make_window_dataset(ds, window_size=5, shift=1, stride=1):
+  windows = ds.window(window_size, shift=shift, stride=stride)
+
+  def sub_to_batch(sub):
+    return sub.batch(window_size, drop_remainder=True)
+
+  windows = windows.flat_map(sub_to_batch)
+  return windows
+
+ds = make_window_dataset(range_ds, window_size=10, shift = 5, stride=3)
+
+for example in ds.take(10):
+  print(example.numpy())
+```
+
+Then it's easy to extract labels, as before:
+
+```python
+dense_labels_ds = ds.map(dense_1_step)
+
+for inputs,labels in dense_labels_ds.take(3):
+  print(inputs.numpy(), "=>", labels.numpy())
+```
+
+### Resampling
+
+When working with a dataset that is very class-imbalanced, you may want to resample the dataset. [`tf.data`](https://www.tensorflow.org/api_docs/python/tf/data) provides two methods to do this. The credit card fraud dataset is a good example of this sort of problem.
+
+{% hint style="info" %}
+See [Imbalanced Data](https://www.tensorflow.org/tutorials/keras/imbalanced_data) for a full tutorial.
+{% endhint %}
+
+```python
+zip_path = tf.keras.utils.get_file(
+    origin='https://storage.googleapis.com/download.tensorflow.org/data/creditcard.zip',
+    fname='creditcard.zip',
+    extract=True)
+
+csv_path = zip_path.replace('.zip', '.csv')
+
+creditcard_ds = tf.data.experimental.make_csv_dataset(
+    csv_path, batch_size=1024, label_name="Class",
+    # Set the column types: 30 floats and an int.
+    column_defaults=[float()]*30+[int()])
+```
+
+Now, check the distribution of classes, it is highly skewed:
+
+```python
+def count(counts, batch):
+  features, labels = batch
+  class_1 = labels == 1
+  class_1 = tf.cast(class_1, tf.int32)
+
+  class_0 = labels == 0
+  class_0 = tf.cast(class_0, tf.int32)
+
+  counts['class_0'] += tf.reduce_sum(class_0)
+  counts['class_1'] += tf.reduce_sum(class_1)
+
+  return counts
+  
+counts = creditcard_ds.take(10).reduce(
+    initial_state={'class_0': 0, 'class_1': 0},
+    reduce_func = count)
+
+counts = np.array([counts['class_0'].numpy(),
+                   counts['class_1'].numpy()]).astype(np.float32)
+
+fractions = counts/counts.sum()
+print(fractions)
+```
+
+A common approach to training with an imbalanced dataset is to balance it. [`tf.data`](https://www.tensorflow.org/api_docs/python/tf/data) includes a few methods which enable this workflow:
+
+**Datasets sampling**
+
+One approach to resampling a dataset is to use `sample_from_datasets`. This is more applicable when you have a separate [`data.Dataset`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset) for each class.
+
+Here, just use filter to generate them from the credit card fraud data:
+
+```python
+negative_ds = (
+  creditcard_ds
+    .unbatch()
+    .filter(lambda features, label: label==0)
+    .repeat())
+positive_ds = (
+  creditcard_ds
+    .unbatch()
+    .filter(lambda features, label: label==1)
+    .repeat())
+    
+for features, label in positive_ds.batch(10).take(1):
+  print(label.numpy())
+```
+
+To use [`tf.data.experimental.sample_from_datasets`](https://www.tensorflow.org/api_docs/python/tf/data/experimental/sample_from_datasets) pass the datasets, and the weight for each:
+
+```python
+balanced_ds = tf.data.experimental.sample_from_datasets(
+    [negative_ds, positive_ds], [0.5, 0.5]).batch(10)
+```
+
+Now the dataset produces examples of each class with 50/50 probability:
+
+```python
+for features, labels in balanced_ds.take(10):
+  print(labels.numpy())
+```
+
+**Rejection resampling**
+
+One problem with the above [`experimental.sample_from_datasets`](https://www.tensorflow.org/api_docs/python/tf/data/experimental/sample_from_datasets) approach is that is that it needs a separate [`tf.data.Dataset`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset) per class. Using [`Dataset.filter`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#filter) works, but results in all the data being loaded twice.
+
+The [`data.experimental.rejection_resample`](https://www.tensorflow.org/api_docs/python/tf/data/experimental/rejection_resample) function can be applied to a dataset to rebalance it, while only loading it once. Elements will be dropped from the dataset to achieve balance.
+
+[`data.experimental.rejection_resample`](https://www.tensorflow.org/api_docs/python/tf/data/experimental/rejection_resample) takes a `class_func` argument. This `class_func` is applied to each dataset element, and is used to determine which class an example belongs to for the purposes of balancing.
+
+The elements of `creditcard_ds` are already `(features, label)` pairs. So the `class_func` just needs to return those labels:
+
+```python
+def class_func(features, label):
+  return label
+```
+
+The resampler also needs a target distribution, and optionally an initial distribution estimate:
+
+```python
+resampler = tf.data.experimental.rejection_resample(
+    class_func, target_dist=[0.5, 0.5], initial_dist=fractions)
+```
+
+The resampler deals with individual examples, so you must `unbatch` the dataset before applying the resampler:
+
+```python
+resample_ds = creditcard_ds.unbatch().apply(resampler).batch(10)
+```
+
+The resampler returns creates `(class, example)` pairs from the output of the `class_func`. In this case, the `example` was already a `(feature, label)` pair, so use `map` to drop the extra copy of the labels:
+
+```python
+balanced_ds = resample_ds.map(lambda extra_label, features_and_label: features_and_label)
+```
+
+Now the dataset produces examples of each class with 50/50 probability:
+
+```python
+for features, labels in balanced_ds.take(10):
+  print(labels.numpy())
+```
+
+## Using high-level APIs
+
+### tf.keras
+
+The [`tf.keras`](https://www.tensorflow.org/api_docs/python/tf/keras) API simplifies many aspects of creating and executing machine learning models. Its `.fit()` and `.evaluate()` and `.predict()` APIs support datasets as inputs. Here is a quick dataset and model setup:
+
+```python
+train, test = tf.keras.datasets.fashion_mnist.load_data()
+
+images, labels = train
+images = images/255.0
+labels = labels.astype(np.int32)
+
+fmnist_train_ds = tf.data.Dataset.from_tensor_slices((images, labels))
+fmnist_train_ds = fmnist_train_ds.shuffle(5000).batch(32)
+
+model = tf.keras.Sequential([
+  tf.keras.layers.Flatten(),
+  tf.keras.layers.Dense(10, activation='softmax')
+])
+
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(), 
+              metrics=['accuracy'])
+```
+
+Passing a dataset of `(feature, label)` pairs is all that's needed for [`Model.fit`](https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit) and [`Model.evaluate`](https://www.tensorflow.org/api_docs/python/tf/keras/Model#evaluate):
+
+```python
+model.fit(fmnist_train_ds, epochs=2)
+```
+
+If you pass an infinite dataset, for example by calling [`Dataset.repeat()`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#repeat), you just need to also pass the `steps_per_epoch` argument:
+
+```python
+model.fit(fmnist_train_ds.repeat(), epochs=2, steps_per_epoch=20)
+```
+
+For evaluation you can pass the number of evaluation steps:
+
+```python
+loss, accuracy = model.evaluate(fmnist_train_ds)
+print("Loss :", loss)
+print("Accuracy :", accuracy)
+```
+
+For long datasets, set the number of steps to evaluate:
+
+```python
+loss, accuracy = model.evaluate(fmnist_train_ds.repeat(), steps=10)
+print("Loss :", loss)
+print("Accuracy :", accuracy)
+```
+
+The labels are not required in when calling [`Model.predict`](https://www.tensorflow.org/api_docs/python/tf/keras/Model#predict)
+
+```python
+predict_ds = tf.data.Dataset.from_tensor_slices(images).batch(32)
+result = model.predict(predict_ds, steps = 10)
+print(result.shape)
+```
+
+But the labels are ignored if you do pass a dataset containing them:
+
+```python
+result = model.predict(fmnist_train_ds, steps = 10)
+print(result.shape)
+```
+
+### tf.estimator
+
+To use a `Dataset` in the `input_fn` of a [`tf.estimator.Estimator`](https://www.tensorflow.org/api_docs/python/tf/estimator/Estimator), simply return the `Dataset` from the `input_fn` and the framework will take care of consuming its elements for you. For example:
+
+```python
+import tensorflow_datasets as tfds
+
+def train_input_fn():
+  titanic = tf.data.experimental.make_csv_dataset(
+      titanic_file, batch_size=32,
+      label_name="survived")
+  titanic_batches = (
+      titanic.cache().repeat().shuffle(500)
+      .prefetch(tf.data.experimental.AUTOTUNE))
+  return titanic_batches
+  
+embark = tf.feature_column.categorical_column_with_hash_bucket('embark_town', 32)
+cls = tf.feature_column.categorical_column_with_vocabulary_list('class', ['First', 'Second', 'Third']) 
+age = tf.feature_column.numeric_column('age')
+
+import tempfile
+model_dir = tempfile.mkdtemp()
+model = tf.estimator.LinearClassifier(
+    model_dir=model_dir,
+    feature_columns=[embark, cls, age],
+    n_classes=2
+)
+
+model = model.train(input_fn=train_input_fn, steps=100)
+
+result = model.evaluate(train_input_fn, steps=10)
+
+for key, value in result.items():
+  print(key, ":", value)
+  
+for pred in model.predict(train_input_fn):
+  for key, value in pred.items():
+    print(key, ":", value)
+  break
+```
 

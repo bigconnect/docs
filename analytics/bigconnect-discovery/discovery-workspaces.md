@@ -70,7 +70,7 @@ When the mouse cursor is over an entity, it is shown as follows:
 
 You can clone, move or delete folders and entities in the workspace. Once you select a folder or entity, the clone, move, and delete buttons in the lower-left corner of the workspace home become active.
 
-![](../../.gitbook/assets/image%20%28100%29.png)
+![](../../.gitbook/assets/image%20%28101%29.png)
 
 * **Select all:** Selects all items in the current folder and entity list.
 * **Clone workbook:** This is exclusive for the workbook type. Click this button to clone the selected workbooks.
@@ -90,7 +90,7 @@ The shared workspace list page is used to view a list of all shared workspaces a
 
 The shared workspace list page is composed as follows:
 
-![](../../.gitbook/assets/image%20%28134%29.png)
+![](../../.gitbook/assets/image%20%28137%29.png)
 
 1. **Number of shared workspaces:** Displays how many shared workspaces are listed.
 2. **Add a shared workspace:** Click this button to move to the page to add a shared workspace. \(See Create a shared workspace for a deailed procedure\)

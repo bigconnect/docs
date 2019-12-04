@@ -10,7 +10,7 @@ To create a workbench:
 
 2. Select the workbench-type data connection that connects to the data table you want, and click **Next**.
 
-![](../../../.gitbook/assets/image%20%28219%29.png)
+![](../../../.gitbook/assets/image%20%28224%29.png)
 
 * **Search by name of data connection:** Searches the list of data connections available to the workspace by the name you type in.
 * **DB type:** Filters data connections by database type \(Oracle/MySQL/Hive/Presto/Tibero\). Select **All** to display data connections regardless of database type.
@@ -19,7 +19,7 @@ To create a workbench:
 
 3. Confirm the information of the selected data connection and enter a name and a description to create a workbench.
 
-![](../../../.gitbook/assets/image%20%2872%29.png)
+![](../../../.gitbook/assets/image%20%2873%29.png)
 
 4. The created workbench is immediately available.
 
