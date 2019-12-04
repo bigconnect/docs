@@ -2,7 +2,7 @@
 
 Bringing in data into a system is always a complex task. Throughout your enterprise data topology, you have streams of data that you need to move, collect, and process on the way to their destinations. BDL provides a low-latency ingest infrastructure tool that lets you create continuous data ingest pipelines using a drag and drop UI within an integrated development environment \(IDE\), powered by the [StreamSets Data Collector](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Getting_Started/GettingStarted_Title.html).
 
-![BigConnect Data Pipelines](../.gitbook/assets/image%20%2818%29.png)
+![BigConnect Data Pipelines](../.gitbook/assets/image%20%2835%29.png)
 
 The Data Collector is a lightweight, powerful design and execution engine that streams data in real time. You can use it to route and process data in your data streams.
 

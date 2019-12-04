@@ -4,11 +4,11 @@ Permissions that an Ambari-level administrator assigns each user or group define
 
 Use these tables to determine what permissions each role includes. For example: A user with any role can view metrics, but only an Ambari Administrator can create a new Ambari-managed cluster.
 
-![Service-Level Permissions](../../../.gitbook/assets/image%20%2837%29.png)
+![Service-Level Permissions](../../../.gitbook/assets/image%20%2870%29.png)
 
-![Host-Level Permissions](../../../.gitbook/assets/image%20%2877%29.png)
+![Host-Level Permissions](../../../.gitbook/assets/image%20%28129%29.png)
 
-![Cluster-Level Permissions](../../../.gitbook/assets/image%20%2880%29.png)
+![Cluster-Level Permissions](../../../.gitbook/assets/image%20%28133%29.png)
 
-![Ambari-Level Permissions](../../../.gitbook/assets/image%20%2866%29.png)
+![Ambari-Level Permissions](../../../.gitbook/assets/image%20%28111%29.png)
 

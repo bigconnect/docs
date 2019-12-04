@@ -2,11 +2,11 @@
 
 BigConnect Discovery performs analytics on its ingested data sources or other external data sources using various analytical tools and outputs analytical results in charts and reports. To utilize this system, you must understand its overall structure shown below:
 
-![](../../../.gitbook/assets/image%20%28116%29.png)
+![](../../../.gitbook/assets/image%20%28183%29.png)
 
 ### Data Preparation
 
-Data Preparation refines data from source data to be ingested into BigConnect. See [Discovery Data Preparation](../data-preparation.md) for more details.
+Data Preparation refines data from source data to be ingested into BigConnect. See [Discovery Data Preparation](../data-preparation/) for more details.
 
 ![BigConnect Discovery Data Preparation](../../../.gitbook/assets/prep.png)
 
@@ -18,7 +18,7 @@ Data Storage manages data ingested into the Druid engine for analysis and visual
 
 ![](../../../.gitbook/assets/datasource.jpg)
 
-![](../../../.gitbook/assets/image%20%2890%29.png)
+![](../../../.gitbook/assets/image%20%28145%29.png)
 
 ### Data analysis and visualization
 
@@ -36,17 +36,17 @@ Workbook supports working on, sharing, and making a presentation with dashboards
 
 ![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/dashboard.jpg)
 
-![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/image%20%2812%29.png)
+![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/image%20%2823%29.png)
 
-![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/image%20%2871%29.png)
+![BigConnect Discovery Workbook Dashboard](../../../.gitbook/assets/image%20%28120%29.png)
 
 #### Notebook
 
-Notebooks enables advanced analytics based on machine learning by using Jupyter Notebooks. See [Discovery Notebooks](../discovery-notebooks.md) for more details.
+Notebooks enables advanced analytics based on machine learning by using Jupyter Notebooks. See [Discovery Notebooks](../discovery-notebooks/) for more details.
 
 #### Workbench
 
-The Workbench enables SQL data analytics. See [Discovery Workbench](../discovery-workbench.md) for more details.
+The Workbench enables SQL data analytics. See [Discovery Workbench](../discovery-workbench/) for more details.
 
 ![BigConnect Discovery Data Workbench](../../../.gitbook/assets/sql.jpg)
 
