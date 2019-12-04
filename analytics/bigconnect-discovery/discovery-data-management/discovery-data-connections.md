@@ -26,7 +26,7 @@ On the Data Connection home page, you can create, edit and view database connect
 
 On the Create data connection screen, enter the required information to create a connection.
 
-![](../../../.gitbook/assets/image%20%2840%29.png)
+![](../../../.gitbook/assets/image%20%2844%29.png)
 
 
 
