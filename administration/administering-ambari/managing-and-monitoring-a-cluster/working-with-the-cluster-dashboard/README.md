@@ -4,7 +4,7 @@ Use Dashboard to view metrics and configuration history for your cluster.
 
 You monitor your Hadoop cluster using Ambari Web. **Dashboard** provides Metrics and Heatmaps visualizations and cluster configuration history options. You access the cluster dashboard by clicking **Dashboard** at the top left of the Ambari Web UI main window.
 
-![Ambari Dashboard Menu Option](../../../../.gitbook/assets/image%20%2811%29.png)
+![Ambari Dashboard Menu Option](../../../../.gitbook/assets/image%20%2813%29.png)
 
 {% page-ref page="open-the-cluster-dashboard.md" %}
 
