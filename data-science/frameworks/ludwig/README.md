@@ -14,5 +14,11 @@ Ludwig provides a set of model architectures that can be combined together to cr
 
 The core design principles we baked into the toolbox are: - No coding required: no coding skills are required to train a model and use it for obtaining predictions. - Generality: a new data type-based approach to deep learning model design that makes the tool usable across many different use cases. - Flexibility: experienced users have extensive control over model building and training, while newcomers will find it easy to use. - Extensibility: easy to add new model architecture and new feature data types. - Understandability: deep learning model internals are often considered black boxes, but we provide standard visualizations to understand their performance and compare their predictions.
 
+{% page-ref page="ludwig-basic-principles.md" %}
 
+{% page-ref page="ludwig-exmples.md" %}
+
+{% page-ref page="ludwig-user-guide.md" %}
+
+{% page-ref page="ludwig-developer-guide.md" %}
 

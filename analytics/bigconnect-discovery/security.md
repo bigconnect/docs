@@ -8,7 +8,7 @@ To manage users, click **ADMINISTRATION ‣ USER** on the left-hand panel of the
 
 This menu shows applications for membership. As shown below, the list includes the applications that have been rejected or waiting for approval. But, approved users are listed here but can be found in the **Members** menu.
 
-![](../../.gitbook/assets/image%20%28196%29.png)
+![](../../.gitbook/assets/image%20%28198%29.png)
 
 ## Members
 
@@ -27,7 +27,7 @@ The Members home shows a list of Discovery members. The member list can be filte
 
 Clicking on a member in the list opens the member information page shown below:
 
-![](../../.gitbook/assets/image%20%2899%29.png)
+![](../../.gitbook/assets/image%20%28100%29.png)
 
 This page displays some basic information and allows a number of settings.
 
@@ -39,7 +39,7 @@ This page displays some basic information and allows a number of settings.
 
 Click the **Create member** button on the top right of the page to pop up the member creation dialog box below.
 
-![](../../.gitbook/assets/image%20%2886%29.png)
+![](../../.gitbook/assets/image%20%2887%29.png)
 
 Enter the member’s real name, ID, and email address to register the member, and the membership details will be sent to the email address.
 
@@ -72,7 +72,7 @@ This page provides the following functions:
 
 Click the **Create group** button on the top right of the page to pop up the group creation dialog box below.
 
-![](../../.gitbook/assets/image%20%28107%29.png)
+![](../../.gitbook/assets/image%20%28108%29.png)
 
 Enter a name and description for the group and click **Done** to create the new group.
 
@@ -80,9 +80,9 @@ Enter a name and description for the group and click **Done** to create the new 
 
 BigConnect Discovery supports four types of permissions shown below, thereby enabling the administrator to grant different user privileges. This menu allows permission settings for individual members or groups.
 
-![](../../.gitbook/assets/image%20%28222%29.png)
+![](../../.gitbook/assets/image%20%28224%29.png)
 
 Click on one of the four permissions presented on the home to list the individual members and groups assigned the selected permission. In the **Member** or **Group** section, click on the ![setup](https://metatron-app.github.io/metatron-doc-discovery/en/_images/setup_icon.png) icon to pop up the following settings dialog box where you can set which members or groups will be assigned the permission.
 
-![](../../.gitbook/assets/image%20%28130%29.png)
+![](../../.gitbook/assets/image%20%28131%29.png)
 

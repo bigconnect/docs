@@ -18,7 +18,7 @@ The following column filters are included automatically when a chart is created:
 
 The chart filter panel is located on the right-hand side of the chart home screen. On this panel, you can easily view and configure registered filters.
 
-![](../../../.gitbook/assets/image%20%28132%29.png)
+![](../../../.gitbook/assets/image%20%28133%29.png)
 
 1. **Filter number:** Displays how many filters are registered for the chart.
 2. **Add/edit filter:** Click on “+” at the top right to either add a new filter or open a popup for configuring an existing filter.
@@ -37,7 +37,7 @@ The chart filter dialog box is divided into the Dimension and Measure tabs as sh
 
 From the connected data source, select a dimension on which to create a filter.
 
-![](../../../.gitbook/assets/image%20%2884%29.png)
+![](../../../.gitbook/assets/image%20%2885%29.png)
 
 * **Value range:** Select whether to filter the chart by a single or multiple data categories.
 
@@ -59,11 +59,11 @@ Dimensions with a time icon displayed are of a timestamp type for which a timest
 
 “Relative” sets a period of time relative to the present and displays only data from the applicable period of time in the chart.
 
-![](../../../.gitbook/assets/image%20%28202%29.png)
+![](../../../.gitbook/assets/image%20%28204%29.png)
 
 “Specific” directly sets a certain period of time of data and displays only data from the applicable period of time in the chart.
 
-![](../../../.gitbook/assets/image%20%28168%29.png)
+![](../../../.gitbook/assets/image%20%28169%29.png)
 
 ### Measure filtering
 
@@ -73,13 +73,13 @@ From the connected data source, select a measure on which to create a filter.
 
 Once you have selected a measure, designate the range of values to filter.
 
-![](../../../.gitbook/assets/image%20%28219%29.png)
+![](../../../.gitbook/assets/image%20%28221%29.png)
 
 ## Global filters
 
 Global filters specify which data is to be displayed in all charts of a dashboard. They can be added, edited, or deleted in the filter panel in the dashboard editing window.
 
-![](../../../.gitbook/assets/image%20%28164%29.png)
+![](../../../.gitbook/assets/image%20%28165%29.png)
 
 1. **Number of filter widgets:** Displays how many filter widgets are currently registered in the dashboard next to the global filter heading.
 2. **Add a filter widget:** Click the “+” icon at the top right to create a new filter widget in the dashboard. The filter creation popup interface and process for creating filters are the same as the process for creating chart filters described in the previous section.
