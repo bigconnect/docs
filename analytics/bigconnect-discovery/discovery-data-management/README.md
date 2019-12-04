@@ -1,6 +1,6 @@
 # Discovery Data Management
 
-![](../../../.gitbook/assets/image%20%28152%29.png)
+![](../../../.gitbook/assets/image%20%28164%29.png)
 
 As shown above, data used by the three Discovery modules \(workbook, notebook and workbench\) is prepared from various types of source data, engines, and storages. For these operations, data flows need to be standardized and managed, and different types of source data need to be linked.
 

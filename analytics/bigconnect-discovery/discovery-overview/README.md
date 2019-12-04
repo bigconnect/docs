@@ -14,7 +14,7 @@ The mainstream products in the current BI market belong to the 2nd and 3rd gener
 
 BigConnect Discovery combines data of various dimensions for large-sized fact data to produce a single big OLAP cube \(data mart\).
 
-![Big OLAP Cube](../../../.gitbook/assets/image%20%28205%29.png)
+![Big OLAP Cube](../../../.gitbook/assets/image%20%28219%29.png)
 
 The use of a big OLAP cube offers the following advantages:
 

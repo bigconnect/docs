@@ -4,7 +4,7 @@
 
 Data tables in Druid \(called data sources\) are collections of timestamped events designed for OLAP queries. A data source is composed of three distinct types of columns \(here we use an example dataset from online advertising\).
 
-![Source: http://druid.io](../../.gitbook/assets/image%20%28137%29.png)
+![Source: http://druid.io](../../.gitbook/assets/image%20%28147%29.png)
 
 * **Timestamp column:** Druid treats timestamp separately in a data source because all its queries center around the time axis \(If non-time series data is ingested in batch, all records are timestamped with the current time for use in Druid\).
 * **Dimension columns:** Dimensions are string attributes of an event, and the columns most commonly used in filtering the data. Four dimensions are involved in the example dataset: publisher, advertiser, gender, and country. They each represent an axis of the data chosen to slice across.
@@ -20,7 +20,7 @@ One major characteristic of Druid is real-time ingestion, which is enabled by re
 
 The individual events in our example dataset are not very interesting because there may be trillions of such events. However, summarizations of this type of data by time interval can yield many useful insights. Druid summarizes this raw data when ingesting it using an optional process called “roll-up.” Below is an example of roll-up.
 
-![Source: Interactive Exploratory Analytics with Druid \| DataEngConf SF &#x2018;17](../../.gitbook/assets/image%20%2883%29.png)
+![Source: Interactive Exploratory Analytics with Druid \| DataEngConf SF &#x2018;17](../../.gitbook/assets/image%20%2890%29.png)
 
 The table on the left lists the domain click events that occurred from 00:00:00 to 01:00:00 on January 1, 2011. Since individual events recorded in seconds do not have much significance from the analyst’s perspective, the data was compiled at a granularity of one hour. This results in the more meaningful table on the right, which shows the number of clicks by gender for the same time period.
 
@@ -54,7 +54,7 @@ In addition, this data segmentation is key to parallel processing in Druid’s d
 
 The way Druid stores data contributes to its data structures highly optimized for analytic queries. This section uses the Druid table below as an example:
 
-![Source: Druid: A Real-time Analytical Data Store](../../.gitbook/assets/image%20%2836%29.png)
+![Source: Druid: A Real-time Analytical Data Store](../../.gitbook/assets/image%20%2838%29.png)
 
 #### Columnar storage and indexing
 

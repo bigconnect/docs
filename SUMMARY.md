@@ -232,6 +232,8 @@
       * [Manage a Dataflow](analytics/bigconnect-discovery/data-preparation/manage-a-dataflow/README.md)
         * [Dataflow Rules](analytics/bigconnect-discovery/data-preparation/manage-a-dataflow/dataflow-rules.md)
         * [Dataflow Rule Types](analytics/bigconnect-discovery/data-preparation/manage-a-dataflow/dataflow-rule-types.md)
+        * [Data snapshots](analytics/bigconnect-discovery/data-preparation/manage-a-dataflow/data-snapshots/README.md)
+          * [Using Data snapshots](analytics/bigconnect-discovery/data-preparation/manage-a-dataflow/data-snapshots/using-data-snapshots.md)
     * [Discovery Security](analytics/bigconnect-discovery/security.md)
     * [Discovery Getting Started](analytics/bigconnect-discovery/getting-started.md)
   * [Cypher Lab](analytics/cypher-lab.md)

@@ -17,7 +17,7 @@ Next, on the upper right of the **dataset** page, click the **+ Generate new dat
 
 In the dataset creation page, select the dataset type.
 
-![](../../../.gitbook/assets/image%20%28140%29.png)
+![](../../../.gitbook/assets/image%20%28150%29.png)
 
 * **My file:** Create a dataset by opening the user’s local file or via a URI \(upcoming feature\) \(See **Create a dataset from a file** for a detailed procedure\).
 * **Database:** Create a dataset using external database access information and queries \(See **Create a dataset from a database** for a detailed procedure\).
@@ -35,15 +35,15 @@ Create a dataset by opening the user’s local file or via a URI:
 
 2. Select a file to be used as a data source from your local PC. You can click the **Import** button to select a file, or drag and drop the file into the box. Once a file is selected, click Next.
 
-![](../../../.gitbook/assets/image%20%2826%29.png)
+![](../../../.gitbook/assets/image%20%2827%29.png)
 
 3. Check the grid of the uploaded file, and designate a column delimiter. Proceed if the data is successfully displayed.
 
-![](../../../.gitbook/assets/image%20%2878%29.png)
+![](../../../.gitbook/assets/image%20%2883%29.png)
 
 4. Enter the **Name** and **Description** of the dataset, and click the **Done** button.
 
-![](../../../.gitbook/assets/image%20%28125%29.png)
+![](../../../.gitbook/assets/image%20%28135%29.png)
 
 5. Once the dataset is created, the dataset list is displayed. You can check that the list contains the newly created dataset.
 
@@ -53,7 +53,7 @@ Create a dataset using external database access information and queries.
 
 To create a dataset from a database, you should first create a Data Connection. See [Create a data connection](../discovery-data-management/discovery-data-connections.md) for a detailed procedure.
 
-![](../../../.gitbook/assets/image%20%28155%29.png)
+![](../../../.gitbook/assets/image%20%28167%29.png)
 
 After establishing the data connection, go to **MANAGEMENT** &gt; **Data Preparation** &gt; **Dataset** &gt; **+ Generate new dataset**.
 
@@ -65,14 +65,14 @@ After establishing the data connection, go to **MANAGEMENT** &gt; **Data Prepara
 
 3. Select the data. You can either select a table from the connected database, or write a query yourself.
 
-![](../../../.gitbook/assets/image%20%28115%29.png)
+![](../../../.gitbook/assets/image%20%28125%29.png)
 
 * **Table:** Select a database and a table to display the table’s data. Once the data being ingested has been displayed, confirm the data and click **Next**.
 * **Query:** Write a query to import the data you want, and click **Run** to display the data in the lower section. Confirm the data and click **Next**.
 
 4. Enter the **Name** and **Description** of the dataset, and click the **Done** button.
 
-![](../../../.gitbook/assets/image%20%2862%29.png)
+![](../../../.gitbook/assets/image%20%2865%29.png)
 
 5. Once the dataset is created, the dataset list is displayed. You can check that the list contains the newly created dataset.
 
@@ -93,7 +93,7 @@ The creation of a staging DB dataset is the same as dataset creation from a data
 
 3. Enter the **Name** and **Description** of the dataset, and click the **Done** button.
 
-![](../../../.gitbook/assets/image%20%2825%29.png)
+![](../../../.gitbook/assets/image%20%2826%29.png)
 
 4. Once the dataset is created, the dataset list is displayed. You can check that the list contains the newly created dataset.
 

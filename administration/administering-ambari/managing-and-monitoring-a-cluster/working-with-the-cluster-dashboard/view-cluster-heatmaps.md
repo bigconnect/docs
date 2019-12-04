@@ -6,13 +6,13 @@ A colored block represents each host in your cluster. Colors displayed in the bl
 
 Hovering over a block that represents a host displays more detailed information about that specific host. A separate window displays metrics about components installed on that host.
 
-![](../../../../.gitbook/assets/image%20%28101%29.png)
+![](../../../../.gitbook/assets/image%20%28110%29.png)
 
 If any data necessary to determine usage is not available, the block displays **Invalid data**.
 
 You can select a different heatmap, using the **Select Metric** menu:
 
-![](../../../../.gitbook/assets/image%20%28130%29.png)
+![](../../../../.gitbook/assets/image%20%28140%29.png)
 
 Heatmaps supports the following metrics:
 

@@ -10,7 +10,7 @@ Use the Actions UI control to act on hosts in your cluster. Actions that you per
 1. In the **Hosts** page, select or search for hosts running a RegionServer: 
 2. Using the **Actions** control, click **Filtered Hosts &gt; RegionServers &gt; Restart &gt;**
 
-![](../../../../.gitbook/assets/image%20%28179%29.png)
+![](../../../../.gitbook/assets/image%20%28192%29.png)
 
 3. Click **OK** to start the selected operation.
 
