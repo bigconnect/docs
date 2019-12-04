@@ -433,5 +433,294 @@ for image_raw, label_text in labeled_ds.take(1):
   print(label_text.numpy())
 ```
 
+## Batching dataset elements
+
+### Simple batching
+
+The simplest form of batching stacks `n` consecutive elements of a dataset into a single element. The [`Dataset.batch()`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#batch) transformation does exactly this, with the same constraints as the [`tf.stack()`](https://www.tensorflow.org/api_docs/python/tf/stack) operator, applied to each component of the elements: i.e. for each component _i_, all elements must have a tensor of the exact same shape.
+
+```python
+inc_dataset = tf.data.Dataset.range(100)
+dec_dataset = tf.data.Dataset.range(0, -100, -1)
+dataset = tf.data.Dataset.zip((inc_dataset, dec_dataset))
+batched_dataset = dataset.batch(4)
+
+for batch in batched_dataset.take(4):
+  print([arr.numpy() for arr in batch])
+```
+
+While [`tf.data`](https://www.tensorflow.org/api_docs/python/tf/data) tries to propagate shape information, the default settings of [`Dataset.batch`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#batch) result in an unknown batch size because the last batch may not be full. Note the `None`s in the shape:
+
+```python
+batched_dataset
+```
+
+Use the `drop_remainder` argument to ignore that last batch, and get full shape propagation:
+
+```python
+batched_dataset = dataset.batch(7, drop_remainder=True)
+batched_dataset
+```
+
+### Batching tensors with padding
+
+The above recipe works for tensors that all have the same size. However, many models \(e.g. sequence models\) work with input data that can have varying size \(e.g. sequences of different lengths\). To handle this case, the [`Dataset.padded_batch()`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#padded_batch) transformation enables you to batch tensors of different shape by specifying one or more dimensions in which they may be padded.
+
+```python
+dataset = tf.data.Dataset.range(100)
+dataset = dataset.map(lambda x: tf.fill([tf.cast(x, tf.int32)], x))
+dataset = dataset.padded_batch(4, padded_shapes=(None,))
+
+for batch in dataset.take(2):
+  print(batch.numpy())
+  print()
+```
+
+The [`Dataset.padded_batch()`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#padded_batch) transformation allows you to set different padding for each dimension of each component, and it may be variable-length \(signified by `None` in the example above\) or constant-length. It is also possible to override the padding value, which defaults to 0.
+
+## Training workflows
+
+### Processing multiple epochs
+
+The [`tf.data`](https://www.tensorflow.org/api_docs/python/tf/data) API offers two main ways to process multiple epochs of the same data.
+
+The simplest way to iterate over a dataset in multiple epochs is to use the [`Dataset.repeat()`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#repeat) transformation. First we create a dataset of titanic data:
+
+```python
+titanic_file = tf.keras.utils.get_file("train.csv", "https://storage.googleapis.com/tf-datasets/titanic/train.csv")
+titanic_lines = tf.data.TextLineDataset(titanic_file)
+
+def plot_batch_sizes(ds):
+  batch_sizes = [batch.shape[0] for batch in ds]
+  plt.bar(range(len(batch_sizes)), batch_sizes)
+  plt.xlabel('Batch number')
+  plt.ylabel('Batch size')
+```
+
+Applying the [`Dataset.repeat()`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#repeat) transformation with no arguments will repeat the input indefinitely.
+
+The [`Dataset.repeat`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#repeat) transformation concatenates its arguments without signaling the end of one epoch and the beginning of the next epoch. Because of this a [`Dataset.batch`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#batch) applied after [`Dataset.repeat`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#repeat) will yield batches that stradle epoch boundaries:
+
+```python
+titanic_batches = titanic_lines.repeat(3).batch(128)
+plot_batch_sizes(titanic_batches)
+```
+
+If you need clear epoch separation, put [`Dataset.batch`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#batch) before the repeat:
+
+```python
+titanic_batches = titanic_lines.batch(128).repeat(3)
+
+plot_batch_sizes(titanic_batches)
+```
+
+If you would like to perform a custom computation \(e.g. to collect statistics\) at the end of each epoch then it's simplest to restart the dataset iteration on each epoch:
+
+```python
+epochs = 3
+dataset = titanic_lines.batch(128)
+
+for epoch in range(epochs):
+  for batch in dataset:
+    print(batch.shape)
+  print("End of epoch: ", epoch)
+```
+
+### Randomly shuffling input data
+
+The [`Dataset.shuffle()`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#shuffle) transformation maintains a fixed-size buffer and chooses the next element uniformly at random from that buffer.
+
+{% hint style="info" %}
+While large buffer\_sizes shuffle more thoroughly, they can take a lot of memory, and significant time to fill. Consider using [`Dataset.interleave`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#interleave) across files if this becomes a problem.
+{% endhint %}
+
+Add an index to the dataset so you can see the effect:
+
+```python
+lines = tf.data.TextLineDataset(titanic_file)
+counter = tf.data.experimental.Counter()
+
+dataset = tf.data.Dataset.zip((counter, lines))
+dataset = dataset.shuffle(buffer_size=100)
+dataset = dataset.batch(20)
+```
+
+Since the `buffer_size` is 100, and the batch size is 20, the first batch contains no elements with an index over 120.
+
+```python
+n,line_batch = next(iter(dataset))
+print(n.numpy())
+```
+
+As with [`Dataset.batch`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#batch) the order relative to [`Dataset.repeat`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#repeat) matters.
+
+[`Dataset.shuffle`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#shuffle) doesn't signal the end of an epoch until the shuffle buffer is empty. So a shuffle placed before a repeat will show every element of one epoch before moving to the next:
+
+```python
+dataset = tf.data.Dataset.zip((counter, lines))
+shuffled = dataset.shuffle(buffer_size=100).batch(10).repeat(2)
+
+print("Here are the item ID's near the epoch boundary:\n")
+for n, line_batch in shuffled.skip(60).take(5):
+  print(n.numpy())
+  
+shuffle_repeat = [n.numpy().mean() for n, line_batch in shuffled]
+plt.plot(shuffle_repeat, label="shuffle().repeat()")
+plt.ylabel("Mean item ID")
+plt.legend()
+```
+
+But a repeat before a shuffle mixes the epoch boundaries together:
+
+```python
+dataset = tf.data.Dataset.zip((counter, lines))
+shuffled = dataset.repeat(2).shuffle(buffer_size=100).batch(10)
+
+print("Here are the item ID's near the epoch boundary:\n")
+for n, line_batch in shuffled.skip(55).take(15):
+  print(n.numpy())
+  
+repeat_shuffle = [n.numpy().mean() for n, line_batch in shuffled]
+
+plt.plot(shuffle_repeat, label="shuffle().repeat()")
+plt.plot(repeat_shuffle, label="repeat().shuffle()")
+plt.ylabel("Mean item ID")
+plt.legend()
+```
+
+## Preprocessing data
+
+The [`Dataset.map(f)`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#map) transformation produces a new dataset by applying a given function `f` to each element of the input dataset. It is based on the [`map()`](https://en.wikipedia.org/wiki/Map_%28higher-order_function%29) function that is commonly applied to lists \(and other structures\) in functional programming languages. The function `f` takes the [`tf.Tensor`](https://www.tensorflow.org/api_docs/python/tf/Tensor) objects that represent a single element in the input, and returns the [`tf.Tensor`](https://www.tensorflow.org/api_docs/python/tf/Tensor) objects that will represent a single element in the new dataset. Its implementation uses standard TensorFlow operations to transform one element into another.
+
+This section covers common examples of how to use [`Dataset.map()`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#map).
+
+### Decoding image data and resizing it
+
+When training a neural network on real-world image data, it is often necessary to convert images of different sizes to a common size, so that they may be batched into a fixed size.
+
+Rebuild the flower filenames dataset:
+
+```python
+list_ds = tf.data.Dataset.list_files(str(flowers_root/'*/*'))
+```
+
+Write a function that manipulates the dataset elements.
+
+```python
+# Reads an image from a file, decodes it into a dense tensor, and resizes it
+# to a fixed shape.
+def parse_image(filename):
+  parts = tf.strings.split(file_path, '/')
+  label = parts[-2]
+
+  image = tf.io.read_file(filename)
+  image = tf.image.decode_jpeg(image)
+  image = tf.image.convert_image_dtype(image, tf.float32)
+  image = tf.image.resize(image, [128, 128])
+  return image, label
+```
+
+Test that it works.
+
+```python
+file_path = next(iter(list_ds))
+image, label = parse_image(file_path)
+
+def show(image, label):
+  plt.figure()
+  plt.imshow(image)
+  plt.title(label.numpy().decode('utf-8'))
+  plt.axis('off')
+
+show(image, label)
+```
+
+Map it over the dataset.
+
+```python
+images_ds = list_ds.map(parse_image)
+
+for image, label in images_ds.take(2):
+  show(image, label)
+```
+
+### Applying arbitrary Python logic
+
+For performance reasons, we encourage you to use TensorFlow operations for preprocessing your data whenever possible. However, it is sometimes useful to call external Python libraries when parsing your input data. You can use the [`tf.py_function()`](https://www.tensorflow.org/api_docs/python/tf/py_function) operation in a [`Dataset.map()`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#map) transformation.
+
+For example, if you want to apply a random rotation, the [`tf.image`](https://www.tensorflow.org/api_docs/python/tf/image) module only has [`tf.image.rot90`](https://www.tensorflow.org/api_docs/python/tf/image/rot90), which is not very useful for image augmentation.
+
+{% hint style="info" %}
+`tensorflow_addons` has a TensorFlow compatible `rotate` in `tensorflow_addons.image.rotate`.
+{% endhint %}
+
+To demonstrate [`tf.py_function`](https://www.tensorflow.org/api_docs/python/tf/py_function), try using the `scipy.ndimage.rotate` function instead:
+
+```python
+import scipy.ndimage as ndimage
+
+def random_rotate_image(image):
+  image = ndimage.rotate(image, np.random.uniform(-30, 30), reshape=False)
+  return image
+
+image, label = next(iter(images_ds))
+image = random_rotate_image(image)
+show(image, label)
+```
+
+To use this function with [`Dataset.map`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#map) the same caveats apply as with [`Dataset.from_generator`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#from_generator), you need to describe the return shapes and types when you apply the function:
+
+```python
+def tf_random_rotate_image(image, label):
+  im_shape = image.shape
+  [image,] = tf.py_function(random_rotate_image, [image], [tf.float32])
+  image.set_shape(im_shape)
+  return image, label
+
+rot_ds = images_ds.map(tf_random_rotate_image)
+
+for image, label in rot_ds.take(2):
+  show(image, label)
+```
+
+### Parsing tf.Example protocol buffer messages
+
+Many input pipelines extract [`tf.train.Example`](https://www.tensorflow.org/api_docs/python/tf/train/Example) protocol buffer messages from a TFRecord format. Each [`tf.train.Example`](https://www.tensorflow.org/api_docs/python/tf/train/Example) record contains one or more "features", and the input pipeline typically converts these features into tensors.
+
+```python
+fsns_test_file = tf.keras.utils.get_file("fsns.tfrec", "https://storage.googleapis.com/download.tensorflow.org/data/fsns-20160927/testdata/fsns-00000-of-00001")
+dataset = tf.data.TFRecordDataset(filenames = [fsns_test_file])
+```
+
+You can work with [`tf.train.Example`](https://www.tensorflow.org/api_docs/python/tf/train/Example) protos outside of a [`tf.data.Dataset`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset) to understand the data:
+
+```python
+raw_example = next(iter(dataset))
+parsed = tf.train.Example.FromString(raw_example.numpy())
+
+feature = parsed.features.feature
+raw_img = feature['image/encoded'].bytes_list.value[0]
+img = tf.image.decode_png(raw_img)
+plt.imshow(img)
+plt.axis('off')
+_ = plt.title(feature["image/text"].bytes_list.value[0])
+raw_example = next(iter(dataset))
+
+def tf_parse(eg):
+  example = tf.io.parse_example(
+      eg[tf.newaxis], {
+          'image/encoded': tf.io.FixedLenFeature(shape=(), dtype=tf.string),
+          'image/text': tf.io.FixedLenFeature(shape=(), dtype=tf.string)
+      })
+  return example['image/encoded'][0], example['image/text'][0]
+
+img, txt = tf_parse(raw_example)
+print(txt.numpy())
+print(repr(img.numpy()[:20]), "...")
+
+decoded = dataset.map(tf_parse)
+image_batch, text_batch = next(iter(decoded.batch(10)))
+```
+
 
 
