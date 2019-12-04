@@ -21,11 +21,11 @@ You can view the details of snapshot creation through the two paths below:
 
 In the snapshot details page, you can view details such as data validity ratio and a grid of the created snapshot, and download the results as a CSV file.
 
-![](../../../../../.gitbook/assets/image%20%2889%29.png)
+![](../../../../../.gitbook/assets/image%20%28105%29.png)
 
 If valid data has not been created, the snapshot details page displays an error log.
 
-![](../../../../../.gitbook/assets/image%20%2812%29.png)
+![](../../../../../.gitbook/assets/image%20%2814%29.png)
 
 
 

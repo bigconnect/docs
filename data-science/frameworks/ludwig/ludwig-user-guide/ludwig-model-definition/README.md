@@ -196,7 +196,361 @@ input_features:
             word_length_limit: 2000
 ```
 
+## Feature types
 
+See sub-sections for all supported feature types.
 
-### 
+## Combiners
+
+Combiners are the part of the model that take the outputs of the encoders of all input features and combine them before providing the combined representation to the different output decoders. If you don't specify a combiner, the concat combiner will be used.
+
+### Concat Combiner
+
+The concat combiner assumes all outputs from encoders are tensors of size `b x h` where `b` is the batch size and `h` is the hidden dimension, which can be different for each input. It concatenates along the `h` dimension, and then \(optionally\) passes the concatenated tensor through a stack of fully connected layers. It returns the final `b x h'` tensor where `h'` is the size of the last fully connected layer or the sum of the sizes of the `h` of all inputs in the case there are no fully connected layers. If there's only one input feature and no fully connected layers are specified, the output of the input feature is just passed through as output.
+
+```yaml
++-----------+
+|Input      |
+|Feature 1  +-+
++-----------+ |            +---------+
++-----------+ | +------+   |Fully    |
+|...        +--->Concat+--->Connected+->
++-----------+ | +------+   |Layers   |
++-----------+ |            +---------+
+|Input      +-+
+|Feature N  |
++-----------+
+```
+
+These are the available parameters of a concat combiner
+
+* `fc_layers` \(default `null`\): it is a list of dictionaries containing the parameters of all the fully connected layers. The length of the list determines the number of stacked fully connected layers and the content of each dictionary determines the parameters for a specific layer. The available parameters for each layer are: `fc_size`, `norm`, `activation`, `dropout`, `initializer` and `regularize`. If any of those values is missing from the dictionary, the default one specified as a parameter of the decoder will be used instead.
+* `num_fc_layers` \(default 0\): this is the number of stacked fully connected layers that the input to the feature passes through. Their output is projected in the feature's output space.
+* `fc_size` \(default `256`\): if a `fc_size` is not already specified in `fc_layers` this is the default `fc_size` that will be used for each layer. It indicates the size of the output of a fully connected layer.
+* `activation` \(default `relu`\): if an `activation` is not already specified in `fc_layers` this is the default `activation` that will be used for each layer. It indicates the activation function applied to the output.
+* `norm` \(default `null`\): if a `norm` is not already specified in `fc_layers` this is the default `norm` that will be used for each layer. It indicates the norm of the output and it can be `null`, `batch` or `layer`.
+* `dropout` \(default `false`\): determines if there should be a dropout layer after each layer.
+* `initializer` \(default `null`\): the initializer to use. If `null`, the default initialized of each variable is used \(`glorot_uniform` in most cases\). Options are: `constant`, `identity`, `zeros`, `ones`, `orthogonal`, `normal`, `uniform`, `truncated_normal`, `variance_scaling`, `glorot_normal`, `glorot_uniform`, `xavier_normal`, `xavier_uniform`, `he_normal`, `he_uniform`, `lecun_normal`, `lecun_uniform`. Alternatively it is possible to specify a dictionary with a key `type` that identifies the type of initializer and other keys for its parameters, e.g. `{type: normal, mean: 0, stddev: 0}`. To know the parameters of each initializer, please refer to [TensorFlow's documentation](https://www.tensorflow.org/api_docs/python/tf/keras/initializers).
+* `regularize` \(default `true`\): if `true` the weights of the layers are added to the set of weights that get regularized by a regularization loss \(if the `regularization_lambda` in `training` is greater than 0\).
+
+Example concat combiner in the model definition:
+
+```yaml
+type: concat
+fc_layers: null
+num_fc_layers: 0
+fc_size: 256
+activation: relu
+norm: null
+dropout: false
+initializer: null
+regularize: true
+```
+
+### Sequence Concat Combiner
+
+The sequence concat combiner assumes at least one output from encoders is a tensors of size `b x s x h` where `b` is the batch size, `s` is the length of the sequence and `h` is the hidden dimension. The sequence / text / sequential input can be specified with the `main_sequence_feature` parameter that should have the name of the sequential feature as value. If no `main_sequence_feature` is specified, the combiner will look through all the features in the order they are defined in the model definition and will look for a feature with a rank 3 tensor output \(sequence, text or time series\). If it cannot find one it will raise an exception, otherwise the output of that feature will be used for concatenating the other features along the sequence `s` dimension.
+
+If there are other input features with a rank 3 output tensor, the combiner will concatenate them alongside the `s` dimension, which means that all of them must have identical `s` dimension, otherwise an error will be thrown. Specifically, as the placeholders of the sequential features are of dimension `[None, None]` in order to make the `BucketedBatcher` trim longer sequences to their actual length, the check if the sequences are of the same length cannot be performed at model building time, and a dimension mismatch error will be returned during training when a datapoint with two sequential features of different lengths are provided.
+
+Other features that have a `b x h` rank 2 tensor output will be replicated `s` times and concatenated to the `s` dimension. The final output is a `b x s x h'` tensor where `h'` is the size of the concatenation of the `h` dimensions of all input features.
+
+```yaml
++-----------+
+|Input      |
+|Feature 1  +-+
++-----------+ |            +---------+
++-----------+ | +------+   |Fully    |
+|...        +--->Concat+--->Connected+->
++-----------+ | +------+   |Layers   |
++-----------+ |            +---------+
+|Input      +-+
+|Feature N  |
++-----------+
+```
+
+These are the available parameters of a sequence concat combiner
+
+* `main_sequence_feature` \(default `null`\): name fo the sequence / text/ time series feature to concatenate the outputs of the other features to. If no `main_sequence_feature` is specified, the combiner will look through all the features in the order they are defined in the model definition and will look for a feature with a rank 3 tensor output \(sequence, text or time series\). If it cannot find one it will raise an exception, otherwise the output of that feature will be used for concatenating the other features along the sequence `s` dimension. If there are other input features with a rank 3 output tensor, the combiner will concatenate them alongside the `s` dimension, which means that all of them must have identical `s` dimension, otherwise an error will be thrown.
+
+Example sequence concat combiner in the model definition:
+
+```yaml
+type: sequence_concat
+main_sequence_feature: null
+```
+
+### Sequence Combiner
+
+The sequence combiner stacks a sequence concat combiner with a sequence encoder one on top of each other. All the considerations about inputs tensor ranks describer for the sequence concat combiner apply also in this case, but the main difference is that this combiner uses the `b x s x h'` output of the sequence concat combiner, where `b` is the batch size, `s` is the sequence length and `h'` is the sum of the hidden dimensions of all input features, as input fo any of the sequence encoders described in the sequence features encoders section. Refer to that section for more detailed information about the sequence encoders and their parameters. Also all the considerations on the shape of the outputs done for the sequence encoders apply in this case too.
+
+```yaml
+Sequence
+Feature
+Output
+
++---------+
+|emb seq 1|
++---------+
+|...      +--+
++---------+  |  +-----------------+
+|emb seq n|  |  |emb seq 1|emb oth|   +--------+
++---------+  |  +-----------------+   |Sequence|
+             +-->...      |...    +-->+Encoder +->
+Other        |  +-----------------+   |        |
+Feature      |  |emb seq n|emb oth|   +--------+
+Output       |  +-----------------+
+             |
++-------+    |
+|emb oth+----+
++-------+
+```
+
+Example sequence concat combiner in the model definition:
+
+```yaml
+type: sequence
+main_sequence_feature: null
+encoder: parallel_cnn
+... encoder parameters ...
+```
+
+## Visualizations
+
+Several visualization can be obtained from the result files from both `train`, `predict` and `experiment` by using the `visualize` command. The command has several parameters, but not all the visualizations use all of them. Let's first present the parameters of the general script, and then, for each available visualization, we will discuss about the specific parameters needed and what visualization they produce.
+
+```text
+usage: ludwig visualize [options]
+
+This script analyzes results and shows some nice plots.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DATA_CSV, --data_csv DATA_CSV
+                        raw data file
+  -g GROUND_TRUTH, --ground_truth GROUND_TRUTH
+                        ground truth file
+  -gm GROUND_TRUTH_METADATA, --ground_truth_metadata GROUND_TRUTH_METADATA
+                        input metadata JSON file
+  -v {learning_curves,compare_performance,compare_classifiers_performance_from_prob,compare_classifiers_performance_from_pred,compare_classifiers_performance_subset,compare_classifiers_performance_changing_k,compare_classifiers_multiclass_multimetric,compare_classifiers_predictions,compare_classifiers_predictions_distribution,confidence_thresholding,confidence_thresholding_data_vs_acc,confidence_thresholding_data_vs_acc_subset,confidence_thresholding_data_vs_acc_subset_per_class,confidence_thresholding_2thresholds_2d,confidence_thresholding_2thresholds_3d,binary_threshold_vs_metric,roc_curves,roc_curves_from_test_statistics,calibration_1_vs_all,calibration_multiclass,confusion_matrix,frequency_vs_f1}, --visualization {learning_curves,compare_performance,compare_classifiers_performance_from_prob,compare_classifiers_performance_from_pred,compare_classifiers_performance_subset,compare_classifiers_performance_changing_k,compare_classifiers_multiclass_multimetric,compare_classifiers_predictions,compare_classifiers_predictions_distribution,confidence_thresholding,confidence_thresholding_data_vs_acc,confidence_thresholding_data_vs_acc_subset,confidence_thresholding_data_vs_acc_subset_per_class,confidence_thresholding_2thresholds_2d,confidence_thresholding_2thresholds_3d,binary_threshold_vs_metric,roc_curves,roc_curves_from_test_statistics,calibration_1_vs_all,calibration_multiclass,confusion_matrix,frequency_vs_f1}
+                        type of visualization
+  -f FIELD, --field FIELD
+                        field containing ground truth
+  -tf THRESHOLD_FIELDS [THRESHOLD_FIELDS ...], --threshold_fields THRESHOLD_FIELDS [THRESHOLD_FIELDS ...]
+                        fields for 2d threshold
+  -pred PREDICTIONS [PREDICTIONS ...], --predictions PREDICTIONS [PREDICTIONS ...]
+                        predictions files
+  -prob PROBABILITIES [PROBABILITIES ...], --probabilities PROBABILITIES [PROBABILITIES ...]
+                        probabilities files
+  -trs TRAINING_STATS [TRAINING_STATS ...], --training_statistics TRAINING_STATS [TRAINING_STATS ...]
+                        training stats files
+  -tes TEST_STATS [TEST_STATS ...], --test_statistics TEST_STATS [TEST_STATS ...]
+                        test stats files
+  -mn MODEL_NAMES [MODEL_NAMES ...], --model_names MODEL_NAMES [MODEL_NAMES ...]
+                        names of the models to use as labels
+  -tn TOP_N_CLASSES [TOP_N_CLASSES ...], --top_n_classes TOP_N_CLASSES [TOP_N_CLASSES ...]
+                        number of classes to plot
+  -k TOP_K, --top_k TOP_K
+                        number of elements in the ranklist to consider
+  -ll LABELS_LIMIT, --labels_limit LABELS_LIMIT
+                        maximum numbers of labels. If labels in dataset are
+                        higher than this number, "rare" label
+  -ss {ground_truth,predictions}, --subset {ground_truth,predictions}
+                        type of subset filtering
+  -n, --normalize       normalize rows in confusion matrix
+  -m METRICS [METRICS ...], --metrics METRICS [METRICS ...]
+                        metrics to dispay in threshold_vs_metric
+  -pl POSITIVE_LABEL, --positive_label POSITIVE_LABEL
+                        label of the positive class for the roc curve
+  -l {critical,error,warning,info,debug,notset}, --logging_level {critical,error,warning,info,debug,notset}
+                        the level of logging to use
+```
+
+Some additional information on the parameters:
+
+* The list parameters are considered to be aligned, meaning `predictions`, `probabilities`, `training_statistics`, `test_statistics` and `model_names` are indexed altogether, for instance the name of the model producing the second predictions in the list will be the second in the model names.
+* `data_csv` is intended to be the data the model\(s\) were trained on.
+* `ground_truth` and `ground_truth_metadata` are respectively the `HDF5` and `JSON` file obtained during training preprocessing. If you plan to use the visualizations then be sure not to use the `skip_save_preprocessing` when training. Those files are needed because they contain the split performed at preprocessing time, so it is easy to extract the test set from them.
+* `field` is the output feature to use for creating the visualization.
+
+Other parameters will be detailed for each visualization as different ones use them differently.
+
+Example commands to generate the visualizations are based on running two experiments and comparing them. The experiments themselves are run with the following:
+
+```text
+ludwig experiment --experiment_name titanic --model_name Model1 --data_csv train.csv -mdf titanic_model1.yaml
+ludwig experiment --experiment_name titanic --model_name Model2 --data_csv train.csv -mdf titanic_model2.yaml
+```
+
+For this, you need to download the Kaggle Titanic dataset to get `train.csv`. Note that the images associated with each visualization below are not from the Titanic dataset. The two models are defined with `titanic_model1.yaml`
+
+```yaml
+input_features:
+    -
+        name: Pclass
+        type: category
+    -
+        name: Sex
+        type: category
+    -
+        name: Age
+        type: numerical
+        preprocessing:
+          missing_value_strategy: fill_with_mean
+    -
+        name: SibSp
+        type: numerical
+    -
+        name: Parch
+        type: numerical
+    -
+        name: Fare
+        type: numerical
+        preprocessing:
+          missing_value_strategy: fill_with_mean
+    -
+        name: Embarked
+        type: category
+
+output_features:
+    -
+        name: Survived
+        type: binary
+```
+
+and with `titanic_model2.yaml`:
+
+```yaml
+input_features:
+    -
+        name: Pclass
+        type: category
+    -
+        name: Sex
+        type: category
+    -
+        name: SibSp
+        type: numerical
+    -
+        name: Parch
+        type: numerical
+    -
+        name: Embarked
+        type: category
+
+output_features:
+    -
+        name: Survived
+        type: binary
+```
+
+### Learning Curves
+
+This visualization uses the `training_statistics` and `model_names` parameters. For each model \(in the aligned lists of `training_statistics` and `model_names`\) and for each output feature and measure of the model, it produces a line plot showing how that measure changed over the course of the epochs of training on the training and validation sets.
+
+Example command:
+
+`ludwig visualize --visualization learning_curves --model_names Model1 Model2 --training_statistics results\titanic_Model1_0\training_statistics.json results\titanic_Model2_0\training_statistics.json`
+
+![](../../../../../.gitbook/assets/image%20%28110%29.png)
+
+### Confusion Matrix
+
+This visualization uses the `top_n_classes`, `normalize`, `ground_truth_metadata`, `test_statistics` and `model_names` parameters. For each model \(in the aligned lists of `test_statistics` and `model_names`\) it produces a heatmap of the confusion matrix in the predictions for each field that has a confusion matrix in `test_statistics`. The value of `top_n_classes` limits the heatmap to the `n` most frequent classes.
+
+Example command:
+
+`ludwig visualize --visualization confusion_matrix --top_n_classes 2 --test_statistics results\titanic_Model1_0\test_statistics.json --ground_truth_metadata results\titanic_Model1_0\model\train_set_metadata.json`
+
+![](../../../../../.gitbook/assets/image%20%2888%29.png)
+
+The second plot produced, is a barplot showing the entropy of each class, ranked from most entropic to least entropic.
+
+![](../../../../../.gitbook/assets/image%20%28264%29.png)
+
+### Compare Performance
+
+This visualization uses the `field`, `test_statistics` and `model_names` parameters. For each model \(in the aligned lists of `test_statistics` and `model_names`\) it produces bars in a bar plot, one for each overall metric available in the `test_statistics` file for the specified `field`.
+
+Example command:
+
+`ludwig visualize --visualization compare_performance --model_names Model1 Model2 --test_statistics results\titanic_Model1_0\test_statistics.json results\titanic_Model2_0\test_statistics.json --field Survived`
+
+![](../../../../../.gitbook/assets/image%20%28111%29.png)
+
+### Compare Classifier Predictions
+
+This visualization uses the `ground_truth`, `field`, `predictions` and `model_names` parameters. `field` needs to be a category and there must be two and only two models \(in the aligned lists of `predictions` and `model_names`\). This visualization produces a pie chart comparing the predictions of the two models for the specified `field`.
+
+Example command:
+
+`ludwig visualize --visualization compare_classifiers_predictions --model_names Model1 Model2 --ground_truth train.hdf5 --field Survived --predictions results\titanic_Model1_0\Survived_predictions.csv results\titanic_Model2_0\Survived_predictions.csv`
+
+![](../../../../../.gitbook/assets/image%20%28219%29.png)
+
+### Confidence\_Thresholding
+
+This visualization uses the `ground_truth`, `field`, `probabilities` and `model_names` parameters. `field` needs to be a category. For each model \(in the aligned lists of `probabilities` and `model_names`\) it produces a pair of lines indicating the accuracy of the model and the data coverage while increasing a threshold \(x axis\) on the probabilities of predictions for the specified `field`.
+
+![](../../../../../.gitbook/assets/image%20%28165%29.png)
+
+### Binary Threshold vs. Metric
+
+This visualization uses the `positive_label`, `metrics`, `ground_truth`, `field`, `probabilities` and `model_names` parameters. `field` can be a category or binary feature. For each metric specified in `metrics` \(options are `f1`, `precision`, `recall`, `accuracy`\), this visualization produces a line chart plotting a threshold on the confidence of the model against the metric for the specified `field`. If `field` is a category feature, `positive_label` indicates which is the class to be considered positive class and all the others will be considered negative. It needs to be an integer, to figure out the association between classes and integers check the `ground_truth_metadata` JSON file.
+
+![](../../../../../.gitbook/assets/image%20%28239%29.png)
+
+### ROC Curves
+
+**roc\_curves**
+
+This visualization uses the `positive_label`, `ground_truth`, `field`, `probabilities` and `model_names` parameters. `field` can be a category or binary feature. This visualization produces a line chart plotting the roc curves for the specified `field`. If `field` is a category feature, `positive_label` indicates which is the class to be considered positive class and all the others will be considered negative. It needs to be an integer, to figure out the association between classes and integers check the `ground_truth_metadata` JSON file.
+
+![](../../../../../.gitbook/assets/image%20%28121%29.png)
+
+**roc\_curves\_from\_test\_statistics**
+
+This visualization uses the `field`, `test_statistics` and `model_names` parameters. `field` needs to be binary feature. This visualization produces a line chart plotting the roc curves for the specified `field`.
+
+![](../../../../../.gitbook/assets/image%20%28203%29.png)
+
+### **Calibration Plot**
+
+**calibration\_1\_vs\_all**
+
+This visualization uses the `top_k`, `ground_truth`, `field`, `probabilities` and `model_names` parameters. `field` needs to be a category or binary. For each class or each of the `k` most frequent classes if `top_k` is specified, it produces two plots computed on the fly from the probabilities of predictions for the specified `field`.
+
+The first plot is a calibration curve that shows the calibration of the predictions considering the current class to be the true one and all others to be a false one, drawing one line for each model \(in the aligned lists of `probabilities` and `model_names`\).
+
+![](../../../../../.gitbook/assets/image%20%28193%29.png)
+
+The second plot shows the distributions of the predictions considering the current class to be the true one and all others to be a false one, drawing the distribution for each model \(in the aligned lists of `probabilities` and `model_names`\).
+
+![](../../../../../.gitbook/assets/image%20%2890%29.png)
+
+**calibration\_multiclass**
+
+This visualization uses the `ground_truth`, `field`, `probabilities` and `model_names` parameters. `field` needs to be a category. For each class, produces two plots computed on the fly from the probabilities of predictions for the specified `field`.
+
+The first plot is a calibration curve that shows the calibration of the predictions considering al classes, drawing one line for each model \(in the aligned lists of `probabilities` and `model_names`\).
+
+![](../../../../../.gitbook/assets/image%20%28155%29.png)
+
+The second plot shows a bar plot of the brier score \(that calculates how calibrated are the probabilities of the predictions of a model\), drawing one bar for each model \(in the aligned lists of `probabilities` and `model_names`\).
+
+![](../../../../../.gitbook/assets/image%20%2853%29.png)
+
+### **Class Frequency vs. F1 score**
+
+**frequency\_vs\_f1**
+
+This visualization uses the `ground_truth_metadata`, `field`, `test_statistics` and `model_names` parameters. `field` needs to be a category. For each model \(in the aligned lists of `test_statistics` and `model_names`\), produces two plots statistics of predictions for the specified `field`.
+
+The first plot is a line plot with one x axis representing the different classes and two vertical axes colored in orange and blue respectively. The orange one is the frequency of the class and an orange line is plotted to show the trend. The blue one is the F1 score for that class and a blue line is plotted to show the trend. The classes on the x axis are sorted by f1 score.
+
+![](../../../../../.gitbook/assets/image%20%28194%29.png)
+
+The second plot has the same structure of the first one, but the axes are flipped and the classes on the x axis are sorted by frequency.
+
+![](../../../../../.gitbook/assets/image%20%2811%29.png)
 

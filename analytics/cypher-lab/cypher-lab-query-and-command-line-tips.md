@@ -14,7 +14,7 @@ You can also write and edit multi-line queries by switching to multi-line editin
 
 You can put several Cypher statements into the command line input \(with semicolons to separate statements\) and run as a block by enabling the multi-statement query setting. To do this, go to the `Settings` tab on your Neo4j Browser window and make sure the box is checked for `Enable multi statement query editor`. These steps are shown in the image below.
 
-![](../../.gitbook/assets/image%20%2892%29.png)
+![](../../.gitbook/assets/image%20%28108%29.png)
 
 ## Output, Export, & Visualization
 
@@ -184,9 +184,9 @@ Query time is reported in the `Table` or `Code` views \(**don’t rely on that e
 
 You can also download the results as a CSV from the `Table`, `Text`, and `Code` views or download the graph as an SVG or PNG from the `Graph` view, as shown below.
 
-![](../../.gitbook/assets/image%20%28239%29.png)
+![](../../.gitbook/assets/image%20%28280%29.png)
 
-![](../../.gitbook/assets/image%20%28113%29.png)
+![](../../.gitbook/assets/image%20%28136%29.png)
 
 ## Graph Metadata
 
@@ -212,7 +212,7 @@ You can reset to the default styles with **:style reset**
 
 Within the GRASS file, you can change colors, fonts, sizes, outlines, and titles per node label and relationship type. It is also possible to combine multiple properties into a caption with `caption: '{name}, born in {born}';`
 
-![](../../.gitbook/assets/image%20%28177%29.png)
+![](../../.gitbook/assets/image%20%28212%29.png)
 
 ## Configuration
 

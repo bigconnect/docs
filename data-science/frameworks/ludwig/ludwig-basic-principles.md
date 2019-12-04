@@ -65,7 +65,7 @@ ludwig visualize --visualization learning_curves --training_statistics path/to/t
 
 The commands will display a graph that looks like the following, where you can see loss and accuracy as functions of train iteration number:
 
-![](../../../.gitbook/assets/image%20%28195%29.png)
+![](../../../.gitbook/assets/image%20%28232%29.png)
 
 Several visualizations are available, please refer to **Visualizations** for more details.
 
@@ -85,7 +85,7 @@ ludwig visualize --visualization compare_performance --test_statistics path/to/t
 
 will return a bar plot comparing the models on different measures:
 
-![](../../../.gitbook/assets/image%20%2884%29.png)
+![](../../../.gitbook/assets/image%20%2899%29.png)
 
 A handy `ludwig experiment` command that performs training and prediction one after the other is also available.
 
@@ -110,11 +110,11 @@ predictions = model.predict(test_dataframe)
 model.close()
 ```
 
-`model_definition` is a dictionary contaning the same information of the YAML file. More details are provided in the [User Guide](ludwig-user-guide/) and in the [API documentation](ludwig-developer-guide.md).
+`model_definition` is a dictionary contaning the same information of the YAML file. More details are provided in the [User Guide](ludwig-user-guide/) and in the [API documentation]().
 
 ## Extensibility
 
 Ludwig is built from the ground up with extensibility in mind. It is easy to add an additional datatype that is not currently supported by adding a datatype-specific implementation of abstract classes which contain functions to preprocess the data, encode it, and decode it.
 
-Furthermore, new models, with their own specific hyperparameters, can be easily added by implementing a class that accepts tensors \(of a specific rank, depending of the datatype\) as inputs and provides tensors as output. This encourages reuse and sharing new models with the community. Refer to the [Developer Guide](ludwig-developer-guide.md) for further details.
+Furthermore, new models, with their own specific hyperparameters, can be easily added by implementing a class that accepts tensors \(of a specific rank, depending of the datatype\) as inputs and provides tensors as output. This encourages reuse and sharing new models with the community. Refer to the [Developer Guide]() for further details.
 

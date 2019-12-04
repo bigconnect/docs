@@ -8,7 +8,7 @@ After installing and starting Ambari Server from the command line, you access Am
 
 2. Enter the Ambari Web URL in the browser address bar. The Ambari Web Sign In page displays in your browser.
 
-![Ambari Login Page](../../../../.gitbook/assets/image%20%28148%29.png)
+![Ambari Login Page](../../../../.gitbook/assets/image%20%28178%29.png)
 
 3. Type your user name and password in the Sign In page. If you are an Ambari administrator accessing the Ambari Web UI for the first time, use the default Ambari administrator credentials: admin/admin
 

@@ -20,5 +20,3 @@ The core design principles we baked into the toolbox are: - No coding required: 
 
 {% page-ref page="ludwig-user-guide/" %}
 
-{% page-ref page="ludwig-developer-guide.md" %}
-
