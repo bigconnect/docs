@@ -4,11 +4,11 @@ Use the widgets on Dashboard Metrics to monitor cluster-wide metrics.
 
 On the Metrics page, multiple widgets represent operating status information of your cluster. Most widgets display a single metric, such as HDFS Disk Usage:
 
-![](../../../../.gitbook/assets/image%20%28112%29.png)
+![](../../../../.gitbook/assets/image%20%28113%29.png)
 
 Hover your cursor over a Metrics widget. A pop up window displays more details, if available.
 
-![](../../../../.gitbook/assets/image%20%28138%29.png)
+![](../../../../.gitbook/assets/image%20%28140%29.png)
 
 Click the edit widget icon to export, modify or remove a widget from the Metrics page.
 

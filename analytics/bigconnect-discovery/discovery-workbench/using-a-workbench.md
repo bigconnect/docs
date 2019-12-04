@@ -8,7 +8,7 @@ In the workbench, you can edit and manage an SQL database easily, as well as vis
 
 This section displays basic information on the active workbench.
 
-![](../../../.gitbook/assets/image%20%2814%29.png)
+![](../../../.gitbook/assets/image%20%2815%29.png)
 
 1. **Name:** Name of the workbench. Click on it to change the workbench’s name.
 2. **Data connection:** Name of the data connection used by the workbench. Click the ![icon\_exclamation](https://metatron-app.github.io/metatron-doc-discovery/en/_images/icon_exclamation.png) icon to view its details.
@@ -18,7 +18,7 @@ This section displays basic information on the active workbench.
 
 This section provides a UI to conveniently insert the name of a database, table, or column in the query editor.
 
-![](../../../.gitbook/assets/image%20%28181%29.png)
+![](../../../.gitbook/assets/image%20%28183%29.png)
 
 1. **Database name:** Displays the name of the selected database. By default, the first database of the data connection used by the workbench is selected. Click on it to list all databases included in the data connection. Select a database in the list to replace the currently selected database.
 2. **Schema browser:** A popup browser displaying the table list of the selected database, and information of all the columns and records in each table.
@@ -30,7 +30,7 @@ This section provides a UI to conveniently insert the name of a database, table,
 
 This section allows you to edit and run queries.
 
-![](../../../.gitbook/assets/image%20%2864%29.png)
+![](../../../.gitbook/assets/image%20%2865%29.png)
 
 1. ![icon\_arrow](https://metatron-app.github.io/metatron-doc-discovery/en/_images/icon_arrow.png) : Navigates to tabs of previous or subsequent queries when there are too many tabs. If tabs are not many, this button will not appear.
 2. **Tab:** You can run or store queries in separate tabs for more efficient management of them. Click the ![icon\_more](https://metatron-app.github.io/metatron-doc-discovery/en/_images/icon_more1.png) button to edit the tab title or delete the tab.
@@ -51,7 +51,7 @@ Once a query is executed, its results are displayed in a query results tab. Quer
 
 ### During query execution
 
-![](../../../.gitbook/assets/image%20%2848%29.png)
+![](../../../.gitbook/assets/image%20%2849%29.png)
 
 1. **Query result tabs:** When multiple queries are executed, a different tab is created for each query to show its result. While a query’s execution is in progress, “Loading” is displayed in its tab title.
 2. **Query log:** Shows an execution log for the query. In the case of a Hive connection, a Hive job log is additionally displayed.
@@ -77,7 +77,7 @@ Once a query is executed, its results are displayed in a query results tab. Quer
 
 ### After query execution
 
-![](../../../.gitbook/assets/image%20%2829%29.png)
+![](../../../.gitbook/assets/image%20%2830%29.png)
 
 1. **Query result tabs:** When multiple queries are executed, a different tab is created for each query to show its result. While a query’s execution is in progress, “Loading” is displayed in its tab title.
 2. **Data details:** Shows a data table resulting from executing the query. You can copy this data output to the clipboard.
@@ -100,7 +100,7 @@ The extra tools section provides useful tools for the workbench.
 
 If a certain type of statement is repeatedly used with a different value for each query run, set the variable element as a “global variable” for convenient use.
 
-![](../../../.gitbook/assets/image%20%28123%29.png)
+![](../../../.gitbook/assets/image%20%28124%29.png)
 
 * **Variable type:** You can select either a calendar or text type.
 * **Add new variable:** Select the variable type you want and click “Add new variable.” A new global variable will be added in the query editor.
@@ -111,7 +111,7 @@ If a certain type of statement is repeatedly used with a different value for eac
 
 Used to move to another workbench. Click the target workbench to move to.
 
-![](../../../.gitbook/assets/image%20%28154%29.png)
+![](../../../.gitbook/assets/image%20%28156%29.png)
 
 * **Search for workbench:** Search for a workbench stored in the workspace.
 * **Workbench list:** Displays all workbenches stored in the workspace. Click a workbench in the list to move to that workbench.
@@ -120,7 +120,7 @@ Used to move to another workbench. Click the target workbench to move to.
 
 Displays the table list of the selected database, and information of the columns and records in each table.
 
-![](../../../.gitbook/assets/image%20%2854%29.png)
+![](../../../.gitbook/assets/image%20%2855%29.png)
 
 * **Column:** Shows the names and data types of all columns of the selected table.
 * **Information:** Displays attributes of the selected table.

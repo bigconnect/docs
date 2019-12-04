@@ -1,6 +1,6 @@
 # Discovery Workbooks
 
-![](../../../.gitbook/assets/image%20%2858%29.png)
+![](../../../.gitbook/assets/image%20%2859%29.png)
 
 Discovery Workbook is a data visualization module powered by the Druid engine. As shown in the diagram above, each **workbook** consists of multiple **dashboards**, while each dashboard consists of various **charts** showing a visualization of source data analysis.
 
