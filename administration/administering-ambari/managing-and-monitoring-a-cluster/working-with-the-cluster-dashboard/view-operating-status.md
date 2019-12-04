@@ -4,7 +4,7 @@ Expand **Services** &gt; to see top-level metrics about service operating status
 
 **Services** lists all of the Apache component services that are currently installed and monitored.
 
-![](../../../../.gitbook/assets/image%20%2836%29.png)
+![](../../../../.gitbook/assets/image%20%2837%29.png)
 
 The icon shape, color, and action to the left of each item indicates the operating status of that service:
 
@@ -15,5 +15,5 @@ The icon shape, color, and action to the left of each item indicates the operati
 
 Hover your cursor over the restart indicator to view the status of stale components.
 
-![](../../../../.gitbook/assets/image%20%2849%29.png)
+![](../../../../.gitbook/assets/image%20%2850%29.png)
 

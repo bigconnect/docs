@@ -6,7 +6,7 @@ description: High-level architecture for BigConnect Data Lake
 
 BDL has many components powering its runtime, both commercial and open source. At a high- level, the platform can be broken down into the following building blocks:
 
-![BigConnect Core Components](../.gitbook/assets/image%20%2882%29.png)
+![BigConnect Core Components](../.gitbook/assets/image%20%2885%29.png)
 
 All components have been carefully chosen, tested and integrated to work seamlessly together.
 

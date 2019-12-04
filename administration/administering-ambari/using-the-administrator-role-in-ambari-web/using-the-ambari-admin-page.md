@@ -4,7 +4,7 @@ Use the Ambari Admin page to create new clusters, register remote clusters,deplo
 
 When you first log in to Ambari as an administrator, **Ambari Admin &gt; Cluster Management &gt; Cluster Information** page displays the **Launch Install Wizard** option. Click **Launch Install Wizard** to deploy an Ambari-managed, cluster.
 
-![](../../../.gitbook/assets/image%20%282%29.png)
+![](../../../.gitbook/assets/image%20%283%29.png)
 
 Other Ambari Admin options include:
 
@@ -18,7 +18,7 @@ After you create a cluster, the **Dashboard** option displays. Use the **Dashboa
 
 After you create a cluster, the **Ambari Admin &gt; Cluster Management &gt; Cluster Information** page displays the cluster name and blueprint information for the cluster you just created. You can export \(download\) the Ambari blueprint.
 
-![](../../../.gitbook/assets/image%20%2829%29.png)
+![](../../../.gitbook/assets/image%20%2830%29.png)
 
 **Versions** displays current component version information, and the option to register versions stored in specific repositorites.
 

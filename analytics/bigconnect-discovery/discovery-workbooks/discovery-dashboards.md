@@ -126,7 +126,7 @@ Click Edit Dashboard on the basic dashboard page to go to a page for editing the
 
 ### Dashboard widget arrangement settings
 
-![](../../../.gitbook/assets/image%20%2845%29.png)
+![](../../../.gitbook/assets/image%20%2846%29.png)
 
 1. **Change widget location:** Drag the title of a widget to move the widget.
 2. **Adjust widget width:** Move the distance between widgets to adjust their widths.
@@ -137,7 +137,7 @@ Click Edit Dashboard on the basic dashboard page to go to a page for editing the
 
 On the chart widget panel, you can add/edit/delete a chart in the dashboard.
 
-![](../../../.gitbook/assets/image%20%2835%29.png)
+![](../../../.gitbook/assets/image%20%2836%29.png)
 
 1. **Number of chart widgets:** Displays how many chart widgets are registered in the dashboard.
 2. **Add a chart widget:** Click on it to create a new chart widget in the dashboard.
@@ -148,7 +148,7 @@ On the chart widget panel, you can add/edit/delete a chart in the dashboard.
 
 On the text widget panel, you can add/edit/delete a text widget in the dashboard.
 
-![](../../../.gitbook/assets/image%20%2884%29.png)
+![](../../../.gitbook/assets/image%20%2887%29.png)
 
 1. **Number of text widgets:** Displays how many text widgets are registered in the dashboard.
 2. **Add a text widget:** Click on it to create a new text widget in the dashboard.
@@ -158,7 +158,7 @@ On the text widget panel, you can add/edit/delete a text widget in the dashboard
 
 On the layout panel, you can adjust some settings on how to arrange widgets and display each widget in the widget display area.
 
-![](../../../.gitbook/assets/image%20%2878%29.png)
+![](../../../.gitbook/assets/image%20%2880%29.png)
 
 * **Set board height**
 
@@ -174,7 +174,7 @@ On the layout panel, you can adjust some settings on how to arrange widgets and 
 
 In the data source panel, you can view and edit information on connected data sources, as well as add column filters easily. Click on a filter icon on a dimension or measure on the right-hand side to add a filter.
 
-![](../../../.gitbook/assets/image%20%2851%29.png)
+![](../../../.gitbook/assets/image%20%2852%29.png)
 
 Please note that the filters you can apply or clear here are global filters applied to the entire dashboard, and those applied or cleared in the chart editor are all chart filters.
 
@@ -186,17 +186,38 @@ Click the ![db\_info](https://metatron-app.github.io/metatron-doc-discovery/en/_
 
 Displays all values in the data source.
 
-![](../../../.gitbook/assets/image%20%2811%29.png)
+![](../../../.gitbook/assets/image%20%2812%29.png)
 
 ### Column details tab
 
 Displays details about each column of the data source.
 
-![](../../../.gitbook/assets/image%20%2880%29.png)
+![](../../../.gitbook/assets/image%20%2882%29.png)
 
 ### Dashboard data information tab
 
 Displays an overview of the data source.
 
-![](../../../.gitbook/assets/image%20%283%29.png)
+![](../../../.gitbook/assets/image%20%284%29.png)
+
+## Presentation mode
+
+Click Presentation view on the basic dashboard page to view workbook dashboards with a presentation UI. In this mode, you can easily report and share data analytics results.
+
+![](../../../.gitbook/assets/image%20%282%29.png)
+
+1. **Name:** Name of the current dashboard.
+2. **Slide navigation:** Each circle represents a different dashboard in the workbook. For example, if you click the 4th circle, the 4th dashboard slide will be displayed with that circle highlighted.
+3. **Auto slide show settings:** Select a duration for each slide and click PLAY to start an auto slide show.
+4. **Exit:** Closes the presentation view and returns to the workbook/dashboard basic page.
+
+## Renaming columns
+
+Hover the mouse over a column name on the data source panel in dashboard editing mode, and click the icon on the right to check the alias of the column.
+
+![](../../../.gitbook/assets/image%20%2884%29.png)
+
+Hover the mouse over the alias to open a window where you can enter a new column name. After entering the name, click Apply to see the change applied.
+
+![](../../../.gitbook/assets/image%20%2872%29.png)
 
