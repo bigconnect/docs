@@ -6,7 +6,7 @@ BigConnect provides the necessary tools to engage in developing and productional
 
 Training AI models require a lot of hardware resources and is very CPU/GPU intensive. Having the ability to distribute training workloads among multiple machines is a must. This is why we chose Spark as the primary option for all distributed data processing tasks. The Universal AI engine fully leverages the power of Spark for distributing training workloads across multiple machines.
 
-![Universal AI in BigConnect](../.gitbook/assets/image%20%28327%29.png)
+![Universal AI in BigConnect](../.gitbook/assets/image%20%28360%29.png)
 
 We carefully chose the best Machine Learning and Deep Learning tools and frameworks that can handle almost every task. BigConnect fully supports and integrates:
 
@@ -18,5 +18,5 @@ We carefully chose the best Machine Learning and Deep Learning tools and framewo
 
 We also provide an annotation tool for labeling data for training. Supported data types are text, images, tabular data.
 
-![Data Labeling tool in BigConnect](../.gitbook/assets/image%20%28220%29.png)
+![Data Labeling tool in BigConnect](../.gitbook/assets/image%20%28243%29.png)
 

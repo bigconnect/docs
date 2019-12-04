@@ -10,5 +10,5 @@ To analyze data in a workspace using a notebook, initial settings are required f
 
 * If you do not want to select any server, select the **\(none\)** item.
 
-![](../../../.gitbook/assets/image%20%28328%29.png)
+![](../../../.gitbook/assets/image%20%28361%29.png)
 

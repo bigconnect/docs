@@ -452,7 +452,7 @@ Example command:
 
 `ludwig visualize --visualization learning_curves --model_names Model1 Model2 --training_statistics results\titanic_Model1_0\training_statistics.json results\titanic_Model2_0\training_statistics.json`
 
-![](../../../../../.gitbook/assets/image%20%28130%29.png)
+![](../../../../../.gitbook/assets/image%20%28146%29.png)
 
 ### Confusion Matrix
 
@@ -462,11 +462,11 @@ Example command:
 
 `ludwig visualize --visualization confusion_matrix --top_n_classes 2 --test_statistics results\titanic_Model1_0\test_statistics.json --ground_truth_metadata results\titanic_Model1_0\model\train_set_metadata.json`
 
-![](../../../../../.gitbook/assets/image%20%28104%29.png)
+![](../../../../../.gitbook/assets/image%20%28116%29.png)
 
 The second plot produced, is a barplot showing the entropy of each class, ranked from most entropic to least entropic.
 
-![](../../../../../.gitbook/assets/image%20%28302%29.png)
+![](../../../../../.gitbook/assets/image%20%28334%29.png)
 
 ### Compare Performance
 
@@ -476,7 +476,7 @@ Example command:
 
 `ludwig visualize --visualization compare_performance --model_names Model1 Model2 --test_statistics results\titanic_Model1_0\test_statistics.json results\titanic_Model2_0\test_statistics.json --field Survived`
 
-![](../../../../../.gitbook/assets/image%20%28131%29.png)
+![](../../../../../.gitbook/assets/image%20%28147%29.png)
 
 ### Compare Classifier Predictions
 
@@ -486,19 +486,19 @@ Example command:
 
 `ludwig visualize --visualization compare_classifiers_predictions --model_names Model1 Model2 --ground_truth train.hdf5 --field Survived --predictions results\titanic_Model1_0\Survived_predictions.csv results\titanic_Model2_0\Survived_predictions.csv`
 
-![](../../../../../.gitbook/assets/image%20%28250%29.png)
+![](../../../../../.gitbook/assets/image%20%28276%29.png)
 
 ### Confidence\_Thresholding
 
 This visualization uses the `ground_truth`, `field`, `probabilities` and `model_names` parameters. `field` needs to be a category. For each model \(in the aligned lists of `probabilities` and `model_names`\) it produces a pair of lines indicating the accuracy of the model and the data coverage while increasing a threshold \(x axis\) on the probabilities of predictions for the specified `field`.
 
-![](../../../../../.gitbook/assets/image%20%28192%29.png)
+![](../../../../../.gitbook/assets/image%20%28214%29.png)
 
 ### Binary Threshold vs. Metric
 
 This visualization uses the `positive_label`, `metrics`, `ground_truth`, `field`, `probabilities` and `model_names` parameters. `field` can be a category or binary feature. For each metric specified in `metrics` \(options are `f1`, `precision`, `recall`, `accuracy`\), this visualization produces a line chart plotting a threshold on the confidence of the model against the metric for the specified `field`. If `field` is a category feature, `positive_label` indicates which is the class to be considered positive class and all the others will be considered negative. It needs to be an integer, to figure out the association between classes and integers check the `ground_truth_metadata` JSON file.
 
-![](../../../../../.gitbook/assets/image%20%28272%29.png)
+![](../../../../../.gitbook/assets/image%20%28302%29.png)
 
 ### ROC Curves
 
@@ -506,13 +506,13 @@ This visualization uses the `positive_label`, `metrics`, `ground_truth`, `field`
 
 This visualization uses the `positive_label`, `ground_truth`, `field`, `probabilities` and `model_names` parameters. `field` can be a category or binary feature. This visualization produces a line chart plotting the roc curves for the specified `field`. If `field` is a category feature, `positive_label` indicates which is the class to be considered positive class and all the others will be considered negative. It needs to be an integer, to figure out the association between classes and integers check the `ground_truth_metadata` JSON file.
 
-![](../../../../../.gitbook/assets/image%20%28143%29.png)
+![](../../../../../.gitbook/assets/image%20%28159%29.png)
 
 **roc\_curves\_from\_test\_statistics**
 
 This visualization uses the `field`, `test_statistics` and `model_names` parameters. `field` needs to be binary feature. This visualization produces a line chart plotting the roc curves for the specified `field`.
 
-![](../../../../../.gitbook/assets/image%20%28234%29.png)
+![](../../../../../.gitbook/assets/image%20%28259%29.png)
 
 ### **Calibration Plot**
 
@@ -522,11 +522,11 @@ This visualization uses the `top_k`, `ground_truth`, `field`, `probabilities` an
 
 The first plot is a calibration curve that shows the calibration of the predictions considering the current class to be the true one and all others to be a false one, drawing one line for each model \(in the aligned lists of `probabilities` and `model_names`\).
 
-![](../../../../../.gitbook/assets/image%20%28224%29.png)
+![](../../../../../.gitbook/assets/image%20%28247%29.png)
 
 The second plot shows the distributions of the predictions considering the current class to be the true one and all others to be a false one, drawing the distribution for each model \(in the aligned lists of `probabilities` and `model_names`\).
 
-![](../../../../../.gitbook/assets/image%20%28106%29.png)
+![](../../../../../.gitbook/assets/image%20%28119%29.png)
 
 **calibration\_multiclass**
 
@@ -534,11 +534,11 @@ This visualization uses the `ground_truth`, `field`, `probabilities` and `model_
 
 The first plot is a calibration curve that shows the calibration of the predictions considering al classes, drawing one line for each model \(in the aligned lists of `probabilities` and `model_names`\).
 
-![](../../../../../.gitbook/assets/image%20%28182%29.png)
+![](../../../../../.gitbook/assets/image%20%28203%29.png)
 
 The second plot shows a bar plot of the brier score \(that calculates how calibrated are the probabilities of the predictions of a model\), drawing one bar for each model \(in the aligned lists of `probabilities` and `model_names`\).
 
-![](../../../../../.gitbook/assets/image%20%2862%29.png)
+![](../../../../../.gitbook/assets/image%20%2868%29.png)
 
 ### **Class Frequency vs. F1 score**
 
@@ -548,9 +548,9 @@ This visualization uses the `ground_truth_metadata`, `field`, `test_statistics` 
 
 The first plot is a line plot with one x axis representing the different classes and two vertical axes colored in orange and blue respectively. The orange one is the frequency of the class and an orange line is plotted to show the trend. The blue one is the F1 score for that class and a blue line is plotted to show the trend. The classes on the x axis are sorted by f1 score.
 
-![](../../../../../.gitbook/assets/image%20%28225%29.png)
+![](../../../../../.gitbook/assets/image%20%28248%29.png)
 
 The second plot has the same structure of the first one, but the axes are flipped and the classes on the x axis are sorted by frequency.
 
-![](../../../../../.gitbook/assets/image%20%2816%29.png)
+![](../../../../../.gitbook/assets/image%20%2817%29.png)
 

@@ -6,7 +6,7 @@ Only an Ambari administrator can access the **Ambari Admin** page from Ambari We
 
 1.From the user menu, click the Manage Ambari option.
 
-![Manage Ambari Menu Option](../../../../.gitbook/assets/image%20%2832%29.png)
+![Manage Ambari Menu Option](../../../../.gitbook/assets/image%20%2833%29.png)
 
 The user menu displays the user name of the current user. The **Manage Ambari** option appears only for users assigned Ambari Administrator access to the cluster.
 

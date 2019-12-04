@@ -1,6 +1,6 @@
 # Discovery Notebooks
 
-![](../../../.gitbook/assets/image%20%28333%29.png)
+![](../../../.gitbook/assets/image%20%28366%29.png)
 
 BigConnect Discovery supports a notebook function. Notebook is a tool for creating and sharing documents that include live codes, equations, visualizations, and descriptive texts. It is mostly used for data cleaning and manipulation, numerical simulations, statistical modeling, and machine learning.
 
