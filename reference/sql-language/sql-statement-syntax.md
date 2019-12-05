@@ -14,10 +14,6 @@ ALTER SCHEMA name RENAME TO new_name
 
 Change the definition of an existing schema.
 
-#### **Examples**
-
-Rename schema web to traffic:
-
 ```sql
 ALTER SCHEMA web RENAME TO traffic
 ```
@@ -37,24 +33,6 @@ ALTER TABLE name RENAME COLUMN column_name TO new_column_name
 
 Change the definition of an existing table.
 
-#### Examples
-
-Rename table users to people:
-
-`ALTER TABLE users RENAME TO people;`
-
-Add column zip to the users table:
-
-`ALTER TABLE users ADD COLUMN zip varchar;`
-
-Drop column zip from the users table:
-
-`ALTER TABLE users DROP COLUMN zip;`
-
-Rename column id to user\_id in the users table:
-
-`ALTER TABLE users RENAME COLUMN id TO user_id;`
-
 ### ANALYZE
 
 #### **Synopsis**
@@ -70,32 +48,6 @@ Collects table and column statistics for a given table.
 The optional `WITH` clause can be used to provide connector-specific properties. To list all available properties, run the following query:
 
 `SELECT * FROM system.metadata.analyze_properties`
-
-#### Examples
-
-Analyze table web to collect table and column statistics:
-
-`ANALYZE web;`
-
-Analyze table stores in catalog hive and schema default:
-
-`ANALYZE hive.default.stores;`
-
-Analyze partitions '1992-01-01', '1992-01-02' from a Hive partitioned table sales:
-
-`ANALYZE hive.default.sales WITH   
-(partitions = ARRAY[ARRAY['1992-01-01'], ARRAY['1992-01-02']]);`
-
-Analyze partitions with complex partition key \(state and city columns\) from a Hive partitioned table customers:
-
-`ANALYZE hive.default.customers WITH   
-(partitions = ARRAY[ARRAY['CA', 'San Francisco'], ARRAY['NY', 'NY']]);`
-
-Analyze only columns department and product\_id for partitions '1992-01-01', '1992-01-02' from a Hive partitioned table sales:
-
-`ANALYZE hive.default.sales WITH (`  
-****    `partitions = ARRAY[ARRAY['1992-01-01'], ARRAY['1992-01-02']],  
-    columns = ARRAY['department', 'product_id']);`
 
 ### CALL
 
@@ -113,20 +65,6 @@ Procedures can be provided by connectors to perform data manipulation or adminis
 
 Some connectors, such as the [PostgreSQL Connector](https://prestosql.io/docs/current/connector/postgresql.html), are for systems that have their own stored procedures. These stored procedures are separate from the connector-defined procedures discussed here and thus are not directly callable via `CALL`.
 
-#### Examples
-
-Call a procedure using positional arguments:
-
-`CALL test(123, 'apple');`
-
-Call a procedure using named arguments:
-
-`CALL test(name => 'apple', id => 123);`
-
-Call a procedure using a fully qualified name:
-
-`CALL catalog.schema.test();`
-
 ### COMMENT
 
 #### **Synopsis**
@@ -139,12 +77,6 @@ COMMENT ON TABLE name IS 'comments'
 
 Set the comment for a table. The comment can be removed by setting the comment to `NULL`.
 
-#### Examples
-
-Change the comment for the users table to be master table:
-
-`COMMENT ON TABLE users IS 'master table';`
-
 ### COMMIT
 
 #### **Synopsis**
@@ -156,11 +88,6 @@ COMMIT [ WORK ]
 #### **Description**
 
 Commit the current transaction.
-
-#### Examples
-
-`COMMIT;  
-COMMIT WORK;`
 
 ### CREATE ROLE
 
@@ -176,16 +103,6 @@ CREATE ROLE role_name
 `CREATE ROLE` creates the specified role in the current catalog.
 
 The optional `WITH ADMIN` clause causes the role to be created with the specified user as a role admin. A role admin has permission to drop or grant a role. If the optional `WITH ADMIN` clause is not specified, the role is created with current user as admin.
-
-#### Examples
-
-Create role admin
-
-`CREATE ROLE admin;`
-
-Create role moderator with admin bob:
-
-`CREATE ROLE moderator WITH ADMIN USER bob;`
 
 #### Limitations
 
@@ -209,20 +126,6 @@ The optional `IF NOT EXISTS` clause causes the error to be suppressed if the sch
 The optional `WITH` clause can be used to set properties on the newly created schema. To list all available schema properties, run the following query:
 
 `SELECT * FROM system.metadata.schema_properties`
-
-#### Examples
-
-Create a new schema web in the current catalog:
-
-`CREATE SCHEMA web`
-
-Create a new schema sales in the hive catalog:
-
-`CREATE SCHEMA hive.sales`
-
-Create the schema traffic if it does not already exist:
-
-`CREATE SCHEMA IF NOT EXISTS traffic`
 
 ### CREATE TABLE
 
@@ -257,36 +160,6 @@ The `LIKE` clause can be used to include all the column definitions from an exis
 
 If `INCLUDING PROPERTIES` is specified, all of the table properties are copied to the new table. If the `WITH` clause specifies the same property name as one of the copied properties, the value from the `WITH` clause will be used. The default behavior is `EXCLUDING PROPERTIES`. The `INCLUDING PROPERTIES` option maybe specified for at most one table.
 
-#### Examples
-
-Create a new table orders:
-
-`CREATE TABLE orders (  
-  orderkey bigint,  
-  orderstatus varchar,  
-  totalprice double,  
-  orderdate date  
-)  
-WITH (format = 'ORC')`
-
-Create the table `orders` if it does not already exist, adding a table comment and a column comment:
-
-`CREATE TABLE IF NOT EXISTS orders (  
-  orderkey bigint,  
-  orderstatus varchar,  
-  totalprice double COMMENT 'Price in cents.',  
-  orderdate date  
-)  
-COMMENT 'A table to keep track of orders.'`
-
-Create the table `bigger_orders` using the columns from `orders` plus additional columns at the start and end:
-
-`CREATE TABLE  (  
-  another_orderkey bigint,  
-  LIKE orders,   
-  another_orderdate date  
-)`
-
 ### CREATE TABLE AS
 
 #### **Synopsis**
@@ -309,660 +182,656 @@ The optional `WITH` clause can be used to set properties on the newly created ta
 
 `SELECT * FROM system.metadata.table_properties`
 
-#### Examples
-
-Create a new table orders\_column\_aliased with the results of a query and the given column names:
-
-`CREATE TABLE orders_column_aliased (order_date, total_price)  
-AS  
-SELECT orderdate, totalprice  
-FROM orders`
-
-Create a new table orders\_by\_date that summarizes orders:
-
-`CREATE TABLE orders_by_date  
-COMMENT 'Summary of orders by date'  
-WITH (format = 'ORC')  
-AS  
-SELECT orderdate, sum(totalprice) AS price  
-FROM orders  
-GROUP BY orderdate`
-
-Create the table orders\_by\_date if it does not already exist:
-
-`CREATE TABLE IF NOT EXISTS orders_by_date AS  
-SELECT orderdate, sum(totalprice) AS price  
-FROM orders  
-GROUP BY orderdate`
-
-Create a new empty\_nation table with the same schema as nation and no data:
-
-`CREATE TABLE empty_nation AS  
-SELECT *  
-FROM nation  
-WITH NO DATA`
-
 ### CREATE VIEW
 
 #### **Synopsis**
 
 ```sql
-XXXX
+CREATE [ OR REPLACE ] VIEW view_name
+[ SECURITY { DEFINER | INVOKER } ]
+AS query
 ```
 
 #### **Description**
 
-XXXX
+Create a new view of a `SELECT` query. The view is a logical table that can be referenced by future queries. Views do not contain any data. Instead, the query stored by the view is executed everytime the view is referenced by another query.
 
-#### Examples
+The optional `OR REPLACE` clause causes the view to be replaced if it already exists rather than raising an error.
 
-XXXX
+#### Security
+
+In the default `DEFINER` security mode, tables referenced in the view are accessed using the permissions of the view owner \(the _creator_ or _definer_ of the view\) rather than the user executing the query. This allows providing restricted access to the underlying tables, for which the user may not be allowed to access directly.
+
+In the `INVOKER` security mode, tables referenced in the view are accessed using the permissions of the user executing the query \(the _invoker_ of the view\). A view created in this mode is simply a stored query.
+
+Regardless of the security mode, the `current_user` function will always return the user executing the query and thus may be used within views to filter out rows or otherwise restrict access.
 
 ### DEALLOCATE PREPARE
 
 #### **Synopsis**
 
 ```sql
-XXXX
+DEALLOCATE PREPARE statement_name
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+Removes a statement with the name `statement_name` from the list of prepared statements in a session.
 
 ### DELETE
 
 #### **Synopsis**
 
 ```sql
-XXXX
+DELETE FROM table_name [ WHERE condition ]
 ```
 
 #### **Description**
 
-XXXX
+Delete rows from a table. If the `WHERE` clause is specified, only the matching rows are deleted. Otherwise, all rows from the table are deleted.
 
-#### Examples
+#### Limitations
 
-XXXX
+Some connectors have limited or no support for `DELETE`. See connector documentation for more details.
 
 ### DESCRIBE
 
 #### **Synopsis**
 
 ```sql
-XXXX
+DESCRIBE table_name
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+`DESCRIBE` is an alias for `SHOW COLUMNS`.
 
 ### DESCRIBE INPUT
 
 #### **Synopsis**
 
 ```sql
-XXXX
+DESCRIBE INPUT statement_name
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+Lists the input parameters of a prepared statement along with the position and type of each parameter. Parameter types that cannot be determined will appear as `unknown`.
 
 ### DESCRIBE OUTPUT
 
 #### **Synopsis**
 
 ```sql
-XXXX
+DESCRIBE OUTPUT statement_name
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+List the output columns of a prepared statement, including the column name \(or alias\), catalog, schema, table, type, type size in bytes, and a boolean indicating if the column is aliased.
 
 ### DROP ROLE
 
 #### **Synopsis**
 
 ```sql
-XXXX
+DROP ROLE role_name
 ```
 
 #### **Description**
 
-XXXX
+`DROP ROLE` drops the specified role in the current catalog.
 
-#### Examples
+For `DROP ROLE` statement to succeed, the user executing it should possess admin privileges for the given role.
 
-XXXX
+#### Limitations
 
-###  DROP SCHEMA
+Some connectors do not support role management. See connector documentation for more details.
+
+### DROP SCHEMA
 
 #### **Synopsis**
 
 ```sql
-XXXX
+DROP SCHEMA [ IF EXISTS ] schema_name
 ```
 
 #### **Description**
 
-XXXX
+Drop an existing schema. The schema must be empty.
 
-#### Examples
-
-XXXX
+The optional `IF EXISTS` clause causes the error to be suppressed if the schema does not exist.
 
 ### DROP TABLE
 
 #### **Synopsis**
 
 ```sql
-XXXX
+DROP TABLE  [ IF EXISTS ] table_name
 ```
 
 #### **Description**
 
-XXXX
+Drops an existing table.
 
-#### Examples
-
-XXXX
+The optional `IF EXISTS` clause causes the error to be suppressed if the table does not exist.
 
 ### DROP VIEW
 
 #### **Synopsis**
 
 ```sql
-XXXX
+DROP VIEW [ IF EXISTS ] view_name
 ```
 
 #### **Description**
 
-XXXX
+Drop an existing view.
 
-#### Examples
-
-XXXX
+The optional `IF EXISTS` clause causes the error to be suppressed if the view does not exist.
 
 ### EXECUTE
 
 #### **Synopsis**
 
 ```sql
-XXXX
+EXECUTE statement_name [ USING parameter1 [ , parameter2, ... ] ]
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+Executes a prepared statement with the name `statement_name`. Parameter values are defined in the `USING` clause.
 
 ### EXPLAIN
 
 #### **Synopsis**
 
 ```sql
-XXXX
+EXPLAIN [ ( option [, ...] ) ] statement
+
+where option can be one of:
+
+    FORMAT { TEXT | GRAPHVIZ | JSON }
+    TYPE { LOGICAL | DISTRIBUTED | VALIDATE | IO }
 ```
 
 #### **Description**
 
-XXXX
+Show the logical or distributed execution plan of a statement, or validate the statement. Use `TYPE DISTRIBUTED` option to display fragmented plan. Each plan fragment is executed by a single or multiple Presto nodes. Fragments separation represent the data exchange between Presto nodes. Fragment type specifies how the fragment is executed by Presto nodes and how the data is distributed between fragments:
 
-#### Examples
-
-XXXX
+* `SINGLE`Fragment is executed on a single node.
+* `HASH`Fragment is executed on a fixed number of nodes with the input data distributed using a hash function.
+* `ROUND_ROBIN` Fragment is executed on a fixed number of nodes with the input data distributed in a round-robin fashion.
+* `BROADCAST` Fragment is executed on a fixed number of nodes with the input data broadcasted to all nodes.
+* `SOURCE`Fragment is executed on nodes where input splits are accessed.
 
 ### EXPLAIN ANALYZE
 
 #### **Synopsis**
 
 ```sql
-XXXX
+EXPLAIN ANALYZE [VERBOSE] statement
 ```
 
 #### **Description**
 
-XXXX
+Execute the statement and show the distributed execution plan of the statement along with the cost of each operation.
 
-#### Examples
+The `VERBOSE` option will give more detailed information and low-level statistics; understanding these may require knowledge of Presto internals and implementation details.
 
-XXXX
+{% hint style="info" %}
+The stats may not be entirely accurate, especially for queries that complete quickly.
+{% endhint %}
 
 ### GRANT
 
 #### **Synopsis**
 
 ```sql
-XXXX
+GRANT ( privilege [, ...] | ( ALL PRIVILEGES ) )
+ON [ TABLE ] table_name TO ( user | USER user | ROLE role )
+[ WITH GRANT OPTION ]
 ```
 
 #### **Description**
 
-XXXX
+Grants the specified privileges to the specified grantee.
 
-#### Examples
+Specifying `ALL PRIVILEGES` grants `DELETE`, `INSERT` and `SELECT` privileges.
 
-XXXX
+Specifying `ROLE PUBLIC` grants privileges to the `PUBLIC` role and hence to all users.
+
+The optional `WITH GRANT OPTION` clause allows the grantee to grant these same privileges to others.
+
+For `GRANT` statement to succeed, the user executing it should possess the specified privileges as well as the `GRANT OPTION` for those privileges.
 
 ### GRANT ROLES
 
 #### **Synopsis**
 
 ```sql
-XXXX
+GRANT role [, ...]
+TO ( user | USER user | ROLE role) [, ...]
+[ GRANTED BY ( user | USER user | ROLE role | CURRENT_USER | CURRENT_ROLE ) ]
+[ WITH ADMIN OPTION ]
 ```
 
 #### **Description**
 
-XXXX
+Grants the specified role\(s\) to the specified principal\(s\) in the current catalog.
 
-#### Examples
+If the `WITH ADMIN OPTION` clause is specified, the role\(s\) are granted to the users with `GRANT` option.
 
-XXXX
+For the `GRANT` statement for roles to succeed, the user executing it either should be the role admin or should possess the `GRANT` option for the given role.
+
+The optional `GRANTED BY` clause causes the role\(s\) to be granted with the specified principal as a grantor. If the `GRANTED BY` clause is not specified, the roles are granted with the current user as a grantor.
 
 ### INSERT
 
 #### **Synopsis**
 
 ```sql
-XXXX
+INSERT INTO table_name [ ( column [, ... ] ) ] query
 ```
 
 #### **Description**
 
-XXXX
+Insert new rows into a table.
 
-#### Examples
-
-XXXX
+If the list of column names is specified, they must exactly match the list of columns produced by the query. Each column in the table not present in the column list will be filled with a `null` value. Otherwise, if the list of columns is not specified, the columns produced by the query must exactly match the columns in the table being inserted into.
 
 ### PREPARE
 
 #### **Synopsis**
 
 ```sql
-XXXX
+PREPARE statement_name FROM statement
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+Prepares a statement for execution at a later time. Prepared statements are queries that are saved in a session with a given name. The statement can include parameters in place of literals to be replaced at execution time. Parameters are represented by question marks.
 
 ### RESET SESSION
 
 #### **Synopsis**
 
 ```sql
-XXXX
+RESET SESSION name
+RESET SESSION catalog.name
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+Reset a session property value to the default value.
 
 ### REVOKE
 
 #### **Synopsis**
 
 ```sql
-XXXX
+REVOKE [ GRANT OPTION FOR ]
+( privilege [, ...] | ALL PRIVILEGES )
+ON [ TABLE ] table_name FROM ( user | USER user | ROLE role )
 ```
 
 #### **Description**
 
-XXXX
+Revokes the specified privileges from the specified grantee.
 
-#### Examples
+Specifying `ALL PRIVILEGES` revokes DELETE, INSERT and SELECT privileges.
 
-XXXX
+Specifying `ROLE PUBLIC` revokes privileges from the `PUBLIC` role. Users will retain privileges assigned to them directly or via other roles.
+
+The optional `GRANT OPTION FOR` clause also revokes the privileges to grant the specified privileges.
+
+For `REVOKE` statement to succeed, the user executing it should possess the specified privileges as well as the `GRANT OPTION` for those privileges.
+
+#### Limitations
+
+Some connectors have no support for `REVOKE`. See connector documentation for more details.
 
 ### REVOKE ROLES
 
 #### **Synopsis**
 
 ```sql
-XXXX
+REVOKE
+[ ADMIN OPTION FOR ]
+role [, ...]
+FROM ( user | USER user | ROLE role) [, ...]
+[ GRANTED BY ( user | USER user | ROLE role | CURRENT_USER | CURRENT_ROLE ) ]
 ```
 
 #### **Description**
 
-XXXX
+Revokes the specified role\(s\) from the specified principal\(s\) in the current catalog.
 
-#### Examples
+If the `ADMIN OPTION FOR` clause is specified, the `GRANT` permission is revoked instead of the role.
 
-XXXX
+For the `REVOKE` statement for roles to succeed, the user executing it either should be the role admin or should possess the `GRANT` option for the given role.
+
+The optional `GRANTED BY` clause causes the role\(s\) to be revoked with the specified principal as a revoker. If the `GRANTED BY` clause is not specified, the roles are revoked by the current user as a revoker.
+
+#### Limitations
+
+Some connectors do not support role management. See connector documentation for more details.
 
 ### ROLLBACK
 
 #### **Synopsis**
 
 ```sql
-XXXX
+ROLLBACK [ WORK ]
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+Rollback the current transaction.
 
 ### SELECT
 
 #### **Synopsis**
 
 ```sql
-XXXX
+[ WITH with_query [, ...] ]
+SELECT [ ALL | DISTINCT ] select_expression [, ...]
+[ FROM from_item [, ...] ]
+[ WHERE condition ]
+[ GROUP BY [ ALL | DISTINCT ] grouping_element [, ...] ]
+[ HAVING condition]
+[ { UNION | INTERSECT | EXCEPT } [ ALL | DISTINCT ] select ]
+[ ORDER BY expression [ ASC | DESC ] [, ...] ]
+[ OFFSET count [ ROW | ROWS ] ]
+[ LIMIT { count | ALL } | FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } { ONLY | WITH TIES } ]
+```
+
+where `from_item` is one of
+
+```sql
+table_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
+from_item join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
+```
+
+and `join_type` is one of
+
+```sql
+[ INNER ] JOIN
+LEFT [ OUTER ] JOIN
+RIGHT [ OUTER ] JOIN
+FULL [ OUTER ] JOIN
+CROSS JOIN
+```
+
+and `grouping_element` is one of
+
+```sql
+()
+expression
+GROUPING SETS ( ( column [, ...] ) [, ...] )
+CUBE ( column [, ...] )
+ROLLUP ( column [, ...] )
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+Retrieve rows from zero or more tables.
 
 ### SET ROLE
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SET ROLE ( role | ALL | NONE )
 ```
 
 #### **Description**
 
-XXXX
+`SET ROLE` sets the enabled role for the current session in the current catalog.
 
-#### Examples
+`SET ROLE role` enables a single specified role for the current session. For the `SET ROLE role` statement to succeed, the user executing it should have a grant for the given role.
 
-XXXX
+`SET ROLE ALL` enables all roles that the current user has been granted for the current session.
+
+`SET ROLE NONE` disables all the roles granted to the current user for the current session.
+
+#### Limitations
+
+Some connectors do not support role management. See connector documentation for more details.
 
 ### SET SESSION
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SET SESSION name = expression
+SET SESSION catalog.name = expression
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+Set a session property value.
 
 ### SHOW CATALOGS
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SHOW CATALOGS [ LIKE pattern ]
 ```
 
 #### **Description**
 
-XXXX
+List the available catalogs. The `LIKE` clause can be used to restrict the list of catalog names.
 
-#### Examples
-
-XXXX
-
-###  SHOW COLUMNS
+### SHOW COLUMNS
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SHOW COLUMNS FROM table
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+List the columns in `table` along with their data type and other attributes.
 
 ### SHOW CREATE TABLE
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SHOW CREATE TABLE table_name
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+Show the SQL statement that creates the specified table.
 
 ### SHOW CREATE VIEW
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SHOW CREATE VIEW view_name
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+Show the SQL statement that creates the specified view.
 
 ### SHOW FUNCTIONS
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SHOW FUNCTIONS [ LIKE pattern ]
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+List all the functions available for use in queries. The `LIKE` clause can be used to restrict the list of functions.
 
 ### SHOW GRANTS
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SHOW GRANTS [ ON [ TABLE ] table_name ]
 ```
 
 #### **Description**
 
-XXXX
+List the grants for the current user on the specified table in the current catalog.
 
-#### Examples
+If no table name is specified, the command lists the grants for the current user on all the tables in all schemas of the current catalog.
 
-XXXX
+The command requires the current catalog to be set.
+
+{% hint style="info" %}
+Ensure that authentication has been enabled before running any of the authorization commands.
+{% endhint %}
+
+#### Limitations
+
+Some connectors have no support for `SHOW GRANTS`. See connector documentation for more details.
 
 ### SHOW ROLE GRANTS
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SHOW ROLE GRANTS [ FROM catalog ]
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+List non-recursively the ```ROLE``s that have been granted to the session user in ``catalog```, or the current catalog if `catalog` is not specified.
 
 ### SHOW ROLES
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SHOW [CURRENT] ROLES [ FROM catalog ]
 ```
 
 #### **Description**
 
-XXXX
+`SHOW ROLES` lists all the roles in `catalog` or in the current catalog if `catalog` is not specified.
 
-#### Examples
-
-XXXX
+`SHOW CURRENT ROLES` lists the enabled roles for the session in `catalog, or in the current catalog if catalog` is not specified.
 
 ### SHOW SCHEMAS
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SHOW SCHEMAS [ FROM catalog ] [ LIKE pattern ]
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+List the schemas in `catalog` or in the current catalog. The `LIKE` clause can be used to restrict the list of schema names.
 
 ### SHOW SESSION
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SHOW SESSION [ LIKE pattern ]
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+List the current session properties. The `LIKE` clause can be used to restrict the list of session properties.
 
 ### SHOW STATS
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SHOW STATS FOR table
+SHOW STATS FOR ( SELECT * FROM table [ WHERE condition ] )
 ```
 
 #### **Description**
 
-XXXX
+Returns approximated statistics for the named table or for the results of a \(limited\) query.
 
-#### Examples
+Statistics are returned for each column, along with a summary row.
 
-XXXX
+| Column | Description |
+| :--- | :--- |
+| `column_name` | The name of the column \(`NULL` for the summary row\) |
+| `data_size` | The total size in bytes of all of the values in the column |
+| `distinct_values_count` | The number of distinct values in the column |
+| `nulls_fractions` | The portion of the values in the column that are `NULL` |
+| `row_count` | The number of rows \(only returned for the summary row\) |
+| `low_value` | The lowest value found in this column \(only for some types\) |
+| `high_value` | The highest value found in this column \(only for some types\) |
 
 ### SHOW TABLES
 
 #### **Synopsis**
 
 ```sql
-XXXX
+SHOW TABLES [ FROM schema ] [ LIKE pattern ]
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+List the tables in `schema` or in the current schema. The `LIKE` clause can be used to restrict the list of table names.
 
 ### START TRANSACTION
 
 #### **Synopsis**
 
 ```sql
-XXXX
+START TRANSACTION [ mode [, ...] ]
+```
+
+where `mode` is one of
+
+```sql
+ISOLATION LEVEL { READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE }
+READ { ONLY | WRITE }
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+Start a new transaction for the current session.
 
 ### USE
 
 #### **Synopsis**
 
 ```sql
-XXXX
+USE catalog.schema
+USE schema
 ```
 
 #### **Description**
 
-XXXX
-
-#### Examples
-
-XXXX
+Update the session to use the specified catalog and schema. If a catalog is not specified, the schema is resolved relative to the current catalog.
 
 ### VALUES
 
 #### **Synopsis**
 
 ```sql
-XXXX
+VALUES row [, ...]
+```
+
+where `row` is a single expression or
+
+```sql
+( column_expression [, ...] )
 ```
 
 #### **Description**
 
-XXXX
+Defines a literal inline table.
 
-#### Examples
-
-XXXX
+`VALUES` can be used anywhere a query can be used \(e.g., the `FROM` clause of a `SELECT`, an `INSERT`, or even at the top level\). `VALUES` creates an anonymous table without column names, but the table and columns can be named using an `AS` clause with column aliases.
 
