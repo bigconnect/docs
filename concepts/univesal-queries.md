@@ -2,7 +2,7 @@
 
 The Data Model can be queried in three ways: with SQL queries like any typical database, with Cypher queries like any typical graph structure or by using textual queries.
 
-![Univesal Queries in BigConnect](../.gitbook/assets/image%20%28152%29.png)
+![Univesal Queries in BigConnect](../.gitbook/assets/image%20%28160%29.png)
 
 ### SQL Queries
 
@@ -40,7 +40,7 @@ Cypher is a declarative graph query language that allows for expressive and effi
 
 Cypher is inspired by a number of different approaches and builds on established practices for expressive querying. Many of the keywords, such as WHERE and ORDER BY, are inspired by [SQL](http://en.wikipedia.org/wiki/SQL). Pattern matching borrows expression approaches from [SPARQL](http://en.wikipedia.org/wiki/SPARQL). Some of the list semantics are borrowed from languages such as Haskell and Python. Cypher’s constructs, based on English prose and neat iconography, make queries easy both to write, and to read.
 
-Have a look at the [Cypher Language Reference](../reference/cypher-language.md) page for supported  clauses, functions and operators.
+Have a look at the [Cypher Language Reference](../reference/cypher-language/) page for supported  clauses, functions and operators.
 
 ### Textual Queries
 

@@ -7,7 +7,7 @@ Steps
 1. Browse to the **Hosts** page and select **Actions &gt; +Add New Hosts.** The **Add Host wizard** provides a sequence of prompts similar to those in the Ambari Cluster Install wizard. 
 2. Follow the prompts, providing information similar to that provided to define the first set of hosts in your cluster:
 
-![](../../../../.gitbook/assets/image%20%2834%29.png)
+![](../../../../.gitbook/assets/image%20%2835%29.png)
 
 **After you finish**  
 Review and confirm all recommended configuration changes.

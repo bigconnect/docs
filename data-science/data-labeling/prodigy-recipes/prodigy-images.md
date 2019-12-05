@@ -22,7 +22,7 @@ $ prodigy image.test image_objects tiny-yolo /tmp/my_images/
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../../.gitbook/assets/image%20%28356%29.png)
+![](../../../.gitbook/assets/image%20%28373%29.png)
 
 
 

@@ -26,7 +26,7 @@ Furthermore, any `.ipynb` notebook document available from a public URL can be s
 
 A new notebook may be created at any time, either from the dashboard, or using the File ‣ New menu option from within an active notebook. The new notebook is created within the same directory and will open in a new browser tab. It will also be reflected as a new entry in the notebook list on the dashboard.
 
-![](../.gitbook/assets/image%20%28110%29.png)
+![](../.gitbook/assets/image%20%28118%29.png)
 
 ## Opening notebooks
 
@@ -36,7 +36,7 @@ An open notebook has **exactly one** interactive session connected to a kernel, 
 
 When you create a new notebook document, you will be presented with the **notebook name**, a **menu bar**, a **toolbar** and an empty **code cell**.
 
-![](../.gitbook/assets/image%20%28141%29.png)
+![](../.gitbook/assets/image%20%28149%29.png)
 
 **Notebook name**: The name displayed at the top of the page, next to the Jupyter logo, reflects the name of the `.ipynb` file. Clicking on the notebook name brings up a dialog which allows you to rename it. Thus, renaming a notebook from “Untitled0” to “My first notebook” in the browser, renames the `Untitled0.ipynb` file to `My first notebook.ipynb`.
 

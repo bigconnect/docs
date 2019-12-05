@@ -65,7 +65,7 @@ ludwig visualize --visualization learning_curves --training_statistics path/to/t
 
 The commands will display a graph that looks like the following, where you can see loss and accuracy as functions of train iteration number:
 
-![](../../../.gitbook/assets/image%20%28304%29.png)
+![](../../../.gitbook/assets/image%20%28318%29.png)
 
 Several visualizations are available, please refer to **Visualizations** for more details.
 
@@ -85,7 +85,7 @@ ludwig visualize --visualization compare_performance --test_statistics path/to/t
 
 will return a bar plot comparing the models on different measures:
 
-![](../../../.gitbook/assets/image%20%28133%29.png)
+![](../../../.gitbook/assets/image%20%28141%29.png)
 
 A handy `ludwig experiment` command that performs training and prediction one after the other is also available.
 

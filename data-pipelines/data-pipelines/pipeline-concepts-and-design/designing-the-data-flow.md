@@ -8,13 +8,13 @@ When you connect a stage to multiple stages, all data passes to all connected st
 
 For example, in the following pipeline, all of the data from the Directory origin passes to both branches of the pipeline for different types of processing. But you might optionally configure required fields for the Field Splitter or Field Replacer to discard any records that are not needed.
 
-![](../../../.gitbook/assets/image%20%281%29.png)
+![](../../../.gitbook/assets/image%20%282%29.png)
 
 To route data based on more complex conditions, use a Stream Selector.
 
 Some stages generate events that pass to event streams. Event streams originate from an event-generating stage, such as an origin or destination, and pass from the stage through an event stream output, as follows:
 
-![](../../../.gitbook/assets/image%20%2867%29.png)
+![](../../../.gitbook/assets/image%20%2871%29.png)
 
 ## Merging Streams
 
@@ -22,7 +22,7 @@ You can merge streams of data in a pipeline by connecting two or more stages to 
 
 For example, in the following pipeline, the Stream Selector stage sends data with null values to the Field Replacer stage:
 
-![](../../../.gitbook/assets/image%20%2866%29.png)
+![](../../../.gitbook/assets/image%20%2870%29.png)
 
 The data from the Stream Selector default stream and all data from Field Replacer pass to Expression Evaluator for further processing, but in no particular order and with no record merging.
 

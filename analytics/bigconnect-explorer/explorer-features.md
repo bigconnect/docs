@@ -18,7 +18,7 @@ Data ingestion can be manual \(using the UI\) for small amounts of data or batch
 
 Data ingestion is a visual process in BigConect Explorer. Either by using the user interface or Data Pipelines, data ingestion and data model mapping will be done in an easy, visual way. This ensures lower error rates and high process maintainability.
 
-![BigConnect Explorer Data Ingestion](../../.gitbook/assets/image%20%28325%29.png)
+![BigConnect Explorer Data Ingestion](../../.gitbook/assets/image%20%28340%29.png)
 
 ## Visual Interface
 
@@ -28,7 +28,7 @@ BigConnect provides an extensible integrated visual console where users can quer
 
 [ElasticSearch ](www.elastic.co)is used behind the scenes to search through the data model and compute aggregations. This means that search results are delivered near-real-time and search queries can be as complex as you can imagine.
 
-![BigConnect Explorer Search](../../.gitbook/assets/image%20%2864%29.png)
+![BigConnect Explorer Search](../../.gitbook/assets/image%20%2868%29.png)
 
 The UI provides a Google-like search experience, enriched with filters, sorting, refinements and spatial queries. The search field supports the Lucene query syntax so you can use special things like wildcard \(\*\), question mark \(?\), keyword matching, phrase matching, grouping, boolean queries \(AND, OR\), fuzzy queries \(~\), proximity matching \(~4\), range searches \(amount:\[500 TO 800\]\) and boosts \(^\). 
 
@@ -38,9 +38,9 @@ Example:
 
 Spatial queries can use the map to pinpoint the center and area of interest:
 
-![BigConnect Spatial Search](../../.gitbook/assets/image%20%2826%29.png)
+![BigConnect Spatial Search](../../.gitbook/assets/image%20%2827%29.png)
 
-On top of classic faceted full-text search, more advanced queries can be performed using the [Cypher](../../reference/cypher-language.md) query language, using the integrated Cypher query editor with autocomplete features:
+On top of classic faceted full-text search, more advanced queries can be performed using the [Cypher](../../reference/cypher-language/) query language, using the integrated Cypher query editor with autocomplete features:
 
 `MATCH (nicole:Actor {name: 'Nicole Kidman'})-[:ACTED_IN]->(movie:Movie)   
 WHERE movie.year < 2015   
@@ -54,13 +54,13 @@ Data items like concepts and relations can have a lot of information associated 
 
 The Detail view contains all information about a selected object or a group of selected objects. You can change the attributes, attach an image, see assigned tags, navigate through its relations and execute relevant actions for the object \(ex. Delete, Add Watch, Export etc.\)
 
-![BigConnect Explorer Detail View](../../.gitbook/assets/image%20%2873%29.png)
+![BigConnect Explorer Detail View](../../.gitbook/assets/image%20%2877%29.png)
 
-![BigConnect Explorer Detail View](../../.gitbook/assets/image%20%2886%29.png)
+![BigConnect Explorer Detail View](../../.gitbook/assets/image%20%2892%29.png)
 
 If a group of objects is selected, the Detail view will display statistics about the common attributes of the selected objects.
 
-![BigConnect Explorer Selection Statistics](../../.gitbook/assets/image%20%2887%29.png)
+![BigConnect Explorer Selection Statistics](../../.gitbook/assets/image%20%2893%29.png)
 
 The Detail view is completely extendable to fit any needs using the UI plugin mechanism.
 
@@ -68,25 +68,25 @@ Besides the various objects that can be loaded into the platform, BigConnect Exp
 
 **Text items** have by definition some textual content that can be annotated by selecting pieces of text and marking them as new objects or relations. This is handy if you need to infer new relations from textual content such as mentioned persons, companies, locations, IP addresses or items found in a dictionary, detected by an NLP engine or that satisfy a certain regex pattern.
 
-![BigConnect Explorer Text Annotation](../../.gitbook/assets/image%20%28289%29.png)
+![BigConnect Explorer Text Annotation](../../.gitbook/assets/image%20%28302%29.png)
 
 **Images** have by definition an associated image. They can be text items as well, so they can have text attached to as well, from an OCR engine for example. In the same way as text items, the image can be annotated to mark relevant existing or objects. This can be done manually or automatically using the Face Recognition or Object Detection enrichments, or even by using Cloud Services like Azure Cloud Computer Vision.
 
-![BigConnect Explorer Image Annotation](../../.gitbook/assets/image%20%28384%29.png)
+![BigConnect Explorer Image Annotation](../../.gitbook/assets/image%20%28403%29.png)
 
 **Audio items** have by definition an associated audio track. BigConnext Explorer will show a player for these types of items to play the contents. Audio items can be text items as well, so they can have text attached, from a speech-to-text engine for example. Sample plugins are provided for speech-to-text using Google Cloud Speech API.
 
-![BigConnect Explorer Audio Player with Transcriptions](../../.gitbook/assets/image%20%28357%29.png)
+![BigConnect Explorer Audio Player with Transcriptions](../../.gitbook/assets/image%20%28374%29.png)
 
 **Video items** have by definition associated video content and can also be text items. Since a video can optionally have an audio track, a Data Worker can be used to split and OCR the video frames and the audio track to extract all relevant information from the video, such as text, found objects, people etc.
 
-![BigConnect Explorer Video Player ](../../.gitbook/assets/image%20%28113%29.png)
+![BigConnect Explorer Video Player ](../../.gitbook/assets/image%20%28121%29.png)
 
 ### Dashboard
 
 The Explorer  includes a dashboard where users are being taken upon login. Various widgets can be added or removed from the dashboard to bring to focus any relevant information.
 
-![BigConnect Explorer Dashboard](../../.gitbook/assets/image%20%28199%29.png)
+![BigConnect Explorer Dashboard](../../.gitbook/assets/image%20%28210%29.png)
 
 ### Analysis Tools
 
@@ -98,7 +98,7 @@ Any number of analysis tool instances can be added inside a space to facilitate 
 
 For analyzing the data in its core connected form, we provide an advanced graph tool that can be used to create connections, see how objects are related, find connections between objects and more.
 
-![BigConnext Explorer Link Analysis](../../.gitbook/assets/image%20%28166%29.png)
+![BigConnext Explorer Link Analysis](../../.gitbook/assets/image%20%28176%29.png)
 
 The graph is interactive, you can drag objects around, create new objects and relations and explore the entire data model.
 
@@ -106,13 +106,13 @@ Objects can be copied and pasted from anywhere onto the graph, external files ca
 
 Finding how two objects are connected is quite easy as well. Just use the Find Path feature to find out.
 
-![BigConnect Explorer Find Path](../../.gitbook/assets/image%20%28367%29.png)
+![BigConnect Explorer Find Path](../../.gitbook/assets/image%20%28384%29.png)
 
 #### Spatial Analysis
 
 Data with geo-spatial information associated \(latitude, longitude\) can be displayed on an interactive map with support for layers, annotations and aggregations.
 
-![BigConnect Explorer Spatial Analysis](../../.gitbook/assets/image%20%28350%29.png)
+![BigConnect Explorer Spatial Analysis](../../.gitbook/assets/image%20%28367%29.png)
 
 New objects can be created at specific points on the map and will automatically receive location information for future reference. Practical use cases can include defining POIs, locating events, cars, phone calls, network packets etc.
 
@@ -122,13 +122,13 @@ The map can be annotated using points, lines and polygons that can become themse
 
 Quick charts can be created using the Chart tool. A wide selection of charts is available.
 
-![](../../.gitbook/assets/image%20%28338%29.png)
+![](../../.gitbook/assets/image%20%28354%29.png)
 
 #### Timeline
 
 The timeline is present on every screen and can display the distribution of items over time, if items have date/time attributes. Multiple date/time attributes can be displayed on the timeline and you can zoom-in/zoom-out to specific time periods and select the objects of interest.
 
-![](../../.gitbook/assets/image%20%2811%29.png)
+![](../../.gitbook/assets/image%20%2812%29.png)
 
 ### Administration
 

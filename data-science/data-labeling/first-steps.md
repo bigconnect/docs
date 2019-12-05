@@ -53,7 +53,7 @@ $ prodigy ner.teach my_set en_core_web_sm news_headlines.jsonl
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../.gitbook/assets/image%20%2841%29.png)
+![](../../.gitbook/assets/image%20%2843%29.png)
 
 By default, all entities will be shown. To only annotate one or more specific entity labels, use the `--label` option – for example, `--label ORG` or `--label ORG,PERSON`. Keep in mind that this recipe only works for entity types already present in the model. [See here](http://spacy.io/api/annotation#named-entities) for an overview of spaCy's NER scheme.
 
@@ -67,7 +67,7 @@ $ prodigy textcat.teach my_set en_core_web_sm news_headlines.jsonl --label POLIT
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../.gitbook/assets/image%20%28216%29.png)
+![](../../.gitbook/assets/image%20%28227%29.png)
 
 ## Train a model
 

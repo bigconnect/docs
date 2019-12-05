@@ -4,11 +4,11 @@ Some pipeline and pipeline stage properties include an Add icon \(![](https://st
 
 For example, in the Expression Evaluator, you can click the Add icon in simple edit mode to add multiple expressions to the processor. The stage displays text boxes for you to enter configuration values, as follows:
 
-![](../../../.gitbook/assets/image%20%28292%29.png)
+![](../../../.gitbook/assets/image%20%28306%29.png)
 
 Or, you can switch to bulk edit mode to enter a list of configurations in JSON format, for example:
 
-![](../../../.gitbook/assets/image%20%28111%29.png)
+![](../../../.gitbook/assets/image%20%28119%29.png)
 
 When you switch to bulk edit mode, Data Collector displays the correct field names and any values that you entered in simple edit mode. Modify the values, but be sure not to modify the field names. If you modify the field names by mistake, Data Collector displays a validation error message.
 
