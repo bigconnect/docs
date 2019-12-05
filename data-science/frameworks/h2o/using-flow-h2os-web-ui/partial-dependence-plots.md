@@ -6,15 +6,15 @@ For models that include only numerical values, you can view a Partial Dependence
 
 1. To view a PDP for a model, click the Score dropdown at the top of the Flow UI, then select Partial Dependence Plots.
 
-![](../../../../.gitbook/assets/image%20%28200%29.png)
+![](../../../../.gitbook/assets/image%20%28233%29.png)
 
 2. Specify the Model and Frame that you want to use to retrieve the plots, and specify the number of bins \(levels that PDP will compute\). Note that more levels will result in slower speeds. By default, the top 10 features are used to build the plot. Alternatively, you can click the **Select Column?** button to build a plot based on a specified set of columns. Click **Compute** when you are done.
 
-![](../../../../.gitbook/assets/image%20%2830%29.png)
+![](../../../../.gitbook/assets/image%20%2834%29.png)
 
 3. After the job is finished, click **View** to see the plots.
 
-![](../../../../.gitbook/assets/image%20%28154%29.png)
+![](../../../../.gitbook/assets/image%20%28177%29.png)
 
 
 

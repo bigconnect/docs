@@ -2,7 +2,7 @@
 
 From **Dashboard &gt; Metrics**, you can filter the dashboard to display only cluster-wide metrics. For example, you can customize the dashboard to hide all except the following widgets:
 
-![](../../../../.gitbook/assets/image%20%28137%29.png)
+![](../../../../.gitbook/assets/image%20%28157%29.png)
 
 Additional options include:
 
@@ -11,7 +11,7 @@ Additional options include:
 * Hover your cursor over a widget to magnify the chart or itemize the widget display A larger version of the widget displays in a separate window. You can use the larger view in the same ways that you use the dashboard.
 * Click **OK** to close the larger view
 
-![](../../../../.gitbook/assets/image%20%28319%29.png)
+![](../../../../.gitbook/assets/image%20%28368%29.png)
 
 **Memory Usage**  
 Cluster-wide memory used, including memory that is cached, swapped, used, and shared  
