@@ -2,7 +2,7 @@
 
 The Data Model can be queried in three ways: with SQL queries like any typical database, with Cypher queries like any typical graph structure or by using textual queries.
 
-![Univesal Queries in BigConnect](../.gitbook/assets/image%20%28149%29.png)
+![Univesal Queries in BigConnect](../.gitbook/assets/image%20%28152%29.png)
 
 ### SQL Queries
 
@@ -14,7 +14,7 @@ Presto is targeted at analysts who expect response times ranging from sub-second
 
 It fully supports and extends the SQL query language and provides a large collection of SQL functions and procedures for the most challenging tasks, from handling JSON data types to GeoSpatial, HyperLogLog, Quantiles and more.
 
-Have a look at the [SQL Language Reference](../reference/sql-language.md) page for supported SQL clauses, functions and operators.
+Have a look at the [SQL Language Reference](../reference/sql-language/) page for supported SQL clauses, functions and operators.
 
 ### OLAP
 

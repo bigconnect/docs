@@ -14,7 +14,7 @@ To route data based on more complex conditions, use a Stream Selector.
 
 Some stages generate events that pass to event streams. Event streams originate from an event-generating stage, such as an origin or destination, and pass from the stage through an event stream output, as follows:
 
-![](../../../.gitbook/assets/image%20%2866%29.png)
+![](../../../.gitbook/assets/image%20%2867%29.png)
 
 ## Merging Streams
 
@@ -22,7 +22,7 @@ You can merge streams of data in a pipeline by connecting two or more stages to 
 
 For example, in the following pipeline, the Stream Selector stage sends data with null values to the Field Replacer stage:
 
-![](../../../.gitbook/assets/image%20%2865%29.png)
+![](../../../.gitbook/assets/image%20%2866%29.png)
 
 The data from the Stream Selector default stream and all data from Field Replacer pass to Expression Evaluator for further processing, but in no particular order and with no record merging.
 

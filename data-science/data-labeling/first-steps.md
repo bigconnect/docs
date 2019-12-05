@@ -67,7 +67,7 @@ $ prodigy textcat.teach my_set en_core_web_sm news_headlines.jsonl --label POLIT
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../.gitbook/assets/image%20%28209%29.png)
+![](../../.gitbook/assets/image%20%28216%29.png)
 
 ## Train a model
 
