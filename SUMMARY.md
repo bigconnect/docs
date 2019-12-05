@@ -370,6 +370,8 @@
   * [Cypher Language](reference/cypher-language.md)
   * [SQL Language](reference/sql-language/README.md)
     * [Data Types](reference/sql-language/sql-data-types.md)
+    * [Reserved Keywords](reference/sql-language/sql-reserved-keywords.md)
+    * [SQL Statement Syntax](reference/sql-language/sql-statement-syntax.md)
   * [Search](reference/search.md)
   * [BigConnect Explorer](reference/bigconnect-explorer/README.md)
     * [Plugin Development](reference/bigconnect-explorer/plugin-development.md)
