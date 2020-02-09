@@ -251,7 +251,7 @@ sudo su - bdl
 4.Download the installation kit \(_X.Y.Z is the BDL version number_\) and extract the archive to the **/opt/bdl** folder:
 
 ```text
-curl -o /tmp/bdl.tgz https://bits.bigconnect.io/downloads/bdl-X.Y.Z.tgz
+curl -o /tmp/bdl.tgz http://bits.bigconnect.io/downloads/bdl/bdl-X.Y.Z.tgz
 tar -zxf /tmp/bdl.tgz -C /opt
 ```
 
