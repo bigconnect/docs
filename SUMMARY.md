@@ -432,6 +432,6 @@
 * [Release Notes](release-notes.md)
 * [Sandbox](sandbox/README.md)
   * [Installation](sandbox/installation.md)
-  * [Start/Stop BDL](sandbox/start-stop-bdl.md)
+  * [Start/Stop Services](sandbox/start-stop-bdl.md)
   * [URLs and Ports](sandbox/service-urls.md)
 

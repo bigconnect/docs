@@ -1,31 +1,20 @@
 ---
-description: BDL Releases
+description: Release notes v4.1
 ---
 
 # Release Notes
 
-## 4.0.0
+## Release 4.1
 
-### Graph Engine
+### Changed
 
-* Upgrade to Elasticsearch 6.8
+* Move to ElasticSearch 6.8
+* Move to Ambari 2.7.4
 
-### BigConnect Discovery
+### Added
 
-* Fix prediction for line charts
-* Fix dataset naming issue
-* Fix notebook integration issue
-
-### Presto
-
-* Massive performance improvements for BigConnect Graph Engine catalog
-
-### Data Collector
-
-* Added BigConnect Graph Engine Cypher Origin, Processor and Target
-* Added Python script executor Origin and Processor
-
-
+* URL Engagement Data Worker
+* Face Recognition Data Worker
 
 
 

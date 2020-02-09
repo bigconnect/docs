@@ -40,9 +40,15 @@ sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 ```
 
-2. Reboot the machine.
+2. Add your hostname to the /etc/hosts file and make sure the following command returns a valid ip:
 
-3. Install required OS packages:
+```text
+ping `hostname`
+```
+
+3. Reboot the machine.
+
+4. Install required OS packages:
 
 ```text
 sudo rpm -v --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
@@ -61,7 +67,7 @@ sudo yum install -y rabbitmq-server ffmpeg nmap-ncat.x86_64 python3
 sudo yum install -y MariaDB-server MariaDB-client
 ```
 
-4. Configure RabbitMQ:
+5. Configure RabbitMQ:
 
 ```text
 sudo systemctl enable --now rabbitmq-server
@@ -72,13 +78,13 @@ sudo rabbitmqctl set_user_tags admin administrator
 sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 ```
 
-5. Configure MariaDB to start automatically:
+6. Configure MariaDB to start automatically:
 
 ```text
 sudo systemctl enable --now mariadb
 ```
 
-6. Create the bdl OS user with sudo rights and BDL installation folder:
+7. Create the bdl OS user with sudo rights and BDL installation folder:
 
 ```text
 sudo useradd bdl
@@ -87,7 +93,7 @@ sudo mkdir -p /opt/bdl
 sudo chown -R bdl:bdl /opt/bdl
 ```
 
-7. Set the password for the bdl user \(you will be asked for it later on\):
+8. Set the password for the bdl user \(you will be asked for it later on\):
 
 ```text
 passwd bdl
@@ -233,6 +239,8 @@ sudo chown -R bdl:bdl /opt/bdl
 ```
 {% endtab %}
 {% endtabs %}
+
+## 3. Install BDL
 
 1.Login as the bdl user
 
