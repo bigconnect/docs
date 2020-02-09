@@ -19,8 +19,6 @@ The Sandbox allows you to learn and explore BDL on your own. It includes the fol
 * Spark
 * ZooKeeper
 
-
-
 {% page-ref page="installation.md" %}
 
 {% page-ref page="start-stop-bdl.md" %}
