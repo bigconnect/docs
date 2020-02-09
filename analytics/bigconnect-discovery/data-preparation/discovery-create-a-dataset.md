@@ -21,7 +21,7 @@ In the dataset creation page, select the dataset type.
 
 * **My file:** Create a dataset by opening the user’s local file or via a URI \(upcoming feature\) \(See **Create a dataset from a file** for a detailed procedure\).
 * **Database:** Create a dataset using external database access information and queries \(See **Create a dataset from a database** for a detailed procedure\).
-* **Staging DB:** Create a dataset from the staging DB built in Metatron \(See **Create a dataset from staging DB** for a detailed procedure\).
+* **Staging DB:** Create a dataset from the staging DB built in Discovery \(See **Create a dataset from staging DB** for a detailed procedure\).
 
 {% hint style="info" %}
 The Staging DB is an in-cluster database that stores data temporarily in order to facilitate data loading. Hive is generally used for it.
@@ -78,7 +78,7 @@ After establishing the data connection, go to **MANAGEMENT** &gt; **Data Prepara
 
 ## Create a dataset from staging DB
 
-Create a dataset from the staging DB built in Metatron.
+Create a dataset from the staging DB built in Discovery.
 
 The creation of a staging DB dataset is the same as dataset creation from a database, but does not involve the selection of a data connection.
 

@@ -41,13 +41,13 @@ Use the Hadoop FS origin to process data from HDFS in cluster batch mode.
 Data Collector can process data from Amazon S3 in the following cluster batch modes:
 
 * Cluster EMR batch mode - In cluster EMR batch mode, Data Collector runs on an Amazon EMR cluster to process Amazon S3 data. Data Collector can run on an existing EMR cluster or on a new EMR cluster that is provisioned when the pipeline starts. When you provision a new EMR cluster, you can configure whether the cluster remains active or terminates when the pipeline stops.
-* Cluster batch mode - In cluster batch mode, Data Collector runs on a Cloudera distribution of Hadoop \(CDH\) or Hortonworks Data Platform \(HDP\) cluster to process Amazon S3 data.
+* Cluster batch mode - In cluster batch mode, Data Collector runs on a distribution of Hadoop to process Amazon S3 data.
 
 In either mode, Data Collector processes all available data and then stops the pipeline.
 
-Data Collector runs as an application on top of MapReduce in the EMR, CDH, or HDP cluster. MapReduce runs on a YARN cluster manager. MapReduce creates one map task for each HDFS block.
+Data Collector runs as an application on top of MapReduce in the Hadoop cluster. MapReduce runs on a YARN cluster manager. MapReduce creates one map task for each HDFS block.
 
-Use the Hadoop FS origin to process data from Amazon S3 in cluster EMR or cluster batch mode.
+Use the Hadoop FS origin to process data from Amazon S3 in EMR cluster or cluster batch mode.
 
 
 

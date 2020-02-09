@@ -55,7 +55,7 @@ For Ambari 2.6.0 and higher, `config.sh` is not supported and will fail. Use `co
 10. On a host that has the ZooKeeper client installed, use the ZooKeeper client to change znode permissions.
 
 ```text
-/usr/hdp/current/zookeeper-client/bin/zkCli.sh
+/opt/bdl/zookeeper-client/bin/zkCli.sh
 getAcl /rmstore/ZKRMStateRoot
 setAcl /rmstore/ZKRMStateRoot world:anyone:rwcda
 ```

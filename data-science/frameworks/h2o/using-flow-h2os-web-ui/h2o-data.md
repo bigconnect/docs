@@ -6,7 +6,7 @@ There are multiple ways to import data in H2O flow:
 
 * Click the **Assist Me!** button in the row of buttons below the menus, then click the **importFiles** link. Enter the file path in the auto-completing **Search** entry field and press **Enter**. Select the file from the search results and confirm it by clicking the **Add All** link.
 
-![](../../../../.gitbook/assets/image%20%28445%29.png)
+![](../../../../.gitbook/assets/image%20%28446%29.png)
 
 * In a blank cell, select the CS format, then enter `importFiles ["path/filename.format"]` \(where `path/filename.format` represents the complete file path to the file, including the full file name. The file path can be a local file path or a website address. **Note**: For S3 file locations, use the format `importFiles [ "s3:/path/to/bucket/file/file.tab.gz" ]`
 
@@ -103,5 +103,5 @@ The following options can be specified when imputing dataset:
 * **Group By**: If the **Method** is either Mean or Mode, then choose the column or columns to group by.
 * **Combine Method**: If the **Method** is Median, then choose how to combine quantiles on even sample sizes. Available **Combine Method** options include Interpolate, Average, Low, and High.
 
-![](../../../../.gitbook/assets/image%20%28452%29.png)
+![](../../../../.gitbook/assets/image%20%28453%29.png)
 

@@ -12,7 +12,7 @@ This page collects and reports various statistics related to the performance of 
 
 ![](../../../.gitbook/assets/log-statistics.jpg)
 
-1. **Query success/failure rate:** Displays the daily success/failure rates of queries performed in Metatron.
+1. **Query success/failure rate:** Displays the daily success/failure rates of queries performed in BigConnect Discovery.
 2. **Query frequency by user:** Graph indicating how many queries were performed by each user. Click a bar to view the job log for the user.
 3. **In order of longest:** Displays the performed queries in the order of the longest running time.
 4. **Amount of scan data:** Displays the performed queries in the order of the highest amount of scanned data.

@@ -2,7 +2,7 @@
 
 BigConnect Discovery performs analytics on its ingested data sources or other external data sources using various analytical tools and outputs analytical results in charts and reports. To utilize this system, you must understand its overall structure shown below:
 
-![](../../../.gitbook/assets/image%20%28399%29.png)
+![](../../../.gitbook/assets/image%20%28400%29.png)
 
 ### Data Preparation
 

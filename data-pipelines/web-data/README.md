@@ -2,7 +2,7 @@
 
 Sponge helps you transform the limitless amount of unstructured content into valuable information that can be used everywhere. Whether is about web sites, blogs or forums, Sponge is a full-featured, flexible and extensible web crawler that runs on any platform and will help you crawl what you want, how you want.
 
-Web sites are crawled with configurable HTTP spiders. It providse a very simple web UI where users can annotate any web page and define how to extract their data of interest.
+Web sites are crawled with configurable HTTP spiders. It provides a very simple web UI where users can annotate any web page and define how to extract their data of interest.
 
 Once data is extracted, it is fed to the processing pipeline where extracted data can be manipulated before using it in your own service or application.
 

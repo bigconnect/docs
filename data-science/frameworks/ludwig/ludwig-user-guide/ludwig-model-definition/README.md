@@ -466,7 +466,7 @@ Example command:
 
 The second plot produced, is a barplot showing the entropy of each class, ranked from most entropic to least entropic.
 
-![](../../../../../.gitbook/assets/image%20%28415%29.png)
+![](../../../../../.gitbook/assets/image%20%28416%29.png)
 
 ### Compare Performance
 

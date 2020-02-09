@@ -72,11 +72,11 @@ Besides the various objects that can be loaded into the platform, BigConnect Exp
 
 **Images** have by definition an associated image. They can be text items as well, so they can have text attached to as well, from an OCR engine for example. In the same way as text items, the image can be annotated to mark relevant existing or objects. This can be done manually or automatically using the Face Recognition or Object Detection enrichments, or even by using Cloud Services like Azure Cloud Computer Vision.
 
-![BigConnect Explorer Image Annotation](../../.gitbook/assets/image%20%28462%29.png)
+![BigConnect Explorer Image Annotation](../../.gitbook/assets/image%20%28463%29.png)
 
 **Audio items** have by definition an associated audio track. BigConnext Explorer will show a player for these types of items to play the contents. Audio items can be text items as well, so they can have text attached, from a speech-to-text engine for example. Sample plugins are provided for speech-to-text using Google Cloud Speech API.
 
-![BigConnect Explorer Audio Player with Transcriptions](../../.gitbook/assets/image%20%28430%29.png)
+![BigConnect Explorer Audio Player with Transcriptions](../../.gitbook/assets/image%20%28431%29.png)
 
 **Video items** have by definition associated video content and can also be text items. Since a video can optionally have an audio track, a Data Worker can be used to split and OCR the video frames and the audio track to extract all relevant information from the video, such as text, found objects, people etc.
 
@@ -106,13 +106,13 @@ Objects can be copied and pasted from anywhere onto the graph, external files ca
 
 Finding how two objects are connected is quite easy as well. Just use the Find Path feature to find out.
 
-![BigConnect Explorer Find Path](../../.gitbook/assets/image%20%28440%29.png)
+![BigConnect Explorer Find Path](../../.gitbook/assets/image%20%28441%29.png)
 
 #### Spatial Analysis
 
 Data with geo-spatial information associated \(latitude, longitude\) can be displayed on an interactive map with support for layers, annotations and aggregations.
 
-![BigConnect Explorer Spatial Analysis](../../.gitbook/assets/image%20%28423%29.png)
+![BigConnect Explorer Spatial Analysis](../../.gitbook/assets/image%20%28424%29.png)
 
 New objects can be created at specific points on the map and will automatically receive location information for future reference. Practical use cases can include defining POIs, locating events, cars, phone calls, network packets etc.
 
@@ -122,7 +122,7 @@ The map can be annotated using points, lines and polygons that can become themse
 
 Quick charts can be created using the Chart tool. A wide selection of charts is available.
 
-![](../../.gitbook/assets/image%20%28407%29.png)
+![](../../.gitbook/assets/image%20%28408%29.png)
 
 #### Timeline
 

@@ -18,11 +18,11 @@ If FileSystem is selected as the snapshot location, the snapshot will be created
 
 The HIVE option is available only when STAGING\_DB is enabled. A snapshot is created in the table when you designate a schema name and table name.
 
-![](../../../../../.gitbook/assets/image%20%28460%29.png)
+![](../../../../../.gitbook/assets/image%20%28461%29.png)
 
 3. When the snapshot is created, you can view the snapshot status and related information in the same window.
 
-![](../../../../../.gitbook/assets/image%20%28448%29.png)
+![](../../../../../.gitbook/assets/image%20%28449%29.png)
 
 
 

@@ -8,7 +8,7 @@ Once the Google Chrome extension is installed, it needs to be configured so it c
 
 Once the extension is configured, it can be accessed by opening **Developer Tools \(F12\)**. You will see a tab named **Sponge Annotator**.
 
-![](../../.gitbook/assets/image%20%28409%29.png)
+![](../../.gitbook/assets/image%20%28410%29.png)
 
 There are three menu options in the Sponge Annotator toolbar:
 

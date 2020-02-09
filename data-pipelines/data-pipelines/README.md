@@ -1,6 +1,6 @@
 # Data Pipelines
 
-StreamSets Data Collector is a lightweight, powerful design and execution engine that streams data in real time. Use Data Collector to route and process data in your data streams.
+The Data Collector is a lightweight, powerful design and execution engine that streams data in real time. Use Data Collector to route and process data in your data streams.
 
 To define the flow of data, you design a pipeline in Data Collector. A pipeline consists of stages that represent the origin and destination of the pipeline, and any additional processing that you want to perform. After you design the pipeline, you click Start and Data Collector goes to work.
 

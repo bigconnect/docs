@@ -25,7 +25,7 @@ RETURN friend
 It is not required to include the `RETURN` clause in the Cypher statement above. If you do not want to return any results, simply run this statement instead: `CREATE (friend:Person {name: 'Mark'})`
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%28443%29.png)
+![](../../.gitbook/assets/image%20%28444%29.png)
 
 Great! Now we added Mark to the database. However, Mark is all alone with no relationships because we just created his node and did not specify any connections. We know he is friends with Jennifer \(same as Michael\), so we can add a new `IS_FRIENDS_WITH` relationship between the existing Jennifer and Mark nodes. The Cypher to do that would look like this.
 
@@ -62,7 +62,7 @@ SET p.birthdate = date('1980-01-01')
 RETURN p
 ```
 
-![](../../.gitbook/assets/image%20%28441%29.png)
+![](../../.gitbook/assets/image%20%28442%29.png)
 
 If we now wanted to change her birthday, we could use the same query above to find Jennifer’s node again and put a different date in the `SET` clause.
 
@@ -101,7 +101,7 @@ DELETE r
 
 To delete a node that does not have any relationships, you need to find the node you want to delete and then use the `DELETE` keyword, just as we did for the relationship above. We can delete Mark’s node for now and add him back in a later exercise.
 
-![](../../.gitbook/assets/image%20%28465%29.png)
+![](../../.gitbook/assets/image%20%28466%29.png)
 
 #### Delete a Node and Relationship
 

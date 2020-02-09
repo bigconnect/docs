@@ -23,7 +23,7 @@ Once you write a notebook code, you can return the results by calling a REST API
 ![](../../../.gitbook/assets/image%20%28159%29.png)
 
 * **HTML**: The results of running the notebook script are returned in HTML.
-* **JSON**: The results of running the notebook script are returned in a custom JSON format. In this case, the `response.write(...)` function provided by Metatron Discovery will be used. The following is an example code for using the response.write function:
+* **JSON**: The results of running the notebook script are returned in a custom JSON format. In this case, the `response.write(...)` function provided by BigConnect Discovery will be used. The following is an example code for using the response.write function:
 
   > * R-based notebook: `response.write(list(coefficient = 2, intercept = 0))`
   > * Python-based notebook: `response.write({'coefficient' : 2.5, 'intercept' : 0})`

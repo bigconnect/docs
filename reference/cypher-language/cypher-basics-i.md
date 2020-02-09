@@ -147,7 +147,7 @@ Let us look at some examples of the syntax we have learned so far using `MATCH` 
 
 **Example 2:** Find `Person` nodes in the graph that have a name of ‘Jennifer’. Remember that we can name our variable anything we want, as long as we reference that same name later.
 
-![](../../.gitbook/assets/image%20%28471%29.png)
+![](../../.gitbook/assets/image%20%28472%29.png)
 
 **Example 3:** Find which `Company` Jennifer works for.
 
@@ -169,7 +169,7 @@ MATCH (:Person {name: 'Jennifer'})-[:WORKS_FOR]->(company:Company)
 RETURN company.name
 ```
 
-![](../../.gitbook/assets/image%20%28420%29.png)
+![](../../.gitbook/assets/image%20%28421%29.png)
 
 ### Aliasing Return Values
 

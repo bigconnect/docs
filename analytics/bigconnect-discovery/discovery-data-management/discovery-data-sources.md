@@ -10,7 +10,7 @@ The Data Source menu can be accessed under **MANAGEMENT** &gt; **Data Storage** 
 
 The columns of a data source linked to the dashboard are categorized into **dimension** and **measure** columns as explained below. To make full use of Discovery’s data analysis and visualization features, you must understand the concepts of dimensions and measures clearly.
 
-![](../../../.gitbook/assets/image%20%28401%29.png)
+![](../../../.gitbook/assets/image%20%28402%29.png)
 
 
 
@@ -144,7 +144,7 @@ Displays the trend of the data source size over time.
 
 **Query distribution \(during last one week\)**
 
-![](../../../.gitbook/assets/image%20%28437%29.png)
+![](../../../.gitbook/assets/image%20%28438%29.png)
 
 * **Query distribution by user \(during last one week\):** Displays a pie chart of query percentages by user for the past week.
 * **Query distribution by elapsed time \(during last one week\):** Displays a pie chart of query percentages by execution time for the past week.

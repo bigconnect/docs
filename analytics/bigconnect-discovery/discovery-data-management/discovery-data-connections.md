@@ -39,7 +39,7 @@ On the Create data connection screen, enter the required information to create a
 * **Security:** Set the type of security to be applied while using the data connection.
 
   > * **Always connect:** Logs in using the account information the user has entered to create a new data connection.
-  > * **Connect by user’s account:** Logs in using the account information registered in Metatron Discovery.
+  > * **Connect by user’s account:** Logs in using the account information registered in BigConnect Discovery.
   > * **Connect with ID and password:** Requires to enter the account information every time the data connection is used.
 
 * **Validation check:** Checks whether the connection information entered is valid; the result is shown next to the button. The validity of the connection appears below the button.

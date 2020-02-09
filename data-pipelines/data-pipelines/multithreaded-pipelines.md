@@ -30,7 +30,7 @@ With Max Concurrent Requests set to 5, when you start the pipeline the origin cr
 
 Conceptually, the multithreaded pipeline looks like this:
 
-![](../../.gitbook/assets/image%20%28426%29.png)
+![](../../.gitbook/assets/image%20%28427%29.png)
 
 Each pipeline runner performs the processing associated with the rest of the pipeline. After a batch is written to pipeline destinations - in this case, Azure Data Lake Store 1 and 2 - the pipeline runner becomes available for another batch of data. Each batch is processed and written as quickly as possible, independently from batches processed by other pipeline runners, so the write-order of the batches can differ from the read-order.
 

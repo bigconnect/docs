@@ -22,7 +22,7 @@ Record header attributes are string values. You can use `record:attribute functi
 
 For example, the following Expression Evaluator adds the file and offset record header attributes created by the Directory origin to the record:
 
-![](../../../.gitbook/assets/image%20%28455%29.png)
+![](../../../.gitbook/assets/image%20%28456%29.png)
 
 ## Internal Attributes
 

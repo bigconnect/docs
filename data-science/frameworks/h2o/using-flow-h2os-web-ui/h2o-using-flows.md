@@ -31,7 +31,7 @@ The **Outline** tab in the sidebar displays a brief summary of the cells current
 * To jump to a specific cell, click the cell description.
 * To delete a cell, select it and press the X key on your keyboard.
 
-![](../../../../.gitbook/assets/image%20%28469%29.png)
+![](../../../../.gitbook/assets/image%20%28470%29.png)
 
 ## Saving Flows
 
@@ -83,7 +83,7 @@ After clicking **Load Notebook**, the saved flow is loaded.
 
 To load an exported flow, click the **Flow** menu and select **Open Flow…**. In the pop-up window that appears, click the **Choose File** button and select the exported flow, then click the **Open** button.
 
-![](../../../../.gitbook/assets/image%20%28410%29.png)
+![](../../../../.gitbook/assets/image%20%28411%29.png)
 
 **Notes**:
 

@@ -62,7 +62,7 @@ Notes
 
 > * As shown below, the format input field lists different entries depending on the input. The candidate list is narrowed as more values are entered.
 
-![](../../../../.gitbook/assets/image%20%28431%29.png)
+![](../../../../.gitbook/assets/image%20%28432%29.png)
 
 ## rename
 
@@ -357,7 +357,7 @@ Notes
 
 ## unpivot
 
-![](../../../../.gitbook/assets/image%20%28467%29.png)
+![](../../../../.gitbook/assets/image%20%28468%29.png)
 
 Required arguments
 

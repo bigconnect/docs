@@ -39,7 +39,7 @@ Click the + button on the data source column list to open a dialog box for addin
 
 ![](../../../.gitbook/assets/image%20%28221%29.png)
 
-![](../../../.gitbook/assets/image%20%28419%29.png)
+![](../../../.gitbook/assets/image%20%28420%29.png)
 
 1. **Column name:** Fill in a name for the custom column.
 2. **Coding box:** Write a code for the custom column. Click a list from the column or formula list below to type your selection in this box automatically.
@@ -50,13 +50,13 @@ Click the + button on the data source column list to open a dialog box for addin
 
 Pivoting is a process of grouping the given table by specific columns, thereby helping the analyst view particular aspects of the source data in a graphic or tabular chart. This process includes selecting columns that contain meaningful data and placing them on the column/row/cross shelves.
 
-![](../../../.gitbook/assets/image%20%28461%29.png)
+![](../../../.gitbook/assets/image%20%28462%29.png)
 
 In the example shown above, two dimension columns are placed on the column shelf and one measure column is placed on the cross shelf. The chart displays data resulting from the columns placed on the shelves in this way.
 
 Mandatory/recommended column types for each shelf vary depending on the chart type. Selecting a chart type before placing columns on a shelf shows the necessary column types for each shelf.
 
-![](../../../.gitbook/assets/image%20%28433%29.png)
+![](../../../.gitbook/assets/image%20%28434%29.png)
 
 ### Column/row/cross shelves
 
@@ -66,7 +66,7 @@ Think of the structure of Excel to understand what column/row/cross shelves work
 
 Whereas Excel shows data in a two-dimensional grid composed of columns, rows and crosses, BigConnect Discovery is an OLAP data discovery tool capable of multidimensional data representation. In the following Discovery chart, the column, row, and crossing axes form a three-dimensional cube.
 
-![](../../../.gitbook/assets/image%20%28398%29.png)
+![](../../../.gitbook/assets/image%20%28399%29.png)
 
 If the values of an Excel grid are displayed in a three-dimensional chart, each crossing value will be represented by a bar. However, Discovery needs to display such a chart two-dimensionally; for this, bars either in the same column or in the same row get stacked at one point while remaining distinctive from one another. The resulting two-dimensional chart is shown in the gray area of the chart below.
 
@@ -390,7 +390,7 @@ If you set the chart direction **Horizontal** in the Common Setting area, the se
 
 Defines how to display the X-axis of the chart. If you set the chart direction **Horizontal** in the Common Setting area, the settings are exchanged between X-axis and Y-axis.
 
-![](../../../.gitbook/assets/image%20%28463%29.png)
+![](../../../.gitbook/assets/image%20%28464%29.png)
 
 1. **Show axis title:** Used to set a title for the X-axis of the chart. Disabling this function hides the title of the X-axis.
 2. **Show axis label:** Select whether or not to show the data labels on the X-axis of the chart. Disabling this function hides the data labels on the X-axis.
@@ -485,7 +485,7 @@ This type of chart visualizes the proportion of each category of the dimension c
 
 BigConnect Discovery offers a **map view** function for visualizations of location data. Creating a chart in map view involves different conditions compared to other chart types.
 
-![](../../../.gitbook/assets/image%20%28434%29.png)
+![](../../../.gitbook/assets/image%20%28435%29.png)
 
 * At least one **location** dimension is required.
 * Data is placed on **map layer shelves** instead of the row/column/intersection shelves.
@@ -500,7 +500,7 @@ To use map view, dimension columns of WKT geometry types such as `Point`, `LineS
 * **Line:** This is a geometry type with line coordinates. WKT representations of LineString and MultiLineString are supported.
 * **Polygon**: This is a geometry type with shape coordinates. WKT representations of Polygon and MultiPolygon are supported.
 
-![](../../../.gitbook/assets/image%20%28470%29.png)
+![](../../../.gitbook/assets/image%20%28471%29.png)
 
 ### Map layer shelves
 
@@ -522,7 +522,7 @@ You can also place measures on a layer shelf to classify colors by measure and s
 
 Click the `+`button on the right of a layer shelf to add another layer on top of the first layer. Each layer must use a different data source, and columns of only one data source are allowed to be placed per layer. Currently, up to two layer shelves are supported.
 
-![](../../../.gitbook/assets/image%20%28425%29.png)
+![](../../../.gitbook/assets/image%20%28426%29.png)
 
 ### Style properties
 
@@ -565,7 +565,7 @@ Sets how to express layers. When a layer shelf is added, separate setting menus 
 
 #### **Layer properties of polygon type**
 
-![](../../../.gitbook/assets/image%20%28413%29.png)
+![](../../../.gitbook/assets/image%20%28414%29.png)
 
 1. **Layer Name** : Set a name of the layer for legend and tooltip settings in the map view.
 2. **Color** : Data points can be distinguished by color based on a string dimension or a measure on the layer shelf. A color can be picked from the palette if color standards are not available. The transparency can be set as a% value.
@@ -579,7 +579,7 @@ Choose whether or not to display a legend. The default is Off. The position of t
 
 ### Spatial analysis
 
-The map view of Metatron Discovery supports simple spatial analysis between two layers. Spatial operations can be set in the analysis tab on the left, and the current version supports two types of spatial operations.
+The map view of BigConnect Discovery supports simple spatial analysis between two layers. Spatial operations can be set in the analysis tab on the left, and the current version supports two types of spatial operations.
 
 ![](../../../.gitbook/assets/image%20%28195%29.png)
 

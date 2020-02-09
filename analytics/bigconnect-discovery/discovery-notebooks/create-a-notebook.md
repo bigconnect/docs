@@ -6,7 +6,7 @@ Once the notebook server has been set up, you can create a notebook. A notebook 
 
 ![](../../../.gitbook/assets/image%20%2830%29.png)
 
-2. Select the type of data set that you wish to analyze in the notebook. You can choose between **Data source**, the unit of data used in Metatron Discovery, **Dashboard**, **Chart**, and **Not selected**. If you want to use Zeppelin, select **Not selected**
+2. Select the type of data set that you wish to analyze in the notebook. You can choose between **Data source**, the unit of data used in BigConnect Discovery, **Dashboard**, **Chart**, and **Not selected**. If you want to use Zeppelin, select **Not selected**
 
 ![](../../../.gitbook/assets/image%20%28149%29.png)
 

@@ -63,7 +63,7 @@ Define runtime parameters when you configure the pipeline.
 
 Use an expression in the pipeline to call a runtime parameter.
 
-You can use runtime parameters to represent any stage or pipeline property that allows the use of the StreamSets expression language, including properties that display as text boxes, checkboxes, or drop-down menus. You can also call a runtime parameter in the code developed for a scripting processor.
+You can use runtime parameters to represent any stage or pipeline property that allows the use of the Data Collector expression language, including properties that display as text boxes, checkboxes, or drop-down menus. You can also call a runtime parameter in the code developed for a scripting processor.
 
 ### Calling from Text Boxes
 

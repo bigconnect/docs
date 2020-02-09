@@ -26,7 +26,7 @@ For example, the Record Count and Record Throughput statistics in Monitor mode d
 
 You can view the number of error records in these statistics. However, you might want to be notified when the number of error records reaches a certain threshold. You can enable the default rule for the Pipeline Error Records Counter metric to send an alert when the pipeline encounters more than 100 error records. When you enable the metric rule and the alert triggers, the alert displays in the Data Collector UI as follows:
 
-![](../../.gitbook/assets/image%20%28454%29.png)
+![](../../.gitbook/assets/image%20%28455%29.png)
 
 When you enable a metric rule, it automatically enables an alert for the rule. You can also configure a metric rule to send email alerts to all email addresses associated with the pipeline.
 

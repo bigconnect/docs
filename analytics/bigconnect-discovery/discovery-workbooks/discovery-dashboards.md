@@ -148,7 +148,7 @@ On the chart widget panel, you can add/edit/delete a chart in the dashboard.
 
 On the text widget panel, you can add/edit/delete a text widget in the dashboard.
 
-![](../../../.gitbook/assets/image%20%28412%29.png)
+![](../../../.gitbook/assets/image%20%28413%29.png)
 
 1. **Number of text widgets:** Displays how many text widgets are registered in the dashboard.
 2. **Add a text widget:** Click on it to create a new text widget in the dashboard.
@@ -192,7 +192,7 @@ Displays all values in the data source.
 
 Displays details about each column of the data source.
 
-![](../../../.gitbook/assets/image%20%28400%29.png)
+![](../../../.gitbook/assets/image%20%28401%29.png)
 
 ### Dashboard data information tab
 
@@ -215,7 +215,7 @@ Click Presentation view on the basic dashboard page to view workbook dashboards 
 
 Hover the mouse over a column name on the data source panel in dashboard editing mode, and click the icon on the right to check the alias of the column.
 
-![](../../../.gitbook/assets/image%20%28402%29.png)
+![](../../../.gitbook/assets/image%20%28403%29.png)
 
 Hover the mouse over the alias to open a window where you can enter a new column name. After entering the name, click Apply to see the change applied.
 

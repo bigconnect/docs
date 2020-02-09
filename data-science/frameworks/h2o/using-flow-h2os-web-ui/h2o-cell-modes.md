@@ -61,7 +61,7 @@ To change the cell’s format \(for example, from code to Markdown\), make sure 
 
 The series of buttons at the top of the page below the menus run cells in a flow.
 
-![](../../../../.gitbook/assets/image%20%28464%29.png)
+![](../../../../.gitbook/assets/image%20%28465%29.png)
 
 * To run all cells in the flow, click the **Flow** menu, then click **Run All Cells**.
 * To run the current cell and all subsequent cells, click the **Flow** menu, then click **Run All Cells Below**.
@@ -85,7 +85,7 @@ When the flow is complete, a message displays in the upper right.
 
 ![](../../../../.gitbook/assets/image%20%28192%29.png)
 
-![](../../../../.gitbook/assets/image%20%28458%29.png)
+![](../../../../.gitbook/assets/image%20%28459%29.png)
 
 {% hint style="info" %}
 If there is an error in the flow, H2O Flow stops at the cell that contains the error.

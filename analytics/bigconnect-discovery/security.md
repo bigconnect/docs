@@ -12,7 +12,7 @@ This menu shows applications for membership. As shown below, the list includes t
 
 ## Members
 
-Users can sign up for Metatron Discovery in one of the following two ways:
+Users can sign up for Discovery in one of the following two ways:
 
 1. Administrator’s approval of a user’s application for membership
 2. Registration by the administrator
@@ -80,7 +80,7 @@ Enter a name and description for the group and click **Done** to create the new 
 
 BigConnect Discovery supports four types of permissions shown below, thereby enabling the administrator to grant different user privileges. This menu allows permission settings for individual members or groups.
 
-![](../../.gitbook/assets/image%20%28416%29.png)
+![](../../.gitbook/assets/image%20%28417%29.png)
 
 Click on one of the four permissions presented on the home to list the individual members and groups assigned the selected permission. In the **Member** or **Group** section, click on the ![setup](https://metatron-app.github.io/metatron-doc-discovery/en/_images/setup_icon.png) icon to pop up the following settings dialog box where you can set which members or groups will be assigned the permission.
 

@@ -43,13 +43,6 @@ The **Enable HA wizard** describes the set of automated and manual steps you mus
   
    The output looks similar to:`Successfully updated the following locations... Updated X records in SDS table`
 
-{% hint style="danger" %}
-**Important**  
-The Hive configuration path for a default HDP 2.3.x or later stack is `/etc/hive/conf/conf.server`
-
-The Hive configuration path for a default HDP 2.2.x or earlier stack is `/etc/hive/conf`
-{% endhint %}
-
         c. Adjust the ZooKeeper Failover Controller retries setting for your environment.  
             Browse to Services &gt; HDFS &gt; Configs &gt; Advanced core-site.
 

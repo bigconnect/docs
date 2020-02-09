@@ -3,7 +3,7 @@
 BigConnect has data extractors for Social Networks as well. Extraction can be made either using publicly available information or by authenticating in the respective social network.
 
 {% hint style="warning" %}
-Social Network data is not extracted using official APIs and should be used in accordance with each platform's Terms and Conditions.
+Social Network data should be extracted in accordance with each platform's Terms and Conditions.
 
 Plase be aware that massive scraping of data from some platforms \(eg. Facebook\) might get your account blocked or even have the platform engage in legal actions.
 {% endhint %}

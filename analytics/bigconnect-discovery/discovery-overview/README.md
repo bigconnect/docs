@@ -1,6 +1,6 @@
 # Discovery Overview
 
-Metatron Discovery is a 4th-generation OLAP-based business intelligence \(BI\) solution that combines OLAP, visualization, and machine learning technologies for even non-experts to quickly and easily derive higher-level value from data.
+BigConnect Discovery is a 4th-generation OLAP-based business intelligence \(BI\) solution that combines OLAP, visualization, and machine learning technologies for even non-experts to quickly and easily derive higher-level value from data.
 
 ### 4th-generation BI solution
 
@@ -14,7 +14,7 @@ The mainstream products in the current BI market belong to the 2nd and 3rd gener
 
 BigConnect Discovery combines data of various dimensions for large-sized fact data to produce a single big OLAP cube \(data mart\).
 
-![Big OLAP Cube](../../../.gitbook/assets/image%20%28436%29.png)
+![Big OLAP Cube](../../../.gitbook/assets/image%20%28437%29.png)
 
 The use of a big OLAP cube offers the following advantages:
 

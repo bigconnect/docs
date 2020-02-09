@@ -23,7 +23,7 @@ Regarding Druid’s query latency, the paper discusses two performance assessmen
 
 The figure below shows the query latencies resulting from Druid and MySQL when tested on the 1GB and 100GB TPC-H datasets:
 
-![Source: Druid: A Real-time Analytical Data Store](../../.gitbook/assets/image%20%28432%29.png)
+![Source: Druid: A Real-time Analytical Data Store](../../.gitbook/assets/image%20%28433%29.png)
 
 By showcasing these results, the paper suggests that Druid is capable of extremely faster query returns compared to legacy relational database systems.
 
@@ -31,7 +31,7 @@ The Druid paper also presents how faster query returns are achieved when multipl
 
 ![Source: Druid: A Real-time Analytical Data Store](../../.gitbook/assets/image%20%28370%29.png)
 
-It was observed that not all types of queries achieve linear scaling, but the simpler aggregation queries do, ensuring a speed increment almost proportional to the number of the cores \(SK Telecom’s Metatron has made improvements to achieve much more obvious linear scalability\).
+It was observed that not all types of queries achieve linear scaling, but the simpler aggregation queries do, ensuring a speed increment almost proportional to the number of the cores.
 
 ### Ingestion latency
 
@@ -61,7 +61,7 @@ The conditions of query latency measurement were as follows:
 
 The query times for five queries of the TPC-H 100G dataset were as follows \(the query times in Hive were also measured as a reference\):
 
-![Source: SK Telecom T-DE WIKI Metatron Project](../../.gitbook/assets/image%20%2861%29.png)
+![Source: SK Telecom T-DE Wiki](../../.gitbook/assets/image%20%2861%29.png)
 
 {% hint style="info" %}
 The reasons why the Hive benchmark performed poorly include that some processes were performed through Thrift and the dataset wasn’t partitioned.
@@ -81,11 +81,11 @@ The conditions of ingestion latency measurement were as follows:
 
 Data ingestion was performed 100 times under the conditions specified above, and the average ingestion latency was 1.623439 seconds. As illustrated below, ingestion latency was computed as the sum of Kafka ingestion latency, Druid ingestion latency, and Druid query latency.
 
-![Source: SK Telecom T-DE WIKI Metatron Project](../../.gitbook/assets/image%20%28451%29.png)
+![Source: SK Telecom T-DE WIKI](../../.gitbook/assets/image%20%28452%29.png)
 
 ## Comparison with Apache Spark
 
-Comparing Druid with Apache Spark is meaningful because both technologies are emerging as next-generation solutions for large-scale analytics and their different advantages make them very complementary when combined together. Metatron also makes use of this combination: Druid as the data storage/processing engine and Spark as an advanced analytics module.
+Comparing Druid with Apache Spark is meaningful because both technologies are emerging as next-generation solutions for large-scale analytics and their different advantages make them very complementary when combined together. BigConnect Discovery also makes use of this combination: Druid as the data storage/processing engine and Spark as an advanced analytics module.
 
 This section briefly introduces a report comparing the performance of Druid and Spark published by Harish Butani, the founder of Sparkline Data Inc. Prior to the performance comparison, the report states that the two solutions are in complementary relations, rather than competitors.
 

@@ -4,14 +4,14 @@
 
 ## **Advantages of data preparation**
 
-![](../../../.gitbook/assets/image%20%28406%29.png)
+![](../../../.gitbook/assets/image%20%28407%29.png)
 
 Users can create transformation rules by following the step-by-step process as shown in the above GUI. Since the transformation results from each step are stored in memory together with the data distribution, users can easily check the results through the simple click of a button and perform **undo** and **redo** just like using a text editor.
 
 Based on these characteristics, the data preparation tool offers the following advantages:
 
 * Users unfamiliar with programming or data processing can obtain the desired results.
-* Adding a transformation rule usually involves programming or writing an SQL query. However, Metatron Discovery’s Data Preparation provides a GUI for **exploratory transformation** that enables the creation of transformation rules simply by clicking a button or typing.
+* Adding a transformation rule usually involves programming or writing an SQL query. However, BigConnect Discovery’s Data Preparation provides a GUI for **exploratory transformation** that enables the creation of transformation rules simply by clicking a button or typing.
 * Basic data transformation is conducted automatically. For instance, a type cast is automatically applied to columns comprised of numerals. This is made possible by the **undo** and rule deletion functions.
 * Data of different forms can be combined as desired \(e.g. reference file + fact table\).
 * The results of data refinement can be shared with others, thus reducing the burden of exchanging physical data.

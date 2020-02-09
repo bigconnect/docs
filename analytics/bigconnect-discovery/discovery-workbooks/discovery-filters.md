@@ -10,7 +10,7 @@ A chart filter defines what range of data is to be shown on the chart. This chap
 
 The following column filters are included automatically when a chart is created:
 
-> * **Timestamp column filter:** As a time-series data store, the Metatron engine necessarily uses a time filter.
+> * **Timestamp column filter:** As a time-series data store, the Druid engine necessarily uses a time filter.
 > * **Recommended filters:** Column filters designated as “recommended filters” during the registration of the data source.
 > * **Dashboard filters set global:** Filters applied to all charts registered in the dashboard.
 
@@ -73,7 +73,7 @@ From the connected data source, select a measure on which to create a filter.
 
 Once you have selected a measure, designate the range of values to filter.
 
-![](../../../.gitbook/assets/image%20%28408%29.png)
+![](../../../.gitbook/assets/image%20%28409%29.png)
 
 ## Global filters
 

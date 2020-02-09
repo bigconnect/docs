@@ -3,7 +3,9 @@
 Use options on **Ambari Web &gt; Services &gt; Metrics** to manage the metrics visible for a specific service.
 
 **About this task**  
-The **Ambari Web &gt; Services &gt; Metrics** tab displays metrics information using multiple widgets. You can add and remove widgets from the **Metrics** tab. HDP core services currently support this functionality, including HDFS, Hive, HBase, and YARN services.![](https://docs.cloudera.com/HDPDocuments/Ambari-2.7.3.0/managing-and-monitoring-ambari/how-to/images/amb_service_summary_metrics.png)
+The **Ambari Web &gt; Services &gt; Metrics** tab displays metrics information using multiple widgets. You can add and remove widgets from the **Metrics** tab. BigConnect core services currently support this functionality, including HDFS, Hive, HBase, and YARN services.
+
+![](https://docs.cloudera.com/HDPDocuments/Ambari-2.7.3.0/managing-and-monitoring-ambari/how-to/images/amb_service_summary_metrics.png)
 
 Steps
 

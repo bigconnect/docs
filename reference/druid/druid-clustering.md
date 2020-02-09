@@ -4,13 +4,13 @@
 
 A Druid cluster consists of different types of nodes and each node type is designed to perform a specific set of things:
 
-![](../../.gitbook/assets/image%20%28456%29.png)
+![](../../.gitbook/assets/image%20%28457%29.png)
 
 ## Real-time nodes
 
 Real-time nodes function to ingest and query event streams. The nodes are only concerned with events for some small time range and periodically hand them off to the deep storage in the following steps:
 
-![Source: Druid: A Real-time Analytical Data Store](../../.gitbook/assets/image%20%28428%29.png)
+![Source: Druid: A Real-time Analytical Data Store](../../.gitbook/assets/image%20%28429%29.png)
 
 1. Incoming events are indexed in memory and immediately become available for querying.
 2. The in-memory data is regularly persisted to disk and converted into an immutable, columnar storage format.

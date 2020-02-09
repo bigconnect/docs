@@ -52,15 +52,6 @@ The following image shows the Data Collector UI when you configure a pipeline:
     </tr>
     <tr>
       <td style="text-align:left">
-        <img src="https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/icon_DPM.png"
-        alt/>
-      </td>
-      <td style="text-align:left">StreamSets Control Hub icon</td>
-      <td style="text-align:left">Provides information about StreamSets Control Hub and lets you register
-        this Data Collector with Control Hub.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
         <img src="https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/icon_OverHome.png"
         alt/>
       </td>

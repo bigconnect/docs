@@ -184,7 +184,7 @@ Query time is reported in the `Table` or `Code` views \(**don’t rely on that e
 
 You can also download the results as a CSV from the `Table`, `Text`, and `Code` views or download the graph as an SVG or PNG from the `Graph` view, as shown below.
 
-![](../../.gitbook/assets/image%20%28438%29.png)
+![](../../.gitbook/assets/image%20%28439%29.png)
 
 ![](../../.gitbook/assets/image%20%28223%29.png)
 

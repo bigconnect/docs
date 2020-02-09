@@ -3,7 +3,7 @@
 To access the wizard and enable ResourceManager high availability:  
   
 **About this task**  
-If you are working in an HDP 2.2 or later environment, you can configure high availability for ResourceManager by using the Enable ResourceManager HA wizard.
+You can configure high availability for ResourceManager by using the Enable ResourceManager HA wizard.
 
 Before you begin  
   

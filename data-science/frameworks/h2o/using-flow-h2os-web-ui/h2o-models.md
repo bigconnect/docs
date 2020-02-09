@@ -145,7 +145,7 @@ The following additional functions are available when viewing a model:
 4. To overwrite any files with the same name, check the _Overwrite:_ checkbox.
 5. Click the **Import** button. A confirmation message displays when the model has been successfully imported. To view the imported model, click the **View Model** button.
 
-![](../../../../.gitbook/assets/image%20%28468%29.png)
+![](../../../../.gitbook/assets/image%20%28469%29.png)
 
 ## Run AutoML
 
@@ -175,7 +175,7 @@ After clicking **View**, the Leaderboard displays the list of models that were b
 
 To include a parameter in a grid search in Flow, check the checkbox in the _GRID?_ column to the right of the parameter name \(highlighted in red in the image below\).
 
-![](../../../../.gitbook/assets/image%20%28417%29.png)
+![](../../../../.gitbook/assets/image%20%28418%29.png)
 
 * If the parameter selected for grid search is Boolean \(T/F or Y/N\), both values are included when the _Grid?_ checkbox is selected.
 * If the parameter selected for grid search is a list of values, the values display as checkboxes when the _Grid?_ checkbox is selected. More than one option can be selected.
@@ -194,7 +194,7 @@ To include a parameter in a grid search in Flow, check the checkbox in the _GRID
 
 **Confusion Matrix**: \(RF, GBM\) Table depicting performance of algorithm in terms of false positives, false negatives, true positives, and true negatives. The actual results display in the columns and the predictions display in the rows; correct predictions are highlighted in yellow. In the example below, `0` was predicted correctly 902 times, while `8` was predicted correctly 822 times and `0` was predicted as `4` once.
 
-![](../../../../.gitbook/assets/image%20%28411%29.png)
+![](../../../../.gitbook/assets/image%20%28412%29.png)
 
 **ROC Curve**: \(DRF\) A [ROC Curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) is a graph that represents the ratio of true positives to false positives. \(For more information, refer to the Linear Digressions [podcast](http://lineardigressions.com/episodes/2017/1/29/rock-the-roc-curve) describing ROC Curves.\) To view a specific threshold, select a value from the drop-down **Threshold** list. To view any of the following details, select it from the drop-down **Criterion** list:
 
@@ -208,11 +208,11 @@ To include a parameter in a grid search in Flow, check the checkbox in the _GRID
 
 The lower-left side of the graph represents less tolerance for false positives while the upper-right represents more tolerance for false positives. Ideally, a highly accurate ROC resembles the following example.
 
-![](../../../../.gitbook/assets/image%20%28449%29.png)
+![](../../../../.gitbook/assets/image%20%28450%29.png)
 
 **Hit Ratio**: \(GBM, DRF, NaiveBayes, DL, GLM\) \(Multinomial Classification only\) Table representing the number of times that the prediction was correct out of the total number of predictions.
 
-![](../../../../.gitbook/assets/image%20%28404%29.png)
+![](../../../../.gitbook/assets/image%20%28405%29.png)
 
 **Standardized Coefficient Magnitudes** \(GLM\) Bar chart representing the relationship of a specific feature to the response variable. Coefficients can be positive \(orange\) or negative \(blue\). A positive coefficient indicates a positive relationship between the feature and the response, where an increase in the feature corresponds with an increase in the response, while a negative coefficient represents a negative relationship between the feature and the response where an increase in the feature corresponds with a decrease in the response \(or vice versa\).
 

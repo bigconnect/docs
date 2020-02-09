@@ -61,7 +61,7 @@ The Edit Rules page consists of the following:
 * When a rule is inserted in this manner, all subsequent rules are affected.
 * Rules that cannot be normally executed are displayed in red. In this case, they will revert to the results obtained in the previous step.
 
-![](../../../../.gitbook/assets/image%20%28439%29.png)
+![](../../../../.gitbook/assets/image%20%28440%29.png)
 
 ## Edit a created rule
 
@@ -69,7 +69,7 @@ The Edit Rules page consists of the following:
 
 1. In the list of rules on the right, place the cursor over the rule to be edited. The ![edit](https://metatron-app.github.io/metatron-doc-discovery/en/_images/icon_edit1.png) button appears. Press this button.
 
-![](../../../../.gitbook/assets/image%20%28442%29.png)
+![](../../../../.gitbook/assets/image%20%28443%29.png)
 
 2. Edit the rule in the command input panel and press the **Done** button.
 

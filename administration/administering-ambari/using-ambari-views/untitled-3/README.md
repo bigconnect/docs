@@ -1,7 +1,7 @@
 # Using YARN Queue Manager View
 
 **About this task**  
-The Yarn Capacity Scheduler allows for multiple tenants in an HDP cluster to share compute resources according to configurable workload management policies. The YARN Queue Manager View is designed to help Hadoop operators configure these policies for YARN. In the View, operators can create hierarchical queues and tune configurations for each queue to define an overall workload management policy for the cluster.
+The Yarn Capacity Scheduler allows for multiple tenants in an BigConnect cluster to share compute resources according to configurable workload management policies. The YARN Queue Manager View is designed to help Hadoop operators configure these policies for YARN. In the View, operators can create hierarchical queues and tune configurations for each queue to define an overall workload management policy for the cluster.
 
 {% page-ref page="set-up-yarn-workflow-queues.md" %}
 

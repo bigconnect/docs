@@ -6,10 +6,10 @@ It is common in large cluster deployments to use DNS aliases for specific hosts,
 
 In Ambari, individual hosts can be configured to use a public host name when referencing individual hosts in configuration files or in **Quick Links**.   
   
-For example, if you have a physical host with a FQDN of `revo1.bigconnect.local`, and you have a DNS CNAME that also points to that host using `nn1.bigconnect.local`, it is possible to configure Ambari to use `nn1.hortonworks.local` for **Quick Links** associated with that host, and whenever `nn1.bigconnect.local` is used in configuration, Ambari will understand that it is associated with the `revo1.bigconnect.local` host. That way if you need to move the NameNode to `revo4.bigconnect.local`, you can configure that new host to use `nn1.bigconnect.local` for its public host name without having to make client configuration changes.
+For example, if you have a physical host with a FQDN of `revo1.bigconnect.local`, and you have a DNS CNAME that also points to that host using `nn1.bigconnect.local`, it is possible to configure Ambari to use `nn1.bigconnect.local` for **Quick Links** associated with that host, and whenever `nn1.bigconnect.local` is used in configuration, Ambari will understand that it is associated with the `revo1.bigconnect.local` host. That way if you need to move the NameNode to `revo4.bigconnect.local`, you can configure that new host to use `nn1.bigconnect.local` for its public host name without having to make client configuration changes.
 
 {% hint style="info" %}
-You still have to modify the specific configuration properties that reference `revo1.bigconnect.local` and update them with the alias which you have chosen to use, `nn1.hortonworks.local` in this case, in order for this feature to work as expected.
+You still have to modify the specific configuration properties that reference `revo1.bigconnect.local` and update them with the alias which you have chosen to use, `nn1.bigconnect.local` in this case, in order for this feature to work as expected.
 {% endhint %}
 
 {% page-ref page="custom-and-private-host-names.md" %}

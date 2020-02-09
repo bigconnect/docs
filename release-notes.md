@@ -1,22 +1,31 @@
 ---
-description: Release notes v4.1
+description: BDL Releases
 ---
 
 # Release Notes
 
-## Release 4.1
+## 4.0.0
 
-### Fixed
+### Graph Engine
 
-* Removed humans, they weren't doing fine with animals.
+* Upgrade to Elasticsearch 6.8
 
-### Changed
+### BigConnect Discovery
 
-* Animals are now super cute, all of them.
+* Fix prediction for line charts
+* Fix dataset naming issue
+* Fix notebook integration issue
 
-### Added
+### Presto
 
-* Introduced animals into the world, we believe they're going to be a neat addition.
+* Massive performance improvements for BigConnect Graph Engine catalog
+
+### Data Collector
+
+* Added BigConnect Graph Engine Cypher Origin, Processor and Target
+* Added Python script executor Origin and Processor
+
+
 
 
 

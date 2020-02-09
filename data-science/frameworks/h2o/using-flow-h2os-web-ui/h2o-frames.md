@@ -26,7 +26,7 @@ From the `getFrameSummary` cell, you can:
 
 When you view a frame, you can “drill-down” to the necessary level of detail \(such as a specific column or row\) using the **Inspect** button or by clicking the links. The following screenshot displays the results of clicking the **Inspect** button for a frame.
 
-![](../../../../.gitbook/assets/image%20%28424%29.png)
+![](../../../../.gitbook/assets/image%20%28425%29.png)
 
 This screenshot displays the results of clicking the **columns** link.
 
@@ -53,7 +53,7 @@ To make a prediction, check the checkboxes for the frames you want to use to mak
 
 Datasets can be split within Flow for use in model training and testing.
 
-![](../../../../.gitbook/assets/image%20%28472%29.png)
+![](../../../../.gitbook/assets/image%20%28473%29.png)
 
 1. To split a frame, click the **Assist Me** button, then click **splitFrame**.
 
