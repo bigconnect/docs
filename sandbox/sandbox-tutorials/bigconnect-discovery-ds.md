@@ -11,6 +11,8 @@ BigConnect Discovery has seamless integration with Jupyter Notebooks. You can cr
 
 1.Follow the **BigConnect Discovery Basics** tutorial, **Preparing data** section to create the **salesdata** datasource.
 
+## Tutorial
+
 1.The first step is to connect Jupyter Notebook to BigConnect Discovery. Login to BigConnect Discovery and choose **MANAGEMENT / Notebook / Notebook Server** from the menu. Click on **Add a server** on the Notebook page:
 
 ![](../../.gitbook/assets/image%20%2885%29.png)
