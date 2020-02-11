@@ -8,7 +8,7 @@ To manage users, click **ADMINISTRATION ‣ USER** on the left-hand panel of the
 
 This menu shows applications for membership. As shown below, the list includes the applications that have been rejected or waiting for approval. But, approved users are listed here but can be found in the **Members** menu.
 
-![](../../.gitbook/assets/image%20%28414%29.png)
+![](../../.gitbook/assets/image%20%28423%29.png)
 
 ## Members
 
@@ -21,13 +21,13 @@ Users can sign up for Discovery in one of the following two ways:
 
 The Members home shows a list of Discovery members. The member list can be filtered by various criteria, and clicking on an entry in the list allows you to view and edit the selected member’s information.
 
-![](../../.gitbook/assets/image%20%28153%29.png)
+![](../../.gitbook/assets/image%20%28160%29.png)
 
 ### View and edit member information
 
 Clicking on a member in the list opens the member information page shown below:
 
-![](../../.gitbook/assets/image%20%28227%29.png)
+![](../../.gitbook/assets/image%20%28235%29.png)
 
 This page displays some basic information and allows a number of settings.
 
@@ -39,7 +39,7 @@ This page displays some basic information and allows a number of settings.
 
 Click the **Create member** button on the top right of the page to pop up the member creation dialog box below.
 
-![](../../.gitbook/assets/image%20%28195%29.png)
+![](../../.gitbook/assets/image%20%28202%29.png)
 
 Enter the member’s real name, ID, and email address to register the member, and the membership details will be sent to the email address.
 
@@ -54,13 +54,13 @@ By grouping Discovery users, you can use the following convenient features:
 
 The Groups home shows the user groups currently registered in Discovery. The group list can be filtered by various criteria, and clicking on an entry in the list allows you to view and edit the selected group’s information.
 
-![](../../.gitbook/assets/image%20%2877%29.png)
+![](../../.gitbook/assets/image%20%2880%29.png)
 
 ### View and edit group information
 
 Clicking on a group in the list opens the group information page shown below:
 
-![](../../.gitbook/assets/image%20%28116%29.png)
+![](../../.gitbook/assets/image%20%28121%29.png)
 
 This page provides the following functions:
 
@@ -72,7 +72,7 @@ This page provides the following functions:
 
 Click the **Create group** button on the top right of the page to pop up the group creation dialog box below.
 
-![](../../.gitbook/assets/image%20%28242%29.png)
+![](../../.gitbook/assets/image%20%28250%29.png)
 
 Enter a name and description for the group and click **Done** to create the new group.
 
@@ -80,9 +80,9 @@ Enter a name and description for the group and click **Done** to create the new 
 
 BigConnect Discovery supports four types of permissions shown below, thereby enabling the administrator to grant different user privileges. This menu allows permission settings for individual members or groups.
 
-![](../../.gitbook/assets/image%20%28468%29.png)
+![](../../.gitbook/assets/image%20%28480%29.png)
 
 Click on one of the four permissions presented on the home to list the individual members and groups assigned the selected permission. In the **Member** or **Group** section, click on the ![setup](https://metatron-app.github.io/metatron-doc-discovery/en/_images/setup_icon.png) icon to pop up the following settings dialog box where you can set which members or groups will be assigned the permission.
 
-![](../../.gitbook/assets/image%20%28301%29.png)
+![](../../.gitbook/assets/image%20%28310%29.png)
 

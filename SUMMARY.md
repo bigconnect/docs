@@ -436,4 +436,5 @@
   * [URLs and Ports](sandbox/service-urls.md)
   * [Tutorials](sandbox/sandbox-tutorials/README.md)
     * [BigConnect Discovery Basics](sandbox/sandbox-tutorials/bigconnect-discovery.md)
+    * [BigConnect Discovery Data Science](sandbox/sandbox-tutorials/bigconnect-discovery-ds.md)
 

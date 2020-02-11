@@ -4,7 +4,7 @@
 
 ## **Advantages of data preparation**
 
-![](../../../.gitbook/assets/image%20%28453%29.png)
+![](../../../.gitbook/assets/image%20%28464%29.png)
 
 Users can create transformation rules by following the step-by-step process as shown in the above GUI. Since the transformation results from each step are stored in memory together with the data distribution, users can easily check the results through the simple click of a button and perform **undo** and **redo** just like using a text editor.
 
