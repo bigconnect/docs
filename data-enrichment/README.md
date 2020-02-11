@@ -2,7 +2,7 @@
 
 All data that is ingested or changed is processed by a series of Data Workers. Think of them as jobs that run in a distributed, asynchronous way to analyze each and every piece of data and produce new information from it. Examples can be numerous: extracting names of persons from text, detecting objects in an image, extracting IPs and events from log files, detect sentiment in a piece of text, create new connections based on some attributes etc.
 
-![](../.gitbook/assets/image%20%28398%29.png)
+![](../.gitbook/assets/image%20%28444%29.png)
 
 {% hint style="info" %}
 Enrichment is done based on the type of information: text, image, video, audio, log files, network packets etc.

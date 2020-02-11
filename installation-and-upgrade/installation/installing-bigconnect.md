@@ -45,7 +45,7 @@ For a new cluster, the Cluster Install wizard displays a Welcome page.
 From the Ambari Welcome page, choose **Launch Install Wizard**.  
 
 
-![Ambari Cluster Install Wizard](../../.gitbook/assets/image%20%28103%29.png)
+![Ambari Cluster Install Wizard](../../.gitbook/assets/image%20%28117%29.png)
 
 ### 6. Name Your Cluster
 
@@ -117,7 +117,7 @@ The Cluster Install wizard assigns the slave components, such as DataNodes, Node
 
 The Customize Services step presents you with a set of tabs that let you review and modify your cluster setup. The Cluster Install wizard attempts to set reasonable defaults for each of the options. You are **strongly encouraged** to review these settings as your requirements might be more advanced.
 
-![](../../.gitbook/assets/image%20%2864%29.png)
+![](../../.gitbook/assets/image%20%2872%29.png)
 
 Ambari will group the commonly customized configuration elements together into four categories: Credentials, Databases, Directories, and Accounts. All other configuration will be available in the All Configurations section of the Installation Wizard.
 
@@ -159,7 +159,7 @@ Depending on how your environment is configured, you might not allow groupmod or
 
 Here you have an opportunity to review and revise the remaining configurations for your services. Browse through each configuration tab. Hovering your cursor over each of the properties, displays a brief description of what the property does. The number of service tabs shown here depends on the services you decided to install in your cluster. **Any service with configuration issues that require attention will show up in the bell icon with the number properties that need attention.**
 
-![](../../.gitbook/assets/image%20%2840%29.png)
+![](../../.gitbook/assets/image%20%2847%29.png)
 
 The bell popover contains configurations that require your attention, configurations that are highly recommended to be reviewed and changed, and configurations that will be automatically changed based on Ambari’s recommendations unless you choose to opt out of those changes. Required Configuration must be addressed in order to proceed on to the next step in the Wizard. Carefully review the required and recommended settings and address issues before proceeding**.**
 

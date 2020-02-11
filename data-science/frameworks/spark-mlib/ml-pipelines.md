@@ -57,13 +57,13 @@ A `Pipeline` is specified as a sequence of stages, and each stage is either a `T
 
 We illustrate this for the simple text document workflow. The figure below is for the _training time_ usage of a `Pipeline`.
 
-![](../../../.gitbook/assets/image%20%285%29.png)
+![](../../../.gitbook/assets/image%20%2810%29.png)
 
 Above, the top row represents a `Pipeline` with three stages. The first two \(`Tokenizer` and `HashingTF`\) are `Transformer`s \(blue\), and the third \(`LogisticRegression`\) is an `Estimator` \(red\). The bottom row represents data flowing through the pipeline, where cylinders indicate `DataFrame`s. The `Pipeline.fit()` method is called on the original `DataFrame`, which has raw text documents and labels. The `Tokenizer.transform()` method splits the raw text documents into words, adding a new column with words to the `DataFrame`. The `HashingTF.transform()` method converts the words column into feature vectors, adding a new column with those vectors to the `DataFrame`. Now, since `LogisticRegression` is an `Estimator`, the `Pipeline` first calls `LogisticRegression.fit()` to produce a `LogisticRegressionModel`. If the `Pipeline` had more `Estimator`s, it would call the `LogisticRegressionModel`’s `transform()` method on the `DataFrame` before passing the `DataFrame` to the next stage.
 
 A `Pipeline` is an `Estimator`. Thus, after a `Pipeline`’s `fit()` method runs, it produces a `PipelineModel`, which is a `Transformer`. This `PipelineModel` is used at _test time_; the figure below illustrates this usage.
 
-![](../../../.gitbook/assets/image%20%28279%29.png)
+![](../../../.gitbook/assets/image%20%28316%29.png)
 
 In the figure above, the `PipelineModel` has the same number of stages as the original `Pipeline`, but all `Estimator`s in the original `Pipeline` have become `Transformer`s. When the `PipelineModel`’s `transform()` method is called on a test dataset, the data are passed through the fitted pipeline in order. Each stage’s `transform()` method updates the dataset and passes it to the next stage.
 

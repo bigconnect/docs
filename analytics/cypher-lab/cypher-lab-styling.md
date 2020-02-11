@@ -8,9 +8,9 @@ For example, if you click on one of the `Movie` nodes in the MovieGraph \(`:play
 
 To see this for yourself, you can click on the `Person` label above the graph and change the color, size, and captions of all nodes labeled with `Person`. The first image below shows changes to nodes labeled `Person`. The second image shows changes to relationships labeled `ACTED_IN`.
 
-![](../../.gitbook/assets/image%20%28298%29.png)
+![](../../.gitbook/assets/image%20%28337%29.png)
 
-![](../../.gitbook/assets/image%20%28310%29.png)
+![](../../.gitbook/assets/image%20%28351%29.png)
 
 
 

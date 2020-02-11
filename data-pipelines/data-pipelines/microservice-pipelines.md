@@ -43,7 +43,7 @@ When you initially create a microservice pipeline, a sample microservice pipelin
 
 The sample pipeline shows how you might use the REST Service origin and several Send Response to Origin destinations in a microservice pipeline:
 
-![](../../.gitbook/assets/image%20%28308%29.png)
+![](../../.gitbook/assets/image%20%28349%29.png)
 
 The sample pipeline uses an HTTP Router processor to route data to different streams based on the REST API request method and path parameter, performs additional processing, and then passes the records to the Send Response to Origin destinations. The destinations pass the records back to the REST Service origin with the specified status codes, in this case, 200 for OK. The pipeline error handling also passes records back to the origin, with the 400 Bad Request status code. The REST Service origin generates a response with the records it receives and sends it to the originating client.
 

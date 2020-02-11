@@ -17,7 +17,7 @@ Next, on the upper right of the **dataset** page, click the **+ Generate new dat
 
 In the dataset creation page, select the dataset type.
 
-![](../../../.gitbook/assets/image%20%28318%29.png)
+![](../../../.gitbook/assets/image%20%28360%29.png)
 
 * **My file:** Create a dataset by opening the user’s local file or via a URI \(upcoming feature\) \(See **Create a dataset from a file** for a detailed procedure\).
 * **Database:** Create a dataset using external database access information and queries \(See **Create a dataset from a database** for a detailed procedure\).
@@ -35,15 +35,15 @@ Create a dataset by opening the user’s local file or via a URI:
 
 2. Select a file to be used as a data source from your local PC. You can click the **Import** button to select a file, or drag and drop the file into the box. Once a file is selected, click Next.
 
-![](../../../.gitbook/assets/image%20%2848%29.png)
+![](../../../.gitbook/assets/image%20%2855%29.png)
 
 3. Check the grid of the uploaded file, and designate a column delimiter. Proceed if the data is successfully displayed.
 
-![](../../../.gitbook/assets/image%20%28167%29.png)
+![](../../../.gitbook/assets/image%20%28192%29.png)
 
 4. Enter the **Name** and **Description** of the dataset, and click the **Done** button.
 
-![](../../../.gitbook/assets/image%20%28287%29.png)
+![](../../../.gitbook/assets/image%20%28324%29.png)
 
 5. Once the dataset is created, the dataset list is displayed. You can check that the list contains the newly created dataset.
 
@@ -53,7 +53,7 @@ Create a dataset using external database access information and queries.
 
 To create a dataset from a database, you should first create a Data Connection. See [Create a data connection](../discovery-data-management/discovery-data-connections.md) for a detailed procedure.
 
-![](../../../.gitbook/assets/image%20%28344%29.png)
+![](../../../.gitbook/assets/image%20%28386%29.png)
 
 After establishing the data connection, go to **MANAGEMENT** &gt; **Data Preparation** &gt; **Dataset** &gt; **+ Generate new dataset**.
 
@@ -61,18 +61,18 @@ After establishing the data connection, go to **MANAGEMENT** &gt; **Data Prepara
 
 2. Select the data connection, and press the **Test** button to check that the connection is valid.
 
-![](../../../.gitbook/assets/image.png)
+![](../../../.gitbook/assets/image%20%283%29.png)
 
 3. Select the data. You can either select a table from the connected database, or write a query yourself.
 
-![](../../../.gitbook/assets/image%20%28268%29.png)
+![](../../../.gitbook/assets/image%20%28305%29.png)
 
 * **Table:** Select a database and a table to display the table’s data. Once the data being ingested has been displayed, confirm the data and click **Next**.
 * **Query:** Write a query to import the data you want, and click **Run** to display the data in the lower section. Confirm the data and click **Next**.
 
 4. Enter the **Name** and **Description** of the dataset, and click the **Done** button.
 
-![](../../../.gitbook/assets/image%20%28122%29.png)
+![](../../../.gitbook/assets/image%20%28140%29.png)
 
 5. Once the dataset is created, the dataset list is displayed. You can check that the list contains the newly created dataset.
 
@@ -86,14 +86,14 @@ The creation of a staging DB dataset is the same as dataset creation from a data
 
 2. Select the data. You can either select a table from the connected database, or write a query yourself.
 
-![](../../../.gitbook/assets/image%20%2814%29.png)
+![](../../../.gitbook/assets/image%20%2819%29.png)
 
 * **Table:** Select a database and a table to display the table’s data. Once the data being ingested has been displayed, confirm the data and click **Next**.
 * **Query:** Write a query to import the data you want, and click **Run** to display the data in the lower section. Confirm the data and click **Next**.
 
 3. Enter the **Name** and **Description** of the dataset, and click the **Done** button.
 
-![](../../../.gitbook/assets/image%20%2847%29.png)
+![](../../../.gitbook/assets/image%20%2854%29.png)
 
 4. Once the dataset is created, the dataset list is displayed. You can check that the list contains the newly created dataset.
 

@@ -91,7 +91,7 @@ Click the Use Parameter icon \(![](https://streamsets.com/documentation/datacoll
 
 For example, the following image shows that the Delivery Guarantee property that displays as a drop-down menu has been converted to a text box so that a parameter can be called from the property:
 
-![](../../../.gitbook/assets/image%20%2880%29.png)
+![](../../../.gitbook/assets/image%20%2892%29.png)
 
 The parameter must evaluate to a valid option for the property type:
 
@@ -109,7 +109,7 @@ To view a valid key value, select the desired option from the menu, then click t
 
 For example, after selecting At Least Once for the Delivery Guarantee property and then clicking the Use Parameter icon, the text box displays AT\_LEAST\_ONCE as the key value for the At Least Once option:
 
-![](../../../.gitbook/assets/image%20%28372%29.png)
+![](../../../.gitbook/assets/image%20%28415%29.png)
 
 ### Calling from Scripting Processors
 
@@ -156,7 +156,7 @@ Before you can view the current runtime parameter values, verify that the monito
 
 When you monitor a pipeline that you started with parameter values, the Runtime Parameters chart displays as follows:
 
-![](../../../.gitbook/assets/image%20%28240%29.png)
+![](../../../.gitbook/assets/image%20%28275%29.png)
 
 The Runtime Parameters chart does not display when you start a pipeline without parameters.
 
