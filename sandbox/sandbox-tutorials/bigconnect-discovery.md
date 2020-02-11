@@ -1,4 +1,4 @@
-# BigConnect Discovery
+# BigConnect Discovery Basics
 
 This tutorial will teach you the basics of BigConnect Discovery. The main points addressed are:
 

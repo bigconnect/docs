@@ -435,5 +435,5 @@
   * [Start/Stop Services](sandbox/start-stop-bdl.md)
   * [URLs and Ports](sandbox/service-urls.md)
   * [Tutorials](sandbox/sandbox-tutorials/README.md)
-    * [BigConnect Discovery](sandbox/sandbox-tutorials/bigconnect-discovery.md)
+    * [BigConnect Discovery Basics](sandbox/sandbox-tutorials/bigconnect-discovery.md)
 
