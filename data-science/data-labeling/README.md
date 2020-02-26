@@ -10,47 +10,47 @@ Prodigy's web app lets you annotate text, entities, classification and images st
 
 ## Annotate plain text
 
-![](../../.gitbook/assets/image%20%28169%29.png)
+![](../../.gitbook/assets/image%20%28175%29.png)
 
 ## Annotate and correct named entities
 
-![](../../.gitbook/assets/image%20%28486%29.png)
+![](../../.gitbook/assets/image%20%28520%29.png)
 
 ## Annotate and correct part-of-speech tags
 
-![](../../.gitbook/assets/image%20%28324%29.png)
+![](../../.gitbook/assets/image%20%28340%29.png)
 
 ## Annotate syntactic dependencies and semantic relations
 
-![](../../.gitbook/assets/image%20%28461%29.png)
+![](../../.gitbook/assets/image%20%28493%29.png)
 
 ## Annotate labelled text or images
 
-![](../../.gitbook/assets/image%20%28418%29.png)
+![](../../.gitbook/assets/image%20%28444%29.png)
 
 ## Annotate images, bounding boxes and image segments
 
-![](../../.gitbook/assets/image%20%28533%29.png)
+![](../../.gitbook/assets/image%20%28568%29.png)
 
 ## Select one or more answers or pick the odd one out
 
-![](../../.gitbook/assets/image%20%28180%29.png)
+![](../../.gitbook/assets/image%20%28187%29.png)
 
 ## Compare two annotations
 
-![](../../.gitbook/assets/image%20%28223%29.png)
+![](../../.gitbook/assets/image%20%28234%29.png)
 
 ## Compare texts with a visual diff
 
-![](../../.gitbook/assets/image%20%28197%29.png)
+![](../../.gitbook/assets/image%20%28206%29.png)
 
 ## Annotate any HTML content
 
-![](../../.gitbook/assets/image%20%28224%29.png)
+![](../../.gitbook/assets/image%20%28235%29.png)
 
 ## Embed dynamic content
 
-![](../../.gitbook/assets/image%20%2818%29.png)
+![](../../.gitbook/assets/image%20%2819%29.png)
 
 
 

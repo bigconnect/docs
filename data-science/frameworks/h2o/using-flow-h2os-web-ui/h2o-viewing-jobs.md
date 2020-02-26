@@ -6,7 +6,7 @@ Any command you enter in H2O \(such as `importFiles`\) is submitted as a job, wh
 
 To view all jobs, click the **Admin** menu, then click **Jobs**, or enter `getJobs` in a cell in CS mode.
 
-![](../../../../.gitbook/assets/image%20%28271%29.png)
+![](../../../../.gitbook/assets/image%20%28285%29.png)
 
 The following information displays:
 
@@ -23,7 +23,7 @@ To refresh this information, click the **Refresh** button. To view the details o
 
 To view a specific job, click the link in the “Destination” column.
 
-![](../../../../.gitbook/assets/image%20%28136%29.png)
+![](../../../../.gitbook/assets/image%20%28141%29.png)
 
 The following information displays:
 

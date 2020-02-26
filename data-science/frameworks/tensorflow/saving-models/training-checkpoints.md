@@ -134,7 +134,7 @@ These paths, e.g. `'./tf_ckpts/ckpt-10'`, are not files on disk. Instead they ar
 
 TensorFlow matches variables to checkpointed values by traversing a directed graph with named edges, starting from the object being loaded. Edge names typically come from attribute names in objects, for example the `"l1"` in `self.l1 = tf.keras.layers.Dense(5)`. `tf.train.Checkpoint` uses its keyword argument names, as in the `"step"` in `tf.train.Checkpoint(step=...)`.The dependency graph from the example above looks like this:
 
-![](../../../../.gitbook/assets/image%20%28373%29.png)
+![](../../../../.gitbook/assets/image%20%28392%29.png)
 
 With the optimizer in red, regular variables in blue, and optimizer slot variables in orange. The other nodes, for example representing the [`tf.train.Checkpoint`](https://www.tensorflow.org/api_docs/python/tf/train/Checkpoint), are black.
 

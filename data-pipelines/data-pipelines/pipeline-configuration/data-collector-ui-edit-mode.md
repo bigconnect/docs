@@ -2,7 +2,7 @@
 
 The following image shows the Data Collector UI when you configure a pipeline:
 
-![](../../../.gitbook/assets/image%20%28212%29.png)
+![](../../../.gitbook/assets/image%20%28222%29.png)
 
 <table>
   <thead>

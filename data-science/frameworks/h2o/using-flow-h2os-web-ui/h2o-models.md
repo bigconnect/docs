@@ -11,7 +11,7 @@ There are several ways to build a model, you can:
 
 The **Build Model…** button can be accessed from any page containing the .hex key for the parsed data \(for example, `getJobs` &gt; `getFrame`\). The following image depicts the K-Means model type. Available options vary depending on model type.
 
-![](../../../../.gitbook/assets/image%20%28255%29.png)
+![](../../../../.gitbook/assets/image%20%28268%29.png)
 
 
 
@@ -35,7 +35,7 @@ In the **Build a Model** cell, select an algorithm from the drop-down menu. Avai
 
 You can also specify to run AutoML, which automatically trains and tunes models while requiring as few parameters as possible. All the user needs to do is point to a dataset, identify the response column, and optionally specify a time-constraint.
 
-![](../../../../.gitbook/assets/image%20%2812%29.png)
+![](../../../../.gitbook/assets/image%20%2813%29.png)
 
 The available options vary depending on the selected model. If an option is only available for a specific model type, the model type is listed. If no model type is specified, the option is applicable to all model types.
 
@@ -105,13 +105,13 @@ The available options vary depending on the selected model. If an option is only
 
 Click the **Assist Me!** button, then click the **getModels** link, or enter `getModels` in the cell in CS mode and press **Ctrl+Enter**. A list of available models displays.
 
-![](../../../../.gitbook/assets/image%20%28166%29.png)
+![](../../../../.gitbook/assets/image%20%28171%29.png)
 
 To view all current models, you can also click the **Model** menu and click **List All Models**.
 
 Click on a model name to view details about the model. The information that displays varies based on the algorithm that was used to build the model, but it can include the parameters used when building the model, scoring history, training metrics, coefficient tables, and a POJO preview.
 
-![](../../../../.gitbook/assets/image%20%2875%29.png)
+![](../../../../.gitbook/assets/image%20%2878%29.png)
 
 The following additional functions are available when viewing a model:
 
@@ -135,7 +135,7 @@ The following additional functions are available when viewing a model:
 5. To overwrite any files with the same name, check the _Overwrite:_ checkbox.
 6. Click the **Export** button. A confirmation message displays when the model has been successfully exported.
 
-![](../../../../.gitbook/assets/image%20%28242%29.png)
+![](../../../../.gitbook/assets/image%20%28253%29.png)
 
 **To import a built model:**
 
@@ -145,7 +145,7 @@ The following additional functions are available when viewing a model:
 4. To overwrite any files with the same name, check the _Overwrite:_ checkbox.
 5. Click the **Import** button. A confirmation message displays when the model has been successfully imported. To view the imported model, click the **View Model** button.
 
-![](../../../../.gitbook/assets/image%20%28535%29.png)
+![](../../../../.gitbook/assets/image%20%28571%29.png)
 
 ## Run AutoML
 
@@ -157,25 +157,25 @@ The outputted models will display on a leaderboard, showing the best results fir
 
 To begin an AutoML run, select **Models &gt; Run AutoML** from the top menu.
 
-![](../../../../.gitbook/assets/image%20%28343%29.png)
+![](../../../../.gitbook/assets/image%20%28361%29.png)
 
 At a minimum, specify the training frame and the response column. \(Note that by default, the AutoML run will end after 3600 seconds.\) Click **Build Model** to start the run.
 
-![](../../../../.gitbook/assets/image%20%2814%29.png)
+![](../../../../.gitbook/assets/image%20%2815%29.png)
 
 Click the **View** button to view the Leaderboard and/or monitor the current AutoML run.
 
-![](../../../../.gitbook/assets/image%20%2878%29.png)
+![](../../../../.gitbook/assets/image%20%2881%29.png)
 
 After clicking **View**, the Leaderboard displays the list of models that were built in the order of `mean_residual_deviance` \(best model first\). While AutoML is running, click the **Monitor Live** button and scroll down to view a live feed of the User Feedback progress of AutoML. This section provides details about each step taken by AutoML, including the parameters being configured, the dataset’s features, and model training information.
 
-![](../../../../.gitbook/assets/image%20%28112%29.png)
+![](../../../../.gitbook/assets/image%20%28117%29.png)
 
 ## Using Grid Search
 
 To include a parameter in a grid search in Flow, check the checkbox in the _GRID?_ column to the right of the parameter name \(highlighted in red in the image below\).
 
-![](../../../../.gitbook/assets/image%20%28481%29.png)
+![](../../../../.gitbook/assets/image%20%28515%29.png)
 
 * If the parameter selected for grid search is Boolean \(T/F or Y/N\), both values are included when the _Grid?_ checkbox is selected.
 * If the parameter selected for grid search is a list of values, the values display as checkboxes when the _Grid?_ checkbox is selected. More than one option can be selected.
@@ -186,15 +186,15 @@ To include a parameter in a grid search in Flow, check the checkbox in the _GRID
 
 **Scoring history**: \(GBM, DL\) Represents the error rate of the model as it is built. Typically, the error rate will be higher at the beginning \(the left side of the graph\) then decrease as the model building completes and accuracy improves. Can include mean squared error \(MSE\) and deviance.
 
-![](../../../../.gitbook/assets/image%20%2822%29.png)
+![](../../../../.gitbook/assets/image%20%2823%29.png)
 
 **Variable importances**: \(GBM, DRF, DL\) Represents the statistical significance of each variable in the data in terms of its affect on the model. Variables are listed in order of most to least importance. The percentage values represent the percentage of importance across all variables, scaled to 100%. The method of computing each variable’s importance depends on the algorithm. To view the scaled importance value of a variable, use your mouse to hover over the bar representing the variable.
 
-![](../../../../.gitbook/assets/image%20%28436%29.png)
+![](../../../../.gitbook/assets/image%20%28463%29.png)
 
 **Confusion Matrix**: \(RF, GBM\) Table depicting performance of algorithm in terms of false positives, false negatives, true positives, and true negatives. The actual results display in the columns and the predictions display in the rows; correct predictions are highlighted in yellow. In the example below, `0` was predicted correctly 902 times, while `8` was predicted correctly 822 times and `0` was predicted as `4` once.
 
-![](../../../../.gitbook/assets/image%20%28472%29.png)
+![](../../../../.gitbook/assets/image%20%28506%29.png)
 
 **ROC Curve**: \(DRF\) A [ROC Curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) is a graph that represents the ratio of true positives to false positives. \(For more information, refer to the Linear Digressions [podcast](http://lineardigressions.com/episodes/2017/1/29/rock-the-roc-curve) describing ROC Curves.\) To view a specific threshold, select a value from the drop-down **Threshold** list. To view any of the following details, select it from the drop-down **Criterion** list:
 
@@ -208,15 +208,15 @@ To include a parameter in a grid search in Flow, check the checkbox in the _GRID
 
 The lower-left side of the graph represents less tolerance for false positives while the upper-right represents more tolerance for false positives. Ideally, a highly accurate ROC resembles the following example.
 
-![](../../../../.gitbook/assets/image%20%28515%29.png)
+![](../../../../.gitbook/assets/image%20%28549%29.png)
 
 **Hit Ratio**: \(GBM, DRF, NaiveBayes, DL, GLM\) \(Multinomial Classification only\) Table representing the number of times that the prediction was correct out of the total number of predictions.
 
-![](../../../../.gitbook/assets/image%20%28462%29.png)
+![](../../../../.gitbook/assets/image%20%28494%29.png)
 
 **Standardized Coefficient Magnitudes** \(GLM\) Bar chart representing the relationship of a specific feature to the response variable. Coefficients can be positive \(orange\) or negative \(blue\). A positive coefficient indicates a positive relationship between the feature and the response, where an increase in the feature corresponds with an increase in the response, while a negative coefficient represents a negative relationship between the feature and the response where an increase in the feature corresponds with a decrease in the response \(or vice versa\).
 
-![](../../../../.gitbook/assets/image%20%2835%29.png)
+![](../../../../.gitbook/assets/image%20%2836%29.png)
 
 
 

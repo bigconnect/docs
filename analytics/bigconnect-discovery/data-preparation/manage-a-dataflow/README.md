@@ -30,7 +30,7 @@ The first step in defining a dataflow is to add a dataset. This can be conducted
 
 4. Select the datasets to be added.
 
-![](../../../../.gitbook/assets/image%20%287%29.png)
+![](../../../../.gitbook/assets/image%20%288%29.png)
 
 5. When an imported dataset and its corresponding wrangled dataset are created, click the **Edit rules** button to edit rules \(see **Edit rules** for a detailed procedure\).
 

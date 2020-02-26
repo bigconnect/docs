@@ -437,4 +437,6 @@
   * [Tutorials](sandbox/sandbox-tutorials/README.md)
     * [BigConnect Discovery Basics](sandbox/sandbox-tutorials/bigconnect-discovery.md)
     * [BigConnect Discovery Data Science](sandbox/sandbox-tutorials/bigconnect-discovery-ds.md)
+    * [BigConnect Explorer](sandbox/sandbox-tutorials/bigconnect-explorer/README.md)
+      * [Importing Data](sandbox/sandbox-tutorials/bigconnect-explorer/sbx-explorer-importing-data.md)
 

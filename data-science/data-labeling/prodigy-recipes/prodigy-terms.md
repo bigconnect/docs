@@ -19,7 +19,7 @@ Because word2vec models are look-up tables, each term is assigned a single meani
 
 Build a terminology list interactively using a model's word vectors and seed terms, either a comma-separated list or a text file containing one term per line.
 
-![](../../../.gitbook/assets/image%20%28364%29.png)
+![](../../../.gitbook/assets/image%20%28383%29.png)
 
 ## terms.to-patterns
 
