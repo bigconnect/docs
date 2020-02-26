@@ -18,7 +18,7 @@ A pipeline that processes whole files include an origin and one or more destinat
 
 You can include certain processors to read or modify the file reference information included in the record, such as the file name or owner. You can also include a Whole File Transformer processor to convert Avro files to Parquet. However, a basic whole file pipeline looks like this:
 
-![](../../../.gitbook/assets/image%20%28283%29.png)
+![](../../../.gitbook/assets/image%20%28293%29.png)
 
 ## Whole File Records
 

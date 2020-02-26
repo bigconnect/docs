@@ -53,11 +53,11 @@ Please refer to the relational and graph model below when considering the data s
 
 **Relational model**
 
-![](../../.gitbook/assets/image%20%2841%29.png)
+![](../../.gitbook/assets/image%20%2842%29.png)
 
 **Graph Model**
 
-![](../../.gitbook/assets/image%20%28262%29.png)
+![](../../.gitbook/assets/image%20%28270%29.png)
 
 The intent of this guide is to introduce Cypher by comparing it with the equivalent SQL statements, so that your existing SQL knowledge allows your to understand it immediately.
 

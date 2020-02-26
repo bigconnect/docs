@@ -10,7 +10,7 @@ $ prodigy dep.teach news_headlines en_core_web_sm data.jsonl
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../../.gitbook/assets/image%20%28209%29.png)
+![](../../../.gitbook/assets/image%20%28213%29.png)
 
 ## dep.batch-train
 

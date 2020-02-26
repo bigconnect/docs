@@ -14,7 +14,7 @@ You can use Data Collector to view how data passes through the pipeline.
 
 The following image shows Data Collector in Preview mode:
 
-![](../../.gitbook/assets/image%20%28385%29.png)
+![](../../.gitbook/assets/image%20%28399%29.png)
 
 <table>
   <thead>

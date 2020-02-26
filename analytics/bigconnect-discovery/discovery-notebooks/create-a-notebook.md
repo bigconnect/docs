@@ -4,19 +4,19 @@ Once the notebook server has been set up, you can create a notebook. A notebook 
 
 1. Click the **+ Notebook** button at the bottom of the workspace. You’ll be prompted to create a notebook.
 
-![](../../../.gitbook/assets/image%20%2837%29.png)
+![](../../../.gitbook/assets/image%20%2838%29.png)
 
 2. Select the type of data set that you wish to analyze in the notebook. You can choose between **Data source**, the unit of data used in BigConnect Discovery, **Dashboard**, **Chart**, and **Not selected**. If you want to use Zeppelin, select **Not selected**
 
-![](../../../.gitbook/assets/image%20%28186%29.png)
+![](../../../.gitbook/assets/image%20%28190%29.png)
 
 3. After selecting either **Data Source**, **Dashboard**, or **Chart**, you can see a list of data currently registered in BigConnect Discovery. Select the data to analyze and click Next.
 
-![](../../../.gitbook/assets/image%20%28176%29.png)
+![](../../../.gitbook/assets/image%20%28180%29.png)
 
 4. Enter the information about the notebook that you want to use as an analytics tool for data. The **server type** can only be selected for a notebook server connected at the initial notebook server setup. If **Jupyter** is selected, “R” or “Python” can be selected for analysis, whereas “Spark” \(Scala\) is used when **Zeppelin** is selected.
 
-![](../../../.gitbook/assets/image%20%28410%29.png)
+![](../../../.gitbook/assets/image%20%28424%29.png)
 
 5. Once a notebook has been created, you can find it in the workspace.
 
