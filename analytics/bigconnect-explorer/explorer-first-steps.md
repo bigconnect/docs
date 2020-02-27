@@ -8,7 +8,7 @@ This will bring you to the welcome page called **Dashboard**.
 
 The first thing you need to do is load some data. The easiest way to do it is to drag & drop some documents. Go to the **Analyze** tab and create a **Graph** tool. After that drop some documents and you should be ready to go.
 
-
-
-
+{% hint style="info" %}
+Please make sure the read through the [Tutorials](../../sandbox-tutorials/) section on [BigConnect Explorer](../../sandbox-tutorials/bigconnect-explorer/) that teaches you to use all features of the product.
+{% endhint %}
 
