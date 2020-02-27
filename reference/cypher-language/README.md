@@ -32,7 +32,7 @@ CREATE (john)-[:FRIEND]->(joe)-[:FRIEND]->(steve)
 CREATE (john)-[:FRIEND]->(sara)-[:FRIEND]->(maria)
 ```
 
-![](../../.gitbook/assets/image%20%28398%29.png)
+![](../../.gitbook/assets/image%20%28416%29.png)
 
 For example, here is a query which finds a user called **'John'** and **'John’s'** friends \(though not his direct friends\) before returning both **'John'** and any friends-of-friends that are found.
 

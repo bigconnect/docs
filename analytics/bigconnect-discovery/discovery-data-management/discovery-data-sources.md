@@ -10,7 +10,7 @@ The Data Source menu can be accessed under **MANAGEMENT** &gt; **Data Storage** 
 
 The columns of a data source linked to the dashboard are categorized into **dimension** and **measure** columns as explained below. To make full use of Discovery’s data analysis and visualization features, you must understand the concepts of dimensions and measures clearly.
 
-![](../../../.gitbook/assets/image%20%28509%29.png)
+![](../../../.gitbook/assets/image%20%28534%29.png)
 
 
 
@@ -89,7 +89,7 @@ This area displays basic information of the data source.
 
 In this area, you can check and set which workspaces have access to the data source.
 
-![](../../../.gitbook/assets/image%20%28311%29.png)
+![](../../../.gitbook/assets/image%20%28324%29.png)
 
 1. **Allow all workspaces to use this data source:** Select this check box to make the data source available in all workspaces.
 2. **Edit:** Used to allow specific workspaces to access the data source. This button will disappear if the data source is set as open data.
@@ -117,7 +117,7 @@ Column view/settings
 
 Provides a user interface for editing the name and type of columns.
 
-![](../../../.gitbook/assets/image%20%28354%29.png)
+![](../../../.gitbook/assets/image%20%28370%29.png)
 
 1. **Role:** Displays whether the column is a dimension or measure.
 2. **Name:** Displays the actual name of the column.
@@ -134,17 +134,17 @@ The Monitoring tab reports the usage of the data source.
 
 Displays the trend of data source transactions over time.
 
-![](../../../.gitbook/assets/image%20%28187%29.png)
+![](../../../.gitbook/assets/image%20%28193%29.png)
 
 **Changes of data size**
 
 Displays the trend of the data source size over time.
 
-![](../../../.gitbook/assets/image%20%28366%29.png)
+![](../../../.gitbook/assets/image%20%28383%29.png)
 
 **Query distribution \(during last one week\)**
 
-![](../../../.gitbook/assets/image%20%28555%29.png)
+![](../../../.gitbook/assets/image%20%28583%29.png)
 
 * **Query distribution by user \(during last one week\):** Displays a pie chart of query percentages by user for the past week.
 * **Query distribution by elapsed time \(during last one week\):** Displays a pie chart of query percentages by execution time for the past week.
@@ -153,7 +153,7 @@ Displays the trend of the data source size over time.
 
 Used to view a detailed history of each performed query.
 
-![](../../../.gitbook/assets/image%20%28164%29.png)
+![](../../../.gitbook/assets/image%20%28170%29.png)
 
 1. **Date:** Set a time range to display only those queries that were last executed within this time range.
 2. **Query type:** Filters the performed queries by type.

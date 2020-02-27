@@ -10,7 +10,7 @@ $ prodigy ner.teach news_headlines en_core_web_sm headlines.jsonl
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../../.gitbook/assets/image%20%2899%29.png)
+![](../../../.gitbook/assets/image%20%28102%29.png)
 
 ## ner.batch-train
 
@@ -58,7 +58,7 @@ $ prodigy ner.match fruits_ner en_core_web_sm /tmp/food_texts.jsonl --patterns /
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../../.gitbook/assets/image%20%28279%29.png)
+![](../../../.gitbook/assets/image%20%28291%29.png)
 
 ## ner.manual
 
@@ -80,7 +80,7 @@ prodigy ner.make-gold news_headlines_gold en_core_web_sm news.jsonl --label "PER
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../../.gitbook/assets/image%20%28116%29.png)
+![](../../../.gitbook/assets/image%20%28120%29.png)
 
 ## ner.silver-to-gold
 
@@ -122,7 +122,7 @@ Ignore      25
 Total      324
 ```
 
-![](../../../.gitbook/assets/image%20%28442%29.png)
+![](../../../.gitbook/assets/image%20%28465%29.png)
 
 ## ner.print-stream
 

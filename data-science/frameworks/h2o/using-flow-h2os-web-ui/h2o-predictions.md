@@ -8,7 +8,7 @@ After creating your model, click the key link for the model, then click the **Pr
 
 Click the **Assist Me!** button, then click the **getPredictions** link, or enter `getPredictions` in the cell in CS mode and press **Ctrl+Enter**. A list of the stored predictions displays. To view a prediction, click the **View** button to the right of the model name.
 
-![](../../../../.gitbook/assets/image%20%28475%29.png)
+![](../../../../.gitbook/assets/image%20%28499%29.png)
 
 You can also view predictions by clicking the drop-down **Score** menu and selecting **List All Predictions**.
 
@@ -31,7 +31,7 @@ To compute Gains/Lift, H2O applies the model to the original dataset to find the
 
 For each group, the lift is calculated as the proportion of observations that are events \(targets\) in the group to the overall proportion of events \(targets\).
 
-![](../../../../.gitbook/assets/image%20%28357%29.png)
+![](../../../../.gitbook/assets/image%20%28373%29.png)
 
 In addition to the chart, a Gains/Lift table is also available. This table reports the following for each group:
 
@@ -44,7 +44,7 @@ In addition to the chart, a Gains/Lift table is also available. This table repor
 * Gain \(difference in percentages between the overall proportion of events and the observed proportion of observations that are events in the group\)
 * Cumulative gain
 
-![](../../../../.gitbook/assets/image%20%28438%29.png)
+![](../../../../.gitbook/assets/image%20%28460%29.png)
 
 The _response\_rate_ column lists the likelihood of response, the _lift_ column lists the lift rate, and the _cumulative\_lift_ column provides the percentage of increase in response based on the lift.
 

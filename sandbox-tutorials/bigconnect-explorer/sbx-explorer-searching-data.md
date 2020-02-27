@@ -6,7 +6,7 @@ In this tutorial we will explore how to use some of the search features of BigCo
 
 Login to BigConnect Explorer using the default username **admin** and password **admin.** Click on the **Discover** menu item in the top menu bar and you will be taken to the search page.
 
-![](../../.gitbook/assets/image%20%28452%29.png)
+![](../../.gitbook/assets/image%20%28464%29.png)
 
 In the top part you have a global search field where you can enter search terms. Have a look at the **Querying data** wizard on the search page to get some hints on what is the search syntax.
 
@@ -23,13 +23,13 @@ On the left side of the search page you have the **Filters**. Here you can choos
 
 Let's do a search for everything by typing **\*** in the search field:
 
-![](../../.gitbook/assets/image%20%28358%29.png)
+![](../../.gitbook/assets/image%20%28365%29.png)
 
 We have a new panel on the right side called **Refinements**. By default, BigConnect Explorer aggregates all search results by some predefined system properties: Concept and Media Tag in our case. You can drill down in search results by clicking on a concept or media tag.
 
 For example, if we want to see all objects that have the Media Tag = animal, click on the animal media tag and the search results will be filtered accordingly.
 
-![](../../.gitbook/assets/image%20%28209%29.png)
+![](../../.gitbook/assets/image%20%28211%29.png)
 
 You can further drill down on available Refinements or use Filters to do so.
 

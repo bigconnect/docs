@@ -4,7 +4,7 @@ After you create a cluster, you can give it a new name:
 
 1.On the Ambari Admin page, in Cluster Information &gt; Cluster Name\*, enter up to 80 alphanumeric characters to rename your cluster.
 
-![](../../../.gitbook/assets/image%20%28220%29.png)
+![](../../../.gitbook/assets/image%20%28229%29.png)
 
 2. Click **Save**.
 

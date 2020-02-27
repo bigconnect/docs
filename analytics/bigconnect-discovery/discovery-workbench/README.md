@@ -1,6 +1,6 @@
 # Discovery Workbench
 
-![](../../../.gitbook/assets/image%20%28131%29.png)
+![](../../../.gitbook/assets/image%20%28136%29.png)
 
 BigConnect Workbench provides an environment for data preparation and analytics based on SQL. Its main functions are as follows:
 

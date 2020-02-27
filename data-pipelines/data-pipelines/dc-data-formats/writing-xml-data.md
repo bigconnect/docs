@@ -11,9 +11,9 @@ When writing XML data, the destination expects all record data under a single ro
 
 For example, in the following pipeline, the Expression Evaluator uses the expression, `${record:value('/')}`, to create a root field and copy the entire record under the root field:
 
-![](../../../.gitbook/assets/image%20%28371%29.png)
+![](../../../.gitbook/assets/image%20%28388%29.png)
 
 Then, you can use the Field Remover to keep only the root field, which removes all other fields:
 
-![](../../../.gitbook/assets/image%20%2873%29.png)
+![](../../../.gitbook/assets/image%20%2874%29.png)
 

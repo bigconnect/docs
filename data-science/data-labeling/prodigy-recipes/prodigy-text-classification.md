@@ -10,7 +10,7 @@ $ prodigy textcat.teach news_headlines en_core_web_sm headlines.jsonl --label PO
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../../.gitbook/assets/image%20%28178%29.png)
+![](../../../.gitbook/assets/image%20%28184%29.png)
 
 ## textcat.manual
 
@@ -22,7 +22,7 @@ $ prodigy textcat.manual news_headlines en_core_web_sm headlines.jsonl --label P
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../../.gitbook/assets/image%20%28268%29.png)
+![](../../../.gitbook/assets/image%20%28279%29.png)
 
 ## textcat.batch-train
 
