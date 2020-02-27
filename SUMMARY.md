@@ -440,5 +440,6 @@
     * [BigConnect Discovery Data Science](sandbox-tutorials/bigconnect-discovery-1/bigconnect-discovery-ds.md)
   * [BigConnect Explorer](sandbox-tutorials/bigconnect-explorer/README.md)
     * [Loading Data](sandbox-tutorials/bigconnect-explorer/sbx-explorer-importing-data.md)
-    * [Enriching Data](sandbox-tutorials/bigconnect-explorer/enriching-data.md)
+    * [Enriching Data](sandbox-tutorials/bigconnect-explorer/sbx-explorer-enriching-data.md)
+    * [Searching data](sandbox-tutorials/bigconnect-explorer/sbx-explorer-searching-data.md)
 
