@@ -23,13 +23,13 @@ Regarding Druid’s query latency, the paper discusses two performance assessmen
 
 The figure below shows the query latencies resulting from Druid and MySQL when tested on the 1GB and 100GB TPC-H datasets:
 
-![Source: Druid: A Real-time Analytical Data Store](../../.gitbook/assets/image%20%28578%29.png)
+![Source: Druid: A Real-time Analytical Data Store](../../.gitbook/assets/image%20%28579%29.png)
 
 By showcasing these results, the paper suggests that Druid is capable of extremely faster query returns compared to legacy relational database systems.
 
 The Druid paper also presents how faster query returns are achieved when multiple nodes are joined together in a cluster. When tested on the TPC-H 100 GB dataset, the performance difference between a single node \(8 cores\) and six-node cluster \(48 cores\) was as follows:
 
-![Source: Druid: A Real-time Analytical Data Store](../../.gitbook/assets/image%20%28488%29.png)
+![Source: Druid: A Real-time Analytical Data Store](../../.gitbook/assets/image%20%28489%29.png)
 
 It was observed that not all types of queries achieve linear scaling, but the simpler aggregation queries do, ensuring a speed increment almost proportional to the number of the cores.
 
@@ -81,7 +81,7 @@ The conditions of ingestion latency measurement were as follows:
 
 Data ingestion was performed 100 times under the conditions specified above, and the average ingestion latency was 1.623439 seconds. As illustrated below, ingestion latency was computed as the sum of Kafka ingestion latency, Druid ingestion latency, and Druid query latency.
 
-![Source: SK Telecom T-DE WIKI](../../.gitbook/assets/image%20%28599%29.png)
+![Source: SK Telecom T-DE WIKI](../../.gitbook/assets/image%20%28600%29.png)
 
 ## Comparison with Apache Spark
 
@@ -117,7 +117,7 @@ And then, a number of queries were chosen to test the performance differences in
 
 The test results are as follows:
 
-![Source: Combining Druid and Spark: Interactive and Flexible Analytics at Scale](../../.gitbook/assets/image%20%28463%29.png)
+![Source: Combining Druid and Spark: Interactive and Flexible Analytics at Scale](../../.gitbook/assets/image%20%28464%29.png)
 
 > * The Filters + Ship Date query provides the greatest performance gain \(over 50 times over Spark\) when Druid is used. This is not surprising as this query is a typical slice-and-dice query tailor-made for Druid. Along the same lines, TPCH Q7 shows a significant performance boost when running on Druid: milliseconds on Druid vs. 10s of seconds on Spark.
 > * For TPCH Q3, Q5, and Q8 there is an improvement, but not to the same level as Q7. This is because the OrderDate predicate is translated to a JavaScript filter in Druid, which is significantly slower than a native Java filter.

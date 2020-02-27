@@ -58,7 +58,7 @@ $ prodigy ner.match fruits_ner en_core_web_sm /tmp/food_texts.jsonl --patterns /
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../../.gitbook/assets/image%20%28291%29.png)
+![](../../../.gitbook/assets/image%20%28292%29.png)
 
 ## ner.manual
 
@@ -122,7 +122,7 @@ Ignore      25
 Total      324
 ```
 
-![](../../../.gitbook/assets/image%20%28465%29.png)
+![](../../../.gitbook/assets/image%20%28466%29.png)
 
 ## ner.print-stream
 

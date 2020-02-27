@@ -65,7 +65,7 @@ ludwig visualize --visualization learning_curves --training_statistics path/to/t
 
 The commands will display a graph that looks like the following, where you can see loss and accuracy as functions of train iteration number:
 
-![](../../../.gitbook/assets/image%20%28484%29.png)
+![](../../../.gitbook/assets/image%20%28485%29.png)
 
 Several visualizations are available, please refer to **Visualizations** for more details.
 

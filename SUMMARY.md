@@ -441,6 +441,7 @@
   * [BigConnect Explorer](sandbox-tutorials/bigconnect-explorer/README.md)
     * [Loading Data](sandbox-tutorials/bigconnect-explorer/sbx-explorer-importing-data.md)
     * [Enriching Data](sandbox-tutorials/bigconnect-explorer/sbx-explorer-enriching-data.md)
-    * [Searching data](sandbox-tutorials/bigconnect-explorer/sbx-explorer-searching-data.md)
+    * [Searching Data](sandbox-tutorials/bigconnect-explorer/sbx-explorer-searching-data.md)
     * [Using the Graph](sandbox-tutorials/bigconnect-explorer/sbx-explorer-using-the-graph.md)
+    * [Using the Map](sandbox-tutorials/bigconnect-explorer/sbx-explorer-using-the-map.md)
 

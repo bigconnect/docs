@@ -26,11 +26,11 @@ From the `getFrameSummary` cell, you can:
 
 When you view a frame, you can “drill-down” to the necessary level of detail \(such as a specific column or row\) using the **Inspect** button or by clicking the links. The following screenshot displays the results of clicking the **Inspect** button for a frame.
 
-![](../../../../.gitbook/assets/image%20%28569%29.png)
+![](../../../../.gitbook/assets/image%20%28570%29.png)
 
 This screenshot displays the results of clicking the **columns** link.
 
-![](../../../../.gitbook/assets/image%20%28364%29.png)
+![](../../../../.gitbook/assets/image%20%28365%29.png)
 
 To view all frames, click the **Assist Me!** button, then click the **getFrames** link, or enter `getFrames` in the cell in CS mode and press **Ctrl+Enter**. You can also view all current frames by clicking the drop-down **Data** menu and selecting **List All Frames**.
 
@@ -53,7 +53,7 @@ To make a prediction, check the checkboxes for the frames you want to use to mak
 
 Datasets can be split within Flow for use in model training and testing.
 
-![](../../../../.gitbook/assets/image%20%28625%29.png)
+![](../../../../.gitbook/assets/image%20%28626%29.png)
 
 1. To split a frame, click the **Assist Me** button, then click **splitFrame**.
 
@@ -98,5 +98,5 @@ To create a plot from a frame, click the **Inspect** button, then click the **Pl
 
 4. click the **Plot** button to plot the data.
 
-![](../../../../.gitbook/assets/image%20%28319%29.png)
+![](../../../../.gitbook/assets/image%20%28320%29.png)
 

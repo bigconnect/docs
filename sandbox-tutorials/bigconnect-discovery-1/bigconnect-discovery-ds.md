@@ -19,7 +19,7 @@ BigConnect Discovery has seamless integration with Jupyter Notebooks. You can cr
 
 2. Choose **jupyter** for the **Type**, enter **http://localhost:9888** for the **URL** and **BDL Jupyter Server** for **Name** and click **Done**.
 
-![](../../.gitbook/assets/image%20%28547%29.png)
+![](../../.gitbook/assets/image%20%28548%29.png)
 
 This sets up the connection to the Jupyter Notebook server provided by BDL.
 
@@ -39,7 +39,7 @@ This sets up the connection to the Jupyter Notebook server provided by BDL.
 
 7. Choose **PYTHON** for the **Development language** \(_R is not installed in the Sandbox_\), enter **Sales Forecast** for **Name** and click **Done**
 
-![](../../.gitbook/assets/image%20%28577%29.png)
+![](../../.gitbook/assets/image%20%28578%29.png)
 
 8. You will be taken to the notebook details page. Click on the **Detail** link to open the actual Jupyter Notebook.
 
@@ -64,7 +64,7 @@ df_sales = pd.json_normalize(dataset)
 df_sales.head()
 ```
 
-![](../../.gitbook/assets/image%20%28529%29.png)
+![](../../.gitbook/assets/image%20%28530%29.png)
 
 11. Add another cell with the following code and run the notebook again:
 
@@ -97,7 +97,7 @@ dump(regr, 'my_model.joblib')
 
 The output should be similar to:
 
-![](../../.gitbook/assets/image%20%28522%29.png)
+![](../../.gitbook/assets/image%20%28523%29.png)
 
 The trained model is not saved on the local disk, as the **my\_model.joblib** file.
 

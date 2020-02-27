@@ -34,15 +34,15 @@ RETURN count(*)
 
 Query1 Results:
 
-![](../../.gitbook/assets/image%20%28387%29.png)
+![](../../.gitbook/assets/image%20%28388%29.png)
 
 Query2 Results:
 
-![](../../.gitbook/assets/image%20%28358%29.png)
+![](../../.gitbook/assets/image%20%28359%29.png)
 
 Query3 Results:
 
-![](../../.gitbook/assets/image%20%28562%29.png)
+![](../../.gitbook/assets/image%20%28563%29.png)
 
 ### Aggregating Values
 
@@ -55,7 +55,7 @@ MATCH (p:Person)-[:IS_FRIENDS_WITH]->(friend:Person)
 RETURN p.name, collect(friend.name) AS friend
 ```
 
-![](../../.gitbook/assets/image%20%28320%29.png)
+![](../../.gitbook/assets/image%20%28321%29.png)
 
 ### Counting Values in a List
 
@@ -74,11 +74,11 @@ RETURN p.name, collect(friend.name) AS friends, size((friend)-[:IS_FRIENDS_WITH]
 
 Query5 Results:
 
-![](../../.gitbook/assets/image%20%28295%29.png)
+![](../../.gitbook/assets/image%20%28296%29.png)
 
 Query6 Results:
 
-![](../../.gitbook/assets/image%20%28311%29.png)
+![](../../.gitbook/assets/image%20%28312%29.png)
 
 ## Manipulating Results and Output
 
@@ -146,7 +146,7 @@ Query9 Results:
 
 Query10 Results:
 
-![](../../.gitbook/assets/image%20%28469%29.png)
+![](../../.gitbook/assets/image%20%28470%29.png)
 
 ### Ordering Results
 
@@ -173,11 +173,11 @@ RETURN p.name, p.yearsExp ORDER BY p.yearsExp DESC
 
 Query11 Results:
 
-![](../../.gitbook/assets/image%20%28325%29.png)
+![](../../.gitbook/assets/image%20%28326%29.png)
 
 Query12 Results:
 
-![](../../.gitbook/assets/image%20%28406%29.png)
+![](../../.gitbook/assets/image%20%28407%29.png)
 
 Notice that our first query has to order by `Person` name before collecting the values into a list. If you do not sort first \(put the `ORDER BY` after the `RETURN`\), you will sort based on the size of the list and not by the first letter of the values in the list. We also sort on two values – technology, then person. This allows us to sort our technology so that all the persons that like a technology are listed together.
 
@@ -225,7 +225,7 @@ WHERE t.type IN ['Graphs','Query Languages']
 RETURN DISTINCT user.name
 ```
 
-![](../../.gitbook/assets/image%20%28508%29.png)
+![](../../.gitbook/assets/image%20%28509%29.png)
 
 For Query13, our use case is that we are launching a new Twitter account for tips and tricks on Cypher, and we want to notify users who have a Twitter account and who like graphs or query languages. The first two lines of the query look for `Person` nodes who have a Twitter handle. Then, we use `WITH` to pass those users over to the next `MATCH`, where we find out if the person likes graphs or query languages. Notice that running this statement without the `DISTINCT` keyword will result in “Melissa” shown twice. This is because she likes graphs, and she also likes query languages. When we use `DISTINCT`, we only retrieve unique users.
 

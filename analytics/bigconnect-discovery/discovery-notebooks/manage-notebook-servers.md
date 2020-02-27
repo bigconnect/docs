@@ -10,7 +10,7 @@ On the left-hand panel of the main screen, go to **MANAGEMENT ‣ Notebook ‣ N
 
 This page shows a list of notebook servers. The notebook server list can be filtered by server name or type, and clicking on an entry in the list allows you to view and edit the selected server’s information. Also, you can delete a notebook server either by clicking its ![bin](https://metatron-app.github.io/metatron-doc-discovery/en/_images/icon_bin1.png) button that appears when hovering the mouse over the server, or by clicking the Delete selections after selecting the checkboxes next to the servers you want to delete.
 
-![](../../../.gitbook/assets/image%20%28455%29.png)
+![](../../../.gitbook/assets/image%20%28456%29.png)
 
 ### Add a notebook server
 

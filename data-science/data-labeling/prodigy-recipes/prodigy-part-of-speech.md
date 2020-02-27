@@ -16,7 +16,7 @@ $ prodigy pos.make-gold news_headlines_gold en_core_web_sm news.jsonl --label "V
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../../.gitbook/assets/image%20%28454%29.png)
+![](../../../.gitbook/assets/image%20%28455%29.png)
 
 ## pos.gold-to-spacy
 

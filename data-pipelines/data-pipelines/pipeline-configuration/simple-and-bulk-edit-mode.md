@@ -4,7 +4,7 @@ Some pipeline and pipeline stage properties include an Add icon \(![](https://st
 
 For example, in the Expression Evaluator, you can click the Add icon in simple edit mode to add multiple expressions to the processor. The stage displays text boxes for you to enter configuration values, as follows:
 
-![](../../../.gitbook/assets/image%20%28461%29.png)
+![](../../../.gitbook/assets/image%20%28462%29.png)
 
 Or, you can switch to bulk edit mode to enter a list of configurations in JSON format, for example:
 

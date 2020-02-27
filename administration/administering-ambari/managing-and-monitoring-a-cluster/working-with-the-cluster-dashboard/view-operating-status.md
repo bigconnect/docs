@@ -15,5 +15,5 @@ The icon shape, color, and action to the left of each item indicates the operati
 
 Hover your cursor over the restart indicator to view the status of stale components.
 
-![](../../../../.gitbook/assets/image%20%28354%29.png)
+![](../../../../.gitbook/assets/image%20%28355%29.png)
 

@@ -52,7 +52,7 @@ WHERE 3 <= p.yearsExp <= 7
 RETURN p
 ```
 
-![](../../.gitbook/assets/image%20%28605%29.png)
+![](../../.gitbook/assets/image%20%28606%29.png)
 
 ### Testing if a Property Exists
 
@@ -76,7 +76,7 @@ RETURN p, rel, c
 
 Query1 Results:
 
-![](../../.gitbook/assets/image%20%28626%29.png)
+![](../../.gitbook/assets/image%20%28627%29.png)
 
 Query2 Results:
 
@@ -145,11 +145,11 @@ RETURN friend.name
 
 Query1 Results:
 
-![](../../.gitbook/assets/image%20%28607%29.png)
+![](../../.gitbook/assets/image%20%28608%29.png)
 
 Query2 Results:
 
-![](../../.gitbook/assets/image%20%28408%29.png)
+![](../../.gitbook/assets/image%20%28409%29.png)
 
 ### Optional Patterns
 
@@ -165,7 +165,7 @@ OPTIONAL MATCH (p)-[:WORKS_FOR]-(other:Company)
 RETURN p.name, other.name
 ```
 
-![](../../.gitbook/assets/image%20%28556%29.png)
+![](../../.gitbook/assets/image%20%28557%29.png)
 
 Notice that Joe is returned because his name starts with the letter ‘J’, but his company name is null. That is because he does not have a `WORKS_FOR` relationship to a company node. Since we used optional match, his `Person` node is still returned from the first match, but the second match is not found, so returns null.
 
@@ -196,7 +196,7 @@ Query1 Results:
 
 Query2 Results:
 
-![](../../.gitbook/assets/image%20%28598%29.png)
+![](../../.gitbook/assets/image%20%28599%29.png)
 
 Notice that on the second query, we used a comma after the first `MATCH` line and added another pattern to match on the next line. This allows us to chain together patterns, similar to when we used the `WHERE exists(<pattern>)` syntax above. With this structure, though, we can add multiple different patterns and link them together, allowing us to traverse various pieces of the graph with certain patterns.
 

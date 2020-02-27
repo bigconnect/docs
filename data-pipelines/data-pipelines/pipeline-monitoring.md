@@ -14,7 +14,7 @@ In Monitor mode, you can use the Data Collector to view data as it passes throug
 
 The following image shows Data Collector in Monitor mode:
 
-![](../../.gitbook/assets/image%20%28322%29.png)
+![](../../.gitbook/assets/image%20%28323%29.png)
 
 <table>
   <thead>

@@ -62,7 +62,7 @@ Notes
 
 > * As shown below, the format input field lists different entries depending on the input. The candidate list is narrowed as more values are entered.
 
-![](../../../../.gitbook/assets/image%20%28576%29.png)
+![](../../../../.gitbook/assets/image%20%28577%29.png)
 
 ## rename
 
@@ -88,7 +88,7 @@ Description
 
 > * All rows are deleted except the rows that return true for the conditional expression.
 
-![](../../../../.gitbook/assets/image%20%28359%29.png)
+![](../../../../.gitbook/assets/image%20%28360%29.png)
 
 ## delete
 
@@ -134,7 +134,7 @@ Notes
 
 ## set
 
-![](../../../../.gitbook/assets/image%20%28482%29.png)
+![](../../../../.gitbook/assets/image%20%28483%29.png)
 
 Required arguments
 
@@ -267,7 +267,7 @@ Description
 
 ## unnest
 
-![](../../../../.gitbook/assets/image%20%28362%29.png)
+![](../../../../.gitbook/assets/image%20%28363%29.png)
 
 Required arguments
 
@@ -296,15 +296,15 @@ Notes
 
 > * The target column must be of the array type.
 
-![](../../../../.gitbook/assets/image%20%28396%29.png)
+![](../../../../.gitbook/assets/image%20%28397%29.png)
 
 If the target array column has four elements as shown in the above example, each original row of the array results in four rows. Non-array columns result in the same columns.
 
-![](../../../../.gitbook/assets/image%20%28446%29.png)
+![](../../../../.gitbook/assets/image%20%28447%29.png)
 
 ## aggregate
 
-![](../../../../.gitbook/assets/image%20%28507%29.png)
+![](../../../../.gitbook/assets/image%20%28508%29.png)
 
 Required arguments
 
@@ -329,11 +329,11 @@ Description
 > * Note that `()` must be inserted when using the count function.
 > * count\(_colname_\) is currently not available.
 
-![](../../../../.gitbook/assets/image%20%28505%29.png)
+![](../../../../.gitbook/assets/image%20%28506%29.png)
 
 ## pivot
 
-![](../../../../.gitbook/assets/image%20%28318%29.png)
+![](../../../../.gitbook/assets/image%20%28319%29.png)
 
 
 
@@ -357,7 +357,7 @@ Notes
 
 ## unpivot
 
-![](../../../../.gitbook/assets/image%20%28617%29.png)
+![](../../../../.gitbook/assets/image%20%28618%29.png)
 
 Required arguments
 
@@ -376,15 +376,15 @@ Notes
 >   
 >   &lt;Where GroupEvery is set to 1&gt;
 
-![](../../../../.gitbook/assets/image%20%28378%29.png)
+![](../../../../.gitbook/assets/image%20%28379%29.png)
 
 &lt;Where GroupEvery is set to the same as the number of columns&gt;
 
-![](../../../../.gitbook/assets/image%20%28448%29.png)
+![](../../../../.gitbook/assets/image%20%28449%29.png)
 
 ## join
 
-![](../../../../.gitbook/assets/image%20%28374%29.png)
+![](../../../../.gitbook/assets/image%20%28375%29.png)
 
 Unlike other rules, join has a separate popup.
 
@@ -432,7 +432,7 @@ Notes
 
 ## window
 
-![](../../../../.gitbook/assets/image%20%28350%29.png)
+![](../../../../.gitbook/assets/image%20%28351%29.png)
 
 ![](../../../../.gitbook/assets/image%20%28248%29.png)
 

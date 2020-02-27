@@ -38,7 +38,7 @@ The Edit Rules page consists of the following:
 * Click a distribution bar to filter the data based on the selected range \(toggle\).
 * Click the type mismatch or null value graph to set conditions for those values.
 
-![](../../../../.gitbook/assets/image%20%28474%29.png)
+![](../../../../.gitbook/assets/image%20%28475%29.png)
 
 ### Using the command input panel
 
@@ -48,7 +48,7 @@ The Edit Rules page consists of the following:
 
 2. Add details as needed, and click the **Add** button. Target columns can be selected using the input panel. You can also designate a column by clicking the column header.
 
-![](../../../../.gitbook/assets/image%20%28492%29.png)
+![](../../../../.gitbook/assets/image%20%28493%29.png)
 
 ### Inserting into a rule list
 
@@ -61,7 +61,7 @@ The Edit Rules page consists of the following:
 * When a rule is inserted in this manner, all subsequent rules are affected.
 * Rules that cannot be normally executed are displayed in red. In this case, they will revert to the results obtained in the previous step.
 
-![](../../../../.gitbook/assets/image%20%28585%29.png)
+![](../../../../.gitbook/assets/image%20%28586%29.png)
 
 ## Edit a created rule
 
@@ -69,11 +69,11 @@ The Edit Rules page consists of the following:
 
 1. In the list of rules on the right, place the cursor over the rule to be edited. The ![edit](https://metatron-app.github.io/metatron-doc-discovery/en/_images/icon_edit1.png) button appears. Press this button.
 
-![](../../../../.gitbook/assets/image%20%28588%29.png)
+![](../../../../.gitbook/assets/image%20%28589%29.png)
 
 2. Edit the rule in the command input panel and press the **Done** button.
 
-![](../../../../.gitbook/assets/image%20%28497%29.png)
+![](../../../../.gitbook/assets/image%20%28498%29.png)
 
 ### Deleting a rule
 
@@ -87,7 +87,7 @@ When a rule is deleted in this manner, all subsequent rules are affected.
 
 On the upper right of the rule list are icons to perform **undo** and **redo**.
 
-![](../../../../.gitbook/assets/image%20%28323%29.png)
+![](../../../../.gitbook/assets/image%20%28324%29.png)
 
 To revert to a state before executing a command, press the ![undo](https://metatron-app.github.io/metatron-doc-discovery/en/_images/icon_undo.png) button.
 

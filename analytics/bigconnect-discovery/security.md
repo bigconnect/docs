@@ -8,7 +8,7 @@ To manage users, click **ADMINISTRATION ‣ USER** on the left-hand panel of the
 
 This menu shows applications for membership. As shown below, the list includes the applications that have been rejected or waiting for approval. But, approved users are listed here but can be found in the **Members** menu.
 
-![](../../.gitbook/assets/image%20%28489%29.png)
+![](../../.gitbook/assets/image%20%28490%29.png)
 
 ## Members
 
@@ -80,9 +80,9 @@ Enter a name and description for the group and click **Done** to create the new 
 
 BigConnect Discovery supports four types of permissions shown below, thereby enabling the administrator to grant different user privileges. This menu allows permission settings for individual members or groups.
 
-![](../../.gitbook/assets/image%20%28560%29.png)
+![](../../.gitbook/assets/image%20%28561%29.png)
 
 Click on one of the four permissions presented on the home to list the individual members and groups assigned the selected permission. In the **Member** or **Group** section, click on the ![setup](https://metatron-app.github.io/metatron-doc-discovery/en/_images/setup_icon.png) icon to pop up the following settings dialog box where you can set which members or groups will be assigned the permission.
 
-![](../../.gitbook/assets/image%20%28353%29.png)
+![](../../.gitbook/assets/image%20%28354%29.png)
 

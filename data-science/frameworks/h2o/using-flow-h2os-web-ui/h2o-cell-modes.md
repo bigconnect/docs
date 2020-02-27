@@ -23,7 +23,7 @@ In command mode, the flag is yellow. The flag also indicates the cell’s format
 
 * **CS**: Code \(default\)
 
-![](../../../../.gitbook/assets/image%20%28329%29.png)
+![](../../../../.gitbook/assets/image%20%28330%29.png)
 
 * **RAW**: Raw format \(for code comments\)
 
@@ -31,7 +31,7 @@ In command mode, the flag is yellow. The flag also indicates the cell’s format
 
 * **H\[1-6\]**: Heading level \(where 1 is a first-level heading\)
 
-![](../../../../.gitbook/assets/image%20%28316%29.png)
+![](../../../../.gitbook/assets/image%20%28317%29.png)
 
 **NOTE**: If there is an error in the cell, the flag is red.
 
@@ -61,7 +61,7 @@ To change the cell’s format \(for example, from code to Markdown\), make sure 
 
 The series of buttons at the top of the page below the menus run cells in a flow.
 
-![](../../../../.gitbook/assets/image%20%28613%29.png)
+![](../../../../.gitbook/assets/image%20%28614%29.png)
 
 * To run all cells in the flow, click the **Flow** menu, then click **Run All Cells**.
 * To run the current cell and all subsequent cells, click the **Flow** menu, then click **Run All Cells Below**.
@@ -85,7 +85,7 @@ When the flow is complete, a message displays in the upper right.
 
 ![](../../../../.gitbook/assets/image%20%28257%29.png)
 
-![](../../../../.gitbook/assets/image%20%28606%29.png)
+![](../../../../.gitbook/assets/image%20%28607%29.png)
 
 {% hint style="info" %}
 If there is an error in the flow, H2O Flow stops at the cell that contains the error.

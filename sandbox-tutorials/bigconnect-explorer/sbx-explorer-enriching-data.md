@@ -23,11 +23,11 @@ Login to BigConnect Explorer using the default username **admin** and password *
 
 Go to **Analyze** in the upper menu bar.
 
-![](../../.gitbook/assets/image%20%28620%29.png)
+![](../../.gitbook/assets/image%20%28621%29.png)
 
 Click on the **Graph** card \(or the **New..**. button and choose **Graph**\) and an empty graph will be created for you:
 
-![](../../.gitbook/assets/image%20%28532%29.png)
+![](../../.gitbook/assets/image%20%28533%29.png)
 
 Drag & drop the two downloaded files on the empty graph.
 
@@ -37,7 +37,7 @@ You can also click on the UPLOAD card and select the files using the upload dial
 
 A popup will be shown to ask you how you want to load the files into the system. Just leave the defaults and click **Import**
 
-![](../../.gitbook/assets/image%20%28431%29.png)
+![](../../.gitbook/assets/image%20%28432%29.png)
 
 The system will load and process the files. After a short while you should see four items on your graph:
 
@@ -47,7 +47,7 @@ The system will load and process the files. After a short while you should see f
 
 Select the item that contains text information. You can see that some words in the text are underlined and that the item has a Negative Sentiment.
 
-![](../../.gitbook/assets/image%20%28417%29.png)
+![](../../.gitbook/assets/image%20%28418%29.png)
 
 These are automated enrichments that were applied by the system. The underlined words are Named Entities that the system detected and it marked them for you to "**resolve**".
 
@@ -87,13 +87,13 @@ Now select the text item on the graph, right click on it and choose **Add Relate
 
 For images things work in a similar way. Click on the image item on the graph:
 
-![](../../.gitbook/assets/image%20%28308%29.png)
+![](../../.gitbook/assets/image%20%28309%29.png)
 
 You can see that the image object has 3 blue boxes: **Animal, Hat, Sunglasses**. These are the objects the system automatically identified in the image.
 
 To manually annotate an image, you can draw a rectangle with your mouse on the image. Place the mouse on the image, click and then draw the rectangle. Once you finished, the system will ask you to "resolve" the piece of the image to an object, in a similar way to text items.
 
-![](../../.gitbook/assets/image%20%28517%29.png)
+![](../../.gitbook/assets/image%20%28518%29.png)
 
 Enter the name of the new entity, its concept and click "Resolve as New".
 

@@ -37,9 +37,9 @@ In the data column list, you can view and edit information on connected data sou
 
 Click the + button on the data source column list to open a dialog box for adding a custom column. By applying various formulas to existing columns of the data source, you can create a new column that helps create your desired chart.
 
-![](../../../.gitbook/assets/image%20%28296%29.png)
+![](../../../.gitbook/assets/image%20%28297%29.png)
 
-![](../../../.gitbook/assets/image%20%28563%29.png)
+![](../../../.gitbook/assets/image%20%28564%29.png)
 
 1. **Column name:** Fill in a name for the custom column.
 2. **Coding box:** Write a code for the custom column. Click a list from the column or formula list below to type your selection in this box automatically.
@@ -50,33 +50,33 @@ Click the + button on the data source column list to open a dialog box for addin
 
 Pivoting is a process of grouping the given table by specific columns, thereby helping the analyst view particular aspects of the source data in a graphic or tabular chart. This process includes selecting columns that contain meaningful data and placing them on the column/row/cross shelves.
 
-![](../../../.gitbook/assets/image%20%28610%29.png)
+![](../../../.gitbook/assets/image%20%28611%29.png)
 
 In the example shown above, two dimension columns are placed on the column shelf and one measure column is placed on the cross shelf. The chart displays data resulting from the columns placed on the shelves in this way.
 
 Mandatory/recommended column types for each shelf vary depending on the chart type. Selecting a chart type before placing columns on a shelf shows the necessary column types for each shelf.
 
-![](../../../.gitbook/assets/image%20%28579%29.png)
+![](../../../.gitbook/assets/image%20%28580%29.png)
 
 ### Column/row/cross shelves
 
 Think of the structure of Excel to understand what column/row/cross shelves work for. As shown below, the crossing of each column and row cross contains a value.
 
-![](../../../.gitbook/assets/image%20%28427%29.png)
+![](../../../.gitbook/assets/image%20%28428%29.png)
 
 Whereas Excel shows data in a two-dimensional grid composed of columns, rows and crosses, BigConnect Discovery is an OLAP data discovery tool capable of multidimensional data representation. In the following Discovery chart, the column, row, and crossing axes form a three-dimensional cube.
 
-![](../../../.gitbook/assets/image%20%28526%29.png)
+![](../../../.gitbook/assets/image%20%28527%29.png)
 
 If the values of an Excel grid are displayed in a three-dimensional chart, each crossing value will be represented by a bar. However, Discovery needs to display such a chart two-dimensionally; for this, bars either in the same column or in the same row get stacked at one point while remaining distinctive from one another. The resulting two-dimensional chart is shown in the gray area of the chart below.
 
-![](../../../.gitbook/assets/image%20%28523%29.png)
+![](../../../.gitbook/assets/image%20%28524%29.png)
 
 ## Type of charts
 
 BigConnect Discovery provides about 20 types of charts. If you place columns on shelves before selecting a chart, suitable charts are highlighted in purple.
 
-![](../../../.gitbook/assets/image%20%28402%29.png)
+![](../../../.gitbook/assets/image%20%28403%29.png)
 
 The table below summarizes conditions to create, uses, and examples for each chart.
 
@@ -352,7 +352,7 @@ This section describes how to configure the settings of the chart style settings
 
 Defines various colors used in the chart.
 
-![](../../../.gitbook/assets/image%20%28384%29.png)
+![](../../../.gitbook/assets/image%20%28385%29.png)
 
 1. **Graph color setting:** Set criteria to classify data on the chart by color, and select a coloring theme.
 
@@ -366,7 +366,7 @@ Defines various colors used in the chart.
 
 Defines how to display numerical text data on the chart graph. To use this function, turn on Show Axis Label in the Data Label Settings Menu.
 
-![](../../../.gitbook/assets/image%20%28439%29.png)
+![](../../../.gitbook/assets/image%20%28440%29.png)
 
 1. **Format:** Select a display format for numeric values from among number, currency, percent, and exponent.
 2. **Decimal place:** Set how many digits to display after the decimal point.
@@ -379,7 +379,7 @@ Defines how to display numerical text data on the chart graph. To use this funct
 
 If you set the chart direction **Horizontal** in the Common Setting area, the settings are exchanged between X-axis and Y-axis.
 
-![](../../../.gitbook/assets/image%20%28493%29.png)
+![](../../../.gitbook/assets/image%20%28494%29.png)
 
 1. **Show axis title:** Used to set a title for the Y-axis of the chart. Disabling this function hides the title of the Y-axis.
 2. **Show axis label:** Select whether or not to show the data labels on the Y-axis of the chart. Disabling this function hides the data labels on the Y-axis.
@@ -390,7 +390,7 @@ If you set the chart direction **Horizontal** in the Common Setting area, the se
 
 Defines how to display the X-axis of the chart. If you set the chart direction **Horizontal** in the Common Setting area, the settings are exchanged between X-axis and Y-axis.
 
-![](../../../.gitbook/assets/image%20%28612%29.png)
+![](../../../.gitbook/assets/image%20%28613%29.png)
 
 1. **Show axis title:** Used to set a title for the X-axis of the chart. Disabling this function hides the title of the X-axis.
 2. **Show axis label:** Select whether or not to show the data labels on the X-axis of the chart. Disabling this function hides the data labels on the X-axis.
@@ -401,19 +401,19 @@ Defines how to display the X-axis of the chart. If you set the chart direction *
 
 Selects whether to display the data values on the chart graph.
 
-![](../../../.gitbook/assets/image%20%28335%29.png)
+![](../../../.gitbook/assets/image%20%28336%29.png)
 
 ### Common settings
 
 This section describes how to style the six most popular chart types \(bar chart, table, line chart, scatter chart, heatmap, and pie chart\).
 
-![](../../../.gitbook/assets/image%20%28401%29.png)
+![](../../../.gitbook/assets/image%20%28402%29.png)
 
 #### Bar chart
 
 This type of chart presents data values in each category of a dimension column with rectangular bars.
 
-![](../../../.gitbook/assets/image%20%28297%29.png)
+![](../../../.gitbook/assets/image%20%28298%29.png)
 
 1. **Chart type**
 
@@ -443,7 +443,7 @@ A table block is formed based on the categories into which the dimension columns
 
 This type of chart presents data values in each category of a dimension column with points. Adjacent data points are connected with each other. This type of chart is used to view trends.
 
-![](../../../.gitbook/assets/image%20%28501%29.png)
+![](../../../.gitbook/assets/image%20%28502%29.png)
 
 **Chart type**
 
@@ -474,7 +474,7 @@ This type of chart displays values aggregated from the measure column placed on 
 
 This type of chart visualizes the proportion of each category of the dimension column.
 
-![](../../../.gitbook/assets/image%20%28433%29.png)
+![](../../../.gitbook/assets/image%20%28434%29.png)
 
 **Chart type**
 
@@ -485,7 +485,7 @@ This type of chart visualizes the proportion of each category of the dimension c
 
 BigConnect Discovery offers a **map view** function for visualizations of location data. Creating a chart in map view involves different conditions compared to other chart types.
 
-![](../../../.gitbook/assets/image%20%28580%29.png)
+![](../../../.gitbook/assets/image%20%28581%29.png)
 
 * At least one **location** dimension is required.
 * Data is placed on **map layer shelves** instead of the row/column/intersection shelves.
@@ -500,15 +500,15 @@ To use map view, dimension columns of WKT geometry types such as `Point`, `LineS
 * **Line:** This is a geometry type with line coordinates. WKT representations of LineString and MultiLineString are supported.
 * **Polygon**: This is a geometry type with shape coordinates. WKT representations of Polygon and MultiPolygon are supported.
 
-![](../../../.gitbook/assets/image%20%28621%29.png)
+![](../../../.gitbook/assets/image%20%28622%29.png)
 
 ### Map layer shelves
 
-![](../../../.gitbook/assets/image%20%28424%29.png)
+![](../../../.gitbook/assets/image%20%28425%29.png)
 
 Map view uses map layer shelves instead of the row/column/intersection shelves that are used by other chart types. A map layer shelf requires at least one location dimension.
 
-![](../../../.gitbook/assets/image%20%28392%29.png)
+![](../../../.gitbook/assets/image%20%28393%29.png)
 
 When a string dimension is placed on a map layer shelf, data points are colored based on its elements; when the mouse is over a data point, the corresponding string is displayed in the data tooltip.
 
@@ -522,7 +522,7 @@ You can also place measures on a layer shelf to classify colors by measure and s
 
 Click the `+`button on the right of a layer shelf to add another layer on top of the first layer. Each layer must use a different data source, and columns of only one data source are allowed to be placed per layer. Currently, up to two layer shelves are supported.
 
-![](../../../.gitbook/assets/image%20%28570%29.png)
+![](../../../.gitbook/assets/image%20%28571%29.png)
 
 ### Style properties
 
@@ -542,7 +542,7 @@ Sets how to express layers. When a layer shelf is added, separate setting menus 
 
 #### **Layer properties of point type**
 
-![](../../../.gitbook/assets/image%20%28307%29.png)
+![](../../../.gitbook/assets/image%20%28308%29.png)
 
 1. **Layer Name** : Set a name of the layer for legend and tooltip settings in the map view.
 2. **The Type Layer** : the Data Points the CAN be Displayed on the Map the AS Is the `Point`, `Heatmap`, `Hexagon`, or `Cluster`. The point type is selected by default.
@@ -556,7 +556,7 @@ Sets how to express layers. When a layer shelf is added, separate setting menus 
 
 #### **Layer properties of line type**
 
-![](../../../.gitbook/assets/image%20%28513%29.png)
+![](../../../.gitbook/assets/image%20%28514%29.png)
 
 1. **ayer Name** : Set a name of the layer for legend and tooltip settings in the map view.
 2. **Color** : Data points can be distinguished by color based on a string dimension or a measure on the layer shelf. A color can be picked from the palette if color standards are not available. The transparency can be set as a% value.
@@ -565,7 +565,7 @@ Sets how to express layers. When a layer shelf is added, separate setting menus 
 
 #### **Layer properties of polygon type**
 
-![](../../../.gitbook/assets/image%20%28554%29.png)
+![](../../../.gitbook/assets/image%20%28555%29.png)
 
 1. **Layer Name** : Set a name of the layer for legend and tooltip settings in the map view.
 2. **Color** : Data points can be distinguished by color based on a string dimension or a measure on the layer shelf. A color can be picked from the palette if color standards are not available. The transparency can be set as a% value.
@@ -575,7 +575,7 @@ Sets how to express layers. When a layer shelf is added, separate setting menus 
 
 Choose whether or not to display a legend. The default is Off. The position of the legend can be set when turned on.
 
-![](../../../.gitbook/assets/image%20%28500%29.png)
+![](../../../.gitbook/assets/image%20%28501%29.png)
 
 ### Spatial analysis
 

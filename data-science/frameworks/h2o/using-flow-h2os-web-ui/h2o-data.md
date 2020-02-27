@@ -6,13 +6,13 @@ There are multiple ways to import data in H2O flow:
 
 * Click the **Assist Me!** button in the row of buttons below the menus, then click the **importFiles** link. Enter the file path in the auto-completing **Search** entry field and press **Enter**. Select the file from the search results and confirm it by clicking the **Add All** link.
 
-![](../../../../.gitbook/assets/image%20%28591%29.png)
+![](../../../../.gitbook/assets/image%20%28592%29.png)
 
 * In a blank cell, select the CS format, then enter `importFiles ["path/filename.format"]` \(where `path/filename.format` represents the complete file path to the file, including the full file name. The file path can be a local file path or a website address. **Note**: For S3 file locations, use the format `importFiles [ "s3:/path/to/bucket/file/file.tab.gz" ]`
 
 After selecting the file to import, the file path displays in the “Search Results” section. To import a single file, click the plus sign next to the file. To import all files in the search results, click the **Add all** link. The files selected for import display in the “Selected Files” section.
 
-![](../../../../.gitbook/assets/image%20%28372%29.png)
+![](../../../../.gitbook/assets/image%20%28373%29.png)
 
 {% hint style="info" %}
 If the file is compressed, it will only be read using a single thread. For best performance, we recommend uncompressing the file before importing, as this will allow use of the faster multithreaded distributed parallel reader during import. Please note that .zip files containing multiple files are not currently supported.
@@ -24,7 +24,7 @@ If the file is compressed, it will only be read using a single thread. For best 
 
 After you click the **Import** button, the raw code for the current job displays. A summary displays the results of the file import, including the number of imported files and their Network File System \(nfs\) locations.
 
-![](../../../../.gitbook/assets/image%20%28310%29.png)
+![](../../../../.gitbook/assets/image%20%28311%29.png)
 
 ## Uploading Files
 
@@ -40,7 +40,7 @@ Ok, now that your data is available in H2O Flow, let’s move on to the next ste
 
 After you have imported your data, parse the data.
 
-![](../../../../.gitbook/assets/image%20%28436%29.png)
+![](../../../../.gitbook/assets/image%20%28437%29.png)
 
 The read-only **Sources** field shows the file path for the imported data selected for parsing. The **ID** contains the auto-generated name for the parsed data \(by default, the file name of the imported file uses `.hex` as the file extension\). Use the default name or enter a custom name in this field.
 
@@ -87,7 +87,7 @@ You can search for a column by entering it in the _Search by column name…_ ent
 
 After making your selections, click the **Parse** button. The code for the current job displays.
 
-![](../../../../.gitbook/assets/image%20%28420%29.png)
+![](../../../../.gitbook/assets/image%20%28421%29.png)
 
 Since we’ve submitted a couple of jobs \(data import & parse\) to H2O now, let’s take a moment to learn more about jobs in H2O.
 
@@ -103,5 +103,5 @@ The following options can be specified when imputing dataset:
 * **Group By**: If the **Method** is either Mean or Mode, then choose the column or columns to group by.
 * **Combine Method**: If the **Method** is Median, then choose how to combine quantiles on even sample sizes. Available **Combine Method** options include Interpolate, Average, Low, and High.
 
-![](../../../../.gitbook/assets/image%20%28600%29.png)
+![](../../../../.gitbook/assets/image%20%28601%29.png)
 

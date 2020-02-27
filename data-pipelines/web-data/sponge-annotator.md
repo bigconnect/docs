@@ -8,7 +8,7 @@ Once the Google Chrome extension is installed, it needs to be configured so it c
 
 Once the extension is configured, it can be accessed by opening **Developer Tools \(F12\)**. You will see a tab named **Sponge Annotator**.
 
-![](../../.gitbook/assets/image%20%28548%29.png)
+![](../../.gitbook/assets/image%20%28549%29.png)
 
 There are three menu options in the Sponge Annotator toolbar:
 
@@ -37,7 +37,7 @@ The first thing you need to do is to **Add a new field.** This will take you to 
 
 Once you are happy with your selection, click **Save field** to continue. The field will be added to the project details panel.
 
-![](../../.gitbook/assets/image%20%28428%29.png)
+![](../../.gitbook/assets/image%20%28429%29.png)
 
 You have some actions available for the new field: 
 
@@ -54,7 +54,7 @@ All changes are automatically synchronized to Sponge Manager when an action is t
 
 Once you clicked the Select button in the field details panel, an overlay will be displayed at the bottom of the webpage and zone selection becomes active.
 
-![](../../.gitbook/assets/image%20%28451%29.png)
+![](../../.gitbook/assets/image%20%28452%29.png)
 
 Moving the mouse around the page will show green boxes around the HTML element below the mouse pointer. Click the mouse to select the desired element and the green box will become red. The CSS selector will be updated in the overlay panel with the selected element. 
 
@@ -74,7 +74,7 @@ Once the extension is loaded, it will be displayed also as an icon next to Googl
 
 Right-click on the icon and choose the **Options** menu item:
 
-![](../../.gitbook/assets/image%20%28343%29.png)
+![](../../.gitbook/assets/image%20%28344%29.png)
 
 The configuration page will be displayed in the browser. Here you can configure Sponge Manager connection details:
 

@@ -109,7 +109,7 @@ To view a valid key value, select the desired option from the menu, then click t
 
 For example, after selecting At Least Once for the Delivery Guarantee property and then clicking the Use Parameter icon, the text box displays AT\_LEAST\_ONCE as the key value for the At Least Once option:
 
-![](../../../.gitbook/assets/image%20%28490%29.png)
+![](../../../.gitbook/assets/image%20%28491%29.png)
 
 ### Calling from Scripting Processors
 
@@ -156,7 +156,7 @@ Before you can view the current runtime parameter values, verify that the monito
 
 When you monitor a pipeline that you started with parameter values, the Runtime Parameters chart displays as follows:
 
-![](../../../.gitbook/assets/image%20%28321%29.png)
+![](../../../.gitbook/assets/image%20%28322%29.png)
 
 The Runtime Parameters chart does not display when you start a pipeline without parameters.
 

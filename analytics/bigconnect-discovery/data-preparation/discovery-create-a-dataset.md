@@ -17,7 +17,7 @@ Next, on the upper right of the **dataset** page, click the **+ Generate new dat
 
 In the dataset creation page, select the dataset type.
 
-![](../../../.gitbook/assets/image%20%28421%29.png)
+![](../../../.gitbook/assets/image%20%28422%29.png)
 
 * **My file:** Create a dataset by opening the user’s local file or via a URI \(upcoming feature\) \(See **Create a dataset from a file** for a detailed procedure\).
 * **Database:** Create a dataset using external database access information and queries \(See **Create a dataset from a database** for a detailed procedure\).
@@ -43,7 +43,7 @@ Create a dataset by opening the user’s local file or via a URI:
 
 4. Enter the **Name** and **Description** of the dataset, and click the **Done** button.
 
-![](../../../.gitbook/assets/image%20%28380%29.png)
+![](../../../.gitbook/assets/image%20%28381%29.png)
 
 5. Once the dataset is created, the dataset list is displayed. You can check that the list contains the newly created dataset.
 
@@ -53,7 +53,7 @@ Create a dataset using external database access information and queries.
 
 To create a dataset from a database, you should first create a Data Connection. See [Create a data connection](../discovery-data-management/discovery-data-connections.md) for a detailed procedure.
 
-![](../../../.gitbook/assets/image%20%28452%29.png)
+![](../../../.gitbook/assets/image%20%28453%29.png)
 
 After establishing the data connection, go to **MANAGEMENT** &gt; **Data Preparation** &gt; **Dataset** &gt; **+ Generate new dataset**.
 
@@ -65,7 +65,7 @@ After establishing the data connection, go to **MANAGEMENT** &gt; **Data Prepara
 
 3. Select the data. You can either select a table from the connected database, or write a query yourself.
 
-![](../../../.gitbook/assets/image%20%28357%29.png)
+![](../../../.gitbook/assets/image%20%28358%29.png)
 
 * **Table:** Select a database and a table to display the table’s data. Once the data being ingested has been displayed, confirm the data and click **Next**.
 * **Query:** Write a query to import the data you want, and click **Run** to display the data in the lower section. Confirm the data and click **Next**.

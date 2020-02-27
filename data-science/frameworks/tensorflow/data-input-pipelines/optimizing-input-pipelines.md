@@ -55,7 +55,7 @@ To perform a training step, you must first extract and transform the training da
 
 Without pipelining, the CPU and the GPU/TPU sit idle much of the time:
 
-![](../../../../.gitbook/assets/image%20%28360%29.png)
+![](../../../../.gitbook/assets/image%20%28361%29.png)
 
 With pipelining, idle time diminishes significantly:
 
@@ -77,7 +77,7 @@ Note that the prefetch transformation provides benefits any time there is an opp
 
 When preparing a batch, input elements may need to be pre-processed. To this end, the [`tf.data`](https://www.tensorflow.org/api_docs/python/tf/data) API offers the [`tf.data.Dataset.map`](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#map) transformation, which applies a user-defined function \(for example, `parse_fn` from the running example\) to each element of the input dataset. Because input elements are independent of one another, the pre-processing can be parallelized across multiple CPU cores. To make this possible, the `map` transformation provides the `num_parallel_calls` argument to specify the level of parallelism. For example, the following diagram illustrates the effect of setting `num_parallel_calls=2` to the `map` transformation:
 
-![](../../../../.gitbook/assets/image%20%28381%29.png)
+![](../../../../.gitbook/assets/image%20%28382%29.png)
 
 Choosing the best value for the `num_parallel_calls` argument depends on your hardware, characteristics of your training data \(such as its size and shape\), the cost of your map function, and what other processing is happening on the CPU at the same time; a simple heuristic is to use the number of available CPU cores. For instance, if the machine executing the example above had 4 cores, it would have been more efficient to set `num_parallel_calls=4`. On the other hand, setting `num_parallel_calls` to a value much greater than the number of available CPUs can lead to inefficient scheduling, resulting in a slowdown. Similar to the `prefetch` transformation, the `map` transformation supports [`tf.data.experimental.AUTOTUNE`](https://www.tensorflow.org/api_docs/python/tf/data/experimental#AUTOTUNE) which will delegate the decision about what level of parallelism to use to the tf.data runtime.
 

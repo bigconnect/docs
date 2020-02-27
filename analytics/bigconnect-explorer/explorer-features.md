@@ -18,7 +18,7 @@ Data ingestion can be manual \(using the UI\) for small amounts of data or batch
 
 Data ingestion is a visual process in BigConect Explorer. Either by using the user interface or Data Pipelines, data ingestion and data model mapping will be done in an easy, visual way. This ensures lower error rates and high process maintainability.
 
-![BigConnect Explorer Data Ingestion](../../.gitbook/assets/image%20%28516%29.png)
+![BigConnect Explorer Data Ingestion](../../.gitbook/assets/image%20%28517%29.png)
 
 ## Visual Interface
 
@@ -68,15 +68,15 @@ Besides the various objects that can be loaded into the platform, BigConnect Exp
 
 **Text items** have by definition some textual content that can be annotated by selecting pieces of text and marking them as new objects or relations. This is handy if you need to infer new relations from textual content such as mentioned persons, companies, locations, IP addresses or items found in a dictionary, detected by an NLP engine or that satisfy a certain regex pattern.
 
-![BigConnect Explorer Text Annotation](../../.gitbook/assets/image%20%28457%29.png)
+![BigConnect Explorer Text Annotation](../../.gitbook/assets/image%20%28458%29.png)
 
 **Images** have by definition an associated image. They can be text items as well, so they can have text attached to as well, from an OCR engine for example. In the same way as text items, the image can be annotated to mark relevant existing or objects. This can be done manually or automatically using the Face Recognition or Object Detection enrichments, or even by using Cloud Services like Azure Cloud Computer Vision.
 
-![BigConnect Explorer Image Annotation](../../.gitbook/assets/image%20%28611%29.png)
+![BigConnect Explorer Image Annotation](../../.gitbook/assets/image%20%28612%29.png)
 
 **Audio items** have by definition an associated audio track. BigConnext Explorer will show a player for these types of items to play the contents. Audio items can be text items as well, so they can have text attached, from a speech-to-text engine for example. Sample plugins are provided for speech-to-text using Google Cloud Speech API.
 
-![BigConnect Explorer Audio Player with Transcriptions](../../.gitbook/assets/image%20%28575%29.png)
+![BigConnect Explorer Audio Player with Transcriptions](../../.gitbook/assets/image%20%28576%29.png)
 
 **Video items** have by definition associated video content and can also be text items. Since a video can optionally have an audio track, a Data Worker can be used to split and OCR the video frames and the audio track to extract all relevant information from the video, such as text, found objects, people etc.
 
@@ -86,7 +86,7 @@ Besides the various objects that can be loaded into the platform, BigConnect Exp
 
 The Explorer  includes a dashboard where users are being taken upon login. Various widgets can be added or removed from the dashboard to bring to focus any relevant information.
 
-![BigConnect Explorer Dashboard](../../.gitbook/assets/image%20%28327%29.png)
+![BigConnect Explorer Dashboard](../../.gitbook/assets/image%20%28328%29.png)
 
 ### Analysis Tools
 
@@ -106,13 +106,13 @@ Objects can be copied and pasted from anywhere onto the graph, external files ca
 
 Finding how two objects are connected is quite easy as well. Just use the Find Path feature to find out.
 
-![BigConnect Explorer Find Path](../../.gitbook/assets/image%20%28586%29.png)
+![BigConnect Explorer Find Path](../../.gitbook/assets/image%20%28587%29.png)
 
 #### Spatial Analysis
 
 Data with geo-spatial information associated \(latitude, longitude\) can be displayed on an interactive map with support for layers, annotations and aggregations.
 
-![BigConnect Explorer Spatial Analysis](../../.gitbook/assets/image%20%28567%29.png)
+![BigConnect Explorer Spatial Analysis](../../.gitbook/assets/image%20%28568%29.png)
 
 New objects can be created at specific points on the map and will automatically receive location information for future reference. Practical use cases can include defining POIs, locating events, cars, phone calls, network packets etc.
 
@@ -122,7 +122,7 @@ The map can be annotated using points, lines and polygons that can become themse
 
 Quick charts can be created using the Chart tool. A wide selection of charts is available.
 
-![](../../.gitbook/assets/image%20%28542%29.png)
+![](../../.gitbook/assets/image%20%28543%29.png)
 
 #### Timeline
 

@@ -14,23 +14,23 @@ Prodigy's web app lets you annotate text, entities, classification and images st
 
 ## Annotate and correct named entities
 
-![](../../.gitbook/assets/image%20%28566%29.png)
+![](../../.gitbook/assets/image%20%28567%29.png)
 
 ## Annotate and correct part-of-speech tags
 
-![](../../.gitbook/assets/image%20%28368%29.png)
+![](../../.gitbook/assets/image%20%28369%29.png)
 
 ## Annotate syntactic dependencies and semantic relations
 
-![](../../.gitbook/assets/image%20%28536%29.png)
+![](../../.gitbook/assets/image%20%28537%29.png)
 
 ## Annotate labelled text or images
 
-![](../../.gitbook/assets/image%20%28483%29.png)
+![](../../.gitbook/assets/image%20%28484%29.png)
 
 ## Annotate images, bounding boxes and image segments
 
-![](../../.gitbook/assets/image%20%28615%29.png)
+![](../../.gitbook/assets/image%20%28616%29.png)
 
 ## Select one or more answers or pick the odd one out
 

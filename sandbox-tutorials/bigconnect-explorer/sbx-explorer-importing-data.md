@@ -23,11 +23,11 @@ Login to BigConnect Explorer using the default username **admin** and password *
 
 Go to **Analyze** in the upper menu bar.
 
-![](../../.gitbook/assets/image%20%28620%29.png)
+![](../../.gitbook/assets/image%20%28621%29.png)
 
 Click on the **Graph** card and an empty graph will be created for you:
 
-![](../../.gitbook/assets/image%20%28532%29.png)
+![](../../.gitbook/assets/image%20%28533%29.png)
 
 Now, let's download all sample files from [https://github.com/bigconnect/demos/tree/master/explorer/basics](https://github.com/bigconnect/demos/tree/master/explorer/basics) and save them somewhere on your station:
 
@@ -44,11 +44,11 @@ You can also click on the UPLOAD card and select the files using the upload dial
 
 A popup will be shown to ask you how you want to load the files into the system. Just leave the defaults and click **Import**
 
-![](../../.gitbook/assets/image%20%28431%29.png)
+![](../../.gitbook/assets/image%20%28432%29.png)
 
 The system will load and process the files. After a short while you should see four items on your graph:
 
-![](../../.gitbook/assets/image%20%28340%29.png)
+![](../../.gitbook/assets/image%20%28341%29.png)
 
 Note that BigConnect automatically detected the mime-type of each file and assigned the appropriate icons.
 
@@ -77,7 +77,7 @@ It's a sample file that contains 2000 fictional persons.
 
 Choose **Ingest** from the top menu bar:
 
-![](../../.gitbook/assets/image%20%28596%29.png)
+![](../../.gitbook/assets/image%20%28597%29.png)
 
 Click on the **Upload your files** link under the **Files** card. The following screen will be displayed:
 
@@ -93,11 +93,11 @@ Click **Import** to continue and preview the file.
 
 Now we need to tell BigConnect Explorer how to map the fields from the CSV file to our schema. This process is called mapping**.** Click on the green **Map Structured Data** button.
 
-![](../../.gitbook/assets/image%20%28397%29.png)
+![](../../.gitbook/assets/image%20%28398%29.png)
 
 Select the first row of the table that contains the header fields \(id, first\_name, last\_name etc.\):
 
-![](../../.gitbook/assets/image%20%28379%29.png)
+![](../../.gitbook/assets/image%20%28380%29.png)
 
 The system extracted the field names from the CSV header. Now we will go through each column and tell the system how to import it:
 
@@ -107,27 +107,27 @@ The system extracted the field names from the CSV header. Now we will go through
 
 2. The system asks us how to map this column. We want to map it to a new entity that has the concept **Person**. Click on the **New Concept...**  field to browse existing concepts defined in BigConnect and choose the **Person** concept:
 
-![](../../.gitbook/assets/image%20%28520%29.png)
+![](../../.gitbook/assets/image%20%28521%29.png)
 
 3. Now the system will ask on which property of the Person concept we want to map this column on:
 
-![](../../.gitbook/assets/image%20%28528%29.png)
+![](../../.gitbook/assets/image%20%28529%29.png)
 
 4. Since we don't have an existing property to map on, we need to create one. Just type the **uniqueid** in the **Choose Property...** field and click on the **Create "uniqueid"** dark row.
 
-![](../../.gitbook/assets/image%20%28478%29.png)
+![](../../.gitbook/assets/image%20%28479%29.png)
 
 5. A small section will be displayed asking to specify the **Data Format** for our new field: 
 
-![](../../.gitbook/assets/image%20%28471%29.png)
+![](../../.gitbook/assets/image%20%28472%29.png)
 
 6. Choose **String** and click on the green **Create "uniqueid"** button:
 
-![](../../.gitbook/assets/image%20%28515%29.png)
+![](../../.gitbook/assets/image%20%28516%29.png)
 
 7. Check the **Use this column as unique identifier for this entity** checkbox and then click **Save**.
 
-![](../../.gitbook/assets/image%20%28338%29.png)
+![](../../.gitbook/assets/image%20%28339%29.png)
 
 8. This is the "hard" way of doing the mapping where we have control of exactly how each field is mapped. The "easy" way is to let the system auto-map all fields. We will do that for the rest of the fields.
 
@@ -137,15 +137,15 @@ Click on the **Automap** link:
 
 9. Select our previously created entity Person\#1 from the **Auto-map to** dropdown and click **Save**:
 
-![](../../.gitbook/assets/image%20%28539%29.png)
+![](../../.gitbook/assets/image%20%28540%29.png)
 
 10. Click on **Preview.** The system will parse all rows from the file and validate that they can be imported:
 
-![](../../.gitbook/assets/image%20%28435%29.png)
+![](../../.gitbook/assets/image%20%28436%29.png)
 
 11. Finally click on **Import** button to launch the import process in the background. You can monitor the progress of all background tasks by clicking on the **Activity** icon in the top menu bar:
 
-![](../../.gitbook/assets/image%20%28480%29.png)
+![](../../.gitbook/assets/image%20%28481%29.png)
 
 ### 
 
@@ -185,11 +185,11 @@ where _**\[full\_path\_to\_bdldemo\_addresses\_sql\_script\]**_ is the absolute 
 
 Choose **Ingest** from the top menu bar:
 
-![](../../.gitbook/assets/image%20%28596%29.png)
+![](../../.gitbook/assets/image%20%28597%29.png)
 
 Click on the **MySQL** link under the **SQL** card. The following screen will be displayed:
 
-![](../../.gitbook/assets/image%20%28456%29.png)
+![](../../.gitbook/assets/image%20%28457%29.png)
 
 Click on **Add** to create a new Connection:
 
@@ -204,11 +204,11 @@ Fill in the following details:
 * Username: **bdldemo**
 * Password: **bdldemo**
 
-![](../../.gitbook/assets/image%20%28476%29.png)
+![](../../.gitbook/assets/image%20%28477%29.png)
 
 Click on the **Save** button to create the connection. At this point, the connection details provided will be validated against the database and if everything is ok, the connection is created.
 
-![](../../.gitbook/assets/image%20%28510%29.png)
+![](../../.gitbook/assets/image%20%28511%29.png)
 
 Click on the highlighted arrow to expand the MySQL connection and click on the plus circle to create a new Data Source:
 
@@ -223,7 +223,7 @@ Enter the following details and click **Next**:
 * Name: **addresses**
 * Select Statement: **SELECT \* FROM addresses**
 
-![](../../.gitbook/assets/image%20%28414%29.png)
+![](../../.gitbook/assets/image%20%28415%29.png)
 
 A preview of the data in the addresses table is be displayed. Click **Next** to continue to the Data Mapping part:
 
@@ -237,15 +237,15 @@ Now we need to tell BigConnect Explorer how to map the fields from the SQL query
 
 2. Type **address** in the Concept field and click on the dark **Create "address"** button.
 
-![](../../.gitbook/assets/image%20%28527%29.png)
+![](../../.gitbook/assets/image%20%28528%29.png)
 
 3. Click on the green **Create "address"** button to create the address Concept.
 
-![](../../.gitbook/assets/image%20%28306%29.png)
+![](../../.gitbook/assets/image%20%28307%29.png)
 
 4. Type **uniqueid** in the Property field and click on the dark **Create "uniqueid"** button. Choose **String** as the **Data Format** for the new field and click on **Create "uniqueid"**. 
 
-![](../../.gitbook/assets/image%20%28302%29.png)
+![](../../.gitbook/assets/image%20%28303%29.png)
 
 5. Check the **Identifier** checkbox to tell BigConnect that this field uniquely identifies our entity and click **Save**.
 
@@ -257,7 +257,7 @@ Don't check the **Identifier** checkbox for any other field, because we only wan
 
 7. Repeat the step 6 for the **country** and **street** columns. In the end you should have the following mapping:
 
-![](../../.gitbook/assets/image%20%28623%29.png)
+![](../../.gitbook/assets/image%20%28624%29.png)
 
 Click **Next** and check the **Run on finish** checkbox:
 
@@ -267,7 +267,7 @@ Click **Next** to continue and then click **Save** on the Review Final Configura
 
 You can monitor the progress of all background tasks by clicking on the Activity icon in the top menu bar:
 
-![](../../.gitbook/assets/image%20%28300%29.png)
+![](../../.gitbook/assets/image%20%28301%29.png)
 
 
 

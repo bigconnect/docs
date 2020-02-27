@@ -10,7 +10,7 @@ You can use and modify flows in a variety of ways:
 
 Clips enable you to save cells containing your workflow for later reuse. To save a cell as a clip, click the paperclip icon to the right of the cell \(highlighted in the red box in the following screenshot\). 
 
-![](../../../../.gitbook/assets/image%20%28333%29.png)
+![](../../../../.gitbook/assets/image%20%28334%29.png)
 
 To use a clip in a workflow, click the “Clips” tab in the sidebar on the right.
 
@@ -31,7 +31,7 @@ The **Outline** tab in the sidebar displays a brief summary of the cells current
 * To jump to a specific cell, click the cell description.
 * To delete a cell, select it and press the X key on your keyboard.
 
-![](../../../../.gitbook/assets/image%20%28619%29.png)
+![](../../../../.gitbook/assets/image%20%28620%29.png)
 
 ## Saving Flows
 
@@ -83,7 +83,7 @@ After clicking **Load Notebook**, the saved flow is loaded.
 
 To load an exported flow, click the **Flow** menu and select **Open Flow…**. In the pop-up window that appears, click the **Choose File** button and select the exported flow, then click the **Open** button.
 
-![](../../../../.gitbook/assets/image%20%28549%29.png)
+![](../../../../.gitbook/assets/image%20%28550%29.png)
 
 **Notes**:
 

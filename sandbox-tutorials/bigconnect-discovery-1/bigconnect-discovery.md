@@ -9,7 +9,7 @@ This tutorial will teach you the basics of data preparation and visualisation wi
 
 1.Login to BigConnect Discovery by going to [http://localhost:8180](http://localhost:8180) and use **admin**/**admin** for username and password. You will be taken to the _Admin Workspace_.
 
-![](../../.gitbook/assets/image%20%28466%29.png)
+![](../../.gitbook/assets/image%20%28467%29.png)
 
 2.Open the menu and choose **MANAGEMENT / Data Preparation / Datasets.** On this page, click on the **Generate new dataset** link.
 
@@ -17,7 +17,7 @@ This tutorial will teach you the basics of data preparation and visualisation wi
 
 3.Choose **My file** to upload your data
 
-![](../../.gitbook/assets/image%20%28544%29.png)
+![](../../.gitbook/assets/image%20%28545%29.png)
 
 4. Download the sample sales.csv dataset from [https://github.com/bigconnect/demos/raw/master/discovery/sales.csv](https://github.com/bigconnect/demos/raw/master/discovery/sales.csv) , upload it and choose Next. Leave the other options as default.
 
@@ -29,7 +29,7 @@ This tutorial will teach you the basics of data preparation and visualisation wi
 
 6. On the next screen, accept the defaults and click **Done**.
 
-![](../../.gitbook/assets/image%20%28398%29.png)
+![](../../.gitbook/assets/image%20%28399%29.png)
 
 7. After import, a new Data Preparation Flow will be created and you will be taken to the flow screen.
 
@@ -39,7 +39,7 @@ This tutorial will teach you the basics of data preparation and visualisation wi
 
 8.1 Change the date format for OrderDate to yyyy-MM-dd. Click the three dots icon next to the **OrderDate** column and choose **Alter / Set Format**:
 
-![](../../.gitbook/assets/image%20%28627%29.png)
+![](../../.gitbook/assets/image%20%28628%29.png)
 
 8.2 Set **yyyy-MM-dd** as the format in the bottom pane and click **Add**.
 
@@ -63,7 +63,7 @@ Enter **Geolocation** as the new column name and click **Add**.
 
 The new column is added to the dataset:
 
-![](../../.gitbook/assets/image%20%28559%29.png)
+![](../../.gitbook/assets/image%20%28560%29.png)
 
 9. Let's generate a new dataset based on the rules we set. Click on the **Snapshot** button in the top pane. 
 
@@ -99,11 +99,11 @@ Everything went smooth, we don't have any errors.
 
 14.4 Click on the **Geolocation** column and chang its Type to **Point**.
 
-![](../../.gitbook/assets/image%20%28557%29.png)
+![](../../.gitbook/assets/image%20%28558%29.png)
 
 14.3 Make sure that **OrderDate** is selected as the **Time-Type column** and hit **Next**.
 
-![](../../.gitbook/assets/image%20%28292%29.png)
+![](../../.gitbook/assets/image%20%28293%29.png)
 
 15. On the next screen, choose **Day** for **Query Granularit**y and **Month** for **Segment Granularity**. Choose **false** for **Rollup** if enabled and click **Next**.
 
@@ -123,7 +123,7 @@ Now that we have ingested the prepared data into our Druid engine, it's time to 
 
 1.Open the menu and choose **WORKSPACE / Admin Workspace** to go to our personal workspace. On this screen click on **Workbook.**
 
-![](../../.gitbook/assets/image%20%28609%29.png)
+![](../../.gitbook/assets/image%20%28610%29.png)
 
 2.Give a name to our new Workbook \(eg. **Demo**\) and click on **Done**.
 
@@ -139,7 +139,7 @@ Now that we have ingested the prepared data into our Druid engine, it's time to 
 
 5. Now let's add some charts. Click on the **Chart** dropdown button and select **Chart**.
 
-![](../../.gitbook/assets/image%20%28419%29.png)
+![](../../.gitbook/assets/image%20%28420%29.png)
 
 6. Choose **Pie Chart**. Click on the **Sub\_Category** Dimension and **Sales** Measure from the left pane to add them to our chart.
 
@@ -147,7 +147,7 @@ Now that we have ingested the prepared data into our Druid engine, it's time to 
 
 7. Click on the color palette and choose the blue color scheme for our pie chart:
 
-![](../../.gitbook/assets/image%20%28294%29.png)
+![](../../.gitbook/assets/image%20%28295%29.png)
 
 8. Now let's add some labels to our chart. Click on the Data Label settings option, enable **Show Data Label**, select **Series Name** and **Series Percent** and enable **Use Outside Label:**
 
@@ -155,7 +155,7 @@ Now that we have ingested the prepared data into our Druid engine, it's time to 
 
 9. Finally, click on the Common Settings button, change the **Chart Type** to **Donut** and toggle the chart **Legend**:
 
-![](../../.gitbook/assets/image%20%28393%29.png)
+![](../../.gitbook/assets/image%20%28394%29.png)
 
 10. **Save** the chart and the system will place it automatically on the Dashboard.
 
@@ -163,7 +163,7 @@ Now that we have ingested the prepared data into our Druid engine, it's time to 
 
 11. Now let's add a new chart. Click on the plus icon next to the Chart section in the right pane. 
 
-![](../../.gitbook/assets/image%20%28395%29.png)
+![](../../.gitbook/assets/image%20%28396%29.png)
 
 12. Click on the **OrderDate** dimension, **Sales** and **Profit** measures and select **Line Chart** as the type of chart to be created.
 
@@ -179,7 +179,7 @@ Now that we have ingested the prepared data into our Druid engine, it's time to 
 
 15. Now let's add data labels to our line chart. Click on the Data Label settings option, enable **Show Data Label**, select **Series Value** and choose Above for **Position:**
 
-![](../../.gitbook/assets/image%20%28341%29.png)
+![](../../.gitbook/assets/image%20%28342%29.png)
 
 16. Click on **Save** and drag the new chart below the first pie chart.
 
@@ -189,7 +189,7 @@ Now that we have ingested the prepared data into our Druid engine, it's time to 
 
 18. Drag the **City** column to the second dimension slot and the **Sales** column to the measure slot:
 
-![](../../.gitbook/assets/image%20%28568%29.png)
+![](../../.gitbook/assets/image%20%28569%29.png)
 
 19. Change the order of **Sales** items to **Descending**:
 
@@ -197,23 +197,23 @@ Now that we have ingested the prepared data into our Druid engine, it's time to 
 
 20. Let's format our numbers now to look more friendly. Click on the Number Format button, change **Format** to **Currency** and choose **USD** as the currency. Select **Automation** for **Number Abbreviations**.
 
-![](../../.gitbook/assets/image%20%28502%29.png)
+![](../../.gitbook/assets/image%20%28503%29.png)
 
 21. Let's also color the numbers based on their highest value. Click on the Color Setting button and choose **Measure** from the dropdown. Click on the color selector and choose the **red scheme** from the **9 steps** category.
 
-![](../../.gitbook/assets/image%20%28290%29.png)
+![](../../.gitbook/assets/image%20%28291%29.png)
 
 22. Click on the Common Setting icon and set **Color Style** to background:
 
-![](../../.gitbook/assets/image%20%28304%29.png)
+![](../../.gitbook/assets/image%20%28305%29.png)
 
 24. Finally, **Save** the chart and drag it on the right side of the dashboard.
 
-![](../../.gitbook/assets/image%20%28509%29.png)
+![](../../.gitbook/assets/image%20%28510%29.png)
 
 25. Click on the **Done** button on the top ribbon to save our dashboard.
 
-![](../../.gitbook/assets/image%20%28385%29.png)
+![](../../.gitbook/assets/image%20%28386%29.png)
 
 
 
@@ -225,7 +225,7 @@ For example, to see what happened in New York City, click on the New York City r
 
 26. Now let's create a new dashboard with the **salesdata** datasource and name it "**Sales Geography**". Add a new chart to the dashboard and choose **Map View** for the chart type. Add the **Geolocation** dimension and **Sales** measure to the chart:
 
-![](../../.gitbook/assets/image%20%28552%29.png)
+![](../../.gitbook/assets/image%20%28553%29.png)
 
 27. Click on the Layer Settings button and change the **Layer Type** to **Heatmap, Hexagon** or **Cluster** to see the different type of spatial aggregations.
 

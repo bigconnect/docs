@@ -143,11 +143,11 @@ Let us look at some examples of the syntax we have learned so far using `MATCH` 
 
 **Example 1:** Find the labeled `Person` nodes in the graph. Note that we must use a variable like `p` for the `Person` node if we want retrieve the node in the `RETURN` clause.
 
-![](../../.gitbook/assets/image%20%28459%29.png)
+![](../../.gitbook/assets/image%20%28460%29.png)
 
 **Example 2:** Find `Person` nodes in the graph that have a name of ‘Jennifer’. Remember that we can name our variable anything we want, as long as we reference that same name later.
 
-![](../../.gitbook/assets/image%20%28622%29.png)
+![](../../.gitbook/assets/image%20%28623%29.png)
 
 **Example 3:** Find which `Company` Jennifer works for.
 
@@ -169,7 +169,7 @@ MATCH (:Person {name: 'Jennifer'})-[:WORKS_FOR]->(company:Company)
 RETURN company.name
 ```
 
-![](../../.gitbook/assets/image%20%28564%29.png)
+![](../../.gitbook/assets/image%20%28565%29.png)
 
 ### Aliasing Return Values
 
@@ -190,11 +190,11 @@ RETURN order.orderId AS OrderID, order.orderDate AS `Purchase Date`,
 
 Results Without Aliases:
 
-![](../../.gitbook/assets/image%20%28301%29.png)
+![](../../.gitbook/assets/image%20%28302%29.png)
 
 Results With Aliases:
 
-![](../../.gitbook/assets/image%20%28524%29.png)
+![](../../.gitbook/assets/image%20%28525%29.png)
 
 {% hint style="info" %}
 You can specify return aliases that have spaces by using the backtick character before and after the alias \(order.orderDate AS `Purchase Date`\). If you do not have an alias that contains spaces, then you do not need to use backticks.

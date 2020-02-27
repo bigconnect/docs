@@ -184,9 +184,9 @@ Query time is reported in the `Table` or `Code` views \(**don’t rely on that e
 
 You can also download the results as a CSV from the `Table`, `Text`, and `Code` views or download the graph as an SVG or PNG from the `Graph` view, as shown below.
 
-![](../../.gitbook/assets/image%20%28584%29.png)
+![](../../.gitbook/assets/image%20%28585%29.png)
 
-![](../../.gitbook/assets/image%20%28298%29.png)
+![](../../.gitbook/assets/image%20%28299%29.png)
 
 ## Graph Metadata
 
@@ -212,7 +212,7 @@ You can reset to the default styles with **:style reset**
 
 Within the GRASS file, you can change colors, fonts, sizes, outlines, and titles per node label and relationship type. It is also possible to combine multiple properties into a caption with `caption: '{name}, born in {born}';`
 
-![](../../.gitbook/assets/image%20%28444%29.png)
+![](../../.gitbook/assets/image%20%28445%29.png)
 
 ## Configuration
 

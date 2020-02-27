@@ -11,7 +11,7 @@ Additional options include:
 * Hover your cursor over a widget to magnify the chart or itemize the widget display A larger version of the widget displays in a separate window. You can use the larger view in the same ways that you use the dashboard.
 * Click **OK** to close the larger view
 
-![](../../../../.gitbook/assets/image%20%28485%29.png)
+![](../../../../.gitbook/assets/image%20%28486%29.png)
 
 **Memory Usage**  
 Cluster-wide memory used, including memory that is cached, swapped, used, and shared  
