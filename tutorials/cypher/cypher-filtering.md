@@ -8,7 +8,7 @@ All of our examples will continue with the graph example we have been using in t
 
 We have added more `Person` nodes \(blue\) who `WORK_FOR` different `Company` nodes \(red\) and `LIKE` different `Technology` nodes. Each person could also have multiple `IS_FRIENDS_WITH` relationships to other people. This gives us a network of people, the companies they work for, and the technologies they like.
 
-![](../../../.gitbook/assets/image%20%28244%29.png)
+![](../../.gitbook/assets/image%20%28244%29.png)
 
 ## The WHERE clause
 
@@ -52,7 +52,7 @@ WHERE 3 <= p.yearsExp <= 7
 RETURN p
 ```
 
-![](../../../.gitbook/assets/image%20%28606%29.png)
+![](../../.gitbook/assets/image%20%28606%29.png)
 
 ### Testing if a Property Exists
 
@@ -76,11 +76,11 @@ RETURN p, rel, c
 
 Query1 Results:
 
-![](../../../.gitbook/assets/image%20%28627%29.png)
+![](../../.gitbook/assets/image%20%28627%29.png)
 
 Query2 Results:
 
-![](../../../.gitbook/assets/image%20%2872%29.png)
+![](../../.gitbook/assets/image%20%2872%29.png)
 
 ### Strings - Partial Values, Fuzzy Searches, and More
 
@@ -110,7 +110,7 @@ You can also use regular expressions to test the value of strings. For example, 
 
 Let’s look at an example.
 
-![](../../../.gitbook/assets/image%20%2854%29.png)
+![](../../.gitbook/assets/image%20%2854%29.png)
 
 Just like in SQL and other languages, you can check if a property value is a value in a list. The `IN` keyword allows you to specify an array of values and validate a property’s contents against each one in the list.
 
@@ -122,7 +122,7 @@ WHERE p.yearsExp IN [1, 5, 6]
 RETURN p.name, p.yearsExp
 ```
 
-![](../../../.gitbook/assets/image%20%28224%29.png)
+![](../../.gitbook/assets/image%20%28224%29.png)
 
 ## Filtering on Patterns
 
@@ -145,11 +145,11 @@ RETURN friend.name
 
 Query1 Results:
 
-![](../../../.gitbook/assets/image%20%28608%29.png)
+![](../../.gitbook/assets/image%20%28608%29.png)
 
 Query2 Results:
 
-![](../../../.gitbook/assets/image%20%28409%29.png)
+![](../../.gitbook/assets/image%20%28409%29.png)
 
 ### Optional Patterns
 
@@ -165,7 +165,7 @@ OPTIONAL MATCH (p)-[:WORKS_FOR]-(other:Company)
 RETURN p.name, other.name
 ```
 
-![](../../../.gitbook/assets/image%20%28557%29.png)
+![](../../.gitbook/assets/image%20%28557%29.png)
 
 Notice that Joe is returned because his name starts with the letter ‘J’, but his company name is null. That is because he does not have a `WORKS_FOR` relationship to a company node. Since we used optional match, his `Person` node is still returned from the first match, but the second match is not found, so returns null.
 
@@ -192,11 +192,11 @@ RETURN p.name
 
 Query1 Results:
 
-![](../../../.gitbook/assets/image%20%28198%29.png)
+![](../../.gitbook/assets/image%20%28198%29.png)
 
 Query2 Results:
 
-![](../../../.gitbook/assets/image%20%28599%29.png)
+![](../../.gitbook/assets/image%20%28599%29.png)
 
 Notice that on the second query, we used a comma after the first `MATCH` line and added another pattern to match on the next line. This allows us to chain together patterns, similar to when we used the `WHERE exists(<pattern>)` syntax above. With this structure, though, we can add multiple different patterns and link them together, allowing us to traverse various pieces of the graph with certain patterns.
 

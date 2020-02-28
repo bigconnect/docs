@@ -176,24 +176,26 @@
       * [Other tasks](administration-group/installation-and-upgrade/installation/prepare-the-environment/other-tasks.md)
     * [Installing BigConnect Data Lake](administration-group/installation-and-upgrade/installation/installing-bigconnect.md)
 
+## TUTORIALS
+
+* [BigConnect Discovery](tutorials/bigconnect-discovery-1/README.md)
+  * [BigConnect Discovery Basics](tutorials/bigconnect-discovery-1/bigconnect-discovery.md)
+  * [BigConnect Discovery Data Science](tutorials/bigconnect-discovery-1/bigconnect-discovery-ds.md)
+* [Cypher](tutorials/cypher/README.md)
+  * [Cypher Basics I](tutorials/cypher/cypher-basics-i.md)
+  * [Cypher Basics II](tutorials/cypher/cypher-basics-ii.md)
+  * [Filtering](tutorials/cypher/cypher-filtering.md)
+  * [Aggregations](tutorials/cypher/cypher-aggregations.md)
+  * [From SQL to Cypher](tutorials/cypher/from-sql-to-cypher.md)
+* [BigConnect Explorer](tutorials/bigconnect-explorer/README.md)
+  * [Loading Data](tutorials/bigconnect-explorer/sbx-explorer-importing-data.md)
+  * [Enriching Data](tutorials/bigconnect-explorer/sbx-explorer-enriching-data.md)
+  * [Searching Data](tutorials/bigconnect-explorer/sbx-explorer-searching-data.md)
+  * [Using the Graph](tutorials/bigconnect-explorer/sbx-explorer-using-the-graph.md)
+  * [Using the Map](tutorials/bigconnect-explorer/sbx-explorer-using-the-map.md)
+
 ## RESOURCES <a id="resources-group"></a>
 
-* [Tutorials](resources-group/sandbox-tutorials/README.md)
-  * [BigConnect Discovery](resources-group/sandbox-tutorials/bigconnect-discovery-1/README.md)
-    * [BigConnect Discovery Basics](resources-group/sandbox-tutorials/bigconnect-discovery-1/bigconnect-discovery.md)
-    * [BigConnect Discovery Data Science](resources-group/sandbox-tutorials/bigconnect-discovery-1/bigconnect-discovery-ds.md)
-  * [BigConnect Explorer](resources-group/sandbox-tutorials/bigconnect-explorer/README.md)
-    * [Loading Data](resources-group/sandbox-tutorials/bigconnect-explorer/sbx-explorer-importing-data.md)
-    * [Enriching Data](resources-group/sandbox-tutorials/bigconnect-explorer/sbx-explorer-enriching-data.md)
-    * [Searching Data](resources-group/sandbox-tutorials/bigconnect-explorer/sbx-explorer-searching-data.md)
-    * [Using the Graph](resources-group/sandbox-tutorials/bigconnect-explorer/sbx-explorer-using-the-graph.md)
-    * [Using the Map](resources-group/sandbox-tutorials/bigconnect-explorer/sbx-explorer-using-the-map.md)
-  * [Cypher](resources-group/sandbox-tutorials/cypher/README.md)
-    * [Cypher Basics I](resources-group/sandbox-tutorials/cypher/cypher-basics-i.md)
-    * [Cypher Basics II](resources-group/sandbox-tutorials/cypher/cypher-basics-ii.md)
-    * [Filtering](resources-group/sandbox-tutorials/cypher/cypher-filtering.md)
-    * [Aggregations](resources-group/sandbox-tutorials/cypher/cypher-aggregations.md)
-    * [From SQL to Cypher](resources-group/sandbox-tutorials/cypher/from-sql-to-cypher.md)
 * [Release Notes](resources-group/release-notes.md)
 
 ## REFERENCE <a id="reference-1"></a>

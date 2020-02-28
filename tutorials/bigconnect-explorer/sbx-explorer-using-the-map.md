@@ -10,7 +10,7 @@ There are numerous ways to get data onto the map:
 * Copy & Paste items from another Graph or Map
 * Load all elements from a saved search
 
-![](../../../.gitbook/assets/image%20%28284%29.png)
+![](../../.gitbook/assets/image%20%28284%29.png)
 
 All items added on the map are automatically clustered based on the zoom level. 
 

@@ -36,7 +36,7 @@ You can think of Concepts and Relations like database tables and their propertie
 The system provides a default setup of Concepts, Relations and Properties. Users can alter the default setup by defining their own Concepts, Relations and Properties depending of their business case. 
 {% endhint %}
 
-![Default schema for Concepts](../../../.gitbook/assets/image%20%28487%29.png)
+![Default schema for Concepts](../../.gitbook/assets/image%20%28487%29.png)
 
 {% hint style="warning" %}
 There are some default Concepts, Relations and Properties that are system-defined and cannot be changed. They are need for BigConnect Explorer to work properly and you cannot change or delete them. 

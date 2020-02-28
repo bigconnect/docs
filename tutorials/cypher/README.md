@@ -2,7 +2,7 @@
 
 The Cypher Lab is a graphical user interface \(GUI\) that helps users run and visualize [Cypher](https://en.wikipedia.org/wiki/Cypher_%28query_language%29) queries  using a web browser.
 
-![BigConnect Cypher Lab](../../../.gitbook/assets/image%20%28463%29.png)
+![BigConnect Cypher Lab](../../.gitbook/assets/image%20%28463%29.png)
 
 ## Editor
 
@@ -24,7 +24,7 @@ Clicking on an option results in a wider sidebar sliding open, with details abou
 
 For example, clicking the "Database" icon opens details about the database.
 
-![](../../../.gitbook/assets/image%20%28350%29.png)
+![](../../.gitbook/assets/image%20%28350%29.png)
 
 ## Frame Viewing Options
 
@@ -32,7 +32,7 @@ This enables you to view the data in different ways. Clicking on Rows for exampl
 
 Here's an example of data being displayed in row format.
 
-![](../../../.gitbook/assets/image%20%28294%29.png)
+![](../../.gitbook/assets/image%20%28294%29.png)
 
 
 
