@@ -1,6 +1,6 @@
 # Cypher Lab
 
-The Cypher Lab is a graphical user interface \(GUI\) that helps users run and visualize [Cypher]() queries  using a web browser.
+The Cypher Lab is a graphical user interface \(GUI\) that helps users run and visualize [Cypher](https://en.wikipedia.org/wiki/Cypher_%28query_language%29) queries  using a web browser.
 
 ![BigConnect Cypher Lab](../../../.gitbook/assets/image%20%28463%29.png)
 

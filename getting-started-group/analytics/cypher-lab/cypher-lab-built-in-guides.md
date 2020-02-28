@@ -6,7 +6,7 @@ To pin a particular pane to the top of the window \(under command line\) so that
 
 | **Title** | **Description** | **Command** |
 | :--- | :--- | :--- |
-| Intro | A guided tour of Neo4j Browser | `:play intro` |
+| Intro | A guided tour of Cypher Lab | `:play intro` |
 | Concepts | Graph database basics | `:play concepts` |
 | Cypher | Cypher graph query language introduction | `:play cypher` |
 | The Movie Graph | A mini graph model of connections between actors and movies | `:play movie graph` |
