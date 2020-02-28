@@ -2,7 +2,7 @@
 description: BigConnect Data Lake
 ---
 
-# Intro
+# What is BDL ?
 
 BigConnect Data Lake \(BDL\) is a s a secure data platform that offers a broad set of enterprise data services with the key data analytics and artificial intelligence functionality that enterprises require.
 
