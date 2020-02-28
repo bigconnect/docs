@@ -1,4 +1,4 @@
-# Administering Ambari
+# Ambari
 
 Apache Ambari enables you to provision, manage, and monitor your Hadoop cluster.
 
@@ -20,7 +20,7 @@ Installing Ambari creates the default user `admin/admin`. This Ambari-level admi
 
 **Related information**
 
-[Installing, Configuring, and Deploying a Cluster](../installation-and-upgrade/installation/installing-bigconnect.md)
+[Installing, Configuring, and Deploying a Cluster](../../administration-group/installation-and-upgrade/installation/installing-bigconnect.md)
 
 
 

@@ -40,7 +40,7 @@ Spatial queries can use the map to pinpoint the center and area of interest:
 
 ![BigConnect Spatial Search](../../../.gitbook/assets/image%20%2836%29.png)
 
-On top of classic faceted full-text search, more advanced queries can be performed using the [Cypher](../../../reference-1/cypher-language/) query language, using the integrated Cypher query editor with autocomplete features:
+On top of classic faceted full-text search, more advanced queries can be performed using the [Cypher]() query language, using the integrated Cypher query editor with autocomplete features:
 
 `MATCH (nicole:Actor {name: 'Nicole Kidman'})-[:ACTED_IN]->(movie:Movie)   
 WHERE movie.year < 2015   
