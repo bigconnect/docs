@@ -1,3 +1,7 @@
+---
+description: Tutorials on working with BigConnect Explorer
+---
+
 # BigConnect Explorer
 
 This tutorial will teach you the basics of data loading and visualisation with BigConnect Explorer. The main points addressed in the following sections are:
