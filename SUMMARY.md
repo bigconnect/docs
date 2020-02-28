@@ -12,7 +12,7 @@
   * [Universal Data Loading](getting-started-group/concepts/universal-data-loading.md)
   * [Auto Enrichment](getting-started-group/concepts/auto-enrichment.md)
   * [Security](getting-started-group/concepts/security.md)
-* [Analytics](getting-started-group/analytics/README.md)
+* [Data Analytics](getting-started-group/analytics/README.md)
   * [BigConnect Explorer](getting-started-group/analytics/bigconnect-explorer/README.md)
     * [Explorer Features](getting-started-group/analytics/bigconnect-explorer/explorer-features.md)
     * [Explorer Architecture and Concepts](getting-started-group/analytics/bigconnect-explorer/explorer-architecture-and-concepts.md)
