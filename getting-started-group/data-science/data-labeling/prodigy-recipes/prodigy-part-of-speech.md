@@ -4,7 +4,7 @@
 
 Collect the best possible training data for a part-of-speech tagging model with the model in the loop. Based on your annotations, Prodigy will decide which questions to ask next. All annotations will be stored in the database. You can stream in examples from a file or a live API. If no stream source is specified, it defaults to `sys.stdin`, letting you pipe through data via the `pipe` recipe or your own scripts.
 
-![](../../../../.gitbook/assets/image%20%28188%29.png)
+![](../../../../.gitbook/assets/image%20%28191%29.png)
 
 ## pos.make-gold
 
@@ -16,7 +16,7 @@ $ prodigy pos.make-gold news_headlines_gold en_core_web_sm news.jsonl --label "V
 ✨ Starting the web server on port 8080...
 ```
 
-![](../../../../.gitbook/assets/image%20%28455%29.png)
+![](../../../../.gitbook/assets/image%20%28463%29.png)
 
 ## pos.gold-to-spacy
 

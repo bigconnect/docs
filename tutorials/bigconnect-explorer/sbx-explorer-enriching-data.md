@@ -19,15 +19,15 @@ Let's see how the process works for an image and a text document. First, downloa
 
 Login to BigConnect Explorer using the default username **admin** and password **admin.** If this is the first time you login, you will be taken to the default dashboard created for you.
 
-![](../../.gitbook/assets/image%20%2875%29.png)
+![](../../.gitbook/assets/image%20%2876%29.png)
 
 Go to **Analyze** in the upper menu bar.
 
-![](../../.gitbook/assets/image%20%28621%29.png)
+![](../../.gitbook/assets/image%20%28634%29.png)
 
 Click on the **Graph** card \(or the **New..**. button and choose **Graph**\) and an empty graph will be created for you:
 
-![](../../.gitbook/assets/image%20%28533%29.png)
+![](../../.gitbook/assets/image%20%28544%29.png)
 
 Drag & drop the two downloaded files on the empty graph.
 
@@ -37,17 +37,17 @@ You can also click on the UPLOAD card and select the files using the upload dial
 
 A popup will be shown to ask you how you want to load the files into the system. Just leave the defaults and click **Import**
 
-![](../../.gitbook/assets/image%20%28432%29.png)
+![](../../.gitbook/assets/image%20%28440%29.png)
 
 The system will load and process the files. After a short while you should see four items on your graph:
 
-![](../../.gitbook/assets/image%20%28206%29.png)
+![](../../.gitbook/assets/image%20%28209%29.png)
 
 ### Text items
 
 Select the item that contains text information. You can see that some words in the text are underlined and that the item has a Negative Sentiment.
 
-![](../../.gitbook/assets/image%20%28418%29.png)
+![](../../.gitbook/assets/image%20%28426%29.png)
 
 These are automated enrichments that were applied by the system. The underlined words are Named Entities that the system detected and it marked them for you to "**resolve**".
 
@@ -57,11 +57,11 @@ These are automated enrichments that were applied by the system. The underlined 
 
 Click on the word **Austria** and you will see a popup where you can resolve the word to a new object:
 
-![](../../.gitbook/assets/image%20%28129%29.png)
+![](../../.gitbook/assets/image%20%28131%29.png)
 
 The system found that Austria is a probable Location object. Click on **Resolve** to proceed.
 
-![](../../.gitbook/assets/image%20%2877%29.png)
+![](../../.gitbook/assets/image%20%2878%29.png)
 
 The popup above allows you to create a new object with concept **Location** and name **Austria**. This is what BigConnect suggests you should do. If the Austria Location object exists in the system, then the popup  will tell you to associate the word with the existing object instead of creating a new one.
 
@@ -71,7 +71,7 @@ Click "**Resolve**" to proceed.
 When you "resolve" a word or piece of image, the system will create a relationship of type **hasEntity** between the item that contains the word to the target resolved object.
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%28105%29.png)
+![](../../.gitbook/assets/image%20%28107%29.png)
 
 You can see that the word Austria is now bolded. This means that this word is resolved and you can click on it to see details about the target object.
 
@@ -81,19 +81,19 @@ You can see that the word Austria is now bolded. This means that this word is re
 
 Now select the text item on the graph, right click on it and choose **Add Related** from the context menu. Click again **Add Related** and the Austria Location will be added to the graph automatically.
 
-![](../../.gitbook/assets/image%20%28155%29.png)
+![](../../.gitbook/assets/image%20%28158%29.png)
 
 ### Image Items
 
 For images things work in a similar way. Click on the image item on the graph:
 
-![](../../.gitbook/assets/image%20%28309%29.png)
+![](../../.gitbook/assets/image%20%28314%29.png)
 
 You can see that the image object has 3 blue boxes: **Animal, Hat, Sunglasses**. These are the objects the system automatically identified in the image.
 
 To manually annotate an image, you can draw a rectangle with your mouse on the image. Place the mouse on the image, click and then draw the rectangle. Once you finished, the system will ask you to "resolve" the piece of the image to an object, in a similar way to text items.
 
-![](../../.gitbook/assets/image%20%28518%29.png)
+![](../../.gitbook/assets/image%20%28529%29.png)
 
 Enter the name of the new entity, its concept and click "Resolve as New".
 

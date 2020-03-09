@@ -8,7 +8,7 @@ The Manager is the main entry point for using Sponge. It's a web application whe
 
 To create a new scraping project, navigate to the **Projects** menu item and choose **New Project**. A popup is displayed where you need to enter project information.
 
-![](../../../.gitbook/assets/image%20%28285%29.png)
+![](../../../.gitbook/assets/image%20%28290%29.png)
 
 * **Name** - the name of your Project
 * **Description** - a small description of your Project
@@ -18,11 +18,11 @@ To create a new scraping project, navigate to the **Projects** menu item and cho
 
 Once all information has been filled in, click the **Save** button. The project will be created and it will show in the Projects list.
 
-![](../../../.gitbook/assets/image%20%28218%29.png)
+![](../../../.gitbook/assets/image%20%28221%29.png)
 
-The next step is to configure our Project. Click on the  ![](../../../.gitbook/assets/image%20%28469%29.png) icon to go to the Project detail page.
+The next step is to configure our Project. Click on the  ![](../../../.gitbook/assets/image%20%28478%29.png) icon to go to the Project detail page.
 
-![](../../../.gitbook/assets/image%20%28520%29.png)
+![](../../../.gitbook/assets/image%20%28531%29.png)
 
 There are two actions and several actions that can be performed from the Project detail page:
 
@@ -49,7 +49,7 @@ In this section, various settings for the web scraped can be configured:
 
 ### Constant Fields
 
-![](../../../.gitbook/assets/image%20%28287%29.png)
+![](../../../.gitbook/assets/image%20%28292%29.png)
 
 These fields will have constant values for all scraped records. They are useful to mention the name of the scraped source, it's url, category, type etc.
 
@@ -61,19 +61,19 @@ General configuration settings for the project.
 
 Here you can configure how source fields map to destination fields. 
 
-![](../../../.gitbook/assets/image%20%28492%29.png)
+![](../../../.gitbook/assets/image%20%28501%29.png)
 
 ### Starting and Monitoring
 
 Projects can be started from the project list page, by clicking the Play button. When you try to start it, a popup will ask the user when the project should be started:
 
-![](../../../.gitbook/assets/image%20%28439%29.png)
+![](../../../.gitbook/assets/image%20%28447%29.png)
 
 You can choose to start it right away using **Run now** or scheduled using **Run scheduled**.
 
 When you choose the **Run Scheduled** option, the project will be run every N units of time \(Hours, Days or Minutes\):
 
-![](../../../.gitbook/assets/image%20%28314%29.png)
+![](../../../.gitbook/assets/image%20%28319%29.png)
 
 Running a scheduled project can be cancelled from the project details page using the **Remove Schedule** button.
 
@@ -98,7 +98,7 @@ Committers are destinations where Sponge stores scraped data. Out-of-the-box Spo
 
 Adding or changing committers can be done from the **Administration -&gt; Committer Configuration** page.
 
-![](../../../.gitbook/assets/image%20%28124%29.png)
+![](../../../.gitbook/assets/image%20%28126%29.png)
 
 Click the **New Committer** button to add a new committer. A popup will be displayed with the following information:
 
@@ -111,7 +111,7 @@ Click the **New Committer** button to add a new committer. A popup will be displ
 
 Used for storing scraping data in a database. This commiter will automatically create a database table for each project, using the project's name as a guideline.
 
-![](../../../.gitbook/assets/image%20%28346%29.png)
+![](../../../.gitbook/assets/image%20%28351%29.png)
 
 * **DB Driver Class** - fully-qualified class name of the JDBC driver to use \(eg. com.mysql.jdbc.Driver\)
 * **DB Driver Path** - the full path to the JDBC **.jar** file of the driver
@@ -135,7 +135,7 @@ Sponge includes the MySQL JDBC driver by default.
 
 Used for storing scraped data in raw, JSON or XML files in a configured folder.
 
-![](../../../.gitbook/assets/image%20%28352%29.png)
+![](../../../.gitbook/assets/image%20%28357%29.png)
 
 * **Directory** - full path to a filesystem folder where to store scraped data
 * **Committer** - one of _FileSystemCommitter, JSONFileCommitter, XMLFileCommitter_
@@ -148,7 +148,7 @@ The OS user that owns the Sponge Manager or Sponge Agent processes needs to have
 
 Used for storing scraped data as Documents in BigConnect \(ie. entities with Concept Type = Document\)
 
-![](../../../.gitbook/assets/image%20%28204%29.png)
+![](../../../.gitbook/assets/image%20%28207%29.png)
 
 * **Bc URL** - The HTTP\(S\)  URL to BigConnect Explorer
 * **Bc Username** - BigConnect Username
@@ -180,7 +180,7 @@ For example, consider you would like to scrape multiple news websites and store 
 
 Adding or changing schemas can be done from the **Administration -&gt; Schema Configuration** page.
 
-![](../../../.gitbook/assets/image%20%28209%29.png)
+![](../../../.gitbook/assets/image%20%28212%29.png)
 
 To register a new Schema, click the **Create new Schema** button and fill the following information:
 

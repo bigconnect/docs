@@ -26,7 +26,7 @@ For example, say you are processing Avro data as part of the Drift Synchronizati
 
 The following Expression Evaluator creates the Price field and defines the precision and scale field attributes based on the existing Cost precision and scale.
 
-![](../../../../.gitbook/assets/image%20%28423%29.png)
+![](../../../../.gitbook/assets/image%20%28431%29.png)
 
 ## Viewing Field Attributes in Data Preview
 

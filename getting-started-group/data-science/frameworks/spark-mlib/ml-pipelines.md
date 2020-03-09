@@ -63,7 +63,7 @@ Above, the top row represents a `Pipeline` with three stages. The first two \(`T
 
 A `Pipeline` is an `Estimator`. Thus, after a `Pipeline`’s `fit()` method runs, it produces a `PipelineModel`, which is a `Transformer`. This `PipelineModel` is used at _test time_; the figure below illustrates this usage.
 
-![](../../../../.gitbook/assets/image%20%28370%29.png)
+![](../../../../.gitbook/assets/image%20%28376%29.png)
 
 In the figure above, the `PipelineModel` has the same number of stages as the original `Pipeline`, but all `Estimator`s in the original `Pipeline` have become `Transformer`s. When the `PipelineModel`’s `transform()` method is called on a test dataset, the data are passed through the fitted pipeline in order. Each stage’s `transform()` method updates the dataset and passes it to the next stage.
 

@@ -10,11 +10,11 @@ You can use and modify flows in a variety of ways:
 
 Clips enable you to save cells containing your workflow for later reuse. To save a cell as a clip, click the paperclip icon to the right of the cell \(highlighted in the red box in the following screenshot\). 
 
-![](../../../../../.gitbook/assets/image%20%28334%29.png)
+![](../../../../../.gitbook/assets/image%20%28339%29.png)
 
 To use a clip in a workflow, click the “Clips” tab in the sidebar on the right.
 
-![](../../../../../.gitbook/assets/image%20%28144%29.png)
+![](../../../../../.gitbook/assets/image%20%28147%29.png)
 
 All saved clips, including the default system clips \(such as `assist`, `importFiles`, and `predict`\), are listed. Clips you have created are listed under the “My Clips” heading. To select a clip to insert, click the circular button to the left of the clip name. To delete a clip, click the trashcan icon to right of the clip name.
 
@@ -31,7 +31,7 @@ The **Outline** tab in the sidebar displays a brief summary of the cells current
 * To jump to a specific cell, click the cell description.
 * To delete a cell, select it and press the X key on your keyboard.
 
-![](../../../../../.gitbook/assets/image%20%28620%29.png)
+![](../../../../../.gitbook/assets/image%20%28633%29.png)
 
 ## Saving Flows
 
@@ -39,15 +39,15 @@ You can save your flow for later reuse. After a Flow is saved, you can load it b
 
 To save your flow as a notebook, click the “Save” button \(the first button in the row of buttons below the flow name\), or click the drop-down “Flow” menu and select “Save Flow.” To enter a custom name for the flow, click the default flow name \(“Untitled Flow”\) and type the desired flow name. A pencil icon indicates where to enter the desired name.
 
-![](../../../../../.gitbook/assets/image%20%2897%29.png)
+![](../../../../../.gitbook/assets/image%20%2898%29.png)
 
 To confirm the name, click the checkmark to the right of the name field.
 
-![](../../../../../.gitbook/assets/image%20%28217%29.png)
+![](../../../../../.gitbook/assets/image%20%28220%29.png)
 
 To reuse a saved flow, click the “Flows” tab in the sidebar, then click the flow name. To delete a saved flow, click the trashcan icon to the right of the flow name.
 
-![](../../../../../.gitbook/assets/image%20%28119%29.png)
+![](../../../../../.gitbook/assets/image%20%28121%29.png)
 
 ## Finding Saved Flows on Your Disk
 
@@ -83,7 +83,7 @@ After clicking **Load Notebook**, the saved flow is loaded.
 
 To load an exported flow, click the **Flow** menu and select **Open Flow…**. In the pop-up window that appears, click the **Choose File** button and select the exported flow, then click the **Open** button.
 
-![](../../../../../.gitbook/assets/image%20%28550%29.png)
+![](../../../../../.gitbook/assets/image%20%28561%29.png)
 
 **Notes**:
 

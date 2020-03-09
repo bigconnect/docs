@@ -15,31 +15,31 @@ BigConnect Discovery has seamless integration with Jupyter Notebooks. You can cr
 
 1.The first step is to connect Jupyter Notebook to BigConnect Discovery. Login to BigConnect Discovery and choose **MANAGEMENT / Notebook / Notebook Server** from the menu. Click on **Add a server** on the Notebook page:
 
-![](../../.gitbook/assets/image%20%2894%29.png)
+![](../../.gitbook/assets/image%20%2895%29.png)
 
 2. Choose **jupyter** for the **Type**, enter **http://localhost:9888** for the **URL** and **BDL Jupyter Server** for **Name** and click **Done**.
 
-![](../../.gitbook/assets/image%20%28548%29.png)
+![](../../.gitbook/assets/image%20%28559%29.png)
 
 This sets up the connection to the Jupyter Notebook server provided by BDL.
 
 3. Head to the **WORKSPACE / Admin Workspace** from the menu and connect the notebook server to our workspace. Click on the three dots on the right hand side of the top pane and choose **Set notebook server**:
 
-![](../../.gitbook/assets/image%20%28250%29.png)
+![](../../.gitbook/assets/image%20%28254%29.png)
 
 4. Select **BDL Jupyter Server** and click **Done**.
 
-![](../../.gitbook/assets/image%20%28146%29.png)
+![](../../.gitbook/assets/image%20%28149%29.png)
 
 5. A new button named **Notebook** will be shown on the bottom pane of the Admin Workspace. Click on it to create a new notebook
 
-![](../../.gitbook/assets/image%20%28116%29.png)
+![](../../.gitbook/assets/image%20%28118%29.png)
 
 6. Choose **Datasource** as the source type, select our previously created sa**l**esdata datasource and click **Next**.
 
 7. Choose **PYTHON** for the **Development language** \(_R is not installed in the Sandbox_\), enter **Sales Forecast** for **Name** and click **Done**
 
-![](../../.gitbook/assets/image%20%28578%29.png)
+![](../../.gitbook/assets/image%20%28590%29.png)
 
 8. You will be taken to the notebook details page. Click on the **Detail** link to open the actual Jupyter Notebook.
 
@@ -64,7 +64,7 @@ df_sales = pd.json_normalize(dataset)
 df_sales.head()
 ```
 
-![](../../.gitbook/assets/image%20%28530%29.png)
+![](../../.gitbook/assets/image%20%28541%29.png)
 
 11. Add another cell with the following code and run the notebook again:
 
@@ -85,7 +85,7 @@ ax = df_sales.plot(x='OrderDate', y='Sales', color='black', style='.')
 df_new.plot(x='OrderDate', y='pred', color='orange', linewidth=3, ax=ax, alpha=0.5)
 ```
 
-![](../../.gitbook/assets/image%20%28171%29.png)
+![](../../.gitbook/assets/image%20%28174%29.png)
 
 12. Add another cell with the following code and run the notebook again to save the trained model to a file and run the notebook again:
 
@@ -97,7 +97,7 @@ dump(regr, 'my_model.joblib')
 
 The output should be similar to:
 
-![](../../.gitbook/assets/image%20%28523%29.png)
+![](../../.gitbook/assets/image%20%28534%29.png)
 
 The trained model is not saved on the local disk, as the **my\_model.joblib** file.
 

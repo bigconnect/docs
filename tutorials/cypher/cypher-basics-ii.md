@@ -12,7 +12,7 @@ Adding data in Cypher works very similarly to any other data access language’s
 
 Let us look at an example that we used in our last guide. To review, we had a `Person` node \(Jennifer\) who liked graphs, was friends with Michael, and worked at Neo4j.
 
-![](../../.gitbook/assets/image%20%28372%29.png)
+![](../../.gitbook/assets/image%20%28378%29.png)
 
 What if we wanted to add another of Jennifer’s friends to the graph? We can add Jennifer’s friend Mark using the Cypher statement below.
 
@@ -25,7 +25,7 @@ RETURN friend
 It is not required to include the `RETURN` clause in the Cypher statement above. If you do not want to return any results, simply run this statement instead: `CREATE (friend:Person {name: 'Mark'})`
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%28590%29.png)
+![](../../.gitbook/assets/image%20%28603%29.png)
 
 Great! Now we added Mark to the database. However, Mark is all alone with no relationships because we just created his node and did not specify any connections. We know he is friends with Jennifer \(same as Michael\), so we can add a new `IS_FRIENDS_WITH` relationship between the existing Jennifer and Mark nodes. The Cypher to do that would look like this.
 
@@ -35,7 +35,7 @@ MATCH (mark:Person {name: 'Mark'})
 CREATE (jennifer)-[rel:IS_FRIENDS_WITH]->(mark)
 ```
 
-![](../../.gitbook/assets/image%20%28259%29.png)
+![](../../.gitbook/assets/image%20%28263%29.png)
 
 Notice that we run two `MATCH` queries before we create a relationship between the nodes. Why is that? The reason we do a match for Jennifer’s node and a match for Mark’s node first is because the `CREATE` keyword does a blind insert and will create the entire pattern, regardless if it already exists in the database.
 
@@ -62,7 +62,7 @@ SET p.birthdate = date('1980-01-01')
 RETURN p
 ```
 
-![](../../.gitbook/assets/image%20%28588%29.png)
+![](../../.gitbook/assets/image%20%28600%29.png)
 
 If we now wanted to change her birthday, we could use the same query above to find Jennifer’s node again and put a different date in the `SET` clause.
 
@@ -95,13 +95,13 @@ MATCH (j:Person {name: 'Jennifer'})-[r:IS_FRIENDS_WITH]->(m:Person {name: 'Mark'
 DELETE r
 ```
 
-![](../../.gitbook/assets/image%20%28163%29.png)
+![](../../.gitbook/assets/image%20%28166%29.png)
 
 #### Delete a Node
 
 To delete a node that does not have any relationships, you need to find the node you want to delete and then use the `DELETE` keyword, just as we did for the relationship above. We can delete Mark’s node for now and add him back in a later exercise.
 
-![](../../.gitbook/assets/image%20%28615%29.png)
+![](../../.gitbook/assets/image%20%28628%29.png)
 
 #### Delete a Node and Relationship
 
@@ -130,7 +130,7 @@ MATCH (n:Person {name: 'Jennifer'})
 SET n.birthdate = null
 ```
 
-![](../../.gitbook/assets/image%20%28127%29.png)
+![](../../.gitbook/assets/image%20%28129%29.png)
 
 ### Avoiding Duplicate Data Using MERGE
 
@@ -142,7 +142,7 @@ To start, let us look at an example of this by adding Mark back to our database 
 
 If we run the same statement again, Cypher will find an existing node this time that has the name Mark, so it will return the matched node without any changes.
 
-![](../../.gitbook/assets/image%20%2869%29.png)
+![](../../.gitbook/assets/image%20%2870%29.png)
 
 #### Using Merge on a Relationship
 
@@ -159,7 +159,7 @@ Notice that we used `MATCH` here to find both Mark’s node and Jennifer’s nod
 
 Cypher never produces a partial mix of matching and creating within a pattern. To avoid a mix of match and create, you need to match any existing elements of your pattern first before doing a merge on any elements you might want to create, just as we did in the statement above.
 
-![](../../.gitbook/assets/image%20%28507%29.png)
+![](../../.gitbook/assets/image%20%28517%29.png)
 
 Just for reference, the Cypher statement that will cause duplicates is below. Because this pattern \(Jennifer IS\_FRIENDS\_WITH Mark\) does not exist in the database, Cypher creates the entire pattern new – both nodes, as well as the relationship between them.
 
