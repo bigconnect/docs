@@ -175,6 +175,8 @@
       * [Operational Database](administration-group/installation-and-upgrade/installation/prepare-the-environment/operational-database.md)
       * [Other tasks](administration-group/installation-and-upgrade/installation/prepare-the-environment/other-tasks.md)
     * [Installing BigConnect Data Lake](administration-group/installation-and-upgrade/installation/installing-bigconnect.md)
+* [Backup](administration-group/backup/README.md)
+  * [Explorer](administration-group/backup/explorer.md)
 
 ## TUTORIALS
 
