@@ -1,7 +1,5 @@
 # Concepts
 
-{% page-ref page="architecture.md" %}
-
 {% page-ref page="universal-data-model.md" %}
 
 {% page-ref page="univesal-queries.md" %}

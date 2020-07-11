@@ -203,3 +203,4 @@ The following image shows Data Collector in Monitor mode:
     </tr>
   </tbody>
 </table>
+

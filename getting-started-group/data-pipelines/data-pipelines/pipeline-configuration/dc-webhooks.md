@@ -36,7 +36,9 @@ You can configure the following types of webhooks:
       <td style="text-align:left">Pipeline Configuration tab &gt; Notifications tab</td>
     </tr>
   </tbody>
-</table>The flexibility of webhooks enables you to automatically trigger a wide range of tasks, depending on the ability of external systems to support webhooks or process HTTP requests.
+</table>
+
+The flexibility of webhooks enables you to automatically trigger a wide range of tasks, depending on the ability of external systems to support webhooks or process HTTP requests.
 
 {% hint style="warning" %}
 You must configure webhooks as expected by the receiving system. For details on how to configure incoming webhooks check the receiving system's documentation. You might also need to enable webhook usage within that system.

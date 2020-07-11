@@ -340,7 +340,9 @@ The table below summarizes conditions to create, uses, and examples for each cha
       <td style="text-align:left">Monitoring energy flows in a factory</td>
     </tr>
   </tbody>
-</table>## Chart style attributes
+</table>
+
+## Chart style attributes
 
 Once data is pivoted, an options menu is shown on the right of the screen to allow you to set the chart style. The composition of the menu varies with chart type. This section describes the settings used universally by all chart types and the “Common Setting” items for each chart type.
 

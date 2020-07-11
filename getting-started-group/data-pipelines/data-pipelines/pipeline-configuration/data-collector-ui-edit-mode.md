@@ -267,7 +267,9 @@ The following image shows the Data Collector UI when you configure a pipeline:
       <td style="text-align:left">Maximizes the configuration panel.</td>
     </tr>
   </tbody>
-</table>{% hint style="info" %}
+</table>
+
+{% hint style="info" %}
 Some icons and options might not display. The items that display are based on the task that you are performing and roles assigned to your user account.
 
 For example, the Copy icon displays only when you select stage that can be copied, it does not display when you select a link or an origin. Or, if you log in with the Manager role, most configuration-related icons are not available.

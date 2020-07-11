@@ -127,7 +127,9 @@ To pin a particular pane to the top of the window \(under command line\) so that
         </td>
     </tr>
   </tbody>
-</table>All you have to do is enter any of the above commands in the Browser command line \(at the top of the pane\) and follow the accompanying guides to walk through the training or scenarios. Guides are presented as slideshows that can be navigated by clicking the forward and back arrows in the pane to progress to the next or previous slide. To execute any of the queries provided within a Browser guide, simply click on the query, and it will populate in the command line. Then, just press Enter or the Play button to execute the statement! Results of the query will populate in a panel right below the command line.
+</table>
+
+All you have to do is enter any of the above commands in the Browser command line \(at the top of the pane\) and follow the accompanying guides to walk through the training or scenarios. Guides are presented as slideshows that can be navigated by clicking the forward and back arrows in the pane to progress to the next or previous slide. To execute any of the queries provided within a Browser guide, simply click on the query, and it will populate in the command line. Then, just press Enter or the Play button to execute the statement! Results of the query will populate in a panel right below the command line.
 
 ### Styling Neo4j Browser Visualization
 

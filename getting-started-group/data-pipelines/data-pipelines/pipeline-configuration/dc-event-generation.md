@@ -35,7 +35,9 @@ Pipeline event records have the following event-related record header attributes
       <td style="text-align:left">Epoch timestamp when the stage created the event.</td>
     </tr>
   </tbody>
-</table>The event framework generates the following types of pipeline events:
+</table>
+
+The event framework generates the following types of pipeline events:
 
 **pipeline-start**
 
@@ -89,3 +91,4 @@ The stop event record has `sdc.event.type` set to `pipeline-stop`, and the follo
     </tr>
   </tbody>
 </table>
+

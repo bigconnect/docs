@@ -210,3 +210,4 @@ The following image shows Data Collector in Preview mode:
     </tr>
   </tbody>
 </table>
+

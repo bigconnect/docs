@@ -132,7 +132,9 @@ Concepts also have meta-properties that describe how the concept should be treat
         results.</td>
     </tr>
   </tbody>
-</table>Out of the box, the following concept hierarchy is provided:
+</table>
+
+Out of the box, the following concept hierarchy is provided:
 
 * `Thing`
   * `Event`
@@ -233,7 +235,9 @@ Relations also have meta-properties that describe how the they should be treated
         results.</td>
     </tr>
   </tbody>
-</table>Out of the box, the following relation hierarchy is provided:
+</table>
+
+Out of the box, the following relation hierarchy is provided:
 
 * Root Relationship
   * Has Entity
@@ -407,7 +411,9 @@ Properties apply to both concepts and relations. They also have meta-properties 
       <td style="text-align:left">The GeoHash precision to use for the GeoHash aggregation</td>
     </tr>
   </tbody>
-</table>Out of the box, the following properties are provided**:**
+</table>
+
+Out of the box, the following properties are provided**:**
 
 * Title - the title of the object
 * Text - any text contents

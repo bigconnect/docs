@@ -125,7 +125,9 @@ The record:attribute function does not allow access to internal record header at
       <td style="text-align:left">n/a</td>
     </tr>
   </tbody>
-</table>## Viewing Attributes in Data Preview
+</table>
+
+## Viewing Attributes in Data Preview
 
 You can use data preview to view the record header attributes associated with a record at any given point in the pipeline. To view record header attributes, enable the Show Record/Field Header data preview property.
 

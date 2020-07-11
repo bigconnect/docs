@@ -129,7 +129,9 @@ The following stages provide CRUD record header attributes:
       </td>
     </tr>
   </tbody>
-</table>## CRUD-Enabled Stages
+</table>
+
+## CRUD-Enabled Stages
 
 The following stages recognize CRUD operations stored in record header attributes and can perform writes based on those values. Some stages also provide CRUD-related properties.
 
@@ -347,7 +349,9 @@ The following stages recognize CRUD operations stored in record header attribute
       </td>
     </tr>
   </tbody>
-</table>## Processing the Record
+</table>
+
+## Processing the Record
 
 Change logs can provide record data in different formats. The JDBC Tee processor and JDBC Producer can decode most change log formats to generate record data based on the origin change log. When using other CRUD-enabled destinations, you might need to add additional processing to the pipeline to alter the format of the record.
 

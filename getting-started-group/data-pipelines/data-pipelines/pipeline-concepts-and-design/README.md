@@ -10,7 +10,7 @@ You can use [executor](../executors.md) stages to perform event-triggered task e
 
 In pipelines that write to Hive or parquet or to PostgreSQL, you can implement a data drift solution that detects drift in incoming data and updates tables in destination systems.
 
-When you start a pipeline, Data Collector runs the pipeline until you stop the pipeline or shut down Data Collector. You can use Data Collector to run multiple pipelines.
+When you start a pipeline, Data Pipelines runs the pipeline until you stop the pipeline or shut down Data Collector. You can use Data Collector to run multiple pipelines.
 
 While the pipeline runs, you can [monitor](../pipeline-monitoring.md) the pipeline to verify that the pipeline performs as expected. You can also define metric and data rules and alerts to let you know when certain thresholds are reached.
 

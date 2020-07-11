@@ -128,7 +128,9 @@ NetFlow 9 records can include the following fields:
         to include raw data in the record.</td>
     </tr>
   </tbody>
-</table>### Sample Raw and Interpreted Record
+</table>
+
+### Sample Raw and Interpreted Record
 
 When you set the Record Generation Mode property to Raw and Interpreted Data, the resulting record includes all of the possible NetFlow 9 fields, as follows:
 

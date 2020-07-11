@@ -2,10 +2,34 @@
 
 * [What is BDL ?](README.md)
 
+## Cloud
+
+* [Object Storage Service \(OSS\)](cloud/oss/README.md)
+  * [Basic Concepts](cloud/oss/oss-basic-concepts.md)
+  * [Quick Start](cloud/oss/oss-quick-start/README.md)
+    * [Create Buckets](cloud/oss/oss-quick-start/oss-create-buckets.md)
+    * [Upload Objects](cloud/oss/oss-quick-start/oss-upload-objects.md)
+    * [Download objects](cloud/oss/oss-quick-start/oss-download-objects.md)
+    * [Delete Objects](cloud/oss/oss-quick-start/oss-delete-objects.md)
+    * [Delete Buckets](cloud/oss/oss-quick-start/delete-buckets.md)
+  * [Limits](cloud/oss/oss-limits.md)
+  * [osscli](cloud/oss/oss-cli/README.md)
+    * [Download and Installation](cloud/oss/oss-cli/osscli-download-and-installation.md)
+    * [FS Commands](cloud/oss/oss-cli/oss-fs-commands.md)
+    * [Admin Commands](cloud/oss/oss-cli/oss-admin-commands.md)
+  * [Developer Guide](cloud/oss/oss-dev-guide/README.md)
+    * [.NET SDK QuickStart](cloud/oss/oss-dev-guide/oss-dotnet-sdk-quickstart.md)
+    * [.NET SDK Reference](cloud/oss/oss-dev-guide/oss-dotnet-sdk-reference.md)
+    * [Python SDK QuickStart](cloud/oss/oss-dev-guide/oss-python-sdk-quickstart.md)
+    * [Python SDK Reference](cloud/oss/oss-dev-guide/oss-python-sdk-reference.md)
+    * [Java SDK QuickStart](cloud/oss/oss-dev-guide/oss-java-sdk-quickstart.md)
+    * [Java SDK Reference](cloud/oss/oss-dev-guide/oss-java-sdk-reference.md)
+    * [JavaScript SDK QuickStart](cloud/oss/oss-dev-guide/oss-js-sdk.md)
+    * [JavaScript SDK Reference](cloud/oss/oss-dev-guide/javascript-sdk-reference.md)
+
 ## GETTING STARTED <a id="getting-started-group"></a>
 
 * [Concepts](getting-started-group/concepts/README.md)
-  * [Architecture](getting-started-group/concepts/architecture.md)
   * [Universal Data Model](getting-started-group/concepts/universal-data-model.md)
   * [Univesal Queries](getting-started-group/concepts/univesal-queries.md)
   * [Universal AI](getting-started-group/concepts/universal-ai.md)
@@ -159,25 +183,6 @@
   * [Start/Stop Services](getting-started-group/sandbox/start-stop-bdl.md)
   * [URLs and Ports](getting-started-group/sandbox/service-urls.md)
 
-## ADMINISTRATION <a id="administration-group"></a>
-
-* [Deployment](administration-group/installation-and-upgrade/README.md)
-  * [Operating Systems](administration-group/installation-and-upgrade/operating-systems.md)
-  * [Sizing](administration-group/installation-and-upgrade/sizing.md)
-  * [Installation](administration-group/installation-and-upgrade/installation/README.md)
-    * [Software Requirements](administration-group/installation-and-upgrade/installation/software-requirements.md)
-    * [Gather Information](administration-group/installation-and-upgrade/installation/gather-information.md)
-    * [Prepare the Environment](administration-group/installation-and-upgrade/installation/prepare-the-environment/README.md)
-      * [​Password-less SSH](administration-group/installation-and-upgrade/installation/prepare-the-environment/password-less-ssh.md)
-      * [Enable NTP](administration-group/installation-and-upgrade/installation/prepare-the-environment/enable-ntp.md)
-      * [DNS](administration-group/installation-and-upgrade/installation/prepare-the-environment/dns.md)
-      * [Firewall](administration-group/installation-and-upgrade/installation/prepare-the-environment/firewall.md)
-      * [Operational Database](administration-group/installation-and-upgrade/installation/prepare-the-environment/operational-database.md)
-      * [Other tasks](administration-group/installation-and-upgrade/installation/prepare-the-environment/other-tasks.md)
-    * [Installing BigConnect Data Lake](administration-group/installation-and-upgrade/installation/installing-bigconnect.md)
-* [Backup](administration-group/backup/README.md)
-  * [Explorer](administration-group/backup/explorer.md)
-
 ## TUTORIALS
 
 * [BigConnect Discovery](tutorials/bigconnect-discovery-1/README.md)
@@ -197,12 +202,25 @@
   * [Aggregations](tutorials/cypher/cypher-aggregations.md)
   * [From SQL to Cypher](tutorials/cypher/from-sql-to-cypher.md)
 
-## RESOURCES <a id="resources-group"></a>
+## On-Premise
 
-* [Blog](https://www.bigconnect.io/blog)
-* [Support Forum](https://community.bigconnect.io/)
-* [YouTube Channel](https://www.youtube.com/channel/UCPB9zeBPhcTgrqQDCe57HyA)
-* [Release Notes](resources-group/release-notes.md)
+* [Architecture](on-premise/architecture.md)
+* [Deployment](on-premise/installation-and-upgrade/README.md)
+  * [Operating Systems](on-premise/installation-and-upgrade/operating-systems.md)
+  * [Sizing](on-premise/installation-and-upgrade/sizing.md)
+  * [Installation](on-premise/installation-and-upgrade/installation/README.md)
+    * [Software Requirements](on-premise/installation-and-upgrade/installation/software-requirements.md)
+    * [Gather Information](on-premise/installation-and-upgrade/installation/gather-information.md)
+    * [Prepare the Environment](on-premise/installation-and-upgrade/installation/prepare-the-environment/README.md)
+      * [​Password-less SSH](on-premise/installation-and-upgrade/installation/prepare-the-environment/password-less-ssh.md)
+      * [Enable NTP](on-premise/installation-and-upgrade/installation/prepare-the-environment/enable-ntp.md)
+      * [DNS](on-premise/installation-and-upgrade/installation/prepare-the-environment/dns.md)
+      * [Firewall](on-premise/installation-and-upgrade/installation/prepare-the-environment/firewall.md)
+      * [Operational Database](on-premise/installation-and-upgrade/installation/prepare-the-environment/operational-database.md)
+      * [Other tasks](on-premise/installation-and-upgrade/installation/prepare-the-environment/other-tasks.md)
+    * [Installing BigConnect Data Lake](on-premise/installation-and-upgrade/installation/installing-bigconnect.md)
+* [Backup](on-premise/backup/README.md)
+  * [Explorer](on-premise/backup/explorer.md)
 
 ## REFERENCE <a id="reference-group"></a>
 
@@ -460,4 +478,11 @@
   * [Data Types](reference-group/sql-language/sql-data-types.md)
   * [SQL Statement Syntax](reference-group/sql-language/sql-statement-syntax.md)
   * [Reserved Keywords](reference-group/sql-language/sql-reserved-keywords.md)
+
+## RESOURCES <a id="resources-group"></a>
+
+* [Blog](https://www.bigconnect.io/blog)
+* [Support Forum](https://community.bigconnect.io/)
+* [YouTube Channel](https://www.youtube.com/channel/UCPB9zeBPhcTgrqQDCe57HyA)
+* [Release Notes](resources-group/release-notes.md)
 
