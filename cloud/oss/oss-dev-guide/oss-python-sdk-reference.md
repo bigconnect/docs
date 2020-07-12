@@ -14,17 +14,17 @@ minioClient = Minio('storage-4175974314028753.cloud.bigconnect.io',
 
 | Bucket operations | Object operations | Presigned operations | Bucket policy/notification/encryption operations |
 | :--- | :--- | :--- | :--- |
-| `make_bucket` | `get_object` | `presigned_get_object` | `get_bucket_policy` |
-| `list_buckets` | `put_object` | `presigned_put_object` | `set_bucket_policy` |
-| `bucket_exists` | `copy_object` | `presigned_post_policy` | `get_bucket_notification` |
-| `remove_bucket` | `stat_object` |  | `set_bucket_notification` |
-| `list_objects` | `remove_object` |  | `remove_all_bucket_notification` |
-| `list_objects_v2` | `remove_objects` |  | `listen_bucket_notification` |
-| `list_incomplete_uploads` | `remove_incomplete_upload` |  | `get_bucket_encryption` |
-|  | `fput_object` |  | `put_bucket_encryption` |
-|  | `fget_object` |  | `delete_bucket_encryption` |
-|  | `get_partial_object` |  |  |
-|  | `select_object_content` |  |  |
+| \`\`[`make_bucket`](oss-python-sdk-reference.md#make_bucket-bucket_name-location-default)\`\` | \`\`[`get_object`](oss-python-sdk-reference.md#get_object-bucket_name-object_name-request_headers-none)\`\` | \`\`[`presigned_get_object`](oss-python-sdk-reference.md#presigned_get_object-bucket_name-object_name-expires-timedelta-days-7)\`\` | `get_bucket_policy` |
+| \`\`[`list_buckets`](oss-python-sdk-reference.md#list_buckets) | \`\`[`put_object`](oss-python-sdk-reference.md#put_object-bucket_name-object_name-data-length-content_type-application-octet-stream-metadata-none-progress-none-part_size-510241024)\`\` | \`\`[`presigned_put_object`](oss-python-sdk-reference.md#presigned_put_object-bucket_name-object_name-expires-timedelta-days-7)\`\` | `set_bucket_policy` |
+| \`\`[`bucket_exists`](oss-python-sdk-reference.md#bucket_exists-bucket_name) | \`\`[`copy_object`](oss-python-sdk-reference.md#copy_object-bucket_name-object_name-object_source-copy_conditions-none-metadata-none)\`\` | \`\`[`presigned_post_policy`](oss-python-sdk-reference.md#presigned_post_policy-postpolicy)\`\` | `get_bucket_notification` |
+| \`\`[`remove_bucket`](oss-python-sdk-reference.md#remove_bucket-bucket_name)\`\` | \`\`[`stat_object`](oss-python-sdk-reference.md#stat_object-bucket_name-object_name)\`\` |  | `set_bucket_notification` |
+| \`\`[`list_objects`](oss-python-sdk-reference.md#list_objects-bucket_name-prefix-none-recursive-false)\`\` | \`\`[`remove_object`](oss-python-sdk-reference.md#remove_object-bucket_name-object_name)\`\` |  | `remove_all_bucket_notification` |
+| \`\`[`list_objects_v2`](oss-python-sdk-reference.md#list_objects_v-2-bucket_name-prefix-none-recursive-false)\`\` | \`\`[`remove_objects`](oss-python-sdk-reference.md#remove_objects-bucket_name-objects_iter)\`\` |  | `listen_bucket_notification` |
+| \`\`[`list_incomplete_uploads`](oss-python-sdk-reference.md#list_incomplete_uploads-bucket_name-prefix-recursive-false)\`\` | \`\`[`remove_incomplete_upload`](oss-python-sdk-reference.md#remove_incomplete_upload-bucket_name-object_name)\`\` |  | `get_bucket_encryption` |
+|  | \`\`[`fput_object`](oss-python-sdk-reference.md#fput_object-bucket_name-object_name-file_path-content_type-application-octet-stream-metadata-none-progress-none-part_size-510241024)\`\` |  | `put_bucket_encryption` |
+|  | \`\`[`fget_object`](oss-python-sdk-reference.md#fget_object-bucket_name-object_name-file_path-request_headers-none)\`\` |  | `delete_bucket_encryption` |
+|  | \`\`[`get_partial_object`](oss-python-sdk-reference.md#get_partial_object-bucket_name-object_name-offset-0-length-0-request_headers-none)\`\` |  |  |
+|  | \`\`[`select_object_content`](oss-python-sdk-reference.md#select_object_content-bucket_name-object_name-options)\`\` |  |  |
 
 ### 1. Constructor
 
