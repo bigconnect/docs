@@ -11,6 +11,7 @@
 
 ## Cloud
 
+* [Getting Started](cloud/getting-started.md)
 * [AI](cloud/ai/README.md)
   * [Audio](cloud/ai/audio.md)
   * [Video](cloud/ai/video.md)
@@ -22,6 +23,8 @@
   * [Cypher Lab Commands and Keyboard](cloud/cypher-lab/cypher-lab-commands-and-keyboard.md)
   * [Cypher Lab Styling](cloud/cypher-lab/cypher-lab-styling.md)
   * [Cypher Lab Built-in Guides](cloud/cypher-lab/cypher-lab-built-in-guides.md)
+* [Data Streaming](cloud/data-streaming.md)
+* [Identity Management](cloud/identity-management.md)
 * [Discovery](cloud/bigconnect-discovery/README.md)
   * [Druid](cloud/bigconnect-discovery/druid/README.md)
     * [Druid Features](cloud/bigconnect-discovery/druid/druid-features.md)
