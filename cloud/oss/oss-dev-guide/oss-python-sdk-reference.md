@@ -12,19 +12,47 @@ minioClient = Minio('storage-4175974314028753.cloud.bigconnect.io',
                   secure=True)
 ```
 
-| Bucket operations | Object operations | Presigned operations | Bucket policy/notification/encryption operations |
-| :--- | :--- | :--- | :--- |
-| \`\`[`make_bucket`](oss-python-sdk-reference.md#make_bucket-bucket_name-location-default)\`\` | \`\`[`get_object`](oss-python-sdk-reference.md#get_object-bucket_name-object_name-request_headers-none)\`\` | \`\`[`presigned_get_object`](oss-python-sdk-reference.md#presigned_get_object-bucket_name-object_name-expires-timedelta-days-7)\`\` | `get_bucket_policy` |
-| \`\`[`list_buckets`](oss-python-sdk-reference.md#list_buckets) | \`\`[`put_object`](oss-python-sdk-reference.md#put_object-bucket_name-object_name-data-length-content_type-application-octet-stream-metadata-none-progress-none-part_size-510241024)\`\` | \`\`[`presigned_put_object`](oss-python-sdk-reference.md#presigned_put_object-bucket_name-object_name-expires-timedelta-days-7)\`\` | `set_bucket_policy` |
-| \`\`[`bucket_exists`](oss-python-sdk-reference.md#bucket_exists-bucket_name) | \`\`[`copy_object`](oss-python-sdk-reference.md#copy_object-bucket_name-object_name-object_source-copy_conditions-none-metadata-none)\`\` | \`\`[`presigned_post_policy`](oss-python-sdk-reference.md#presigned_post_policy-postpolicy)\`\` | `get_bucket_notification` |
-| \`\`[`remove_bucket`](oss-python-sdk-reference.md#remove_bucket-bucket_name)\`\` | \`\`[`stat_object`](oss-python-sdk-reference.md#stat_object-bucket_name-object_name)\`\` |  | `set_bucket_notification` |
-| \`\`[`list_objects`](oss-python-sdk-reference.md#list_objects-bucket_name-prefix-none-recursive-false)\`\` | \`\`[`remove_object`](oss-python-sdk-reference.md#remove_object-bucket_name-object_name)\`\` |  | `remove_all_bucket_notification` |
-| \`\`[`list_objects_v2`](oss-python-sdk-reference.md#list_objects_v-2-bucket_name-prefix-none-recursive-false)\`\` | \`\`[`remove_objects`](oss-python-sdk-reference.md#remove_objects-bucket_name-objects_iter)\`\` |  | `listen_bucket_notification` |
-| \`\`[`list_incomplete_uploads`](oss-python-sdk-reference.md#list_incomplete_uploads-bucket_name-prefix-recursive-false)\`\` | \`\`[`remove_incomplete_upload`](oss-python-sdk-reference.md#remove_incomplete_upload-bucket_name-object_name)\`\` |  | `get_bucket_encryption` |
-|  | \`\`[`fput_object`](oss-python-sdk-reference.md#fput_object-bucket_name-object_name-file_path-content_type-application-octet-stream-metadata-none-progress-none-part_size-510241024)\`\` |  | `put_bucket_encryption` |
-|  | \`\`[`fget_object`](oss-python-sdk-reference.md#fget_object-bucket_name-object_name-file_path-request_headers-none)\`\` |  | `delete_bucket_encryption` |
-|  | \`\`[`get_partial_object`](oss-python-sdk-reference.md#get_partial_object-bucket_name-object_name-offset-0-length-0-request_headers-none)\`\` |  |  |
-|  | \`\`[`select_object_content`](oss-python-sdk-reference.md#select_object_content-bucket_name-object_name-options)\`\` |  |  |
+**Bucket operations**
+
+* [make\_bucket](oss-python-sdk-reference.md#make_bucket-bucket_name-location-default) - Creates a new bucket
+* [list\_buckets](oss-python-sdk-reference.md#list_buckets) - Lists all buckets
+* [bucket\_exists](oss-python-sdk-reference.md#bucket_exists-bucket_name) - Checks if a bucket exists
+* [remove\_bucket](oss-python-sdk-reference.md#remove_bucket-bucket_name) - Removes a bucket
+* [list\_objects](oss-python-sdk-reference.md#list_objects-bucket_name-prefix-none-recursive-false) - Lists objects in a bucket
+* [list\_objects\_v2](oss-python-sdk-reference.md#list_objects_v-2-bucket_name-prefix-none-recursive-false) - Lists objects in a bucket using the Version 2 API
+* [list\_incomplete\_uploads](oss-python-sdk-reference.md#list_incomplete_uploads-bucket_name-prefix-recursive-false) - Lists partially uploaded objects in a bucket
+
+**Object operations**
+
+* [get\_object](oss-python-sdk-reference.md#get_object-bucket_name-object_name-request_headers-none) - Downloads an object
+* [put\_object](oss-python-sdk-reference.md#put_object-bucket_name-object_name-data-length-content_type-application-octet-stream-metadata-none-progress-none-part_size-510241024) - Add a new object
+* [copy\_object](oss-python-sdk-reference.md#copy_object-bucket_name-object_name-object_source-copy_conditions-none-metadata-none) - Copy a source object on object storage server to a new object.
+* [stat\_object](oss-python-sdk-reference.md#stat_object-bucket_name-object_name) - Gets metadata of an object
+* [remove\_object](oss-python-sdk-reference.md#remove_object-bucket_name-object_name) - Removes an object
+* [remove\_objects](oss-python-sdk-reference.md#remove_objects-bucket_name-objects_iter) - Removes multiple objects in a bucket
+* [remove\_incomplete\_upload](oss-python-sdk-reference.md#remove_incomplete_upload-bucket_name-object_name) - Removes a partially uploaded object.
+* [fput\_object](oss-python-sdk-reference.md#fput_object-bucket_name-object_name-file_path-content_type-application-octet-stream-metadata-none-progress-none-part_size-510241024) - Uploads contents from a file,
+* [fget\_object](oss-python-sdk-reference.md#fget_object-bucket_name-object_name-file_path-request_headers-none) - Downloads and saves the object as a file in the local filesystem
+* [get\_partial\_object](oss-python-sdk-reference.md#get_partial_object-bucket_name-object_name-offset-0-length-0-request_headers-none) - Downloads the specified range bytes of an object
+* [select\_object\_content](oss-python-sdk-reference.md#select_object_content-bucket_name-object_name-options) - Select object content filters the contents of object based on a simple structured query language \(SQL\).
+
+**Presigned operations**
+
+* [presigned\_get\_object](oss-python-sdk-reference.md#presigned_get_object-bucket_name-object_name-expires-timedelta-days-7) - Generates a presigned URL for HTTP GET operations
+* [presigned\_put\_object](oss-python-sdk-reference.md#presigned_put_object-bucket_name-object_name-expires-timedelta-days-7) - Generates a presigned URL for HTTP PUT operations.
+* [presigned\_post\_policy](oss-python-sdk-reference.md#presigned_post_policy-postpolicy) - Allows setting policy conditions to a presigned URL for POST operations
+
+**Bucket policy/notification/encryption operations**
+
+* [get\_bucket\_policy](oss-python-sdk-reference.md#get_bucket_policy-bucket_name) - Gets current policy of a bucket.
+* [set\_bucket\_policy](oss-python-sdk-reference.md#set_bucket_policy-bucket_name-policy) - Set a bucket policy for a specified bucket
+* [get\_bucket\_notification](oss-python-sdk-reference.md#get_bucket_notification-bucket_name) - Fetch the notifications configuration on a bucket.
+* [set\_bucket\_notification](oss-python-sdk-reference.md#set_bucket_notification-bucket_name-notification) - Set notification configuration on a bucket
+* [remove\_all\_bucket\_notification](oss-python-sdk-reference.md#remove_all_bucket_notification-bucket_name) - Remove all notifications configured on the bucket
+* [listen\_bucket\_notification](oss-python-sdk-reference.md#listen_bucket_notification-bucket_name-prefix-suffix-events) - Listen for notifications on a bucket
+* [get\_bucket\_encryption](oss-python-sdk-reference.md#get_bucket_encryption-bucket_name) - Get default encryption configuration set on a bucket.
+* [put\_bucket\_encryption](oss-python-sdk-reference.md#put_bucket_encryption-bucket_name-encryption_configuration) - Put/Set default encryption configuration for a specified bucket.
+* [delete\_bucket\_encryption](oss-python-sdk-reference.md#delete_bucket_encryption-bucket_name) - Remove default encryption configuration on a bucket
 
 ### 1. Constructor
 
