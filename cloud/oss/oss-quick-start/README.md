@@ -25,6 +25,6 @@ OSS provides APIs and SDKs in multiple programming languages to facilitate secon
 
 * [JavaScript SDK](../oss-dev-guide/oss-js-sdk.md) 
 * [Java SDK](../oss-dev-guide/oss-java-sdk-quickstart.md) 
-* Python SDK 
-* .NET SDK 
+* [Python SDK](../oss-dev-guide/oss-python-sdk-quickstart.md) 
+* [.NET SDK](../oss-dev-guide/oss-dotnet-sdk-quickstart.md) 
 
