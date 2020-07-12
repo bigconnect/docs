@@ -2,8 +2,8 @@
 
 ### Create OSS Client.
 
-```text
-CopyMinioClient minioClient =
+```java
+MinioClient minioClient =
     MinioClient.builder()
         .endpoint("https://storage-4175974314028753.cloud.bigconnect.io")
         .credentials("Q3AM3UQ867SPQQA43P2F", "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG")

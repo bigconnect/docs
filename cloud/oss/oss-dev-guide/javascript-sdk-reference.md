@@ -1,30 +1,60 @@
 # JavaScript SDK Reference
 
-| Bucket operations | Object operations | Presigned operations | Bucket Policy & Notification operations |
-| :--- | :--- | :--- | :--- |
-| \`\`[`makeBucket`](javascript-sdk-reference.md#makebucket-bucketname-region-callback)\`\` | \`\`[`getObject`](javascript-sdk-reference.md#getobject-bucketname-objectname-callback)\`\` | \`\`[`presignedUrl`](javascript-sdk-reference.md#presignedurl-httpmethod-bucketname-objectname-expiry-reqparams-requestdate-cb)\`\` | \`\`[`getBucketNotification`](javascript-sdk-reference.md#getbucketnotification-bucketname-cb)\`\` |
-| \`\`[`listBuckets`](javascript-sdk-reference.md#listbuckets-callback)\`\` | \`\`[`getPartialObject`](javascript-sdk-reference.md#getpartialobject-bucketname-objectname-offset-length-callback)\`\` | \`\`[`presignedGetObject`](javascript-sdk-reference.md#presignedgetobject-bucketname-objectname-expiry-respheaders-requestdate-cb)\`\` | \`\`[`setBucketNotification`](javascript-sdk-reference.md#setbucketnotification-bucketname-bucketnotificationconfig-callback)\`\` |
-| \`\`[`bucketExists`](javascript-sdk-reference.md#bucketexists-bucketname-callback)\`\` | \`\`[`fGetObject`](javascript-sdk-reference.md#fgetobject-bucketname-objectname-filepath-callback)\`\` | \`\`[`presignedPutObject`](javascript-sdk-reference.md#presignedputobject-bucketname-objectname-expiry-callback)\`\` | \`\`[`removeAllBucketNotification`](javascript-sdk-reference.md#removeallbucketnotification-bucketname-callback)\`\` |
-| \`\`[`removeBucket`](javascript-sdk-reference.md#removebucket-bucketname-callback)\`\` | \`\`[`putObject`](javascript-sdk-reference.md#putobject-bucketname-objectname-stream-size-metadata-callback)\`\` | \`\`[`presignedPostPolicy`](javascript-sdk-reference.md#presignedpostpolicy-policy-callback)\`\` | \`\`[`getBucketPolicy`](javascript-sdk-reference.md#getbucketpolicy-bucketname-callback)\`\` |
-| \`\`[`listObjects`](javascript-sdk-reference.md#listobjects-bucketname-prefix-recursive)\`\` | \`\`[`fPutObject`](javascript-sdk-reference.md#fputobject-bucketname-objectname-filepath-metadata-callback)\`\` |  | \`\`[`setBucketPolicy`](javascript-sdk-reference.md#setbucketpolicy-bucketname-bucketpolicy-callback)\`\` |
-| \`\`[`listObjectsV2`](javascript-sdk-reference.md#listobjectsv-2-bucketname-prefix-recursive-startafter)\`\` | \`\`[`copyObject`](javascript-sdk-reference.md#copyobject-bucketname-objectname-sourceobject-conditions-callback)\`\` |  | \`\`[`listenBucketNotification`](javascript-sdk-reference.md#listenbucketnotification-bucketname-prefix-suffix-events)\`\` |
-| \`\`[`listIncompleteUploads`](javascript-sdk-reference.md#listincompleteuploads-bucketname-prefix-recursive)\`\` | \`\`[`statObject`](javascript-sdk-reference.md#statobject-bucketname-objectname-callback)\`\` |  |  |
-|  | \`\`[`removeObject`](javascript-sdk-reference.md#removeobject-bucketname-objectname-callback)\`\` |  |  |
-|  | \`\`[`removeObjects`](javascript-sdk-reference.md#removeobjects-bucketname-objectslist-callback)\`\` |  |  |
-|  | \`\`[`removeIncompleteUpload`](javascript-sdk-reference.md#removeincompleteupload-bucketname-objectname-callback)\`\` |  |  |
+### Initialize Client Object
 
-| Bucket operations | Object operations | Presigned operations | Bucket Policy & Notification operations |
-| :--- | :--- | :--- | :--- |
-| \`\`[`makeBucket`](javascript-sdk-reference.md#makebucket-bucketname-region-callback)\`\` | \`\`[`getObject`](javascript-sdk-reference.md#getobject-bucketname-objectname-callback)\`\` | \`\`[`presignedUrl`](javascript-sdk-reference.md#presignedurl-httpmethod-bucketname-objectname-expiry-reqparams-requestdate-cb)\`\` | \`\`[`getBucketNotification`](javascript-sdk-reference.md#getbucketnotification-bucketname-cb)\`\` |
-| \`\`[`listBuckets`](javascript-sdk-reference.md#listbuckets-callback)\`\` | \`\`[`getPartialObject`](javascript-sdk-reference.md#getpartialobject-bucketname-objectname-offset-length-callback)\`\` | \`\`[`presignedGetObject`](javascript-sdk-reference.md#presignedgetobject-bucketname-objectname-expiry-respheaders-requestdate-cb)\`\` | \`\`[`setBucketNotification`](javascript-sdk-reference.md#setbucketnotification-bucketname-bucketnotificationconfig-callback)\`\` |
-| \`\`[`bucketExists`](javascript-sdk-reference.md#bucketexists-bucketname-callback)\`\` | \`\`[`fGetObject`](javascript-sdk-reference.md#fgetobject-bucketname-objectname-filepath-callback)\`\` | \`\`[`presignedPutObject`](javascript-sdk-reference.md#presignedputobject-bucketname-objectname-expiry-callback)\`\` | \`\`[`removeAllBucketNotification`](javascript-sdk-reference.md#removeallbucketnotification-bucketname-callback)\`\` |
-| \`\`[`removeBucket`](javascript-sdk-reference.md#removebucket-bucketname-callback)\`\` | \`\`[`putObject`](javascript-sdk-reference.md#putobject-bucketname-objectname-stream-size-metadata-callback)\`\` | \`\`[`presignedPostPolicy`](javascript-sdk-reference.md#presignedpostpolicy-policy-callback)\`\` | \`\`[`getBucketPolicy`](javascript-sdk-reference.md#getbucketpolicy-bucketname-callback)\`\` |
-| \`\`[`listObjects`](javascript-sdk-reference.md#listobjects-bucketname-prefix-recursive)\`\` | \`\`[`fPutObject`](javascript-sdk-reference.md#fputobject-bucketname-objectname-filepath-metadata-callback)\`\` |  | \`\`[`setBucketPolicy`](javascript-sdk-reference.md#setbucketpolicy-bucketname-bucketpolicy-callback)\`\` |
-| \`\`[`listObjectsV2`](javascript-sdk-reference.md#listobjectsv-2-bucketname-prefix-recursive-startafter)\`\` | \`\`[`copyObject`](javascript-sdk-reference.md#copyobject-bucketname-objectname-sourceobject-conditions-callback)\`\` |  | \`\`[`listenBucketNotification`](javascript-sdk-reference.md#listenbucketnotification-bucketname-prefix-suffix-events)\`\` |
-| \`\`[`listIncompleteUploads`](javascript-sdk-reference.md#listincompleteuploads-bucketname-prefix-recursive)\`\` | \`\`[`statObject`](javascript-sdk-reference.md#statobject-bucketname-objectname-callback)\`\` |  |  |
-|  | \`\`[`removeObject`](javascript-sdk-reference.md#removeobject-bucketname-objectname-callback)\`\` |  |  |
-|  | \`\`[`removeObjects`](javascript-sdk-reference.md#removeobjects-bucketname-objectslist-callback)\`\` |  |  |
-|  | \`\`[`removeIncompleteUpload`](javascript-sdk-reference.md#removeincompleteupload-bucketname-objectname-callback)\`\` |  |  |
+```javascript
+var OSS = require('minio')
+
+var ossClient = new Minio.Client({
+    endPoint: 'storage-NNNNN.cloud.bigconnect.io',
+    port: 443,
+    useSSL: true,
+    accessKey: 'Q3AM3UQ867SPQQA43P2F',
+    secretKey: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG'
+});
+```
+
+Bucket operations
+
+* [makeBucket](javascript-sdk-reference.md#makebucket-bucketname-region-callback) - Creates a new bucket.
+* [listBuckets](javascript-sdk-reference.md#listbuckets-callback) - Lists all buckets
+* [bucketExists](javascript-sdk-reference.md#bucketexists-bucketname-callback) - Checks if a bucket exists
+* [removeBucket](javascript-sdk-reference.md#removebucket-bucketname-callback) - Removes a bucket
+* [listObjects](javascript-sdk-reference.md#listobjects-bucketname-prefix-recursive) - Lists all objects in a bucket
+* [listObjectsV2](javascript-sdk-reference.md#listobjectsv-2-bucketname-prefix-recursive-startafter) - Lists all objects in a bucket using S3 listing objects V2 API
+* [listObjectsV2WithMetadata](javascript-sdk-reference.md#listobjectsv-2-withmetadata-bucketname-prefix-recursive-startafter) - Lists all objects and their metadata in a bucket using S3 listing objects V2 API
+* [listIncompleteUploads](javascript-sdk-reference.md#listincompleteuploads-bucketname-prefix-recursive) - Lists partially uploaded objects in a bucket
+
+Object operations
+
+* [getObject](javascript-sdk-reference.md#getobject-bucketname-objectname-callback) - Downloads an object as a stream
+* [getPartialObject](javascript-sdk-reference.md#getpartialobject-bucketname-objectname-offset-length-callback) - Downloads the specified range bytes of an object as a stream.
+* [fGetObject](javascript-sdk-reference.md#fgetobject-bucketname-objectname-filepath-callback) - Downloads and saves the object as a file in the local filesystem
+* [putObject](javascript-sdk-reference.md#putobject-bucketname-objectname-stream-size-metadata-callback) - Uploads an object from a stream/Buffer
+* [fPutObject](javascript-sdk-reference.md#fputobject-bucketname-objectname-filepath-metadata-callback) - Uploads contents from a file to objectName
+* [copyObject](javascript-sdk-reference.md#copyobject-bucketname-objectname-sourceobject-conditions-callback) - Copy a source object into a new object in the specified bucket
+* [statObject](javascript-sdk-reference.md#statobject-bucketname-objectname-callback) - Gets metadata of an object.
+* [removeObject](javascript-sdk-reference.md#removeobject-bucketname-objectname-callback) - Removes an object
+* [removeObjects](javascript-sdk-reference.md#removeobjects-bucketname-objectslist-callback) - Remove all objects in the objectsList.
+* [removeIncompleteUpload](javascript-sdk-reference.md#removeincompleteupload-bucketname-objectname-callback) - Removes a partially uploaded object
+
+Presigned operations
+
+* [presignedUrl](javascript-sdk-reference.md#presignedurl-httpmethod-bucketname-objectname-expiry-reqparams-requestdate-cb) - Generates a presigned URL for the provided HTTP method, 'httpMethod'.
+* [presignedGetObject](javascript-sdk-reference.md#presignedgetobject-bucketname-objectname-expiry-respheaders-requestdate-cb) - Generates a presigned URL for HTTP GET operations
+* [presignedPutObject](javascript-sdk-reference.md#presignedputobject-bucketname-objectname-expiry-callback) - Generates a presigned URL for HTTP PUT operations
+* [presignedPostPolicy](javascript-sdk-reference.md#presignedpostpolicy-policy-callback) - Allows setting policy conditions to a presigned URL for POST operations
+
+Bucket Policy & Notification operations
+
+* [getBucketNotification](javascript-sdk-reference.md#getbucketnotification-bucketname-cb) - Fetch the notification configuration stored in the S3 provider and that belongs to the specified bucket name.
+* [setBucketNotification](javascript-sdk-reference.md#setbucketnotification-bucketname-bucketnotificationconfig-callback) - Upload a user-created notification configuration and associate it to the specified bucket name.
+* [removeAllBucketNotification](javascript-sdk-reference.md#removeallbucketnotification-bucketname-callback) - Remove the bucket notification configuration associated to the specified bucket
+* [getBucketPolicy](javascript-sdk-reference.md#getbucketpolicy-bucketname-callback) - Get the bucket policy associated with the specified bucket
+* [setBucketPolicy](javascript-sdk-reference.md#setbucketpolicy-bucketname-bucketpolicy-callback) - Set the bucket policy on the specified bucket
+* [listenBucketNotification](javascript-sdk-reference.md#listenbucketnotification-bucketname-prefix-suffix-events) - Listen for notifications on a bucket.
+
+
 
 ### 1. Constructor
 
