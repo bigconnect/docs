@@ -10,36 +10,63 @@ MinioClient minioClient =
         .build();
 ```
 
-| Bucket operations | Object operations |
-| :--- | :--- |
-| `bucketExists` | `composeObject` |
-| `deleteBucketEncryption` | `copyObject` |
-| `deleteBucketLifeCycle` | `deleteObjectTags` |
-| `deleteBucketNotification` | `disableObjectLegalHold` |
-| `deleteBucketPolicy` | `downloadObject` |
-| `deleteBucketTags` | `enableObjectLegalHold` |
-| `deleteDefaultRetention` | `getObject` |
-| `disableVersioning` | `getObjectRetention` |
-| `enableVersioning` | `getObjectTags` |
-| `getBucketEncryption` | `getObjectUrl` |
-| `getBucketLifeCycle` | `getPresignedObjectUrl` |
-| `getBucketNotification` | `isObjectLegalHoldEnabled` |
-| `getBucketPolicy` | `listObjects` |
-| `getBucketTags` | `presignedPostPolicy` |
-| `getDefaultRetention` | `putObject` |
-| `isVersioningEnabled` | `removeObject` |
-| `listBuckets` | `removeObjects` |
-| `listenBucketNotification` | `selectObjectContent` |
-| `listIncompleteUploads` | `setObjectRetention` |
-| `makeBucket` | `setObjectTags` |
-| `removeBucket` | `statObject` |
-| `removeIncompleteUpload` | `uploadObject` |
-| `setBucketEncryption` |  |
-| `setBucketLifeCycle` |  |
-| `setBucketNotification` |  |
-| `setBucketPolicy` |  |
-| `setBucketTags` |  |
-| `setDefaultRetention` |  |
+**Bucket operations**
+
+* [bucketExists](oss-java-sdk-reference.md#bucketexists-bucketexistsargs-args) - Checks if a bucket exists
+* [deleteBucketEncryption](oss-java-sdk-reference.md#deletebucketencryption-deletebucketencryptionargs-args) - Deletes encryption configuration of a bucket.
+* [deleteBucketLifeCycle](oss-java-sdk-reference.md#deletebucketlifecycle-deletebucketlifecycleargs-args) - Deletes life-cycle configuration of a bucket
+* [deleteBucketNotification](oss-java-sdk-reference.md#deletebucketnotification-deletebucketnotificationargs-args) - Deletes notification configuration of a bucket
+* [deleteBucketPolicy](oss-java-sdk-reference.md#deletebucketpolicy-deletebucketpolicyargs-args) - Deletes bucket policy configuration of a bucket
+* [deleteBucketTags](oss-java-sdk-reference.md#deletebuckettags-deletebuckettagsargs-args) - Deletes tags of a bucket
+* [deleteDefaultRetention](oss-java-sdk-reference.md#deletedefaultretention-deletedefaultretentionargs-args) - Deletes default object retention in a bucket.
+* [disableVersioning](oss-java-sdk-reference.md#disableversioning-disableversioningargs-args) - Disables object versioning feature in a bucket
+* [enableVersioning](oss-java-sdk-reference.md#enableversioning-enableversioningargs-args) - Enables object versioning feature in a bucket
+* [isVersioningEnabled](oss-java-sdk-reference.md#isversioningenabled-isversioningenabledargs-args) - Get bucket version status.
+* [getBucketEncryption](oss-java-sdk-reference.md#getbucketencryption-getbucketencryptionargs-args) - Gets encryption configuration of a bucket.
+* [getBucketLifeCycle](oss-java-sdk-reference.md#getbucketlifecycle-getbucketlifecycleargs-args) - Gets life-cycle configuration of a bucket
+* [getBucketNotification](oss-java-sdk-reference.md#getbucketnotification-getbucketnotificationargs-args) - Gets notification configuration of a bucket
+* [getBucketPolicy](oss-java-sdk-reference.md#getbucketpolicy-getbucketpolicyargs-args) - Gets bucket policy configuration of a bucket.
+* [getBucketTags](oss-java-sdk-reference.md#getbuckettags-getbuckettagsargs-args) - Gets tags of a bucket.
+* [getDefaultRetention](oss-java-sdk-reference.md#getdefaultretention-getdefaultretentionargs-args) - Gets default object retention in a bucket.
+* [listBuckets](oss-java-sdk-reference.md#listbuckets) - Lists bucket information of all buckets
+* [listenBucketNotification](oss-java-sdk-reference.md#listenbucketnotification-listenbucketnotificationargs-args) - Listens events of object prefix and suffix of a bucket
+* [listIncompleteUploads](oss-java-sdk-reference.md#listincompleteuploads-listincompleteuploadsargs-args) - Lists incomplete object upload information of a bucket.
+* [makeBucket](oss-java-sdk-reference.md#makebucket-makebucketargs-args) - Creates a bucket with given region and object lock feature enabled.
+* [removeBucket](oss-java-sdk-reference.md#removebucket-removebucketargs-args) - Removes an empty bucket
+* [setBucketEncryption](oss-java-sdk-reference.md#setbucketencryption-setbucketencryptionargs-args) - Sets encryption configuration of a bucket.
+* [setBucketLifeCycle](oss-java-sdk-reference.md#setbucketlifecycle-setbucketlifecycleargs-args) - Sets life-cycle configuration to a bucket.
+* [setBucketNotification](oss-java-sdk-reference.md#setbucketnotification-setbucketnotificationargs-args) - Sets notification configuration to a bucket.
+* [setBucketPolicy](oss-java-sdk-reference.md#setbucketpolicy-setbucketpolicyargs-args) - Sets bucket policy configuration to a bucket
+* [setBucketTags](oss-java-sdk-reference.md#setbuckettags-setbuckettagsargs-args) - Sets tags to a bucket
+* [setDefaultRetention](oss-java-sdk-reference.md#setdefaultretention-setdefaultretentionargs-args) - Sets default object retention in a bucket
+
+**Object operations**
+
+* [composeObject](oss-java-sdk-reference.md#composeobject-composeobjectargs-args) - Creates an object by combining data from different source objects using server-side copy
+* [copyObject](oss-java-sdk-reference.md#copyobject-copyobjectargs-args) - Creates an object by server-side copying data from another object
+* [deleteObjectTags](oss-java-sdk-reference.md#deleteobjecttags-deleteobjecttagsargs-args) - Deletes tags of an object.
+* [disableObjectLegalHold](oss-java-sdk-reference.md#disableobjectlegalhold-disableobjectlegalholdargs-args) - Disables legal hold on an object.
+* [downloadObject](oss-java-sdk-reference.md#downloadobject-downloadobjectargs-args) - Downloads data of an object to file
+* [enableObjectLegalHold](oss-java-sdk-reference.md#enableobjectlegalhold-enableobjectlegalholdargs-args) - Enables legal hold on an object
+* [getObject](oss-java-sdk-reference.md#getobject-getobjectargs-args) - Gets data of an object.
+* [getObjectRetention](oss-java-sdk-reference.md#getobjectretention-getobjectretentionargs-args) - Gets retention configuration of an object
+* [getObjectTags](oss-java-sdk-reference.md#getobjecttags-getobjecttagsargs-args) - Gets tags of an object.
+* [getObjectUrl](oss-java-sdk-reference.md#getobjecturl-string-bucketname-string-objectname) - Gets URL of an object useful when this object has public read access
+* [getPresignedObjectUrl](oss-java-sdk-reference.md#getpresignedobjecturl-getpresignedobjecturlargs-args) - Gets presigned URL of an object for HTTP method, expiry time and custom request parameters
+* [isObjectLegalHoldEnabled](oss-java-sdk-reference.md#isobjectlegalholdenabled-isobjectlegalholdenabledargs-args) - Returns true if legal hold is enabled on an object.
+* [listObjects](oss-java-sdk-reference.md#listobjects-listobjectsargs-args) - Lists object information of a bucket.
+* [presignedPostPolicy](oss-java-sdk-reference.md#presignedpostpolicy-postpolicy-policy) - Gets form-data of PostPolicy of an object to upload its data using POST method.
+* [putObject](oss-java-sdk-reference.md#putobject-putobjectargs-args) - Uploads given stream as object in bucket
+* [removeIncompleteUpload](oss-java-sdk-reference.md#removeincompleteupload-removeincompleteuploadargs-args) - Removes incomplete uploads of an object.
+* [removeObject](oss-java-sdk-reference.md#removeobject-removeobjectargs-args) - Removes an object.
+* [removeObjects](oss-java-sdk-reference.md#removeobjects-removeobjectsargs-args) - Removes multiple objects lazily
+* [selectObjectContent](oss-java-sdk-reference.md#selectobjectcontent-selectobjectcontentargs-args) - Selects content of a object by SQL expression
+* [setObjectRetention](oss-java-sdk-reference.md#setobjectretention-setobjectretentionargs-args) - Sets retention configuration to an object
+* [setObjectTags](oss-java-sdk-reference.md#setobjecttags-setobjecttagsargs-args) - Sets tags to an object
+* [statObject](oss-java-sdk-reference.md#statobject-statobjectargs-args) - Gets object information and metadata of an object.
+* [uploadObject](oss-java-sdk-reference.md#uploadobject-uploadobjectargs-args) - Uploads contents from a file as object in bucket.
+
+
 
 ### 1. Client Builder
 
