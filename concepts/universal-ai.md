@@ -13,8 +13,6 @@ We carefully chose the best Machine Learning and Deep Learning tools and framewo
 * [Jupyter Notebooks](https://jupyter-notebook.readthedocs.io/en/stable/) with Scala, R and Python kernels
 * [H2O](https://github.com/h2oai/h2o-3)
 * [Spark MLib](https://spark.apache.org/mllib/)
-* [TensorFlow](https://www.tensorflow.org/)
-* [Ludwig](https://uber.github.io/ludwig/)
 
 We also provide an annotation tool for labeling data for training. Supported data types are text, images, tabular data.
 

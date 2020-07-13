@@ -12,11 +12,7 @@
 ## Cloud
 
 * [Getting Started](cloud/getting-started.md)
-* [AI](cloud/ai/README.md)
-  * [Audio](cloud/ai/audio.md)
-  * [Video](cloud/ai/video.md)
-  * [Images](cloud/ai/images.md)
-  * [Text](cloud/ai/text.md)
+* [AI](cloud/ai.md)
 * [Core Service](cloud/core-service.md)
 * [Cypher Lab](cloud/cypher-lab/README.md)
   * [Cypher Lab Query and Command-Line Tips](cloud/cypher-lab/cypher-lab-query-and-command-line-tips.md)
