@@ -114,6 +114,7 @@
     * [JavaScript SDK QuickStart](cloud/oss/oss-dev-guide/oss-js-sdk.md)
     * [JavaScript SDK Reference](cloud/oss/oss-dev-guide/javascript-sdk-reference.md)
 * [Pipelines](cloud/pipelines/README.md)
+  * [Data Workers](cloud/pipelines/data-workers.md)
   * [Social Network Data](cloud/pipelines/social-data.md)
 * [Pipeline Lab](cloud/data-pipelines/README.md)
   * [Pipeline Concepts and Design](cloud/data-pipelines/pipeline-concepts-and-design/README.md)
