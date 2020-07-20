@@ -4,25 +4,24 @@ The AI Service contains a number of carefully chosen deep-learning models to ful
 
 The following AI models are available as REST services:
 
-* Named Entity Recognition based on spaCy
-* Face age detection model based on VGGFace
-* Text in the Wild & OCR detection model based on EAST and Tesseract
-* Face features extractor based on Keras VGGFace
-* Face emotion detection model based on GilLevi's Caffe model
-* IBM Watson Personality Insights
-* Face emotion detection model
-* Text sentiment detection model based on VADER
-* Face detection model based on SSD
-* Object detection model based on MXNET's SSD \(MobileNet backend \| COCO dataset\)
-* Location resolver service based on CLAVIN
-* Speech to Text model for American English based on DeepSpeech
-* Face age detection model based on SSRNET
-* Autoencoder based fraud detection model
-* Face gender detection model based on SSRNET
-* Image Metadata extractor \(EXIF\) service
-* Topic modeling model based on LDA
-* Location resolver service based on geoPy and OpenStreetMaps
-* Image captioning model based on LSTM and Chainer framework
+* Named Entity Recognition
+* Text in the Wild & OCR
+* Personality Insights
+* Sentiment
+* Face detection
+* Face recognition
+* Face age detection
+* Face features extractor
+* Face gender detection
+* Face emotion detection
+* Object detection
+* Location resolver
+* License Plate Recognition
+* Speech to Text \(American English only\)
+* Fraud detection
+* Image Metadata extractor \(EXIF\) 
+* Topic modeling
+* Image captioning
 
 The API endpoints are listed by each service in the URL section:
 
