@@ -1,4 +1,4 @@
-# Object Storage Service \(OSS\)
+# Object Store
 
 The Object Storage Service \(OSS\) is a secure and highly reliable cloud storage service provided by the BigConnect Cloud. It enables you to store a large amount of data in the cloud.
 

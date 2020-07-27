@@ -14,7 +14,7 @@ Data tables in Druid \(called data sources\) are collections of timestamped even
 
 Druid supports real-time and batch ingestion.
 
-One major characteristic of Druid is real-time ingestion, which is enabled by real-time nodes \(For details, see [Real-time nodes](../../ml/spark-mlib/clustering.md)\). Events ingested in real-time from a data stream get indexed in seconds to become queryable in the Druid cluster.
+One major characteristic of Druid is real-time ingestion, which is enabled by real-time nodes \(For details, see [Real-time nodes]()\). Events ingested in real-time from a data stream get indexed in seconds to become queryable in the Druid cluster.
 
 ### Data roll-up
 
