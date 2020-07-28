@@ -43,35 +43,9 @@ To save your flow as a notebook, click the “Save” button \(the first button 
 
 To confirm the name, click the checkmark to the right of the name field.
 
-![](../../../.gitbook/assets/image%20%28220%29.png)
-
 To reuse a saved flow, click the “Flows” tab in the sidebar, then click the flow name. To delete a saved flow, click the trashcan icon to the right of the flow name.
 
 ![](../../../.gitbook/assets/image%20%28121%29.png)
-
-## Finding Saved Flows on Your Disk
-
-By default, flows are saved to the `h2oflows` directory underneath your home directory. The directory where flows are saved is printed to stdout:
-
-```text
-03-20 14:54:20.945 172.16.2.39:54323     95667  main      INFO: Flow dir: '/Users/[YOUR_USER_NAME]/h2oflows'
-```
-
-To back up saved flows, copy this directory to your preferred backup location.
-
-To specify a different location for saved flows, use the command-line argument `-flow_dir` when launching H2O:
-
-`java -jar h2o.jar -flow_dir /[ENTER_PATH_TO_FLOW_DIRECTORY_HERE]`
-
-If the directory that you enter in place of `[ENTER_PATH_TO_FLOW_DIRECTORY_HERE]` does not exist, it will be created the first time you save a flow.
-
-## Saving Flows on a Hadoop Cluster
-
-If you are running H2O Flow on a Hadoop cluster, H2O will try to find the HDFS home directory to use as the default directory for flows. If the HDFS home directory is not found, flows cannot be saved unless a directory is specified while launching using `-flow_dir`:
-
-`hadoop jar h2odriver.jar -nodes 1 -mapperXmx 6g -output hdfsOutputDirName -flow_dir hdfs://[HOST]:[PORT_NUMBER]/[PATH_TO_DIRECTORY_HERE]`
-
-The location specified in `-flow_dir` may be either an hdfs or regular filesystem directory. If the directory does not exist, it will be created the first time you save a flow.
 
 ## Loading Flows
 

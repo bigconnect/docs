@@ -1,6 +1,6 @@
 # Frames
 
-An H2O frame represents a 2D array of data. The data may be local or it may be distributed in an H2O cluster.
+An Tetra frame represents a 2D array of data. The data may be local or it may be distributed in an Tetra cluster.
 
 ## Creating Frames
 
@@ -34,7 +34,7 @@ This screenshot displays the results of clicking the **columns** link.
 
 To view all frames, click the **Assist Me!** button, then click the **getFrames** link, or enter `getFrames` in the cell in CS mode and press **Ctrl+Enter**. You can also view all current frames by clicking the drop-down **Data** menu and selecting **List All Frames**.
 
-A list of the current frames in H2O displays that includes the following information for each frame:
+A list of the current frames in Tetra displays that includes the following information for each frame:
 
 * Link to the frame \(the “key”\)
 * Number of rows and columns

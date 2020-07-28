@@ -2,7 +2,7 @@
 
 ## Importing Files
 
-There are multiple ways to import data in H2O flow:
+There are multiple ways to import data in Tetra flow:
 
 * Click the **Assist Me!** button in the row of buttons below the menus, then click the **importFiles** link. Enter the file path in the auto-completing **Search** entry field and press **Enter**. Select the file from the search results and confirm it by clicking the **Add All** link.
 
@@ -34,7 +34,7 @@ To upload a local file, click the **Data** menu and select **Upload File…**. C
 
 When the file has uploaded successfully, a message displays in the upper right and the **Setup Parse** cell displays.
 
-Ok, now that your data is available in H2O Flow, let’s move on to the next step: parsing. Click the **Parse these files** button to continue.
+Ok, now that your data is available in Tetra Flow, let’s move on to the next step: parsing. Click the **Parse these files** button to continue.
 
 ## Parsing Data
 
@@ -44,7 +44,7 @@ After you have imported your data, parse the data.
 
 The read-only **Sources** field shows the file path for the imported data selected for parsing. The **ID** contains the auto-generated name for the parsed data \(by default, the file name of the imported file uses `.hex` as the file extension\). Use the default name or enter a custom name in this field.
 
-1. Select the parser type \(if necessary\) from the drop-down **Parser** list. For most data parsing, H2O automatically recognizes the data type, so the default settings typically do not need to be changed. The following options are available:
+1. Select the parser type \(if necessary\) from the drop-down **Parser** list. For most data parsing, Tetra automatically recognizes the data type, so the default settings typically do not need to be changed. The following options are available:
 
 * AUTO
 * ARFF
@@ -83,13 +83,13 @@ To change the column type, select the drop-down list to the right of the column 
 * String
 * Invalid
 
-You can search for a column by entering it in the _Search by column name…_ entry field above the first column name entry field. As you type, H2O displays the columns that match the specified search terms.
+You can search for a column by entering it in the _Search by column name…_ entry field above the first column name entry field. As you type, Tetra displays the columns that match the specified search terms.
 
 After making your selections, click the **Parse** button. The code for the current job displays.
 
 ![](../../../.gitbook/assets/image%20%28429%29.png)
 
-Since we’ve submitted a couple of jobs \(data import & parse\) to H2O now, let’s take a moment to learn more about jobs in H2O.
+Since we’ve submitted a couple of jobs \(data import & parse\) to Tetra now, let’s take a moment to learn more about jobs in Tetra.
 
 ## Imputing Data
 

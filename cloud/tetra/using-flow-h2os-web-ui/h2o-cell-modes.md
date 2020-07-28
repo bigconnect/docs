@@ -88,7 +88,7 @@ When the flow is complete, a message displays in the upper right.
 ![](../../../.gitbook/assets/image%20%28620%29.png)
 
 {% hint style="info" %}
-If there is an error in the flow, H2O Flow stops at the cell that contains the error.
+If there is an error in the flow, Tetra Flow stops at the cell that contains the error.
 {% endhint %}
 
 

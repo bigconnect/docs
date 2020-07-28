@@ -39,7 +39,7 @@ You can also specify to run AutoML, which automatically trains and tunes models 
 
 The available options vary depending on the selected model. If an option is only available for a specific model type, the model type is listed. If no model type is specified, the option is applicable to all model types.
 
-* **model\_id**: \(Optional\) Enter a custom name for the model to use as a reference. By default, H2O automatically generates an ID containing the model type \(for example, `gbm-6f6bdc8b-ccbc-474a-b590-4579eea44596`\).
+* **model\_id**: \(Optional\) Enter a custom name for the model to use as a reference. By default, Tetra automatically generates an ID containing the model type \(for example, `gbm-6f6bdc8b-ccbc-474a-b590-4579eea44596`\).
 * **training\_frame**: \(Required\) Select the dataset used to build the model.
 * **validation\_frame**: \(Optional\) Select the dataset used to evaluate the accuracy of the model.
 * **nfolds**: \(GLM, GBM, DL, DRF\) Specify the number of folds for cross-validation.
@@ -117,12 +117,12 @@ The following additional functions are available when viewing a model:
 
 * **Refresh**: Refreshes the model.
 * **Predict**: Use this model to make predictions.
-* **Download POJO**: Generates a Plain Old Java Object \(POJO\) that can use the model outside of H2O. Note that a POJO can be run in standalone mode or it can be integrated into a platform, such as [Hadoop’s Storm](https://github.com/h2oai/h2o-tutorials/tree/master/tutorials/streaming/storm). To make the POJO work in your Java application, you will also need the `h2o-genmodel.jar` file \(available via the **Download Generated Model** button, from the **Admin** menu, or in `h2o-3/h2o-genmodel/build/libs/h2o-genmodel.jar`\). Note that POJOs are are not supported for XGBoost models.
+* **Download POJO**: Generates a Plain Old Java Object \(POJO\) that can use the model outside of Tetra. Note that a POJO can be run in standalone mode or it can be integrated into a platform, such as [Hadoop’s Storm](https://github.com/h2oai/h2o-tutorials/tree/master/tutorials/streaming/storm). To make the POJO work in your Java application, you will also need the `genmodel.jar` file \(available via the **Download Generated Model** button, from the **Admin** menu. Note that POJOs are are not supported for XGBoost models.
 * **Download Model Deployment Package \(MOJO\)**: Downloads a zip file containing the Model ObJect, Optimized \(MOJO\). This file includes the outputting model information in JSON format. Note that MOJOs are available for AutoML, Deep Learning, DRF, GBM, GLM, GLRM, K-Means, Stacked Ensembles, SVM, Word2vec, and XGBoost models.
 * **Export**: Exports a built model.
 * **Inspect**: Inspect the model. Clicking this button displays a data table of the model parameters and output information.
 * **Delete**: Deletes the model.
-* **Download Gen Model**: Downloads the Generated Model \(h2o-genmodel.jar\) file for this model. Note that this is also available from the **Admin** dropdown menu.
+* **Download Gen Model**: Downloads the Generated Model \(genmodel.jar\) file for this model. Note that this is also available from the **Admin** dropdown menu.
 
 ## Exporting and Importing Models
 
@@ -131,7 +131,7 @@ The following additional functions are available when viewing a model:
 1. Click the **Model** menu at the top of the screen.
 2. Select _Export Model…_
 3. In the `exportModel` cell that appears, select the model from the drop-down _Model:_ list.
-4. Enter a location for the exported model in the _Path:_ entry field. **Note**: If you specify a location that doesn’t exist, it will be created. For example, if you only enter `test` in the _Path:_ entry field, the model will be exported to `h2o-3/test`.
+4. Enter a location for the exported model in the _Path:_ entry field. **Note**: If you specify a location that doesn’t exist, it will be created. 
 5. To overwrite any files with the same name, check the _Overwrite:_ checkbox.
 6. Click the **Export** button. A confirmation message displays when the model has been successfully exported.
 
@@ -141,7 +141,7 @@ The following additional functions are available when viewing a model:
 
 1. Click the **Model** menu at the top of the screen.
 2. Select _Import Model…_
-3. Enter the location of the model in the _Path:_ entry field. **Note**: The file path must be complete \(e.g., `Users/h2o-user/h2o-3/exported_models`\). Do not rename models while importing.
+3. Enter the location of the model in the _Path:_ entry field. **Note**: The file path must be complete \(e.g., `/home/user/tetra-user/exported_models`\). Do not rename models while importing.
 4. To overwrite any files with the same name, check the _Overwrite:_ checkbox.
 5. Click the **Import** button. A confirmation message displays when the model has been successfully imported. To view the imported model, click the **View Model** button.
 

@@ -16,7 +16,7 @@ You can also type `assist` in a blank cell and press **Ctrl+Enter**. A list of c
 
 ### Viewing Example Flows
 
-You can explore the pre-configured flows available in H2O Flow for a demonstration of how to create a flow. To view the example flows:
+You can explore the pre-configured flows available in Tetra Flow for a demonstration of how to create a flow. To view the example flows:
 
 * Click the **view example Flows** link below the **Quickstart Videos** button in the **Help** sidebar
 

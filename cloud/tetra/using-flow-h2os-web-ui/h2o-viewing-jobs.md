@@ -1,6 +1,6 @@
 # Viewing Jobs
 
-Any command you enter in H2O \(such as `importFiles`\) is submitted as a job, which is associated with a key. The key identifies the job within H2O and is used as a reference.
+Any command you enter in Tetra \(such as `importFiles`\) is submitted as a job, which is associated with a key. The key identifies the job within Tetra and is used as a reference.
 
 ## Viewing All Jobs
 
@@ -34,5 +34,5 @@ The following information displays:
 * Run time
 * Progress
 
-Ok, now that you understand how to find jobs in H2O, let’s submit a new one by building a model.
+Ok, now that you understand how to find jobs in Tetra, let’s submit a new one by building a model.
 

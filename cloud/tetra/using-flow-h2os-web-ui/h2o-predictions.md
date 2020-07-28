@@ -18,7 +18,7 @@ The Gains/Lift chart evaluates the prediction ability of a binary classification
 
 This information is particularly useful for direct marketing applications, for example. The gains/lift chart shows the effectiveness of the current model\(s\) compared to a baseline, allowing users to quickly identify the most useful model.
 
-By default, H2O reports the Gains/Lift for all binary classification models if the following requirements are met:
+By default, Tetra reports the Gains/Lift for all binary classification models if the following requirements are met:
 
 * The training frame dataset must contain actual binary class labels.
 * The prediction column used as the response must contain probabilities.
@@ -27,7 +27,7 @@ By default, H2O reports the Gains/Lift for all binary classification models if t
 
 ### How the Gains/Lift Chart is Built
 
-To compute Gains/Lift, H2O applies the model to the original dataset to find the response probability. The data is divided into groups by quantile thresholds of the response probability. Note that the default number of groups is 16; if there are fewer than 16 unique probability values, then the number of groups is reduced to the number of unique quantile thresholds. For binning, H2O uses the following probabilities vector to create cut points \(0.99, 0.98, 0.97, 0.96, 0.95, 0.9, 0.85, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0\).
+To compute Gains/Lift, Tetra applies the model to the original dataset to find the response probability. The data is divided into groups by quantile thresholds of the response probability. Note that the default number of groups is 16; if there are fewer than 16 unique probability values, then the number of groups is reduced to the number of unique quantile thresholds. For binning, Tetra uses the following probabilities vector to create cut points \(0.99, 0.98, 0.97, 0.96, 0.95, 0.9, 0.85, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0\).
 
 For each group, the lift is calculated as the proportion of observations that are events \(targets\) in the group to the overall proportion of events \(targets\).
 
