@@ -1,4 +1,4 @@
-# Data Collector UI - Edit Mode
+# DataFabric UI - Edit Mode
 
 The following image shows the Data Collector UI when you configure a pipeline:
 
