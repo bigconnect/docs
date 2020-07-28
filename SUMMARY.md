@@ -34,7 +34,7 @@
     * [Test Origin for Preview](cloud/datafabric-studio/pipeline-concepts-and-design/test-origin-for-preview.md)
     * [Understanding Pipeline States](cloud/datafabric-studio/pipeline-concepts-and-design/understanding-pipeline-states.md)
   * [Pipeline Configuration](cloud/datafabric-studio/pipeline-configuration/README.md)
-    * [DataFabric UI - Edit Mode](cloud/datafabric-studio/pipeline-configuration/datafabric-ui-edit-mode.md)
+    * [Data Collector UI - Edit Mode](cloud/datafabric-studio/pipeline-configuration/data-collector-ui-edit-mode.md)
     * [Retrying the Pipeline](cloud/datafabric-studio/pipeline-configuration/retrying-the-pipeline.md)
     * [Rate Limit](cloud/datafabric-studio/pipeline-configuration/dc-rate-limit.md)
     * [Simple and Bulk Edit Mode](cloud/datafabric-studio/pipeline-configuration/simple-and-bulk-edit-mode.md)

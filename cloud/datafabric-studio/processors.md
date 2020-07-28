@@ -8,18 +8,19 @@ You can use different processors based on the execution mode of the pipeline: st
 
 In standalone pipelines, you can use the following processor:
 
-* Record Deduplicator - Removes duplicate records.
+* [Record Deduplicator](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/RDeduplicator.html#concept_z3m_v52_zq) - Removes duplicate records.
 
 ### Standalone or Cluster Pipelines
 
 In standalone or cluster pipelines, you can use the following processors:
 
-* Base64 Field Decoder - Decodes Base64 encoded data to binary data.
-* Base64 Field Encoder - Encodes binary data using Base64.
-* Control Hub API - Calls a Control Hub API.
-* Couchbase Lookup - Performs lookups in Couchbase Server to enrich records with data.
-* Data Generator - Serializes a record into a field using the specified data format.
-* Data Parser - Parses NetFlow or syslog data embedded in a field.
+* [Base64 Field Decoder](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/Base64Decoder.html#concept_ujj_spy_kv) - Decodes Base64 encoded data to binary data.
+* [Base64 Field Encoder](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/Base64Encoder.html#concept_wtr_mpy_kv) - Encodes binary data using Base64.
+* [Control Hub API](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/ControlHubAPI.html#concept_akz_zsr_2jb) - Calls a Control Hub API.
+* [Couchbase Lookup](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/CouchbaseLookup.html#concept_rxk_1dq_2fb) - Performs lookups in Couchbase Server to enrich records with data.
+* [Databricks ML Evaluator](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/DatabricksML.html#concept_nlz_k3v_gfb) - Uses a machine learning model exported with Databricks ML Model Export to generate evaluations, scoring, or classifications of data.
+* [Data Generator](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/DataGenerator.html#concept_hw1_gq4_3fb) - Serializes a record into a field using the specified data format.
+* [Data Parser](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/DataParser.html#concept_xw3_4xk_r1b) - Parses NetFlow or syslog data embedded in a field.
 * [Delay](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/Delay.html#concept_ez5_pvf_wbb) - Delays passing a batch to the rest of the pipeline.
 * [Encrypt and Decrypt Fields](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/EncryptDecrypt.html#concept_zs3_vfk_hfb) - Encrypts or decrypts fields.
 * [Expression Evaluator](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/Expression.html#concept_zm2_pp3_wq) - Performs calculations on data. Can also add or modify record header attributes.
