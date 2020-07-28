@@ -1,8 +1,8 @@
 # Rate Limit
 
-You can limit the rate at which a Data Collector pipeline processes records by defining the maximum number of records that the pipeline can read in a second
+You can limit the rate at which a DataFabric pipeline processes records by defining the maximum number of records that the pipeline can read in a second
 
-By default, a Data Collector pipeline has no rate limit. You might want to limit the rate for the following reasons:
+By default, a DataFabric pipeline has no rate limit. You might want to limit the rate for the following reasons:
 
 **The pipeline reads records faster than it can write them to the destination system**
 

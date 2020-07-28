@@ -1,10 +1,10 @@
 # Implicit and Explicit Validation
 
-Data Collector performs two types of validation:
+DataFabric performs two types of validation:
 
 **Implicit validation**
 
-Implicit validation occurs by default as the Data Collector UI saves your changes. Implicit validation lists missing or incomplete configuration, such as an unconnected stage or a required property that has not been configured.
+Implicit validation occurs by default as the DataFabric Studio saves your changes. Implicit validation lists missing or incomplete configuration, such as an unconnected stage or a required property that has not been configured.
 
 Errors found by implicit validation display in the Issues list. An error icons display on stages with undefined required properties and on the canvas for pipeline issues.
 

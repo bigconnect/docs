@@ -18,7 +18,7 @@ You can send notifications when the pipeline converts to the following states:
 
 You can specify multiple states to trigger notifications, but you cannot configure the pipeline to send different notifications based on different pipeline state changes at this time. For example, if you configure notifications for the Running and Finished states, the pipeline sends notifications when changing to both states.
 
-To send email notification, Data Collector must be configured to send email. To enable sending email, configure the email alert Data Collector properties.
+To send email notification, DataFabric must be configured to send email. To enable sending email, configure the email alert DataFabric properties.
 
 For more information about pipeline states, see [Understanding Pipeline States](../pipeline-concepts-and-design/understanding-pipeline-states.md).
 

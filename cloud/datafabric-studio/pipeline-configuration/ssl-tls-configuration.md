@@ -43,7 +43,7 @@ When SSL/TLS is enabled in a stage, you can also enable the use of a keystore an
 Though similar in many ways, a keystore contains a private key and public certificates that are used to verify the identity of the client upon a request from an SSL/TLS server. In contrast, a truststore generally contains certificates from trusted certificate authorities that an SSL/TLS client uses to verify the identity of an SSL/TLS server.
 
 {% hint style="warning" %}
-Before enabling SSL/TLS in a stage, store the keystore and truststore files on the Data Collector or Data Collector Edge machine.
+Before enabling SSL/TLS in a stage, store the keystore and truststore files on the DataFabric  machine.
 {% endhint %}
 
 When you configure a keystore or truststore, you can configure the following properties:
@@ -57,7 +57,7 @@ You can use the following types of keystores and truststores:
 
 **file and location**
 
-When specifying the file and location of the keystore or truststore file, you can either use an absolute path to the file or a path relative to the Data Collector resources directory.
+When specifying the file and location of the keystore or truststore file, you can either use an absolute path to the file or a path relative to the DataFabric resources directory.
 
 **password**
 
@@ -65,13 +65,13 @@ A password is optional for keystore and truststore files, but highly recommended
 
 **algorithm**
 
-Data Collector uses the SunX509 key exchange algorithm by default. You can use any algorithm compatible with your keystore/truststore file that is supported by your JVM.
+DataFabric uses the SunX509 key exchange algorithm by default. You can use any algorithm compatible with your keystore/truststore file that is supported by your JVM.
 
 ## Transport Protocols
 
 When SSL/TLS is enabled in a stage, you can configure the transport protocol to use.
 
-Data Collector uses TLSv1.2 by default. You can specify one or more other protocols, but versions prior to TLSv1.2 are not as secure.
+DataFabric uses TLSv1.2 by default. You can specify one or more other protocols, but versions prior to TLSv1.2 are not as secure.
 
 ## Cipher Suites
 

@@ -1,8 +1,8 @@
 # Event Generation
 
-The event framework generates pipeline events for Data Collector standalone pipelines when the pipeline starts and stops.
+The event framework generates pipeline events for DataFabric standalone pipelines when the pipeline starts and stops.
 
-In a Data Collector standalone pipeline, you can pass pipeline events to an executor or to another pipeline for additional processing. By default, these events are discarded.
+In a DataFabric standalone pipeline, you can pass pipeline events to an executor or to another pipeline for additional processing. By default, these events are discarded.
 
 ## Pipeline Event Records
 

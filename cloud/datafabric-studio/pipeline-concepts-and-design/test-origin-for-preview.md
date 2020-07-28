@@ -2,7 +2,7 @@
 
 
 
-A test origin can provide test data for data preview to aid in pipeline development. In Control Hub, you can also use test origins when developing pipeline fragments. Test origins are not used when running a pipeline.
+A test origin can provide test data for data preview to aid in pipeline development. Test origins are not used when running a pipeline.
 
 A test origin is a virtual stage that you configure in the pipeline or pipeline fragment properties. Test origins do not display in the canvas. This allows you to configure the real origin - the one that you want to use in production - in the canvas, while configuring a test origin in the pipeline or fragment properties.
 
