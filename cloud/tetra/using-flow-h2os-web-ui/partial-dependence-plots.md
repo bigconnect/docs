@@ -12,7 +12,7 @@ For models that include only numerical values, you can view a Partial Dependence
 
 3. After the job is finished, click **View** to see the plots.
 
-![](../../../.gitbook/assets/image%20%28238%29.png)
+![](../../../.gitbook/assets/assets-2f-lv6yu_27lr-b2zlvws_-2f-lvgg18z7m-sj5xcw7uk-2f-lvgilsu6q5xjkwxwzfy-2fimage.jpg)
 
 
 
