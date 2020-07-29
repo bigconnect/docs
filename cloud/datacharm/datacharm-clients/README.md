@@ -4,9 +4,9 @@ A client is used to send queries to DataCharm and receive results, or otherwise 
 
 The following clients are available:
 
-* CLI
-* JDBC Driver
-* Web
+* [CLI](datacharm-cli.md)
+* [JDBC Driver](jdbc-driver.md)
+* [Web SQL Editor](web-sql.md)
 
 
 
