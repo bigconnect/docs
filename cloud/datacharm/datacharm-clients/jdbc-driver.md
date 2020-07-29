@@ -33,14 +33,14 @@ jdbc:presto://host:port/catalog/schema
 For example, use the following URL to connect to Presto running on `example.net` port `8080` with the catalog `hive` and the schema `sales`:
 
 ```text
-jdbc:presto://dsql-.net:8080/hive/sales
+jdbc:presto://dsql-<TENANT_ID>.cloud.bigconnect.io:443/bigconnect/public
 ```
 
 The above URL can be used as follows to create a connection:
 
 ```text
-String url = "jdbc:presto://example.net:8080/hive/sales";
-Connection connection = DriverManager.getConnection(url, "test", null);
+String url = "jdbc:presto://dsql-<TENANT_ID>.cloud.bigconnect.io:443/bigconnect/public";
+Connection connection = DriverManager.getConnection(url, "<TENANT_ID>", "<PASSWORD>");
 ```
 
 ### Connection Parameters <a id="connection-parameters"></a>
@@ -49,7 +49,7 @@ The driver supports various parameters that may be set as URL parameters, or as 
 
 ```text
 // URL parameters
-String url = "jdbc:presto://example.net:8080/hive/sales";
+String url = "jdbc:presto://dsql-<TENANT_ID>.cloud.bigconnect.io:443/bigconnect/public";
 Properties properties = new Properties();
 properties.setProperty("user", "test");
 properties.setProperty("password", "secret");
@@ -57,7 +57,7 @@ properties.setProperty("SSL", "true");
 Connection connection = DriverManager.getConnection(url, properties);
 
 // properties
-String url = "jdbc:presto://example.net:8080/hive/sales?user=test&password=secret&SSL=true";
+String url = "jdbc:presto://dsql-<TENANT_ID>.cloud.bigconnect.io:443/bigconnect/public?user=test&password=secret&SSL=true";
 Connection connection = DriverManager.getConnection(url);
 ```
 
