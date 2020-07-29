@@ -67,6 +67,8 @@
   * [Pipeline Monitoring](cloud/datafabric-studio/pipeline-monitoring.md)
   * [Dataflow Triggers](cloud/datafabric-studio/dataflow-triggers.md)
 * [DataCharm](cloud/datacharm/README.md)
+  * [Concepts](cloud/datacharm/datacharm-concepts.md)
+  * [Clients](cloud/datacharm/datacharm-clients.md)
   * [SQL Language](cloud/datacharm/sql-language/README.md)
     * [Data Types](cloud/datacharm/sql-language/sql-data-types.md)
     * [SQL Statement Syntax](cloud/datacharm/sql-language/sql-statement-syntax.md)
