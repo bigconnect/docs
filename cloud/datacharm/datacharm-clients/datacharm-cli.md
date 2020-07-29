@@ -11,8 +11,10 @@ The CLI requires a Java virtual machine available on the path. It can be used wi
 Download [datacharm-cli-340.jar](http://bits.bigconnect.io/cloud/datacharm-cli-340.jar),  make it executable with `chmod +x`, then run it:
 
 ```text
-./datacharm-cli-340.jar --server <datacharm_url> --catalog bigconnect --schema public
+./datacharm-cli-340.jar --server https://dsql-<TENANT_ID>.cloud.bigconnect.io --user <TENANT_ID> --catalog bigconnect --schema public --password
 ```
+
+where &lt;TENANT\_ID&gt; is your cloud tenant id that can be found on the summary page of your Data Lake in the [Cloud console](https://console.cloud.bigconnect.io).
 
 Run the CLI with the `--help` option to see the available options.
 

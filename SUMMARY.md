@@ -70,6 +70,7 @@
   * [Concepts](cloud/datacharm/datacharm-concepts.md)
   * [Clients](cloud/datacharm/datacharm-clients/README.md)
     * [CLI](cloud/datacharm/datacharm-clients/datacharm-cli.md)
+    * [JDBC Driver](cloud/datacharm/datacharm-clients/jdbc-driver.md)
   * [SQL Language](cloud/datacharm/sql-language/README.md)
     * [Data Types](cloud/datacharm/sql-language/sql-data-types.md)
     * [SQL Statement Syntax](cloud/datacharm/sql-language/sql-statement-syntax.md)
