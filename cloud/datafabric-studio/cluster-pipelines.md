@@ -28,26 +28,23 @@ When Spark Streaming runs on YARN, you can limit the number of workers spawned b
 
 Use the Kafka Consumer origin to process data from a Kafka cluster in cluster streaming mode.
 
-### HDFS
+### BigConnect Zion HDFS
 
-Data Collector can process data from HDFS in cluster batch mode. In cluster batch mode, Data Collector processes all available data and then stops the pipeline.
+Data Collector can process data from BigConnect Zion HDFS in cluster batch mode. In cluster batch mode, Data Collector processes all available data and then stops the pipeline.
 
 Data Collector runs as an application on top of MapReduce, an open-source cluster-computing framework. MapReduce runs on a YARN cluster manager. YARN and MapReduce generate additional worker nodes as needed. MapReduce creates one map task for each HDFS block.
 
 Use the Hadoop FS origin to process data from HDFS in cluster batch mode.
 
-### Amazon S3
+### BigConnect Object Store / Amazon S3
 
-Data Collector can process data from Amazon S3 in the following cluster batch modes:
-
-* Cluster EMR batch mode - In cluster EMR batch mode, Data Collector runs on an Amazon EMR cluster to process Amazon S3 data. Data Collector can run on an existing EMR cluster or on a new EMR cluster that is provisioned when the pipeline starts. When you provision a new EMR cluster, you can configure whether the cluster remains active or terminates when the pipeline stops.
-* Cluster batch mode - In cluster batch mode, Data Collector runs on a distribution of Hadoop to process Amazon S3 data.
+Data Collector can process data from BigConnect Object Store. In cluster batch mode, Data Collector runs on BigConnect Zion to process Object Store data.
 
 In either mode, Data Collector processes all available data and then stops the pipeline.
 
 Data Collector runs as an application on top of MapReduce in the Hadoop cluster. MapReduce runs on a YARN cluster manager. MapReduce creates one map task for each HDFS block.
 
-Use the Hadoop FS origin to process data from Amazon S3 in EMR cluster or cluster batch mode.
+Use the Hadoop FS origin to process data from Object Store in cluster batch mode.
 
 
 

@@ -7,7 +7,7 @@ The following AI models are available as REST services:
 * Named Entity Recognition
 * Text in the Wild & OCR
 * Personality Insights
-* Sentiment
+* ​[https://prestosql.io/docs/current/language.html](https://prestosql.io/docs/current/language.html) [https://prestosql.io/docs/current/sql.html](https://prestosql.io/docs/current/sql.html) [https://prestosql.io/docs/current/functions.html](https://prestosql.io/docs/current/functions.html)Sentiment
 * Face detection
 * Face recognition
 * Face age detection

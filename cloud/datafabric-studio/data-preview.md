@@ -1,6 +1,6 @@
 # Data Preview
 
-You can preview data to help build or fine-tune a pipeline. When using Control Hub, you can also use data preview when developing pipeline fragments.
+You can preview data to help build or fine-tune a pipeline. 
 
 You can use data preview with complete or incomplete pipelines and fragments. And you can choose from several options to provide source data for the preview.
 
@@ -8,7 +8,7 @@ When you preview data, source data passes through the pipeline or fragment, allo
 
 You can preview data for one stage at a time or for a group of stages. You can also view the data in list or table view, and refresh the preview data.
 
-## Data Collector UI - Preview Mode
+## DataFabric Studio - Preview Mode
 
 You can use Data Collector to view how data passes through the pipeline.
 
@@ -99,9 +99,9 @@ The following image shows Data Collector in Preview mode:
         alt/>
       </td>
       <td style="text-align:left">Link to a pipeline list</td>
-      <td style="text-align:left">Link to a <a href="https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Getting_Started/GettingStarted_Title.html#concept_wc5_ysp_1w">pipeline list on the Home page</a>.
-        Use to view a list of available pipelines, perform pipeline maintenance
-        like starting or sharing a pipeline, and navigate to individual pipelines.</td>
+      <td style="text-align:left">Link to a pipeline list on the Home page. Use to view a list of available
+        pipelines, perform pipeline maintenance like starting or sharing a pipeline,
+        and navigate to individual pipelines.</td>
     </tr>
     <tr>
       <td style="text-align:left">

@@ -20,9 +20,9 @@ When you configure a microservice pipeline, you use a microservice origin, any a
 
 Microservice origins listen for or read JSON-formatted requests. They also send responses from microservice destinations back to the origin system.You can use the following origins in microservice pipelines:
 
-* [REST Service origin](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Origins/RESTService.html#concept_hfg_2sn_p2b) - Listens on an HTTP endpoint, parses the contents of all authorized requests, and sends responses back to the originating REST API. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
-* [WebSocket Client origin](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Origins/WebSocketClient.html#concept_unk_nzk_fbb) - Reads data from a WebSocket server endpoint. Can send responses back to the origin system as part of a microservice pipeline.
-* [WebSocket Server origin](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Origins/WebSocketServer.html#concept_u2r_gpc_3z) - Listens on a WebSocket endpoint and processes the contents of all authorized WebSocket client requests. Creates multiple threads to enable parallel processing in a multithreaded pipeline. Can send responses back to the origin system as part of a microservice pipeline.
+* REST Service origin - Listens on an HTTP endpoint, parses the contents of all authorized requests, and sends responses back to the originating REST API. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
+* WebSocket Client origin - Reads data from a WebSocket server endpoint. Can send responses back to the origin system as part of a microservice pipeline.
+* WebSocket Server origin - Listens on a WebSocket endpoint and processes the contents of all authorized WebSocket client requests. Creates multiple threads to enable parallel processing in a multithreaded pipeline. Can send responses back to the origin system as part of a microservice pipeline.
 
 ## Microservice Destinations
 
@@ -32,10 +32,10 @@ When you don't need to write data to a destination system, you can use the Send 
 
 When you want to write to destination systems without sending a response, you can use non-microservice destinations in microservice pipelines.The following microservice destinations can send responses to microservice origins:
 
-* [HTTP Client destination](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Destinations/HTTPClient.html#concept_khl_sg5_lz) - Writes data to an HTTP endpoint. Can send responses to a microservice origin in a microservice pipeline.
-* [Kafka Producer destination](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Destinations/KProducer.html#concept_oq2_5jl_zq) - Writes data to a Kafka cluster. Can send responses to a microservice origin in a microservice pipeline.
-* [Kinesis Producer destination](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Destinations/KinProducer.html#concept_swk_h1j_yr) - Writes data to Kinesis Streams. Can send responses to a microservice origin in a microservice pipeline.
-* [Send Response to Origin destination](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Destinations/SendResponse.html#concept_eyd_zx4_q2b) - Sends records with the specified response to the microservice origin in the pipeline. Does not write data to a destination system.
+* HTTP Client destination - Writes data to an HTTP endpoint. Can send responses to a microservice origin in a microservice pipeline.
+* Kafka Producer destination - Writes data to a Kafka cluster. Can send responses to a microservice origin in a microservice pipeline.
+* Kinesis Producer destination - Writes data to Kinesis Streams. Can send responses to a microservice origin in a microservice pipeline.
+* Send Response to Origin destination - Sends records with the specified response to the microservice origin in the pipeline. Does not write data to a destination system.
 
 ## Sample Pipeline
 

@@ -8,7 +8,7 @@ When the Data Collector runs a pipeline, you can view real-time statistics about
 * Configure rules and alerts
 * View the pipeline history
 
-## Data Collector UI - Monitor Mode
+## DataFabric Studio - Monitor Mode
 
 In Monitor mode, you can use the Data Collector to view data as it passes through the pipeline.
 
