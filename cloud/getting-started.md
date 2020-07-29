@@ -1,6 +1,4 @@
 # Getting Started
 
-{% page-ref page="ai.md" %}
-
-
+In progress...
 
