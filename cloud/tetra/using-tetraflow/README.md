@@ -10,23 +10,23 @@ Tetra Flow sends commands to Tetra as a sequence of executable cells. The cells 
 
 While Tetra Flow supports REST API, R scripts, and CoffeeScript, no programming experience is required to run Tetra Flow. You can click your way through any Tetra operation without ever writing a single line of code. You can even disable the input cells to run Tetra Flow using only the GUI. Tetra Flow is designed to guide you every step of the way, by providing input prompts, interactive help, and example flows.
 
-{% page-ref page="h2o-how-to-use-the-interface.md" %}
+{% page-ref page="tetraflow-how-to-use-the-interface.md" %}
 
-{% page-ref page="h2o-using-flows.md" %}
+{% page-ref page="tetraflow-using-flows.md" %}
 
-{% page-ref page="h2o-cell-modes.md" %}
+{% page-ref page="tetraflow-cell-modes.md" %}
 
-{% page-ref page="h2o-data.md" %}
+{% page-ref page="tetraflow-data.md" %}
 
-{% page-ref page="h2o-viewing-jobs.md" %}
+{% page-ref page="tetraflow-viewing-jobs.md" %}
 
-{% page-ref page="h2o-models.md" %}
+{% page-ref page="tetraflow-models.md" %}
 
 {% page-ref page="partial-dependence-plots.md" %}
 
-{% page-ref page="h2o-predictions.md" %}
+{% page-ref page="tetraflow-predictions.md" %}
 
-{% page-ref page="h2o-frames.md" %}
+{% page-ref page="tetraflow-frames.md" %}
 
 
 
