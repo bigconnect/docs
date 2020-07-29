@@ -130,7 +130,7 @@
     * [JavaScript SDK QuickStart](cloud/oss/oss-dev-guide/oss-js-sdk.md)
     * [JavaScript SDK Reference](cloud/oss/oss-dev-guide/javascript-sdk-reference.md)
 * [Tetra](cloud/tetra/README.md)
-  * [Using the Tetra Flow UI](cloud/tetra/using-flow-h2os-web-ui/README.md)
+  * [Using Tetra Flow](cloud/tetra/using-flow-h2os-web-ui/README.md)
     * [How to Use the Interface](cloud/tetra/using-flow-h2os-web-ui/h2o-how-to-use-the-interface.md)
     * [Using Flows](cloud/tetra/using-flow-h2os-web-ui/h2o-using-flows.md)
     * [Cell Modes](cloud/tetra/using-flow-h2os-web-ui/h2o-cell-modes.md)

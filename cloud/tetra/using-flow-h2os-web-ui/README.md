@@ -1,6 +1,6 @@
-# Using the Tetra Flow UI
+# Using Tetra Flow
 
-Tetra Flow is an open-source user interface for Tetra. It is a web-based interactive environment that allows you to combine code execution, text, mathematics, plots, and rich media in a single document.
+Tetra Flow is a user interface for Tetra. It is a web-based interactive environment that allows you to combine code execution, text, mathematics, plots, and rich media in a single document.
 
 With Tetra Flow, you can capture, rerun, annotate, present, and share your workflow. Tetra Flow allows you to use Tetra interactively to import files, build models, and iteratively improve them. Based on your models, you can make predictions and add rich text to create vignettes of your work - all within Flow’s browser-based environment.
 
