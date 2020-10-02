@@ -11,7 +11,7 @@ They can be executed Pre or Post Stage:
 
 Extract the value of DOM elements into target fields using CSS selectors.
 
-![BigConnect Sponge DOMTagger](../../../.gitbook/assets/image%20%28664%29.png)
+![BigConnect Sponge DOMTagger](../../../.gitbook/assets/image%20%28677%29.png)
 
 You can add one or more selectors to this tagger. Each selector has the following configuration properties:
 
@@ -30,7 +30,7 @@ You can add one or more selectors to this tagger. Each selector has the followin
 
 Changes the character case of field values**.**
 
-![](../../../.gitbook/assets/image%20%28654%29.png)
+![](../../../.gitbook/assets/image%20%28658%29.png)
 
 * **field -** the name of the document field to change
 * **caseType** -  method used to change the character case:
@@ -48,7 +48,7 @@ Changes the character case of field values**.**
 
 Define and add constant fields to a document.
 
-![](../../../.gitbook/assets/image%20%28650%29.png)
+![](../../../.gitbook/assets/image%20%28651%29.png)
 
 * **name -** the name of the field to add
 * **value** - value of the field
@@ -71,19 +71,19 @@ If no **fromField** is specified, the document content will be used. If the **to
 
 Can be used as a **Pre**-Stage on text document only when matching strings on document content, or both as a **Pre**-Stage or **Post**-Stage when the **fromField** is used.
 
-![](../../../.gitbook/assets/image%20%28655%29.png)
+![](../../../.gitbook/assets/image%20%28659%29.png)
 
 * **fromField** - source field
 * **toField** - target field
 * **value** - text to match or regular expression
 * **caseSensitive** - perform matching in a case-sensitive way
-* **regex** - if the provided **value** is a regex expression or not
+* **regex** - if the provided **value** is a [regex expression ](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html)or not
 
 ## CurrentDateTagger
 
 Adds the server UTC date to the specified field. If no field is provided, the date will be added to the field `document.importedDate`. The default date format is EPOCH \(the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC\). 
 
-![](../../../.gitbook/assets/image%20%28659%29.png)
+![](../../../.gitbook/assets/image%20%28664%29.png)
 
 * **field** - target field
 * **format** - a custom date format, as per the formatting options found on [SimpleDateFormat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html).
@@ -94,7 +94,7 @@ Adds the server UTC date to the specified field. If no field is provided, the da
 
 Formats a date from any given format to a format of choice, as per the formatting options found on [SimpleDateFormat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html) with the exception of the string "EPOCH" which represents the difference, measured in milliseconds, between the date and midnight, January 1, 1970. The default format for **fromFormat** or **toFormat** when not specified is EPOCH.
 
-![](../../../.gitbook/assets/image%20%28658%29.png)
+![](../../../.gitbook/assets/image%20%28663%29.png)
 
 
 
@@ -119,7 +119,7 @@ Delete the document fields provided.
 
 Keep only the document fields provided, delete all other ones.
 
-![](../../../.gitbook/assets/image%20%28662%29.png)
+![](../../../.gitbook/assets/image%20%28673%29.png)
 
 {% hint style="info" %}
 Unless you have good reasons for doing otherwise, it is recommended to use this tagger as one of the last ones to be executed. This is a good practice to ensure all document fields are available to other taggers and filters that may require them even if they are not otherwise required.
@@ -131,7 +131,7 @@ Unless you have good reasons for doing otherwise, it is recommended to use this 
 
 Merge multiple document fields into a single one.
 
-![](../../../.gitbook/assets/image%20%28660%29.png)
+![](../../../.gitbook/assets/image%20%28668%29.png)
 
 * **fromFields** - list all fields to merge, separated by commas
 * **toField** - target field to store all values combined into one string, optionally separated by a **separator**
@@ -142,7 +142,7 @@ Merge multiple document fields into a single one.
 
 Rename document fields to different names.
 
-![](../../../.gitbook/assets/image%20%28656%29.png)
+![](../../../.gitbook/assets/image%20%28661%29.png)
 
 * **fromField** - source field name
 * **toField** - target field name
@@ -152,13 +152,13 @@ Rename document fields to different names.
 
 Replaces an existing document field value with another one. The same field specified in **fromField** will be used for the replacement.
 
-![](../../../.gitbook/assets/image%20%28667%29.png)
+![](../../../.gitbook/assets/image%20%28680%29.png)
 
 * **fromField** - source field
 * **fromValue** - source field value
 * **toValue** - replacement value
 * **caseSensitive** - whether to match in case-sensitive way
-* **regex** - if **fromValue** is a Regular Expression
+* **regex** - if **fromValue** is a [Regular Expression](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html)
 * **wholeMatch** - whether matches should be made against the whole field value or not \(default\)
 * **replaceAll** - only applicable when **wholeMatch** is false
 
@@ -168,11 +168,11 @@ Tag incoming documents using a scripting language. The default script engine is 
 
 The following are variables are made available to your script for each document:
 
-* reference: Document unique reference as a string.
-* content: Document content, as a string \(of maxReadSize length\).
-* metadata: Document field as a ImporterMetadata object.
-* parsed: Whether the document was already parsed, as a boolean.
-* sectionIndex: Content section index if it had to be split, as an integer.
+* `reference`: Document unique reference as a string.
+* `content`: Document content, as a string \(of maxReadSize length\).
+* `metadata`: Document fields.
+* `parsed`: Whether the document was already parsed, as a boolean.
+* `sectionIndex`: Content section index if it had to be split, as an integer.
 
 There is no expected return value from your script. Returning one has no effect.
 

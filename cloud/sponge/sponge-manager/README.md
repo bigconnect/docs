@@ -5,14 +5,14 @@ The Manager is the main entry point for using Sponge. It's a web application whe
 The first thing to do is login in the application with the default user **admin** and password **admin**. 
 
 {% hint style="danger" %}
-Please change your password after logging in to prevent unauthorized access to your cloud instance.
+Please change your password after logging in to prevent unauthorised access to your cloud instance.
 {% endhint %}
 
-![BigConnect Sponge login screeen](../../../.gitbook/assets/image%20%28653%29.png)
+![BigConnect Sponge login screeen](../../../.gitbook/assets/image%20%28656%29.png)
 
 After logging in, you will see the list of projects. If this is the first time you login to Sponge, you don't have any projects.
 
-![BigConnect Sponge list of projects](../../../.gitbook/assets/image%20%28665%29.png)
+![BigConnect Sponge list of projects](../../../.gitbook/assets/image%20%28678%29.png)
 
 The next thing to do is to create a new project. 
 
@@ -20,7 +20,7 @@ The next thing to do is to create a new project.
 
 To create a new scraping project, navigate to the **Projects** menu item and choose **New Project**. A popup is displayed where you need to enter project information.
 
-![BigConnect Sponge new project dialog](../../../.gitbook/assets/image%20%28652%29.png)
+![BigConnect Sponge new project dialog](../../../.gitbook/assets/image%20%28655%29.png)
 
 * **Name** - the name of your Project
 * **Description** - a small description of your Project
@@ -29,11 +29,11 @@ To create a new scraping project, navigate to the **Projects** menu item and cho
 
 Once all information has been filled in, click the **Save** button. The project will be created and it will show in the Projects list.
 
-![BigConnect Sponge list of projects](../../../.gitbook/assets/image%20%28666%29.png)
+![BigConnect Sponge list of projects](../../../.gitbook/assets/image%20%28679%29.png)
 
-The next step is to configure our Project. Click on the ![](../../../.gitbook/assets/image%20%28663%29.png) icon to go to the Project detail page.
+The next step is to configure our Project. Click on the ![](../../../.gitbook/assets/image%20%28675%29.png) icon to go to the Project detail page.
 
-![BigConnect Sponge project detail page](../../../.gitbook/assets/image%20%28651%29.png)
+![BigConnect Sponge project detail page](../../../.gitbook/assets/image%20%28652%29.png)
 
 In here you can configure everything related to your project, you can see a preview of data being scraped and the events emitted during the crawling process. 
 
@@ -53,7 +53,7 @@ pre-configured for your cloud instance.
 
 ### Crawler 
 
-![BigConnect Sponge crawler settings](../../../.gitbook/assets/image%20%28661%29.png)
+![BigConnect Sponge crawler settings](../../../.gitbook/assets/image%20%28672%29.png)
 
 In this section, you can configure how the website should be crawled:
 
@@ -86,7 +86,7 @@ Before we get into details, you need to understand how the Sponge behaves when c
 
 A [**Tagger**](sponge-taggers.md) allows you to add to or modify existing document fields. A [**Filter**](sponge-filters.md) allows you to filter out certain incoming documents based on field values. A [**Splitter**](sponge-splitters.md) splits a document into multiple ones \(e.g. comments in a news article, products on a eCommerce website\).
 
-![BigConnect Sponge Behaviour settings](../../../.gitbook/assets/image%20%28668%29.png)
+![BigConnect Sponge Behaviour settings](../../../.gitbook/assets/image%20%28681%29.png)
 
 The reference list of available Taggers, Filters and Splitters can be found here:
 
@@ -94,13 +94,19 @@ The reference list of available Taggers, Filters and Splitters can be found here
 * [Filters](sponge-filters.md)
 * [Splitters](sponge-splitters.md)
 
+A very useful tool while working with **Behaviors** is the **Field Preview** tab. After a first run of your project, you can see here all available fields for crawled documents, including the ones resulted from any Tagger, Filter or Splitter you applied.
+
+![](../../../.gitbook/assets/image%20%28650%29.png)
+
+
+
 ### Committer
 
-Here you can configure how source fields map to destination fields. 
+Here you can choose the Committer for your project. Some Committers support field mappings, while others don't. Please refer to the [Committer Configuration](./#committer-configuration) section for more information on how to configure committers.
 
-![](../../../.gitbook/assets/image%20%28501%29.png)
+### Starting and Stopping
 
-### Starting and Monitoring
+#### Starting a Project
 
 Projects can be started from the project list page, by clicking the Play button. When you try to start it, a popup will ask the user when the project should be started:
 
@@ -118,6 +124,22 @@ Running a scheduled project can be cancelled from the project details page using
 Once started, the project will report a progress bar that shows **Links crawled vs Links processed**. It does not show the actual progress in terms of percentage because that would be impossible. This is why the status bar keeps updating every few seconds.
 {% endhint %}
 
+#### Stopping a Project
+
+When a project is in the RUNNING state, you can stop it from the project list page, by clicking on the stop sign next to the project.
+
+### Monitoring
+
+You can monitor project crawling events in the project detail page, by going to the **Event Log** tab.
+
+![](../../../.gitbook/assets/image%20%28676%29.png)
+
+Here you can see the latest events being fired by the crawler, along with details about the URL being processed and its depth.
+
+You can also monitor all documents and fields that pass through the system in the **Field Preview** tab:
+
+![](../../../.gitbook/assets/image%20%28666%29.png)
+
 ## Administration
 
 {% hint style="info" %}
@@ -128,14 +150,14 @@ The administration screen is only accessible to users with Admnistrator privileg
 
 Committers are destinations where Sponge stores scraped data. Out-of-the-box Sponge supports the following destinations:
 
-* XML Files \(default\)
-* JSON Files
+* XML Files \(default\) stored on the local disk or [BigConnect Object Store](../../oss/)
+* JSON Files stored on the local disk or [BigConnect Object Store](../../oss/)
 * SQL Databases
-* BigConnect
+* [Zion](../../core-service.md)
 
-Adding or changing committers can be done from the **Administration -&gt; Committer Configuration** page.
+Adding or changing committers can be done from the **Administration -&gt; Committers** page.
 
-![](../../../.gitbook/assets/image%20%28126%29.png)
+![](../../../.gitbook/assets/image%20%28669%29.png)
 
 Click the **New Committer** button to add a new committer. A popup will be displayed with the following information:
 
@@ -148,7 +170,7 @@ Click the **New Committer** button to add a new committer. A popup will be displ
 
 Used for storing scraping data in a database. This commiter will automatically create a database table for each project, using the project's name as a guideline.
 
-![](../../../.gitbook/assets/image%20%28351%29.png)
+![](../../../.gitbook/assets/image%20%28653%29.png)
 
 * **DB Driver Class** - fully-qualified class name of the JDBC driver to use \(eg. com.mysql.jdbc.Driver\)
 * **DB Driver Path** - the full path to the JDBC **.jar** file of the driver
@@ -168,32 +190,53 @@ The configured database user needs to have the following database permissions:
 Sponge includes the MySQL JDBC driver by default.
 {% endhint %}
 
-#### File Committers
+#### JSON/XML File Committers
 
-Used for storing scraped data in raw, JSON or XML files in a configured folder.
+Used for storing scraped data in JSON or XML files in a configured local folder.
 
-![](../../../.gitbook/assets/image%20%28357%29.png)
+![](../../../.gitbook/assets/image%20%28682%29.png)
 
 * **Directory** - full path to a filesystem folder where to store scraped data
-* **Committer** - one of _FileSystemCommitter, JSONFileCommitter, XMLFileCommitter_
+* **Committer** - one of _JSONFileCommitter, XMLFileCommitter_
 
 {% hint style="warning" %}
 The OS user that owns the Sponge Manager or Sponge Agent processes needs to have write permissions to write to the configured folder.
 {% endhint %}
 
-#### BigConnect Committer
+#### S3 JSON/XML File Committers
 
-Used for storing scraped data as Documents in BigConnect \(ie. entities with Concept Type = Document\)
+Used for storing scraped data in JSON/XML files in a [BigConnect Object Store](../../oss/) instance.
 
-![](../../../.gitbook/assets/image%20%28207%29.png)
+![](../../../.gitbook/assets/image%20%28667%29.png)
 
-* **Bc URL** - The HTTP\(S\)  URL to BigConnect Explorer
-* **Bc Username** - BigConnect Username
-* **Bc Password** - BigConnect User password
+* **Endpoint**: URL of a [BigConnect Object Store](../../oss/) instance  \(e.g. https://storage-3122463932808256.cloud.bigconnect.io\)
+* **Access Key**: Tenant ID
+* **Secret Key**: secret key for the Object Store
+* **Bucket**: name of a bucket \(a new one will be created if it doesn't exist\)
+
+#### Zion Committer
+
+Used for storing scraped data as Documents in [Zion](../../core-service.md) \(ie. entities with Concept Type = Document\)
+
+![](../../../.gitbook/assets/image%20%28665%29.png)
+
+* **Bolt URL** - The URL to a Zion Bolt server \(e.g. bolt://core-170393591705357.cloud.bigconnect.io:10242\)
+* **Username** - Zion user
+* **Password** - Zion password
+
+{% hint style="info" %}
+When choosing this connector in the Project details page, you will be prompted to perform concept and field mapping.
+
+The Zion instance needs to be available and accessible by Sponge.
+{% endhint %}
 
 ### Agent Configuration
 
-Agents run scraping jobs on local or remote machines. Sponge Manager includes a local agent that can start scraping jobs as subprocesses.
+Agents run scraping jobs on local or remote machines. Sponge Manager includes a local agent that can start scraping jobs as sub-processes.
+
+{% hint style="info" %}
+You don't need to alter this configuration for small-scale deployments. 
+{% endhint %}
 
 Adding or changing agents can be done from the **Administration -&gt; Agent Configuration** page.
 
