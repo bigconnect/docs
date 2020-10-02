@@ -8,7 +8,7 @@ Splits HTML, XHTML, or XML document on a specific element. This splitter constru
 
 The [jsoup](http://jsoup.org/) parser library is used to load a document content into a DOM tree. Elements are referenced using a [CSS or JQuery-like syntax](http://jsoup.org/cookbook/extracting-data/selector-syntax).
 
-![](../../../.gitbook/assets/image%20%28657%29.png)
+![](../../../.gitbook/assets/image%20%28658%29.png)
 
 * **selector**: [CSS or JQuery-like syntax](http://jsoup.org/cookbook/extracting-data/selector-syntax) to select the DOM elements that will be splitted.
 

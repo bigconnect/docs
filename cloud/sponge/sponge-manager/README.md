@@ -8,11 +8,11 @@ The first thing to do is login in the application with the default user **admin*
 Please change your password after logging in to prevent unauthorised access to your cloud instance.
 {% endhint %}
 
-![BigConnect Sponge login screeen](../../../.gitbook/assets/image%20%28656%29.png)
+![BigConnect Sponge login screeen](../../../.gitbook/assets/image%20%28657%29.png)
 
 After logging in, you will see the list of projects. If this is the first time you login to Sponge, you don't have any projects.
 
-![BigConnect Sponge list of projects](../../../.gitbook/assets/image%20%28678%29.png)
+![BigConnect Sponge list of projects](../../../.gitbook/assets/image%20%28680%29.png)
 
 The next thing to do is to create a new project. 
 
@@ -20,7 +20,7 @@ The next thing to do is to create a new project.
 
 To create a new scraping project, navigate to the **Projects** menu item and choose **New Project**. A popup is displayed where you need to enter project information.
 
-![BigConnect Sponge new project dialog](../../../.gitbook/assets/image%20%28655%29.png)
+![BigConnect Sponge new project dialog](../../../.gitbook/assets/image%20%28656%29.png)
 
 * **Name** - the name of your Project
 * **Description** - a small description of your Project
@@ -29,9 +29,9 @@ To create a new scraping project, navigate to the **Projects** menu item and cho
 
 Once all information has been filled in, click the **Save** button. The project will be created and it will show in the Projects list.
 
-![BigConnect Sponge list of projects](../../../.gitbook/assets/image%20%28679%29.png)
+![BigConnect Sponge list of projects](../../../.gitbook/assets/image%20%28681%29.png)
 
-The next step is to configure our Project. Click on the ![](../../../.gitbook/assets/image%20%28675%29.png) icon to go to the Project detail page.
+The next step is to configure our Project. Click on the ![](../../../.gitbook/assets/image%20%28677%29.png) icon to go to the Project detail page.
 
 ![BigConnect Sponge project detail page](../../../.gitbook/assets/image%20%28652%29.png)
 
@@ -53,7 +53,7 @@ pre-configured for your cloud instance.
 
 ### Crawler 
 
-![BigConnect Sponge crawler settings](../../../.gitbook/assets/image%20%28672%29.png)
+![BigConnect Sponge crawler settings](../../../.gitbook/assets/image%20%28674%29.png)
 
 In this section, you can configure how the website should be crawled:
 
@@ -86,7 +86,7 @@ Before we get into details, you need to understand how the Sponge behaves when c
 
 A [**Tagger**](sponge-taggers.md) allows you to add to or modify existing document fields. A [**Filter**](sponge-filters.md) allows you to filter out certain incoming documents based on field values. A [**Splitter**](sponge-splitters.md) splits a document into multiple ones \(e.g. comments in a news article, products on a eCommerce website\).
 
-![BigConnect Sponge Behaviour settings](../../../.gitbook/assets/image%20%28681%29.png)
+![BigConnect Sponge Behaviour settings](../../../.gitbook/assets/image%20%28683%29.png)
 
 The reference list of available Taggers, Filters and Splitters can be found here:
 
@@ -132,13 +132,13 @@ When a project is in the RUNNING state, you can stop it from the project list pa
 
 You can monitor project crawling events in the project detail page, by going to the **Event Log** tab.
 
-![](../../../.gitbook/assets/image%20%28676%29.png)
+![](../../../.gitbook/assets/image%20%28678%29.png)
 
 Here you can see the latest events being fired by the crawler, along with details about the URL being processed and its depth.
 
 You can also monitor all documents and fields that pass through the system in the **Field Preview** tab:
 
-![](../../../.gitbook/assets/image%20%28666%29.png)
+![](../../../.gitbook/assets/image%20%28667%29.png)
 
 ## Administration
 
@@ -157,7 +157,7 @@ Committers are destinations where Sponge stores scraped data. Out-of-the-box Spo
 
 Adding or changing committers can be done from the **Administration -&gt; Committers** page.
 
-![](../../../.gitbook/assets/image%20%28669%29.png)
+![](../../../.gitbook/assets/image%20%28671%29.png)
 
 Click the **New Committer** button to add a new committer. A popup will be displayed with the following information:
 
@@ -194,7 +194,7 @@ Sponge includes the MySQL JDBC driver by default.
 
 Used for storing scraped data in JSON or XML files in a configured local folder.
 
-![](../../../.gitbook/assets/image%20%28682%29.png)
+![](../../../.gitbook/assets/image%20%28684%29.png)
 
 * **Directory** - full path to a filesystem folder where to store scraped data
 * **Committer** - one of _JSONFileCommitter, XMLFileCommitter_
@@ -207,7 +207,7 @@ The OS user that owns the Sponge Manager or Sponge Agent processes needs to have
 
 Used for storing scraped data in JSON/XML files in a [BigConnect Object Store](../../oss/) instance.
 
-![](../../../.gitbook/assets/image%20%28667%29.png)
+![](../../../.gitbook/assets/image%20%28668%29.png)
 
 * **Endpoint**: URL of a [BigConnect Object Store](../../oss/) instance  \(e.g. https://storage-3122463932808256.cloud.bigconnect.io\)
 * **Access Key**: Tenant ID
@@ -218,7 +218,7 @@ Used for storing scraped data in JSON/XML files in a [BigConnect Object Store](.
 
 Used for storing scraped data as Documents in [Zion](../../core-service.md) \(ie. entities with Concept Type = Document\)
 
-![](../../../.gitbook/assets/image%20%28665%29.png)
+![](../../../.gitbook/assets/image%20%28666%29.png)
 
 * **Bolt URL** - The URL to a Zion Bolt server \(e.g. bolt://core-170393591705357.cloud.bigconnect.io:10242\)
 * **Username** - Zion user
@@ -261,4 +261,16 @@ You can configure various aspects from the System Configuration page like
 * User Agent for scraping 
 
 Changing system configuration properties can be done from the **Administration -&gt; System Configuration** page.
+
+### User Management
+
+Users can be managed from the **Administration -&gt; Users** page. 
+
+![](../../../.gitbook/assets/image%20%28669%29.png)
+
+You can activate/deactivate a user by clicking on the Activated/Deactivated button next to the user in the list.
+
+![](../../../.gitbook/assets/image%20%28654%29.png)
+
+A user can be a regular or an administrator. The administrator user has the ROLE\_ADMIN profile and has access to the Administration section.
 

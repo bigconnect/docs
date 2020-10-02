@@ -6,7 +6,7 @@ A Filter allows you to filter out certain incoming documents based on field valu
 
 Accepts or rejects a document based on the date value\(s\) of a document field, stored in a specified format. If multiple values are found for a field, only one of them needs to match for this filter to take effect. If the value cannot be parsed to a valid date, it is considered not to be matching.
 
-![](../../../.gitbook/assets/image%20%28660%29.png)
+![](../../../.gitbook/assets/image%20%28661%29.png)
 
 When adding a condition, you can specify a static date \(i.e. a constant date value\), or you can tell this filter you want to use a date relative to the current type. There is a distinction to be made between TODAY and NOW. TODAY is the current day without the hours, minutes, and seconds, where as NOW is the current day with the hours, minutes, and seconds. You can also decide whether you want the current date to be fixed \(does not change after being set for the first time\), or whether it should be refreshed on every call to reflect system date time changes.
 
@@ -56,7 +56,7 @@ For example, let's say you want to keep only documents from the last seven days,
 
 Accepts or rejects a document based on whether any of the specified document fields are empty or not. Any control characters \(char &lt;= 32\) are removed before evaluating if a property is empty or not.
 
-![](../../../.gitbook/assets/image%20%28671%29.png)
+![](../../../.gitbook/assets/image%20%28673%29.png)
 
 * **onMatch** - whether to include or exclude the document when this filter matches all conditions
 * **fields** - coma separated list of fields to match
@@ -65,7 +65,7 @@ Accepts or rejects a document based on whether any of the specified document fie
 
 Accepts or rejects a document based on the numeric value\(s\) of a field, supporting decimals. If multiple values are found for a field, only one of them needs to match for this filter to take effect. If the value is not a valid number, it is considered not to be matching. The decimal character is expected to be a dot. To reject decimals or to deal with non-numeric fields in your own way, you can use **RegexMetadataFilter**.
 
-![](../../../.gitbook/assets/image%20%28654%29.png)
+![](../../../.gitbook/assets/image%20%28655%29.png)
 
 Use one or two \(for ranges\) conditions, where possible operators are: 
 
@@ -95,7 +95,7 @@ Accepts or rejects a document based on its field values using [regular expressio
 You can test your Regex patterns using this [tool](https://www.freeformatter.com/java-regex-tester.html).
 {% endhint %}
 
-![](../../../.gitbook/assets/image%20%28670%29.png)
+![](../../../.gitbook/assets/image%20%28672%29.png)
 
 * **onMatch** - whether to include or exclude the document when this filter matches all conditions
 * **field** - source field
@@ -110,7 +110,7 @@ Accepts or rejects a document based on its reference \(e.g. URL\).
 You can test your Regex patterns using this [tool](https://www.freeformatter.com/java-regex-tester.html).
 {% endhint %}
 
-![](../../../.gitbook/assets/image%20%28674%29.png)
+![](../../../.gitbook/assets/image%20%28676%29.png)
 
 * **onMatch** - whether to include or exclude the document when this filter matches all conditions
 * **caseSensitive** - perform the matching case-sensitive
