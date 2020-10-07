@@ -18,6 +18,8 @@ You can send notifications when the pipeline converts to the following states:
 
 You can specify multiple states to trigger notifications, but you cannot configure the pipeline to send different notifications based on different pipeline state changes at this time. For example, if you configure notifications for the Running and Finished states, the pipeline sends notifications when changing to both states.
 
+ However, when configuring a webhook, you can use webhook parameters in the payload to indicate the state change that triggered the notification. For more information about webhooks, see [Webhooks](dc-webhooks.md).
+
 To send email notification, DataFabric must be configured to send email. To enable sending email, configure the email alert DataFabric properties.
 
 For more information about pipeline states, see [Understanding Pipeline States](../pipeline-concepts-and-design/understanding-pipeline-states.md).
