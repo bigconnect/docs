@@ -20,6 +20,7 @@
   * [Cypher Lab Styling](cloud/cypher-lab/cypher-lab-styling.md)
   * [Cypher Lab Built-in Guides](cloud/cypher-lab/cypher-lab-built-in-guides.md)
 * [DataFabric](cloud/datafabric/README.md)
+  * [Dashboard](cloud/datafabric/dashboard.md)
   * [Data Workers](cloud/datafabric/data-workers.md)
   * [Social Network Data](cloud/datafabric/social-data.md)
 * [DataFabric Studio](cloud/datafabric-studio/README.md)
