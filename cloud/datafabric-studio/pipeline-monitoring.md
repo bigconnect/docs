@@ -14,7 +14,7 @@ In Monitor mode, you can use the Data Collector to view data as it passes throug
 
 The following image shows Data Collector in Monitor mode:
 
-![](../../.gitbook/assets/image%20%28328%29.png)
+![](../../.gitbook/assets/image%20%28694%29.png)
 
 <table>
   <thead>
@@ -70,15 +70,6 @@ The following image shows Data Collector in Monitor mode:
     </tr>
     <tr>
       <td style="text-align:left">
-        <img src="https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/icon_PackageManager.png"
-        alt/>
-      </td>
-      <td style="text-align:left">Package Manager icon</td>
-      <td style="text-align:left">Displays the Package Manager which allows you to install additional stage
-        libraries for a core Data Collector installation.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
         <img src="https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/icon_MonAlert.png"
         alt/>
       </td>
@@ -102,19 +93,6 @@ The following image shows Data Collector in Monitor mode:
       <td style="text-align:left">User icon</td>
       <td style="text-align:left">Displays the active user and the roles assigned to the user. Also allows
         you to log out of Data Collector.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <img src="https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/icon_OverCHelp.png"
-        alt/>
-      </td>
-      <td style="text-align:left">Help icon</td>
-      <td style="text-align:left">
-        <p>Provides context-sensitive help based on the information in the panel.
-          Allows you to configure display settings and to specify whether to use
-          a local or hosted version of the help.</p>
-        <p>Provides access to the REST API and the Data Collector version.</p>
-      </td>
     </tr>
     <tr>
       <td style="text-align:left">
