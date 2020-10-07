@@ -1,8 +1,8 @@
-# DataFabric UI - Edit Mode
+# DataFabric Studio - Edit Mode
 
-The following image shows the Data Collector UI when you configure a pipeline:
+The following image shows the DataFabric Studio when you configure a pipeline:
 
-![](../../../.gitbook/assets/image%20%28239%29.png)
+![](../../../.gitbook/assets/image%20%28687%29.png)
 
 <table>
   <thead>
@@ -61,15 +61,6 @@ The following image shows the Data Collector UI when you configure a pipeline:
     </tr>
     <tr>
       <td style="text-align:left">
-        <img src="https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/icon_PackageManager.png"
-        alt/>
-      </td>
-      <td style="text-align:left">Package Manager icon</td>
-      <td style="text-align:left">Displays the Package Manager which allows you to install additional stage
-        libraries for a core Data Collector installation.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
         <img src="https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/icon_MonAlert.png"
         alt/>
       </td>
@@ -82,8 +73,8 @@ The following image shows the Data Collector UI when you configure a pipeline:
         alt/>
       </td>
       <td style="text-align:left">Administration icon</td>
-      <td style="text-align:left">Provides access to Data Collector configuration properties, directories,
-        and log. Also allows you to shut down Data Collector.</td>
+      <td style="text-align:left">Provides access to DataFabric configuration properties, directories, and
+        log.</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -92,20 +83,7 @@ The following image shows the Data Collector UI when you configure a pipeline:
       </td>
       <td style="text-align:left">User icon</td>
       <td style="text-align:left">Displays the active user and the roles assigned to the user. Also allows
-        you to log out of Data Collector.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <img src="https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/icon_OverCHelp.png"
-        alt/>
-      </td>
-      <td style="text-align:left">Help icon</td>
-      <td style="text-align:left">
-        <p>Provides context-sensitive help based on the information in the panel.
-          Allows you to configure display settings and to specify whether to use
-          a local or hosted version of the help.</p>
-        <p>Provides access to the REST API and the Data Collector version.</p>
-      </td>
+        you to log out of DataFabric.</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -141,7 +119,7 @@ The following image shows the Data Collector UI when you configure a pipeline:
         alt/>
       </td>
       <td style="text-align:left">View Log icon</td>
-      <td style="text-align:left">Displays the Data Collector log. The equivalent to selecting Administration
+      <td style="text-align:left">Displays the DataFabric log. The equivalent to selecting Administration
         &gt; Logs.</td>
     </tr>
     <tr>
