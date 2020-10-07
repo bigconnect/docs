@@ -20,7 +20,7 @@ DataFabric Studio provides a web-based user interface \(UI\) to configure pipeli
 
 The UI includes the following general areas and icons:
 
-![](../../.gitbook/assets/image%20%28691%29.png)
+![](../../.gitbook/assets/image%20%28693%29.png)
 
 <table>
   <thead>
@@ -67,7 +67,7 @@ The UI includes the following general areas and icons:
     </tr>
     <tr>
       <td style="text-align:left">
-        <img src="../../.gitbook/assets/image (688).png" alt/>
+        <img src="../../.gitbook/assets/image (689).png" alt/>
       </td>
       <td style="text-align:left">Home icon</td>
       <td style="text-align:left">Displays a home page with a list of pipelines and their statuses, allowing
@@ -75,7 +75,7 @@ The UI includes the following general areas and icons:
     </tr>
     <tr>
       <td style="text-align:left">
-        <img src="../../.gitbook/assets/image (689).png" alt/>
+        <img src="../../.gitbook/assets/image (690).png" alt/>
       </td>
       <td style="text-align:left">Notifications icon</td>
       <td style="text-align:left">Displays notifications.</td>
@@ -90,7 +90,7 @@ The UI includes the following general areas and icons:
     </tr>
     <tr>
       <td style="text-align:left">
-        <img src="../../.gitbook/assets/image (690).png" alt/>
+        <img src="../../.gitbook/assets/image (692).png" alt/>
       </td>
       <td style="text-align:left">User icon</td>
       <td style="text-align:left">Displays the active user and the roles assigned to the user. Also allows

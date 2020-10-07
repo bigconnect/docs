@@ -40,6 +40,7 @@
     * [DataFabric Studio - Edit Mode](cloud/datafabric-studio/pipeline-configuration/datafabric-ui-edit-mode.md)
     * [Retrying the Pipeline](cloud/datafabric-studio/pipeline-configuration/retrying-the-pipeline.md)
     * [Rate Limit](cloud/datafabric-studio/pipeline-configuration/dc-rate-limit.md)
+    * [Advanced Options](cloud/datafabric-studio/pipeline-configuration/advanced-options.md)
     * [Simple and Bulk Edit Mode](cloud/datafabric-studio/pipeline-configuration/simple-and-bulk-edit-mode.md)
     * [Runtime Values](cloud/datafabric-studio/pipeline-configuration/runtime-values.md)
     * [Event Generation](cloud/datafabric-studio/pipeline-configuration/dc-event-generation.md)
