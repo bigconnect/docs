@@ -37,13 +37,10 @@ In standalone pipelines, you can use the following origins:
 * **MQTT Subscriber** - Subscribes to a topic on an MQTT broker to read messages from the broker.
 * **MySQL Binary Log** - Reads MySQL binary logs to generate change data capture records.
 * **NiFi HTTP Server** - Listens for requests from a NiFi PutHTTP processor and processes NiFi FlowFiles.
-* **Omniture** - Reads web usage reports from the Omniture reporting API.
 * **OPC UA Client** - Reads data from a OPC UA server.
 * **Oracle Bulkload** - Reads data from multiple Oracle database tables, then stops the pipeline. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **Oracle CDC Client** - Reads LogMiner redo logs to generate change data capture records.
 * **PostgreSQL CDC Client** - Reads PostgreSQL WAL data to generate change data capture records.
-* **Pulsar Consumer** - Reads messages from Apache Pulsar topics.
-* **RabbitMQ Consumer** - Reads messages from RabbitMQ.
 * **Redis Consumer** - Reads messages from Redis.
 * **REST Service** - Listens on an HTTP endpoint, parses the contents of all authorized requests, and sends responses back to the originating REST API. Creates multiple threads to enable parallel processing in a multithreaded pipeline. Use only in microservice pipelines.
 * **Salesforce** - Reads data from Salesforce.
@@ -52,7 +49,6 @@ In standalone pipelines, you can use the following origins:
 * **SQL Server Change Tracking** - Reads data from Microsoft SQL Server change tracking tables and generates the latest version of each record. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **Start Pipeline** - Starts a Data Collector, Data Collector Edge, or Transformer pipeline.
 * **TCP Server** - Listens at the specified ports and processes incoming data over TCP/IP connections. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
-* **Teradata Consumer** - Reads data from Teradata Database tables through a JDBC connection. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **UDP Multithreaded Source** - Reads messages from one or more UDP ports. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **UDP Source** - Reads messages from one or more UDP ports.
 * **UDP to Kafka \(Deprecated**\) - Reads messages from one or more UDP ports and writes the data to Kafka.
