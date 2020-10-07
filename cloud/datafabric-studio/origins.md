@@ -34,8 +34,6 @@ In standalone pipelines, you can use the following origins:
 * **Kafka Consumer** - Reads messages from a single Kafka topic.
 * **Kafka Multi Topic** Consumer - Reads messages from multiple Kafka topics. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **Kinesis Consumer** - Reads data from Kinesis Streams. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
-* **MongoDB** - Reads documents from MongoDB.
-* **MongoDB Oplog** - Reads entries from a MongoDB Oplog.
 * **MQTT Subscriber** - Subscribes to a topic on an MQTT broker to read messages from the broker.
 * **MySQL Binary Log** - Reads MySQL binary logs to generate change data capture records.
 * **NiFi HTTP Server** - Listens for requests from a NiFi PutHTTP processor and processes NiFi FlowFiles.
