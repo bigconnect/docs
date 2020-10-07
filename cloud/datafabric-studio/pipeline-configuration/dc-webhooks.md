@@ -96,3 +96,62 @@ When configuring an alert webhook, you can use the following parameters:
 * PIPELINE\_URL - The direct URL to the pipeline.
 * TIME - Time of the triggered request.
 
+## Examples
+
+Here are some examples of how you might use webhooks:
+
+### Send webhooks to a Slack channel
+
+You can configure a pipeline to send webhooks to a Slack channel. For example, you could have all alerts sent to an Operations Slack channel so someone on your operations team can respond to the alert.To do this, you perform the following steps:
+
+1. Configure Slack for incoming webhooks for the channel you want to use.
+
+   At the time of writing, you can enable webhooks in Slack starting from [this page](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks). When you enable webhooks, Slack generates a URL for you to use. If you have already enabled webhooks, check your account information for the Slack URL.
+
+2. Copy the URL that Slack generates and use this to configure the pipeline.The URL looks something like this:
+
+   ```text
+   https://hooks.slack.com/services/<random string>/<random string>/<random string>
+   ```
+
+   Slack also offers instructions on how to configure the payload. At this time, they suggest a text field with the contents of the message, like Data Collector default payload.
+
+3. Configure the webhook in the pipeline.
+
+   For Slack, you can just enter the URL and accept the defaults for everything else.
+
+   Here's how a Slack alert webhook might look:
+
+![](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/Webhook-Slack.png)
+
+### Start another pipeline
+
+You can start a pipeline after the first pipeline completes all processing using dataflow triggers, the Pipeline Finisher executor, and a state notification webhook.
+
+For example, say you have a JDBC Query Consumer origin that performs a full query to process all legacy data in some database tables.
+
+You configure the origin to generate an event when it completes processing all available data, and you connect the event stream to the Pipeline Finisher executor. When the Pipeline Finisher executor receives the event from the JDBC Query Consumer, it transitions the pipeline to a Finished state. For more information on using the Pipeline Finisher executor with dataflow triggers, see Stopping a Pipeline After Processing All Available Data.
+
+To use this state change to start a second pipeline, configure a webhook that triggers when the pipeline state changes to Finished:
+
+1. In the pipeline properties, click the Notifications tab and click Add to add a webhook.
+2. For the URL, enter the command to start the pipeline.
+
+   The command looks something like this:
+
+   ```text
+   <http|https>://<system ip>.<http port>/rest/v1/pipeline/<pipeline id>/start
+   ```
+
+   For example: http://localhost:18630/rest/v1/pipeline/MyPipelinefbb6894c-08ec-421e-9e3c-4e6bbb2f5baf/start
+
+3. Using simple or bulk edit mode, click the Add icon to add a request header, and add the following header: `X-Requested-By`
+
+   And set the value to: `sdc`.
+
+   You can use the default method and authentication type, and keep or delete the payload, since they aren't used by the REST API.
+
+   This is how the webhook might look:
+
+![](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/WebHook-RESTAPI.png)
+
