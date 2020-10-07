@@ -32,6 +32,7 @@
     * [Record Header Attributes](cloud/datafabric-studio/pipeline-concepts-and-design/record-header-attributes.md)
     * [Field Attributes](cloud/datafabric-studio/pipeline-concepts-and-design/field-attributes.md)
     * [Processing Changed Data](cloud/datafabric-studio/pipeline-concepts-and-design/processing-changed-data.md)
+    * [Control Character Removal](cloud/datafabric-studio/pipeline-concepts-and-design/control-character-removal.md)
     * [Development Stages](cloud/datafabric-studio/pipeline-concepts-and-design/development-stages.md)
     * [Test Origin for Preview](cloud/datafabric-studio/pipeline-concepts-and-design/test-origin-for-preview.md)
     * [Understanding Pipeline States](cloud/datafabric-studio/pipeline-concepts-and-design/understanding-pipeline-states.md)

@@ -51,23 +51,6 @@ The following stages provide CRUD record header attributes:
         attribute.</td>
     </tr>
     <tr>
-      <td style="text-align:left">MapR DB CDC</td>
-      <td style="text-align:left">
-        <p>Includes the CRUD operation type in the sdc.operation.type record header
-          attribute.</p>
-        <p>Includes additional CDC information in record header attributes.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">MongoDB Oplog</td>
-      <td style="text-align:left">
-        <p>Includes the CRUD operation type in the sdc.operation.type record header
-          attribute.</p>
-        <p>Can include additional CDC information in record header attributes, such
-          as the op and ns attributes.</p>
-      </td>
-    </tr>
-    <tr>
       <td style="text-align:left">MySQL Binary Log</td>
       <td style="text-align:left">
         <p>Includes the CRUD operation type in the sdc.operation.type record header
