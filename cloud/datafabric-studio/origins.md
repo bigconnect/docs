@@ -8,7 +8,7 @@ You can use different origins based on the execution mode of the pipeline: stand
 
 In standalone pipelines, you can use the following origins:
 
-* **Amazon S3** - Reads objects from Amazon S3. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
+* **Amazon S3 / BigConnect Object Store** - Reads objects from BigConnect Object Store or any  S3-compatible store. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **Amazon SQS Consumer** - Reads data from queues in Amazon Simple Queue Services \(SQS\). Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **Azure Data Lake Storage Gen1** - Reads data from Microsoft Azure Data Lake Storage Gen1. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **Azure Data Lake Storage Gen2** - Reads data from Microsoft Azure Data Lake Storage Gen2. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
