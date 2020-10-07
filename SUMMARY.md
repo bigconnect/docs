@@ -25,6 +25,7 @@
   * [Social Network Data](cloud/datafabric/social-data.md)
 * [DataFabric Studio](cloud/datafabric-studio/README.md)
   * [Pipeline Concepts and Design](cloud/datafabric-studio/pipeline-concepts-and-design/README.md)
+    * [Data in Motion](cloud/datafabric-studio/pipeline-concepts-and-design/data-in-motion.md)
     * [Designing the Data Flow](cloud/datafabric-studio/pipeline-concepts-and-design/designing-the-data-flow.md)
     * [Dropping Unwanted Records](cloud/datafabric-studio/pipeline-concepts-and-design/dropping-unwanted-records.md)
     * [Error Record Handling](cloud/datafabric-studio/pipeline-concepts-and-design/error-record-handling.md)

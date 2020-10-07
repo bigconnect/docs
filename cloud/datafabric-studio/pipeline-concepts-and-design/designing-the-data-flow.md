@@ -2,7 +2,7 @@
 
 You can branch and merge streams in the pipeline.
 
-## Branching Streams
+### Branching Streams
 
 When you connect a stage to multiple stages, all data passes to all connected stages. You can configure required fields for a stage to discard records before they enter the stage, but by default all records are passed.
 
@@ -16,9 +16,9 @@ Some stages generate events that pass to event streams. Event streams originate 
 
 ![](../../../.gitbook/assets/image%20%28116%29.png)
 
-## Merging Streams
+### Merging Streams
 
-You can merge streams of data in a pipeline by connecting two or more stages to the same downstream stage. When you merge streams of data, Data Collector channels the data from all streams to the same stage, but does not perform a join of records in the stream.
+You can merge streams of data in a pipeline by connecting two or more stages to the same downstream stage. When you merge streams of data, DataFabric channels the data from all streams to the same stage, but does not perform a join of records in the stream.
 
 For example, in the following pipeline, the Stream Selector stage sends data with null values to the Field Replacer stage:
 
@@ -26,7 +26,11 @@ For example, in the following pipeline, the Stream Selector stage sends data wit
 
 The data from the Stream Selector default stream and all data from Field Replacer pass to Expression Evaluator for further processing, but in no particular order and with no record merging.
 
-Important: Pipeline validation does not prevent duplicate data. To avoid writing duplicate data to destinations, configure the pipeline logic to remove duplicate data or to prevent the generation of duplicate data.
+{% hint style="warning" %}
+Pipeline validation does not prevent duplicate data. To avoid writing duplicate data to destinations, configure the pipeline logic to remove duplicate data or to prevent the generation of duplicate data.
+{% endhint %}
 
 Note that you cannot merge event streams with data streams. Event records must stream from the event-generating stage to destinations or executors without merging with data streams.
+
+ For more information about the event framework and event streams, see Dataflow Triggers Overview
 

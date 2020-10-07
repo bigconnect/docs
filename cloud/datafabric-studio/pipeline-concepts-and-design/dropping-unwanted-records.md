@@ -2,13 +2,13 @@
 
 You can drop records from the pipeline at each stage by defining required fields or preconditions for a record to enter a stage.
 
-## Required Fields
+### Required Fields
 
 A required field is a field that must exist in a record to allow it into the stage for processing. When a record does not include all required fields, it is processed based on the error handling configured for the pipeline. You can define required fields for any processor, executor, and most destination stages.
 
 Configure required fields as part of the overall pipeline logic or to minimize processing errors. For example, if a Field Hasher encodes social security data in the /SSN field. To ensure all records include social security numbers, you can make /SSN a required field for the stage.
 
-## Preconditions
+### Preconditions
 
 Preconditions are conditions that a record must satisfy to enter the stage for processing. Stages process all preconditions before passing a record to the stage or to error handling. When a record does not meet all configured preconditions, it is processed based on the error handling configured for the stage.
 
