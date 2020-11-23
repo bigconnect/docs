@@ -184,5 +184,5 @@ RETURN m, r, j
 
 ### Next Steps
 
-Now that you have learned how to write create, read, update, and delete statement in Cypher, you can interact with data to get it into and out of Neo4j in a variety of ways. The next guide will show you how to handle filtering in BigConnect to return results with various criteria and to run fuzzy searches using ranges and partial values.
+Now that you have learned how to write create, read, update, and delete statement in Cypher, you can interact with data to get it into and out of BigConnect in a variety of ways. The next guide will show you how to handle filtering in BigConnect to return results with various criteria and to run fuzzy searches using ranges and partial values.
 
