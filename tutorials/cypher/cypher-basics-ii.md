@@ -8,7 +8,7 @@ While these are the standard CRUD operations, some things function a bit differe
 
 ### Inserting Data with Cypher
 
-Adding data in Cypher works very similarly to any other data access language’s insert statement. Instead of the `INSERT` keyword like in SQL, though, Cypher uses `CREATE`. You can use `CREATE` to insert nodes, relationships, and patterns into Neo4j.
+Adding data in Cypher works very similarly to any other data access language’s insert statement. Instead of the `INSERT` keyword like in SQL, though, Cypher uses `CREATE`. You can use `CREATE` to insert nodes, relationships, and patterns into BigConnect.
 
 Let us look at an example that we used in our last guide. To review, we had a `Person` node \(Jennifer\) who liked graphs, was friends with Michael, and worked at Neo4j.
 
@@ -114,9 +114,9 @@ DELETE m
 
 #### Delete Properties
 
-You can also remove properties, but instead of using the `DELETE` keyword, we can use a couple of other approaches. The first option is to use `REMOVE` on the property. This tells Neo4j that you want to remove the property from the node entirely and no longer store it.
+You can also remove properties, but instead of using the `DELETE` keyword, we can use a couple of other approaches. The first option is to use `REMOVE` on the property. This tells BigConnect that you want to remove the property from the node entirely and no longer store it.
 
-The second option is to use the `SET` keyword from earlier to set the property value to `null`. Unlike other database models, Neo4j does not store null values. Instead, it only stores properties and values that are meaningful to your data. This means that you can have different types and amounts of properties on various nodes and relationships in your graph.
+The second option is to use the `SET` keyword from earlier to set the property value to `null`. Unlike other database models, BigConnect does not store null values. Instead, it only stores properties and values that are meaningful to your data. This means that you can have different types and amounts of properties on various nodes and relationships in your graph.
 
 To show you both options, let us look at the code for each.
 
