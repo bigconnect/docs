@@ -1,6 +1,6 @@
 # Universal Data Loading
 
-Bringing in data into a system is always a complex task. Throughout your enterprise data topology, you have streams of data that you need to move, collect, and process on the way to their destinations. BDL provides a low-latency ingest infrastructure tool that lets you create continuous data ingest pipelines using a drag and drop UI within an integrated development environment \(IDE\), powered by the [StreamSets Data Collector](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Getting_Started/GettingStarted_Title.html).
+Bringing in data into a system is always a complex task. Throughout your enterprise data topology, you have streams of data that you need to move, collect, and process on the way to their destinations. BDL provides a low-latency ingest infrastructure tool that lets you create continuous data ingest pipelines using a drag and drop UI within an integrated development environment \(IDE\).
 
 ![BigConnect Data Pipelines](../.gitbook/assets/image%20%2894%29.png)
 
