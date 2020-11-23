@@ -39,20 +39,21 @@ The following information can be collected from Twitter:
 * Reactions
 * Comments
 
-### YouTube
+### VKontakte
 
-The following information can be collected from YouTube:
+The following information can be collected from VKontakte:
 
-* Videos
-* Channel statistics
+* Posts \(hashtags, links, images etc.\)
+* Communities
+* Users
 * Reactions
 * Comments
 
-### LinkedIn
+### TikTok
 
-The following information can be collected from LinkedIn:
+The following information can be collected from TikTok:
 
-* Posts \(hashtags, links, images etc.\)
+* Posts
 * Users
 * Reactions
 * Comments
