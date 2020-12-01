@@ -181,8 +181,6 @@
     * [Filters](cloud/sponge/sponge-manager/sponge-filters.md)
     * [Splitters](cloud/sponge/sponge-manager/sponge-splitters.md)
   * [Sponge Annotator](cloud/sponge/sponge-annotator.md)
-* [StreamNet](cloud/data-streaming.md)
-* [Zion](cloud/core-service.md)
 
 ## TUTORIALS
 
@@ -202,30 +200,6 @@
   * [Filtering](tutorials/cypher/cypher-filtering.md)
   * [Aggregations](tutorials/cypher/cypher-aggregations.md)
   * [From SQL to Cypher](tutorials/cypher/from-sql-to-cypher.md)
-
-## On-Premise
-
-* [Architecture](on-premise/architecture.md)
-* [Deployment](on-premise/installation-and-upgrade/README.md)
-  * [Operating Systems](on-premise/installation-and-upgrade/operating-systems.md)
-  * [Sizing](on-premise/installation-and-upgrade/sizing.md)
-  * [Installation](on-premise/installation-and-upgrade/installation/README.md)
-    * [Software Requirements](on-premise/installation-and-upgrade/installation/software-requirements.md)
-    * [Gather Information](on-premise/installation-and-upgrade/installation/gather-information.md)
-    * [Prepare the Environment](on-premise/installation-and-upgrade/installation/prepare-the-environment/README.md)
-      * [​Password-less SSH](on-premise/installation-and-upgrade/installation/prepare-the-environment/password-less-ssh.md)
-      * [Enable NTP](on-premise/installation-and-upgrade/installation/prepare-the-environment/enable-ntp.md)
-      * [DNS](on-premise/installation-and-upgrade/installation/prepare-the-environment/dns.md)
-      * [Firewall](on-premise/installation-and-upgrade/installation/prepare-the-environment/firewall.md)
-      * [Operational Database](on-premise/installation-and-upgrade/installation/prepare-the-environment/operational-database.md)
-      * [Other tasks](on-premise/installation-and-upgrade/installation/prepare-the-environment/other-tasks.md)
-    * [Installing BigConnect Data Lake](on-premise/installation-and-upgrade/installation/installing-bigconnect.md)
-* [Backup](on-premise/backup/README.md)
-  * [Explorer](on-premise/backup/explorer.md)
-* [Sandbox](on-premise/sandbox/README.md)
-  * [Installation](on-premise/sandbox/installation.md)
-  * [Start/Stop Services](on-premise/sandbox/start-stop-bdl.md)
-  * [URLs and Ports](on-premise/sandbox/service-urls.md)
 
 ## RESOURCES <a id="resources-group"></a>
 

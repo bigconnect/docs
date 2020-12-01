@@ -153,7 +153,7 @@ Committers are destinations where Sponge stores scraped data. Out-of-the-box Spo
 * XML Files \(default\) stored on the local disk or [BigConnect Object Store](../../oss/)
 * JSON Files stored on the local disk or [BigConnect Object Store](../../oss/)
 * SQL Databases
-* [Zion](../../core-service.md)
+* [Zion]()
 
 Adding or changing committers can be done from the **Administration -&gt; Committers** page.
 
@@ -216,7 +216,7 @@ Used for storing scraped data in JSON/XML files in a [BigConnect Object Store](.
 
 #### Zion Committer
 
-Used for storing scraped data as Documents in [Zion](../../core-service.md) \(ie. entities with Concept Type = Document\)
+Used for storing scraped data as Documents in [Zion]() \(ie. entities with Concept Type = Document\)
 
 ![](../../../.gitbook/assets/image%20%28666%29.png)
 
