@@ -4,6 +4,8 @@ BigConnect provides an extensible platform to understand and work with any amoun
 
 {% page-ref page="architecture-and-concepts.md" %}
 
+{% page-ref page="cypher-lab/" %}
+
 {% page-ref page="search.md" %}
 
 
