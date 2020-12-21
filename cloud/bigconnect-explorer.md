@@ -1,4 +1,4 @@
-# Explorer
+# BigConnect Explorer
 
 BigConnect Explorer is best suited for exploring and making sense of **unstructured data**. It can do a lot: data ingestion, data enrichment, discovery and analysis. 
 

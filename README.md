@@ -14,3 +14,23 @@ The platform and all its components are open, extensible, massively scalable and
 
 It is best suited to help solve problems where there is no straightforward solution and no obvious “correct” answer.
 
+{% page-ref page="cloud/ai.md" %}
+
+{% page-ref page="cloud/bigconnect-core/" %}
+
+{% page-ref page="cloud/bigconnect-discovery/" %}
+
+{% page-ref page="cloud/bigconnect-explorer.md" %}
+
+{% page-ref page="cloud/ds-notebooks.md" %}
+
+{% page-ref page="cloud/datafabric/" %}
+
+{% page-ref page="cloud/identity-management.md" %}
+
+{% page-ref page="cloud/oss/" %}
+
+{% page-ref page="cloud/sponge/" %}
+
+
+
