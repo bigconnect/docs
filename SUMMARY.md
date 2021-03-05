@@ -202,7 +202,6 @@
 ## RESOURCES <a id="resources-group"></a>
 
 * [Blog](https://www.bigconnect.io/blog)
-* [Support Forum](https://community.bigconnect.io/)
 * [YouTube Channel](https://www.youtube.com/channel/UCPB9zeBPhcTgrqQDCe57HyA)
 * [Release Notes](resources-group/release-notes.md)
 
