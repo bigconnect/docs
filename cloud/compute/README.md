@@ -1,5 +1,5 @@
 ---
-description: Build applications by managing your own infrastructure with Cloud Servers.
+description: Build applications by managing your own infrastructure in the Cloud
 ---
 
 # Compute
