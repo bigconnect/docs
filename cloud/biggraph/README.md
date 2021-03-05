@@ -1,4 +1,4 @@
-# Cypher Lab
+# BigGraph
 
 The Cypher Lab is a graphical user interface \(GUI\) that helps users run and visualize [Cypher](https://en.wikipedia.org/wiki/Cypher_%28query_language%29) queries  using a web browser.
 

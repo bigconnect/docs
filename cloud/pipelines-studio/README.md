@@ -1,4 +1,4 @@
-# DataFabric Studio
+# Data Pipelines Studio
 
 DataFabric is a lightweight, powerful design and execution engine that streams data in real time. Use DataFabric  to route and process data in your data streams.
 

@@ -14,7 +14,7 @@ Presto is targeted at analysts who expect response times ranging from sub-second
 
 It fully supports and extends the SQL query language and provides a large collection of SQL functions and procedures for the most challenging tasks, from handling JSON data types to GeoSpatial, HyperLogLog, Quantiles and more.
 
-Have a look at the [SQL Language Reference](../cloud/datacharm/sql-language/) page for supported SQL clauses, functions and operators.
+Have a look at the [SQL Language Reference](../cloud/trino/sql-language/) page for supported SQL clauses, functions and operators.
 
 ### OLAP
 

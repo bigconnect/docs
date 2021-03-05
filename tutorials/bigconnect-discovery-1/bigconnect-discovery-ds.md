@@ -101,5 +101,5 @@ The output should be similar to:
 
 The trained model is not saved on the local disk, as the **my\_model.joblib** file.
 
-You can use it in a [Data Collector](../../cloud/datafabric-studio/) pipeline to apply it on new data as it arrives.
+You can use it in a [Data Collector](../../cloud/pipelines-studio/) pipeline to apply it on new data as it arrives.
 

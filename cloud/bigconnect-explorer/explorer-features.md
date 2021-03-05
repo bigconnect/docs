@@ -14,7 +14,7 @@ Concepts and relations can also have attributes. For a company these can be the 
 
 BigConnect Explorer can ingest and process any kind of information: databases, office documents, text files, XML files, HTML files, images, audio and video files or streams.
 
-Data ingestion can be manual \(using the UI\) for small amounts of data or batched, automated using [Data Pipelines](../datafabric-studio/).
+Data ingestion can be manual \(using the UI\) for small amounts of data or batched, automated using [Data Pipelines](../pipelines-studio/).
 
 Data ingestion is a visual process in BigConect Explorer. Either by using the user interface or Data Pipelines, data ingestion and data model mapping will be done in an easy, visual way. This ensures lower error rates and high process maintainability.
 
