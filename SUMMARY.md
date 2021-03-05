@@ -1,20 +1,23 @@
 # Table of contents
 
-* [What is BDL ?](README.md)
-* [Concepts](concepts/README.md)
-  * [Universal Data Model](concepts/universal-data-model.md)
-  * [Univesal Queries](concepts/univesal-queries.md)
-  * [Universal AI](concepts/universal-ai.md)
-  * [Universal Data Loading](concepts/universal-data-loading.md)
-  * [Auto Enrichment](concepts/auto-enrichment.md)
-  * [Security](concepts/security.md)
+* [Getting Started](README.md)
 
 ## Cloud
 
-* [Getting Started](cloud/getting-started.md)
+* [Compute](cloud/compute/README.md)
+  * [Cloud Servers](cloud/compute/cloud-servers.md)
+  * [Load Balancers](cloud/compute/load-balancers.md)
+  * [Networking](cloud/compute/networking.md)
 * [AI](cloud/ai.md)
 * [CodeLab](cloud/ds-notebooks.md)
 * [BigGraph](cloud/biggraph/README.md)
+  * [Concepts](cloud/biggraph/concepts/README.md)
+    * [Universal Data Model](cloud/biggraph/concepts/universal-data-model.md)
+    * [Univesal Queries](cloud/biggraph/concepts/univesal-queries.md)
+    * [Universal AI](cloud/biggraph/concepts/universal-ai.md)
+    * [Universal Data Loading](cloud/biggraph/concepts/universal-data-loading.md)
+    * [Auto Enrichment](cloud/biggraph/concepts/auto-enrichment.md)
+    * [Security](cloud/biggraph/concepts/security.md)
   * [Cypher Lab Query and Command-Line Tips](cloud/biggraph/cypher-lab-query-and-command-line-tips.md)
   * [Cypher Lab Commands and Keyboard](cloud/biggraph/cypher-lab-commands-and-keyboard.md)
   * [Cypher Lab Styling](cloud/biggraph/cypher-lab-styling.md)
@@ -203,5 +206,4 @@
 
 * [Blog](https://www.bigconnect.io/blog)
 * [YouTube Channel](https://www.youtube.com/channel/UCPB9zeBPhcTgrqQDCe57HyA)
-* [Release Notes](resources-group/release-notes.md)
 
