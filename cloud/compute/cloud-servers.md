@@ -12,6 +12,10 @@ You can also resize a Cloud Server to a larger plan after creation, including re
 
 ## Shared CPU vs. Dedicated CPU
 
+{% hint style="success" %}
+All Cloud Servers run on the latest generation of Intel Xeon CPUs \(Skylake\) with DDR4 ECC RAM. We use NVMe SSDs for local Cloud Server disks.
+{% endhint %}
+
 * A Cloud Server is a virtual machine \(VM\) that is allocated resources, like CPU, RAM, and disk storage, from a physical host.
 * A hypervisor, also known as a virtual machine monitor, makes sure that the multiple Cloud Servers running on a physical host each receive their virtual resources, like vCPU.
 * A vCPU is a unit of processing power corresponding to a single hyperthread on a processor core. A modern, multicore processor has several vCPUs.
@@ -21,8 +25,6 @@ The plan you choose determines the amount of resources allocated to the Cloud Se
 Dedicated CPU plans have guaranteed access to the full hyperthread at all times. With shared CPU plans, the hyperthread allocated to the Cloud Server may be shared between multiple other Cloud Servers. When a shared CPU Cloud Serve experiences heavier load, the hypervisor dynamically allocates more hyperthread\(s\) to it.
 
 However, the amount of CPU cycles available for the hypervisor to allocate depends on the workload of the other Cloud Servers sharing that host. If these neighboring Cloud Servers have high load, a Cloud Server could receive fractions of hyperthreads instead of dedicated access to the underlying physical processors. In practice, this means that shared CPU Cloud Servers can have access to full hyperthreads, but it’s not guaranteed.
-
-All Cloud Servers use DDR4 memory and NVMe disks.
 
 ### Shared Plan
 
