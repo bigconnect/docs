@@ -6,6 +6,7 @@
 
 * [Compute](cloud/compute/README.md)
   * [Cloud Servers](cloud/compute/cloud-servers.md)
+  * [Block Storage](cloud/compute/block-storage.md)
   * [Load Balancers](cloud/compute/load-balancers.md)
   * [Networking](cloud/compute/networking.md)
 * [AI](cloud/ai.md)
