@@ -10,7 +10,7 @@ Customizations are in the form of plugins that can be developed both for the bac
 
 {% page-ref page="explorer-features.md" %}
 
-{% page-ref page="explorer-architecture-and-concepts.md" %}
+{% page-ref page="../biggraph/biggraph-architecture-and-concepts.md" %}
 
 
 
