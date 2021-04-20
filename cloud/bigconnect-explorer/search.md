@@ -1,6 +1,6 @@
 # Search
 
-BigConnect has ElasticSearch natively built. Thus it supports all types of queries and aggregations supported by ElasticSearch. 
+BigGraph has ElasticSearch natively built. Thus it supports all types of queries and aggregations supported by ElasticSearch. 
 
 Some limitations do apply if security is enabled, because it changes the way data is stored. This means that not all ElasticSearch aggregations are supported when security is enabled.
 
