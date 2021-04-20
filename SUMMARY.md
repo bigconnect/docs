@@ -144,6 +144,7 @@
       * [Activity](cloud/bigconnect-explorer/explorer-developer-guide/extension-point-reference/activity.md)
       * [Admin](cloud/bigconnect-explorer/explorer-developer-guide/extension-point-reference/admin.md)
       * [Authentication](cloud/bigconnect-explorer/explorer-developer-guide/extension-point-reference/authentication.md)
+      * [Dashboard Item](cloud/bigconnect-explorer/explorer-developer-guide/extension-point-reference/dashboard-item.md)
   * [Explorer Features](cloud/bigconnect-explorer/explorer-features.md)
 * [Object Store](cloud/oss/README.md)
   * [Basic Concepts](cloud/oss/oss-basic-concepts.md)
