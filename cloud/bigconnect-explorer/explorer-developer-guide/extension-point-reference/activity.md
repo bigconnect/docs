@@ -4,6 +4,8 @@ description: Add additional items to the activity panel.
 
 # Activity
 
+[Example code](https://github.com/mware-solutions/doc-examples/tree/master/extension-activity)
+
 Activity extension points allow plugins to add additional items to the activity panel \(opened via the gears menu bar icon.\) These rows can show the progress of a long-running process or a front-end task using start/stop events.
 
 ![](../../../../.gitbook/assets/image%20%28696%29.png)
