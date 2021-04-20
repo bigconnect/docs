@@ -14,7 +14,7 @@ Create custom login authentication mechanisms.
 
 The web plugin registers the resources needed, and creates a route the form will POST credentials.
 
-```text
+```java
 app.registerBeforeAuthenticationJavaScript("/com/mware/examples/authentication/plugin.js");
 app.registerJavaScript("/com/mware/examples/authentication/authentication.js", false);
 app.registerJavaScriptTemplate("/com/mware/examples/authentication/login.hbs");
@@ -32,7 +32,7 @@ This extension deviates from others in that the authentication `plugin.js` is re
 
 Register the authentication extension in the `plugin.js` file:
 
-```text
+```javascript
 define(['public/v1/api'], function(bc) {
     'use strict';
 
@@ -48,7 +48,7 @@ define(['public/v1/api'], function(bc) {
 
 Create the FlightJS authentication component.
 
-```text
+```javascript
 define([
     'public/v1/api',
     './login.hbs'
@@ -172,7 +172,7 @@ define([
 
 When the login request succeeds, the component triggers `loginSuccess`, this notifies BigConnect that the application loading process should attempt to continue loading. If the session is not valid, the front-end state is undefined.
 
-```text
+```javascript
 $.post('login', {
     username: $username.val(),
     password: $password.val()
@@ -195,7 +195,7 @@ $.post('login', {
 
 The login route uses BigConnect's `UserRepository` to create users, then prepares the session using `CurrentUser.set`.
 
-```text
+```java
 public JSONObject handle(
         HttpServletRequest request,
         @Required(name = "username") String username,
