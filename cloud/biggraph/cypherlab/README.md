@@ -4,7 +4,5 @@ The Cypher Lab is a tool for developers to interact with the graph using the Cyp
 
 ![BigConnect ClypherLab](../../../.gitbook/assets/image%20%28697%29.png)
 
-Please see [Cypher](../../../tutorials/cypher/) tutorial for a detailed walk-through.
-
-
+Please see [Cypher tutorial](../../../tutorials/cypher/) for a detailed walk-through or the next sections to learn how to use the CyherLab features.
 
