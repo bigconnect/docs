@@ -5,7 +5,7 @@ A client is used to send queries to Trino and receive results, or otherwise inte
 The following clients are available:
 
 * [CLI](trino-cli.md)
-* [JDBC Driver](jdbc-driver.md)
+* [JDBC Driver](trino-jdbc-driver.md)
 * [Web SQL Editor](web-sql.md)
 
 

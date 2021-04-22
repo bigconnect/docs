@@ -8,19 +8,19 @@ The CLI requires a Java virtual machine available on the path. It can be used wi
 
 ### Installation
 
-Download [datacharm-cli-340.jar](http://bits.bigconnect.io/cloud/datacharm-cli-340.jar),  make it executable with `chmod +x`, then run it:
+Download [trino-cli-340.jar](http://bits.bigconnect.io/cloud/trino-cli-340.jar),  make it executable with `chmod +x`, then run it:
 
 ```text
-./datacharm-cli-340.jar --server https://dsql-<TENANT_ID>.cloud.bigconnect.io --user <TENANT_ID> --catalog bigconnect --schema public --password
+./trino-cli-340.jar --server https://dsql-<TENANT_ID>.cloud.bigconnect.io --user <TENANT_ID> --catalog bigconnect --schema public --password
 ```
 
-where &lt;TENANT\_ID&gt; is your cloud tenant id that can be found on the summary page of your Data Lake in the [Cloud console](https://console.cloud.bigconnect.io).
+where &lt;TENANT\_ID&gt; is your cloud tenant id that can be found on the summary page of your Project in the [Cloud console](https://console.cloud.bigconnect.io).
 
 Run the CLI with the `--help` option to see the available options.
 
 ### Authentication
 
-You can override your username with the `--user` option. It defaults to your operating system username. If your Presto server requires password authentication, use the `--password` option to have the CLI prompt for a password. You can set the `PRESTO_PASSWORD` environment variable with the password value to avoid the prompt.
+You can override your username with the `--user` option. It defaults to your operating system username. If your Trino server requires password authentication, use the `--password` option to have the CLI prompt for a password. You can set the `PRESTO_PASSWORD` environment variable with the password value to avoid the prompt.
 
 ### Pagination <a id="pagination"></a>
 
