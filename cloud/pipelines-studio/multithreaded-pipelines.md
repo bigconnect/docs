@@ -1,8 +1,8 @@
 # Multithreaded Pipelines
 
-A multithreaded pipeline is a Data Collector pipeline with an origin that supports parallel execution, enabling one pipeline to run in multiple threads.
+A multithreaded pipeline is a data pipeline with an origin that supports parallel execution, enabling one pipeline to run in multiple threads.
 
-Multithreaded pipelines enable processing high volumes of data in a single pipeline on one Data Collector, thus taking full advantage of all available CPUs on the Data Collector machine. When using multithreaded pipelines, make sure to allocate sufficient resources to the pipeline and Data Collector.
+Multithreaded pipelines enable processing high volumes of data in a single pipeline on one Data Pipelines machine, thus taking full advantage of all available CPUs on the Data Pipelines machine. When using multithreaded pipelines, make sure to allocate sufficient resources to the pipeline and Data Collector.
 
 A multithreaded pipeline honors the configured delivery guarantee for the pipeline, but does not guarantee the order in which batches of data are processed.
 
