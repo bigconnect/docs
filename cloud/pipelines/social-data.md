@@ -1,6 +1,6 @@
 # Social Network Data
 
-BigConnect has data extractors for Social Networks as well. Extraction can be made either using publicly available information or by authenticating in the respective social network.
+Data Pipeliens has data extractors for Social Networks as well. Data extraction can be performed using publicly available information only from the respective social network.
 
 {% hint style="warning" %}
 Social Network data should be extracted in accordance with each platform's Terms and Conditions.
