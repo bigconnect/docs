@@ -1,6 +1,6 @@
 # SQL Statement Syntax
 
-This chapter describes the SQL syntax used in Presto.
+This chapter describes the SQL syntax used in Trino.
 
 ### ALTER SCHEMA
 
