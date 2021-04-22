@@ -8,10 +8,10 @@ The CLI requires a Java virtual machine available on the path. It can be used wi
 
 ### Installation
 
-Download [trino-cli-340.jar](http://bits.bigconnect.io/cloud/trino-cli-340.jar),  make it executable with `chmod +x`, then run it:
+Download [trino-cli-355-executable.jar](https://repo1.maven.org/maven2/io/trino/trino-cli/355/trino-cli-355-executable.jar),  rename it to `trino` make it executable with `chmod +x`, then run it:
 
 ```text
-./trino-cli-340.jar --server https://dsql-<TENANT_ID>.cloud.bigconnect.io --user <TENANT_ID> --catalog bigconnect --schema public --password
+./trino --server https://dsql-<TENANT_ID>.cloud.bigconnect.io --user <TENANT_ID> --catalog bigconnect --schema public --password
 ```
 
 where &lt;TENANT\_ID&gt; is your cloud tenant id that can be found on the summary page of your Project in the [Cloud console](https://console.cloud.bigconnect.io).
