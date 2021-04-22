@@ -73,7 +73,7 @@
 * [Trino](cloud/trino/README.md)
   * [Concepts](cloud/trino/trino-concepts.md)
   * [Clients](cloud/trino/trino-clients/README.md)
-    * [CLI](cloud/trino/trino-clients/datacharm-cli.md)
+    * [CLI](cloud/trino/trino-clients/trino-cli.md)
     * [JDBC Driver](cloud/trino/trino-clients/jdbc-driver.md)
     * [Web SQL Editor](cloud/trino/trino-clients/web-sql.md)
   * [Functions and Operators](cloud/trino/trino-functions-and-operators/README.md)
