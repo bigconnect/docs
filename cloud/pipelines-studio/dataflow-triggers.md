@@ -14,9 +14,9 @@ Events produce event records. Pipeline-related event records are passed immediat
 
 **task execution**
 
-To trigger a task, you need an executor. Executor stages perform tasks in DataFabric or external systems. Each time an executor receives an event, it performs the specified task.
+To trigger a task, you need an executor. Executor stages perform tasks in Data Pipelines or external systems. Each time an executor receives an event, it performs the specified task.
 
-For example, the Hive Query executor runs user-defined Hive or Impala queries each time it receives an event, and the MapReduce executor triggers a MapReduce job when it receives events. Within DataFabric, the Pipeline Finisher executor stops a pipeline upon receiving an event, transitioning the pipeline to a Finished state.
+For example, the Hive Query executor runs user-defined Hive or Impala queries each time it receives an event, and the MapReduce executor triggers a MapReduce job when it receives events. Within Data Pipelines, the Pipeline Finisher executor stops a pipeline upon receiving an event, transitioning the pipeline to a Finished state.
 
 **event storage**
 
