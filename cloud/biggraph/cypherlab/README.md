@@ -1,25 +1,10 @@
 # Cypher Lab
 
-## Getting Super Powers
+The Cypher Lab is a tool for developers to interact with the graph using the Cypher Query language.
 
-Becoming a super hero is a fairly straight forward process:
+![BigConnect ClypherLab](../../../.gitbook/assets/image%20%28697%29.png)
 
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
+Please see [Cypher](../../../tutorials/cypher/) tutorial for a detailed walk-through.
 
 
 
