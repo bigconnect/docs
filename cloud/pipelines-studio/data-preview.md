@@ -8,13 +8,13 @@ When you preview data, source data passes through the pipeline or fragment, allo
 
 You can preview data for one stage at a time or for a group of stages. You can also view the data in list or table view, and refresh the preview data.
 
-## DataFabric Studio - Preview Mode
+## DataPipelines Studio - Preview Mode
 
 You can use Data Collector to view how data passes through the pipeline.
 
 The following image shows Data Collector in Preview mode:
 
-![](../../.gitbook/assets/image%20%28427%29.png)
+![](../../.gitbook/assets/pipelines_preview.jpg)
 
 <table>
   <thead>

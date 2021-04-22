@@ -1,6 +1,6 @@
 # Pipeline Monitoring
 
-When the Data Collector runs a pipeline, you can view real-time statistics about the pipeline, examine a sample of the data being processed, and create rules and alerts.When you access the Data Collector UI as the Data Collector runs a pipeline, the UI displays the pipeline in Monitor mode. In Monitor mode, you can perform the following tasks:
+When Data Pipelines runs a pipeline, you can view real-time statistics about the pipeline, examine a sample of the data being processed, and create rules and alerts.When you access the Studio while running a pipeline, the UI displays the pipeline in Monitor mode. In Monitor mode, you can perform the following tasks:
 
 * View real-time stage and pipeline statistics
 * View stage and pipeline error information, including error records for each stage
@@ -8,11 +8,11 @@ When the Data Collector runs a pipeline, you can view real-time statistics about
 * Configure rules and alerts
 * View the pipeline history
 
-## DataFabric Studio - Monitor Mode
+## Data Pipelines Studio - Monitor Mode
 
-In Monitor mode, you can use the Data Collector to view data as it passes through the pipeline.
+In Monitor mode, you can use the Studio to view data as it passes through the pipeline.
 
-The following image shows Data Collector in Monitor mode:
+The following image shows the Studio in Monitor mode:
 
 ![](../../.gitbook/assets/image%20%28694%29.png)
 
@@ -29,7 +29,7 @@ The following image shows Data Collector in Monitor mode:
       <td style="text-align:left">1</td>
       <td style="text-align:left">Pipeline canvas</td>
       <td style="text-align:left">
-        <p>Displays the pipeline that the Data Collector is running.</p>
+        <p>Displays the pipeline that Data Pipelines is running.</p>
         <p>You can click a stage to view statistics about the stage. Click an unused
           section of the canvas to view pipeline statistics. Or, you can use the
           stage list to select the information that you want to view.</p>
@@ -82,8 +82,8 @@ The following image shows Data Collector in Monitor mode:
         alt/>
       </td>
       <td style="text-align:left">Administration icon</td>
-      <td style="text-align:left">Provides access to Data Collector configuration properties, directories,
-        and log. Also allows you to shut down Data Collector.</td>
+      <td style="text-align:left">Provides access to the Studio&apos;s configuration properties, directories,
+        and log. Also allows you to shut down the Studio.</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -92,7 +92,7 @@ The following image shows Data Collector in Monitor mode:
       </td>
       <td style="text-align:left">User icon</td>
       <td style="text-align:left">Displays the active user and the roles assigned to the user. Also allows
-        you to log out of Data Collector.</td>
+        you to log out of the Studio.</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -118,7 +118,7 @@ The following image shows Data Collector in Monitor mode:
         alt/>
       </td>
       <td style="text-align:left">View Log icon</td>
-      <td style="text-align:left">Displays the Data Collector log. The equivalent to selecting Administration
+      <td style="text-align:left">Displays the Data Pipelines Studio log. The equivalent to selecting Administration
         &gt; Logs.</td>
     </tr>
     <tr>
