@@ -10,7 +10,77 @@ BigGraph is NOT a transactional system. It's main purpose is to ingest, store an
 
 ## Direct API
 
+You can use the Direct API with RocksDB and Elasticsearch by including the following Maven dependencies \(available in Maven Central\). 
 
+```markup
+<dependency>
+    <groupId>io.bigconnect</groupId>
+    <artifactId>core</artifactId>
+    <version>4.2.0</version>
+</dependency>
+<dependency>
+    <groupId>io.bigconnect</groupId>
+    <artifactId>storage-rocksdb</artifactId>
+    <version>4.2.0</version>
+</dependency>
+<dependency>
+    <groupId>io.bigconnect</groupId>
+    <artifactId>search-index</artifactId>
+    <version>4.2.0</version>
+</dependency>
+```
+
+The following example creates [Graph](https://github.com/bigconnect/bigconnect/blob/master/core/src/main/java/com/mware/ge/Graph.java) instance and performs some basic operations.
+
+```java
+import com.mware.ge.*;
+import com.mware.core.model.schema.SchemaConstants;
+import static com.mware.ge.rocksdb.RocksDBGraphConfiguration.*;
+import static com.mware.ge.elasticsearch5.DefaultIndexSelectionStrategy.*;
+import static com.mware.ge.values.storable.Values.*;
+
+/* Create a Graph instance (connect to RocksDB and Elasticsearch) */
+Map configMap = new HashMap();
+configMap.put(STREAMING_PROPERTY_VALUE_DATA_FOLDER, "/tmp/biggraph/spv");
+configMap.put(DATA_PATH, dataPath.toString(), "/tmp/biggraph/data/");
+configMap.put(WAL_PATH, walPath.toString(), "/tmp/biggraph/data/wal");
+configMap.put(SEARCH_INDEX_PROP_PREFIX, Elasticsearch5SearchIndex.class.getName());
+configMap.put(SEARCH_INDEX_PROP_PREFIX + "." + CONFIG_INDEX_NAME, "biggraph");
+configMap.put(SEARCH_INDEX_PROP_PREFIX + "." + CONFIG_INDEX_NAME, "biggraph");
+configMap.put(SEARCH_INDEX_PROP_PREFIX + "." + CLUSTER_NAME, "biggraph");
+configMap.put(SEARCH_INDEX_PROP_PREFIX + "." + ES_LOCATIONS, "localhost");
+Graph graph = RocksDBGraph.create(configMap);
+
+/* Create a vertex with a property */
+Authorizations authorizations = graph.createAuthorizations();
+Vertex v1 = graph.prepareVertex(Visibility.EMPTY, SchemaConstants.CONCEPT_TYPE_THING)
+     .setProperty("prop1", stringValue("value1"), null, Visibility.EMPTY)
+     .save(authorizations);
+Vertex v2 = graph.prepareVertex(Visibility.EMPTY, SchemaConstants.CONCEPT_TYPE_THING)
+     .setProperty("prop1", stringValue("value2"), null, Visibility.EMPTY)
+     .save(authorizations);     
+graph.flush();
+
+/* Create an edge between the two vertices and set a property on the edge */
+Edge edge = graph.prepareEdge(v1, v2, "v1Tov2", Visibility.EMPTY)
+                .setProperty("prop2", stringValue("value3"), Visibility.EMPTY)
+                .save(authorizations);
+getGraph().flush();
+
+/* search for a vertex by on of its properties */
+Query query = graph.query(AUTHORIZATIONS_A).has("prop1", stringValue("value1"));
+try (QueryResultsIterable<Vertex> results = query.vertices()) {
+   long totalHits = results.getTotalHits();
+   results.forEach(v -> System.out.print(v.getId()));
+} catch (IOException ex) {
+  ex.printStackTrace();
+}
+
+                                
+/* delete an element */
+graph.deleteElement(v1, authorizations);
+
+```
 
 ## Cypher
 
