@@ -1,10 +1,10 @@
 # Concepts
 
-To understand DataCharm, you must first understand the terms and concepts used throughout the  documentation.
+To understand Trino, you must first understand the terms and concepts used throughout the  documentation.
 
-While it’s easy to understand statements and queries, as an end-user you should have familiarity with concepts such as stages and splits to take full advantage of DataCharm to execute efficient queries. As a DataCharm administrator or a DataCharm contributor you should understand how DataCharm’s concepts of stages map to tasks and how tasks contain a set of drivers which process data.
+While it’s easy to understand statements and queries, as an end-user you should have familiarity with concepts such as stages and splits to take full advantage of Trino to execute efficient queries. As a Trino administrator or a Trino contributor you should understand how Trino’s concepts of stages map to tasks and how tasks contain a set of drivers which process data.
 
-This section provides a solid definition for the core concepts referenced throughout DataCharm, and these sections are sorted from most general to most specific.
+This section provides a solid definition for the core concepts referenced throughout Trino, and these sections are sorted from most general to most specific.
 
 ## Types of Instances
 
