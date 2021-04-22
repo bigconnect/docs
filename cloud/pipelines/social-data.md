@@ -1,4 +1,4 @@
-# Social Network Data
+# Getting Social Network Data
 
 Data Pipeliens has data extractors for Social Networks as well. Data extraction can be performed using publicly available information only from the respective social network.
 
