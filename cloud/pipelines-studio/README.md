@@ -1,22 +1,22 @@
 # Data Pipelines Studio
 
-DataFabric is a lightweight, powerful design and execution engine that streams data in real time. Use DataFabric  to route and process data in your data streams.
+Data Pipelines Studio is a lightweight, powerful design and execution engine that streams data in real time. Use Data Pipelines Studio  to route and process data in your data streams.
 
-To define the flow of data, you design a pipeline in DataFabric Studio. A pipeline consists of stages that represent the origin and destination of the pipeline, and any additional processing that you want to perform. After you design the pipeline, you click Start and DataFabric goes to work.
+To define the flow of data, you design a pipeline in Data Pipelines Studio. A pipeline consists of stages that represent the origin and destination of the pipeline, and any additional processing that you want to perform. After you design the pipeline, you click Start and the Studio goes to work.
 
 ### Logging In and Creating a Pipeline in DataFabric Studio
 
-After you provision a DataFabric Studio service, you can log in and create your first pipeline:
+After you provision a Data Pipelines Studio service, you can log in and create your first pipeline:
 
-1. To access DataFabric Studio, enter the following URL in the address bar of your browser:    `https://pipelinelab-NNNNNNNNN.cloud.bigconnect.io`where NNNNNNNNN is your Tenant ID.
+1. To access Data Pipelines Studio, enter the following URL in the address bar of your browser:    `https://pipelinelab-NNNNNNNNN.cloud.bigconnect.io`where NNNNNNNNN is your Tenant ID.
 2. On the **Get Started** page, click **Create New Pipeline**.
 3. In the **New Pipeline** window, enter a name for the pipeline, optionally enter a description, and click **Save**.
 
-The pipeline canvas appears. The Properties panel displays pipeline properties. For a description of the icons and areas, see  [DataFabric Studio - Edit Mode](pipeline-configuration/datafabric-ui-edit-mode.md).
+The pipeline canvas appears. The Properties panel displays pipeline properties. For a description of the icons and areas, see  [Data Pipelines Studio - Edit Mode](pipeline-configuration/datafabric-ui-edit-mode.md).
 
-### DataFabric Studio UI
+### Data Pipelines Studio UI
 
-DataFabric Studio provides a web-based user interface \(UI\) to configure pipelines, preview data, monitor pipelines, and review snapshots of data.
+Data Pipelines Studio provides a web-based user interface \(UI\) to configure pipelines, preview data, monitor pipelines, and review snapshots of data.
 
 The UI includes the following general areas and icons:
 
@@ -85,7 +85,7 @@ The UI includes the following general areas and icons:
         <img src="../../.gitbook/assets/image (686).png" alt/>
       </td>
       <td style="text-align:left">Administration icon</td>
-      <td style="text-align:left">Provides access to DataFabric Studio configuration properties, directories,
+      <td style="text-align:left">Provides access to Data Pipelines Studio configuration properties, directories,
         and log.</td>
     </tr>
     <tr>
@@ -94,14 +94,14 @@ The UI includes the following general areas and icons:
       </td>
       <td style="text-align:left">User icon</td>
       <td style="text-align:left">Displays the active user and the roles assigned to the user. Also allows
-        you to log out of DataFabric Studio.</td>
+        you to log out of Data Pipelines Studio.</td>
     </tr>
   </tbody>
 </table>
 
-For information about configuring pipelines, see [Data Fabric Studio - Edit Mode](pipeline-configuration/datafabric-ui-edit-mode.md).
+For information about configuring pipelines, see [Data Pipelines Studio - Edit Mode](pipeline-configuration/datafabric-ui-edit-mode.md).
 
-For information about data preview options, see Data Collector UI - Preview Mode.
+For information about data preview options, see Data Pipelines Studio - Preview Mode.
 
-For information about pipeline monitoring options, see Data Collector UI - Monitor Mode.
+For information about pipeline monitoring options, see Data Pipelines Studio - Monitor Mode.
 

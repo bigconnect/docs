@@ -1,6 +1,6 @@
 # DataFabric Studio - Edit Mode
 
-The following image shows the DataFabric Studio when you configure a pipeline:
+pThe following image shows the DataFabric Studio when you configure a pipeline:
 
 ![](../../../.gitbook/assets/image%20%28687%29.png)
 
