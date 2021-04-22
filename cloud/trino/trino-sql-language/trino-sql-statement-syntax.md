@@ -357,7 +357,7 @@ where option can be one of:
 
 #### **Description**
 
-Show the logical or distributed execution plan of a statement, or validate the statement. Use `TYPE DISTRIBUTED` option to display fragmented plan. Each plan fragment is executed by a single or multiple Presto nodes. Fragments separation represent the data exchange between Presto nodes. Fragment type specifies how the fragment is executed by Presto nodes and how the data is distributed between fragments:
+Show the logical or distributed execution plan of a statement, or validate the statement. Use `TYPE DISTRIBUTED` option to display fragmented plan. Each plan fragment is executed by a single or multiple Trino nodes. Fragments separation represent the data exchange between Trino nodes. Fragment type specifies how the fragment is executed by Trino nodes and how the data is distributed between fragments:
 
 * `SINGLE`Fragment is executed on a single node.
 * `HASH`Fragment is executed on a fixed number of nodes with the input data distributed using a hash function.
@@ -377,7 +377,7 @@ EXPLAIN ANALYZE [VERBOSE] statement
 
 Execute the statement and show the distributed execution plan of the statement along with the cost of each operation.
 
-The `VERBOSE` option will give more detailed information and low-level statistics; understanding these may require knowledge of Presto internals and implementation details.
+The `VERBOSE` option will give more detailed information and low-level statistics; understanding these may require knowledge of Trino internals and implementation details.
 
 {% hint style="info" %}
 The stats may not be entirely accurate, especially for queries that complete quickly.

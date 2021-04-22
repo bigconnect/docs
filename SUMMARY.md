@@ -21,7 +21,7 @@
     * [Cypher Lab Commands and Keyboard](cloud/biggraph/cypherlab/cypher-lab-commands-and-keyboard.md)
 * [Data Pipelines](cloud/pipelines/README.md)
   * [Dashboard](cloud/pipelines/dashboard.md)
-  * [Data Workers](cloud/pipelines/data-workers.md)
+  * [BigGraph Data Workers](cloud/pipelines/data-workers.md)
   * [Social Network Data](cloud/pipelines/social-data.md)
 * [Data Pipelines Studio](cloud/pipelines-studio/README.md)
   * [Pipeline Concepts and Design](cloud/pipelines-studio/pipeline-concepts-and-design/README.md)
