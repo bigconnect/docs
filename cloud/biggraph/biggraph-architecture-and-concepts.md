@@ -7,12 +7,13 @@ A high level overview of a production architecture is presented below. This is a
 There are different types of BigConnect nodes:
 
 * **Data Worker** nodes usually handle data enrichment
-* **Process Worker** nodes usually handle long running processes \(such as running Machine Learning models or Graph algorithms\) or scheduled tasks
+* **Long Running Process Worker** nodes usually handle long running processes \(such as running Machine Learning models or Graph algorithms\) or scheduled tasks
 * **External Worker** nodes that handle data ingestion or processing from potentially rate-limited external sources
 * **Explorer** nodes serve the BigConnect Explorer application
-* **Bolt Server** nodes execute Cypher queries
+* **Graph Engine** is BigGraph
+* **Bolt Server** **nodes** execute Cypher queries
 
-Each BigConnect running node can be a combination of one or more types. This means that in a very simple deployment, one running node can be used to serve the Explorer, to run data worker plugins and job worker plugins, whereas in a typical production deployment you will have nodes that handle specific tasks and are also distributed across many machines.
+Each running node can be a combination of one or more types. This means that in a very simple deployment, one running node can be used to serve the Explorer, to run data worker plugins and job worker plugins, whereas in a typical production deployment you will have nodes that handle specific tasks and are also distributed across many machines.
 
 Because nodes need to talk to each-other, each node instance can connect to a WorkQueue to publish and subscribe to messages. The current implementation offers an in-memory work queue for simple deployments and a RabbitMQ work queue for production deployments. Other types of WorkQueues can be easily implemented as well \(eg. Apache Kafka, AWS Simple Queue Service etc.\).
 
@@ -24,13 +25,11 @@ Property Graphs have been around for a while and the technology offering has gro
 
 It makes a clear distinction between storing data and querying data, because not all storage containers can also retrieve the data in a timely manner. This is a common architecture for Property Graphs where a search index is used to perform fast queries.
 
-The current implementation uses Apache Accumulo for storage and ElasticSearch for searching. 
-
 ## Data Model \(Ontology\)
 
-The core foundation of the BigConnect Data Lake is the dynamic, semantic data model, called Ontology. It represents the way you store, correlate and query all information and it’s a conceptual data model that expresses information in a factual way: objects, relations and attributes. 
+The core foundation of BigGraph is the dynamic, semantic data model, called Ontology. It represents the way you store, correlate and query all information and it’s a conceptual data model that expresses information in a factual way: objects, relations and attributes. 
 
-Typically, the ontology is used to provide meaning to the information stored in bigCONNECT, either at ingestion time or later on, during the life-cycle of the data. It can be defined in the beginning or any time later on, to adapt to any data structure, type or meaning. Any information stored in the system can be mapped to an entity \(that has a concept\), can have some relations and some attributes. 
+Typically, the ontology is used to provide meaning to the information stored in the system, either at ingestion time or later on, during the life-cycle of the data. It can be defined in the beginning or any time later on, to adapt to any data structure, type or meaning. Any information stored in the system can be mapped to an entity \(that has a concept\), can have some relations and some attributes. 
 
 Concepts can be anything you can think of: person, vehicle,  bank transaction, phone call, equipment, company, location, event, network packet, log file etc. They are linked to each other using meaningful relations like “works at”, “lives in”, “has friend”, “is brother of”, “sent from IP”, “source file” etc.
 
@@ -486,9 +485,20 @@ When clients attempt to read data from BigConnect,  any security labels present 
 
 Authorizations are specified as a comma-separated list of tokens the user possesses:
 
-```text
+```java
 Authorization auths = new Authorizations("admin","system");
 ```
 
+## Storage and Search
 
+In BigGraph the data is stored in a Graph by using Vertices, Edges, Properties and ExtendedData. There are three implementation for the Graph store:
+
+* [AccumuloGraph](https://github.com/bigconnect/bigconnect/blob/master/storage/accumulo/store/src/main/java/com/mware/ge/accumulo/AccumuloGraph.java) - this is the "production-grade" storage type. It's currently being used by large customers to store billions of vertices and edges. It uses [Apache Accumulo](https://accumulo.apache.org/) as the underlying NoSQL data store and is designed to run in clusters of hundreds of nodes.
+* [RocksDBGraph](https://github.com/bigconnect/bigconnect/blob/master/storage/rocksdb/src/main/java/com/mware/ge/rocksdb/RocksDBGraph.java) - this is the "small-grade" storage type designed for local, desktop use. It should have to problem to store more than 1 million vertices and edges but it will start to get laggy once you pass that boundary. It cannot be distributed due to the nature of [RocksDB](http://rocksdb.org/).
+* [InMemoryGraph](https://github.com/bigconnect/bigconnect/blob/master/core/src/main/java/com/mware/ge/inmemory/InMemoryGraph.java) - built mostly for development purposes, it stores the data only in memory. Use this for development and keep in mind that restarting the JVM will lose all data.
+
+BigGraph also needs a search index to run queries and aggregations against properties of vertices and edges. There are two implementations for the search index:
+
+* [Elasticsearch5SearchIndex](https://github.com/bigconnect/bigconnect/blob/master/search/index/src/main/java/com/mware/ge/elasticsearch5/Elasticsearch5SearchIndex.java) - this is the "production-grade" implementation that uses Elasticsearch 7
+* [DefaultSearchIndex](https://github.com/bigconnect/bigconnect/blob/master/core/src/main/java/com/mware/ge/search/DefaultSearchIndex.java) - built mostly for development purposes, it stores the data only in memory. Use this for development and keep in mind that restarting the JVM will lose all data.
 
