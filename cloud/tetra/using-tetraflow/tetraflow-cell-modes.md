@@ -23,7 +23,7 @@ In command mode, the flag is yellow. The flag also indicates the cell’s format
 
 * **CS**: Code \(default\)
 
-![](../../../.gitbook/assets/image%20%28335%29.png)
+![](../../../.gitbook/assets/image%20%28429%29.png)
 
 * **RAW**: Raw format \(for code comments\)
 

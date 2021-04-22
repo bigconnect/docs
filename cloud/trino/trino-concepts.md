@@ -1,6 +1,6 @@
 # Concepts
 
-To understand Trino, you must first understand the terms and concepts used throughout the  documentation.
+To understand Trino, you must first understand the terms and concepts used throughout the documentation.
 
 While it’s easy to understand statements and queries, as an end-user you should have familiarity with concepts such as stages and splits to take full advantage of Trino to execute efficient queries. As a Trino administrator or a Trino contributor you should understand how Trino’s concepts of stages map to tasks and how tasks contain a set of drivers which process data.
 

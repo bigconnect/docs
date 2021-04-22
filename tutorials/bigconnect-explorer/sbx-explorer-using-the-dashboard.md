@@ -82,7 +82,7 @@ Now go to the **Dashboard** and add a **Saved Search** widget. Click the "**Conf
 
 Now for the fun part. Click on the configuration wheel on the Saved Search widget and click the **Add** link next to Aggregation:
 
-![](../../.gitbook/assets/image%20%28405%29.png)
+![](../../.gitbook/assets/image%20%28405%29%20%281%29.png)
 
 Choose the **Text** property from the **Property to Count** dropdown:
 

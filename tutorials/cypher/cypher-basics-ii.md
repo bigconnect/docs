@@ -12,7 +12,7 @@ Adding data in Cypher works very similarly to any other data access language’s
 
 Let us look at an example that we used in our last guide. To review, we had a `Person` node \(Jennifer\) who liked graphs, was friends with Michael, and worked at Neo4j.
 
-![](../../.gitbook/assets/image%20%28378%29.png)
+![](../../.gitbook/assets/image%20%28378%29%20%281%29.png)
 
 What if we wanted to add another of Jennifer’s friends to the graph? We can add Jennifer’s friend Mark using the Cypher statement below.
 

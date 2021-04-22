@@ -9,7 +9,7 @@ This tutorial will teach you the basics of data preparation and visualisation wi
 
 1.Login to BigConnect Discovery by going to [http://localhost:8180](http://localhost:8180) and use **admin**/**admin** for username and password. You will be taken to the _Admin Workspace_.
 
-![](../../.gitbook/assets/image%20%28476%29.png)
+![](../../.gitbook/assets/image%20%28476%29%20%281%29.png)
 
 2.Open the menu and choose **MANAGEMENT / Data Preparation / Datasets.** On this page, click on the **Generate new dataset** link.
 

@@ -8,7 +8,7 @@ All of our examples will continue with the graph example we have been using in t
 
 We have added more `Person` nodes \(blue\) who `WORK_FOR` different `Company` nodes \(red\) and `LIKE` different `Technology` nodes. Each person could also have multiple `IS_FRIENDS_WITH` relationships to other people. This gives us a network of people, the companies they work for, and the technologies they like.
 
-![](../../.gitbook/assets/image%20%28247%29.png)
+![](../../.gitbook/assets/image%20%28247%29%20%281%29.png)
 
 ## The WHERE clause
 

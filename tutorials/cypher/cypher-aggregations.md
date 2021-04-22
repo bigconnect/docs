@@ -2,7 +2,7 @@
 
 All of our examples will continue with the graph example we have been using in the previous guides. Below is an image of the graph to familiarize yourself with the nodes and relationships used throughout this page.
 
-![](../../.gitbook/assets/image%20%28113%29.png)
+![](../../.gitbook/assets/image%20%28247%29.png)
 
 Helpful aggregation operations, such as calculating averages, sums, percentiles, minimum/maximum, and counts are available in Cypher. You may find many of these have similar syntax to other query language operations, but Cypher does work slightly differently with aggregation.
 

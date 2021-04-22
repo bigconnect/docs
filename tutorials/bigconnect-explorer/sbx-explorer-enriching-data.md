@@ -71,7 +71,7 @@ Click "**Resolve**" to proceed.
 When you "resolve" a word or piece of image, the system will create a relationship of type **hasEntity** between the item that contains the word to the target resolved object.
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%28107%29.png)
+![](../../.gitbook/assets/image%20%28506%29.png)
 
 You can see that the word Austria is now bolded. This means that this word is resolved and you can click on it to see details about the target object.
 

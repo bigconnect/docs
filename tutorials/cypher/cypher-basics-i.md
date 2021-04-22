@@ -2,7 +2,7 @@
 
 Since Cypher is designed to be human-readable, it’s construct is based on English prose and iconography to make syntax visual and easily understood. For example, take a look at the simple graph data in the image below. How would you represent this data in English? _NOTE: the answer is in the paragraph below_
 
-![](../../.gitbook/assets/image%20%2865%29.png)
+![](../../.gitbook/assets/image%20%28378%29.png)
 
 Jennifer likes Graphs. Jennifer is friends with Michael. Jennifer works for Neo4j.
 

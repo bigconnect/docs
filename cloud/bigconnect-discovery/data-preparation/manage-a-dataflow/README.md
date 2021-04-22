@@ -10,7 +10,7 @@ The following subsections cover the processes involved in defining a dataflow, s
 
 The Dataflow menu can be accessed under **MANAGEMENT** &gt; **Data Preparation** &gt; **Dataflow** on the left-hand panel of the main screen.
 
-![](../../../../.gitbook/assets/create_a_dataset_1-1.jpg)
+![](../../../../.gitbook/assets/create_a_dataset_1.jpg)
 
 ## Adding a Dataset
 

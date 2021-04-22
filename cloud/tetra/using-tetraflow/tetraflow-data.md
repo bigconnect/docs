@@ -87,7 +87,7 @@ You can search for a column by entering it in the _Search by column name…_ ent
 
 After making your selections, click the **Parse** button. The code for the current job displays.
 
-![](../../../.gitbook/assets/image%20%28429%29.png)
+![](../../../.gitbook/assets/image%20%28429%29%20%281%29.png)
 
 Since we’ve submitted a couple of jobs \(data import & parse\) to Tetra now, let’s take a moment to learn more about jobs in Tetra.
 

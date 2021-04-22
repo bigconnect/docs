@@ -61,7 +61,7 @@ The Edit Rules page consists of the following:
 * When a rule is inserted in this manner, all subsequent rules are affected.
 * Rules that cannot be normally executed are displayed in red. In this case, they will revert to the results obtained in the previous step.
 
-![](../../../../.gitbook/assets/image%20%28598%29.png)
+![](../../../../.gitbook/assets/image%20%28502%29%20%281%29.png)
 
 ## Edit a created rule
 

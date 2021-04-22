@@ -9,7 +9,7 @@ A wrangled dataset is created during the **dataflow** setting process, which def
 
 The Dataflow menu can be accessed under **MANAGEMENT** &gt; **Data Preparation** &gt; **Dataset** on the left-hand panel of the main screen.
 
-![](../../../.gitbook/assets/create_a_dataset_1.jpg)
+![](../../../.gitbook/assets/create_a_dataset_1%20%281%29.jpg)
 
 Next, on the upper right of the **dataset** page, click the **+ Generate new dataset** button to create a new dataset.
 

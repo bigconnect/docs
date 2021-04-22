@@ -96,7 +96,7 @@ The reference list of available Taggers, Filters and Splitters can be found here
 
 A very useful tool while working with **Behaviors** is the **Field Preview** tab. After a first run of your project, you can see here all available fields for crawled documents, including the ones resulted from any Tagger, Filter or Splitter you applied.
 
-![](../../../.gitbook/assets/image%20%28650%29.png)
+![](../../../.gitbook/assets/image%20%28667%29.png)
 
 
 
@@ -138,7 +138,7 @@ Here you can see the latest events being fired by the crawler, along with detail
 
 You can also monitor all documents and fields that pass through the system in the **Field Preview** tab:
 
-![](../../../.gitbook/assets/image%20%28667%29.png)
+![](../../../.gitbook/assets/image%20%28667%29%20%281%29.png)
 
 ## Administration
 

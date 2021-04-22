@@ -39,7 +39,7 @@ Click the + button on the data source column list to open a dialog box for addin
 
 ![](../../../.gitbook/assets/image%20%28302%29.png)
 
-![](../../../.gitbook/assets/image%20%28576%29.png)
+![](../../../.gitbook/assets/image%20%28302%29%20%281%29.png)
 
 1. **Column name:** Fill in a name for the custom column.
 2. **Coding box:** Write a code for the custom column. Click a list from the column or formula list below to type your selection in this box automatically.

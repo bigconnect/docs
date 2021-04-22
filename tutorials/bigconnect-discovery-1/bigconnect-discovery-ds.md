@@ -97,7 +97,7 @@ dump(regr, 'my_model.joblib')
 
 The output should be similar to:
 
-![](../../.gitbook/assets/image%20%28534%29.png)
+![](../../.gitbook/assets/image%20%28534%29%20%281%29.png)
 
 The trained model is not saved on the local disk, as the **my\_model.joblib** file.
 

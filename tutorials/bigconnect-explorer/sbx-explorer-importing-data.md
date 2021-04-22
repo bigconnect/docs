@@ -85,7 +85,7 @@ Click on the **Upload your files** link under the **Files** card. The following 
 
 Drag and drop the **addresses.csv** file on the gray container or click on the gray container and choose the **addresses.csv** file. The file will be displayed in the gray container:
 
-![](../../.gitbook/assets/image%20%28277%29.png)
+![](../../.gitbook/assets/image%20%28277%29%20%281%29.png)
 
 Click **Import** to continue and preview the file.
 
@@ -93,7 +93,7 @@ Click **Import** to continue and preview the file.
 
 Now we need to tell BigConnect Explorer how to map the fields from the CSV file to our schema. This process is called mapping**.** Click on the green **Map Structured Data** button.
 
-![](../../.gitbook/assets/image%20%28404%29.png)
+![](../../.gitbook/assets/image%20%28404%29%20%281%29.png)
 
 Select the first row of the table that contains the header fields \(id, first\_name, last\_name etc.\):
 
@@ -119,7 +119,7 @@ The system extracted the field names from the CSV header. Now we will go through
 
 5. A small section will be displayed asking to specify the **Data Format** for our new field: 
 
-![](../../.gitbook/assets/image%20%28481%29.png)
+![](../../.gitbook/assets/image%20%28481%29%20%281%29.png)
 
 6. Choose **String** and click on the green **Create "uniqueid"** button:
 
