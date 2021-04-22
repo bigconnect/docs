@@ -10,7 +10,7 @@ To use a test origin in data preview, you must select the test origin in the dat
 
 For example, say your IT department has provided a separate bucket for test data in Amazon S3. In the canvas, you configure an Amazon S3 origin to use the real bucket for production. In the pipeline properties, you configure a virtual Amazon S3 test origin to use the test bucket.
 
-During pipeline development and testing, you configure data preview to use the test origin, leaving production data untouched. Then when the pipeline is ready, you start the pipeline. DataFabric uses the real Amazon S3 origin to process production data, ignoring the test origin.You can use the test origin as needed, but here are some general scenarios:
+During pipeline development and testing, you configure data preview to use the test origin, leaving production data untouched. Then when the pipeline is ready, you start the pipeline. Data Pipelines uses the real Amazon S3 origin to process production data, ignoring the test origin.You can use the test origin as needed, but here are some general scenarios:
 
 * Use a test origin to access test data in the same origin system.
 

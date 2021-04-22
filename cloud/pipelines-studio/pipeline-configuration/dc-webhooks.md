@@ -2,7 +2,7 @@
 
 You can configure a pipeline to use webhooks.
 
-A webhook is a user-defined HTTP callback - an HTTP request that the pipeline sends automatically when certain actions occur. You can use webhooks to automatically trigger external tasks based on an HTTP request. Tasks can be as simple as sending a message through an application API or as powerful as passing commands to the DataFabric command line interface.
+A webhook is a user-defined HTTP callback - an HTTP request that the pipeline sends automatically when certain actions occur. You can use webhooks to automatically trigger external tasks based on an HTTP request. Tasks can be as simple as sending a message through an application API or as powerful as passing commands to the Data Pipelines command line interface.
 
 You can configure the following types of webhooks:
 
@@ -29,9 +29,9 @@ You can configure the following types of webhooks:
       <td style="text-align:left">
         <p>The pipeline sends all state notification webhooks when the pipeline transitions
           to the selected pipeline states.</p>
-        <p>For example, you can send an HTTP request to the DataFabric REST API to
-          start a different pipeline when the current pipeline transitions to a Finished
-          state.</p>
+        <p>For example, you can send an HTTP request to the Data Pipelines REST API
+          to start a different pipeline when the current pipeline transitions to
+          a Finished state.</p>
       </td>
       <td style="text-align:left">Pipeline Configuration tab &gt; Notifications tab</td>
     </tr>
@@ -58,7 +58,7 @@ You can use the following methods in webhooks:
 
 ## Payload and Parameters
 
-You can include a request body or payload for PUT, POST, and DELETE request webhooks. Depending on the receiving system, the payload might not be used. For example, when using the DataFabric REST API, you simply include all required information in the URL.
+You can include a request body or payload for PUT, POST, and DELETE request webhooks. Depending on the receiving system, the payload might not be used. For example, when using the Data Pipelines REST API, you simply include all required information in the URL.
 
 When you configure a payload, you can use any valid content type, then specify the content type in the webhook properties. When defining a message, be sure to consider when the pipeline sends the webhook and include the information that the recipient needs.
 

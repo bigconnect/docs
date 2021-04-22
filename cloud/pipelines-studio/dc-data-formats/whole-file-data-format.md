@@ -2,7 +2,7 @@
 
 You can use the whole file data format to transfer entire files from an origin system to a destination system. With the whole file data format, you can transfer any type of file.
 
-When transferring whole files, Data Collector streams file data from the origin system and writes the data to the destination system based on the directory and file name defined in the destination.
+When transferring whole files, Data Pipelines streams file data from the origin system and writes the data to the destination system based on the directory and file name defined in the destination.
 
 Whole file records contain reference information for the file transfer. They do not contain data from within the files. While you can use several processors to read or modify the reference information, you cannot use typical processors, such as the Field Masker or the Field Replacer, to perform processing on file data. The only processor that substantially alters whole file data is the Whole File Transformer processor, which converts Avro files to Parquet. 
 

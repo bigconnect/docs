@@ -1,6 +1,6 @@
-# DataFabric Studio - Edit Mode
+# Data Pipelines Studio - Edit Mode
 
-pThe following image shows the DataFabric Studio when you configure a pipeline:
+The following image shows the Data Pipelines Studio when you configure a pipeline:
 
 ![](../../../.gitbook/assets/image%20%28687%29.png)
 
@@ -73,8 +73,8 @@ pThe following image shows the DataFabric Studio when you configure a pipeline:
         alt/>
       </td>
       <td style="text-align:left">Administration icon</td>
-      <td style="text-align:left">Provides access to DataFabric configuration properties, directories, and
-        log.</td>
+      <td style="text-align:left">Provides access to Data Pipelines Studio configuration properties, directories,
+        and log.</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -83,7 +83,7 @@ pThe following image shows the DataFabric Studio when you configure a pipeline:
       </td>
       <td style="text-align:left">User icon</td>
       <td style="text-align:left">Displays the active user and the roles assigned to the user. Also allows
-        you to log out of DataFabric.</td>
+        you to log out of Data Pipelines Studio.</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -119,7 +119,7 @@ pThe following image shows the DataFabric Studio when you configure a pipeline:
         alt/>
       </td>
       <td style="text-align:left">View Log icon</td>
-      <td style="text-align:left">Displays the DataFabric log. The equivalent to selecting Administration
+      <td style="text-align:left">Displays the Data Pipelines Studio log. The equivalent to selecting Administration
         &gt; Logs.</td>
     </tr>
     <tr>

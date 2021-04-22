@@ -1,6 +1,6 @@
 # Understanding Pipeline States
 
-A pipeline state is the current condition of the pipeline, such as "running" or "stopped". The pipeline state can display in the All Pipelines list. The state of a pipeline can also appear in the DataFabric log.The following pipeline states often display in the All Pipelines list:
+A pipeline state is the current condition of the pipeline, such as "running" or "stopped". The pipeline state can display in the All Pipelines list. The state of a pipeline can also appear in the Data Pipelines log.The following pipeline states often display in the All Pipelines list:
 
 * EDITED - The pipeline has been created or modified, and has not run since the last modification.
 * FINISHED - The pipeline has completed all expected processing and has stopped running.
@@ -10,11 +10,11 @@ A pipeline state is the current condition of the pipeline, such as "running" or 
 * START\_ERROR - The pipeline encountered an error while starting and failed to start.
 * STOP\_ERROR - The pipeline encountered an error while stopping.
 
-The following pipeline states are transient and rarely display in the All Pipelines list. These states can display in the DataFabric  log when the pipeline logging level is set to Debug:
+The following pipeline states are transient and rarely display in the All Pipelines list. These states can display in the Data Pipelines  log when the pipeline logging level is set to Debug:
 
-* CONNECT\_ERROR - When running a cluster-mode pipeline, DataFabric  cannot connect to the underlying cluster manager, such as Mesos or YARN.
-* CONNECTING - The pipeline is preparing to restart after a DataFabric  restart.
-* DISCONNECTED - The pipeline is disconnected from external systems, typically because DataFabric is restarting or shutting down.
+* CONNECT\_ERROR - When running a cluster-mode pipeline, Data Pipelines  cannot connect to the underlying cluster manager, such as Mesos or YARN.
+* CONNECTING - The pipeline is preparing to restart after a Data Pipelines  restart.
+* DISCONNECTED - The pipeline is disconnected from external systems, typically because Data Pipelines is restarting or shutting down.
 * FINISHING - The pipeline is in the process of finishing all expected processing.
 * RETRY - The pipeline is trying to run after encountering an error while running. This occurs only when the pipeline is configured for a retry upon error.
 * RUNNING\_ERROR - The pipeline encounters errors while running.
@@ -37,19 +37,19 @@ When you start a pipeline for the first time but it cannot start, the pipeline t
 
 `(EDITED)... STARTING... STARTING_ERROR... START_ERROR`
 
-### Stopping or restarting DataFabric
+### Stopping or restarting Data Pipelines Studio
 
-When DataFabric shuts down, running pipelines transition through the following states:
+When Data Pipelines shuts down, running pipelines transition through the following states:
 
 `(RUNNING)... DISCONNECTING... DISCONNECTED`
 
-When DataFabric restarts, any pipelines that were running transition through the following states:
+When Data Pipelines restarts, any pipelines that were running transition through the following states:
 
 `DISCONNECTED... CONNECTING... STARTING... RUNNING`
 
 ### Retrying a pipeline
 
-When a pipeline is configured to retry upon error, DataFabric performs the specified number of retries when the pipeline encounters errors while running.
+When a pipeline is configured to retry upon error, Data Pipelines performs the specified number of retries when the pipeline encounters errors while running.
 
 When retrying upon error and successfully retrying, a pipeline transitions through the following states:
 

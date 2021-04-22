@@ -10,7 +10,7 @@ Or, you can switch to bulk edit mode to enter a list of configurations in JSON f
 
 ![](../../../.gitbook/assets/image%20%28183%29.png)
 
-When you switch to bulk edit mode, DataFabric displays the correct field names and any values that you entered in simple edit mode. Modify the values, but be sure not to modify the field names. If you modify the field names by mistake, DataFabric displays a validation error message.
+When you switch to bulk edit mode, Data Pipelines displays the correct field names and any values that you entered in simple edit mode. Modify the values, but be sure not to modify the field names. If you modify the field names by mistake, Data Pipelines displays a validation error message.
 
 In bulk edit mode, you can add additional configurations by entering text in JSON format. Or, you can click the Add icon to add another configuration with empty values and then enter the values in the JSON text.
 

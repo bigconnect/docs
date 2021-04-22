@@ -6,7 +6,7 @@ The origin creates a batch as it reads data from the origin system or as data ar
 
 The origin sends the batch when the batch is full or when the batch wait time limit elapses. The batch moves through the pipeline from processor to processor until it reaches pipeline destinations.
 
-Destinations write the batch to destination systems, and DataFabric commits the offset internally. Based on the pipeline delivery guarantee, DataFabric either commits the offset as soon as it writes to any destination system or after receiving confirmation of the write from all destination systems. After the offset commit, the origin stage creates a new batch.
+Destinations write the batch to destination systems, and Data Pipelines commits the offset internally. Based on the pipeline delivery guarantee, Data Pipelines either commits the offset as soon as it writes to any destination system or after receiving confirmation of the write from all destination systems. After the offset commit, the origin stage creates a new batch.
 
 Note that this describes general pipeline behavior. Behavior can differ based on the specific pipeline configuration. For example, for the Kafka Consumer, the offset is stored in Kafka or ZooKeeper. And for origin systems that do not store data, such as Omniture and HTTP Client, offsets are not stored because they aren't relevant.
 
@@ -14,7 +14,7 @@ Note that this describes general pipeline behavior. Behavior can differ based on
 
 The information above describes a standard single-threaded pipeline - the origin creates a batch and passes it through the pipeline, creating a new batch only after processing the previous batch.
 
-Some origins can generate multiple threads to enable parallel processing in multithreaded pipelines. In a multithreaded pipeline, you configure the origin to create the number of threads or amount of concurrency that you want to use. And DataFabric creates a number of pipeline runners based on the pipeline Max Runners property to perform pipeline processing. Each thread connects to the origin system, creates a batch of data, and passes the batch to an available pipeline runner.
+Some origins can generate multiple threads to enable parallel processing in multithreaded pipelines. In a multithreaded pipeline, you configure the origin to create the number of threads or amount of concurrency that you want to use. And Data Pipelines creates a number of pipeline runners based on the pipeline Max Runners property to perform pipeline processing. Each thread connects to the origin system, creates a batch of data, and passes the batch to an available pipeline runner.
 
 Each pipeline runner processes one batch at a time, just like a pipeline that runs on a single thread. When the flow of data slows, the pipeline runners wait idly until they are needed, generating an empty batch at regular intervals. You can configure the Runner Idle Time pipeline property to specify the interval or to opt out of empty batch generation.
 
@@ -30,21 +30,21 @@ The Delivery Guarantee pipeline property offers the following choices:‌
 
 Ensures that the pipeline processes all data.‌
 
-If a failure causes DataFabric to stop while processing a batch of data, when it restarts, it reprocesses the batch. This option ensures that no data is lost.‌
+If a failure causes Data Pipelines to stop while processing a batch of data, when it restarts, it reprocesses the batch. This option ensures that no data is lost.‌
 
-With this option, DataFabric commits the offset after receiving write confirmation from destination systems. If a failure occurs after DataFabric passes data to destination systems but before receiving confirmation and committing the offset, up to one batch data might be duplicated in destination systems.‌
+With this option, Data Pipelines commits the offset after receiving write confirmation from destination systems. If a failure occurs after Data Pipelines passes data to destination systems but before receiving confirmation and committing the offset, up to one batch data might be duplicated in destination systems.‌
 
 #### At most once
 
 Ensures that data is not processed more than once.‌
 
-If a failure causes DataFabricto stop while processing a batch of data, when it starts up, it begins processing with the next batch of data. This option avoids the duplication of data in destinations due to reprocessing.‌
+If a failure causes Data Pipelines to stop while processing a batch of data, when it starts up, it begins processing with the next batch of data. This option avoids the duplication of data in destinations due to reprocessing.‌
 
-With this option, DataFabric commits the offset after a write without waiting for confirmation from destination systems. If a failure occurs after DataFabric passes data to destinations and commits the offset, up to one batch of data might not get written to the destination systems.‌
+With this option, Data Pipelines commits the offset after a write without waiting for confirmation from destination systems. If a failure occurs after Data Pipelines passes data to destinations and commits the offset, up to one batch of data might not get written to the destination systems.‌
 
 ### Data Types
 
-Within a pipeline, DataFabric uses the following data types, converting data as necessary when reading from or writing to external systems:
+Within a pipeline, Data Pipelines uses the following data types, converting data as necessary when reading from or writing to external systems:
 
 | Data Type | Description |
 | :--- | :--- |

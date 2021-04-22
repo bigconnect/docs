@@ -1,6 +1,6 @@
 # Reading and Processing XML Data
 
-You can parse XML documents from an origin system with an origin enabled for the XML data format. You can also parse XML documents in a field in a Data Collector record with the XML Parser processor.
+You can parse XML documents from an origin system with an origin enabled for the XML data format. You can also parse XML documents in a field in a Data Pipelines record with the XML Parser processor.
 
 You can use the XML data format and the XML Parser to process well-formed XML documents. If you want to process invalid XML documents, you can try using the text data format with custom delimiters. 
 

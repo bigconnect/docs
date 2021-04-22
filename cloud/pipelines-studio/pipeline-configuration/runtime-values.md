@@ -18,15 +18,15 @@ Runtime parameters are defined for a single pipeline - only that pipeline can ca
 
 Use runtime properties when you want to define values for multiple pipeline properties in a file.
 
-You define runtime properties in a file local to the DataFabric, and then you call the properties from within a pipeline. At runtime, DataFabric loads the property values from the file. A runtime properties file can contain multiple properties.
+You define runtime properties in a file local to the Data Pipelines, and then you call the properties from within a pipeline. At runtime, Data Pipelines loads the property values from the file. A runtime properties file can contain multiple properties.
 
-Runtime properties are defined for the entire DataFabric - any pipeline can call them.
+Runtime properties are defined for the entire Data Pipelines - any pipeline can call them.
 
 **Runtime resources**
 
 Use runtime resources when you want to store common pipeline configuration properties in files with restricted permissions.
 
-You define runtime resources in a file local to the DataFabric, and then you call the resources from within a pipeline. You can restrict the permissions for the resource files, but any user who can create a pipeline can access the data stored in the files.
+You define runtime resources in a file local to Data Pipelines, and then you call the resources from within a pipeline. You can restrict the permissions for the resource files, but any user who can create a pipeline can access the data stored in the files.
 
 {% hint style="info" %}
 To more securely define sensitive values, use credential stores.
@@ -41,7 +41,7 @@ Use runtime parameters to define values for stage and pipeline properties. For e
 When you define a runtime parameter, you enter the default value to use. When you start the pipeline, you can specify another value to override the default. When the pipeline runs, the value replaces the name of the runtime parameter.
 
 {% hint style="info" %}
-If you shut down and then restart DataFabric without stopping the pipeline, the pipeline continues running with the last set of parameter values.
+If you shut down and then restart Data Pipelines without stopping the pipeline, the pipeline continues running with the last set of parameter values.
 {% endhint %}
 
 To implement runtime parameters, perform the following steps:
@@ -63,7 +63,7 @@ Define runtime parameters when you configure the pipeline.
 
 Use an expression in the pipeline to call a runtime parameter.
 
-You can use runtime parameters to represent any stage or pipeline property that allows the use of the DataFabric expression language, including properties that display as text boxes, checkboxes, or drop-down menus. You can also call a runtime parameter in the code developed for a scripting processor.
+You can use runtime parameters to represent any stage or pipeline property that allows the use of the Data Pipelines expression language, including properties that display as text boxes, checkboxes, or drop-down menus. You can also call a runtime parameter in the code developed for a scripting processor.
 
 ### Calling from Text Boxes
 

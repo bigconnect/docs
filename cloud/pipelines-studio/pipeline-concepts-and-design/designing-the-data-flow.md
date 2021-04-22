@@ -18,7 +18,7 @@ Some stages generate events that pass to event streams. Event streams originate 
 
 ### Merging Streams
 
-You can merge streams of data in a pipeline by connecting two or more stages to the same downstream stage. When you merge streams of data, DataFabric channels the data from all streams to the same stage, but does not perform a join of records in the stream.
+You can merge streams of data in a pipeline by connecting two or more stages to the same downstream stage. When you merge streams of data, Data Pipelines channels the data from all streams to the same stage, but does not perform a join of records in the stream.
 
 For example, in the following pipeline, the Stream Selector stage sends data with null values to the Field Replacer stage:
 

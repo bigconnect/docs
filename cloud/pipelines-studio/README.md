@@ -4,7 +4,7 @@ Data Pipelines Studio is a lightweight, powerful design and execution engine tha
 
 To define the flow of data, you design a pipeline in Data Pipelines Studio. A pipeline consists of stages that represent the origin and destination of the pipeline, and any additional processing that you want to perform. After you design the pipeline, you click Start and the Studio goes to work.
 
-### Logging In and Creating a Pipeline in DataFabric Studio
+### Logging In and Creating a Pipeline in Data Pipelines Studio
 
 After you provision a Data Pipelines Studio service, you can log in and create your first pipeline:
 
@@ -101,7 +101,7 @@ The UI includes the following general areas and icons:
 
 For information about configuring pipelines, see [Data Pipelines Studio - Edit Mode](pipeline-configuration/datafabric-ui-edit-mode.md).
 
-For information about data preview options, see Data Pipelines Studio - Preview Mode.
+For information about data preview options, see [Data Pipelines Studio - Preview Mode](data-preview.md).
 
-For information about pipeline monitoring options, see Data Pipelines Studio - Monitor Mode.
+For information about pipeline monitoring options, see [Data Pipelines Studio - Monitor Mode](pipeline-monitoring.md).
 

@@ -20,7 +20,7 @@ You can specify multiple states to trigger notifications, but you cannot configu
 
  However, when configuring a webhook, you can use webhook parameters in the payload to indicate the state change that triggered the notification. For more information about webhooks, see [Webhooks](dc-webhooks.md).
 
-To send email notification, DataFabric must be configured to send email. To enable sending email, configure the email alert DataFabric properties.
+To send email notification, Data Pipelines must be configured to send email. To enable sending email, configure the email alert Data Pipelines properties.
 
 For more information about pipeline states, see [Understanding Pipeline States](../pipeline-concepts-and-design/understanding-pipeline-states.md).
 

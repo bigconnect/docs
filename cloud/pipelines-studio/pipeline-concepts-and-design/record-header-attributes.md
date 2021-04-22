@@ -26,7 +26,7 @@ For example, the following Expression Evaluator adds the file and offset record 
 
 ## Internal Attributes
 
-DataFabric generates and updates some read-only internal record header attributes as records move from stage to stage. These attributes can be viewed for debugging issues, but can only be updated by DataFabric.
+Data Pipelines generates and updates some read-only internal record header attributes as records move from stage to stage. These attributes can be viewed for debugging issues, but can only be updated by Data Pipelines.
 
 The record:attribute function does not allow access to internal record header attributes. The following table describes the internal record header attributes and the functions that you can use to access the data in the pipeline:
 
@@ -365,7 +365,7 @@ When using the Expression Evaluator or scripting processor to generate the targe
 * The destination uses the directory exactly as written in the targetDirectory header attribute. Unlike directory templates, the directory specified in the targetDirectory attribute should not include any components that require evaluation, such as runtime parameters, variables, or runtime properties.
 * When you define the expression that evaluates to a directory, you can use any valid component, including expressions that evaluate data in the record.
 
-For example, you want to write records to different directories based on the DataFabric that runs the pipeline, and the region and store ID where the transaction took place. You can set up a runtime resource named DIR that defines the base for the directory and define DIR for each Data Fabric instance that runs the pipeline. Then, you can use the following expression in the Expression Evaluator to define the targetDirectory attribute:
+For example, you want to write records to different directories based on the Data Pipelines that runs the pipeline, and the region and store ID where the transaction took place. You can set up a runtime resource named DIR that defines the base for the directory and define DIR for each Data Data Pipelines instance that runs the pipeline. Then, you can use the following expression in the Expression Evaluator to define the targetDirectory attribute:
 
 `${runtime:conf('DIR')/transactions/${record.value('/region')}/${record.value('/storeID')}`
 
