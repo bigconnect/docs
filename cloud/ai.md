@@ -1,4 +1,4 @@
-# AI
+# Intelligence
 
 The AI Service contains a number of carefully chosen deep-learning models to fulfill tasks like Named Entity Recognition, Translation, Sentiment analysis and more.
 

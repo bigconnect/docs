@@ -78,7 +78,7 @@ Workbook supports working on, sharing, and making a presentation with dashboards
 
 #### Notebook
 
-Notebooks enables advanced analytics based on machine learning by using Jupyter Notebooks. See [Discovery Notebooks](discovery-notebooks/) for more details.
+Notebooks enables advanced analytics based on machine learning by using Jupyter Notebooks. See [Discovery Notebooks]() for more details.
 
 #### Workbench
 
