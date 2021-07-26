@@ -192,6 +192,7 @@
 * [Tetra ML](cloud/tetra/README.md)
   * [Algorithms](cloud/tetra/tetraml-algorithms/README.md)
     * [AutoML](cloud/tetra/tetraml-algorithms/tetraml-automl.md)
+    * [Cox Proportional Hazards \(CoxPH\)](cloud/tetra/tetraml-algorithms/tetraml-coxph.md)
   * [Using Tetra Flow](cloud/tetra/using-tetraflow/README.md)
     * [How to Use the Interface](cloud/tetra/using-tetraflow/tetraflow-how-to-use-the-interface.md)
     * [Using Flows](cloud/tetra/using-tetraflow/tetraflow-using-flows.md)
