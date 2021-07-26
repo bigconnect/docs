@@ -6,12 +6,12 @@
 
 * [BigGraph](cloud/biggraph/README.md)
   * [Architecture and Concepts](cloud/biggraph/biggraph-architecture-and-concepts.md)
-  * [BigGraph Developer Guide](cloud/biggraph/biggraph-developer-guide.md)
   * [Cypher Lab](cloud/biggraph/cypherlab/README.md)
     * [Cypher Lab Query and Command-Line Tips](cloud/biggraph/cypherlab/cypher-lab-query-and-command-line-tips.md)
     * [Cypher Lab Styling](cloud/biggraph/cypherlab/cypher-lab-styling.md)
     * [Cypher Lab Built-in Guides](cloud/biggraph/cypherlab/cypher-lab-built-in-guides.md)
     * [Cypher Lab Commands and Keyboard](cloud/biggraph/cypherlab/cypher-lab-commands-and-keyboard.md)
+  * [BigGraph Developer Guide](cloud/biggraph/biggraph-developer-guide.md)
 * [Compute](cloud/compute/README.md)
   * [Cloud Servers](cloud/compute/cloud-servers.md)
   * [Block Storage \(Volumes\)](cloud/compute/block-storage.md)
