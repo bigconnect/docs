@@ -17,7 +17,7 @@ In supervised learning, the dataset is labeled with the answer that algorithm sh
 
 TetraML supports the following supervised algorithms:
 
-* AutoML: Automatic Machine Learning
+* [AutoML](tetraml-automl.md): Automatic Machine Learning
 * Cox Proportional Hazards \(CoxPH\)
 * Deep Learning \(Neural Networks\)
 * Distributed Random Forest \(DRF\)
