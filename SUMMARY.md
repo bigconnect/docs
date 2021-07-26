@@ -190,6 +190,8 @@
     * [JavaScript SDK QuickStart](cloud/oss/oss-dev-guide/oss-js-sdk.md)
     * [JavaScript SDK Reference](cloud/oss/oss-dev-guide/javascript-sdk-reference.md)
 * [Tetra ML](cloud/tetra/README.md)
+  * [Algorithms](cloud/tetra/tetraml-algorithms/README.md)
+    * [AutoML](cloud/tetra/tetraml-algorithms/tetraml-automl.md)
   * [Using Tetra Flow](cloud/tetra/using-tetraflow/README.md)
     * [How to Use the Interface](cloud/tetra/using-tetraflow/tetraflow-how-to-use-the-interface.md)
     * [Using Flows](cloud/tetra/using-tetraflow/tetraflow-using-flows.md)
