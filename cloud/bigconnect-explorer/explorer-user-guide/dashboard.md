@@ -12,6 +12,10 @@ When a new workspace is created, a Dashboard will be created as well with some d
 
 To edit the dashboard layout and place or rearrange widgets, click on the ![](../../../.gitbook/assets/image%20%28467%29.png) button. The Dashboard will enter in Edit mode where you can add, remove, reposition and resize widgets.
 
+{% hint style="info" %}
+You can also change the name of the Dashboard in Edit mode.
+{% endhint %}
+
 ![](../../../.gitbook/assets/image%20%28507%29.png)
 
 The following widgets are available:
