@@ -5,7 +5,9 @@ BigConnext Explorer has an advanced tool for graph visualization. You can create
 {% hint style="warning" %}
 The graph is not designed for displaying too many elements. 
 
-We performed many tests and determined that 10,000 should be the maximum number of items that can be added to still have a decent experience. Of course this depends a lot of your desktop/laptop CPU power and the browser you use.
+We performed many tests and determined that 10,000 should be the maximum number of items that can be added to still have a decent experience. Of course this depends a lot of your desktop/laptop CPU power and the browser you use. 
+
+Google Chrome / Chromium browsers perform better when rendering many items on the graph canvas.
 {% endhint %}
 
 ![Graph showing 15,000 elements with a directed layout](../../../../.gitbook/assets/image%20%28435%29.png)
@@ -26,7 +28,7 @@ There are numerous ways to get data onto the graph:
 If you add load data from a dataset \(saved search\), you need to apply a layout after loading the data, because all loaded elements will be overlapped.
 {% endhint %}
 
-For this tutorial, we will use an existing graph that looks like this:
+For this guide, we will use an existing graph that looks like this:
 
 ![](../../../../.gitbook/assets/image%20%28458%29.png)
 
