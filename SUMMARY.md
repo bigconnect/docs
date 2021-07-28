@@ -136,7 +136,7 @@
     * [Analyze](cloud/bigconnect-explorer/explorer-user-guide/analyze/README.md)
       * [Graph](cloud/bigconnect-explorer/explorer-user-guide/analyze/graph.md)
       * [Map](cloud/bigconnect-explorer/explorer-user-guide/analyze/map.md)
-      * [Charts](cloud/bigconnect-explorer/explorer-user-guide/analyze/charts.md)
+      * [Charts](cloud/bigconnect-explorer/explorer-user-guide/analyze/explorer-charts.md)
   * [Developer Guide](cloud/bigconnect-explorer/explorer-developer-guide/README.md)
     * [Creating a standard plugin](cloud/bigconnect-explorer/explorer-developer-guide/explorer-creating-a-standard-plugin.md)
     * [Creating a React plugin](cloud/bigconnect-explorer/explorer-developer-guide/creating-a-react-plugin.md)

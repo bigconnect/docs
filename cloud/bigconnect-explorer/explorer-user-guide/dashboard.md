@@ -73,7 +73,7 @@ You will now see the distribution of post dates within the 1 day boundary.
 
 ## Chart
 
-This widget displays a previously saved chart from the [Charts](analyze/charts.md) analysis tool. Plece the widget on the dashboard and choose the saved chart to display from the widget configuration menu.
+This widget displays a previously saved chart from the [Charts](analyze/explorer-charts.md) analysis tool. Plece the widget on the dashboard and choose the saved chart to display from the widget configuration menu.
 
 ![](../../../.gitbook/assets/image%20%2865%29.png)
 
