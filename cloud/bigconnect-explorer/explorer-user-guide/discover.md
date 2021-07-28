@@ -61,5 +61,11 @@ Filtering by Properties depends on the type of the property being selected. Diff
   * LATITUDE, LONGITUDE: The location latitude and longitude must equal the provided values
   * KM: radius in km of a circle with center \(LATITUDE, LONGITUDE\) to search for objects
 
+Multiple property filters can be applied. By default, the operator applied between subsequent filters is AND. However, you can change this to OR or NOT.
 
+You can also group property filters together using the grouping icons: ![](../../../.gitbook/assets/image%20%28576%29.png) 
+
+## Sorting
+
+Search results can be sorted by one or more properties. Select the desired properties from the dropdown and click on them afterwards to change the sort order.
 
