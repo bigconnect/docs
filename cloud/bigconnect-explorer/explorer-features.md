@@ -1,4 +1,4 @@
-# Explorer Features
+# Features
 
 ## Dynamic Data Model
 

@@ -1,4 +1,4 @@
-# Explorer Developer Guide
+# Developer Guide
 
 ## REST APIs
 
