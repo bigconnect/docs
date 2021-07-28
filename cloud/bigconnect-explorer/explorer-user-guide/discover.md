@@ -63,9 +63,31 @@ Filtering by Properties depends on the type of the property being selected. Diff
 
 Multiple property filters can be applied. By default, the operator applied between subsequent filters is AND. However, you can change this to OR or NOT.
 
-You can also group property filters together using the grouping icons: ![](../../../.gitbook/assets/image%20%28576%29.png) 
+You can also group property filters together using the grouping icons: ![](../../../.gitbook/assets/image%20%28594%29.png) 
 
 ## Sorting
 
 Search results can be sorted by one or more properties. Select the desired properties from the dropdown and click on them afterwards to change the sort order.
+
+## Saved searches
+
+You can save the current query, its filters, refinements and sort properties by clicking the Saved Searches dropdown:
+
+![](../../../.gitbook/assets/image%20%28699%29.png)
+
+Just enter a name for your saved search and choose whether you want it to be available to all users \(Global\). By default, a saved search is available only to the user that created it.
+
+{% hint style="info" %}
+Saved Searches are used in the Saved Search dashboard widget and in tools like Graph, Map and Charts to load multiple items from the graph store.
+{% endhint %}
+
+## Exporting search results
+
+You can export all search results or only selected ones. The top export icon next to the Saved Searches dropdown ![](../../../.gitbook/assets/image%20%28598%29.png) is used to export all search results. 
+
+![](../../../.gitbook/assets/image%20%28650%29.png)
+
+If you want to export only certain search results, select the rows you want to export and click the export dropdown next to the pagination options.  
+
+![](../../../.gitbook/assets/image%20%28700%29.png)
 
