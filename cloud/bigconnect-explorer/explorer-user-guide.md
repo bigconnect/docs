@@ -20,17 +20,17 @@ You can think of Concepts and Relations like database tables and their propertie
 
 BigConnect Explorer has a default layout comprised of the **Main Menu**, **Work Area** and a **Footer Widget**.
 
-![BigConnect Explorer General Layout](../../.gitbook/assets/image%20%28101%29.png)
+![BigConnect Explorer General Layout](../../.gitbook/assets/image%20%28113%29.png)
 
  The Main Menu is organized into three main sections:
 
 * **Left navigation links**: when clicked, the corresponding section will be displayed in the Work Area.
 * **Quick search**…: allows quick searching through the system. Found items can be dragged and dropped to various analysis tools present in the **Analyze** section \(eg: Graph, Map\)
 * **Icons for various tasks:**
-  *  **Spaces** ![](../../.gitbook/assets/image%20%2865%29.png) - manage the spaces you are part of
-  *  **Activities** ![](../../.gitbook/assets/image%20%28113%29.png) - shows running & completed jobs
-  *  **Alerts**  ![](../../.gitbook/assets/image%20%28155%29.png) - shows the number of unassigned alerts
-  *  **Administration** ![](../../.gitbook/assets/image%20%28156%29.png) - administration menu
+  *  **Spaces** ![](../../.gitbook/assets/image%20%28101%29.png) - manage the spaces you are part of
+  *  **Activities** ![](../../.gitbook/assets/image%20%28193%29.png) - shows running & completed jobs
+  *  **Alerts**  ![](../../.gitbook/assets/image%20%28243%29.png) - shows the number of unassigned alerts
+  *  **Administration** ![](../../.gitbook/assets/image%20%28282%29.png) - administration menu
   *  **Active user** ![](../../.gitbook/assets/image%20%2857%29.png) - logged-in username with **Preferences** and **Logout** sub-menu items
 
 ## Spaces
@@ -43,13 +43,13 @@ This is a first element of security. Spaces and their data are not visible among
 
 All data visualizations are specific to a workspace. This means that the dashboard, graphs, maps, and charts are visible only in that workspace. A new workspace will always start with a default \(customizable\) Dashboard layout.
 
-Spaces can be managed by clicking the Spaces icon in the Main Menu: ![](../../.gitbook/assets/image%20%2865%29.png). A popup menu shows the list of spaces you created or are part of. You can also add a new space by filling in the name of the space and clicking the **Add** button. The **Shared with me** section shows the spaces you were invited in and are part of. Clicking the settings icon will show the the access rights you are granted in the respective space.
+Spaces can be managed by clicking the Spaces icon in the Main Menu: ![](../../.gitbook/assets/image%20%28101%29.png). A popup menu shows the list of spaces you created or are part of. You can also add a new space by filling in the name of the space and clicking the **Add** button. The **Shared with me** section shows the spaces you were invited in and are part of. Clicking the settings icon will show the the access rights you are granted in the respective space.
 
-![List of spaces in BigConnect Explorer ](../../.gitbook/assets/image%20%2886%29.png)
+![List of spaces in BigConnect Explorer ](../../.gitbook/assets/image%20%28107%29.png)
 
-The spaces you created are shown in the **Choose active Space** section. To edit the name of a space or to invite other users to your space, click the space settings icon: ![](../../.gitbook/assets/image%20%28193%29.png) 
+The spaces you created are shown in the **Choose active Space** section. To edit the name of a space or to invite other users to your space, click the space settings icon: ![](../../.gitbook/assets/image%20%28335%29.png) 
 
-![](../../.gitbook/assets/image%20%28107%29.png)
+![](../../.gitbook/assets/image%20%28155%29.png)
 
 To invite other users to your space type in the first letters of the username and press the **Arrow Down** key. A list of users that match the search criteria is displayed. Click on the use you want to invite and set the proper access rights:
 
@@ -57,7 +57,27 @@ To invite other users to your space type in the first letters of the username an
 * **Comment**: read-only access to the space and the ability to add comments to items
 * **Edit**: read-write access to the space
 
+## Footer Widget
 
+The footer widget shows information about the active space you are in \(current space\). 
 
+![BigConnect Explorer Footer Widget](../../.gitbook/assets/image%20%2886%29.png)
 
+It shows the name of the space \(`space1`\) , the number of unpublished changes and a link to open the Timeline view for the current space.
+
+To see unpublished changes, click the orange number badge. A popup will be displayed showing each unpublished change. Here, you can publish or undo changes one by one or all.
+
+![](../../.gitbook/assets/image%20%28185%29.png)
+
+## Timeline
+
+The timeline shows the distribution of date properties of all items available in the current space. 
+
+![](../../.gitbook/assets/image%20%2865%29.png)
+
+{% hint style="info" %}
+Items in a space are items placed on the **Graph** or **Map** tools.
+{% endhint %}
+
+You can choose which properties are displayed in the Timeline by clicking the cog icon in the top-right part of the timeline.
 
