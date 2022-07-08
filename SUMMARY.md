@@ -244,10 +244,14 @@
 
 ## Products
 
-* [MWARE Portal](products/mware-portal.md)
+* [MWARE Portal](products/mware-portal/README.md)
+  * [Setting up](products/mware-portal/setting-up/README.md)
+    * [System Wide Settings](products/mware-portal/setting-up/system-wide-settings.md)
+    * [System Settings](products/mware-portal/setting-up/system-settings.md)
+    * [Server Administration](products/mware-portal/setting-up/server-administration.md)
 * [MWARE Identity & Access Management](products/mware-iam.md)
-  * [Architecture](products/mware-iam/architecture.md)
-  * [Provisioning Architecture](products/mware-iam/provisioning-architecture.md)
-  * [User Management Architecture](products/mware-iam/user-management-architecture.md)
+  * [Architecture](products/mware-iam/architecture/README.md)
+    * [Provisioning Architecture](products/mware-iam/architecture/provisioning-architecture.md)
+    * [User Management Architecture](products/mware-iam/architecture/user-management-architecture.md)
 * [BigConnect Answers](products/bigconnect-answers.md)
 * [BigConnect Virtual Machine](products/bigconnect-vm.md)

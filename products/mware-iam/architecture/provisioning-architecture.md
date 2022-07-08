@@ -45,7 +45,7 @@ WSO2 Charon is one of the SCIM implementations that are made available under Apa
 
 The following diagram provides an overview of the module breakdown of Charon along with purpose of each module and planned tasks of them.
 
-![](<../../.gitbook/assets/image (709).png>)
+![](<../../../.gitbook/assets/image (712).png>)
 
 The following includes a brief introduction on each of the modules.
 
@@ -64,7 +64,7 @@ Out of the JAX-RS implementations, Apache-Wink was selected since it better cate
 
 The following is a deployment diagram of Charon-SCIM service provider (the web application provided by Charon-Impl module). It also gives a high level idea on how Charon-Core and Charon-Utils modules are utilized.
 
-![](<../../.gitbook/assets/image (707).png>)
+![](<../../../.gitbook/assets/image (708).png>)
 
 As this diagram of the reference implementation illustrates, a SCIM service provider can be developed using any REST implementation and SCIM-defined resources can be exposed utilizing the API provided by the Charon-Core. On the other hand, SCIM Consumers can also be implemented using the client API of Charon-Core.
 
@@ -72,17 +72,17 @@ As this diagram of the reference implementation illustrates, a SCIM service prov
 
 The SCIM (System for Cross-Domain Identity Management) specification defines a [fixed set of default attributes](http://tools.ietf.org/html/draft-ietf-scim-core-schema-01#section-11.2) for the user object. This set is defined to ensure the interoperability and it can cater to most of the industry's identity management requirements. Given below is a sample user object with the default attributes set.
 
-![](<../../.gitbook/assets/image (708).png>)
+![](<../../../.gitbook/assets/image (710).png>)
 
 However the SCIM specification itself introduces the [Enterprise User Extension](http://tools.ietf.org/html/draft-ietf-scim-core-schema-01#section-11.3) to support extra attributes for the SCIM user object.
 
-![](<../../.gitbook/assets/image (711).png>)
+![](<../../../.gitbook/assets/image (714).png>)
 
 However the reality in the industry is that organizations have their own attributes defined for the users. These attributes are already there in their LDAP schemas. Therefore SCIM should be extensible enough to cope with these custom attributes of the users.
 
 WSO2 Identity Server allows users to define their own user schema in a configuration file ( `[IS-HOME]/repository/conf/scim-schema-extension.config` ). Then these configured schema are used while creating, validating user objects. With this the users can pass their custom attributes of users over SCIM for Identity Management requirements. The implementation is adhering to the [Schema Extension Model](http://tools.ietf.org/html/draft-ietf-scim-core-schema-01#section-4) . Given below is a sample extended user object with the default schema configuration.
 
-![](<../../.gitbook/assets/image (702).png>)
+![](<../../../.gitbook/assets/image (702).png>)
 
 ### Claims Mapping
 
@@ -100,7 +100,7 @@ Now the server is up and running with the new extended user schema. The claim ma
 
 Create a new user with the new schema. The following screen depicts the user to be added with the **wso2Extension** attributes.
 
-![](<../../.gitbook/assets/image (704).png>)
+![](<../../../.gitbook/assets/image (705).png>)
 
 ### cURL commands
 
@@ -134,4 +134,4 @@ The above command provides the following results:
 
 The created SCIM user object can be viewed in the following screen:
 
-![](<../../.gitbook/assets/image (703).png>)
+![](<../../../.gitbook/assets/image (704).png>)
