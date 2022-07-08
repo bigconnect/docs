@@ -1,2 +1,0 @@
-# BigConnect Virtual Machine
-

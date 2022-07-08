@@ -4,7 +4,7 @@ BigConnect Answers is a simple and powerful analytics tool which lets anyone lea
 
 ### The Home Page
 
-![](../../.gitbook/assets/EmptyHomepage.jpg)
+![](../.gitbook/assets/EmptyHomepage.jpg)
 
 Fresh out of the box, BigConnect Answers will show you a few things on the home page:
 

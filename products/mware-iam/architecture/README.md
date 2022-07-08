@@ -10,7 +10,7 @@ Apart from such registered users, Identity Server is also used as an identity pr
 
 The following diagram depicts the architecture of the Identity Server and the various processes that take place within it.
 
-![](<../../../.gitbook/assets/image (707).png>)
+![](<../../../.gitbook/assets/image (708).png>)
 
 ### Authentication framework
 
