@@ -45,7 +45,7 @@ WSO2 Charon is one of the SCIM implementations that are made available under Apa
 
 The following diagram provides an overview of the module breakdown of Charon along with purpose of each module and planned tasks of them.
 
-![](<../../.gitbook/assets/image (708).png>)
+![](<../../.gitbook/assets/image (709).png>)
 
 The following includes a brief introduction on each of the modules.
 
@@ -64,7 +64,7 @@ Out of the JAX-RS implementations, Apache-Wink was selected since it better cate
 
 The following is a deployment diagram of Charon-SCIM service provider (the web application provided by Charon-Impl module). It also gives a high level idea on how Charon-Core and Charon-Utils modules are utilized.
 
-![](<../../.gitbook/assets/image (706).png>)
+![](<../../.gitbook/assets/image (707).png>)
 
 As this diagram of the reference implementation illustrates, a SCIM service provider can be developed using any REST implementation and SCIM-defined resources can be exposed utilizing the API provided by the Charon-Core. On the other hand, SCIM Consumers can also be implemented using the client API of Charon-Core.
 
@@ -72,11 +72,11 @@ As this diagram of the reference implementation illustrates, a SCIM service prov
 
 The SCIM (System for Cross-Domain Identity Management) specification defines a [fixed set of default attributes](http://tools.ietf.org/html/draft-ietf-scim-core-schema-01#section-11.2) for the user object. This set is defined to ensure the interoperability and it can cater to most of the industry's identity management requirements. Given below is a sample user object with the default attributes set.
 
-![](<../../.gitbook/assets/image (707).png>)
+![](<../../.gitbook/assets/image (708).png>)
 
 However the SCIM specification itself introduces the [Enterprise User Extension](http://tools.ietf.org/html/draft-ietf-scim-core-schema-01#section-11.3) to support extra attributes for the SCIM user object.
 
-![](<../../.gitbook/assets/image (709).png>)
+![](<../../.gitbook/assets/image (711).png>)
 
 However the reality in the industry is that organizations have their own attributes defined for the users. These attributes are already there in their LDAP schemas. Therefore SCIM should be extensible enough to cope with these custom attributes of the users.
 

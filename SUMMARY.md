@@ -245,8 +245,9 @@
 ## Products
 
 * [MWARE Portal](products/mware-portal.md)
-* [MWARE Identity & Access Management](products/mware-iam/README.md)
+* [MWARE Identity & Access Management](products/mware-iam.md)
   * [Architecture](products/mware-iam/architecture.md)
   * [Provisioning Architecture](products/mware-iam/provisioning-architecture.md)
+  * [User Management Architecture](products/mware-iam/user-management-architecture.md)
 * [BigConnect Answers](products/bigconnect-answers.md)
 * [BigConnect Virtual Machine](products/bigconnect-vm.md)
