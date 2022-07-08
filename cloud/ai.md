@@ -17,15 +17,15 @@ The following AI models are available as REST services:
 * Object detection
 * Location resolver
 * License Plate Recognition
-* Speech to Text \(American English only\)
+* Speech to Text (American English only)
 * Fraud detection
-* Image Metadata extractor \(EXIF\) 
+* Image Metadata extractor (EXIF)&#x20;
 * Topic modeling
 * Image captioning
 
 The API endpoints are listed by each service in the URL section:
 
-![](../.gitbook/assets/image%20%28644%29.png)
+![](<../.gitbook/assets/image (644).png>)
 
 To make a call, prepend the service URL to the URL endpoint listed in each box. Example:
 
@@ -69,13 +69,13 @@ Predict sentiment of sentence: "_The bright spot in the banking industry has bee
 
 1. Base64 encode the sentence. The result should be:
 
-```text
+```
 VGhlIGJyaWdodCBzcG90IGluIHRoZSBiYW5raW5nIGluZHVzdHJ5IGhhcyBiZWVuIHRoZSBpbnZl
 c3RtZW50IGJhbmtzIGJlY2F1c2UgdGhleSBhcmUgY2FzaGluZyBpbiBvbiByZXN1cmdlbnQgY2Fw
 aXRhbCBtYXJrZXRzLgo=
 ```
 
-2. Call the service REST endpoint using `curl` :
+2\. Call the service REST endpoint using `curl` :
 
 ```bash
 curl -XPOST https://ai-170393591705357.cloud.bigconnect.io/api/sentiment-analysis/1/predict -d'  
@@ -88,4 +88,3 @@ curl -XPOST https://ai-170393591705357.cloud.bigconnect.io/api/sentiment-analysi
 The output will be:
 
 `{"entities": [{"sentiment": "Positive"}]}`
-

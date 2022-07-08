@@ -22,7 +22,7 @@ Description
 
 ## header
 
-Required arguments: Row number that contains the column name \(1-base\)
+Required arguments: Row number that contains the column name (1-base)
 
 Description
 
@@ -39,7 +39,7 @@ Required arguments
 
 Optional arguments
 
-> * Set format: A format string \(Joda Time\) in the case of timestamp
+> * Set format: A format string (Joda Time) in the case of timestamp
 
 Description
 
@@ -62,7 +62,7 @@ Notes
 
 > * As shown below, the format input field lists different entries depending on the input. The candidate list is narrowed as more values are entered.
 
-![](../../../../.gitbook/assets/image%20%28589%29.png)
+![](<../../../../.gitbook/assets/image (589).png>)
 
 ## rename
 
@@ -76,7 +76,7 @@ Description
 > * This rule changes the name of the selected column.
 > * To rename two or more columns at once, click the **Rename multiple columns** button at the bottom of the command input panel to display the following popup.
 
-![](../../../../.gitbook/assets/image%20%2899%29.png)
+![](<../../../../.gitbook/assets/image (99).png>)
 
 ## keep
 
@@ -88,7 +88,7 @@ Description
 
 > * All rows are deleted except the rows that return true for the conditional expression.
 
-![](../../../../.gitbook/assets/image%20%28366%29.png)
+![](<../../../../.gitbook/assets/image (366).png>)
 
 ## delete
 
@@ -102,20 +102,19 @@ Description
 
 ## replace
 
-![](../../../../.gitbook/assets/image%20%28233%29.png)
+![](<../../../../.gitbook/assets/image (233).png>)
 
 Required arguments
 
 > * Column: A list of target columns
-> * Pattern: A string pattern to be replaced
+> *   Pattern: A string pattern to be replaced
 >
->   > * In the case of a constant string: Characters enclosed inside `'` \(`'Houston'`, `'Naperville'`, `'Philadelphia'` etc.\)
->   > * In the case of a regular expression: Characters enclosed inside `/` \(`/[ ,_]+/`, `/\s+$/`, etc.\)
+>     > * In the case of a constant string: Characters enclosed inside `'` (`'Houston'`, `'Naperville'`, `'Philadelphia'` etc.)
+>     > * In the case of a regular expression: Characters enclosed inside `/` (`/[ ,_]+/`, `/\s+$/`, etc.)
+> *   New value: A new string expression to replace the specified pattern
 >
-> * New value: A new string expression to replace the specified pattern
->
->   > * Constant string
->   > * Regular expression `$1_$2_$3`, etc.
+>     > * Constant string
+>     > * Regular expression `$1_$2_$3`, etc.
 
 Optional arguments
 
@@ -130,33 +129,33 @@ Description
 Notes
 
 > * Do not use `'` or `/` in a **new value**.
-> * Values from other columns are not available as **new values**. replace performs string replacement for content in the selected columns only. \(cf. **set** rule\)
+> * Values from other columns are not available as **new values**. replace performs string replacement for content in the selected columns only. (cf. **set** rule)
 
 ## set
 
-![](../../../../.gitbook/assets/image%20%28492%29.png)
+![](<../../../../.gitbook/assets/image (492).png>)
 
 Required arguments
 
 > * Column: A list of target columns
-> * Expression: An expression to be applied to the values of the target column. Values from other columns may be referenced. \(cf. **replace** rule\)
+> *   Expression: An expression to be applied to the values of the target column. Values from other columns may be referenced. (cf. **replace** rule)
 >
->   > * When multiple columns are involved, use a `$col` variable, which will be substituted by the respective target column during each conversion.
->   > * That is, when applying the set command on `column1` and `column2`, `$col` becomes `column1` during conversion of `column1`, and `$col` becomes `column2` during conversion of `column2`.
+>     > * When multiple columns are involved, use a `$col` variable, which will be substituted by the respective target column during each conversion.
+>     > * That is, when applying the set command on `column1` and `column2`, `$col` becomes `column1` during conversion of `column1`, and `$col` becomes `column2` during conversion of `column2`.
 
 Optional arguments
 
-> * Use only under the following conditions
+> *   Use only under the following conditions
 >
->   > * The set rule is applied only to rows satisfying this condition.
->   > * This rule may be regarded the same as the `WHERE` statement in SQL.
+>     > * The set rule is applied only to rows satisfying this condition.
+>     > * This rule may be regarded the same as the `WHERE` statement in SQL.
 
 Description
 
 > * This rule replaces the values in the selected column with results returned by the expression.
 > * When using a complex expression, click the **Advanced editor** to display the popup shown below:
 
-![](../../../../.gitbook/assets/image%20%28148%29.png)
+![](<../../../../.gitbook/assets/image (148).png>)
 
 In the **Advanced editor**, you can edit the expression in a larger window while viewing the column list and a list of functions and their descriptions, and also run a validity check before implementing the expression.
 
@@ -223,7 +222,7 @@ Optional arguments
 
 Description
 
-> * A new column\(s\) with content matching the given pattern is created.
+> * A new column(s) with content matching the given pattern is created.
 
 Notes
 
@@ -263,11 +262,11 @@ Description
 > * The target columns are grouped into a new column of the given type.
 > * Below are examples of grouping columns into an array and map, respectively.
 
-![](../../../../.gitbook/assets/image%20%28132%29.png)
+![](<../../../../.gitbook/assets/image (132).png>)
 
 ## unnest
 
-![](../../../../.gitbook/assets/image%20%28369%29.png)
+![](<../../../../.gitbook/assets/image (369).png>)
 
 Required arguments
 
@@ -296,15 +295,15 @@ Notes
 
 > * The target column must be of the array type.
 
-![](../../../../.gitbook/assets/image%20%28403%29.png)
+![](<../../../../.gitbook/assets/image (403).png>)
 
 If the target array column has four elements as shown in the above example, each original row of the array results in four rows. Non-array columns result in the same columns.
 
-![](../../../../.gitbook/assets/image%20%28455%29.png)
+![](<../../../../.gitbook/assets/image (455).png>)
 
 ## aggregate
 
-![](../../../../.gitbook/assets/image%20%28518%29.png)
+![](<../../../../.gitbook/assets/image (518).png>)
 
 Required arguments
 
@@ -315,32 +314,31 @@ Description
 
 > * A new column is added from the results of grouping by each combination of the elements from the GroupBy columns.
 > * A column is created for each expression. For example, two columns are created if average and count are designated as expressions.
-> * The available aggregate functions are as follows:
+> *   The available aggregate functions are as follows:
 >
->   > * count\(\)
->   > * sum\(_colname_\)
->   > * avg\(_colname_\)
->   > * min\(_colname_\)
->   > * max\(_colname_\)
+>     > * count()
+>     > * sum(_colname_)
+>     > * avg(_colname_)
+>     > * min(_colname_)
+>     > * max(_colname_)
 >
->   Notes
->
+>     Notes
 > * Calculations are performed only for sampling results. Therefore, the snapshot?the results for the entire data?may be different.
 > * Note that `()` must be inserted when using the count function.
-> * count\(_colname_\) is currently not available.
+> * count(_colname_) is currently not available.
 
-![](../../../../.gitbook/assets/image%20%28516%29.png)
+![](<../../../../.gitbook/assets/image (516).png>)
 
 ## pivot
 
-![](../../../../.gitbook/assets/image%20%28324%29.png)
+![](<../../../../.gitbook/assets/image (324).png>)
 
 
 
 Required arguments
 
 > * Column: A list of columns subject to pivoting
-> * Expression: A list of expressions whose resulting values form new columns \(only aggregate functions are available\)
+> * Expression: A list of expressions whose resulting values form new columns (only aggregate functions are available)
 > * Group by: A list of columns that group values by.
 
 Description
@@ -350,48 +348,48 @@ Description
 
 Notes
 
-> * This is used when performing GroupBy on at least two columns. \(1 pivoted column, 1 GroupBy column\)
+> * This is used when performing GroupBy on at least two columns. (1 pivoted column, 1 GroupBy column)
 > * Here, **Rename multiple columns** is useful as column names tend to get longer.
 
-![](../../../../.gitbook/assets/image%20%289%29.png)
+![](<../../../../.gitbook/assets/image (9).png>)
 
 ## unpivot
 
-![](../../../../.gitbook/assets/image%20%28631%29.png)
+![](<../../../../.gitbook/assets/image (631).png>)
 
 Required arguments
 
 > * Column: A list of target columns to be converted into values in new columns
-> * GroupEvery: Number of columns \(defaults to 1\)
+> * GroupEvery: Number of columns (defaults to 1)
 
 Description
 
-> * Two columns are created?one contains the selected column names and the other contains their values. \(If GroupEvery is set to 1\)
+> * Two columns are created?one contains the selected column names and the other contains their values. (If GroupEvery is set to 1)
 > * If GroupEvery is the same as the number of selected columns, each resulting pair of columns contains the name and values of its respective original column. Therefore, If 10 columns are unpivoted with the GroupEvery argument set to 10, for example, a total of 20 columns are created.
 
 Notes
 
-> * Using the GroupEvery argument set to a factor of the number of columns will soon be supported.
+> *   Using the GroupEvery argument set to a factor of the number of columns will soon be supported.
 >
->   
->   &lt;Where GroupEvery is set to 1&gt;
+>     \
+>     \<Where GroupEvery is set to 1>
 
-![](../../../../.gitbook/assets/image%20%28385%29.png)
+![](<../../../../.gitbook/assets/image (385).png>)
 
-&lt;Where GroupEvery is set to the same as the number of columns&gt;
+\<Where GroupEvery is set to the same as the number of columns>
 
-![](../../../../.gitbook/assets/image%20%28457%29.png)
+![](<../../../../.gitbook/assets/image (457).png>)
 
 ## join
 
-![](../../../../.gitbook/assets/image%20%28381%29.png)
+![](<../../../../.gitbook/assets/image (381).png>)
 
 Unlike other rules, join has a separate popup.
 
-Required arguments \(select in a popup or enter a value\)
+Required arguments (select in a popup or enter a value)
 
 > * Dataset to join: A wrangled dataset in the same dataflow
-> * Columns to join \(toggle\)
+> * Columns to join (toggle)
 > * Join keys: Multiple values may be entered
 > * Join type: Only inner join supported now
 
@@ -405,17 +403,17 @@ Notes
 
 > * The join keys must be included in the columns to join.
 
-![](../../../../.gitbook/assets/image%20%28176%29.png)
+![](<../../../../.gitbook/assets/image (176).png>)
 
 ## union
 
-![](../../../../.gitbook/assets/image%20%28229%29.png)
+![](<../../../../.gitbook/assets/image (229).png>)
 
 
 
 Similar to **join**, union has a separate popup.
 
-Required arguments \(select in a popup\)
+Required arguments (select in a popup)
 
 > * Datasets to union: Multiple selections allowed.
 
@@ -428,11 +426,10 @@ Notes
 
 > * The target datasets must coincide with the dataset that unions them in terms of column name, type, and number of columns.
 
-![](../../../../.gitbook/assets/image%20%2832%29.png)
+![](<../../../../.gitbook/assets/image (32).png>)
 
 ## window
 
-![](../../../../.gitbook/assets/image%20%28356%29.png)
+![](<../../../../.gitbook/assets/image (356).png>)
 
-![](../../../../.gitbook/assets/image%20%28251%29.png)
-
+![](<../../../../.gitbook/assets/image (251).png>)

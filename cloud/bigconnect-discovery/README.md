@@ -1,6 +1,6 @@
 # Discovery
 
-BigConnect Discovery is a 4th-generation OLAP-based business intelligence \(BI\) solution that combines OLAP, visualization, and machine learning technologies for even non-experts to quickly and easily derive higher-level value from data.
+BigConnect Discovery is a 4th-generation OLAP-based business intelligence (BI) solution that combines OLAP, visualization, and machine learning technologies for even non-experts to quickly and easily derive higher-level value from data.
 
 ### 4th-generation BI solution
 
@@ -12,9 +12,9 @@ The mainstream products in the current BI market belong to the 2nd and 3rd gener
 
 ### Built on Big OLAP
 
-BigConnect Discovery combines data of various dimensions for large-sized fact data to produce a single big OLAP cube \(data mart\).
+BigConnect Discovery combines data of various dimensions for large-sized fact data to produce a single big OLAP cube (data mart).
 
-![Big OLAP Cube](../../.gitbook/assets/image%20%28595%29.png)
+![Big OLAP Cube](<../../.gitbook/assets/image (595).png>)
 
 The use of a big OLAP cube offers the following advantages:
 
@@ -30,7 +30,7 @@ The use of a big OLAP cube offers the following advantages:
 
 BigConnect Discovery is an end-to-end solution that supports the entire process of data discovery, from preparation of large-scale data to data visualization and exploration and to advanced analytics. The figure below is a summary of Discovery’s architecture and key features.
 
-![](../../.gitbook/assets/single_solution.png)
+![](../../.gitbook/assets/single\_solution.png)
 
 
 
@@ -38,7 +38,7 @@ BigConnect Discovery is an end-to-end solution that supports the entire process 
 
 BigConnect Discovery performs analytics on its ingested data sources or other external data sources using various analytical tools and outputs analytical results in charts and reports. To utilize this system, you must understand its overall structure shown below:
 
-![](../../.gitbook/assets/image%20%28543%29.png)
+![](<../../.gitbook/assets/image (543).png>)
 
 ### Data Preparation
 
@@ -54,7 +54,7 @@ Data Storage manages data ingested into the Druid engine for analysis and visual
 
 ![](../../.gitbook/assets/datasource.jpg)
 
-![](../../.gitbook/assets/image%20%28441%29.png)
+![](<../../.gitbook/assets/image (441).png>)
 
 ### Data analysis and visualization
 
@@ -72,13 +72,13 @@ Workbook supports working on, sharing, and making a presentation with dashboards
 
 ![BigConnect Discovery Workbook Dashboard](../../.gitbook/assets/dashboard.jpg)
 
-![BigConnect Discovery Workbook Dashboard](../../.gitbook/assets/image%20%2853%29.png)
+![BigConnect Discovery Workbook Dashboard](<../../.gitbook/assets/image (53).png>)
 
-![BigConnect Discovery Workbook Dashboard](../../.gitbook/assets/image%20%28374%29.png)
+![BigConnect Discovery Workbook Dashboard](<../../.gitbook/assets/image (374).png>)
 
 #### Notebook
 
-Notebooks enables advanced analytics based on machine learning by using Jupyter Notebooks. See [Discovery Notebooks]() for more details.
+Notebooks enables advanced analytics based on machine learning by using Jupyter Notebooks. See [Discovery Notebooks](broken-reference) for more details.
 
 #### Workbench
 
@@ -91,6 +91,4 @@ The Workbench enables SQL data analytics. See [Discovery Workbench](discovery-wo
 This function monitors data use based on data query statistics and query logs. See [Discovery Data Monitoring](discovery-data-management/discovery-data-monitoring.md) for more details.
 
 ![BigConnect Discovery Data Monitoring](../../.gitbook/assets/monitoring.jpg)
-
-
 

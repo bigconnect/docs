@@ -11,7 +11,7 @@ This document assumes that you have a working VisualStudio development environme
 
 To install [MinIO .NET package](https://www.nuget.org/packages/Minio/), run the following command in Nuget Package Manager Console.
 
-```text
+```
 PM> Install-Package Minio
 ```
 
@@ -19,12 +19,12 @@ PM> Install-Package Minio
 
 To connect to an OSS Service Instance, you will need to specify the following parameters.
 
-| Parameter | Description |
-| :--- | :--- |
-| endpoint | URL to object storage service. \(eg. `storage-4175974314028753.cloud.bigconnect.io`\) |
-| accessKey | Access key is the user ID that uniquely identifies your account. |
-| secretKey | Secret key is the password to your account. |
-| secure | Enable/Disable HTTPS support. Must be set to True. |
+| Parameter | Description                                                                         |
+| --------- | ----------------------------------------------------------------------------------- |
+| endpoint  | URL to object storage service. (eg. `storage-4175974314028753.cloud.bigconnect.io`) |
+| accessKey | Access key is the user ID that uniquely identifies your account.                    |
+| secretKey | Secret key is the password to your account.                                         |
+| secure    | Enable/Disable HTTPS support. Must be set to True.                                  |
 
 Example:
 
@@ -50,8 +50,8 @@ foreach (Bucket bucket in getListBucketsTask.Result.Buckets)
 
 ### Complete _File Uploader_ Example
 
-This example program connects to an object storage server, creates a bucket and uploads a file to the bucket.  
-To run the following example, click on \[Link\] and start the project
+This example program connects to an object storage server, creates a bucket and uploads a file to the bucket.\
+To run the following example, click on \[Link] and start the project
 
 ```csharp
 using System;
@@ -116,21 +116,22 @@ namespace FileUploader
 **On Windows**
 
 * Clone this repository and open the Minio.Sln in Visual Studio 2017.
-* Enter your credentials and bucket name, object name etc.in Minio.Examples/Program.cs Uncomment the example test cases such as below in Program.cs to run an example.
+* Enter your credentials and bucket name, object name etc.in Minio.Examples/Program.cs\
+  Uncomment the example test cases such as below in Program.cs to run an example.
 
 ```csharp
 //Cases.MakeBucket.Run(minioClient, bucketName).Wait();
 ```
 
-* Run the Minio.Client.Examples project from Visual Studio \#\#\#\# On Linux \(Ubuntu 16.04\)
+* Run the Minio.Client.Examples project from Visual Studio #### On Linux (Ubuntu 16.04)
 
 **Setting up Mono and .NETCore on Linux**
 
 > NOTE: minio-dotnet requires mono 5.0.1 stable release and .NET Core 2.0 SDK to build on Linux.
 
-* Install [.NETCore](https://www.microsoft.com/net/core#linuxredhat) and [Mono](http://www.mono-project.com/download/#download-lin) for your distro. See sample script to install .NETCore and Mono for Ubuntu Xenial [mono\_install.sh](https://github.com/minio/minio-dotnet/blob/master/mono_install.sh)
+* Install [.NETCore](https://www.microsoft.com/net/core#linuxredhat) and [Mono](http://www.mono-project.com/download/#download-lin) for your distro. See sample script to install .NETCore and Mono for Ubuntu Xenial [mono\_install.sh](https://github.com/minio/minio-dotnet/blob/master/mono\_install.sh)
 
-```text
+```
 $ ./mono_install.sh
 ```
 
@@ -138,7 +139,7 @@ $ ./mono_install.sh
 
 * Clone this project.
 
-```text
+```
 $ git clone https://github.com/minio/minio-dotnet && cd minio-dotnet
 ```
 
@@ -155,4 +156,3 @@ $ dotnet run
 ```
 
 Have a look at the [.NET SDK Reference](oss-dotnet-sdk-reference.md) for more information.
-

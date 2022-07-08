@@ -22,7 +22,7 @@ Record header attributes are string values. You can use `record:attribute functi
 
 For example, the following Expression Evaluator adds the file and offset record header attributes created by the Directory origin to the record:
 
-![](../../../.gitbook/assets/image%20%28617%29.png)
+![](<../../../.gitbook/assets/image (617).png>)
 
 ## Internal Attributes
 
@@ -30,294 +30,63 @@ Data Pipelines generates and updates some read-only internal record header attri
 
 The record:attribute function does not allow access to internal record header attributes. The following table describes the internal record header attributes and the functions that you can use to access the data in the pipeline:
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Internal Record Header Attribute</th>
-      <th style="text-align:left">Description</th>
-      <th style="text-align:left">Related Function</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">stageCreator</td>
-      <td style="text-align:left">The ID of the stage that created the record.</td>
-      <td style="text-align:left">record:creator()</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">sourceId</td>
-      <td style="text-align:left">Source of the record. Can include different information based on the origin
-        type.</td>
-      <td style="text-align:left">record:id()</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">stagesPath</td>
-      <td style="text-align:left">List of stages that processed the record in order, by stage name.</td>
-      <td
-      style="text-align:left">record:path()</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">trackingId</td>
-      <td style="text-align:left">The route the record has taken through the pipeline, starting with the
-        sourceId, then listing the stages that processed the record.</td>
-      <td style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">previousTrackingId</td>
-      <td style="text-align:left">The tracking ID of the record before it entered the current stage.</td>
-      <td
-      style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">errorStage</td>
-      <td style="text-align:left">
-        <p>The stage that generated the error.</p>
-        <p>In error records only.</p>
-      </td>
-      <td style="text-align:left">record:errorStage()</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">errorStageLabel</td>
-      <td style="text-align:left">
-        <p>The user-defined name for a stage.</p>
-        <p>In error records only.</p>
-      </td>
-      <td style="text-align:left">record:errorStageLabel()</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">errorCode</td>
-      <td style="text-align:left">
-        <p>The error code.</p>
-        <p>In error records only.</p>
-      </td>
-      <td style="text-align:left">record:errorCode()</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">errorJobId</td>
-      <td style="text-align:left">
-        <p>The ID of the job that started the pipeline.</p>
-        <p>Only in error records from pipelines started by Control Hub jobs.</p>
-      </td>
-      <td style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">errorMessage</td>
-      <td style="text-align:left">
-        <p>The error message.</p>
-        <p>In error records only.</p>
-      </td>
-      <td style="text-align:left">record:errorMessage()</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">errorTimestamp</td>
-      <td style="text-align:left">
-        <p>The time that the error occurred.</p>
-        <p>In error records only.</p>
-      </td>
-      <td style="text-align:left">record:errorTime()</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">errorStackTrace</td>
-      <td style="text-align:left">
-        <p>The stack trace associated with the error.</p>
-        <p>In error records only.</p>
-      </td>
-      <td style="text-align:left">n/a</td>
-    </tr>
-  </tbody>
-</table>
+| Internal Record Header Attribute | Description                                                                                                                         | Related Function         |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| stageCreator                     | The ID of the stage that created the record.                                                                                        | record:creator()         |
+| sourceId                         | Source of the record. Can include different information based on the origin type.                                                   | record:id()              |
+| stagesPath                       | List of stages that processed the record in order, by stage name.                                                                   | record:path()            |
+| trackingId                       | The route the record has taken through the pipeline, starting with the sourceId, then listing the stages that processed the record. | n/a                      |
+| previousTrackingId               | The tracking ID of the record before it entered the current stage.                                                                  | n/a                      |
+| errorStage                       | <p>The stage that generated the error.</p><p>In error records only.</p>                                                             | record:errorStage()      |
+| errorStageLabel                  | <p>The user-defined name for a stage.</p><p>In error records only.</p>                                                              | record:errorStageLabel() |
+| errorCode                        | <p>The error code.</p><p>In error records only.</p>                                                                                 | record:errorCode()       |
+| errorJobId                       | <p>The ID of the job that started the pipeline.</p><p>Only in error records from pipelines started by Control Hub jobs.</p>         | n/a                      |
+| errorMessage                     | <p>The error message.</p><p>In error records only.</p>                                                                              | record:errorMessage()    |
+| errorTimestamp                   | <p>The time that the error occurred.</p><p>In error records only.</p>                                                               | record:errorTime()       |
+| errorStackTrace                  | <p>The stack trace associated with the error.</p><p>In error records only.</p>                                                      | n/a                      |
 
 ## Header Attribute-Generating Stages
 
 The following table lists the stages that generate record header attributes to enable special processing:
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Stage</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">CDC-enabled origins</td>
-      <td style="text-align:left">Include the CRUD operation type in the sdc.operation.type header attribute
-        and can include additional CRUD and CDC information in record header attributes.
-        For more information, see CDC-Enabled Origins.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Origins that process Avro data and the Data Parser processor</td>
-      <td style="text-align:left">Include the Avro schema in an avroSchema record header attribute.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Stages that generate events</td>
-      <td style="text-align:left">Generate record header attributes for event records. For details about
-        event record header attributes, see &quot;Event Records&quot; in the stage
-        documentation.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Amazon S3 origin</td>
-      <td style="text-align:left">Can be configured to include system-defined and user-defined object metadata
-        in record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Amazon SQS Consumer origin</td>
-      <td style="text-align:left">Can be configured to include SQS message attributes in record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Azure Data Lake Storage Gen1 origin</td>
-      <td style="text-align:left">Includes information about the originating file for the record in record
-        header attributes.
-        <br />
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Azure Data Lake Storage Gen2 origin</td>
-      <td style="text-align:left">Includes information about the originating file for the record in record
-        header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Directory origin</td>
-      <td style="text-align:left">Includes information about the originating file for the record in record
-        header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">File Tail origin</td>
-      <td style="text-align:left">Includes information about the originating file for the record in record
-        header attributes.
-        <br />Can be configured to use tag attributes for sets of files.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Google Pub/Sub Subscriber origin</td>
-      <td style="text-align:left">When available, includes user-defined message attributes in record header
-        attributes</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Groovy Scripting origin</td>
-      <td style="text-align:left">Can be configured to create record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Hadoop FS origin</td>
-      <td style="text-align:left">Includes information about the file and offset in record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Hadoop FS Standalone origin</td>
-      <td style="text-align:left">Includes information about the originating file for the record in record
-        header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">HTTP Client origin</td>
-      <td style="text-align:left">Includes response header fields in record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">HTTP Server origin</td>
-      <td style="text-align:left">Includes information about the requested URL and request header fields
-        in record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">JavaScript Scripting origin</td>
-      <td style="text-align:left">Can be configured to create record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">JDBC Multitable Consumer origin</td>
-      <td style="text-align:left">Includes table and data type information in JDBC record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">JDBC Query Consumer origin</td>
-      <td style="text-align:left">Can be configured to include table and data type information in JDBC record
-        header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Jython Scripting origin</td>
-      <td style="text-align:left">Can be configured to create record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Kafka Consumer origin</td>
-      <td style="text-align:left">Includes information about the origins of the record in record header
-        attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Kafka Multitopic Consumer origin</td>
-      <td style="text-align:left">Includes information about the origins of the record in record header
-        attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">MQTT Subscriber origin</td>
-      <td style="text-align:left">Includes information about the origins of the record in record header
-        attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">RabbitMQ Consumer origin</td>
-      <td style="text-align:left">Includes RabbitMQ attributes in record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">REST Service origin</td>
-      <td style="text-align:left">Includes information about the URL and request header fields in record
-        header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Salesforce origin</td>
-      <td style="text-align:left">Includes Salesforce information about the origins of the record in Salesforce
-        header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">SAP HANA Query Consumer origin</td>
-      <td style="text-align:left">Can be configured to include table and data type information in JDBC header
-        attributes.
-        <br />Can be configured to include SAP HANA connection information in SAP HANA
-        header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">SFTP/FTP/FTPS Client origin</td>
-      <td style="text-align:left">Includes information about the originating file for the record in record
-        header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">SQL Server 2019 BDC Multitable Consumer origin</td>
-      <td style="text-align:left">Includes table and data type information in JDBC record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Teradata Consumer origin</td>
-      <td style="text-align:left">Includes table and data type information in JDBC record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Couchbase Lookup processor</td>
-      <td style="text-align:left">Includes information about the state of the looked-up document in a record
-        header attribute.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Expression Evaluator processor</td>
-      <td style="text-align:left">Can be configured to create or update record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Groovy Evaluator processor</td>
-      <td style="text-align:left">Can be configured to create or update record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Hive Metadata processor</td>
-      <td style="text-align:left">
-        <p>Generates record header attributes for the data record. These attributes
-          can be used for record-based writes as part of the Drift Synchronization
-          Solution for Hive.
-          <br />
-        </p>
-        <p>Can be configured to add custom header attributes to the metadata record.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">HTTP Client processor</td>
-      <td style="text-align:left">Includes response header fields in record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">JavaScript Evaluator processor</td>
-      <td style="text-align:left">Can be configured to create or update record header attributes.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Schema Generator processor</td>
-      <td style="text-align:left">Generates schemas and write them to a user-defined record header attribute.</td>
-    </tr>
-  </tbody>
-</table>
+| Stage                                                        | Description                                                                                                                                                                                                                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| CDC-enabled origins                                          | Include the CRUD operation type in the sdc.operation.type header attribute and can include additional CRUD and CDC information in record header attributes. For more information, see CDC-Enabled Origins.                                                   |
+| Origins that process Avro data and the Data Parser processor | Include the Avro schema in an avroSchema record header attribute.                                                                                                                                                                                            |
+| Stages that generate events                                  | Generate record header attributes for event records. For details about event record header attributes, see "Event Records" in the stage documentation.                                                                                                       |
+| Amazon S3 origin                                             | Can be configured to include system-defined and user-defined object metadata in record header attributes.                                                                                                                                                    |
+| Amazon SQS Consumer origin                                   | Can be configured to include SQS message attributes in record header attributes.                                                                                                                                                                             |
+| Azure Data Lake Storage Gen1 origin                          | Includes information about the originating file for the record in record header attributes.&#xD;                                                                                                                                                             |
+| Azure Data Lake Storage Gen2 origin                          | Includes information about the originating file for the record in record header attributes.                                                                                                                                                                  |
+| Directory origin                                             | Includes information about the originating file for the record in record header attributes.                                                                                                                                                                  |
+| File Tail origin                                             | Includes information about the originating file for the record in record header attributes.&#xD; Can be configured to use tag attributes for sets of files.                                                                                                  |
+| Google Pub/Sub Subscriber origin                             | When available, includes user-defined message attributes in record header attributes                                                                                                                                                                         |
+| Groovy Scripting origin                                      | Can be configured to create record header attributes.                                                                                                                                                                                                        |
+| Hadoop FS origin                                             | Includes information about the file and offset in record header attributes.                                                                                                                                                                                  |
+| Hadoop FS Standalone origin                                  | Includes information about the originating file for the record in record header attributes.                                                                                                                                                                  |
+| HTTP Client origin                                           | Includes response header fields in record header attributes.                                                                                                                                                                                                 |
+| HTTP Server origin                                           | Includes information about the requested URL and request header fields in record header attributes.                                                                                                                                                          |
+| JavaScript Scripting origin                                  | Can be configured to create record header attributes.                                                                                                                                                                                                        |
+| JDBC Multitable Consumer origin                              | Includes table and data type information in JDBC record header attributes.                                                                                                                                                                                   |
+| JDBC Query Consumer origin                                   | Can be configured to include table and data type information in JDBC record header attributes.                                                                                                                                                               |
+| Jython Scripting origin                                      | Can be configured to create record header attributes.                                                                                                                                                                                                        |
+| Kafka Consumer origin                                        | Includes information about the origins of the record in record header attributes.                                                                                                                                                                            |
+| Kafka Multitopic Consumer origin                             | Includes information about the origins of the record in record header attributes.                                                                                                                                                                            |
+| MQTT Subscriber origin                                       | Includes information about the origins of the record in record header attributes.                                                                                                                                                                            |
+| RabbitMQ Consumer origin                                     | Includes RabbitMQ attributes in record header attributes.                                                                                                                                                                                                    |
+| REST Service origin                                          | Includes information about the URL and request header fields in record header attributes.                                                                                                                                                                    |
+| Salesforce origin                                            | Includes Salesforce information about the origins of the record in Salesforce header attributes.                                                                                                                                                             |
+| SAP HANA Query Consumer origin                               | Can be configured to include table and data type information in JDBC header attributes.&#xD; Can be configured to include SAP HANA connection information in SAP HANA header attributes.                                                                     |
+| SFTP/FTP/FTPS Client origin                                  | Includes information about the originating file for the record in record header attributes.                                                                                                                                                                  |
+| SQL Server 2019 BDC Multitable Consumer origin               | Includes table and data type information in JDBC record header attributes.                                                                                                                                                                                   |
+| Teradata Consumer origin                                     | Includes table and data type information in JDBC record header attributes.                                                                                                                                                                                   |
+| Couchbase Lookup processor                                   | Includes information about the state of the looked-up document in a record header attribute.                                                                                                                                                                 |
+| Expression Evaluator processor                               | Can be configured to create or update record header attributes.                                                                                                                                                                                              |
+| Groovy Evaluator processor                                   | Can be configured to create or update record header attributes.                                                                                                                                                                                              |
+| Hive Metadata processor                                      | <p>Generates record header attributes for the data record. These attributes can be used for record-based writes as part of the Drift Synchronization Solution for Hive.</p><p>Can be configured to add custom header attributes to the metadata record.</p> |
+| HTTP Client processor                                        | Includes response header fields in record header attributes.                                                                                                                                                                                                 |
+| JavaScript Evaluator processor                               | Can be configured to create or update record header attributes.                                                                                                                                                                                              |
+| Schema Generator processor                                   | Generates schemas and write them to a user-defined record header attribute.                                                                                                                                                                                  |
 
 ## Record Header Attributes for Record-Based Writes
 
@@ -333,13 +102,13 @@ You can use the following record header attributes in destinations:
 
 The targetDirectory record header attribute defines the directory where the record is written. If the directory does not exist, the destination creates the directory. The targetDirectory header attribute replaces the Directory Template property in the destination.
 
-When you use targetDirectory to provide the directory, the time basis configured for the destination is used only for determining whether a record is late. Time basis is not used to determine the output directories to create or to write records to directories. 
+When you use targetDirectory to provide the directory, the time basis configured for the destination is used only for determining whether a record is late. Time basis is not used to determine the output directories to create or to write records to directories.&#x20;
 
 To use the targetDirectory header attribute, on the Output tab, select Directory in Header.
 
-**avroSchema attribute in destinations that write Avro data** 
+**avroSchema attribute in destinations that write Avro data**&#x20;
 
-The avroSchema header attribute defines the Avro schema for the record. When you use this header attribute, you cannot define an Avro schema to use in the destination. 
+The avroSchema header attribute defines the Avro schema for the record. When you use this header attribute, you cannot define an Avro schema to use in the destination.&#x20;
 
 To use the avroSchema header attribute, on the Data Format tab, select the Avro data format, and then for the Avro Schema Location property, select In Record Header.
 
@@ -397,12 +166,11 @@ When using the Expression Evaluator or scripting processor to generate the roll 
 
 To define these record header attributes in the Expression Evaluator, perform the following steps:
 
-1. On the **Expressions** tab of the Expression Evaluator, specify the **Header Attribute** name.  
-   To generate a target directory, use _targetDirectory_.  
-   To generate an Avro schema, use _avroSchema_.
+1.  On the **Expressions** tab of the Expression Evaluator, specify the **Header Attribute** name.\
+    To generate a target directory, use _targetDirectory_.\
+    To generate an Avro schema, use _avroSchema_.
 
-   You can use any name for a roll indicator header attribute.
-
+    You can use any name for a roll indicator header attribute.
 2. For the **Header Attribute** **Expression**, define the expression that evaluates to the information you want the destination to use.
 
 For information about generating record header attributes with scripting processors, see the scripting processor documentation.
@@ -413,7 +181,6 @@ You can use data preview to view the record header attributes associated with a 
 
 For example, the following image shows a record generated by the Directory origin in data preview.
 
-![](../../../.gitbook/assets/image%20%28334%29.png)
+![](<../../../.gitbook/assets/image (334).png>)
 
 The "Record Header" list displays the set of read-only internal attributes in the record at this point of the pipeline. The header attributes under "values" are the attributes created by the Directory origin.
-

@@ -6,7 +6,7 @@ BigConnect Explorer is a webapp and it has specific endpoints that you can use t
 
 There is an REST API browser included in the Web Console that you can explore and play with the different API endpoints. You can find it in the admin console, under the REST API section.
 
-![BigConnect Eplorer REST API](../../../.gitbook/assets/image%20%28695%29.png)
+![BigConnect Eplorer REST API](<../../../.gitbook/assets/image (695).png>)
 
 ## Web Framework
 
@@ -16,12 +16,12 @@ The Explorer has its own minimalistic, lightning-fast web framework. It provides
 
 Web plugins are deployed alongside Explorer inside of the web server and are used to both add custom functionality and override existing components.
 
-The framework provides routing and parameter binding. Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI \(or path\) and a specific HTTP request method \(GET, POST, and so on\). Each route can have one or more handler functions, which are executed when the route is matched.
+The framework provides routing and parameter binding. Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and so on). Each route can have one or more handler functions, which are executed when the route is matched.
 
 Route definition takes the following structure: `app.METHOD (path, handlers)` where:
 
 * `app` in an instance of [com.mware.web.framework.App](https://github.com/bigconnect/bigconnect-explorer/blob/master/web-base/src/main/java/com/mware/web/framework/App.java)
-* METHOD is an [HTTP request method](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods), in lowercase.
+* METHOD is an [HTTP request method](https://en.wikipedia.org/wiki/Hypertext\_Transfer\_Protocol#Request\_methods), in lowercase.
 * `path` is a path on the server
 * `handlers` are a list of classes to be called when the route is matched. Each class must implement the [com.mware.web.framework.Handler](https://github.com/bigconnect/bigconnect-explorer/blob/master/web-base/src/main/java/com/mware/web/framework/Handler.java) or its sub-interfaces, like [com.mware.web.framework.ParameterizedHandler](https://github.com/bigconnect/bigconnect-explorer/blob/master/web-base/src/main/java/com/mware/web/framework/ParameterizedHandler.java)
 
@@ -36,7 +36,7 @@ Handler methods can also have parameters that will be bound automatically to req
 
 Creating a web app plugin can range from creating some JavaScript that can execute inside of Explorer all the way to overriding the current functionality of an endpoint inside Explorer. This means that web app plugins will always have some sort of mix of front-end and back-end components that provide functionality.
 
-To start working with a web plugin, you must implement the interface [com.mware.web.WebAppPlugin](https://github.com/bigconnect/bigconnect-explorer/blob/master/web-base/src/main/java/com/mware/web/WebAppPlugin.java) and register all of your helper files in there. 
+To start working with a web plugin, you must implement the interface [com.mware.web.WebAppPlugin](https://github.com/bigconnect/bigconnect-explorer/blob/master/web-base/src/main/java/com/mware/web/WebAppPlugin.java) and register all of your helper files in there.&#x20;
 
 To ensure that your web plugin is deployed, it needs to be loaded onto the classpath by adding it's fully qualified class name into the `META-INF/services/com.mware.web.WebAppPlugin` file in a jar that is on the classpath.
 
@@ -45,7 +45,7 @@ Web Plugins can be developed using plain JavaScript or React, depending on your 
 * Creating a standard plugin
 * Creating a React plugin
 
-BigConnect Explorer provides a rich set of UI extension points to develop or alter existing functionality, without altering the main code.  
+BigConnect Explorer provides a rich set of UI extension points to develop or alter existing functionality, without altering the main code. &#x20;
 
 ## Extension Points
 
@@ -55,7 +55,7 @@ An extension point is simply a mapping from a string – the namespaced extensio
 
 All registered extension points are viewable in the admin panel, under `UI Extensions`, and in the table of contents in this document.
 
-To register some custom behavior, require the [`public/v1/api`](https://docs.bigconnect.io/~/drafts/-LQEgexO3YP4CDrrELDr/primary/javascript/module-public_v1_api.html) module, and use the [`registry`](https://docs.bigconnect.io/~/drafts/-LQEgexO3YP4CDrrELDr/primary/javascript/module-registry.html) member.
+To register some custom behavior, require the [`public/v1/api`](https://docs.bigconnect.io/\~/drafts/-LQEgexO3YP4CDrrELDr/primary/javascript/module-public\_v1\_api.html) module, and use the [`registry`](https://docs.bigconnect.io/\~/drafts/-LQEgexO3YP4CDrrELDr/primary/javascript/module-registry.html) member.
 
 ```javascript
 require(['public/v1/api'], function(bc) {    var registry = bc.registry;    registry.registerExtension([extension point name], [extension point object])})
@@ -83,9 +83,7 @@ If you call `documentExtensionPoint` before `extensionsForPoint` all the extensi
 
 nvalid extensions are logged as warnings in the browser JavaScript console.
 
-Please see the list of available extension points with descriptions and code examples under the section Extension Point Reference.  
-
-
+Please see the list of available extension points with descriptions and code examples under the section Extension Point Reference.\
 
 
 

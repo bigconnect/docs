@@ -2,17 +2,17 @@
 
 Each workspace has its own unique Dashboard where users can place widgets to get a quick overview of the most interesting things. It is also the first thing a users will see when he will login to BigConnect Explorer:
 
-![Example Social Media Dashboard](../../.gitbook/assets/image%20%28602%29.png)
+![Example Social Media Dashboard](<../../.gitbook/assets/image (602).png>)
 
 
 
-When a new workspace is created, a Dashboard will be created as well with some default widgets. 
+When a new workspace is created, a Dashboard will be created as well with some default widgets.&#x20;
 
-![](../../.gitbook/assets/image%20%28267%29.png)
+![](<../../.gitbook/assets/image (267).png>)
 
-To edit the dashboard layout and place or rearrange widgets, click on the ![](../../.gitbook/assets/image%20%28467%29.png) button. The Dashboard will enter in Edit mode where you can add, remove, reposition and resize widgets.
+To edit the dashboard layout and place or rearrange widgets, click on the <img src="../../.gitbook/assets/image (467).png" alt="" data-size="original"> button. The Dashboard will enter in Edit mode where you can add, remove, reposition and resize widgets.
 
-![](../../.gitbook/assets/image%20%28507%29.png)
+![](<../../.gitbook/assets/image (507).png>)
 
 The following widgets are available:
 
@@ -70,37 +70,36 @@ c.sourceDate = datetime.fromepochmillis(date.parse(row.date, 'ms', 'yyyy-MM-dd H
 
 Now go back to BigConnect Explorer and re-login. Select to the Discover menu item, type **\*** in the search field and filter by the **Social Comment** entity. You will see only the FB posts:
 
-![](../../.gitbook/assets/image%20%28252%29.png)
+![](<../../.gitbook/assets/image (252).png>)
 
 Save the search and give it the name: **FB Posts**
 
-![](../../.gitbook/assets/image%20%28144%29.png)
+![](<../../.gitbook/assets/image (144).png>)
 
 Now go to the **Dashboard** and add a **Saved Search** widget. Click the "**Configure Saved Search…**" link and choose **FB Posts** from the Saved Search drop-down. You will ses the results of our previously saved search:
 
-![](../../.gitbook/assets/image%20%28522%29.png)
+![](<../../.gitbook/assets/image (522).png>)
 
 Now for the fun part. Click on the configuration wheel on the Saved Search widget and click the **Add** link next to Aggregation:
 
-![](../../.gitbook/assets/image%20%28405%29%20%281%29.png)
+![](<../../.gitbook/assets/image (405) (1).png>)
 
 Choose the **Text** property from the **Property to Count** dropdown:
 
-![](../../.gitbook/assets/image%20%28364%29.png)
+![](<../../.gitbook/assets/image (364).png>)
 
 The widget will now show an aggregation of the most frequent used terms in the Text field. Change the visualization to **Tag Cloud** to see things in a word cloud:
 
-![](../../.gitbook/assets/image%20%28562%29.png)
+![](<../../.gitbook/assets/image (562).png>)
 
 {% hint style="info" %}
-You can increase the size of the aggregation by clicking on on the property name \(eg. Text in our case\) and change the value under the property name \(eg. from 10 to 50\). 
+You can increase the size of the aggregation by clicking on on the property name (eg. Text in our case) and change the value under the property name (eg. from 10 to 50).&#x20;
 {% endhint %}
 
 You can perform Count, Histogram and Geo-Coordinate cluster aggregations, depending on the type of property you want to aggregate. You can also sort the results or exclude certain terms from a Count aggregation.
 
 For example, change the property name to **Source Date**,  choose **Histogram** as the type of Aggregation and set the interval to **1 days**:
 
-![](../../.gitbook/assets/image%20%2862%29.png)
+![](<../../.gitbook/assets/image (62).png>)
 
 You will now see the distribution of post dates within the 1 day boundary.
-

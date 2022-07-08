@@ -8,9 +8,9 @@ description: Add decorations to graph nodes
 
 Graph node decorations are additional detail to display around a vertex when displayed in a graph. These decorations are implemented as [Cytoscape](http://js.cytoscape.org/) nodes inside of compound nodes. That allows them to be styled just like vertices using `org.bigconnect.graph.style` extensions.
 
-{% hint style="danger" %} Decorations can have performance impact on the graph.
+\{% hint style="danger" %\} Decorations can have performance impact on the graph.
 
-Once a node displays a decoration, another container node is created that is never removed. Also each decoration is a full cytoscape node. {% endhint %}
+Once a node displays a decoration, another container node is created that is never removed. Also each decoration is a full cytoscape node. \{% endhint %\}
 
 ### Alignment Positions
 
@@ -34,11 +34,11 @@ _**Note:** There is no collision detection on decorations with equal alignments_
 
 Register the plugin script in a web plugin.
 
-```text
+```
 app.registerJavaScript("/com/mware/examples/graph_node_decoration/popover.js", false);
 ```
 
-[GraphNodeDecorationWebAppPlugin.java \(line 17\)](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/java/com/mware/examples/graph_node_decoration/GraphNodeDecorationWebAppPlugin.java#L17)
+[GraphNodeDecorationWebAppPlugin.java (line 17)](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/java/com/mware/examples/graph\_node\_decoration/GraphNodeDecorationWebAppPlugin.java#L17)
 
 ### Register Extension
 
@@ -68,15 +68,15 @@ bc.registry.registerExtension('org.bigconnect.graph.node.decoration', {
 });
 ```
 
-[plugin.js \(lines 34–54\)](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/resources/com/mware/examples/graph_node_decoration/plugin.js#L34-L54)
+[plugin.js (lines 34–54)](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/resources/com/mware/examples/graph\_node\_decoration/plugin.js#L34-L54)
 
 The default graph style-sheet defines `label` as the content of the node.
 
-```text
+```
 content: 'data(label)',
 ```
 
-[styles.js \(line 213\)](https://github.com/mware-solutions/doc-examples/blob/master/main-source-doc/product/graph/styles.js#L213)
+[styles.js (line 213)](https://github.com/mware-solutions/doc-examples/blob/master/main-source-doc/product/graph/styles.js#L213)
 
 Register a style extension to format the decoration. All decorations have the `decoration` class, so append that to the selector to avoid conflicts with node classes.
 
@@ -94,7 +94,7 @@ Register a style extension to format the decoration. All decorations have the `d
 });
 ```
 
-[plugin.js \(lines 70–80\)](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/resources/com/mware/examples/graph_node_decoration/plugin.js#L70-L80)
+[plugin.js (lines 70–80)](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/resources/com/mware/examples/graph\_node\_decoration/plugin.js#L70-L80)
 
 #### Popover Tutorial
 
@@ -110,7 +110,7 @@ app.registerJavaScript("/com/mware/examples/graph_node_decoration/popover.js", f
 app.registerJavaScriptTemplate("/com/mware/examples/graph_node_decoration/template.hbs");
 ```
 
-[GraphNodeDecorationWebAppPlugin.java \(lines 16–18\)](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/java/com/mware/examples/graph_node_decoration/GraphNodeDecorationWebAppPlugin.java#L16-L18)
+[GraphNodeDecorationWebAppPlugin.java (lines 16–18)](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/java/com/mware/examples/graph\_node\_decoration/GraphNodeDecorationWebAppPlugin.java#L16-L18)
 
 **Register Extension**
 
@@ -130,7 +130,7 @@ Register the decoration with an `onClick` handler.
 });
 ```
 
-[plugin.js \(lines 70–80\)](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/resources/com/mware/examples/graph_node_decoration/plugin.js#L70-L80)
+[plugin.js (lines 70–80)](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/resources/com/mware/examples/graph\_node\_decoration/plugin.js#L70-L80)
 
 **Popover Component**
 
@@ -157,7 +157,7 @@ define([
 });
 ```
 
-[popover.js](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/resources/com/mware/examples/graph_node_decoration/popover.js)
+[popover.js](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/resources/com/mware/examples/graph\_node\_decoration/popover.js)
 
 The `withPopover` mixin provides the popover specific handling to attach to the decoration.
 
@@ -173,7 +173,6 @@ Add the template with the necessary markup for the popover.
 </div>
 ```
 
-[template.hbs](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/resources/com/mware/examples/graph_node_decoration/template.hbs)
+[template.hbs](https://github.com/mware-solutions/doc-examples/blob/master/extension-graph-node-decoration/src/main/resources/com/mware/examples/graph\_node\_decoration/template.hbs)
 
 The popover mixin calls `setupWithTemplate` to initialize the popover, so if extra work is needed to be done after the template has rendered, use `after('setupWithTemplate')`. `this.dialog` and `this.popover` are instance variables for the popover and the content.
-

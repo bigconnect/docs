@@ -13,7 +13,7 @@ To upload an object to an OSS bucket in the OSS console, perform the following s
 1. Log on to the [Cloud Console](http://console.cloud.bigconnect.io/).
 2. In the left-side navigation pane, click **Object Storage**.
 3. Click the target bucket.
-4. Click the ![](../../../.gitbook/assets/image%20%28642%29.png) icon in the lower part of the screen and choose the **Upload file** icon
+4. Click the <img src="../../../.gitbook/assets/image (642).png" alt="" data-size="original"> icon in the lower part of the screen and choose the **Upload file** icon
 5. Choose one or more files to upload.
 
 {% hint style="success" %}
@@ -31,4 +31,3 @@ osscli cp myobject.txt bdl/mybucket
 ### Use APIs and SDKs
 
 OSS provides APIs and SDKs that use a variety of programming languages to facilitate secondary development.
-

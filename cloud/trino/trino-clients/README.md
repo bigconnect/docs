@@ -6,7 +6,5 @@ The following clients are available:
 
 * [CLI](trino-cli.md)
 * [JDBC Driver](trino-jdbc-driver.md)
-* [Web SQL Editor]()
-
-
+* [Web SQL Editor](broken-reference)
 

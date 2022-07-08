@@ -8,7 +8,8 @@ To define the flow of data, you design a pipeline in Data Pipelines Studio. A pi
 
 After you provision a Data Pipelines Studio service, you can log in and create your first pipeline:
 
-1. To access Data Pipelines Studio, enter the following URL in the address bar of your browser:    `https://pipelinelab-NNNNNNNNN.cloud.bigconnect.io`where NNNNNNNNN is your Tenant ID.
+1. To access Data Pipelines Studio, enter the following URL in the address bar of your browser:   \
+   `https://pipelinelab-NNNNNNNNN.cloud.bigconnect.io`where NNNNNNNNN is your Tenant ID.
 2. On the **Get Started** page, click **Create New Pipeline**.
 3. In the **New Pipeline** window, enter a name for the pipeline, optionally enter a description, and click **Save**.
 
@@ -16,92 +17,23 @@ The pipeline canvas appears. The Properties panel displays pipeline properties. 
 
 ### Data Pipelines Studio UI
 
-Data Pipelines Studio provides a web-based user interface \(UI\) to configure pipelines, preview data, monitor pipelines, and review snapshots of data.
+Data Pipelines Studio provides a web-based user interface (UI) to configure pipelines, preview data, monitor pipelines, and review snapshots of data.
 
 The UI includes the following general areas and icons:
 
-![](../../.gitbook/assets/image%20%28693%29.png)
+![](<../../.gitbook/assets/image (693).png>)
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">AREA/ICON</th>
-      <th style="text-align:left">NAME</th>
-      <th style="text-align:left">DESCRIPTION</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1</td>
-      <td style="text-align:left">Pipeline canvas</td>
-      <td style="text-align:left">Canvas for configuring, previewing, or monitoring a pipeline.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">2</td>
-      <td style="text-align:left">Properties panel / Preview panel / Monitor panel</td>
-      <td style="text-align:left">
-        <p>When you configure a pipeline, the Properties panel displays the properties
-          of the pipeline or selected stage. You can resize, minimize and maximize
-          the panel.
-          <br />
-        </p>
-        <p>When you preview data, the Preview panel displays the data that enters
-          and exits the selected stage or group of stages. It can also display stage
-          properties and preview configuration.
-          <br />
-        </p>
-        <p>
-          <br />
-        </p>
-        <p>When you monitor a running pipeline, the Monitor panel displays real-time
-          metrics and statistics.
-          <br />
-        </p>
-        <p>
-          <br />
-        </p>
-        <p><b>Note</b>: Some icons and options might not display. The items that
-          display are based on the task that you are performing and roles assigned
-          to your user account.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <img src="../../.gitbook/assets/image (689).png" alt/>
-      </td>
-      <td style="text-align:left">Home icon</td>
-      <td style="text-align:left">Displays a home page with a list of pipelines and their statuses, allowing
-        you to perform pipeline maintenance and navigate to individual pipelines.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <img src="../../.gitbook/assets/image (690).png" alt/>
-      </td>
-      <td style="text-align:left">Notifications icon</td>
-      <td style="text-align:left">Displays notifications.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <img src="../../.gitbook/assets/image (686).png" alt/>
-      </td>
-      <td style="text-align:left">Administration icon</td>
-      <td style="text-align:left">Provides access to Data Pipelines Studio configuration properties, directories,
-        and log.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <img src="../../.gitbook/assets/image (692).png" alt/>
-      </td>
-      <td style="text-align:left">User icon</td>
-      <td style="text-align:left">Displays the active user and the roles assigned to the user. Also allows
-        you to log out of Data Pipelines Studio.</td>
-    </tr>
-  </tbody>
-</table>
+| AREA/ICON                                                                  | NAME                                             | DESCRIPTION                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| -------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1                                                                          | Pipeline canvas                                  | Canvas for configuring, previewing, or monitoring a pipeline.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| 2                                                                          | Properties panel / Preview panel / Monitor panel | <p>When you configure a pipeline, the Properties panel displays the properties of the pipeline or selected stage. You can resize, minimize and maximize the panel.</p><p>When you preview data, the Preview panel displays the data that enters and exits the selected stage or group of stages. It can also display stage properties and preview configuration.</p><p></p><p>When you monitor a running pipeline, the Monitor panel displays real-time metrics and statistics.</p><p></p><p><strong>Note</strong>: Some icons and options might not display. The items that display are based on the task that you are performing and roles assigned to your user account.</p> |
+| <img src="../../.gitbook/assets/image (689).png" alt="" data-size="line">  | Home icon                                        | Displays a home page with a list of pipelines and their statuses, allowing you to perform pipeline maintenance and navigate to individual pipelines.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| <img src="../../.gitbook/assets/image (690).png" alt="" data-size="line">  | Notifications icon                               | Displays notifications.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| <img src="../../.gitbook/assets/image (686).png" alt="" data-size="line">  | Administration icon                              | Provides access to Data Pipelines Studio configuration properties, directories, and log.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| <img src="../../.gitbook/assets/image (692).png" alt="" data-size="line">  | User icon                                        | Displays the active user and the roles assigned to the user. Also allows you to log out of Data Pipelines Studio.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 For information about configuring pipelines, see [Data Pipelines Studio - Edit Mode](pipeline-configuration/datafabric-ui-edit-mode.md).
 
 For information about data preview options, see [Data Pipelines Studio - Preview Mode](data-preview.md).
 
 For information about pipeline monitoring options, see [Data Pipelines Studio - Monitor Mode](pipeline-monitoring.md).
-

@@ -9,89 +9,89 @@ This tutorial will teach you the basics of data preparation and visualisation wi
 
 1.Login to BigConnect Discovery by going to [http://localhost:8180](http://localhost:8180) and use **admin**/**admin** for username and password. You will be taken to the _Admin Workspace_.
 
-![](../../.gitbook/assets/image%20%28476%29%20%281%29.png)
+![](<../../.gitbook/assets/image (476) (1).png>)
 
 2.Open the menu and choose **MANAGEMENT / Data Preparation / Datasets.** On this page, click on the **Generate new dataset** link.
 
-![](../../.gitbook/assets/image%20%28194%29.png)
+![](<../../.gitbook/assets/image (194).png>)
 
 3.Choose **My file** to upload your data
 
-![](../../.gitbook/assets/image%20%28556%29.png)
+![](<../../.gitbook/assets/image (556).png>)
 
-4. Download the sample sales.csv dataset from [https://github.com/bigconnect/demos/raw/master/discovery/sales.csv](https://github.com/bigconnect/demos/raw/master/discovery/sales.csv) , upload it and choose Next. Leave the other options as default.
+4\. Download the sample sales.csv dataset from [https://github.com/bigconnect/demos/raw/master/discovery/sales.csv](https://github.com/bigconnect/demos/raw/master/discovery/sales.csv) , upload it and choose Next. Leave the other options as default.
 
-![](../../.gitbook/assets/image%20%28169%29.png)
+![](<../../.gitbook/assets/image (169).png>)
 
-5. Review the dataset and choose **Next** to continue.
+5\. Review the dataset and choose **Next** to continue.
 
-![](../../.gitbook/assets/image%20%2888%29.png)
+![](<../../.gitbook/assets/image (88).png>)
 
-6. On the next screen, accept the defaults and click **Done**.
+6\. On the next screen, accept the defaults and click **Done**.
 
-![](../../.gitbook/assets/image%20%28406%29.png)
+![](<../../.gitbook/assets/image (406).png>)
 
-7. After import, a new Data Preparation Flow will be created and you will be taken to the flow screen.
+7\. After import, a new Data Preparation Flow will be created and you will be taken to the flow screen.
 
-![](../../.gitbook/assets/image%20%28103%29.png)
+![](<../../.gitbook/assets/image (103).png>)
 
-8. Let's do some changes to the dataset:
+8\. Let's do some changes to the dataset:
 
 8.1 Change the date format for OrderDate to yyyy-MM-dd. Click the three dots icon next to the **OrderDate** column and choose **Alter / Set Format**:
 
-![](../../.gitbook/assets/image%20%28641%29.png)
+![](<../../.gitbook/assets/image (641).png>)
 
 8.2 Set **yyyy-MM-dd** as the format in the bottom pane and click **Add**.
 
-![](../../.gitbook/assets/image%20%28151%29.png)
+![](<../../.gitbook/assets/image (151).png>)
 
 8.3 Delete the **Country**, **orderprofitable** and **SalesAboveTarget** columns. For each one of the, click on the the three dots icon next to the column name and choose **Drop**.
 
-![](../../.gitbook/assets/image%20%28154%29.png)
+![](<../../.gitbook/assets/image (154).png>)
 
 8.4 Set the date format for **ShipDate** to **yyyy-MM-dd**. Follow the same instructions in step 8.1 to do so.
 
-8.5 Combine the **latitude** and **longitude** columns in a new column of type Point. The Point datatype expects data to be in WKT format, eg. _POINT\(lat lon\)._ Without selecting a colum, choose **derive** from the **Add rule** section in the bottom pane:
+8.5 Combine the **latitude** and **longitude** columns in a new column of type Point. The Point datatype expects data to be in WKT format, eg. _POINT(lat lon)._ Without selecting a colum, choose **derive** from the **Add rule** section in the bottom pane:
 
-```text
+```
 concat('POINT (', `longitude`, ' ', `latitude`, ')')
 ```
 
 Enter **Geolocation** as the new column name and click **Add**.
 
-![](../../.gitbook/assets/image%20%28249%29.png)
+![](<../../.gitbook/assets/image (249).png>)
 
 The new column is added to the dataset:
 
-![](../../.gitbook/assets/image%20%28572%29.png)
+![](<../../.gitbook/assets/image (572).png>)
 
-9. Let's generate a new dataset based on the rules we set. Click on the **Snapshot** button in the top pane. 
+9\. Let's generate a new dataset based on the rules we set. Click on the **Snapshot** button in the top pane.&#x20;
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+![](<../../.gitbook/assets/image (10).png>)
 
-10. Leave all options to their defaults and click **Done**.
+10\. Leave all options to their defaults and click **Done**.
 
-![](../../.gitbook/assets/image%20%28115%29.png)
+![](<../../.gitbook/assets/image (115).png>)
 
-11. The snapshot will be created and will be displayed in the **SNAPSHOT** section of the Flow. 
+11\. The snapshot will be created and will be displayed in the **SNAPSHOT** section of the Flow.&#x20;
 
-![](../../.gitbook/assets/image%20%28165%29.png)
+![](<../../.gitbook/assets/image (165).png>)
 
-12. Click on the created snapshot to see rule execution results:
+12\. Click on the created snapshot to see rule execution results:
 
-![](../../.gitbook/assets/image%20%28274%29.png)
+![](<../../.gitbook/assets/image (274).png>)
 
-Everything went smooth, we don't have any errors. 
+Everything went smooth, we don't have any errors.&#x20;
 
-13. Now let's create a Datasource from this snapshot. Click on the **Create datasource** button and you will be taken to the Datasource Schema configuration screen.
+13\. Now let's create a Datasource from this snapshot. Click on the **Create datasource** button and you will be taken to the Datasource Schema configuration screen.
 
-![](../../.gitbook/assets/image%20%28172%29.png)
+![](<../../.gitbook/assets/image (172).png>)
 
-14. BigConnect Discovery makes some guesses as to how the columns will be mapped, but we need to review them. Let's make the following changes:
+14\. BigConnect Discovery makes some guesses as to how the columns will be mapped, but we need to review them. Let's make the following changes:
 
 14.1 Click on the **PostalCode** column and change its **Role** to **Dimension** and **Type** to **String**.
 
-![](../../.gitbook/assets/image%20%2893%29.png)
+![](<../../.gitbook/assets/image (93).png>)
 
 14.2 Click on the **latitude** column and change its **Role** to **Dimension** and **Type** to **Latitude**
 
@@ -99,23 +99,23 @@ Everything went smooth, we don't have any errors.
 
 14.4 Click on the **Geolocation** column and chang its Type to **Point**.
 
-![](../../.gitbook/assets/image%20%28570%29.png)
+![](<../../.gitbook/assets/image (570).png>)
 
 14.3 Make sure that **OrderDate** is selected as the **Time-Type column** and hit **Next**.
 
-![](../../.gitbook/assets/image%20%28298%29.png)
+![](<../../.gitbook/assets/image (298).png>)
 
-15. On the next screen, choose **Day** for **Query Granularit**y and **Month** for **Segment Granularity**. Choose **false** for **Rollup** if enabled and click **Next**.
+15\. On the next screen, choose **Day** for **Query Granularit**y and **Month** for **Segment Granularity**. Choose **false** for **Rollup** if enabled and click **Next**.
 
-![](../../.gitbook/assets/image%20%28235%29.png)
+![](<../../.gitbook/assets/image (235).png>)
 
-16. On the next screen, enter **salesdata** as the Datasource **Name** and hit **Done**.
+16\. On the next screen, enter **salesdata** as the Datasource **Name** and hit **Done**.
 
-![](../../.gitbook/assets/image%20%28283%29.png)
+![](<../../.gitbook/assets/image (283).png>)
 
-17. The system will start to ingest the data in the Druid engine and the progress is reported. After finishing, you will see something like this:
+17\. The system will start to ingest the data in the Druid engine and the progress is reported. After finishing, you will see something like this:
 
-![](../../.gitbook/assets/image%20%282%29.png)
+![](<../../.gitbook/assets/image (2).png>)
 
 ## Visualizing data
 
@@ -123,117 +123,115 @@ Now that we have ingested the prepared data into our Druid engine, it's time to 
 
 1.Open the menu and choose **WORKSPACE / Admin Workspace** to go to our personal workspace. On this screen click on **Workbook.**
 
-![](../../.gitbook/assets/image%20%28623%29.png)
+![](<../../.gitbook/assets/image (623).png>)
 
-2.Give a name to our new Workbook \(eg. **Demo**\) and click on **Done**.
+2.Give a name to our new Workbook (eg. **Demo**) and click on **Done**.
 
-![](../../.gitbook/assets/image%20%28141%29.png)
+![](<../../.gitbook/assets/image (141).png>)
 
-3. Now let's add our newly created datasource to the Workbook. Click on the **Add datasource** baloon, choose **salesdata** and hit **Done**.
+3\. Now let's add our newly created datasource to the Workbook. Click on the **Add datasource** baloon, choose **salesdata** and hit **Done**.
 
-![](../../.gitbook/assets/image%20%28109%29.png)
+![](<../../.gitbook/assets/image (109).png>)
 
-4. Click **Next** to move to the next screen. Enter **Sales Dashboard** as the Name for our new dashboard and click **Done** to finally open our new Workbook and Sales Dashboard.
+4\. Click **Next** to move to the next screen. Enter **Sales Dashboard** as the Name for our new dashboard and click **Done** to finally open our new Workbook and Sales Dashboard.
 
-![](../../.gitbook/assets/image%20%28202%29.png)
+![](<../../.gitbook/assets/image (202).png>)
 
-5. Now let's add some charts. Click on the **Chart** dropdown button and select **Chart**.
+5\. Now let's add some charts. Click on the **Chart** dropdown button and select **Chart**.
 
-![](../../.gitbook/assets/image%20%28428%29.png)
+![](<../../.gitbook/assets/image (428).png>)
 
-6. Choose **Pie Chart**. Click on the **Sub\_Category** Dimension and **Sales** Measure from the left pane to add them to our chart.
+6\. Choose **Pie Chart**. Click on the **Sub\_Category** Dimension and **Sales** Measure from the left pane to add them to our chart.
 
 ![](../../.gitbook/assets/image.png)
 
-7. Click on the color palette and choose the blue color scheme for our pie chart:
+7\. Click on the color palette and choose the blue color scheme for our pie chart:
 
-![](../../.gitbook/assets/image%20%28300%29.png)
+![](<../../.gitbook/assets/image (300).png>)
 
-8. Now let's add some labels to our chart. Click on the Data Label settings option, enable **Show Data Label**, select **Series Name** and **Series Percent** and enable **Use Outside Label:**
+8\. Now let's add some labels to our chart. Click on the Data Label settings option, enable **Show Data Label**, select **Series Name** and **Series Percent** and enable **Use Outside Label:**
 
-![](../../.gitbook/assets/image%20%2829%29.png)
+![](<../../.gitbook/assets/image (29).png>)
 
-9. Finally, click on the Common Settings button, change the **Chart Type** to **Donut** and toggle the chart **Legend**:
+9\. Finally, click on the Common Settings button, change the **Chart Type** to **Donut** and toggle the chart **Legend**:
 
-![](../../.gitbook/assets/image%20%28400%29.png)
+![](<../../.gitbook/assets/image (400).png>)
 
-10. **Save** the chart and the system will place it automatically on the Dashboard.
+10\. **Save** the chart and the system will place it automatically on the Dashboard.
 
-![](../../.gitbook/assets/image%20%28182%29.png)
+![](<../../.gitbook/assets/image (182).png>)
 
-11. Now let's add a new chart. Click on the plus icon next to the Chart section in the right pane. 
+11\. Now let's add a new chart. Click on the plus icon next to the Chart section in the right pane.&#x20;
 
-![](../../.gitbook/assets/image%20%28402%29.png)
+![](<../../.gitbook/assets/image (402).png>)
 
-12. Click on the **OrderDate** dimension, **Sales** and **Profit** measures and select **Line Chart** as the type of chart to be created.
+12\. Click on the **OrderDate** dimension, **Sales** and **Profit** measures and select **Line Chart** as the type of chart to be created.
 
-![](../../.gitbook/assets/image%20%2848%29.png)
+![](<../../.gitbook/assets/image (48).png>)
 
-13. Change the aggregation type for the **Sales** and **Profit** measures to **AVG**:
+13\. Change the aggregation type for the **Sales** and **Profit** measures to **AVG**:
 
-![](../../.gitbook/assets/image%20%281%29.png)
+![](<../../.gitbook/assets/image (1).png>)
 
-14. Change the **Granularity** for **OrderDate** to **Month**:
+14\. Change the **Granularity** for **OrderDate** to **Month**:
 
-![](../../.gitbook/assets/image%20%28105%29.png)
+![](<../../.gitbook/assets/image (105).png>)
 
-15. Now let's add data labels to our line chart. Click on the Data Label settings option, enable **Show Data Label**, select **Series Value** and choose Above for **Position:**
+15\. Now let's add data labels to our line chart. Click on the Data Label settings option, enable **Show Data Label**, select **Series Value** and choose Above for **Position:**
 
-![](../../.gitbook/assets/image%20%28347%29.png)
+![](<../../.gitbook/assets/image (347).png>)
 
-16. Click on **Save** and drag the new chart below the first pie chart.
+16\. Click on **Save** and drag the new chart below the first pie chart.
 
-![](../../.gitbook/assets/image%20%28237%29.png)
+![](<../../.gitbook/assets/image (237).png>)
 
-17. Now let's add another one. Click on the **plus** icon next to the **Chart** section title. Select **Text Table** as the chart type.
+17\. Now let's add another one. Click on the **plus** icon next to the **Chart** section title. Select **Text Table** as the chart type.
 
-18. Drag the **City** column to the second dimension slot and the **Sales** column to the measure slot:
+18\. Drag the **City** column to the second dimension slot and the **Sales** column to the measure slot:
 
-![](../../.gitbook/assets/image%20%28581%29.png)
+![](<../../.gitbook/assets/image (581).png>)
 
-19. Change the order of **Sales** items to **Descending**:
+19\. Change the order of **Sales** items to **Descending**:
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](<../../.gitbook/assets/image (7).png>)
 
-20. Let's format our numbers now to look more friendly. Click on the Number Format button, change **Format** to **Currency** and choose **USD** as the currency. Select **Automation** for **Number Abbreviations**.
+20\. Let's format our numbers now to look more friendly. Click on the Number Format button, change **Format** to **Currency** and choose **USD** as the currency. Select **Automation** for **Number Abbreviations**.
 
-![](../../.gitbook/assets/image%20%28513%29.png)
+![](<../../.gitbook/assets/image (513).png>)
 
-21. Let's also color the numbers based on their highest value. Click on the Color Setting button and choose **Measure** from the dropdown. Click on the color selector and choose the **red scheme** from the **9 steps** category.
+21\. Let's also color the numbers based on their highest value. Click on the Color Setting button and choose **Measure** from the dropdown. Click on the color selector and choose the **red scheme** from the **9 steps** category.
 
-![](../../.gitbook/assets/image%20%28296%29.png)
+![](<../../.gitbook/assets/image (296).png>)
 
-22. Click on the Common Setting icon and set **Color Style** to background:
+22\. Click on the Common Setting icon and set **Color Style** to background:
 
-![](../../.gitbook/assets/image%20%28310%29.png)
+![](<../../.gitbook/assets/image (310).png>)
 
-24. Finally, **Save** the chart and drag it on the right side of the dashboard.
+24\. Finally, **Save** the chart and drag it on the right side of the dashboard.
 
-![](../../.gitbook/assets/image%20%28520%29.png)
+![](<../../.gitbook/assets/image (520).png>)
 
-25. Click on the **Done** button on the top ribbon to save our dashboard.
+25\. Click on the **Done** button on the top ribbon to save our dashboard.
 
-![](../../.gitbook/assets/image%20%28392%29.png)
+![](<../../.gitbook/assets/image (392).png>)
 
 
 
 {% hint style="info" %}
-While viewing a dashboard, you can drill-down into various items by clicking on them into each widget. 
+While viewing a dashboard, you can drill-down into various items by clicking on them into each widget.&#x20;
 
 For example, to see what happened in New York City, click on the New York City row in the right table widget and the dashboard will refresh to show only information related to New York City.
 {% endhint %}
 
-26. Now let's create a new dashboard with the **salesdata** datasource and name it "**Sales Geography**". Add a new chart to the dashboard and choose **Map View** for the chart type. Add the **Geolocation** dimension and **Sales** measure to the chart:
+26\. Now let's create a new dashboard with the **salesdata** datasource and name it "**Sales Geography**". Add a new chart to the dashboard and choose **Map View** for the chart type. Add the **Geolocation** dimension and **Sales** measure to the chart:
 
-![](../../.gitbook/assets/image%20%28565%29.png)
+![](<../../.gitbook/assets/image (565).png>)
 
-27. Click on the Layer Settings button and change the **Layer Type** to **Heatmap, Hexagon** or **Cluster** to see the different type of spatial aggregations.
+27\. Click on the Layer Settings button and change the **Layer Type** to **Heatmap, Hexagon** or **Cluster** to see the different type of spatial aggregations.
 
-![](../../.gitbook/assets/image%20%28204%29.png)
+![](<../../.gitbook/assets/image (204).png>)
 
-28.  Thank you for your patience and keep playing around to discovery other BigConnect Discovery features like the Workbench, Notebooks, Data Catalogue, Collaboration features and more.
-
-
+28\.  Thank you for your patience and keep playing around to discovery other BigConnect Discovery features like the Workbench, Notebooks, Data Catalogue, Collaboration features and more.
 
 
 

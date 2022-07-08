@@ -8,9 +8,9 @@ description: Replace the element inspector text section
 
 Replace the default text collapsible section content in the Inspector.
 
-{% hint style="warning" %} The console will show a warning if multiple extensions are found for a given vertex, name, and key. The extension used is non-deterministic. {% endhint %}
+\{% hint style="warning" %\} The console will show a warning if multiple extensions are found for a given vertex, name, and key. The extension used is non-deterministic. \{% endhint %\}
 
-[![](https://github.com/mware-solutions/bigconnect-docs/raw/master/.gitbook/assets/image%20%281%29.png)](https://github.com/mware-solutions/bigconnect-docs/blob/master/.gitbook/assets/image%20%281%29.png)
+[![](https://github.com/mware-solutions/bigconnect-docs/raw/master/.gitbook/assets/image%20\(1\).png)](https://github.com/mware-solutions/bigconnect-docs/blob/master/.gitbook/assets/image%20\(1\).png)
 
 ### Web Plugin
 
@@ -22,7 +22,7 @@ app.registerJavaScriptComponent("/com/mware/examples/detail_text/Example.jsx");
 app.registerResourceBundle("/com/mware/examples/detail_text/messages.properties");
 ```
 
-[DetailTextWebAppPlugin.java \(lines 16–18\)](https://github.com/mware-solutions/doc-examples/blob/master/extension-detail-text/src/main/java/com/mware/examples/detail_text/DetailTextWebAppPlugin.java#L16-L18)
+[DetailTextWebAppPlugin.java (lines 16–18)](https://github.com/mware-solutions/doc-examples/blob/master/extension-detail-text/src/main/java/com/mware/examples/detail\_text/DetailTextWebAppPlugin.java#L16-L18)
 
 ### Register Extension
 
@@ -37,7 +37,7 @@ bc.registry.registerExtension('org.bigconnect.detail.text', {
 });
 ```
 
-[plugin.js \(lines 3–8\)](https://github.com/mware-solutions/doc-examples/blob/master/extension-detail-text/src/main/resources/com/mware/examples/detail_text/plugin.js#L3-L8)
+[plugin.js (lines 3–8)](https://github.com/mware-solutions/doc-examples/blob/master/extension-detail-text/src/main/resources/com/mware/examples/detail\_text/plugin.js#L3-L8)
 
 ### The JS Component
 
@@ -57,5 +57,4 @@ render() {
 }
 ```
 
-[Example.jsx \(lines 7–17\)](https://github.com/mware-solutions/doc-examples/blob/master/extension-detail-text/src/main/resources/com/mware/examples/detail_text/Example.jsx#L7-L17)
-
+[Example.jsx (lines 7–17)](https://github.com/mware-solutions/doc-examples/blob/master/extension-detail-text/src/main/resources/com/mware/examples/detail\_text/Example.jsx#L7-L17)
