@@ -1,0 +1,23 @@
+# Targeted Vocabularies
+
+You can decide which vocabularies can be applied to an asset type and which vocabularies are required for an asset type with Targeted Vocabularies. To configure these settings, go to the Categories application in Site Administration and select a vocabulary’s _Actions_ → _Edit_ button. Select the _Associated Asset Types_ tab to reveal a dialog box like the one below.
+
+![Figure 1: You can target vocabularies by checking the Allow Multiple Categories selector and then selecting the Asset Types.](https://liferay-support.zendesk.com/hc/article\_attachments/360030160311/targeted-vocabularies.png)
+
+The default value for _Associated Asset Types_ is _All Asset Types_. You can fine tune your choices by using the _+_ and _-_ buttons, which narrows the scope of the vocabulary to specific assets. In the screenshot above, notice that the vocabulary is configured to be available for Web Content articles and Blog entries, but it is not required. It is mandatory, however, for Bookmark entries.
+
+### Single and Multi-valued Vocabularies <a href="#single-and-multi-valued-vocabularies" id="single-and-multi-valued-vocabularies"></a>
+
+You can also decide if users can choose one or more categories from the same vocabulary to apply to an asset. If a vocabulary is single-valued you can only choose one. If it allows more, you can choose several categories from the vocabulary to apply to an asset.
+
+![Figure 2: Multi-valued vocabularies allow multiple categories from the vocabulary to be applied to an asset. Single-valued vocabularies only allow one category from the vocabulary to be applied. Here, the Dining and Nightlife categories are selected to be applied but the Scenic Adventures category is not.](https://liferay-support.zendesk.com/hc/article\_attachments/360030191112/multi-valued-vocabularies.png)
+
+You can configure the single-valued or multi-valued status of a vocabulary through the Categories application. Edit a vocabulary and deselect the _Allow Multiple Categories_ selector to create a single-valued vocabulary. Use the default option to create a multi-valued vocabulary.
+
+### Separated Entries <a href="#separated-entries" id="separated-entries"></a>
+
+A third feature of vocabularies and categories is that every vocabulary has its own separated entry. These entries appear in the Categorization section of the form for editing an asset, and they allow users to easily select appropriate categories for that asset.
+
+![Figure 3: Vocabularies have their own entries, making it easy to select available categories.](https://liferay-support.zendesk.com/hc/article\_attachments/360030191152/separated-entries.png)
+
+It’s important to use tags and categories with all your content, so that content is easier for users to find.
