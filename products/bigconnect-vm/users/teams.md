@@ -18,4 +18,4 @@ When you're ready, click **Create team**.
 
 From the menu select **Users** then select **Teams**.  Select the team you want to add users to then click **Add** next to the user.
 
-![](<../../../.gitbook/assets/image (720).png>)
+![](<../../../.gitbook/assets/image (722).png>)

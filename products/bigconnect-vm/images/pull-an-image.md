@@ -12,7 +12,7 @@ This method lets you pull images from Docker Hub or from another registry that y
 
 From the menu select **Images**. Select the registry to use then enter the name of the image. On a multi-node environment, select the node to deploy to.
 
-![](<../../../.gitbook/assets/image (770).png>)
+![](<../../../.gitbook/assets/image (772).png>)
 
 When you're ready, click **Pull the image**.
 
@@ -22,6 +22,6 @@ Using advanced mode, you can define a custom registry URL, port and image. This 
 
 From the menu select **Images** then select **Advanced mode**. Next, enter the registry, port and image in the **Image** box. On a multi-node environment, select the node to deploy to.
 
-![](<../../../.gitbook/assets/image (773).png>)
+![](<../../../.gitbook/assets/image (775).png>)
 
 When you're ready, click **Pull the image**.

@@ -6,7 +6,7 @@ Give access to individual users then manage them as their needs change over time
 
 From the menu select **Users**.  Enter a username and a strong password (and confirm it). You can also set whether this user is an Administrator as well as add the user to any teams you have created.&#x20;
 
-![](<../../../.gitbook/assets/image (772).png>)
+![](<../../../.gitbook/assets/image (774).png>)
 
 Once you're ready, click **Create user**.
 
@@ -14,13 +14,13 @@ Once you're ready, click **Create user**.
 
 From the menu select **Users** then select the user you want to promote to administrator. Toggle **Administrator** on then click **Save**.
 
-![](<../../../.gitbook/assets/image (726).png>)
+![](<../../../.gitbook/assets/image (728).png>)
 
 ## Reset a user's password
 
 From the menu select **Users** then select the user whose password you want to reset. Enter a new strong password, re-enter the password to confirm it then click **Update password**.
 
-![](<../../../.gitbook/assets/image (736).png>)
+![](<../../../.gitbook/assets/image (738).png>)
 
 ## Authentication
 
@@ -28,9 +28,9 @@ BigConnect VM provides its own internal authentication mechanism, encrypting use
 
 When using internal authentication, an administrator can set the minimum length for users' passwords. The default is 12 characters, but this can be adjusted using the slider. Any users with passwords that don't meet the requirements will be asked to update their passwords when they next log in.
 
-![](<../../../.gitbook/assets/image (750).png>)
+![](<../../../.gitbook/assets/image (752).png>)
 
-### Authenticate via LDAP
+### LDAP
 
 BigConnect VM can be configured to accept Lightweight Directory Access Protocol (LDAP) authentication if your organization has implemented LDAP authentication. When users attempt to log into BigConnect VM, the application will authenticate them against your LDAP directory. If authentication is successful, the user is allowed to log into BigConnect VM.
 
@@ -44,19 +44,19 @@ Log into Portainer as an administrator. From the menu select **Settings**, selec
 
 Enabling this setting automatically creates users within BigConnect VM once they are successfully authenticated by LDAP. If you do not enable this, you must manually create users with the same username as the corresponding LDAP directory.
 
-![](<../../../.gitbook/assets/image (754).png>)
+![](<../../../.gitbook/assets/image (756).png>)
 
 #### Server Type
 
 Here you can select a custom configuration or a preconfigured OpenLDAP template.
 
-![](<../../../.gitbook/assets/image (729).png>)
+![](<../../../.gitbook/assets/image (731).png>)
 
 #### LDAP configuration
 
 Enter the IP address/FQDN and port number of your LDAP server. Opt to either connect anonymously (your LDAP server must support this) or enter a user account that has READ access to the directory. Click **Test connectivity** to validate that you can connect.
 
-![](<../../../.gitbook/assets/image (761).png>)
+![](<../../../.gitbook/assets/image (763).png>)
 
 If you want to add additional LDAP servers to provide for authentication fallback, click **Add additional server** and fill in the server details.
 
@@ -64,7 +64,7 @@ If you want to add additional LDAP servers to provide for authentication fallbac
 
 Configure the remaining LDAP settings, using the table below as a guide:
 
-![](<../../../.gitbook/assets/image (751).png>)
+![](<../../../.gitbook/assets/image (753).png>)
 
 #### User-search configurations
 
@@ -94,7 +94,7 @@ Enter filter criteria for the results returned from LDAP to BigConnect VM. For e
 
 In the example below, the domain `portainer.local` has an OU called `Groups` and within that OU is a group called `PortainerDevUsers`. This search filter will only allow users who are members of the `PortainerDevUsers` LDAP group to log into BigConnect VM.
 
-![](<../../../.gitbook/assets/image (760).png>)
+![](<../../../.gitbook/assets/image (762).png>)
 
 As an optional step, click **Add user search configuration** to define additional user-search configurations.
 
@@ -112,7 +112,7 @@ Enter either:
 
 If you have a large number of groups in your domain, narrow the scope Portainer searches on by using OUs.
 
-![](<../../../.gitbook/assets/image (776).png>)
+![](<../../../.gitbook/assets/image (778).png>)
 
 **Group Membership Attribute**
 
@@ -129,3 +129,24 @@ If you want to filter the list of groups to return only those that contain the s
 ![](<../../../.gitbook/assets/image (711).png>)
 
 As an optional step, click **Add group search configuration** to define additional group-search configurations.
+
+### OAuth
+
+#### Configuring OAuth authentication in Portainer
+
+From the menu select **Settings** then select **Authentication**. Under the **Authentication method** section click **OAuth**.
+
+In the next screen, enter the credentials provided by your OAuth provider, using the table below as a guide.
+
+![](<../../../.gitbook/assets/image (715).png>)
+
+If you toggle **Automatic team membership** on, you can choose to automatically add OAuth users to certain Portainer teams based on the **Claim name**. Claim names will be matched with teams or you can manually link a claim name (using regex) with Portainer teams under the **Statically assigned teams** option. You can also define a **Default team** for users who don't belong to any other team.
+
+In addition, you can enable the automatic assignment of admin rights to specified groups if desired.
+
+![](<../../../.gitbook/assets/image (719).png>)
+
+#### OAuth providers
+
+BigConnect VM provides pre-configured OAuth provider options or you can set up your own custom OAuth provider. Each of the pre-configured providers can have their configuration overridden if you need to make changes to the BigConnect VM defaults.
+

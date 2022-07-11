@@ -12,4 +12,4 @@ You cannot remove volumes attached to a container. If you want to do this, first
 
 When the confirmation message appears, click **Remove**.
 
-![](<../../../.gitbook/assets/image (765).png>)
+![](<../../../.gitbook/assets/image (767).png>)

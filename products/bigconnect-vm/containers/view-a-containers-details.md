@@ -2,7 +2,7 @@
 
 From the menu select **Containers**, then select the container you want to view. Here you can view the container's status and details, including port configurations, environment variables, labels, attached volumes and networks, and more. You also have a number of actions available, including starting, stopping and removing the container.
 
-![](<../../../.gitbook/assets/image (734).png>)
+![](<../../../.gitbook/assets/image (736).png>)
 
 You can also toggle the container webhook, view the container logs, inspect the container's configuration, view container stats, access the console, and (if the container is running in interactive mode) attach to the running container.
 
@@ -10,4 +10,4 @@ You can also toggle the container webhook, view the container logs, inspect the 
 
 You can create an image from a deployed container to use when creating other containers.
 
-![](<../../../.gitbook/assets/image (721).png>)
+![](<../../../.gitbook/assets/image (723).png>)

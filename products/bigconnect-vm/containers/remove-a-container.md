@@ -4,4 +4,4 @@ From the menu select **Containers**, tick the checkbox next to the container you
 
 When the confirmation message appears, opt whether or not to automatically remove non-persistent volumes then click **Remove**.
 
-![](<../../../.gitbook/assets/image (747).png>)
+![](<../../../.gitbook/assets/image (749).png>)
