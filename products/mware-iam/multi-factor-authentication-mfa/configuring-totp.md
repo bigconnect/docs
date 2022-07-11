@@ -4,7 +4,7 @@ The TOTP authenticator allows you to authenticate a user using **Time-Based One 
 
 TOTP is an **algorithm-generated temporary passcode** that is used for strong authentication. The algorithm that generates each passcode uses the current time of day as one of its factors, ensuring that each password is unique.
 
-### Configuring the service provider[¶](https://is.docs.wso2.com/en/latest/learn/configuring-totp/#configuring-the-service-provider) <a href="#configuring-the-service-provider" id="configuring-the-service-provider"></a>
+### Configuring the service provider <a href="#configuring-the-service-provider" id="configuring-the-service-provider"></a>
 
 The next step is to configure the service provider.
 
@@ -13,7 +13,7 @@ The next step is to configure the service provider.
 3. To create the first authentication step:
    1. Click **Add Authentication Step**.
    2. Click **Add Authenticator** that is under **Local Authenticators** of Step 1 to add the `basic` authentication as the first step.\
-      Adding basic authentication as a first step ensures that the first step of authentication will be done using the user's credentials that are configured with the WSO2 Identity Server
+      Adding basic authentication as a first step ensures that the first step of authentication will be done using the user's credentials that are configured with the IAM Server
 4. To create the second authentication step:
    1. Click **Add Authentication Step**.
    2. Click **Add Authenticator** that is under **Local Authenticators** of Step 2 to add the `totp` from the drop down as the second step.\
