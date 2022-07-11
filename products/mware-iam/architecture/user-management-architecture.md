@@ -26,7 +26,7 @@ The User Store Manager is responsible for managing the underlying user store. It
 * `LDAPUserStoreManager` (read-only)
 * `ApacheDSUserStoreManager` (read and write)
 
-![](<../../../.gitbook/assets/image (715).png>)
+![](<../../../.gitbook/assets/image (715) (1).png>)
 
 You can write a custom user store manager implementation by implementing `UserStoreManager` or by extending `AbstractUserStoreManager` or one of the default implementations.
 

@@ -314,6 +314,7 @@
     * [Configuring Email OTP](products/mware-iam/multi-factor-authentication-mfa/configuring-email-otp.md)
     * [Configuring TOTP](products/mware-iam/multi-factor-authentication-mfa/configuring-totp.md)
     * [Configuring X509 Certificate Authenticator](products/mware-iam/multi-factor-authentication-mfa/configuring-x509-certificate-authenticator.md)
+  * [Adaptive Authentication](products/mware-iam/adaptive-authentication.md)
 * [BigConnect Answers](products/bigconnect-answers.md)
   * [Exploring data](products/bigconnect-answers/exploring-data.md)
   * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
