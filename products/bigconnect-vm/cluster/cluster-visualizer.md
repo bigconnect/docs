@@ -6,7 +6,7 @@ The **Cluster visualizer** section gives you an overview of your cluster and the
 
 View the details about the cluster including the number of nodes, services and tasks. You can also adjust the visualizer display.
 
-![](<../../../.gitbook/assets/image (730).png>)
+![](<../../../.gitbook/assets/image (731).png>)
 
 ### Options
 

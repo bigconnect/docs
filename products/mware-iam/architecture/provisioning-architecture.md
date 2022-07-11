@@ -45,7 +45,7 @@ WSO2 Charon is one of the SCIM implementations that are made available under Apa
 
 The following diagram provides an overview of the module breakdown of Charon along with purpose of each module and planned tasks of them.
 
-![](<../../../.gitbook/assets/image (714) (1).png>)
+![](<../../../.gitbook/assets/image (714) (1) (1).png>)
 
 The following includes a brief introduction on each of the modules.
 

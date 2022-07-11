@@ -10,10 +10,10 @@ From the menu select **Containers**, select the container that you want to attac
 
 Scroll down to **Advanced container settings**. Click **Volumes** then click **map additional volume**.
 
-![](<../../../.gitbook/assets/image (711).png>)
+![](<../../../.gitbook/assets/image (712).png>)
 
 In the **container** field enter the path. In the **volume** field enter the volume to attach to the container.
 
-![](<../../../.gitbook/assets/image (712).png>)
+![](<../../../.gitbook/assets/image (713).png>)
 
 When you're ready, click **Deploy the container**. When the confirmation message appears, click **Replace**.

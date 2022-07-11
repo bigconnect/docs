@@ -14,7 +14,7 @@ On a multi-node environment, the image you import will only be available on the 
 
 When importing an image you can also select to tag the image using a registry you have preconfigured in BigConnect VM. Select the **Registry** from the dropdown and enter the image name and tag.&#x20;
 
-![](<../../../.gitbook/assets/image (751).png>)
+![](<../../../.gitbook/assets/image (755).png>)
 
 If you wish to tag the image with a registry that is not configured within BigConnect VM, click **Advanced mode** and enter the registry, port, image and tag as required
 

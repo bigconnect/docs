@@ -6,7 +6,7 @@ To get access to and update your user settings, select **my account** at the top
 
 Enter the following details, using the table below as a guide. When you're finished, click **Update password**.
 
-![](<../../.gitbook/assets/image (729).png>)
+![](<../../.gitbook/assets/image (730).png>)
 
 ## Access tokens
 
@@ -20,4 +20,4 @@ Portainer lets you choose between light, dark and high-contrast themes. The chos
 
 Select a theme from the options to preview how it looks. When you are happy with your chosen theme, click **Update theme**.
 
-![](<../../.gitbook/assets/image (744).png>)
+![](<../../.gitbook/assets/image (745).png>)

@@ -8,6 +8,6 @@ If you export a container to a tar file, the volumes won't get exported with it.
 
 From the menu select **Images**, select the image you want to export then click **Export this image**.  When the warning message appears, click **Continue**.
 
-![](<../../../.gitbook/assets/image (758).png>)
+![](<../../../.gitbook/assets/image (764).png>)
 
 When the image has downloaded, a success message will appear, and your browser should automatically download the resulting tar file.
