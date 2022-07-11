@@ -62,7 +62,7 @@ Adaptive authentication enables an identity provider to prompt multi-factor auth
 
 1. On the **Main** tab, click **Service Providers > Add** and add a new service provider called `saml2-web-app-pickup-dispatch.com` .
 2. Expand the **Inbound Authentication configuration> SAML2 Web SSO configuration** section, and click **Configure**\
-   ****![](<../../.gitbook/assets/image (709).png>)****
+   ****![](<../../.gitbook/assets/image (709) (1).png>)****
 3. Fill in the following fields.
    * **Issuer:** `saml2-web-app-pickup-dispatch.com`
    * **Assertion Consumer URL:** `http://localhost.com:8080/saml2-web-app-pickup-dispatch.com/consumer`

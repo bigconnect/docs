@@ -12,6 +12,6 @@ From the menu select **Networks** then click **Add network**. Define the new net
 * **Enable manual container attachment**: Toggle this option on to allow users to attach the network to running containers.&#x20;
 * **Deployment**: On multi-node clusters, select the node where the network will be created.
 
-![](<../../../.gitbook/assets/image (770).png>)
+![](<../../../.gitbook/assets/image (776).png>)
 
 When you're finished, click **Create the network**.

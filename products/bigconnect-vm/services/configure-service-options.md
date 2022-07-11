@@ -76,7 +76,7 @@ Lets you manually specify a hostname or URL and associate the URL to an internal
 
 Sets limits on resource utilization, such as memory, CPU reservation and CPU limit.
 
-![](<../../../.gitbook/assets/image (710).png>)
+![](<../../../.gitbook/assets/image (710) (1).png>)
 
 ### Placement constraints
 

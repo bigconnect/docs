@@ -12,7 +12,7 @@ Any user management system has the following basic components:
 
 The following diagram illustrates how the user management functionality is structured to work in MWARE products:
 
-![](<../../../.gitbook/assets/image (709) (1).png>)
+![](<../../../.gitbook/assets/image (709) (1) (1).png>)
 
 * **User stores:** A user store is the database where information about the users and user roles is stored, including log-in name, password, first name, last name, and e-mail address.
 * **RDBMS (for Authentication and Authorization):** This RDBMS stores information of the role-based permissions.

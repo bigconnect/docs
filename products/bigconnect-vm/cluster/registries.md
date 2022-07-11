@@ -14,8 +14,8 @@ From the menu select **Swarm**, select **Registries** then click **Add registry*
 
 To configure access to a registry, from the menu select **Swarm** then select **Registries**. Find the registry you want to manage then select **Manage access**.&#x20;
 
-![](<../../../.gitbook/assets/image (771).png>)
+![](<../../../.gitbook/assets/image (777).png>)
 
 From the dropdown, select the users or teams that you would like to have access then click **Create access**.
 
-![](<../../../.gitbook/assets/image (734).png>)
+![](<../../../.gitbook/assets/image (737).png>)

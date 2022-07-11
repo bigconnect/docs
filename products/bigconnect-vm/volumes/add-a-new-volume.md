@@ -16,11 +16,11 @@ In BigConnect VM, you can mount an NFS volume to persist the data of your contai
 
 From the menu select **Volumes** then click **Add volume**.&#x20;
 
-![](<../../../.gitbook/assets/image (743).png>)
+![](<../../../.gitbook/assets/image (747).png>)
 
 Under the **NFS Settings** section, complete the following.
 
-![](<../../../.gitbook/assets/image (745).png>)
+![](<../../../.gitbook/assets/image (750).png>)
 
 When you're finished, click **Create the volume**.
 
@@ -50,8 +50,8 @@ Complete the information in the **Create volume** screen, using the table below 
 
 When you're finished, click **Create the volume**. The volume can now be attached to a container in the same way as any other volume.
 
-![](<../../../.gitbook/assets/image (727).png>)
+![](<../../../.gitbook/assets/image (728).png>)
 
 Once attached, you can confirm that the tmpfs volume has been mounted correctly within the container:
 
-![](<../../../.gitbook/assets/image (749).png>)
+![](<../../../.gitbook/assets/image (754).png>)

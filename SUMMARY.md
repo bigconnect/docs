@@ -369,6 +369,9 @@
   * [Cluster](products/bigconnect-vm/cluster/README.md)
     * [Cluster visualizer](products/bigconnect-vm/cluster/cluster-visualizer.md)
     * [Registries](products/bigconnect-vm/cluster/registries.md)
+  * [Account settings](products/bigconnect-vm/account-settings.md)
+  * [Users](products/bigconnect-vm/users/README.md)
+    * [Teams](products/bigconnect-vm/users/teams.md)
 
 ## Cloud
 
