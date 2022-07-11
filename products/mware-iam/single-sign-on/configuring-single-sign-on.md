@@ -6,9 +6,9 @@ MWARE IAM supports single sign-on using different protocols:
 
 * [SAML 2.0 Web SSO](saml-2.0-web-sso.md)
 * [WS-Trust](ws-trust.md)
-* WS-Federation
-* Integrated Windows Authentication
-* OAuth2-OpenID Connect
+* [WS-Federation](ws-federation.md)
+* [Integrated Windows Authentication](integrated-windows-authentication.md)
+* [OAuth2-OpenID Connect](oauth2-openid-connect.md)
 
 To set up reCaptcha for single sign on, see the following page: [Configuring reCaptcha](configuring-recaptcha.md).
 

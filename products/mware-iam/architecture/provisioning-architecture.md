@@ -45,7 +45,7 @@ WSO2 Charon is one of the SCIM implementations that are made available under Apa
 
 The following diagram provides an overview of the module breakdown of Charon along with purpose of each module and planned tasks of them.
 
-![](<../../../.gitbook/assets/image (714).png>)
+![](<../../../.gitbook/assets/image (714) (1).png>)
 
 The following includes a brief introduction on each of the modules.
 
@@ -82,7 +82,7 @@ However the reality in the industry is that organizations have their own attribu
 
 WSO2 Identity Server allows users to define their own user schema in a configuration file ( `[IS-HOME]/repository/conf/scim-schema-extension.config` ). Then these configured schema are used while creating, validating user objects. With this the users can pass their custom attributes of users over SCIM for Identity Management requirements. The implementation is adhering to the [Schema Extension Model](http://tools.ietf.org/html/draft-ietf-scim-core-schema-01#section-4) . Given below is a sample extended user object with the default schema configuration.
 
-![](<../../../.gitbook/assets/image (702).png>)
+![](<../../../.gitbook/assets/image (702) (1).png>)
 
 ### Claims Mapping
 

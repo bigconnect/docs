@@ -307,6 +307,8 @@
     * [SAML 2.0 Web SSO](products/mware-iam/single-sign-on/saml-2.0-web-sso.md)
     * [WS-Trust](products/mware-iam/single-sign-on/ws-trust.md)
     * [WS-Federation](products/mware-iam/single-sign-on/ws-federation.md)
+    * [Integrated Windows Authentication](products/mware-iam/single-sign-on/integrated-windows-authentication.md)
+    * [OAuth2-OpenID Connect](products/mware-iam/single-sign-on/oauth2-openid-connect.md)
 * [BigConnect Answers](products/bigconnect-answers.md)
   * [Exploring data](products/bigconnect-answers/exploring-data.md)
   * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
