@@ -72,7 +72,7 @@ As this diagram of the reference implementation illustrates, a SCIM service prov
 
 The SCIM (System for Cross-Domain Identity Management) specification defines a [fixed set of default attributes](http://tools.ietf.org/html/draft-ietf-scim-core-schema-01#section-11.2) for the user object. This set is defined to ensure the interoperability and it can cater to most of the industry's identity management requirements. Given below is a sample user object with the default attributes set.
 
-![](<../../../.gitbook/assets/image (712) (1).png>)
+![](<../../../.gitbook/assets/image (712) (1) (1).png>)
 
 However the SCIM specification itself introduces the [Enterprise User Extension](http://tools.ietf.org/html/draft-ietf-scim-core-schema-01#section-11.3) to support extra attributes for the SCIM user object.
 
@@ -100,7 +100,7 @@ Now the server is up and running with the new extended user schema. The claim ma
 
 Create a new user with the new schema. The following screen depicts the user to be added with the **wso2Extension** attributes.
 
-![](<../../../.gitbook/assets/image (707) (1).png>)
+![](<../../../.gitbook/assets/image (707) (1) (1).png>)
 
 ### cURL commands
 

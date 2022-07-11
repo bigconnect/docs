@@ -28,13 +28,13 @@ Paste the contents of your docker-compose file into the box provided. Once all t
 
 Click **Select file** to browse for a docker-compose file to upload. Once all the details have been completed, click **Create custom template**.
 
-![](<../../../.gitbook/assets/image (729).png>)
+![](<../../../.gitbook/assets/image (729) (1).png>)
 
 #### Git repository
 
 Fill in the details for your Git repository.
 
-![](<../../../.gitbook/assets/image (753).png>)
+![](<../../../.gitbook/assets/image (753) (1).png>)
 
 If your repository requires access authentication, toggle **Authentication** on then enter the username and password. When all the details have been entered, click **Create custom template**.
 
@@ -44,10 +44,10 @@ Custom templates support the use of variables to provide further customization o
 
 Variables are identified in stacks with `{{ }}`. For example, the following stack provides a `MYSQL_PASSWORD` variable:
 
-![](<../../../.gitbook/assets/image (734).png>)
+![](<../../../.gitbook/assets/image (734) (1).png>)
 
 When a variable is defined, options appear to customize how the variable appears when deploying the stack. You can set the **label**, **description** and **default value**.
 
 When a template is deployed, any variables that have been configured are editable:
 
-![](<../../../.gitbook/assets/image (754).png>)
+![](<../../../.gitbook/assets/image (754) (1).png>)

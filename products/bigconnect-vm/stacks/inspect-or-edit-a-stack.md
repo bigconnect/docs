@@ -4,7 +4,7 @@
 
 From the menu select **Stacks** then select the stack you want to inspect. From here you can stop, delete or create a template from the stack, and if deployed from Git you can detach the stack from the Git repository.
 
-![](<../../../.gitbook/assets/image (712).png>)
+![](<../../../.gitbook/assets/image (712) (1).png>)
 
 If the stack was deployed from a Git repository, you can:
 
@@ -28,7 +28,7 @@ When using Docker Standalone, you can:
 * View container statistics.
 * Get access to the container's console.
 
-![](<../../../.gitbook/assets/image (735).png>)
+![](<../../../.gitbook/assets/image (735) (1).png>)
 
 ### Docker Swarm
 
@@ -52,7 +52,7 @@ Editing a stack allows you to make changes to the configuration and redeploy tho
 The Editor tab is only available for stacks that were deployed using the Web Editor. For stacks deployed from a Git repository, the docker-compose file must be edited in the repository itself.
 {% endhint %}
 
-![](<../../../.gitbook/assets/image (741).png>)
+![](<../../../.gitbook/assets/image (741) (1).png>)
 
 Here, you can edit the Compose file for the stack to suit your needs, as well as toggle the stack webhook and retrieve the webhook URL. You can also make changes to environment variables for the stack, and on Docker Swarm environments you can prune services if you have made changes that remove some services from the stack.
 

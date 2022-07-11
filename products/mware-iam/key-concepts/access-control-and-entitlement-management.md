@@ -4,7 +4,7 @@ Today, enterprise applications seek ways of enforcing security that allows the r
 
 ### Types of access control <a href="#types-of-access-control" id="types-of-access-control"></a>
 
-![](<../../../.gitbook/assets/image (755).png>)
+![](<../../../.gitbook/assets/image (755) (1).png>)
 
 The following table describes the various types of access control.
 

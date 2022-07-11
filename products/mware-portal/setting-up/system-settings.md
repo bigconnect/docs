@@ -10,7 +10,7 @@ In System Settings, administrators make system scoped configuration changes and 
 
 System Settings is organized into sections (for example, Content) and categories (for example, Workflow) based on the functionality being configured. There’s also a Search bar to make finding configuration entries easier. Search for the name of a specific configuration entry, or even a specific field within an entry.
 
-![](<../../../.gitbook/assets/image (711) (1).png>)
+![](<../../../.gitbook/assets/image (711) (1) (1).png>)
 
 Changing a configuration isn’t difficult:
 
