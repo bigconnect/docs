@@ -2,9 +2,10 @@
 
 MWARE IAM enables configuring password policies to enhance user password strength using the following features:
 
-* Password Patterns
-* Password History
+* [Password Patterns](password-policies.md#configuring-password-patterns)
+* [Password History](password-policies.md#validating-password-history)
 * Password Expiry
+* [Password Reset](password-policies.md#configuring-password-reset)
 
 ## Password Patterns <a href="#configuring-password-patterns" id="configuring-password-patterns"></a>
 
@@ -128,12 +129,16 @@ Follow the steps below to define the password policy that Sam wants to enforce.
        Note that these passwords get successfully added to the system.
    7. Now, change Alex's password back to `testiam`. Note that the password gets successfully changed.
 
+## Password Expiry <a href="#password-expiry" id="password-expiry"></a>
+
+MWARE IAM supports configuring a password expiry policy to prompt users to change their password after a defined time period. This is supported via a connector.&#x20;
+
 ## Password Reset <a href="#configuring-password-reset" id="configuring-password-reset"></a>
 
 MWARE IAM enables users to reset their forgotten passwords using the following methods:
 
-* Password Reset with Email
-* Password Reset with Challenge Question
+* [Password Reset with Email](password-policies.md#configuring-password-recovery-with-email)
+* [Password Reset with Challenge Question](password-policies.md#configuring-password-reset-with-challenge-questions)
 
 ### With Email <a href="#configuring-password-recovery-with-email" id="configuring-password-recovery-with-email"></a>
 
