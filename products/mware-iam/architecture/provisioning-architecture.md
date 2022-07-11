@@ -100,7 +100,7 @@ Now the server is up and running with the new extended user schema. The claim ma
 
 Create a new user with the new schema. The following screen depicts the user to be added with the **wso2Extension** attributes.
 
-![](<../../../.gitbook/assets/image (707).png>)
+![](<../../../.gitbook/assets/image (707) (1).png>)
 
 ### cURL commands
 

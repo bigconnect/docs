@@ -320,6 +320,19 @@
   * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
 * [BigConnect Virtual Machine](products/bigconnect-vm/README.md)
   * [Home](products/bigconnect-vm/home.md)
+  * [Dashboard](products/bigconnect-vm/dashboard.md)
+  * [Application Templates](products/bigconnect-vm/application-templates/README.md)
+    * [Custom templates](products/bigconnect-vm/application-templates/custom-templates.md)
+    * [Deploy a stack](products/bigconnect-vm/application-templates/deploy-a-stack.md)
+    * [Deploy a container](products/bigconnect-vm/application-templates/deploy-a-container.md)
+  * [Stacks](products/bigconnect-vm/stacks/README.md)
+    * [Add a new stack](products/bigconnect-vm/stacks/add-a-new-stack.md)
+    * [Inspect or edit a stack](products/bigconnect-vm/stacks/inspect-or-edit-a-stack.md)
+    * [Create a template from a deployed stack](products/bigconnect-vm/stacks/create-a-template-from-a-deployed-stack.md)
+    * [Remove a stack](products/bigconnect-vm/stacks/remove-a-stack.md)
+  * [Services](products/bigconnect-vm/services/README.md)
+    * [Add a new service](products/bigconnect-vm/services/add-a-new-service.md)
+    * [Configure service options](products/bigconnect-vm/services/configure-service-options.md)
 
 ## Cloud
 

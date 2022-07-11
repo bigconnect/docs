@@ -4,7 +4,7 @@ Today, enterprise applications seek ways of enforcing security that allows the r
 
 ### Types of access control <a href="#types-of-access-control" id="types-of-access-control"></a>
 
-![](<../../../.gitbook/assets/image (718).png>)
+![](<../../../.gitbook/assets/image (755).png>)
 
 The following table describes the various types of access control.
 
@@ -97,7 +97,7 @@ The XACML engine of the MWARE Identity Server has two major components, i.e., PA
 
 The following diagram represents the component architecture of the PDP.
 
-![](<../../../.gitbook/assets/image (710).png>)
+![](<../../../.gitbook/assets/image (725).png>)
 
 The following provides a more detailed information on the various components available in the PDP architecture.
 
@@ -130,7 +130,7 @@ This is same as Balana PDP. However, this instance has been initialized with the
 
 This module finds from different policy stores to evaluate a XACML request. The following is a high-level diagram of how this works.
 
-![](<../../../.gitbook/assets/image (713).png>)
+![](<../../../.gitbook/assets/image (733).png>)
 
 Any number of policy finder modules can be plugged with the Carbon policy finder.
 
@@ -150,7 +150,7 @@ When you are writing a new module, you need to consider the following in additio
 
 This module helps to find the missing attribute for a given XACML request. The following is the high-level diagram for both the Carbon attribute and resource finders.
 
-![](<../../../.gitbook/assets/image (719).png>)
+![](<../../../.gitbook/assets/image (764).png>)
 
 Any number of PIP attribute finder modules can be plugged with the Carbon attribute finder. You need to implement the PIPAttributeFinder interface to write a new module and register it using the entitlement.properties configuration file. By default, MWARE Identity Server is shipped with a DefaultAttributeFinder that communicates with the underlying user store of the Identity Server. The default user store of the Identity Server is ApacheDS where it can be changed.&#x20;
 
