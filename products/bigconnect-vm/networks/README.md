@@ -2,4 +2,4 @@
 
 BigConnect VM lets you add, remove and manage virtual networks in your environment.
 
-![](<../../../.gitbook/assets/image (759).png>)
+![](<../../../.gitbook/assets/image (766).png>)

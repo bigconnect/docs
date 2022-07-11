@@ -2,7 +2,7 @@
 
 Select **Containers** from the menu then click **Add container**.
 
-![](<../../../.gitbook/assets/image (746).png>)
+![](<../../../.gitbook/assets/image (752).png>)
 
 {% hint style="info" %}
 When using Docker Hub you can use the **Search** button to search for the image you have entered, and ensure that you have the correct name and tag. Portainer also displays the number of pulls remaining for your Docker Hub account when using an anonymous account.
@@ -10,11 +10,11 @@ When using Docker Hub you can use the **Search** button to search for the image 
 
 Alternatively you can switch to advanced mode to manually enter registry and image details. This is useful if you want to do a one-off container deployment from a registry that isn't configured within BigConnect VM.
 
-![](<../../../.gitbook/assets/image (760).png>)
+![](<../../../.gitbook/assets/image (767).png>)
 
 ## Network ports configuration section <a href="#network-ports-configuration-section" id="network-ports-configuration-section"></a>
 
-![](<../../../.gitbook/assets/image (745).png>)
+![](<../../../.gitbook/assets/image (751).png>)
 
 **Publish all exposed network ports to random host ports**
 
@@ -34,4 +34,4 @@ Toggle this option on to automatically remove the container once it exits. This 
 
 Choose from a range of options to customize the deployment.
 
-![](<../../../.gitbook/assets/image (756).png>)
+![](<../../../.gitbook/assets/image (762).png>)

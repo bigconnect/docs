@@ -54,7 +54,7 @@ env_file:
   - stack.env
 ```
 
-![](<../../../.gitbook/assets/image (716).png>)
+![](<../../../.gitbook/assets/image (716) (1).png>)
 
 When you're ready click **Deploy the stack**.
 

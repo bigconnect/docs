@@ -363,6 +363,12 @@
   * [Configs](products/bigconnect-vm/configs/README.md)
     * [Add a new config](products/bigconnect-vm/configs/add-a-new-config.md)
     * [Remove a config](products/bigconnect-vm/configs/remove-a-config.md)
+  * [Secrets](products/bigconnect-vm/secrets/README.md)
+    * [Add a new secret](products/bigconnect-vm/secrets/add-a-new-secret.md)
+    * [Remove a secret](products/bigconnect-vm/secrets/remove-a-secret.md)
+  * [Cluster](products/bigconnect-vm/cluster/README.md)
+    * [Cluster visualizer](products/bigconnect-vm/cluster/cluster-visualizer.md)
+    * [Registries](products/bigconnect-vm/cluster/registries.md)
 
 ## Cloud
 

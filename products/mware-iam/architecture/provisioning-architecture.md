@@ -76,7 +76,7 @@ The SCIM (System for Cross-Domain Identity Management) specification defines a [
 
 However the SCIM specification itself introduces the [Enterprise User Extension](http://tools.ietf.org/html/draft-ietf-scim-core-schema-01#section-11.3) to support extra attributes for the SCIM user object.
 
-![](<../../../.gitbook/assets/image (716) (1).png>)
+![](<../../../.gitbook/assets/image (716) (1) (1).png>)
 
 However the reality in the industry is that organizations have their own attributes defined for the users. These attributes are already there in their LDAP schemas. Therefore SCIM should be extensible enough to cope with these custom attributes of the users.
 

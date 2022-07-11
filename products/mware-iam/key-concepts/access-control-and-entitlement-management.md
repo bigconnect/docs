@@ -150,7 +150,7 @@ When you are writing a new module, you need to consider the following in additio
 
 This module helps to find the missing attribute for a given XACML request. The following is the high-level diagram for both the Carbon attribute and resource finders.
 
-![](<../../../.gitbook/assets/image (764).png>)
+![](<../../../.gitbook/assets/image (764) (1).png>)
 
 Any number of PIP attribute finder modules can be plugged with the Carbon attribute finder. You need to implement the PIPAttributeFinder interface to write a new module and register it using the entitlement.properties configuration file. By default, MWARE Identity Server is shipped with a DefaultAttributeFinder that communicates with the underlying user store of the Identity Server. The default user store of the Identity Server is ApacheDS where it can be changed.&#x20;
 

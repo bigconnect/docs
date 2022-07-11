@@ -11,7 +11,7 @@ If the stack was deployed from a Git repository, you can:
 * Configure automatic updates or manually pull and redeploy the stack.
 * View and edit the stack's environment variables.
 
-![](<../../../.gitbook/assets/image (704).png>)
+![](<../../../.gitbook/assets/image (704) (1).png>)
 
 If the stack was deployed using the Web Editor or uploaded, you will have the option to edit your compose file manually.
 

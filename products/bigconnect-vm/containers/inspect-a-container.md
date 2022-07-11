@@ -4,8 +4,8 @@ View information about any container, such as network settings, volumes and imag
 
 All of the information about the container will display in a tree view. Select any parameter to show more details (if available).
 
-![](<../../../.gitbook/assets/image (738).png>)
+![](<../../../.gitbook/assets/image (744).png>)
 
 You can also inspect the container in a raw JSON format by clicking **Text**.
 
-![](<../../../.gitbook/assets/image (751).png>)
+![](<../../../.gitbook/assets/image (757).png>)

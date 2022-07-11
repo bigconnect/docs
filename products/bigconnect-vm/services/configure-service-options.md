@@ -108,7 +108,7 @@ Updates a service according to the parameters you specify. The parameters specif
 
 Normally, updating a service will only cause the service’s tasks to be replaced with new ones if a change to the service requires recreating the tasks for it to take effect.
 
-![](<../../../.gitbook/assets/image (765).png>)
+![](<../../../.gitbook/assets/image (765) (1).png>)
 
 ### Logging driver
 

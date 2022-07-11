@@ -22,4 +22,4 @@ This section shows how many nodes are in the cluster and contains a link to the 
 
 The remaining dashboard is made up of tiles showing the number of stacks, services, containers (including health and running-status metrics), images (and how much disk space they consume), volumes and networks.
 
-![](<../../.gitbook/assets/image (763).png>)
+![](<../../.gitbook/assets/image (763) (1).png>)
