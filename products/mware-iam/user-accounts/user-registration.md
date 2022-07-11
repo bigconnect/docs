@@ -2,9 +2,9 @@
 
 MWARE IAM enables user registration using the following methods:
 
-* User Registration with Password Entry
-* User Registration with Email Verification
-* User Self-Registration
+* [User Registration with Password Entry](user-registration.md#user-registration-with-password-entry)
+* [User Registration with Email Verification](user-registration.md#user-registration-with-email-verification)
+* [User Self-Registration](user-registration.md#self-registration)
 
 ## Registration with Password Entry <a href="#user-registration-with-password-entry" id="user-registration-with-password-entry"></a>
 

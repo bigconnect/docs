@@ -2,8 +2,8 @@
 
 MWARE IAM enables locking user accounts using the following methods:
 
-* Admin-Initiated Account Locking
-* Account Locking due to Failed Login Attempts
+* [Admin-Initiated Account Locking](account-locking.md#configuring-admin-initiated-account-locking)
+* [Account Locking due to Failed Login Attempts](account-locking.md#configuring-account-locking-due-to-failed-login-attempts)
 
 ## Admin-Initiated <a href="#configuring-admin-initiated-account-locking" id="configuring-admin-initiated-account-locking"></a>
 
