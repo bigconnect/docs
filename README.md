@@ -4,11 +4,19 @@ description: How to deploy and host projects on BigConnect Cloud
 
 # Getting Started
 
-BigConnect has a variety of products to meet a variety of needs.
+MWARE has a complete product catalog to meet today's data and digitalization and needs.
 
-### Compute
+### Portal
 
-Build applications by managing your own infrastructure with Cloud Servers, block storage volumes, Load Balancers and Private Networks.
+Create amazing digital experiences on the most agile, scalable, and secure portal platform available today.
+
+### Identity & Access Management
+
+Deliver Seamless Login and Authentication experiences with the MWARE IAM Server.
+
+### Virtual Machine
+
+Easily configure, monitor and secure Docker containers in minutes.
 
 ### Object Store
 
@@ -57,16 +65,4 @@ Smart, scalable web data collection. Whether is about web sites, blogs or forums
 ### TetraML
 
 Create world-class Machine Learning models. A fully distributed in-memory machine learning platform with linear scalability and the most widely used statistical & machine learning algorithms including gradient boosted machines, generalized linear models, deep learning and more.
-
-
-
-
-
-
-
-
-
-
-
-
 
