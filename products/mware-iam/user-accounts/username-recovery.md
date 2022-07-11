@@ -12,7 +12,7 @@ Let's learn how Larry can recover the password by providing the corresponding pr
 
 Follow the steps below to configure MWARE IAM Server to enable username recovery.
 
-1. Open the `deployment.toml` file in the `<IS_HOME>/repository/conf` directory.
+1. Open the `deployment.toml` file in the `<IAM_HOME>/repository/conf` directory.
    1.  Check whether the following listener configs are in place.
 
        ```
