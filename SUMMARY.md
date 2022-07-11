@@ -335,6 +335,7 @@
     * [Joins](products/bigconnect-answers/asking-questions/joins.md)
     * [Multi-level aggregation](products/bigconnect-answers/asking-questions/multi-level-aggregation.md)
     * [Searching your tables and questions](products/bigconnect-answers/asking-questions/searching-your-tables-and-questions.md)
+  * [Working with SQL](products/bigconnect-answers/working-with-sql.md)
 * [BigConnect Virtual Machine](products/bigconnect-vm/README.md)
   * [Home](products/bigconnect-vm/home.md)
   * [Dashboard](products/bigconnect-vm/dashboard.md)
