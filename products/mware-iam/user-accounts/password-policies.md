@@ -133,7 +133,7 @@ Follow the steps below to define the password policy that Sam wants to enforce.
 
 MWARE IAM supports configuring a password expiry policy to prompt users to change their password after a defined time period. This is supported via a connector.
 
-## Password Resetassw <a href="#configuring-password-reset" id="configuring-password-reset"></a>
+## Password Reset <a href="#configuring-password-reset" id="configuring-password-reset"></a>
 
 MWARE IAM enables users to reset their forgotten passwords using the following methods:
 
