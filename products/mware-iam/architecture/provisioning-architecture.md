@@ -64,7 +64,7 @@ Out of the JAX-RS implementations, Apache-Wink was selected since it better cate
 
 The following is a deployment diagram of Charon-SCIM service provider (the web application provided by Charon-Impl module). It also gives a high level idea on how Charon-Core and Charon-Utils modules are utilized.
 
-![](<../../../.gitbook/assets/image (710).png>)
+![](<../../../.gitbook/assets/image (710) (1).png>)
 
 As this diagram of the reference implementation illustrates, a SCIM service provider can be developed using any REST implementation and SCIM-defined resources can be exposed utilizing the API provided by the Charon-Core. On the other hand, SCIM Consumers can also be implemented using the client API of Charon-Core.
 
@@ -134,4 +134,4 @@ The above command provides the following results:
 
 The created SCIM user object can be viewed in the following screen:
 
-![](<../../../.gitbook/assets/image (705).png>)
+![](<../../../.gitbook/assets/image (705) (1).png>)

@@ -97,7 +97,7 @@ The XACML engine of the MWARE Identity Server has two major components, i.e., PA
 
 The following diagram represents the component architecture of the PDP.
 
-![](<../../../.gitbook/assets/image (709).png>)
+![](<../../../.gitbook/assets/image (710).png>)
 
 The following provides a more detailed information on the various components available in the PDP architecture.
 

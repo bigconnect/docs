@@ -5,7 +5,7 @@ Single sign-on is a key feature of the MWARE IAM that enables users to access mu
 MWARE IAM supports single sign-on using different protocols:
 
 * [SAML 2.0 Web SSO](saml-2.0-web-sso.md)
-* WS-Trust
+* [WS-Trust](ws-trust.md)
 * WS-Federation
 * Integrated Windows Authentication
 * OAuth2-OpenID Connect

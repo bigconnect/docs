@@ -305,6 +305,7 @@
     * [Configuring Single Sign-On](products/mware-iam/single-sign-on/configuring-single-sign-on.md)
     * [Configuring reCaptcha](products/mware-iam/single-sign-on/configuring-recaptcha.md)
     * [SAML 2.0 Web SSO](products/mware-iam/single-sign-on/saml-2.0-web-sso.md)
+    * [WS-Trust](products/mware-iam/single-sign-on/ws-trust.md)
 * [BigConnect Answers](products/bigconnect-answers.md)
   * [Exploring data](products/bigconnect-answers/exploring-data.md)
   * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
