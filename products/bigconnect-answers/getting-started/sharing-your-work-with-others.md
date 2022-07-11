@@ -1,7 +1,5 @@
 # Sharing your work with others
 
-#### Create a dashboard with saved questions, and set up an alert to get notified when your question returns something interesting. <a href="#create-a-dashboard-with-saved-questions-and-set-up-an-alert-to-g" id="create-a-dashboard-with-saved-questions-and-set-up-an-alert-to-g"></a>
-
 You can use Answers all on your own, but it becomes even more useful when you start sharing your answers with other people on your team or in your organization. The first step is saving some of your questions.
 
 ### Saving questions <a href="#saving-questions" id="saving-questions"></a>

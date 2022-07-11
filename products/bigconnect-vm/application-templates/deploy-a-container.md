@@ -6,7 +6,7 @@ From the menu select **App Templates**. Toggle **Show container templates** on t
 
 Define a name, a network, port mapping and volumes, and toggle **Enable access control** on if needed.
 
-![](<../../../.gitbook/assets/image (747) (1).png>)
+![](<../../../.gitbook/assets/image (747) (1) (1).png>)
 
 You can also make changes to container settings such as port and volume mapping, host file entries, labels and the hostname by clicking **Show advanced options**.
 

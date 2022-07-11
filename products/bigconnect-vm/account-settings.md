@@ -20,4 +20,4 @@ Portainer lets you choose between light, dark and high-contrast themes. The chos
 
 Select a theme from the options to preview how it looks. When you are happy with your chosen theme, click **Update theme**.
 
-![](<../../.gitbook/assets/image (747).png>)
+![](<../../.gitbook/assets/image (747) (1).png>)

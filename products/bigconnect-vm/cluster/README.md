@@ -46,4 +46,4 @@ These sections list the available PCI devices and physical disks on the node.&#x
 
 Here you'll find details about the node's configuration as part of the cluster. You can view the role, set the availability status of the node, view the current status and apply labels to the node.
 
-![](<../../../.gitbook/assets/image (777).png>)
+![](<../../../.gitbook/assets/image (777) (1).png>)
