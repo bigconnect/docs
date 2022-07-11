@@ -10,6 +10,6 @@ Define a name, a network, port mapping and volumes, and toggle **Enable access c
 
 You can also make changes to container settings such as port and volume mapping, host file entries, labels and the hostname by clicking **Show advanced options**.
 
-![](<../../../.gitbook/assets/image (740).png>)
+![](<../../../.gitbook/assets/image (740) (1).png>)
 
 Once you have configured the container, click **Deploy the container**.

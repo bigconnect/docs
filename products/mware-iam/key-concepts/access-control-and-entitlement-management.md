@@ -97,7 +97,7 @@ The XACML engine of the MWARE Identity Server has two major components, i.e., PA
 
 The following diagram represents the component architecture of the PDP.
 
-![](<../../../.gitbook/assets/image (725).png>)
+![](<../../../.gitbook/assets/image (725) (1).png>)
 
 The following provides a more detailed information on the various components available in the PDP architecture.
 
@@ -130,7 +130,7 @@ This is same as Balana PDP. However, this instance has been initialized with the
 
 This module finds from different policy stores to evaluate a XACML request. The following is a high-level diagram of how this works.
 
-![](<../../../.gitbook/assets/image (733).png>)
+![](<../../../.gitbook/assets/image (733) (1).png>)
 
 Any number of policy finder modules can be plugged with the Carbon policy finder.
 

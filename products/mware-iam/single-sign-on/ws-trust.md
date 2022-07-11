@@ -47,7 +47,7 @@ To secure the Security Token Service:
 6. Provide the required details as follows:
    1. Select **ALL-USER-STORE-DOMAINS**.
    2. Select the role you created to grant permission to access secured service. In this example, the admin role is used. Next, click **Finish**.\
-      ****![](<../../../.gitbook/assets/image (724).png>)
+      ****![](<../../../.gitbook/assets/image (724) (1).png>)
 7. Click **Finish**.
 8. Click **Ok** on the confirmation dialog window that appears.
 9. Click **Update** to complete the process.

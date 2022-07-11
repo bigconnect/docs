@@ -6,4 +6,4 @@ From the menu select **Containers**, select the container then select **Console*
 
 If you need to define a command other than those provided, toggle the **Use custom command** option on. Once connected, you can run commands in the console the same as any other Linux system.
 
-![](<../../../.gitbook/assets/image (742).png>)
+![](<../../../.gitbook/assets/image (744).png>)

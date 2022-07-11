@@ -2,4 +2,4 @@
 
 From the menu select **Services**, select the service whose logs you want to view then click **Service logs**.
 
-![](<../../../.gitbook/assets/image (731).png>)
+![](<../../../.gitbook/assets/image (732).png>)

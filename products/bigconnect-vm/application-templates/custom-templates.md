@@ -12,7 +12,7 @@ To view a list of custom templates, from the menu select **App Templates** then 
 
 Click **Add Custom Template** then complete the details:
 
-![](<../../../.gitbook/assets/image (766).png>)
+![](<../../../.gitbook/assets/image (766) (1).png>)
 
 ### Selecting the build method
 
@@ -22,7 +22,7 @@ Next, choose the build method that suits your needs. You can use the web editor 
 
 Paste the contents of your docker-compose file into the box provided. Once all the details have been completed, click **Create custom template**.
 
-![](<../../../.gitbook/assets/image (722).png>)
+![](<../../../.gitbook/assets/image (722) (1).png>)
 
 #### Upload
 

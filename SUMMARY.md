@@ -351,6 +351,18 @@
   * [Images](products/bigconnect-vm/images/README.md)
     * [Pull an image](products/bigconnect-vm/images/pull-an-image.md)
     * [Build a new image](products/bigconnect-vm/images/build-a-new-image.md)
+    * [Import an image](products/bigconnect-vm/images/import-an-image.md)
+    * [Export an image](products/bigconnect-vm/images/export-an-image.md)
+  * [Networks](products/bigconnect-vm/networks/README.md)
+    * [Add a new network](products/bigconnect-vm/networks/add-a-new-network.md)
+    * [Remove a network](products/bigconnect-vm/networks/remove-a-network.md)
+  * [Volumes](products/bigconnect-vm/volumes/README.md)
+    * [Add a new volume](products/bigconnect-vm/volumes/add-a-new-volume.md)
+    * [Browse a volume](products/bigconnect-vm/volumes/browse-a-volume.md)
+    * [Remove a volume](products/bigconnect-vm/volumes/remove-a-volume.md)
+  * [Configs](products/bigconnect-vm/configs/README.md)
+    * [Add a new config](products/bigconnect-vm/configs/add-a-new-config.md)
+    * [Remove a config](products/bigconnect-vm/configs/remove-a-config.md)
 
 ## Cloud
 

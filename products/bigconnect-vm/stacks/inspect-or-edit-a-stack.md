@@ -42,7 +42,7 @@ When using Docker Swarm, you can:
 * View service statistics.
 * Get access to the service's console.
 
-![](<../../../.gitbook/assets/image (726).png>)
+![](<../../../.gitbook/assets/image (726) (1).png>)
 
 ## Editing a stack
 

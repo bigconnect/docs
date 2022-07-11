@@ -71,7 +71,7 @@ Adaptive authentication enables an identity provider to prompt multi-factor auth
 5. Expand **Local and Outbound Authentication Configuration** and click **Advanced Configuration**.\
    ![](<../../.gitbook/assets/image (744) (1).png>)
 6. You can add authentication steps or use a template to configure adaptive authentication depending on your requirement. For example, add Demo HardwareKey Authenticator.\
-   ![](<../../.gitbook/assets/image (749).png>)
+   ![](<../../.gitbook/assets/image (749) (1).png>)
 7.  Add the following configuration to the `<IAM_HOME>/repository/conf/deployment.toml` file.
 
     ```toml

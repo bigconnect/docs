@@ -20,7 +20,7 @@ Changing a configuration isn’t difficult:
 
 **Important:** Content generated using templates (e.g., FreeMarker templates and Application Display Templates) is cached. Cached content might not reflect configuration changes until the cache is invalidated (cleared). The Server Administration → Resources tab provides cache clearing options.
 
-![](<../../../.gitbook/assets/image (713) (1).png>)
+![](<../../../.gitbook/assets/image (713) (1) (1).png>)
 
 If you make some regrettable configuration decisions and can’t recall exactly what you did, start over by clicking the actions button (![Actions](https://liferay-support.zendesk.com/hc/article\_attachments/360030186732/icon-actions.png)), then clicking _Reset Default Values_.
 

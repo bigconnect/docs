@@ -36,7 +36,7 @@ In Portainer you can create stacks from Compose YML files. To do this, from the 
 
 As part of the stack creation you can enable a stack webhook, allowing you to remotely trigger redeployments of the stack from your repository, for example.
 
-![](<../../../.gitbook/assets/image (761).png>)
+![](<../../../.gitbook/assets/image (761) (1).png>)
 
 As an optional step, enter any environment variables. You can use these to define values in your compose file that would vary between deployments (for example, hostnames, database names, etc).
 

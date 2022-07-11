@@ -18,7 +18,7 @@ From the menu select **Images** then click **Build a new image**. Next, give the
 
 Scroll down and select the node you want to save the image on (if on a multi-node environment) then click **Build the image**.
 
-![](<../../../.gitbook/assets/image (718).png>)
+![](<../../../.gitbook/assets/image (719).png>)
 
 When the build is finished, select the **Output** tab to view the build history and the result.
 
@@ -28,7 +28,7 @@ If you have an existing Dockerfile, you can upload it to BigConnect VM and use i
 
 From the menu select **Images** then click **Build a new image**. Next, give the image a descriptive name (you can enter multiple names), select the **Upload** option under **Build method**, then browse to and upload the Dockerfile.
 
-![](<../../../.gitbook/assets/image (745).png>)
+![](<../../../.gitbook/assets/image (749).png>)
 
 Scroll down and select the node you want to save the image on (if on a multi-node environment) then click **Build the image**.
 
@@ -40,7 +40,7 @@ If the Dockerfile is hosted on the Internet (either in a tarball or a public Git
 
 From the menu select **Images** then click **Build a new image**. Next, give the image a descriptive name (you can enter multiple names), select the **Upload** option under **Build method**, then enter the **URL** of the file and the **Dockerfile path** within the tarball or repository.
 
-![](<../../../.gitbook/assets/image (750).png>)
+![](<../../../.gitbook/assets/image (752).png>)
 
 Scroll down and select the node you want to save the image on (if on a multi-node environment) click **Build the image**.&#x20;
 

@@ -32,7 +32,7 @@ It's best to set environment variables when you create a container and before de
 
 Labels give you a way to record information about a container, such as the way it's configured. Labels can also be used by BigConnect VM to hide containers from the interface.
 
-![](<../../../.gitbook/assets/image (758).png>)
+![](<../../../.gitbook/assets/image (758) (1).png>)
 
 ### Mounts
 
@@ -56,7 +56,7 @@ Enter the source path in the **Source** field, enter the container path in the *
 
 You can define one or more networks for a service either before or after deployment. Simply select the network from the dropdown then click **Apply changes**.
 
-![](<../../../.gitbook/assets/image (713).png>)
+![](<../../../.gitbook/assets/image (713) (1).png>)
 
 ### Published ports
 
@@ -68,7 +68,7 @@ Use this setting to publish ports so they can access a container from outside of
 
 Lets you manually specify a hostname or URL and associate the URL to an internal or external IP address.
 
-![](<../../../.gitbook/assets/image (748).png>)
+![](<../../../.gitbook/assets/image (748) (1).png>)
 
 ## Service specification settings
 
@@ -82,7 +82,7 @@ Sets limits on resource utilization, such as memory, CPU reservation and CPU lim
 
 Use placement constraints to control which nodes a service can be assigned to.
 
-![](<../../../.gitbook/assets/image (723).png>)
+![](<../../../.gitbook/assets/image (723) (1).png>)
 
 ### Placement preferences
 
@@ -120,13 +120,13 @@ Docker includes logging mechanisms called _logging drivers_ that get information
 
 Lets you add metadata to containers using Docker labels either via an array or a dictionary. We recommend that you use reverse-DNS notation to stop labels from conflicting with those used by other software.
 
-![](<../../../.gitbook/assets/image (732).png>)
+![](<../../../.gitbook/assets/image (732) (1).png>)
 
 ### Configs
 
 Docker 17.06 introduced Swarm service configs. These allow you to store non-sensitive information such as configuration files outside a service’s image or running containers. This keeps images as generic as possible and removes the need to bind-mount configuration files into containers or use environment variables.
 
-![](<../../../.gitbook/assets/image (762).png>)
+![](<../../../.gitbook/assets/image (762) (1).png>)
 
 ### Secrets
 
