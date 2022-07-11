@@ -298,6 +298,7 @@
   * [User Accounts](products/mware-iam/user-accounts/README.md)
     * [User Registration](products/mware-iam/user-accounts/user-registration.md)
     * [Password Policies](products/mware-iam/user-accounts/password-policies.md)
+    * [Username Recovery](products/mware-iam/user-accounts/username-recovery.md)
 * [BigConnect Answers](products/bigconnect-answers.md)
   * [Exploring data](products/bigconnect-answers/exploring-data.md)
   * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
