@@ -1,6 +1,6 @@
 # REST APIs
 
-**API creation** is the process of linking an existing backend API implementation to the [API Publisher](https://apim.docs.wso2.com/en/4.2.0/get-started/apim-architecture/#api-publisher), so that you can manage and monitor the [API's lifecycle](https://apim.docs.wso2.com/en/4.2.0/design/lifecycle-management/api-lifecycle/), documentation, security, community, and subscriptions. Alternatively, you can provide the API implementation in-line in the [API Publisher](https://apim.docs.wso2.com/en/4.2.0/get-started/apim-architecture/#api-publisher) itself.
+**API creation** is the process of linking an existing backend API implementation to the [API Publisher](../get-started/architecture-and-key-components.md#api-publisher), so that you can manage and monitor the [API's lifecycle](https://apim.docs.wso2.com/en/4.2.0/design/lifecycle-management/api-lifecycle/), documentation, security, community, and subscriptions. Alternatively, you can provide the API implementation in-line in the [API Publisher](../get-started/architecture-and-key-components.md#api-publisher) itself.
 
 Follow the instructions below to create a REST API using the basic flow:
 

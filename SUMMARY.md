@@ -319,7 +319,7 @@
   * [Get Started](products/mware-esb/get-started/README.md)
     * [Key Concepts](products/mware-esb/get-started/key-concepts.md)
     * [Architecture and Key Components](products/mware-esb/get-started/architecture-and-key-components.md)
-  * [Design APIs](products/mware-esb/design-apis/README.md)
+  * [Design APIs](products/mware-esb/design-apis.md)
     * [REST APIs](products/mware-esb/design-apis/rest-apis.md)
   * [Deploy and Publish APIs](products/mware-esb/deploy-and-publish-apis.md)
   * [Consume APIs](products/mware-esb/consume-apis.md)
