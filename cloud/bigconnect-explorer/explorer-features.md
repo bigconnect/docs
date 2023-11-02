@@ -86,7 +86,7 @@ Besides the various objects that can be loaded into the platform, BigConnect Exp
 
 The Explorer  includes a dashboard where users are being taken upon login. Various widgets can be added or removed from the dashboard to bring to focus any relevant information.
 
-![BigConnect Explorer Dashboard](<../../.gitbook/assets/image (2).png>)
+![BigConnect Explorer Dashboard](<../../.gitbook/assets/image (2) (1).png>)
 
 ### Analysis Tools
 
@@ -106,7 +106,7 @@ Objects can be copied and pasted from anywhere onto the graph, external files ca
 
 Finding how two objects are connected is quite easy as well. Just use the Find Path feature to find out.
 
-![BigConnect Explorer Find Path](<../../.gitbook/assets/image (11).png>)
+![BigConnect Explorer Find Path](<../../.gitbook/assets/image (11) (1).png>)
 
 #### Spatial Analysis
 

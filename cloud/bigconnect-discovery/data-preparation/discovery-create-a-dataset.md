@@ -91,7 +91,7 @@ After establishing the data connection, go to **MANAGEMENT** > **Data Preparatio
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (5).png" alt="">
+<img src="../../../.gitbook/assets/image (5) (1).png" alt="">
 
 </div>
 

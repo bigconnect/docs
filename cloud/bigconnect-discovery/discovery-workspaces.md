@@ -90,7 +90,7 @@ The shared workspace list page is used to view a list of all shared workspaces a
 
 The shared workspace list page is composed as follows:
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (1) (1).png>)
 
 1. **Number of shared workspaces:** Displays how many shared workspaces are listed.
 2. **Add a shared workspace:** Click this button to move to the page to add a shared workspace. (See Create a shared workspace for a deailed procedure)

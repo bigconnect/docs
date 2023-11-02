@@ -6,7 +6,7 @@ Below are instructions on creating rules, checking the results, and modifying or
 
 The Edit Rules page consists of the following:
 
-![](<../../../../.gitbook/assets/image (15).png>)
+![](<../../../../.gitbook/assets/image (15) (1).png>)
 
 1. Column type, name, and menu button
 2. Menu for simple rule creation

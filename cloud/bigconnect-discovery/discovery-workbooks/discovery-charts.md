@@ -145,7 +145,7 @@ Defines how to display numerical text data on the chart graph. To use this funct
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (10).png" alt="">
+<img src="../../../.gitbook/assets/image (10) (1).png" alt="">
 
 </div>
 
@@ -177,7 +177,7 @@ Defines how to display the X-axis of the chart. If you set the chart direction *
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (8).png" alt="">
+<img src="../../../.gitbook/assets/image (8) (1).png" alt="">
 
 </div>
 
@@ -202,7 +202,7 @@ This section describes how to style the six most popular chart types (bar chart,
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (6).png" alt="">
+<img src="../../../.gitbook/assets/image (6) (1).png" alt="">
 
 </div>
 
@@ -230,7 +230,7 @@ A table block is formed based on the categories into which the dimension columns
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image.png" alt="">
+<img src="../../../.gitbook/assets/image (15).png" alt="">
 
 </div>
 
@@ -246,7 +246,7 @@ A table block is formed based on the categories into which the dimension columns
 
 This type of chart presents data values in each category of a dimension column with points. Adjacent data points are connected with each other. This type of chart is used to view trends.
 
-![](<../../../.gitbook/assets/image (14).png>)
+![](<../../../.gitbook/assets/image (14) (1).png>)
 
 **Chart type**
 
@@ -319,7 +319,7 @@ Map view uses map layer shelves instead of the row/column/intersection shelves t
 
 When a string dimension is placed on a map layer shelf, data points are colored based on its elements; when the mouse is over a data point, the corresponding string is displayed in the data tooltip.
 
-![](<../../../.gitbook/assets/image (7).png>)
+![](<../../../.gitbook/assets/image (7) (1).png>)
 
 You can also place measures on a layer shelf to classify colors by measure and simultaneously represent different point sizes based on that measure. As with dimension values, the corresponding measure is displayed in the tooltip.
 
