@@ -47,7 +47,7 @@ cd samples-apim/graphql-backend
 
 Once the above steps are done, the Star Wars server will be running on `http://localhost:8080`.
 
-<figure><img src="../../../.gitbook/assets/image (879).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (879).png" alt=""><figcaption></figcaption></figure>
 
 You can use `http://localhost:8080/graphql` as the endpoint when creating the GraphQL API.
 
@@ -62,7 +62,7 @@ You can use `http://localhost:8080/graphql` as the endpoint when creating the Gr
     Let's use `admin` as the username and password to sign in.
 2. Click **Create API** and then click **Import GraphQL SDL**.
 
-<figure><img src="../../../.gitbook/assets/create-graphql-schema-option.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/create-graphql-schema-option.webp" alt=""><figcaption></figcaption></figure>
 
 3. Import the schema by dragging and dropping the file or by uploading the file, and click **Next**.
 
@@ -74,7 +74,7 @@ Let's use the [StarWarsAPI schema definition](https://apim.docs.wso2.com/en/late
 * The file name can be any name, which is based on your preference.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (880).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (880).png" alt=""><figcaption></figcaption></figure>
 
 4. Enter the GraphQL API related details and click **Create**.
 
@@ -82,7 +82,7 @@ Let's create an API named "StarWarsAPI" using the following sample data.
 
 <table data-header-hidden><thead><tr><th width="136"></th><th></th></tr></thead><tbody><tr><td>Field</td><td>Description</td></tr><tr><td>Name</td><td>StarWarsAPI</td></tr><tr><td>Context</td><td><code>/swapi</code></td></tr><tr><td>Version</td><td>1.0.0</td></tr><tr><td>Endpoint</td><td><p>http://localhost:8080/graphql</p><ul><li>When you provide the HTTP URL as the backend endpoint, WSO2 API-M will internally derive the corresponding WebSocket URL <code>ws://localhost:8080/graphql</code>.</li><li>Thereafter, the API Gateway will use this WebSocket URL as the backend subscription endpoint of the GraphQL API.</li></ul></td></tr></tbody></table>
 
-<figure><img src="../../../.gitbook/assets/image (881).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (881).png" alt=""><figcaption></figcaption></figure>
 
 5.  Optionally, modify the existing GraphQL schema definition.
 
@@ -93,7 +93,7 @@ Let's create an API named "StarWarsAPI" using the following sample data.
     The existing GraphQL API schema gets downloaded.\
 
 
-    <figure><img src="../../../.gitbook/assets/image (882).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../.gitbook/assets/image (882).png" alt=""><figcaption></figcaption></figure>
 
     c. Update the schema definition as required.
 
@@ -109,7 +109,7 @@ a. Click **Show More** under the **Operations** section in the **Overview** page
 
 <div data-full-width="true">
 
-<figure><img src="../../../.gitbook/assets/image (883).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (883).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -123,7 +123,7 @@ Repeat the following sub-steps to create two scopes named `adminScope` and `Film
 
 **i.a.** Click **Local Scopes**, and then click **Create Scopes**.
 
-<figure><img src="../../../.gitbook/assets/image (884).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (884).png" alt=""><figcaption></figcaption></figure>
 
 **i.b.** Enter the required details.
 
@@ -133,13 +133,13 @@ Enter the following details for this example scenario.
 
 
 
-<figure><img src="../../../.gitbook/assets/image (885).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (885).png" alt=""><figcaption></figcaption></figure>
 
 **i.c.** Press `Enter` to add each role.
 
 **i.d.** Click **Save**.
 
-<figure><img src="../../../.gitbook/assets/image (886).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (886).png" alt=""><figcaption></figcaption></figure>
 
 **ii.** **Define the operation level configurations**.
 
@@ -147,7 +147,7 @@ Enter the following details for this example scenario.
 
 **ii.b.** Click **Operation Level** to apply Rate Limiting for operations.
 
-<figure><img src="../../../.gitbook/assets/image (887).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (887).png" alt=""><figcaption></figcaption></figure>
 
 **ii.c.** Select a Rate Limiting Policy, scope, and enable or disable security for each of the operations.
 
@@ -162,7 +162,7 @@ Apply the following scopes to the respective operations.
 
 If you check the list of scopes, it should appear as follows:
 
-<figure><img src="../../../.gitbook/assets/image (888).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (888).png" alt=""><figcaption></figcaption></figure>
 
 Now, you have successfully created and configured a GraphQL API.
 

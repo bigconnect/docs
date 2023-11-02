@@ -35,19 +35,19 @@ Follow the instructions below to create a WebSocket API using the basic flow:
     For testing purposes, you can use `https://localhost:9443/publisher` and `admin` as the username and password.
 2. Click **Create API**, go to **Streaming API**, and Click **WebSocket API**.
 
-<figure><img src="../../../../.gitbook/assets/design-new-streaming-api.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/design-new-streaming-api.webp" alt=""><figcaption></figcaption></figure>
 
 3. Enter the API details.
 
 <table><thead><tr><th width="151">Field</th><th>Sample value</th></tr></thead><tbody><tr><td>Name</td><td>WebSocket</td></tr><tr><td>Context</td><td><p><code>/websocket</code></p><p>The API context is used by the Gateway to identify the API. Therefore, the API context must be unique. This context is the API's root context when invoking the API through the Gateway.</p><p>You can define the API's version as a parameter of its context by adding the <code>{version}</code> into the context. For example, <code>{version}/websocket</code>. The WSO2 API-M assigns the actual version of the API to the <code>{version}</code> parameter internally. For example, <code>ws://localhost:9099/1.0.0/websocket</code>. Note that the version appears before the context, allowing you to group your APIs based on the versions.</p></td></tr><tr><td>Version</td><td>1.0.0</td></tr><tr><td>Protocol</td><td>WebSocket</td></tr><tr><td>Endpoint</td><td><p>Use one of the following endpoints.</p><ul><li>ws://ws.ifelse.io:80</li><li>wss://ws.ifelse.io:443</li></ul></td></tr></tbody></table>
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 4. Click **Create** to create the API.
 
 The overview page of the newly created API appears.
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2 - Configure the Topics <a href="#step-2-configure-the-topics" id="step-2-configure-the-topics"></a>
 
@@ -60,18 +60,18 @@ Topics of a WebSocket API are always **Subscribe (sub) and Publish (pub)**, wher
     a. Optionally, click delete as shown below, to delete an existing topic.\
 
 
-    <figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
     b. Select the **Types**, enter the **Topic Name**, and click **+** as shown below, to add a new topic.
 
 | Topic Name | `/notifications` |
 | ---------- | ---------------- |
 
-<figure><img src="../../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 The newly added topic is displayed as follows.
 
-<figure><img src="../../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 c. Optionally, provide a URL Mapping to the topic.
 
@@ -83,7 +83,7 @@ Expand **both** PUB and SUB under the created topic, provide the same URL Mappin
 | ----------- | ----------------------- |
 | URL Mapping | `/notifications`        |
 
-<figure><img src="../../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 3 - View the AsyncAPI Definition <a href="#step-3-view-the-asyncapi-definition" id="step-3-view-the-asyncapi-definition"></a>
 
@@ -91,7 +91,7 @@ Click **AsyncAPI Definition** under **API Configurations**.
 
 The AsyncAPI definition of the streaming API, which you just created, appears.
 
-<figure><img src="../../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 Now, you have successfully created and configured a Streaming API. Next, let's [Publish your API](https://apim.docs.wso2.com/en/latest/deploy-and-publish/publish-on-dev-portal/publish-an-api).
 

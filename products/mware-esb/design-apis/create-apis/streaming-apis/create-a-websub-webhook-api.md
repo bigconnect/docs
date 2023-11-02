@@ -45,7 +45,7 @@ Follow the instructions below to create a WebHook API using the basic flow:
     For testing purposes, you can use `https://localhost:9443/publisher` and `admin` as the username and password.
 2. Click **CREATE API**, go to **Streaming API**, and Click **Webhook API**.
 
-<figure><img src="../../../../.gitbook/assets/design-new-streaming-api2.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/design-new-streaming-api2.webp" alt=""><figcaption></figcaption></figure>
 
 3. Enter the details of the new WebSub/Webhook API.
 
@@ -60,7 +60,7 @@ Follow the instructions below to create a WebHook API using the basic flow:
 
 The overview page of the created WebSub/WebHook API appears.
 
-<figure><img src="../../../../.gitbook/assets/image (889).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (889).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2 - Configure the Topics <a href="#step-2-configure-the-topics" id="step-2-configure-the-topics"></a>
 
@@ -93,7 +93,7 @@ Click **AsyncAPI Definition** under **API Configurations**.
 
 The AsyncAPI definition of the streaming API, which you just created, appears.
 
-<figure><img src="../../../../.gitbook/assets/image (890).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (890).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 4 - Configure the Runtime Configurations <a href="#step-4-configure-the-runtime-configurations" id="step-4-configure-the-runtime-configurations"></a>
 

@@ -155,7 +155,7 @@ Description
 > * This rule replaces the values in the selected column with results returned by the expression.
 > * When using a complex expression, click the **Advanced editor** to display the popup shown below:
 
-![](<../../../../.gitbook/assets/image (26).png>)
+![](<../../../../.gitbook/assets/image (26) (1).png>)
 
 In the **Advanced editor**, you can edit the expression in a larger window while viewing the column list and a list of functions and their descriptions, and also run a validity check before implementing the expression.
 
