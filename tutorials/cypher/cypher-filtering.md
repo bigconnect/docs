@@ -6,9 +6,9 @@ However, most of the time, developers are not querying for a narrow value and ne
 
 All of our examples will continue with the graph example we have been using in the previous guides, but include some more data for some of our later queries. Below is an image of the new graph.
 
-We have added more `Person` nodes \(blue\) who `WORK_FOR` different `Company` nodes \(red\) and `LIKE` different `Technology` nodes. Each person could also have multiple `IS_FRIENDS_WITH` relationships to other people. This gives us a network of people, the companies they work for, and the technologies they like.
+We have added more `Person` nodes (blue) who `WORK_FOR` different `Company` nodes (red) and `LIKE` different `Technology` nodes. Each person could also have multiple `IS_FRIENDS_WITH` relationships to other people. This gives us a network of people, the companies they work for, and the technologies they like.
 
-![](../../.gitbook/assets/image%20%28247%29%20%281%29.png)
+![](<../../.gitbook/assets/image (751).png>)
 
 ## The WHERE clause
 
@@ -52,13 +52,13 @@ WHERE 3 <= p.yearsExp <= 7
 RETURN p
 ```
 
-![](../../.gitbook/assets/image%20%28619%29.png)
+![](<../../.gitbook/assets/image (732).png>)
 
 ### Testing if a Property Exists
 
 You may only be interested if a property exists on a node or relationship. For instance, you might want to check which customers in your system have Twitter handles, so you can show relevant content. Or, you could check if the all of your employees have a start date property to verify which entities might need updated.
 
-Remember: in Neo4j, a property only exists \(is stored\) if it has a value. A null property will not be stored. This ensures that only valuable, necessary information is retained for your nodes and relationships.
+Remember: in Neo4j, a property only exists (is stored) if it has a value. A null property will not be stored. This ensures that only valuable, necessary information is retained for your nodes and relationships.
 
 To write this type of existence check, you simply need to use the `WHERE` clause and the `exists()` method for that property. The Cypher code is written in the block below.
 
@@ -76,11 +76,11 @@ RETURN p, rel, c
 
 Query1 Results:
 
-![](../../.gitbook/assets/image%20%28640%29.png)
+![](<../../.gitbook/assets/image (790).png>)
 
 Query2 Results:
 
-![](../../.gitbook/assets/image%20%2873%29.png)
+![](<../../.gitbook/assets/image (712).png>)
 
 ### Strings - Partial Values, Fuzzy Searches, and More
 
@@ -110,7 +110,7 @@ You can also use regular expressions to test the value of strings. For example, 
 
 Let’s look at an example.
 
-![](../../.gitbook/assets/image%20%2854%29.png)
+![](<../../.gitbook/assets/image (718).png>)
 
 Just like in SQL and other languages, you can check if a property value is a value in a list. The `IN` keyword allows you to specify an array of values and validate a property’s contents against each one in the list.
 
@@ -122,7 +122,7 @@ WHERE p.yearsExp IN [1, 5, 6]
 RETURN p.name, p.yearsExp
 ```
 
-![](../../.gitbook/assets/image%20%28227%29.png)
+![](<../../.gitbook/assets/image (840).png>)
 
 ## Filtering on Patterns
 
@@ -145,11 +145,11 @@ RETURN friend.name
 
 Query1 Results:
 
-![](../../.gitbook/assets/image%20%28621%29.png)
+![](<../../.gitbook/assets/image (799).png>)
 
 Query2 Results:
 
-![](../../.gitbook/assets/image%20%28417%29.png)
+![](<../../.gitbook/assets/image (759).png>)
 
 ### Optional Patterns
 
@@ -165,12 +165,12 @@ OPTIONAL MATCH (p)-[:WORKS_FOR]-(other:Company)
 RETURN p.name, other.name
 ```
 
-![](../../.gitbook/assets/image%20%28569%29.png)
+![](<../../.gitbook/assets/image (862).png>)
 
 Notice that Joe is returned because his name starts with the letter ‘J’, but his company name is null. That is because he does not have a `WORKS_FOR` relationship to a company node. Since we used optional match, his `Person` node is still returned from the first match, but the second match is not found, so returns null.
 
 {% hint style="info" %}
-To see the difference, try running the query without the `OPTIONAL` in front of the second match. You can see that Joe’s row is no longer returned. That is because Cypher reads the statement with an `AND` match, so that the person must match the first criteria \(name starts with ‘J’\) and the second criteria \(person works for a company\).
+To see the difference, try running the query without the `OPTIONAL` in front of the second match. You can see that Joe’s row is no longer returned. That is because Cypher reads the statement with an `AND` match, so that the person must match the first criteria (name starts with ‘J’) and the second criteria (person works for a company).
 {% endhint %}
 
 ## More Complex Patterns
@@ -192,15 +192,14 @@ RETURN p.name
 
 Query1 Results:
 
-![](../../.gitbook/assets/image%20%28201%29.png)
+![](<../../.gitbook/assets/image (808).png>)
 
 Query2 Results:
 
-![](../../.gitbook/assets/image%20%28612%29.png)
+![](<../../.gitbook/assets/image (754).png>)
 
 Notice that on the second query, we used a comma after the first `MATCH` line and added another pattern to match on the next line. This allows us to chain together patterns, similar to when we used the `WHERE exists(<pattern>)` syntax above. With this structure, though, we can add multiple different patterns and link them together, allowing us to traverse various pieces of the graph with certain patterns.
 
 ## Next Steps
 
 We have seen how to use the `WHERE` clause to filter property values and how to search properties for partial values or string matches. Patterns helped us maneuver through the graph and check data for specific relationships or paths. In the next section, we will learn how to use aggregation in Cypher and how to do more with the return results.
-

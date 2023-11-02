@@ -6,7 +6,7 @@ Below are instructions on creating rules, checking the results, and modifying or
 
 The Edit Rules page consists of the following:
 
-![](<../../../../.gitbook/assets/image (270).png>)
+![](<../../../../.gitbook/assets/image (15).png>)
 
 1. Column type, name, and menu button
 2. Menu for simple rule creation
@@ -25,11 +25,11 @@ The Edit Rules page consists of the following:
 * Depending on your OS, click while holding the ^ or ⌘ key to select/deselect a column (toggle).
 * Click while holding the Shift key to select a range.
 
-![](<../../../../.gitbook/assets/image (44).png>)
+![](<../../../../.gitbook/assets/image (142).png>)
 
 2\. Click the ![header\_menu](https://metatron-app.github.io/metatron-doc-discovery/en/\_images/header\_menu.png) icon in the header of a selected column to open the header menu, and select a transformation command. Among the commands, **drop** and **settype** are performed upon clicking.
 
-![](<../../../../.gitbook/assets/image (85).png>)
+![](<../../../../.gitbook/assets/image (50).png>)
 
 3\. To add details, fill out the command input panel below, and click the **Add** button.
 
@@ -38,30 +38,34 @@ The Edit Rules page consists of the following:
 * Click a distribution bar to filter the data based on the selected range (toggle).
 * Click the type mismatch or null value graph to set conditions for those values.
 
-![](<../../../../.gitbook/assets/image (484).png>)
+![](<../../../../.gitbook/assets/image (182).png>)
 
 ### Using the command input panel
 
 1\. Select a transformation rule (command) in the command input panel.
 
-![](<../../../../.gitbook/assets/image (117).png>)
+![](<../../../../.gitbook/assets/image (139).png>)
 
 2\. Add details as needed, and click the **Add** button. Target columns can be selected using the input panel. You can also designate a column by clicking the column header.
 
-![](<../../../../.gitbook/assets/image (502).png>)
+![](<../../../../.gitbook/assets/image (185).png>)
 
 ### Inserting into a rule list
 
 1\. In the list of rules of the right, place the cursor over the boundary where you wish to insert a new rule. The **+ Insert rule** button appears. Press this button.
 
-![](<../../../../.gitbook/assets/image (170).png>)
+<div align="left">
+
+<img src="../../../../.gitbook/assets/image (35).png" alt="">
+
+</div>
 
 2\. Select a transformation rule (command) in the command input panel. Add details as needed, and click the **Add** button.
 
 * When a rule is inserted in this manner, all subsequent rules are affected.
 * Rules that cannot be normally executed are displayed in red. In this case, they will revert to the results obtained in the previous step.
 
-![](<../../../../.gitbook/assets/image (502) (1).png>)
+![](<../../../../.gitbook/assets/image (502).png>)
 
 ## Edit a created rule
 
@@ -69,11 +73,15 @@ The Edit Rules page consists of the following:
 
 1\. In the list of rules on the right, place the cursor over the rule to be edited. The ![edit](https://metatron-app.github.io/metatron-doc-discovery/en/\_images/icon\_edit1.png) button appears. Press this button.
 
-![](<../../../../.gitbook/assets/image (601).png>)
+<div align="left">
+
+<img src="../../../../.gitbook/assets/image (79).png" alt="">
+
+</div>
 
 2\. Edit the rule in the command input panel and press the **Done** button.
 
-![](<../../../../.gitbook/assets/image (508).png>)
+![](<../../../../.gitbook/assets/image (46).png>)
 
 ### Deleting a rule
 
@@ -81,13 +89,21 @@ In the list of rules on the right, place the cursor over the rule to be deleted.
 
 When a rule is deleted in this manner, all subsequent rules are affected.
 
-![](<../../../../.gitbook/assets/image (28).png>)
+<div align="left">
+
+<img src="../../../../.gitbook/assets/image (188).png" alt="">
+
+</div>
 
 ### Undo and redo
 
 On the upper right of the rule list are icons to perform **undo** and **redo**.
 
-![](<../../../../.gitbook/assets/image (329).png>)
+<div align="left">
+
+<img src="../../../../.gitbook/assets/image (109).png" alt="">
+
+</div>
 
 To revert to a state before executing a command, press the ![undo](https://metatron-app.github.io/metatron-doc-discovery/en/\_images/icon\_undo.png) button.
 

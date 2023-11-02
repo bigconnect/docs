@@ -22,9 +22,9 @@ Let's get started to configure the service provider you created!
 
 1. Expand the **Inbound Authentication Configuration** section and then expand **OAuth/OpenID Connect Configuration.** Click **Configure**.
 2. Fill in the form that appears. For the **Allowed Grant Types** you can disable the ones you do not require or wish to block.\
-   ![](<../../../.gitbook/assets/image (736) (1).png>)
+   ![](<../../../.gitbook/assets/image (242).png>)
 3. Click **Add**. Note that client key and client secret get generated.\
-   ![](<../../../.gitbook/assets/image (706).png>)
+   ![](<../../../.gitbook/assets/image (309).png>)
 
 * **OAuth Client Key** - This is the client key of the service provider, which will be checked for authentication by the Identity Server before providing the access token.
 * **OAuth Client Secret** - This is the client secret of the service provider, which will be checked for authentication by the Identity Server before providing the access token. Click the **Show** button to view the exact value of this.

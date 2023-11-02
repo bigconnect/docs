@@ -4,13 +4,13 @@ MWARE Portal is modular, meaning it’s composed of many applications divided in
 
 In System Settings, administrators make system scoped configuration changes and set system-wide default configurations for other scopes. System Settings is located in Control Panel → Configuration → System Settings.
 
-![](<../../../.gitbook/assets/image (704) (1) (1).png>)
+![](<../../../.gitbook/assets/image (277).png>)
 
 ### Editing System Configurations <a href="#editing-system-configurations" id="editing-system-configurations"></a>
 
 System Settings is organized into sections (for example, Content) and categories (for example, Workflow) based on the functionality being configured. There’s also a Search bar to make finding configuration entries easier. Search for the name of a specific configuration entry, or even a specific field within an entry.
 
-![](<../../../.gitbook/assets/image (711) (1) (1).png>)
+![](<../../../.gitbook/assets/image (295).png>)
 
 Changing a configuration isn’t difficult:
 
@@ -20,7 +20,7 @@ Changing a configuration isn’t difficult:
 
 **Important:** Content generated using templates (e.g., FreeMarker templates and Application Display Templates) is cached. Cached content might not reflect configuration changes until the cache is invalidated (cleared). The Server Administration → Resources tab provides cache clearing options.
 
-![](<../../../.gitbook/assets/image (713) (1) (1).png>)
+![](<../../../.gitbook/assets/image (257).png>)
 
 If you make some regrettable configuration decisions and can’t recall exactly what you did, start over by clicking the actions button (![Actions](https://liferay-support.zendesk.com/hc/article\_attachments/360030186732/icon-actions.png)), then clicking _Reset Default Values_.
 

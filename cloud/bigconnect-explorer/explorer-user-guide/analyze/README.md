@@ -2,7 +2,7 @@
 
 The Analyze section of BigConnect Explorer is where you can use all available tools to perform various tasks on your data.
 
-![](../../../../.gitbook/assets/image%20%28576%29.png)
+![](<../../../../.gitbook/assets/image (439).png>)
 
 BigConnect Explorer's tools are pluggable, meaning that they can be installed and configured to handle specific business cases. By default, three general tools are available:
 
@@ -11,4 +11,3 @@ BigConnect Explorer's tools are pluggable, meaning that they can be installed an
 * [Map](map.md): tool used to see on the map items that have a valid geolocation
 
 You can add as many tools as you want by clicking the **New** dropdown button in the left pane.
-

@@ -2,13 +2,13 @@
 
 Cypher is like SQL a declarative, textual query language, but for graphs.
 
-It consists of clauses, keywords and expressions like predicates and functions, many of which will be familiar \(like `WHERE`, `ORDER BY`, `SKIP LIMIT`, `AND`, `p.unitPrice > 10`\).
+It consists of clauses, keywords and expressions like predicates and functions, many of which will be familiar (like `WHERE`, `ORDER BY`, `SKIP LIMIT`, `AND`, `p.unitPrice > 10`).
 
 Unlike SQL, Cypher is all about expressing graph patterns. We added a special clause `MATCH` for **matching** those patterns in your data. These patterns are what you would usually draw on a whiteboard, just converted into text using **ASCII-art symbols**.
 
 We represent the circles of node entities with round parentheses, like this: `(p:Product)`.
 
-And arrows of relationships are drawn as such `-->`, you can add relationship-type and other information in square brackets  
+And arrows of relationships are drawn as such `-->`, you can add relationship-type and other information in square brackets\
 `-[:ORDERED]->`.
 
 Bringing both together `()-->()<--()` looks almost like our original diagram. It gives us a first hint at the expressiveness of graph patterns: `(cust:Customer)-[:ISSUED]->(o:Order)-[:CONTAINS]->(prod:Product)`.
@@ -21,7 +21,7 @@ With **user defined procedures** you can extend the language with functionality 
 
 ## Data Model Transformation
 
-Relational databases store data in tables with fixed structure \(schema\), each column having a name, type, length, constraints etc. References between tables are represented by repeating the primary key of one table as column in another as a foreign key. For many-to-many references, JOIN-tables \(or link-tables\) are needed as artificial construct between the connected tables.
+Relational databases store data in tables with fixed structure (schema), each column having a name, type, length, constraints etc. References between tables are represented by repeating the primary key of one table as column in another as a foreign key. For many-to-many references, JOIN-tables (or link-tables) are needed as artificial construct between the connected tables.
 
 A well normalized relational model can be directly translated into a equivalent graph model. Graph models are mostly driven by use-cases, so there will be opportunity for optimization and model evolution afterwards.
 
@@ -35,7 +35,7 @@ It is important to have an good understanding of the graph model before you star
 
 As already mentioned, the essence of your Cypher statements are the patterns you are are interested in.
 
-In a node pattern `(variable:Label)` you can use a variable and one or more labels for the node. You can also provide attributes as key-value structure, e.g. \(item:Product {name:”Chocolade”}\).
+In a node pattern `(variable:Label)` you can use a variable and one or more labels for the node. You can also provide attributes as key-value structure, e.g. (item:Product {name:”Chocolade”}).
 
 For relationship-patterns like `()-[someRel:REL_TYPE]→()` it is the same, only that you might chose an variable like `someRel` and one or more alternative relationship-types.
 
@@ -53,11 +53,11 @@ Please refer to the relational and graph model below when considering the data s
 
 **Relational model**
 
-![](../../.gitbook/assets/image%20%2842%29.png)
+![](<../../.gitbook/assets/image (792).png>)
 
 **Graph Model**
 
-![](../../.gitbook/assets/image%20%28286%29.png)
+![](<../../.gitbook/assets/image (784).png>)
 
 The intent of this guide is to introduce Cypher by comparing it with the equivalent SQL statements, so that your existing SQL knowledge allows your to understand it immediately.
 
@@ -156,7 +156,7 @@ FROM products AS p
 WHERE p.ProductName LIKE 'C%' AND p.UnitPrice > 100;
 ```
 
-The `LIKE` operator is replaced by a `STARTS WITH` \(there are also `CONTAINS` and `ENDS WITH`\) all three of which are index supported.
+The `LIKE` operator is replaced by a `STARTS WITH` (there are also `CONTAINS` and `ENDS WITH`) all three of which are index supported.
 
 ```sql
 MATCH (p:Product)
@@ -170,7 +170,7 @@ You can also use a regular expression, like `p.productName =~ "C.*"`.
 
 _Join Records, Distinct Results_
 
-We want to see who bought _Chocolade_. Let’s join the four tables together, refer to the model \(ER-diagram\) when you’re unsure.
+We want to see who bought _Chocolade_. Let’s join the four tables together, refer to the model (ER-diagram) when you’re unsure.
 
 ```sql
 SELECT DISTINCT c.CompanyName
@@ -181,7 +181,7 @@ JOIN products AS p ON (od.ProductID = p.ProductID)
 WHERE p.ProductName = 'Chocolade';
 ```
 
-The graph model \(have a look\) is much simpler, as we don’t need join tables, and expressing connections as graph patterns, is easier to read too.
+The graph model (have a look) is much simpler, as we don’t need join tables, and expressing connections as graph patterns, is easier to read too.
 
 ```sql
 MATCH (p:Product {productName:"Chocolade"})<-[:PRODUCT]-(:Order)<-[:PURCHASED]-(c:Customer)
@@ -242,7 +242,7 @@ ORDER BY cnt DESC LIMIT 10
 
 _Collecting Master-Detail Queries_
 
-In SQL there is a particularly dreaded kind of query – master detail information. You have one main entity \(master, head, parent\) and many dependent ones \(detail, position, child\). Usually you either query it by joining both and returning the master data multiple times \(once for each detail\), or by only fetching the primary key of the master and then pulling all detail rows via that foreign key.
+In SQL there is a particularly dreaded kind of query – master detail information. You have one main entity (master, head, parent) and many dependent ones (detail, position, child). Usually you either query it by joining both and returning the master data multiple times (once for each detail), or by only fetching the primary key of the master and then pulling all detail rows via that foreign key.
 
 For instance if we look at the employees per territory, then the territory information is returned for each employee.
 
@@ -253,7 +253,7 @@ JOIN EmployeeTerritory AS et ON (et.EmployeeID = e.EmployeeID)
 JOIN Territory AS t ON (et.TerritoryID = t.TerritoryID);
 ```
 
-In Cypher we can either return the structure like in SQL. Or we can choose to use the `collect` aggregation function, which aggregates values into a collection \(list,array\). So we only return one row per parent, containing an inlined collection of child values. This also works for nested values.
+In Cypher we can either return the structure like in SQL. Or we can choose to use the `collect` aggregation function, which aggregates values into a collection (list,array). So we only return one row per parent, containing an inlined collection of child values. This also works for nested values.
 
 ```sql
 MATCH (t:Territory)<-[:IN_TERRITORY]-(e:Employee)
@@ -264,9 +264,9 @@ RETURN t.description, collect(e.lastName);
 
 _Hierarchies and Trees, Variable Length Joins_
 
-If you have to express category-, territory- or organizational hierarchies in SQL then you model it usually with a self-join via a foreign key from child to parent. Adding data is not problematic, as are single level queries \(get all children for this parent\). As soon as you get into multi-level queries, the number of joins explodes, especially if your level depth not fixed.
+If you have to express category-, territory- or organizational hierarchies in SQL then you model it usually with a self-join via a foreign key from child to parent. Adding data is not problematic, as are single level queries (get all children for this parent). As soon as you get into multi-level queries, the number of joins explodes, especially if your level depth not fixed.
 
-Taking the example of the product categories, we have to decide upfront up to how many levels of categories we want to query. We will tackle only three potential levels here \(which means 1+2+3 = 6 self-joins of the ProductCategory table\).
+Taking the example of the product categories, we have to decide upfront up to how many levels of categories we want to query. We will tackle only three potential levels here (which means 1+2+3 = 6 self-joins of the ProductCategory table).
 
 ```sql
 SELECT p.ProductName
@@ -282,7 +282,7 @@ JOIN ProductCategory pc5 ON (pc4.ParentID = pc5.CategoryID AND pc5.CategoryName 
 ;
 ```
 
-Cypher is able to express hierarchies of any depth just with the appropriate relationships. Variable levels are represented by variable length paths, which are denoted by a star `*` after the relationship-type and optional limits \(`min..max`\).
+Cypher is able to express hierarchies of any depth just with the appropriate relationships. Variable levels are represented by variable length paths, which are denoted by a star `*` after the relationship-type and optional limits (`min..max`).
 
 ```sql
 MATCH (p:Product)-[:CATEGORY]->(l:ProductCategory)-[:PARENT*0..]-(:ProductCategory {name:"Dairy Products"})
@@ -290,4 +290,3 @@ RETURN p.name
 ```
 
 There is much more to Cypher than shown in this short section. Hopefully the comparison with SQL helped you to understand the concepts
-

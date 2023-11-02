@@ -2,15 +2,15 @@
 
 In BigConnect Discovery, a “data source” refers to a Druid database table into which data is ingested. Based on these data sources, workbooks and notebooks perform data analytics and visualization.
 
-The Data Source menu can be accessed under **MANAGEMENT** &gt; **Data Storage** &gt; **Data Source** on the left-hand panel of the main screen.
+The Data Source menu can be accessed under **MANAGEMENT** > **Data Storage** > **Data Source** on the left-hand panel of the main screen.
 
-![BigConnect Discovery Create DataSource](../../../.gitbook/assets/create_datasource_1.jpg)
+![BigConnect Discovery Create DataSource](../../../.gitbook/assets/create\_datasource\_1.jpg)
 
 ## “Dimensions” and “Measures”
 
 The columns of a data source linked to the dashboard are categorized into **dimension** and **measure** columns as explained below. To make full use of Discovery’s data analysis and visualization features, you must understand the concepts of dimensions and measures clearly.
 
-![](../../../.gitbook/assets/image%20%28546%29.png)
+![](<../../../.gitbook/assets/image (175).png>)
 
 
 
@@ -18,35 +18,33 @@ The columns of a data source linked to the dashboard are categorized into **dime
 
 A column containing categorical data with the following characteristics:
 
-> * The values in this type of column are not for aggregation but to be categorized \(e.g.: Category, Region, Organization\)
+> * The values in this type of column are not for aggregation but to be categorized (e.g.: Category, Region, Organization)
 > * By each of these categories, measure values are aggregated.
 
 **Measure columns**
 
 A column containing quantitative data with the following characteristics:
 
-> * The values in this type of column are subject to aggregation or contain quantitative information \(e.g.: Sales\)
+> * The values in this type of column are subject to aggregation or contain quantitative information (e.g.: Sales)
 > * These values are aggregated based on dimensions.
 
 ## Data source management home
 
 On this home page, you can create, edit and view data sources.
 
-![](../../../.gitbook/assets/manage_datasource_01.jpg)
+![](../../../.gitbook/assets/manage\_datasource\_01.jpg)
 
-1. **Status:** Filters the data source list by the availability of data sources stored in the data storage.
+1.  **Status:** Filters the data source list by the availability of data sources stored in the data storage.
 
-   > * **Enable:** Displays data sources that have been ingested and are available in workbooks or workbenches.
-   > * **Preparing:** Displays new data sources whose ingestion is in progress.
-   > * **Failed:** Displays data sources that have not been created properly.
-   > * **Disabled:** Displays data sources that have been ingested but are not available because of an error in a certain Druid process.
+    > * **Enable:** Displays data sources that have been ingested and are available in workbooks or workbenches.
+    > * **Preparing:** Displays new data sources whose ingestion is in progress.
+    > * **Failed:** Displays data sources that have not been created properly.
+    > * **Disabled:** Displays data sources that have been ingested but are not available because of an error in a certain Druid process.
+2.  **Publish:** Filter the data source list by public workspace.
 
-2. **Publish:** Filter the data source list by public workspace.
-
-   > * **Open Data:** Displays only data sources publicly available in all workspaces.
-   > * **Admin Workspace:** Displays only data sources available in the administrator workspace.
-   > * **Shared workspaces:** Displays only data sources available in the selected shared workspaces.
-
+    > * **Open Data:** Displays only data sources publicly available in all workspaces.
+    > * **Admin Workspace:** Displays only data sources available in the administrator workspace.
+    > * **Shared workspaces:** Displays only data sources available in the selected shared workspaces.
 3. **Creator:** Filters the data source list by user or group that created the source data.
 4. **Created time:** Determines whether the data source list is filtered by created or updated time. You can choose from among All, Today, and Last 7 days or specify a time range to display only those entries that were created/updated within the range.
 5. **Search by name of data source:** Searches the data source list for the name you type in.
@@ -57,7 +55,7 @@ On this home page, you can create, edit and view data sources.
 
 Click a data source listed in the data source management home to view various attributes of that data source. The following subsections describe each area of the data source details. Note that a data source represents a Druid database table stored in BigConnect Discovery and necessarily includes a timestamp column as a time-series table.
 
-![](../../../.gitbook/assets/manage_datasource_02.jpg)
+![](../../../.gitbook/assets/manage\_datasource\_02.jpg)
 
 ### **Common top area**
 
@@ -71,7 +69,7 @@ Click a data source listed in the data source management home to view various at
 
 This area displays basic information of the data source.
 
-![](../../../.gitbook/assets/manage_datasource_03.jpg)
+![](../../../.gitbook/assets/manage\_datasource\_03.jpg)
 
 
 
@@ -79,17 +77,17 @@ This area displays basic information of the data source.
 2. **Status:** Displays the availability of the data source.
 3. **Size:** Displays the size of the data source.
 4. **Duration:** Displays the time range of the timestamps included in the data source.
-5. **Timestamp setting:** Displays the granularities defined when the data source was created.
+5.  **Timestamp setting:** Displays the granularities defined when the data source was created.
 
-   > * **Query Granularity:** Defines the minimum time period by which data is queried. This ensures faster returns by aggregating data per granularity interval.
-   > * **Segment Granularity:** In Druid, a data source is stored into multiple segments to be processed over multiple nodes in the distributed cluster environment. This granularity setting defines the time intervals into which the data source is partitioned.
-   > * **Histogram:** A graph displaying the size of the data stored within each time interval in Kbytes. This histogram is can be rendered because the Druid engine timestamps every table record.
+    > * **Query Granularity:** Defines the minimum time period by which data is queried. This ensures faster returns by aggregating data per granularity interval.
+    > * **Segment Granularity:** In Druid, a data source is stored into multiple segments to be processed over multiple nodes in the distributed cluster environment. This granularity setting defines the time intervals into which the data source is partitioned.
+    > * **Histogram:** A graph displaying the size of the data stored within each time interval in Kbytes. This histogram is can be rendered because the Druid engine timestamps every table record.
 
 **Publish area**
 
 In this area, you can check and set which workspaces have access to the data source.
 
-![](../../../.gitbook/assets/image%20%28330%29.png)
+![](<../../../.gitbook/assets/image (164).png>)
 
 1. **Allow all workspaces to use this data source:** Select this check box to make the data source available in all workspaces.
 2. **Edit:** Used to allow specific workspaces to access the data source. This button will disappear if the data source is set as open data.
@@ -101,7 +99,7 @@ The top section of the column details tab provides a user interface to filter co
 
 Column view/settings
 
-![](../../../.gitbook/assets/manage_datasource_05.jpg)
+![](../../../.gitbook/assets/manage\_datasource\_05.jpg)
 
 1. **Search data:** Searches for columns by the column name you type in.
 2. **Role:** Displays all, dimension, or measure columns.
@@ -117,12 +115,12 @@ Column view/settings
 
 Provides a user interface for editing the name and type of columns.
 
-![](../../../.gitbook/assets/image%20%28377%29.png)
+![](<../../../.gitbook/assets/image (55).png>)
 
 1. **Role:** Displays whether the column is a dimension or measure.
 2. **Name:** Displays the actual name of the column.
 3. **Logical name:** Allows you to edit the logical name of the column displayed in the system.
-4. **Type:** Allows you to edit the logical type \(character/integer/date, etc.\) of the column.
+4. **Type:** Allows you to edit the logical type (character/integer/date, etc.) of the column.
 5. **Format:** Allows you to edit the display format of the column in the case of the column being a timestamp type.
 6. **Description:** Allows you to add a detailed description of the column.
 
@@ -134,32 +132,30 @@ The Monitoring tab reports the usage of the data source.
 
 Displays the trend of data source transactions over time.
 
-![](../../../.gitbook/assets/image%20%28196%29.png)
+![](<../../../.gitbook/assets/image (174).png>)
 
 **Changes of data size**
 
 Displays the trend of the data source size over time.
 
-![](../../../.gitbook/assets/image%20%28390%29.png)
+![](<../../../.gitbook/assets/image (103).png>)
 
-**Query distribution \(during last one week\)**
+**Query distribution (during last one week)**
 
-![](../../../.gitbook/assets/image%20%28596%29.png)
+![](<../../../.gitbook/assets/image (24).png>)
 
-* **Query distribution by user \(during last one week\):** Displays a pie chart of query percentages by user for the past week.
-* **Query distribution by elapsed time \(during last one week\):** Displays a pie chart of query percentages by execution time for the past week.
+* **Query distribution by user (during last one week):** Displays a pie chart of query percentages by user for the past week.
+* **Query distribution by elapsed time (during last one week):** Displays a pie chart of query percentages by execution time for the past week.
 
 **Query log**
 
 Used to view a detailed history of each performed query.
 
-![](../../../.gitbook/assets/image%20%28173%29.png)
+![](<../../../.gitbook/assets/image (148).png>)
 
 1. **Date:** Set a time range to display only those queries that were last executed within this time range.
 2. **Query type:** Filters the performed queries by type.
 3. **Status:** Displays all, succeeded, or failed queries.
 4. **Query list:** Lists queries filtered by specified criteria.
 5. **Detail:** Click on it to view the query statement.
-
-
 

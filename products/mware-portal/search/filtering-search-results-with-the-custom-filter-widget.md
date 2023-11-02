@@ -47,7 +47,7 @@ Set the name of the contributed query. This is unnecessary unless this filter ac
 
 **Boost (number)**
 
-****[Boost](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-term-query.html#term-field-params) the score of the results matching this query. Specify any whole or decimal number here that makes sense. If you always want results matching this at the top, set the Boost value really high (e.g., _1000_).
+[Boost](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-term-query.html#term-field-params) the score of the results matching this query. Specify any whole or decimal number here that makes sense. If you always want results matching this at the top, set the Boost value really high (e.g., _1000_).
 
 **Custom Heading (text)**
 

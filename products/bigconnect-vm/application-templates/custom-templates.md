@@ -12,7 +12,7 @@ To view a list of custom templates, from the menu select **App Templates** then 
 
 Click **Add Custom Template** then complete the details:
 
-![](<../../../.gitbook/assets/image (766) (1).png>)
+![](<../../../.gitbook/assets/image (301).png>)
 
 ### Selecting the build method
 
@@ -22,19 +22,19 @@ Next, choose the build method that suits your needs. You can use the web editor 
 
 Paste the contents of your docker-compose file into the box provided. Once all the details have been completed, click **Create custom template**.
 
-![](<../../../.gitbook/assets/image (722) (1).png>)
+![](<../../../.gitbook/assets/image (268).png>)
 
 #### Upload
 
 Click **Select file** to browse for a docker-compose file to upload. Once all the details have been completed, click **Create custom template**.
 
-![](<../../../.gitbook/assets/image (729) (1).png>)
+![](<../../../.gitbook/assets/image (280).png>)
 
 #### Git repository
 
 Fill in the details for your Git repository.
 
-![](<../../../.gitbook/assets/image (753) (1).png>)
+![](<../../../.gitbook/assets/image (262).png>)
 
 If your repository requires access authentication, toggle **Authentication** on then enter the username and password. When all the details have been entered, click **Create custom template**.
 
@@ -44,10 +44,10 @@ Custom templates support the use of variables to provide further customization o
 
 Variables are identified in stacks with `{{ }}`. For example, the following stack provides a `MYSQL_PASSWORD` variable:
 
-![](<../../../.gitbook/assets/image (734) (1).png>)
+![](<../../../.gitbook/assets/image (284).png>)
 
 When a variable is defined, options appear to customize how the variable appears when deploying the stack. You can set the **label**, **description** and **default value**.
 
 When a template is deployed, any variables that have been configured are editable:
 
-![](<../../../.gitbook/assets/image (754) (1).png>)
+![](<../../../.gitbook/assets/image (253).png>)

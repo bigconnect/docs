@@ -2,7 +2,7 @@
 
 ## Query Tips
 
-You can remove all accumulated output frames with `:clear`. The ‘X’ button at the top right of each pane removes that frame and aborts a \(long-\)running statement. The maximum number of frames that are kept is configurable in the CypherLab Settings from the left-side menu.
+You can remove all accumulated output frames with `:clear`. The ‘X’ button at the top right of each pane removes that frame and aborts a (long-)running statement. The maximum number of frames that are kept is configurable in the CypherLab Settings from the left-side menu.
 
 If you want to review a past query, you can find the result pane and click the query above the graph visualisation to pull it back into the editor. The keyboard shortcuts listed above will help you work efficiently within the editor area.
 
@@ -10,11 +10,15 @@ You can also write and edit multi-line queries by switching to multi-line editin
 
 ## Command Tips
 
-`Ctrl+Up` and `Ctrl+Down` \(Mac users, use the Cmd key\) allows you to navigate command history, and you can access all command history with `:history`. The command history is persisted across CypherLab restarts.
+`Ctrl+Up` and `Ctrl+Down` (Mac users, use the Cmd key) allows you to navigate command history, and you can access all command history with `:history`. The command history is persisted across CypherLab restarts.
 
-You can put several Cypher statements into the command line input \(with semicolons to separate statements\) and run as a block by enabling the multi-statement query setting. To do this, go to the `Settings` tab on your CypherLab window and make sure the box is checked for `Enable multi statement query editor`. These steps are shown in the image below.
+You can put several Cypher statements into the command line input (with semicolons to separate statements) and run as a block by enabling the multi-statement query setting. To do this, go to the `Settings` tab on your CypherLab window and make sure the box is checked for `Enable multi statement query editor`. These steps are shown in the image below.
 
-![](../../../.gitbook/assets/image%20%28236%29.png)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (814).png" alt="">
+
+</div>
 
 ## Output, Export, & Visualization
 
@@ -24,7 +28,7 @@ You can switch between `Graph`, `Table`, `Text`, and `Code` views to see the res
 Don’t worry if you don’t see any output. You might just be in Graph mode, but had your query return tabular/scalar data. To see the results, just switch the mode to the Table view.
 {% endhint %}
 
-Query time is reported in the `Table` or `Code` views \(**don’t rely on that exact timing though**\), and it includes the latency and deserialization costs, not just the actual query execution time.
+Query time is reported in the `Table` or `Code` views (**don’t rely on that exact timing though**), and it includes the latency and deserialization costs, not just the actual query execution time.
 
 ## CypherLab User Interface Guide
 
@@ -34,22 +38,22 @@ Goals
 
 Beginner
 
-For an introduction to Cypher Lab’s features and navigation, you can type `:play intro` into the command-line and press Enter or click the play button \(![cypher run button](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/cypher_run_button.jpg)\).
+For an introduction to Cypher Lab’s features and navigation, you can type `:play intro` into the command-line and press Enter or click the play button (![cypher run button](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/cypher\_run\_button.jpg)).
 
 ### Built-in Guides
 
-If you want to learn more about Cypher before diving in, click on any of the helpful links shown after startup \(commands also shown below\). 
+If you want to learn more about Cypher before diving in, click on any of the helpful links shown after startup (commands also shown below).&#x20;
 
-To pin a particular pane to the top of the window \(under command line\) so that it stays at the top when you run queries after it, just click the pushpin button \(![pin button](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/pin_button.png)\). This is especially helpful for pinning guides to the top so they do not get pushed down to the bottom of the window as you run queries.
+To pin a particular pane to the top of the window (under command line) so that it stays at the top when you run queries after it, just click the pushpin button (![pin button](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/pin\_button.png)). This is especially helpful for pinning guides to the top so they do not get pushed down to the bottom of the window as you run queries.
 
-| **Title** | **Description** | **Command** |
-| :--- | :--- | :--- |
-| Intro | A guided tour of Cypher Lab | `:play intro` |
-| Cypher | Cypher graph query language introduction | `:play cypher` |
-| The Movie Graph | A mini graph model of connections between actors and movies | `:play movie graph` |
+| **Title**              | **Description**                                                           | **Command**             |
+| ---------------------- | ------------------------------------------------------------------------- | ----------------------- |
+| Intro                  | A guided tour of Cypher Lab                                               | `:play intro`           |
+| Cypher                 | Cypher graph query language introduction                                  | `:play cypher`          |
+| The Movie Graph        | A mini graph model of connections between actors and movies               | `:play movie graph`     |
 | The Northwind Database | A classic use case of RDBMS to graph with import instructions and queries | `:play northwind graph` |
 
-All you have to do is enter any of the above commands in the CypherLab command line \(at the top of the pane\) and follow the accompanying guides to walk through the training or scenarios. Guides are presented as slideshows that can be navigated by clicking the forward and back arrows in the pane to progress to the next or previous slide. To execute any of the queries provided within a CypherLab guide, simply click on the query, and it will populate in the command line. Then, just press Enter or the Play button to execute the statement! Results of the query will populate in a panel right below the command line.
+All you have to do is enter any of the above commands in the CypherLab command line (at the top of the pane) and follow the accompanying guides to walk through the training or scenarios. Guides are presented as slideshows that can be navigated by clicking the forward and back arrows in the pane to progress to the next or previous slide. To execute any of the queries provided within a CypherLab guide, simply click on the query, and it will populate in the command line. Then, just press Enter or the Play button to execute the statement! Results of the query will populate in a panel right below the command line.
 
 ### Styling CypherLab Visualization
 
@@ -57,58 +61,65 @@ As mentioned above, any queries you run in CypherLab will populate your results 
 
 The nodes will already have sensible captions assigned by the CypherLab, which auto-selects a property from the property list to use as a caption. You can see all the properties of that element if you click on any node or relationship. Properties will appear below the visualization. Larger property sets might be collapsed into a subset, but there is a little triangle on the right to unfold them.
 
-For example, if you click on one of the `Movie` nodes in the MovieGraph \(`:play movie graph`\), then you can see its properties below the graph visual. The same applies for `Actor` nodes or the `ACTED_IN` relationships. If you click on any label or relationship **above** the graph visualization, you can then choose its styling in the area below the graph. Colors, sizes, and captions are selectable from there.
+For example, if you click on one of the `Movie` nodes in the MovieGraph (`:play movie graph`), then you can see its properties below the graph visual. The same applies for `Actor` nodes or the `ACTED_IN` relationships. If you click on any label or relationship **above** the graph visualization, you can then choose its styling in the area below the graph. Colors, sizes, and captions are selectable from there.
 
 To see this for yourself, you can click on the `Person` label above the graph and change the color, size, and captions of all nodes labeled with `Person`. The first image below shows changes to nodes labeled `Person`. The second image shows changes to relationships labeled `ACTED_IN`.
 
-![style person node](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/style_person_node.png)
+![style person node](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/style\_person\_node.png)
 
-![style actedin relationship](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/style_actedin_relationship.png)
+![style actedin relationship](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/style\_actedin\_relationship.png)
 
 ### Useful Commands and Keyboard Shortcuts
 
-| Shortcut | Purpose |
-| :--- | :--- |
-| `:help` | Help System |
-| `:help commands` | Useful Commands |
-| `:clear` | Clear Frames |
-| `:style [reset]` | Styling Popup & Reset |
-| `:help keys` | Keyboard Help |
-| Ctrl+Enter or Cmd+Enter | Execute Statement |
-| Ctrl+Up or Cmd+Up | Previous Statement |
-| Shift+Enter | Enter Multiline Mode |
-| / | Move Focus to Editor |
-| ESC | Toggle Editor to Full Screen |
+| Shortcut                | Purpose                      |
+| ----------------------- | ---------------------------- |
+| `:help`                 | Help System                  |
+| `:help commands`        | Useful Commands              |
+| `:clear`                | Clear Frames                 |
+| `:style [reset]`        | Styling Popup & Reset        |
+| `:help keys`            | Keyboard Help                |
+| Ctrl+Enter or Cmd+Enter | Execute Statement            |
+| Ctrl+Up or Cmd+Up       | Previous Statement           |
+| Shift+Enter             | Enter Multiline Mode         |
+| /                       | Move Focus to Editor         |
+| ESC                     | Toggle Editor to Full Screen |
 
 ### Query and Command-Line Tips
 
 Query Tips
 
-You can remove all accumulated output frames with `:clear`. The ‘X’ button at the top right of each pane removes that frame and aborts a \(long-\)running statement. The maximum number of frames that are kept is configurable in the CypherLab Settings from the left-side menu.
+You can remove all accumulated output frames with `:clear`. The ‘X’ button at the top right of each pane removes that frame and aborts a (long-)running statement. The maximum number of frames that are kept is configurable in the CypherLab Settings from the left-side menu.
 
 If you want to review a past query, you can find the result pane and click the query above the graph visualisation to pull it back into the editor. The keyboard shortcuts listed above will help you work efficiently within the editor area.
 
 You can also write and edit multi-line queries by switching to multi-line editing mode with Shift+Enter, then Enter will create newlines. You then need to run Ctrl+Enter or Cmd+Enter to run multi-line queries.Command Tips
 
-Ctrl+Up and Ctrl+Down \(Mac users, use the Cmd key\) allows you to navigate command history, and you can access all command history with `:history`. The command history is persisted across CypherLab restarts.
+Ctrl+Up and Ctrl+Down (Mac users, use the Cmd key) allows you to navigate command history, and you can access all command history with `:history`. The command history is persisted across CypherLab restarts.
 
-You can put several Cypher statements into the command line input \(with semicolons to separate statements\) and run as a block by enabling the multi-statement query setting. To do this, go to the `Settings` tab on your CypherLab window and make sure the box is checked for `Enable multi statement query editor`. These steps are shown in the image below.
+You can put several Cypher statements into the command line input (with semicolons to separate statements) and run as a block by enabling the multi-statement query setting. To do this, go to the `Settings` tab on your CypherLab window and make sure the box is checked for `Enable multi statement query editor`. These steps are shown in the image below.
 
-[![enable multiline queries](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/enable_multiline_queries.jpg)](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/enable_multiline_queries.jpg)Output, Export, & Visualization Tips
+[![enable multiline queries](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/enable\_multiline\_queries.jpg)](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/enable\_multiline\_queries.jpg)Output, Export, & Visualization Tips
 
 You can switch between `Graph`, `Table`, `Text`, and `Code` views to see the results in various formats by clicking the icons on the left of each pane.
 
-|  | Don’t worry if you don’t see any output. You might just be in Graph mode, but had your query return tabular/scalar data. To see the results, just switch the mode to the Table view. |
-| :--- | :--- |
+|   | Don’t worry if you don’t see any output. You might just be in Graph mode, but had your query return tabular/scalar data. To see the results, just switch the mode to the Table view. |
+| - | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-
-Query time is reported in the `Table` or `Code` views \(**don’t rely on that exact timing though**\), and it includes the latency and deserialization costs, not just the actual query execution time.
+Query time is reported in the `Table` or `Code` views (**don’t rely on that exact timing though**), and it includes the latency and deserialization costs, not just the actual query execution time.
 
 You can also download the results as a CSV from the `Table`, `Text`, and `Code` views or download the graph as an SVG or PNG from the `Graph` view, as shown below.
 
-![](../../../.gitbook/assets/image%20%28597%29.png)
+<div align="left">
 
-![](../../../.gitbook/assets/image%20%28304%29.png)
+<img src="../../../.gitbook/assets/image (785).png" alt="">
+
+</div>
+
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (650).png" alt="">
+
+</div>
 
 ## Graph Metadata
 
@@ -126,7 +137,7 @@ Creating folders can help organize your favorites, and you can rearrange them by
 
 ## Advanced Styling
 
-For more advanced styling, you can bring up the style-viewer with `:style` and copy/paste the graph-style-sheet \(GRASS\) that is returned. You can edit this stylesheet offline, save the file as a .grass file, and drag it back onto the drag-area of the viewer.
+For more advanced styling, you can bring up the style-viewer with `:style` and copy/paste the graph-style-sheet (GRASS) that is returned. You can edit this stylesheet offline, save the file as a .grass file, and drag it back onto the drag-area of the viewer.
 
 {% hint style="info" %}
 You can reset to the default styles with **:style reset**
@@ -134,7 +145,7 @@ You can reset to the default styles with **:style reset**
 
 Within the GRASS file, you can change colors, fonts, sizes, outlines, and titles per node label and relationship type. It is also possible to combine multiple properties into a caption with `caption: '{name}, born in {born}';`
 
-![](../../../.gitbook/assets/image%20%28453%29.png)
+![](<../../../.gitbook/assets/image (649).png>)
 
 ## Configuration
 
@@ -144,6 +155,4 @@ The defaults for all the settings can adjusted at any time by going to the confi
 * Individual settings are configured with the following defaults:
   * `:config maxNeighbours:100` – maxiumum number of neighbours for a node
   * `:config maxRows:100` – maximum number of rows for the tabular result
-
-
 

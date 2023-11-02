@@ -4,4 +4,4 @@ The **Home** page is the first page you will see after logging into BigConnect V
 
 To manage an environment, click to select it.
 
-![](<../../.gitbook/assets/image (703) (1).png>)
+![](<../../.gitbook/assets/image (271).png>)

@@ -25,7 +25,7 @@ The following AI models are available as REST services:
 
 The API endpoints are listed by each service in the URL section:
 
-![](<../.gitbook/assets/image (644).png>)
+![](<../.gitbook/assets/image (409).png>)
 
 To make a call, prepend the service URL to the URL endpoint listed in each box. Example:
 

@@ -4,30 +4,30 @@
 
 A Druid cluster consists of different types of nodes and each node type is designed to perform a specific set of things:
 
-![](../../../.gitbook/assets/image%20%28618%29.png)
+![](<../../../.gitbook/assets/image (84).png>)
 
 ## Real-time nodes
 
 Real-time nodes function to ingest and query event streams. The nodes are only concerned with events for some small time range and periodically hand them off to the deep storage in the following steps:
 
-![Source: Druid: A Real-time Analytical Data Store](../../../.gitbook/assets/image%20%28586%29.png)
+![Source: Druid: A Real-time Analytical Data Store](<../../../.gitbook/assets/image (96).png>)
 
 1. Incoming events are indexed in memory and immediately become available for querying.
 2. The in-memory data is regularly persisted to disk and converted into an immutable, columnar storage format.
 3. The persisted data is loaded into off-heap memory to be still queryable.
 4. On a periodic basis, the persisted indexes are merged together to form a “segment” of data and then get handed off to deep storage.
 
-In this way, all events ingested into real-time nodes, regardless before or after persisted, are present in memory \(either on- or off-heap\) and thus can be queried \(queries hit both the in-memory and persisted indexes\). This functionality of real-time nodes enables Druid to conduct real-time data ingestion meaning that events can be queried almost as soon as they occur. In addition, there is no data loss during these steps. In addition, there is no data loss during these steps.
+In this way, all events ingested into real-time nodes, regardless before or after persisted, are present in memory (either on- or off-heap) and thus can be queried (queries hit both the in-memory and persisted indexes). This functionality of real-time nodes enables Druid to conduct real-time data ingestion meaning that events can be queried almost as soon as they occur. In addition, there is no data loss during these steps. In addition, there is no data loss during these steps.
 
 Real-time nodes announce their online state and the data they serve in Zookeeper for the purpose of coordination with the rest of the Druid cluster.
 
 ## Historical nodes
 
-Historical nodes function to load and serve the immutable blocks of data \(segments\) created by real-time nodes. These nodes download immutable segments locally from the deep storage and serve queries over those segments \(e.g., data aggregation/filtering\). The nodes are operationally simple based on a shared-nothing architecture; they have no single point of contention and simply load, drop, and serve segments as instructed by Zookeeper.
+Historical nodes function to load and serve the immutable blocks of data (segments) created by real-time nodes. These nodes download immutable segments locally from the deep storage and serve queries over those segments (e.g., data aggregation/filtering). The nodes are operationally simple based on a shared-nothing architecture; they have no single point of contention and simply load, drop, and serve segments as instructed by Zookeeper.
 
 A historical node’s process of serving a query is as follows:
 
-![Source: Druid: A Real-time Analytical Data Store](../../../.gitbook/assets/image%20%28526%29.png)
+![Source: Druid: A Real-time Analytical Data Store](<../../../.gitbook/assets/image (63).png>)
 
 Once a query is received, the historical node first checks a local cache that maintains information about what segments already exist on the node. If information about a segment in question is not present in the cache, the node will proceed to download the segment from deep storage. On the completion of the processing, the segment is announced in Zookeeper to become queryable and the node performs the requested query on the segment.
 
@@ -41,7 +41,7 @@ Broker nodes understand the metadata published in Zookeeper about what segments 
 
 Broker nodes use a cache for resource efficiency as follows:
 
-![Source: Druid: A Real-time Analytical Data Store](../../../.gitbook/assets/image%20%28309%29.png)
+![Source: Druid: A Real-time Analytical Data Store](<../../../.gitbook/assets/image (37).png>)
 
 Once a broker node receives a query involving a number of segments, it checks for segments already existing in the cache. For any segments absent in the cache, the broker node will forward the query to the correct historical and real-time nodes. Once historical nodes return their results, the broker will cache these results on a per-segment basis for future use. Real-time data is never cached and hence requests for real-time data will always be forwarded to real-time nodes. Since real-time data is perpetually changing, caching the results is unreliable.
 
@@ -69,9 +69,7 @@ Druid is designed to have no single point of failure. The different node types o
 
 Druid features a modular, extensible platform that allows various external modules to be added to its basic architecture. An example of how Druid’s architecture can be extended with modules is shown below:
 
-![Source: MetaMarkets - Introduction to Druid by Fangjin Yang](../../../.gitbook/assets/image%20%28491%29.png)
+![Source: MetaMarkets - Introduction to Druid by Fangjin Yang](<../../../.gitbook/assets/image (115).png>)
 
 BigConnect Discovery, based on Metatron Discovery, an end-to-end business intelligence solution to be introduced in this paper, was also built by adding various modules to the Druid engine.
-
-
 

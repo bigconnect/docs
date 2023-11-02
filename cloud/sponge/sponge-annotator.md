@@ -8,7 +8,7 @@ Once the Google Chrome extension is installed, it needs to be configured so it c
 
 Once the extension is configured, it can be accessed by opening **Developer Tools (F12)**. You will see a tab named **Sponge Annotator**.
 
-![](<../../.gitbook/assets/image (560).png>)
+![](<../../.gitbook/assets/image (682).png>)
 
 There are three menu options in the Sponge Annotator toolbar:
 
@@ -22,11 +22,11 @@ The list of projects is loaded automatically from Sponge Manager if the Sponge M
 
 Choose a project from the list of projects to get started. You will be taken to the project details panel.
 
-![](<../../.gitbook/assets/image (74).png>)
+![](<../../.gitbook/assets/image (767).png>)
 
 The first thing you need to do is to **Add a new field.** This will take you to the add new field panel where you can perform several actions.
 
-![](<../../.gitbook/assets/image (63).png>)
+![](<../../.gitbook/assets/image (517).png>)
 
 * **Field**: the name of the field (no spaces allowed)
 * **Selector**:&#x20;
@@ -37,7 +37,7 @@ The first thing you need to do is to **Add a new field.** This will take you to 
 
 Once you are happy with your selection, click **Save field** to continue. The field will be added to the project details panel.
 
-![](<../../.gitbook/assets/image (437).png>)
+![](<../../.gitbook/assets/image (532).png>)
 
 You have some actions available for the new field:&#x20;
 
@@ -54,13 +54,13 @@ All changes are automatically synchronized to Sponge Manager when an action is t
 
 Once you clicked the Select button in the field details panel, an overlay will be displayed at the bottom of the webpage and zone selection becomes active.
 
-![](<../../.gitbook/assets/image (460).png>)
+![](<../../.gitbook/assets/image (569).png>)
 
 Moving the mouse around the page will show green boxes around the HTML element below the mouse pointer. Click the mouse to select the desired element and the green box will become red. The CSS selector will be updated in the overlay panel with the selected element.&#x20;
 
 Once you are finished selecting the desired element, click the **Done selecting!** button to have the CSS selector registered for the field.
 
-![](../../.gitbook/assets/screenshot-from-2019-12-05-14-01-23.jpg)
+![](<../../.gitbook/assets/Screenshot from 2019-12-05 14-01-23.jpg>)
 
 The overlay panel has some helper options available:
 
@@ -70,15 +70,19 @@ The overlay panel has some helper options available:
 
 ## Configure Sponge Annotator
 
-Once the extension is loaded, it will be displayed also as an icon next to Google Chrome's address bar: <img src="../../.gitbook/assets/image (265).png" alt="" data-size="line">&#x20;
+Once the extension is loaded, it will be displayed also as an icon next to Google Chrome's address bar: <img src="../../.gitbook/assets/image (825).png" alt="" data-size="line">&#x20;
 
 Right-click on the icon and choose the **Options** menu item:
 
-![](<../../.gitbook/assets/image (349).png>)
+![](<../../.gitbook/assets/image (838).png>)
 
 The configuration page will be displayed in the browser. Here you can configure Sponge Manager connection details:
 
-![](<../../.gitbook/assets/image (271).png>)
+<div align="left">
+
+<img src="../../.gitbook/assets/image (684).png" alt="">
+
+</div>
 
 * **Sponge Server URL**: The URL of Sponge Manager. Please check to see if it's accessible from your computer.
 * **Username**: your Sponge Manager username

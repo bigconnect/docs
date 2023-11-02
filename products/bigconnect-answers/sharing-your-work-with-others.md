@@ -44,7 +44,7 @@ There are often times when you want to be alerted about something. Answers has a
 
 If email or Slack is set up in your Answers, we can click on the **Settings button** below our area chart and turn on `Goal line`, then enter the value “500” in the box below the toggle switch to tell Answers that we want to be notified whenever there are more than 500 orders over $40 in a single month.
 
-__
+
 
 ![Fig. 6. Under the area visualization in the Display tab, you can add a goal line and set the goal value.](https://www.metabase.com/learn/images/sharing-work/SettingGoalLine.png)
 

@@ -12,7 +12,7 @@ In this section you can:
 * View the service logs.
 * Update, roll back or delete the service.
 
-![](<../../../.gitbook/assets/image (737) (1).png>)
+![](<../../../.gitbook/assets/image (299).png>)
 
 ## Container specification configuration options
 
@@ -20,19 +20,19 @@ In this section you can:
 
 Here you can replace the container image with a different image. Select the registry, enter the image name, then click **Apply changes**.
 
-![](<../../../.gitbook/assets/image (718) (1).png>)
+![](<../../../.gitbook/assets/image (308).png>)
 
 ### Environment variables
 
 It's best to set environment variables when you create a container and before deployment. You can still set or edit these variables after deployment if you wish.
 
-![](<../../../.gitbook/assets/image (746) (1).png>)
+![](<../../../.gitbook/assets/image (267).png>)
 
 ### Container labels
 
 Labels give you a way to record information about a container, such as the way it's configured. Labels can also be used by BigConnect VM to hide containers from the interface.
 
-![](<../../../.gitbook/assets/image (758) (1).png>)
+![](<../../../.gitbook/assets/image (290).png>)
 
 ### Mounts
 
@@ -42,13 +42,13 @@ You have the option to either mount or bind volumes in Portainer, and you can al
 
 Select the volume from the **Source** dropdown, enter the container path in the **Target** field tick **Read only** if required then click **Apply changes**.
 
-![](<../../../.gitbook/assets/image (745) (1).png>)
+![](<../../../.gitbook/assets/image (266).png>)
 
 #### For bind mounts:
 
 Enter the source path in the **Source** field, enter the container path in the **Target** field, tick **Read only** if required then click **Apply changes**.
 
-![](<../../../.gitbook/assets/image (752) (1).png>)
+![](<../../../.gitbook/assets/image (235).png>)
 
 ## Networks & ports configuration options
 
@@ -56,19 +56,19 @@ Enter the source path in the **Source** field, enter the container path in the *
 
 You can define one or more networks for a service either before or after deployment. Simply select the network from the dropdown then click **Apply changes**.
 
-![](<../../../.gitbook/assets/image (713) (1).png>)
+![](<../../../.gitbook/assets/image (303).png>)
 
 ### Published ports
 
 Use this setting to publish ports so they can access a container from outside of the host. You can either add new ports or update existing ports.
 
-![](<../../../.gitbook/assets/image (720) (1).png>)
+![](<../../../.gitbook/assets/image (250).png>)
 
 ### Hosts file entries
 
 Lets you manually specify a hostname or URL and associate the URL to an internal or external IP address.
 
-![](<../../../.gitbook/assets/image (748) (1).png>)
+![](<../../../.gitbook/assets/image (307).png>)
 
 ## Service specification settings
 
@@ -76,19 +76,19 @@ Lets you manually specify a hostname or URL and associate the URL to an internal
 
 Sets limits on resource utilization, such as memory, CPU reservation and CPU limit.
 
-![](<../../../.gitbook/assets/image (710) (1).png>)
+![](<../../../.gitbook/assets/image (283).png>)
 
 ### Placement constraints
 
 Use placement constraints to control which nodes a service can be assigned to.
 
-![](<../../../.gitbook/assets/image (723) (1).png>)
+![](<../../../.gitbook/assets/image (273).png>)
 
 ### Placement preferences
 
 While placement constraints limit the nodes a service can run on, placement preferences attempt to place tasks on appropriate nodes in an algorithmic way (by default they are spread evenly).
 
-![](<../../../.gitbook/assets/image (707) (1).png>)
+![](<../../../.gitbook/assets/image (255).png>)
 
 ### Restart policy
 
@@ -100,7 +100,7 @@ Docker's restart policies ensure that linked containers are restarted in the cor
 
 You can also adjust the restart delay, maximum attempts and restart window.
 
-![](<../../../.gitbook/assets/image (739) (1).png>)
+![](<../../../.gitbook/assets/image (245).png>)
 
 ### Update configuration
 
@@ -108,28 +108,28 @@ Updates a service according to the parameters you specify. The parameters specif
 
 Normally, updating a service will only cause the service’s tasks to be replaced with new ones if a change to the service requires recreating the tasks for it to take effect.
 
-![](<../../../.gitbook/assets/image (765) (1).png>)
+![](<../../../.gitbook/assets/image (287).png>)
 
 ### Logging driver
 
 Docker includes logging mechanisms called _logging drivers_ that get information from the containers and services you're running. Each Docker daemon has a default logging driver which each container will use, unless you configure them to use a different logging driver.
 
-![](<../../../.gitbook/assets/image (730) (1).png>)
+![](<../../../.gitbook/assets/image (219).png>)
 
 ### Service labels
 
 Lets you add metadata to containers using Docker labels either via an array or a dictionary. We recommend that you use reverse-DNS notation to stop labels from conflicting with those used by other software.
 
-![](<../../../.gitbook/assets/image (732) (1).png>)
+![](<../../../.gitbook/assets/image (288).png>)
 
 ### Configs
 
 Docker 17.06 introduced Swarm service configs. These allow you to store non-sensitive information such as configuration files outside a service’s image or running containers. This keeps images as generic as possible and removes the need to bind-mount configuration files into containers or use environment variables.
 
-![](<../../../.gitbook/assets/image (762) (1).png>)
+![](<../../../.gitbook/assets/image (305).png>)
 
 ### Secrets
 
 In the context of Docker Swarm services, a secret is a blob of data such as a password, SSH private key, SSL certificate, or another piece of data that should not be transmitted over a network or stored unencrypted in a Dockerfile or in your application’s source code.
 
-![](<../../../.gitbook/assets/image (715) (1).png>)
+![](<../../../.gitbook/assets/image (241).png>)

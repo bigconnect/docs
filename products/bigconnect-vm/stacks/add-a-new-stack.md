@@ -6,7 +6,7 @@ From the menu select **Stacks**, click **Add stack**, give the stack a descripti
 
 As part of the stack creation you can enable a stack webhook, allowing you to remotely trigger redeployments of the stack from your repository, for example.
 
-![](<../../../.gitbook/assets/image (743) (1).png>)
+![](<../../../.gitbook/assets/image (265).png>)
 
 As an optional step, you can also use the web editor to define environment variables. You can use these to define values in your compose file that would vary between deployments (for example, hostnames, database names, etc).
 
@@ -26,7 +26,7 @@ env_file:
 
 **Note:** Using `env_file` to define a file does not work in Docker Swarm due to the lack of `env_file` support in `docker stack deploy` (used on Swarm environments to deploy your stack). On Docker Swarm, you will need to define each environment variable manually.&#x20;
 
-![](<../../../.gitbook/assets/image (708) (1).png>)
+![](<../../../.gitbook/assets/image (292).png>)
 
 When you're ready, click **Deploy the stack**.
 
@@ -36,7 +36,7 @@ In Portainer you can create stacks from Compose YML files. To do this, from the 
 
 As part of the stack creation you can enable a stack webhook, allowing you to remotely trigger redeployments of the stack from your repository, for example.
 
-![](<../../../.gitbook/assets/image (761) (1).png>)
+![](<../../../.gitbook/assets/image (231).png>)
 
 As an optional step, enter any environment variables. You can use these to define values in your compose file that would vary between deployments (for example, hostnames, database names, etc).
 
@@ -54,7 +54,7 @@ env_file:
   - stack.env
 ```
 
-![](<../../../.gitbook/assets/image (716) (1).png>)
+![](<../../../.gitbook/assets/image (246).png>)
 
 When you're ready click **Deploy the stack**.
 
@@ -62,4 +62,4 @@ When you're ready click **Deploy the stack**.
 
 If your Compose file is hosted in a Git repository, you can deploy from there. From the menu select **Stacks**, click **Add stack**, then give the stack a descriptive name. Select **Git Repository** then enter information about your Git repo.
 
-![](<../../../.gitbook/assets/image (757) (1).png>)
+![](<../../../.gitbook/assets/image (240).png>)

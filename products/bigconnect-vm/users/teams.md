@@ -10,7 +10,7 @@ From the menu select **Users** then select **Teams**.  Enter the name of the tea
 If your BigConnect VM installation uses external authentication and teams are synced from your external authentication provider, the team leader role is disabled.
 {% endhint %}
 
-![](<../../../.gitbook/assets/image (709).png>)
+![](<../../../.gitbook/assets/image (342).png>)
 
 When you're ready, click **Create team**.
 
@@ -18,4 +18,4 @@ When you're ready, click **Create team**.
 
 From the menu select **Users** then select **Teams**.  Select the team you want to add users to then click **Add** next to the user.
 
-![](<../../../.gitbook/assets/image (722).png>)
+![](<../../../.gitbook/assets/image (336).png>)

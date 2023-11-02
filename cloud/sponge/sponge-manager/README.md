@@ -8,11 +8,11 @@ The first thing to do is login in the application with the default user **admin*
 Please change your password after logging in to prevent unauthorised access to your cloud instance.
 {% endhint %}
 
-![BigConnect Sponge login screeen](<../../../.gitbook/assets/image (657).png>)
+![BigConnect Sponge login screeen](<../../../.gitbook/assets/image (608).png>)
 
 After logging in, you will see the list of projects. If this is the first time you login to Sponge, you don't have any projects.
 
-![BigConnect Sponge list of projects](<../../../.gitbook/assets/image (680).png>)
+![BigConnect Sponge list of projects](<../../../.gitbook/assets/image (531).png>)
 
 The next thing to do is to create a new project.&#x20;
 
@@ -20,7 +20,7 @@ The next thing to do is to create a new project.&#x20;
 
 To create a new scraping project, navigate to the **Projects** menu item and choose **New Project**. A popup is displayed where you need to enter project information.
 
-![BigConnect Sponge new project dialog](<../../../.gitbook/assets/image (656).png>)
+![BigConnect Sponge new project dialog](<../../../.gitbook/assets/image (567).png>)
 
 * **Name** - the name of your Project
 * **Description** - a small description of your Project
@@ -29,11 +29,11 @@ To create a new scraping project, navigate to the **Projects** menu item and cho
 
 Once all information has been filled in, click the **Save** button. The project will be created and it will show in the Projects list.
 
-![BigConnect Sponge list of projects](<../../../.gitbook/assets/image (681).png>)
+![BigConnect Sponge list of projects](<../../../.gitbook/assets/image (454).png>)
 
-The next step is to configure our Project. Click on the <img src="../../../.gitbook/assets/image (677).png" alt="" data-size="line"> icon to go to the Project detail page.
+The next step is to configure our Project. Click on the <img src="../../../.gitbook/assets/image (422).png" alt="" data-size="line"> icon to go to the Project detail page.
 
-![BigConnect Sponge project detail page](<../../../.gitbook/assets/image (652).png>)
+![BigConnect Sponge project detail page](<../../../.gitbook/assets/image (547).png>)
 
 In here you can configure everything related to your project, you can see a preview of data being scraped and the events emitted during the crawling process.&#x20;
 
@@ -53,7 +53,7 @@ pre-configured for your cloud instance.
 
 ### Crawler&#x20;
 
-![BigConnect Sponge crawler settings](<../../../.gitbook/assets/image (674).png>)
+![BigConnect Sponge crawler settings](<../../../.gitbook/assets/image (521).png>)
 
 In this section, you can configure how the website should be crawled:
 
@@ -70,7 +70,7 @@ In this section, you can configure how the website should be crawled:
 
 {% hint style="warning" %}
 Most REJECTED\_\* crawling events are caused by incorrect **Include Patterns** and **Start URLs.**\
-****You can test your Regex patterns using this [tool](https://www.freeformatter.com/java-regex-tester.html).
+You can test your Regex patterns using this [tool](https://www.freeformatter.com/java-regex-tester.html).
 {% endhint %}
 
 ### Behavior
@@ -86,7 +86,7 @@ Before we get into details, you need to understand how the Sponge behaves when c
 
 A [**Tagger**](sponge-taggers.md) allows you to add to or modify existing document fields. A [**Filter**](sponge-filters.md) allows you to filter out certain incoming documents based on field values. A [**Splitter**](sponge-splitters.md) splits a document into multiple ones (e.g. comments in a news article, products on a eCommerce website).
 
-![BigConnect Sponge Behaviour settings](<../../../.gitbook/assets/image (683).png>)
+![BigConnect Sponge Behaviour settings](<../../../.gitbook/assets/image (519).png>)
 
 The reference list of available Taggers, Filters and Splitters can be found here:
 
@@ -110,13 +110,13 @@ Here you can choose the Committer for your project. Some Committers support fiel
 
 Projects can be started from the project list page, by clicking the Play button. When you try to start it, a popup will ask the user when the project should be started:
 
-![](<../../../.gitbook/assets/image (447).png>)
+![](<../../../.gitbook/assets/image (871).png>)
 
 You can choose to start it right away using **Run now** or scheduled using **Run scheduled**.
 
 When you choose the **Run Scheduled** option, the project will be run every N units of time (Hours, Days or Minutes):
 
-![](<../../../.gitbook/assets/image (319).png>)
+![](<../../../.gitbook/assets/image (861).png>)
 
 Running a scheduled project can be cancelled from the project details page using the **Remove Schedule** button.
 
@@ -132,13 +132,13 @@ When a project is in the RUNNING state, you can stop it from the project list pa
 
 You can monitor project crawling events in the project detail page, by going to the **Event Log** tab.
 
-![](<../../../.gitbook/assets/image (678).png>)
+![](<../../../.gitbook/assets/image (446).png>)
 
 Here you can see the latest events being fired by the crawler, along with details about the URL being processed and its depth.
 
 You can also monitor all documents and fields that pass through the system in the **Field Preview** tab:
 
-![](<../../../.gitbook/assets/image (667) (1).png>)
+![](<../../../.gitbook/assets/image (518).png>)
 
 ## Administration
 
@@ -157,7 +157,7 @@ Committers are destinations where Sponge stores scraped data. Out-of-the-box Spo
 
 Adding or changing committers can be done from the **Administration -> Committers** page.
 
-![](<../../../.gitbook/assets/image (671).png>)
+![](<../../../.gitbook/assets/image (541).png>)
 
 Click the **New Committer** button to add a new committer. A popup will be displayed with the following information:
 
@@ -170,7 +170,7 @@ Click the **New Committer** button to add a new committer. A popup will be displ
 
 Used for storing scraping data in a database. This commiter will automatically create a database table for each project, using the project's name as a guideline.
 
-![](<../../../.gitbook/assets/image (653).png>)
+![](<../../../.gitbook/assets/image (479).png>)
 
 * **DB Driver Class** - fully-qualified class name of the JDBC driver to use (eg. com.mysql.jdbc.Driver)
 * **DB Driver Path** - the full path to the JDBC **.jar** file of the driver
@@ -194,7 +194,7 @@ Sponge includes the MySQL JDBC driver by default.
 
 Used for storing scraped data in JSON or XML files in a configured local folder.
 
-![](<../../../.gitbook/assets/image (684).png>)
+![](<../../../.gitbook/assets/image (543).png>)
 
 * **Directory** - full path to a filesystem folder where to store scraped data
 * **Committer** - one of _JSONFileCommitter, XMLFileCommitter_
@@ -207,7 +207,7 @@ The OS user that owns the Sponge Manager or Sponge Agent processes needs to have
 
 Used for storing scraped data in JSON/XML files in a [BigConnect Object Store](../../oss/) instance.
 
-![](<../../../.gitbook/assets/image (668).png>)
+![](<../../../.gitbook/assets/image (417).png>)
 
 * **Endpoint**: URL of a [BigConnect Object Store](../../oss/) instance \
   (e.g. https://storage-3122463932808256.cloud.bigconnect.io)
@@ -219,7 +219,7 @@ Used for storing scraped data in JSON/XML files in a [BigConnect Object Store](.
 
 Used for storing scraped data as Documents in [Zion](broken-reference) (ie. entities with Concept Type = Document)
 
-![](<../../../.gitbook/assets/image (666).png>)
+![](<../../../.gitbook/assets/image (613).png>)
 
 * **Bolt URL** - The URL to a Zion Bolt server\
   (e.g. bolt://core-170393591705357.cloud.bigconnect.io:10242)
@@ -242,7 +242,7 @@ You don't need to alter this configuration for small-scale deployments.&#x20;
 
 Adding or changing agents can be done from the **Administration -> Agent Configuration** page.
 
-![](<../../../.gitbook/assets/image (22).png>)
+![](<../../../.gitbook/assets/image (847).png>)
 
 To register a new Agent, click the **Create new Agent** button and fill the following information:
 
@@ -268,10 +268,10 @@ Changing system configuration properties can be done from the **Administration -
 
 Users can be managed from the **Administration -> Users** page.&#x20;
 
-![](<../../../.gitbook/assets/image (669).png>)
+![](<../../../.gitbook/assets/image (628).png>)
 
 You can activate/deactivate a user by clicking on the Activated/Deactivated button next to the user in the list.
 
-![](<../../../.gitbook/assets/image (654).png>)
+![](<../../../.gitbook/assets/image (537).png>)
 
 A user can be a regular or an administrator. The administrator user has the ROLE\_ADMIN profile and has access to the Administration section.

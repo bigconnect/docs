@@ -20,18 +20,18 @@ You can think of Concepts and Relations like database tables and their propertie
 
 BigConnect Explorer has a default layout comprised of the **Main Menu**, **Work Area** and a **Footer Widget**.
 
-![BigConnect Explorer General Layout](<../../../.gitbook/assets/image (156).png>)
+![BigConnect Explorer General Layout](<../../../.gitbook/assets/image (609).png>)
 
 &#x20;The Main Menu is organized into three main sections:
 
 * **Left navigation links**: when clicked, the corresponding section will be displayed in the Work Area.
 * **Quick search**…: allows quick searching through the system. Found items can be dragged and dropped to various analysis tools present in the **Analyze** section (eg: Graph, Map)
 * **Icons for various tasks:**
-  * &#x20;**Spaces** <img src="../../../.gitbook/assets/image (113).png" alt="" data-size="original"> - manage the spaces you are part of
-  * &#x20;**Activities** <img src="../../../.gitbook/assets/image (282).png" alt="" data-size="original"> - shows running & completed jobs
-  * &#x20;**Alerts**  <img src="../../../.gitbook/assets/image (321).png" alt="" data-size="original"> - shows the number of unassigned alerts
-  * &#x20;**Administration** <img src="../../../.gitbook/assets/image (382).png" alt="" data-size="original"> - administration menu
-  * &#x20;**Active user** <img src="../../../.gitbook/assets/image (57).png" alt="" data-size="original"> - logged-in username with **Preferences** and **Logout** sub-menu items
+  * &#x20;**Spaces** <img src="../../../.gitbook/assets/image (504).png" alt="" data-size="original"> - manage the spaces you are part of
+  * &#x20;**Activities** <img src="../../../.gitbook/assets/image (451).png" alt="" data-size="original"> - shows running & completed jobs
+  * &#x20;**Alerts**  <img src="../../../.gitbook/assets/image (581).png" alt="" data-size="original"> - shows the number of unassigned alerts
+  * &#x20;**Administration** <img src="../../../.gitbook/assets/image (484).png" alt="" data-size="original"> - administration menu
+  * &#x20;**Active user** <img src="../../../.gitbook/assets/image (523).png" alt="" data-size="original"> - logged-in username with **Preferences** and **Logout** sub-menu items
 
 ## Spaces
 
@@ -43,13 +43,13 @@ This is a first element of security. Spaces and their data are not visible among
 
 All data visualizations are specific to a workspace. This means that the dashboard, graphs, maps, and charts are visible only in that workspace. A new workspace will always start with a default (customizable) Dashboard layout.
 
-Spaces can be managed by clicking the Spaces icon in the Main Menu: <img src="../../../.gitbook/assets/image (113).png" alt="" data-size="original">. A popup menu shows the list of spaces you created or are part of. You can also add a new space by filling in the name of the space and clicking the **Add** button. The **Shared with me** section shows the spaces you were invited in and are part of. Clicking the settings icon will show the the access rights you are granted in the respective space.
+Spaces can be managed by clicking the Spaces icon in the Main Menu: <img src="../../../.gitbook/assets/image (504).png" alt="" data-size="original">. A popup menu shows the list of spaces you created or are part of. You can also add a new space by filling in the name of the space and clicking the **Add** button. The **Shared with me** section shows the spaces you were invited in and are part of. Clicking the settings icon will show the the access rights you are granted in the respective space.
 
-![List of spaces in BigConnect Explorer ](<../../../.gitbook/assets/image (155).png>)
+![List of spaces in BigConnect Explorer ](<../../../.gitbook/assets/image (576).png>)
 
-The spaces you created are shown in the **Choose active Space** section. To edit the name of a space or to invite other users to your space, click the space settings icon: <img src="../../../.gitbook/assets/image (530).png" alt="" data-size="original">&#x20;
+The spaces you created are shown in the **Choose active Space** section. To edit the name of a space or to invite other users to your space, click the space settings icon: <img src="../../../.gitbook/assets/image (395).png" alt="" data-size="original">&#x20;
 
-![](<../../../.gitbook/assets/image (185).png>)
+![](<../../../.gitbook/assets/image (482).png>)
 
 To invite other users to your space type in the first letters of the username and press the **Arrow Down** key. A list of users that match the search criteria is displayed. Click on the use you want to invite and set the proper access rights:
 
@@ -61,19 +61,19 @@ To invite other users to your space type in the first letters of the username an
 
 The footer widget shows information about the active space you are in (current space).&#x20;
 
-![BigConnect Explorer Footer Widget](<../../../.gitbook/assets/image (107).png>)
+![BigConnect Explorer Footer Widget](<../../../.gitbook/assets/image (483).png>)
 
 It shows the name of the space (`space1`) , the number of unpublished changes and a link to open the Timeline view for the current space.
 
 To see unpublished changes, click the orange number badge. A popup will be displayed showing each unpublished change. Here, you can publish or undo changes one by one or all.
 
-![](<../../../.gitbook/assets/image (86).png>)
+![](<../../../.gitbook/assets/image (538).png>)
 
 ## Timeline
 
 The timeline shows the distribution of date properties of all items available in the current space.&#x20;
 
-![](<../../../.gitbook/assets/image (101).png>)
+![](<../../../.gitbook/assets/image (579).png>)
 
 {% hint style="info" %}
 Items in a space are items placed on the **Graph** or **Map** tools.
@@ -83,7 +83,7 @@ You can choose which properties are displayed in the Timeline by clicking the co
 
 The timeline can be zoomed in/out using the mouse wheel. Select an interval on the timeline by left-clicking the mouse and dragging the desired interval. All objects who's chosen date properties fall in the selected interval will be selected.
 
-![](<../../../.gitbook/assets/image (537).png>)
+![](<../../../.gitbook/assets/image (494).png>)
 
 ## Adding items
 
@@ -95,7 +95,7 @@ New items can be added into BigConnect in two ways:
 
 When you want to add one or more items, a new dialog will popup:
 
-![BigConnect Explorer Add item popup](<../../../.gitbook/assets/image (422).png>)
+![BigConnect Explorer Add item popup](<../../../.gitbook/assets/image (520).png>)
 
 Here you can specify the following things:
 

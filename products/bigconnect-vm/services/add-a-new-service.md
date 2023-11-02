@@ -2,7 +2,7 @@
 
 From the menu click **Services** then click **Add service**.
 
-![](<../../../.gitbook/assets/image (717) (1).png>)
+![](<../../../.gitbook/assets/image (294).png>)
 
 You can also configure any advanced options for the service in the bottom section.
 

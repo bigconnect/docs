@@ -8,9 +8,8 @@ To show advanced options, select **Show Advanced Options** at the top of the pro
 
 For example, the following image displays the properties pane for a Directory origin when advanced options are not shown. The three basic properties shown on the General tab are the general properties that you are most likely to use.
 
-![](../../../.gitbook/assets/image%20%28688%29.png)
+![](<../../../.gitbook/assets/image (297).png>)
 
 When you select either Show Advanced Options property, the properties pane shows an additional property on the General tab and shows an additional tab. In the image below, the circled advanced property and tab are configured with recommended default values. You likely won't need to configure these properties until you begin fine tuning how the pipeline processes your data.
 
-![](../../../.gitbook/assets/image%20%28691%29.png)
-
+![](<../../../.gitbook/assets/image (225).png>)

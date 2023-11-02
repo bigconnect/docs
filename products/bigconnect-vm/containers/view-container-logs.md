@@ -2,4 +2,4 @@
 
 From the menu select **Containers**, select the container then select **Logs**.
 
-![](<../../../.gitbook/assets/image (758).png>)
+![](<../../../.gitbook/assets/image (366).png>)

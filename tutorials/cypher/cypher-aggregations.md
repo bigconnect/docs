@@ -2,7 +2,7 @@
 
 All of our examples will continue with the graph example we have been using in the previous guides. Below is an image of the graph to familiarize yourself with the nodes and relationships used throughout this page.
 
-![](../../.gitbook/assets/image%20%28247%29.png)
+![](<../../.gitbook/assets/image (247) (1).png>)
 
 Helpful aggregation operations, such as calculating averages, sums, percentiles, minimum/maximum, and counts are available in Cypher. You may find many of these have similar syntax to other query language operations, but Cypher does work slightly differently with aggregation.
 
@@ -14,7 +14,7 @@ In Cypher, you do not need to specify a grouping key. It implicitly groups by a 
 
 Sometimes you only need to return a count of the results found in the database, rather than returning the objects themselves. The `count()` function in Cypher allows you to count the number of occurences of entities, relationships, or results returned.
 
-There are two different ways you can count return results from your query. The first is by using `count(n)` to count the number of occurences of `n` and does not include `null` values. You can specify nodes, relationships, or properties within the parentheses for Cypher to count. The second way to count results is with `count(*)`, which counts the number of result rows returned \(including those with `null` values\).
+There are two different ways you can count return results from your query. The first is by using `count(n)` to count the number of occurences of `n` and does not include `null` values. You can specify nodes, relationships, or properties within the parentheses for Cypher to count. The second way to count results is with `count(*)`, which counts the number of result rows returned (including those with `null` values).
 
 In our data set, some of our `Person` nodes have a Twitter handle, but others do not. If we run the first example query below, you will see that we have the `twitter` property has a value for four people and is `null` for the other five people. The second and third queries show how to use the different count options.
 
@@ -34,28 +34,28 @@ RETURN count(*)
 
 Query1 Results:
 
-![](../../.gitbook/assets/image%20%28394%29.png)
+![](<../../.gitbook/assets/image (679).png>)
 
 Query2 Results:
 
-![](../../.gitbook/assets/image%20%28365%29.png)
+![](<../../.gitbook/assets/image (634).png>)
 
 Query3 Results:
 
-![](../../.gitbook/assets/image%20%28575%29.png)
+![](<../../.gitbook/assets/image (714).png>)
 
 ### Aggregating Values
 
 The `collect()` function in Cypher gives you the capability to aggregate values into a list. You can use this to group a set of values based on a particular starting node, relationship, property.
 
-For instance, if we listed each person in our example data with each of their friends \(see the Cypher below\), you would see duplicate names in the left column because each `Person` might have multiple friends, and you need a result for each relationship from the starting person. To aggregate all of a person’s friends by the starting person, you can use `collect()`. This will group the friend values by the non-aggregate field \(in our case, `p.name`\).
+For instance, if we listed each person in our example data with each of their friends (see the Cypher below), you would see duplicate names in the left column because each `Person` might have multiple friends, and you need a result for each relationship from the starting person. To aggregate all of a person’s friends by the starting person, you can use `collect()`. This will group the friend values by the non-aggregate field (in our case, `p.name`).
 
 ```sql
 MATCH (p:Person)-[:IS_FRIENDS_WITH]->(friend:Person)
 RETURN p.name, collect(friend.name) AS friend
 ```
 
-![](../../.gitbook/assets/image%20%28326%29.png)
+![](<../../.gitbook/assets/image (868).png>)
 
 ### Counting Values in a List
 
@@ -74,11 +74,19 @@ RETURN p.name, collect(friend.name) AS friends, size((friend)-[:IS_FRIENDS_WITH]
 
 Query5 Results:
 
-![](../../.gitbook/assets/image%20%28301%29.png)
+<div align="left">
+
+<img src="../../.gitbook/assets/image (768).png" alt="">
+
+</div>
 
 Query6 Results:
 
-![](../../.gitbook/assets/image%20%28317%29.png)
+<div align="left">
+
+<img src="../../.gitbook/assets/image (663).png" alt="">
+
+</div>
 
 ## Manipulating Results and Output
 
@@ -90,7 +98,7 @@ In the next few paragraphs, we will show how to use certain clauses and keywords
 
 The syntax for the queries above might look a bit intimidating, but there are better ways to write it. One of those ways is to use the `WITH` clause to pass values from one section of a query to another. This allows you to execute some intermediate calculations or operations within your query to use later.
 
-You must specify the variables in the `WITH` clause that you want to use later. Only those variables will be passed to the next part of the query. There are a variety of ways to use this functionality \(e.g. count, collect, filter, limit results\), but we will show a couple, including a cleaner version of our `size()` query from above.
+You must specify the variables in the `WITH` clause that you want to use later. Only those variables will be passed to the next part of the query. There are a variety of ways to use this functionality (e.g. count, collect, filter, limit results), but we will show a couple, including a cleaner version of our `size()` query from above.
 
 ```sql
 //Query7: find and list the technologies people like
@@ -107,17 +115,25 @@ RETURN p.name, friendsList, numberOfFoFs
 
 Query7 Results:
 
-![](../../.gitbook/assets/image%20%28142%29.png)
+<div align="left">
+
+<img src="../../.gitbook/assets/image (629).png" alt="">
+
+</div>
 
 Query8 Results:
 
-![](../../.gitbook/assets/image%20%2859%29.png)
+<div align="left">
 
-In the first query, we pass the `Person` name, and a collected list of the `Technology` types. Only these items can be referenced in the `RETURN` clause. We cannot use the relationship \(`r`\) or even the `Person` birthdate because we did not pass those values along.
+<img src="../../.gitbook/assets/image (680).png" alt="">
 
-In the second query, we can only reference `p` and any of its properties \(name, birthdate, yrsExperience, twitter\), the collection of friends \(as a whole, not each value\), and the number of friend-of-friends. Since we passed those values in the `WITH` clause, we can use those in our `WHERE` or `RETURN` clauses.
+</div>
 
-`WITH` requires all values passed to have a variable \(if they do not already have one\). Our `Person` nodes were given a variable \(`p`\) in the `MATCH` clause, so we do not need to assign a variable there.
+In the first query, we pass the `Person` name, and a collected list of the `Technology` types. Only these items can be referenced in the `RETURN` clause. We cannot use the relationship (`r`) or even the `Person` birthdate because we did not pass those values along.
+
+In the second query, we can only reference `p` and any of its properties (name, birthdate, yrsExperience, twitter), the collection of friends (as a whole, not each value), and the number of friend-of-friends. Since we passed those values in the `WITH` clause, we can use those in our `WHERE` or `RETURN` clauses.
+
+`WITH` requires all values passed to have a variable (if they do not already have one). Our `Person` nodes were given a variable (`p`) in the `MATCH` clause, so we do not need to assign a variable there.
 
 ### Looping through List Values
 
@@ -142,17 +158,25 @@ RETURN p.name, p.yearsExp
 
 Query9 Results:
 
-![](../../.gitbook/assets/image%20%2868%29.png)
+<div align="left">
+
+<img src="../../.gitbook/assets/image (672).png" alt="">
+
+</div>
 
 Query10 Results:
 
-![](../../.gitbook/assets/image%20%28479%29.png)
+<div align="left">
+
+<img src="../../.gitbook/assets/image (864).png" alt="">
+
+</div>
 
 ### Ordering Results
 
 Our list of potential hiring candidates from our last example might be more useful if we could order the candidates by most or least experience. Or perhaps we want to rank all of our people by age.
 
-The `ORDER BY` keyword will sort the results based on the value you specify and in ascending or descending order \(ascending is default\). Let’s use the same queries from our example with `UNWIND` and see how we can order our candidates.
+The `ORDER BY` keyword will sort the results based on the value you specify and in ascending or descending order (ascending is default). Let’s use the same queries from our example with `UNWIND` and see how we can order our candidates.
 
 ```sql
 //Query11: for a list of techRequirements, look for people who have each skill - ordered Query9
@@ -173,13 +197,13 @@ RETURN p.name, p.yearsExp ORDER BY p.yearsExp DESC
 
 Query11 Results:
 
-![](../../.gitbook/assets/image%20%28331%29.png)
+![](<../../.gitbook/assets/image (681).png>)
 
 Query12 Results:
 
-![](../../.gitbook/assets/image%20%28415%29.png)
+![](<../../.gitbook/assets/image (676).png>)
 
-Notice that our first query has to order by `Person` name before collecting the values into a list. If you do not sort first \(put the `ORDER BY` after the `RETURN`\), you will sort based on the size of the list and not by the first letter of the values in the list. We also sort on two values – technology, then person. This allows us to sort our technology so that all the persons that like a technology are listed together.
+Notice that our first query has to order by `Person` name before collecting the values into a list. If you do not sort first (put the `ORDER BY` after the `RETURN`), you will sort based on the size of the list and not by the first letter of the values in the list. We also sort on two values – technology, then person. This allows us to sort our technology so that all the persons that like a technology are listed together.
 
 You can try out the difference in sorting by both values or one value by running these queries:
 
@@ -225,7 +249,7 @@ WHERE t.type IN ['Graphs','Query Languages']
 RETURN DISTINCT user.name
 ```
 
-![](../../.gitbook/assets/image%20%28519%29.png)
+![](<../../.gitbook/assets/image (653).png>)
 
 For Query13, our use case is that we are launching a new Twitter account for tips and tricks on Cypher, and we want to notify users who have a Twitter account and who like graphs or query languages. The first two lines of the query look for `Person` nodes who have a Twitter handle. Then, we use `WITH` to pass those users over to the next `MATCH`, where we find out if the person likes graphs or query languages. Notice that running this statement without the `DISTINCT` keyword will result in “Melissa” shown twice. This is because she likes graphs, and she also likes query languages. When we use `DISTINCT`, we only retrieve unique users.
 
@@ -243,7 +267,6 @@ ORDER BY numberOfFriends DESC
 LIMIT 3
 ```
 
-![](../../.gitbook/assets/image%20%28102%29.png)
+![](<../../.gitbook/assets/image (631).png>)
 
-Our query pulls persons and the friends they are connected to and returns the person name and count of their friends. We could run just that much of the query and return a messy list of names and friend counts, but we probably want to order the list based on the number of friends each person has starting with the biggest number at the top \(`DESC`\). You could also run that much of the query to see the friends and counts all in order, but we only want to pull the top 3 people with the most friends. The `LIMIT` pulls the top results from our ordered list.
-
+Our query pulls persons and the friends they are connected to and returns the person name and count of their friends. We could run just that much of the query and return a messy list of names and friend counts, but we probably want to order the list based on the number of friends each person has starting with the biggest number at the top (`DESC`). You could also run that much of the query to see the friends and counts all in order, but we only want to pull the top 3 people with the most friends. The `LIMIT` pulls the top results from our ordered list.

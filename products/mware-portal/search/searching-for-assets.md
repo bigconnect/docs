@@ -75,10 +75,10 @@ http://localhost:8080/web/guest/search?q=data&target=this-site
 ```
 
 **Destination Page**\
-****Provide a friendly URL to the search page. If not configured or if it points to a page that doesn’t exist, a message appears for administrators that the search bar must be configured for it to appear to users.
+Provide a friendly URL to the search page. If not configured or if it points to a page that doesn’t exist, a message appears for administrators that the search bar must be configured for it to appear to users.
 
 **Use Advanced Search Syntax**\
-****If using Elasticsearch, enabling this allows users to enter [Query String Syntax](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-query-string-query.html#query-string-syntax) into the Search Bar. If using Solr, consult its documentation for the [proper syntax](https://lucene.apache.org/solr/guide/6\_6/query-syntax-and-parsing.html).
+If using Elasticsearch, enabling this allows users to enter [Query String Syntax](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-query-string-query.html#query-string-syntax) into the Search Bar. If using Solr, consult its documentation for the [proper syntax](https://lucene.apache.org/solr/guide/6\_6/query-syntax-and-parsing.html).
 
 ### Search Suggestions <a href="#search-suggestions" id="search-suggestions"></a>
 

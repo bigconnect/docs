@@ -2,7 +2,7 @@
 
 This is where you search through data stored in BigConnect.&#x20;
 
-![](<../../../.gitbook/assets/image (474).png>)
+![](<../../../.gitbook/assets/image (485).png>)
 
 In the top part you have a global search field where you can enter search terms. Have a look at the **Querying data** wizard on the search page to get some hints on what is the search syntax.
 
@@ -19,13 +19,13 @@ On the left side of the search page you have the **Filters**. Here you can choos
 
 To see what's available in the system, type \* in the search field and hit Enter:
 
-![](<../../../.gitbook/assets/image (372).png>)
+![](<../../../.gitbook/assets/image (509).png>)
 
 We have a new panel on the right side called **Refinements**. By default, BigConnect aggregates all search results by some predefined system properties: Concept and Media Tag in our case. You can drill down in search results by clicking on a concept or media tag.
 
 For example, if we want to see all objects that have the Media Tag = animal, click on the animal media tag and the search results will be filtered accordingly.
 
-![](<../../../.gitbook/assets/image (214).png>)
+![](<../../../.gitbook/assets/image (443).png>)
 
 You can further drill down on available Refinements or use Filters to do so.
 
@@ -63,7 +63,7 @@ Filtering by Properties depends on the type of the property being selected. Diff
 
 Multiple property filters can be applied. By default, the operator applied between subsequent filters is AND. However, you can change this to OR or NOT.
 
-You can also group property filters together using the grouping icons: <img src="../../../.gitbook/assets/image (598).png" alt="" data-size="original">&#x20;
+You can also group property filters together using the grouping icons: <img src="../../../.gitbook/assets/image (573).png" alt="" data-size="original">&#x20;
 
 ## Sorting
 
@@ -73,7 +73,7 @@ Search results can be sorted by one or more properties. Select the desired prope
 
 You can save the current query, its filters, refinements and sort properties by clicking the Saved Searches dropdown:
 
-![](<../../../.gitbook/assets/image (700).png>)
+![](<../../../.gitbook/assets/image (490).png>)
 
 Just enter a name for your saved search and choose whether you want it to be available to all users (Global). By default, a saved search is available only to the user that created it.
 
@@ -83,10 +83,10 @@ Saved Searches are used in the Saved Search dashboard widget and in tools like G
 
 ## Exporting search results
 
-You can export all search results or only selected ones. The top export icon next to the Saved Searches dropdown <img src="../../../.gitbook/assets/image (650).png" alt="" data-size="original"> is used to export all search results.&#x20;
+You can export all search results or only selected ones. The top export icon next to the Saved Searches dropdown <img src="../../../.gitbook/assets/image (572).png" alt="" data-size="original"> is used to export all search results.&#x20;
 
-![](<../../../.gitbook/assets/image (698).png>)
+![](<../../../.gitbook/assets/image (487).png>)
 
 If you want to export only certain search results, select the rows you want to export and click the export dropdown next to the pagination options. &#x20;
 
-![](<../../../.gitbook/assets/image (701).png>)
+![](<../../../.gitbook/assets/image (525).png>)

@@ -47,7 +47,7 @@ To secure the Security Token Service:
 6. Provide the required details as follows:
    1. Select **ALL-USER-STORE-DOMAINS**.
    2. Select the role you created to grant permission to access secured service. In this example, the admin role is used. Next, click **Finish**.\
-      ****![](<../../../.gitbook/assets/image (724) (1).png>)
+      ![](<../../../.gitbook/assets/image (233).png>)
 7. Click **Finish**.
 8. Click **Ok** on the confirmation dialog window that appears.
 9. Click **Update** to complete the process.
@@ -67,5 +67,5 @@ The **Subject confirmation methods** define how a relying party (RP), which is t
 1. Under the **Inbound Authentication Configuration** section, click **WS-Trust Security Token Service Configuration** **>** **Configure**. The STS Configuration page appears.\
    ![sts-config](https://is.docs.wso2.com/en/latest/assets/img/tutorials/sts-config.png)
 2. Enter the required details.\
-   ![](<../../../.gitbook/assets/image (711) (1).png>)
+   ![](<../../../.gitbook/assets/image (221).png>)
 3. Click **Update** to save the changes made to the service provider.

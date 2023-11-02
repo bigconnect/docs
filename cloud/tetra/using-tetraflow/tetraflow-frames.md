@@ -6,13 +6,17 @@ An Tetra frame represents a 2D array of data. The data may be local or it may be
 
 To create a frame with a large amount of random data (for example, to use for testing), click the drop-down **Admin** menu, then select **Create Synthetic Frame**. Customize the frame as needed, then click the **Create** button to create the frame.
 
-![](<../../../.gitbook/assets/image (180).png>)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (731).png" alt="">
+
+</div>
 
 ## Viewing Frames
 
 To view a specific frame, click the “Key” link for the specified frame, or enter `getFrameSummary "FrameName"` in a cell in CS mode (where `FrameName` is the name of a frame, such as `allyears2k.hex`).
 
-![](<../../../.gitbook/assets/image (128).png>)
+![](<../../../.gitbook/assets/image (711).png>)
 
 From the `getFrameSummary` cell, you can:
 
@@ -26,11 +30,15 @@ From the `getFrameSummary` cell, you can:
 
 When you view a frame, you can “drill-down” to the necessary level of detail (such as a specific column or row) using the **Inspect** button or by clicking the links. The following screenshot displays the results of clicking the **Inspect** button for a frame.
 
-![](<../../../.gitbook/assets/image (582).png>)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (739).png" alt="">
+
+</div>
 
 This screenshot displays the results of clicking the **columns** link.
 
-![](<../../../.gitbook/assets/image (371).png>)
+![](<../../../.gitbook/assets/image (660).png>)
 
 To view all frames, click the **Assist Me!** button, then click the **getFrames** link, or enter `getFrames` in the cell in CS mode and press **Ctrl+Enter**. You can also view all current frames by clicking the drop-down **Data** menu and selecting **List All Frames**.
 
@@ -45,7 +53,7 @@ For parsed data, the following information displays:
 * Link to the .hex file
 * The **Build Model**, **Predict**, and **Inspect** buttons
 
-![](<../../../.gitbook/assets/image (217).png>)
+![](<../../../.gitbook/assets/image (804).png>)
 
 To make a prediction, check the checkboxes for the frames you want to use to make the prediction, then click the **Predict on Selected Frames** button.
 
@@ -53,7 +61,11 @@ To make a prediction, check the checkboxes for the frames you want to use to mak
 
 Datasets can be split within Flow for use in model training and testing.
 
-![](<../../../.gitbook/assets/image (639).png>)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (657).png" alt="">
+
+</div>
 
 1\. To split a frame, click the **Assist Me** button, then click **splitFrame**.
 
@@ -71,7 +83,7 @@ Datasets can be split within Flow for use in model training and testing.
 
 To create a plot from a frame, click the **Inspect** button, then click the **Plot** button for columns or factors. Note that from this section, you can also inspect the **Chunk compression summary** and the **Frame distribution summary**.
 
-![](<../../../.gitbook/assets/image (137).png>)
+![](<../../../.gitbook/assets/image (854).png>)
 
 1\. Select the type of plot from the **Type** menu
 
@@ -98,4 +110,8 @@ To create a plot from a frame, click the **Inspect** button, then click the **Pl
 
 4\. click the **Plot** button to plot the data.
 
-![](<../../../.gitbook/assets/image (325).png>)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (815).png" alt="">
+
+</div>

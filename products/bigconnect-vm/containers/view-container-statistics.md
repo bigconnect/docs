@@ -8,6 +8,6 @@ From the menu select **Containers**, select the container then select **Stats**.
 * I/O usage.
 * Processes running in the container
 
-![](<../../../.gitbook/assets/image (780).png>)
+![](<../../../.gitbook/assets/image (363).png>)
 
-![](<../../../.gitbook/assets/image (784).png>)
+![](<../../../.gitbook/assets/image (388).png>)

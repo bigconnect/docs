@@ -4,16 +4,11 @@ Today, enterprise applications seek ways of enforcing security that allows the r
 
 ### Types of access control <a href="#types-of-access-control" id="types-of-access-control"></a>
 
-![](<../../../.gitbook/assets/image (755) (1).png>)
+![](<../../../.gitbook/assets/image (215).png>)
 
 The following table describes the various types of access control.
 
-| Access Control Type	               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |   |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| **Access Control Lists**           | Access control lists are the oldest and most basic form of access control. This type was primarily adopted for use in operating systems. This maintains a set of users and operations that can be performed on a resource as a mapping. This is easy to implement due to the use of maps. However, this is not scalable for larger user bases and can become difficult to manage.                                                                                                                                                                                                                                                                                                                              |   |
-| **Role-based Access Control**      | <p>Role-based Access Control (RBAC) is an approach used to restrict access to authorized users based on their role. This is a static permission model which provides access control. It is used by the majority of enterprises with more than 500 users.</p><p>This access control type is used when all users are categorized into different roles. The roles define the resources that can be accessed by users assigned to that role. This type of access control reduces management overhead. These users and roles can also be externalized using user stores. These roles need to be managed carefully. There can be instances where a user is assigned to multiple roles. This is a subset of ABAC.</p> |   |
-| **Attribute-based Access Control** | <p>Attribute-based access control (ABAC) defines a new access control paradigm whereby access rights are granted to users through the use of policies that combine attributes together.</p><p>Here, authorization happens based on attributes. This access control type addresses the limitations of role-based access control to provide a more fine-grained approach. This can be based on the attributes of the user, the environment, or even the resource itself. This is more flexible when compared with the role-based approach. There is no need to know the user prior to granting access.</p>                                                                                                       |   |
-| **Policy-based Access Control**    | <p>This type of access control addresses the requirement to have a more uniform access control mechanism. This helps larger enterprises to have uniform access control for the large amount of organizational units. This is helpful when carrying out security audits.</p><p>This is the most complex form of access control. This involves specifying policies unambiguously using XACML and using authorized attribute sources in the enterprise. Here Policy Based Access Control(PBAC) (also called Rule-based access control) is an extension of ABAC where attributes are used in writing policies.</p>                                                                                                 |   |
+<table><thead><tr><th>Access Control Type	</th><th>Description</th><th data-hidden></th></tr></thead><tbody><tr><td><strong>Access Control Lists</strong></td><td>Access control lists are the oldest and most basic form of access control. This type was primarily adopted for use in operating systems. This maintains a set of users and operations that can be performed on a resource as a mapping. This is easy to implement due to the use of maps. However, this is not scalable for larger user bases and can become difficult to manage.</td><td></td></tr><tr><td><strong>Role-based Access Control</strong></td><td><p>Role-based Access Control (RBAC) is an approach used to restrict access to authorized users based on their role. This is a static permission model which provides access control. It is used by the majority of enterprises with more than 500 users.</p><p>This access control type is used when all users are categorized into different roles. The roles define the resources that can be accessed by users assigned to that role. This type of access control reduces management overhead. These users and roles can also be externalized using user stores. These roles need to be managed carefully. There can be instances where a user is assigned to multiple roles. This is a subset of ABAC.</p></td><td></td></tr><tr><td><strong>Attribute-based Access Control</strong></td><td><p>Attribute-based access control (ABAC) defines a new access control paradigm whereby access rights are granted to users through the use of policies that combine attributes together.</p><p>Here, authorization happens based on attributes. This access control type addresses the limitations of role-based access control to provide a more fine-grained approach. This can be based on the attributes of the user, the environment, or even the resource itself. This is more flexible when compared with the role-based approach. There is no need to know the user prior to granting access.</p></td><td></td></tr><tr><td><strong>Policy-based Access Control</strong></td><td><p>This type of access control addresses the requirement to have a more uniform access control mechanism. This helps larger enterprises to have uniform access control for the large amount of organizational units. This is helpful when carrying out security audits.</p><p>This is the most complex form of access control. This involves specifying policies unambiguously using XACML and using authorized attribute sources in the enterprise. Here Policy Based Access Control(PBAC) (also called Rule-based access control) is an extension of ABAC where attributes are used in writing policies.</p></td><td></td></tr></tbody></table>
 
 ### Introducing XACML
 
@@ -97,7 +92,7 @@ The XACML engine of the MWARE Identity Server has two major components, i.e., PA
 
 The following diagram represents the component architecture of the PDP.
 
-![](<../../../.gitbook/assets/image (725) (1).png>)
+![](<../../../.gitbook/assets/image (226).png>)
 
 The following provides a more detailed information on the various components available in the PDP architecture.
 
@@ -130,7 +125,7 @@ This is same as Balana PDP. However, this instance has been initialized with the
 
 This module finds from different policy stores to evaluate a XACML request. The following is a high-level diagram of how this works.
 
-![](<../../../.gitbook/assets/image (733) (1).png>)
+![](<../../../.gitbook/assets/image (217).png>)
 
 Any number of policy finder modules can be plugged with the Carbon policy finder.
 
@@ -150,7 +145,7 @@ When you are writing a new module, you need to consider the following in additio
 
 This module helps to find the missing attribute for a given XACML request. The following is the high-level diagram for both the Carbon attribute and resource finders.
 
-![](<../../../.gitbook/assets/image (764) (1).png>)
+![](<../../../.gitbook/assets/image (278).png>)
 
 Any number of PIP attribute finder modules can be plugged with the Carbon attribute finder. You need to implement the PIPAttributeFinder interface to write a new module and register it using the entitlement.properties configuration file. By default, MWARE Identity Server is shipped with a DefaultAttributeFinder that communicates with the underlying user store of the Identity Server. The default user store of the Identity Server is ApacheDS where it can be changed.&#x20;
 

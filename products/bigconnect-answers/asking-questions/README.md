@@ -22,7 +22,7 @@ SQL questions give a lot more freedom of expression — you have all of SQL at y
 
 Let’s tour the drill-through functionality available in the **Action Menu**. If you’d like to follow along, see figure 3 for a screenshot of the question in the **Notebook Editor**. The visualization has been set to a **stacked bar chart** (figure 4).
 
-__
+
 
 ![Fig. 4. Setting the visualization to a stacked bar chart.](https://www.metabase.com/learn/images/create-charts-with-explorable-data/stacked-bar-chart.png)
 

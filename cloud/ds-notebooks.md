@@ -18,15 +18,15 @@ The notebook extends the console-based approach to interactive computing in a qu
 
 Notebook documents contains the inputs and outputs of a interactive session as well as additional text that accompanies the code but is not meant for execution. In this way, notebook files can serve as a complete computational record of a session, interleaving executable code with explanatory text, mathematics, and rich representations of resulting objects. These documents are internally [JSON](https://en.wikipedia.org/wiki/JSON) files and are saved with the `.ipynb` extension. Since JSON is a plain text format, they can be version-controlled and shared with colleagues.
 
-Notebooks may be exported to a range of static formats, including HTML \(for example, for blog posts\), reStructuredText, LaTeX, PDF, and slide shows, via the [nbconvert](https://nbconvert.readthedocs.io/en/latest/) command.
+Notebooks may be exported to a range of static formats, including HTML (for example, for blog posts), reStructuredText, LaTeX, PDF, and slide shows, via the [nbconvert](https://nbconvert.readthedocs.io/en/latest/) command.
 
-Furthermore, any `.ipynb` notebook document available from a public URL can be shared via the [Jupyter Notebook Viewer](https://jupyter-notebook.readthedocs.io/en/stable/nbviewer) \([nbviewer](https://nbviewer.jupyter.org/)\). This service loads the notebook document from the URL and renders it as a static web page. The results may thus be shared with a colleague, or as a public blog post, without other users needing to install the Jupyter notebook themselves. In effect, [nbviewer](https://nbviewer.jupyter.org/) is simply [nbconvert](https://nbconvert.readthedocs.io/en/latest/) as a web service, so you can do your own static conversions with nbconvert, without relying on nbviewer.
+Furthermore, any `.ipynb` notebook document available from a public URL can be shared via the [Jupyter Notebook Viewer](https://jupyter-notebook.readthedocs.io/en/stable/nbviewer) ([nbviewer](https://nbviewer.jupyter.org/)). This service loads the notebook document from the URL and renders it as a static web page. The results may thus be shared with a colleague, or as a public blog post, without other users needing to install the Jupyter notebook themselves. In effect, [nbviewer](https://nbviewer.jupyter.org/) is simply [nbconvert](https://nbconvert.readthedocs.io/en/latest/) as a web service, so you can do your own static conversions with nbconvert, without relying on nbviewer.
 
 ## Creating a new notebook document
 
 A new notebook may be created at any time, either from the dashboard, or using the File ‣ New menu option from within an active notebook. The new notebook is created within the same directory and will open in a new browser tab. It will also be reflected as a new entry in the notebook list on the dashboard.
 
-![](../.gitbook/assets/image%20%28181%29.png)
+![](<../.gitbook/assets/image (865).png>)
 
 ## Opening notebooks
 
@@ -36,7 +36,7 @@ An open notebook has **exactly one** interactive session connected to a kernel, 
 
 When you create a new notebook document, you will be presented with the **notebook name**, a **menu bar**, a **toolbar** and an empty **code cell**.
 
-![](../.gitbook/assets/image%20%28230%29.png)
+![](<../.gitbook/assets/image (713).png>)
 
 **Notebook name**: The name displayed at the top of the page, next to the Jupyter logo, reflects the name of the `.ipynb` file. Clicking on the notebook name brings up a dialog which allows you to rename it. Thus, renaming a notebook from “Untitled0” to “My first notebook” in the browser, renames the `Untitled0.ipynb` file to `My first notebook.ipynb`.
 
@@ -53,4 +53,3 @@ Because you use Jupyter in a web browser, some people are understandably concern
 You can also use Jupyter remotely: your company or university might run the server for you, for instance. If you want to work with sensitive data in those cases, talk to your IT or data protection staff about it.
 
 We aim to ensure that other pages in your browser or other users on the same computer can’t access your notebook server. See [Security in the Jupyter notebook server](https://jupyter-notebook.readthedocs.io/en/stable/security.html#server-security) for more about this.
-

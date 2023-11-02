@@ -10,7 +10,11 @@ The following subsections cover the processes involved in defining a dataflow, s
 
 The Dataflow menu can be accessed under **MANAGEMENT** > **Data Preparation** > **Dataflow** on the left-hand panel of the main screen.
 
-![](../../../../.gitbook/assets/create\_a\_dataset\_1.jpg)
+<div align="left">
+
+<img src="../../../../.gitbook/assets/create_a_dataset_1 (1).jpg" alt="">
+
+</div>
 
 ## Adding a Dataset
 
@@ -26,21 +30,33 @@ The first step in defining a dataflow is to add a dataset. This can be conducted
 
 3\. Click the **Add dataset to this dataflow** button on the center of the page.
 
-![](../../../../.gitbook/assets/add\_datasets\_3.jpg)
+<div align="left">
+
+<img src="../../../../.gitbook/assets/add_datasets_3.jpg" alt="">
+
+</div>
 
 4\. Select the datasets to be added.
 
-![](<../../../../.gitbook/assets/image (8).png>)
+![](<../../../../.gitbook/assets/image (81).png>)
 
 5\. When an imported dataset and its corresponding wrangled dataset are created, click the **Edit rules** button to edit rules (see **Edit rules** for a detailed procedure).
 
-![](../../../../.gitbook/assets/add\_datasets\_5.jpg)
+<div align="left">
+
+<img src="../../../../.gitbook/assets/add_datasets_5.jpg" alt="">
+
+</div>
 
 ## Creating a Dataflow in the dataset details page
 
 In the dataset details page, click the **Create dataflow with this dataset** button to create a dataflow, and proceed until the step before **Edit rules**.
 
-![](../../../../.gitbook/assets/add\_datasets\_6.jpg)
+<div align="left">
+
+<img src="../../../../.gitbook/assets/add_datasets_6.jpg" alt="">
+
+</div>
 
 {% hint style="info" %}
 The dataflow is named based on the name of the dataset.

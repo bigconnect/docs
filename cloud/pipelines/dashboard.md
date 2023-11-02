@@ -6,11 +6,9 @@ Teams of data engineers use the shared pipeline repository provided with the Dat
 
 The pipeline repository also includes pre-built pipelines for [social network crawling](social-data.md) and [data workers](data-workers.md) for BigGraph.
 
-Once deployed, the Data Pipelines service is available at `https://pipelines-NNNNNNN.cloud.bigconnect.io/dashboard` 
+Once deployed, the Data Pipelines service is available at `https://pipelines-NNNNNNN.cloud.bigconnect.io/dashboard`&#x20;
 
 When logging into Data Pipelines you are presented with the main dashboard where you can see manage the deployed pipelines.
 
-![](../../.gitbook/assets/image%20%28645%29.png)
-
-
+![](<../../.gitbook/assets/image (619).png>)
 

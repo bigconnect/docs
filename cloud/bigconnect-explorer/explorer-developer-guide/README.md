@@ -6,7 +6,7 @@ BigConnect Explorer is a webapp and it has specific endpoints that you can use t
 
 There is an REST API browser included in the Web Console that you can explore and play with the different API endpoints. You can find it in the admin console, under the REST API section.
 
-![BigConnect Eplorer REST API](<../../../.gitbook/assets/image (695).png>)
+![BigConnect Eplorer REST API](<../../../.gitbook/assets/image (243).png>)
 
 ## Web Framework
 

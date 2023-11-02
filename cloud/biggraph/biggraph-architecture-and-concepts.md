@@ -2,7 +2,7 @@
 
 A high level overview of a production architecture is presented below. This is an ideal deployment scenario, with dedicated machines for each Explorer (Web Console), Data Workers, Job Workers, Queues and Data Ingestion.
 
-![](<../../.gitbook/assets/image (459).png>)
+![](<../../.gitbook/assets/image (154).png>)
 
 There are different types of BigConnect nodes:
 
@@ -39,7 +39,7 @@ The ontology defines what Concepts, Relations and Properties are available**.** 
 
 ### Concepts
 
-The conceps are hierarchical and inheritable. This means that child concepts will inherit the properties of parent concepts. There is a root concept that sits at the top of the hierarchy and is called **thing** and **** It's a system-level concept that cannot be removed. Any first-level concepts must inherit the thing root concept.
+The conceps are hierarchical and inheritable. This means that child concepts will inherit the properties of parent concepts. There is a root concept that sits at the top of the hierarchy and is called **thing** and It's a system-level concept that cannot be removed. Any first-level concepts must inherit the thing root concept.
 
 Concepts also have meta-properties that describe how the concept should be treated in the system and what actions are available for them:
 
@@ -71,7 +71,7 @@ Out of the box, the following concept hierarchy is provided:
 
 ### Relations
 
-The relations are hierarchical and inheritable, like concepts. This means that child relations will inherit the properties of parent relations . There is a root relation that sits at the top of the hierarchy and **** It's a system-level relation that cannot be removed. Any first-level relations must inherit the root relationship.
+The relations are hierarchical and inheritable, like concepts. This means that child relations will inherit the properties of parent relations . There is a root relation that sits at the top of the hierarchy and It's a system-level relation that cannot be removed. Any first-level relations must inherit the root relationship.
 
 Relations also have meta-properties that describe how the they should be treated in the system and what actions are available for them:
 
@@ -183,14 +183,14 @@ Each term is comprised of one to many alpha-numeric characters, hyphens, undersc
 For example, suppose within our organization we want to label our data values with security labels defined in terms of user roles. We might have tokens such as: _admin, audit, system_
 
 `// Users must have admin privileges`\
-_``_`admin`\
-``\
+`admin`\
+\
 `// Users must have admin AND audit privileges`\
 `admin & audit`\
-``\
+\
 `// Users with either admin OR audit privileges`\
 `admin | audit`\
-``\
+\
 `// Users must have audit and one or both of admin or system`\
 `(admin|system)&audit`
 

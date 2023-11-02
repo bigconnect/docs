@@ -2,7 +2,7 @@
 
 Since Cypher is designed to be human-readable, it’s construct is based on English prose and iconography to make syntax visual and easily understood. For example, take a look at the simple graph data in the image below. How would you represent this data in English? _NOTE: the answer is in the paragraph below_
 
-![](../../.gitbook/assets/image%20%28378%29.png)
+![](<../../.gitbook/assets/image (378) (1).png>)
 
 Jennifer likes Graphs. Jennifer is friends with Michael. Jennifer works for Neo4j.
 
@@ -18,7 +18,7 @@ This is especially helpful to use in the Cypher Lab when saving queries. If you 
 
 Since Cypher uses ASCII-Art for patterns, we need a visual way to represent each component of our pattern above. We know that the main components of the property graph model are nodes and relationships. Remember that nodes are the data entities in your graph and that you can often identify nodes by finding the nouns or objects in your data model. In our example, `Jennifer`, `Michael`, `Graphs`, and `Neo4j` are our nodes.
 
-![](../../.gitbook/assets/image%20%28260%29.png)
+![](<../../.gitbook/assets/image (639).png>)
 
 To depict nodes in Cypher, we surround the node with parentheses, e.g. `(node)`. Notice how the parentheses look similar to the circles that the visual representation uses for nodes in our data model.
 
@@ -51,11 +51,11 @@ Using our graph example above, let’s see how we could specify our nodes.
 
 ### Representing Relationships in Cypher
 
-To fully utilize the power of a graph database, we also need to express the relationships between our nodes. Relationships are represented in Cypher using an arrow `-->` or `<--` between two nodes. Notice how the syntax looks like the arrows and lines connecting our nodes in the visual representation. Additional information, such as how nodes are connected \(relationship type\) and any properties pertaining to the relationship, can be placed in square brackets inside of the arrow.
+To fully utilize the power of a graph database, we also need to express the relationships between our nodes. Relationships are represented in Cypher using an arrow `-->` or `<--` between two nodes. Notice how the syntax looks like the arrows and lines connecting our nodes in the visual representation. Additional information, such as how nodes are connected (relationship type) and any properties pertaining to the relationship, can be placed in square brackets inside of the arrow.
 
 In our example, the lines with `LIKES`, `IS_FRIENDS_WITH`, and `WORKS_FOR` between nodes are our relationships.
 
-![](../../.gitbook/assets/image%20%284%29.png)
+![](<../../.gitbook/assets/image (779).png>)
 
 Undirected relationships are represented with no arrow and just two dashes `--`. This means that the relationship can be traversed in either direction. While a direction **must** be inserted to the database, it can be matched with an undirected relationship where Cypher ignores any particular direction and retrieves the relationship and connected nodes, no matter what the physical direction is. This allows the queries to be flexible and not force the user to know the physical direction of the relationship stored in the database.
 
@@ -76,13 +76,13 @@ MATCH (p:Person)-[:LIKES]-(t:Technology)
 
 Relationship types categorize and add meaning to a relationship, similar to how labels group nodes. In our property graph data model, relationships show how nodes are connected and related to each other. You can usually identify relationships in your data model by looking for actions or verbs.
 
-You can specify any type of relationship you want between nodes, but we recommend good naming conventions using verbs and actions. Poor relationship type names make it more difficult to both read and write Cypher \(remember, it should sound like English!\).
+You can specify any type of relationship you want between nodes, but we recommend good naming conventions using verbs and actions. Poor relationship type names make it more difficult to both read and write Cypher (remember, it should sound like English!).
 
 For example, let us look at the relationship types from our example graph.
 
-* `[:LIKES]` – makes sense when we put nodes on either side of the relationship \(Jennifer LIKES Graphs\)
-* `[:IS_FRIENDS_WITH]` – makes sense when we put nodes with it \(Jennifer IS\_FRIENDS\_WITH Michael\)
-* `[:WORKS_FOR]` – makes sense with nodes \(Jennifer WORKS\_FOR Neo4j\)
+* `[:LIKES]` – makes sense when we put nodes on either side of the relationship (Jennifer LIKES Graphs)
+* `[:IS_FRIENDS_WITH]` – makes sense when we put nodes with it (Jennifer IS\_FRIENDS\_WITH Michael)
+* `[:WORKS_FOR]` – makes sense with nodes (Jennifer WORKS\_FOR Neo4j)
 
 #### Relationship Variables
 
@@ -91,19 +91,19 @@ Just as we did with nodes, if we want to refer to a relationship later in a quer
 As an example, you could use either `-[rel]->` or `-[rel:LIKES]->` and call the `rel` variable later in your query to reference the relationship and its details.
 
 {% hint style="info" %}
-If you forget the colon in front of a relationship type like this -\[LIKES\]-&gt;, it represents a variable \(not a relationship type\). Since no relationship type declared, Cypher will search all types of relationships.
+If you forget the colon in front of a relationship type like this -\[LIKES]->, it represents a variable (not a relationship type). Since no relationship type declared, Cypher will search all types of relationships.
 {% endhint %}
 
 ### Node or Relationship Properties
 
 We have talked about how to write Cypher for nodes, relationships, and labels. The last piece of our property graph data model is for properties. Remember that properties are name-value pairs that provide additional details to our nodes and relationships.
 
-To represent these in Cypher, we can use curly braces within the parentheses of a node or the brackets of a relationship. The name and value of the property then go inside the curly braces. Our example graph has both a node property \(`name`\) and a relationship property \(`since`\).
+To represent these in Cypher, we can use curly braces within the parentheses of a node or the brackets of a relationship. The name and value of the property then go inside the curly braces. Our example graph has both a node property (`name`) and a relationship property (`since`).
 
 * Node property: `(p:Person {name: 'Jennifer'})`
 * Relationship property: `-[rel:IS_FRIENDS_WITH {since: 2018}]->`
 
-![](../../.gitbook/assets/image%20%28175%29.png)
+![](<../../.gitbook/assets/image (669).png>)
 
 Properties can have values with a variety of data types_._
 
@@ -123,7 +123,7 @@ This bit of Cypher tells the pattern we want, but it does not tell whether we wa
 
 ### Cypher Keywords
 
-Just like with most programming languages, there are a few words in Cypher reserved for specific actions in parts of a query. We need to be able to create, read, update, or delete data in BigConnect, and keywords help us accomplish that functionality. Let us look more in detail at two common keywords \(more will be covered in upcoming guides\).
+Just like with most programming languages, there are a few words in Cypher reserved for specific actions in parts of a query. We need to be able to create, read, update, or delete data in BigConnect, and keywords help us accomplish that functionality. Let us look more in detail at two common keywords (more will be covered in upcoming guides).
 
 #### MATCH
 
@@ -143,22 +143,22 @@ Let us look at some examples of the syntax we have learned so far using `MATCH` 
 
 **Example 1:** Find the labeled `Person` nodes in the graph. Note that we must use a variable like `p` for the `Person` node if we want retrieve the node in the `RETURN` clause.
 
-![](../../.gitbook/assets/image%20%28469%29.png)
+![](<../../.gitbook/assets/image (687).png>)
 
 **Example 2:** Find `Person` nodes in the graph that have a name of ‘Jennifer’. Remember that we can name our variable anything we want, as long as we reference that same name later.
 
-![](../../.gitbook/assets/image%20%28636%29.png)
+![](<../../.gitbook/assets/image (745).png>)
 
 **Example 3:** Find which `Company` Jennifer works for.
 
-Explanation: we know we need to find Jennifer’s `Person` node, and we need to find the `Company` node she is connected to. To do that, we need to follow the `WORKS_FOR` relationship from Jennifer’s `Person` node to the `Company` node. We have also specified a label of `Company` so that the query will only look at nodes with that label. Since we only care about returning the company in this query, we need to give that node a variable \(`company`\) but do not need to give variables for the `Person` node or `WORKS_FOR` relationship.
+Explanation: we know we need to find Jennifer’s `Person` node, and we need to find the `Company` node she is connected to. To do that, we need to follow the `WORKS_FOR` relationship from Jennifer’s `Person` node to the `Company` node. We have also specified a label of `Company` so that the query will only look at nodes with that label. Since we only care about returning the company in this query, we need to give that node a variable (`company`) but do not need to give variables for the `Person` node or `WORKS_FOR` relationship.
 
 ```sql
 MATCH (:Person {name: 'Jennifer'})-[:WORKS_FOR]->(company:Company)
 RETURN company
 ```
 
-![](../../.gitbook/assets/image%20%28133%29.png)
+![](<../../.gitbook/assets/image (810).png>)
 
 **Example 4:** Find which `Company` Jennifer works for, but this time, return only the name of the company.
 
@@ -169,7 +169,7 @@ MATCH (:Person {name: 'Jennifer'})-[:WORKS_FOR]->(company:Company)
 RETURN company.name
 ```
 
-![](../../.gitbook/assets/image%20%28577%29.png)
+![](<../../.gitbook/assets/image (637).png>)
 
 ### Aliasing Return Values
 
@@ -190,17 +190,16 @@ RETURN order.orderId AS OrderID, order.orderDate AS `Purchase Date`,
 
 Results Without Aliases:
 
-![](../../.gitbook/assets/image%20%28307%29.png)
+![](<../../.gitbook/assets/image (646).png>)
 
 Results With Aliases:
 
-![](../../.gitbook/assets/image%20%28536%29.png)
+![](<../../.gitbook/assets/image (860).png>)
 
 {% hint style="info" %}
-You can specify return aliases that have spaces by using the backtick character before and after the alias \(order.orderDate AS `Purchase Date`\). If you do not have an alias that contains spaces, then you do not need to use backticks.
+You can specify return aliases that have spaces by using the backtick character before and after the alias (order.orderDate AS `Purchase Date`). If you do not have an alias that contains spaces, then you do not need to use backticks.
 {% endhint %}
 
 ### Next Steps
 
 Now that you know how to write nodes, relationships, properties, and patterns in Cypher for reading existing data, you can begin exploring data that exists in a BigConnect system. We will look at more `MATCH` capabilities in an upcoming guide, as well as how to write Cypher for create, update, and delete operations with your data.
-

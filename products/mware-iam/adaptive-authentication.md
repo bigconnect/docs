@@ -62,16 +62,16 @@ Adaptive authentication enables an identity provider to prompt multi-factor auth
 
 1. On the **Main** tab, click **Service Providers > Add** and add a new service provider called `saml2-web-app-pickup-dispatch.com` .
 2. Expand the **Inbound Authentication configuration> SAML2 Web SSO configuration** section, and click **Configure**\
-   ****![](<../../.gitbook/assets/image (709) (1).png>)****
+   ![](<../../.gitbook/assets/image (275).png>)
 3. Fill in the following fields.
    * **Issuer:** `saml2-web-app-pickup-dispatch.com`
    * **Assertion Consumer URL:** `http://localhost.com:8080/saml2-web-app-pickup-dispatch.com/consumer`
 4. Leave the rest of the default configurations as it is and click **Register**.\
-   ![](<../../.gitbook/assets/image (742) (1).png>)
+   ![](<../../.gitbook/assets/image (244).png>)
 5. Expand **Local and Outbound Authentication Configuration** and click **Advanced Configuration**.\
-   ![](<../../.gitbook/assets/image (744) (1).png>)
+   ![](<../../.gitbook/assets/image (214).png>)
 6. You can add authentication steps or use a template to configure adaptive authentication depending on your requirement. For example, add Demo HardwareKey Authenticator.\
-   ![](<../../.gitbook/assets/image (749) (1).png>)
+   ![](<../../.gitbook/assets/image (282).png>)
 7.  Add the following configuration to the `<IAM_HOME>/repository/conf/deployment.toml` file.
 
     ```toml

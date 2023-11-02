@@ -43,7 +43,7 @@ Follow these steps to create a new Documents and Media file via Office 365™:
     * PowerPoint: Microsoft PowerPoint™ (`.pptx`)
     * Excel: Microsoft Excel™ (`.xlsx`)
 
-    ****\
+    \
     **Cancel Checkout:** Deletes the Office 365™ file, discarding any changes.
 
 ### Editing Files <a href="#editing-files" id="editing-files"></a>

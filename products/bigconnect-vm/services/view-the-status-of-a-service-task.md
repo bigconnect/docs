@@ -6,4 +6,4 @@ From the menu select **Services** then click the down-arrow to the left of the s
 
 Select any individual task to go to the container details page for that task. You can also perform various actions on individual tasks by using the icons in the **Actions** column.
 
-![](<../../../.gitbook/assets/image (734).png>)
+![](<../../../.gitbook/assets/image (263).png>)

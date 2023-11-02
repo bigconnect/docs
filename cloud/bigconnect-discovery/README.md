@@ -14,7 +14,7 @@ The mainstream products in the current BI market belong to the 2nd and 3rd gener
 
 BigConnect Discovery combines data of various dimensions for large-sized fact data to produce a single big OLAP cube (data mart).
 
-![Big OLAP Cube](<../../.gitbook/assets/image (595).png>)
+![Big OLAP Cube](<../../.gitbook/assets/image (189).png>)
 
 The use of a big OLAP cube offers the following advantages:
 
@@ -38,7 +38,7 @@ BigConnect Discovery is an end-to-end solution that supports the entire process 
 
 BigConnect Discovery performs analytics on its ingested data sources or other external data sources using various analytical tools and outputs analytical results in charts and reports. To utilize this system, you must understand its overall structure shown below:
 
-![](<../../.gitbook/assets/image (543).png>)
+![](<../../.gitbook/assets/image (180).png>)
 
 ### Data Preparation
 
@@ -54,7 +54,7 @@ Data Storage manages data ingested into the Druid engine for analysis and visual
 
 ![](../../.gitbook/assets/datasource.jpg)
 
-![](<../../.gitbook/assets/image (441).png>)
+![](<../../.gitbook/assets/image (155).png>)
 
 ### Data analysis and visualization
 
@@ -72,9 +72,9 @@ Workbook supports working on, sharing, and making a presentation with dashboards
 
 ![BigConnect Discovery Workbook Dashboard](../../.gitbook/assets/dashboard.jpg)
 
-![BigConnect Discovery Workbook Dashboard](<../../.gitbook/assets/image (53).png>)
+![BigConnect Discovery Workbook Dashboard](<../../.gitbook/assets/image (45).png>)
 
-![BigConnect Discovery Workbook Dashboard](<../../.gitbook/assets/image (374).png>)
+![BigConnect Discovery Workbook Dashboard](<../../.gitbook/assets/image (100).png>)
 
 #### Notebook
 

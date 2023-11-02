@@ -4,4 +4,4 @@ From the menu select **Stacks**, tick the checkbox next to the stack you want to
 
 When the confirmation message appears, click **Remove**.
 
-![](<../../../.gitbook/assets/image (728) (1).png>)
+![](<../../../.gitbook/assets/image (236).png>)

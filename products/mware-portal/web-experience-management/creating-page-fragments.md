@@ -8,7 +8,7 @@ To navigate to the Page Fragments interface,
 
 1.  Go to Site Administration. Make sure the Site where you want to work is selected. If you prefer creating a Fragment that’s available for all Sites, navigate to the _Global_ Site and create your Fragment there. Global Fragments are inherited by child Sites, so they can only be edited from the Global Site. Any resources the Global Fragment references (e.g., image) from the Global Site is copied to a Site that leverages the Fragment.
 
-    ****
+
 2. Select _Site Builder_ → _Page Fragments_
 
 ![Figure 1: Here is the Page Fragments page with no custom Fragments or Collections created.](https://liferay-support.zendesk.com/hc/article\_attachments/360040158772/empty-fragments-page.png)

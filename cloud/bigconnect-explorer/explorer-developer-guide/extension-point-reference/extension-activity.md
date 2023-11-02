@@ -6,9 +6,9 @@ description: Add additional items to the activity panel.
 
 [Example code](https://github.com/mware-solutions/doc-examples/tree/master/extension-activity)
 
-Activity extension points allow plugins to add additional items to the activity panel \(opened via the gears menu bar icon.\) These rows can show the progress of a long-running process or a front-end task using start/stop events.
+Activity extension points allow plugins to add additional items to the activity panel (opened via the gears menu bar icon.) These rows can show the progress of a long-running process or a front-end task using start/stop events.
 
-![](../../../../.gitbook/assets/image%20%28696%29.png)
+![](<../../../../.gitbook/assets/image (306).png>)
 
 This tutorial will create an example long-running process, and an activity item that shows its progress, along with a custom finished component. For details on creating the back-end long-running process, see the tutorial code link above.
 
@@ -38,7 +38,7 @@ app.post("/com/mware/examples/activity/start", authenticator, csrfProtector, Rea
 
 Add a message bundle key for the type of activity in the `messages.properties` file:
 
-```text
+```
 activity.tasks.type.com-mware-examples-activity=Example
 ```
 
@@ -59,6 +59,4 @@ define(['react'], function(React) {
     return Finished;
 })
 ```
-
-
 

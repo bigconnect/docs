@@ -20,17 +20,15 @@ Like record header attributes, you can use the Expression Evaluator or any scrip
 
 Field attributes are string values. You can also use `record:fieldAttribute` functions in any expression to include attribute values in calculations.Important: Field attributes do not have field paths. When using an attribute in an expression, use just the attribute name surrounded by quotation marks after specifying the path to the associated field, as follows:
 
- `​${record:fieldAttribute(<path to the field>,'<attribute name>')}`
+&#x20;`​${record:fieldAttribute(<path to the field>,'<attribute name>')}`
 
 For example, say you are processing Avro data as part of the Drift Synchronization Solution for Hive. All Decimal fields include automatically generated precision and scale field attributes. Before passing the data to the Hive Metadata processor, you want to create a new Price Decimal field based on the existing cost data.
 
 The following Expression Evaluator creates the Price field and defines the precision and scale field attributes based on the existing Cost precision and scale.
 
-![](../../../.gitbook/assets/image%20%28431%29.png)
+![](<../../../.gitbook/assets/image (716).png>)
 
 ## Viewing Field Attributes in Data Preview
 
 As with record header attributes, you can use data preview to view field attributes at any point in the pipeline. To view field attributes, enable the Show Record/Field Header data preview property.
-
-
 

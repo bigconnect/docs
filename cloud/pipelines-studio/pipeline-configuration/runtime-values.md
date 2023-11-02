@@ -77,7 +77,7 @@ For example, to use the JDBCConnectionString runtime parameter for the JDBC Mult
 
 You can call a runtime parameter from within an expression language function by simply entering the parameter name. For example, the following expression returns the value of the JDBCConnectionString runtime parameter:
 
- `${record:value(JDBCConnectionString)}`
+&#x20;`${record:value(JDBCConnectionString)}`
 
 You can use a runtime parameter to represent a part of a property. For example, you could use a RootDir runtime parameter and append the rest of the directory in the property as follows:
 
@@ -87,11 +87,11 @@ You can use a runtime parameter to represent a part of a property. For example, 
 
 To call a runtime parameter in a stage or pipeline property that displays as a checkbox or drop-down menu, you first must convert the property to a text box.
 
-Click the Use Parameter icon \(![](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/icon_UseParam.png)\) next to the checkbox or drop-down menu to convert the property to a text box, and then call the parameter using the required syntax.
+Click the Use Parameter icon (![](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/icon\_UseParam.png)) next to the checkbox or drop-down menu to convert the property to a text box, and then call the parameter using the required syntax.
 
 For example, the following image shows that the Delivery Guarantee property that displays as a drop-down menu has been converted to a text box so that a parameter can be called from the property:
 
-![](../../../.gitbook/assets/image%20%28108%29.png)
+![](<../../../.gitbook/assets/image (853).png>)
 
 The parameter must evaluate to a valid option for the property type:
 
@@ -105,11 +105,11 @@ Parameters called from properties that display as drop-down menus must evaluate 
 
 For example, to use a parameter for the Delivery Guarantee property that displays as a drop-down menu, the parameter must evaluate to one of the valid key values, AT\_LEAST\_ONCE or AT\_MOST\_ONCE, and not to one of the menu options, At Least Once or At Most Once.
 
-To view a valid key value, select the desired option from the menu, then click the **Use Parameter** icon. The text box displays the key value for the selected option. 
+To view a valid key value, select the desired option from the menu, then click the **Use Parameter** icon. The text box displays the key value for the selected option.&#x20;
 
 For example, after selecting At Least Once for the Delivery Guarantee property and then clicking the Use Parameter icon, the text box displays AT\_LEAST\_ONCE as the key value for the At Least Once option:
 
-![](../../../.gitbook/assets/image%20%28500%29.png)
+![](<../../../.gitbook/assets/image (699).png>)
 
 ### Calling from Scripting Processors
 
@@ -137,10 +137,9 @@ When you start the pipeline, specify the values to use for the parameters.
 If you want to use the default parameter values, you can simply click the Start icon to start the pipeline.
 {% endhint %}
 
-1. From the pipeline canvas, click the More icon, and then click **Start with Parameters**.If Start with Parameters is not enabled, the pipeline is not valid.
+1.  From the pipeline canvas, click the More icon, and then click **Start with Parameters**.If Start with Parameters is not enabled, the pipeline is not valid.
 
-   The **Start with Parameters** dialog box lists all parameters defined for the pipeline and their default values.
-
+    The **Start with Parameters** dialog box lists all parameters defined for the pipeline and their default values.
 2. Override any default values with the values you want to use for this pipeline run.
 3. Click Start.
 
@@ -156,7 +155,10 @@ Before you can view the current runtime parameter values, verify that the monito
 
 When you monitor a pipeline that you started with parameter values, the Runtime Parameters chart displays as follows:
 
-![](../../../.gitbook/assets/image%20%28327%29.png)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (753).png" alt="">
+
+</div>
 
 The Runtime Parameters chart does not display when you start a pipeline without parameters.
-

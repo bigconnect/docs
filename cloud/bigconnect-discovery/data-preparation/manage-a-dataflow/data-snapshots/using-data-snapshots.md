@@ -16,16 +16,16 @@ The status of snapshot creation can be classified as follows:
 
 You can view the details of snapshot creation through the two paths below:
 
-1. Go to the snapshot list under **MANGEMENT** &gt; **Data Preparation** &gt; **Data Snapshot**.
-2. Click the **Snapshot \(\#\)** tab on the right of the [Edit rules](../dataflow-rules.md) page in **Dataflow**
+1. Go to the snapshot list under **MANGEMENT** > **Data Preparation** > **Data Snapshot**.
+2. Click the **Snapshot (#)** tab on the right of the [Edit rules](../dataflow-rules.md) page in **Dataflow**
 
 In the snapshot details page, you can view details such as data validity ratio and a grid of the created snapshot, and download the results as a CSV file.
 
-![](../../../../../.gitbook/assets/image%20%28231%29.png)
+![](<../../../../../.gitbook/assets/image (697).png>)
 
 If valid data has not been created, the snapshot details page displays an error log.
 
-![](../../../../../.gitbook/assets/image%20%2830%29.png)
+![](<../../../../../.gitbook/assets/image (783).png>)
 
 
 
@@ -33,7 +33,6 @@ If valid data has not been created, the snapshot details page displays an error 
 
 In the details page of a successfully created snapshot, the **Download as CSV** option is enabled.
 
-![](../../../../../.gitbook/assets/data_snapshot_5.jpg)
+![](../../../../../.gitbook/assets/data\_snapshot\_5.jpg)
 
 The downloaded file is a standard CSV, with each value separated by a “comma” and each row by a “new line.”
-

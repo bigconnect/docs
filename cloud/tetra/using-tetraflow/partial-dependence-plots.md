@@ -8,9 +8,9 @@ For models that include only numerical values, you can view a Partial Dependence
 
 2\. Specify the Model and Frame that you want to use to retrieve the plots, and specify the number of bins (levels that PDP will compute). Note that more levels will result in slower speeds. By default, the top 10 features are used to build the plot. Alternatively, you can click the **Select Column?** button to build a plot based on a specified set of columns. Click **Compute** when you are done.
 
-![](<../../../.gitbook/assets/image (43).png>)
+![](<../../../.gitbook/assets/image (722).png>)
 
 3\. After the job is finished, click **View** to see the plots.
 
-![](../../../.gitbook/assets/assets-2f-lv6yu\_27lr-b2zlvws\_-2f-lvgg18z7m-sj5xcw7uk-2f-lvgilsu6q5xjkwxwzfy-2fimage.jpg)
+![](../../../.gitbook/assets/assets%2F-Lv6YU\_27lR-b2ZLvWS\_%2F-LvGg18Z7M-sj5XCw7Uk%2F-LvGilSu6Q5xjkwxWzFy%2Fimage.jpg)
 

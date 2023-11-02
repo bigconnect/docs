@@ -18,7 +18,11 @@ The following column filters are included automatically when a chart is created:
 
 The chart filter panel is located on the right-hand side of the chart home screen. On this panel, you can easily view and configure registered filters.
 
-![](../../../.gitbook/assets/image%20%28362%29.png)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (149).png" alt="">
+
+</div>
 
 1. **Filter number:** Displays how many filters are registered for the chart.
 2. **Add/edit filter:** Click on “+” at the top right to either add a new filter or open a popup for configuring an existing filter.
@@ -31,25 +35,32 @@ Click the button at the top of the chart filter panel or click the button in eac
 
 The chart filter dialog box is divided into the Dimension and Measure tabs as shown below:
 
-![](../../../.gitbook/assets/image%20%28120%29.png)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (166).png" alt="">
+
+</div>
 
 ### Dimension filtering
 
 From the connected data source, select a dimension on which to create a filter.
 
-![](../../../.gitbook/assets/image%20%28223%29.png)
+<div align="left">
 
-* **Value range:** Select whether to filter the chart by a single or multiple data categories.
+<img src="../../../.gitbook/assets/image (70).png" alt="">
 
-  > * **Single:** Select one data category by which to filter the chart.
-  > * **Multiple:** Select multiple data categories by which to filter the chart.
+</div>
 
-* **Search:** If there are too many elements in the column, this function allows you to limit the results only to those you wish to see.
+*   **Value range:** Select whether to filter the chart by a single or multiple data categories.
 
-  > * **Search by name:** Search the column element list by name.
-  > * **Element filtering:** Filters elements either by matching element names with regular expressions or wildcards, or by applying a range condition to a measure.
+    > * **Single:** Select one data category by which to filter the chart.
+    > * **Multiple:** Select multiple data categories by which to filter the chart.
+*   **Search:** If there are too many elements in the column, this function allows you to limit the results only to those you wish to see.
 
-![](../../../.gitbook/assets/image%20%28139%29.png)
+    > * **Search by name:** Search the column element list by name.
+    > * **Element filtering:** Filters elements either by matching element names with regular expressions or wildcards, or by applying a range condition to a measure.
+
+![](<../../../.gitbook/assets/image (90).png>)
 
 * **Defined value:** Used to add?as a filter criterion?a data element that is not contained in the column. This allows you to create a filter in advance for a data element that may be added later.
 
@@ -59,31 +70,50 @@ Dimensions with a time icon displayed are of a timestamp type for which a timest
 
 “Relative” sets a period of time relative to the present and displays only data from the applicable period of time in the chart.
 
-![](../../../.gitbook/assets/image%20%28515%29.png)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (143).png" alt="">
+
+</div>
 
 “Specific” directly sets a certain period of time of data and displays only data from the applicable period of time in the chart.
 
-![](../../../.gitbook/assets/image%20%28438%29.png)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (181).png" alt="">
+
+</div>
 
 ### Measure filtering
 
 From the connected data source, select a measure on which to create a filter.
 
-![](../../../.gitbook/assets/image%20%28162%29.png)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (183).png" alt="">
+
+</div>
 
 Once you have selected a measure, designate the range of values to filter.
 
-![](../../../.gitbook/assets/image%20%28557%29.png)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (207).png" alt="">
+
+</div>
 
 ## Global filters
 
 Global filters specify which data is to be displayed in all charts of a dashboard. They can be added, edited, or deleted in the filter panel in the dashboard editing window.
 
-![](../../../.gitbook/assets/image%20%28432%29.png)
+<div align="left">
+
+<img src="../../../.gitbook/assets/image (190).png" alt="">
+
+</div>
 
 1. **Number of filter widgets:** Displays how many filter widgets are currently registered in the dashboard next to the global filter heading.
 2. **Add a filter widget:** Click the “+” icon at the top right to create a new filter widget in the dashboard. The filter creation popup interface and process for creating filters are the same as the process for creating chart filters described in the previous section.
 3. **Filter widget list:** Lists filter widgets registered in the dashboard. Hover the mouse over a widget to display the edit and delete icons. Drag a widget to the widget display area to display the widget in the display area.
 
 Global filters applied to the entire dashboard are also listed when creating an individual filter for a new chart. When creating a global filter, if there are any individual chart filters, it intuitively notifies you of which column the filter was created from.
-
