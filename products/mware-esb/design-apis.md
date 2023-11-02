@@ -2,7 +2,7 @@
 
 Designing an API spans through a few phases of an API Lifecycle. A correct tool can help design an API seamlessly and efficiently. MWARE ESB supports the designing of an API via the API Publisher Portal.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 The following are the various aspects associated with the designing phase of the API lifecycle.
 

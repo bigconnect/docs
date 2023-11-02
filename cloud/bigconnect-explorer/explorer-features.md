@@ -72,7 +72,7 @@ Besides the various objects that can be loaded into the platform, BigConnect Exp
 
 **Images** have by definition an associated image. They can be text items as well, so they can have text attached to as well, from an OCR engine for example. In the same way as text items, the image can be annotated to mark relevant existing or objects. This can be done manually or automatically using the Face Recognition or Object Detection enrichments, or even by using Cloud Services like Azure Cloud Computer Vision.
 
-![BigConnect Explorer Image Annotation](<../../.gitbook/assets/image (17).png>)
+![BigConnect Explorer Image Annotation](<../../.gitbook/assets/image (17) (1).png>)
 
 **Audio items** have by definition an associated audio track. BigConnext Explorer will show a player for these types of items to play the contents. Audio items can be text items as well, so they can have text attached, from a speech-to-text engine for example. Sample plugins are provided for speech-to-text using Google Cloud Speech API.
 

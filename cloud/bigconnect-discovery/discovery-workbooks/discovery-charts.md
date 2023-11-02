@@ -230,7 +230,7 @@ A table block is formed based on the categories into which the dimension columns
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (15).png" alt="">
+<img src="../../../.gitbook/assets/image (18).png" alt="">
 
 </div>
 

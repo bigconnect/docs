@@ -1,6 +1,6 @@
 # REST APIs
 
-**API creation** is the process of linking an existing backend API implementation to the [API Publisher](../get-started/architecture-and-key-components.md#api-publisher), so that you can manage and monitor the [API's lifecycle](https://apim.docs.wso2.com/en/4.2.0/design/lifecycle-management/api-lifecycle/), documentation, security, community, and subscriptions. Alternatively, you can provide the API implementation in-line in the [API Publisher](../get-started/architecture-and-key-components.md#api-publisher) itself.
+**API creation** is the process of linking an existing backend API implementation to the [API Publisher](../../get-started/architecture-and-key-components.md#api-publisher), so that you can manage and monitor the [API's lifecycle](https://apim.docs.wso2.com/en/4.2.0/design/lifecycle-management/api-lifecycle/), documentation, security, community, and subscriptions. Alternatively, you can provide the API implementation in-line in the [API Publisher](../../get-started/architecture-and-key-components.md#api-publisher) itself.
 
 Follow the instructions below to create a REST API using the basic flow:
 
@@ -16,11 +16,11 @@ The **Create API** button will only appear for a user who has the `creator` role
 
 2. Select **REST API** from the options available
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 3. Click **Start from Scratch**.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 4. Enter API details.
 
@@ -30,25 +30,25 @@ The **Create API** button will only appear for a user who has the `creator` role
 The **Create & Publish** option will only appear when a user who has `publisher` permission adds the details for the Endpoint which is an optional field.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 5. Click **Create** to create the API.
 
 The overview page of the newly created API appears.
 
-<figure><img src="../../../.gitbook/assets/overviewpage-rest-api.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/overviewpage-rest-api.webp" alt=""><figcaption></figcaption></figure>
 
 6. Go to **Develop**, **Portal Configurations**, and click **Basic Info**.
 
 <div align="left">
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
 a. Configure the API design configurations.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 b. Add a tag and press enter.
 
@@ -68,7 +68,7 @@ a. Click **Runtime**, which is under the **API Configurations** section.
 
 Transport Level Security defines the transport protocol on which the API is exposed.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 b. If you wish to limit the API availability to only one transport (e.g., HTTPS), deselect the **Transport Level Security** checkbox.
 
@@ -80,22 +80,22 @@ By default, the API will have five resources with `/*` as the URL pattern.
 
 a. Click **Resources**, which is under the **API Configurations** section
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 b. Modify the resources as follows and click **Save** to update the resources.
 
 i. Click delete, as shown below, to remove all the existing resources.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 ii. Select an appropriate **HTTP Verb** from the dropdown and click **(+)** to add a new resource.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 The newly added resource is displayed as follows.\
 
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 iii. Expand the created **GET** operation to add details for the **Summary and Description** and **Operation governance** sections.
 
@@ -106,11 +106,11 @@ ii. Update the Security settings as required.
 * Turn the security setting off if you want to make a certain operation of the API non-secured and accessible without passing an access token.
 * To make the whole API non-secured and fully accessible without an access token, turn the security setting off in all the operations of the API.
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 iii. Add resource parameters if required using the Parameters section.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 You can define the following parameter types based on the resource parameters that you add.
 
@@ -124,6 +124,6 @@ The OpenAPI Specification (a.k.a Swagger definition) for the PizzaShack API appe
 
 
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 Now, you have successfully created and configured a REST API. Next, [deploy the API](https://apim.docs.wso2.com/en/4.2.0/deploy-and-publish/deploy-on-gateway/deploy-api/deploy-an-api/), [test the API](https://apim.docs.wso2.com/en/4.2.0/design/create-api/create-rest-api/test-a-rest-api/), and finally [publish the API](https://apim.docs.wso2.com/en/4.2.0/deploy-and-publish/publish-on-dev-portal/publish-an-api).

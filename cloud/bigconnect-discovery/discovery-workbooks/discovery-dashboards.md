@@ -124,7 +124,7 @@ Click Edit Dashboard on the basic dashboard page to go to a page for editing the
 
 On the chart widget panel, you can add/edit/delete a chart in the dashboard.
 
-![](<../../../.gitbook/assets/image (18).png>)
+![](<../../../.gitbook/assets/image (18) (1).png>)
 
 1. **Number of chart widgets:** Displays how many chart widgets are registered in the dashboard.
 2. **Add a chart widget:** Click on it to create a new chart widget in the dashboard.
