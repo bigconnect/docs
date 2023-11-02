@@ -324,6 +324,7 @@
       * [Create an API from an OpenAPI Definition](products/mware-esb/design-apis/rest-apis/create-an-api-from-an-openapi-definition.md)
       * [Expose a SOAP Service as a REST API](products/mware-esb/design-apis/rest-apis/expose-a-soap-service-as-a-rest-api.md)
       * [Test a REST API](products/mware-esb/design-apis/rest-apis/test-a-rest-api.md)
+    * [GraphQL APIs](products/mware-esb/design-apis/graphql-apis.md)
   * [Deploy and Publish APIs](products/mware-esb/deploy-and-publish-apis.md)
   * [Consume APIs](products/mware-esb/consume-apis.md)
   * [Integrate](products/mware-esb/integrate.md)
