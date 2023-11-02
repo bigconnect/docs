@@ -23,7 +23,7 @@ Based on these characteristics, the data preparation tool offers the following a
 
 ## Structure of data preparation
 
-![](<../../../.gitbook/assets/image (20).png>)
+![](<../../../.gitbook/assets/image (20) (1).png>)
 
 As shown in the above figure, data preparation is comprised of a **dataset** built from the target data, a **dataflow** that defines transformation rules for the designated dataset, and a **data snapshot** that shows the transformation results.
 

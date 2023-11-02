@@ -142,7 +142,7 @@ Displays the trend of the data source size over time.
 
 **Query distribution (during last one week)**
 
-![](<../../../.gitbook/assets/image (24).png>)
+![](<../../../.gitbook/assets/image (24) (1).png>)
 
 * **Query distribution by user (during last one week):** Displays a pie chart of query percentages by user for the past week.
 * **Query distribution by elapsed time (during last one week):** Displays a pie chart of query percentages by execution time for the past week.

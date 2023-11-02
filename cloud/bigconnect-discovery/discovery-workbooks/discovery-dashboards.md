@@ -202,7 +202,7 @@ Displays an overview of the data source.
 
 Click Presentation view on the basic dashboard page to view workbook dashboards with a presentation UI. In this mode, you can easily report and share data analytics results.
 
-![](<../../../.gitbook/assets/image (25).png>)
+![](<../../../.gitbook/assets/image (25) (1).png>)
 
 1. **Name:** Name of the current dashboard.
 2. **Slide navigation:** Each circle represents a different dashboard in the workbook. For example, if you click the 4th circle, the 4th dashboard slide will be displayed with that circle highlighted.

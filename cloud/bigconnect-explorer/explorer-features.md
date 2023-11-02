@@ -68,7 +68,7 @@ Besides the various objects that can be loaded into the platform, BigConnect Exp
 
 **Text items** have by definition some textual content that can be annotated by selecting pieces of text and marking them as new objects or relations. This is handy if you need to infer new relations from textual content such as mentioned persons, companies, locations, IP addresses or items found in a dictionary, detected by an NLP engine or that satisfy a certain regex pattern.
 
-![BigConnect Explorer Text Annotation](<../../.gitbook/assets/image (22).png>)
+![BigConnect Explorer Text Annotation](<../../.gitbook/assets/image (22) (1).png>)
 
 **Images** have by definition an associated image. They can be text items as well, so they can have text attached to as well, from an OCR engine for example. In the same way as text items, the image can be annotated to mark relevant existing or objects. This can be done manually or automatically using the Face Recognition or Object Detection enrichments, or even by using Cloud Services like Azure Cloud Computer Vision.
 

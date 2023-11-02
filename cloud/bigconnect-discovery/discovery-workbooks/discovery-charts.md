@@ -230,7 +230,7 @@ A table block is formed based on the categories into which the dimension columns
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (18).png" alt="">
+<img src="../../../.gitbook/assets/image (25).png" alt="">
 
 </div>
 
@@ -323,7 +323,7 @@ When a string dimension is placed on a map layer shelf, data points are colored 
 
 You can also place measures on a layer shelf to classify colors by measure and simultaneously represent different point sizes based on that measure. As with dimension values, the corresponding measure is displayed in the tooltip.
 
-![](<../../../.gitbook/assets/image (21).png>)
+![](<../../../.gitbook/assets/image (21) (1).png>)
 
 #### Add layer shelf
 

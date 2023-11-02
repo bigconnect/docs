@@ -42,7 +42,7 @@ The API can be tested in any lifecycle state, and can be used in any state excep
 
 <div align="left">
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -52,7 +52,7 @@ The API can be tested in any lifecycle state, and can be used in any state excep
 The UI generates an Internal token to authenticate the API call. If the API Publishers have a token or key, then they can paste it in the UI and invoke the API using that key.
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 5. Expand the **GET** method, click **Try it out**, and click **Execute**.
 
@@ -60,6 +60,6 @@ Note the successful response for the API invocation.
 
 <div data-full-width="true">
 
-<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 </div>

@@ -81,7 +81,7 @@ Once a query is executed, its results are displayed in a query results tab. Quer
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (19).png" alt="">
+<img src="../../../.gitbook/assets/image (19) (1).png" alt="">
 
 </div>
 
