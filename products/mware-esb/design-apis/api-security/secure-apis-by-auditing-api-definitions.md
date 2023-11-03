@@ -1,0 +1,184 @@
+# Secure APIs by Auditing API Definitions
+
+API Security has become an important concern in recent times as organizations are more cautious about exposing raw, sensitive data via APIs. Therefore, it is important that APIs adhere to the OpenAPI Specification (OAS) to ensure API security.
+
+WSO2 API-M has partnered with [42Crunch](https://42crunch.com/), the only enterprise API security platform, to bring in the ability to conduct a security audit on the OpenAPI Specification definition and to obtain an audit report.
+
+### Step 1 - Enable Audit API[¶](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#step-1-enable-audit-api) <a href="#step-1-enable-audit-api" id="step-1-enable-audit-api"></a>
+
+#### Step 1.1 - Obtain API token and collection ID[¶](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#step-11-obtain-api-token-and-collection-id) <a href="#step-11-obtain-api-token-and-collection-id" id="step-11-obtain-api-token-and-collection-id"></a>
+
+Follow the instructions below to obtain the API token and collection ID from 42Crunch:
+
+1. Navigate to the [42Crunch platform](https://platform.42crunch.com/) and register or sign in.
+2.  Click **Settings**.
+
+    [![API token settings menu](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/api-token-settings-menu.png)](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/api-token-settings-menu.png)
+3.  Click **API Tokens** and click **Create New Token**.
+
+    [![API token create button](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/api-token-create-button.png)](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/api-token-create-button.png)
+4.  Upgrade the account to access the **API token** type
+
+    [![API token create modal](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/api-token-create-modal.png)](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/api-token-create-modal.png)
+5.  Enter a name for the token and select **API Contract Security Audit** as the token access right.
+
+    When working with API Audit, you only need to select the **API Contract Security Audit** permission.
+
+    [![API token dialog box](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/api-token-dialog-box.png)](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/api-token-dialog-box.png)
+6.  Click **Generate Token**.
+
+    Note
+
+    The generated API Token can be viewed only once. Make sure to copy it and save it in a safe place for future reference.
+
+    [![API token copy generated](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/api-token-copy-generated.png)](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/api-token-copy-generated.png)
+7.  Click either **API Collections** in the left navigation bar or click **+ New Collection** at the bottom of the left navigation to create a collection.
+
+    A Collection in this context is a folder hosted on 42Crunch containing all the APIs that are to be audited.
+
+    [![create new collection](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/collection-create-new.png)](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/collection-create-new.png)
+8.  Copy the Collection ID from the URL of the browser as highlighted below and save it in a safe place for reference.
+
+    [![copy collection id](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/collection-copy-id.png)](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/collection-copy-id.png)
+
+#### Step 1.2 - Configure WSO2 API-M[¶](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#step-12-configure-wso2-api-m) <a href="#step-12-configure-wso2-api-m" id="step-12-configure-wso2-api-m"></a>
+
+You need to add the API Token and Collection ID properties inside the configuration files in WSO2 API-M in order to configure WSO2 API-M with the retrieved properties. Use one of the following methods to carry out this process.
+
+**Enable Audit API for all tenants**[**¶**](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#enable-audit-api-for-all-tenants)
+
+1. Navigate to the `<API-M_HOME>/repository/conf/deployment.toml` file.
+2.  Add the following configuration to the file and save the changes.
+
+    Format
+
+    ```bash
+       [security_audit]
+       api_token="{api-token}"
+       collection_id="{collection-id}"
+       global=true
+    ```
+
+    Example
+
+    Tip
+
+    Set the **global** property to **false** to disable the feature for all other tenants except the super tenant.
+3. Restart the WSO2 API Manager server.
+
+**Enable Audit API for a single tenant**[**¶**](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#enable-audit-api-for-a-single-tenant)
+
+Tip
+
+For more information on creating a tenant, see [Managing Tenants](https://apim.docs.wso2.com/administer/multitenancy/introduction-to-multitenancy/).
+
+1. Navigate to the Admin Console [https://localhost:9443/admin](https://localhost:9443/admin) and sign in with your tenant credentials.
+2. Go to **Settings > Advanced**.
+3.  Add the following configuration to the JSON file and save it.
+
+    Format
+
+    ```bash
+        SecurityAuditConfig: {
+            "apiToken": "{api-token}",
+            "collectionId": "{collection-id}",
+            "overrideGlobal": true
+        }
+    ```
+
+    Example
+
+    [![advanced conf properties](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/advanced-config.png)](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/advanced-config.png)
+4.  Restart the WSO2 API Manager server.
+
+    Note
+
+    If you define a value for the **overrideGlobal** property, it will override the **global** property value, which is under the \[security\_audit] section in the `<API-M_HOME>/repository/conf/deployment.toml` file.\
+    **Important** : If both the **overrideGlobal** and **global** properties are set to **false**, API Security Audit will be disabled even if the API Token and Collection ID is provided.
+
+### Step 2 - Audit an API[¶](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#step-2-audit-an-api) <a href="#step-2-audit-an-api" id="step-2-audit-an-api"></a>
+
+1.  Navigate to the API Publisher.
+
+    [https://localhost:9443/publisher](https://localhost:9443/publisher)
+2. Click on the API that you need to audit.
+3.  Go to **API Definitions**.
+
+    The **Audit API** button will only appear if API Auditing is enabled.
+
+    [![audit api button](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/audit-api-button.png)](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/audit-api-button.png)
+4.  Click **Audit API**.
+
+    At the end of the audit, an audit report is displayed.
+
+    [![sample audit report](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/sample-audit-report.png)](https://apim.docs.wso2.com/en/4.2.0/assets/img/learn/sample-audit-report.png)
+
+    For more information on the details provided in the report, see [Audit report sections](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#auditreports)
+
+### Audit report sections[¶](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#audit-report-sections) <a href="#audit-report-sections" id="audit-report-sections"></a>
+
+There are four sections to the Audit Report:
+
+1. [Audit Score and Summary](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#audit-score-and-summary)
+2. [OpenAPI Format Requirements](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#openapi-format-requirements)
+3. [Security](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#security)
+4. [Data Validation](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#data-validation)
+
+#### Audit score and summary[¶](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#audit-score-and-summary) <a href="#audit-score-and-summary" id="audit-score-and-summary"></a>
+
+This section provides the following information.
+
+1. Overall score, out of 100, given to the API Definition.
+2. The total number of errors.
+3. Overall severity of vulnerabilities present in the API Definition.
+4. Scores given to the Security and Data Validation sections.
+
+Info
+
+The OpenAPI format requirements are not taken into account when calculating the score for the Audit Report.
+
+#### OpenAPI format requirements[¶](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#openapi-format-requirements) <a href="#openapi-format-requirements" id="openapi-format-requirements"></a>
+
+This category presents any issues that exist due to the API Definition not adhering to the OpenAPI specification. OpenAPI format requirements are divided into the following three categories.
+
+1.  **Structural Errors**
+
+    These errors occur when the API's structure does not comply with the Open API format.
+2.  **Semantic Errors**
+
+    OpenAPI contracts that are structurally correct may have issues with the semantics of the fields in them. For example, the API could include an invalid email and URL formats, or inconsistent property formats across the API definition.
+3.  **Best Practices Issues**
+
+    The OpenAPI specification includes requirements, which are not mandatory but are highly recommended. Issues in this section will be shown in the report if those recommended requirements do not exist in the API definition.
+
+Note
+
+The API will not be audited if there are Structural Errors. Therefore, Structural Errors have to be fixed using the built-in Swagger Editor before attempting to audit the API again.
+
+#### Security[¶](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#security) <a href="#security" id="security"></a>
+
+This category presents security issues identified by checking the API against the security best practices such as Authentication, Authorization, and Transport.
+
+#### Data validation[¶](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#data-validation) <a href="#data-validation" id="data-validation"></a>
+
+This category presents issues that arise due to inadequate validation of input and output in an API Definition such as flaws in parameters, response headers, response definition, and schemas.
+
+### Breakdown of severity levels[¶](https://apim.docs.wso2.com/en/latest/design/api-security/configuring-api-security-audit/#breakdown-of-severity-levels) <a href="#breakdown-of-severity-levels" id="breakdown-of-severity-levels"></a>
+
+The **severity** level of an issue allows distinguishing between the most and least dangerous issues easier and is separated into five different levels:
+
+1.  **INFO**
+
+    The lowest severity level. Represents a threat that potentially is unlikely to cause damage should it be executed.
+2.  **LOW**
+
+    It represents a threat that could potentially cause damage but is lower priority.
+3.  **MEDIUM**
+
+    Reminiscent of a threat that needs attending to and could have moderately damaging effects should it be executed.
+4.  **HIGH**
+
+    It represents a threat that could potentially cause great damage if executed and needs to be attended to and fixed before the former levels.
+5.  **CRITICAL**
+
+    The highest severity level. It represents a threat that could have devastating and wide-spread consequences if executed. These threats should be fixed immediately.
