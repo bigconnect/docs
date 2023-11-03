@@ -1,0 +1,48 @@
+---
+description: Admin Console Environment Warning
+---
+
+# Environment Warning
+
+When working with multiple shared environments, it is common for restrictions to be in place on what modifications can be allowed for a given domain. For example, the test environment cannot deviate significantly from the target production environment without potentially invalidating the test.
+
+One way to ensure no accidental changes are made would be to revoke access to the admin console, but this has the downside of preventing engineers from seeing the current settings in the event that a bug is found.
+
+As an alternative, Payara Server ships with a configurable warning bar to ensure any user will see a warning message in while viewing the console:
+
+![Payara Server 172 Environment Warning screenshot](https://docs.payara.fish/community/docs/\_images/admin-console/environment-warning.png)
+
+The warning can be configured in the admin console as seen in the screenshot above. There is a new "_Environment Warning_" tab in the "_Domain_" section which allows you to configure the text and colours of the warning message.
+
+### Configuring the Environment Warning via Asadmin
+
+There are corresponding asadmin commands to get and set the configuration
+
+#### `set-environment-warning-configuration`
+
+**Usage:** `asadmin> set-environment-warning-configuration --enabled=true --message="Caution, this is on production" --textcolour="#00ff00" --backgroundcolour="#ff00ff"`
+
+**Aim:** Sets the environment warning properties and can enable/disable the warning
+
+#### `get-environment-warning-configuration`
+
+**Usage:** `asadmin> get-environment-warning-configuration`
+
+**Aim:** Gets the current environment warning configuration
+
+**Example:**
+
+```none
+Enabled  Message                         Background Colour  Text Colour
+true     Caution, this is on production  #ff00ff            #00ff00
+Command get-environment-warning-configuration executed successfully.
+```
+
+**Command Options**
+
+| Option             | Type            | Description                                                                           | Default | Mandatory |
+| ------------------ | --------------- | ------------------------------------------------------------------------------------- | ------- | --------- |
+| `enabled`          | boolean         | If it is set to true, the top warning banner is shown, otherwise it is not.           | -       | Yes       |
+| `message`          | String          | Text message for the top warning banner.                                              | -       | Yes       |
+| `backgroundcolour` | Hex colour code | Background colour for the top warning banner. It must be a hex value, like `#ffffff`. | -       | Yes       |
+| `textcolour`       | Hex colour code | Text colour for the top warning banner. It must be a hex value, like `#ffffff`.       | -       | Yes       |

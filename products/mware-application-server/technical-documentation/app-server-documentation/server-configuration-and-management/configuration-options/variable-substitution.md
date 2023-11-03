@@ -1,0 +1,146 @@
+# Variable Substitution
+
+## Types of variable references
+
+### References to System Properties
+
+Variable references to system properties start with `${`, followed by the name of the variable, and end with `}`. An example of a variable reference that refers to a `java.home` system property is:
+
+```
+${java.home}
+```
+
+Values of system properties can be specified by:
+
+* the JVM (standard JVM properties like `java.home`)
+* Payara Server (a set of predefined variables, such as `com.sun.aas.instanceRoot`)
+* the `create-system-properties` asadmin command (or in the Admin console `System properties` section)
+* a JVM option prefixed with `-D`
+
+When custom properties are specified, their value can also contain other variable references. It is therefore possible to define a system property using other system properties or environment variables.
+
+### References to environment variables
+
+Environment variable references are used like system property references, but contain an extra `ENV` qualifier and equals sign before the variable name. An example of a reference to an environment variable `HOME` then looks like:
+
+```
+${ENV=HOME}
+${ENV=MAYBE_AVAILABLE:default}
+```
+
+Environment variables need to be specified in the environment before a Payara instance is started. By adding a colon after the variable name, you may append a default value if the variable has not been set.
+
+### References to password aliases
+
+References to password aliases are used to refer to a password which is stored securely in the domain’s keystore. They are treated in a special way and cannot be mixed with other variable references and with other characters in the same configuration value. They are only supposed to be used as a value anywhere a password is expected in the configuration.
+
+Password aliases look like system property references, but contain an extra `ALIAS` qualifier and equals sign before the alias name. Whenever used, the configuration value can only contain a password alias and nothing more.
+
+An example of a reference to a password alias called `cluster-password` for an attribute `admin-password` looks like:
+
+```shell
+admin-password="${ALIAS=cluster-password}"
+```
+
+### References to MicroProfile Properties
+
+MicroProfile property references can be used exactly like an environment variable reference, but using the `MPCONFIG` qualifier. An example of a reference to a MicroProfile property called `foo` would look like:
+
+```
+${MPCONFIG=foo}
+${MPCONFIG=bar:default}
+```
+
+MicroProfile properties need to be declared in one of the Payara defined [config sources](https://docs.payara.fish/community/docs/Technical%20Documentation/MicroProfile/Config/Overview.html#config-sources). By adding a colon after the property name, you may append a default value if the property has not been set.
+
+## Using variable references
+
+A variable can be referenced anywhere inside a string value of a property which supports variable references. Multiple references to system properties and environment variables can be used within the same configuration value, concatenating any number of variable references and plain text chunks. When a reference to a password alias is used, it has to expand to the whole property value and cannot be combined with any other text or variable references.
+
+### Variable references in the domain configuration
+
+Variable references can be used inside text values in the following configuration files within the domain directory:
+
+* domain.xml (inside attribute values or inside text nodes that contain a configuration value)
+* logging.properties (inside property values)
+
+### Variable references in deployed applications
+
+Variable references can be used inside text values also in the following places within deployed applications and modules:
+
+* Package descriptors:
+  * web.xml / glassfish-web.xml
+  * ejb-jar.xml / glassfish-ejb-jar.xml
+  * application.xml / glassfish-application.xml
+  * glassfish-resources.xml
+* Framework descriptors:
+  * persistence.xml
+  * faces-config.xml
+* In the annotations:
+  * `@EJB`, `@WebService`, `@Stateless`, `@Stateful`, `@Singleton`, `@ActivationConfigProperty`, `@DataSource`, `@WebServlet`
+* In JNDI lookups inside an application
+* In pre and post boot command files.
+* In JVM Options.
+* In the `payara-expression-config.properties` file.
+
+### Examples
+
+Here are several examples of where you can use variable references:
+
+#### Within an annotation
+
+```java
+@DataSourceDefinition(name="java:global/ExampleDataSource",
+      className="com.mysql.jdbc.jdbc2.optional.MysqlXADataSource",
+      user="${mysql.user}",
+      password="${ALIAS=mysql-db-password}",
+      databaseName="${ENV=MYSQL_DBNAME}",
+      serverName="localhost"
+   )
+```
+
+#### Within a `web.xml` descriptor
+
+```xml
+<data-source>
+     <name>java:global/ExampleDataSource</name>
+     <class-name>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</class-name>
+     <server-name>localhost</server-name>
+     <port-number>3306</port-number>
+     <database-name>${ENV=MYSQL_DBNAME}</database-name>
+     <user>${mysql.user}</user>
+     <password>${ALIAS=mysql-db-password}</password>
+</data-source>
+```
+
+#### Multiple variable references combined in a single value withing the `domain.xml`
+
+```xml
+<domain log-root="${com.sun.aas.instanceRoot}/${ENV=STAGE_NAME}/logs">
+```
+
+#### Within a pre or post boot command file
+
+```bash
+set configs.config.server-config.http-service.virtual-server.server.default-web-module=${ENV=deployed-app-name}
+set configs.config.server-config.network-config.protocols.protocol.http-listener-1.security-enabled=${ENV=security-enabled}
+```
+
+#### Within a `logging.properties` file
+
+```properties
+handlers=${ENV=CONSOLE-HANDLER}
+handlerServices=${ENV=SYS-LOG-HANDLER}
+```
+
+#### Within a `payara-expression-config.properties` file
+
+|   | The `payara-expression-config.properties` config source is only available in Payara Server |
+| - | ------------------------------------------------------------------------------------------ |
+
+```properties
+fish.payara.example.system=${java.home}
+fish.payara.example.env=${ENV=PATH}
+fish.payara.example.password=${ALIAS=secret}
+fish.payara.example.multiple=property containing both an ${ENV=envProperty} and a ${sysProp}
+```

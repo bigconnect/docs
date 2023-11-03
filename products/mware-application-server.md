@@ -1,2 +1,0 @@
-# MWARE Application Server
-
