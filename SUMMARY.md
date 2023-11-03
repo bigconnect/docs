@@ -423,6 +423,8 @@
         * [Regular Expression Threat Protection](products/mware-esb/design-apis/api-security/threat-protection/regular-expression-threat-protection.md)
         * [JSON Threat Protection](products/mware-esb/design-apis/api-security/threat-protection/json-threat-protection.md)
         * [XML Threat Protection](products/mware-esb/design-apis/api-security/threat-protection/xml-threat-protection.md)
+      * [OpenID Connect](products/mware-esb/design-apis/api-security/openid-connect.md)
+    * [Rate Limiting](products/mware-esb/design-apis/rate-limiting.md)
   * [Deploy and Publish APIs](products/mware-esb/deploy-and-publish-apis.md)
   * [Consume APIs](products/mware-esb/consume-apis.md)
   * [Integrate](products/mware-esb/integrate.md)
