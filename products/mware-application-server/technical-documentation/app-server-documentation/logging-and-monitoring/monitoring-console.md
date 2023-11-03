@@ -25,9 +25,6 @@ asadmin> set-monitoring-console-configuration --enabled=false
 
 Stopping the GUI does not disable the data collection. This is a background process that is controlled separately as described in the next section.
 
-|   | The monitoring console feature is only contained in Payara Server distribution. |
-| - | ------------------------------------------------------------------------------- |
-
 ### Enabling Data Collection
 
 The collection of monitoring data gets enabled and disabled in connection with the general configuration: _Monitoring_ ⇒ _Monitoring Service_ ⇒ _Enabled_
@@ -39,14 +36,14 @@ The collection of monitoring data gets enabled and disabled in connection with t
 
 After enabling the monitoring console open the home page at `/monitoring-console/` (usually on port 8080).
 
-The console comes with a set of [preconfigured pages](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Logging%20and%20Monitoring/Monitoring%20Console.html#monitoring-console-presets) each focussing on different aspects of the server.
+The console comes with a set of preconfigured pages each focussing on different aspects of the server.
 
 |   | The console will let you know that some metrics are only available when the monitoring configuration of certain server parts is set to `HIGH`. |
 | - | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 
 #### Pages
 
-The monitoring console is organized in fully customisable pages. A page is a collection of [widgets](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Logging%20and%20Monitoring/Monitoring%20Console.html#monitoring-console-widgets) arranged in columns. Usually pages are focussed on visualising metrics of a specific area of the server, like HTTP or request tracing. The monitoring console has preconfigured pages as a starting point that can be changed and extended by the user. New custom pages can be created.
+The monitoring console is organized in fully customisable pages. A page is a collection of widgets arranged in columns. Usually pages are focussed on visualising metrics of a specific area of the server, like HTTP or request tracing. The monitoring console has preconfigured pages as a starting point that can be changed and extended by the user. New custom pages can be created.
 
 **Switching Pages**
 
@@ -486,7 +483,7 @@ The _HTTP_ page gives a rough overview of the state of the HTTP services of each
 
 **JVM Page**
 
-The _JVM_ pages gives a general overview of the state of the JVM running Payara Server.
+The _JVM_ pages gives a general overview of the state of the JVM running MWARE AS.
 
 ![JVM Page](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_jvm.png)
 
@@ -580,7 +577,7 @@ To get back to the overview close the details by clicking the x-icon on the righ
 
 **SQL Page**
 
-The _SQL_ page gives insight into slow SQL queries for all connection pools configured in Payara Server.
+The _SQL_ page gives insight into slow SQL queries for all connection pools configured in MWARE AS.
 
 |   | To capture slow SQL queries the _JDBC Connection Pool_ configuration’s _Slow Query Log Threshold_ in the _Advanced_ tab needs to be set to a positive number. |
 | - | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |

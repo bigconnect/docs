@@ -1,6 +1,6 @@
 # Schema Name
 
-Payara Server allows the ability to define the name of the _database schema_ that will hold all batch job tables. This can be set via the Admin Console, in the _domain.xml_ file, or using Asadmin commands.
+MWARE AS allows the ability to define the name of the _database schema_ that will hold all batch job tables. This can be set via the Admin Console, in the _domain.xml_ file, or using Asadmin commands.
 
 ### Defining a Schema name through the Admin Console
 

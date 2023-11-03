@@ -4,7 +4,7 @@ This section details several improvements and enhancements done to features prov
 
 ### Concurrent Instance Configuration
 
-Payara Server can control the number of maximum **concurrent** instances per EJB that can be served to its clients.
+MWARE AS can control the number of maximum **concurrent** instances per EJB that can be served to its clients.
 
 It is possible to limit the number of concurrent Stateless EJB instances that are dispatched, allowing fine-grained control of resources, limiting surface area for DDOS attacks and making applications run more smoothly and efficiently. This is done regardless of the maximum number of instances available in a bean’s pool. Using these boundaries, it is possible to instruct the EJB container so that the maximum number of threads is not exceeded at runtime.
 
@@ -52,11 +52,11 @@ The following is a sample `glassfish-ejb-jar.xml` deployment descriptor that con
 
 ### Customized EJB-JAR Archive Names
 
-It is possible to instruct Payara Server to override the name of an EJB-JAR module when it is deployed either as a standalone module or as part of an EAR application. It is also possible to instruct Payara Server to override the module and/or application’s name.
+It is possible to instruct MWARE AS to override the name of an EJB-JAR module when it is deployed either as a standalone module or as part of an EAR application. It is also possible to instruct MWARE AS to override the module and/or application’s name.
 
 #### Overwriting the Module Name
 
-When deploying an EJB-JAR module on Payara Server, the portable JNDI names for all scanned EJBs will be generated using the name of the module as specified on the _ejb-jar.xml_ deployment descriptor:
+When deploying an EJB-JAR module on MWARE AS, the portable JNDI names for all scanned EJBs will be generated using the name of the module as specified on the _ejb-jar.xml_ deployment descriptor:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -71,9 +71,9 @@ When deploying an EJB-JAR module on Payara Server, the portable JNDI names for a
 |   | If the name’s not specified in the deployment descriptor, the specification states that the module name will be the same as the JAR artifact used to deploy it. |
 | - | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-However, When deploying a JAR from an IDE (like **NetBeans** or **IntelliJ**), the IDE deploys to Payara Server using the asadmin `deploy` command, with the `--name` option specified. This will force the module to have the specified name over the name defined in _ejb-jar.xml_. This is undesired because the IDE usually infers the module name from the name of the project or the JAR file and doesn’t take the correct name of the module into account.
+However, When deploying a JAR from an IDE (like **NetBeans** or **IntelliJ**), the IDE deploys to MWARE AS using the asadmin `deploy` command, with the `--name` option specified. This will force the module to have the specified name over the name defined in _ejb-jar.xml_. This is undesired because the IDE usually infers the module name from the name of the project or the JAR file and doesn’t take the correct name of the module into account.
 
-In Payara Server, the module name defined in the deployment descriptor will be used even if it tries to be overridden using the `--name` option. This behaviour will **always** take precedence.
+In MWARE AS, the module name defined in the deployment descriptor will be used even if it tries to be overridden using the `--name` option. This behaviour will **always** take precedence.
 
 |   | In the case you need to overwrite the name of the module when deploying the module, use the `--forceName` command option. |
 | - | ------------------------------------------------------------------------------------------------------------------------- |
@@ -98,29 +98,17 @@ In the case of EAR artifacts, the portable JNDI names for all scanned EJBs will 
 
 For scenarios when communication with remote EJBs is needed across a complex network topology or when a server architecture is deployed on a cloud provider, there’s a new feature for the EJB server and client applications: A lite and thin client that can be used to communicate via HTTP(S) instead of IIOP-RMI.
 
-Payara Server has support for classic remote EJB since its inception. Classic remote EJB uses the **IIOP-RMI** (Internet Inter-ORB Protocol Remote Method Invocation) protocol for transport communication and the [CSIv2](https://omg.org/spec/SEC) (Common Secure Interoperability Protocol Version 2) protocol for security.
+MWARE AS has support for classic remote EJB since its inception. Classic remote EJB uses the **IIOP-RMI** (Internet Inter-ORB Protocol Remote Method Invocation) protocol for transport communication and the [CSIv2](https://omg.org/spec/SEC) (Common Secure Interoperability Protocol Version 2) protocol for security.
 
 While feature rich, these protocols were not designed with firewalls, NAT, (private) clouds, Docker and generally the Internet in mind. For these environments the requirements of the protocol, such as establishing independent connections back from the server to the client, are too troublesome.
 
-The **IIOP-RMI/CSIv2** also requires the use of multiple heavyweight client libraries. In the case of Payara Server the client library (either referenced by the `gf-client.jar` library or the `payara-embedded-all` dependency) is almost as big as the entire server as it’s essentially a special form of the ACC (Application Client Container). For this reason a much-needed modernization of the transport and security protocols was needed, and for the environments described only one protocol really works, and that is the HTTP(S) protocol.
+The **IIOP-RMI/CSIv2** also requires the use of multiple heavyweight client libraries. In the case of MWARE AS the client library (either referenced by the `gf-client.jar` library or the `payara-embedded-all` dependency) is almost as big as the entire server as it’s essentially a special form of the ACC (Application Client Container). For this reason a much-needed modernization of the transport and security protocols was needed, and for the environments described only one protocol really works, and that is the HTTP(S) protocol.
 
-Payara Server features an additional complimentary EJB remoting technology based on the HTTP(S) protocol while favoring the use of a thin client library that make remote applications much lighter while circumventing known challenges for the Internet and other scenarios.
-
-|   | HTTP(S) for EJB Remoting in Payara Server is a completely different feature from the classic IIOP-RMI/CSIv2-based feature, and does not intend to replace the transport layer protocol used on it, rather it is implemented as an additional independent feature. |
-| - | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-
-|   | TX Propagation and Security Propagation is **not supported** by EJB Remoting in Payara Server. |
-| - | ---------------------------------------------------------------------------------------------- |
-
-|   | In the current version of this feature, not all remote EJB features are implemented yet. |
-| - | ---------------------------------------------------------------------------------------- |
+MWARE AS features an additional complimentary EJB remoting technology based on the HTTP(S) protocol while favoring the use of a thin client library that make remote applications much lighter while circumventing known challenges for the Internet and other scenarios.
 
 #### Configuring HTTP(S) for Remote EJBs
 
-HTTP(S) for EJB remoting in Payara Server makes use of a special web endpoint on which is located by default on the path `/ejb-invoker`.
-
-|   | This endpoint is disabled out of the box and it can be enabled using the `set-ejb-invoker-configuration` asadmin command. |
-| - | ------------------------------------------------------------------------------------------------------------------------- |
+HTTP(S) for EJB remoting in MWARE AS makes use of a special web endpoint on which is located by default on the path `/ejb-invoker`.
 
 **`set-ejb-invoker-configuration`**
 
@@ -222,7 +210,7 @@ Finally, the code that executes the call to the remote EJB must be modified in s
         String method();
     }
     ```
-2.  Second, consider a (secured) EJB that implements that interface and resides in a EJB application called "test" deployed on a Payara server instance that is listening in [`http://localhost:8080`](http://localhost:8080/):
+2.  Second, consider a (secured) EJB that implements that interface and resides in a EJB application called "test" deployed on a MWARE AS instance that is listening in [`http://localhost:8080`](http://localhost:8080/):
 
     ```java
     @Stateless
@@ -330,7 +318,7 @@ Under the covers the remote EJB proxy uses a JAX-RS (Jersey) REST client builder
 | `fish.payara.connectTimeout`           | The connection timeout. A value of **0** represents that the wait is indefinite. Negative values are not allowed. Unit is microseconds.                                                                                                                                                                      | `Number` (from which it’s `Long` value is taken) or a `String` that can be converted to a `Long` value.                             |
 | `fish.payara.readTimeout`              | The timeout to read a response. If the remote Payara doesn’t respond within the defined time a ProcessingException is thrown with a `TimeoutException` as its cause. A value of **0** represents that the wait is indefinite. Negative values are not allowed. Unit is microseconds.                         | `Number` (from which it’s `Long` value is taken) or a `String` that can be converted to a `Long` value.                             |
 | `fish.payara.keyStore`                 | The key store to be used by the proxy. The key store contains the private key as well as certificates with its associated public keys.                                                                                                                                                                       | Instance of `java.security.KeyStore` or a `String` representing its fully qualified classname.                                      |
-| `fish.payara.trustStore`               | The trust store to be used by the proxy. The trust store must contain the certificates that are needed to communicate with the remote Payara Server.                                                                                                                                                         | Instance of `java.security.KeyStore` or a `String` representing its fully qualified classname.                                      |
+| `fish.payara.trustStore`               | The trust store to be used by the proxy. The trust store must contain the certificates that are needed to communicate with the remote MWARE AS.                                                                                                                                                              | Instance of `java.security.KeyStore` or a `String` representing its fully qualified classname.                                      |
 | `fish.payara.sslContext`               | The SSL context that will be used by the proxy for creating secured connections to the Payara remote server. This context **must** be fully initialized, including the trust and key managers. Should not be used in conjunction with the `fish.payara.keyStore` and/or `fish.payara.trustStore` properties. | Instance of `javax.net.ssl.SSLContext` or a `String` representing its fully qualified classname.                                    |
 | `fish.payara.hostnameVerifier`         | The hostname verifier to be used by the proxy to verify the endpoint’s hostname against the identification information of it.                                                                                                                                                                                | Instance of a `javax.net.ssl.HostnameVerifier` or a `String` representing its fully qualified classname.                            |
 | `fish.payara.provider.principal`       | The principal to be used by the proxy to access the secured endpoint.                                                                                                                                                                                                                                        | Instance of a `String`.                                                                                                             |
@@ -427,9 +415,6 @@ To use the Data Grid to store EJB Timers set the **Persistence Service** to _Dat
 ![Set EJB Persistence to Data Grid](https://docs.payara.fish/community/docs/\_images/ejb/set-ejb-timer-persistence.png)
 
 EJB Timers will be coordinated across a single deployment group and if an instance of the deployment group is stopped another instance in the same deployment group will take ownership of the timer and ensure it is fired.
-
-|   | Clustered Timer Firing Mode is NOT used in this version of Payara Server and is always "One Per Deployment Group" |
-| - | ----------------------------------------------------------------------------------------------------------------- |
 
 It is also possible to set the `ejb-timer-service` from the command line. To get the current state, run the following command:
 

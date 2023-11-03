@@ -1,6 +1,6 @@
 # Improved Asadmin CLI
 
-The following is a list of the administration commands that have been introduced or changed from GlassFish in Payara Server to improve the **JBatch API**.
+The following is a list of the administration commands that have been introduced or changed from GlassFish in MWARE AS to improve the **JBatch API**.
 
 ### `set-batch-runtime-configuration`
 
