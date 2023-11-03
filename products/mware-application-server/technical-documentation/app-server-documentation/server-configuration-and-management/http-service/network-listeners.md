@@ -2,7 +2,7 @@
 
 A network listener is a listener socket that has an IP address, port number, protocol, as well as various other configuration options. A listener can listen on a specific port on all network interfaces by using the IP `0.0.0.0`, and a configured port.
 
-A virtual server will then be used to select a combination of network listeners to use for an application. For example, Payara Server has two default network listeners for user deployed applications: an insecure listener on port 8080 (`http-listener-1`), and a secure listener on port 8181 (`http-listener-2`).
+A virtual server will then be used to select a combination of network listeners to use for an application. For example, MWARE AS has two default network listeners for user deployed applications: an insecure listener on port 8080 (`http-listener-1`), and a secure listener on port 8181 (`http-listener-2`).
 
 ### Configuration
 
@@ -46,7 +46,7 @@ The status of the network listener. This determines whether the listener will be
 
 #### JK Enabled
 
-Whether `mod_jk` support should be enabled for this listener. Should only be enabled if `mod_jk` is being explicitly configured on an Apache Web Server in conjunction with Payara Server.
+Whether `mod_jk` support should be enabled for this listener. Should only be enabled if `mod_jk` is being explicitly configured on an Apache Web Server in conjunction with MWARE AS.
 
 **Asadmin Command:**
 

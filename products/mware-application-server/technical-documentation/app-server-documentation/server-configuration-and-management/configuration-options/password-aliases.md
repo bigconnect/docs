@@ -1,6 +1,6 @@
 # Password Aliases
 
-By default, passwords within Payara Server are treated like any other property and are stored in plaintext. Passwords stored in plaintext are a security risk, as you can directly read them, unencrypted and unobstructed.
+By default, passwords within MWARE AS are treated like any other property and are stored in plaintext. Passwords stored in plaintext are a security risk, as you can directly read them, unencrypted and unobstructed.
 
 A **password alias** allows you to have a plaintext reference to an encrypted password stored on the server, with the alias being used wherever the password is needed.
 

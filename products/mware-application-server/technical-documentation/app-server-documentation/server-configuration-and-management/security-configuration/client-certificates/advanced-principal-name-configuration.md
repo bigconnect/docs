@@ -1,6 +1,6 @@
 # Advanced Principal Name Configuration
 
-Payara Server allows the use of the Common-Name (`CN`) attribute of a client certificate’s DN to be used as the full principal’s name when the certificated is authenticated in an application. This simplifies the authentication process, as the common name will replace the full name in the validation process of the certificate’s authentication.
+MWARE AS allows the use of the Common-Name (`CN`) attribute of a client certificate’s DN to be used as the full principal’s name when the certificated is authenticated in an application. This simplifies the authentication process, as the common name will replace the full name in the validation process of the certificate’s authentication.
 
 To configure this behaviour, the `common-name-as-principal-name` property can be used in any security realm of type `com.sun.enterprise.security.auth.realm.certificate.CertificateRealm`.
 

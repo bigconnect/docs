@@ -4,31 +4,31 @@ description: Domain Data Grid Discovery Modes
 
 # Discovery
 
-The Domain Data Grid has the concept of auto-discovery. When a Payara Server or Payara Micro instance starts it must discover other Data Grid nodes so that it can join the grid. Once an instance has connected to a Payara Instance that is already a member of the grid then it can become a member of the grid.
+The Domain Data Grid has the concept of auto-discovery. When a MWARE AS instance starts it must discover other Data Grid nodes so that it can join the grid. Once an instance has connected to a Payara Instance that is already a member of the grid then it can become a member of the grid.
 
 ### Discovery Modes
 
-The following are the discovery mechanisms or modes that are included by default in Payara Server.
+The following are the discovery mechanisms or modes that are included by default in MWARE AS.
 
 #### Domain Discovery Mode
 
-The Domain discovery mode is the default discovery mode in Payara Server. In this mode when a Payara Server instance starts it uses information encoded into the `domain.xml` describing the node IP Address and ports of the other servers in the domain and the DAS to connect to an existing member of the Data Grid. For a Payara Server instance the first server it will try to connect to is the DAS if that fails it will then try each of the other instances in turn. When the DAS starts it tries to connect to each instance in turn.
+The Domain discovery mode is the default discovery mode in MWARE AS. In this mode when a MWARE AS instance starts it uses information encoded into the `domain.xml` describing the node IP Address and ports of the other servers in the domain and the DAS to connect to an existing member of the Data Grid. For a MWARE AS instance the first server it will try to connect to is the DAS if that fails it will then try each of the other instances in turn. When the DAS starts it tries to connect to each instance in turn.
 
 #### TCP-IP Discovery Mode
 
-The TCP-IP discovery mode is an alternative discovery mode. In this mode the user specifies a comma separated list of IP addresses and ports that a Payara Server instance should try to find members of the data grid at upon boot.
+The TCP-IP discovery mode is an alternative discovery mode. In this mode the user specifies a comma separated list of IP addresses and ports that a MWARE AS instance should try to find members of the data grid at upon boot.
 
 #### Multicast Discovery Mode
 
-The Multicast discovery mode is an alternative discovery mode. In this mode the user specifies the multicast group and multicast port used to find other members of the Data Grid. When a Payara Server instance configured with multicast discovery starts it broadcasts a message on the multicast group and port to discover other members of the data grid.
+The Multicast discovery mode is an alternative discovery mode. In this mode the user specifies the multicast group and multicast port used to find other members of the Data Grid. When a MWARE AS instance configured with multicast discovery starts it broadcasts a message on the multicast group and port to discover other members of the data grid.
 
 #### DNS Discovery Mode
 
-The DNS discovery mode is an alternative discovery mode, closely related to the TCPIP discovery mode. In this mode the user specifies a comma separated list of DNS names and ports that a Payara Server should try to find members of the data grid at upon boot.
+The DNS discovery mode is an alternative discovery mode, closely related to the TCPIP discovery mode. In this mode the user specifies a comma separated list of DNS names and ports that a MWARE AS should try to find members of the data grid at upon boot.
 
 #### Kubernetes Discovery Mode
 
-The Kubernetes discovery mode is an alternative discovery mode intended for use when running in a Kubernetes environment. In this mode, the user specifies the Kubernetes service name and namespace that Payara Server should look to find other data grid members in - Payara Server will then contact the Kubernetes master upon boot to obtain the list of IP addresses of any other running instances under the specified namespace and service name.
+The Kubernetes discovery mode is an alternative discovery mode intended for use when running in a Kubernetes environment. In this mode, the user specifies the Kubernetes service name and namespace that MWARE AS should look to find other data grid members in - MWARE AS will then contact the Kubernetes master upon boot to obtain the list of IP addresses of any other running instances under the specified namespace and service name.
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1

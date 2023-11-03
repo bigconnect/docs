@@ -1,21 +1,21 @@
 # Deployment Groups
 
-Deployment Groups are a new feature in Payara Server 5. The Deployment Group is designed to replace the deployment targeting aspect of Clusters that was available in previous versions of Payara.
+Deployment Groups are a new feature in MWARE AS. The Deployment Group is designed to replace the deployment targeting aspect of Clusters that was available in previous versions of MWARE AS.
 
 ### Why replace Clusters
 
-A Cluster in Payara Server 4 encapsulated a number of concepts;
+A Cluster in MWARE AS encapsulated a number of concepts;
 
 * First it was a target of deployment
 * Second it provided in-memory data storage for web sessions and Stateful Session Beans
 * Third it defined a configuration
-* Fourth it treated a number of Payara Server Instances as a single grouping
+* Fourth it treated a number of MWARE AS Instances as a single grouping
 
 With the introduction of the Domain Data Grid the concept of data persistence was split from the Cluster concept to allow all instances to automatically cluster and share data. The introduction of the deployment group splits out the targeting aspect of clusters.
 
 ### What is a Deployment Group
 
-A Deployment Group is a loose grouping of Payara Server instances that can be used as a target for deployments. Deployment Groups consist of 1 or more Payara Server instances and each Payara Server Instance can belong to one or more Deployment Groups.
+A Deployment Group is a loose grouping of MWARE AS instances that can be used as a target for deployments. Deployment Groups consist of 1 or more MWARE AS instances and each MWARE AS Instance can belong to one or more Deployment Groups.
 
 Deployment Groups can also be used to manage the lifecycle of the instances in the group. All instances can be started, re-started and stopped using the deployment group. Restarting all the instances in the deployment group performs a rolling restart whereby each instance is restarted in turn to ensure that any data grid held data is retained across the group restart.
 

@@ -1,6 +1,6 @@
 # Asadmin Recorder
 
-This feature allows you to record the actions you take in the admin console as asadmin commands, aiding with automating or reproducing your setup across multiple Payara Server installations.
+This feature allows you to record the actions you take in the admin console as asadmin commands, aiding with automating or reproducing your setup across multiple MWARE AS installations.
 
 ### Starting and Stopping the Asadmin Recorder
 
@@ -86,7 +86,7 @@ asadmin set-asadmin-recorder-configuration --enabled true --outputLocation /home
 
 ### Running the Generated Scripts
 
-Documentation on running asadmin scripts can be found in the _GlassFish Server Administration Guide_, under the _Run a Set of asadmin Subcommands From a File_ section. The guide can be found in the _GlassFish Server 5 Open Source Edition Documentation_ referenced in the [Payara Server Documentation Overview](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Overview.html)
+Documentation on running asadmin scripts can be found in the _GlassFish Server Administration Guide_, under the _Run a Set of asadmin Subcommands From a File_ section. The guide can be found in the _GlassFish Server 5 Open Source Edition Documentation_
 
 ### Asadmin Commands
 

@@ -1,6 +1,6 @@
 # Multimode Event Designators Support
 
-This feature allows the use of **Bash Event Designators** when using Payara Server’s Asadmin CLI in multimode.
+This feature allows the use of **Bash Event Designators** when using MWARE AS's Asadmin CLI in multimode.
 
 An Event Designator is a reference to a command line entry in the history list, which makes it easy for users to refer and re-use previous asadmin subcommands entries.
 

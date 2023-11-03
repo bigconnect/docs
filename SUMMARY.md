@@ -548,7 +548,7 @@
           * [Nodes Scaling Group](products/mware-application-server/technical-documentation/app-server-documentation/extensions/autoscale-groups/nodes-scaling-group.md)
         * [Certificate Management](products/mware-application-server/technical-documentation/app-server-documentation/extensions/certificate-management.md)
         * [Notifiers](products/mware-application-server/technical-documentation/app-server-documentation/extensions/notifiers.md)
-  * [Jakarta EE Certification](products/mware-application-server/jakarta-ee-certification/README.md)
+  * [Jakarta EE Certification](products/mware-application-server/jakarta-ee-certification.md)
     * [6.2023.10 Platform TCK Results](products/mware-application-server/jakarta-ee-certification/6.2023.10-platform-tck-results.md)
     * [6.2023.10 Web TCK Results](products/mware-application-server/jakarta-ee-certification/6.2023.10-web-tck-results.md)
     * [6.2023.10 Core TCK Results](products/mware-application-server/jakarta-ee-certification/6.2023.10-core-tck-results.md)

@@ -1,6 +1,6 @@
 # Custom Validators
 
-By default, the Payara Server runtime checks only if the submitted Client Certificate is present in the trust store and that it hasn’t expired already. If these conditions are met, it is accepted without any additional checks.
+By default, the MWARE AS runtime checks only if the submitted Client Certificate is present in the trust store and that it hasn’t expired already. If these conditions are met, it is accepted without any additional checks.
 
 Custom Client Certificate Validation allows you to perform extra checks in addition to checking for the presence of the certificate in the trust store.
 

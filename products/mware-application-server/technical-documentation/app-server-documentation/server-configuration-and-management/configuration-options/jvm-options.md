@@ -1,6 +1,6 @@
 # JVM Options
 
-Payara Server can be configured through various JVM options. By default, there are a number of JVM options configured within the `domain.xml` configuration file in each Payara Server domain. Additional JVM options can be added to control various functionality and features of Payara Server.
+MWARE AS can be configured through various JVM options. By default, there are a number of JVM options configured within the `domain.xml` configuration file in each MWARE AS domain. Additional JVM options can be added to control various functionality and features of MWARE AS.
 
 ### Creating JVM Options <a href="#creating-jvm-options" id="creating-jvm-options"></a>
 
@@ -16,7 +16,7 @@ Deleting JVM options is done using either the Admin Console, or the `delete-jvm-
 
 ### Configurable JVM Options
 
-This is a non-exhaustive list of configurable JVM Options for Payara Server.
+This is a non-exhaustive list of configurable JVM Options for MWARE AS.
 
 #### Config File Encoding
 
@@ -34,7 +34,7 @@ Any JDK supported file encoding charset
 
 ### Configuring JDK Versions for JVM Options
 
-It is possible to allow specific JVM options configured for a Payara Server instance to be applied only on specific JDK versions. The configuration is flexible since it allows the user to define minimum and maximum versions of all JDKs upon which each JVM option should be applied.
+It is possible to allow specific JVM options configured for a MWARE AS instance to be applied only on specific JDK versions. The configuration is flexible since it allows the user to define minimum and maximum versions of all JDKs upon which each JVM option should be applied.
 
 JDK versions must follow standard the standard JDK versioning scheme. The syntax that can be used allows for different levels of granularity in the specified JDK versions. Any of the following would be acceptable:
 

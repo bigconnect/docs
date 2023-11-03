@@ -1,8 +1,8 @@
 # Logging
 
-Payara Server captures information about events that occur and records this information using its logging mechanism into log files.
+MWARE AS captures information about events that occur and records this information using its logging mechanism into log files.
 
-In a Payara Server domain, the information is logged into the following files by default:
+In a MWARE AS domain, the information is logged into the following files by default:
 
 | Instance                   | Log File Location               |
 | -------------------------- | ------------------------------- |
@@ -13,7 +13,7 @@ In a Payara Server domain, the information is logged into the following files by
 |   | If an instance is started using the `-verbose` option, it will run in the foreground and log information directly into the console. |
 | - | ----------------------------------------------------------------------------------------------------------------------------------- |
 
-Payara Server uses Java Logging (JUL) to format and output log records. The default configuration file is located at `${DOMAIN_DIR}/config/logging.properties`.
+MWARE AS uses Java Logging (JUL) to format and output log records. The default configuration file is located at `${DOMAIN_DIR}/config/logging.properties`.
 
 Logging settings can be configured by either using the Asadmin CLI or in the Web Admin Console, like in the following screenshot:
 
@@ -45,9 +45,6 @@ asadmin> set-log-attributes com.sun.enterprise.server.logging.GFFileHandler.fast
 ### Log to File
 
 The `Log to File` option allow you to enable and disable the action of logging to a file. When disabled this should help to minimize disk usage.
-
-|   | This option will be more accommodating if Payara Server is running in cloud environment where disk space is scarce. |
-| - | ------------------------------------------------------------------------------------------------------------------- |
 
 #### Enable Log to File using the Admin Console
 
@@ -128,7 +125,7 @@ Whenever the server starts up or the logging properties are changed, the value f
 
 ### Access Logging Max File Size
 
-Payara Server provides different ways to rotate HTTP access log files. This section will detail the use of the max size of the log file to trigger a rotation.
+MWARE AS provides different ways to rotate HTTP access log files. This section will detail the use of the max size of the log file to trigger a rotation.
 
 The **Max File Size** option provides a way to change the file size at which the PayaraServer rotates the access log file. This option accepts an integer value specifying the maximum size of the log file, after which a file rotation will occur.
 
@@ -158,13 +155,13 @@ All the generated entries are stored in _server.log_ by default. It is possible 
 |   | If this setting is enabled, the default log file will be found at `${DOMAIN_DIR}/logs/notification.log`/ |
 | - | -------------------------------------------------------------------------------------------------------- |
 
-The Notification Logging Service uses its own collection of logging properties which are separate from the standard logging facilities of Payara Server. However, they are stored in the same configuration file.
+The Notification Logging Service uses its own collection of logging properties which are separate from the standard logging facilities of MWARE AS. However, they are stored in the same configuration file.
 
 #### Configuring the Notification Logging Service
 
 **Enabling or Disabling Logging to a File**
 
-The **Log to File** option will provide a way to enable and disable logging to a file of Payara Server Notifications. When disabled this should help to minimize disk usage. This option will be more accommodating if Payara Server is running in cloud environment where disk space is scarce.
+The **Log to File** option will provide a way to enable and disable logging to a file of MWARE AS Notifications. When disabled this should help to minimize disk usage. This option will be more accommodating if MWARE AS is running in cloud environment where disk space is scarce.
 
 **Using the Admin Console**
 
@@ -261,7 +258,7 @@ asadmin> set-log-attributes fish.payara.enterprise.server.logging.PayaraNotifica
 
 **Set the Maximum Number of Historic Files**
 
-The `Maximum History Files` option provides a way to set the limit on the number of log files that can be created by Payara Server. Once the number of files reaches the set limit, the oldest rotated log file is deleted. If the value for this option is set `0`, all the rotated log files are preserved.
+The `Maximum History Files` option provides a way to set the limit on the number of log files that can be created by MWARE AS. Once the number of files reaches the set limit, the oldest rotated log file is deleted. If the value for this option is set `0`, all the rotated log files are preserved.
 
 **Using the Admin Console**
 
@@ -271,7 +268,7 @@ To configure the `Maximum History File` option using the Admin Console:
 
 **Using the Asadmin CLI**
 
-Use the following command to set the limit on the number of log files that can be created by Payara Server:
+Use the following command to set the limit on the number of log files that can be created by MWARE AS:
 
 ```shell
 asadmin> set-log-attributes fish.payara.enterprise.server.logging.PayaraNotificationFileHandler.maxHistoryFiles=20
@@ -326,7 +323,7 @@ File rotation keeps log files manageable, as older log files are automatically d
 
 By default a size rotation of `2MB` is used for server logs, meaning no log files will be deleted until the size limit is reached and a new file is created at midnight.
 
-Payara Server has different rotation conditions which can be fine-tuned based on your needs:
+MWARE AS has different rotation conditions which can be fine-tuned based on your needs:
 
 Time
 
@@ -351,7 +348,7 @@ Which allows you to change how the logs are rotated to your needs and can be com
 
 #### ANSI Coloured Logging
 
-Payara Server supports the use of ANSI coloured log entries when running in verbose mode.
+MWARE AS supports the use of ANSI coloured log entries when running in verbose mode.
 
 To enable ANSI colours run the following command using the Asadmin CLI:
 
@@ -364,7 +361,7 @@ asadmin> set-log-attributes com.sun.enterprise.server.logging.UniformLogFormatte
 
 #### Log File Compression on Rotation
 
-Payara Server can be configured to automatically compress rotated log files in an automatic manner to save disk space.
+MWARE AS can be configured to automatically compress rotated log files in an automatic manner to save disk space.
 
 **Using the Web Admin Console**
 
@@ -390,7 +387,7 @@ This is an example how the **Log Viewer** may visualize the entries of 3 compres
 
 ### JSON Log Formatter
 
-Besides the standard Uniform Log Format (ULF) and Oracle Diagnostics Logging (ODL) formats (inherited from Payara Server’s source: GlassFish Server Open Source Edition), Payara Server provides a JSON format. With this format, every entry is formatted as a JSON object string. These entries can be easily processed by any JSON parser for further data processing.
+Besides the standard Uniform Log Format (ULF) and Oracle Diagnostics Logging (ODL) formats (inherited from MWARE AS’s source: GlassFish Server Open Source Edition), MWARE AS provides a JSON format. With this format, every entry is formatted as a JSON object string. These entries can be easily processed by any JSON parser for further data processing.
 
 Once the JSON formatter is enabled, the server’s log file may look similar to this sample:
 
@@ -412,7 +409,7 @@ asadmin> set-log-attributes com.sun.enterprise.server.logging.GFFileHandler.form
 
 #### Configure Prefixed field names
 
-In some situations, the JSON representation of a log entry may use field names that clash with existing standard field names that logging gathering tools may use them for specific purposes. To solve this problem, Payara Server can be configured to automatically prefix all field names in the JSON object representation with an underscore (`_`) character. See the following sample to get an idea of how such a JSON payload would look like:
+In some situations, the JSON representation of a log entry may use field names that clash with existing standard field names that logging gathering tools may use them for specific purposes. To solve this problem, MWARE AS can be configured to automatically prefix all field names in the JSON object representation with an underscore (`_`) character. See the following sample to get an idea of how such a JSON payload would look like:
 
 ![Example log file with underscore prefix in JSON fields](https://docs.payara.fish/community/docs/\_images/logging/json\_underscore\_prefix\_example.png)
 
@@ -469,4 +466,4 @@ The following table lists the fields that can be excluded:
 | tid        | ThreadId, the thread name that generated the log entry.                                                                                                                                               |
 | timeMillis | The time in milliseconds since January 1st, 1970 (Unix epoch) when the log entry is generated. The human-readable version of the timestamp at the beginning of the log entry is always in the output. |
 | levelValue | The numeric value corresponding to the severity level of the message. The severity level name is always present in the log entry. SEVERE = 1000, INFO = 800, FINE = 500, etc…​                        |
-| version    | The Payara Server version number.                                                                                                                                                                     |
+| version    | The MWARE AS version number.                                                                                                                                                                          |

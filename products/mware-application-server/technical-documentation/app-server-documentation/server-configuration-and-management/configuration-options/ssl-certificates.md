@@ -1,6 +1,6 @@
 # SSL Certificates
 
-The Payara Server uses a dedicated key and certificate store when using SSL/TLS connections. The files are located in the configuration directory of the domain `<payara-home>/glassfish/domains/<domain-name>/config` and referenced through JVM options so that they are used for the entire JVM.
+MWARE AS uses a dedicated key and certificate store when using SSL/TLS connections. The files are located in the configuration directory of the domain `<payara-home>/glassfish/domains/<domain-name>/config` and referenced through JVM options so that they are used for the entire JVM.
 
 _cacerts.p12_: Java Keystore formatted file used as Trust Store file holding the X.509 certificates. _keystore.p12_: Java Keystore formatted file containing the Cryptographic keys, like the private keys associated with the certificates.
 
@@ -8,12 +8,10 @@ These keystores are protected with the Master Password of your domain.
 
 ### Adding SSL Certificate <a href="#add-certificate" id="add-certificate"></a>
 
-To add your SSL Certificate to the Payara Server configuration files, you need:
+To add your SSL Certificate to the MWARE AS configuration files, you need:
 
 * The private key associated with your certificate.
 * The Certificate you received from the Certificate Authority based on your Certificate Signing Request (CSR).
-
-You can find the detailed steps of adding a self-signed certificate into Payara for testing purposes in the blog [Securing Payara Server with Custom SSL Certificate](https://blog.payara.fish/securing-payara-server-with-custom-ssl-certificate).
 
 The private key can be stored in various formats. We assume that the key is in a format which can be read by the Java key tool program, such as PKCS#8 (file starts with `BEGIN ENCRYPTED PRIVATE KEY`)
 
@@ -69,7 +67,7 @@ The information can also be entered in the Web Administration console, by naviga
 
 ### Loading Certificates From Multiple Keystores
 
-To add additional keystores to Payara Server you will need to have your keystore and truststore files in a local directory. You can then configure this using the admin console or asadmin commands. If you want to load more than one additional keystore, you will need to use a delimiter between the paths to the additional keystores. This is different depending on your OS, Windows uses ';' and Linux uses ':'.
+To add additional keystores to MWARE AS you will need to have your keystore and truststore files in a local directory. You can then configure this using the admin console or asadmin commands. If you want to load more than one additional keystore, you will need to use a delimiter between the paths to the additional keystores. This is different depending on your OS, Windows uses ';' and Linux uses ':'.
 
 The new JVM properties used to add additional keystores are:
 

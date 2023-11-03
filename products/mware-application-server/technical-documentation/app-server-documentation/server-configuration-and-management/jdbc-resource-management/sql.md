@@ -1,6 +1,6 @@
 # SQL
 
-Payara Server keeps track of the recently executed SQL statements for monitoring purposes. This way, one can review which SQL statements are executed, how many times the same statement is executed and how long it took.
+MWARE AS keeps track of the recently executed SQL statements for monitoring purposes. This way, one can review which SQL statements are executed, how many times the same statement is executed and how long it took.
 
 ### Activate Overview
 
@@ -32,7 +32,7 @@ When using the Rest monitoring interface, you can access the following URL
 http://localhost:4848/monitoring/domain/server/resources/<pool-name>
 ```
 
-In both cases, the _\<pool-name>_ is the actual pool name you have created within Payara Server and which you like to retrieve the information for.
+In both cases, the _\<pool-name>_ is the actual pool name you have created within MWARE AS and which you like to retrieve the information for.
 
 The properties we want to highlight here are
 
@@ -63,9 +63,9 @@ When the cache size is too small, you see an information message in the log to i
 
 ### Slow SQL Logger
 
-:page-aliases:Technical Documentation/Payara Server Documentation/advanced-jdbc/slow-sql-logger.adoc
+:page-aliases:Technical Documentation/MWARE AS Documentation/advanced-jdbc/slow-sql-logger.adoc
 
-Many performance problems in Enterprise Applications can be traced to slow database access. Payara Server includes capabilities to detect and log slow SQL queries executed via a JDBC Connection pool. The Slow SQL logger monitors all queries executed on the connection pool and if they exceed a configurable execution time in seconds a warning message is logged into the server log.
+Many performance problems in Enterprise Applications can be traced to slow database access. MWARE AS includes capabilities to detect and log slow SQL queries executed via a JDBC Connection pool. The Slow SQL logger monitors all queries executed on the connection pool and if they exceed a configurable execution time in seconds a warning message is logged into the server log.
 
 The warning message (see below) logs the SQL query and the stack trace to the code executing the query. This enables rapid diagnosis by pinpointing the exact lines of code to investigate.
 
@@ -171,9 +171,9 @@ java.lang.Exception: Stack Trace shows code path to SQL
 
 ### SQL Trace Listeners
 
-:page-aliases:Technical Documentation/Payara Server Documentation/advanced-jdbc/sql-trace-listeners.adoc
+:page-aliases:Technical Documentation/MWARE AS Documentation/advanced-jdbc/sql-trace-listeners.adoc
 
-Payara Server provides support for custom SQL Trace Listeners. A **SQL Trace Listener** is registered against a data source and is called after each method call made on the JDBC connection pool.
+MWARE AS provides support for custom SQL Trace Listeners. A **SQL Trace Listener** is registered against a data source and is called after each method call made on the JDBC connection pool.
 
 SQL Trace Listeners allows developers to track all calls to the database and can be used to develop custom auditing, error handling or monitoring components. SQL Trace Listeners can be enabled globally on a data source if the class that implements it is on the server’s _classpath_, or can be enabled on application specific data sources by including them in the application’s WAR or EAR.
 

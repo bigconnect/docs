@@ -1,6 +1,6 @@
 # Viewing Members
 
-This section details how to visualize the members of the Domain Data Grid in Payara Server.
+This section details how to visualize the members of the Domain Data Grid in MWARE AS.
 
 ### Viewing Data Grid Members from the Admin Console <a href="#viewing-members-admin-console" id="viewing-members-admin-console"></a>
 

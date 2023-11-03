@@ -1,11 +1,11 @@
 # HealthCheck Service
 
-Payara Server includes a HealthCheck Service that is disabled by default. When enabled it can periodically check the following performance metrics:
+MWARE AS includes a HealthCheck Service that is disabled by default. When enabled it can periodically check the following performance metrics:
 
 * Host CPU Usage
 * Host Memory Usage
-* Payara Server’s JVM Garbage Collections
-* Payara Server’s JVM Heap Usage
+* MWARE AS’s JVM Garbage Collections
+* MWARE AS’s JVM Heap Usage
 * CPU Usage of individual threads
 * Detects stuck threads
 * Monitors metrics exposed by MicroProfile Metrics
@@ -22,7 +22,7 @@ If the [Log Notifier](https://docs.payara.fish/community/docs/Technical%20Docume
 
 ### HealthCheck Service Configuration
 
-As with any other services available in Payara Server, the HealthCheck service can be configured by using the web console, administration commands or editing the _domain.xml_ configuration file directly.
+As with any other services available in MWARE AS, the HealthCheck service can be configured by using the web console, administration commands or editing the _domain.xml_ configuration file directly.
 
 #### Using the Web Administration Console
 

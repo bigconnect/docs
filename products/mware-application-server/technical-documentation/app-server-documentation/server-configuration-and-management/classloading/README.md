@@ -1,7 +1,7 @@
 # Classloading
 
-Payara Server extends the default JVM classloading and provides additional classes, which are loaded by the class loaders included by default on this distribution. Documentation in this section describes:
+MWARE AS extends the default JVM classloading and provides additional classes, which are loaded by the class loaders included by default on this distribution. Documentation in this section describes:
 
 * How classloading in Payara Server works
-* How to install additional classes and libraries into Payara Server
+* How to install additional classes and libraries into MWARE AS
 * How to configure application deployment so that the application has access only to the desired set of classes and libraries

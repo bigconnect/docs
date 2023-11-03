@@ -8,7 +8,7 @@ When working with multiple shared environments, it is common for restrictions to
 
 One way to ensure no accidental changes are made would be to revoke access to the admin console, but this has the downside of preventing engineers from seeing the current settings in the event that a bug is found.
 
-As an alternative, Payara Server ships with a configurable warning bar to ensure any user will see a warning message in while viewing the console:
+As an alternative, MWARE AS ships with a configurable warning bar to ensure any user will see a warning message in while viewing the console:
 
 ![Payara Server 172 Environment Warning screenshot](https://docs.payara.fish/community/docs/\_images/admin-console/environment-warning.png)
 

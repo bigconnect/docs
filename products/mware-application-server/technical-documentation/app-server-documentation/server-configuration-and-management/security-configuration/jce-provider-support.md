@@ -1,6 +1,6 @@
 # JCE Provider Support
 
-Payara Server supports using the JCE framework to configure custom security providers. Custom providers can be installed statically in the JDK, via the service loader mechanism, or via the programmatic API.
+MWARE AS supports using the JCE framework to configure custom security providers. Custom providers can be installed statically in the JDK, via the service loader mechanism, or via the programmatic API.
 
 ### Example <a href="#example" id="example"></a>
 

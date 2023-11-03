@@ -4,7 +4,7 @@
 
 A connection pool is a store of database connections that can be used and (more importantly) re-used to connect to a RDBMS database. They help to improve both the performance and scalability of the system.
 
-Rather than creating a new connection each time one is needed a pool of logical connections is created when Payara Server is started. When a new connection is required the pool is searched for an available connection. If one is available it is returned to the requester. If none is available then the request is either queued or a new connection is established depending on how many connections are already in the pool and how the pool is configured.
+Rather than creating a new connection each time one is needed a pool of logical connections is created when MWARE AS  is started. When a new connection is required the pool is searched for an available connection. If one is available it is returned to the requester. If none is available then the request is either queued or a new connection is established depending on how many connections are already in the pool and how the pool is configured.
 
 Once the connection is finished with, rather than closing it the connection is returned to the connection pool for use by the next requester.
 
@@ -169,7 +169,7 @@ WARNING: A potential connection leak detected for connection pool test-pool. The
 
 ### JDBC Call Logging (SQL Tracing)
 
-:page-aliases:Technical Documentation/Payara Server Documentation/advanced-jdbc/log-jdbc-calls.adoc
+:page-aliases:Technical Documentation/MWARE AS Documentation/advanced-jdbc/log-jdbc-calls.adoc
 
 |   | This is a feature best used for development purposes due to the volume of trace data that is produced. |
 | - | ------------------------------------------------------------------------------------------------------ |
@@ -187,7 +187,7 @@ With **Log JDBC Calls** configured on the connection call each call into the con
 
 #### Using the Administration Console
 
-SQL Tracing can be enabled through the Payara Server Web administration console. First, navigate to the advanced table of your JDBC connection pool, then select the _JDBC > JDBC Connection pools > ${Your Connection pool}_.
+SQL Tracing can be enabled through the MWARE AS Web administration console. First, navigate to the advanced table of your JDBC connection pool, then select the _JDBC > JDBC Connection pools > ${Your Connection pool}_.
 
 Then select the **Advanced Tab** in the main window of the administration console. Then select the checkbox next to **Log JDBC Calls** to enable logging of all SQL calls:
 
@@ -252,9 +252,9 @@ asadmin create jdbc-connection-pool --datasourceclassname org.h2.jdbcx.JdbcDataS
 
 ### Advanced Connection Pool Properties in Deployment Descriptors
 
-:page-aliases:Technical Documentation/Payara Server Documentation/advanced-jdbc/advanced-connection-pool-properties.adoc
+:page-aliases:Technical Documentation/MWARE AS Documentation/advanced-jdbc/advanced-connection-pool-properties.adoc
 
-Payara Server supports setting advanced JDBC connection pool properties directly on data source definitions made with the `@DataSourceDefinition` annotation or directly on deployment descriptors.
+MWARE AS supports setting advanced JDBC connection pool properties directly on data source definitions made with the `@DataSourceDefinition` annotation or directly on deployment descriptors.
 
 #### Setting Properties in the Deployment Descriptor
 

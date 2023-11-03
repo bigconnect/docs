@@ -1,6 +1,6 @@
 # Server Management Asadmin Commands
 
-This is a non-exhaustive list of asadmin commands for Payara Server.
+This is a non-exhaustive list of asadmin commands for MWARE AS.
 
 ### `start-domain`
 
@@ -174,7 +174,7 @@ This command restores files under the domain name from a backup directory.
 
 **Aim**
 
-This command can be used to start a specified instance of Payara Server, which can be either a local or remote instance. This command runs on the DAS.
+This command can be used to start a specified instance of MWARE AS, which can be either a local or remote instance. This command runs on the DAS.
 
 #### Command Options
 
@@ -244,7 +244,7 @@ asadmin> start-local-instance --timeout 180 instance1
 
 **Aim**
 
-This command adds a JAR library to a Payara Server domain and immediately initiates makes it available for class loading.
+This command adds a JAR library to a MWARE AS domain and immediately initiates makes it available for class loading.
 
 | Options  | Type     | Description                                                                                                                                       | Default  | Mandatory |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | --------- |
@@ -378,9 +378,9 @@ asadmin> restart-http-listeners FlyingFish
 
 **Aim**
 
-Configures the starting of a DAS or a Payara Server instance on an unattended boot.
+Configures the starting of a DAS or a MWARE AS instance on an unattended boot.
 
-The create-service subcommand configures the starting of a domain administration server (DAS) or a Payara Server instance on an unattended boot on Windows, Linux, and Oracle Solaris systems.
+The create-service subcommand configures the starting of a domain administration server (DAS) or a MWARE AS instance on an unattended boot on Windows, Linux, and Oracle Solaris systems.
 
 If no operand is specified and the domains directory contains only one domain, the subcommand configures the starting of the DAS for the default domain. If no operand is specified and the domains directory contains multiple domains, an error occurs.
 
@@ -448,7 +448,7 @@ If you delete a service that you created by using the create-service subcommand,
 | `--serviceproperties` | `string`  | Specifies a colon(:)-separated list of various properties that are specific to the service. To customize the display name of the service in the Windows Service list, set the DISPLAY\_NAME property to the required name. For Oracle Solaris 10 systems, if you specify net\_privaddr, the service’s processes will be able to bind to the privileged ports (<1024) on the platform. You can bind to ports< 1024 only if the owner of the service is superuser, otherwise, this is not allowed. On Linux systems using SystemD these properties are stored as Environment entries, accessible via Microprofile property in the applications. |                                                                                    | No        |
 | `--dry-run`, `-n`     | `boolean` | Previews your attempt to create a service. Indicates issues and the outcome that will occur if you run the command without using the --dry-run option. Nothing is actually configured. Default is false.                                                                                                                                                                                                                                                                                                                                                                                                                                      | `false`                                                                            | No        |
 | `--force`             | `string`  | Specifies whether the service is created even if validation of the service fails. Possible values are as follows: `true`, The service is created even if validation of the service fails. `false`, The service is not created (default).                                                                                                                                                                                                                                                                                                                                                                                                      | `false`                                                                            | No        |
-| `--serviceuser`       | `string`  | (Linux systems only) The user that is to run Payara Server when the service is started. The default is the user that is running the subcommand. Specify this option if Payara Server is to be run by a user other than the root user.                                                                                                                                                                                                                                                                                                                                                                                                         | root                                                                               | No        |
+| `--serviceuser`       | `string`  | (Linux systems only) The user that is to run MWARE AS when the service is started. The default is the user that is running the subcommand. Specify this option if MWARE AS is to be run by a user other than the root user.                                                                                                                                                                                                                                                                                                                                                                                                                   | root                                                                               | No        |
 | `--domaindir`         | `string`  | The absolute path of the directory on the disk that contains the configuration of the domain. If this option is specified, the operand must specify a domain.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                    | No        |
 | `--nodedir`           | `string`  | Specifies the directory that contains the instance’s node directory. The instance’s files are stored in the instance’s node directory. The default is as-install/nodes. If this option is specified, the operand must specify an instance.                                                                                                                                                                                                                                                                                                                                                                                                    |                                                                                    | No        |
 | `--node`              | `string`  | Specifies the node on which the instance resides. This option may be omitted only if the directory that the --nodedir option specifies contains only one node directory. Otherwise, this option is required. If this option is specified, the operand must specify an instance.                                                                                                                                                                                                                                                                                                                                                               |                                                                                    | No        |
@@ -466,7 +466,7 @@ Found the Windows Service and successfully uninstalled it.
 The Windows Service was created successfully.  It is ready to be started.  Here are
 the details:
 ID of the service: domain1
-Display Name of the service:domain1 Payara Server
+Display Name of the service:domain1 MWARE AS
 Domain Directory: C:\\payara\\glassfish\\domains\\domain1
 Configuration file for Windows Services Wrapper: C:\\payara\\glassfish\\domains\
 domain1\\bin\\domain1Service.xml

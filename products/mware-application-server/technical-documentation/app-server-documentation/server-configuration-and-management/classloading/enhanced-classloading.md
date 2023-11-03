@@ -1,16 +1,16 @@
 # Enhanced Classloading
 
-This page covers the enhanced class loading functionality provided by Payara Server.
+This page covers the enhanced class loading functionality provided by MWARE AS.
 
 ### Default Class and Library Loading
 
-Payara Server has included many standard Java libraries and packages, for example **Jackson**, **Nimbus JOSE**, **Logback**, and others to use. These libraries are located on the `${PAYARA_INSTALL_DIR}/modules` directory.
+MWARE AS has included many standard Java libraries and packages, for example **Jackson**, **Nimbus JOSE**, **Logback**, and others to use. These libraries are located on the `${PAYARA_INSTALL_DIR}/modules` directory.
 
-The default class loading mechanism of Payara Server works like this: When loading classes that belong to a library or framework that is included in the server, the server **will always** load those classes even if the application itself includes different versions.
+The default class loading mechanism of MWARE AS works like this: When loading classes that belong to a library or framework that is included in the server, the server **will always** load those classes even if the application itself includes different versions.
 
 In some cases, application developers will want to include a different version of the libraries that are already included on the server. Common use cases for this are:
 
-1. Use a newer version of a library that is included in the server. For example, Payara Server includes the Jackson library, and you might need to use a newer version that includes a specific feature you want to use.
+1. Use a newer version of a library that is included in the server. For example, MWARE AS includes the Jackson library, and you might need to use a newer version that includes a specific feature you want to use.
 2. Use an older version of a library included within the server in order to support legacy applications. For example, you are using an older version of **Icefaces** that depends on an older version of JSF.
 
 Unfortunately, due to the way the default class loading works, this will not be possible, and all libraries included with the server libraries will take precedence.
@@ -79,7 +79,7 @@ By specifying these options, the bundled JSF implementation within your deployme
 
 ### Extreme Classloading Isolation
 
-It’s possible to configure an extreme isolation level on the class loading delegation for deployed applications. With this extreme isolation behavior, a deployed application can force the server to load only classes and resources from libraries included on Payara Server that belong to **whitelisted packages** defined on its deployment descriptors.
+It’s possible to configure an extreme isolation level on the class loading delegation for deployed applications. With this extreme isolation behavior, a deployed application can force the server to load only classes and resources from libraries included on MWARE AS that belong to **whitelisted packages** defined on its deployment descriptors.
 
 To configure whitelist packaging you can use the `<whitelist-package>` element on the _glassfish-web.xml_ (WAR artifacts) or the _glassfish-application.xml_ (EAR artifacts). This element can be included multiple times to whitelist multiple packages. Here is an example of whitelisting both the **Google Guava**, **Jackson** and **Faces Config** packages for a WAR application:
 
@@ -97,9 +97,9 @@ The whitelist syntax is simple: Define the name of the package which contains th
 
 #### Default Whitelisted Classes
 
-Certain classes are whitelisted automatically, meaning they will always be loaded from Payara Server’s libraries, even if this feature is turned on.
+Certain classes are whitelisted automatically, meaning they will always be loaded from MWARE AS's libraries, even if this feature is turned on.
 
-This is because these packages are required by Payara Server and therefore cannot be loaded from a deployed application:
+This is because these packages are required by MWARE AS and therefore cannot be loaded from a deployed application:
 
 * `java`
 * `javax`

@@ -10,7 +10,7 @@ This page is a reference for extra and changed elements added to the GlassFish p
 
 With this option its possible to enable/disable **class loading delegation**. This allows deployed application to use libraries included on them, overriding the versions included on the server.
 
-For more information about how class delegation can be configured on Payara Server, see the [Enhanced Class loading](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Server%20Configuration%20And%20Management/Classloading/Enhanced%20Classloading.html) section.
+For more information about how class delegation can be configured on MWARE AS, see the [Enhanced Class loading](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Server%20Configuration%20And%20Management/Classloading/Enhanced%20Classloading.html) section.
 
 ### `clustered-attach-postconstruct`
 
@@ -44,7 +44,7 @@ Default value is `INHERIT`
 
 Used to whitelist packages on [**extreme class loading isolation**](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Server%20Configuration%20And%20Management/Classloading/Enhanced%20Classloading.html#extreme-classloading-isolation). Whitelisted packages are taken into account by the server when scanning libraries.
 
-For more information about how extreme class loading isolation works on Payara Server, see the [Enhanced Classloading](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Server%20Configuration%20And%20Management/Classloading/Enhanced%20Classloading.html) section.
+For more information about how extreme class loading isolation works on MWARE AS, see the [Enhanced Classloading](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Server%20Configuration%20And%20Management/Classloading/Enhanced%20Classloading.html) section.
 
 ### `enable-implicit-cdi`
 
@@ -110,7 +110,7 @@ In an EAR assembly, only the property set in the `glassfish-application.xml` wil
 
 ### `jaxrs-roles-allowed-enabled`
 
-Payara Server and Micro both support using the `@RolesAllowed` annotation out of the box to secure JAX-RS resources.
+MWARE AS both support using the `@RolesAllowed` annotation out of the box to secure JAX-RS resources.
 
 In some cases this may clash with existing code that interprets the same annotation using custom code.
 
@@ -122,9 +122,9 @@ The out-of-the-box support of `@RolesAllowed` for JAX-RS resources can be switch
 
 ### `max-wait-time-in-millis`
 
-Payara Server has re-implemented a property of the `glassfish-ejb-jar.xml` descriptor that was available in GlassFish in versions prior to 4.0.
+MWARE AS has re-implemented a property of the `glassfish-ejb-jar.xml` descriptor that was available in GlassFish in versions prior to 4.0.
 
-The `bean-pool` element allows users to specify controls on a per-EJB basis for pooled stateless EJBs. Payara Server has reintroduced `max-wait-time-in-millis` to govern what happens when the number of requests for an EJB exceeds the number of beans available in the pool.
+The `bean-pool` element allows users to specify controls on a per-EJB basis for pooled stateless EJBs. MWARE AS has reintroduced `max-wait-time-in-millis` to govern what happens when the number of requests for an EJB exceeds the number of beans available in the pool.
 
 A value of `-1` disables the property and means that, when the pool is at maximum usage and another request is made, a new EJB instance is created immediately, with no upper bound.
 

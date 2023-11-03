@@ -1,6 +1,6 @@
 # Advanced Groups Configuration
 
-Payara Server allows the advanced configuration mapping of a client certificate’s distinguished name (DN) to specific realm groups, which allows the realm to automatically assign groups based on the values of each DN part to all principals registered in the realm.
+MWARE AS allows the advanced configuration mapping of a client certificate’s distinguished name (DN) to specific realm groups, which allows the realm to automatically assign groups based on the values of each DN part to all principals registered in the realm.
 
 This feature can be configured by using the `dn-parts-used-for-groups` property of any security realm of type `com.sun.enterprise.security.auth.realm.certificate.CertificateRealm`. It must define a comma separated list of identifiers of DN parts, i.e. `EMAILADDRESS,DC,OU`, and it is empty by default.
 
@@ -29,7 +29,7 @@ Not all DN parts are supported. The following is the list of all parts that are 
 | EMAILADDRESS | E-Mail address                   | 1.2.840.113549.1.9.1       |
 | IP           | IP Address                       | 1.3.6.1.4.1.42.2.11.2.1    |
 
-### Payara Server Configuration
+### MWARE AS Configuration
 
 #### Using the Admin Console
 
@@ -50,7 +50,7 @@ asadmin> set configs.config.${YOUR_INSTANCE_CONFIG}.security-service.auth-realm.
 
 ### Mapping Groups to Security Roles in Applications <a href="#mapping-groups-to-roles-in-applications" id="mapping-groups-to-roles-in-applications"></a>
 
-After configuring the realm groups, you can map these groups to application roles as you’d do by using the Payara Server specific deployment descriptors. You can even map these roles to principals that are configured as documented in the [advanced Principal Name configuration](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Server%20Configuration%20And%20Management/Security%20Configuration/Client%20Certificates/Advanced%20Principal%20Name%20Configuration.html) section.
+After configuring the realm groups, you can map these groups to application roles as you’d do by using the MWARE AS specific deployment descriptors. You can even map these roles to principals that are configured as documented in the advanced Principal Name configuration section.
 
 Here’s a quick summary of the authentication and authorization process would work in this scenario:
 

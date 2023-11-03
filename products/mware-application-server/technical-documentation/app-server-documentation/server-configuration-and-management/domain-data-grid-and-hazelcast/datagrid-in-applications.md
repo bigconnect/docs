@@ -1,6 +1,6 @@
 # Datagrid in Applications
 
-This section details how to use the underlying Data Grid Hazelcast instance in Payara Server within application code.
+This section details how to use the underlying Data Grid Hazelcast instance in MWARE AS within application code.
 
 ### Accessing the Hazelcast instance via JNDI
 
@@ -22,7 +22,7 @@ To import the Hazelcast package, you will need to set add the Public API artefac
 </dependency>
 ```
 
-The Hazelcast JAR (for non-Maven projects), can either be downloaded from the [Hazelcast website](http://hazelcast.org/download/), or you can make use of the JAR that is packaged in Payara Server. The JAR packaged with Payara can be found at `<Payara Installation Directory>/glassfish/modules/hazelcast.jar`.
+The Hazelcast JAR (for non-Maven projects), can either be downloaded from the [Hazelcast website](http://hazelcast.org/download/), or you can make use of the JAR that is packaged in MWARE AS. The JAR packaged with Payara can be found at `<Payara Installation Directory>/glassfish/modules/hazelcast.jar`.
 
 The following code sample will initialize a `HazelcastInstance` variable in the instance embedded in Payara:
 

@@ -8,7 +8,7 @@ Within the Security API specification, an `HttpAuthenticationMechanism` can be d
 
 However, a restriction of the Security API specification is that only one `HttpAuthenticationMechanism` can be defined per application. This restriction is also in place for EAR applications file where it’s possible to have multiple web modules.
 
-Payara Server allows to circumvent this restriction so that multiple authentication mechanisms are used in an EAR application that hosts more than one Web module. To this effect, each web module must configure its own authentication mechanism separately.
+MWARE AS allows to circumvent this restriction so that multiple authentication mechanisms are used in an EAR application that hosts more than one Web module. To this effect, each web module must configure its own authentication mechanism separately.
 
 ### How to Configure <a href="#configure" id="configure"></a>
 

@@ -2,7 +2,7 @@
 
 ## Docker Nodes
 
-A Docker node is similar to the existing SSH, DCOM, and CONFIG nodes in that it is a virtual representation of a Payara Server installation, providing connection details that the Domain Administration Server (DAS) uses to communicate with the installation to create, stop, start, and delete instances. Where it differs from these existing node types is that instances created against it are actually housed in Docker containers, and so also contains details on how to communicate with the Docker engine of the remote machine.
+A Docker node is similar to the existing SSH, DCOM, and CONFIG nodes in that it is a virtual representation of a MWARE AS installation, providing connection details that the Domain Administration Server (DAS) uses to communicate with the installation to create, stop, start, and delete instances. Where it differs from these existing node types is that instances created against it are actually housed in Docker containers, and so also contains details on how to communicate with the Docker engine of the remote machine.
 
 ### Exposing the Docker REST Admin Service <a href="#exposing-the-docker-rest-admin-service" id="exposing-the-docker-rest-admin-service"></a>
 
@@ -25,11 +25,11 @@ Docker nodes do have some unique configuration properties however:
 * Docker Password File - This is the fully-qualified path of the password file that the Docker instance will use for authentication against the DAS. Please note, that this path should be the path to the file on the **remote** machine. This file should be a standard Payara password file as you would use with asadmin. This must be specified, as Docker instances require secure admin to be enabled to start.
 * TLS - Whether or not to use HTTPS to communicate with the Docker engine or not.
 * Docker Port - The port that the Docker engine is listening on. Defaults to 2376.
-* Docker Image - The Docker image to use. Payara Server will default to using the `payara/payaraserver-node:6.2023.10` image.
+* Docker Image - The Docker image to use. MWARE AS will default to using the `payara/payaraserver-node:6.2023.10` image.
 
 The configuration options of CONFIG nodes are also available, namely `nodehost`, `nodedir`, and `installdir`. Specifying the `nodehost` option remains mandatory, but for docker nodes the `installdir` and `nodedir` options can safely be left as their defaults unless you’re specifying your own Docker image.
 
-Please take particular note of the _Docker Password File_ option: this is mandatory and **must be present on the remote machine**. Payara Server does not currently support propagating password files from the DAS to your remote machines. Secure admin must also be enabled for Docker Nodes to function correctly, which entails setting an admin password. See below for an example of enabling secure admin for the default _admin_ user:
+Please take particular note of the _Docker Password File_ option: this is mandatory and **must be present on the remote machine**. MWARE AS does not currently support propagating password files from the DAS to your remote machines. Secure admin must also be enabled for Docker Nodes to function correctly, which entails setting an admin password. See below for an example of enabling secure admin for the default _admin_ user:
 
 ```shell
 >asadmin change-admin-password --user admin
@@ -74,13 +74,13 @@ A full guide for how to do so can be found here: [https://docs.docker.com/engine
 DOCKER_OPTS="--tlsverify --tlscacert=/home/anon/tls/ca.pem --tlscert=/home/anon/tls/server-cert.pem --tlskey=/home/anon/tls/server-key.pem -H=0.0.0.0:2376"
 ```
 
-Assuming you followed this guide, you will need to perform the following steps to allow Payara Server to communicate with the Docker engine:
+Assuming you followed this guide, you will need to perform the following steps to allow MWARE AS to communicate with the Docker engine:
 
 1. Import the CA certificate into the Domain truststore (defaults to `${payaraHome}/glassfish/domains/${domainName}/config/cacerts.p12`)
 2. Create a PKCS12 bundle from the client certificate and key
 3. Import the generated PKCS12 bundle into the Domain’s keystore (defaults to `${payaraHome}/glassfish/domains/${domainName}/config/keystore.p12`)
 
-Once you’ve enabled TLS for the Docker REST admin service and added the necessary certificates & keys to Payara Server, you can create a Docker Node with TLS enabled like so:
+Once you’ve enabled TLS for the Docker REST admin service and added the necessary certificates & keys to MWARE AS, you can create a Docker Node with TLS enabled like so:
 
 ```shell
 asadmin create-node-docker --nodehost localhost --useTls true --dockerPasswordFile /opt/passwordfile.txt --dockerport 2376 DockerInstance1
@@ -118,7 +118,7 @@ There are two ways how to create a Payara Docker instance belonging to a Domain 
 
 **From Domain Administration Server**
 
-Creating a Docker instance is done in exactly the same way as when creating a normal one. You will create a Docker node and then you can create one or more Payara Server instances on it. The Payara DAS will use the same version of the Docker container as the DAS by default.
+Creating a Docker instance is done in exactly the same way as when creating a normal one. You will create a Docker node and then you can create one or more MWARE AS instances on it. The Payara DAS will use the same version of the Docker container as the DAS by default.
 
 ```shell
 >> asadmin --passwordfile /app/passwordfile.txt create-node-docker --nodehost dockerHost1 --dockerpasswordfile /app/passwordfile-docker.txt --dockerport 2376 DockerNode1
@@ -141,19 +141,19 @@ Successfully registered instance with DAS, now attempting to create Docker conta
 Command create-instance executed successfully.
 ```
 
-When you invoke these commands, a Docker container of the name DockerInstance1 will be created. If a Docker container of the same name already exists, the create-instance command will fail, and Payara Server will attempt to unregister the instance from the DAS.
+When you invoke these commands, a Docker container of the name DockerInstance1 will be created. If a Docker container of the same name already exists, the create-instance command will fail, and MWARE AS will attempt to unregister the instance from the DAS.
 
 **From Docker**
 
-Payara Server supports creating instances from Docker itself, making use of the [auto-naming](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Server%20Configuration%20And%20Management/Asadmin%20Commands/Auto%20Naming.html) feature to resolve any conflicts.
+MWARE AS supports creating instances from Docker itself, making use of the auto-naming feature to resolve any conflicts.
 
 The `docker container create` command creates a Payara Docker container without any contact with the DAS. This is also the reason why Docker container has different name than the server instance - they have different contexts and it is not possible to avoid naming conflicts, only to minimize them.
 
-You can also specify an existing Docker node name in `PAYARA_NODE_NAME` property (and ideally also `DOCKER_CONTAINER_IP`) and/or [Deployment Group](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Deployment%20Groups/Overview.html) in `PAYARA_DEPLOYMENT_GROUP` property, then the Docker instance will be created as if it would be created from the DAS, except the fact that the DAS will be informed about that later with the first startup of the new Docker container.
+You can also specify an existing Docker node name in `PAYARA_NODE_NAME` property (and ideally also `DOCKER_CONTAINER_IP`) and/or Deployment Group in `PAYARA_DEPLOYMENT_GROUP` property, then the Docker instance will be created as if it would be created from the DAS, except the fact that the DAS will be informed about that later with the first startup of the new Docker container.
 
 If the property was not specified or the node does not exist, a temporary Docker node and instance will be created on the DAS. The temporary Docker node is bound to the instance, so when you delete the instance, the temporary Docker node will be deleted too. This type of node is also not listed in the DAS or offered in inputs and cannot be edited.
 
-If the instance running on a temporary Docker node is stopped from the DAS, it is immediately unregistered from the DAS. The next start of the same Docker container creates new a Payara Server Instance and a new temporary Docker node again despite the fact that it uses the same Docker container.
+If the instance running on a temporary Docker node is stopped from the DAS, it is immediately unregistered from the DAS. The next start of the same Docker container creates new a MWARE AS Instance and a new temporary Docker node again despite the fact that it uses the same Docker container.
 
 If the Docker containers are stopped externally to Payara (i.e. by the `docker` command), the node and instance will be marked for deletion and cleaned up on shutdown of the DAS.
 
@@ -171,7 +171,7 @@ Hostname is 192.168.1.103
 Docker Container IP is: 192.168.1.103
 No Instance name given.
 No node name given.
-WARNING: Could not find a matching Docker Node: Creating a temporary node specific to this container - cleanup of this container cannot be done by Payara Server
+WARNING: Could not find a matching Docker Node: Creating a temporary node specific to this container - cleanup of this container cannot be done by MWARE AS
 Creating a temporary node with an autogenerated name.
 ./payara6/bin/asadmin -I false -T -a -H payaraDas -p 4848 -W /pathInDocker/passwordfile.txt _create-node-temp --nodehost 192.168.1.103
 Running command create-local-instance:
@@ -207,7 +207,7 @@ Configuration of the Docker containers is done via system properties in an insta
 
 A complete list of the available configuration options can be found in the Docker Engine REST API here: [https://docs.docker.com/engine/api/v1.39/#operation/ContainerCreate](https://docs.docker.com/engine/api/v1.39/#operation/ContainerCreate)
 
-The configuration within Payara Server of the settings denoted in the above link takes the form of dotted names. These names adhere to the following syntax:
+The configuration within MWARE AS of the settings denoted in the above link takes the form of dotted names. These names adhere to the following syntax:
 
 * Each property is prepended with "Docker"
 * Each child object is specified individually, with all of its parents prepended to it
@@ -216,7 +216,7 @@ The configuration within Payara Server of the settings denoted in the above link
 * The colon character is used to denote the value of an object within an array
 * Objects within an array are separated using a comma
 
-Properties that are denoted by arrays of objects containing further objects or arrays are not currently supported. The Env property is unique in that the colon character is used to denote the equals sign, as Payara Server does not currently support properties that contain an equals in their value.
+Properties that are denoted by arrays of objects containing further objects or arrays are not currently supported. The Env property is unique in that the colon character is used to denote the equals sign, as MWARE AS does not currently support properties that contain an equals in their value.
 
 See below for some examples:
 

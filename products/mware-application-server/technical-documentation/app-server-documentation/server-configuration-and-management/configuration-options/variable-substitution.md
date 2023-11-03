@@ -13,7 +13,7 @@ ${java.home}
 Values of system properties can be specified by:
 
 * the JVM (standard JVM properties like `java.home`)
-* Payara Server (a set of predefined variables, such as `com.sun.aas.instanceRoot`)
+* MWARE AS (a set of predefined variables, such as `com.sun.aas.instanceRoot`)
 * the `create-system-properties` asadmin command (or in the Admin console `System properties` section)
 * a JVM option prefixed with `-D`
 
@@ -134,9 +134,6 @@ handlerServices=${ENV=SYS-LOG-HANDLER}
 ```
 
 #### Within a `payara-expression-config.properties` file
-
-|   | The `payara-expression-config.properties` config source is only available in Payara Server |
-| - | ------------------------------------------------------------------------------------------ |
 
 ```properties
 fish.payara.example.system=${java.home}

@@ -8,7 +8,7 @@ The _autoname_ option is enabled either by specifying `--autoname` or `-a` on th
 
 When enabled, this feature allows commands that accept `String` names as their primary parameter (the parameter that you don’t have to specify, e.g. the `instancename` parameter for the `create-instance` command) to generate a name. To automatically generate a name for your instances or resources, simply enable the _autoname_ option and omit providing a name.
 
-Specifically for the `create-instance` and `create-local-instance` commands, the _autoname_ option can also be used to automatically resolve any name conflicts. When resolving a name conflict, Payara Server will simply append a new name to the existing name, like so: `instance1-BamboozledBarracuda`.
+Specifically for the `create-instance` and `create-local-instance` commands, the _autoname_ option can also be used to automatically resolve any name conflicts. When resolving a name conflict, MWARE AS will simply append a new name to the existing name, like so: `instance1-BamboozledBarracuda`.
 
 When creating an instance from the admin console, there is a new **Auto Name** checkbox present, which performs the same conflict resolution function as the _autoname_ CLI option.
 

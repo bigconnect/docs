@@ -4,9 +4,9 @@ description: Server Deployment Descriptor Files
 
 # Deployment Descriptors
 
-By default, the Payara Platform allows the use of standard GlassFish Server deployment descriptor files to configure application behaviour.
+By default, the MWARE AS allows the use of standard GlassFish Server deployment descriptor files to configure application behaviour.
 
-### Payara Platform Deployment Descriptors
+### MWARE AS Deployment Descriptors
 
 The `payara-web.xml` deployment descriptor can be used instead of `glassfish-web.xml`. The top level element for the `payara-web.xml` file must be _`payara-web-app`_ and the schema is referenced by the following declaration:
 
@@ -24,7 +24,7 @@ See the [schema reference](https://docs.payara.fish/community/docs/Appendix/Sche
 
 ### Allowed configuration elements
 
-The following elements are supported in Payara Server on top of elements supported by GlassFish:
+The following elements are supported in MWARE AS on top of elements supported by GlassFish:
 
 ### _glassfish-application.xml_
 
