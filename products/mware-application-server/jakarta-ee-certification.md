@@ -1,2 +1,0 @@
-# Jakarta EE Certification
-

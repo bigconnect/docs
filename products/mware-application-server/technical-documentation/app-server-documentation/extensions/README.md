@@ -1,0 +1,25 @@
+# Extensions
+
+Payara Server Community Edition allows plugin extensions to expand the features of the server’s runtime. This is a way of keeping the Community Edition more compact, and allowing these extensions to be developed and released quickly without being forced into the Community release cycle. This also makes it much easier to extend the server functionality and provide additional features.
+
+Currently, the following extensions are provided:
+
+Notifier Extensions
+
+The notifier extensions allow notifications from the Notification Service to propagate to various channels on top of the notifiers provided by default.
+
+AutoScale Extensions
+
+The AutoScale extensions provide the means for users to scale Payara Server instances up and down across different environments.
+
+gRPC Support
+
+The gRPC Support module allows web applications to define gRPC services which can be consumed by client applications.
+
+Deployment Transformer Extension
+
+The Deployment Transformer extension integrates the Eclipse Jakarta EE namespace transformer into Payara Server, allowing a user to have their Jakarta EE 8 applications transformed on the fly into the Jakarta EE 10 namespace.
+
+###
+
+\
