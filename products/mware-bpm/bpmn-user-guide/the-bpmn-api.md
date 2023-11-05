@@ -2,7 +2,7 @@
 
 ### The Process Engine API and services
 
-The engine API is the most common way of interacting with Flowable. The main starting point is the ProcessEngine, which can be created in several ways as described in the [configuration section](https://www.flowable.com/open-source/docs/bpmn/ch03-Configuration#creating-a-processengine). From the ProcessEngine, you can obtain the various services that contain the workflow/BPM methods. ProcessEngine and the services objects are thread safe, so you can keep a reference to one of those for a whole server.
+The engine API is the most common way of interacting with Flowable. The main starting point is the ProcessEngine, which can be created in several ways as described in the configuration section. From the ProcessEngine, you can obtain the various services that contain the workflow/BPM methods. ProcessEngine and the services objects are thread safe, so you can keep a reference to one of those for a whole server.
 
 ![api.services](https://www.flowable.com/open-source/docs/assets/bpmn/api.services.png)
 
@@ -140,7 +140,7 @@ Object getVariable(String executionId, String variableName);
 <T> T getVariable(String executionId, String variableName, Class<T> variableClass);
 ```
 
-Variables are often used in [Java delegates](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#java-service-task), [expressions](https://www.flowable.com/open-source/docs/bpmn/ch04-API#expressions), execution- or tasklisteners, scripts, and so on. In those constructs, the current _execution_ or _task_ object is available and it can be used for variable setting and/or retrieval. The simplest methods are these:
+Variables are often used in Java delegates, expressions, execution- or tasklisteners, scripts, and so on. In those constructs, the current _execution_ or _task_ object is available and it can be used for variable setting and/or retrieval. The simplest methods are these:
 
 ```
 execution.getVariables();
@@ -250,7 +250,7 @@ The condition on the sequence flow leaving the exclusive gateway are oblivious t
 
 Flowable uses UEL for expression-resolving. UEL stands for _Unified Expression Language_ and is part of the EE6 specification (see [the EE6 specification](http://docs.oracle.com/javaee/6/tutorial/doc/gjddd.html) for detailed information).
 
-Expressions can be used in, for example, [Java Service tasks](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#xml-representation), [Execution Listeners](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#execution-listener), [Task Listeners](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#task-listener) and [Conditional sequence flows](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#xml-representation). Although there are two types of expressions, value-expression and method-expression, Flowable abstracts this so they can both be used where an expression is expected.
+Expressions can be used in, for example, Java Service tasks, Execution Listeners, Task Listeners and Conditional sequence flows. Although there are two types of expressions, value-expression and method-expression, Flowable abstracts this so they can both be used where an expression is expected.
 
 * **Value expression**: resolves to a value. By default, all process variables are available to use. Also, all spring-beans (if using Spring) are available to use in expressions. Some examples:
 
@@ -276,7 +276,7 @@ On top of all process variables, there are a few default objects available that 
 * authenticatedUserId: The id of the user that is currently authenticated. If no user is authenticated, the variable is not available.
 * variableContainer: The VariableContainer for which the expression is being resolved for.
 
-For more concrete usage and examples, check out [Expressions in Spring](https://www.flowable.com/open-source/docs/bpmn/ch05-Spring#expressions), [Java Service tasks](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#xml-representation), [Execution Listeners](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#execution-listener), [Task Listeners](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#task-listener) or [Conditional sequence flows](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#xml-representation).
+For more concrete usage and examples, check out Expressions in Spring, Java Service tasks, Execution Listeners, Task Listeners or Conditional sequence flows.
 
 ### Expression functions <a href="#expression-functions" id="expression-functions"></a>
 
@@ -504,6 +504,6 @@ or
 ProcessEngines.getProcessEngine("myName");
 ```
 
-Of course, it is also possible to use any of the variants of creating a process engine, as described in the [configuration section](https://www.flowable.com/open-source/docs/bpmn/ch03-Configuration#creating-a-processengine).
+Of course, it is also possible to use any of the variants of creating a process engine, as described in the configuration section.
 
 The contextDestroyed method of the context-listener delegates to ProcessEngines.destroy(). That will properly close all initialized process engines.

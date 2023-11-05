@@ -40,7 +40,7 @@ When you are using the demo setup and you want to add your custom classes, you s
 
 #### Using Spring beans from a process <a href="#using-spring-beans-from-a-process" id="using-spring-beans-from-a-process"></a>
 
-When expressions or scripts use Spring beans, those beans have to be available to the engine when executing the process definition. If you are building your own webapp and you configure your process engine in your context as described in [the spring integration section](https://www.flowable.com/open-source/docs/bpmn/ch05-Spring#spring-integration), that is straightforward. But bear in mind that you also should update the Flowable task and rest webapps with that context if you use it.
+When expressions or scripts use Spring beans, those beans have to be available to the engine when executing the process definition. If you are building your own webapp and you configure your process engine in your context as described in the spring integration section, that is straightforward. But bear in mind that you also should update the Flowable task and rest webapps with that context if you use it.
 
 #### Creating a single app <a href="#creating-a-single-app" id="creating-a-single-app"></a>
 
@@ -131,11 +131,9 @@ InputStream imageStream = repositoryService.getResourceAsStream(
 
 ### Generating a process diagram <a href="#generating-a-process-diagram" id="generating-a-process-diagram"></a>
 
-If no image is provided in the deployment, as described in the [previous section](https://www.flowable.com/open-source/docs/bpmn/ch06-Deployment#providing-a-process-diagram), the Flowable engine will generate a process diagram image if the process definition contains the necessary 'diagram interchange' information.
+If no image is provided in the deployment, as described in the previous section, the BPM engine will generate a process diagram image if the process definition contains the necessary 'diagram interchange' information.
 
-The resource can be retrieved in exactly the same way as when [an image is provided](https://www.flowable.com/open-source/docs/bpmn/ch06-Deployment#providing-a-process-diagram) in the deployment.
-
-![deployment.image.generation](https://www.flowable.com/open-source/docs/assets/bpmn/deployment.image.generation.png)
+The resource can be retrieved in exactly the same way as when an image is provided in the deployment.
 
 If, for some reason, it’s not necessary or desirable to generate a diagram during deployment, the isCreateDiagramOnDeploy property can be set on the process engine configuration:
 

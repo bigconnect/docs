@@ -66,20 +66,20 @@ The use case is straightforward: we have a company, let’s call it BPMCorp. In 
 
 #### Process diagram <a href="#process-diagram" id="process-diagram"></a>
 
-The business process as described above can be defined graphically using the [Flowable Designer](https://www.flowable.com/open-source/docs/bpmn/bpmn/ch13-Designer.md#eclipse-designer). However, for this tutorial, we’ll type the XML ourselves, as we’ll learn the most this way at this stage. The graphical BPMN 2.0 notation of our process looks like this:
+The business process as described above can be defined graphically using the BPM Designer. However, for this tutorial, we’ll type the XML ourselves, as we’ll learn the most this way at this stage. The graphical BPMN 2.0 notation of our process looks like this:
 
 ![financial.report.example.diagram](https://www.flowable.com/open-source/docs/assets/bpmn/financial.report.example.diagram.png)
 
-What we see is a [none Start Event](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#None-start-event) (circle on the left), followed by two [User Tasks](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#user-task): _'Write monthly financial report'_ and _'Verify monthly financial report'_, ending in a [none end event](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#None-end-event) (circle with thick border on the right).
+What we see is a none Start Event (circle on the left), followed by two User Tasks: _'Write monthly financial report'_ and _'Verify monthly financial report'_, ending in a none end event (circle with thick border on the right).
 
 #### XML representation <a href="#xml-representation" id="xml-representation"></a>
 
 The XML version of this business process (_FinancialReportProcess.bpmn20.xml_) looks like that shown below. It’s easy to recognize the main elements of our process (click on the link to go to the detailed section of that BPMN 2.0 construct):
 
-* The [(none) start event](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#None-start-event) tells us what the _entry point_ is to the process.
-* The [User Tasks](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#user-task) declarations are the representation of the human tasks of our process. Note that the first task is assigned to the _accountancy_ group, while the second task is assigned to the _management_ group. See [the section on user task assignment](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#user-assignment) for more information on how users and groups can be assigned to user tasks.
-* The process ends when the [none end event](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#None-end-event) is reached.
-* The elements are connected to each other by [sequence flows](https://www.flowable.com/open-source/docs/bpmn/ch07b-BPMN-Constructs#sequence-flow). These sequence flows have a source and target, defining the _direction_ of the sequence flow.
+* The (none) start event tells us what the _entry point_ is to the process.
+* The User Tasks declarations are the representation of the human tasks of our process. Note that the first task is assigned to the _accountancy_ group, while the second task is assigned to the _management_ group. See the section on user task assignment for more information on how users and groups can be assigned to user tasks.
+* The process ends when the none end event is reached.
+* The elements are connected to each other by sequence flows. These sequence flows have a source and target, defining the _direction_ of the sequence flow.
 
 ```
 <definitions id="definitions"
@@ -136,7 +136,7 @@ To be able to create process instances from a given process definition, we must 
 * The process definition will be stored in the persistent datastore that is configured for your Flowable engine. So by deploying our business process, we make sure that the engine will find the process definition after an engine restart.
 * The BPMN 2.0 process XML will be parsed to an in-memory object model that can be manipulated through the Flowable API.
 
-More information on deployment can be found [in the dedicated section on deployment](https://www.flowable.com/open-source/docs/bpmn/ch06-Deployment#deployment).
+More information on deployment can be found in the dedicated section on deployment.
 
 As described in that section, deployment can happen in several ways. One way is through the API as follows. Note that all interaction with the Flowable engine happens through its _services_.
 
@@ -158,7 +158,7 @@ After the task is created, the startProcessInstanceByKey method will return beca
 
 We can now throw this all together and create a simple Java program. Create a new Eclipse project and add the Flowable JARs and dependencies to its classpath (these can be found in the _libs_ folder of the Flowable distribution). Before we can call the Flowable services, we must first construct a ProcessEngine that gives us access to the services. Here we use the _'standalone'_ configuration, which constructs a ProcessEngine that uses the database also used in the demo setup.
 
-You can download the process definition XML [here](https://www.flowable.com/open-source/docs/assets/bpmn/FinancialReportProcess.bpmn20.xml). This file contains the XML shown above, but also contains the necessary BPMN [diagram interchange information](https://www.flowable.com/open-source/docs/bpmn/ch06-Deployment#generating-a-process-diagram) to visualize the process in the Flowable tools.
+This file contains the XML shown above, but also contains the necessary BPMN diagram interchange information to visualize the process in the Flowable tools.
 
 ```
 public static void main(String[] args) {
@@ -207,7 +207,7 @@ TaskService taskService = processEngine.getTaskService();
 List<Task> tasks = taskService.createTaskQuery().taskCandidateGroup("accountancy").list();
 ```
 
-As we’ve configured our ProcessEngine to use the same database that the demo setup is using, we can now log into the [Flowable IDM](http://localhost:8080/flowable-idm/). Login as admin/test and create 2 new users _kermit_ and _fozzie_, and give both of them the _Access the workflow application_ privilege. Then create 2 new organization groups named _accountancy_ and _management_, and add fozzie to the new accountancy group and add kermit to the management group. Now login with fozzie to the [Flowable task](http://localhost:8080/flowable-task/) application, and we will find that we can start our business process by selecting the Task App, then its _Processes_ page and selecting the _'Monthly financial report'_ process.
+As we’ve configured our ProcessEngine to use the same database that the demo setup is using, we can now log into the BPM IDM. Login as admin/test and create 2 new users _kermit_ and _fozzie_, and give both of them the _Access the workflow application_ privilege. Then create 2 new organization groups named _accountancy_ and _management_, and add fozzie to the new accountancy group and add kermit to the management group. Now login with fozzie to the task application, and we will find that we can start our business process by selecting the Task App, then its _Processes_ page and selecting the _'Monthly financial report'_ process.
 
 ![bpmn.financial.report.example.start.process](https://www.flowable.com/open-source/docs/assets/bpmn/bpmn.financial.report.example.start.process.png)
 

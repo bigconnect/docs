@@ -1,8 +1,8 @@
 # Identity management
 
-Starting from Flowable V6, the identity management (IDM) component has been extracted from the flowable-engine module and the logic moved to several separate modules: flowable-idm-api, flowable-idm-engine, flowable-idm-spring and flowable-idm-engine-configurator. The main reason for separating the IDM logic was that it’s not core to the Flowable engine and in a lot of cases when the Flowable engine is embedded in an application, the identity logic is not used or needed.
+The identity management (IDM) component has been extracted from the main engine module and the logic moved to several separate modules: idm-api, idm-engine, idm-spring and idm-engine-configurator. The main reason for separating the IDM logic was that it’s not core to the BPM engine and in a lot of cases when the BPM engine is embedded in an application, the identity logic is not used or needed.
 
-By default, the IDM engine is initialized and started when the Flowable engine is started. This results in the same identity logic being executed and available in Flowable v5. The idm-engine manages its own database schema and the following entities:
+By default, the IDM engine is initialized and started when the the BPM engine is started. The idm-engine manages its own database schema and the following entities:
 
 * User and UserEntity, the user information.
 * Group and GroupEntity, the group information.
@@ -15,9 +15,9 @@ Since the DB contains historic entities for past as well as ongoing instances, y
 
 ### IDM engine configuration <a href="#idm-engine-configuration" id="idm-engine-configuration"></a>
 
-By default the Flowable engine is started with the org.flowable.idm.engine.configurator.IdmEngineConfigurator. This configurator uses the same datasource configuration as the Flowable process engine configuration. No additional configuration is needed to use the identity component as it was configured in Flowable v5.
+By default the BPM engine is started with the org.flowable.idm.engine.configurator.IdmEngineConfigurator. This configurator uses the same datasource configuration as the BPM process engine configuration.&#x20;
 
-When no identity logic is needed in the Flowable engine the IDM engine can be disabled in the process engine configuration.
+When no identity logic is needed in the BPM engine the IDM engine can be disabled in the process engine configuration.
 
 ```
 <bean id="processEngineConfiguration" class="org.flowable.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">

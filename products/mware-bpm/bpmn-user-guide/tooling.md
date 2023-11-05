@@ -4,7 +4,7 @@
 
 #### Introduction <a href="#introduction" id="introduction"></a>
 
-It is possible to connect to Flowable engine using standard Java Management Extensions (JMX) technology in order to get information or to change its behavior. Any standard JMX client can be used for that purpose. Enabling and disabling Job Executor, deploy new process definition files and deleting them are just samples of what could be done using JMX without writing a single line of code.
+It is possible to connect to BPM engine using standard Java Management Extensions (JMX) technology in order to get information or to change its behavior. Any standard JMX client can be used for that purpose. Enabling and disabling Job Executor, deploy new process definition files and deleting them are just samples of what could be done using JMX without writing a single line of code.
 
 #### Quick Start <a href="#quick-start" id="quick-start"></a>
 

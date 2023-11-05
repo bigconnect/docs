@@ -1,6 +1,6 @@
 # Applications
 
-MWARE BPM provides the `flowable-rest.war` which contains the Flowable REST API. More about this can be read in the [REST API](https://www.flowable.com/open-source/docs/bpmn/ch14-REST) chapter.
+MWARE BPM provides several user-facing applications for the visual design of BPMN, CMMN, DMN and Forms elements. It also provides the `flowable-rest.war` which contains the Flowable REST API. More about this can be read in the REST API chapter.
 
 The application is a Spring Boot 3.1 based application, which means that the WAR file is actually executable and can be run as a normal standalone application. See [The Executable Jar Format](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html#build-tool-plugins-maven-packaging) in the Spring Boot reference documentation.
 
@@ -9,16 +9,16 @@ The application is a Spring Boot 3.1 based application, which means that the WAR
 As mentioned before, the application can be deployed on a Tomcat server, and to get started this is probably the easiest approach when additional configuration settings are used. For this installation guide we’ll describe the installation of the application in a Tomcat server.
 
 1. Download a recent stable version of [Apache Tomcat](http://tomcat.apache.org/). It has to be Jakarta Servlet 6 compliant (Tomcat 10 or later)
-2. Download the latest stable [Flowable 7 version](http://www.flowable.org/downloads.html).
+2. Get the latest stable MWARE BPM version.
 3. Copy the flowable-rest.war file from the Flowable distribution _wars_ folder to the Tomcat webapps folder.
 4. Startup the Tomcat server by running the bin/startup.sh (Mac OS and Linux) or bin/startup.bat (Windows) script.
-5. Open a web browser and go to [http://localhost:8080/flowable-rest/docs](http://localhost:8080/flowable-rest/docs).
+5. Open a web browser and go to http://localhost:8080/flowable-rest/docs.
 
 The Flowable REST application should now be running with an H2 in-memory database and the Swagger Docs should be shown in your web browser:
 
 The Flowable REST application should now be running with an H2 in-memory database
 
-Usually, you will want to change the default H2 in-memory database configuration to a MySQL or Postgres (or other persistent database) configuration. You can do this by changing the application.properties file in the _WEB-INF/classes/_ directory of the application. However, it is easier to use the Spring Boot [Externalized Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html). An example configuration can be found on [Github](https://github.com/flowable/flowable-engine/blob/main/modules/flowable-app-rest/src/main/resources/flowable-default.properties) To change the default configuration to MySQL the following changes are needed to the properties file:
+Usually, you will want to change the default H2 in-memory database configuration to a MySQL or Postgres (or other persistent database) configuration. You can do this by changing the application.properties file in the _WEB-INF/classes/_ directory of the application. However, it is easier to use the Spring Boot [Externalized Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html). To change the default configuration to MySQL the following changes are needed to the properties file:
 
 ```
 spring.datasource.url=jdbc:mysql://127.0.0.1:3306/flowable?characterEncoding=UTF-8
@@ -226,4 +226,4 @@ When including the jar in the `WEB-INF/lib` folder of the exploded war then `@Co
 
 #### Creating your own Spring Boot application <a href="#creating-your-own-spring-boot-application" id="creating-your-own-spring-boot-application"></a>
 
-This approach is the most flexible and most powerful approach of all. In order to follow this approach have a look at the [Getting Started with Spring Boot](https://www.flowable.com/open-source/docs/bpmn/ch05a-Spring-Boot#getting-started) section of this documentation.
+This approach is the most flexible and most powerful approach of all. In order to follow this approach have a look at the Getting Started with Spring Boot section of this documentation.

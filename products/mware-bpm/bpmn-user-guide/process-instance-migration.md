@@ -1,10 +1,10 @@
 # Process Instance Migration
 
-When process definitions are updated with new versions, the question arises what should be done with already running process instances that are using older versions of the process definition. In case running process instances should be migrated to another process definition version, you can use the process instance migration features on the Flowable Engine.
+When process definitions are updated with new versions, the question arises what should be done with already running process instances that are using older versions of the process definition. In case running process instances should be migrated to another process definition version, you can use the process instance migration features on the BPM engine.
 
 ### Simple example <a href="#simple-example" id="simple-example"></a>
 
-Let’s start with a simple example to explain the basics of process instance migration in the Flowable Engine. In this simple example we use the following use case:
+Let’s start with a simple example to explain the basics of process instance migration in the BPM Engine. In this simple example we use the following use case:
 
 * There’s one process instance running with a process definition that has a key named simpleTasks and it consists of a start event - user task 1 - end event.
 * The running process instance has an active state of user task 1.
