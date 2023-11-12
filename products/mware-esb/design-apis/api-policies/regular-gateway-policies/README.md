@@ -1,2 +1,0 @@
-# Regular Gateway Policies
-
