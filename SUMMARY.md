@@ -323,6 +323,7 @@
   * [Applications](products/mware-bpm/applications/README.md)
     * [BPM Designer](products/mware-bpm/applications/bpm-designer/README.md)
       * [App Editor](products/mware-bpm/applications/bpm-designer/app-editor.md)
+      * [Process Editor](products/mware-bpm/applications/bpm-designer/process-editor.md)
 * [MWARE ESB](products/mware-esb.md)
 * [MWARE Identity & Access Management](products/mware-iam.md)
 * [MWARE Application Server](products/mware-application-server/README.md)
