@@ -1,8 +1,8 @@
 # Applications
 
-MWARE BPM provides several user-facing applications for the visual design of BPMN, CMMN, DMN and Forms elements. It also provides the `flowable-rest.war` which contains the Flowable REST API. More about this can be read in the REST API chapter.
+MWARE BPM provides several user-facing applications for the visual design of BPMN, CMMN, DMN and Forms elements.
 
-The application is a Spring Boot 3.1 based application, which means that the WAR file is actually executable and can be run as a normal standalone application. See [The Executable Jar Format](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html#build-tool-plugins-maven-packaging) in the Spring Boot reference documentation.
+The application is a Spring Boot based application, which means that the WAR file is actually executable and can be run as a normal standalone application. See [The Executable Jar Format](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html#build-tool-plugins-maven-packaging) in the Spring Boot reference documentation.
 
 ### REST application installation <a href="#flowable-rest-application-installation" id="flowable-rest-application-installation"></a>
 
