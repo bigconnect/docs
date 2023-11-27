@@ -10,7 +10,7 @@ Fresh out of the box, BigConnect Answers will show you a few things on the home 
 
 * Some automatic explorations of your tables that you can look at and save as dashboard.
 * A navigation sidebar that lists:
-  * **Home** button to return to your Metabase home page.
+  * **Home** button to return to your Answers home page.
   * **Collections**, where you’ll store all of your questions, dashboards, and models. You have your own personal collection to store drafts and experiments that aren’t yet ready to share.
   * **Data** section, which lists all of the data sources your Metabase is connected to.
   * **Settings** (the **gear** icon at the bottom of the navigation sidebar).
