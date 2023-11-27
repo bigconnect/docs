@@ -291,6 +291,7 @@
     * [Case Editor](products/mware-bpm/bpm-designer/case-editor.md)
     * [Decision Editor](products/mware-bpm/bpm-designer/decision-editor.md)
     * [Form Editor](products/mware-bpm/bpm-designer/form-editor.md)
+    * [Editing Other Models](products/mware-bpm/bpm-designer/editing-other-models.md)
   * [BPMN Developer Guide](products/mware-bpm/bpmn-developer-guide/README.md)
     * [Configuration](products/mware-bpm/bpmn-developer-guide/configuration.md)
     * [The BPMN API](products/mware-bpm/bpmn-developer-guide/the-bpmn-api.md)
