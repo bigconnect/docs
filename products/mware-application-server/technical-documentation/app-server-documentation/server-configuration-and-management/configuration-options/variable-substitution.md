@@ -28,7 +28,7 @@ ${ENV=HOME}
 ${ENV=MAYBE_AVAILABLE:default}
 ```
 
-Environment variables need to be specified in the environment before a Payara instance is started. By adding a colon after the variable name, you may append a default value if the variable has not been set.
+Environment variables need to be specified in the environment before a MWARE AS instance is started. By adding a colon after the variable name, you may append a default value if the variable has not been set.
 
 ### References to password aliases
 
@@ -51,7 +51,7 @@ ${MPCONFIG=foo}
 ${MPCONFIG=bar:default}
 ```
 
-MicroProfile properties need to be declared in one of the Payara defined [config sources](https://docs.payara.fish/community/docs/Technical%20Documentation/MicroProfile/Config/Overview.html#config-sources). By adding a colon after the property name, you may append a default value if the property has not been set.
+MicroProfile properties need to be declared in one of the MWARE AS defined config sources. By adding a colon after the property name, you may append a default value if the property has not been set.
 
 ## Using variable references
 

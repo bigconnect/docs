@@ -8,7 +8,7 @@ JACC stands for **Java Authentication Contract for Containers**. It’s defined 
 
 Having coded a JACC provider, the first thing to do it is to make these classes available for the server. For that purpose, you need to put the implementation JAR, with all its dependencies, under the `{PAYARA_HOME}/lib` folder.
 
-The next thing to do is to tell Payara you want to use the custom JACC provider. To do this, you have to execute the following administration command:
+The next thing to do is to tell MWARE AS you want to use the custom JACC provider. To do this, you have to execute the following administration command:
 
 ```shell
 create-jacc-provider --policyConfigurationFactoryProvider=com.example.CustomPolicyConfigurationFactory --policyProvider=com.example.CustomPolicy --target=server-config custom-provider set configs.config.server-config.security-service.jacc=custom-provider

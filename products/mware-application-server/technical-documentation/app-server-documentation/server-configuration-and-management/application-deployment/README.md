@@ -1,12 +1,12 @@
 # Application Deployment
 
-Applications can be deployed to Payara Server in the same way as _GlassFish Server 4.1 Open Source Edition_. Payara Server does not modify this process but does add some new features.
+Applications can be deployed to MWARE AS in the same way as _GlassFish Server 4.1 Open Source Edition_. MWARE AS does not modify this process but does add some new features.
 
 ### Deploying on Server Start
 
-GlassFish has had the ability to deploy applications on server start for a long time now, using the _autodeploy_ directory. While acceptable in development environments, the scanner used to deploy files in this directory is a security risk for production and is therefore disabled in the `production` domain bundled with Payara Server.
+GlassFish has had the ability to deploy applications on server start for a long time now, using the _autodeploy_ directory. While acceptable in development environments, the scanner used to deploy files in this directory is a security risk for production and is therefore disabled in the `production` domain bundled with MWARE AS.
 
-To reintroduce the capability of deploying an application on server startup without the risk of enabling the deployment scanner, a feature from Payara Micro was introduced: the ability to run asadmin commands at startup, either pre or post boot.
+To reintroduce the capability of deploying an application on server startup without the risk of enabling the deployment scanner, a feature from MWARE AS Micro was introduced: the ability to run asadmin commands at startup, either pre or post boot.
 
 To enable this feature, we have extended the `start-domain` feature to accept two extra options: `--prebootcommandfile` and `--postbootcommandfile` which can be used as follows:
 
@@ -33,7 +33,7 @@ There are some important caveats to note:
 * Lines where the first non-whitespace character is # are treated as comments
 * Any blank lines will be ignored
 * Any invalid or failing commands will be logged to the server.log and the file will continue to be processed
-* The files _**must**_ exist, and be accessible from Payara Server.
+* The files _**must**_ exist, and be accessible from MWARE AS.
 * Both pre-boot and post-boot files can be passed at the same time.
 {% endhint %}
 
@@ -43,7 +43,7 @@ To deploy via the Asadmin CLI once the server has already started, use the 'depl
 
 **Usage**: `asadmin> deploy /path/to/file` All of the glassfish deploy options apply.
 
-**Payara Specific Options**
+**MWARE AS Specific Options**
 
 `--skipdsfailure`: This option will skip over a data source failure. This means an application can be deployed with a data source set up, but the database need not be running at the time. Without this option the deployment would fail if a data source is defined and the database is not available.
 
@@ -51,7 +51,7 @@ To deploy via the Asadmin CLI once the server has already started, use the 'depl
 
 ### Deploying from a URL
 
-Payara Embedded has the ability to deploy applications from a URL for a while, and this feature has now been brought into Payara Server. To facilitate this new feature, a new asadmin command was created: `deploy-remote-archive`. This command takes all of the same parameters as the standard deploy command, and is used in exactly the same way - the only difference is in the command name, and the fact you specify a URL instead of a file.
+MWARE AS Embedded has the ability to deploy applications from a URL for a while, and this feature has now been brought into MWARE AS. To facilitate this new feature, a new asadmin command was created: `deploy-remote-archive`. This command takes all of the same parameters as the standard deploy command, and is used in exactly the same way - the only difference is in the command name, and the fact you specify a URL instead of a file.
 
 **Usage**: `asadmin> deploy-remote-archive`` `_`url`_
 
@@ -63,7 +63,7 @@ The command will only accept HTTP and HTTPS URLs.
 
 ### Deploying from a Maven Repository.
 
-The feature of Payara Micro to deploy applications from a Maven Repository using their Group, Artefact, Version (GAV) coordinates has also been brought into Payara Server. This functionality uses the same command as when deploying from a URL: `deploy-remote-archive`. This command takes all of the same parameters as the standard deploy command, but has an extra parameter:
+The feature of MWARE AS Micro to deploy applications from a Maven Repository using their Group, Artefact, Version (GAV) coordinates has also been brought into MWARE AS. This functionality uses the same command as when deploying from a URL: `deploy-remote-archive`. This command takes all of the same parameters as the standard deploy command, but has an extra parameter:
 
 * `additionalRepositories` - This parameter accepts a comma separated list of repository URLs, that will be probed when searching for an artefact. By default, the command will only look in Maven Central.
 
@@ -85,6 +85,6 @@ Although the command accepts Maven GAV coordinates, it does not actually make us
 
 ### Overwriting the Application Name
 
-When deploying an application or a module on Payara Server from an IDE (like **NetBeans** or **IntelliJ**), the IDE deploys to Payara Server using the asadmin deploy command, with the --name option specified. This will force the application or module to have the specified name over the name defined in deployment descriptor. This is undesired because the IDE usually infers the application or module name from the name of the project or the package file and doesn’t take the correct name of the application or module into account.
+When deploying an application or a module on MWARE AS from an IDE (like **NetBeans** or **IntelliJ**), the IDE deploys to MWARE AS using the asadmin deploy command, with the --name option specified. This will force the application or module to have the specified name over the name defined in deployment descriptor. This is undesired because the IDE usually infers the application or module name from the name of the project or the package file and doesn’t take the correct name of the application or module into account.
 
 To solve the issue, application or module name defined in the deployment descriptor will **always** take precedence over the `--name` option. But you use the `--name` and `--forcename` options to override this behaviour.

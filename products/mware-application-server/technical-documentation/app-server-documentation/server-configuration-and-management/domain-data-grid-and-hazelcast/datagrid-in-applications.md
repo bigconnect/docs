@@ -48,14 +48,18 @@ To set up Hazelcast for persistence:
 
 1.  Open the "Web Container Availability" tab, and select "Hazelcast" from the Persistence Type drop-down menu:
 
-    ![Web Persistence](https://docs.payara.fish/community/docs/\_images/hazelcast/hazelcast-admin-console-availability-enable-web-persistence.png)
+
+
+    <figure><img src="https://docs.payara.fish/community/docs/_images/hazelcast/hazelcast-admin-console-availability-enable-web-persistence.png" alt=""><figcaption></figcaption></figure>
 2. Save the changes.
 
 **Setting EJB Persistence**
 
 1.  Open the "EJB Container Availability" tab and select "Hazelcast" from the Persistence Type drop-down menu:
 
-    ![EJB Persistence](https://docs.payara.fish/community/docs/\_images/hazelcast/hazelcast-admin-console-availability-enable-ejb-persistence.png)
+
+
+    <figure><img src="https://docs.payara.fish/community/docs/_images/hazelcast/hazelcast-admin-console-availability-enable-ejb-persistence.png" alt=""><figcaption></figcaption></figure>
 2. Save the changes.
 
 #### Setting Hazelcast as the Persistence provider using Asadmin

@@ -101,8 +101,9 @@ set configs.config.server-config.network-config.protocols.protocol.${protocol-na
 
 The timeout, in seconds, for requests.
 
-|   | To disable this timeout, set the value to `-1` |
-| - | ---------------------------------------------- |
+{% hint style="info" %}
+To disable this timeout, set the value to `-1`
+{% endhint %}
 
 **Asadmin Command:**
 
@@ -418,8 +419,9 @@ The following HTTPv2 specific settings can be configured:
 
 Whether to enable HTTP/2 support.
 
-|   | HTTP/2 support can only be enabled on a secure network listener |
-| - | --------------------------------------------------------------- |
+{% hint style="info" %}
+HTTP/2 support can only be enabled on a secure network listener
+{% endhint %}
 
 **Asadmin Command:**
 
@@ -491,8 +493,9 @@ set configs.config.server-config.network-config.protocols.protocol.${protocol-na
 
 The number of streams to process when the high water mark is exceeded.
 
-|   | Only closed streams will be removed. |
-| - | ------------------------------------ |
+{% hint style="info" %}
+Only closed streams will be removed.
+{% endhint %}
 
 **Asadmin Command:**
 
@@ -544,11 +547,11 @@ Whether to enable TLS V1.3 or not. Will be ignored if TLS is disabled.
 set configs.config.server-config.network-config.protocols.protocol.${protocol-name}.ssl.tls13-enabled=[true|false]
 ```
 
-|   | Support for TLS 1.3 is available with JDK 8 versions after **JDK 1.8.0u261**, unless you’re using **Zulu JDK 1.8.0u222 - 1.8.0u252**, in which case you’ll also need to use the Java option **-XX:+UseOpenJSSE**. This option makes OpenJSSE default TLS provider. OpenJSEE is a JSEE provider created by Azul to support TLS 1.3 on JDK 8. See [TLS 1.3 Support in Zulu 8 with OpenJSSE](https://docs.azul.com/openjsse/index.htm) for more information. Also note that this flag can cause problems with the HTTP/2 support. If you’re using a lower version than 1.8.0u222, checkbox to enable TLS 1.3 will not be visible on the web administration console. |
-| - | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+{% hint style="info" %}
+Support for TLS 1.3 is available with JDK 8 versions after **JDK 1.8.0u261**, unless you’re using **Zulu JDK 1.8.0u222 - 1.8.0u252**, in which case you’ll also need to use the Java option **-XX:+UseOpenJSSE**. This option makes OpenJSSE default TLS provider. OpenJSEE is a JSEE provider created by Azul to support TLS 1.3 on JDK 8. See [TLS 1.3 Support in Zulu 8 with OpenJSSE](https://docs.azul.com/openjsse/index.htm) for more information. Also note that this flag can cause problems with the HTTP/2 support. If you’re using a lower version than 1.8.0u222, checkbox to enable TLS 1.3 will not be visible on the web administration console.
 
-|   | You will need to add the following Java Option: **-Dfish.payara.clientHttpsProtocol=TLSv1.3** to the asadmin script for TLS 1.3 to work with asadmin CLI. This sets the TLS version to 1.3 which will be used by the asadmin client. |
-| - | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+You will need to add the following Java Option: **-Dfish.payara.clientHttpsProtocol=TLSv1.3** to the asadmin script for TLS 1.3 to work with asadmin CLI. This sets the TLS version to 1.3 which will be used by the asadmin client.
+{% endhint %}
 
 **Client Authentication**
 
@@ -650,8 +653,9 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
 The last 2 attributes are added based on the other HSTS configuration options.
 
-|   | HSTS can be enabled on any HTTP listener. However, it’s meant to be enabled on a secure HTTP listener if an insecure HTTP listener redirects to the secure listener. When browsers receive the `Strict-Transport-Security` header over HTTPS, they will use HTTPS immediately for all future connections requested over plain HTTP. If the header is retrieved over HTTP, it is ignored by browsers due to security reasons. More information in [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security). |
-| - | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+{% hint style="info" %}
+HSTS can be enabled on any HTTP listener. However, it’s meant to be enabled on a secure HTTP listener if an insecure HTTP listener redirects to the secure listener. When browsers receive the `Strict-Transport-Security` header over HTTPS, they will use HTTPS immediately for all future connections requested over plain HTTP. If the header is retrieved over HTTP, it is ignored by browsers due to security reasons. More information in [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security).
+{% endhint %}
 
 **Asadmin Command:**
 

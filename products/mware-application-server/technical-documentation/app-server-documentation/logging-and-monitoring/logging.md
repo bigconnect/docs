@@ -17,7 +17,7 @@ MWARE AS uses Java Logging (JUL) to format and output log records. The default c
 
 Logging settings can be configured by either using the Asadmin CLI or in the Web Admin Console, like in the following screenshot:
 
-![Logger Settings](https://docs.payara.fish/community/docs/\_images/logging/logging\_setup.png)
+<figure><img src="../../../../../.gitbook/assets/logging_setup.webp" alt=""><figcaption></figcaption></figure>
 
 ### Fast Logging
 
@@ -32,7 +32,7 @@ A common use case of this feature would be to prevent database access done by JP
 
 To configure the `Fast Logging` option, set it in the Logger settings.
 
-![Fast Logging enabled](https://docs.payara.fish/community/docs/\_images/logging/fast\_logging.png)
+<figure><img src="../../../../../.gitbook/assets/fast_logging.webp" alt=""><figcaption></figcaption></figure>
 
 #### Using Asadmin CLI
 
@@ -50,7 +50,7 @@ The `Log to File` option allow you to enable and disable the action of logging t
 
 To configure the `Log to File` option using theAdmin Console:
 
-![Log to File enabled](https://docs.payara.fish/community/docs/\_images/logging/log\_to\_file.png)
+<figure><img src="../../../../../.gitbook/assets/log_to_file.webp" alt=""><figcaption></figcaption></figure>
 
 #### Enable Log to File using the Asadmin CLI
 
@@ -79,9 +79,7 @@ Once the server is run in verbose mode, you can use either the Admin Console or 
 
 #### Configure Logging To Console using the Admin Console
 
-To configure the `Log to Console` option using the Admin Console:
-
-![Log to Console disabled](https://docs.payara.fish/community/docs/\_images/logging/log\_to\_file.png)
+To configure the `Log to Console` option using the Admin Console, check the **Log to Console** option
 
 #### Configure Logging To Console using the Asadmin CLI
 
@@ -97,13 +95,13 @@ When the Multiline mode is enabled, each log entry’s message body will be prin
 
 Here’s a quick example of how multiline formatted log entries look like:
 
-![Multiline mode in the Web Console](https://docs.payara.fish/community/docs/\_images/logging/multiline\_example.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/multiline_example.png" alt=""><figcaption></figcaption></figure>
 
 #### Enable Multiline Mode using the Admin Console
 
 To enable multiline mode from the Admin Console:
 
-![Multiline mode in the Admin Console](https://docs.payara.fish/community/docs/\_images/logging/multiline.png)
+<figure><img src="../../../../../.gitbook/assets/multiline.webp" alt=""><figcaption></figcaption></figure>
 
 #### Enable Multiline Mode using the Admin Console
 
@@ -136,7 +134,7 @@ The **Max File Size** option provides a way to change the file size at which the
 
 To configure the **Max File Size** option using the Admin Console:
 
-![Max File Size](https://docs.payara.fish/community/docs/\_images/logging/max\_file\_size.png)
+<figure><img src="../../../../../.gitbook/assets/max_file_size.webp" alt=""><figcaption></figcaption></figure>
 
 #### Using the Asadmin CLI
 
@@ -167,7 +165,7 @@ The **Log to File** option will provide a way to enable and disable logging to a
 
 To configure the **Log to File** option using Admin Console:
 
-![Log to File enabled](https://docs.payara.fish/community/docs/\_images/logging/notification-logging/payara\_notification\_log\_to\_file.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/notification-logging/payara_notification_log_to_file.png" alt=""><figcaption></figcaption></figure>
 
 **Using the Asadmin CLI**
 
@@ -189,7 +187,7 @@ The **Rotation On Date Change** option provides a way to set the log rotation wh
 
 To configure the **Rotation on Date Change** option using the Admin Console:
 
-![Rotation on Date Change enabled](https://docs.payara.fish/community/docs/\_images/logging/notification-logging/payara\_notification\_rotation\_on\_date\_change.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/notification-logging/payara_notification_rotation_on_date_change.png" alt=""><figcaption></figcaption></figure>
 
 **Using the Asadmin CLI**
 
@@ -210,7 +208,7 @@ The **File Rotation Limit** option provides a way to change the file size at whi
 
 To configure the **File Rotation Limit** option using the Admin Console:
 
-![File Rotation Limit](https://docs.payara.fish/community/docs/\_images/logging/notification-logging/payara\_notification\_rotation\_on\_file\_size.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/notification-logging/payara_notification_rotation_on_file_size.png" alt=""><figcaption></figcaption></figure>
 
 **Using the Asadmin CLI**
 
@@ -228,7 +226,7 @@ The **File Rotation Time Limit** option provides a way to trigger the log file r
 
 To configure the **File Rotation Time Limit** option using the Admin Console:
 
-![File Rotation Time Limit](https://docs.payara.fish/community/docs/\_images/logging/notification-logging/payara\_notification\_rotation\_on\_time\_limit.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/notification-logging/payara_notification_rotation_on_time_limit.png" alt=""><figcaption></figcaption></figure>
 
 **Using the Asadmin CLI**
 
@@ -246,7 +244,7 @@ The **Log File Logging Format** option can be used to change the log entries' fo
 
 To configure the **Log File Logging Format** option using the Admin Console:
 
-![Change Logging Format](https://docs.payara.fish/community/docs/\_images/logging/notification-logging/payara\_notification\_change\_logging\_format.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/notification-logging/payara_notification_change_logging_format.png" alt=""><figcaption></figcaption></figure>
 
 **Using the Asadmin CLI**
 
@@ -264,7 +262,7 @@ The `Maximum History Files` option provides a way to set the limit on the number
 
 To configure the `Maximum History File` option using the Admin Console:
 
-![Maximum History File](https://docs.payara.fish/community/docs/\_images/logging/notification-logging/payara\_notification\_set\_maximum\_number\_of\_history\_files.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/notification-logging/payara_notification_set_maximum_number_of_history_files.png" alt=""><figcaption></figcaption></figure>
 
 **Using the Asadmin CLI**
 
@@ -282,7 +280,7 @@ The `Log File` option provides a way to change the default name and location of 
 
 To configure `Log File` option using Admin Console:
 
-![Log File](https://docs.payara.fish/community/docs/\_images/logging/notification-logging/payara\_notification\_change\_name\_and\_location\_of\_log\_file.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/notification-logging/payara_notification_change_name_and_location_of_log_file.png" alt=""><figcaption></figcaption></figure>
 
 **Using the Asadmin CLI**
 
@@ -303,7 +301,7 @@ The `Compress on Rotation` option provides a way to enable the automatic compres
 
 To configure the `Compress on Rotation` option using the Admin Console:
 
-![Compress on Rotation Enabled](https://docs.payara.fish/community/docs/\_images/logging/notification-logging/payara\_notification\_set\_compress\_on\_rotation.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/notification-logging/payara_notification_set_compress_on_rotation.png" alt=""><figcaption></figcaption></figure>
 
 **Using the Asadmin CLI**
 
@@ -319,7 +317,7 @@ File rotation keeps log files manageable, as older log files are automatically d
 
 #### Enabling file rotation
 
-![File rotation settings](https://docs.payara.fish/community/docs/\_images/logging/daily-log-rotation.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/daily-log-rotation.png" alt=""><figcaption></figcaption></figure>
 
 By default a size rotation of `2MB` is used for server logs, meaning no log files will be deleted until the size limit is reached and a new file is created at midnight.
 
@@ -339,7 +337,7 @@ Maximum number of entries kept in a log file.
 
 These settings can be configured in the Admin Console:
 
-![Log rotation settings](https://docs.payara.fish/community/docs/\_images/logging/log\_rotation\_settings.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/log_rotation_settings.png" alt=""><figcaption></figcaption></figure>
 
 Which allows you to change how the logs are rotated to your needs and can be combined with the default "daily" log rotation.
 
@@ -367,7 +365,7 @@ MWARE AS can be configured to automatically compress rotated log files in an aut
 
 When log rotation is enabled, you can turn on automatic compression in the `Logger Settings` section of the Admin Console, by ticking the `Compress on Rotation` checkbox:
 
-![Compress on rotation enabled](https://docs.payara.fish/community/docs/\_images/logging/compress\_on\_rotation.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/compress_on_rotation.png" alt=""><figcaption></figcaption></figure>
 
 **Using the Asadmin CLI**
 
@@ -383,7 +381,7 @@ Log entries that live in compressed rotated files can be viewed in Admin Console
 
 This is an example how the **Log Viewer** may visualize the entries of 3 compressed files:
 
-![Log Viewer with Compressed log files](https://docs.payara.fish/community/docs/\_images/logging/zipped\_logs.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/zipped_logs.png" alt=""><figcaption></figcaption></figure>
 
 ### JSON Log Formatter
 
@@ -391,13 +389,13 @@ Besides the standard Uniform Log Format (ULF) and Oracle Diagnostics Logging (OD
 
 Once the JSON formatter is enabled, the server’s log file may look similar to this sample:
 
-![Example log file with JSON format](https://docs.payara.fish/community/docs/\_images/logging/json\_example.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/json_example.png" alt=""><figcaption></figcaption></figure>
 
 #### Enable the JSON formatter using the Web Admin Console
 
 To enable the JSON formatter using the Admin Console, just select `JSON` from the list of Logging Formats, either for `Console` or `Log File`:
 
-![JSON format configuration in Web Console](https://docs.payara.fish/community/docs/\_images/logging/json\_config.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/json_config.png" alt=""><figcaption></figcaption></figure>
 
 #### Enable the JSON formatter using the Asadmin CLI
 
@@ -411,7 +409,7 @@ asadmin> set-log-attributes com.sun.enterprise.server.logging.GFFileHandler.form
 
 In some situations, the JSON representation of a log entry may use field names that clash with existing standard field names that logging gathering tools may use them for specific purposes. To solve this problem, MWARE AS can be configured to automatically prefix all field names in the JSON object representation with an underscore (`_`) character. See the following sample to get an idea of how such a JSON payload would look like:
 
-![Example log file with underscore prefix in JSON fields](https://docs.payara.fish/community/docs/\_images/logging/json\_underscore\_prefix\_example.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/logging/json_underscore_prefix_example.png" alt=""><figcaption></figcaption></figure>
 
 The following command will enable this configuration setting:
 
@@ -444,7 +442,7 @@ You can change the `com.sun.enterprise.server.logging.GFFileHandler.excludeField
 
 To configure the excluded fields in the log entries, select them on the _Logger_ settings screen:
 
-![Exclude Fields](https://docs.payara.fish/community/docs/\_images/logging/exclude-fields.png)
+<figure><img src="../../../../../.gitbook/assets/exclude-fields.webp" alt=""><figcaption></figcaption></figure>
 
 #### Using the Asadmin CLI
 

@@ -6,9 +6,7 @@ This feature allows you to record the actions you take in the admin console as a
 
 From the admin console, you should be able to see a button labelled _Enable Asadmin Recorder_ or _Disable Asadmin Recorder_, depending on whether or not the asadmin recorder feature is enabled or not. Clicking this button will enable or disable the asadmin recorder feature respectively:
 
-![Enable recorder in Web Console](https://docs.payara.fish/community/docs/\_images/recorder/enable-recorder.png)
-
-![Disable recorder in Web Console](https://docs.payara.fish/community/docs/\_images/recorder/disable-recorder.png)
+<figure><img src="../../../../../../.gitbook/assets/enable-recorder.webp" alt=""><figcaption></figcaption></figure>
 
 Once enabled, actions in the admin console that have a corresponding `asadmin` command will be recorded to a file. By default, this file is located in the domain directory, and is called _asadmin-commands.txt_.
 
@@ -36,7 +34,7 @@ Alternative way of disabling the asadmin recorder.
 
 To configure the asadmin recorder, navigate to the following page in the admin console: _Domain → Asadmin Recorder_:
 
-![Asadmin recorder configuration](https://docs.payara.fish/community/docs/\_images/recorder/recorder-config.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/recorder/recorder-config.png" alt=""><figcaption></figcaption></figure>
 
 You will be presented with the following configuration options:
 

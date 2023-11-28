@@ -23,14 +23,14 @@ In order to configure a specific `HttpAuthenticationMechanism` for a Web applica
 
 The following mechanisms can be used:
 
-| Value                             | Description                                                               |
-| --------------------------------- | ------------------------------------------------------------------------- |
-| Basic                             | Use _BasicAuthenticationMechanism_ as mechanism.                          |
-| Form                              | Use _FormAuthenticationMechanism_ as mechanism.                           |
-| CustomForm                        | Use _CustomFormAuthenticationMechanism_ as mechanism.                     |
-| JWT                               | Use the custom Payara _JWTAuthenticationMechanism_ as mechanism.          |
-| Certificate                       | Use the custom Payara _CertificateAuthenticationMechanism_ as mechanism.  |
-| Azure                             | Use the custom Payara _AzureOpenIdAuthenticationMechanism_ as mechanism.  |
-| Google                            | Use the custom Payara _GoogleOpenIdAuthenticationMechanism_ as mechanism. |
-| OAuth2                            | Use the custom Payara _OAuth2AuthenticationMechanism_ as mechanism.       |
-| \<any Fully Qualified Class Name> | Use the `HttpAuthenticationMechanism` indicated by the class name.        |
+| Value                             | Description                                                                 |
+| --------------------------------- | --------------------------------------------------------------------------- |
+| Basic                             | Use _BasicAuthenticationMechanism_ as mechanism.                            |
+| Form                              | Use _FormAuthenticationMechanism_ as mechanism.                             |
+| CustomForm                        | Use _CustomFormAuthenticationMechanism_ as mechanism.                       |
+| JWT                               | Use the custom MWARE AS _JWTAuthenticationMechanism_ as mechanism.          |
+| Certificate                       | Use the custom MWARE AS _CertificateAuthenticationMechanism_ as mechanism.  |
+| Azure                             | Use the custom MWARE AS _AzureOpenIdAuthenticationMechanism_ as mechanism.  |
+| Google                            | Use the custom MWARE AS _GoogleOpenIdAuthenticationMechanism_ as mechanism. |
+| OAuth2                            | Use the custom MWARE AS _OAuth2AuthenticationMechanism_ as mechanism.       |
+| \<any Fully Qualified Class Name> | Use the `HttpAuthenticationMechanism` indicated by the class name.          |

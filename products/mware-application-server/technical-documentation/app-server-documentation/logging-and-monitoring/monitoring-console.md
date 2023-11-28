@@ -65,7 +65,7 @@ Changing the column layout of a page does not change the preferred position of t
 
 By default the graphs on a page update every 2 seconds. To control the interval use top right _Data Refresh_ menu or open the _Settings_ and change the interval in the _Global_ settings.
 
-![Global Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_settings\_global.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_settings_global.png" alt=""><figcaption></figcaption></figure>
 
 The interval can be paused and continued without changing the interval duration by using the _paused_ checkbox next to the interval setting.
 
@@ -75,7 +75,7 @@ To add a new page use the top right _Page_ menu and select _New…​_.
 
 This creates a new _Unnamed_ page which can be renamed in the _Page_ settings.
 
-![Page Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_settings\_page.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_settings_page.png" alt=""><figcaption></figcaption></figure>
 
 After naming the page [add widgets](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Logging%20and%20Monitoring/Monitoring%20Console.html#monitoring-console-widget-add).
 
@@ -103,7 +103,7 @@ The chosen role controls the behaviour and available options for the page synchr
 
 The _Page Synchronisation_ dialogue shown when entering the console UI allows the user to pick the pages that should be updated (pulled).
 
-![Page Synchronisation](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_dia\_pages.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_dia_pages.png" alt=""><figcaption></figcaption></figure>
 
 Based on the role the pages to synchronise are pre-selected.
 
@@ -114,13 +114,13 @@ The newest version is marked by a green background for easier orientation.
 
 This dialogue can also be opened from the _Global_ settings by clicking the _Update Local Pages_ button shown _Page Sync_ property.
 
-![Global Page Synchronisation Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_setting\_global\_rolesync.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_setting_global_rolesync.png" alt=""><figcaption></figcaption></figure>
 
 _Administrator_s also find a button to _Update Remote Pages_ with any changes applied to local changes. This is only needed for pages that are not using \_auto\_matic updates.
 
 To share a page that so far is not part of the persistent remote configuration open the _Page_ settings and look for the _Sync_ property:
 
-![Page Synchronisation Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_setting\_page\_sync.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_setting_page_sync.png" alt=""><figcaption></figcaption></figure>
 
 _User_s and _Administrator_s can both _Push_ a page to update the persistent remote configuration and _Pull_ the remote configuration to update the local page. _Administrator_s can also enable or disable the _auto_matic page synchronisation. When enabled any local change done by an _Administrator_ is automatically pushed to the remote configuration and can be pulled by other users.
 
@@ -134,11 +134,11 @@ The monitoring console can be used in one of three roles:
 
 When no role is set for the session the user is asked to choose a role when opening the monitoring console.
 
-![Role Selection](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_dia\_role.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_dia_role.png" alt=""><figcaption></figcaption></figure>
 
 The selection can be changed at any time in the _Global_ settings for _Role_.
 
-![Role Setting](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_setting\_global\_rolesync.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_setting_global_rolesync.png" alt=""><figcaption></figcaption></figure>
 
 **Page Settings**
 
@@ -168,11 +168,11 @@ Make sure the page is of _Type_ _Manual_. Pages of type _Query_ can be changed t
 
 Use the _Select metric(s)_ button of the _Add Widgets_ property of the _Page_ settings to open the metric selection dialog.
 
-![Page Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_settings\_page.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_settings_page.png" alt=""><figcaption></figcaption></figure>
 
 In the selection dialog use the filters to find the metric you are looking for.
 
-![Metric Selection Dialog](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_dia\_add-metrics.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_dia_add-metrics.png" alt=""><figcaption></figcaption></figure>
 
 When the metric is found in the list of matches check it to add it to the selection. After selecting one or more metrics to show in the widget confirm the selection by pressing _Ok_ button of the dialog.
 
@@ -201,9 +201,9 @@ When added, widgets are automatically placed in a column so that they are evenly
 
 The second form of populating a page is to not manually add widgets to it but to define a series query. Matching metrics will be used to automatically populate the page with widgets. To use this option change the page _Type_ to _Query_ in the _Page_ settings.
 
-![Page Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_settings\_page\_query.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_settings_page_query.png" alt=""><figcaption></figcaption></figure>
 
-At a minimum the _Query Series_ has to be defined. This should be a series using a pattern containing wild-cards (see [Series with Wildcards](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Logging%20and%20Monitoring/Monitoring%20Console.html#monitoring-console-widget-advanced) for more details). The matching series are ordered and placed on the page in intervals. The interval is controlled by the _Query Interval_ property. Usually the interval is between 1 minute and 1 hour. If no interval is given the page will first update after 365 days.
+At a minimum the _Query Series_ has to be defined. This should be a series using a pattern containing wild-cards (see Series with Wildcards for more details). The matching series are ordered and placed on the page in intervals. The interval is controlled by the _Query Interval_ property. Usually the interval is between 1 minute and 1 hour. If no interval is given the page will first update after 365 days.
 
 The _Update_ button can be used to force a page update before the next interval starts and ends. Changes to the _Query Series_, _Query Interval_ or _Max Size_ do not have immediate effect and can equally applied immediately using the _Update_ button.
 
@@ -220,7 +220,7 @@ This opens the side panel and shows the detail configuration of the widget. The 
 
 The _Widget_ settings are concerned with the widgets position within the page.
 
-![Widget Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_settings\_widget.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_settings_widget.png" alt=""><figcaption></figcaption></figure>
 
 | Property     | Default      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -233,7 +233,7 @@ The _Widget_ settings are concerned with the widgets position within the page.
 
 The _Data_ settings are concerned with what and how the data is shown in the graph of a widget.
 
-![Widget Data Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_settings\_data.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_settings_data.png" alt=""><figcaption></figcaption></figure>
 
 | Property                  | Default         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -255,7 +255,7 @@ The _Data_ settings are concerned with what and how the data is shown in the gra
 
 Decorations are visual helpers that can be added to a graph of a widget in order to make it easier to for the user to quickly understand the data displayed. In particular these are reference lines.
 
-![Widget Decoration Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_settings\_decorations.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_settings_decorations.png" alt=""><figcaption></figcaption></figure>
 
 | Property            | Default     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -272,7 +272,7 @@ Use the colour input to individually override the widget’s colour for waterlin
 
 The current value of a metric can automatically be categorised as a certain status. For example based on the threshold values of decorations or by encountered errors or missing data. The _Status_ settings allows to set a custom message for a particular status.
 
-![Widget Status Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_settings\_status.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_settings_status.png" alt=""><figcaption></figcaption></figure>
 
 | Property   | Default     | Description                                                                                                                               |
 | ---------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -291,7 +291,7 @@ The values of metric series can be tracked by the server to report values that o
 * _Green_: values in this range indicate a healthy state
 * _White_: values in this range are in no particular state (neither good nor bad, maybe undecidable)
 
-![Widget Alerts Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_settings\_alerts.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_settings_alerts.png" alt=""><figcaption></figcaption></figure>
 
 | Property | Default       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | -------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -301,13 +301,13 @@ The values of metric series can be tracked by the server to report values that o
 
 Alerts can occur when a watch is configured for a metric series. A watch describes the conditions and thresholds used to determine a state from the recent values of a metric series. It is either _Red_ (unhealthy), _Amber_ (degraded), _Green_ (healthy) or _White_ (undetermined). A _Red_ or _Amber_ state causes an alert that is shown on top of the graph.
 
-![Alert for a line graph](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_sample\_alert-graph.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_sample_alert-graph.png" alt=""><figcaption></figcaption></figure>
 
 When an alert occurred for a metric shown in a graph the background of the line causing the alert is coloured in _Red_ or _Amber_ default colour until the alert is stopped.
 
 Alerts are considered ongoing as long as the state is _Red_ or _Amber_. If it is evaluated to _Green_ or _White_ the alert stops. Stopped alerts are no longer shown on top of line graphs. Another way to remove an alert from the line graph is to acknowledge the alert by checking its checkbox. To see even stopped or acknowledged alerts add a widget of type _Alert Table_.
 
-![Alert Table](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_sample\_alert-table.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_sample_alert-table.png" alt=""><figcaption></figcaption></figure>
 
 By default an alert table shows all alerts including stopped and acknowledged alerts. Use the widget _Alerts_ settings to exclude alerts with certain properties.
 
@@ -333,7 +333,7 @@ ns:jvm MetricName
 ns:jvm @:groupName MetricName
 ```
 
-The patterns shown above exemplify conventions used throughout Payara monitoring console. The first grouping level usually is the `ns` (short for namespace), the second the `@` (short for _group_). In the example the metrics belong to the `jvm` namespace and the `groupName` group within that namespace.
+The patterns shown above exemplify conventions used throughout MWARE AS monitoring console. The first grouping level usually is the `ns` (short for namespace), the second the `@` (short for _group_). In the example the metrics belong to the `jvm` namespace and the `groupName` group within that namespace.
 
 When metrics are selected using the dropdowns these details are filled in for the user by selecting items from the dropdowns. Alternatively, a user may choose to enter the series key manually which allows using a wild-card _star_ instead of either a tag value (like `jvm`) or the _MetricName_. For example:
 
@@ -372,7 +372,7 @@ Monitoring console is built with the intention of being used to display metrics 
 
 To enable page rotation open the _Settings_ and check the _enabled_ checkbox in the _Global_ Settings _Page Rotation_ property. This starts the rotation immediately.
 
-![Global Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_settings\_global.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_settings_global.png" alt=""><figcaption></figcaption></figure>
 
 The duration can be adjusted changing the text field of the _Page Rotation_ to another time value. Use units to express the duration, as for example: `1min`, `30sec`. Changes take effect immediately.
 
@@ -382,7 +382,7 @@ The rotation will show each page for the configured duration. Pages can be exclu
 
 Newer versions of the Monitoring Console allow to configure the colours used in graphs. There is a global colour configuration affecting all graphs.
 
-![Widget Status Settings](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_settings\_colors.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_settings_colors.png" alt=""><figcaption></figcaption></figure>
 
 | Property         | Default                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ---------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -406,7 +406,7 @@ Each watch must have at least an _Unhealthy_ or a _Degraded_ condition. When bot
 
 To create custom watches go to the _Watches_ page using the top page menu or the _Global_ settings.
 
-![Creating a Watch](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_watches2.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_page_watches2.png" alt=""><figcaption></figcaption></figure>
 
 The above example shows a relatively simple watch named _HTTP server errors_. The name of the watch can be anything as long as it is unique. The watch should have both an _Unhealthy_ and a _Degraded_ level.
 
@@ -449,7 +449,7 @@ When changing the name of an edited watch to an existing name this overrides tha
 
 Go to the _Watches_ page using the top page menu or the _Global_ settings.
 
-![List of Watches](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_watches1.png)
+<figure><img src="../../../../../.gitbook/assets/mc_page_watches1.webp" alt=""><figcaption></figcaption></figure>
 
 The status of each watch is reflected by the checkbox left of the watches name, checked for enabled, unchecked for disabled. Disabled or stopped watches names are also greyed out. To disable an enabled watch un-check the checkbox or use the _Disable_ item from the cogs menu on the right of the watch widget. To enable a disabled watch check the checkbox or use the _Enable_ item from the cogs menu. The change has immediate effect.
 
@@ -459,7 +459,7 @@ The status of each watch is reflected by the checkbox left of the watches name, 
 
 The _Core_ page gives an overview of some of the important instance metrics. Each instance in the grid is shown separately.
 
-![Core Page](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_core.png)
+<figure><img src="../../../../../.gitbook/assets/mc_page_core.webp" alt=""><figcaption></figcaption></figure>
 
 * _Active Sessions_: Total number of active session for the instance.
 * _Thread Count_: Total number of threads used by the instance.
@@ -472,7 +472,7 @@ The _Core_ page gives an overview of some of the important instance metrics. Eac
 
 The _HTTP_ page gives a rough overview of the state of the HTTP services of each instance.
 
-![HTTP Page](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_http.png)
+<figure><img src="../../../../../.gitbook/assets/mc_page_http.webp" alt=""><figcaption></figcaption></figure>
 
 * _Connection Queue Count Open Connections_: Total number of open connection in the connection queue
 * _Thread Pool Current Threads Busy_: Number of threads in the HTTP thread pool currently processing an HTTP request.
@@ -485,7 +485,7 @@ The _HTTP_ page gives a rough overview of the state of the HTTP services of each
 
 The _JVM_ pages gives a general overview of the state of the JVM running MWARE AS.
 
-![JVM Page](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_jvm.png)
+<figure><img src="../../../../../.gitbook/assets/mc_page_jvm(1).webp" alt=""><figcaption></figcaption></figure>
 
 * _Used Heap_: Total size of the used heap memory
 * _Heap Size_: Size of the committed (reserved) heap memory (OS level)
@@ -498,7 +498,7 @@ The _JVM_ pages gives a general overview of the state of the JVM running MWARE A
 
 A page that shows key metrics on the monitoring system itself that feeds the monitoring console with data. This is mostly useful to identify problems with the monitoring system or to cross check that unexpected metric values aren’t caused by general problems with monitoring.
 
-![Monitoring Page](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_monitoring.png)
+<figure><img src="../../../../../.gitbook/assets/mc_page_monitoring.webp" alt=""><figcaption></figcaption></figure>
 
 * _Source Times_: Shows the duration it took to collect metric data from the individual sources within the server. Durations should be well below a second. Usually in two digit millisecond range.
 * _Sources_: Number of sources metrics are collected from in a particular second. This varies as some sources are collected in an interval of several seconds.
@@ -514,7 +514,7 @@ A page that gives an overview of the state of the server health checks. The indi
 |   | It is not required to enable the _HealthCheck service_ in the general tab in case the checks should only be enabled for metrics based monitoring without causing health check notifier messages. |
 | - | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-![Health Checks Page](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_health-checks.png)
+<figure><img src="../../../../../.gitbook/assets/mc_page_health-checks.webp" alt=""><figcaption></figcaption></figure>
 
 * _CPU_: CPU Health Check, percentage of CPU used by the server instance during last 4 seconds
 * _GC_: Garbage Collection Health Check, percentage of time used to collect garbage objects during the last 4 seconds
@@ -528,7 +528,7 @@ A page that gives an overview of the state of the server health checks. The indi
 
 The _Threads_ page gives detailed information on thread health of the cluster and lists information on stuck or hogging threads. Total number of live and daemon threads are given for reference.
 
-![Thread Health Page](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_threads.png)
+<figure><img src="../../../../../.gitbook/assets/mc_page_threads.webp" alt=""><figcaption></figcaption></figure>
 
 * _Stuck Thread Incidents_: Table listing the most recent information for threads that are considered stuck. This is the case if the time passed since a thread started a not yet finished unit of work becomes longer than the set threshold in the _Stuck Threads_ health check configuration. This could be because it is waiting at a lock or the operation takes a considerable amount of time.
 * _Hogging Thread Incidents_: Table listing the most recent information for threads that are considered hogging. This is the case if the thread’s use of the CPU in percent points is higher than the threshold value configured in the _Hogging Threads_ health check configuration for n times in a row, where n is 1 + the configured number of retries.
@@ -547,7 +547,7 @@ The _Request Tracing_ page overview page shows traces that exceeded the set thre
 
 The _Trace Duration Range_ widget shows all traces for the same method as a single bar. The length and position of the bar gives the range of total trace duration for all the occurrences that exceeded the threshold. The bar starts at the minimum duration observed and ends at the maximum duration observed in the last minute. The legend shows the average duration and the method traced (innermost trace span operation)
 
-![Request Tracing Page](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_request-tracing.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_page_request-tracing.png" alt=""><figcaption></figcaption></figure>
 
 When all time minimum and/or maximum are added in the _Widget_ _Data_ settings the bar starts and/or ends at these "all time" values instead of the minimum and/or maximum within the last minute.
 
@@ -557,7 +557,7 @@ The _Trace Data_ view adds tracing details for the "slow" requests that can be s
 
 By clicking on one of the bars in the overview’s _Trace Duration Range_ widget the details of all kept traces for this method can be viewed. This data corresponds to the traces stored in the trace-store. For each trace, each of the spans corresponds to a bar in this graph.
 
-![Request Tracing Details Page](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_request-tracing2.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_page_request-tracing2.png" alt=""><figcaption></figcaption></figure>
 
 By default the traces are sorted longest (slowest) to shortest (fastest) total duration. On the time axis the spans are shown relative to the start of the trace.
 
@@ -582,7 +582,7 @@ The _SQL_ page gives insight into slow SQL queries for all connection pools conf
 |   | To capture slow SQL queries the _JDBC Connection Pool_ configuration’s _Slow Query Log Threshold_ in the _Advanced_ tab needs to be set to a positive number. |
 | - | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-![Slow SQL Page](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_sql.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_page_sql.png" alt=""><figcaption></figcaption></figure>
 
 * _Slow SQL Queries_: Shows SQL details for queries that were too slow. _Value_ refers to the duration of the SQL query.
 * _Worst SQL Execution Time_: Shows SQL query activity. Each data point gives the duration of the slowest query run during last second. Zero means no SQL query was run.
@@ -592,7 +592,7 @@ The _SQL_ page gives insight into slow SQL queries for all connection pools conf
 
 The main use of the _Alerts_ page is to check for any server alerts. The page is split into two lists: the upper list containing all ongoing alerts, and the lower list containing past alerts. As always for alert lists both lists are sorted starting with the most recent severe alert progressing to the oldest least severe alert. Annotations associated with alerts are hidden in this view to make room for more alert entries.
 
-![Alerts Page](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_alerts.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_page_alerts.png" alt=""><figcaption></figcaption></figure>
 
 Past alerts can be managed by acknowledging the alerts which makes them disappear from the list.
 
@@ -608,7 +608,7 @@ The purpose of this page is to give a quick strong visual indication of the heal
 
 Each _MicroProfile Health_ check is represented as a widget which shows the current status of the check in red (down for a while), amber (just went down) or green (up) for each of the instances where the check is performed.
 
-![RAG Status Page](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_rag.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_page_rag.png" alt=""><figcaption></figcaption></figure>
 
 In the example these are the checks _Service1_ and _Service2_ of the _health-domo-1.0-SNAPSHOT_ application.
 
@@ -620,7 +620,7 @@ Payara monitoring console is build with the intention to allow user defined metr
 
 Open the _Settings_ click _Select metric(s)_ button for _Add Widgets_ property in the _Page_ settings and select the _MicroProfile Metrics_ as _Source_ in the selection dialog.
 
-![Page Selection for MP Metrics](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_dia\_microprofile.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_dia_microprofile.png" alt=""><figcaption></figcaption></figure>
 
 Eventual MP tags used become the `@` group of the shown series key, the MP metric stays the metric name.
 

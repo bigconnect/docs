@@ -10,7 +10,7 @@ One way to ensure no accidental changes are made would be to revoke access to th
 
 As an alternative, MWARE AS ships with a configurable warning bar to ensure any user will see a warning message in while viewing the console:
 
-![Payara Server 172 Environment Warning screenshot](https://docs.payara.fish/community/docs/\_images/admin-console/environment-warning.png)
+<figure><img src="../../../../../../.gitbook/assets/environment-warning.webp" alt=""><figcaption></figcaption></figure>
 
 The warning can be configured in the admin console as seen in the screenshot above. There is a new "_Environment Warning_" tab in the "_Domain_" section which allows you to configure the text and colours of the warning message.
 

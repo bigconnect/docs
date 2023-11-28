@@ -13,10 +13,7 @@ The following is the list of information attributes gathered by the Phone Home s
 | Number of instances in the domain | 2                                                                        |
 | Randomly generated UUID           | eaa6fe2c-2388-4aa7-fdcc-288c7b318ddfeaa6ef23-2388-4aa7-8dcc-288c7b318ddf |
 
-This is the only data which the phone home service gathers from your system.
-
-|   | The UUID is specific to the DAS and is randomly generated on startup, so it is not machine specific. |
-| - | ---------------------------------------------------------------------------------------------------- |
+This is the only data which the phone home service gathers from your system: the UUID is specific to the DAS and is randomly generated on startup, so it is not machine specific.
 
 ### What is the data used for?
 

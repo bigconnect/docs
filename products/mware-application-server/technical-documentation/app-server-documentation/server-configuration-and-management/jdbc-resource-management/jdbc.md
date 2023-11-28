@@ -26,7 +26,7 @@ Click the _New_ button and enter the following values:
 
 Click Next and then click Finish on the next screen, accepting the default values.
 
-![New JDBC Connection Pool](https://docs.payara.fish/community/docs/\_images/connection-pools/connection\_pools\_1.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/connection-pools/connection_pools_1.png" alt=""><figcaption></figcaption></figure>
 
 Add the following properties to the connection pool by going to the _Additional Properties_ tab of the connection pool:
 
@@ -39,7 +39,7 @@ Add the following properties to the connection pool by going to the _Additional 
 | DatabaseName         | test         | Name of the database                                       |
 | connectionAttributes |              | Other connection attributes (supported by the JDBC driver) |
 
-![Connection pool properties](https://docs.payara.fish/community/docs/\_images/connection-pools/connection\_pools\_2.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/connection-pools/connection_pools_2.png" alt=""><figcaption></figcaption></figure>
 
 To test the connection attributes, go back to the _General_ tab and click the _Ping_ button at the top of the screen. You should see a message stating that the ping succeeded.
 
@@ -71,7 +71,7 @@ The minimum size of the connection pool ensures that a number of connections to 
 
 Click on the connection pool name and under the _Pool Settings_ section you will find Initial and Minimum Pool Size and Maximum Pool Size. Set these to your required sizes:
 
-![Connection Pool sizes in the admin console](https://docs.payara.fish/community/docs/\_images/connection-pools/connection\_pools\_3.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/connection-pools/connection_pools_3.png" alt=""><figcaption></figcaption></figure>
 
 #### Setting the sizes using administration commands
 
@@ -108,7 +108,7 @@ In order to avoid this, you can set a connection validation so that if a connect
 
 From the same screen, you can also set whether to close all connections on failure.
 
-![Connection validation configuration in Admin console](https://docs.payara.fish/community/docs/\_images/connection-pools/connection\_pools\_4.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/connection-pools/connection_pools_4.png" alt=""><figcaption></figcaption></figure>
 
 #### Set up the validation using administration commands
 
@@ -132,8 +132,9 @@ This feature allows you to set specific time-outs so that if SQL statements or J
 
 By default these values are set to **0** meaning this detection feature is turned off.
 
-|   | When working on a test or staging environment, it is recommended that leaks are logged after a short timeout but not closed. On production environments, it is recommended that leaks are closed and all logged leaks are monitored instead. |
-| - | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+{% hint style="info" %}
+When working on a test or staging environment, it is recommended that leaks are logged after a short timeout but not closed. On production environments, it is recommended that leaks are closed and all logged leaks are monitored instead.
+{% endhint %}
 
 #### Configuring Leak Detection using the admin console
 
@@ -142,7 +143,7 @@ By default these values are set to **0** meaning this detection feature is turne
 3. Scroll down to _Connection Settings_
 4. Set the _Connection Leak Timeout_ and _Statement Leak Timeout_ value in seconds
 
-![Leak Detection setting in Admin console](https://docs.payara.fish/community/docs/\_images/connection-pools/connection\_pools\_5.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/connection-pools/connection_pools_5.png" alt=""><figcaption></figcaption></figure>
 
 #### Configuring Leak Detection using administration commands
 
@@ -191,7 +192,7 @@ SQL Tracing can be enabled through the MWARE AS Web administration console. Firs
 
 Then select the **Advanced Tab** in the main window of the administration console. Then select the checkbox next to **Log JDBC Calls** to enable logging of all SQL calls:
 
-![Enabling SQL Tracing in the administration console](https://docs.payara.fish/community/docs/\_images/advanced-jdbc/logjdbccall.png)
+<figure><img src="../../../../../../.gitbook/assets/logjdbccall.webp" alt=""><figcaption></figcaption></figure>
 
 #### Using Asadmin Commands
 

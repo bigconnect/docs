@@ -8,7 +8,7 @@ The activation of the collection is controlled by the monitoring service.
 
 When using the Web Administration console, go to _Configuration → \[instance-configuration (like server-config)] → Monitoring:_ and select the level _High_ for the _JDBC Connection pool_ component.
 
-![Activate JDBC Connection pool monitoring with administration console](https://docs.payara.fish/community/docs/\_images/advanced-jdbc/activate-sql-statements.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/advanced-jdbc/activate-sql-statements.png" alt=""><figcaption></figcaption></figure>
 
 When using the _asadmin_ CLI, you can execute the following command to set the _Level Value_
 
@@ -16,7 +16,7 @@ When using the _asadmin_ CLI, you can execute the following command to set the _
 set configs.config.server-config.monitoring-service.module-monitoring-levels.jdbc-connection-pool=HIGH
 ```
 
-The information can be consulted via the JMX beans or the Rest monitoring interface. These need to be activated also, see [jmx monitoring configuration](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Logging%20and%20Monitoring/Monitoring%20Service/JMX%20Monitoring.html) and [rest monitoring configuration](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Logging%20and%20Monitoring/Monitoring%20Service/Rest%20Monitoring.html) on how to do this.
+The information can be consulted via the JMX beans or the Rest monitoring interface. These need to be activated also, see jmx monitoring configuration and rest monitoring configuration on how to do this.
 
 ### Viewing statements
 
@@ -56,10 +56,11 @@ These values can be configured by defining some key-value pairs in the propertie
 * TIME-TO-KEEP-QUERIES-IN-MINUTES: This defines the number of minutes the SQL statement info is retained.
 * MAX-CACHE-SIZE: This defines the maximum size of the cache.
 
-|   | Setting the maximum size of the cache to `0` will disable it completely. |
-| - | ------------------------------------------------------------------------ |
-
 When the cache size is too small, you see an information message in the log to indicate that not all statements could be retained.
+
+{% hint style="info" %}
+Setting the maximum size of the cache to `0` will disable it completely.
+{% endhint %}
 
 ### Slow SQL Logger
 
@@ -79,10 +80,11 @@ There are a number of ways to configure the slow SQL threshold time on a JDBC co
 
 To configure slow SQL logging on a JDBC connection pool via the administration console, navigate to the Connection Pool’s **Advanced Properties** tab. Then specify the **Slow Query Log Threshold** time in seconds or use a decimal value to signify milliseconds.
 
-![Slow SQL Logging settings in the administration console](https://docs.payara.fish/community/docs/\_images/advanced-jdbc/slowsqllogging.png)
+<figure><img src="../../../../../../.gitbook/assets/slowsqllogging.webp" alt=""><figcaption></figcaption></figure>
 
-|   | setting the threshold to `-1` will disable the feature |
-| - | ------------------------------------------------------ |
+{% hint style="info" %}
+setting the threshold to `-1` will disable the feature
+{% endhint %}
 
 #### Using Asadmin commands
 
@@ -265,10 +267,11 @@ SQL Trace Listeners can be enabled on a JDBC connection pool through the adminis
 
 Proceed to add the fully qualified class name of your SQL Trace Listener implementation class in the **SQL Trace Listeners** field:
 
-![Enabling SQL Tracing in the administration console](https://docs.payara.fish/community/docs/\_images/advanced-jdbc/sqltracelistener.png)
+<figure><img src="../../../../../../.gitbook/assets/sqltracelistener.webp" alt=""><figcaption></figcaption></figure>
 
-|   | The implementation class must be on the server’s _classpath_ for it to work correctly |
-| - | ------------------------------------------------------------------------------------- |
+{% hint style="info" %}
+The implementation class must be on the server’s _classpath_ for it to work correctly
+{% endhint %}
 
 **Using asadmin commands**
 

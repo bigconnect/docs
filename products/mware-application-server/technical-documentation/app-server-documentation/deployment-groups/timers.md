@@ -24,7 +24,7 @@ Because deployment groups do not need to share configurations amongst instances,
 
 To ensure correct behaviour of persistent timers within a deployment group, the following conditions need to be met:
 
-* EJB Timer Service needs to use shared storage — external database or [DataGrid](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Jakarta%20EE%20API/Enterprise%20Java%20Beans%20\(EJB\)/Overview.html)
+* EJB Timer Service needs to use shared storage — external database or DataGrid
 * All instances of deployment groups and the Domain Administration Server share the same configuration of EJB Timer Service
 * Applications with persistent timers are deployed to a deployment group and not managed on instance level afterwards
 * Instances are members of only a single deployment group

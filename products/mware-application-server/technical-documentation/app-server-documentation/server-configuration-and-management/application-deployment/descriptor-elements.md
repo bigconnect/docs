@@ -10,7 +10,7 @@ This page is a reference for extra and changed elements added to the GlassFish p
 
 With this option its possible to enable/disable **class loading delegation**. This allows deployed application to use libraries included on them, overriding the versions included on the server.
 
-For more information about how class delegation can be configured on MWARE AS, see the [Enhanced Class loading](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Server%20Configuration%20And%20Management/Classloading/Enhanced%20Classloading.html) section.
+For more information about how class delegation can be configured on MWARE AS, see the [Enhanced Class loading](../../jakarta-ee-api/jax-ws-enhancements.md) section.
 
 ### `clustered-attach-postconstruct`
 
@@ -18,7 +18,7 @@ Whether to call `@PostConstruct` each time the bean is created on a different no
 
 ### `clustered-bean`
 
-Whether this bean should be a [Clustered Singleton](https://docs.payara.fish/community/docs/Technical%20Documentation/Public%20API/Clustered%20Singleton.html). Can be applied only to singleton EJBs.
+Whether this bean should be a Clustered Singleton. Can be applied only to singleton EJBs.
 
 Valid values are `true` or `false`. The default value is `false`.
 
@@ -42,9 +42,9 @@ Default value is `INHERIT`
 
 ### `whitelist-package`
 
-Used to whitelist packages on [**extreme class loading isolation**](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Server%20Configuration%20And%20Management/Classloading/Enhanced%20Classloading.html#extreme-classloading-isolation). Whitelisted packages are taken into account by the server when scanning libraries.
+Used to whitelist packages on **extreme class loading isolation**. Whitelisted packages are taken into account by the server when scanning libraries.
 
-For more information about how extreme class loading isolation works on MWARE AS, see the [Enhanced Classloading](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Server%20Configuration%20And%20Management/Classloading/Enhanced%20Classloading.html) section.
+For more information about how extreme class loading isolation works on MWARE AS, see the [Enhanced Classloading](../classloading/enhanced-classloading.md) section.
 
 ### `enable-implicit-cdi`
 

@@ -8,11 +8,11 @@ A **password alias** allows you to have a plaintext reference to an encrypted pa
 
 To use a password alias, navigate to any configuration view where you would have previously entered a password in plaintext format:
 
-![Password in plain text](https://docs.payara.fish/community/docs/\_images/password-aliases/password-aliases-unused.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/password-aliases/password-aliases-unused.png" alt=""><figcaption></figcaption></figure>
 
 In place of the password, you can enter an alias which corresponds to the password in the form: `${ALIAS=<password-alias-name>}`:
 
-![Placeholder for Password Alias](https://docs.payara.fish/community/docs/\_images/password-aliases/password-aliases-using.png)
+<figure><img src="../../../../../../.gitbook/assets/password-aliases-using.webp" alt=""><figcaption></figcaption></figure>
 
 To create a password alias from the admin console, read the instructions detailed [here](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Server%20Configuration%20And%20Management/Configuration%20Options/Password%20Aliases.html#managing-passwords-admin-console)
 
@@ -40,25 +40,31 @@ Here are instructions on managing password aliases through the web administratio
 
 1.  To create a new password alias for the domain, select **Domain** on the page tree, then select the **Password Aliases** tab and click the **New** button:
 
-    ![Create new password alias](https://docs.payara.fish/community/docs/\_images/password-aliases/password-aliases-new.png)
+
+
+    <figure><img src="../../../../../../.gitbook/assets/password-aliases-new.webp" alt=""><figcaption></figcaption></figure>
 2.  On the next page, enter the name of the alias, and the password, twice:
 
-    ![Password alias creation](https://docs.payara.fish/community/docs/\_images/password-aliases/password-aliases-creation.png)
+
+
+    <figure><img src="https://docs.payara.fish/community/docs/_images/password-aliases/password-aliases-creation.png" alt=""><figcaption></figcaption></figure>
 3.  Finally, press the **OK** button to create your new alias:
 
-    ![Password alias created](https://docs.payara.fish/community/docs/\_images/password-aliases/password-aliases-created.png)
+
+
+    <figure><img src="https://docs.payara.fish/community/docs/_images/password-aliases/password-aliases-created.png" alt=""><figcaption></figcaption></figure>
 
 #### Modifying a password alias
 
 To modify an existing password alias, select it on the **Password Aliases** page. On the **Edit Password Alias** page you are able to change the entered password.
 
-![Modifying password alias](https://docs.payara.fish/community/docs/\_images/password-aliases/password-aliases-modifying.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/password-aliases/password-aliases-modifying.png" alt=""><figcaption></figcaption></figure>
 
 #### Deleting a password alias
 
 To delete a password alias, go to the **Password Aliases page**, tick the checkbox of the password alias you wish to delete and then press the **Delete** button:
 
-![Deleting password alias](https://docs.payara.fish/community/docs/\_images/password-aliases/password-aliases-deleting.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/password-aliases/password-aliases-deleting.png" alt=""><figcaption></figcaption></figure>
 
 ### Asadmin Commands for Managing Password Aliases
 

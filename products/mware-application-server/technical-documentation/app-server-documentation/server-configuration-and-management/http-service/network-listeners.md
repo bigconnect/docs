@@ -112,8 +112,9 @@ SNI can be enabled by configuring a network listener. Existing network listeners
 
 From here, click on the **SSL** tab, and make sure that the **SNI Support** checkbox is ticked.
 
-|   | For SNI to take effect, the network listener must have security enabled by providing a default keypair and certificate, and by checking the **Security** box on the **HTTP** tab. |
-| - | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+{% hint style="info" %}
+For SNI to take effect, the network listener must have security enabled by providing a default keypair and certificate, and by checking the **Security** box on the **HTTP** tab.
+{% endhint %}
 
 ### Asadmin Commands
 

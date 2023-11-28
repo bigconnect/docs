@@ -4,7 +4,7 @@ description: Domain Data Grid Discovery Modes
 
 # Discovery
 
-The Domain Data Grid has the concept of auto-discovery. When a MWARE AS instance starts it must discover other Data Grid nodes so that it can join the grid. Once an instance has connected to a Payara Instance that is already a member of the grid then it can become a member of the grid.
+The Domain Data Grid has the concept of auto-discovery. When a MWARE AS instance starts it must discover other Data Grid nodes so that it can join the grid. Once an instance has connected to a MWARE AS Instance that is already a member of the grid then it can become a member of the grid.
 
 ### Discovery Modes
 

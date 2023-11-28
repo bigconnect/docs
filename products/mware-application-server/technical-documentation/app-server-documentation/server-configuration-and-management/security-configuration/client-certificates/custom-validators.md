@@ -64,5 +64,5 @@ This feature can be configured on the default certificate realm as follows on th
 2. Head to `Security` → `Realms` and select the `certificate` realm
 3. Set the property `certificate-validation` _value_ to `[true/false]`
 
-![Certificate Expiration Validation Setting](https://docs.payara.fish/community/docs/\_images/security/default-certificate-expiration-validation.png)
+<figure><img src="../../../../../../../.gitbook/assets/default-certificate-expiration-validation.webp" alt=""><figcaption></figcaption></figure>
 

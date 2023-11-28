@@ -15,7 +15,7 @@ This feature can be configured on the default certificate realm as follows on th
 3. Click the `Add Property` button
 4. Set the property _Name_ to be `common-name-as-principal-name` and set the _Value_ to `true`
 
-![Common Name As Principal Name Setting](https://docs.payara.fish/community/docs/\_images/security/common-name-as-principal-name.png)
+<figure><img src="../../../../../../../.gitbook/assets/common-name-as-principal-name.webp" alt=""><figcaption></figcaption></figure>
 
 #### Using the Asadmin CLI
 

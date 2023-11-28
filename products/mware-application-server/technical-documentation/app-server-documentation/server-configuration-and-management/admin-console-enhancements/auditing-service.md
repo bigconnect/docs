@@ -27,7 +27,7 @@ The auditing service configuration can be found in the web console under `Config
 
 ![Admin Audit Service in Web Console](https://docs.payara.fish/community/docs/\_images/admin-console/admin-audit-menu.png)
 
-Once enabled, actions in the admin console that have a corresponding `asadmin` command will be sent to the [Notification service](https://docs.payara.fish/community/docs/Technical%20Documentation/Payara%20Server%20Documentation/Logging%20and%20Monitoring/Notification%20Service/Overview.html).
+Once enabled, actions in the admin console that have a corresponding `asadmin` command will be sent to the Notification service.
 
 Check the **Enabled** option (and the **Dynamic** option too if you don’t want to restart the domain) to switch the auditing service on.
 
@@ -47,13 +47,7 @@ All existing operations, including internal operations of the server.
 
 Aside from this configuration setting, you can also define which notifiers will be used to relay the admin console audit events by moving them to the **Selected Notifiers** box.
 
-![Activate Notifiers in the Admin Console](https://docs.payara.fish/community/docs/\_images/request-tracing/select-notifiers.png)
-
-|   | Keep in mind that for audit events to be relayed to the selected notifiers, both the Notification Service and each selected notifier must be enabled and configured beforehand. |
-| - | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-
-|   | You don’t need to manually add each notifier on this screen. When enabling a notifier on its configuration screen, the server will **automatically** add it to the list of selected notifiers for the Admin audit service. This same result occurs when enabling the notifier using the appropriate _asadmin_ command. |
-| - | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+<figure><img src="https://docs.payara.fish/community/docs/_images/request-tracing/select-notifiers.png" alt=""><figcaption></figcaption></figure>
 
 #### From the Command Line
 

@@ -28,7 +28,7 @@ As with any other services available in MWARE AS, the HealthCheck service can be
 
 To configure the HealthCheck Service in the Administration Console, go to _Configuration → \[instance-configuration (like server-config)] → Healthcheck_:
 
-![HealthCheck Configuration in the Admin Console](https://docs.payara.fish/community/docs/\_images/healthcheck/admin-console-configuration.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/healthcheck/admin-console-configuration.png" alt=""><figcaption></figcaption></figure>
 
 Check the **Enabled** box (and the **Dynamic** box too if you don’t want to restart the domain) to switch the HealthCheck service on.
 
@@ -92,7 +92,7 @@ Calculates and prints out how many times GC is executed with its elapsed time. T
 
 You can configure the settings for each checker on the respective tab in the web console. Here’s a sample image with the current configuration for the **CPU Usage** checker:
 
-![CPU Usage Checker Configuration in the Admin Console](https://docs.payara.fish/community/docs/\_images/healthcheck/cpu-usage-checker-configuration.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/healthcheck/cpu-usage-checker-configuration.png" alt=""><figcaption></figcaption></figure>
 
 #### From the Command Line
 
@@ -408,7 +408,7 @@ The **Hogging Threads** and the **Stuck Threads** checkers are special on their 
 
 Here’s a configuration sample of the **Hogging Threads** checker:
 
-![Hogging Threads Checker Configuration in the Admin Console](https://docs.payara.fish/community/docs/\_images/healthcheck/hogging-threads-checker-configuration.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/healthcheck/hogging-threads-checker-configuration.png" alt=""><figcaption></figcaption></figure>
 
 The following are the attributes used to configure this checker:
 
@@ -422,7 +422,7 @@ Represents the count value that should be reached by the hogged thread in order 
 
 And here’s a configuration sample for the **Stuck Threads** checker:
 
-![Stuck Threads Checker Configuration in the Admin Console](https://docs.payara.fish/community/docs/\_images/healthcheck/stuck-threads-checker-configuration.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/healthcheck/stuck-threads-checker-configuration.png" alt=""><figcaption></figcaption></figure>
 
 The following are the attributes used to configure this checker:
 

@@ -36,7 +36,7 @@ To configure the EJB thread pool using the admin console, go to Configuration â†
 
 Add a new additional property, set the Name to the property name from the table above of the property you want to set, and set the Value to a valid value for that property.
 
-![Admin Console Configuration](https://docs.payara.fish/community/docs/\_images/ejb/ejb-thread-pool-admin-console-configuration.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/ejb/ejb-thread-pool-admin-console-configuration.png" alt=""><figcaption></figcaption></figure>
 
 #### Using the Asadmin CLI
 

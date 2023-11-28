@@ -27,7 +27,7 @@ A deployment group can be created in both the administration console and via Asa
 
 To create a new deployment group. Navigate to the Deployment Groups node in the navigation tree, click on the New button and give the deployment group a unique name. From this screen it is also possible to add a number of new server instances if desired, however it is possible to add existing instances to the group later.&#x20;
 
-<figure><img src="https://docs.payara.fish/community/docs/_images/deployment-groups/deployment-group-new.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/deployment-group-new.webp" alt=""><figcaption></figcaption></figure>
 
 #### Using asadmin commands
 
@@ -43,7 +43,9 @@ A deployment group can be deleted in both the administration console and via Asa
 
 #### Using the Administration Console
 
-To delete a deployment group. Navigate to the group in the console, select it and choose delete. ![Delete a Deployment Group](https://docs.payara.fish/community/docs/\_images/deployment-groups/delete-deployment-group.png)
+To delete a deployment group. Navigate to the group in the console, select it and choose delete.&#x20;
+
+<figure><img src="https://docs.payara.fish/community/docs/_images/deployment-groups/delete-deployment-group.png" alt=""><figcaption></figcaption></figure>
 
 #### Using asadmin commands
 
@@ -67,7 +69,11 @@ asadmin> add-instance-to-deployment-group --instance testserver --deploymentgrou
 
 #### Removing an Instance
 
-If you want to remove an instance from a deployment group. Navigate to the deployment group, select the instance and choose remove from the "more actions…​" drop down. ![Remove a Server from a Deployment Group](https://docs.payara.fish/community/docs/\_images/deployment-groups/remove-server-from-dg.png) The same can be achieved using the Asadmin CLI.
+If you want to remove an instance from a deployment group. Navigate to the deployment group, select the instance and choose remove from the "more actions…​" drop down. &#x20;
+
+<figure><img src="https://docs.payara.fish/community/docs/_images/deployment-groups/remove-server-from-dg.png" alt=""><figcaption></figcaption></figure>
+
+The same can be achieved using the Asadmin CLI.
 
 ```shell
 asadmin> remove-instance-from-deployment-group --instance testserver --deploymentgroup test2
@@ -77,7 +83,7 @@ asadmin> remove-instance-from-deployment-group --instance testserver --deploymen
 
 A deployment group can also be used to provide lifecycle management to the group of server instances in the deployment group. All servers in the group can be started, stopped and restarted. To do this, navigate to the deployment group and choose "Start Deployment Group", "Stop Deployment Group" or "Restart Deployment Group".
 
-![Server Lifecycle Management](https://docs.payara.fish/community/docs/\_images/deployment-groups/lifecycle-dg.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/deployment-groups/lifecycle-dg.png" alt=""><figcaption></figcaption></figure>
 
 The same can be achieved using the asadmin commands;
 
@@ -91,7 +97,7 @@ asadmin> stop-deployment-group test2
 
 To deploy an application to a deployment group you just select the deployment group name in the list of targets in the usual way. This can be done both on the Applications tab of the Deployment Group or on the Applications section of the administration console.
 
-![Deploy to a deployment group](https://docs.payara.fish/community/docs/\_images/deployment-groups/deploy-to-dg.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/deployment-groups/deploy-to-dg.png" alt=""><figcaption></figcaption></figure>
 
 To deploy an application using asadmin just specify the deployment group as a target when running the deploy command.
 

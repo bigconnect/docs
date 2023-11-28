@@ -10,7 +10,7 @@ To view data grid members from the admin console:
 
 Selected the **Data Grid** menu option from the domain menu in the sidebar and select the _Data Grid Instances_ tab:
 
-![Domain Cluster Members](https://docs.payara.fish/community/docs/\_images/hazelcast/hazelcast-admin-console-view-cluster-members-from-domain.png)
+<figure><img src="https://docs.payara.fish/community/docs/_images/hazelcast/hazelcast-admin-console-view-cluster-members-from-domain.png" alt=""><figcaption></figcaption></figure>
 
 ### Viewing Cluster Members via asadmin
 

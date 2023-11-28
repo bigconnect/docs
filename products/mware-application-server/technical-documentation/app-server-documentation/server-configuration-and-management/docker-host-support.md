@@ -22,7 +22,7 @@ Creating a Docker node is done in a similar manner to creating an SSH or CONFIG 
 
 Docker nodes do have some unique configuration properties however:
 
-* Docker Password File - This is the fully-qualified path of the password file that the Docker instance will use for authentication against the DAS. Please note, that this path should be the path to the file on the **remote** machine. This file should be a standard Payara password file as you would use with asadmin. This must be specified, as Docker instances require secure admin to be enabled to start.
+* Docker Password File - This is the fully-qualified path of the password file that the Docker instance will use for authentication against the DAS. Please note, that this path should be the path to the file on the **remote** machine. This file should be a standard MWARE AS password file as you would use with asadmin. This must be specified, as Docker instances require secure admin to be enabled to start.
 * TLS - Whether or not to use HTTPS to communicate with the Docker engine or not.
 * Docker Port - The port that the Docker engine is listening on. Defaults to 2376.
 * Docker Image - The Docker image to use. MWARE AS will default to using the `payara/payaraserver-node:6.2023.10` image.

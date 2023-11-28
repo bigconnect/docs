@@ -96,7 +96,7 @@ The above code instantiates the bouncy castle provider, and registers the previo
 
 The modified provider is then inserted at provider position 1 (the first, there’s no 0), using a static method of the [Security](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/Security.html) class.
 
-After pinging this Servlet, and requesting another Servlet over HTTPS that’s protected with the client-cert authentication mechanism, a principal with name `CN=lfoo,OU=bar,O=kaz,L=zak,ST=lak,C=UK` will be replaced at nearly the lowest level in the system with "CN=u1", and Payara will only see this principal name. We can use this principal name for instance to map groups and roles to it:
+After pinging this Servlet, and requesting another Servlet over HTTPS that’s protected with the client-cert authentication mechanism, a principal with name `CN=lfoo,OU=bar,O=kaz,L=zak,ST=lak,C=UK` will be replaced at nearly the lowest level in the system with "CN=u1", and MWARE AS will only see this principal name. We can use this principal name for instance to map groups and roles to it:
 
 ```xml
 <glassfish-web-app>
