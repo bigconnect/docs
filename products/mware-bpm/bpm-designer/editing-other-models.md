@@ -221,7 +221,7 @@ There, you see the **name**, **description**, **version**, **creator** and the *
 
 <figure><img src="../../../.gitbook/assets/work-test-model-details-3f390ff35e8cd90b2d77179deba0698e (1).webp" alt=""><figcaption></figcaption></figure>
 
-### Test Model Editor <a href="#user-model-editor" id="user-model-editor"></a>
+### Test Model Editor <a href="#test-model-editor" id="test-model-editor"></a>
 
 The Test Model Editor is a set of properties that define the test model, associated test users and test datasets.
 
