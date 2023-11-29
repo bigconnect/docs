@@ -1,27 +1,27 @@
 # Editing Other Models
 
-The Other model view includes a number of different models that can be used within an App to configure its behavior. These include Action, Content and User, Security policy, Data object, Template, Service, and Liquibase changelog models. Each of the different models can be created and edited in a similar way through forms.
+ga
 
 ### User Interface[​](https://documentation.flowable.com/latest/user/design/work-editor#user-interface) <a href="#user-interface" id="user-interface"></a>
 
 The different Work models can be selected to create, view and modify by selecting the appropriate filter. Currently, there are three types of Work model:
 
-| Model Type          | Content                    |
-| ------------------- | -------------------------- |
-| Action              | Action models              |
-| Content             | Content models             |
-| User                | User models                |
-| Security policy     | Security policy models     |
-| Data object         | Data object models         |
-| Template            | Template models            |
-| Service             | Service models             |
-| Liquibase changelog | Liquibase changelog models |
+| Model Type      | Content                |
+| --------------- | ---------------------- |
+| Action          | Action models          |
+| Content         | Content models         |
+| User            | User models            |
+| Security policy | Security policy models |
+| Data object     | Data object models     |
+| Template        | Template models        |
+| Test            | Test models            |
+| Service         | Service models         |
 
 ## Action Model[​](https://documentation.flowable.com/latest/user/design/work-editor#action-model)
 
 The Action model editor shows a list of existing Action models, which can then be modified or deleted as required. By default, the list of models is displayed in the order of last modified and as a textual table of model details. It is possible to switch the view to a different sort order or as a graphical gallery of cards.
 
-<figure><img src="../../../.gitbook/assets/820-work-action-list-bfa5c6b928998c0b6fdfb316ed006671.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/spaces_2F-Lv6YU_27lR-b2ZLvWS__2Fuploads_2FrYfF6Sx2Bz5UrkKqYqM5_2F820-work-action-list-bfa5c6b928998c0b6fdfb316ed006671.webp" alt=""><figcaption></figcaption></figure>
 
 The model list enables the following actions:
 
@@ -187,4 +187,76 @@ The User Model Editor is a set of properties that define the model.
 | REST accessible variables Values | A list of names of accessible variables.                                      |
 | Conversation filters             | The filters available in conversations, for example, all, internal, external. |
 | Contact filters                  | The filters available in contacts, for example, all, internal, external.      |
+
+## Test Model[​](https://documentation.flowable.com/latest/user/design/work-editor#user-model) <a href="#user-model" id="user-model"></a>
+
+The Test Model lets the developer focus on testing the business logic, rather than writing boilerplate code. The generated test code handles process instance start at any selected flow node and advances a process instance in case of wait states. Since the test code is generated, there is no need to deal with process definition keys and flow node IDs. Moreover any breaking changes (e.g. a user task becomes an external task) in the BPMN process will already be visible at design time as test compile errors.
+
+After modeling, a developer uses the Test Model to define suitable test cases by selecting a start and an end flow node. The test model finds all possible paths through the BPMN process and each path can be added as a test case. The user has the option to manually select test cases to be added, to to add all test cases automatically.
+
+<figure><img src="../../../.gitbook/assets/work-test-list-bfa5c6b928998c0b6fdfb316ed006671.webp" alt=""><figcaption></figcaption></figure>
+
+The model list enables the following actions:
+
+* View and change model details
+* Edit a model
+
+The following sections describe each feature in more detail.
+
+### Creating a new Test Model
+
+Click the button labeled `Create`, a dialog appears into which you enter basic information:
+
+<figure><img src="../../../.gitbook/assets/work-new-test-model-38457797850dd00e4f2af7e5473452df.webp" alt=""><figcaption></figcaption></figure>
+
+By clicking `Create new model`, a new test model is created, and you are redirected to the edit view of the test model where you can make further configuration changes. See Test Model Editor for more information.
+
+* The display name of the user model.
+* The user model’s unique key.
+* An optional description of the user model.
+
+### Test Model Details
+
+There, you see the **name**, **description**, **version**, **creator** and the **modification date** of the model as well as the current values of the properties that are used to define the test.
+
+<figure><img src="../../../.gitbook/assets/work-test-model-details-3f390ff35e8cd90b2d77179deba0698e (1).webp" alt=""><figcaption></figcaption></figure>
+
+### Test Model Editor[​](https://documentation.flowable.com/latest/user/design/work-editor#user-model-editor) <a href="#user-model-editor" id="user-model-editor"></a>
+
+The Test Model Editor is a set of properties that define the test model, associated test users and test datasets.
+
+<figure><img src="../../../.gitbook/assets/work-test-model-details-3f390ff35e8cd90b2d77179deba0698e (1).webp" alt=""><figcaption></figcaption></figure>
+
+#### Test Cases
+
+The BPM developer can define suitable test cases by selecting a start and an end flow node from the BPM model. Once you select a BPM model, the Start and End nodes, the test model finds all possible paths through the BPMN process and each path can be added as a test case.&#x20;
+
+The user has the option to manually select test cases to be added, or add all test cases automatically:
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+MWARE BPM generates test case names automatically, but optionally a test case can be named and described. Names and descriptions are reflected in the generated test code.
+
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+#### Test Users
+
+
+
+#### Test Data
+
+
+
+### Test coverage
+
+MWARE BPM can check your process model coverage ratio against test paths. Running typical JUnit tests now leaves **html** files in your build output. Just open one and check yourself what your test did:
+
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+* **Visually verify** the paths covered by individual tests **methods** and whole test **classes**
+* Visually check gateway **expressions** and transaction borders (**save points**) used by your process
+* Calculate and **verify** the nodes (_and_ sequence flow) **coverage** ratio reached by tests methods and classes.
+* Works with Java starting with 1.8+
+* Supports **JUnit 4.13.1+**or **JUnit 5**
+* Can be used inside Spring Tests
 
