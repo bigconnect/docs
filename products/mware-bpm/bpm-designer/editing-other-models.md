@@ -231,6 +231,10 @@ The Test Model Editor is a set of properties that define the test model, associa
 
 The BPM developer can define suitable test cases by selecting a start and an end flow node from the BPM model. Once you select a BPM model, the Start and End nodes, the test model finds all possible paths through the BPMN process and each path can be added as a test case.&#x20;
 
+{% hint style="info" %}
+The Test Model generates the optimal (minimum) number of test cases to cover all possible paths on the BPM model, between the chosen Start and End nodes.
+{% endhint %}
+
 The user has the option to manually select test cases to be added, or add all test cases automatically:
 
 <figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
@@ -239,7 +243,7 @@ MWARE BPM generates test case names automatically, but optionally a test case ca
 
 <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-#### Test Users
+Test Users
 
 
 
@@ -247,7 +251,17 @@ MWARE BPM generates test case names automatically, but optionally a test case ca
 
 
 
-### Test coverage
+### Test Case Generation
+
+For each test model, MWARE BPM generates a [JUnit 4](https://junit.org/junit4/) test suite where each test cases will result in a [JUnit 4 test rule](https://github.com/junit-team/junit4/wiki/Rules). The test suite is generates as a Maven Java project that has all required dependencies to execute the test suite independently of MWARE BPM.
+
+The generated Maven JUnit test cases can be integrated in any existing automated CI/CD tools that provide support for Java or JUnit:
+
+* Apache JMeter
+* Jenkins
+* HP Loadrunner
+
+### Test Coverage
 
 MWARE BPM can check your process model coverage ratio against test paths. Running typical JUnit tests now leaves **html** files in your build output. Just open one and check yourself what your test did:
 
