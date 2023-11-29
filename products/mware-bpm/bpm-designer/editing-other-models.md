@@ -264,6 +264,8 @@ The generated Maven JUnit test cases can be integrated in any existing automated
 * HP Loadrunner
 * etc.
 
+The test model ensures the automatic re-generation of test cases whenever the selected model BPM model changes if the **Regenerate Test Cases on process change** setting is enabled.
+
 ### Test Coverage
 
 MWARE BPM can check your process model coverage ratio against test paths. Running typical JUnit tests now leaves **html** files in your build output. Just open one and check yourself what your test did:
