@@ -1,6 +1,6 @@
 # Editing Other Models
 
-ga
+The Other model view includes a number of different models that can be used within an App to configure its behavior. These include Action, Content and User, Security policy, Data object, Template, Test, and Service models. Each of the different models can be created and edited in a similar way through forms.
 
 ### User Interface[​](https://documentation.flowable.com/latest/user/design/work-editor#user-interface) <a href="#user-interface" id="user-interface"></a>
 
@@ -243,13 +243,15 @@ MWARE BPM generates test case names automatically, but optionally a test case ca
 
 <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-Test Users
+#### Test Users
 
-
+Here you can configure the users that will be allocated to the generated test cases. Allocation is based on the user's role. If the users's role does not match the BPM role, the user will not be allocated to the test case (will be ignored).
 
 #### Test Data
 
+Test data must be provided to trigger the selected BPM Start node. The data must be in XML or JSON formats.
 
+Multiple datasets can be provided. The test model will choose the dataset based on the Test data allocation setting (SEQUENTIAL or RANDOM).
 
 ### Test Case Generation
 
@@ -260,6 +262,7 @@ The generated Maven JUnit test cases can be integrated in any existing automated
 * Apache JMeter
 * Jenkins
 * HP Loadrunner
+* etc.
 
 ### Test Coverage
 
@@ -270,7 +273,4 @@ MWARE BPM can check your process model coverage ratio against test paths. Runnin
 * **Visually verify** the paths covered by individual tests **methods** and whole test **classes**
 * Visually check gateway **expressions** and transaction borders (**save points**) used by your process
 * Calculate and **verify** the nodes (_and_ sequence flow) **coverage** ratio reached by tests methods and classes.
-* Works with Java starting with 1.8+
-* Supports **JUnit 4.13.1+**or **JUnit 5**
-* Can be used inside Spring Tests
 
