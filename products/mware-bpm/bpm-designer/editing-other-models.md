@@ -219,13 +219,13 @@ By clicking `Create new model`, a new test model is created, and you are redirec
 
 There, you see the **name**, **description**, **version**, **creator** and the **modification date** of the model as well as the current values of the properties that are used to define the test.
 
-<figure><img src="../../../.gitbook/assets/work-test-model-details-3f390ff35e8cd90b2d77179deba0698e (1).webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/work-test-model-details-3f390ff35e8cd90b2d77179deba0698e (2).webp" alt=""><figcaption></figcaption></figure>
 
 ### Test Model Editor <a href="#test-model-editor" id="test-model-editor"></a>
 
 The Test Model Editor is a set of properties that define the test model, associated test users and test datasets.
 
-<figure><img src="../../../.gitbook/assets/work-test-model-details-3f390ff35e8cd90b2d77179deba0698e (1).webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/work-test-model-details-3f390ff35e8cd90b2d77179deba0698e (2).webp" alt=""><figcaption></figcaption></figure>
 
 #### Test Cases
 
