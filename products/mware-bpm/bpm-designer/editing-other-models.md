@@ -237,9 +237,15 @@ The Test Model generates the optimal (minimum) number of test cases to cover all
 
 The user has the option to manually select test cases to be added, or add all test cases automatically:
 
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
 <figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 MWARE BPM generates test case names automatically, but optionally a test case can be named and described. Names and descriptions are reflected in the generated test code.
+
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+If a test case becomes invalid due to the underlying BPM Model change, the Test Model will outline the test case so the developer can fix the problem:
 
 <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -310,7 +316,7 @@ public class OrderFulfillmentTest {
 
 MWARE BPM can check your process model coverage ratio against test paths. Running typical JUnit tests now leaves **html** files in your build output. Just open one and check yourself what your test did:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Visually verify** the paths covered by individual tests **methods** and whole test **classes**
 * Visually check gateway **expressions** and transaction borders (**save points**) used by your process

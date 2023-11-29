@@ -86,7 +86,7 @@ Besides the various objects that can be loaded into the platform, BigConnect Exp
 
 The Explorer  includes a dashboard where users are being taken upon login. Various widgets can be added or removed from the dashboard to bring to focus any relevant information.
 
-![BigConnect Explorer Dashboard](<../../.gitbook/assets/image (2) (1) (1) (1).png>)
+![BigConnect Explorer Dashboard](<../../.gitbook/assets/image (2) (1) (1) (1) (1).png>)
 
 ### Analysis Tools
 
