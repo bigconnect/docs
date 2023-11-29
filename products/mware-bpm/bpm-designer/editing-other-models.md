@@ -266,6 +266,46 @@ The generated Maven JUnit test cases can be integrated in any existing automated
 
 The test model ensures the automatic re-generation of test cases whenever the selected model BPM model changes if the **Regenerate Test Cases on process change** setting is enabled.
 
+Example of a generated JUnit test suite:
+
+```java
+import org.junit.Rule;
+import org.junit.Test;
+
+import generated.order_fulfillment.TC_Happy_Path;
+
+public class OrderFulfillmentTest {
+
+  @Rule
+  public TC_Happy_Path tc = new TC_Happy_Path();
+
+  @Test
+  public void testItemsAvailable() {
+    tc.handleCheckAvailabilityUserTask()
+      .verify((pi, task) -> {
+        // verify wait state
+        pi.variables().containsEntry("customerId", 123);
+
+        task.hasCandidateGroup("group-xyz");
+      })
+      .withVariable("available", true)
+      .complete();
+
+    // enrich and execute test case
+    tc.createExecutor()
+      .withBusinessKey("order-20210623-0001")
+      .withVariable("customerId", 123)
+      .withVariable("customerType", "NEW")
+      .withBean("approveOrder", new ApproveOrderDelegate())
+      .verify(pi -> {
+        // verify state after execution
+        pi.isEnded();
+      })
+      .execute();
+  }
+}
+```
+
 ### Test Coverage
 
 MWARE BPM can check your process model coverage ratio against test paths. Running typical JUnit tests now leaves **html** files in your build output. Just open one and check yourself what your test did:
