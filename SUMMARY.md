@@ -520,6 +520,7 @@
         * [Transferring Permissions](cloud/pipelines-studio/pipeline-configuration/roles-and-permissions/transfer-pipeline-permissions/page-1.md)
     * [Enabling HTTPS](cloud/pipelines-studio/configuration/enabling-https/README.md)
       * [Prerequisites](cloud/pipelines-studio/configuration/enabling-https/prerequisites.md)
+      * [Step 1. Create Keystore Files](cloud/pipelines-studio/configuration/enabling-https/step-1.-create-keystore-files.md)
     * [Using a Reverse Proxy](cloud/pipelines-studio/configuration/using-a-reverse-proxy.md)
     * [BigConnect Pipelines Configuration](cloud/pipelines-studio/configuration/bigconnect-pipelines-configuration.md)
     * [BigConnect Pipelines Environment Configuration](cloud/pipelines-studio/configuration/bigconnect-pipelines-environment-configuration.md)
