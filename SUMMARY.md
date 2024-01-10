@@ -517,7 +517,7 @@
       * [Pipeline Permissions](cloud/pipelines-studio/pipeline-configuration/roles-and-permissions/pipeline-permissions.md)
       * [Roles and Permissions for Common Tasks](cloud/pipelines-studio/pipeline-configuration/roles-and-permissions/roles-and-permissions-for-common-tasks.md)
       * [Transfer Pipeline Permissions](cloud/pipelines-studio/pipeline-configuration/roles-and-permissions/transfer-pipeline-permissions/README.md)
-        * [Transferring Permissions](cloud/pipelines-studio/configuration/roles-and-permissions/transfer-pipeline-permissions/transferring-permissions.md)
+        * [Transferring Permissions](cloud/pipelines-studio/pipeline-configuration/roles-and-permissions/transfer-pipeline-permissions/page-1.md)
     * [Enabling HTTPS](cloud/pipelines-studio/configuration/enabling-https.md)
     * [Using a Reverse Proxy](cloud/pipelines-studio/configuration/using-a-reverse-proxy.md)
     * [BigConnect Pipelines Configuration](cloud/pipelines-studio/configuration/bigconnect-pipelines-configuration.md)
