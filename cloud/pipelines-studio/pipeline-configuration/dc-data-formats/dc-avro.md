@@ -31,4 +31,3 @@ When writing Avro data, destinations and processors write the data based on an A
 Tip: When needed, you can use the Schema Generator processor to generate an Avro schema and write the schema to the `avroSchema` record header attribute.
 
 Some stages automatically include the Avro schema in the output. Other stages can be configured to include the Avro schema in the output. You can compress the output data using an Avro-supported compression codec.
-

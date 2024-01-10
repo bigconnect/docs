@@ -86,49 +86,12 @@ NetFlow 9 records are generated based on the Record Generation Mode that you sel
 
 NetFlow 9 records can include the following fields:
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">NetFlow 9 Field Name</th>
-      <th style="text-align:left">Description</th>
-      <th style="text-align:left">Included...</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">flowKind</td>
-      <td style="text-align:left">
-        <p>Indicates the type of flow to be processed:</p>
-        <ul>
-          <li>FLOWSET for data from a flowset.</li>
-          <li>OPTIONS for data from an options flow.</li>
-        </ul>
-      </td>
-      <td style="text-align:left">In all NetFlow 9 records.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">values</td>
-      <td style="text-align:left">A map field with field names and values as processed by the stage based
-        on the template specified in the packet header.</td>
-      <td style="text-align:left">In NetFlow 9 records when you configure the Record Generation Mode property
-        to include &#x201C;interpreted&#x201D; data in the record.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">packetHeader</td>
-      <td style="text-align:left">A map field containing information about the packet. Typically includes
-        information such as the source ID and the number of records in the packet.</td>
-      <td
-      style="text-align:left">In all NetFlow 9 records.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">rawValues</td>
-      <td style="text-align:left">A map field with the fields defined by the associated template and the
-        raw, unprocessed, bytes for those fields.</td>
-      <td style="text-align:left">In NetFlow 9 records when you configure the Record Generation Mode property
-        to include raw data in the record.</td>
-    </tr>
-  </tbody>
-</table>
+| NetFlow 9 Field Name | Description                                                                                                                                         | Included...                                                                                                              |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| flowKind             | <p>Indicates the type of flow to be processed:</p><ul><li>FLOWSET for data from a flowset.</li><li>OPTIONS for data from an options flow.</li></ul> | In all NetFlow 9 records.                                                                                                |
+| values               | A map field with field names and values as processed by the stage based on the template specified in the packet header.                             | In NetFlow 9 records when you configure the Record Generation Mode property to include “interpreted” data in the record. |
+| packetHeader         | A map field containing information about the packet. Typically includes information such as the source ID and the number of records in the packet.  | In all NetFlow 9 records.                                                                                                |
+| rawValues            | A map field with the fields defined by the associated template and the raw, unprocessed, bytes for those fields.                                    | In NetFlow 9 records when you configure the Record Generation Mode property to include raw data in the record.           |
 
 ### Sample Raw and Interpreted Record
 
@@ -262,4 +225,3 @@ When you set the Record Generation Mode property to Raw Only, the resulting reco
       }
    }
 ```
-

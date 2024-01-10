@@ -40,4 +40,3 @@ The destination writes records as delimited data. When you use this data format,
 * PostgreSQL CSV - PostgreSQL comma-separated file.
 * PostgreSQL Text - PostgreSQL text file.
 * Custom - File that uses user-defined delimiter, escape, and quote characters.
-
