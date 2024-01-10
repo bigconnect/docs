@@ -277,19 +277,19 @@ To configure multiple LDAP servers, simply configure the connection information 
 \
 For a Cloudera Manager installation, configure the connection information for the additional LDAP servers in an advanced configuration snippet - or safety valve - within Cloudera Manager.\
 \
-In Cloudera Manager, select the StreamSets service, then click **Configuration**. Select **Use Safety Valve to Edit LDAP Information**, and then configure the connection information for all of the LDAP servers in the **Data Collector Advanced Configuration Snippet** for ldap.login.conf safety valve.\
+In Cloudera Manager, select the StreamSets service, then click **Configuration**. Select **Use Safety Valve to Edit LDAP Information**, and then configure the connection information for all of the LDAP servers in the **BigConnect Pipelines Advanced Configuration Snippet for ldap.login.conf** safety valve.\
 \
 When you configure multiple LDAP servers in the safety valve, Cloudera Manager ignores all values entered for the `ldap.*` properties in the **Configuration** tab.
 
 Use the following guidelines when configuring multiple LDAP servers:
 
-* The LDAP user account used to log in to Data Collector must be registered in at least one of the configured LDAP servers to be authenticated.
-* If the LDAP user accounts belong to different LDAP groups in each LDAP server, include all of the group names when you map LDAP groups to Data Collector roles in the $SDC\_CONF/sdc.properties file.
+* The LDAP user account used to log in to BigConnect Pipelines must be registered in at least one of the configured LDAP servers to be authenticated.
+* If the LDAP user accounts belong to different LDAP groups in each LDAP server, include all of the group names when you map LDAP groups to BigConnect Pipelines roles in the _$SDC\_CONF/sdc.properties_ file.
 * If the additional LDAP servers use different passwords for bindDN - the root distinguished name (DN) for the connection - then directly define the passwords in the bindPassword property.
 
-Note: When you configure multiple LDAP servers, Data Collector attempts to connect to each server in the order listed in the ldap-login.conf file. If Data Collector successfully authenticates the user account in one of the LDAP servers, Data Collector still continues to authenticate with the remaining LDAP servers. This can cause the Data Collector log file to include login failure error messages. You can ignore these error messages.
+**Note**: When you configure multiple LDAP servers, BigConnect Pipelines attempts to connect to each server in the order listed in the `ldap-login.conf` file. If BigConnect Pipelines successfully authenticates the user account in one of the LDAP servers, BigConnect Pipelines still continues to authenticate with the remaining LDAP servers. This can cause the BigConnect Pipelines log file to include login failure error messages. You can ignore these error messages.
 
-The following example shows an ldap-login.conf file configured to connect to two OpenLDAP servers, server1 and server2. Each server uses the same password for bindDN:
+The following example shows an _`ldap-login.conf`_ file configured to connect to two OpenLDAP servers, server1 and server2. Each server uses the same password for bindDN:
 
 ```
 ldap {
@@ -340,11 +340,11 @@ ldap {
 
 #### Step 5. Enable LDAP Authentication for MapR Stages <a href="#ariaid-title9" id="ariaid-title9"></a>
 
-To use MapR stages with a Data Collector configured to use LDAP authentication, you must perform an additional step after configuring LDAP authentication.
+To use MapR stages with BigConnect Pipelines configured to use LDAP authentication, you must perform an additional step after configuring LDAP authentication.
 
 The MapR distribution for Hadoop uses the Java Authentication and Authorization Service (JAAS) to control security features. The `$MAPR_HOME/conf/mapr.login.conf` file specifies configuration parameters for JAAS.
 
-Data Collector expects LDAP configuration to be in the JAAS configuration file `$SDC_CONF/ldap-login.conf` and overrides the `java.security.auth.login.config` system property to point to this file.
+BigConnect Pipelines expects LDAP configuration to be in the JAAS configuration file `$SDC_CONF/ldap-login.conf` and overrides the `java.security.auth.login.config` system property to point to this file.
 
 To avoid this conflict, copy the contents of the `$MAPR_HOME/conf/mapr.login.conf` file into the `$SDC_CONF/ldap-login.conf` file after you configure the LDAP connection information in the `ldap-login.conf` file.
 
@@ -354,99 +354,4 @@ For example, use the following command to append the contents of the `mapr.login
 cat $MAPR_HOME/conf/mapr.login.conf >> $SDC_CONF/ldap-login.conf
 ```
 
-### Configuring File-Based Authentication <a href="#ariaid-title10" id="ariaid-title10"></a>
-
-If your organization does not use LDAP and you want to enable multiple users to access Data Collector, you might configure Data Collector to use file-based authentication.
-
-To configure file-based authentication, perform the following tasks:
-
-1. Configure authentication properties.
-2. Configure Data Collector users, groups, and roles.
-
-Users can change their password after logging into Data Collector.
-
-#### Step 1. Configure Authentication Properties <a href="#ariaid-title11" id="ariaid-title11"></a>
-
-Configure authentication properties in the Data Collector configuration file, `$SDC_CONF/sdc.properties`.
-
-When you use file-based authentication, you can use the Basic, Digest, or Form authentication type.
-
-1. In the Data Collector configuration file, `$SDC_CONF/sdc.properties`, enable file-based authentication by setting the http.authentication.login.module property to file.
-2. In the `$SDC_CONF/sdc.properties` file, define the HTTP authentication type by setting the http.authentication property to basic, digest, or form.
-3.  Specify whether Data Collector checks the permissions for the associated realm.properties file for the type of authentication that you use. Set the http.realm.file.permission.check property to one of the following values:
-
-    * true to ensure that the realm.properties file allows access only to the owner.
-    * false to skip the permission check.
-
-    You'll use the realm.properties file in the next step, when you configure Data Collector users and roles.
-
-#### Step 2. Configure Users, Groups, and Roles <a href="#ariaid-title12" id="ariaid-title12"></a>
-
-For file-based authentication, you configure the users that can log in to Data Collector. You assign roles to each user account and you can optionally create and assign groups to the user accounts.
-
-Configure users, groups, and roles in the properties file for the type of authentication that you use: $SDC\_CONF/\<authentication>-realm.properties.
-
-Data Collector roles determine the tasks that a user can perform. You can also create groups and assign the groups to related user accounts. Use groups to easily assign pipeline permissions to groups of users. Pipeline permissions determine the pipeline access that each user has.
-
-For example, say you use file-based authentication and want to create an `Ops` group to manage pipelines. To handle this, when you configure users in the authentication properties file, you grant the Manager role and add the `Ops` group for each operations user. Then, you edit each pipeline they need to manage, assigning read and execute permission to the `Ops` group. For more information, see [Roles and Permissions](https://docs.streamsets.com/portal/datacollector/3.22.x/help/datacollector/UserGuide/Configuration/RolesandPermissions.html#concept\_k1r\_prc\_yy).
-
-Data Collector provides several default user accounts and groups. You can change or remove these default user accounts and groups. For increased security, change the passwords for the default user accounts.Note: Data Collector installed through a cloud service provider marketplace includes only the default `admin` user account and no default groups.For file-based authentication, Data Collector provides the following default user accounts with corresponding roles:
-
-| User Login            | Role    | Tasks                                                                                                                                                                                                                                                                  |
-| --------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `admin` / `admin`     | Admin   | Perform any Data Collector task. Can perform all tasks listed below, as well as activate Data Collector, restart and shut down Data Collector, and view Data Collector metrics. Enable Control Hub. Install libraries using Package Manager. Generate support bundles. |
-| `manager` / `manager` | Manager | Start and stop pipelines, monitor pipelines, configure and reset alerts. Take, review, and manage snapshots.                                                                                                                                                           |
-| `creator` / `creator` | Creator | Create and configure pipelines and alerts, preview data, and monitor the pipeline. Import pipelines.                                                                                                                                                                   |
-| `guest` / `guest`     | Guest   | View pipelines and alerts, and general monitoring information. Export a pipeline.                                                                                                                                                                                      |
-
-For file-based authentication, Data Collector also provides a default `all` group that includes every user, and a `dev` and `test` group. The following default user accounts are available for the `dev` and `test` user groups:
-
-| User Login        | Roles               | Group |
-| ----------------- | ------------------- | ----- |
-| `user1` / `user1` | Manager and Creator | dev   |
-| `user2` / `user2` | Manager and Creator | dev   |
-| `user3` / `user3` | Manager and Creator | test  |
-| `user4` / `user4` | Manager and Creator | test  |
-
-Configure users and groups in the properties file for the type of authentication that you use. For example, if you use basic authentication, use the `basic-realm.properties` file.
-
-To hash login information, you can use an md5 program such as md5 on Mac OS X or md5sum on Linux. For example, you might use the following command to hash a password so that the password is not displayed in the prompt:
-
-```
-read -s pw && echo "$pw" | md5
-```
-
-For basic and form authentication, hash the password alone. For example, when the above command prompts you for the password, enter only the password.
-
-For digest authentication, hash the combination of `<user name>:<realm>:<password>`, where `<realm>` is the authentication type. For example, when the above command prompts you for the password, enter:
-
-`<user name>:<realm>:<password>`
-
-as follows:
-
-`jdoe:digest-realm:JdoePass`
-
-1. To configure users and groups, modify the properties file for the type of authentication that you use.The file name is $SDC\_CONF/\<authentication>-realm.properties.
-2.  For each new user, add a user definition using the following format:
-
-    ```
-    <user name>: MD5:<md5-text>, user, <role> [, <additional role>, <additional role>...] [, group:<group>, group:<additional group>...]
-    ```
-
-    Note: Assign one or more roles to each user. Be sure to include `user` in every user definition.For example, the following line defines a user named jsmith assigned the Creator role and to the Development group:
-
-    ```
-    jsmith: MD5:6d0258c2440a7d19e916292b231e3190,user,creator,group:Development
-    ```
-3. To make the new users available, restart Data Collector.
-
-#### Changing Your Password <a href="#ariaid-title13" id="ariaid-title13"></a>
-
-When Data Collector is configured for file-based authentication, you can use the Data Collector UI to change your password.
-
-Note: When Data Collector is installed through Cloudera Manager, you cannot use the Data Collector UI to change your password. Data Collector configuration properties, including file-based authentication, are [administered through Cloudera Manager](https://docs.streamsets.com/portal/datacollector/3.22.x/help/datacollector/UserGuide/Installation/CMInstall-Overview.html#task\_zn4\_qrn\_25).
-
-1. Click the User icon (![](https://docs.streamsets.com/datacollector/3.22.x/help/datacollector/UserGuide/Graphics/icon\_OverUser.png)), and then click Change Password.
-2.  Enter your current and new password, verify the new password, and then click Save.
-
-    Your changed password takes effect the next time you log in to Data Collector.
+### &#x20;<a href="#ariaid-title10" id="ariaid-title10"></a>
