@@ -20,7 +20,7 @@ You can include certain processors to read or modify the file reference informat
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (817).png" alt="">
+<img src="../../../../.gitbook/assets/image (817).png" alt="">
 
 </div>
 
