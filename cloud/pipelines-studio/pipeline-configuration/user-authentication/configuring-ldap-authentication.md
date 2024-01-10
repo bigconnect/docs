@@ -112,7 +112,7 @@ When an LDAP user logs into BigConnect Pipelines, BigConnect Pipelines uses the 
     ```
 
     \
-    The LDAP server returns the names of the LDAP groups that the user belongs to. BigConnect Pipelines uses the group names to determine the BigConnect Pipelines roles mapped to the LDAP groups, as explained in Step 3. Map LDAP Groups to Data Collector Roles.
+    The LDAP server returns the names of the LDAP groups that the user belongs to. BigConnect Pipelines uses the group names to determine the BigConnect Pipelines roles mapped to the LDAP groups, as explained in Step 3. Map LDAP Groups to BigConnect Pipelines Roles.
 
 #### Example for Active Directory <a href="#ariaid-title5" id="ariaid-title5"></a>
 
@@ -194,7 +194,7 @@ Use the same procedure to configure either secure method.
         ```
         export SDC_CONF=/etc/sdc
         ```
-    3.  Use the following command to copy the default Java truststore file to the Data Collector configuration directory:
+    3.  Use the following command to copy the default Java truststore file to the BigConnect Pipelines configuration directory:
 
         ```
         cp "${JAVA_HOME}/jre/lib/security/cacerts" "${SDC_CONF}/truststore.jks"
@@ -238,7 +238,7 @@ BigConnect Pipelines roles determine the tasks that a user can perform. You map 
 
 After you map LDAP groups to BigConnect Pipelines roles, you can assign pipeline permissions to the groups. Pipeline permissions determine the pipeline access that each user has. For example, say you have an LDAP Developer group for all pipeline developers. When you configure the BigConnect Pipelines LDAP properties, you assign the Creator role to the Developer group so they can create new pipelines. To allow the group to edit existing pipelines, you configure the permissions for each pipeline and assign read and write permission to the Developer group. For more information, see Roles and Permissions.
 
-To map LDAP groups to Data Collector roles, in the Data Collector configuration file, `$SDC_CONF/sdc.properties`, configure the **http.authentication.ldap.role.mapping** property.
+To map LDAP groups to BigConnect Pipelines roles, in the BigConnect Pipelines configuration file, `$SDC_CONF/sdc.properties`, configure the **http.authentication.ldap.role.mapping** property.
 
 BigConnect Pipelines provides the following roles:
 
