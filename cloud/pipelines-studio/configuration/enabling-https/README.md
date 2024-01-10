@@ -2,7 +2,7 @@
 
 To secure communication within BigConnect Pipelines, enable HTTPS for the following components:\
 \
-BigConnect Pipelines\
+**BigConnect Pipelines**\
 \
 Enable HTTPS for BigConnect Pipelines to secure the communication to the BigConnect Pipelines UI and REST API and to use the BigConnect Pipelines as an authoring BigConnect Pipelines in the Control Hub Pipeline Designer.\
 \
