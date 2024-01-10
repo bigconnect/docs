@@ -523,6 +523,7 @@
       * [Step 1. Create Keystore Files](cloud/pipelines-studio/configuration/enabling-https/step-1.-create-keystore-files.md)
       * [Step 2. Create a Truststore File](cloud/pipelines-studio/configuration/enabling-https/step-2.-create-a-truststore-file.md)
       * [Step 3. Configure BigConnect Pipelines to Use HTTPS](cloud/pipelines-studio/configuration/enabling-https/step-3.-configure-bigconnect-pipelines-to-use-https.md)
+      * [Step 4. Configure Cluster Pipelines to Use HTTPS](cloud/pipelines-studio/configuration/enabling-https/step-4.-configure-cluster-pipelines-to-use-https.md)
     * [Using a Reverse Proxy](cloud/pipelines-studio/configuration/using-a-reverse-proxy.md)
     * [BigConnect Pipelines Configuration](cloud/pipelines-studio/configuration/bigconnect-pipelines-configuration.md)
     * [BigConnect Pipelines Environment Configuration](cloud/pipelines-studio/configuration/bigconnect-pipelines-environment-configuration.md)
