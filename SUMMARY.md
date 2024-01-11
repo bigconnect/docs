@@ -574,7 +574,7 @@
     * [Accessing Hashicorp Vault Secrets with Vault Functions (Deprecated)](cloud/pipelines-studio/configuration/accessing-hashicorp-vault-secrets-with-vault-functions-deprecated.md)
     * [Working with Data Governance Tools](cloud/pipelines-studio/configuration/working-with-data-governance-tools.md)
     * [Enabling External JMX Tools](cloud/pipelines-studio/configuration/enabling-external-jmx-tools.md)
-  * [Upgrade](cloud/pipelines-studio/upgrade/README.md)
+  * [Upgrade](cloud/pipelines-studio/upgrade.md)
     * [Pre Upgrade Tasks](cloud/pipelines-studio/upgrade/pre-upgrade-tasks.md)
     * [Upgrade an Installation from the Tarball](cloud/pipelines-studio/upgrade/upgrade-an-installation-from-the-tarball.md)
     * [Upgrade an Installation from the RPM Package](cloud/pipelines-studio/upgrade/upgrade-an-installation-from-the-rpm-package.md)
