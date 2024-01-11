@@ -563,7 +563,7 @@
     * [Custom Stage Libraries](cloud/pipelines-studio/configuration/custom-stage-libraries/README.md)
       * [Storing Custom Libraries for RPM and Tarball](cloud/pipelines-studio/configuration/custom-stage-libraries/storing-custom-libraries-for-rpm-and-tarball.md)
       * [Storing Custom Libraries for Cloudera Manager](cloud/pipelines-studio/configuration/custom-stage-libraries/storing-custom-libraries-for-cloudera-manager.md)
-    * [Credential Stores](cloud/pipelines-studio/configuration/credential-stores/README.md)
+    * [Credential Stores](cloud/pipelines-studio/configuration/credential-stores.md)
       * [Enabling Credential Stores](cloud/pipelines-studio/configuration/credential-stores/enabling-credential-stores.md)
       * [Group Access to Secrets](cloud/pipelines-studio/configuration/credential-stores/group-access-to-secrets.md)
       * [AWS Secrets Manager](cloud/pipelines-studio/configuration/credential-stores/aws-secrets-manager.md)
