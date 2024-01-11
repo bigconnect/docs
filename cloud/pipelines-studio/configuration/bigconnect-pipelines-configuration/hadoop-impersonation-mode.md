@@ -1,2 +1,0 @@
-# Hadoop Impersonation Mode
-
