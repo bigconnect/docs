@@ -13,3 +13,7 @@ For example, the following image displays the properties pane for a Directory or
 When you select either Show Advanced Options property, the properties pane shows an additional property on the General tab and shows an additional tab. In the image below, the circled advanced property and tab are configured with recommended default values. You likely won't need to configure these properties until you begin fine tuning how the pipeline processes your data.
 
 ![](<../../../.gitbook/assets/image (225).png>)
+
+When appropriate, you can configure BigConnect Pipelines to display advanced options by default. When so configured, all new pipelines – and new stages added to existing pipelines – display advanced options by default.
+
+To show advanced options by default, in the BigConnect Pipelines configuration file, uncomment the `ui.default.configuration.view` property, set it to `ADVANCED`, and restart BigConnect Pipelines.

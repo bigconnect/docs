@@ -6,37 +6,10 @@ A webhook is a user-defined HTTP callback - an HTTP request that the pipeline se
 
 You can configure the following types of webhooks:
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Trigger</th>
-      <th style="text-align:left">Description</th>
-      <th style="text-align:left">Configuration Location</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Alert</td>
-      <td style="text-align:left">
-        <p>The pipeline sends all alert webhooks each time an alert is triggered.</p>
-        <p>For example, if your text message application has a webhook API, you can
-          have the pipeline send texts when alerts are triggered..</p>
-      </td>
-      <td style="text-align:left">Pipeline Rules tab &gt; Webhook tab</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">State notification</td>
-      <td style="text-align:left">
-        <p>The pipeline sends all state notification webhooks when the pipeline transitions
-          to the selected pipeline states.</p>
-        <p>For example, you can send an HTTP request to the Data Pipelines REST API
-          to start a different pipeline when the current pipeline transitions to
-          a Finished state.</p>
-      </td>
-      <td style="text-align:left">Pipeline Configuration tab &gt; Notifications tab</td>
-    </tr>
-  </tbody>
-</table>
+| Trigger            | Description                                                                                                                                                                                                                                                                                      | Configuration Location                         |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
+| Alert              | <p>The pipeline sends all alert webhooks each time an alert is triggered.</p><p>For example, if your text message application has a webhook API, you can have the pipeline send texts when alerts are triggered..</p>                                                                            | Pipeline Rules tab > Webhook tab               |
+| State notification | <p>The pipeline sends all state notification webhooks when the pipeline transitions to the selected pipeline states.</p><p>For example, you can send an HTTP request to the Data Pipelines REST API to start a different pipeline when the current pipeline transitions to a Finished state.</p> | Pipeline Configuration tab > Notifications tab |
 
 The flexibility of webhooks enables you to automatically trigger a wide range of tasks, depending on the ability of external systems to support webhooks or process HTTP requests.
 
@@ -104,23 +77,21 @@ Here are some examples of how you might use webhooks:
 
 You can configure a pipeline to send webhooks to a Slack channel. For example, you could have all alerts sent to an Operations Slack channel so someone on your operations team can respond to the alert.To do this, you perform the following steps:
 
-1. Configure Slack for incoming webhooks for the channel you want to use.
+1.  Configure Slack for incoming webhooks for the channel you want to use.
 
-   At the time of writing, you can enable webhooks in Slack starting from [this page](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks). When you enable webhooks, Slack generates a URL for you to use. If you have already enabled webhooks, check your account information for the Slack URL.
+    At the time of writing, you can enable webhooks in Slack starting from [this page](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks). When you enable webhooks, Slack generates a URL for you to use. If you have already enabled webhooks, check your account information for the Slack URL.
+2.  Copy the URL that Slack generates and use this to configure the pipeline.The URL looks something like this:
 
-2. Copy the URL that Slack generates and use this to configure the pipeline.The URL looks something like this:
+    ```
+    https://hooks.slack.com/services/<random string>/<random string>/<random string>
+    ```
 
-   ```text
-   https://hooks.slack.com/services/<random string>/<random string>/<random string>
-   ```
+    Slack also offers instructions on how to configure the payload. At this time, they suggest a text field with the contents of the message, like BigConnect Pipelines default payload.
+3.  Configure the webhook in the pipeline.
 
-   Slack also offers instructions on how to configure the payload. At this time, they suggest a text field with the contents of the message, like Data Collector default payload.
+    For Slack, you can just enter the URL and accept the defaults for everything else.
 
-3. Configure the webhook in the pipeline.
-
-   For Slack, you can just enter the URL and accept the defaults for everything else.
-
-   Here's how a Slack alert webhook might look:
+    Here's how a Slack alert webhook might look:
 
 ![](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/Webhook-Slack.png)
 
@@ -134,24 +105,26 @@ You configure the origin to generate an event when it completes processing all a
 
 To use this state change to start a second pipeline, configure a webhook that triggers when the pipeline state changes to Finished:
 
-1. In the pipeline properties, click the Notifications tab and click Add to add a webhook.
-2. For the URL, enter the command to start the pipeline.
+1. In the pipeline properties, click the **Notifications** tab and click **Add** to add a webhook.
+2.  For the URL, enter the command to start the pipeline.
 
-   The command looks something like this:
+    The command looks something like this:
 
-   ```text
-   <http|https>://<system ip>.<http port>/rest/v1/pipeline/<pipeline id>/start
-   ```
+    ```
+    <http|https>://<system ip>.<http port>/rest/v1/pipeline/<pipeline id>/start
+    ```
 
-   For example: http://localhost:18630/rest/v1/pipeline/MyPipelinefbb6894c-08ec-421e-9e3c-4e6bbb2f5baf/start
+    For example: http://localhost:18630/rest/v1/pipeline/MyPipelinefbb6894c-08ec-421e-9e3c-4e6bbb2f5baf/start
+3.  Using simple or bulk edit mode, click the **Add** icon to add a request header, and add the following header: `X-Requested-By`
 
-3. Using simple or bulk edit mode, click the Add icon to add a request header, and add the following header: `X-Requested-By`
+    And set the value to: `sdc`.\
 
-   And set the value to: `sdc`.
 
-   You can use the default method and authentication type, and keep or delete the payload, since they aren't used by the REST API.
+    You can use the default method and authentication type, and keep or delete the payload, since they aren't used by the REST API.\
 
-   This is how the webhook might look:
+
+    This is how the webhook might look:
+
+<figure><img src="https://docs.streamsets.com/datacollector/3.22.x/help/datacollector/UserGuide/Graphics/WebHook-RESTAPI.png" alt=""><figcaption></figcaption></figure>
 
 ![](https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Graphics/WebHook-RESTAPI.png)
-

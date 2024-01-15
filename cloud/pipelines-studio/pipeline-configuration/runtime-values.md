@@ -161,4 +161,221 @@ When you monitor a pipeline that you started with parameter values, the Runtime 
 
 </div>
 
-The Runtime Parameters chart does not display when you start a pipeline without parameters.
+The Runtime Parameters chart does not display when you start a pipeline without parameters.\
+
+
+### Using Runtime Properties <a href="#ariaid-title10" id="ariaid-title10"></a>
+
+Runtime properties are properties that you define in a file local to the BigConnect Pipelines and call from within a pipeline.
+
+With runtime properties, you can define different sets of values for different BigConnect Pipelines. Runtime properties allow you to easily update the property definitions without editing the pipeline.
+
+For example, you might define a set of runtime properties that points to test systems for pipeline development. When you move to production, you simply update the runtime property definitions in the file. This effectively updates every pipeline that uses those runtime properties without having to edit the pipelines.
+
+When defining a runtime property, you can use a static value or an environment variable.
+
+When calling the runtime property, you can use it as part of a larger property definition. For example, you can set a runtime property to the HOME environment variable, which would differ on different machines, and then use the runtime property as a base directory for a longer directory.
+
+To implement runtime properties, perform the following steps:
+
+1. Define runtime properties.
+2. Use an expression in the pipeline to call a runtime property.
+
+#### Step 1. Define Runtime Properties <a href="#ariaid-title11" id="ariaid-title11"></a>
+
+You can define runtime properties in the BigConnect Pipelines configuration file, `sdc.properties`, or in a separate runtime properties file.
+
+If you define the properties in a separate runtime properties file, use the required procedure for your installation type.
+
+**BigConnect Pipelines configuration file**\
+\
+Use the following steps to define runtime properties in the BigConnect Pipelines configuration file:
+
+1.  In the `$SDC_CONF/sdc.properties` file, configure the **runtime.conf.location** property as follows:
+
+    ```
+    runtime.conf.location=embedded
+    ```
+2. To define the runtime properties in the `$SDC_CONF/sdc.properties` file, use either of the following formats:
+   *   To use a value for a runtime property, use the following format:
+
+       ```
+       runtime.conf_<property name>=<value>
+       ```
+
+       For example, the following runtime property defines a Hadoop FS directory template:
+
+       ```
+       runtime.conf_HDFSDirTemplate=/HDFS/DirectoryTemplate
+       ```
+   *   To use an environment variable for a runtime property, use the following format:
+
+       ```
+       runtime.conf_<property name>=${env("<environment_variable>")}
+       ```
+
+       For example, the following runtime property defines a base directory, setting it to the HOME environment variable:
+
+       ```
+       runtime.conf_BaseDir=${env("HOME")}
+       ```
+3. Restart BigConnect Pipelines to enable the changes.
+
+**Separate runtime properties file for RPM and tarball**\
+\
+Use the following steps to define runtime properties in a separate runtime properties file for an RPM or tarball installation:
+
+1. Create a text file and save it in a directory relative to the `$SDC_CONF` directory.
+2. To define runtime properties in a separate text file, use either of the following formats:
+   *   To use a value for a runtime property, use the following format:
+
+       ```
+       <property name>=<value>
+       ```
+
+       For example, the following runtime property defines a Hadoop FS directory template:
+
+       ```
+       HDFSDirTemplate=/HDFS/DirectoryTemplate
+       ```
+   *   To use an environment variable for a runtime property, use the following format:
+
+       ```
+       <property name>=${env("<environment_variable>")}
+       ```
+
+       For example, the following runtime property defines a base directory, setting it to the HOME environment variable:
+
+       ```
+       BaseDir=${env("HOME")}
+       ```
+3.  In the BigConnect Pipelines configuration file, `$SDC_CONF/sdc.properties`, configure the **runtime.conf.location** property to point to the relative location of the separate runtime properties file.
+
+    For example, the following separate runtime properties file is located in a `runtime` directory that is relative to the `$SDC_CONF` directory:
+
+    ```
+    runtime.conf.location=runtime/test-runtime.properties
+    ```
+4. Restart BigConnect Pipelines to enable the changes.
+
+**Separate runtime properties file for Cloudera Manager**\
+\
+Use the following steps to define runtime properties in a separate runtime properties file for a Cloudera Manager installation:
+
+1. Create a text file and define the runtime properties in the text file using either of the following formats:
+   *   To use a value for a runtime property, use the following format:
+
+       ```
+       <property name>=<value>
+       ```
+
+       For example, the following runtime property defines a Hadoop FS directory template:
+
+       ```
+       HDFSDirTemplate=/HDFS/DirectoryTemplate
+       ```
+   *   To use an environment variable for a runtime property, use the following format:
+
+       ```
+       <property name>=${env("<environment_variable>")}
+       ```
+
+       For example, the following runtime property defines a base directory, setting it to the HOME environment variable:
+
+       ```
+       BaseDir=${env("HOME")}
+       ```
+2. Save the text file in the same directory on every node that runs BigConnect Pipelines.
+3. In Cloudera Manager, select the BigConnect Pipelines service and click Configuration.
+4.  On the Configuration page, in the BigConnect Pipelines Advanced Configuration Snippet (Safety Valve) for sdc-env.sh field, add the following line to define the runtime properties file directory:
+
+    ```
+    ln -sf /<directory>/runtime.properties "${CONF_DIR}/runtime.properties"
+    ```
+
+    For example:
+
+    ```
+    ln -sf /opt/sdc-runtime/runtime.properties "${CONF_DIR}/runtime.properties"
+    ```
+5.  In the BigConnect Pipelines Advanced Configuration Snippet (Safety Valve) for sdc.properties field, configure the runtime.conf.location property to point to the separate runtime properties file by adding the following line:
+
+    ```
+    runtime.conf.location=runtime.properties 
+    ```
+6. Restart BigConnect Pipelines to enable the changes.
+
+For more information, see Configuring BigConnect Pipelines.
+
+#### Step 2. Call the Runtime Property <a href="#ariaid-title12" id="ariaid-title12"></a>
+
+Use the `runtime:conf` function to call a runtime property. You can use runtime properties to represent any stage or pipeline property that allows the use of the expression language.
+
+Call a runtime property based on where the property is defined:
+
+*   To call a runtime property defined in the BigConnect Pipelines configuration file, use the following syntax:
+
+    ```
+    ${runtime:conf(<property name>)}
+    ```
+*   To call a runtime property defined in a runtime properties file, use the following syntax:
+
+    ```
+    ${runtime:conf(runtime.conf_<property name>)}
+    ```
+
+For example, to use the `HDFSDirTemplate` runtime property defined in the BigConnect Pipelines configuration file to provide the directory template for the Hadoop FS destination, enter the following syntax for the Directory Template property:
+
+```
+${runtime:conf('HDFSDirTemplate')}
+```
+
+You can use a runtime property to represent a part of a property. For example, you can use the `RootDir` runtime property defined in a separate runtime properties file and append the rest of the directory, as follows:
+
+```
+${runtime:conf('runtime.conf_RootDir')}/logfiles
+```
+
+### Using Runtime Resources <a href="#ariaid-title13" id="ariaid-title13"></a>
+
+Similar to runtime properties, runtime resources are values that you define in a file local to the BigConnect Pipelines and call from within a pipeline. But with runtime resources, you can restrict the permissions for the files to secure information.
+
+Use runtime resources to store common configuration properties for multiple pipelines, like URLs for external systems. Note that any user who can create a pipeline can access the data stored in the resource files.
+
+**Tip**: To more securely define sensitive values, use credential stores.\
+\
+To implement runtime resources, perform the following steps:
+
+1. Define each runtime resource.
+2. Use an expression in the pipeline to call a runtime resource.
+
+#### Step 1. Define Runtime Resources <a href="#ariaid-title14" id="ariaid-title14"></a>
+
+Use the following steps to define runtime resources:
+
+1.  For each resource, create a text file and save it in the `$SDC_RESOURCES` directory.
+
+    A file must contain one piece of information to be used when the resource is called.
+2.  Optionally, restrict the permissions for the file.
+
+    Generally, anyone can read a file. To restrict permissions, configure the file so only the owner has read or write permissions for the file - in octals, that's 600 or 400. And the owner must be the system user that runs the BigConnect Pipelines.
+
+    When you use the resource in the pipeline, you specify whether the file is restricted.
+
+#### Step 2. Call the Runtime Resource <a href="#ariaid-title15" id="ariaid-title15"></a>
+
+Use the `runtime:loadResource` or `runtime:loadResourceRaw` function to call a runtime resource. You can use runtime resources to represent information in any stage or pipeline property that allows the use of the expression language.
+
+Note: In most cases, you'll use the `runtime:loadResource` function which trims any leading or trailing whitespace characters from the file. However, if needed, you can also use the `runtime:loadResourceRaw` function which includes any leading or trailing whitespace characters in the file.
+
+To call a runtime resource, use the following syntax:
+
+```
+${runtime:loadResource(<file name>, <restricted: true | false>)}
+```
+
+For example, the following expression returns the contents of the `JDBC.txt` file, trimming any leading or trailing whitespace characters. The file contains a connection string and is restricted so only the owner can read the file:
+
+```
+${runtime:loadResource("JDBC.txt", true)}
+```
