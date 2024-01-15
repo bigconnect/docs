@@ -18,7 +18,7 @@ Some origins can generate multiple threads to enable parallel processing in mult
 
 Each pipeline runner processes one batch at a time, just like a pipeline that runs on a single thread. When the flow of data slows, the pipeline runners wait idly until they are needed, generating an empty batch at regular intervals. You can configure the Runner Idle Time pipeline property to specify the interval or to opt out of empty batch generation.
 
-All general references to pipelines in this guide describe single-threaded pipelines, but this information generally applies to multithreaded pipelines. For more details specific to multithreaded pipelines, see [Multithreaded Pipeline](../multithreaded-pipelines.md) Overview.
+All general references to pipelines in this guide describe single-threaded pipelines, but this information generally applies to multithreaded pipelines. For more details specific to multithreaded pipelines, see Multithreaded Pipeline Overview.
 
 ### Delivery Guarantee
 
@@ -46,25 +46,24 @@ With this option, Data Pipelines commits the offset after a write without waitin
 
 Within a pipeline, Data Pipelines uses the following data types, converting data as necessary when reading from or writing to external systems:
 
-| Data Type | Description |
-| :--- | :--- |
-| BOOLEAN | True or False. Corresponds to the Boolean Java data type. |
-| BYTE | 8-bit signed whole number. Ranges from -128 to 127. Corresponds to the Byte Java data type. |
-| BYTE\_ARRAY | Array of byte values. Corresponds to the Byte\[\] Java data type. |
-| CHAR | Stores a single Unicode character. Corresponds to the Char Java data type. |
-| DATE | Time object that includes the day, month, and four-digit year. Does not include time zone. |
-| DATETIME | Time object that includes the day, month, four-digit year, hours, minutes, and seconds. Precise to the millisecond. Does not include time zone. |
-| DECIMAL | Arbitrary-precision signed decimal numbers. Corresponds to the BigDecimal Java class. |
-| DOUBLE | 64-bit double-precision IEEE 754 floating point. Corresponds to the Double Java data type. |
-| FILE\_REF | Internal type for whole file format. |
-| FLOAT | 32-bit single-precision IEEE 754 floating point. Corresponds to the Float Java data type. |
-| INTEGER | 32-bit signed whole number. Corresponds to the Int Java data type. |
-| LIST | Nested type. Contains an enumerated list of values. Values can be any type, and each value in a list can be a different type. |
-| LIST\_MAP | Nested type. Contains a list of key-value pairs kept in a specific order. Keys are always strings. Values can be any type, and each value can be a different type. |
-| LONG | 64-bit signed whole number. Ranges from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807. Corresponds to the Long Java data type. |
-| MAP | Nested type. Contains a list of key-value pairs. Keys are always strings. Values can be any type, and each value can be a different type. |
-| SHORT | 16-bit signed whole number. Ranges from -32,768 to 32767. Corresponds to the Short Java data type. |
-| STRING | Text. Corresponds to the String Java class. |
-| TIME | Time object that includes the hours, minutes, and seconds. Precise to the millisecond. Does not include the time zone. |
+| Data Type       | Description                                                                                                                                                            |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| BOOLEAN         | True or False. Corresponds to the Boolean Java data type.                                                                                                              |
+| BYTE            | 8-bit signed whole number. Ranges from -128 to 127. Corresponds to the Byte Java data type.                                                                            |
+| BYTE\_ARRAY     | Array of byte values. Corresponds to the Byte\[] Java data type.                                                                                                       |
+| CHAR            | Stores a single Unicode character. Corresponds to the Char Java data type.                                                                                             |
+| DATE            | Time object that includes the day, month, and four-digit year. Does not include time zone.                                                                             |
+| DATETIME        | Time object that includes the day, month, four-digit year, hours, minutes, and seconds. Precise to the millisecond. Does not include time zone.                        |
+| DECIMAL         | Arbitrary-precision signed decimal numbers. Corresponds to the BigDecimal Java class.                                                                                  |
+| DOUBLE          | 64-bit double-precision IEEE 754 floating point. Corresponds to the Double Java data type.                                                                             |
+| FILE\_REF       | Internal type for whole file format.                                                                                                                                   |
+| FLOAT           | 32-bit single-precision IEEE 754 floating point. Corresponds to the Float Java data type.                                                                              |
+| INTEGER         | 32-bit signed whole number. Corresponds to the Int Java data type.                                                                                                     |
+| LIST            | Nested type. Contains an enumerated list of values. Values can be any type, and each value in a list can be a different type.                                          |
+| LIST\_MAP       | Nested type. Contains a list of key-value pairs kept in a specific order. Keys are always strings. Values can be any type, and each value can be a different type.     |
+| LONG            | 64-bit signed whole number. Ranges from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807. Corresponds to the Long Java data type.                               |
+| MAP             | Nested type. Contains a list of key-value pairs. Keys are always strings. Values can be any type, and each value can be a different type.                              |
+| SHORT           | 16-bit signed whole number. Ranges from -32,768 to 32767. Corresponds to the Short Java data type.                                                                     |
+| STRING          | Text. Corresponds to the String Java class.                                                                                                                            |
+| TIME            | Time object that includes the hours, minutes, and seconds. Precise to the millisecond. Does not include the time zone.                                                 |
 | ZONED\_DATETIME | Time object that includes day, month, four-digit year, hours, minutes, seconds, and time zone. Precise to the nanosecond. Corresponds to the ZonedDateTime Java class. |
-
