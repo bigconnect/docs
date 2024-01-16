@@ -635,6 +635,7 @@
     * [Google BigQuery](cloud/pipelines-studio/origins/google-bigquery.md)
     * [Google Cloud Storage](cloud/pipelines-studio/origins/google-cloud-storage.md)
     * [Google Pub/Sub Subscriber](cloud/pipelines-studio/origins/google-pub-sub-subscriber.md)
+    * [Groovy Scripting](cloud/pipelines-studio/origins/groovy-scripting.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
