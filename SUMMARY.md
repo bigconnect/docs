@@ -631,6 +631,7 @@
     * [Cron Scheduler](cloud/pipelines-studio/origins/cron-scheduler.md)
     * [Directory](cloud/pipelines-studio/origins/directory.md)
     * [Elasticsearch](cloud/pipelines-studio/origins/elasticsearch.md)
+    * [File Tail](cloud/pipelines-studio/origins/file-tail.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)

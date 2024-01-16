@@ -102,7 +102,7 @@ Optionally, you can configure the origin to delete the scroll when the pipeline 
 
 Clearing the scroll also clears the last saved offset, and so is essentially like resetting the origin. When the pipeline continues, the origin processes all available data instead of processing data from the last saved offset.
 
-### Multithreaded Processing <a href="#ariaid-title7" id="ariaid-title7"></a>
+## Multithreaded Processing <a href="#ariaid-title7" id="ariaid-title7"></a>
 
 The Elasticsearch origin performs parallel processing and enables the creation of a multithreaded pipeline.
 
