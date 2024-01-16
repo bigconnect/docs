@@ -52,20 +52,20 @@ To implement runtime parameters, perform the following steps:
 
 When you monitor a pipeline started with parameters, you can view the parameter values that the pipeline is currently using.
 
-## Step 1. Define Runtime Parameters
+### Step 1. Define Runtime Parameters
 
 Define runtime parameters when you configure the pipeline.
 
 1. In the pipeline properties, click the Parameters tab.
 2. Using simple or bulk edit mode, click the Add icon and define the name and the default value for each parameter.For example, define a parameter named JDBCConnectionString with the default value of `jdbc:mysql://localhost:3306/sample`.
 
-## Step 2. Call the Runtime Parameters
+### Step 2. Call the Runtime Parameters
 
 Use an expression in the pipeline to call a runtime parameter.
 
 You can use runtime parameters to represent any stage or pipeline property that allows the use of the Data Pipelines expression language, including properties that display as text boxes, checkboxes, or drop-down menus. You can also call a runtime parameter in the code developed for a scripting processor.
 
-### Calling from Text Boxes
+#### Calling from Text Boxes
 
 To call a runtime parameter in a stage or pipeline property that displays as a text box, use the following syntax:
 
@@ -83,7 +83,7 @@ You can use a runtime parameter to represent a part of a property. For example, 
 
 `${RootDir}/logfiles`
 
-### Calling from Checkboxes and Drop-Down Menus
+#### Calling from Checkboxes and Drop-Down Menus
 
 To call a runtime parameter in a stage or pipeline property that displays as a checkbox or drop-down menu, you first must convert the property to a text box.
 
@@ -111,7 +111,7 @@ For example, after selecting At Least Once for the Delivery Guarantee property a
 
 ![](<../../../.gitbook/assets/image (699).png>)
 
-### Calling from Scripting Processors
+#### Calling from Scripting Processors
 
 You can call a runtime parameter in the code developed for a scripting processor.
 
@@ -129,7 +129,7 @@ Use the `sdcFunctions.pipelineParameters()` method in any of the processor scrip
 
 `record.value['Company Name'] = sdcFunctions.pipelineParameters()['CompanyParam']`
 
-## Step 3. Start the Pipeline with Parameters
+### Step 3. Start the Pipeline with Parameters
 
 When you start the pipeline, specify the values to use for the parameters.
 
@@ -143,7 +143,7 @@ If you want to use the default parameter values, you can simply click the Start 
 2. Override any default values with the values you want to use for this pipeline run.
 3. Click Start.
 
-## Viewing Runtime Parameters
+### Viewing Runtime Parameters
 
 When you monitor a pipeline started with parameters, you can view the parameter values that the pipeline is currently using.
 
@@ -164,7 +164,7 @@ When you monitor a pipeline that you started with parameter values, the Runtime 
 The Runtime Parameters chart does not display when you start a pipeline without parameters.\
 
 
-### Using Runtime Properties <a href="#ariaid-title10" id="ariaid-title10"></a>
+## Using Runtime Properties <a href="#ariaid-title10" id="ariaid-title10"></a>
 
 Runtime properties are properties that you define in a file local to the BigConnect Pipelines and call from within a pipeline.
 
@@ -181,7 +181,7 @@ To implement runtime properties, perform the following steps:
 1. Define runtime properties.
 2. Use an expression in the pipeline to call a runtime property.
 
-#### Step 1. Define Runtime Properties <a href="#ariaid-title11" id="ariaid-title11"></a>
+### Step 1. Define Runtime Properties <a href="#ariaid-title11" id="ariaid-title11"></a>
 
 You can define runtime properties in the BigConnect Pipelines configuration file, `sdc.properties`, or in a separate runtime properties file.
 
@@ -307,7 +307,7 @@ Use the following steps to define runtime properties in a separate runtime prope
 
 For more information, see Configuring BigConnect Pipelines.
 
-#### Step 2. Call the Runtime Property <a href="#ariaid-title12" id="ariaid-title12"></a>
+### Step 2. Call the Runtime Property <a href="#ariaid-title12" id="ariaid-title12"></a>
 
 Use the `runtime:conf` function to call a runtime property. You can use runtime properties to represent any stage or pipeline property that allows the use of the expression language.
 
@@ -336,7 +336,7 @@ You can use a runtime property to represent a part of a property. For example, y
 ${runtime:conf('runtime.conf_RootDir')}/logfiles
 ```
 
-### Using Runtime Resources <a href="#ariaid-title13" id="ariaid-title13"></a>
+## Using Runtime Resources <a href="#ariaid-title13" id="ariaid-title13"></a>
 
 Similar to runtime properties, runtime resources are values that you define in a file local to the BigConnect Pipelines and call from within a pipeline. But with runtime resources, you can restrict the permissions for the files to secure information.
 
@@ -349,7 +349,7 @@ To implement runtime resources, perform the following steps:
 1. Define each runtime resource.
 2. Use an expression in the pipeline to call a runtime resource.
 
-#### Step 1. Define Runtime Resources <a href="#ariaid-title14" id="ariaid-title14"></a>
+### Step 1. Define Runtime Resources <a href="#ariaid-title14" id="ariaid-title14"></a>
 
 Use the following steps to define runtime resources:
 
@@ -362,7 +362,7 @@ Use the following steps to define runtime resources:
 
     When you use the resource in the pipeline, you specify whether the file is restricted.
 
-#### Step 2. Call the Runtime Resource <a href="#ariaid-title15" id="ariaid-title15"></a>
+### Step 2. Call the Runtime Resource <a href="#ariaid-title15" id="ariaid-title15"></a>
 
 Use the `runtime:loadResource` or `runtime:loadResourceRaw` function to call a runtime resource. You can use runtime resources to represent information in any stage or pipeline property that allows the use of the expression language.
 

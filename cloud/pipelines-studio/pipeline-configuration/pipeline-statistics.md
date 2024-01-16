@@ -1,22 +1,16 @@
 # Pipeline Statistics
 
-When you monitor an active job in Control Hub, you can view real-time statistics and metrics about the running pipeline. However, when the job stops, the real-time statistics are no longer visible.
-
-To monitor statistics and metrics for inactive jobs and for previous job runs, you must configure the pipeline to write statistics to Control Hub or to another system. When a pipeline is configured to write statistics, Control Hub saves the pipeline statistics for each job run.
-
-When a job for an edge pipeline runs on SDC Edge or when a job for a standalone pipeline runs on a single BigConnect Pipelines, you can configure the pipeline to write the statistics directly to Control Hub.
-
 When a job for a standalone pipeline runs on multiple BigConnect Pipelines, a remote pipeline instance runs on each BigConnect Pipelines. When a job for a cluster pipeline runs on a single BigConnect Pipelines, remote pipeline instances run on multiple worker nodes in the cluster. To view aggregated statistics for these jobs within Control Hub, you must configure the pipeline to write the statistics to one of the following systems:
 
-* SDC RPC
+* Data Pipelines RPC
 * Kafka cluster
 * Amazon Kinesis Streams
 * MapR Streams
 
-When you start a job that includes a pipeline configured to write to Kafka, Kinesis, MapR Streams, or SDC RPC, Control Hub automatically generates and runs a system pipeline for the job. The system pipeline reads the statistics written by each running pipeline instance to Kafka, Kinesis, MapR Streams, or SDC RPC. Then, the system pipeline aggregates and sends the statistics to Control Hub.
+When you start a job that includes a pipeline configured to write to Kafka, Kinesis, MapR Streams, or Data Pipelines RPC, Control Hub automatically generates and runs a system pipeline for the job. The system pipeline reads the statistics written by each running pipeline instance to Kafka, Kinesis, MapR Streams, or Data Pipelines RPC. Then, the system pipeline aggregates and sends the statistics to Control Hub.
 
 {% hint style="info" %}
-**Important**: For standalone and cluster pipelines in a production environment, use a Kafka cluster, Amazon Kinesis Streams, or MapR Streams to aggregate statistics. Using SDC RPC to aggregate statistics is not highly available and might cause the loss of some data. It should be used for development purposes only.
+**Important**: For standalone and cluster pipelines in a production environment, use a Kafka cluster, Amazon Kinesis Streams, or MapR Streams to aggregate statistics. Using Data Pipelines RPC to aggregate statistics is not highly available and might cause the loss of some data. It should be used for development purposes only.
 {% endhint %}
 
 ### Pipeline Execution Mode <a href="#ariaid-title2" id="ariaid-title2"></a>
@@ -25,56 +19,43 @@ Pipelines can run in standalone, cluster, or edge execution mode. Some pipeline 
 
 The following table lists each pipeline execution mode and the statistics aggregator options that it supports:
 
-| Pipeline Execution Mode | Supported Statistics Aggregator Options                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Standalone              | All options are supported.                                                                                               |
-| Cluster                 | <ul><li>Write to SDC RPC</li><li>Write to Kafka</li><li>Write to Kinesis Streams</li><li>Write to MapR Streams</li></ul> |
-| Edge                    | <ul><li>Write to Directly to Control Hub</li></ul>                                                                       |
+| Pipeline Execution Mode | Supported Statistics Aggregator Options                                                                                             |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Standalone              | All options are supported.                                                                                                          |
+| Cluster                 | <ul><li>Write to Data Pipelines RPC</li><li>Write to Kafka</li><li>Write to Kinesis Streams</li><li>Write to MapR Streams</li></ul> |
 
 {% hint style="info" %}
 **Important**: For standalone and cluster pipelines in a production environment, use a Kafka cluster, Amazon Kinesis Streams, or MapR Streams to aggregate statistics. Writing statistics directly to Control Hub is supported only when a job with a standalone pipeline runs on a single BigConnect Pipelines. Writing statistics to SDC RPC is not highly available and might cause the loss of some data. These methods should be used for development purposes only.
 {% endhint %}
 
+### Write Statistics to Data Pipelines RPC <a href="#ariaid-title4" id="ariaid-title4"></a>
 
-
-### Write Statistics Directly to Control Hub <a href="#ariaid-title3" id="ariaid-title3"></a>
-
-When you write statistics directly to Control Hub, Control Hub does not generate a system pipeline for the job. Instead, the BigConnect Pipelines or SDC Edge directly sends the statistics to Control Hub.
-
-Write statistics directly to Control Hub in a development environment when the job for a standalone or edge pipeline runs on a single BigConnect Pipelines or SDC Edge. If the job runs on multiple BigConnect Pipelines or Edge BigConnect Pipelines, Control Hub can display the pipeline statistics for each individual pipeline. However, Control Hub cannot display an aggregated view of the statistics across all running pipeline instances.
-
-When you write statistics directly to Control Hub, Control Hub cannot generate data delivery reports for the job or trigger data SLA alerts for the job.
-
-### Write Statistics to SDC RPC <a href="#ariaid-title4" id="ariaid-title4"></a>
-
-When you write statistics to SDC RPC, BigConnect Pipelines effectively adds an SDC RPC destination to the pipeline that you are configuring. Control Hub automatically generates and runs a system pipeline for the job. The system pipeline is a pipeline with a Dev SDC RPC with Buffering origin that reads the statistics passed from the SDC RPC destination, and then aggregates and sends the statistics to Control Hub.
-
-<img src="https://docs.streamsets.com/datacollector/3.22.x/help/reusable-content/shared-graphics/icon-Edge.png" alt="" data-size="line"> Not valid in BigConnect Pipelines Edge pipelines.
+When you write statistics to Data Pipelines RPC, BigConnect Pipelines effectively adds an Data Pipelines RPC destination to the pipeline that you are configuring. Control Hub automatically generates and runs a system pipeline for the job. The system pipeline is a pipeline with a Dev SDC RPC with Buffering origin that reads the statistics passed from the Data Pipelines RPC destination, and then aggregates and sends the statistics to Control Hub.
 
 {% hint style="info" %}
-**Important**: For standalone and cluster pipelines in a production environment, use a Kafka cluster, Amazon Kinesis Streams, or MapR Streams to aggregate statistics. Using SDC RPC to aggregate statistics is not highly available and might cause the loss of some data. It should be used for development purposes only.
+**Important**: For standalone and cluster pipelines in a production environment, use a Kafka cluster, Amazon Kinesis Streams, or MapR Streams to aggregate statistics. Using Data Pipelines RPC to aggregate statistics is not highly available and might cause the loss of some data. It should be used for development purposes only.
 {% endhint %}
 
 \
-When you configure a pipeline to write statistics to an SDC RPC destination, you specify the following information:
+When you configure a pipeline to write statistics to an Data Pipelines RPC destination, you specify the following information:
 
-*   SDC RPC connection - The host and port number of the BigConnect Pipelines machine where Control Hub starts the system pipeline. The host must be a BigConnect Pipelines machine registered with Control Hub that can run a pipeline for the job. A BigConnect Pipelines can run the pipeline when it has all labels associated with the job.
+*   Data Pipelines RPC connection - The host and port number of the BigConnect Pipelines machine where Control Hub starts the system pipeline. The host must be a BigConnect Pipelines machine registered with Control Hub that can run a pipeline for the job. A BigConnect Pipelines can run the pipeline when it has all labels associated with the job.
 
     For example, if you associate the job with the WestCoast label, then the host specified in the RPC connection must be a machine with a registered BigConnect Pipelines that also has the WestCoast label.
-* SDC RPC ID - A user-defined identifier that allows SDC RPC stages to recognize each other. To avoid mixing statistics from different jobs, use a unique ID for each job.
+* Data Pipelines RPC ID - A user-defined identifier that allows Data Pipelines RPC stages to recognize each other. To avoid mixing statistics from different jobs, use a unique ID for each job.
 
 You can optionally enable encryption to pass data securely and define retry and timeout properties.
 
-For more information about SDC RPC pipelines, see SDC RPC Pipeline Overview.
+For more information about Data Pipelines RPC pipelines, see Data Pipelines RPC Pipeline Overview.
 
-#### Best Practices for SDC RPC <a href="#ariaid-title5" id="ariaid-title5"></a>
+#### Best Practices for Data Pipelines RPC <a href="#ariaid-title5" id="ariaid-title5"></a>
 
-Consider the following best practices when you configure a pipeline to write statistics to an SDC RPC destination:
+Consider the following best practices when you configure a pipeline to write statistics to an Data Pipelines RPC destination:
 
-* To avoid mixing statistics from different jobs, use a unique SDC RPC ID for each job.
-*   Monitor the disk space where the Dev SDC RPC with Buffering origin in the system pipeline temporarily buffers the records to disk before passing the records to the next stage in the pipeline.
+* To avoid mixing statistics from different jobs, use a unique Data Pipelines RPC ID for each job.
+*   Monitor the disk space where the Dev Data Pipelines RPC with Buffering origin in the system pipeline temporarily buffers the records to disk before passing the records to the next stage in the pipeline.
 
-    The Dev SDC RPC with Buffering origin in the system pipeline temporarily buffers the statistics to a queue on disk. If the system pipeline slows, the temporary location on disk might become full. The temporary statistics are written to the location specified in the `java.io.tmpdir` system property, to a file with the following name:
+    The Dev Data Pipelines RPC with Buffering origin in the system pipeline temporarily buffers the statistics to a queue on disk. If the system pipeline slows, the temporary location on disk might become full. The temporary statistics are written to the location specified in the `java.io.tmpdir` system property, to a file with the following name:
 
     ```
     sdc-fragments<file ID>.queueFile
@@ -152,8 +133,6 @@ Consider the following best practices when you configure a pipeline to write sta
 ### Write Statistics to MapR Streams <a href="#ariaid-title12" id="ariaid-title12"></a>
 
 When you write statistics to MapR Streams, BigConnect Pipelines effectively adds a MapR Streams Producer destination to the pipeline that you are configuring. Control Hub automatically generates and runs a system pipeline for the job. The system pipeline reads the statistics from MapR Streams, and then aggregates and sends the statistics to Control Hub.
-
-<img src="https://docs.streamsets.com/datacollector/3.22.x/help/reusable-content/shared-graphics/icon-Edge.png" alt="" data-size="line"> Not valid in BigConnect Pipelines Edge pipelines.
 
 When you write statistics to MapR Streams, you define the topic to write to. You also configure the partition strategy. The pipeline passes data to partitions in the MapR Streams topic based on the partition strategy that you choose. You can add additional MapR Streams configuration properties as needed.
 
