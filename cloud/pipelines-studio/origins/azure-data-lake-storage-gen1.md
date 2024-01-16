@@ -20,12 +20,12 @@ The origin can generate events for an event stream. For more information about d
 
 Complete the following prerequisites before you configure the Azure Data Lake Storage Gen1 origin:
 
-1.  If necessary, create a new Azure Active Directory application for Data Collector.
+1.  If necessary, create a new Azure Active Directory application for BigConnect Pipelines.
 
     For information about creating a new application, see the [Azure documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal).
-2.  Ensure that the Azure Active Directory Data Collector application has the appropriate access control to perform the necessary tasks.
+2.  Ensure that the Azure Active Directory BigConnect Pipelines application has the appropriate access control to perform the necessary tasks.
 
-    The Data Collector application requires Read and Execute permissions to read data in Azure. If also writing to Azure, the application requires Write permission as well.
+    The BigConnect Pipelines application requires Read and Execute permissions to read data in Azure. If also writing to Azure, the application requires Write permission as well.
 
     For information about configuring Gen1 access control, see the [Azure documentation](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-security-overview).
 3. Retrieve information from Azure to configure the origin.
@@ -38,10 +38,10 @@ Azure Data Lake Storage Gen1 origin connects to Azure using Azure Active Directo
 
 The origin requires the following Azure authentication information:
 
-*   Application ID - Application ID for the Azure Active Directory Data Collector application. Also known as the client ID.
+*   Application ID - Application ID for the Azure Active Directory BigConnect Pipelines application. Also known as the client ID.
 
     For information on accessing the application ID from the Azure portal, see the [Azure documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#get-application-id-and-authentication-key).
-* Auth Token Endpoint - OAuth 2.0 token endpoint for the Azure Active Directory v1.0 application for Data Collector. For example: `https://login.microsoftonline.com/<uuid>/oauth2/token.`
+* Auth Token Endpoint - OAuth 2.0 token endpoint for the Azure Active Directory v1.0 application for BigConnect Pipelines. For example: `https://login.microsoftonline.com/<uuid>/oauth2/token.`
 *   Application Key - Authentication key or client secret for the Azure Active Directory application. Also known as the client secret.
 
     For information on accessing the application key from the Azure portal, see the [Azure documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#get-application-id-and-authentication-key).
@@ -138,7 +138,7 @@ Each pipeline runner processes one batch at a time, just like a pipeline that ru
 
 Multithreaded pipelines preserve the order of records within each batch, just like a single-threaded pipeline. But since batches are processed by different pipeline runners, the order that batches are written to destinations is not ensured.
 
-For example, say you configure the origin to read files from a directory using five threads and the Last Modified Timestamp read order. When you start the pipeline, the origin creates five threads, and Data Collector creates a matching number of pipeline runners.
+For example, say you configure the origin to read files from a directory using five threads and the Last Modified Timestamp read order. When you start the pipeline, the origin creates five threads, and BigConnect Pipelines creates a matching number of pipeline runners.
 
 The Azure Data Lake Storage Gen1 origin assigns a thread to each of the five oldest files in the directory. Each thread processes its assigned file, passing batches of data to the origin. Upon receiving data, the origin passes a batch to each of the pipeline runners for processing.
 
@@ -253,7 +253,7 @@ no-more-dataThe Azure Data Lake Storage Gen1 origin generates a no-more-data eve
 
 ## Buffer Limit and Error Handling <a href="#ariaid-title14" id="ariaid-title14"></a>
 
-The Azure Data Lake Storage Gen1 origin passes each record to a buffer. The size of the buffer determines the maximum size of the record that can be processed. Decrease the buffer limit when memory on the Data Collector machine is limited. Increase the buffer limit to process larger records when memory is available.
+The Azure Data Lake Storage Gen1 origin passes each record to a buffer. The size of the buffer determines the maximum size of the record that can be processed. Decrease the buffer limit when memory on the BigConnect Pipelines machine is limited. Increase the buffer limit to process larger records when memory is available.
 
 When a record is larger than the specified limit, the Azure Data Lake Storage Gen1 origin processes the source file based on the stage error handling:DiscardThe origin discards the record and all remaining records in the file, and then continues processing the next file.Send to ErrorWith a buffer limit error, the origin cannot send the record to the pipeline for error handling because it is unable to fully process the record.
 
@@ -261,7 +261,7 @@ Instead, the origin creates a message stating that a buffer overrun error occurr
 
 If an error directory is configured for the stage, the origin moves the file to the error directory and continues processing the next file.
 
-Stop PipelineThe origin stops the pipeline and creates a message stating that a buffer overrun error occurred. The message includes the file and offset where the buffer overrun error occurred. The information displays as an alert and in the pipeline history.Note: You can also check the Data Collector log file for error details.
+Stop PipelineThe origin stops the pipeline and creates a message stating that a buffer overrun error occurred. The message includes the file and offset where the buffer overrun error occurred. The information displays as an alert and in the pipeline history.Note: You can also check the BigConnect Pipelines log file for error details.
 
 ## Data Formats <a href="#ariaid-title15" id="ariaid-title15"></a>
 
@@ -301,7 +301,7 @@ Generates a record for every protobuf message.Protobuf messages must match the s
 
 **Pipelines Record**
 
-Generates a record for every record. Use to process records generated by a Data Collector pipeline using the Pipelines Record data format.For error records, the origin provides the original record as read from the origin in the original pipeline, as well as error information that you can use to correct the record.When processing error records, the origin expects the error file names and contents as generated by the original pipeline.TextGenerates a record for each line of text or for each section of text based on a custom delimiter.When a line or section exceeds the maximum line length defined for the origin, the origin truncates it. The origin adds a boolean field named Truncated to indicate if the line was truncated.For more information about processing text with a custom delimiter, see Text Data Format with Custom Delimiters.
+Generates a record for every record. Use to process records generated by a BigConnect pipeline using the Pipelines Record data format.For error records, the origin provides the original record as read from the origin in the original pipeline, as well as error information that you can use to correct the record.When processing error records, the origin expects the error file names and contents as generated by the original pipeline.TextGenerates a record for each line of text or for each section of text based on a custom delimiter.When a line or section exceeds the maximum line length defined for the origin, the origin truncates it. The origin adds a boolean field named Truncated to indicate if the line was truncated.For more information about processing text with a custom delimiter, see Text Data Format with Custom Delimiters.
 
 **Whole File**
 
