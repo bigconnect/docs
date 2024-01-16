@@ -638,6 +638,7 @@
     * [Groovy Scripting](cloud/pipelines-studio/origins/groovy-scripting.md)
     * [Hadoop FS](cloud/pipelines-studio/origins/hadoop-fs.md)
     * [HTTP Client](cloud/pipelines-studio/origins/http-client.md)
+    * [HTTP Server](cloud/pipelines-studio/origins/http-server.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
