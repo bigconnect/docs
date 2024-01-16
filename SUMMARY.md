@@ -633,6 +633,7 @@
     * [Elasticsearch](cloud/pipelines-studio/origins/elasticsearch.md)
     * [File Tail](cloud/pipelines-studio/origins/file-tail.md)
     * [Google BigQuery](cloud/pipelines-studio/origins/google-bigquery.md)
+    * [Google Cloud Storage](cloud/pipelines-studio/origins/google-cloud-storage.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
