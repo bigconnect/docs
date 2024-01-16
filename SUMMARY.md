@@ -626,6 +626,7 @@
     * [Amazon SQS Consumer](cloud/pipelines-studio/origins/amazon-sqs-consumer.md)
     * [Azure Data Lake Storage Gen1](cloud/pipelines-studio/origins/azure-data-lake-storage-gen1.md)
     * [Azure Data Lake Storage Gen2](cloud/pipelines-studio/origins/azure-data-lake-storage-gen2.md)
+    * [Azure IoT/Event Hub Consumer](cloud/pipelines-studio/origins/azure-iot-event-hub-consumer.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
