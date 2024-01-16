@@ -639,6 +639,7 @@
     * [Hadoop FS](cloud/pipelines-studio/origins/hadoop-fs.md)
     * [HTTP Client](cloud/pipelines-studio/origins/http-client.md)
     * [HTTP Server](cloud/pipelines-studio/origins/http-server.md)
+    * [JavaScript Scripting](cloud/pipelines-studio/origins/javascript-scripting.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
