@@ -21,16 +21,16 @@ In standalone pipelines, you can use the following origins:
 * **Google BigQuery** - Executes a query job and reads the result from Google BigQuery.
 * **Google Cloud Storage** - Reads fully written objects from Google Cloud Storage.
 * **Google Pub/Sub Subscriber** - Consumes messages from a Google Pub/Sub subscription. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
-* **Groovy Scripting** - Runs a Groovy script to create Data Collector records. Can create multiple threads to enable parallel processing in a multithreaded pipeline.
+* **Groovy Scripting** - Runs a Groovy script to create BigConnect Pipelines records. Can create multiple threads to enable parallel processing in a multithreaded pipeline.
 * **Hadoop FS Standalone** - Reads fully-written files from HDFS, BigConnect, Azure Data Lake Storage, or Azure HDInsight. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **HTTP Clien**t - Reads data from a streaming HTTP resource URL.
 * **HTTP Server** - Listens on an HTTP endpoint and processes the contents of all authorized HTTP POST and PUT requests. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **HTTP to Kafka (Deprecated)** - Listens on a HTTP endpoint and writes the contents of all authorized HTTP POST requests directly to Kafka.
-* **JavaScript Scripting** - Runs a JavaScript script to create Data Collector records. Can create multiple threads to enable parallel processing in a multithreaded pipeline.
+* **JavaScript Scripting** - Runs a JavaScript script to create BigConnect Pipelines records. Can create multiple threads to enable parallel processing in a multithreaded pipeline.
 * **JDBC Multitable Consumer** - Reads database data from multiple tables through a JDBC connection. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **JDBC Query Consumer** - Reads database data using a user-defined SQL query through a JDBC connection.
 * **JMS Consumer** - Reads messages from JMS.
-* **Jython Scripting** - Runs a Jython script to create Data Collector records. Can create multiple threads to enable parallel processing in a multithreaded pipeline.
+* **Jython Scripting** - Runs a Jython script to create BigConnect Pipelines records. Can create multiple threads to enable parallel processing in a multithreaded pipeline.
 * **Kafka Consumer** - Reads messages from a single Kafka topic.
 * **Kafka Multi Topic** Consumer - Reads messages from multiple Kafka topics. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **Kinesis Consumer** - Reads data from Kinesis Streams. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
@@ -47,7 +47,7 @@ In standalone pipelines, you can use the following origins:
 * **SFTP/FTP/FTPS Client** - Reads files from an SFTP, FTP, or FTPS server.
 * **SQL Server CDC Client** - Reads data from Microsoft SQL Server CDC tables. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **SQL Server Change Tracking** - Reads data from Microsoft SQL Server change tracking tables and generates the latest version of each record. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
-* **Start Pipeline** - Starts a Data Collector, Data Collector Edge, or Transformer pipeline.
+* **Start Pipeline** - Starts a pipeline.
 * **TCP Server** - Listens at the specified ports and processes incoming data over TCP/IP connections. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **UDP Multithreaded Source** - Reads messages from one or more UDP ports. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * **UDP Source** - Reads messages from one or more UDP ports.
@@ -82,7 +82,7 @@ We have several HTTP origins, make sure to use the best one for your needs. Here
 | HTTP Client | <ul><li>Initiates HTTP requests for an external system.</li><li>Processes data synchronously.</li><li>Processes JSON, text, and XML data.</li><li>Can process a range of HTTP requests.</li><li>Can be used in a pipeline with processors.</li></ul>                                                                                                                                       |
 | HTTP Server | <ul><li>Listens for incoming HTTP requests and processes them while the sender waits for confirmation.</li><li>Processes data synchronously.</li><li>Creates multithreaded pipelines, thus suitable for high throughput of incoming data.</li><li>Processes virtually all data formats. Processes HTTP POST and PUT requests.</li><li>Can be used in a pipeline with processors.</li></ul> |
 
-Data Collector also provides an HTTP to Kafka origin for reading large volumes of data from multiple HTTP clients and writing the data immediately to Kafka, without additional processing. However, the HTTP to Kafka origin is now deprecated and will be removed in a future release. We recommend using the HTTP Server origin.
+BigConnect Pipelines also provides an HTTP to Kafka origin for reading large volumes of data from multiple HTTP clients and writing the data immediately to Kafka, without additional processing. However, the HTTP to Kafka origin is now deprecated and will be removed in a future release. We recommend using the HTTP Server origin.
 
 ## Comparing MapR Origins <a href="#ariaid-title3" id="ariaid-title3"></a>
 
@@ -108,9 +108,9 @@ The following table describes some cases when you might want to use each origin:
 | Origin                   | Ideally Used When                                                                                                                                                                                                                                                                                                     |
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | UDP Multithreaded Source | <ul><li>Epoll support enables the use of multiple receiver threads to pass data to the pipeline.</li><li>Complex pipeline requires longer processing time.</li></ul><p>or</p><ul><li>Lack of epoll support allows only a single receiver thread to pass data to the pipeline.</li><li>High volumes of data.</li></ul> |
-| UDP Source               | <ul><li>Epoll support enables the use of multiple receiver threads to pass data to the pipeline.</li><li>Relatively simple pipeline enables speedy Data Collector processing.</li></ul>                                                                                                                               |
+| UDP Source               | <ul><li>Epoll support enables the use of multiple receiver threads to pass data to the pipeline.</li><li>Relatively simple pipeline enables speedy BigConnect Pipelines processing.</li></ul>                                                                                                                         |
 
-Data Collector also provides a UDP to Kafka origin for reading large volumes of data from multiple UDP ports and writing the data immediately to Kafka, without additional processing. However, the UDP to Kafka origin is now deprecated and will be removed in a future release. We recommend using the UDP Multithreaded Source origin.
+BigConnect Pipelines also provides a UDP to Kafka origin for reading large volumes of data from multiple UDP ports and writing the data immediately to Kafka, without additional processing. However, the UDP to Kafka origin is now deprecated and will be removed in a future release. We recommend using the UDP Multithreaded Source origin.
 
 ## Comparing WebSocket Origins <a href="#ariaid-title5" id="ariaid-title5"></a>
 
@@ -135,9 +135,9 @@ Most data formats have a property that limits the maximum size of the record tha
 
 When the origin processes data that is larger than the specified length, the behavior differs based on the origin and the data format. For example, with some data formats, oversized records are handled based on the record error handling configured for the origin. While in other data formats, the origin might truncate the data. For details on how an origin handles size overruns for each data format, see the "Data Formats" section of the origin documentation.
 
-When available, the maximum record size properties are limited by the Data Collector parser buffer size, which is 1048576 bytes by default. So, when raising the maximum record size property in the origin does not change the origin's behavior, you might need to increase the Data Collector parser buffer size by configuring the parser.limit property in the Data Collector configuration file.
+When available, the maximum record size properties are limited by the BigConnect Pipelines parser buffer size, which is 1048576 bytes by default. So, when raising the maximum record size property in the origin does not change the origin's behavior, you might need to increase the BigConnect Pipelines parser buffer size by configuring the parser.limit property in the BigConnect Pipelines configuration file.
 
-Note that most of the maximum record size properties are specified in characters, while the Data Collector limit is defined in bytes.
+Note that most of the maximum record size properties are specified in characters, while the BigConnect Pipelines limit is defined in bytes.
 
 ## Previewing Raw Source Data
 
