@@ -1,4 +1,4 @@
-# Page
+# Directory
 
 The Directory origin reads data from files in a directory. The origin can use multiple threads to enable the parallel processing of files.
 
