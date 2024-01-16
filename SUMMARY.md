@@ -637,6 +637,7 @@
     * [Google Pub/Sub Subscriber](cloud/pipelines-studio/origins/google-pub-sub-subscriber.md)
     * [Groovy Scripting](cloud/pipelines-studio/origins/groovy-scripting.md)
     * [Hadoop FS](cloud/pipelines-studio/origins/hadoop-fs.md)
+    * [HTTP Client](cloud/pipelines-studio/origins/http-client.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
