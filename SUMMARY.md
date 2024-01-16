@@ -606,6 +606,7 @@
     * [Kafka Message Keys](cloud/pipelines-studio/pipeline-configuration/kafka-message-keys.md)
     * [Implicit and Explicit Validation](cloud/pipelines-studio/pipeline-configuration/implicit-and-explicit-validation.md)
     * [Expression Configuration](cloud/pipelines-studio/pipeline-configuration/expression-configuration.md)
+    * [Configuring a Pipeline](cloud/pipelines-studio/pipeline-configuration/configuring-a-pipeline.md)
   * [Data Formats](cloud/pipelines-studio/pipeline-configuration/dc-data-formats/README.md)
     * [Avro Data Format](cloud/pipelines-studio/pipeline-configuration/dc-data-formats/dc-avro.md)
     * [Binary Data Format](cloud/pipelines-studio/pipeline-configuration/dc-data-formats/binary-data-format.md)
