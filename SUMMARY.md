@@ -628,6 +628,8 @@
     * [Azure Data Lake Storage Gen2](cloud/pipelines-studio/origins/azure-data-lake-storage-gen2.md)
     * [Azure IoT/Event Hub Consumer](cloud/pipelines-studio/origins/azure-iot-event-hub-consumer.md)
     * [CoAP Server](cloud/pipelines-studio/origins/coap-server.md)
+    * [Cron Scheduler](cloud/pipelines-studio/origins/cron-scheduler.md)
+    * [Page](cloud/pipelines-studio/origins/page.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
