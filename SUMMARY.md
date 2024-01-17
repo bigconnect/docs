@@ -771,6 +771,8 @@
     * [Databricks Job Launcher](cloud/pipelines-studio/executors/databricks-job-launcher.md)
     * [Databricks Query](cloud/pipelines-studio/executors/databricks-query.md)
     * [Email](cloud/pipelines-studio/executors/email.md)
+    * [HDFS File Metadata](cloud/pipelines-studio/executors/hdfs-file-metadata.md)
+    * [Hive Query](cloud/pipelines-studio/executors/hive-query.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
   * [Solutions](cloud/pipelines-studio/solutions.md)
   * [Multithreaded Pipelines](cloud/pipelines-studio/multithreaded-pipelines.md)
