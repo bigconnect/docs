@@ -9,7 +9,7 @@ You can use different destinations based on the execution mode of the pipeline: 
 In standalone pipelines, you can use the following destinations:
 
 * Rabbit MQ Producer - Writes data to RabbitMQ.
-* Send Response to Origin - Sends records with the specified response to the microservice origin in the pipeline. Use only in a [microservice pipeline](microservice-pipelines.md).
+* Send Response to Origin - Sends records with the specified response to the microservice origin in the pipeline. Use only in a [microservice pipeline](../microservice-pipelines.md).
 
 ### Standalone or Cluster Pipelines
 
@@ -17,7 +17,7 @@ In standalone or cluster pipelines, you can use the following destinations:
 
 * Aerospike - Writes data to Aerospike.
 * Amazon S3 - Writes data to BigConnect Object Store and Amazon S3.
-* Azure Data Lake Storage \(Legacy\) - Writes data to Azure Data Lake Storage Gen1.
+* Azure Data Lake Storage (Legacy) - Writes data to Azure Data Lake Storage Gen1.
 * Azure Data Lake Storage Gen1 - Writes data to Azure Data Lake Storage Gen1.
 * Azure Data Lake Storage Gen2 - Writes data to Azure Data Lake Storage Gen2.
 * Azure Event Hub Producer - Writes data to Azure Event Hub.
@@ -32,7 +32,7 @@ In standalone or cluster pipelines, you can use the following destinations:
 * Google Bigtable - Writes data to Google Cloud Bigtable.
 * Google Cloud Storage - Writes data to Google Cloud Storage.
 * Google Pub/Sub Publisher - Publishes messages to Google Pub/Sub.
-* GPSS Producer - Writes data to Greenplum Database through Greenplum Stream Server \(GPSS\).
+* GPSS Producer - Writes data to Greenplum Database through Greenplum Stream Server (GPSS).
 * Hadoop FS - Writes data to BigConnect Zion, Azure Data Lake Storage, or Azure HDInsight.
 * HBase - Writes data to an HBase cluster.
 * Hive Metastore - Creates and updates Hive tables as needed.
@@ -69,4 +69,3 @@ In standalone or cluster pipelines, you can use the following destinations:
 To help create or test pipelines, you can use the following development destination:
 
 * To Event
-
