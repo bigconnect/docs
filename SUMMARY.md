@@ -675,6 +675,8 @@
     * [Base64 Field Encoder](cloud/pipelines-studio/processors/base64-field-encoder.md)
     * [Data Generator](cloud/pipelines-studio/processors/data-generator.md)
     * [Data Parser](cloud/pipelines-studio/processors/data-parser.md)
+    * [Delay](cloud/pipelines-studio/processors/delay.md)
+    * [Encrypt and Decrypt Fields](cloud/pipelines-studio/processors/encrypt-and-decrypt-fields.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
