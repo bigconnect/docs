@@ -1,6 +1,4 @@
-# Functions
-
-### Record Functions <a href="#ariaid-title2" id="ariaid-title2"></a>
+# Record Functions
 
 Use record functions to determine information about a record, such as the stage that created it or whether a field exists in the record.
 
@@ -8,7 +6,7 @@ You can replace any argument with a literal or an expression that evaluates to t
 
 The expression language provides the following general record functions:
 
-**record:attribute(\<attribute name>)**
+### **record:attribute(\<attribute name>)**
 
 Returns the value of the specified record attribute. Use to return data, for example, for the "tag" attribute that you set using the File Tail origin.Uses the following argument:
 
@@ -22,7 +20,7 @@ For example, the following expression returns the value of a tag attribute added
 ${record:attribute('tag')}
 ```
 
-**record:attributeOrDefault(\<attribute name> , \<default value>)**
+### **record:attributeOrDefault(\<attribute name> , \<default value>)**
 
 Returns the value of the specified record header attribute. When the attribute does not exist or has no value, returns the specified default value.Uses the following arguments:
 
@@ -37,7 +35,7 @@ For example, the following expression returns the value of the tag attribute, an
 ${record:attributeOrDefault('tag', 'NA')}
 ```
 
-**record:creator()**
+### **record:creator()**
 
 Returns the instance name of the stage that created the record, typically an origin stage. Data is stored in the stageCreator field of a record.
 
@@ -49,7 +47,7 @@ For example, the following expression returns the instance name of the stage tha
 ${record:creator()}
 ```
 
-**record:eventCreation()**
+### **record:eventCreation()**
 
 Returns the epoch timestamp when an event occurred. Use to return the creation timestamp from an event record. Returns null values when applied to other records.
 
@@ -61,7 +59,7 @@ For example, the following expression returns the time that the event-generating
 ${record:eventCreation()}
 ```
 
-**record:eventType()**
+### **record:eventType()**
 
 Returns the event type from an event record. Returns null values when applied to other records.Event generating stages create different event types. For information about the possible event types, see "Event Records" in the stage documentation.
 
@@ -73,7 +71,7 @@ For example, the following expression returns the event type from an event recor
 ${record:eventType()}
 ```
 
-**record:eventVersion()**
+### **record:eventVersion()**
 
 Returns the event version from an event record. Returns null values when applied to other records.
 
@@ -85,7 +83,7 @@ For example, the following expression returns the event version from an event re
 ${record:eventVersion()}
 ```
 
-**record:exists(\<field path>)**
+### **record:exists(\<field path>)**
 
 Determines if the specified field is in a record. When the field is not in the record, returns 0. When the field is in the record, returns 1.
 
@@ -99,7 +97,7 @@ ${record:exists('/Name')}
 
 It returns 0 when the Name field is not part of the record.
 
-**record:fieldAttribute(\<field path>, \<field attribute name>)**
+### **record:fieldAttribute(\<field path>, \<field attribute name>)**
 
 Returns the value for the specified field attribute.Uses the following arguments:
 
@@ -114,7 +112,7 @@ For example, the following expression returns the value for the pk attribute on 
 record:fieldAttribute('/ID', 'pk')
 ```
 
-**record:fieldAttributeOrDefault(\<field path>, \<field attribute name>, \<default value>)**
+### **record:fieldAttributeOrDefault(\<field path>, \<field attribute name>, \<default value>)**
 
 Returns the value for the field attribute when it exists. If the attribute does not exist, returns the specified default value.Uses the following arguments:
 
@@ -130,13 +128,13 @@ For example, the following expression returns the value for the pk attribute on 
 record:fieldAttributeOrDefault('/ID', 'pk', 'n')
 ```
 
-**record:id()**
+### **record:id()**
 
 Returns the record ID. The record ID is also stored in the sourceId record header attribute.
 
 Return type: String.
 
-**record:path()**
+### **record:path()**
 
 Returns the stages in the pipeline that processed a record. Data is stored in the stagesPath field of a record. The field path uses the following format:
 
@@ -146,7 +144,7 @@ Returns the stages in the pipeline that processed a record. Data is stored in th
 
 Return type: String.
 
-**record:type(\<field path>)**
+### **record:type(\<field path>)**
 
 Checks the data type of a field. Possible return values are:
 
@@ -169,7 +167,7 @@ Checks the data type of a field. Possible return values are:
 
 Return type: String.
 
-**record:value(\<field path>)**
+### **record:value(\<field path>)**
 
 Returns the value of the field in the appropriate data type.
 
@@ -177,65 +175,8 @@ Return type: When the field includes a value, returns the type based on the fiel
 
 Nulls are coerced based on the expected return type of the function. For example, if an EL is expected to return a string, null is coerced to an empty string. However, a null integer is coerced to 0.
 
-**record:valueOrDefault(\<field path> , \<default value>)**
+### **record:valueOrDefault(\<field path> , \<default value>)**
 
 Returns the value of the field in the appropriate data type. If the field does not exist or if the field is null, returns the default value.Use to provide a default value when a field does not exist or when a field is null.
 
 Return type: Variable, based on whether the function returns the field value or default value.
-
-### Delimited Data Record Functions <a href="#ariaid-title3" id="ariaid-title3"></a>
-
-Use delimited data record functions to process delimited data with the list root field type. If you configured an origin to process the delimited data with the list-map root field type, you can use standard record functions.
-
-For more information about the delimited data root field types, see Delimited Data Root Field Type.
-
-You can replace any argument with a literal or an expression that evaluates to the argument. String literals must be enclosed in single or double quotation marks.
-
-The expression language provides the following delimited data record functions:
-
-**record:dExists()**&#x20;
-
-Determines if the specified header name exists in the record.&#x20;
-
-Return type: Boolean.
-
-**record:dHasDupHeader()**
-
-Determines if the record has duplicate header names.&#x20;
-
-Return type: Boolean.
-
-**record:dIndex(\<header name>)**&#x20;
-
-Returns the index associated with the specified header name. Use to find the position of a header in the record.&#x20;
-
-Return type: Integer, starting with 0 for the first position.
-
-**record:dIsDupHeader(\<header name>)**&#x20;
-
-Determines if the specified header name is used more than once in a record.&#x20;
-
-Return type: Boolean.
-
-**record:dToMap()**
-
-Converts a record with a List root field to a List-Map root field. Use to convert delimited List records to List-Map to allow easier use with standard record functions. For more information about root field types, see Delimited Data Root Field Type.
-
-Return type: Records with a List-Map root field.
-
-To use record:dToMap(), use a slash as the root output field as follows:
-
-<figure><img src="../../../.gitbook/assets/image (1064).png" alt=""><figcaption></figcaption></figure>
-
-**record:dValue(\<header name>)**&#x20;
-
-Returns the value associated with the specified header name.
-
-Return type: String.
-
-**record:dValueAt(\<header index>)**&#x20;
-
-Returns the value at the specified header index position.
-
-Return type: String.
-
