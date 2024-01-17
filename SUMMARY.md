@@ -751,6 +751,8 @@
     * [MongoDB](cloud/pipelines-studio/destinations/mongodb.md)
     * [Named Pipe](cloud/pipelines-studio/destinations/named-pipe.md)
     * [RabbitMQ Producer](cloud/pipelines-studio/destinations/rabbitmq-producer.md)
+    * [Redis](cloud/pipelines-studio/destinations/redis.md)
+    * [Salesforce](cloud/pipelines-studio/destinations/salesforce.md)
   * [Page](cloud/pipelines-studio/page.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
