@@ -790,7 +790,6 @@
     * [Preserving an Audit Trail of Events](cloud/pipelines-studio/solutions/preserving-an-audit-trail-of-events.md)
     * [Drift Synchronization Solution for Hive](cloud/pipelines-studio/solutions/drift-synchronization-solution-for-hive.md)
     * [Drift Synchronization Solution for PostgreSQL](cloud/pipelines-studio/solutions/drift-synchronization-solution-for-postgresql.md)
-  * [Page](cloud/pipelines-studio/page.md)
   * [Multithreaded Pipelines](cloud/pipelines-studio/multithreaded-pipelines.md)
   * [Microservice Pipelines](cloud/pipelines-studio/microservice-pipelines.md)
   * [Orchestration Pipelines](cloud/pipelines-studio/orchestration-pipelines.md)
