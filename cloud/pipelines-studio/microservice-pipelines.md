@@ -14,7 +14,7 @@ For example, you might use the WebSocket Server origin to listen at a WebSocket 
 
 ## Stages for Microservice Pipelines
 
-When you configure a microservice pipeline, you use a microservice origin, any available Data Collector processor, destination, and executor, and one or more microservice destination.
+When you configure a microservice pipeline, you use a microservice origin, any available Data Pipelines processor, destination, and executor, and one or more microservice destination.
 
 ## Microservice Origins
 
@@ -46,3 +46,19 @@ The sample pipeline shows how you might use the REST Service origin and several 
 ![](<../../.gitbook/assets/image (791).png>)
 
 The sample pipeline uses an HTTP Router processor to route data to different streams based on the REST API request method and path parameter, performs additional processing, and then passes the records to the Send Response to Origin destinations. The destinations pass the records back to the REST Service origin with the specified status codes, in this case, 200 for OK. The pipeline error handling also passes records back to the origin, with the 400 Bad Request status code. The REST Service origin generates a response with the records it receives and sends it to the originating client.
+
+## Creating a Microservice Pipeline <a href="#ariaid-title7" id="ariaid-title7"></a>
+
+Create a microservice pipeline to create a fine-grained microservice.
+
+1. From the Home page or Getting Started page, click Create New Pipeline.\
+   Tip: To get to the Home page, click the Home icon.
+2. In the New Pipeline window, enter a pipeline title and optional description, and select the type of pipeline to create:
+   * Pipeline - Select to design a microservice pipeline using an empty canvas.
+   * Microservice Pipeline - Select to design a microservice pipeline based on the sample pipeline or to review the sample pipeline.
+3. When starting with the sample pipeline, explore the pipeline and make changes as needed.
+4. When starting with a blank canvas, perform the following steps:
+   1. On the General tab of the pipeline properties, ensure that Execution Mode is set to Standalone.
+   2. On the Error Records tab, to pass pipeline error records to the microservice origin for inclusion in the response as error records, use the Send Response to Origin option.
+   3. Optionally, on the Error Records - Send Response to Origin tab, configure the status code to use with the error records. Default is 500, representing an internal server error.
+   4. Configure the pipeline using a microservice origin, one or more microservice destinations, and other stages as needed.
