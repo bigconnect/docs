@@ -703,6 +703,8 @@
     * [JSON Generator](cloud/pipelines-studio/processors/json-generator.md)
     * [JSON Parser](cloud/pipelines-studio/processors/json-parser.md)
     * [Jython Evaluator](cloud/pipelines-studio/processors/jython-evaluator.md)
+    * [Log Parser](cloud/pipelines-studio/processors/log-parser.md)
+    * [MLeap Evaluator](cloud/pipelines-studio/processors/mleap-evaluator.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
