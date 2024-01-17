@@ -654,6 +654,7 @@
     * [Oracle CDC Client](cloud/pipelines-studio/origins/oracle-cdc-client.md)
     * [PostgreSQL CDC Client](cloud/pipelines-studio/origins/postgresql-cdc-client.md)
     * [RabbitMQ Consumer](cloud/pipelines-studio/origins/rabbitmq-consumer.md)
+    * [Redis Consumer](cloud/pipelines-studio/origins/redis-consumer.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
