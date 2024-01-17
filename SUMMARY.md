@@ -717,6 +717,8 @@
     * [Static Lookup](cloud/pipelines-studio/processors/static-lookup.md)
     * [Stream Selector](cloud/pipelines-studio/processors/stream-selector.md)
     * [TensorFlow Evaluator](cloud/pipelines-studio/processors/tensorflow-evaluator.md)
+    * [Wait for Pipelines](cloud/pipelines-studio/processors/wait-for-pipelines.md)
+    * [Whole File Transformer](cloud/pipelines-studio/processors/whole-file-transformer.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
