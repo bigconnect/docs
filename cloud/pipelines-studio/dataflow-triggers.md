@@ -28,7 +28,7 @@ For example, you might store event records to keep an audit trail of the files t
 
 ## Pipeline Event Generation <a href="#ariaid-title3" id="ariaid-title3"></a>
 
-The event framework generates pipeline events in Data Collector standalone pipelines at specific points in the pipeline lifecycle. You can configure the pipeline properties to pass each event to an executor or to another pipeline for more complex processing.
+The event framework generates pipeline events in standalone pipelines at specific points in the pipeline lifecycle. You can configure the pipeline properties to pass each event to an executor or to another pipeline for more complex processing.
 
 The event framework generates the following pipeline-related events:
 
@@ -295,3 +295,174 @@ Executes a user-defined shell script for each event. You can use the executor in
 **Spark executor**
 
 Connects to Spark on YARN and starts a Spark application for each event. You can use the executor in any logical way, such as running Spark applications after the Hadoop FS, MapR FS, or Amazon S3 destination closes files. For example, you might use the Spark executor with the Hadoop FS destination to convert Avro files to Parquet when Hadoop FS closes a file.
+
+## Logical Pairings <a href="#ariaid-title12" id="ariaid-title12"></a>
+
+You can use events in any way that works for your needs. The following tables outline some logical pairings of event generation with executors and destinations.
+
+#### Pipeline Events
+
+| Pipeline Event Type | Event Consumer                                                                                                       |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Pipeline Start      | <ul><li>Any single executor, except Pipeline Finisher.</li><li>Another pipeline for additional processing.</li></ul> |
+| Pipeline Stop       | <ul><li>Any single executor, except Pipeline Finisher.</li><li>Another pipeline for additional processing.</li></ul> |
+
+#### Origin Events
+
+| Event Generating Origin                 | Event Consumer                                                                                                                                                                                                                                                                                                                                   |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Amazon S3                               | <ul><li>Pipeline Finisher executor to stop the pipeline after processing queried data from all objects.</li><li>Email executor to send email when the origin completes processing available objects.</li><li>Any destination for event storage.</li></ul>                                                                                        |
+| Azure Data Lake Storage Gen1            | <ul><li>Email executor to send email after closing a file or streaming a whole file.</li><li>Pipeline Finisher executor to stop the pipeline after processing all available files.</li><li>Any destination for event storage.</li></ul>                                                                                                          |
+| Azure Data Lake Storage Gen2            | <ul><li>Email executor to send email after closing a file or streaming a whole file.</li><li>Pipeline Finisher executor to stop the pipeline after processing all available files.</li><li>Any destination for event storage.</li></ul>                                                                                                          |
+| Directory                               | <ul><li>Email executor to send email each time the origin starts or completes processing a file.</li><li>Pipeline Finisher executor to stop the pipeline after processing all available files.</li><li>Any destination for event storage.</li></ul>                                                                                              |
+| File Tail                               | <ul><li>Email executor to send email each time the origin starts or completes processing a file.</li><li>Any destination for event storage.</li></ul>                                                                                                                                                                                            |
+| Google BigQuery                         | <ul><li>Email executor to send email each time the origin successfully completes a query.</li><li>Any destination for event storage.</li></ul>                                                                                                                                                                                                   |
+| Google Cloud Storage                    | <ul><li>Pipeline Finisher executor to stop the pipeline after processing queried data from all objects.</li><li>Email executor to send email when the origin completes processing available objects.</li><li>Any destination for event storage.</li></ul>                                                                                        |
+| Hadoop FS Standalone                    | <ul><li>Email executor to send email each time the origin starts or completes processing a file.</li><li>Pipeline Finisher executor to stop the pipeline after processing all available files.</li><li>Any destination for event storage.</li></ul>                                                                                              |
+| JDBC Multitable Consumer                | <ul><li>Pipeline Finisher executor to stop the pipeline after processing queried data from all tables.</li><li>Email executor to send email when the origin completes processing all data returned by queries.</li><li>Any destination for event storage.</li></ul>                                                                              |
+| JDBC Query Consumer                     | <ul><li>Route the no-more-data event to the Pipeline Finisher executor to stop the pipeline after processing queried data.</li><li>Email executor to send email each time the origin successfully completes a query, fails to complete a query, or completes processing all available data.</li><li>Any destination for event storage.</li></ul> |
+| MongoDB                                 | <ul><li>Route the no-more-data event to the Pipeline Finisher executor to stop the pipeline after processing queried data.</li><li>Email executor to send email when the origin completes processing available objects.</li><li>Any destination for event storage.</li></ul>                                                                     |
+| Oracle Bulkload                         | <ul><li>Email executor to send email after it completes reading data in a table.</li><li>Any destination for event storage.</li></ul>                                                                                                                                                                                                            |
+| Oracle CDC Client                       | <ul><li>Email executor to send email each time it reads DDL statements in the redo logs.</li><li>Any destination for event storage.</li></ul>                                                                                                                                                                                                    |
+| Salesforce                              | <ul><li>Pipeline Finisher executor to stop the pipeline after processing queried data.</li><li>Email executor to send email when the origin completes processing all data returned by a query.</li><li>Any destination for event storage.</li></ul>                                                                                              |
+| SAP HANA Query Consumer                 | <ul><li>Route the no-more-data event to the Pipeline Finisher executor to stop the pipeline after processing queried data.</li><li>Email executor to send email each time the origin successfully completes a query, fails to complete a query, or completes processing all available data.</li><li>Any destination for event storage.</li></ul> |
+| SFTP/FTP/FTPS Client                    | <ul><li>Email executor to send email each time the origin starts or completes processing a file.</li><li>Pipeline Finisher executor to stop the pipeline after processing all available files.</li><li>SFTP/FTP/FTPS Client executor to move or remove a processed file.</li><li>Any destination for event storage.</li></ul>                    |
+| SQL Server 2019 BDC Multitable Consumer | <ul><li>Pipeline Finisher executor to stop the pipeline after processing queried data from all tables.</li><li>Email executor to send email when the origin completes processing all data returned by queries.</li><li>Any destination for event storage.</li></ul>                                                                              |
+| SQL Server Change Tracking              | <ul><li>Pipeline Finisher executor to stop the pipeline after processing available data.</li></ul>                                                                                                                                                                                                                                               |
+| Teradata Consumer                       | <ul><li>Pipeline Finisher executor to stop the pipeline after processing queried data from all tables.</li><li>Email executor to send email when the origin completes processing all data returned by queries.</li><li>Any destination for event storage.</li></ul>                                                                              |
+
+#### Processor Events
+
+| Event Generating Processor | Event Consumer                                                                                                                       |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Windowing Aggregator       | <ul><li>Email executor for notification when results pass specified thresholds.</li><li>Any destination for event storage.</li></ul> |
+| Groovy Evaluator           | <ul><li>Any logical executor.</li><li>Any destination for event storage.</li></ul>                                                   |
+| JavaScript Evaluator       | <ul><li>Any logical executor.</li><li>Any destination for event storage.</li></ul>                                                   |
+| Jython Evaluator           | <ul><li>Any logical executor.</li><li>Any destination for event storage.</li></ul>                                                   |
+| TensorFlow Evaluator       | <ul><li>Any destination for event storage.</li></ul>                                                                                 |
+
+#### Destination Events
+
+| Event Generating Destination | Event Consumer                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Amazon S3                    | <ul><li>Amazon S3 executor to create or copy objects or to add tags to closed objects.</li><li>Databricks Job Launcher executor to run a Databricks application after closing an object or whole file.</li><li>Databricks Delta Lake executor to copy or merge data from Amazon S3 to a Delta Lake table.</li><li>Spark executor to run a Spark application after closing an object or whole file.</li><li>Email executor to send email after closing an object or whole file.</li><li>Any destination for event storage.</li></ul>                                                                                                                                                                          |
+| Azure Data Lake Storage Gen1 | <ul><li>ADLS Gen1 executor to change file metadata, create an empty file, or remove a file or directory after closing a file.</li><li>Email executor to send email after closing a file or streaming a whole file.</li><li>Any destination for event storage.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Azure Data Lake Storage Gen2 | <ul><li>ADLS Gen2 executor to change file metadata, create an empty file, or remove a file or directory after closing a file.</li><li>Databricks Delta Lake executor to copy or merge data from Azure Data Lake Storage Gen2 to a Delta Lake table.</li><li>Email executor to send email after closing a file or streaming a whole file.</li><li>Any destination for event storage.</li></ul>                                                                                                                                                                                                                                                                                                                |
+| Google Cloud Storage         | <ul><li>Databricks Job Launcher executor to run a Databricks job after closing an object or whole file.</li><li>Spark executor to run a Spark application after closing an object or whole file.</li><li>Email executor to send email after closing an object or whole file.</li><li>Any destination for event storage.</li></ul>                                                                                                                                                                                                                                                                                                                                                                            |
+| Hadoop FS                    | <ul><li>HDFS File Metadata executor to change file metadata, create an empty file, or remove a file or directory after closing a file.</li><li><p>Hive Query executor to run Hive or Impala queries after closing a file.</p><p>Particularly useful when using the Drift Synchronization Solution for Hive with Impala.</p></li><li>MapReduce executor to run a MapReduce job after closing a file.</li><li>Databricks Job Launcher executor to run a Databricks job after closing a file.</li><li>Spark executor to run a Spark application after closing a file.</li><li>Email executor to send email after closing a file or streaming a whole file.</li><li>Any destination for event storage.</li></ul> |
+| Hive Metastore               | <ul><li><p>Hive Query executor to run Hive or Impala queries after the destination changes table structures.</p><p>Particularly useful when using the Drift Synchronization Solution for Hive with Impala.</p></li><li>HDFS File Metadata executor to change file metadata, create an empty file, or remove a file or directory after writing an Avro schema file.</li><li>Email executor to send email each time the destination changes the Hive metastore.</li><li>Any destination for event storage.</li></ul>                                                                                                                                                                                           |
+| Local FS                     | <ul><li>HDFS File Metadata executor to change file metadata, create an empty file, or remove a file or directory after closing a file.</li><li>Email executor to send email after the destination closes a file or streams a whole file.</li><li>Any destination for event storage.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                |
+| SFTP/FTP/FTPS Client         | <ul><li>Email executor to send email each time the destination closes a file or streams a whole file.</li><li>SFTP/FTP/FTPS Client executor to move a closed file.</li><li>Any destination for event storage.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+
+#### Executor Events
+
+| Event Generating Executor        | Event Consumer                                                                                                                                                    |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ADLS Gen1 File Metadata executor | <ul><li>Email executor to send email each time the executor changes file metadata.</li><li>Any destination for event storage.</li></ul>                           |
+| ADLS Gen2 File Metadata executor | <ul><li>Email executor to send email each time the executor changes file metadata.</li><li>Any destination for event storage.</li></ul>                           |
+| Amazon S3                        | <ul><li>Email executor to send email each time the executor changes object metadata.</li><li>Any destination for event storage.</li></ul>                         |
+| Databricks Job Launcher executor | <ul><li>Email executor to send email each time the Databricks Job Launcher executor starts a Databricks job.</li><li>Any destination for event storage.</li></ul> |
+| Databricks Query executor        | <ul><li>Email executor to send email when a query succeeds or fails.</li><li>Any destination for event storage.</li></ul>                                         |
+| HDFS File Metadata executor      | <ul><li>Email executor to send email each time the executor changes file metadata.</li><li>Any destination for event storage.</li></ul>                           |
+| Hive Query executor              | <ul><li>Email executor to send email when a query succeeds or fails.</li><li>Any destination for event storage.</li></ul>                                         |
+| JDBC Query executor              | <ul><li>Email executor to send email when a query succeeds or fails.</li><li>Any destination for event storage.</li></ul>                                         |
+| MapReduce executor               | <ul><li>Email executor to send email each time the executor starts a MapReduce job.</li><li>Any destination for event storage.</li></ul>                          |
+| Spark executor                   | <ul><li>Email executor to send email each time the Spark executor starts a Spark application.</li><li>Any destination for event storage.</li></ul>                |
+
+## Event Records <a href="#ariaid-title13" id="ariaid-title13"></a>
+
+Event records are records that are created when a stage or pipeline event occurs.
+
+Most event records pass general event information in record headers, such as when the event occurred. They also can include event-specific details in record fields, like the name and location of the output file that was closed.
+
+Event records generated by the File Tail origin are the exception - they include all event information in record fields.
+
+### Event Record Header Attributes <a href="#ariaid-title14" id="ariaid-title14"></a>
+
+In addition to the standard record header attributes, most event records include record header attributes for event information such as the event type and when the event occurred.
+
+As with any record header attribute, you can use the Expression Evaluator and the record:attribute function to include record header attribute information as a field in the record. For example, when storing event records, you most likely want to include the time of the event in the event record, using the following expression in an Expression Evaluator:
+
+```
+${record:attribute('sdc.event.creation_timestamp')}
+```
+
+Note that all record header attributes are String values. For more information about working with record header attributes, see Record Header Attributes.
+
+Most events include the following event record header attributes. The exception, File Tail, writes all of the event information to record fields.
+
+| Event Record Header Attribute | Description                                                                                                                                                                         |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| sdc.event.type                | <p>Event type. Defined by the stage that generates the event.</p><p>For information about the event types available for an event generating stage, see the stage documentation.</p> |
+| sdc.event.version             | Integer that indicates the version of the event record type.                                                                                                                        |
+| sdc.event.creation\_timestamp | Epoch timestamp when the stage created the event.                                                                                                                                   |
+
+Note: Stage-generated event records differ from stage to stage. For a description of stage events, see "Event Record" in the documentation for the event-generating stage. For a description of pipeline events, see Pipeline Event Records.
+
+## Viewing Events in Data Preview, Snapshot, and Monitor Mode
+
+When generated, stage events display in data preview, Monitor mode, and snapshot as event records. Once a record leaves the event-generating stage, it is treated like a standard record.
+
+Pipeline events generated by the event framework do not display in data preview or Monitor mode. However, you can enable data preview to generate and process pipeline events.
+
+### Viewing Stage Events in Data Preview and Snapshot <a href="#ariaid-title16" id="ariaid-title16"></a>
+
+In data preview and when reviewing snapshots of data, stage-related event records display in the event-generating stage marked as "event records," and they appear below the batch of standard records.
+
+After leaving the stage, the record displays like any other record.
+
+For example, the Directory origin below generates an event record as it starts reading a file for data preview:
+
+![](https://docs.streamsets.com/datacollector/3.22.x/help/datacollector/UserGuide/Graphics/Event-DataPreview.png)
+
+When you select the Local FS destination where the event record is written, you see that the same event record no longer displays the event record label. It is treated like any other record:
+
+![](https://docs.streamsets.com/datacollector/3.22.x/help/datacollector/UserGuide/Graphics/Event-DataPreview-Dest.png)
+
+### Viewing Stage Events in Monitor Mode <a href="#ariaid-title17" id="ariaid-title17"></a>
+
+In Monitor mode, the event-generating stage provides statistics about stage-related event records. Once the event records leave the stage, Monitor mode treats event records like any other record.
+
+For example, when you run and monitor the pipeline featured above, the Directory origin information displays event records in its statistics:
+
+![](https://docs.streamsets.com/datacollector/3.22.x/help/datacollector/UserGuide/Graphics/Event-Monitor-Origin.png)
+
+Notice, in the Record Throughput chart, that you can hover over graphics to get the exact number of records that they represent.
+
+And when you select the Local FS destination where the event record is written, Monitor mode displays statistics for the records written to the destination. At this point, the event records are treated like any other record:
+
+![](https://docs.streamsets.com/datacollector/3.22.x/help/datacollector/UserGuide/Graphics/Event-Monitor-Dest.png)
+
+### Executing Pipeline Events in Data Preview <a href="#ariaid-title18" id="ariaid-title18"></a>
+
+You can enable pipeline event execution in data preview to test event processing.
+
+When you enable pipeline event generation while previewing data, the event framework generates the pipeline start event when you start data preview and the stop event when you stop data preview. If you configured the pipeline to pass the events to executors or to event-consuming pipelines, the events are passed and trigger the additional processing.
+
+To enable generating pipeline event execution during data preview, use the Enable Pipeline Execution data preview property.
+
+## Summary <a href="#ariaid-title19" id="ariaid-title19"></a>
+
+Here are the key points about dataflow triggers and the event framework:
+
+1. You can use the event framework in any pipeline where the logic suits your needs.
+2. The event framework generates pipeline-related events and stage-related events.
+3. You can use pipeline events in standalone pipelines.
+4. Pipeline events are generated when the pipeline starts and stops. For details, see Pipeline Event Generation.
+5. You can configure each pipeline event type to pass to a single executor or to another pipeline for more complex processing.
+6. Stage events are generated based on the processing logic of the stage. For a list of event-generating stages, see Stage Event Generation.
+7.  Events generate event records to pass relevant information regarding the event, such as the path to the file that was closed.
+
+    Stage-generated event records differ from stage to stage. For a description of stage events, see "Event Record" in the documentation for the event-generating stage. For a description of pipeline events, see Pipeline Event Records.
+8. In the simplest use case, you can route stage event records to a destination to save event information.
+9.  You can route stage event records to an executor stage so it can perform a task upon receiving an event.
+
+    For a list of logical event generation and executor pairings, see Logical Pairings.
+10. You can add processors to event streams for stage events or to consuming pipelines for pipeline events.
+
+    For example, you might add an Expression Evaluator to add the event generation time to an event record before writing it to a destination. Or, you might use a Stream Selector to route different types of event records to different executors.
+11. When working with stage events, you cannot merge event streams with data streams.
+12. You can use the Dev Data Generator and To Event development stages to generate events for pipeline development and testing. For more information about the development stages, see Development Stages.
+13. In data preview and in Monitor mode, stage-generated event records display separately in the event-generating stage. Afterwards, they are treated like any standard record.
+14. You can configure data preview to generate and execute pipeline events.
+
