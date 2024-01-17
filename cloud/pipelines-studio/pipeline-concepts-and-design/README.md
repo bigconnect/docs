@@ -2,7 +2,7 @@
 
 A pipeline describes the flow of data from the origin system to destination systems and defines how to transform the data along the way.
 
-You can use a single [origin](../origins.md) stage to represent the origin system, multiple [processor](../processors/) stages to transform data, and multiple [destination](../destinations.md) stages to represent destination systems.
+You can use a single [origin](../origins.md) stage to represent the origin system, multiple [processor](../processors.md) stages to transform data, and multiple [destination](../destinations.md) stages to represent destination systems.
 
 When you develop a pipeline, you can use development stages to provide sample data and generate errors to test error handling. And you can use data preview to determine how stages alter the data through the pipeline.
 

@@ -63,7 +63,7 @@ In standalone or cluster pipelines, you can use the following processors:
 * Static Lookup - Performs key-value lookups in local memory.
 * Stream Selector - Routes data to different streams based on conditions.
 * TensorFlow Evaluator - Uses a TensorFlow machine learning model to generate predictions or classifications of data.
-* Value Replacer \(Deprecated\) - Replaces existing nulls or specified values with constants or nulls.
+* Value Replacer (Deprecated) - Replaces existing nulls or specified values with constants or nulls.
 * Whole File Transformer - Transforms Avro files to Parquet.
 * Windowing Aggregator - Performs aggregations within a window of time, displays the results in Monitor mode, and writes the results to events when enabled. This processor does not update the records being evaluated.
 * XML Flattener - Flattens XML data in a string field.
@@ -76,6 +76,4 @@ To help create or test pipelines, you can use the following development processo
 * Dev Identity
 * Dev Random Error
 * Dev Record Creator
-
-
 
