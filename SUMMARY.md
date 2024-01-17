@@ -656,6 +656,7 @@
     * [RabbitMQ Consumer](cloud/pipelines-studio/origins/rabbitmq-consumer.md)
     * [Redis Consumer](cloud/pipelines-studio/origins/redis-consumer.md)
     * [REST Service](cloud/pipelines-studio/origins/rest-service.md)
+    * [Salesforce](cloud/pipelines-studio/origins/salesforce.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
