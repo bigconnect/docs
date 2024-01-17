@@ -640,6 +640,7 @@
     * [HTTP Client](cloud/pipelines-studio/origins/http-client.md)
     * [HTTP Server](cloud/pipelines-studio/origins/http-server.md)
     * [JavaScript Scripting](cloud/pipelines-studio/origins/javascript-scripting.md)
+    * [JDBC Multitable Consumer](cloud/pipelines-studio/origins/jdbc-multitable-consumer.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
