@@ -659,6 +659,7 @@
     * [REST Service](cloud/pipelines-studio/origins/rest-service.md)
     * [Salesforce](cloud/pipelines-studio/origins/salesforce.md)
     * [SAP HANA Query Consumer](cloud/pipelines-studio/origins/sap-hana-query-consumer.md)
+    * [SFTP/FTP/FTPS Client](cloud/pipelines-studio/origins/sftp-ftp-ftps-client.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
