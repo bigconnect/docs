@@ -738,6 +738,8 @@
     * [Google Cloud Storage](cloud/pipelines-studio/destinations/google-cloud-storage.md)
     * [Google Pub/Sub Publisher](cloud/pipelines-studio/destinations/google-pub-sub-publisher.md)
     * [Hadoop FS](cloud/pipelines-studio/destinations/hadoop-fs.md)
+    * [HBase](cloud/pipelines-studio/destinations/hbase.md)
+    * [Hive Metastore](cloud/pipelines-studio/destinations/hive-metastore.md)
   * [Page](cloud/pipelines-studio/page.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
