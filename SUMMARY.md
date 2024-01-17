@@ -705,6 +705,7 @@
     * [Jython Evaluator](cloud/pipelines-studio/processors/jython-evaluator.md)
     * [Log Parser](cloud/pipelines-studio/processors/log-parser.md)
     * [MLeap Evaluator](cloud/pipelines-studio/processors/mleap-evaluator.md)
+    * [MongoDB Lookup](cloud/pipelines-studio/processors/mongodb-lookup.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
