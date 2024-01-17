@@ -804,6 +804,8 @@
     * [Record Functions](cloud/pipelines-studio/expression-language/record-functions.md)
     * [Delimited Data Record Functions](cloud/pipelines-studio/expression-language/delimited-data-record-functions.md)
     * [Error Record Functions](cloud/pipelines-studio/expression-language/error-record-functions.md)
+    * [Base64 Functions](cloud/pipelines-studio/expression-language/base64-functions.md)
+    * [Credential Functions](cloud/pipelines-studio/expression-language/credential-functions.md)
   * [Regular Expressions](cloud/pipelines-studio/regular-expressions.md)
   * [Grok Patterns](cloud/pipelines-studio/grok-patterns.md)
 * [Discovery](cloud/bigconnect-discovery/README.md)
