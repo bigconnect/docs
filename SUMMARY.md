@@ -648,6 +648,7 @@
     * [Kafka Multitopic Consumer](cloud/pipelines-studio/origins/kafka-multitopic-consumer.md)
     * [MongoDB](cloud/pipelines-studio/origins/mongodb.md)
     * [MongoDB Oplog](cloud/pipelines-studio/origins/mongodb-oplog.md)
+    * [MQTT Subscriber](cloud/pipelines-studio/origins/mqtt-subscriber.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
