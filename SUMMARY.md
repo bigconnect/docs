@@ -742,6 +742,8 @@
     * [Hive Metastore](cloud/pipelines-studio/destinations/hive-metastore.md)
     * [Hive Streaming](cloud/pipelines-studio/destinations/hive-streaming.md)
     * [HTTP Client](cloud/pipelines-studio/destinations/http-client.md)
+    * [InfluxDB](cloud/pipelines-studio/destinations/influxdb.md)
+    * [JDBC Producer](cloud/pipelines-studio/destinations/jdbc-producer.md)
   * [Page](cloud/pipelines-studio/page.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
