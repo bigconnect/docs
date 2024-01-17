@@ -6,7 +6,7 @@ You can use a single [origin](../origins.md) stage to represent the origin syste
 
 When you develop a pipeline, you can use development stages to provide sample data and generate errors to test error handling. And you can use data preview to determine how stages alter the data through the pipeline.
 
-You can use [executor](../executors/) stages to perform event-triggered task execution or to save event information. To process large volumes of data, you can use multithreaded pipelines or cluster mode pipelines.
+You can use [executor](../executors.md) stages to perform event-triggered task execution or to save event information. To process large volumes of data, you can use multithreaded pipelines or cluster mode pipelines.
 
 In pipelines that write to Hive or parquet or to PostgreSQL, you can implement a data drift solution that detects drift in incoming data and updates tables in destination systems.
 
