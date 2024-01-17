@@ -629,6 +629,7 @@
     * [Azure IoT/Event Hub Consumer](cloud/pipelines-studio/origins/azure-iot-event-hub-consumer.md)
     * [CoAP Server](cloud/pipelines-studio/origins/coap-server.md)
     * [Cron Scheduler](cloud/pipelines-studio/origins/cron-scheduler.md)
+    * [Data Pipelines RPC](cloud/pipelines-studio/origins/data-pipelines-rpc.md)
     * [Directory](cloud/pipelines-studio/origins/directory.md)
     * [Elasticsearch](cloud/pipelines-studio/origins/elasticsearch.md)
     * [File Tail](cloud/pipelines-studio/origins/file-tail.md)
