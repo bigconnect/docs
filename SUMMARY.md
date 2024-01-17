@@ -778,6 +778,7 @@
     * [Pipeline Finisher](cloud/pipelines-studio/executors/pipeline-finisher.md)
     * [SFTP/FTP/FTPS Client](cloud/pipelines-studio/executors/sftp-ftp-ftps-client.md)
     * [Shell](cloud/pipelines-studio/executors/shell.md)
+    * [Spark](cloud/pipelines-studio/executors/spark.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
   * [Solutions](cloud/pipelines-studio/solutions.md)
   * [Multithreaded Pipelines](cloud/pipelines-studio/multithreaded-pipelines.md)
