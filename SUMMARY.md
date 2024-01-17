@@ -793,7 +793,7 @@
   * [Multithreaded Pipelines](cloud/pipelines-studio/multithreaded-pipelines.md)
   * [Microservice Pipelines](cloud/pipelines-studio/microservice-pipelines.md)
   * [Orchestration Pipelines](cloud/pipelines-studio/orchestration-pipelines.md)
-  * [DP RPC Pipelines](cloud/pipelines-studio/dp-rpc-pipelines.md)
+  * [DP RPC Pipelines](cloud/pipelines-studio/sdc-rpc-pipelines.md)
   * [Cluster Pipelines](cloud/pipelines-studio/cluster-pipelines.md)
   * [Data Preview](cloud/pipelines-studio/data-preview.md)
   * [Rules and Alerts](cloud/pipelines-studio/rules-and-alerts.md)
