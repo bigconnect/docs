@@ -642,6 +642,7 @@
     * [JavaScript Scripting](cloud/pipelines-studio/origins/javascript-scripting.md)
     * [JDBC Multitable Consumer](cloud/pipelines-studio/origins/jdbc-multitable-consumer.md)
     * [JDBC Query Consumer](cloud/pipelines-studio/origins/jdbc-query-consumer.md)
+    * [JMS Consumer](cloud/pipelines-studio/origins/jms-consumer.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
