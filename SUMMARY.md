@@ -719,6 +719,7 @@
     * [TensorFlow Evaluator](cloud/pipelines-studio/processors/tensorflow-evaluator.md)
     * [Wait for Pipelines](cloud/pipelines-studio/processors/wait-for-pipelines.md)
     * [Whole File Transformer](cloud/pipelines-studio/processors/whole-file-transformer.md)
+    * [Windowing Aggregator](cloud/pipelines-studio/processors/windowing-aggregator.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
