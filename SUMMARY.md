@@ -710,6 +710,8 @@
     * [PostgreSQL Metadata](cloud/pipelines-studio/processors/postgresql-metadata.md)
     * [Record Deduplicator](cloud/pipelines-studio/processors/record-deduplicator.md)
     * [Redis Lookup](cloud/pipelines-studio/processors/redis-lookup.md)
+    * [Schema Generator](cloud/pipelines-studio/processors/schema-generator.md)
+    * [Spark Evaluator](cloud/pipelines-studio/processors/spark-evaluator.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
