@@ -740,6 +740,8 @@
     * [Hadoop FS](cloud/pipelines-studio/destinations/hadoop-fs.md)
     * [HBase](cloud/pipelines-studio/destinations/hbase.md)
     * [Hive Metastore](cloud/pipelines-studio/destinations/hive-metastore.md)
+    * [Hive Streaming](cloud/pipelines-studio/destinations/hive-streaming.md)
+    * [HTTP Client](cloud/pipelines-studio/destinations/http-client.md)
   * [Page](cloud/pipelines-studio/page.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
