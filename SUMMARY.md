@@ -696,6 +696,8 @@
     * [HBase Lookup](cloud/pipelines-studio/processors/hbase-lookup.md)
     * [Hive Metadata](cloud/pipelines-studio/processors/hive-metadata.md)
     * [HTTP Client](cloud/pipelines-studio/processors/http-client.md)
+    * [HTTP Router](cloud/pipelines-studio/processors/http-router.md)
+    * [JavaScript Evaluator](cloud/pipelines-studio/processors/javascript-evaluator.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
