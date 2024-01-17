@@ -644,6 +644,7 @@
     * [JDBC Query Consumer](cloud/pipelines-studio/origins/jdbc-query-consumer.md)
     * [JMS Consumer](cloud/pipelines-studio/origins/jms-consumer.md)
     * [Jython Scripting](cloud/pipelines-studio/origins/jython-scripting.md)
+    * [Kafka Consumer](cloud/pipelines-studio/origins/kafka-consumer.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
