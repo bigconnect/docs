@@ -669,6 +669,7 @@
     * [UDP Multithreaded Source](cloud/pipelines-studio/origins/udp-multithreaded-source.md)
     * [UDP Source](cloud/pipelines-studio/origins/udp-source.md)
     * [WebSocket Client](cloud/pipelines-studio/origins/websocket-client.md)
+    * [WebSocket Server](cloud/pipelines-studio/origins/websocket-server.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
