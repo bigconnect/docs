@@ -692,6 +692,7 @@
     * [Field Type Converter](cloud/pipelines-studio/processors/field-type-converter.md)
     * [Field Zip](cloud/pipelines-studio/processors/field-zip.md)
     * [Geo IP](cloud/pipelines-studio/processors/geo-ip.md)
+    * [Groovy Evaluator](cloud/pipelines-studio/processors/groovy-evaluator.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
