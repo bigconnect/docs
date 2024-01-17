@@ -665,6 +665,7 @@
     * [SQL Server Change Tracking](cloud/pipelines-studio/origins/sql-server-change-tracking.md)
     * [Start Pipelines](cloud/pipelines-studio/origins/start-pipelines.md)
     * [TCP Server](cloud/pipelines-studio/origins/tcp-server.md)
+    * [Teradata Consumer](cloud/pipelines-studio/origins/teradata-consumer.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
