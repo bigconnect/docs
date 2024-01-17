@@ -720,6 +720,8 @@
     * [Wait for Pipelines](cloud/pipelines-studio/processors/wait-for-pipelines.md)
     * [Whole File Transformer](cloud/pipelines-studio/processors/whole-file-transformer.md)
     * [Windowing Aggregator](cloud/pipelines-studio/processors/windowing-aggregator.md)
+    * [XML Flattener](cloud/pipelines-studio/processors/xml-flattener.md)
+    * [XML Parser](cloud/pipelines-studio/processors/xml-parser.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
