@@ -9,7 +9,7 @@ You can use different destinations based on the execution mode of the pipeline: 
 In standalone pipelines, you can use the following destinations:
 
 * Rabbit MQ Producer - Writes data to RabbitMQ.
-* Send Response to Origin - Sends records with the specified response to the microservice origin in the pipeline. Use only in a [microservice pipeline](../microservice-pipelines.md).
+* Send Response to Origin - Sends records with the specified response to the microservice origin in the pipeline. Use only in a [microservice pipeline](microservice-pipelines.md).
 
 ### Standalone or Cluster Pipelines
 
