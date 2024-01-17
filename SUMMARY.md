@@ -698,6 +698,7 @@
     * [HTTP Client](cloud/pipelines-studio/processors/http-client.md)
     * [HTTP Router](cloud/pipelines-studio/processors/http-router.md)
     * [JavaScript Evaluator](cloud/pipelines-studio/processors/javascript-evaluator.md)
+    * [JDBC Lookup](cloud/pipelines-studio/processors/jdbc-lookup.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
