@@ -662,6 +662,7 @@
     * [SFTP/FTP/FTPS Client](cloud/pipelines-studio/origins/sftp-ftp-ftps-client.md)
     * [SQL Server 2019 BDC Multitable Consumer](cloud/pipelines-studio/origins/sql-server-2019-bdc-multitable-consumer.md)
     * [SQL Server CDC Client](cloud/pipelines-studio/origins/sql-server-cdc-client.md)
+    * [SQL Server Change Tracking](cloud/pipelines-studio/origins/sql-server-change-tracking.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
