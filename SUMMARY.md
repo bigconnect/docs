@@ -666,6 +666,7 @@
     * [Start Pipelines](cloud/pipelines-studio/origins/start-pipelines.md)
     * [TCP Server](cloud/pipelines-studio/origins/tcp-server.md)
     * [Teradata Consumer](cloud/pipelines-studio/origins/teradata-consumer.md)
+    * [UDP Multithreaded Source](cloud/pipelines-studio/origins/udp-multithreaded-source.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
