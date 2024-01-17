@@ -733,6 +733,8 @@
     * [Databricks Delta Lake](cloud/pipelines-studio/destinations/databricks-delta-lake.md)
     * [Elasticsearch](cloud/pipelines-studio/destinations/elasticsearch.md)
     * [Flume](cloud/pipelines-studio/destinations/flume.md)
+    * [Google BigQuery](cloud/pipelines-studio/destinations/google-bigquery.md)
+    * [Google Bigtable](cloud/pipelines-studio/destinations/google-bigtable.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
   * [Solutions](cloud/pipelines-studio/solutions.md)
