@@ -651,6 +651,7 @@
     * [MQTT Subscriber](cloud/pipelines-studio/origins/mqtt-subscriber.md)
     * [MySQL Binary Log](cloud/pipelines-studio/origins/mysql-binary-log.md)
     * [Oracle Bulkload](cloud/pipelines-studio/origins/oracle-bulkload.md)
+    * [Oracle CDC Client](cloud/pipelines-studio/origins/oracle-cdc-client.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
