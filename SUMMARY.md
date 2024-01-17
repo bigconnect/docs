@@ -645,6 +645,7 @@
     * [JMS Consumer](cloud/pipelines-studio/origins/jms-consumer.md)
     * [Jython Scripting](cloud/pipelines-studio/origins/jython-scripting.md)
     * [Kafka Consumer](cloud/pipelines-studio/origins/kafka-consumer.md)
+    * [Kafka Multitopic Consumer](cloud/pipelines-studio/origins/kafka-multitopic-consumer.md)
   * [Processors](cloud/pipelines-studio/processors.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
