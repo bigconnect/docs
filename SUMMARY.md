@@ -694,6 +694,7 @@
     * [Geo IP](cloud/pipelines-studio/processors/geo-ip.md)
     * [Groovy Evaluator](cloud/pipelines-studio/processors/groovy-evaluator.md)
     * [HBase Lookup](cloud/pipelines-studio/processors/hbase-lookup.md)
+    * [Hive Metadata](cloud/pipelines-studio/processors/hive-metadata.md)
   * [Destinations](cloud/pipelines-studio/destinations.md)
   * [Executors](cloud/pipelines-studio/executors.md)
   * [Dataflow Triggers](cloud/pipelines-studio/dataflow-triggers.md)
