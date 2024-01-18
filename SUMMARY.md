@@ -457,6 +457,7 @@
   * [Dashboards](products/bigconnect-answers/dashboards/README.md)
     * [Introduction to dashboards](products/bigconnect-answers/dashboards/introduction-to-dashboards.md)
     * [Dashboard filters](products/bigconnect-answers/dashboards/dashboard-filters.md)
+    * [Interactive dashboards](products/bigconnect-answers/dashboards/interactive-dashboards.md)
   * [Old](products/bigconnect-answers/old/README.md)
     * [Getting Started](products/bigconnect-answers/getting-started/README.md)
       * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
