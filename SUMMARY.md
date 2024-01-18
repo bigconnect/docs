@@ -419,6 +419,7 @@
 * [BigConnect Answers](products/bigconnect-answers.md)
   * [Databases](products/bigconnect-answers/databases/README.md)
     * [Amazon Athena](products/bigconnect-answers/databases/amazon-athena.md)
+    * [Amazon RDS](products/bigconnect-answers/databases/amazon-rds.md)
     * [Google BigQuery](products/bigconnect-answers/databases/google-bigquery.md)
     * [Druid](products/bigconnect-answers/databases/druid.md)
     * [MongoDB](products/bigconnect-answers/databases/mongodb.md)
