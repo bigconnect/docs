@@ -814,6 +814,8 @@
     * [Math Functions](cloud/pipelines-studio/expression-language/math-functions.md)
     * [Pipeline Functions](cloud/pipelines-studio/expression-language/pipeline-functions.md)
     * [String Functions](cloud/pipelines-studio/expression-language/string-functions.md)
+    * [Time Functions](cloud/pipelines-studio/expression-language/time-functions.md)
+    * [Miscellaneous Functions](cloud/pipelines-studio/expression-language/miscellaneous-functions.md)
   * [Regular Expressions](cloud/pipelines-studio/regular-expressions.md)
   * [Grok Patterns](cloud/pipelines-studio/grok-patterns.md)
 * [Discovery](cloud/bigconnect-discovery/README.md)
