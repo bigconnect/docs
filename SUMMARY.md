@@ -489,6 +489,8 @@
   * [Permissions](products/bigconnect-answers/permissions/README.md)
     * [Permissions introduction](products/bigconnect-answers/permissions/permissions-introduction.md)
     * [Data permissions](products/bigconnect-answers/permissions/data-permissions.md)
+    * [Collection permissions](products/bigconnect-answers/permissions/collection-permissions.md)
+    * [Application permissions](products/bigconnect-answers/permissions/application-permissions.md)
   * [Page 1](products/bigconnect-answers/page-1.md)
   * [Page](products/bigconnect-answers/page.md)
   * [Old](products/bigconnect-answers/old/README.md)
