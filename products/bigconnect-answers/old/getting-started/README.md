@@ -4,7 +4,7 @@ BigConnect Answers is a simple and powerful analytics tool which lets anyone lea
 
 ### The home page <a href="#the-metabase-home-page" id="the-metabase-home-page"></a>
 
-![](<../../../.gitbook/assets/image (333).png>)
+![](<../../../../.gitbook/assets/image (333).png>)
 
 Fresh out of the box, Answers will show you a few things on the home page:
 
@@ -19,7 +19,7 @@ You can also **Bookmark** your favorite items, and they’ll appear toward the t
 
 To open and close the navigation sidebar, click on the Answers logo in the upper left.
 
-![The Browse Data section will show you the databases connected to your Answers, including the Sample Database that ships with Answers.](<../../../.gitbook/assets/image (347).png>)
+![The Browse Data section will show you the databases connected to your Answers, including the Sample Database that ships with Answers.](<../../../../.gitbook/assets/image (347).png>)
 
 ### Asking a new question <a href="#asking-a-new-question" id="asking-a-new-question"></a>
 
