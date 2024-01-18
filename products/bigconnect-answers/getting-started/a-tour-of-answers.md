@@ -2,7 +2,7 @@
 
 Answers has a _lot_ of tools in its toolkit (and we can’t cover everything here), but even seasoned Users will benefit from a tour of its feature set - especially since we add major new features at a regular clip.
 
-![Fig. 1. The home page.](<../../../../.gitbook/assets/image (371).png>)
+![Fig. 1. The home page.](<../../../.gitbook/assets/image (371).png>)
 
 At a high level, we’ll walk through the features that let you:
 
