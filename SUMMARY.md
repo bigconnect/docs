@@ -448,6 +448,8 @@
     * [Joining data](products/bigconnect-answers/questions/joining-data.md)
     * [The SQL editor](products/bigconnect-answers/questions/the-sql-editor.md)
     * [SQL parameters](products/bigconnect-answers/questions/sql-parameters.md)
+    * [Referencing models and saved questions](products/bigconnect-answers/questions/referencing-models-and-saved-questions.md)
+    * [SQL snippets](products/bigconnect-answers/questions/sql-snippets.md)
   * [Old](products/bigconnect-answers/old/README.md)
     * [Getting Started](products/bigconnect-answers/getting-started/README.md)
       * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
