@@ -809,6 +809,7 @@
     * [Category Functions](cloud/pipelines-studio/expression-language/category-functions.md)
     * [Data Drift Functions](cloud/pipelines-studio/expression-language/data-drift-functions.md)
     * [Data Generation Functions](cloud/pipelines-studio/expression-language/data-generation-functions.md)
+    * [Field Functions](cloud/pipelines-studio/expression-language/field-functions.md)
   * [Regular Expressions](cloud/pipelines-studio/regular-expressions.md)
   * [Grok Patterns](cloud/pipelines-studio/grok-patterns.md)
 * [Discovery](cloud/bigconnect-discovery/README.md)
