@@ -422,6 +422,7 @@
     * [Google BigQuery](products/bigconnect-answers/databases/google-bigquery.md)
     * [Druid](products/bigconnect-answers/databases/druid.md)
     * [MongoDB](products/bigconnect-answers/databases/mongodb.md)
+    * [MySQL / MariaDB](products/bigconnect-answers/databases/mysql-mariadb.md)
   * [Old](products/bigconnect-answers/old/README.md)
     * [Getting Started](products/bigconnect-answers/getting-started/README.md)
       * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
