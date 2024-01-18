@@ -428,6 +428,8 @@
     * [Presto](products/bigconnect-answers/databases/presto.md)
     * [Amazon Redshift](products/bigconnect-answers/databases/amazon-redshift.md)
     * [Snowflake](products/bigconnect-answers/databases/snowflake.md)
+    * [SparkSQL](products/bigconnect-answers/databases/sparksql.md)
+    * [SQL Server](products/bigconnect-answers/databases/sql-server.md)
   * [Old](products/bigconnect-answers/old/README.md)
     * [Getting Started](products/bigconnect-answers/getting-started/README.md)
       * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
