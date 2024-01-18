@@ -117,7 +117,7 @@ Scatterplots are useful for visualizing the correlation between two variables, l
 
 A pie chart or donut chart can be used when breaking out a metric by a single dimension, especially when the number of possible breakouts is small, like users by gender.
 
-![Donut](https://www.metabase.com/docs/latest/questions/images/donut.png)
+<figure><img src="https://www.metabase.com/docs/latest/questions/images/donut.png" alt=""><figcaption></figcaption></figure>
 
 ### Funnel charts
 
