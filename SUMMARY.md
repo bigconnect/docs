@@ -459,6 +459,7 @@
     * [Dashboard filters](products/bigconnect-answers/dashboards/dashboard-filters.md)
     * [Interactive dashboards](products/bigconnect-answers/dashboards/interactive-dashboards.md)
     * [Charts with multiple series](products/bigconnect-answers/dashboards/charts-with-multiple-series.md)
+    * [Dashboard subscriptions](products/bigconnect-answers/dashboards/dashboard-subscriptions.md)
   * [Old](products/bigconnect-answers/old/README.md)
     * [Getting Started](products/bigconnect-answers/getting-started/README.md)
       * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
