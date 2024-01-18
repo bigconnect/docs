@@ -461,6 +461,8 @@
     * [Charts with multiple series](products/bigconnect-answers/dashboards/charts-with-multiple-series.md)
     * [Dashboard subscriptions](products/bigconnect-answers/dashboards/dashboard-subscriptions.md)
     * [Actions on dashboards](products/bigconnect-answers/dashboards/actions-on-dashboards.md)
+  * [Data modeling](products/bigconnect-answers/data-modeling/README.md)
+    * [Models](products/bigconnect-answers/data-modeling/models.md)
   * [Old](products/bigconnect-answers/old/README.md)
     * [Getting Started](products/bigconnect-answers/getting-started/README.md)
       * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
