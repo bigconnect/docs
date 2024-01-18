@@ -425,6 +425,8 @@
     * [MySQL / MariaDB](products/bigconnect-answers/databases/mysql-mariadb.md)
     * [Oracle](products/bigconnect-answers/databases/oracle.md)
     * [PostgreSQL](products/bigconnect-answers/databases/postgresql.md)
+    * [Presto](products/bigconnect-answers/databases/presto.md)
+    * [Amazon Redshift](products/bigconnect-answers/databases/amazon-redshift.md)
   * [Old](products/bigconnect-answers/old/README.md)
     * [Getting Started](products/bigconnect-answers/getting-started/README.md)
       * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
