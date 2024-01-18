@@ -430,6 +430,8 @@
     * [Snowflake](products/bigconnect-answers/databases/snowflake.md)
     * [SparkSQL](products/bigconnect-answers/databases/sparksql.md)
     * [SQL Server](products/bigconnect-answers/databases/sql-server.md)
+    * [SQLite](products/bigconnect-answers/databases/sqlite.md)
+    * [Vertica](products/bigconnect-answers/databases/vertica.md)
   * [Old](products/bigconnect-answers/old/README.md)
     * [Getting Started](products/bigconnect-answers/getting-started/README.md)
       * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
