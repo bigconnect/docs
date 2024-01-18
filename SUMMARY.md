@@ -450,6 +450,7 @@
     * [SQL parameters](products/bigconnect-answers/questions/sql-parameters.md)
     * [Referencing models and saved questions](products/bigconnect-answers/questions/referencing-models-and-saved-questions.md)
     * [SQL snippets](products/bigconnect-answers/questions/sql-snippets.md)
+    * [SQL snippet folder permissions](products/bigconnect-answers/questions/sql-snippet-folder-permissions.md)
   * [Old](products/bigconnect-answers/old/README.md)
     * [Getting Started](products/bigconnect-answers/getting-started/README.md)
       * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
