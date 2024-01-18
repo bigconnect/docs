@@ -440,6 +440,8 @@
     * [SSH tunneling](products/bigconnect-answers/databases/ssh-tunneling.md)
     * [SSL certificate](products/bigconnect-answers/databases/ssl-certificate.md)
     * [Uploading data](products/bigconnect-answers/databases/uploading-data.md)
+  * [Questions](products/bigconnect-answers/questions/README.md)
+    * [Asking questions](products/bigconnect-answers/questions/asking-questions.md)
   * [Old](products/bigconnect-answers/old/README.md)
     * [Getting Started](products/bigconnect-answers/getting-started/README.md)
       * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
