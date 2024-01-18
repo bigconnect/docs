@@ -27,7 +27,7 @@ The following sections describe each feature in more detail.
 
 Click the button labeled `Create decision`, a dialog prompts you to enter basic information:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 * The display name of the action.
 * The action’s unique key.
