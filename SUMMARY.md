@@ -463,6 +463,8 @@
     * [Actions on dashboards](products/bigconnect-answers/dashboards/actions-on-dashboards.md)
   * [Data modeling](products/bigconnect-answers/data-modeling/README.md)
     * [Models](products/bigconnect-answers/data-modeling/models.md)
+    * [Table metadata admin settings](products/bigconnect-answers/data-modeling/table-metadata-admin-settings.md)
+    * [Field types](products/bigconnect-answers/data-modeling/field-types.md)
   * [Old](products/bigconnect-answers/old/README.md)
     * [Getting Started](products/bigconnect-answers/getting-started/README.md)
       * [Sharing your work with others](products/bigconnect-answers/sharing-your-work-with-others.md)
