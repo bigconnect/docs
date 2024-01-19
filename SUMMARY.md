@@ -493,6 +493,8 @@
     * [Application permissions](products/bigconnect-answers/permissions/application-permissions.md)
     * [Data sandboxes](products/bigconnect-answers/permissions/data-sandboxes.md)
     * [Data sandbox examples](products/bigconnect-answers/permissions/data-sandbox-examples.md)
+    * [SQL snippet folder permissions](products/bigconnect-answers/permissions/sql-snippet-folder-permissions.md)
+  * [Page 2](products/bigconnect-answers/page-2.md)
   * [Page 1](products/bigconnect-answers/page-1.md)
   * [Page](products/bigconnect-answers/page.md)
   * [Old](products/bigconnect-answers/old/README.md)
