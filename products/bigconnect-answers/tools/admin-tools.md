@@ -1,0 +1,26 @@
+# Admin tools
+
+The Admin **Tools** tab contains features for troubleshooting. To get to the Admin tools sections, go to the top right of the screen and click on the **gear** icon > **Admin settings** > **Tools**.
+
+[Question error logs](https://www.metabase.com/docs/latest/usage-and-performance-tools/tools#question-error-logs)
+
+Question error logs is only available on [Pro](https://www.metabase.com/product/pro) and [Enterprise](https://www.metabase.com/product/enterprise) plans (both self-hosted and on Metabase Cloud).
+
+Metabase will list the questions that returned errors when last run, including the:
+
+* Error message,
+* Database that returned the error,
+* Collection that houses the question that errored.
+
+You can select and rerun multiple questions at a time while you troubleshoot to see whether you’ve resolved their errors.
+
+[Model caching logs](https://www.metabase.com/docs/latest/usage-and-performance-tools/tools#model-caching-logs)
+
+Here you can view the:
+
+* [Models](https://www.metabase.com/docs/latest/data-modeling/models) being cached,
+* The status of the last caching query,
+* When the model was last cached,
+* And who created the cache.
+
+You can also click the refresh icon to rerun the model’s query to update its cache.
