@@ -1,53 +1,53 @@
 # General settings
 
-This section contains settings for your whole instance, like its URL, the reporting timezone, and toggles for disabling or enabling some of Metabase’s optional features.
+This section contains settings for your whole instance, like its URL, the reporting timezone, and toggles for disabling or enabling some of Answers’s optional features.
 
 You can configure these settings from **Settings** > **Admin Settings** > **General**.
 
-[Site name](https://www.metabase.com/docs/latest/configuring-metabase/settings#site-name)
+## Site name
 
-How you’d like to refer to this instance of Metabase.
+How you’d like to refer to this instance of Answers.
 
-[Site URL](https://www.metabase.com/docs/latest/configuring-metabase/settings#site-url)
+## Site URL
 
-The site URL is the web address that people use to access your Metabase instance. Make sure to include `http://` or `https://` to make sure it’s reachable. This feature is only available for self-hosted Metabases. For customers on Metabase Cloud, check out [Custom domains](https://www.metabase.com/docs/latest/cloud/custom-domain).
+The site URL is the web address that people use to access your Answers instance. Make sure to include `http://` or `https://` to make sure it’s reachable.
 
-[Custom homepage](https://www.metabase.com/docs/latest/configuring-metabase/settings#custom-homepage)
+## Custom homepage
 
-Admins can pick a dashboard to serve as the homepage. If people lack permissions to view the selected dashboard, Metabase will redirect them to the default homepage.
+Admins can pick a dashboard to serve as the homepage. If people lack permissions to view the selected dashboard, Answers will redirect them to the default homepage.
 
-If you’ve set a dashboard as your homepage, and want to revert to the default Metabase homepage, simply turn off the **Enabled** toggle to disable the Custom Homepage feature.
+If you’ve set a dashboard as your homepage, and want to revert to the default Answers homepage, simply turn off the **Enabled** toggle to disable the Custom Homepage feature.
 
-[Redirect to HTTPS](https://www.metabase.com/docs/latest/configuring-metabase/settings#redirect-to-https)
+## Redirect to HTTPS
 
-By default, Metabase is served over HTTP.
+By default, Answers is served over HTTP.
 
 To force all traffic to use HTTPS via redirect, click `http://` (under the **Site URL** section) and select `https://` from the dropdown menu.
 
-For example, say you enable HTTPS redirect for a Metabase instance at the site URL “example.com”. When someone enters an address like `example.com/data` in their browser’s address bar, they’ll get automatically redirected to a secure connection at `https://example.com/data`.
+For example, say you enable HTTPS redirect for a Answers instance at the site URL “example.com”. When someone enters an address like `example.com/data` in their browser’s address bar, they’ll get automatically redirected to a secure connection at `https://example.com/data`.
 
-> Note: if you haven’t set up HTTPS on your server, Metabase will not let you enable HTTPS redirect. Instead, you’ll get a warning saying “It looks like HTTPS is not properly configured.”
+> Note: if you haven’t set up HTTPS on your server, Answers will not let you enable HTTPS redirect. Instead, you’ll get a warning saying “It looks like HTTPS is not properly configured.”
 
-[Email address for help requests](https://www.metabase.com/docs/latest/configuring-metabase/settings#email-address-for-help-requests)
+## Email address for help requests
 
-This email address will be displayed in various messages throughout Metabase when users encounter a scenario where they need assistance from an admin, such as a password reset request.
+This email address will be displayed in various messages throughout Answers when users encounter a scenario where they need assistance from an admin, such as a password reset request.
 
-[Anonymous tracking](https://www.metabase.com/docs/latest/configuring-metabase/settings#anonymous-tracking)
+## Anonymous tracking
 
-This option turns determines whether or not you allow [anonymous data about your usage of Metabase](https://www.metabase.com/docs/latest/installation-and-operation/information-collection) to be sent back to us to help us improve the product. [Your database’s data is never tracked or sent](https://www.metabase.com/security).
+This option turns determines whether or not you allow anonymous data about your usage of Answers to be sent back to us to help us improve the product. Your database’s data is never tracked or sent.
 
-[Friendly table and field names](https://www.metabase.com/docs/latest/configuring-metabase/settings#friendly-table-and-field-names)
+## Friendly table and field names
 
-By default, Metabase attempts to make field and table names more readable by changing things like `somehorriblename` to `Some Horrible Name`. This does not work well for languages other than English, or for fields that have lots of abbreviations or codes in them. If you’d like to turn this setting off, you can do so from the Admin Panel under **Settings** > **Admin settings** > **General**.
+By default, Answers attempts to make field and table names more readable by changing things like `somehorriblename` to `Some Horrible Name`. This does not work well for languages other than English, or for fields that have lots of abbreviations or codes in them. If you’d like to turn this setting off, you can do so from the Admin Panel under **Settings** > **Admin settings** > **General**.
 
-If you re-enable this setting, Metabase will run a [scan](https://www.metabase.com/docs/latest/databases/sync-scan#how-database-scans-work) against your database to review your table and column names again.
+If you re-enable this setting, Answers will run a scan against your database to review your table and column names again.
 
-To manually label field or table names in Metabase, check out the [Table Metadata](https://www.metabase.com/docs/latest/data-modeling/metadata-editing) section in your admin settings. Metadata in the Table Metadata can be further curated in [models](https://www.metabase.com/docs/latest/data-modeling/models).
+To manually label field or table names in Answers, check out the Table Metadata section in your admin settings. Metadata in the Table Metadata can be further curated in models.
 
-[Enable nested queries](https://www.metabase.com/docs/latest/configuring-metabase/settings#enable-nested-queries)
+## Enable nested queries
 
-By default, Metabase allows your users to use a previously saved question as a source for queries. If you have a lot of slow running queries, you may want to switch this option off, as performance problem can occur.
+By default, Answers allows your users to use a previously saved question as a source for queries. If you have a lot of slow running queries, you may want to switch this option off, as performance problem can occur.
 
-[Enable X-rays](https://www.metabase.com/docs/latest/configuring-metabase/settings#enable-x-rays)
+## Enable X-rays
 
-[X-rays](https://www.metabase.com/docs/latest/exploration-and-organization/x-rays) are a great way for people to get quick summary stats on your data. If these X-ray queries get too slow or expensive, you can turn them off here.
+X-rays are a great way for people to get quick summary stats on your data. If these X-ray queries get too slow or expensive, you can turn them off here.
