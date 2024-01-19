@@ -1,44 +1,44 @@
 # Usage analytics
 
-The **Metabase Analytics** collection is a special collection that contains view-only questions, dashboards, and models that help you understand how people are using your Metabase.
+The **Answers Analytics** collection is a special collection that contains view-only questions, dashboards, and models that help you understand how people are using your **Answers**.
 
-![Metabase analytics collection](https://www.metabase.com/docs/latest/usage-and-performance-tools/images/metabase-analytics.png)
+<figure><img src="../../../.gitbook/assets/image (1068).png" alt=""><figcaption></figcaption></figure>
 
 These resources are useful for:
 
-* **Understanding Usage**: Understand how people use your Metabase (e.g., new questions, most active people and groups, and so on).
-* **Auditing activity**: Know who viewed or did what and when, including tracking dashboard and question views, queries, downloads, and other activity like changing settings or inviting people to your Metabase.
+* **Understanding Usage**: Understand how people use your **Answers** (e.g., new questions, most active people and groups, and so on).
+* **Auditing activity**: Know who viewed or did what and when, including tracking dashboard and question views, queries, downloads, and other activity like changing settings or inviting people to your **Answers**.
 * **Improving operations**: Know the slowest dashboards and questions, how your database’s are performing, who’s consuming the most resources, and so on.
 
-Some things to keep in mind with this special Metabase analytics collection:
+Some things to keep in mind with this special **Answers** analytics collection:
 
-* Metabase analytics is a view-only collection. Even admins can’t curate it. It is eternal.
-* By default, only admins can view the Metabase analytics collection (though admins can grant other groups view access to it). If you’re upgrading from a version older than 48, people in groups with [monitoring access](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics) will also get access to the Metabase analytics collection. But after that initial grandfathering in, the monitoring access privilege is unrelated to the Metabase analytics collection; you’ll need to specifically grant groups access to the Metabase analytics collection.
-* You can duplicate any item in the Metabase analytics collection, modify the item to your liking, and save the item to another collection.
+* **Answers** analytics is a view-only collection. Even admins can’t curate it. It is eternal.
+* By default, only admins can view the **Answers** analytics collection (though admins can grant other groups view access to it). If you’re upgrading from a version older than 48, people in groups with monitoring access will also get access to the Answers analytics collection. But after that initial grandfathering in, the monitoring access privilege is unrelated to the Answers analytics collection; you’ll need to specifically grant groups access to the Answers analytics collection.
+* You can duplicate any item in the Answers analytics collection, modify the item to your liking, and save the item to another collection.
 
-[Permissions](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#permissions)
+## Permissions
 
-By default, only admins can see the Metabase analytics collection. You can manage permissions for the collection in **Admin settings** > **Permissions** > **Collections**.
+By default, only admins can see the Answers analytics collection. You can manage permissions for the collection in **Admin settings** > **Permissions** > **Collections**.
 
-There are only two access types for the Metabase analytics collection: **View** and **No access**.
+There are only two access types for the Answers analytics collection: **View** and **No access**.
 
-Additionally, this Metabase analytics collection has a default sub-collection called “Custom reports” which you can use to save duplicated/modified questions, dashboards, and models. This sub-collection inherits the same permissions, but it’s not view-only; admins have curate access by default, and can grant other groups view access.
+Additionally, this Answers analytics collection has a default sub-collection called “Custom reports” which you can use to save duplicated/modified questions, dashboards, and models. This sub-collection inherits the same permissions, but it’s not view-only; admins have curate access by default, and can grant other groups view access.
 
-[Creating custom reports](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#creating-custom-reports)
+## Creating custom reports
 
-You can duplicate any of the questions, dashboards and models in the Metabase analytics collection and tweak them to your liking, but you’ll need to save them to a different collection.
+You can duplicate any of the questions, dashboards and models in the Answers analytics collection and tweak them to your liking, but you’ll need to save them to a different collection.
 
-[Custom reports collection](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#custom-reports-collection)
+## Custom reports collection
 
-While you _can_ save custom questions, models, and dashboards wherever you like (except for the Metabase analytics collection), we recommend that you save your custom Metabase analytics reports in the conveniently named “Custom reports” sub-collection. That way these items inherit the same permissions as the parent Metabase analytics collection.
+While you _can_ save custom questions, models, and dashboards wherever you like (except for the Answers analytics collection), we recommend that you save your custom Answers analytics reports in the conveniently named “Custom reports” sub-collection. That way these items inherit the same permissions as the parent Answers analytics collection.
 
-There is one thing to know about the Custom reports collection: its metadata resets whenever Metabase restarts. While you are able to temporarily rename the Custom reports collection, or give it a description or an Official badge, Metabase will drop this collection’s metadata when it restarts. But rest assured that Metabase will preserve any questions, models, events, or dashboards that you add to the Custom reports collection.
+There is one thing to know about the Custom reports collection: its metadata resets whenever Answers restarts. While you are able to temporarily rename the Custom reports collection, or give it a description or an Official badge, Answers will drop this collection’s metadata when it restarts. But rest assured that Answers will preserve any questions, models, events, or dashboards that you add to the Custom reports collection.
 
-[Dashboards](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#dashboards)
+## Dashboards
 
-The Metabase Analytics collection includes a set of read-only dashboards.
+The Answers Analytics collection includes a set of read-only dashboards.
 
-[Metabase metrics](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#metabase-metrics)
+## Metabase metrics
 
 General information about people viewing and creating dashboards, questions, subscriptions, and alerts. Cards include:
 
@@ -54,17 +54,17 @@ General information about people viewing and creating dashboards, questions, sub
 * Most viewed dashboards
 * Most viewed cards
 
-[Most viewed content](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#most-viewed-content)
+## Most viewed content
 
-View the most relevant content in your Metabase. Cards include:
+View the most relevant content in your Answers. Cards include:
 
 * Most viewed dashboards
 * Most viewed questions
 * Most viewed tables
 
-[Person overview](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#person-overview)
+## Person overview
 
-See what someone’s been up to in your Metabase. Cards include:
+See what someone’s been up to in your Answers. Cards include:
 
 * Member of
 * Active alerts
@@ -78,7 +78,7 @@ See what someone’s been up to in your Metabase. Cards include:
 * Recent activity
 * Last queries
 
-[Dashboard overview](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#dashboard-overview)
+## Dashboard overview
 
 Information about dashboards, questions, models, and tables. Cards include:
 
@@ -92,7 +92,7 @@ Information about dashboards, questions, models, and tables. Cards include:
 * Recent activity on dashboard
 * Subscriptions on this dashboard
 
-[Question overview](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#question-overview)
+## Question overview
 
 Views, performance, activity, and other data for a particular question. Cards include:
 
@@ -104,7 +104,7 @@ Views, performance, activity, and other data for a particular question. Cards in
 * Last activity on this question
 * Alerts on this question
 
-[Performance overview](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#performance-overview)
+## Performance overview
 
 Question, dashboard and database performance. Cards include:
 
@@ -115,7 +115,7 @@ Question, dashboard and database performance. Cards include:
 * Dashboards with more questions in the same tab
 * Users consuming the most resources
 
-[Content with cobwebs](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#content-with-cobwebs)
+## Content with cobwebs
 
 Dashboards and questions that you could consider archiving. Cards include:
 
@@ -123,11 +123,11 @@ Dashboards and questions that you could consider archiving. Cards include:
 * Questions without recent reviews
 * Questions that don’t belong to a dashboard
 
-[Models](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#models)
+## Models
 
-The Metabase analytics collection includes a bunch of useful models based on Metabase’s application database.
+The Answers analytics collection includes a bunch of useful models based on Answers’s application database.
 
-[Activity log model](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#activity-log-model)
+## Activity log model
 
 Each row of this model describes one event of a particular topic. Fields include:
 
@@ -163,7 +163,7 @@ The topics include:
 * subscription-delete
 * user-joined
 
-[View Log model](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#view-log-model)
+## View Log model
 
 Tracks views cards (which includes models), dashboards, and tables. Fields include:
 
@@ -174,9 +174,9 @@ Tracks views cards (which includes models), dashboards, and tables. Fields inclu
 * Entity ID
 * Entity Qualified ID
 
-[Query log model](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#query-log-model)
+## Query log model
 
-Information about all queries Metabase ran across all dashboards. Fields include:
+Information about all queries Answers ran across all dashboards. Fields include:
 
 * Entity ID
 * Started At
@@ -217,9 +217,9 @@ Query sources include:
 * question
 * xlsx-download
 
-[Content model](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#content-model)
+## Content model
 
-All Metabase content, including questions, models, dashboards, events, and collections. Entity types include:
+All Answers content, including questions, models, dashboards, events, and collections. Entity types include:
 
 * action
 * collection
@@ -228,7 +228,7 @@ All Metabase content, including questions, models, dashboards, events, and colle
 * model
 * question
 
-[Dashboard subscriptions](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#dashboard-subscriptions)
+## Dashboard subscriptions
 
 Which subscriptions are active, who created them, who’s subscribed to them, when they’re sent, and more.
 
@@ -247,7 +247,7 @@ Which subscriptions are active, who created them, who’s subscribed to them, wh
 * Recipient External
 * Parameters
 
-[Alerts](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#alerts)
+## Alerts
 
 All alerts, both active and archived.
 
@@ -267,7 +267,7 @@ All alerts, both active and archived.
 * Recipients
 * Recipient External
 
-[Content](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#content)
+## Content
 
 Questions, dashboards, models, events, and collections.
 
@@ -292,9 +292,9 @@ Questions, dashboards, models, events, and collections.
 * Question Is Native
 * Event Timestamp
 
-[People model](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#people-model)
+## People model
 
-Everyone in your Metabase, including deactivated accounts. Fields include:
+Everyone in your Answers, including deactivated accounts. Fields include:
 
 * User ID
 * Email
@@ -309,7 +309,7 @@ Everyone in your Metabase, including deactivated accounts. Fields include:
 * SSO Source
 * Locale
 
-[Dashboard subscriptions model](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#dashboard-subscriptions-model)
+## Dashboard subscriptions model
 
 Which subscriptions are active, who created them, who’s subscribed to them, when they’re sent, and more.
 
@@ -328,7 +328,7 @@ Which subscriptions are active, who created them, who’s subscribed to them, wh
 * Recipient External
 * Parameters
 
-[Dashboard cards model](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#dashboard-cards-model)
+## Dashboard cards model
 
 Each row is a dashboard card: either a question card or a text card. Fields include:
 
@@ -343,7 +343,7 @@ Each row is a dashboard card: either a question card or a text card. Fields incl
 * Visualization Settings
 * Parameter Mappings
 
-[Databases model](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#databases-model)
+## Databases model
 
 Information about your connected data sources. Fields include:
 
@@ -359,11 +359,11 @@ Information about your connected data sources. Fields include:
 * Timezone
 * Is On Demand
 * Auto Run Queries
-* Cache Ttl
+* Cache TTL
 * Creator ID
 * Db Version
 
-[Tables model](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#tables-model)
+## Tables model
 
 List of all tables across all connected data sources. Fields include:
 
@@ -379,7 +379,7 @@ List of all tables across all connected data sources. Fields include:
 * Schema
 * Is Upload
 
-[Fields model](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#fields-model)
+## Fields model
 
 All fields from all connected data sources. Fields include:
 
@@ -397,9 +397,9 @@ All fields from all connected data sources. Fields include:
 * Active
 * Table ID
 
-[System tasks](https://www.metabase.com/docs/latest/usage-and-performance-tools/usage-analytics#system-tasks)
+## System tasks
 
-Describes the last 14 days of Metabase internal processes tasks.
+Describes the last 14 days of Answers internal processes tasks.
 
 * ID
 * Task
