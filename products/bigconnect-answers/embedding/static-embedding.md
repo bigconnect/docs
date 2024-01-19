@@ -1,102 +1,69 @@
 # Static embedding
 
-## Static embedding <a href="#static-embedding" id="static-embedding"></a>
-
 Also known as: standalone embedding, or signed embedding.
 
-In general, embedding works by displaying a Metabase URL inside an iframe in your website. A **static embed** (or signed embed) is an iframe that’s loading a Metabase URL secured with a signed JSON Web Token (JWT). Metabase will only load the URL if the request supplies a JWT signed with the secret shared between your app and your Metabase. The JWT also includes a reference to the resource to load, e.g., the dashboard ID, and any values for locked parameters.
+In general, embedding works by displaying a Answers URL inside an iframe in your website. A **static embed** (or signed embed) is an iframe that’s loading a Answers URL secured with a signed JSON Web Token (JWT). Answers will only load the URL if the request supplies a JWT signed with the secret shared between your app and your Answers. The JWT also includes a reference to the resource to load, e.g., the dashboard ID, and any values for locked parameters.
 
-You can can’t use static embeds with [data sandboxes](https://www.metabase.com/docs/latest/permissions/data-sandboxes), [drill-through](https://www.metabase.com/learn/questions/drill-through) or [auditing tools](https://www.metabase.com/docs/latest/usage-and-performance-tools/audit) because signed JWTs don’t create user sessions (server-side sessions). For those features, check out [interactive embedding](https://www.metabase.com/docs/latest/embedding/interactive-embedding).
+You can can’t use static embeds with data sandboxes, drill-through or auditing tools because signed JWTs don’t create user sessions (server-side sessions). For those features, check out interactive embedding.
 
-To restrict data in static embeds for specific people or groups, set up [locked parameters](https://www.metabase.com/docs/latest/embedding/static-embedding-parameters#restricting-data-in-a-static-embed) instead.
+To restrict data in static embeds for specific people or groups, set up locked parameters instead.
 
-[How static embedding works](https://www.metabase.com/docs/latest/embedding/static-embedding#how-static-embedding-works)
+## How static embedding works
 
-If you want to set up interactive Metabase filters in your iframe, your web server will need to make requests to Metabase for updated data each time a website visitor updates the filter widget.
+If you want to set up interactive Answers filters in your iframe, your web server will need to make requests to Answers for updated data each time a website visitor updates the filter widget.
 
-To ask for updated data from Metabase, your web server will generate a new Metabase [embedding URL](https://www.metabase.com/docs/latest/embedding/static-embedding#adding-the-embedding-url-to-your-website). For example, if a website visitor enters the value “true” in an [embedded filter widget](https://www.metabase.com/docs/latest/embedding/static-embedding-parameters#adding-a-filter-widget-to-a-static-embed), your web server will generate a new embedding URL with an extra parameter:
-
-```
-your_metabase_embedding_url?filter=true
-            
-            
-```
+To ask for updated data from Answers, your web server will generate a new Answers embedding URL. For example, if a website visitor enters the value “true” in an embedded filter widget, your web server will generate a new embedding URL with an extra parameter:
 
 ```
-            
+your_answers_embedding_url?filter=true  
 ```
 
-```
-
-                Copy        
-```
-
-To prevent people from editing the embedding URL to get access to other parts of your Metabase (e.g., by changing the parameter to `filter=company_secrets`), your web server will add a signed JWT to the new embedding URL:
+To prevent people from editing the embedding URL to get access to other parts of your Answers (e.g., by changing the parameter to `filter=company_secrets`), your web server will add a signed JWT to the new embedding URL:
 
 ```
-your_metabase_embedding_url/your_signed_jwt?filter=true
-            
-            
+your_answers_embedding_url/your_signed_jwt?filter=true 
 ```
 
-```
-            
-```
+The signed JWT is generated using your Answers secret key. The secret key tells Answers that the request for filtered data can be trusted, so it’s safe to display the results at the new embedding URL. Note that this secret key is shared for all static embeds, so whoever has access to that key will have access to all embedded artifacts.
 
-```
+If you want to embed charts with additional interactive features, like drill-down and self-service querying, see Interactive embedding.
 
-                Copy        
-```
-
-The signed JWT is generated using your [Metabase secret key](https://www.metabase.com/docs/latest/embedding/static-embedding#regenerating-the-secret-key). The secret key tells Metabase that the request for filtered data can be trusted, so it’s safe to display the results at the new embedding URL. Note that this secret key is shared for all static embeds, so whoever has access to that key will have access to all embedded artifacts.
-
-If you want to embed charts with additional interactive features, like [drill-down](https://www.metabase.com/learn/questions/drill-through) and [self-service querying](https://www.metabase.com/docs/latest/questions/query-builder/introduction), see [Interactive embedding](https://www.metabase.com/docs/latest/embedding/interactive-embedding).
-
-[Enabling the embedding feature in Metabase](https://www.metabase.com/docs/latest/embedding/static-embedding#enabling-the-embedding-feature-in-metabase)
+## Enabling the embedding feature
 
 1. Go to **Settings** > **Admin settings** > **Embedding**.
 2. Click **Enable**.
 
-[Making a question or dashboard embeddable](https://www.metabase.com/docs/latest/embedding/static-embedding#making-a-question-or-dashboard-embeddable)
+### Making a question or dashboard embeddable
 
 1. Go to the question or dashboard that you want to embed in your website.
 2. Click on the **sharing icon** (square with an arrow pointing to the top right).
 3. Select **Embed this item in an application**.
-4. Optional: [Preview the appearance of the embed](https://www.metabase.com/docs/latest/embedding/static-embedding#customizing-the-appearance-of-static-embeds).
-5. Optional: [Add parameters to the embed](https://www.metabase.com/docs/latest/embedding/static-embedding-parameters).
+4. Optional: Preview the appearance of the embed.
+5. Optional: Add parameters to the embed.
 6. Click **Publish**.
 
-![Preview](https://www.metabase.com/docs/latest/embedding/images/04-preview.png)[Adding the embedding URL to your website](https://www.metabase.com/docs/latest/embedding/static-embedding#adding-the-embedding-url-to-your-website)
+<figure><img src="https://www.metabase.com/docs/latest/embedding/images/04-preview.png" alt=""><figcaption></figcaption></figure>
 
-The embedding URL for a question or dashboard is the Metabase URL that’ll be displayed in your website’s iframe. It’s generated by your web server using your [Metabase site URL](https://www.metabase.com/docs/latest/configuring-metabase/settings#site-url), [signed JWT](https://www.metabase.com/docs/latest/embedding/static-embedding#how-static-embedding-works), and [parameters](https://www.metabase.com/docs/latest/embedding/static-embedding-parameters):
+### Adding the embedding URL to your website
 
-```
-metabase_site_url/embed/question/your_jwt_token?parameter_name=value
-            
-            
-```
+The embedding URL for a question or dashboard is the Answers URL that’ll be displayed in your website’s iframe. It’s generated by your web server using your Answers site URL, signed JWT, and parameters:
 
 ```
-            
+answers_site_url/embed/question/your_jwt_token?parameter_name=value    
 ```
 
-```
-
-                Copy        
-```
-
-Once you’ve made a question or dashboard [embeddable](https://www.metabase.com/docs/latest/embedding/static-embedding#making-a-question-or-dashboard-embeddable), you’ll need to put the embedding URL for that question or dashboard on your website:
+Once you’ve made a question or dashboard embeddable, you’ll need to put the embedding URL for that question or dashboard on your website:
 
 1. Go to the question or dashboard > **sharing icon** > **Embed this item in an application**.
 2. Click **Code**.
-3. Optional: [Preview the server code](https://www.metabase.com/docs/latest/embedding/static-embedding#previewing-the-frontend-code-for-an-embed).
+3. Optional: Preview the server code.
 4. Add the server code to the file that builds your website.
-5. Optional: [Preview the frontend code](https://www.metabase.com/docs/latest/embedding/static-embedding#previewing-the-frontend-code-for-an-embed).
+5. Optional: Preview the frontend code.
 6. Add the frontend code to the HTML file where you want your static embed to appear.
 
-For more examples, see our [reference apps repo](https://github.com/metabase/embedding-reference-apps).
+For more examples, see our reference apps repo.
 
-[Previewing the server code for an embed](https://www.metabase.com/docs/latest/embedding/static-embedding#previewing-the-server-code-for-an-embed)
+### Previewing the server code for an embed
 
 1. Go to the question or dashboard > **sharing icon** > **Embed this item in an application**.
 2. Click **Code**.
@@ -105,21 +72,21 @@ For more examples, see our [reference apps repo](https://github.com/metabase/emb
 
 When you make changes to the style, appearance, or parameter preview settings, the server code sample will update as well. Make sure to copy these changes to your actual server code.
 
-![Code samples for embedding](https://www.metabase.com/docs/latest/embedding/images/05-code.png)[Previewing the frontend code for an embed](https://www.metabase.com/docs/latest/embedding/static-embedding#previewing-the-frontend-code-for-an-embed)
+#### Previewing the frontend code for an embed
 
 1. Go to the question or dashboard > **sharing icon** > **Embed this item in an application**.
 2. Click **Code**.
 3. In the bottom code block, get the sample code for your frontend.
 4. Optional: Select your template language from the dropdown menu.
 
-[Editing an embedded question or dashboard](https://www.metabase.com/docs/latest/embedding/static-embedding#editing-an-embedded-question-or-dashboard)
+## Editing an embedded question or dashboard
 
-If you change the [parameters](https://www.metabase.com/docs/latest/embedding/static-embedding-parameters) of your embedded item:
+If you change the parameters of your embedded item:
 
 1. Click **Publish** again.
-2. [Update the code](https://www.metabase.com/docs/latest/embedding/static-embedding#adding-the-embedding-url-to-your-website) on your server so that it matches the code generated by Metabase (**Code** > top block).
+2. Update the code on your server so that it matches the code generated by Answers (**Code** > top block).
 
-[Disabling embedding for a question or dashboard](https://www.metabase.com/docs/latest/embedding/static-embedding#disabling-embedding-for-a-question-or-dashboard)
+### Disabling embedding for a question or dashboard
 
 You can find a list of all embedded questions and dashboards from **Admin settings** > **Embedding**.
 
@@ -128,57 +95,38 @@ You can find a list of all embedded questions and dashboards from **Admin settin
 3. Select **Embed this item in an application**.
 4. Click **Unpublish**.
 
-[Customizing the appearance of static embeds](https://www.metabase.com/docs/latest/embedding/static-embedding#customizing-the-appearance-of-static-embeds)
+## Customizing the appearance of static embeds
 
-You can change the way an embedded question or dashboard looks in an iframe (which won’t change how it looks in your Metabase instance). Settings include:
+You can change the way an embedded question or dashboard looks in an iframe (which won’t change how it looks in your Answers instance). Settings include:
 
 * Border
 * Title
 * Theme (light, dark, transparent)
-* Font¹
-* Download data²
-
-¹ Available on [paid plans](https://www.metabase.com/pricing).
-
-² Available on [paid plans](https://www.metabase.com/pricing) and hides the download button on questions only (not dashboards).
+* Font
+* Download data
 
 To update the appearance of a static embed:
 
 1. Optional: Preview the appearance changes from your question or dashboard’s embedding settings (**sharing icon** > **Embed this item in an application**).
 2. Optional: Click **Code** to find the updated server code snippet in the top code block.
-3. Change the [parameters](https://www.metabase.com/docs/latest/embedding/static-embedding-parameters#customizing-the-appearance-of-a-static-embed) in your actual server code.
+3. Change the parameters in your actual server code.
 
-For global appearance settings, such as the colors and fonts used across your entire Metabase instance, see [Customizing Metabase’s appearance](https://www.metabase.com/docs/latest/configuring-metabase/appearance).
+For global appearance settings, such as the colors and fonts used across your entire Answers instance, see Customizing Answers’s appearance.
 
-[Removing the “Powered by Metabase” banner](https://www.metabase.com/docs/latest/embedding/static-embedding#removing-the-powered-by-metabase-banner)![Powered by Metabase](https://www.metabase.com/docs/latest/embedding/images/powered-by-metabase.png)
+## Regenerating the secret key
 
-The banner appears on signed embeds created with Metabase’s open-source version. You’ll need to upgrade to a [Pro or Enterprise plan](https://www.metabase.com/pricing) to remove the banner.
-
-[Regenerating the secret key](https://www.metabase.com/docs/latest/embedding/static-embedding#regenerating-the-secret-key)
-
-Your embedding secret key is used to sign JWTs for all of your [embedding URLs](https://www.metabase.com/docs/latest/embedding/static-embedding#adding-the-embedding-url-to-your-website). You can find it under **Settings** > **Admin settings** > **Embedding**.
+Your embedding secret key is used to sign JWTs for all of your embedding URLs. You can find it under **Settings** > **Admin settings** > **Embedding**.
 
 To reiterate: this key is shared across all static embeds. Whoever has access to this key could get access to all embedded artifacts, so keep this key secure.
 
 **Regenerate key** will create a new secret key, and break any embedding URLs that used the old key.
 
-[Resizing dashboards to fit their content](https://www.metabase.com/docs/latest/embedding/static-embedding#resizing-dashboards-to-fit-their-content)
+## Resizing dashboards to fit their content
 
-Dashboards are a fixed aspect ratio, so if you’d like to ensure they’re automatically sized vertically to fit their contents you can use the [iFrame Resizer](https://github.com/davidjbradshaw/iframe-resizer) script. Metabase serves a copy for convenience:
-
-```
-<script src="http://metabase.example.com/app/iframeResizer.js"></script>
-<iframe src="http://metabase.example.com/embed/dashboard/TOKEN" onload="iFrameResize({}, this)"></iframe>
-            
-            
-```
+Dashboards are a fixed aspect ratio, so if you’d like to ensure they’re automatically sized vertically to fit their contents you can use the [iFrame Resizer](https://github.com/davidjbradshaw/iframe-resizer) script. Answers serves a copy for convenience:
 
 ```
-            
-```
-
-```
-
-                Copy        
+<script src="http://answers.example.com/app/iframeResizer.js"></script>
+<iframe src="http://answers.example.com/embed/dashboard/TOKEN" onload="iFrameResize({}, this)"></iframe>
 ```
 
