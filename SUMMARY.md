@@ -491,6 +491,7 @@
     * [Data permissions](products/bigconnect-answers/permissions/data-permissions.md)
     * [Collection permissions](products/bigconnect-answers/permissions/collection-permissions.md)
     * [Application permissions](products/bigconnect-answers/permissions/application-permissions.md)
+    * [Data sandboxes](products/bigconnect-answers/permissions/data-sandboxes.md)
   * [Page 1](products/bigconnect-answers/page-1.md)
   * [Page](products/bigconnect-answers/page.md)
   * [Old](products/bigconnect-answers/old/README.md)
