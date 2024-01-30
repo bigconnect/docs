@@ -1,6 +1,6 @@
 # Appearance
 
-Appearance settings give you the option to white label Metabase to match your company’s branding.
+Appearance settings give you the option to white label the product to match your company’s branding.
 
 If you’re looking for date, time, number, or currency formatting, see Formatting defaults.
 

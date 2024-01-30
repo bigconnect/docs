@@ -8,7 +8,7 @@ You can edit these settings at any time. Just remember to save your changes.
 
 #### Display name
 
-The display name for the database in the Metabase interface.
+The display name for the database in the Answers interface.
 
 #### Host
 
@@ -36,63 +36,63 @@ See our guide to SSH tunneling.
 
 #### Unfold JSON Columns
 
-For MySQL databases, Metabase can unfold JSON columns into component fields to yield a table where each JSON key becomes a column. JSON unfolding is on by default, but you can turn off JSON unfolding if performance is slow.
+For MySQL databases, Answers can unfold JSON columns into component fields to yield a table where each JSON key becomes a column. JSON unfolding is on by default, but you can turn off JSON unfolding if performance is slow.
 
 If you turn on JSON unfolding, you can also toggle the unfolding for individual columns in table metadata.
 
 #### Additional JDBC connection string options
 
-You can append options to the connection string that Metabase uses to connect to your database.
+You can append options to the connection string that Answers uses to connect to your database.
 
 #### Re-run queries for simple explorations
 
 Turn this option **OFF** if people want to click **Run** (the play button) before applying any Summarize or filter selections.
 
-By default, Metabase will execute a query as soon as you choose an grouping option from the **Summarize** menu or a filter condition from the drill-through menu. If your database is slow, you may want to disable re-running to avoid loading data on each click.
+By default, Answers will execute a query as soon as you choose an grouping option from the **Summarize** menu or a filter condition from the drill-through menu. If your database is slow, you may want to disable re-running to avoid loading data on each click.
 
-### Choose when Metabase syncs and scans
+### Choose when Answers syncs and scans
 
-Turn this option **ON** to manage the queries that Metabase uses to stay up to date with your database. For more information, see Syncing and scanning databases.
+Turn this option **ON** to manage the queries that Answers uses to stay up to date with your database. For more information, see Syncing and scanning databases.
 
 **Database syncing**
 
 If you’ve selected **Choose when syncs and scans happen** > **ON**, you’ll be able to set:
 
 * The frequency of the sync: hourly (default) or daily.
-* The time to run the sync, in the timezone of the server where your Metabase app is running.
+* The time to run the sync, in the timezone of the server where your Answers app is running.
 
 **Scanning for filter values**
 
-Metabase can scan the values present in each field in this database to enable checkbox filters in dashboards and questions. This can be a somewhat resource-intensive process, particularly if you have a very large database.
+Answers can scan the values present in each field in this database to enable checkbox filters in dashboards and questions. This can be a somewhat resource-intensive process, particularly if you have a very large database.
 
 If you’ve selected **Choose when syncs and scans happen** > **ON**, you’ll see the following options under **Scanning for filter values**:
 
-* **Regularly, on a schedule** allows you to run scan queries at a frequency that matches the rate of change to your database. The time is set in the timezone of the server where your Metabase app is running. This is the best option for a small database, or tables with distinct values that get updated often.
-* **Only when adding a new filter widget** is a great option if you want scan queries to run on demand. Turning this option **ON** means that Metabase will only scan and cache the values of the field(s) that are used when a new filter is added to a dashboard or SQL question.
+* **Regularly, on a schedule** allows you to run scan queries at a frequency that matches the rate of change to your database. The time is set in the timezone of the server where your Answers app is running. This is the best option for a small database, or tables with distinct values that get updated often.
+* **Only when adding a new filter widget** is a great option if you want scan queries to run on demand. Turning this option **ON** means that Answers will only scan and cache the values of the field(s) that are used when a new filter is added to a dashboard or SQL question.
 * **Never, I’ll do this manually if I need to** is an option for databases that are either prohibitively large, or which never really have new values added. Use the Re-scan field values now button to run a manual scan and bring your filter values up to date.
 
 #### Periodically refingerprint tables
 
 > Periodic refingerprinting will increase the load on your database.
 
-Turn this option **ON** to scan a sample of values every time Metabase runs a sync.
+Turn this option **ON** to scan a sample of values every time Answers runs a sync.
 
-A fingerprinting query examines the first 10,000 rows from each column and uses that data to guesstimate how many unique values each column has, what the minimum and maximum values are for numeric and timestamp columns, and so on. If you leave this option **OFF**, Metabase will only fingerprint your columns once during setup.
+A fingerprinting query examines the first 10,000 rows from each column and uses that data to guesstimate how many unique values each column has, what the minimum and maximum values are for numeric and timestamp columns, and so on. If you leave this option **OFF**, Answers will only fingerprint your columns once during setup.
 
 #### Default result cache duration
 
-How long to keep question results. By default, Metabase will use the value you supply on the cache settings page, but if this database has other factors that influence the freshness of data, it could make sense to set a custom duration. You can also choose custom durations on individual questions or dashboards to help improve performance.
+How long to keep question results. By default, Answers will use the value you supply on the cache settings page, but if this database has other factors that influence the freshness of data, it could make sense to set a custom duration. You can also choose custom durations on individual questions or dashboards to help improve performance.
 
 Options are:
 
-* **Use instance default (TTL)**. TTL is time to live, meaning how long the cache remains valid before Metabase should run the query again.
+* **Use instance default (TTL)**. TTL is time to live, meaning how long the cache remains valid before Answers should run the query again.
 * **Custom**.
 
 If you are on a paid plan, you can also set cache duration per questions. See Advanced caching controls.
 
 ### Connecting to MySQL 8+ servers
 
-Metabase uses the MariaDB connector to connect to MariaDB and MySQL servers. The MariaDB connector does not currently support MySQL 8’s default authentication plugin, so in order to connect, you’ll need to change the plugin used by the Metabase user to
+Answers uses the MariaDB connector to connect to MariaDB and MySQL servers. The MariaDB connector does not currently support MySQL 8’s default authentication plugin, so in order to connect, you’ll need to change the plugin used by the Answers user to
 
 ```
 mysql_native_password`: `ALTER USER 'answers'@'%' IDENTIFIED WITH mysql_native_password BY 'thepassword';
@@ -100,11 +100,11 @@ mysql_native_password`: `ALTER USER 'answers'@'%' IDENTIFIED WITH mysql_native_p
 
 ### Unable to log in with correct credentials
 
-**How to detect this:** Metabase fails to connect to your MySQL server with the error message “Looks like the username or password is incorrect”, but you’re sure that the username and password is correct. You may have created the MySQL user with an allowed host other than the host you’re connecting from.
+**How to detect this:** Answers fails to connect to your MySQL server with the error message “Looks like the username or password is incorrect”, but you’re sure that the username and password is correct. You may have created the MySQL user with an allowed host other than the host you’re connecting from.
 
 For example, if the MySQL server is running in a Docker container, and your `answers` user was created with `CREATE USER 'answers'@'localhost' IDENTIFIED BY 'thepassword';`, the `localhost` will be resolved to the Docker container, and not the host machine, causing access to be denied.
 
-You can identify this issue by looking in the Metabase server logs for the error message:
+You can identify this issue by looking in the Answers server logs for the error message:
 
 ```
 Access denied for user 'answers'@'172.17.0.1' (using password: YES).
@@ -141,9 +141,9 @@ DROP USER 'answers'@'localhost';
 
 ### Syncing records that include JSON
 
-**Metabase will infer the JSON “schema” based on the keys in the first five hundred rows of a table.** MySQL JSON fields lack schema, so Metabase can’t rely on table metadata to define which keys a JSON field has. To work around the lack of schema, Metabase will get the first five hundred records and parse the JSON in those records to infer the JSON’s “schema”. The reason Metabase limits itself to five hundred records is so that syncing metadata doesn’t put unnecessary strain on your database.
+**Answers will infer the JSON “schema” based on the keys in the first five hundred rows of a table.** MySQL JSON fields lack schema, so Answers can’t rely on table metadata to define which keys a JSON field has. To work around the lack of schema, Answers will get the first five hundred records and parse the JSON in those records to infer the JSON’s “schema”. The reason Answers limits itself to five hundred records is so that syncing metadata doesn’t put unnecessary strain on your database.
 
-The problem is that, if the keys in the JSON vary record to record, the first five hundred rows may not capture all the keys used by JSON objects in that JSON field. To get Metabase to infer all the JSON keys, you’ll need to add the additional keys to the JSON objects in the first five hundred rows.
+The problem is that, if the keys in the JSON vary record to record, the first five hundred rows may not capture all the keys used by JSON objects in that JSON field. To get Answers to infer all the JSON keys, you’ll need to add the additional keys to the JSON objects in the first five hundred rows.
 
 **This JSON “schema” inference doesn’t work with MariaDB**, due to implementation differences between MySQL and MariaDB.
 

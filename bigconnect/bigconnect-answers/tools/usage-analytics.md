@@ -38,7 +38,7 @@ There is one thing to know about the Custom reports collection: its metadata res
 
 The Answers Analytics collection includes a set of read-only dashboards.
 
-## Metabase metrics
+## Metrics
 
 General information about people viewing and creating dashboards, questions, subscriptions, and alerts. Cards include:
 
