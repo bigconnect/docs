@@ -1,0 +1,55 @@
+# Phone Home
+
+All MWARE AS distributions report back a limited amount of information about their specific configuration at launch time. No sensitive data about your machine or specific usage of MWARE ASis sent to 0s or any member of the Payara Services team.
+
+The following is the list of information attributes gathered by the Phone Home service:
+
+| Attribute                         | Example                                                                  |
+| --------------------------------- | ------------------------------------------------------------------------ |
+| MWARE AS Version                  | 6.2023.10 #badassfish                                                    |
+| Java Virtual Machine Version      | 1.8.0\_121                                                               |
+| Domain Uptime                     | 36500                                                                    |
+| Number of nodes in the domain     | 1                                                                        |
+| Number of instances in the domain | 2                                                                        |
+| Randomly generated UUID           | eaa6fe2c-2388-4aa7-fdcc-288c7b318ddfeaa6ef23-2388-4aa7-8dcc-288c7b318ddf |
+
+This is the only data which the phone home service gathers from your system: the UUID is specific to the DAS and is randomly generated on startup, so it is not machine specific.
+
+### What is the data used for?
+
+The phone home data is presently used to gather usage statistics about the corresponding distribution, such as how long users typically run instances, and what versions they use.
+
+Previously this could only be done at an extremely simple level from downloads over time, giving us no idea how MWARE AS is used beyond specific interactions with contributors and customers which may not accurately represent the state of our user base.
+
+The phone home service was designed as a non-intrusive survey tool which would only gather data specific to Payara and has no contact with any running applications, or indeed anything on your machine other than the mentioned attributes.
+
+### Disabling and Enabling Phone Home
+
+The phone home service is enabled by default when starting a MWARE AS. The phone home service can be easily disabled in the following ways.
+
+### Enable the Phone Home service
+
+```shell
+asadmin> enable-phone-home
+```
+
+### Disable the Phone Home service
+
+#### Using Asadmin
+
+Run this asadmin command and then restart the server to disable PhoneHome
+
+```shell
+asadmin> disable-phone-home
+```
+
+#### Disable by Removing The Service Module
+
+* Navigate to the `${PAYARA_INSTALL_DIR}/glassfish/modules` directory
+* Delete the `phonehome-bootstrap.jar` module.
+
+### List the current status of the Phone Home service.
+
+```shell
+asadmin> list-phone-home
+```

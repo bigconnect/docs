@@ -1,0 +1,106 @@
+# Deployment Groups
+
+Deployment Groups are a new feature in MWARE AS. The Deployment Group is designed to replace the deployment targeting aspect of Clusters that was available in previous versions of MWARE AS.
+
+### Why replace Clusters
+
+A Cluster in MWARE AS encapsulated a number of concepts;
+
+* First it was a target of deployment
+* Second it provided in-memory data storage for web sessions and Stateful Session Beans
+* Third it defined a configuration
+* Fourth it treated a number of MWARE AS Instances as a single grouping
+
+With the introduction of the Domain Data Grid the concept of data persistence was split from the Cluster concept to allow all instances to automatically cluster and share data. The introduction of the deployment group splits out the targeting aspect of clusters.
+
+### What is a Deployment Group
+
+A Deployment Group is a loose grouping of MWARE AS instances that can be used as a target for deployments. Deployment Groups consist of 1 or more MWARE AS instances and each MWARE AS Instance can belong to one or more Deployment Groups.
+
+Deployment Groups can also be used to manage the lifecycle of the instances in the group. All instances can be started, re-started and stopped using the deployment group. Restarting all the instances in the deployment group performs a rolling restart whereby each instance is restarted in turn to ensure that any data grid held data is retained across the group restart.
+
+### Creating a Deployment Group
+
+A deployment group can be created in both the administration console and via Asadmin
+
+#### Using the Administration console
+
+To create a new deployment group. Navigate to the Deployment Groups node in the navigation tree, click on the New button and give the deployment group a unique name. From this screen it is also possible to add a number of new server instances if desired, however it is possible to add existing instances to the group later.&#x20;
+
+<figure><img src="../../../../.gitbook/assets/deployment-group-new.webp" alt=""><figcaption></figcaption></figure>
+
+#### Using asadmin commands
+
+To create a new deployment group run the command;
+
+```shell
+asadmin> create-deployment-group test
+```
+
+### Deleting a Deployment Group
+
+A deployment group can be deleted in both the administration console and via Asadmin.
+
+#### Using the Administration Console
+
+To delete a deployment group. Navigate to the group in the console, select it and choose delete.&#x20;
+
+<figure><img src="https://docs.payara.fish/community/docs/_images/deployment-groups/delete-deployment-group.png" alt=""><figcaption></figcaption></figure>
+
+#### Using asadmin commands
+
+To delete a deployment group run the command;
+
+```shell
+asadmin> delete-deployment-group test
+```
+
+### Managing Deployment Group Membership
+
+#### Adding an instance
+
+When you have an existing standalone instance it can be assigned to a deployment group using the administration console and via asadmin. To add an existing instance to a deployment group. Navigate to the deployment group in the administration Console and then select the instance in the drop down from the Instances tab.  The same can be achieved using the asadmin command;
+
+<figure><img src="https://docs.payara.fish/community/docs/_images/deployment-groups/add-server-to-dg.png" alt=""><figcaption></figcaption></figure>
+
+```shell
+asadmin> add-instance-to-deployment-group --instance testserver --deploymentgroup test2
+```
+
+#### Removing an Instance
+
+If you want to remove an instance from a deployment group. Navigate to the deployment group, select the instance and choose remove from the "more actions…​" drop down. &#x20;
+
+<figure><img src="https://docs.payara.fish/community/docs/_images/deployment-groups/remove-server-from-dg.png" alt=""><figcaption></figcaption></figure>
+
+The same can be achieved using the Asadmin CLI.
+
+```shell
+asadmin> remove-instance-from-deployment-group --instance testserver --deploymentgroup test2
+```
+
+### Server Lifecycle Management
+
+A deployment group can also be used to provide lifecycle management to the group of server instances in the deployment group. All servers in the group can be started, stopped and restarted. To do this, navigate to the deployment group and choose "Start Deployment Group", "Stop Deployment Group" or "Restart Deployment Group".
+
+<figure><img src="https://docs.payara.fish/community/docs/_images/deployment-groups/lifecycle-dg.png" alt=""><figcaption></figcaption></figure>
+
+The same can be achieved using the asadmin commands;
+
+```shell
+asadmin> start-deployment-group test2
+asadmin> restart-deployment-group test2
+asadmin> stop-deployment-group test2
+```
+
+### Deploying Applications to a Deployment Group
+
+To deploy an application to a deployment group you just select the deployment group name in the list of targets in the usual way. This can be done both on the Applications tab of the Deployment Group or on the Applications section of the administration console.
+
+<figure><img src="https://docs.payara.fish/community/docs/_images/deployment-groups/deploy-to-dg.png" alt=""><figcaption></figcaption></figure>
+
+To deploy an application using asadmin just specify the deployment group as a target when running the deploy command.
+
+```shell
+asadmin> deploy --target test2 test.war
+```

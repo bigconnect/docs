@@ -1,0 +1,105 @@
+# Advanced Groups Configuration
+
+MWARE AS allows the advanced configuration mapping of a client certificate’s distinguished name (DN) to specific realm groups, which allows the realm to automatically assign groups based on the values of each DN part to all principals registered in the realm.
+
+This feature can be configured by using the `dn-parts-used-for-groups` property of any security realm of type `com.sun.enterprise.security.auth.realm.certificate.CertificateRealm`. It must define a comma separated list of identifiers of DN parts, i.e. `EMAILADDRESS,DC,OU`, and it is empty by default.
+
+If both properties are set, a principal who completed the certificate validation will have all groups from both `assign-groups` settings.
+
+Not all DN parts are supported. The following is the list of all parts that are supported, categorized by their OIDs:
+
+| DN Part      | Description                      | Object ID                  |
+| ------------ | -------------------------------- | -------------------------- |
+| CN           | Common Name                      | 2.5.4.3                    |
+| SURNAME      | Surname                          | 2.5.4.4                    |
+| SERIALNUMBER | Serial Number of the certificate | 2.5.4.5                    |
+| C            | Country                          | 2.5.4.6                    |
+| L            | Locality                         | 2.5.4.7                    |
+| ST           | State                            | 2.5.4.8                    |
+| STREET       | Street                           | 2.5.4.9                    |
+| O            | Organisation                     | 2.5.4.10                   |
+| OU           | Organisation Unit                | 2.5.4.11                   |
+| T            | Title                            | 2.5.4.12                   |
+| GIVENNAME    | Given Name                       | 2.5.4.42                   |
+| INITIALS     | Initials                         | 2.5.4.43                   |
+| GENERATION   | Generation                       | 2.5.4.44                   |
+| DNQUALIFIER  | DN Qualifier                     | 2.5.4.46                   |
+| UID          | User ID                          | 0.9.2342.19200300.100.1.1  |
+| DC           | Domain Component                 | 0.9.2342.19200300.100.1.25 |
+| EMAILADDRESS | E-Mail address                   | 1.2.840.113549.1.9.1       |
+| IP           | IP Address                       | 1.3.6.1.4.1.42.2.11.2.1    |
+
+### MWARE AS Configuration
+
+#### Using the Admin Console
+
+This feature can be configured on the default certificate realm with the following steps:
+
+1. Navigate to the applicable configuration page for your use (e.g. `server-config`) under the `Configurations` option in the side menu
+2. Head to `Security` → `Realms` and select the `certificate` realm
+3. Click the `Add Property` button
+4. Set the property _Name_ to be `dn-parts-used-for-groups` and set the _Value_ to a comma separated list of OID names.
+
+#### Using the Asadmin CLI
+
+You can also use the following asadmin command to set the value of the property in the security realm:
+
+```shell
+asadmin> set configs.config.${YOUR_INSTANCE_CONFIG}.security-service.auth-realm.certificate.property.dn-parts-used-for-groups=EMAILADDRESS,DC,OU
+```
+
+### Mapping Groups to Security Roles in Applications <a href="#mapping-groups-to-roles-in-applications" id="mapping-groups-to-roles-in-applications"></a>
+
+After configuring the realm groups, you can map these groups to application roles as you’d do by using the MWARE AS specific deployment descriptors. You can even map these roles to principals that are configured as documented in the advanced Principal Name configuration section.
+
+Here’s a quick summary of the authentication and authorization process would work in this scenario:
+
+* The principal receives principal name as configured (whole DN or only CN part)
+* The principal receives all groups from realm’s `assign-groups` list
+* The principal receives all groups from certificate’s DN parts listed in `dn-parts-used-for-groups` realm property (limited to those listed in table)
+* The server allows the principal to access the application
+* The client receives all roles from application’s security role mapping, where at least one of his principal names or groups matches their respective element.
+* The security roles are then used for authorization to access application resources
+
+For example, if user roles were mapped like this in the `payara-web.xml` deployment descriptor of an application and we enabled using `CN` as a principal name and set the `dn-parts-used-for-groups` to `OU`:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE payara-web-app PUBLIC "-//Payara.fish//DTD Payara Server 4 Servlet 3.0//EN" "{payaraWebDtd}">
+<payara-web-app error-url="">
+  <context-root>/health-services</context-root>
+  <security-role-mapping>
+    <role-name>role1</role-name>
+    <principal-name>C=UK, S=lak, L=zak, OU=unitA, CN=foo1</principal-name>
+    <principal-name>C=UK, S=lak, L=zak, OU=unitA, CN=foo2</principal-name>
+    <principal-name>C=UK, S=lak, L=zak, OU=unitC, CN=foo4</principal-name>
+    <principal-name>C=UK, S=lak, L=zak, OU=unitD, CN=foo-director</principal-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>role2</role-name>
+    <principal-name>C=UK, S=lak, L=zak, OU=unitB, CN=foo3</principal-name>
+    <principal-name>C=UK, S=lak, L=zak, OU=unitD, CN=foo-director</principal-name>
+  </security-role-mapping>
+</payara-web-app>
+```
+
+Then the role mapping can be based on organizational unit in this case. But you can still use the principal name as in any normal case:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE payara-web-app PUBLIC "-//Payara.fish//DTD Payara Server 4 Servlet 3.0//EN" "{payaraWebDtd}">
+<payara-web-app error-url="">
+  <context-root>/health-services</context-root>
+  <security-role-mapping>
+    <role-name>role1</role-name>
+    <group-name>unitA</group-name>
+    <group-name>unitC</group-name>
+    <group-name>unitD</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>role2</role-name>
+    <group-name>unitB</group-name>
+    <principal-name>foo-director</principal-name>
+  </security-role-mapping>
+</payara-web-app>
+```

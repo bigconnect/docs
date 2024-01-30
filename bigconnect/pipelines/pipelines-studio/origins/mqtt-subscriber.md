@@ -1,0 +1,85 @@
+# MQTT Subscriber
+
+The MQTT Subscriber origin subscribes to topics on an MQTT broker to read messages from the broker. The origin functions as an MQTT client that receives messages, generating a record for each message.&#x20;
+
+When you configure the origin, you specify the information needed to connect to the MQTT broker. You must define connection credentials when the MQTT broker requires a user name and password. You can also configure SSL/TLS properties, including default transport protocols and cipher suites.
+
+You specify one or more topics on the MQTT broker that the origin subscribes to. The origin includes the name of the originating topic for each record in a record header attribute.
+
+You also configure the quality of service level and the persistence mechanism that the origin uses to enable reliable messaging.
+
+### Topics <a href="#ariaid-title3" id="ariaid-title3"></a>
+
+The MQTT Subscriber origin reads messages from one or more topics on the MQTT broker. A topic is a string that the broker uses to filter messages for each connected client.
+
+When you configure the origin, you define one or more topic names. You can include multiple topic levels in a topic. For example, the following topic has three topic levels:
+
+```
+sales/US/NorthernRegion
+```
+
+You can use the StreamSets expression language to define the topic names. You can also use MQTT wildcards in the topic names, such as the single level wildcard (+) or the multi level wildcard (#).
+
+For more information, see the [HiveMQ documentation on MQTT topics](http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices).
+
+### Record Header Attributes <a href="#ariaid-title4" id="ariaid-title4"></a>
+
+The MQTT Subscriber origin creates a record header attribute that includes information about the origins of the record.
+
+You can use the `record:attribute` or `record:attributeOrDefault` functions to access the information in the attributes.
+
+The MQTT Subscriber origin creates the following record header attribute:
+
+* TOPIC\_HEADER\_NAME - Includes the originating topic for each record.
+
+### Data Formats <a href="#ariaid-title5" id="ariaid-title5"></a>
+
+The MQTT Subscriber origin processes data differently based on the data format that you select.
+
+The MQTT Subscriber origin processes data formats as follows:
+
+Binary
+
+Generates a record with a single byte array field at the root of the record.When the data exceeds the user-defined maximum data size, the origin cannot process the data. Because the record is not created, the origin cannot pass the record to the pipeline to be written as an error record. Instead, the origin generates a stage error.
+
+Datagram
+
+Generates a record for every message. The origin can process [collectd](https://collectd.org/) messages, NetFlow 5 and NetFlow 9 messages, and the following types of syslog messages:
+
+* [RFC 5424](https://tools.ietf.org/html/rfc5424)
+* [RFC 3164](https://tools.ietf.org/html/rfc3164)
+* Non-standard common messages, such as RFC 3339 dates with no version digit
+
+When processing NetFlow messages, the stage generates different records based on the NetFlow version. When processing NetFlow 9, the records are generated based on the NetFlow 9 configuration properties.
+
+Delimited
+
+Generates a record for each delimited line.The CSV parser that you choose determines the delimiter properties that you configure and how the stage handles parsing errors. You can specify if the data includes a header line and whether to use it. You can define the number of lines to skip before reading, the character set of the data, and the root field type to use for the generated record.You can also configure the stage to replace a string constant with null values and to ignore control characters.
+
+JSON
+
+Generates a record for each JSON object. You can process JSON files that include multiple JSON objects or a single JSON array.When an object exceeds the maximum object length defined for the origin, the origin processes the object based on the error handling configured for the stage.
+
+Log
+
+Generates a record for every log line.When a line exceeds the user-defined maximum line length, the origin truncates longer lines.You can include the processed log line as a field in the record. If the log line is truncated, and you request the log line in the record, the origin includes the truncated line.You can define the log format or type to be read.
+
+Protobuf
+
+Generates a record for every protobuf message. By default, the origin assumes messages contain multiple protobuf messages.Protobuf messages must match the specified message type and be described in the descriptor file.When the data for a record exceeds 1 MB, the origin cannot continue processing data in the message. The origin handles the message based on the stage error handling property and continues reading the next message.
+
+Record
+
+Generates a record for every record. Use to process records generated by a pipeline using the Record data format.For error records, the origin provides the original record as read from the origin in the original pipeline, as well as error information that you can use to correct the record.When processing error records, the origin expects the error file names and contents as generated by the original pipeline.
+
+Text
+
+Generates a record for each line of text or for each section of text based on a custom delimiter.When a line or section exceeds the maximum line length defined for the origin, the origin truncates it. The origin adds a boolean field named Truncated to indicate if the line was truncated.
+
+XML
+
+Generates records based on a user-defined delimiter element. Use an XML element directly under the root element or define a simplified XPath expression. If you do not define a delimiter element, the origin treats the XML file as a single record.Generated records include XML attributes and namespace declarations as fields in the record by default. You can configure the stage to include them in the record as field attributes.You can include XPath information for each parsed XML element and XML attribute in field attributes. This also places each namespace in an xmlns record header attribute.
+
+**Note**: Field attributes and record header attributes are written to destination systems automatically only when you use the Pipelines RPC data format in destinations.&#x20;
+
+When a record exceeds the user-defined maximum record length, the origin skips the record and continues processing with the next record. It sends the skipped record to the pipeline for error handling.Use the XML data format to process valid XML documents.

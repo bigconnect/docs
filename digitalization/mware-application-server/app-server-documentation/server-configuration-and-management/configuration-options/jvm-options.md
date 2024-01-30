@@ -1,0 +1,85 @@
+# JVM Options
+
+MWARE AS can be configured through various JVM options. By default, there are a number of JVM options configured within the `domain.xml` configuration file in each MWARE AS domain. Additional JVM options can be added to control various functionality and features of MWARE AS.
+
+### Creating JVM Options <a href="#creating-jvm-options" id="creating-jvm-options"></a>
+
+JVM options can be created via the Admin Console, or the `create-jvm-options` asadmin command. The jvm option key value pair must be enclosed in quotation marks.
+
+**Example:** `asadmin create-jvm-options "-Djava.awt.headless\=true"`
+
+### Deleting JVM Options
+
+Deleting JVM options is done using either the Admin Console, or the `delete-jvm-options` asadmin command.
+
+**Example:** `asadmin delete-jvm-options "-Djava.awt.headless"`
+
+### Configurable JVM Options
+
+This is a non-exhaustive list of configurable JVM Options for MWARE AS.
+
+#### Config File Encoding
+
+**Property**
+
+`fish.payara.configFileEncoding`
+
+**Aim**
+
+Sets the domain.xml parser character encoding. The domain will fail to start if you are using characters not covered by UTF-8 in your configuration without this property configured.
+
+**Acceptable Values**
+
+Any JDK supported file encoding charset
+
+### Configuring JDK Versions for JVM Options
+
+It is possible to allow specific JVM options configured for a MWARE AS instance to be applied only on specific JDK versions. The configuration is flexible since it allows the user to define minimum and maximum versions of all JDKs upon which each JVM option should be applied.
+
+JDK versions must follow standard the standard JDK versioning scheme. The syntax that can be used allows for different levels of granularity in the specified JDK versions. Any of the following would be acceptable:
+
+* `1.8.0.162`
+* `1.8.0u162`
+* `1.8.0`
+* `1.8`
+
+#### Using the Admin Console
+
+To configure the JDK versions for JVM options in the admin console, head to the **Configurations → \<instance configuration> → JVM Settings** and on the **JVM Options** tab specify the versions in the table:
+
+![Configure JDK versions for JVM options in Admin console](https://docs.payara.fish/community/docs/\_images/jvm-options/configure-jdk-versions-admin-console.png)
+
+You can omit either the minimum or maximum versions by leaving the fields blank.
+
+#### Using Asadmin commands
+
+It is also possible to create JVM options with JDK versions using the asadmin commands.
+
+The `create-jvm-options` asadmin command allows the minimum and maximum JDK versions to be set in the following ways:
+
+1.  Use the `--min-jvm` and `--max-jvm` arguments to set the versions when running the command:
+
+    ```shell
+    asadmin create-jvm-options --target=server-config --min-jvm=1.8.0u162 "-Djava.awt.headless\=true"
+
+    asadmin create-jvm-options --target=server-config --max-jvm=1.8.0u172 "-XX\:+UnlockDiagnosticVMOptions"
+    ```
+2.  Specify the versions using the `[MIN_VERSION | MAX_VERSION]` text syntax for the inclusive version range before each JVM option:
+
+    ```shell
+    asadmin create-jvm-options --target=server-config "[1.8.0u162|]-Djava.awt.headless\=true"
+
+    asadmin create-jvm-options --target=server-config "[|1.8.0u172]-XX\:+UnlockDiagnosticVMOptions"
+
+    asadmin create-jvm-options --target=server-config "[1.8.0u168|1.8.0u172]-XX\:NewRatio\=2"
+    ```
+
+The `delete-jvm-options` asadmin command does not require you to specify the JDK version when deleting a JVM option, though you can if you wish.
+
+For example, given the option `[1.8.0.160|1.8.0.200]XX\:NewRatio=3`, either of the following commands are acceptable:
+
+```shell
+asadmin delete-jvm-options "XX\:NewRatio=3"
+
+asadmin delete-jvm-options "[1.8.0.160|1.8.0.200]XX\:NewRatio=3"
+```

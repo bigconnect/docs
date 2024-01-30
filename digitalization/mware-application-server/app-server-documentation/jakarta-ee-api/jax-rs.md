@@ -1,0 +1,5 @@
+# JAX-RS
+
+## Using CDI with JAX-RS Resources
+
+CDI injection works by default in JAX-RS classes. Payara will convert all JAX-RS resources into Request Scoped CDI beans, therefore allowing CDI Injection in JAX-RS classes without the need for a bean defining scope.

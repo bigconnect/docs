@@ -1,0 +1,183 @@
+# MongoDB
+
+The MongoDB origin reads data from MongoDB.&#x20;
+
+The MongoDB origin generates a record for every MongoDB document. To read change data capture information from the MongoDB Oplog, use the MongoDB Oplog origin.
+
+The MongoDB origin reads from capped and uncapped collections. When you configure MongoDB, you define connection information, such as the connection string and MongoDB credentials. You also configure the offset field, collection type, and initial offset. These properties determine how the origin queries the database.
+
+When the pipeline stops, the MongoDB origin notes where it stops reading. When the pipeline starts again, the origin continues processing from the last-saved offset by default. You can reset the origin to process all requested files.
+
+You can optionally configure advanced options that determine how the origin connects to MongoDB, including enabling SSL/TLS for the origin.
+
+The origin can generate events for an event stream.&#x20;
+
+### Credentials <a href="#ariaid-title2" id="ariaid-title2"></a>
+
+Based on the authentication used by the MongoDB server, configure the origin to use no authentication, username/password authentication, or LDAP authentication. When using username/password authentication, you can also use delegated authentication.
+
+By default, the origin uses no authentication.
+
+To use username/password or LDAP authentication, enter the required credentials in one of the following ways:Connection string in the MongoDB tabEnter credentials in the connection string in the MongoDB tab.To enter credentials for username/password authentication, enter the username and password before the host name. Use the following format:
+
+<pre><code><strong>mongodb://username:password@host[:port][/[database][?options]]
+</strong></code></pre>
+
+To enter credentials for LDAP authentication, enter the username and password before the host name, and set the authMechanism option to PLAIN. Use the following format:
+
+<pre><code><strong>mongodb://username:password@host[:port][/[database]?authMechanism=PLAIN
+</strong></code></pre>
+
+Credentials tabSelect either the Username/Password or LDAP authentication type in the Credentials tab. Then enter the username and password for the authentication type.
+
+If you enter credentials in both the connection string and in the Credentials tab, the Credentials tab takes precedence.
+
+### Offset Field and Initial Offset <a href="#ariaid-title3" id="ariaid-title3"></a>
+
+MongoDB uses the offset field to track the data to read. By default, the MongoDB origin uses the \_id field as the offset field.
+
+You can use a nested offset field, such as o.\_id. Or, you can use any Object ID, date, or string field as the offset field. The results for using any field besides the default \_id field are not guaranteed.
+
+When you use a date or Object ID field, specify a timestamp to use as the initial offset. Object ID fields include an embedded timestamp that the origin uses to determine where in the collection to begin reading. When you define the initial offset for a date or Object ID field, use the following format:
+
+```
+YYYY-MM-DD HH:mm:ss
+```
+
+When you use a string field, specify the initial string to use as the initial offset.
+
+Note: If you change the offset field type for the origin after the pipeline runs and then stops, you must reset the origin before you can run the pipeline again.
+
+### Read Preference <a href="#ariaid-title4" id="ariaid-title4"></a>
+
+You can configure the read preference that the MongoDB origin uses.
+
+The read preference determines how the origin reads data from different members of the MongoDB replica set.
+
+You can use the following MongoDB read preferences:
+
+* Primary - Requires reading from the primary member.
+* Primary Preferred - Prefers reading from the primary, but allows reads from a secondary member.
+* Secondary - Requires reading from a secondary member.
+* Secondary Preferred - Prefers reading from a secondary, but allows reads from a primary when necessary.
+* Nearest - Reads from the member with the least network latency.
+
+By default, the origin uses Secondary Preferred to avoid making unnecessary requests to the primary member.
+
+### Event Generation <a href="#ariaid-title5" id="ariaid-title5"></a>
+
+The MongoDB origin can generate events when it completes processing all available data and the configured batch wait time has elapsed.
+
+MongoDB origin events can be used in any logical way. For example:
+
+*   With the Pipeline Finisher executor to stop the pipeline and transition the pipeline to a Finished state when the origin completes processing available data.
+
+    When you restart a pipeline stopped by the Pipeline Finisher executor, the origin continues processing from the last-saved offset unless you reset the origin.
+* With a destination to store event information.
+
+#### Event Records <a href="#ariaid-title6" id="ariaid-title6"></a>
+
+Event records generated by the MongoDB origin have the following event-related record header attributes. Record header attributes are stored as String values:
+
+| Record Header Attribute       | Description                                                                                                                                                                                                                       |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| sdc.event.type                | <p>Event type. Uses the following event type:</p><ul><li>no-more-data - Generated after the origin completes processing all available objects and the number of seconds configured for Max Batch Wait Time has elapsed.</li></ul> |
+| sdc.event.version             | Integer that indicates the version of the event record type.                                                                                                                                                                      |
+| sdc.event.creation\_timestamp | Epoch timestamp when the stage created the event.                                                                                                                                                                                 |
+
+The MongoDB origin can generate the following event record:
+
+no-more-dataThe MongoDB origin generates a no-more-data event record when the origin completes processing all available records and the number of seconds configured for Max Batch Wait Time elapses without any new objects appearing to be processed.No-more-data event records generated by the origin have the sdc.event.type set to no-more-data and include the following fields:
+
+| Event Record Field | Description                                                                                                           |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| record-count       | Number of records successfully generated since the pipeline started or since the last no-more-data event was created. |
+| error-count        | Number of error records generated since the pipeline started or since the last no-more-data event was created.        |
+
+### BSON Timestamp <a href="#ariaid-title7" id="ariaid-title7"></a>
+
+When processing data from MongoDB version 2.6 and later, the MongoDB origin supports the MongoDB BSON Timestamp data type.
+
+The MongoDB BSON Timestamp is a MongoDB data type that includes a timestamp and ordinal as follows:
+
+```
+<BSON Timestamp field name>:Timestamp(<timestamp>, <ordinal>)
+```
+
+The MongoDB origin converts the BSON Timestamp to a map as follows:
+
+```
+<BSON Timestamp field name>{MAP}:
+    Timestamp{DATETIME}:<UTC timestamp>
+    Ordinal{INTEGER}:<integer ordinal>
+```
+
+For example, a Transaction BSON timestamp of `(1485449409, 1)`, is converted to the following Transaction map field:
+
+```
+"Transaction":{
+    "Timestamp":Jan 26, 2016 14:50:09PM
+    "Ordinal":1
+}
+```
+
+### Enabling SSL/TLS <a href="#ariaid-title8" id="ariaid-title8"></a>
+
+You can enable the MongoDB origin to use SSL/TLS to connect to MongoDB.
+
+1. In the Advanced tab for the stage, select the SSL Enabled property.
+2.  If the MongoDB certificate is signed by a private CA or not trusted by the default Java truststore, create a custom truststore file or modify a copy of the default Java truststore file to add the CA to the file. Then configure Data Pipelines to use the modified truststore file.
+
+    By default, Data Pipelines uses the Java truststore file located in $JAVA\_HOME/jre/lib/security/cacerts. If your certificate is signed by a CA that is included in the default Java truststore file, you do not need to create a truststore file and can skip this step.
+
+    In these steps, we show how to modify the default truststore file to add an additional CA to the list of trusted CAs. If you prefer to create a custom truststore file, see the [keytool documentation](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html).
+3. **Note**: If Data Pipelines is already configured to use a custom truststore file to enable HTTPS or for secure connections to an LDAP server, then simply add this additional CA to the same modified truststore file.
+   1.  Use the following command to set the JAVA\_HOME environment variable:
+
+       ```
+       export JAVA_HOME=<Java home directory>
+       ```
+   2.  Use the following command to set the SDC\_CONF environment variable:
+
+       ```
+       export SDC_CONF=<Data Pipelines configuration directory>
+       ```
+
+       For example, for an RPM installation use:
+
+       ```
+       export SDC_CONF=/etc/sdc
+       ```
+   3.  Use the following command to copy the default Java truststore file to the Data Pipelines configuration directory:
+
+       ```
+       cp "${JAVA_HOME}/jre/lib/security/cacerts" "${SDC_CONF}/truststore.jks"
+       ```
+   4.  Use the following keytool command to import the CA certificate into the truststore file:
+
+       ```
+       keytool -import -file <MongoDB certificate> -trustcacerts -noprompt -alias <MongoDB alias> -storepass <password> -keystore "${SDC_CONF}/truststore.jks"
+       ```
+
+       For example:
+
+       ```
+       keytool -import -file  myMongoDB.pem -trustcacerts -noprompt -alias MyMongoDB -storepass changeit -keystore "${SDC_CONF}/truststore.jks"
+       ```
+   5.  Define the following options in the SDC\_JAVA\_OPTS environment variable:
+
+       * javax.net.ssl.trustStore - Path to the truststore file on the Data Pipelines machine.
+       * javax.net.ssl.trustStorePassword - Truststore password.
+
+       Modify environment variables using the method required by your installation type.
+
+       For example, define the options as follows:
+
+       ```
+       export SDC_JAVA_OPTS="${SDC_JAVA_OPTS} -Djavax.net.ssl.trustStore=/etc/sdc/truststore.jks -Djavax.net.ssl.trustStorePassword=mypassword -Xmx1024m -Xms1024m -server -XX:-OmitStackTraceInFastThrow"
+       ```
+
+       Or to avoid saving the password in the export command, save the password in a text file and then define the truststore password option as follows: -Djavax.net.ssl.trustStorePassword=$(cat passwordfile.txt)
+
+       Then ensure that the password file is readable only by the user executing the export command.
+   6. Restart Data Pipelines to enable the changes.

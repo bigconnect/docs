@@ -1,0 +1,111 @@
+# JCE Provider Support
+
+MWARE AS supports using the JCE framework to configure custom security providers. Custom providers can be installed statically in the JDK, via the service loader mechanism, or via the programmatic API.
+
+### Example <a href="#example" id="example"></a>
+
+The example below uses an existing provider ([Bouncy Castle](https://bouncycastle.org/)), to which a custom service is added programmatically. As suggested above, this is not the suggested way to do this since it is being changed dynamically. Rather, this example is here for an idea of how it _could_ be used.
+
+#### Custom Certificate Factory
+
+```java
+public class MyJCECertificateFactory extends CertificateFactory {
+
+    @Override
+    public Certificate engineGenerateCertificate(InputStream in) throws CertificateException {
+        Certificate certificate = super.engineGenerateCertificate(in);
+
+        if (certificate instanceof X509Certificate == false) {
+            return certificate;
+        }
+
+        return new MyJCEX509Certificate((X509Certificate) certificate);
+    }
+
+}
+```
+
+This factory is based on the [CertificateFactory SPI](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/CertificateFactorySpi.html) type, but instead of implementing it fully the Bouncy Castle’s CertificateFactory is used. The returned [Certificate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/Certificate.html) is then wrapped in our own. A custom certificate type might then look as follows:
+
+#### Custom Certificate
+
+```java
+public class MyJCEX509Certificate extends X509Certificate {
+
+    private final X509Certificate certificate;
+
+    public MyJCEX509Certificate(X509Certificate certificate) {
+        this.certificate = certificate;
+    }
+
+    @Override
+    public X500Principal getSubjectX500Principal() {
+
+        X500Principal principal = certificate.getSubjectX500Principal();
+
+        if ("C=UK,ST=lak,L=zak,O=kaz,OU=bar,CN=lfoo".equals(principal.getName())) {
+            return new X500Principal("CN=u1");
+        }
+
+        return principal;
+    }
+
+    @Override
+    public Principal getSubjectDN() {
+
+        Principal principal = certificate.getSubjectDN();
+
+        if ("CN=lfoo,OU=bar,O=kaz,L=zak,ST=lak,C=UK".equals(principal.getName())) {
+            return new X500Principal("CN=u1");
+        }
+
+        return principal;
+    }
+
+    // Other methods omitted for brevity
+}
+```
+
+This custom certificate is where the "principal mapping" is performed. For the example only "CN=lfoo,OU=bar,O=kaz,L=zak,ST=lak,C=UK" to "CN=u1" is mapped though. Note that the example above overrides two methods. The getSubjectDN() one is actually deprecated (or denigrated as in the Certificate’s terminology), but it’s still being used all over the place. getSubjectX500Principal() is the preferred method to use.
+
+Finally, the factory can be installed for example via a Servlet that we can easily ping (as mentioned, this would not normally be the advisory way to do this):
+
+#### Custom Installation File
+
+```java
+@WebServlet(urlPatterns = { "/BouncyServlet" })
+public class BouncyServlet extends HttpServlet {
+
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        BouncyCastleProvider provider = new BouncyCastleProvider();
+        provider.put("CertificateFactory.X.509", MyJCECertificateFactory.class.getName());
+
+        int pos = Security.insertProviderAt(provider, 1);
+
+        response.getWriter().print("pos:" + pos);
+    }
+
+}
+```
+
+The above code instantiates the bouncy castle provider, and registers the previous custom certificate factory with it. In this example you can see the type and algorithm being combined into the single key for registering our factory class.
+
+The modified provider is then inserted at provider position 1 (the first, there’s no 0), using a static method of the [Security](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/Security.html) class.
+
+After pinging this Servlet, and requesting another Servlet over HTTPS that’s protected with the client-cert authentication mechanism, a principal with name `CN=lfoo,OU=bar,O=kaz,L=zak,ST=lak,C=UK` will be replaced at nearly the lowest level in the system with "CN=u1", and MWARE AS will only see this principal name. We can use this principal name for instance to map groups and roles to it:
+
+```xml
+<glassfish-web-app>
+    <security-role-mapping>
+        <role-name>g1</role-name>
+        <group-name>g1</group-name>
+        <principal-name>CN=u1</principal-name>
+    </security-role-mapping>
+</glassfish-web-app>
+```
+
+A fully working sample demonstrating exactly this can be found in the [Java EE 7 samples repo](https://github.com/javaee-samples/javaee7-samples/tree/master/servlet/security-clientcert-jce).
