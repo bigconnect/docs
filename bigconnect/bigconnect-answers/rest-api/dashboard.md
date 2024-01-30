@@ -30,7 +30,7 @@ Get `Dashboards`. With filter option `f` (default `all`), restrict results as fo
 * `mine` - Return Dashboards created by the current user.
 * `archived` - Return Dashboards that have been archived. (By default, these are _excluded_.).
 
-### PARAMS:
+PARAMS:
 
 * **`f`** nullable enum of all, mine, archived
 
