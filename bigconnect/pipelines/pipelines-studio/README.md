@@ -9,7 +9,7 @@ To define the flow of data, you design a pipeline in Data Pipelines Studio. A pi
 After you provision a Data Pipelines Studio service, you can log in and create your first pipeline:
 
 1. To access Data Pipelines Studio, enter the following URL in the address bar of your browser:   \
-   `https://pipelinelab-NNNNNNNNN.cloud.bigconnect.io`where NNNNNNNNN is your Tenant ID.
+   `http://localhost:18630`
 2. On the **Get Started** page, click **Create New Pipeline**.
 3. In the **New Pipeline** window, enter a name for the pipeline, optionally enter a description, and click **Save**.
 
