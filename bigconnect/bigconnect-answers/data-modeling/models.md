@@ -154,8 +154,6 @@ Just like with a question, admins can verify models. Verifying a model will give
 
 ## Model caching
 
-_Currently available for PostgreSQL, MySQL, and Redshift_.
-
 Answers can cache the results of your models so that the models load faster. Answers caches models by creating tables in a bespoke schema in your data warehouse, and saves the results of the queries that underlie your models in those tables. When people ask questions based on your models, Answers will substitute those cached results in place of running the model’s query.
 
 To set up model caching:
