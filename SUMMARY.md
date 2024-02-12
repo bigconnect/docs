@@ -959,7 +959,7 @@
     * [Regular Expressions](bigconnect/pipelines/pipelines-studio/regular-expressions.md)
     * [Grok Patterns](bigconnect/pipelines/pipelines-studio/grok-patterns.md)
     * [Development SDK](bigconnect/pipelines/pipelines-studio/development-sdk.md)
-  * [Dashboard](bigconnect/pipelines/dashboard.md)
+  * [Pipeline Controller](bigconnect/pipelines/dashboard.md)
   * [BigGraph Data Workers](bigconnect/pipelines/data-workers.md)
   * [Getting Social Network Data](bigconnect/pipelines/social-data.md)
 * [BigConnect Explorer](bigconnect/bigconnect-explorer/README.md)
