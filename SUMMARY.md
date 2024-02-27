@@ -477,7 +477,7 @@
       * [MySQL / MariaDB](bigconnect/bigconnect-answers/databases/connection-details/mysql-mariadb.md)
       * [Oracle](bigconnect/bigconnect-answers/databases/connection-details/oracle.md)
       * [PostgreSQL](bigconnect/bigconnect-answers/databases/connection-details/postgresql.md)
-      * [Presto](bigconnect/bigconnect-answers/databases/connection-details/presto.md)
+      * [BigConnect Core](bigconnect/bigconnect-answers/databases/connection-details/bigconnect-core.md)
       * [Amazon Redshift](bigconnect/bigconnect-answers/databases/connection-details/amazon-redshift.md)
       * [Snowflake](bigconnect/bigconnect-answers/databases/connection-details/snowflake.md)
       * [SparkSQL](bigconnect/bigconnect-answers/databases/connection-details/sparksql.md)

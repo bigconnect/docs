@@ -1,4 +1,4 @@
-# Presto
+# BigConnect Core
 
 To add a database connection, click on the **gear** icon in the top right, and navigate to **Admin settings** > **Databases** > **Add a database**.
 
@@ -22,7 +22,7 @@ The database port. E.g., 8080.
 
 #### Catalog
 
-Presto catalogs contain schemas and reference data sources via a connector.
+BigConnect Core catalogs contain schemas and reference data sources via a connector.
 
 #### Schema (optional)
 
@@ -57,12 +57,12 @@ You can specify a local file path, or upload a truststore. You’ll also need to
 Kerberos settings include:
 
 * Kerberos principal (e.g., `service/instance@REALM`)
-* Kerberos coordinator service (e.g., `presto`)
+* Kerberos coordinator service (e.g., `bigconnect`)
 * You can use a canonical hostname.
 * Kerberos credential cache file (e.g., `/tmp/kerbo-credential-cache`)
 * Kerberos keytab file (e.g., `/path/to/kerberos.keytab`)
 * Kerberos configuration file (e.g., `/etc/krb5.conf`)
-* Presto coordinator Kerberos service principal pattern (e.g., `${SERVICE}@${HOST}.${SERVICE}`
+* BigConnect coordinator Kerberos service principal pattern (e.g., `${SERVICE}@${HOST}.${SERVICE}`
 
 #### Additional JDBC connection string options
 
