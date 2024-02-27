@@ -418,7 +418,7 @@
 
 ## The BigConnect Platform <a href="#bigconnect" id="bigconnect"></a>
 
-* [BigConnect Base](bigconnect/biggraph/README.md)
+* [BigConnect Core](bigconnect/biggraph/README.md)
   * [Architecture and Concepts](bigconnect/biggraph/biggraph-architecture-and-concepts.md)
   * [Cypher](bigconnect/biggraph/cypher/README.md)
     * [Cypher Basics I](bigconnect/biggraph/cypher/cypher-basics-i.md)

@@ -4,7 +4,7 @@ A high level overview of a production architecture is presented below. This is a
 
 ![](<../../.gitbook/assets/image (154).png>)
 
-There are different types of BigConnect nodes:
+There are different types of BigConnect Core nodes:
 
 * **Data Worker** nodes usually handle data enrichment
 * **Long Running Process Worker** nodes usually handle long running processes (such as running Machine Learning models or Graph algorithms) or scheduled tasks
