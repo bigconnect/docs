@@ -4,15 +4,15 @@
 
 Actions let you write parameterized SQL that can then be attached to buttons, clicks, or even added on the page as form elements.
 
-### Introduction to actions <a href="#introduction-to-actions" id="introduction-to-actions"></a>
+### [Introduction to actions](introduction-to-actions.md) <a href="#introduction-to-actions" id="introduction-to-actions"></a>
 
 Use actions to update your data based on user input or values on the page.
 
-### Basic actions <a href="#basic-actions" id="basic-actions"></a>
+### [Basic actions](basic-actions.md) <a href="#basic-actions" id="basic-actions"></a>
 
 Answers will create basic actions that auto-track a model’s schema.
 
-### Custom actions <a href="#custom-actions" id="custom-actions"></a>
+### [Custom actions](custom-actions.md) <a href="#custom-actions" id="custom-actions"></a>
 
 Write SQL to create new actions.
 
