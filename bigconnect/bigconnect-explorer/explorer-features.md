@@ -22,7 +22,7 @@ Data ingestion is a visual process in BigConect Explorer. Either by using the us
 
 ## Visual Interface
 
-BigConnect provides an extensible integrated visual console where users can query and analyze the data. The console is collaborative, and all actions are taken inside a space. This means that all data that is added, modified, queried or analyzed can be contained to that space alone. Data changes that happen inside a space can be published to be available for everybody.
+BigConnect provides an extensible integrated web visual console where users can query and analyze the data. The console is collaborative, and all actions are taken inside a space. This means that all data that is added, modified, queried or analyzed can be contained to that space alone. Data changes that happen inside a space can be published to be available for everybody.
 
 ### Enterprise Search
 
