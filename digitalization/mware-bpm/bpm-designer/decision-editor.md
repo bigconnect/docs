@@ -27,7 +27,7 @@ The following sections describe each feature in more detail.
 
 Click the button labeled `Create decision`, a dialog prompts you to enter basic information:
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * The display name of the action.
 * The action’s unique key.
@@ -67,7 +67,7 @@ Each row in the Decision Table can be considered as a single rule. Each column o
 
 The example presented is a very simple use case: determining the discount percentage based on a customer category. To start, click the `Create decision` button.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Provide a decision table name and a unique decision table key and select the `Create new decision model` button.
 

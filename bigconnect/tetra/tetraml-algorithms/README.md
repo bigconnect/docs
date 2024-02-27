@@ -1,10 +1,10 @@
-# Algorithms
+# ML Algorithms
 
 This section provides an overview of each algorithm available in Tetra ML.
 
 ### Supported Data Types
 
-When building models, the supported data types varies per algorithm.
+When building modelsAI , the supported data types varies per algorithm.
 
 * All TetraML algos accept data as numerical and categorical.
 * Word2Vec accepts data as text.
@@ -17,8 +17,8 @@ In supervised learning, the dataset is labeled with the answer that algorithm sh
 
 TetraML supports the following supervised algorithms:
 
-* [AutoML](tetraml-automl.md): Automatic Machine Learning
-* [Cox Proportional Hazards (CoxPH)](tetraml-coxph.md)
+* AutoML: Automatic Machine Learning
+* Cox Proportional Hazards (CoxPH)
 * Deep Learning (Neural Networks)
 * Distributed Random Forest (DRF)
 * Generalized Linear Model (GLM)
