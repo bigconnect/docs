@@ -419,7 +419,14 @@
 ## The BigConnect Platform <a href="#bigconnect" id="bigconnect"></a>
 
 * [BigConnect Core](bigconnect/biggraph/README.md)
-  * [Architecture and Concepts](bigconnect/biggraph/biggraph-architecture-and-concepts.md)
+  * [Overview](bigconnect/biggraph/biggraph-architecture-and-concepts.md)
+  * [Data Model](bigconnect/biggraph/data-model.md)
+  * [Data storage](bigconnect/biggraph/data-storage/README.md)
+    * [Hadoop](bigconnect/biggraph/data-storage/hadoop.md)
+    * [RocksDB](bigconnect/biggraph/data-storage/rocksdb.md)
+    * [Memory](bigconnect/biggraph/data-storage/memory.md)
+  * [Data indexing](bigconnect/biggraph/data-indexing.md)
+  * [Security](bigconnect/biggraph/security.md)
   * [Cypher](bigconnect/biggraph/cypher/README.md)
     * [Cypher Basics I](bigconnect/biggraph/cypher/cypher-basics-i.md)
     * [Cypher Basics II](bigconnect/biggraph/cypher/cypher-basics-ii.md)
