@@ -71,6 +71,8 @@ For example, change the property name to **Source Date**,  choose **Histogram** 
 
 You will now see the distribution of post dates within the 1 day boundary.
 
+The following visualizations are supported: **Pie Chart, Bar Chart, Heatmap** (for GeoHash aggregations only) and **Tag Cloud**.
+
 ## Chart
 
 This widget displays a previously saved chart from the [Charts](analyze/explorer-charts.md) analysis tool. Plece the widget on the dashboard and choose the saved chart to display from the widget configuration menu.
