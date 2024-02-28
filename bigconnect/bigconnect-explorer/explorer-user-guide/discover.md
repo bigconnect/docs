@@ -59,13 +59,21 @@ Filtering by Properties depends on the type of the property being selected. Diff
   * _EQUALS_: the Property value must equal the specified value
   * _HAS `Property`_: the Property is set
   * _DOES NOT HAVE `Property`_: the Property is not set
-* **Geolocation**:&#x20;
-  * LATITUDE, LONGITUDE: The location latitude and longitude must equal the provided values
-  * KM: radius in km of a circle with center (LATITUDE, LONGITUDE) to search for objects
 
 Multiple property filters can be applied. By default, the operator applied between subsequent filters is AND. However, you can change this to OR or NOT.
 
 You can also group property filters together using the grouping icons: <img src="../../../.gitbook/assets/image (573).png" alt="" data-size="original">&#x20;
+
+## Spatial Filtering
+
+A special property named `Geolocation` exists on all objects.  This property can have latitude and longitude information in the WGS 84 EPSG format. BigConnet Explorer can search objects that have their Geolocation in a specific range:
+
+* LATITUDE, LONGITUDE: The location latitude and longitude must equal the provided values
+* KM: radius in km of a circle with center (LATITUDE, LONGITUDE) to search for objects
+
+The spatial search can also be performed visually, by drawing a circle on the map around the area you want to search.
+
+<figure><img src="../../../.gitbook/assets/image (1069).png" alt=""><figcaption></figcaption></figure>
 
 ## Advanced filtering
 
