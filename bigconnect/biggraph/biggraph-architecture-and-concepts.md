@@ -17,7 +17,7 @@ Each running node can be a combination of one or more types. This means that in 
 
 Because nodes need to talk to each-other, each node instance can connect to a WorkQueue to publish and subscribe to messages. The current implementation offers an in-memory work queue for simple deployments and a RabbitMQ work queue for production deployments. Other types of WorkQueues can be easily implemented as well (eg. Apache Kafka, AWS Simple Queue Service etc.).
 
-## The Graph Engine
+## The StorageEngine
 
 Handles the persistence of data and provides operations for adding, updating, deleting and querying stored data. It provides a graph-like structure based on **Vertices**, **Edges** and _**multi-valued**_** Properties** that can be applied to Vertices or Edges.&#x20;
 
