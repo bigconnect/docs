@@ -1006,7 +1006,6 @@
       * [User Profile](bigconnect/bigconnect-explorer/explorer-developer-guide/extension-point-reference/extension-user-profile.md)
       * [Visibility](bigconnect/bigconnect-explorer/explorer-developer-guide/extension-point-reference/extension-visibility.md)
       * [Websocket](bigconnect/bigconnect-explorer/explorer-developer-guide/extension-point-reference/extension-websocket.md)
-  * [Search](bigconnect/bigconnect-explorer/search.md)
   * [Quick Start](bigconnect/bigconnect-explorer/bigconnect-explorer/README.md)
     * [Loading Data](bigconnect/bigconnect-explorer/bigconnect-explorer/sbx-explorer-importing-data.md)
     * [Enriching Data](bigconnect/bigconnect-explorer/bigconnect-explorer/sbx-explorer-enriching-data.md)
