@@ -276,6 +276,16 @@ Saved searches can be aggregated using the **Saved Search** dashboard widget. Th
 * [IP Range Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-iprange-aggregation.html)
 * [Missing Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-missing-aggregation.html)
 
+## Refinements
+
+BigConnect Explorer can be configured to display various search facets when performing a search. These facets are called Refinements. Administrators can configure facets in the data model for each property, and the preferred method to aggregate results around the facet.
+
+<figure><img src="../../../.gitbook/assets/image (1070).png" alt=""><figcaption></figcaption></figure>
+
+When users perform a search, the right-hand panel shows the available Refinements and the number of items matched by each refinement. Clicking on a refinement will narrow the search results to objects matched by the respective property value.
+
+
+
 ## Exporting search results
 
 You can export all search results or only selected ones. The top export icon next to the Saved Searches dropdown <img src="../../../.gitbook/assets/image (572).png" alt="" data-size="original"> is used to export all search results.&#x20;
