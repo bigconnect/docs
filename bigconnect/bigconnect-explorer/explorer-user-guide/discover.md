@@ -246,19 +246,9 @@ Diacritics are reduced to normal characters as much as possible. Lucene converts
 
 Search results can be sorted by one or more properties. Select the desired properties from the dropdown and click on them afterwards to change the sort order.
 
-## Supported aggregations
+## Pagination
 
-When security is enabled, the following aggregation are fully supported:
-
-* [Terms Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-terms-aggregation.html)
-* [Significant Terms Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-significantterms-aggregation.html)
-* [Date Histogram](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-datehistogram-aggregation.html)
-* [GeoHash grid Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-geohashgrid-aggregation.html)
-* [Histogram Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-histogram-aggregation.html)
-* [Nested Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-nested-aggregation.html)
-* [Range Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-range-aggregation.html)
-* [IP Range Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-iprange-aggregation.html)
-* [Missing Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-missing-aggregation.html)
+Because a search can yield millions of results, search results are always paginated. The total number of results and number of pages are fetched eagerly and the user can browse results by navigating pages. Users can configure the number of search results displayed on a page.
 
 ## Saved searches
 
@@ -271,6 +261,20 @@ Just enter a name for your saved search and choose whether you want it to be ava
 {% hint style="info" %}
 Saved Searches are used in the Saved Search dashboard widget and in tools like Graph, Map and Charts to load multiple items from the graph store.
 {% endhint %}
+
+### Supported aggregations
+
+Saved searches can be aggregated using the **Saved Search** dashboard widget. The following aggregation are supported:
+
+* [Terms Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-terms-aggregation.html)
+* [Significant Terms Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-significantterms-aggregation.html)
+* [Date Histogram](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-datehistogram-aggregation.html)
+* [GeoHash grid Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-geohashgrid-aggregation.html)
+* [Histogram Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-histogram-aggregation.html)
+* [Nested Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-nested-aggregation.html)
+* [Range Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-range-aggregation.html)
+* [IP Range Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-iprange-aggregation.html)
+* [Missing Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-bucket-missing-aggregation.html)
 
 ## Exporting search results
 
