@@ -1,6 +1,6 @@
 # Security
 
-An important feature of the Graph Engine is that it includes a layer of fine-grained data security: every operation on the data structure is made using a set of Authorizations and each piece of data has a Visibility label attached to it.&#x20;
+An important feature of the BigConnect Core is that it includes a layer of fine-grained data security: every operation on the data structure is made using a set of Authorizations and each piece of data has a Visibility label attached to it.&#x20;
 
 The Visibility is used to determine whether a given user meets the security requirements to read the value.  This enables data of various security levels to be stored in the same element (vertex or edge) and users of varying degrees of access to query the data, while preserving data confidentiality.
 
@@ -31,3 +31,7 @@ Authorizations are specified as a comma-separated list of tokens the user posses
 ```java
 Authorization auths = new Authorizations("admin","system");
 ```
+
+## Audit
+
+BigConnect provides an options to audit all users actions. Audit data can be logged or persisted in the data store in a special audit table.
