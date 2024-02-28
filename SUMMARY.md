@@ -428,6 +428,7 @@
   * [Indexing](bigconnect/biggraph/indexing.md)
   * [Enrichment](bigconnect/biggraph/enrichment.md)
   * [Security](bigconnect/biggraph/security.md)
+  * [Backup](bigconnect/biggraph/backup.md)
   * [Cypher](bigconnect/biggraph/cypher/README.md)
     * [Cypher Basics I](bigconnect/biggraph/cypher/cypher-basics-i.md)
     * [Cypher Basics II](bigconnect/biggraph/cypher/cypher-basics-ii.md)
