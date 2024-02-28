@@ -165,6 +165,12 @@ To escape these character use the \ before the character. For example to search 
 
 `\(1\+1\)\:2`
 
+### Casing and diacritics
+
+By default, BigConnect Explorer performs searches in a case-insensitive manner. This is a configurable  options and must be enforced before the Elasticsearch index is created. It cannot be changed after the index was created.&#x20;
+
+Diacritics are reduced to normal characters as much as possible. Lucene converts alphabetic, numeric, and symbolic Unicode characters which are not in the first 127 ASCII characters (the "Basic Latin" Unicode block) into their ASCII equivalents, if one exists.
+
 ## Supported aggregations
 
 When security is enabled, the following aggregation are fully supported:
