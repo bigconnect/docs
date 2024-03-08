@@ -1,0 +1,3 @@
+# Site Settings
+
+Once you’ve [created a Site](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/adding-a-site), you’ll want to customize it to meet your needs and the needs of your users. There are a wealth of configuration options and tools available to help you create the Site you envision. Through the Site Menu you can access these settings to configure every aspect of the Site, from the name to the analytics services. They can help define default permissions for users, the default language you’d like to provide for the Site, and much more.
