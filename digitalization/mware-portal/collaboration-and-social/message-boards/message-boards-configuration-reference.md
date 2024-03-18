@@ -1,0 +1,89 @@
+# Message Boards Configuration Reference
+
+This article documents configuration settings available in the _Message Boards_ app. To view the _Message Boards_ app’s Configuration screen:
+
+1. Navigate to _Site Administration_ → _Content & Data_ → _Message Boards_.
+2. Click the _Options_ menu → _Configuration_.
+
+### [General Tab](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#general-tab) <a href="#general-tab" id="general-tab"></a>
+
+![General Tab](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/01.png)
+
+| Name                                | Description                                                                                                                 |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Allow Anonymous Posting             | Allows guest (non-authenticated) users to post threads.                                                                     |
+| Subscribe by Default                | Subscribe users by default to threads they participate in.                                                                  |
+| Message Format                      | Dropdown menu to select BBCode or HTML as the editor                                                                        |
+| Enable Report Inappropriate Content | Enables users to report threads for Terms of Use violations                                                                 |
+| Enable Ratings                      | Enables users to rate threads                                                                                               |
+| Thread as Question by Default       | If enabled, the first threads are always questions and subsequent threads can be marked as answers; disabled by default     |
+| Show Recent Posts from Last         | Dropdown menu to select how many previous posts are displayed based on time: _24 Hours_, _7 Days_, _30 Days_, or _365 Days_ |
+
+### [Email From](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#email-from) <a href="#email-from" id="email-from"></a>
+
+![Email From Tab](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/02.png)
+
+| Name        | Description                               |
+| ----------- | ----------------------------------------- |
+| Name        | Name of the forum owner or moderator      |
+| Address     | Email address of forum owner or moderator |
+| HTML Format | Checkbox to select the email’s format     |
+
+Expand the _Definition of Terms_ menu to learn more about how to create an automated email that import data and metadata from each thread:
+
+![Email From Definition of Terms](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/08.png)
+
+### [Message Added Email](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#message-added-email) <a href="#message-added-email" id="message-added-email"></a>
+
+The _Message Added Email_ tab contains the template for emails that are sent whenever a message board thread is created.
+
+![Message Added Email](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/03.png)
+
+Expand the _Definition of Terms_ menu to learn more about how the variables used to create an automated email that import data and metadata from each thread.
+
+![Message Added Email Definition of Terms](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/09.png)
+
+### [Message Updated Email](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#message-updated-email) <a href="#message-updated-email" id="message-updated-email"></a>
+
+The _Message Added Email_ tab contains the template for emails that are sent whenever a message board thread is updated.
+
+![Message Updated Email](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/04.png)
+
+Expand the _Definition of Terms_ menu to learn more about how to create an automated email that import data and metadata from each thread
+
+![Message Added Email Definition of Terms](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/09.png)
+
+### [Thread Priorities](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#thread-priorities) <a href="#thread-priorities" id="thread-priorities"></a>
+
+![Message Updated Email](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/05.png)
+
+| Name               | Description                                                                                                        |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Default Language   | The instance’s default language is set to English and cannot be modified here.                                     |
+| Localized Language | Dropdown menu for all supported languages; allows administrators to input different ranks in different languages.  |
+| Name               | Name of the priority level                                                                                         |
+| Image              | Name of the icon associated with the priority level; can be a complete URL or a path relative to the theme         |
+| Priority           | Priority level of the thread; threads with a higher number are more important; enter them in the descending order. |
+
+### [User Ranks](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#user-ranks) <a href="#user-ranks" id="user-ranks"></a>
+
+![User Ranks](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/06.png)
+
+Message Boards users can configured to have a visible rank based on the number of posts they contribute.
+
+| Name                 | Description                                                                                                       |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Default Language     | The instance’s default language is set to English and cannot be modified here.                                    |
+| Localized Language   | Dropdown menu for all supported languages; allows administrators to input different ranks in different languages. |
+| User Ranks Text Area | Text area where the user-defined ranks are entered                                                                |
+
+### [RSS](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#rss) <a href="#rss" id="rss"></a>
+
+![RSS](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/07.png)
+
+| Name                     | Description                                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------------------------- |
+| Enable RSS Subscription  | Toggle to enable or disable RSS subscriptions                                                     |
+| Maximum Items to Display | Dropdown menu to select maximum number of threads in the RSS feed                                 |
+| Display Style            | Dropdown menu to select how the threads are displayed as an abstract, full content, or title only |
+| Format                   | Dropdown menu to select which format: Atom 1.0, RSS 1.0, or RSS 2.0                               |

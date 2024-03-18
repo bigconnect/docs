@@ -1,2 +1,0 @@
-# Collaboration and Social
-

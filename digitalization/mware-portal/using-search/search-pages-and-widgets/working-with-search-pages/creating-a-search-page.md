@@ -1,0 +1,26 @@
+# Creating a Search Page
+
+You can create and configure a search page for your Site if you choose not to base it on an existing search page template. This approach is preferable if you do not want to share common elements of your Site’s search page with search pages on other Sites.
+
+These steps show you how to switch to a manually configured search experience in the default site.
+
+1.  If using a site with an existing Search page, first delete the default search page. Navigate to the default site’s menu and clicking _Site Builder_ → _Pages_. Click the Search page’s Actions menu icon (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Delete_. Confirm deleting the page.
+
+    Once deleted, the search bar is replaced by a warning message visible only to site administrators:
+
+    ![A search page must be configured for the Search Bar widget.](https://resources.learn.liferay.com/images/dxp/latest/en/using-search/search-pages-and-widgets/working-with-search-pages/creating-a-search-page/images/01.png)
+2.  Create a new page. Make it hidden or add it to the navigation (the default search page is hidden from the navigation).
+
+    If you want a pre-configured search page as a starting point, use the Search page template. Find the template in the Add Site Page form. It’s under _Global Templates_.
+
+    ![Use the Search page template to jump-start its creation.](https://resources.learn.liferay.com/images/dxp/latest/en/using-search/search-pages-and-widgets/working-with-search-pages/creating-a-search-page/images/02.png)
+3. If you’re creating a page not backed by a template, add and configure all the widgets you need. You’ll find all the available search widgets in the Add Widget menu’s Search section. Lay them out however you want on the page.
+4.  Configure the search bar at the top of the page, making sure it points to your new search page’s friendly URL.
+
+    Click the Search Bar widget’s Options menu (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-widget-options.png)).
+
+    Click _Configuration_ and set the Destination Page to the search page’s friendly URL.
+
+    Click _Save_.
+
+Your search page is up and running.
