@@ -6,7 +6,7 @@ Sites are customizable spaces for building personalized digital experiences. Fol
 
     ![Open the Sites application.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/sites/adding-a-site/images/01.png)
 2. Click _Add_ ( ![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ).
-3.  Select a _Site Template_. Choose between templates _Provided by Liferay_ or [_Custom Site Templates_](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/site-templates) to create your site.
+3.  Select a _Site Template_. Choose between templates _Provided by Liferay_ or _Custom Site Templates_ to create your site.
 
     Choose the _Blank Site_ template, to create a new site without any pages or content.
 
@@ -15,10 +15,10 @@ Sites are customizable spaces for building personalized digital experiences. Fol
 
     NOTE
 
-    If [Private Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/understanding-pages/understanding-pages#enabling-private-pages) are enabled for your system, you, you can determine whether all pages inherited from a site template are private.
+    If Private Pages are enabled for your system, you, you can determine whether all pages inherited from a site template are private.
 5. Click _Add_ to begin creating your site.
 
-Once finished, you are redirected to your new [site’s settings](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/site-settings-ui-reference). You can begin configuring your site, or see [Default Site Applications](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/default-site-applications) for a full list of applications you can use to build your site.
+Once finished, you are redirected to your new site’s settings. You can begin configuring your site, or see Default Site Applications for a full list of applications you can use to build your site.
 
 ### [Creating Organization Sites](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/adding-a-site#creating-organization-sites) <a href="#creating-organization-sites" id="creating-organization-sites"></a>
 
