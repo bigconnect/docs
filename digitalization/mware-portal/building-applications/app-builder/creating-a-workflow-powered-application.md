@@ -1,0 +1,33 @@
+# Creating a Workflow Powered Application
+
+Workflow Powered Applications require data from multiple stakeholders. These process-driven applications can go through multiple stages before the object’s data is fully fleshed out. These apps can even send the processing back to previous stages/stakeholders.
+
+To create an example application, read
+
+* [Creating the Role Change Request Object](https://learn.liferay.com/web/guest/w/dxp/building-applications/reference/app-builder/creating-the-role-change-request-object)
+* [Creating the Role Change Request App](https://learn.liferay.com/web/guest/w/dxp/building-applications/reference/app-builder/creating-the-role-change-request-app)
+
+Workflow Powered Apps are designed by thinking about the steps the object’s forms must pass through before being considered complete.
+
+![The Role Change Request object goes through several steps before it's completely filled out.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/reference/app-builder/creating-a-workflow-powered-application/images/02.png)
+
+Each step has configuration options depending on its stage in the workflow:
+
+| Step                                                 | Configuration Options                                                     | Description                                                                                                                                                                                                                                                                                    |
+| ---------------------------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Start (Initial Step)                                 | <p>Step Name<br>Main Data Object<br>Form View<br>Table View<br>Action</p> | At a minimum, choose an object, form view, and table view so that the data object can begin getting filled out. There’s no assignee, because anyone who can add a record begins the processing. The action can be renamed but always proceeds to the next step.                                |
+| 1 (Step 1)                                           | <p>Step Name<br>Assignee<br>Form View<br>Action</p>                       | Name the step and assign it to a [Role](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/understanding-roles-and-permissions). Then choose or create a form view (set it to read only or editable) and name the action that transitions to the next step. |
+| Additional Numbered Steps (e.g., Step 2, 3, 4, etc.) | Same as for step 1, plus the _Add New Action_ option                      | Additional steps can do everything that Step 1 can do, plus create a new action that transitions back to the previous workflow step, if necessary.                                                                                                                                             |
+| End (Final Step)                                     | Step Name                                                                 | Name the last step in the workflow process                                                                                                                                                                                                                                                     |
+
+### [App Versions](https://learn.liferay.com/web/guest/w/dxp/building-applications/reference/app-builder/creating-a-workflow-powered-application#app-versions) <a href="#app-versions" id="app-versions"></a>
+
+Workflow Powered Apps are versioned, because [workflow processes are versioned](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/managing-workflows#viewing-and-restoring-workflow-revisions). A new version of the app is created when you
+
+* Add, edit, or remove steps or transitions in the workflow process (actions that generate a new version of the workflow process).
+* Add, update, or remove a form view in one of the workflow steps.
+* Add, update, or remove the assignees of a workflow step.
+
+A new version of the Workflow Powered App only applies to new submissions. The app’s manager can check the version for each submission from its details view—view the record’s details by clicking on it in a table view.
+
+\
