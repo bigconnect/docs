@@ -1,0 +1,79 @@
+# Formulas inspector
+
+With Orbeon Forms, [formulas](https://doc.orbeon.com/form-builder/formulas) are very important: they are used for calculating values, making parts of the form visible or readonly, and more. However, they can be difficult to debug, and so far Form Builder didn't have a way to show all formulas in a central location.
+
+This new, still experimental feature allows you to inspect formulas. You access it under the "Test" menu.
+
+![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-515a9c8bac1f91af2f9d5ae5056af181819c2a0d%252Finspect-formulas-button.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=82ed348ee67b2843ceb4e35e5ef41d055fcc0a17b6f8b15ad26e7b013dc027e2)
+
+The "Inspect Formulas" button
+
+### Availability <a href="#availability" id="availability"></a>
+
+\[SINCE Orbeon Forms 2021.1]
+
+This feature considered experimental with Orbeon Forms 2021.1, but only because it is still fairly basic! However, it is still useful, and we hope to improve it in newer versions of Orbeon Forms.
+
+### Usage <a href="#usage" id="usage"></a>
+
+The formulas inspector allows you to see, in a table, the following formulas used in the form for:
+
+* Initial Value
+* Calculated Value
+* Visibility
+* Required
+* Read-Only
+
+You select the category of formulas from the list. Then the results table shows, in order, all the formulas of that category associated with form controls, as well as the controls they depend on or influence (see below).
+
+The following example show dependencies between "Calculated Value" formulas and controls. A color scheme indicates the dependency relationships between controls via formulas.
+
+![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-f072e9b136b8b0c5a2b72ca4d338c1dd747d8cde%252Finspect-formulas-example.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=32a68a39dcd7bb9bc46544e6abbed207e3fea9806e04ff9d62315a627763cee1)
+
+Example showing "Calculated Value" dependencies
+
+### Results table <a href="#results-table" id="results-table"></a>
+
+#### Basics <a href="#basics" id="basics"></a>
+
+Each row shows a form control. The columns are as follows:
+
+1. Position of the result in the list of results
+2. Control name as defined in Form Builder
+3. Formula
+4. Control dependencies (see below)
+5. Control datatype as defined in Form Builder
+6. Control value if present
+7. Path dependencies (see below)
+
+There are several benefits to seeing all the formulas in this overview:
+
+* You can see how many formulas you have in your form.
+* You can quickly check them for correctness.
+* You can see if the values they use have the correct datatype.
+
+And so on!
+
+#### Control dependencies <a href="#control-dependencies" id="control-dependencies"></a>
+
+A formula can [refer to control values](https://doc.orbeon.com/form-builder/formulas#referring-to-control-values-from-formulas) using the variable notation `$foo` where `foo` is the control name. A formula that refers to other controls with this notation lists these dependencies in the _Control dependencies_ column.
+
+In addition, when selecting a given row in the results table, the row highlights, and up to four other different colors are used to highlight variable dependencies:
+
+* **Direct dependency:** controls that the current formula directly depends on
+* **Transitive dependency:** controls that the current formula indirectly depends on
+* **Direct influence:** controls that are directly influenced by the current formula
+* **Transitive influence:** controls that are indirectly influenced by the current formula
+
+When a given row is selected, checking the "Show related rows only" checkbox allows focusing the view on only the controls that depend on or are influenced by the selected row.
+
+Note that when you rename a control in Form Builder, all dependent formulas are automatically updated. See [Renaming of controls and formulas](https://doc.orbeon.com/form-builder/formulas#renaming-of-controls-and-formulas).
+
+#### Path dependencies <a href="#path-dependencies" id="path-dependencies"></a>
+
+In addition to _control dependencies_, a formula produces so-called _path dependencies_. These dependencies represent computational dependencies on the data. These are used to improve the performance of the evaluation of the formula.
+
+* **Green circle:** indicates that path dependencies were successfully established for the formula. The dependent paths show below.
+* **Red circle:** indicates that path dependencies were not established for the formula.
+
+If too many formulas, especially in a large form, cannot establish path dependencies, performance of the form can be decreased. The "Path dependencies" column can help indicate whether this is a problem.

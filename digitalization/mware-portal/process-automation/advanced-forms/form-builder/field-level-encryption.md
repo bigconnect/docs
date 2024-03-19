@@ -1,0 +1,77 @@
+# Field-level encryption
+
+This feature allows form authors to mark certain fields so any data entered by users in those fields is encrypted when stored in the database. This is typically useful for fields used to capture personal information, also referred to as "personally identifiable information" (PII), "sensitive personal information" (SPI), or "personal information," depending on the context. Encrypting such information can help you with compliance with privacy laws, such as GDPR.
+
+### Marking fields for encryption <a href="#marking-fields-for-encryption" id="marking-fields-for-encryption"></a>
+
+In Form Builder, to mark a field for encryption, open the "Control Settings" dialog for that field, and click on the "Encrypt data at rest" checkbox, as done in the screenshot below.
+
+![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LQ5x\_9q6zPjSvGwF8Wc%252F-LHG9JAFGWeN9RtYR4nB%252Ffield-level-encryption-ssn.png%3Fgeneration=1540936357389866%26alt=media\&width=768\&dpr=4\&quality=100\&sign=938991353183e466ee16b8ecad07acc16e138cf7181d2690438ee95295e03cd0)
+
+Checkbox to mark field for encryption
+
+### Configuration <a href="#configuration" id="configuration"></a>
+
+The key and algorithm to use is configured through the [encryption properties](https://doc.orbeon.com/configuration/properties/general#encryption-properties). Before you start using this feature, make sure to change the default password.
+
+[\[SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1)
+
+The `oxf.fr.field-encryption.password` property controls a separate encryption password for field-level encryption. In previous versions, the general `oxf.crypto.password` property is used instead.
+
+If you are upgrading from an earlier version of Orbeon Forms to version 2023.1, you need to set `oxf.fr.field-encryption.password` to the same value as `oxf.crypto.password` used previously. This step is required for Orbeon Forms to allow you to read existing encrypted data, as well as to write new encrypted data.
+
+If you fail to do this, Orbeon Forms will report an error when you try to read or write encrypted data.
+
+Copy
+
+````
+
+```xml
+<property
+	as="xs:string"
+	name="oxf.fr.field-encryption.password"
+	value="SET THIS PASSWORD"/>
+````
+
+Once you have set `oxf.fr.field-encryption.password`, we recommend that you can change `oxf.crypto.password` to a different value.
+
+It is generally safe to change `oxf.crypto.password`, even regularly, as this is not used to encrypt data at rest.
+
+**WARNING: But keep in mind that `oxf.fr.field-encryption.password` needs to remain stable so that existing encrypted value can be read back. If that password is changed or lost, the existing data will not be readable anymore.**
+
+### When encryption happens <a href="#when-encryption-happens" id="when-encryption-happens"></a>
+
+When storing form data, encryption is done before it is sent to the implementation of persistence API. When retrieving form data, decryption is done after it is received from the implementation of the persistence API. This means that implementations of the persistence API don't need to worry about encrypting or decrypting data when storing or reading form data. Also, it means that values of fields marked for encryption will be encrypted on the wire on the way to and from your database, further increasing the security of your solution.
+
+![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LHGA85t9BlXG2-FbvzC%252F-LHGAGUQAWDdybB39MMZ%252Ffield-level-encryption-when.png%3Fgeneration=1531444010474720%26alt=media\&width=768\&dpr=4\&quality=100\&sign=5f1a33742f96d2f00062dcad3b26b0990c3d3b0bb540712e5ef3510e8e5e93b3)
+
+Data encryption in Form Runner, before it reaches the implementation of the persistence API
+
+### Making changes to what needs to be encrypted <a href="#making-changes-to-what-needs-to-be-encrypted" id="making-changes-to-what-needs-to-be-encrypted"></a>
+
+Say you edit an existing form definition in Form Builder and change the fields to be encrypted:
+
+* If you publish the form as a new version, then changes apply to new data captured with the new version. (Existing data tied to earlier versions will continue to be encrypted per the earlier versions of those form definitions.)
+* If you publish the form overwriting an existing version:
+  * When retrieving form data form the persistence API, fields that were encrypted at the time the form data was stored will be decrypted (even if the list of fields to encrypt has changed in the current form definition).
+  * When storing form data, fields marked for encryption in the form definition will be encrypted.
+
+This means that, from the perspective of fields encryption, overwriting an existing form definition at publication time doesn't cause any problem. This is because encrypted fields are marked as such in the form data, so Orbeon Forms can decrypt them even if the list of fields to be encrypted has changed since the last time the form data was saved.
+
+However, overwriting an existing form definition at publication time won't re-encrypt existing data. For this to happen, you need to [trigger a re-encryption](https://doc.orbeon.com/form-runner/pages/forms-admin-page#re-encryption) from the Forms Admin page.
+
+### Limitations <a href="#limitations" id="limitations"></a>
+
+1. Currently, the search API isn't able to handle encrypted fields.
+   * This has the following consequences:
+     * You can't search values of encrypted fields, whether from a [summary page](https://doc.orbeon.com/form-builder/summary-page) or using the [search API](https://doc.orbeon.com/form-runner/api/persistence/search).
+     * Neither the summary page nor the search API is able to show or return the values of encrypted fields (it will instead show/return the encrypted values).
+   * Consequently, fields marked for encryption shouldn't be marked to be shown on the summary page, or to be included in bulk edit.
+2. Re-encryption doesn't support changing the encryption key, that is decrypting with a first key (the old key) and encrypting with a second key (the new key). If you need to change the encryption key, for now you need to:
+   1. For any published form, with encrypted fields, for which data exists, edit the form to unmark all encrypted fields, and re-publish the form overwriting the relevant version.
+   2. From the Form Runner home page, trigger a re-encryption for all the forms that had encrypted fields.
+   3. Change the key in your properties. After this, none of the fields in your form data will be encrypted in the database.
+   4. Repeat step 1, but this time marking fields for encryption.
+   5. Repeat step 2, after which the relevant fields will be encrypted with the new key.
+
+We expect these limitations to be lifted in future versions of Orbeon Forms.

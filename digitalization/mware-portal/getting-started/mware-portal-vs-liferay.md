@@ -3,6 +3,7 @@
 MWARE Portal has Liferay DXP at its core as the underlying technology, meaning that all Liferay DXP features are available in MWARE Portal. However, there are some notable changes that MWARE Portal has over Liferay DXP:
 
 * A powerful new BPM engine with support for BPMN 2.0,  CMMN, Decision Tables and Workflow Applications, Task List and much more
+* Professional, pixel-perfect forms with avanced features like digial signatures, export/import PDF forms, 1D/2D barcodes, analytics and much more
 * Native Single Sign-On integration with MWARE Identity & Access Management
 * Seamless deployment and clustering with MWARE Application Server.
 * Performance tuning and optimizations that enable high concurrency and low latency in handling user requests
