@@ -1,0 +1,283 @@
+# Consuming REST Services
+
+Liferay DXP contains REST services for most of its applications. These services are fully [OpenAPI](https://app.swaggerhub.com/apis/liferayinc/headless-delivery) compliant. Here, you’ll learn how to consume them. This takes only three steps:
+
+1. Identify the service you wish to consume.
+2. Identify the site containing the data you need.
+3. Make the service call using credentials that have access to the data.
+
+This example uses Docker image with a fresh install of Liferay DXP.
+
+### [Identify the Service to Consume](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#identify-the-service-to-consume) <a href="#identify-the-service-to-consume" id="identify-the-service-to-consume"></a>
+
+You need a running Liferay DXP to call its REST services.
+
+Start a new Liferay instance by running
+
+```bash
+docker run -it -m 8g -p 8080:8080 liferay/portal:7.4.3.112-ga112
+```
+
+Sign in to Liferay at [http://localhost:8080](http://localhost:8080/). Use the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
+
+To view the various API endpoints, use your browser and access Liferay’s API Explorer at `[server]:[port]/o/api`. For example, in your Docker instance, you can find them here:
+
+```log
+http://localhost:8080/o/api
+```
+
+APIs are divided into several categories. This example uses the `BlogPosting` service to retrieve blog posts from the Blogs widget, but you can use this procedure with any of the published services.
+
+1. Select the _Headless Delivery_ category. This category contains the `BlogPosting` service. You can use the filter to search for services.
+2. Click the _Show Schemas_ button, and on the right side of the screen a list of all the schemas in this category appears.
+3. Keep a browser tab open to the schema browser; when you want to PUT a `BlogPosting`, you’ll need its schema.
+
+![The schema browser makes it convenient to find and call the service you want.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/consuming-apis/consuming-rest-services/images/01.png)
+
+### [Identify the Site Containing the Data](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#identify-the-site-containing-the-data) <a href="#identify-the-site-containing-the-data" id="identify-the-site-containing-the-data"></a>
+
+Now you must find the default Site ID:
+
+1. Open the Site menu (![Site menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-menu.png)) and go to _Configuration_ → _Site Settings_.
+2. Under the Platform section, click _Site Configuration_. For Liferay DXP versions 7.3 and earlier, click the _General_ tab.
+3.  Find the Site identifier under Site ID.
+
+    ![Identify the Site Id under the Site Settings and Site Configuration option.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/consuming-apis/consuming-rest-services/images/03.png)
+
+### [Make the Service Call Using Credentials with Access to the Data](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#make-the-service-call-using-credentials-with-access-to-the-data) <a href="#make-the-service-call-using-credentials-with-access-to-the-data" id="make-the-service-call-using-credentials-with-access-to-the-data"></a>
+
+Now you have everything you need to make the call. All web services must be accessed using credentials that have access to the data you’re requesting. The simplest way is to use Basic Auth, which passes credential data in the URL. Since this is insecure, you should only use this method during development. For production, your application should authorize users via [OAuth2](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2).
+
+The examples below use [cURL](https://curl.haxx.se/).
+
+#### [Calling a Service Using Basic Auth (During Development Only)](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#calling-a-service-using-basic-auth-during-development-only) <a href="#calling-a-service-using-basic-auth-during-development-only" id="calling-a-service-using-basic-auth-during-development-only"></a>
+
+To call a service using Basic Auth, provide the credentials in the URL:
+
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20122/blog-postings/" -u 'test@liferay.com:learn'
+```
+
+#### [Calling a Service Using OAuth2](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#calling-a-service-using-oauth2) <a href="#calling-a-service-using-oauth2" id="calling-a-service-using-oauth2"></a>
+
+For production, create an [OAuth2 application](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/creating-oauth2-applications) and use the OAuth2 process to get an authorization token. Once you have the token, provide it in the HTTP header:
+
+```bash
+curl -H "Authorization: Bearer d5571ff781dc555415c478872f0755c773fa159" http://localhost:8080/o/headless-delivery/v1.0/sites/20122/blog-postings
+```
+
+### [Getting and Posting Data](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#getting-and-posting-data) <a href="#getting-and-posting-data" id="getting-and-posting-data"></a>
+
+If you run the query above to get all blog postings, you’ll see there aren’t any:
+
+```json
+{
+  "actions" : {
+    "subscribe" : {
+      "method" : "PUT",
+      "href" : "http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/subscribe"
+    },
+    "unsubscribe" : {
+      "method" : "PUT",
+      "href" : "http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/unsubscribe"
+    },
+    "create" : {
+      "method" : "POST",
+      "href" : "http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings"
+    }
+  },
+  "items" : [ ],
+  "lastPage" : 1,
+  "page" : 1,
+  "pageSize" : 20,
+  "totalCount" : 0
+}
+```
+
+First, you’ll post a blog entry.
+
+#### [Posting a Blog Entry](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#posting-a-blog-entry) <a href="#posting-a-blog-entry" id="posting-a-blog-entry"></a>
+
+You can use the schema browser to learn how to post a blog entry.
+
+![The schema for any service is published on your Liferay DXP instance.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/consuming-apis/consuming-rest-services/images/02.png)
+
+1. Go back to your browser tab containing the schema browser. On the right side, click the `BlogPosting` entry to display its schema (see above). This shows the whole data structure for a `BlogPosting`, but there are only two required fields:
+   * `articleBody`
+   * `headline`
+2.  Construct a simple JSON document to post a blog entry:
+
+    ```json
+    {
+        "headline": "Test Blog Entry from REST Services",
+        "articleBody": "This article was posted via REST services provided by Liferay DXP."
+    }
+    ```
+3.  Make the request:
+
+    ```bash
+    curl --header "Content-Type: application/json" --request POST --data '{ "headline": "Test Blog Entry from REST Services", "articleBody": "This article was posted via REST services provided by Liferay DXP." }' http://localhost:8080/o/headless-delivery/v1.0/sites/20122/blog-postings -u test@liferay.com:learn
+    ```
+
+Liferay DXP returns the full JSON representation of your blog entry:
+
+```json
+{
+  "actions" : {
+    "get" : {
+      "method" : "GET",
+      "href" : "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/{blogPostingId}"
+    },
+    "replace" : {
+      "method" : "PUT",
+      "href" : "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/{blogPostingId}"
+    },
+    "update" : {
+      "method" : "PATCH",
+      "href" : "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/{blogPostingId}"
+    },
+    "delete" : {
+      "method" : "DELETE",
+      "href" : "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/{blogPostingId}"
+    }
+  },
+  "alternativeHeadline" : "",
+  "articleBody" : "This article was posted via REST services provided by Liferay DXP.",
+  "creator" : {
+    "additionalName" : "",
+    "contentType" : "UserAccount",
+    "familyName" : "Test",
+    "givenName" : "Test",
+    "id" : 20125,
+    "name" : "Test Test",
+    "profileURL" : "/web/test"
+  },
+  "customFields" : [ ],
+  "dateCreated" : "2020-03-06T18:02:26Z",
+  "dateModified" : "2020-03-06T18:02:27Z",
+  "datePublished" : "2020-03-06T18:02:00Z",
+  "description" : "",
+  "encodingFormat" : "text/html",
+  "friendlyUrlPath" : "test-blog-entry-from-rest-services",
+  "headline" : "Test Blog Entry from REST Services",
+  "id" : 35215,
+  "keywords" : [ ],
+  "numberOfComments" : 0,
+  "relatedContents" : [ ],
+  "siteId" : 20122,
+  "taxonomyCategories" : [ ]
+}
+```
+
+#### [Getting All Blog Entries](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#getting-all-blog-entries) <a href="#getting-all-blog-entries" id="getting-all-blog-entries"></a>
+
+Now you can repeat the first query you did to see that the blog entry you posted is there:
+
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20122/blog-postings/" -u 'test@liferay.com:learn'
+```
+
+This returns a list of blog entries. The entry you added is the only one in the list:
+
+```json
+{
+  "actions" : {
+    "subscribe" : {
+      "method" : "PUT",
+      "href" : "http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/subscribe"
+    },
+    "unsubscribe" : {
+      "method" : "PUT",
+      "href" : "http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/unsubscribe"
+    },
+    "create" : {
+      "method" : "POST",
+      "href" : "http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings"
+    }
+  },
+  "items" : [ {
+    "actions" : {
+      "get" : {
+        "method" : "GET",
+        "href" : "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/{blogPostingId}"
+      },
+      "replace" : {
+        "method" : "PUT",
+        "href" : "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/{blogPostingId}"
+      },
+      "update" : {
+        "method" : "PATCH",
+        "href" : "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/{blogPostingId}"
+      },
+      "delete" : {
+        "method" : "DELETE",
+        "href" : "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/{blogPostingId}"
+      }
+    },
+    "alternativeHeadline" : "",
+    "articleBody" : "This article was posted via REST services provided by Liferay DXP.",
+    "creator" : {
+      "additionalName" : "",
+      "contentType" : "UserAccount",
+      "familyName" : "Test",
+      "givenName" : "Test",
+      "id" : 20125,
+      "name" : "Test Test",
+      "profileURL" : "/web/test"
+    },
+    "customFields" : [ ],
+    "dateCreated" : "2020-03-06T18:02:26Z",
+    "dateModified" : "2020-03-06T18:02:27Z",
+    "datePublished" : "2020-03-06T18:02:00Z",
+    "description" : "",
+    "encodingFormat" : "text/html",
+    "friendlyUrlPath" : "test-blog-entry-from-rest-services",
+    "headline" : "Test Blog Entry from REST Services",
+    "id" : 35215,
+    "keywords" : [ ],
+    "numberOfComments" : 0,
+    "relatedContents" : [ ],
+    "siteId" : 20122,
+    "taxonomyCategories" : [ ]
+  } ],
+  "lastPage" : 1,
+  "page" : 1,
+  "pageSize" : 20,
+  "totalCount" : 1
+}
+```
+
+#### [Getting a Single Blog Entry](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#getting-a-single-blog-entry) <a href="#getting-a-single-blog-entry" id="getting-a-single-blog-entry"></a>
+
+Each time you’ve made a request, Liferay DXP has returned other possible endpoints. One of these is to get a single blog entry by its ID. If you know your entry’s ID, you can retrieve it:
+
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/35215" -u test@liferay.com:learn
+```
+
+This returns the same blog entry.
+
+#### [Deleting a Blog Entry](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#deleting-a-blog-entry) <a href="#deleting-a-blog-entry" id="deleting-a-blog-entry"></a>
+
+If you know its ID, you can also delete your blog entry:
+
+```bash
+curl -X DELETE "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/35215" -u test@liferay.com:learn
+```
+
+In this case, nothing is returned, but you can verify your entry is gone by requesting it as you did above:
+
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/35215" -u test@liferay.com:learn
+```
+
+Liferay DXP then returns this JSON document in response:
+
+```json
+{
+  "status" : "NOT_FOUND",
+  "title" : "No BlogsEntry exists with the primary key 35215"
+}
+```
+
+Congratulations! You’ve now learned how to call Liferay DXP’s REST services. Remember that the examples above use Basic Auth: for production, use OAuth2 to call services in a secure way.
