@@ -1,6 +1,6 @@
 # Changing Your Site’s Appearance
 
-Liferay has many ways to customize your site’s appearance. Your site’s favicon and theme are two of the first elements you may want to change. Themes set a default look and feel for your site, while the favicon is an icon that identifies your site in the user’s browser tab.
+The portal has many ways to customize your site’s appearance. Your site’s favicon and theme are two of the first elements you may want to change. Themes set a default look and feel for your site, while the favicon is an icon that identifies your site in the user’s browser tab.
 
 ### Changing Your Site’s Favicon <a href="#changing-your-sites-favicon" id="changing-your-sites-favicon"></a>
 
@@ -20,7 +20,7 @@ Your site uses the chosen image for its favicon.
 
 ### Changing Your Site’s Theme <a href="#changing-your-sites-theme" id="changing-your-sites-theme"></a>
 
-By default, Liferay instances use the Classic theme, but you can deploy and use custom themes.
+By default, portal instances use the Classic theme, but you can deploy and use custom themes.
 
 #### Deploy a New Theme <a href="#deploy-a-new-theme" id="deploy-a-new-theme"></a>
 
@@ -41,9 +41,9 @@ By default, Liferay instances use the Classic theme, but you can deploy and use 
 
 NOTE
 
-To replace `[docker-container-id]`, use `docker ps` to find the liferay/portal container’s ID. The `[path-to-deploy-folder]` is `opt/liferay/deploy`.
+To replace `[docker-container-id]`, use `docker ps` to find the portal container’s ID. The `[path-to-deploy-folder]` is `opt/liferay/deploy`.
 
-This loads the sample theme into your DXP instance. You can check your console for the following message to confirm the theme successfully deployed:
+This loads the sample theme into your portal instance. You can check your console for the following message to confirm the theme successfully deployed:
 
 ```log
 2023-12-21 16:01:20.836 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:68] STARTED liferay-5b2v-theme_1.0.0 [1617]
