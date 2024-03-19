@@ -11,8 +11,6 @@ Both versions work exactly the same. For development and debugging of the XForms
 
 You enable minimal resources in `properties-local.xml` as follows:
 
-Copy
-
 ```
 <property
   as="xs:boolean"
@@ -27,13 +25,13 @@ Default:
 
 ### Combined asset resources <a href="#combined-asset-resources" id="combined-asset-resources"></a>
 
-Disabling combined resources is deprecated. Disabling combined resources already doesn't work when embedding forms, whether with the Java embedding API, the JavaScript embedding API, or the Liferay proxy portlet, and future versions of Orbeon Forms are likely to completely drop the support for non-combined resources.
+Disabling combined resources is deprecated. Disabling combined resources already doesn't work when embedding forms, whether with the Java embedding API, the JavaScript embedding API, or the Liferay proxy portlet, and future versions of Advanced Forms are likely to completely drop the support for non-combined resources.
 
 #### Rationale <a href="#rationale" id="rationale"></a>
 
-Serving external CSS and JavaScript assets can have a high performance cost on page loads. This is particularly important with the intensive use of JavaScript in Orbeon Forms. In particular, it can be shown that serving many small files is slower than serving a single large file.
+Serving external CSS and JavaScript assets can have a high performance cost on page loads. This is particularly important with the intensive use of JavaScript in Advanced Forms. In particular, it can be shown that serving many small files is slower than serving a single large file.
 
-This is why Orbeon Forms supports the option of combining the multiple JavaScript and CSS files required for a given XForms page into one or two JavaScript files and one or two CSS file.
+This is why Advanced Forms supports the option of combining the multiple JavaScript and CSS files required for a given XForms page into one or two JavaScript files and one or two CSS file.
 
 _NOTE: In theory, HTTP pipelining can improve very much on this, but this is (very unfortunately) useless in practice at the time of writing because browsers do not implement it or do not enable it by default. HTTP/2 might help solve this._
 
@@ -64,25 +62,23 @@ If all the resources belong to the baseline, only one JavaScript and one CSS fil
 
 The URLs produced identify the resources needed by the page, for example:
 
-Copy
-
 ```
 <link rel="stylesheet"
-  href="/orbeon/xforms-server/orbeon-8b3d174e93f2d74146c9b2a5356bd5b8b5e196f8.css"
+  href="/forms/xforms-server/forms-8b3d174e93f2d74146c9b2a5356bd5b8b5e196f8.css"
   type="text/css" media="all">
 
 <link rel="stylesheet"
-  href="/orbeon/xforms-server/orbeon-e01218f47e6ecd43fb1c2295ccae2e688c443b62.css"
+  href="/forms/xforms-server/forms-e01218f47e6ecd43fb1c2295ccae2e688c443b62.css"
   type="text/css" media="all">
 
 <script type="text/javascript"
-  src="/orbeon/xforms-server/orbeon-19e8d10829ccdd0d9aec779c0c89e5d1f57764dd.js">
+  src="/forms/xforms-server/forms-19e8d10829ccdd0d9aec779c0c89e5d1f57764dd.js">
 
 <script type="text/javascript"
-  src="/orbeon/xforms-server/orbeon-3a3469eca94e6df9783e742067f464b57de4e2f3.js"/>
+  src="/forms/xforms-server/forms-3a3469eca94e6df9783e742067f464b57de4e2f3.js"/>
 ```
 
-When the Orbeon Forms XForms server receives a request for a combined resource, it determine what files need to be combined and outputs them all together. Furthermore, for CSS files, all URLs referred to with `url()` are rewritten, so that links to images, in particular, remain correct.
+When the Advanced Forms XForms server receives a request for a combined resource, it determine what files need to be combined and outputs them all together. Furthermore, for CSS files, all URLs referred to with `url()` are rewritten, so that links to images, in particular, remain correct.
 
 Some CSS and JavaScript files are never included into aggregated resources:
 
@@ -96,8 +92,6 @@ Some CSS and JavaScript files are never included into aggregated resources:
 
 You enable this feature in `properties-local.xml` as follows:
 
-Copy
-
 ```
 <property
   as="xs:boolean"
@@ -105,24 +99,20 @@ Copy
   value="true"/>
 ```
 
-When this is enabled, Orbeon Forms combines JS and CSS resources.
+When this is enabled, Advanced Forms combines JS and CSS resources.
 
 Default:
 
 * `prod` mode: `true`
 * `dev` mode: `false`
 
-Mappings between resources URLs and the resources are stored in the `xforms.resources` cache, configured in [`RESOURCES/config/ehcache.xml`](https://github.com/orbeon/orbeon-forms/blob/master/src/main/resources/config/ehcache.xml).
+Mappings between resources URLs and the resources are stored in the `xforms.resources` cache, configured in `RESOURCES/config/ehcache.xml`.
 
 **Baseline of XForms assets**
-
-\[SINCE Orbeon Forms 2017.1]
 
 _NOTE: These properties are mainly intended for internal use. Proceed with caution._
 
 The default baseline of XForms assets is configured with the `oxf.xforms.assets.baseline` property. Here is an example:
-
-Copy
 
 ```
 <property as="xs:string"  name="oxf.xforms.assets.baseline">
@@ -142,7 +132,7 @@ Copy
       "js": [
         { "full": "/ops/jquery/jquery-3.6.0.js",                                         "min": true  },
         { "full": "/apps/fr/style/bootstrap/js/bootstrap.js",                            "min": true  },
-        { "full": "/ops/javascript/orbeon/util/jquery-orbeon.js",                        "min": true  },
+        { "full": "/ops/javascript/forms/util/jquery-forms.js","min": true  },
         { "full": "/ops/nprogress-0.2.0/nprogress.js",                                   "min": true  },
         { "full": "/ops/bowser/bowser.js",                                               "min": true  },
         { "full": "/ops/mousetrap/mousetrap.min.js",                                     "min": false },
@@ -164,15 +154,15 @@ Copy
         { "full": "/ops/javascript/underscore/underscore.js",                            "min": true  },
 
         { "full": "/ops/javascript/xforms.js",                                           "min": true  },
-        { "full": "/ops/javascript/orbeon/xforms/server/AjaxServer.js",                  "min": true  },
-        { "full": "/ops/javascript/orbeon/xforms/control/CalendarResources.js",          "min": true  },
-        { "full": "/ops/javascript/orbeon/xforms/control/Calendar.js",                   "min": true  },
-        { "full": "/ops/javascript/orbeon/xforms/control/Placeholder.js",                "min": true  },
-        { "full": "/ops/javascript/orbeon/xforms/controls/Placement.js",                 "min": true  },
-        { "full": "/ops/javascript/orbeon/xforms/controls/Help.js",                      "min": true  },
-        { "full": "/ops/javascript/orbeon/xforms/controls/Hint.js",                      "min": true  },
+        { "full": "/ops/javascript/forms/xforms/server/AjaxServer.js",                  "min": true  },
+        { "full": "/ops/javascript/forms/xforms/control/CalendarResources.js",          "min": true  },
+        { "full": "/ops/javascript/forms/xforms/control/Calendar.js",                   "min": true  },
+        { "full": "/ops/javascript/forms/xforms/control/Placeholder.js",                "min": true  },
+        { "full": "/ops/javascript/forms/xforms/controls/Placement.js",                 "min": true  },
+        { "full": "/ops/javascript/forms/xforms/controls/Help.js",                      "min": true  },
+        { "full": "/ops/javascript/forms/xforms/controls/Hint.js",                      "min": true  },
 
-        { "full": "/ops/javascript/scalajs/orbeon-xforms-web.js",                        "min": false }
+        { "full": "/ops/javascript/scalajs/forms-xforms-web.js",                        "min": false }
       ],
 
       "xbl": [
@@ -188,31 +178,23 @@ Minimal versions:
 * are enabled when `"min"` is set to `true` and
 * assume that an asset named `file.min.css` is the minimal version for `file.css`.
 
-\[SINCE Orbeon Forms 2021.1]
-
 The `"xbl"` key allows specifying a JSON array of XBL components, indicated by direct name (QName), whose assets must also be included.
 
 This capability renders the `oxf.xforms.resources.baseline` property deprecated.
 
 **Excluding assets**
 
-\[DEPRECATED SINCE Orbeon Forms 2019.2]
-
 The `oxf.xforms.assets.baseline.excludes` property can be used to exclude assets.
 
 It doesn't make much sense to use this property in a properties file. Instead, it should be used via an attribute on `xf:model`.
 
-Copy
-
 ```
-xxf:assets.baseline.excludes="/ops/javascript/scalajs/orbeon-xforms.js /ops/javascript/scalajs/orbeon-xforms-launcher.js"
+xxf:assets.baseline.excludes="/ops/javascript/scalajs/forms-xforms.js /ops/javascript/scalajs/forms-xforms-launcher.js"
 ```
 
 This property is deprecated. Use `oxf.xforms.assets.baseline.updates` instead.
 
 **Updating assets**
-
-\[SINCE Orbeon Forms 2019.2]
 
 The `oxf.xforms.assets.baseline.updates` property can be used to exclude and add assets.
 
@@ -220,19 +202,13 @@ It doesn't make much sense to use this property in a properties file. Instead, i
 
 Each asset must be prefixed with a `+` or a `-` to indicate whether the asset as removed from or added to the baseline.
 
-Copy
-
 ```
-xxf:assets.baseline.updates="-/ops/javascript/scalajs/orbeon-xforms.js +/apps/fr/resources/scalajs/orbeon-form-runner.js"
+xxf:assets.baseline.updates="-/ops/javascript/scalajs/forms-xforms.js +/apps/fr/resources/scalajs/forms-form-runner.js"
 ```
 
 **Baseline of XBL components assets**
 
-\[DEPRECATED SINCE Orbeon Forms 2021.1]
-
 The baseline of resources is configured as follows:
-
-Copy
 
 ```
 <property
@@ -243,15 +219,11 @@ Copy
 
 The value consists of a list of qualified names referring to XBL components. Resources for the components specified are always included in every page, whether the component is used by the page or not.
 
-Starting Orbeon Forms 2021.1, use `oxf.xforms.assets.baseline` instead.
+Use `oxf.xforms.assets.baseline` instead.
 
 **Disk caching of combined resources**
 
-\[UNTIL Orbeon Forms 2019.1]
-
 In addition, you can enable caching on disk of combined resources with:
-
-Copy
 
 ```
 <property
@@ -260,9 +232,7 @@ Copy
   value="true"/>
 ```
 
-This cache works differently from other Orbeon Forms caches, as the result is stored in the resources, typically under:
-
-Copy
+This cache works differently from other Advanced Forms caches, as the result is stored in the resources, typically under:
 
 ```
 WEB-INF/resources/xforms-server/
@@ -270,26 +240,14 @@ WEB-INF/resources/xforms-server/
 
 One benefit of this mechanism is that it allows making such combined files to be served by an Apache front-end.
 
-_NOTE: This property is removed with Orbeon Forms 2019.2. HTTP reverse proxies can cache resources without having access to a file on disk, which makes this feature obsolete._
-
 ### Versioned asset resources <a href="#versioned-asset-resources" id="versioned-asset-resources"></a>
-
-#### Availability <a href="#availability" id="availability"></a>
-
-This is an [Orbeon Forms PE](https://www.orbeon.com/download) feature.
-
-This feature is enabled by default in Orbeon Forms PE.
-
-With the introduction of [run modes](https://doc.orbeon.com/configuration/advanced/run-modes), the feature is disabled by default in `dev` mode but enabled by default in `prod` mode.
 
 #### Rationale <a href="#rationale-1" id="rationale-1"></a>
 
-To further improve caching efficiency, Orbeon Forms supports enabling _versioned resources_. Usually, a resource such as a CSS, JavaScript or image file, is served through URLs like this one:
-
-Copy
+To further improve caching efficiency, Advanced Forms supports enabling _versioned resources_. Usually, a resource such as a CSS, JavaScript or image file, is served through URLs like this one:
 
 ```
-http://localhost:8080/orbeon/xforms-server/orbeon-a8adf9b6d7d9e9ed23060a279fabed50bd829236.js
+http://localhost:8080/forms/xforms-server/forms-a8adf9b6d7d9e9ed23060a279fabed50bd829236.js
 ```
 
 When configuring caching on the server, for example by using an Apache front-end, you may face a dilemma:
@@ -297,7 +255,7 @@ When configuring caching on the server, for example by using an Apache front-end
 * Caching aggressively (with an expiration date far in the future and no revalidation) so that the client asks for the resource as rarely as possible. Doing so may cause resources on the client to be out of date.
 * Caching for a shorter period of time or by forcing revalidation so that your client always has a fresh version of the resources. Doing so may cause longer page loads and more load on the server.
 
-Orbeon Forms solves this by providing the option of using versioned resources, that is inserting automatically a version number within resource URLs.
+Advanced Forms solves this by providing the option of using versioned resources, that is inserting automatically a version number within resource URLs.
 
 #### Configuration <a href="#configuration-1" id="configuration-1"></a>
 
@@ -305,19 +263,15 @@ Orbeon Forms solves this by providing the option of using versioned resources, t
 
 You enable versioned resources in `properties-local.xml`:
 
-Copy
-
 ```
 <property as="xs:boolean" name="oxf.resources.versioned" value="true"/>
 ```
 
-With Orbeon Forms PE, versioned resources are enabled by default in `prod` mode.
+With Advanced Forms, versioned resources are enabled by default in `prod` mode.
 
 **oxf.resources.version-number**
 
 You can configure an optional application version number for your own resources:
-
-Copy
 
 ```
 
@@ -328,9 +282,7 @@ Note that if this property is commented out or missing, no versioning takes plac
 
 **oxf.xforms.resources.encode-version**
 
-The Orbeon Forms version number is not exposed by default to users in the `prod` run mode. You can change this by setting the following property to `false`:
-
-Copy
+The Advanced Forms version number is not exposed by default to users in the `prod` run mode. You can change this by setting the following property to `false`:
 
 ```
 <property as="xs:boolean" name="oxf.xforms.resources.encode-version" value="false"/>
@@ -342,49 +294,39 @@ When this is set to `true`, the version number is HMAC-encoded with the configur
 
 With versioned resources enabled, resources are served with URLs as follows:
 
-Copy
-
 ```
-http://localhost:8080/orbeon/xforms-server/58a8724010cd6fbe3ae7298de0a5c6e9dafc990b/orbeon-aa144f9fcd394054c18536a679b02ad4553e0048.js
+http://localhost:8080/forms/xforms-server/58a8724010cd6fbe3ae7298de0a5c6e9dafc990b/forms-aa144f9fcd394054c18536a679b02ad4553e0048.js
 ```
 
 The XForms Server component, which serves the resource in this case, sets an expiration date far in the future. For example, this is the description of the cache entry in the Firefox `about:cache` page:
 
-Copy
-
 ```
-Key: http://localhost:8080/orbeon/xforms-server/58a8724010cd6fbe3ae7298de0a5c6e9dafc990b/orbeon-aa144f9fcd394054c18536a679b02ad4553e0048.js  
+Key: http://localhost:8080/forms/xforms-server/58a8724010cd6fbe3ae7298de0a5c6e9dafc990b/forms-aa144f9fcd394054c18536a679b02ad4553e0048.js  
 Fetch count: 2
 Last-Modified: Fri, 23 Jun 2017 06:23:34 GMT
 Expires: Fri, 20 Jul 2018 09:35:03 GMT
 ```
 
-This means that the resource can effectively be cached "for ever" by a client. In case the client visits Orbeon Forms pages often, the resources will be available from cache, therefore reducing page loading times and server load as well.
+This means that the resource can effectively be cached "for ever" by a client. In case the client visits Advanced Forms pages often, the resources will be available from cache, therefore reducing page loading times and server load as well.
 
-When Orbeon Forms is upgraded on the server, the version number changes as well. An XForms page will refer to resources with the new version number, so the cached resource is not used by the browser and a new resource is loaded from the server, before being cached. This "magic" is enabled simply with the inclusion of the Orbeon Forms version number in the URL.
+When Advanced Forms is upgraded on the server, the version number changes as well. An XForms page will refer to resources with the new version number, so the cached resource is not used by the browser and a new resource is loaded from the server, before being cached. This "magic" is enabled simply with the inclusion of the Advanced Forms version number in the URL.
 
 Only CSS and JavaScript resources used by the XForms engine are loaded through the XForms Server component. Other resources like images referred by XForms stylesheets are served by the Page Flow Controller, through URLs like this one:
 
-Copy
-
 ```
-http://localhost:8080/orbeon/ops/images/xforms/error.png
+http://localhost:8080/forms/ops/images/xforms/error.png
 ```
 
 With resource versioning enabled, the URL becomes:
 
-Copy
-
 ```
-http://localhost:8080/orbeon/58a8724010cd6fbe3ae7298de0a5c6e9dafc990b/ops/images/xforms/error.png
+http://localhost:8080/forms/58a8724010cd6fbe3ae7298de0a5c6e9dafc990b/ops/images/xforms/error.png
 ```
 
 When resource versioning is enabled, the Page Flow Controller by default serves all the resources defined in `<files>` elements by first checking the `oxf.resources.versioned` property. If versioning is enabled, the PFC removes the version number from the URL before searching for the resource on disk. It is possible to turn this behavior on and off selectively with the `versioned` attribute. Here is how to turn off versioning for PDF files in `page-flow.xml`:
 
-Copy
-
 ```
-<config xmlns="http://www.orbeon.com/oxf/controller" xmlns:oxf="http://www.orbeon.com/oxf/processors">
+<config xmlns="http://www.m-ware.eu/oxf/controller" xmlns:oxf="http://www.m-ware.eu/oxf/processors">
     <!-- GIF images are loaded following oxf.resources.versioned -->
     <files path-info="*.gif"/>
     <!-- More file definitions here -->
@@ -400,9 +342,7 @@ Copy
 
 Conversely, resource URLs produced by an XForms page are automatically rewritten following the Page Flow's `<files>` definitions.
 
-The versioning mechanism is made available to your own application resources as well. Any resource whose path doesn't start with `/ops/` or `/config/` is considered part of your application, not of Orbeon Forms. In that case, the Orbeon Forms version number is not used, but you specify instead an application version number in properties-local.xml:
-
-Copy
+The versioning mechanism is made available to your own application resources as well. Any resource whose path doesn't start with `/ops/` or `/config/` is considered part of your application, not of Advanced Forms. In that case, the Advanced Forms version number is not used, but you specify instead an application version number in properties-local.xml:
 
 ```
 <property as="xs:string" name="oxf.resources.version-number" value="1.6.3"/>
@@ -415,8 +355,6 @@ The following scenario shows the entire lifecycle for application resources:
 * You create an image as `RESOURCES/apps/foo/bar.png`
 *   You refer to it as:
 
-    Copy
-
     ```
     <xhtml:body>
         <xhtml:img src="/apps/foo/bar.png" alt="My Image"/>
@@ -424,30 +362,22 @@ The following scenario shows the entire lifecycle for application resources:
     ```
 *   With versioning enabled, the image path is rewritten automatically as follows:
 
-    Copy
-
     ```
     /1.6.3/apps/foo/bar.png
     ```
 
-    Note that the application resource number is used because the resource is not part of Orbeon Forms.
+    Note that the application resource number is used because the resource is not part of Advanced Forms.
 *   Your browser sees a URL like:
 
-    Copy
-
     ```
-    http://localhost:8080/orbeon/1.6.3/apps/foo/bar.png
+    http://localhost:8080/forms/1.6.3/apps/foo/bar.png
     ```
 *   When the browser loads the image, the PFC receives back:
-
-    Copy
 
     ```
     /1.6.3/apps/foo/bar.png
     ```
 *   The PFC knows that PNG files are versioned, so removes the version number and sends this resource to the browser:
-
-    Copy
 
     ```
     RESOURCES/apps/foo/bar.png
@@ -455,15 +385,11 @@ The following scenario shows the entire lifecycle for application resources:
 
 From client-side JavaScript, you can access the application version number as follow:
 
-Copy
-
 ```
-var version = ORBEON.util.Utils.getProperty(APPLICATION_RESOURCES_VERSION_PROPERTY);
+var version = FORMS.util.Utils.getProperty(APPLICATION_RESOURCES_VERSION_PROPERTY);
 ```
 
 Versioned resources served by the PFC (that is all the resources except the XForms engine's CSS and JavaScript resources) also get an aggressive expiration date.
 
 In case you use Apache, you can in addition configure a rewriting rule with [mod\_rewrite](https://httpd.apache.org/docs/2.2/mod/mod\_rewrite.html) to allow Apache to directly load resources containing a version number, as shown below.
-
-_NOTE: We recommend restarting Orbeon Forms after changing the `oxf.resources.versioned` property, as data in Orbeon Forms caches may not be made aware of the change until the next restart._
 

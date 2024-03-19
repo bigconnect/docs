@@ -2,22 +2,18 @@
 
 ### Enabling XForms logging <a href="#enabling-xforms-logging" id="enabling-xforms-logging"></a>
 
-Sometimes, an error message or stack trace in the Orbeon Forms log file provides enough information to a developer to figure out what went wrong, but not always. In such cases, you can turn to the XForms engine logging facility. To enable it, make sure you uncomment the following logging `<Logger>` (Log4j 2.x) or `<Category>` (Log4j 1.x):
+Sometimes, an error message or stack trace in the Advanced Forms log file provides enough information to a developer to figure out what went wrong, but not always. In such cases, you can turn to the XForms engine logging facility. To enable it, make sure you uncomment the following logging `<Logger>` (Log4j 2.x) or `<Category>` (Log4j 1.x):
 
 Log4j 2.x (`WEB-INF/resources/config/log4j2.xml`):
 
-Copy
-
 ```
-<Logger name="org.orbeon.oxf.xforms.processor.XFormsServer" level="debug"/>
+<Logger name="org.forms.oxf.xforms.processor.XFormsServer" level="debug"/>
 ```
 
 Log4j 1.x (`WEB-INF/resources/config/log4j.xml`):
 
-Copy
-
 ```
-<category name="org.orbeon.oxf.xforms.processor.XFormsServer">
+<category name="org.forms.oxf.xforms.processor.XFormsServer">
     <priority value="debug"/>
 </category>
 ```
@@ -27,8 +23,6 @@ _Note: You must restart your Servlet container for those changes to be taken int
 ### Fine-grained configuration <a href="#fine-grained-configuration" id="fine-grained-configuration"></a>
 
 Two properties in `WEB-INF/resources/config/properties-local.xml` control exactly what is logged by the XForms engine:
-
-Copy
 
 ```
     <property as="xs:NMTOKENS" name="oxf.xforms.logging.debug">
@@ -69,7 +63,7 @@ Copy
     * other activity related to an XForms document
     * this includes the output of the `<xf:message>` action with level `xxf:log-debug`
   * `process`
-    * activity related to [processes](https://doc.orbeon.com/form-runner/advanced/buttons-and-processes)
+    * activity related to processes
 * Not related to a particular XForms document:
   * `analysis`
     * activity related to the static analysis of an XForms document
@@ -86,7 +80,6 @@ Copy
   * `utils`
     * miscellaneous activity
   * `cache`
-    * \[SINCE Orbeon Forms 4.6]
     * activity of the static state cache during XForms initialization
 * Data:
   * `html-static-state`
@@ -125,21 +118,17 @@ During XForms development, you might want to enable a more aggressive debug conf
 1. Change your Log4j2 or Log4j configuration. In your `WEB-INF/resources/config`, check if you have a file named `log4j2.xml` or `log4j.xml`:
    *   If you have a file named `log4j2.xml` (with `2` in the file name), inside the element `<Loggers>`, add:
 
-       Copy
-
        ```
-       <Logger name="org.orbeon.oxf.xforms.processor.XFormsServer" level="debug"/>
-       <Logger name="org.orbeon.oxf.processor.DebugProcessor"      level="debug"/>
-       <Logger name="org.orbeon.relational"                        level="debug"/>
-       <Logger name="org.orbeon.auth"                              level="debug"/>
-       <Logger name="org.orbeon.lifecycle"                         level="debug"/>
+       <Logger name="org.forms.oxf.xforms.processor.XFormsServer" level="debug"/>
+       <Logger name="org.forms.oxf.processor.DebugProcessor"      level="debug"/>
+       <Logger name="org.forms.relational"                        level="debug"/>
+       <Logger name="org.forms.auth"                              level="debug"/>
+       <Logger name="org.forms.lifecycle"                         level="debug"/>
        ```
    *   If you have a file named `log4j.xml` (without `2` in the file name), uncomment the following:
 
-       Copy
-
        ```
-       <category name="org.orbeon.oxf.xforms.processor.XFormsServer">
+       <category name="org.forms.oxf.xforms.processor.XFormsServer">
            <priority value="debug"/>
        </category>
        ```
@@ -171,10 +160,8 @@ During XForms development, you might want to enable a more aggressive debug conf
 
 In production, you probably don't want any debug information coming out to your logs. So set this in `log4j.xml`:
 
-Copy
-
 ```
-<category name="org.orbeon.oxf.xforms.processor.XFormsServer">
+<category name="org.forms.oxf.xforms.processor.XFormsServer">
     <priority value="info"/>
 </category>
 ```
@@ -185,17 +172,13 @@ Alternatively, remove or comment-out the lines above. When this is done, the `ox
 
 If you only want to see submission timings, in your `log4j.xml` use:
 
-Copy
-
 ```
-<category name="org.orbeon.oxf.xforms.processor.XFormsServer">
+<category name="org.forms.oxf.xforms.processor.XFormsServer">
     <priority value="debug"/>
 </category>
 ```
 
 And in your `properties-local.xml`:
-
-Copy
 
 ```
 <property as="xs:NMTOKENS" name="oxf.xforms.logging.debug">
@@ -206,8 +189,6 @@ Copy
 ### Example output <a href="#example-output" id="example-output"></a>
 
 The following shows a sample XForms logging session:
-
-Copy
 
 ```
 XForms server - start handling external events

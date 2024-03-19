@@ -2,8 +2,6 @@
 
 ### What this is about <a href="#what-this-is-about" id="what-this-is-about"></a>
 
-\[SINCE Orbeon Forms 4.8]
-
 The _limiter filter_ is a servlet filter designed to limit the number of concurrent form processing requests, in order to reduce the likelihood of the server running out of resources.
 
 Loading Form Runner pages and updating form state can be CPU and memory intensive, and a high level of concurrency for these operations is not desirable (even as we are working to improve the level of concurrency).
@@ -16,20 +14,18 @@ It is therefore more efficient, past a certain level of concurrency, to _seriali
 * Other containers have settings which are very hard to figure out.
 * Only _some_ heavy requests must be serialized.
 
-Therefore Orbeon Forms ships with a filter which implements the limiting mechanism internally.
+Therefore Advanced Forms ships with a filter which implements the limiting mechanism internally.
 
 ### Configuration <a href="#configuration" id="configuration"></a>
 
-The filter is enabled by default in Orbeon Forms 4.8. It is configured in `WEB-INF/web.xml`.
+The filter is enabled by default. It is configured in `WEB-INF/web.xml`.
 
 Here is a typical configuration:
 
-Copy
-
 ```
 <filter>
-    <filter-name>orbeon-limiter-filter</filter-name>
-    <filter-class>org.orbeon.oxf.servlet.LimiterFilter</filter-class>
+    <filter-name>forms-limiter-filter</filter-name>
+    <filter-class>org.forms.oxf.servlet.LimiterFilter</filter-class>
     <!-- Include Form Runner pages and XForms Ajax requests -->
     <init-param>
         <param-name>include</param-name>
@@ -56,7 +52,7 @@ Copy
     </init-param>
 </filter>
 <filter-mapping>
-    <filter-name>orbeon-limiter-filter</filter-name>
+    <filter-name>forms-limiter-filter</filter-name>
     <url-pattern>/*</url-pattern>
     <dispatcher>REQUEST</dispatcher>
 </filter-mapping>
@@ -90,14 +86,3 @@ The effective maximum number of concurrent threads allowed by the filter is:
 ### Disabling the filter <a href="#disabling-the-filter" id="disabling-the-filter"></a>
 
 Remove or comment-out the relevant `<filter-mapping>` in `WEB-INF/web.xml`.
-
-[\[SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1) If you are using Orbeon Forms 2023.1 or newer, the configuration above will look slightly different. Parameters are stored in `<context-param>` instead of `<init-param>`, and the parameter names are prefixed with `oxf.orbeon-limiter-filter`. To disable the filter, add the following parameter:
-
-Copy
-
-```
-<context-param>
-    <param-name>oxf.orbeon-limiter-filter.enabled</param-name>
-    <param-value>false</param-value>
-</context-param>
-```

@@ -10,15 +10,11 @@ The [`Content-Security-Policy` HTTP header](https://developer.mozilla.org/en-US/
 
 Some organizations set the `Content-Security-Policy` header to strict values which disallow inline JavaScript and CSS within HTML pages, for example with `default-src 'self'`.
 
-Up until Orbeon Forms 2017.2, Orbeon Forms included some inline scripts and CSS in the HTML served to the browser. Disabling inline scripts and CSS with `Content-Security-Policy` with those Orbeon Forms versions will prevent Orbeon Forms from working correctly.
-
-With Orbeon Forms 2018.1 and newer, Orbeon Forms no longer produces inline scripts and CSS by default, which allows for these strict values of the `Content-Security-Policy` header. While Orbeon Forms already [takes measures](https://doc.orbeon.com/configuration/advanced/security) against XSS and data injection, disabling the use of inline scripts can make Orbeon Forms even safer by default.
+Advanced Forms no longer produces inline scripts and CSS by default, which allows for these strict values of the `Content-Security-Policy` header. While Advanced Forms already takes measures against XSS and data injection, disabling the use of inline scripts can make Advanced Forms even safer by default.
 
 #### Configuration property <a href="#configuration-property" id="configuration-property"></a>
 
 The following XForms property allows you to re-enable inline scripts and CSS. The default is `false`:
-
-Copy
 
 ```
 <property 
@@ -33,9 +29,7 @@ We recommend leaving the value to the default of `false`.
 
 In many cases, the `Content-Security-Policy` header is generated more globally by a reverse proxy or server.
 
-But Orbeon Forms is able to produce that header as well, whether just for testing or for deployment. To enable this, simply uncomment the following entry in the Orbeon Forms WAR file's `web.xml`:
-
-Copy
+But Advanced Forms is able to produce that header as well, whether just for testing or for deployment. To enable this, simply uncomment the following entry in the Advanced Forms WAR file's `web.xml`:
 
 ```
 <init-param>
