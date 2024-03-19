@@ -2,7 +2,7 @@
 
 ### Introduction <a href="#introduction" id="introduction"></a>
 
-Orbeon Form Builder is a visual form designer which allows you to build and deploy forms in minutes right from your web browser.
+Advanced Form Builder is a visual form designer which allows you to build and deploy forms in minutes right from your web browser.
 
 A few key Form Builder features:
 
@@ -49,12 +49,12 @@ A few useful terms used in this document:
 * **Data entry.** Act of entering data into a form.
 * **Form user.** As opposed to the form _author_, the form _user_ is the person entering data into a form.
 * **Form Builder.** The software, described in this document, used by the form author to create a form definition.
-* **Form Runner.** The Orbeon Forms runtime environment, which takes care of presenting to an end user the form definitions created by the form author with Form Builder.
+* **Form Runner.** The Advanced Forms runtime environment, which takes care of presenting to an end user the form definitions created by the form author with Form Builder.
 * **Design time.** The time during which the form is edited in Form Builder.
 * **Runtime.** The time during which the form is executed by Form Runner, and where end users can enter data.
 
 ### Software requirements <a href="#software-requirements" id="software-requirements"></a>
 
-On the client, Form Builder requires a modern web browser. For specifics, see the release notes of the Orbeon Forms release you are using.
+On the client, Form Builder requires a modern web browser. For specifics, see the release notes of the Advanced Forms release you are using.
 
 The faster the browser and the computer, the better your authoring experience will be.
