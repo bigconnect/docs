@@ -6,11 +6,9 @@ The table of contents is a list of sections in the form. It is shown at the top 
 
 <div align="left" data-full-width="false">
 
-<img src="https://doc.orbeon.com/~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-ef0510d2556ea82071412c8d43335f8d45d39eb9%252Ftoc-top.png%3Falt=media&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=2537dcc248c08f57d902d39fe5d9105781124e15a6a34e3f72537e9e7455ccef" alt="">
+<img src="https://doc.orbeon.com/~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-ef0510d2556ea82071412c8d43335f8d45d39eb9%252Ftoc-top.png%3Falt=media&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=2537dcc248c08f57d902d39fe5d9105781124e15a6a34e3f72537e9e7455ccef" alt="Table of contents on top">
 
 </div>
-
-Table of contents on top
 
 Note the following:
 
@@ -31,19 +29,6 @@ If the number of table of contents entries (that is, of form sections) is greate
 
 This can be omitted or set to -1 to never show the TOC.
 
-[\[DEPRECATED SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1)
-
-The following property does the same as `oxf.fr.detail.toc.min-sections` but is deprecated. Use `oxf.fr.detail.toc.min-sections` instead since Orbeon Forms 2023.1.
-
-Copy
-
-```
-<property
-    as="xs:integer"
-    name="oxf.fr.detail.toc.*.*"
-    value="0"/>
-```
-
 ### Position of the table of contents <a href="#position-of-the-table-of-contents" id="position-of-the-table-of-contents"></a>
 
 ```
@@ -55,15 +40,11 @@ Copy
 
 Where to place the table of contents: `top`, `left`, or `none`. The default is `top`. If neither `top` nor `left` is specified, the table of contents is not shown.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-403c72f66f246788f8b8cf473ac13ba954579fa2%252Ftoc-left.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=75bb5981e624992cffdc88ca9a8b4ea9cdf87cd9b14105d5e84bf03f692cdfe6)
-
-Table of contents on the left
+![Table of contents on the left](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-403c72f66f246788f8b8cf473ac13ba954579fa2%252Ftoc-left.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=75bb5981e624992cffdc88ca9a8b4ea9cdf87cd9b14105d5e84bf03f692cdfe6)
 
 In PDF mode, the `left` position is not supported and the table of contents is always shown at the top.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-9facc29f78badc53505002299b30fdf0e6e354c1%252Ftoc-top-pdf.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=443d3fa37f0af04b50766377d19bc5c493f4ecafb0957c54a1b87c6fcefa7c41)
-
-Table of contents on top in PDF files
+![Table of contents on top in PDF files](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-9facc29f78badc53505002299b30fdf0e6e354c1%252Ftoc-top-pdf.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=443d3fa37f0af04b50766377d19bc5c493f4ecafb0957c54a1b87c6fcefa7c41)
 
 ### Modes in which the table of contents is shown <a href="#modes-in-which-the-table-of-contents-is-shown" id="modes-in-which-the-table-of-contents-is-shown"></a>
 

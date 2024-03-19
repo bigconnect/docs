@@ -2,11 +2,7 @@
 
 ### Header and footer configuration <a href="#header-and-footer-configuration" id="header-and-footer-configuration"></a>
 
-[\[SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1)
-
-The following property controls the header and footer configuration for automatic PDF files. The property is in JSON format. For details, see [Header and footer configuration](https://doc.orbeon.com/form-runner/features/pdf-production/pdf-automatic#header-and-footer-configuration).
-
-Copy
+The following property controls the header and footer configuration for automatic PDF files. The property is in JSON format.
 
 ```
 <property as="xs:string" name="oxf.fr.detail.pdf.header-footer.*.*">
@@ -18,11 +14,7 @@ Copy
 
 ### Custom PDF filename <a href="#custom-pdf-filename" id="custom-pdf-filename"></a>
 
-\[SINCE Orbeon Forms 4.9]
-
 The following property dynamically controls the name of the PDF file produced on the Detail Page. By default, if the property value is blank, the PDF filename is a random id assigned to the current form session.
-
-Copy
 
 ```
 <property
@@ -35,8 +27,6 @@ The value of the property, if not empty, is an XPath expression which runs in th
 
 Example:
 
-Copy
-
 ```
 <property
     as="xs:string"
@@ -46,11 +36,7 @@ Copy
 
 If the form contains a `customer-id` field, the PDF filename will be the value of that field followed by `.pdf`. If the field is blank, the default, random id filename is used, as if the property had not been specified.
 
-\[SINCE Orbeon Forms 2022.1 and 2021.1.5]
-
 The property has the following default:
-
-Copy
 
 ```
 <property as="xs:string" name="oxf.fr.detail.pdf.filename.*.*">
@@ -67,11 +53,7 @@ A similar default is present for other types of exports (TIFF, Excel, XML, etc.)
 
 ### Hyperlinks in automatic mode <a href="#hyperlinks-in-automatic-mode" id="hyperlinks-in-automatic-mode"></a>
 
-\[SINCE Orbeon Forms 4.6]
-
 The following property controls whether hyperlinks are enabled in the generated PDF. By default, they are enabled:
-
-Copy
 
 ```
 <property
@@ -108,9 +90,9 @@ a[href] {
 
 ### Avoiding fields being cut across pages <a href="#avoiding-fields-being-cut-across-pages" id="avoiding-fields-being-cut-across-pages"></a>
 
-\[SINCE Orbeon Forms 2020.1.5] When a field can be partially, but not entirely, shown at the bottom of a page, instead of showing part of the field on one page and part on the other page ("cutting" the field), it is often better to move that field along with its label to the next page. However, in some cases, when the field contains a lot of text, moving the whole field to the next page means that the "previous page" ends up with a lot of blank space, which is a suboptimal use of the page, and can even be confusing.
+When a field can be partially, but not entirely, shown at the bottom of a page, instead of showing part of the field on one page and part on the other page ("cutting" the field), it is often better to move that field along with its label to the next page. However, in some cases, when the field contains a lot of text, moving the whole field to the next page means that the "previous page" ends up with a lot of blank space, which is a suboptimal use of the page, and can even be confusing.
 
-So Orbeon Forms implements the following heuristic in cases where the whole field can't fit on the current page: if the field's content is "short", the whole field is pushed to the next page, and if the content is "longer" the field is "cut", with part of the field on one page, and part on the next page. The threshold separating what is considered to be "short" and "longer" is defined with the following property, in the number of characters, and the default value is 512.
+Advanced Forms implements the following heuristic in cases where the whole field can't fit on the current page: if the field's content is "short", the whole field is pushed to the next page, and if the content is "longer" the field is "cut", with part of the field on one page, and part on the next page. The threshold separating what is considered to be "short" and "longer" is defined with the following property, in the number of characters, and the default value is 512.
 
 Copy
 
@@ -123,9 +105,7 @@ Copy
 
 ### Barcode <a href="#barcode" id="barcode"></a>
 
-\[Orbeon Forms PE] The following property specifies whether a barcode must be included on PDF files produced from a PDF template. Adding a barcode to a PDF produced without a PDF template isn't supported at this point (see [RFE #2190](https://github.com/orbeon/orbeon-forms/issues/2190)).
-
-Copy
+The following property specifies whether a barcode must be included on PDF files produced from a PDF template. Adding a barcode to a PDF produced without a PDF template isn't supported at this point.
 
 ```
 <property
@@ -134,25 +114,9 @@ Copy
     value="false"/>
 ```
 
-### Font embedding in automatic mode <a href="#font-embedding-in-automatic-mode" id="font-embedding-in-automatic-mode"></a>
-
-See [Automatic PDF](https://doc.orbeon.com/form-runner/features/pdf-production/pdf-automatic).
-
-### Font embedding in template mode <a href="#font-embedding-in-template-mode" id="font-embedding-in-template-mode"></a>
-
-See [PDF templates](https://doc.orbeon.com/form-runner/features/pdf-production/pdf-templates).
-
 ### Disabling the PDF button when form is invalid <a href="#disabling-the-pdf-button-when-form-is-invalid" id="disabling-the-pdf-button-when-form-is-invalid"></a>
 
-\[BEFORE Orbeon Forms 4.2]
-
-With version 4.0 and earlier, the PDF button is always disabled if invalid data is present in the form.
-
-\[SINCE Orbeon Forms 4.2]
-
 The PDF button is always enabled, allowing users to generate a PDF for the current form, even if some data in the form is invalid. If instead, you wish to disable the PDF button when the form is invalid, set the following property to `true` (it is set to `false` by default):
-
-Copy
 
 ```
 <property
@@ -163,14 +127,10 @@ Copy
 
 ### Automatic PDF page size and orientation <a href="#automatic-pdf-page-size-and-orientation" id="automatic-pdf-page-size-and-orientation"></a>
 
-\[SINCE Orbeon Forms 2019.2]
-
 Available page orientations:
 
 * `portrait` (default)
 * `landscape`
-
-Copy
 
 ```
 <property 
@@ -185,8 +145,6 @@ Available page sizes:
 * `a4`
 * `legal`
 
-Copy
-
 ```
 <property 
     as="xs:string" 
@@ -198,6 +156,4 @@ These can also be configured for a particular form in Form Builder's Form Settin
 
 #### Calculations in readonly modes <a href="#calculations-in-readonly-modes" id="calculations-in-readonly-modes"></a>
 
-\[SINCE Orbeon Forms 2021.1]
-
-See the [`oxf.fr.detail.readonly.disable-calculate` property](https://doc.orbeon.com/configuration/properties/form-runner/form-runner-detail-page#calculations-in-readonly-modes).
+See the `oxf.fr.detail.readonly.disable-calculate` property.

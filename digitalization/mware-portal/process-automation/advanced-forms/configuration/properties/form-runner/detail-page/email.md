@@ -50,15 +50,12 @@ Copy
 * `from`:
   * sender email address(es) appearing in the email sent
 * `reply-to`:
-  * SINCE Orbeon Forms 2020.1
   * message `Reply-To` address(es)
 * `to`:
   * recipient email address(es) of the email sent
 * `cc`:
-  * SINCE Orbeon Forms 2017.1
   * carbon copy recipient email address(es) of the email sent
 * `bcc`:
-  * SINCE Orbeon Forms 2017.1
   * blind carbon copy email address(es) of the email sent
 
 List of emails are space- or comma- separated.
@@ -96,11 +93,7 @@ Copy
 
 In the examples above, only raw email addresses are shown. Multiple addresses must be separated by commas.
 
-\[SINCE Orbeon Forms 2021.4]
-
 The configuration properties can now contain a name, following the standard syntax:
-
-Copy
 
 ```
 John Smith <john@example.org>
@@ -108,15 +101,11 @@ John Smith <john@example.org>
 
 Or:
 
-Copy
-
 ```
 "John Smith" <john@example.org>
 ```
 
 Keep in mind that if the addresses are stored in an XML attribute in your `properties-local.xml`, you need to escape some characters:
-
-Copy
 
 ```
 <property
@@ -127,8 +116,6 @@ Copy
 
 Similarly, if you use quotes, you need to escape them:
 
-Copy
-
 ```
 <property
     as="xs:string"
@@ -137,8 +124,6 @@ Copy
 ```
 
 When more than one email is present, if you specify names, you must use commas exclusively as a separator (with whitespace allowed around commas):
-
-Copy
 
 ```
 <property
@@ -152,8 +137,6 @@ Copy
 * `attach-pdf`: whether the PDF representation is attached to the email
 * `attach-tiff`: whether the TIFF representation is attached to the email
 * `attach-xml`: whether the XML data is attached to the email
-
-Copy
 
 ```
 <property
@@ -172,8 +155,6 @@ Copy
     value="true"/>
 ```
 
-\[SINCE Orbeon Forms 2016.1]
-
 The following property controls whether file and image form attachments are attached to the email.
 
 * `all`: all form attachments are included (this is the default)
@@ -188,8 +169,6 @@ Copy
     name="oxf.fr.email.attach-files.*.*"
     value="all"/>
 ```
-
-\[SINCE Orbeon Forms 2018.1]
 
 The following properties control the name of the PDF, TIFF and XML attachments:
 
@@ -212,8 +191,6 @@ The property contains an XPath expression which generates the filename. The expr
 * `fr:is-design-time()`
 
 _NOTE: Control values must be extracted by searching for element values within the XML document. In the future, we hope to provide a function for that purpose._
-
-Copy
 
 ```
 <property as="xs:string" name="oxf.fr.email.pdf.filename.*.*">
@@ -245,11 +222,9 @@ Copy
 
 ### Email subject and body <a href="#email-subject-and-body" id="email-subject-and-body"></a>
 
-NOTE: Since Orbeon Forms 2018.1, you can set a form's email subject and body in the Form Builder user interface. You can also use template placeholders. See [Email settings](https://doc.orbeon.com/form-builder/advanced/email-settings).
+NOTE: You can set a form's email subject and body in the Form Builder user interface. You can also use template placeholders.
 
-With any Orbeon Forms version, the following properties can be used to set default and per app/form email subject and body templates.
-
-Copy
+With any Advanced Forms version, the following properties can be used to set default and per app/form email subject and body templates.
 
 ```
 <property 
@@ -260,14 +235,12 @@ Copy
 <property 
     as="xs:string"
     name="oxf.fr.resource.*.*.en.email.body"
-    value="Hi, here is an email from Orbeon Forms!"/>
+    value="Hi, here is an email from Advanced Forms!"/>
 ```
 
 ### Styling HTML emails <a href="#styling-html-emails" id="styling-html-emails"></a>
 
-\[SINCE Orbeon Forms 2019.1]
-
-When using HTML for an email body template in [Email settings](https://doc.orbeon.com/form-builder/advanced/email-settings), you can provide inline CSS that will be included in the email messages. For example"
+When using HTML for an email body template in Email settings, you can provide inline CSS that will be included in the email messages. For example"
 
 Copy
 

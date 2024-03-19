@@ -1,4 +1,4 @@
-# Forms
+# Simple Forms
 
 Liferay Forms gives you robust form building capability so you can gather user data that you need (for example, customer feedback, a job application). The application can be used for simple one or two question surveys to complex, multi-page, homeowners insurance applications containing rules and with lists populated by a REST data provider. You can build a form quickly and then share that form with users.
 

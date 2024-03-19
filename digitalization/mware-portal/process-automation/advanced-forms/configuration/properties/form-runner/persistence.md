@@ -18,11 +18,9 @@ This allows you for example to store certain form definition on disk, while stor
 
 ### Persistence layer configuration <a href="#persistence-layer-configuration" id="persistence-layer-configuration"></a>
 
-Orbeon Forms 4.0 introduces a level of indirection in the persistence layer configuration: you map the parameters _app_, _form_, and _form definition or data_ to a _provider_, and then map that provider to its REST persistence API. This is configured via properties starting with `oxf.fr.persistence.provider`.
+Advanced Forms introduces a level of indirection in the persistence layer configuration: you map the parameters _app_, _form_, and _form definition or data_ to a _provider_, and then map that provider to its REST persistence API. This is configured via properties starting with `oxf.fr.persistence.provider`.
 
 By default, eXist is configured for all apps and forms, including form definitions and form data. This is done by associating the `exist` provider:
-
-Copy
 
 ```
 <property
@@ -33,47 +31,43 @@ Copy
 
 In each such provider mapping, there are 3 configurable pieces of information. They represent, in this order:
 
-1. A string to specify the Form Runner application name, like `orbeon` or `acme`.
+1. A string to specify the Form Runner application name, like `forms` or `acme`.
 2. A Form Runner form name, like `registration` or `address`.
 3. Whether the configuration regards form data (`data`), or the form configuration files (`form`).
 
-Each of those can be a wildcard (`*`). Wildcards allow you to setup Orbeon Forms to use different persistence providers for different app, form, and resource type combinations.
+Each of those can be a wildcard (`*`). Wildcards allow you to setup Advanced Forms to use different persistence providers for different app, form, and resource type combinations.
 
 The properties are interpreted hierarchically and you may specify the configuration more or less specifically:
 
-| Property                                          | Explanation                                            |
-| ------------------------------------------------- | ------------------------------------------------------ |
-| `oxf.fr.persistence.provider.*.*.*`               | form definitions and form data for all applications    |
-| `oxf.fr.persistence.provider.*.*.data`            | form data for all applications                         |
-| `oxf.fr.persistence.provider.*.*.form`            | form definitions for all applications                  |
-| `oxf.fr.persistence.provider.orbeon.*.form`       | form definitions for all forms in application "orbeon" |
-| `oxf.fr.persistence.provider.orbeon.*.data`       | form data for all forms in application "orbeon"        |
-| `oxf.fr.persistence.provider.orbeon.contact.*`    | form definitions and data for "orbeon/contact"         |
-| `oxf.fr.persistence.provider.orbeon.contact.form` | form definitions for "orbeon/contact"                  |
-| `oxf.fr.persistence.provider.orbeon.contact.data` | form data for "orbeon/contact"                         |
+| Property                                         | Explanation                                           |
+| ------------------------------------------------ | ----------------------------------------------------- |
+| `oxf.fr.persistence.provider.*.*.*`              | form definitions and form data for all applications   |
+| `oxf.fr.persistence.provider.*.*.data`           | form data for all applications                        |
+| `oxf.fr.persistence.provider.*.*.form`           | form definitions for all applications                 |
+| `oxf.fr.persistence.provider.forms.*.form`       | form definitions for all forms in application "forms" |
+| `oxf.fr.persistence.provider.forms.*.data`       | form data for all forms in application "forms"        |
+| `oxf.fr.persistence.provider.forms.contact.*`    | form definitions and data for "forms/contact"         |
+| `oxf.fr.persistence.provider.forms.contact.form` | form definitions for "forms/contact"                  |
+| `oxf.fr.persistence.provider.forms.contact.data` | form data for "forms/contact"                         |
 
 _NOTE: This means that you can't name a persistence provider `provider`._
 
-For example some built-in demo forms as well as Form Builder load their form definitions directly from the Orbeon Forms web application. This is done by using more specific properties (without wildcards):
-
-Copy
+For example some built-in demo forms as well as Form Builder load their form definitions directly from the Advanced Forms web application. This is done by using more specific properties (without wildcards):
 
 ```
 <property
     as="xs:string"
-    name="oxf.fr.persistence.provider.orbeon.builder.form"
+    name="oxf.fr.persistence.provider.forms.builder.form"
     value="resource"/>
 <property
     as="xs:string"
-    name="oxf.fr.persistence.provider.orbeon.dmv-14.form"
+    name="oxf.fr.persistence.provider.forms.dmv-14.form"
     value="resource"/>
 ```
 
-One thing you might notice is that, as far as configuring persistence, you treat Form Builder itself just like another form, with app name `orbeon` and form name `builder`.
+One thing you might notice is that, as far as configuring persistence, you treat Form Builder itself just like another form, with app name `forms` and form name `builder`.
 
 If you want to change the default provider to Oracle, and since a provider named `oracle` is predefined, the following configuration will do just that:
-
-Copy
 
 ```
 <property
@@ -84,25 +78,23 @@ Copy
 
 Because wildcards are used, this property does not override the configuration for the built-in demo forms as well as Form Builder! This is desirable, because the Form Builder implementation itself is not usually something you want to store somewhere else.
 
-In the case of Oracle, the wildcards also allow you to setup Orbeon Forms to use different schemas for different app, form, and resource type combinations. For instance you could store everything related to an `hr` app in one Oracle database schema and everything related to another `finance` app in another Oracle database schema. For more on this, see how to setup the persistence layer for [multiple schemas](https://doc.orbeon.com/form-runner/persistence/relational-db).
+In the case of Oracle, the wildcards also allow you to setup Advanced Forms to use different schemas for different app, form, and resource type combinations. For instance you could store everything related to an `hr` app in one Oracle database schema and everything related to another `finance` app in another Oracle database schema.&#x20;
 
 Each provider supports standard properties, as follows:
 
-| Property                                                                                                                                                                     | Explanation                                                                               |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`oxf.fr.persistence.[provider].uri`](https://doc.orbeon.com/configuration/properties/form-runner/persistence#property\_uri)                                                 | The location, via HTTP, of the provider implementation.                                   |
-| [`oxf.fr.persistence.[provider].active`](https://doc.orbeon.com/configuration/properties/form-runner/persistence#property\_active)                                           | Whether the provider is active                                                            |
-| [`oxf.fr.persistence.[provider].autosave`](https://doc.orbeon.com/configuration/properties/form-runner/persistence#property\_autosave)                                       | Whether [autosave](https://doc.orbeon.com/form-runner/persistence/autosave) is supported. |
-| [`oxf.fr.persistence.[provider].permissions`](https://doc.orbeon.com/configuration/properties/form-runner/persistence#property\_permissions)                                 | Whether user/group permissions are supported                                              |
-| [`oxf.fr.persistence.[provider].versioning`](https://doc.orbeon.com/configuration/properties/form-runner/persistence#property\_versioning)                                   | Whether versioning is supported                                                           |
-| [`oxf.fr.persistence.[provider].data-format-version`](https://doc.orbeon.com/configuration/properties/form-runner/persistence#property\_data-format-version)                 | The data format version used in the database                                              |
-| [`oxf.fr.persistence.[provider].escape-non-ascii-characters`](https://doc.orbeon.com/configuration/properties/form-runner/persistence#property\_escape-non-ascii-characters) | Whether non-ASCII characters should be escaped                                            |
+| Property                                                    | Explanation                                             |
+| ----------------------------------------------------------- | ------------------------------------------------------- |
+| `oxf.fr.persistence.[provider].uri`                         | The location, via HTTP, of the provider implementation. |
+| `oxf.fr.persistence.[provider].active`                      | Whether the provider is active                          |
+| `oxf.fr.persistence.[provider].autosave`                    | Whether autosave is supported.                          |
+| `oxf.fr.persistence.[provider].permissions`                 | Whether user/group permissions are supported            |
+| `oxf.fr.persistence.[provider].versioning`                  | Whether versioning is supported                         |
+| `oxf.fr.persistence.[provider].data-format-version`         | The data format version used in the database            |
+| `oxf.fr.persistence.[provider].escape-non-ascii-characters` | Whether non-ASCII characters should be escaped          |
 
 #### `uri` property <a href="#property_uri" id="property_uri"></a>
 
 The `uri` property specifies the location, via HTTP, of the provider implementation.
-
-Copy
 
 ```
 <property
@@ -113,16 +105,11 @@ Copy
 
 #### `active` property <a href="#property_active" id="property_active"></a>
 
-\[SINCE Orbeon Forms 4.4]
-
 The `active` property specifies whether the provider is active.
 
-This is used as follows (confirmed for Orbeon Forms 4.4 to 4.10):
+This is used as follows:
 
 * If active, the Form Runner Home Page queries the persistence implementation to obtain the list of published forms and enable administrative operations.
-* See issue [#2327](https://github.com/orbeon/orbeon-forms/issues/2327).
-
-Copy
 
 ```
 <property
@@ -133,15 +120,11 @@ Copy
 
 #### `autosave` property <a href="#property_autosave" id="property_autosave"></a>
 
-\[SINCE Orbeon Forms 4.4]
+The `autosave` property specifies whether autosave is supported.
 
-The `autosave` property specifies whether [autosave](https://doc.orbeon.com/form-runner/persistence/autosave) is supported.
+This is used as follows:
 
-This is used as follows (confirmed for Orbeon Forms 4.4 to 4.10):
-
-* If `true`, Form Runner enables autosave if the other [conditions](https://doc.orbeon.com/form-runner/persistence/autosave) are met. Otherwise, Form Runner will not attempt to enable autosave.
-
-Copy
+* If `true`, Form Runner enables autosave if the other conditions are met. Otherwise, Form Runner will not attempt to enable autosave.
 
 ```
 <property
@@ -152,17 +135,13 @@ Copy
 
 #### `permissions` property <a href="#property_permissions" id="property_permissions"></a>
 
-\[SINCE Orbeon Forms 4.4]
-
 The `permissions` property specifies whether user/group permissions are supported.
 
 If `true`, Form Runner assumes that permissions are supported by the provider implementation.
 
-This is used as follows (confirmed for Orbeon Forms 4.4 to 4.10):
+This is used as follows:
 
 * The Summary Page sends a 403 if the user doesn't have access based on role, and the persistence provider is known not to support permissions.
-
-Copy
 
 ```
 <property
@@ -173,17 +152,13 @@ Copy
 
 #### `versioning` property <a href="#property_versioning" id="property_versioning"></a>
 
-\[SINCE Orbeon Forms 4.5]
-
 The `versioning` property specifies whether versioning is supported.
 
 If `true`, Form Runner assumes that versioning is supported by the provider implementation.
 
-This is used as follows (confirmed for Orbeon Forms 4.5 to 4.10):
+This is used as follows:
 
 * At form publishing time, Form Builder proposes the option to overwrite the existing published form definition, or to create a new version.
-
-Copy
 
 ```
 <property
@@ -192,50 +167,15 @@ Copy
     value="[true|false]"/>
 ```
 
-See also [Limitations](https://doc.orbeon.com/form-runner/features/versioning#limitations).
-
-#### `data-format-version` property <a href="#property_data-format-version" id="property_data-format-version"></a>
-
-\[SINCE Orbeon Forms 2017.1]
-
-The `data-format-version` property specifies which data format version is in the database.
-
-Allowed values:
-
-* `4.0.0`
-* `4.8.0`
-* `2019.1.0` \[SINCE Orbeon Forms 2019.1]
-
-The values must match exactly.
-
-The default is `4.0.0` for backward compatibility.
-
-This property must be changed very carefully. All form data in the database for a given provider must be in the same format and it is not possible, at this point, to change the value of this property if there is existing data in the database.
-
-Copy
-
-```
-<property
-    as="xs:string"
-    name="oxf.fr.persistence.*.data-format-version"
-    value="4.8.0"/>
-```
-
-_NOTE: Since Orbeon Forms 2017.1, the `oxf.fr.detail.new.service.enable` property always assumes data in `4.0.0` format even if the property above is set to a different value._
-
 #### `escape-non-ascii-characters` property <a href="#property_escape-non-ascii-characters" id="property_escape-non-ascii-characters"></a>
 
-\[SINCE Orbeon Forms 2021.1]
-
-We recommend you set up your database to store text as Unicode, to avoid potential problems when users enter non-ASCII characters, like accents, characters from non-latin languages, or even emojis. In cases when this isn't possible, you can set the following property to `true`, to instruct Orbeon Forms to escape all non-ASCII characters in form data before they are sent to the database.
+We recommend you set up your database to store text as Unicode, to avoid potential problems when users enter non-ASCII characters, like accents, characters from non-latin languages, or even emojis. In cases when this isn't possible, you can set the following property to `true`, to instruct Advanced Forms to escape all non-ASCII characters in form data before they are sent to the database.
 
 This escaping only applies to form data, and not to indices created based on this data, which means that if you are using the Form Runner summary page, or the search API, and that a field value shown in the summary page or returned by the search API contains a character that your database is unable to store, while your data is still safe, the summary page or the result of the search API might contain an incorrect value.
 
 For instance, say a user enters the character `é` in a field, and that you have this property enabled, then the form data will contain `&#233;`, which is the escaped version of `é`, however, if that field is indexed (because you've enabled _Show on Summary page_ or _Allow bulk edit_ in the _Control Settings_ for that field), then the character `é` will be stored in the index table, which might be a problem if your database encoding cannot accommodate the storage of this character.
 
-Amongst the [built-in implementations of the persistence API](https://doc.orbeon.com/form-runner/persistence/db-support), this property is supported for all relational databases, but not for eXist.
-
-Copy
+Amongst the built-in implementations of the persistence API, this property is supported for all relational databases, but not for eXist.
 
 ```
 <property
@@ -246,14 +186,12 @@ Copy
 
 ### Multiple databases of the same type <a href="#multiple-databases-of-the-same-type" id="multiple-databases-of-the-same-type"></a>
 
-Say you have two MySQL databases (or a single MySQL database with different schemas and users configured) and you would like to configure Orbeon Forms to store form definitions and form data to one or the other of the databases. Assume the following JDBC datasources:
+Say you have two MySQL databases (or a single MySQL database with different schemas and users configured) and you would like to configure Advanced Forms to store form definitions and form data to one or the other of the databases. Assume the following JDBC datasources:
 
 * `mysql_foo`
 * `mysql_bar`
 
 You associate each datasource with a Form Runner _persistence provider_ with the following properties:
-
-Copy
 
 ```
 <property as="xs:anyURI"  name="oxf.fr.persistence.mysql_foo.uri"         value="/fr/service/mysql"/>
@@ -286,8 +224,6 @@ Then if you would like:
 
 Add:
 
-Copy
-
 ```
 <property as="xs:string"  name="oxf.fr.persistence.provider.foo.*.*"      value="mysql_foo"/>
 <property as="xs:string"  name="oxf.fr.persistence.provider.bar.*.*"      value="mysql_bar"/>
@@ -295,15 +231,11 @@ Copy
 
 ### Configuration properties for specific persistence providers <a href="#configuration-properties-for-specific-persistence-providers" id="configuration-properties-for-specific-persistence-providers"></a>
 
-Each provider may have specific configuration properties. For the latest settings, see [`properties-form-runner.xml`](https://github.com/orbeon/orbeon-forms/blob/master/src/main/resources/config/properties-form-runner.xml#L17).
+Each provider may have specific configuration properties. For the latest settings, see `properties-form-runner.xml`.
 
 ### Attachments <a href="#attachments" id="attachments"></a>
 
-[\[SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1)
-
 By default, attachments are stored in the database. You can configure Form Runner to store attachments in the file system instead. This is useful for larger attachments, for example. You can do so globally by setting the following property:
-
-Copy
 
 ```
 <property 
@@ -313,8 +245,6 @@ Copy
 ```
 
 The base directory where attachments are stored is configured with:
-
-Copy
 
 ```
 <property
@@ -328,8 +258,6 @@ Copy
 Multiple attachment directories can be configured, following the same principles as described [above](https://doc.orbeon.com/configuration/properties/form-runner/persistence#multiple-databases-of-the-same-type)
 
 For example, if you need two different base directories for the Form Runner apps `foo` and `bar`, you can do so by using the following properties:
-
-Copy
 
 ```
 <property 
@@ -350,9 +278,7 @@ Copy
 
 #### Dynamic base directory configuration <a href="#dynamic-base-directory-configuration" id="dynamic-base-directory-configuration"></a>
 
-In addition to static paths, you can also use an [AVT](https://doc.orbeon.com/xforms/core/attribute-value-templates) to dynamically configure the base directory. For instance, the following would use a base directory specified by an environment variable:
-
-Copy
+In addition to static paths, you can also use an AVT to dynamically configure the base directory. For instance, the following would use a base directory specified by an environment variable:
 
 ```
 <property

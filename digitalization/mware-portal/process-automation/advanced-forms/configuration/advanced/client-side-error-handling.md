@@ -2,13 +2,11 @@
 
 ### Disabling the standard error dialog <a href="#disabling-the-standard-error-dialog" id="disabling-the-standard-error-dialog"></a>
 
-By default, when an Ajax error happens, Orbeon Forms shows users an error dialog.
+By default, when an Ajax error happens, Advanced Forms shows users an error dialog.
 
 ![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkC3H3NSL2hoPXaakE%252Ferror-dialog.png%3Fgeneration=1528743348818856%26alt=media\&width=768\&dpr=4\&quality=100\&sign=4389535bc3cf353fd414b07c012e9b03f5c35ffb19b860c317a69d111934aa1a)
 
 You can disable this behavior by adding this property to your `properties-local.xml`:
-
-Copy
 
 ```
 <property
@@ -19,19 +17,17 @@ Copy
 
 ### JavaScript event handler <a href="#javascript-event-handler" id="javascript-event-handler"></a>
 
-Orbeon Forms exposes a custom JavaScript event: `ORBEON.xforms.Events.errorEvent`.
+Advanced Forms exposes a custom JavaScript event: `FORMS.xforms.Events.errorEvent`.
 
 By default a dialog is shown to the user when an error is intercepted. If you prefer to show your own dialog or to implement some other behavior in case of error, most likely you will want to:
 
-* Disable the default error dialog by setting the [`oxf.xforms.show-error-dialog`](https://doc.orbeon.com/xforms/core/error-handling#error-dialog) property to `false`.
-* Register your own listener on `ORBEON.xforms.Events.errorEvent`.
+* Disable the default error dialog by setting the `oxf.xforms.show-error-dialog` property to `false`.
+* Register your own listener on `FORMS.xforms.Events.errorEvent`.
 
-You can register your own listener on that event, and when fired, send users to a page you choose, as done in the following snippet, which sends users to the Orbeon home page:
-
-Copy
+You can register your own listener on that event, and when fired, send users to a page you choose, as done in the following snippet, which sends users to the Advanced home page:
 
 ```
-ORBEON.xforms.Events.errorEvent.subscribe(function(eventName, eventData) {
+FORMS.xforms.Events.errorEvent.subscribe(function(eventName, eventData) {
     // your code here
 });
 ```
@@ -40,10 +36,8 @@ ORBEON.xforms.Events.errorEvent.subscribe(function(eventName, eventData) {
 
 In case the user session expires, or some other error happens, you would like to redirect them a page you created that will, for instance, tell users to log in and try again, and if the problem persists to contact customer support.
 
-Copy
-
 ```
-ORBEON.xforms.Events.errorEvent.subscribe(function(eventName, eventData) {
+FORMS.xforms.Events.errorEvent.subscribe(function(eventName, eventData) {
     window.location.href = "http://www.example.org/";
 });
 ```
@@ -54,16 +48,13 @@ ORBEON.xforms.Events.errorEvent.subscribe(function(eventName, eventData) {
 
 By default, the source markup for this dialog is available under:
 
-Copy
-
 ```
 oxf:/config/error-dialog.xml
 ```
 
 This file is located inside the following jar file:
 
-* \[SINCE Orbeon Forms 2016.3] `WEB-INF/lib/orbeon-core.jar`
-* \[UP TO Orbeon Forms 2016.2] `WEB-INF/lib/orbeon-resources-private.jar`
+* `WEB-INF/lib/forms-core.jar`
 
 You can override it in two ways:
 
@@ -72,13 +63,11 @@ You can override it in two ways:
 
 #### Localization <a href="#localization" id="localization"></a>
 
-\[SINCE Orbeon Forms 2020.1] Should you need to provide multiple versions of the error dialog in different languages, you can do so by having multiple `<div class="xforms-error-panel">` each with its own `lang` attribute (see below for the full structure of the HTML you need to provide). Orbeon Forms will try to get the error panel with the `lang` attribute matching the current language, and if it can't find one it will pick the first error panel.
+Should you need to provide multiple versions of the error dialog in different languages, you can do so by having multiple `<div class="xforms-error-panel">` each with its own `lang` attribute (see below for the full structure of the HTML you need to provide). Advanced Forms will try to get the error panel with the `lang` attribute matching the current language, and if it can't find one it will pick the first error panel.
 
 #### Example: default dialog <a href="#example-default-dialog" id="example-default-dialog"></a>
 
 The default dialog provides classes allowing for opening/closing a details section:
-
-Copy
 
 ```
 <div xmlns="http://www.w3.org/1999/xhtml" class="xforms-error-dialogs">
@@ -149,8 +138,6 @@ Copy
 #### Example: minimal dialog <a href="#example-minimal-dialog" id="example-minimal-dialog"></a>
 
 At a minimum, the file should contain the following structure:
-
-Copy
 
 ```
 <div xmlns="http://www.w3.org/1999/xhtml"

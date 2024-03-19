@@ -27,7 +27,7 @@ Default:
 
 ### Combined asset resources <a href="#combined-asset-resources" id="combined-asset-resources"></a>
 
-Starting with Orbeon Forms 2020.1, disabling combined resources is deprecated. Disabling combined resources already doesn't work when embedding forms, whether with the [Java embedding API](https://doc.orbeon.com/form-runner/link-embed/java-api), the [JavaScript embedding API](https://doc.orbeon.com/form-runner/link-embed/javascript-api), or the [Liferay proxy portlet](https://doc.orbeon.com/form-runner/link-embed/liferay-proxy-portlet), and future versions of Orbeon Forms are likely to completely drop the support for non-combined resources.
+Disabling combined resources is deprecated. Disabling combined resources already doesn't work when embedding forms, whether with the Java embedding API, the JavaScript embedding API, or the Liferay proxy portlet, and future versions of Orbeon Forms are likely to completely drop the support for non-combined resources.
 
 #### Rationale <a href="#rationale" id="rationale"></a>
 
