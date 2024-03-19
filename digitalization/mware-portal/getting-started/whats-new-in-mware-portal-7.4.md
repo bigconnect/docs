@@ -1,6 +1,6 @@
 # What's New in MWARE Portal 7.4
 
-MWARE DXP 7.4 comes with enhanced functionality and exciting improvements that make it even easier for both technical and non-technical users to deliver and optimize digital experiences.
+MWARE Portal 7.4 comes with enhanced functionality and exciting improvements that make it even easier for both technical and non-technical users to deliver and optimize digital experiences.
 
 ### Optimizing Digital Experiences with Data-Driven Insight
 

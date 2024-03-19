@@ -5,7 +5,7 @@ Structures and Templates provide direct access to the portal’s APIs which make
 * **Content Developers** get full permission to create and edit structures and templates.
 * **Content Creators** only need permission to view the structures and templates so they can use them to create content.
 
-When creating the Roles, define them to have global permission for all structures and templates across the entire instance or only for specific Sites. For more information on creating Roles, see the [Roles and Permissions](../managing-users/roles-and-permissions.md) article.
+When creating the Roles, define them to have global permission for all structures and templates across the entire instance or only for specific Sites. For more information on creating Roles, see the [Roles and Permissions](broken-reference) article.
 
 ### Assigning Permissions for Individual Templates <a href="#assigning-permissions-for-individual-templates" id="assigning-permissions-for-individual-templates"></a>
 
