@@ -1,6 +1,6 @@
 # Messages
 
-Some of the [Form Runner actions](https://doc.orbeon.com/form-runner/advanced/buttons-and-processes/actions-form-runner) display messages to users. For instance, when a form is saved, a message is displayed to confirm that the form was saved successfully. The Messages dialog allows you to customize those messages directly in Form Builder, instead of using properties such as `oxf.fr.resource.*.*.en.detail.messages.save-success`.
+Some of the Form Runner actions display messages to users. For instance, when a form is saved, a message is displayed to confirm that the form was saved successfully. The Messages dialog allows you to customize those messages directly in Form Builder, instead of using properties such as `oxf.fr.resource.*.*.en.detail.messages.save-success`.
 
 ### Usage <a href="#usage" id="usage"></a>
 
@@ -10,6 +10,6 @@ You can open the Messages dialog by clicking on the "Messages" button, under the
 
 Each message must have a language, a name, and a value.
 
-The message name can be one of the pre-defined names present in [Form Runner's `resources.xml`](https://github.com/orbeon/orbeon-forms/blob/master/form-runner/jvm/src/main/resources/apps/fr/i18n/resources.xml) (e.g. `save-success` or `upload-error`) or a custom name, which can be entered by selecting "Other".
+The message name can be one of the pre-defined names present in Form Runner's `resources.xml` (e.g. `save-success` or `upload-error`) or a custom name, which can be entered by selecting "Other".
 
 When a message is defined in the Messages dialog, it overrides any message defined in a property.

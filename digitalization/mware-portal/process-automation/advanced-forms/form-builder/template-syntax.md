@@ -4,8 +4,6 @@
 
 You define a template by setting a placeholder with the following syntax:
 
-Copy
-
 ```
 {$foo}
 ```
@@ -26,8 +24,8 @@ The following options are available for each template parameter:
   * **XPath Expression:** calculated expression.
   * **All Control Values:** the value of all form controls.
     * This is only available for the email body.
-    * This is experimental as of Orbeon Forms 2018.1.
-  * **Links** \[SINCE Orbeon Forms 2020.1]
+    * This is experimental.
+  * **Links**&#x20;
     * Links are available for the following:
       * Email Body
       * Label
@@ -41,40 +39,34 @@ The following options are available for each template parameter:
       * Link to the "summary" page
       * Link to the "home" page
       * Link to the PDF file
-  * **Automatic PDF only** [\[SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1)
+  * **Automatic PDF only**
     * Image (form logo by default)
     * Form title
     * Page number
     * Page count
 
-_NOTE: For the email subject and body, an XPath expression runs in the context of the form data's root element. However, the_ [_Form Runner function library_](https://doc.orbeon.com/xforms/xpath/extension-functions/extension-form-runner) _is not yet available to expressions as of Orbeon Forms 2018.1. For labels, hints and help messages, the Form Runner function library is available._
-
 A template may omit references to any or all template parameters.
 
 ### Links <a href="#links" id="links"></a>
 
-\[SINCE Orbeon Forms 2020.1]
+Links are intended to point to some Advanced Forms pages or resources (namely, the PDF file). The end user might see such links in explanatory text and email bodies, in particular.
 
-Links are intended to point to some Orbeon Forms pages or resources (namely, the PDF file). The end user might see such links in explanatory text and email bodies, in particular.
-
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-M4Uik0YvALonqST3SbT%252F-M4UilXSzCfo29i3G1n1%252Ftemplate-parameter-links-example.png%3Fgeneration=1586449030236823%26alt=media\&width=300\&dpr=4\&quality=100\&sign=115d73e3f50feb818cfdb09276cefe1da9fb99892a4d427926ebf5204dd5c9df)
+<figure><img src="https://doc.orbeon.com/~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-M4Uik0YvALonqST3SbT%252F-M4UilXSzCfo29i3G1n1%252Ftemplate-parameter-links-example.png%3Fgeneration=1586449030236823%26alt=media&#x26;width=300&#x26;dpr=4&#x26;quality=100&#x26;sign=115d73e3f50feb818cfdb09276cefe1da9fb99892a4d427926ebf5204dd5c9df" alt=""><figcaption></figcaption></figure>
 
 To insert the URL, you use the template syntax within the "URL" field of the link dialog:
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252Fsync%252Fda4b18a94f8cdc0cc0ea7b45d45cc5e5fffecb60.png%3Fgeneration=1593110546549524%26alt=media\&width=300\&dpr=4\&quality=100\&sign=50e7228e24ab3f3ebbf12dbaf453abd0e2f92b4ea9b8ff2bf834b630ab74c5fc)
+<figure><img src="https://doc.orbeon.com/~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252Fsync%252Fda4b18a94f8cdc0cc0ea7b45d45cc5e5fffecb60.png%3Fgeneration=1593110546549524%26alt=media&#x26;width=300&#x26;dpr=4&#x26;quality=100&#x26;sign=50e7228e24ab3f3ebbf12dbaf453abd0e2f92b4ea9b8ff2bf834b630ab74c5fc" alt=""><figcaption></figcaption></figure>
 
-Form Runner requires the ability to know how to reach Form Runner. In some cases (use of a reverse proxy), Orbeon Forms cannot determine this automatically. For this purpose, the following property allows setting the external Form Runner URL. By default, it is empty, and can set it to an absolute URL as follows:
-
-Copy
+Form Runner requires the ability to know how to reach Form Runner. In some cases (use of a reverse proxy), Advanced Forms cannot determine this automatically. For this purpose, the following property allows setting the external Form Runner URL. By default, it is empty, and can set it to an absolute URL as follows:
 
 ```
 <property 
     as="xs:string"
     name="oxf.fr.external-base-url"
-    value="https://orbeon.acme.org/forms"/>
+    value="https://forms.acme.org/forms"/>
 ```
 
-You can't use links to point back to Form Runner when using [embedding](https://doc.orbeon.com/form-runner/link-embed/java-api) or the \[ [Form Runner proxy portlet](https://doc.orbeon.com/form-runner/link-embed/liferay-proxy-portlet).
+You can't use links to point back to Form Runner when using embedding.
 
 ### Localization <a href="#localization" id="localization"></a>
 
@@ -87,14 +79,14 @@ When the form definition has more than one language:
 
 In the following example of a dynamic control label, the `$name` variable refers to the subsequent `name` parameter. The Template Parameters section declares that `name` parameter to refer to the `name` control.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LImUI-s4XdNuE\_d1HEH%252F-LImUPKirryB\_JmDLxOc%252Fcontrol-settings-label-dynamic.png%3Fgeneration=1533076681294826%26alt=media\&width=300\&dpr=4\&quality=100\&sign=c63eb704f7a35a0153c9fd59208cc5d593af36098e4f7a62a006f56daefbdcb5)
+<figure><img src="https://doc.orbeon.com/~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LImUI-s4XdNuE_d1HEH%252F-LImUPKirryB_JmDLxOc%252Fcontrol-settings-label-dynamic.png%3Fgeneration=1533076681294826%26alt=media&#x26;width=300&#x26;dpr=4&#x26;quality=100&#x26;sign=c63eb704f7a35a0153c9fd59208cc5d593af36098e4f7a62a006f56daefbdcb5" alt=""><figcaption></figcaption></figure>
 
 This is how this would appear in the running form:
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LImUI-s4XdNuE\_d1HEH%252F-LImUPKkm1VXRZ4-udcg%252Fcontrol-settings-label-dynamic-runtime.png%3Fgeneration=1533076680490317%26alt=media\&width=300\&dpr=4\&quality=100\&sign=d06779015aca0eb217fe165bf8cfc2bf7744c90fc2035a7df3a2cb664c8bfc9e)
+<figure><img src="https://doc.orbeon.com/~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LImUI-s4XdNuE_d1HEH%252F-LImUPKkm1VXRZ4-udcg%252Fcontrol-settings-label-dynamic-runtime.png%3Fgeneration=1533076680490317%26alt=media&#x26;width=300&#x26;dpr=4&#x26;quality=100&#x26;sign=d06779015aca0eb217fe165bf8cfc2bf7744c90fc2035a7df3a2cb664c8bfc9e" alt=""><figcaption></figcaption></figure>
 
 In the following example of dynamic email subject, the `$title` and `$author` variables refer also to the subsequent parameters.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LFZt2gpdgtXSCCHe0-f%252F-LFZtEcvvfVnf-hiy65c%252Femail-settings-subject.png%3Fgeneration=1529627345314154%26alt=media\&width=300\&dpr=4\&quality=100\&sign=cc64a449741ab7f03324f09bc507527b0e4f6dcfba12079e15c18b772de0ff0f)
+<figure><img src="https://doc.orbeon.com/~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LFZt2gpdgtXSCCHe0-f%252F-LFZtEcvvfVnf-hiy65c%252Femail-settings-subject.png%3Fgeneration=1529627345314154%26alt=media&#x26;width=300&#x26;dpr=4&#x26;quality=100&#x26;sign=cc64a449741ab7f03324f09bc507527b0e4f6dcfba12079e15c18b772de0ff0f" alt=""><figcaption></figcaption></figure>
 
 The text of the template is localized as usual when the form definition has more than one language.
