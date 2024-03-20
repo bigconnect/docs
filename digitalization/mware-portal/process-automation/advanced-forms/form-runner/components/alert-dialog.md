@@ -10,8 +10,6 @@ Let's assume that you want to ask a yes/no question which produces a dialog as s
 
 First declare the dialog, with:
 
-Copy
-
 ```
 <fr:alert-dialog id="overwrite-file-dialog">
     <fr:label>Copy</fr:label>
@@ -32,8 +30,6 @@ Copy
 4. You placed an event handler inside the `<fr:positive-choice``>`, which will run when/if users press the _Yes_ button.
 
 You open this dialog by dispatching the event `fr-show` to the dialog:
-
-Copy
 
 ```
 <xf:dispatch target="overwrite-file-dialog" name="fr-show"/>
@@ -93,8 +89,6 @@ _You pass the element id using the context property named_ `positive-targetid`_,
 
 _**Keeping context information** – When opening the dialog you can pass an optional context property named_ `context`_; the value of this property must be a string, and it will be passed back to your handler for_ `fr-positive`_, or_ `fr-negative`_, or_ `fr-neutral`_. This is particularly useful when you want to "forward" an event property to your custom handler. For instance you can open the dialog with:_
 
-Copy
-
 ```
 <xf:dispatch target="confirm-deletion-dialog" name="fr-show">
     <xf:property name="positive-targetid" value="'delete-trigger'"/>
@@ -104,29 +98,21 @@ Copy
 
 _And then in your handler access the value you originally passed, as in:_
 
-Copy
-
 ```
 <xf:action event="fr-positive">
     <xf:delete ref="instance('patient-conditions')/condition[@id = event('context')]"/>
 </xf:action>
 ```
 
-_NOTE: Before Orbeon Forms 4.0, use_ `xxf:context` _instead of_ `xf:property`_._
-
 ### Dynamic message <a href="#dynamic-message" id="dynamic-message"></a>
 
 Instead of specifying an inline message with `fr:message`, you can pass it dynamically when opening the dialog:
-
-Copy
 
 ```
 <xf:dispatch target="confirm-deletion-dialog" name="fr-show">
     <xf:property name="message" value="'Are you sure you want to proceed?'"/>
 </xf:dispatch>
 ```
-
-_NOTE: Before Orbeon Forms 4.0, use_ `xxf:context` _instead of_ `xf:property`_._
 
 ### Dialog icon <a href="#dialog-icon" id="dialog-icon"></a>
 

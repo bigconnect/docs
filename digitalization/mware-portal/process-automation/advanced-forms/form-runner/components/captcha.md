@@ -17,7 +17,7 @@ Both the `fr:recaptcha` and `fr:simple-captcha` components support the same even
    * `empty` — this tells you users didn't provide any answer. When that happens, you could notify users and keep the same challenge.
    *   One of the values listed in the [reCAPTCHA API documentation](https://developers.google.com/recaptcha/docs/verify?csw=1) (look for the table under _Error Code Reference_). When this happens, you could notify users, and _need_ to change the challenge by dispatching `fr-reload` to the reCAPTCHA. (For added safety, the reCAPTCHA won't let users try to solve the same captcha multiple times.)
 
-       Copy
+
 
        ```
        <fr:recaptcha id="my-captcha">
@@ -33,7 +33,7 @@ Both the `fr:recaptcha` and `fr:simple-captcha` components support the same even
 
 #### Supported version <a href="#supported-version" id="supported-version"></a>
 
-Orbeon Forms supports the reCAPTCHA v2 since Orbeon Forms 2018.1 and 2017.2.2. Google [stopped supporting the reCAPTCHA v1](https://developers.google.com/recaptcha/docs/faq#what-happens-to-recaptcha-v1) used by earlier versions of Orbeon Forms after March 31, 2018. Hence, if you're using the reCAPTCHA, and are using an older version of Orbeon Forms, you'll want to upgrade to a newer version which supports reCAPTCHA v2.
+Advanced Forms supports the reCAPTCHA v2. Google [stopped supporting the reCAPTCHA v1](https://developers.google.com/recaptcha/docs/faq#what-happens-to-recaptcha-v1) after March 31, 2018.
 
 #### Usage <a href="#usage" id="usage"></a>
 
@@ -44,7 +44,7 @@ You can use this component to show users a captcha, like the one shown in the fo
 1. First, you need to [sign up with reCAPTCHA](https://www.google.com/recaptcha/admin#list) to get your own public/private key pair.
 2.  Store your public key (now called "site key") and private key in your properties, as follows:
 
-    Copy
+
 
     ```
      <property
@@ -59,7 +59,7 @@ You can use this component to show users a captcha, like the one shown in the fo
 3. Add the reCAPTCHA component to your form:
    *   For forms you're creating in Form Builder, enable the reCAPTCHA by setting the following property:
 
-       Copy
+
 
        ```
          <property
@@ -69,7 +69,7 @@ You can use this component to show users a captcha, like the one shown in the fo
        ```
    *   For forms you're creating by writing XForms "by hand", add the component to your form as follows. You'll also want to add handlers for the `fr-verify-done` and maybe `fr-verify-error` events.
 
-       Copy
+
 
        ```
          <fr:recaptcha id="my-recaptcha"/>
@@ -82,7 +82,7 @@ You can configure:
 * The theme using properties, either:
   *   For forms you're creating with Form Builder, with:
 
-      Copy
+
 
       ```
         <property 
@@ -92,7 +92,7 @@ You can configure:
       ```
   *   For forms you're creating by writing XForms "by hand", with:
 
-      Copy
+
 
       ```
         <property 
@@ -111,8 +111,6 @@ You can use this component to show users a captcha, like the one shown in the fo
 ![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkBwzq5H2ia01pQFVj%252Fxbl-simple-captcha.png%3Fgeneration=1528743319187556%26alt=media\&width=768\&dpr=4\&quality=100\&sign=5af2a12f7e395891851612f4c3190e9ea176cf08f59e7c41bc02606e27891c0b)
 
 To use this component, where you want the captcha to show in your form, add:
-
-Copy
 
 ```
 <fr:simple-captcha id="my-simple-captcha">

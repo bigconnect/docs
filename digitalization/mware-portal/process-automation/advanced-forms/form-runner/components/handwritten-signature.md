@@ -5,9 +5,7 @@ This component allows you to capture a signature from people filling out the for
 * The signature is stored digitally.
 * On a desktop, the signature is drawn with a mouse or other pointing device, while one a mobile it is drawn with the user's finger or, more rarely, a stylus.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkC3S5OPRDF713WUMS%252Fhandwritten-signature.png%3Fgeneration=1528743349467543%26alt=media\&width=768\&dpr=4\&quality=100\&sign=8a15db3bfeb16af040427d5e4c0b99a8cbbe4a6d7bf8a9d67129bb53f5ce1e89)
-
-An example signature
+![An example signature](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkC3S5OPRDF713WUMS%252Fhandwritten-signature.png%3Fgeneration=1528743349467543%26alt=media\&width=768\&dpr=4\&quality=100\&sign=8a15db3bfeb16af040427d5e4c0b99a8cbbe4a6d7bf8a9d67129bb53f5ce1e89)
 
 ### Usage <a href="#usage" id="usage"></a>
 

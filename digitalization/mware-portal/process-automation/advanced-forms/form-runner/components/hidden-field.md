@@ -21,8 +21,6 @@ _NOTE: With Form Builder, you cannot directly edit the label of a hidden field i
 
 ### Basic usage <a href="#basic-usage" id="basic-usage"></a>
 
-Copy
-
 ```
 <fr:hidden ref="validating">
     <xf:label>Validation</xf:label>

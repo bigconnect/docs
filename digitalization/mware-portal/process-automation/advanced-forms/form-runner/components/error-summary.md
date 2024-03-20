@@ -20,8 +20,6 @@ Main features:
 
 The minimal configuration looks like this:
 
-Copy
-
 ```
 <fr:error-summary observer="my-group">
     <fr:label>Your Form Contains the Following Errors</fr:label>
@@ -29,8 +27,6 @@ Copy
 ```
 
 The mandatory `observer` attribute points to a control to observe. That control and all the descendants of that control are surveyed for changes in validity:
-
-Copy
 
 ```
 <xf:group id="my-group">
@@ -55,8 +51,6 @@ _NOTE: For a control to visually appear in the summary, it must have a non-empty
 
 The title can be dynamic, e.g. for localization purposes:
 
-Copy
-
 ```
 <fr:error-summary observer="my-group">
     <fr:label><xf:output value="instance('resources')/summary-title"/></fr:label>
@@ -71,8 +65,6 @@ If specified, the following attributes point to nodes into which the error summa
 * `visible-errors-count-ref:` current number of visible errors in the sub-form. An error for a control is visible if the control has been visited by the user `(xs:integer`).
 * `valid-ref:` whether the sub-form is valid or not `(xs:boolean)`.
 
-Copy
-
 ```
 <fr:error-summary observer="my-group" errors-count-ref="instance('errors')/errors-count" valid-ref="instance('errors')/valid">
     <fr:label>Your Form Contains the Following Errors</fr:label>
@@ -80,8 +72,6 @@ Copy
 ```
 
 You can use this information for example to show a status icon:
-
-Copy
 
 ```
 <xf:group ref=".[not(instance('errors')/valid = 'true')]">
@@ -98,8 +88,6 @@ You can dispatch the `fr-visit-all` event to the error summary. This:
 
 This is useful when the user, for example, presses a "Save" button: in that case, you might want to show all the errors on the form right away:
 
-Copy
-
 ```
 <xf:trigger>
     <xf:label>Save</xf:label>
@@ -109,17 +97,13 @@ Copy
 
 When you do this, make sure that `<fr:error-summary>` has an id:
 
-Copy
-
 ```
 <fr:error-summary observer="my-group" id="my-error-summary">
     ...
 </fr:error-summary>
 ```
 
-Then, to disable the alert icon on invalid controls, until either users went through the control, or users did an action (such as "Save") that dispatched an fr-visit-all, add the following CSS. The first rule disables the background image and the second one enables it, overriding the first rule in cases where the alert is both active and the control is visited. Most likely, you will need to modify the relative path in the second rule, depending on the location of your CSS file. The path should resolve to `/your-all/ops/images/xforms/exclamation.png` if you are not in separate deployment, and `/your-app/orbeon/ops/images/xforms/exclamation.png` if you use separate deployment. Note that it is better here to have a relative URL (adjusting the number of `..` in the path) rather than an absolute URL (starting with `/your-app`), as a relative URL allows you to change the context of your application without having to change the CSS.
-
-Copy
+Then, to disable the alert icon on invalid controls, until either users went through the control, or users did an action (such as "Save") that dispatched an fr-visit-all, add the following CSS. The first rule disables the background image and the second one enables it, overriding the first rule in cases where the alert is both active and the control is visited. Most likely, you will need to modify the relative path in the second rule, depending on the location of your CSS file. The path should resolve to `/your-all/ops/images/xforms/exclamation.png` if you are not in separate deployment, and `/your-app/forms/ops/images/xforms/exclamation.png` if you use separate deployment. Note that it is better here to have a relative URL (adjusting the number of `..` in the path) rather than an absolute URL (starting with `/your-app`), as a relative URL allows you to change the context of your application without having to change the CSS.
 
 ```
 .xforms-alert-active         { background-image: none }
@@ -135,13 +119,9 @@ You can dispatch the `fr-unvisit-all` event to the error summary. This:
 
 #### Setting a page size <a href="#setting-a-page-size" id="setting-a-page-size"></a>
 
-\[SINCE Orbeon Forms 2018.1]
-
 When forms have a large number of errors, the Error Summary can become too large to be very useful. By default, the Error Summary only shows 20 errors, and link buttons appear to show more or less errors if needed.
 
 To change the default, you can set the following property:
-
-Copy
 
 ```
 <property 
@@ -156,8 +136,6 @@ The `page-size` attribute can also be used on the component when used outside of
 
 When there are no visible errors, the entire body of the error summary is hidden. You can had your own header and footer content within that body so it hides and shows depending on whether there are errors or not. Just add the `<fr:header>` and `<fr:footer>` elements:
 
-Copy
-
 ```
 <fr:error-summary observer="my-group">
     <fr:label>Your Form Contains the Following Errors</fr:label>
@@ -168,8 +146,6 @@ Copy
 #### Global errors <a href="#global-errors" id="global-errors"></a>
 
 In addition to errors related to controls, the error summary can handle global errors:
-
-Copy
 
 ```
 <fr:error-summary observer="my-group">
@@ -193,8 +169,6 @@ By default the error summary updates the list of error as they occur on the form
 
 By specifying the `incremental="false"` attribute, errors only show on demand with the `fr-update` and `fr-clear` events.
 
-Copy
-
 ```
 <fr:error-summary observer="my-group" id="my-error-summary" incremental="false">
     ...
@@ -203,23 +177,17 @@ Copy
 
 To update the visible list of errors with the actual errors in the form, dispatch the `fr-update` event:
 
-Copy
-
 ```
 <xf:dispatch name="fr-update" targetid="my-error-summary"/>
 ```
 
 To clear the visible list of errors, dispatch the `fr-clear` event:
 
-Copy
-
 ```
 <xf:dispatch name="fr-clear" targetid="my-error-summary"/>
 ```
 
 To properly update the error summary within a submission response, you might need an explicit `<xf:refresh>` action before dispatching `fr-update`, so that the UI captures all the valid/invalid states:
-
-Copy
 
 ```
 <xf:action ev:event="xforms-submit-done">

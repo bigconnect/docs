@@ -2,13 +2,13 @@
 
 ### Appearance <a href="#appearance" id="appearance"></a>
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-45c8a2f736f1ad2975940af3421370e25435fd1e%252Fxbl-time-controls.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=187880748655c36510d007f209d89fd500727c6adc34460d5b0d3377f583fc3a)
+![Regular appearance](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-45c8a2f736f1ad2975940af3421370e25435fd1e%252Fxbl-time-controls.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=187880748655c36510d007f209d89fd500727c6adc34460d5b0d3377f583fc3a)
 
-Regular appearance
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-1e8f1151d7196e5cc550f1eff7ade71845e492b0%252Fxbl-time-controls-readonly.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=5a100a34df37a77ecca5fd505a3f09b3b0dbf4196d15fe12ea48fffc05491ec8)
 
-Readonly modes appearance
+![Readonly modes appearance](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-1e8f1151d7196e5cc550f1eff7ade71845e492b0%252Fxbl-time-controls-readonly.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=5a100a34df37a77ecca5fd505a3f09b3b0dbf4196d15fe12ea48fffc05491ec8)
+
+
 
 ### What it does <a href="#what-it-does" id="what-it-does"></a>
 
@@ -50,9 +50,9 @@ The Time component is directly accessible from the Form Builder toolbox.
 
 The Control Settings dialog features a user interface for configuring the control width and output format.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-cafa5575872b27d711d15879bfc8d2d8944f56a8%252Fxbl-time-editor-custom-cropped.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=a76306d74bb914d879e1eb39e36d062105a1c4a43e485df976f86f09c8435e7f)
+![Configuring the time format](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-cafa5575872b27d711d15879bfc8d2d8944f56a8%252Fxbl-time-editor-custom-cropped.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=a76306d74bb914d879e1eb39e36d062105a1c4a43e485df976f86f09c8435e7f)
 
-Configuring the time format
+
 
 ### Configuration <a href="#configuration" id="configuration"></a>
 
@@ -65,8 +65,6 @@ The `field-width` parameter can have two values:
 
 This parameter can be specified at the control level, form level, or in properties-local.xml. The default is:
 
-Copy
-
 ```
 <property
     as="xs:string"
@@ -77,8 +75,6 @@ Copy
 #### Output format <a href="#output-format" id="output-format"></a>
 
 The `oxf.xforms.format.input.time` global property configures the default output format for all instances of the Time component. The default value is:
-
-Copy
 
 ```
 <property
@@ -112,11 +108,7 @@ Important:
 
 When seconds are omitted, the user is still allowed to enter non-zero seconds. However, they will not be shown by the control when the user leaves the control.
 
-\[SINCE Orbeon Forms 2022.1.1]
-
 The Time component adds an `output-format` parameter. This parameter can be used to override the global property at the control level, the form level, or via properties-local.xml with the following new property:
-
-Copy
 
 ```
 <property
@@ -126,8 +118,6 @@ Copy
 ```
 
 As usual, the property can use an app name and form name (with possible wildcards) to specify a default value for all controls in a given app/form:
-
-Copy
 
 ```
 <property
@@ -146,23 +136,17 @@ The Time control uses the `oxf.xforms.format.output.time` property to format the
 
 The default value is:
 
-Copy
-
 ```
 <property as="xs:string"  name="oxf.xforms.format.output.time">
     if (. castable as xs:time) then format-time(xs:time(.), '[h]:[m]:[s] [P,*-2]', xxf:lang(), (), ()) else .
 </property>
 ```
 
-\[SINCE Orbeon Forms 2022.1.1]
-
 The Time components uses the `output-format` parameter to format the time in readonly modes, including `view` and `pdf`.
 
 This means that the `oxf.xforms.format.output.time` property is no longer used in readonly modes.
 
 ### Example usage <a href="#example-usage" id="example-usage"></a>
-
-Copy
 
 ```
 <fr:time 

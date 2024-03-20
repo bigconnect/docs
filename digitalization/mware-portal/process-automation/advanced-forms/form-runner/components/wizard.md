@@ -2,13 +2,9 @@
 
 The `fr:wizard` component presents the nested list of `fr:section` elements as a series of navigable steps, with only one section is visible at a time. The component also shows a table of contents and buttons allowing users to navigate between sections.
 
-\[SINCE Orbeon Forms 2016.2]
-
 `fr:wizard` also supports optional navigation through the first level of subsections.
 
 ### Basic usage <a href="#basic-usage" id="basic-usage"></a>
-
-Copy
 
 ```
 <fr:wizard id="my-wizard">
@@ -23,11 +19,7 @@ Copy
 
 ### The sectionref attribute <a href="#the-sectionref-attribute" id="the-sectionref-attribute"></a>
 
-\[SINCE Orbeon Forms 4.8]
-
 The `sectionref` attribute allows reading and writing the current top-level section _name_ to instance data.
-
-Copy
 
 ```
 <fr:wizard sectionref="instance('foo')/bar">
@@ -41,11 +33,7 @@ The section name is obtained from the section id by removing its `-section` or `
 
 ### The subsections-nav attribute <a href="#the-subsections-nav-attribute" id="the-subsections-nav-attribute"></a>
 
-\[SINCE Orbeon Forms 2016.3]
-
 The `subsections-nav` attribute on top-level `fr:section` elements can be used to explicitly disable subsection navigation with:
-
-Copy
 
 ```
 <fr:section subsections-nav="false">
@@ -59,8 +47,6 @@ Top-level repeated sections do no support subsection navigation and behave as if
 
 You can dispatch the `fr-prev` and `fr-next` events to the wizard component to navigate forward/backward:
 
-Copy
-
 ```
 <xf:dispatch name="fr-next" targetid="my-wizard"/>
 ```
@@ -70,8 +56,6 @@ If the wizard cannot navigate, the event has no effect.
 ### Events dispatched by fr:wizard <a href="#events-dispatched-by-fr-wizard" id="events-dispatched-by-fr-wizard"></a>
 
 #### The fr-section-shown event <a href="#the-fr-section-shown-event" id="the-fr-section-shown-event"></a>
-
-\[SINCE Orbeon Forms 2016.2]
 
 When the wizard component shows a section, it dispatches the `fr-section-shown` event with the following properties:
 
@@ -84,8 +68,6 @@ When the wizard component shows a section, it dispatches the `fr-section-shown` 
 In separate table of contents mode, if no section shows initially, this event is not dispatched until the first section shows.
 
 #### The fr-toc-shown event <a href="#the-fr-toc-shown-event" id="the-fr-toc-shown-event"></a>
-
-\[SINCE Orbeon Forms 2016.2]
 
 When the wizard component shows its table of contents, it dispatches the `fr-toc-shown` event with the following properties:
 

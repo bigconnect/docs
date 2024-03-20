@@ -15,7 +15,7 @@ You can configure whether you want to have a particular card on the Landing page
 
 All Form Runner and Form Builder navigation bars now provide a direct link to the Landing page. This can be disabled if not desired.
 
-<figure><img src="../../../../../../.gitbook/assets/image.jpg" alt=""><figcaption><p>Landing page navigation</p></figcaption></figure>
+<figure><img src="../../../../../../.gitbook/assets/image (2).jpg" alt=""><figcaption><p>Landing page navigation</p></figcaption></figure>
 
 ### Configuration properties <a href="#configuration-properties" id="configuration-properties"></a>
 

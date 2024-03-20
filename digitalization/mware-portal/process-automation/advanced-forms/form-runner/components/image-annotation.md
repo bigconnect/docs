@@ -10,9 +10,7 @@ This component uses [wPaint](https://github.com/websanova/wPaint), which require
 
 ### Configuration <a href="#configuration" id="configuration"></a>
 
-[\[SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1) You can change the start stroke color with the following property:
-
-Copy
+You can change the start stroke color with the following property:
 
 ```
 <property 

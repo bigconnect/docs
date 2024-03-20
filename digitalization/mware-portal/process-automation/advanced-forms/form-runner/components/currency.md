@@ -12,8 +12,6 @@ While working with currency amounts, the component is careful not to do any mani
 
 You use the number component like a regular input field, for example:
 
-Copy
-
 ```
 <fr:currency ref="my-amount">
   <xf:label>Amount</xf:label>
@@ -30,17 +28,11 @@ Copy
 * `decimal-separator`: single character to use as decimal separator
 * `grouping-separator`: single character to use as thousands separator separator (can be blank)
 * `round-when-formatting`: when formatting the number for display, whether to round the value to `digits-after-decimal` if there are more digits after the decimal point or not. The default is `false`.
-  * SINCE Orbeon Forms 2016.1
-  * UNTIL Orbeon Forms 2017.2: Rounding uses the [half to even](https://en.wikipedia.org/wiki/Rounding#Round\_half\_to\_even) method.
-  * SINCE Orbeon Forms 2018.1: Rounding uses the [half up](https://en.wikipedia.org/wiki/Rounding#Round\_half\_up) method.
+  * Rounding uses the [half up](https://en.wikipedia.org/wiki/Rounding#Round\_half\_up) method.
 * `round-when-storing`: when storing the number entered by the user, whether to round the value to `digits-after-decimal` if there are more digits after the decimal point or not. The default is `false`.
-  * SINCE Orbeon Forms 2016.1
-  * UNTIL Orbeon Forms 2017.2: Rounding uses the [half to even](https://en.wikipedia.org/wiki/Rounding#Round\_half\_to\_even) method.
-  * SINCE Orbeon Forms 2018.1: Rounding uses the [half up](https://en.wikipedia.org/wiki/Rounding#Round\_half\_up) method.
+  * Rounding uses the [half up](https://en.wikipedia.org/wiki/Rounding#Round\_half\_up) method.
 
 These are the default values of the properties:
-
-Copy
 
 ```
 <property
@@ -79,8 +71,6 @@ By default the dollar sign ("$") is used as a currency prefix. You can override 
 
 * Globally for all your forms in your ‘properties-local.xml’ by setting the following property:
 
-Copy
-
 ```
 <property
     as="xs:string"
@@ -97,8 +87,6 @@ Copy
 By default, the component shows the value to 2 digits after the decimal sign. You can override this either:
 
 * Globally for all your forms in your `properties-local.xml` by setting the following property:
-
-Copy
 
 ```
 <property
@@ -117,8 +105,6 @@ If you set `digits-after-decimal` to 0, then the decimal separator isn't shown. 
 
 #### Control without focus <a href="#control-without-focus" id="control-without-focus"></a>
 
-Copy
-
 ```
 <fr:currency ref="value"/>
 ```
@@ -126,8 +112,6 @@ Copy
 ![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkC0IsjGK5mIFtbTUn%252Fxbl-currency1.png%3Fgeneration=1528743356610728%26alt=media\&width=768\&dpr=4\&quality=100\&sign=c30f7c6bb34de481d3804522d5ccafc754b411ba7dd87100d4ba6fa250355520)
 
 #### Setting a static prefix with the prefix attribute <a href="#setting-a-static-prefix-with-the-prefix-attribute" id="setting-a-static-prefix-with-the-prefix-attribute"></a>
-
-Copy
 
 ```
 <fr:currency ref="value" prefix="£"/>
@@ -137,8 +121,6 @@ Copy
 
 #### Setting a dynamic prefix with the fr:prefix element <a href="#setting-a-dynamic-prefix-with-the-fr-prefix-element" id="setting-a-dynamic-prefix-with-the-fr-prefix-element"></a>
 
-Copy
-
 ```
 <fr:currency ref="value">
     <fr:prefix ref="/config/prefix"/>
@@ -146,8 +128,6 @@ Copy
 ```
 
 #### Showing 3 digits after decimal sign <a href="#showing-3-digits-after-decimal-sign" id="showing-3-digits-after-decimal-sign"></a>
-
-Copy
 
 ```
 <fr:currency
@@ -159,8 +139,6 @@ Copy
 
 #### Showing 0 digits after the decimal sign <a href="#showing-0-digits-after-the-decimal-sign" id="showing-0-digits-after-the-decimal-sign"></a>
 
-Copy
-
 ```
 <fr:currency
     ref="value"
@@ -170,8 +148,6 @@ Copy
 ![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkC0Iyky8MDwbWmC3a%252Fxbl-currency3.png%3Fgeneration=1528743359003878%26alt=media\&width=768\&dpr=4\&quality=100\&sign=7202b7097548a465eb828df15a80a48c38bd2433f811990d0552a996f19ff89a)
 
 #### Read-only input field, because bound to node set as read-only with a MIP <a href="#read-only-input-field-because-bound-to-node-set-as-read-only-with-a-mip" id="read-only-input-field-because-bound-to-node-set-as-read-only-with-a-mip"></a>
-
-Copy
 
 ```
 <xforms:bind ref="readonly-node" readonly="true()"/>
@@ -183,6 +159,4 @@ Copy
 
 #### Rounding <a href="#rounding" id="rounding"></a>
 
-\[SINCE Orbeon Forms 2016.1]
-
-For examples of rounding, see the [`fr:number`](https://doc.orbeon.com/form-runner/component/number) component.
+For examples of rounding, see the `fr:number` component.

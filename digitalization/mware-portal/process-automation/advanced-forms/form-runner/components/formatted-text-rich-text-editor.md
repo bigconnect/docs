@@ -8,33 +8,21 @@ This components wraps the [TinyMCE](https://www.tiny.cloud/) rich text editor.
 
 Include the TinyMCE editor in your page with:
 
-Copy
-
 ```
 <fr:tinymce ref="..."/>
 ```
-
-Since Orbeon Forms 2016.1, it is also enabled with:
-
-Copy
 
 ```
 <xf:textarea mediatype="text/html">
 ```
 
-Until Orbeon Forms 4.10 included, `<xf:textarea mediatype="text/html">` was using the deprecated YUI 2 RTE editor.
-
 #### Configuration <a href="#configuration" id="configuration"></a>
 
 **Attribute, form, and property configuration**
 
-[\[SINCE Orbeon Forms 2023.1.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1.1)
-
 The component can be configured with the `config` attribute. The attribute takes a JSON configuration string.
 
 If no `config` attribute is set, the following property is used:
-
-Copy
 
 ```
 <property as="xs:string"  name="oxf.xforms.xbl.fr.tinymce.config">
@@ -62,8 +50,6 @@ Copy
 
 You can also set properties specific to an app and/or form:
 
-Copy
-
 ```
 <property as="xs:string"  name="oxf.xforms.xbl.fr.tinymce.config.acme.sales">
     ...
@@ -73,8 +59,6 @@ Copy
 Attribute and properties are interpreted as AVTs (like all attributes and properties that configure components), which explains the double brackets `{{...}}`.
 
 For example, the following configuration restores the `iframe` mode (instead of the `inline` mode) for all Formatted Text / Rich Text Editor instances:
-
-Copy
 
 ```
 <property as="xs:string"  name="oxf.xforms.xbl.fr.tinymce.config">
@@ -105,8 +89,6 @@ In that example, the `content_style` property is used to set CSS to match the `i
 For backward compatibility, if an `TINYMCE_CUSTOM_CONFIG` JavaScript variable (see below) is found in the page, it is used as the configuration.
 
 **Deprecated configuration**
-
-[\[DEPRECATED SINCE Orbeon Forms 2023.1.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1.1)
 
 Prefer the `oxf.xforms.xbl.fr.tinymce.config` property above.
 

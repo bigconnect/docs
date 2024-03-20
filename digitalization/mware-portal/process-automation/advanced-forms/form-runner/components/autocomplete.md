@@ -1,18 +1,16 @@
 # Autocomplete
 
-This component is deprecated and we recommend you update your forms to use the new [dynamic dropdown](https://doc.orbeon.com/form-runner/component/static-dynamic-dropdown), as the autocomplete control isn't maintained anymore, and is slated to be removed from future versions of Orbeon Forms.
+This component is deprecated and we recommend you update your forms to use the new dynamic dropdown, as the autocomplete control isn't maintained anymore, and is slated to be removed from future versions of Advanced Forms.
 
 ### Overview <a href="#overview" id="overview"></a>
 
-[Autocomplete](http://en.wikipedia.org/wiki/Autocomplete) is a feature provided by many applications, and this component makes it easy to add an autocomplete field to your form. The autocomplete controls is not unlike an `<xf:select1>` selection controls:
+Autocomplete is a feature provided by many applications, and this component makes it easy to add an autocomplete field to your form. The autocomplete controls is not unlike an `<xf:select1>` selection controls:
 
-* You use a [single-node binding attribute](http://www.w3.org/TR/xforms11/#structure-attrs-single-node) to bind the control to the node holding the current value for the control.
+* You use a single-node binding attribute to bind the control to the node holding the current value for the control.
 * You use a combination of `<xf:itemset>` and `<xf:item>` to define the values suggested to the user. Just as with `<xf:select1>`, what is visible to users are item's labels and what is stored in the node to which your autocomplete is bound is the selected item's value.
 * Just like the `<xf:select1>`, the autocomplete only implements a closed selection: users will only be able to select a value which exists in the itemset. The value of the node bound to the autocomplete won't be set to the value typed by users in the field, unless they select an item from the suggestion list or type text which is identical to one of the item's label.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkC6EBzAudjhdytT0I%252Fautocomplete-simple.png%3Fgeneration=1528743362994717%26alt=media\&width=768\&dpr=4\&quality=100\&sign=648fe18f3426f38c372c808fa1e1dee70a2e8e69798ac6553f5fdb97cb6901ed)
-
-Auto Complete field used for a list of countries
+![Auto Complete field used for a list of countries](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkC6EBzAudjhdytT0I%252Fautocomplete-simple.png%3Fgeneration=1528743362994717%26alt=media\&width=768\&dpr=4\&quality=100\&sign=648fe18f3426f38c372c808fa1e1dee70a2e8e69798ac6553f5fdb97cb6901ed)
 
 ### Modes <a href="#modes" id="modes"></a>
 
@@ -31,7 +29,7 @@ The autocomplete can work in one of three modes, which in order of increasing co
     In this mode, the autocomplete field determines which values are shown in the suggestion based on what users typed in the field. It will only show items which label starts with the text entered by users. The comparison is not case sensitive. For instance, typing "ar" in a field that expects a list of countries with show "Argentina", amongst other countries, but not "Saudi Arabia".
 *   What does the syntax look like?
 
-    Copy
+
 
     ```
       <fr:autocomplete ref="country-name" dynamic-itemset="false">
@@ -50,13 +48,13 @@ The autocomplete can work in one of three modes, which in order of increasing co
     When you have a service responding to an HTTP `GET`, that, given the current value users typed in the search field, returns an XML document with the list of suggestions.
 *   What does the syntax look like?
 
-    Copy
+
 
     ```
       <fr:autocomplete
               ref="country-name"
               labelref="@label"
-              resource="/fr/service/custom/orbeon/controls/countries?country-name={$fr-search-value}"
+              resource="/fr/service/custom/forms/controls/countries?country-name={$fr-search-value}"
               max-results-displayed="4">
           <xf:label>Country code: </xf:label>
           <xf:itemset ref="/countries/country">
@@ -87,7 +85,7 @@ The autocomplete can work in one of three modes, which in order of increasing co
     * The suggestion list shows up only after users enter at least 2 characters.
     *   The suggestion list is updating by running a submission which calls a service, providing the text typed by users so far.
 
-        Copy
+
 
         ```
         <fr:autocomplete
@@ -143,8 +141,6 @@ _For more on the `labelref` attribute, see the above section the resource mode._
 
 You can set the content of the text field by sending the `fr-set-label` event to the autocomplete component, with `label` as context information. For instance:
 
-Copy
-
 ```
 <xf:dispatch
         event="DOMActivate"
@@ -168,14 +164,14 @@ By default, the autocomplete displays a maximum of 10 items. You can have the au
 
 *   Adding attribute `max-results-displayed`. You would typically use this attribute to provide a static value. For instance:
 
-    Copy
+
 
     ```
       <fr:autocomplete max-results-displayed="20">
     ```
-*   Adding a nested element `<fr:max-results-displayed>`, which supports [single node binding attributes](http://www.w3.org/TR/xforms11/#structure-attrs-single-node) (`ref`, `model`, and `bind`) as well as the `value` attribute. For instance:
+*   Adding a nested element `<fr:max-results-displayed>`, which supports single node binding attributes (`ref`, `model`, and `bind`) as well as the `value` attribute. For instance:
 
-    Copy
+
 
     ```
       <fr:autocomplete>
@@ -183,7 +179,7 @@ By default, the autocomplete displays a maximum of 10 items. You can have the au
     ```
 *   By defining the property:
 
-    Copy
+
 
     ```
       <property
@@ -205,8 +201,6 @@ This is the out of the box behavior in static mode. It is left to you to return 
 You can disable this button by adding a `show-suggestions-button="false"` attribute on the control. The default value of this attribute is `true`.
 
 ### Styling <a href="#styling" id="styling"></a>
-
-#### Orbeon Forms 4.10 and later <a href="#orbeon-forms-4.10-and-later" id="orbeon-forms-4.10-and-later"></a>
 
 The defaults of the autocomplete are improved compared to previous versions:
 

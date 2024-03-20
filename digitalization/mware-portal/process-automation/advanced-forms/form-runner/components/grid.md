@@ -7,7 +7,7 @@ The `fr:grid` component organizes contained controls in a grid of rows and colum
   * configurable min/max number of iterations
   * can repeat over several heterogeneous rows
   * built-in icons and menus to add, remove, and move repeated rows
-  * supports `relevant` and `readonly` MIPs \[SINCE Orbeon Forms 4.8]
+  * supports `relevant` and `readonly` MIPs
 
 ### Appearance <a href="#appearance" id="appearance"></a>
 
@@ -26,46 +26,41 @@ A menu is available to perform operations on or around a line. Not all operation
 * Move Down
   * When allowed, move the current repetition one level below.
 * Clear Line
-  * \[SINCE Orbeon Forms 2019.2]
   * Clear or reset all the values in the current repetition.
 * Remove Line
   * When allowed, remove the current repetition.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LxNZd9pylI96dTuT4G-%252F-LxNZnu6lBwB2OfvmEeT%252Fxbl-grid-menu.png%3Fgeneration=1577739044203862%26alt=media\&width=768\&dpr=4\&quality=100\&sign=8ab245f03bef547985f09c529b1399b4149446eba82551c743772e2d5de15ddf)
+![Repeated grid menu](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LxNZd9pylI96dTuT4G-%252F-LxNZnu6lBwB2OfvmEeT%252Fxbl-grid-menu.png%3Fgeneration=1577739044203862%26alt=media\&width=768\&dpr=4\&quality=100\&sign=8ab245f03bef547985f09c529b1399b4149446eba82551c743772e2d5de15ddf)
 
-Repeated grid menu
+
 
 **Single-line**
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkCAbnFWxn72b7jx7n%252Fxbl-grid-full-single-line.png%3Fgeneration=1528743382406409%26alt=media\&width=768\&dpr=4\&quality=100\&sign=da2c3699713903110401d3b9c93b186c3f31d439a4f057329fd1a3e769f601d5)
+![Full appearance / single-line](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkCAbnFWxn72b7jx7n%252Fxbl-grid-full-single-line.png%3Fgeneration=1528743382406409%26alt=media\&width=768\&dpr=4\&quality=100\&sign=da2c3699713903110401d3b9c93b186c3f31d439a4f057329fd1a3e769f601d5)
 
-Full appearance / single-line
+
 
 **Multi-line**
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkCAbtYoXC\_rSD\_Sh6%252Fxbl-grid-full-multi-line.png%3Fgeneration=1528743382493360%26alt=media\&width=768\&dpr=4\&quality=100\&sign=5925460e2649e42e048dffeaa1ef7e66391f746450a740d336ad55622382c9ba)
+![Full appearance / multi-line](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkCAbtYoXC\_rSD\_Sh6%252Fxbl-grid-full-multi-line.png%3Fgeneration=1528743382493360%26alt=media\&width=768\&dpr=4\&quality=100\&sign=5925460e2649e42e048dffeaa1ef7e66391f746450a740d336ad55622382c9ba)
 
-Full appearance / multi-line
+
 
 #### Minimal repeat appearance <a href="#minimal-repeat-appearance" id="minimal-repeat-appearance"></a>
 
-\[SINCE Orbeon Forms 2016.1]
+![Minimal appearance / single-line](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkCAbxpOZ4nAZGiMhn%252Fxbl-grid-minimal-single-line.png%3Fgeneration=1528743382431710%26alt=media\&width=768\&dpr=4\&quality=100\&sign=a1cd469b3c9ac2976542d8c3092f7ef33d72699802039210677b8ed4a1430b13)
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkCAbxpOZ4nAZGiMhn%252Fxbl-grid-minimal-single-line.png%3Fgeneration=1528743382431710%26alt=media\&width=768\&dpr=4\&quality=100\&sign=a1cd469b3c9ac2976542d8c3092f7ef33d72699802039210677b8ed4a1430b13)
 
-Minimal appearance / single-line
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkCAc0FSqbbZWCLF8J%252Fxbl-grid-minimal-multi-line.png%3Fgeneration=1528743382491075%26alt=media\&width=768\&dpr=4\&quality=100\&sign=5bb20eb5ee3e57285f5074ecfd082cf8cb7375aa854405d76ebbbe97ddafb6da)
+![Minimal appearance / multi-line](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkCAc0FSqbbZWCLF8J%252Fxbl-grid-minimal-multi-line.png%3Fgeneration=1528743382491075%26alt=media\&width=768\&dpr=4\&quality=100\&sign=5bb20eb5ee3e57285f5074ecfd082cf8cb7375aa854405d76ebbbe97ddafb6da)
 
-Minimal appearance / multi-line
+
 
 ### Basic usage <a href="#basic-usage" id="basic-usage"></a>
 
 #### Format of rows and cells <a href="#format-of-rows-and-cells" id="format-of-rows-and-cells"></a>
 
-**Starting Orbeon Forms 2017.2**
-
-With Orbeon Forms 2017.2 and newer, the format for grid rows and cells produced by Form Builder has changed. Instead of using `<xh:tr>` and `<xh:td>`, it uses `<fr:c>`. `<xh:tr>` and `<xh:td>` are still supported for backward compatibility.
+The format for grid rows and cells produced by Form Builder has changed. Instead of using `<xh:tr>` and `<xh:td>`, it uses `<fr:c>`. `<xh:tr>` and `<xh:td>` are still supported for backward compatibility.
 
 The following attributes are supported on `<fr:c>`:
 
@@ -99,21 +94,6 @@ In other words, the grid must be well-formed.
 
 However, the grid may have holes, and not all cells need be present.
 
-**Until Orbeon Forms 2017.1**
-
-`<xh:tr>` and `<xh:td>` are used to indicate rows and cells, following the HTML tables `<tr>` and `<td>` scheme.
-
-The following attributes are supported on `<xh:td>`:
-
-* `rowspan`
-  * optional, defaults to 1
-  * as in HTML
-  * supported in Form Builder
-* `colspan`
-  * optional, defaults to 1
-  * as in HTML
-  * NOT supported in Form Builder
-
 #### Non-repeated mode <a href="#non-repeated-mode" id="non-repeated-mode"></a>
 
 **General information**
@@ -125,10 +105,6 @@ Attributes:
 
 _NOTE: In the future `bind` and `ref` should be supported._
 
-**Starting Orbeon Forms 2017.2**
-
-Copy
-
 ```
 <fr:grid id="note-grid">
     <fr:c y="1" x="1" w="12">
@@ -138,8 +114,6 @@ Copy
 ```
 
 Example with multiple cells spanning rows and columns:
-
-Copy
 
 ```
 <fr:grid id="grid-1-grid">
@@ -158,20 +132,6 @@ Copy
 </fr:grid>
 ```
 
-**Until Orbeon Forms 2017.1**
-
-Copy
-
-```
-<fr:grid id="note-grid">
-    <xh:tr>
-        <xh:td>
-            <!-- A form control will be placed here -->
-        </xh:td>
-    </xh:tr>
-</fr:grid>
-```
-
 #### Repeated mode <a href="#repeated-mode" id="repeated-mode"></a>
 
 **General information**
@@ -181,7 +141,7 @@ Attributes:
 * `id`: optional grid id.
 * `repeat`
   * `true`: legacy repeat mode
-  * `content`: new repeat mode with an enclosing element \[SINCE Orbeon Forms 4.8]
+  * `content`: new repeat mode with an enclosing element
 * `bind` or `ref`
   * with `repeat="content"`: single item binding which binds to the enclosing element
   * with `repeat="true"`: item sequence binding which binds to the repeated elements
@@ -202,28 +162,26 @@ Attributes:
     * context of the iteration item
   * if the constraint returns `false()`, the current row cannot be removed
 * `clear-constraint`
-  * \[SINCE Orbeon Forms 2022.1]
   * optional XPath expression
   * evaluation context
     * context of the iteration item
   * if the constraint returns `false()`, the "Clear Line" menu item is disabled
 * `freeze`
   * optional number of rows at the top which cannot be removed or moved
-  * can be an AVT \[SINCE Orbeon Forms 2016.3]
+  * can be an AVT&#x20;
   * evaluation context
     * with `repeat="content"`: context of the binding (`bind` or `ref`)
     * with `repeat="true"`: context of the `fr:grid element`
 * `readonly`
   * force the grid to be readonly when set to `true`
   * this cannot be an AVT
-* `apply-defaults` \[SINCE Orbeon Forms 2016.1]
+* `apply-defaults`
   * `true`: dynamic initial values (via the `xxf:default` MIP) apply to new iterations
   * missing or \`false: dynamic initial values do not apply to new iterations
   * can be an AVT
-  * see also: [Evaluation of initial values upon insert](https://doc.orbeon.com/xforms/actions/repeat-insert-delete#evaluation-of-initial-values-upon-insert)
-* `appearance` \[SINCE Orbeon Forms 2016.1]
+* `appearance`
   * `full`
-    * the default appearance, as with Orbeon Forms 4.10 and earlier
+    * the default appearance
     * row menu
       * reordering of rows
       * insertion of rows at specific points
@@ -232,17 +190,13 @@ Attributes:
     * does not show the "+" button at the top left
     * does not show the row menu and associated features
     * instead just provides "Add another" and "Remove" links at the bottom
-* `insert` \[SINCE Orbeon Forms 2016.2]
+* `insert`&#x20;
   * `index`
     * the "Add Another" or "+" button adds a new repetition after the iteration currently with keyboard focus
     * this is the default in `full` appearance
   * `bottom`
     * the "Add Another" or "+" button adds a new repetition after the last iteration
     * this is the default in `minimal` appearance
-
-**Starting Orbeon Forms 2017.2**
-
-Copy
 
 ```
 <fr:grid
@@ -257,33 +211,12 @@ Copy
 </fr:grid>
 ```
 
-**Until Orbeon Forms 2017.1**
-
-Copy
-
-```
-<fr:grid
-    id="note-grid"
-    repeat="content"
-    bind="note-bind"
-    template="instance('note-template')"
-    min="0">
-    <xh:tr>
-        <xh:td>
-            <!-- A form control will be placed here -->
-        </xh:td>
-    </xh:tr>
-</fr:grid>
-```
-
 ### Data format <a href="#data-format" id="data-format"></a>
 
 With `repeat="content"`:
 
 * An enclosing element is present.
 * Nested elements, typically suffixed with `-iteration`, enclose each repetition.
-
-Copy
 
 ```
 <note>
@@ -301,8 +234,6 @@ With legacy `repeat="true"`:
 * No enclosing element is present.
 * Elements are repeated at the top-level.
 
-Copy
-
 ```
 <note>
     <note-text/>
@@ -313,8 +244,6 @@ Copy
 ```
 
 A template instance contains the XML data to insert for a new iteration:
-
-Copy
 
 ```
 <xf:instance id="note-template">
@@ -335,8 +264,6 @@ In either case, `fr:grid` contains the rows to repeat as `xh:tr`. Each `xh:tr` c
 
 ### Events <a href="#events" id="events"></a>
 
-\[SINCE Orbeon Forms 2016.1]
-
 The following events are dispatched to the `fr:grid` element:
 
 | Event name             | Description                                            |
@@ -345,8 +272,6 @@ The following events are dispatched to the `fr:grid` element:
 | `fr-iteration-removed` | Dispatched when the user has just removed an iteration |
 
 These events are not dispatched if the number of iterations changes by other means, for examle if the data is replaced, or inserts/deletes happen outside of the component.
-
-\[SINCE Orbeon Forms 2018.2]
 
 Both events take an `index` context information:
 

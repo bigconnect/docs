@@ -6,13 +6,9 @@ This component represents an attachment to a form which has to contain an image.
 
 By default the component accepts `image/*` mediatypes.
 
-\[SINCE Orbeon Forms 2017.1]
-
-If an [`upload-mediatypes` custom constraint](https://doc.orbeon.com/xforms/xpath/extension-functions/extension-validation#xxfupload-mediatypes) is present and not blank, it is used applied to the enclosed upload control. If missing, the default is `image/*`.
+If an `upload-mediatypes` custom constraint is present and not blank, it is used applied to the enclosed upload control. If missing, the default is `image/*`.
 
 ### Events <a href="#events" id="events"></a>
-
-\[SINCE Orbeon Forms 2017.1]
 
 This component dispatches the following events following the enclosed upload control:
 
@@ -22,8 +18,6 @@ This component dispatches the following events following the enclosed upload con
 * `xxforms-upload-error`
 
 ### Image transformation <a href="#image-transformation" id="image-transformation"></a>
-
-\[SINCE Orbeon Forms 2022.1]
 
 The component can transform the uploaded image. The following attributes control the transformation:
 
@@ -50,8 +44,6 @@ The component can transform the uploaded image. The following attributes control
 
 The following matching properties allow setting global defaults. For example:
 
-Copy
-
 ```
 <property 
     as="xs:string"
@@ -75,6 +67,5 @@ Copy
 
 When used in Form Builder, the following custom settings for image transformation are available:
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-7212ee532dfe67b3ee3a539f70e342a2d9487c9c%252Fcustom-settings-image-attachment.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=49579cc4cbe65d0a26988894a9bf6d08ce3e71497e1c04d8452eab0befc5327f)
+![Custom settings](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-7212ee532dfe67b3ee3a539f70e342a2d9487c9c%252Fcustom-settings-image-attachment.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=49579cc4cbe65d0a26988894a9bf6d08ce3e71497e1c04d8452eab0befc5327f)
 
-Custom settings

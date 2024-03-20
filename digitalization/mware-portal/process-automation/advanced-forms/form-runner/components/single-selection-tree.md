@@ -11,8 +11,6 @@ You:
 * specify `appearance="tree"` on an `<xf:select1>` control
 * generally use an `<xf:itemset>` element to point to items which are organized in a hierarchy
 
-Copy
-
 ```
 <xf:select1 appearance="tree" ref="value">
     <xf:itemset ref="instance('tree-items')//item">
@@ -23,8 +21,6 @@ Copy
 ```
 
 The `tree-items` instance might look like:
-
-Copy
 
 ```
 <xf:instance id="tree-items">
@@ -80,8 +76,6 @@ If the control is readonly, it appears grayed out. It is not possible to select 
 
 The `<xf:itemset>` element supports the `xxf:open` extension attribute, which determines which nodes of the tree are open when the tree is first rendered. You can use `<xf:itemset xxf:open="true">` if you want all the nodes to be open. If you have a condition under which nodes should be open, use an AVT. For instance, the following will open just the first level of the tree. If you wanted to open all the nodes up to 3 levels of depth, you would instead write `{count(ancestor-or-self::item) le 3}`.
 
-Copy
-
 ```
 <xf:select ref="value">
     <xf:itemset
@@ -101,8 +95,6 @@ The result:
 
 You can use an AVT in the the `class` attribute on the `<xf:itemset>` element to produce different CSS classes for different nodes.
 
-Copy
-
 ```
 class="my-class-{position()}" 
 ```
@@ -115,25 +107,19 @@ When used in Form Runner's readonly modes, the control doesn't show a tree but a
 
 You need the following configuration to use from a plain XForms (non-Form Runner) page, as the component's JavaScript is part of Form Runner:
 
-Copy
-
 ```
-<xh:script type="text/javascript" src="/apps/fr/resources/scalajs/orbeon-form-runner.js"/>
+<xh:script type="text/javascript" src="/apps/fr/resources/scalajs/forms-form-runner.js"/>
 ```
 
 And then, on your main XForms model, put the `xxf:assets.baseline.excludes` attribute like this:
 
-Copy
-
 ```
-<xf:model xxf:assets.baseline.excludes="/ops/javascript/scalajs/orbeon-xforms.js">
+<xf:model xxf:assets.baseline.excludes="/ops/javascript/scalajs/forms-xforms.js">
 ```
 
 ### Custom styling <a href="#custom-styling" id="custom-styling"></a>
 
-Starting with Orbeon Forms 2017.1, the implementation of the `tree` appearance uses the [Fancytree](https://github.com/mar10/fancytree) JavaScript library.
-
-_NOTE: This is subject to change in new versions of Orbeon Forms._
+The implementation of the `tree` appearance uses the [Fancytree](https://github.com/mar10/fancytree) JavaScript library.
 
 However you can look at the markup produced by Fancytree with your browser's development tools and apply custom CSS to style the tree. All icons are set with CSS. Here is an example of the HTML layout:
 

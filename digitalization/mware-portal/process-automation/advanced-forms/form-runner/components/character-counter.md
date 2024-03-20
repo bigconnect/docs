@@ -17,8 +17,6 @@ It supports the following controls:
 
 The component is generally activated using the `appearance` attribute:
 
-Copy
-
 ```
 <fr:input bind="message-bind" appearance="character-counter">
     <xf:label>Message</xf:label>
@@ -44,4 +42,4 @@ By default, `fr-charcounter-over` places a minus sign in front of the number of 
 
 ### Form Builder support <a href="#form-builder-support" id="form-builder-support"></a>
 
-The CSS bindings allow Form Builder to propose the "Character Counter" appearance to the user automatically. See [How the new Form Builder Appearance Selector Works](https://blog.orbeon.com/2015/06/how-new-form-builder-appearance.html) for details.
+The CSS bindings allow Form Builder to propose the "Character Counter" appearance to the user automatically.

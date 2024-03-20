@@ -6,20 +6,16 @@ The `fr:yesno-input` component displays a simple choice between "Yes" and "No". 
 
 Appearance
 
-This control is generally recommended over the [Checkbox Input Component](https://doc.orbeon.com/form-runner/component/checkbox-input) for binary (or boolean) selection, because:
+This control is generally recommended over the Checkbox Input Component for binary (or boolean) selection, because:
 
 * A "Yes/No" choice is usually clearer to the user.
 * The control can be marked as "Required", in which case he user has to make a selection to pass validation. With a single checkbox, it is easier to miss making a selection.
-
-[\[SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1)
 
 A "Clear value" button is available in Form Builder to clear the value of the control without editing the source of the form definition or recreating the control.
 
 ### Basic usage <a href="#basic-usage" id="basic-usage"></a>
 
 You use `fr:yesno-input` like a regular XForms controls. Example:
-
-Copy
 
 ```
 <fr:yesno-input ref="happy-camper">

@@ -1,6 +1,8 @@
 # Section
 
-The `fr:section` component organizes [grids](https://doc.orbeon.com/form-runner/component/grid) under a header or title. Features:
+The `fr:section` component organizes grids under a header or title.&#x20;
+
+Features:
 
 * collapsible section content
 * optional repetition of its content
@@ -14,15 +16,15 @@ The `fr:section` component organizes [grids](https://doc.orbeon.com/form-runner/
 
 An open, collapsible section shows a "collapse" icon at the left of the heading.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LL5f7RgoXiXvVKRMgo4%252F-LL5fFrp3zrt2iQRL6qn%252Fxbl-section-open.png%3Fgeneration=1535562815480459%26alt=media\&width=768\&dpr=4\&quality=100\&sign=01432ed3eb26f2fa4c43a5dc622c3164f71795391365170d0d6e7d810c90e2bf)
+![Open section](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LL5f7RgoXiXvVKRMgo4%252F-LL5fFrp3zrt2iQRL6qn%252Fxbl-section-open.png%3Fgeneration=1535562815480459%26alt=media\&width=768\&dpr=4\&quality=100\&sign=01432ed3eb26f2fa4c43a5dc622c3164f71795391365170d0d6e7d810c90e2bf)
 
-Open section
+
 
 The same section when closed just shows the heading.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LL5f7RgoXiXvVKRMgo4%252F-LL5fFrrTxnUUNZqnZpy%252Fxbl-section-closed.png%3Fgeneration=1535562815098586%26alt=media\&width=768\&dpr=4\&quality=100\&sign=d34da2ae197f1b8e0c6075b610cf8ff21326a7df8f2a9e6106dfa53b5489baeb)
+![Closed or collapsed section](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LL5f7RgoXiXvVKRMgo4%252F-LL5fFrrTxnUUNZqnZpy%252Fxbl-section-closed.png%3Fgeneration=1535562815098586%26alt=media\&width=768\&dpr=4\&quality=100\&sign=d34da2ae197f1b8e0c6075b610cf8ff21326a7df8f2a9e6106dfa53b5489baeb)
 
-Closed or collapsed section
+
 
 #### Full repeat appearance <a href="#full-repeat-appearance" id="full-repeat-appearance"></a>
 
@@ -39,28 +41,25 @@ A menu is available to perform operations on or around a line. Not all operation
 * Move Down
   * When allowed, move the current repetition one level below.
 * Clear Line
-  * \[SINCE Orbeon Forms 2019.2]
   * Clear or reset all the values in the current repetition.
 * Remove Line
   * When allowed, remove the current repetition.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LxNZd9pylI96dTuT4G-%252F-LxNZnu6lBwB2OfvmEeT%252Fxbl-grid-menu.png%3Fgeneration=1577739044203862%26alt=media\&width=768\&dpr=4\&quality=100\&sign=8ab245f03bef547985f09c529b1399b4149446eba82551c743772e2d5de15ddf)
+![Repeated section menu](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LxNZd9pylI96dTuT4G-%252F-LxNZnu6lBwB2OfvmEeT%252Fxbl-grid-menu.png%3Fgeneration=1577739044203862%26alt=media\&width=768\&dpr=4\&quality=100\&sign=8ab245f03bef547985f09c529b1399b4149446eba82551c743772e2d5de15ddf)
 
-Repeated section menu
+
 
 **Appearance**
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LL5gPVZwk84cOQApInB%252F-LL5fFrtIwfQ0-rpmSI4%252Fxbl-section-repeat-full.png%3Fgeneration=1535563155219681%26alt=media\&width=768\&dpr=4\&quality=100\&sign=3faa0a7fbb976924289592a1b91e91f9314ac53dcc91830bca54ac16b6e4e1ad)
+![Full appearance](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LL5gPVZwk84cOQApInB%252F-LL5fFrtIwfQ0-rpmSI4%252Fxbl-section-repeat-full.png%3Fgeneration=1535563155219681%26alt=media\&width=768\&dpr=4\&quality=100\&sign=3faa0a7fbb976924289592a1b91e91f9314ac53dcc91830bca54ac16b6e4e1ad)
 
-Full appearance
+
 
 #### Minimal repeat appearance <a href="#minimal-repeat-appearance" id="minimal-repeat-appearance"></a>
 
-\[SINCE Orbeon Forms 2016.1]
+![Minimal appearance](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LL5f7RgoXiXvVKRMgo4%252F-LL5fFrvj4uF\_KpKdUED%252Fxbl-section-repeat-minimal.png%3Fgeneration=1535562815420972%26alt=media\&width=768\&dpr=4\&quality=100\&sign=22305542eaeb1d68a055aa8e08fbe100deccd682fe75a6f06eb66ec4fcccca17)
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LL5f7RgoXiXvVKRMgo4%252F-LL5fFrvj4uF\_KpKdUED%252Fxbl-section-repeat-minimal.png%3Fgeneration=1535562815420972%26alt=media\&width=768\&dpr=4\&quality=100\&sign=22305542eaeb1d68a055aa8e08fbe100deccd682fe75a6f06eb66ec4fcccca17)
 
-Minimal appearance
 
 ### Basic usage <a href="#basic-usage" id="basic-usage"></a>
 
@@ -81,18 +80,18 @@ These attributes are supported when the section is in non-repeated mode.
     * section animates
   * `false`
     * section does not animate
-* `collapsible` \[SINCE Orbeon Forms 2016.1]
+* `collapsible`&#x20;
   * whether the section can be collapsed and expanded by clicking on its title
   * `true` (default)
     * allow section to be collapsed
   * `false`
     * don't allow section to be collapsed
   * _NOTE: If the section is initially closed and `collapsible` is `false`, the user won't be able to open the section._
-* `level` \[SINCE Orbeon Forms 2016.3]
+* `level`
   * level of the section, from `1` to `6`
   * default: `2`
   * alongside `base-level`, this value translates into an HTML heading `h1` to `h6`
-* `base-level` \[SINCE Orbeon Forms 2016.3]
+* `base-level`
   * base level of the section, from `0` to `5`
   * default: `0`
   * when set to a non-zero value, this value is added to the value of `level` to produce the actual section level
@@ -103,7 +102,7 @@ These attributes are supported in addition to the non-repeated mode attributes w
 
 * `freeze`
   * optional number of rows at the top which cannot be removed or moved
-  * can be an AVT \[SINCE Orbeon Forms 2016.3]
+  * can be an AVT&#x20;
 * `readonly`
   * whether to disallow the user to add/remove iteration with the menu or the "-" button (depending on appearance)
   * `false` (default)
@@ -112,9 +111,9 @@ These attributes are supported in addition to the non-repeated mode attributes w
         mode is readonly ("view" mode, "pdf" mode, etc.)
   * `true` (default)
     * don't show the iteration menu and buttons
-* `appearance` \[SINCE Orbeon Forms 2016.1]
+* `appearance`&#x20;
   * `full`
-    * the default appearance, as with Orbeon Forms 4.10 and earlier
+    * the default appearance
     * iteration menu
       * reordering of iterations
       * insertion of iterations at specific points
@@ -123,7 +122,7 @@ These attributes are supported in addition to the non-repeated mode attributes w
     * does not show the "+" button at the top left
     * does not show the iteration menu and associated features
     * instead just provides "Add another" and "Remove" links at the bottom and a "-" button to the right
-* `insert` \[SINCE Orbeon Forms 2016.2]
+* `insert`&#x20;
   * `index`
     * the "Add Another" or "+" button adds a new repetition after the iteration currently with keyboard focus
     * this is the default in `full` appearance
@@ -133,13 +132,13 @@ These attributes are supported in addition to the non-repeated mode attributes w
 
 You move, insert, and remove iterations using the left menu:
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LL5f7RgoXiXvVKRMgo4%252F-LL5fFsA63T9kFXWkDGy%252Fxbl-section-repeat-menu.png%3Fgeneration=1535562815284997%26alt=media\&width=768\&dpr=4\&quality=100\&sign=797b62030f4c32947a691ff79ddaf25265b27861ef0879fea0c2ef0388bb41ca)
+![Menu](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LL5f7RgoXiXvVKRMgo4%252F-LL5fFsA63T9kFXWkDGy%252Fxbl-section-repeat-menu.png%3Fgeneration=1535562815284997%26alt=media\&width=768\&dpr=4\&quality=100\&sign=797b62030f4c32947a691ff79ddaf25265b27861ef0879fea0c2ef0388bb41ca)
 
-Menu
+
 
 ### Data format <a href="#data-format" id="data-format"></a>
 
-See [Form data format](https://doc.orbeon.com/form-runner/api/data-formats/form-data#repeated-sections).
+See Form data format.
 
 ### Events <a href="#events" id="events"></a>
 
@@ -151,8 +150,6 @@ See [Form data format](https://doc.orbeon.com/form-runner/api/data-formats/form-
 | `fr-collapse` | Collapse the section |
 
 #### Events dispatched <a href="#events-dispatched" id="events-dispatched"></a>
-
-\[SINCE Orbeon Forms 2016.1]
 
 The following events are dispatched to the `fr:section` element:
 
