@@ -1,10 +1,10 @@
 # Action syntax
 
-Orbeon Forms supports services and actions. With Orbeon Forms 2018.2, a first step towards more powerful actions is introduced. There is no interface for it yet, but instead an XML configuration which you can paste into the form definition via the ["Edit Source"](https://doc.orbeon.com/form-builder/advanced/edit-source) dialog.
+Advanced Forms supports services and actions. There is no interface for it yet, but instead an XML configuration which you can paste into the form definition via the "Edit Source" dialog.
 
 ### Enhancements <a href="#enhancements" id="enhancements"></a>
 
-In addition to the features available through the ["Actions" dialog](https://doc.orbeon.com/form-builder/advanced/services-and-actions/actions), the following enhancements are available:
+In addition to the features available through the "Actions" dialog, the following enhancements are available:
 
 * Call an action in response to _multiple events_.
 * Support _more event types_.
@@ -12,14 +12,12 @@ In addition to the features available through the ["Actions" dialog](https://doc
 * Run actions _without_ calling services.
 * Clear repeated grid or repeated section repetitions.
 * Add repeated grid or repeated section repetitions.
-* _Repeatedly run_ parts of an action. \[SINCE Orbeon Forms 2019.1]
-* _Conditionally run_ parts of an action. \[SINCE Orbeon Forms 2019.1]
+* _Repeatedly run_ parts of an action.
+* _Conditionally run_ parts of an action.&#x20;
 
 ### Updating the form definition <a href="#updating-the-form-definition" id="updating-the-form-definition"></a>
 
 You place listeners and actions within the source code, preferably before the end of the main `<xf:model>` content. For example:
-
-Copy
 
 ```
     <!-- other Form Builder code here -->
@@ -50,8 +48,6 @@ The following example:
     * adds a repetition at the end of the `my-table` repeated grid
     * sets the value of controls on the new repetition
   * finally, all the `result-dropdown` dropdown control items are updated
-
-Copy
 
 ```
     <!-- other Form Builder code here -->
@@ -94,8 +90,6 @@ Copy
 #### Basic syntax <a href="#basic-syntax" id="basic-syntax"></a>
 
 A listener looks like this:
-
-Copy
 
 ```
 <fr:listener
@@ -145,15 +139,11 @@ Form load:
 * `form-load-after-data`: run when the data is ready
 * `form-load-after-controls`: run after the controls are ready
 
-See also [Running processes upon page load](https://doc.orbeon.com/configuration/properties/form-runner/form-runner-detail-page#running-processes-upon-page-load) for the detail of the form load events.
-
 ### Actions <a href="#actions" id="actions"></a>
 
 #### Basic syntax <a href="#basic-syntax-1" id="basic-syntax-1"></a>
 
 An action looks like this:
-
-Copy
 
 ```
 <fr:action
@@ -171,11 +161,7 @@ Copy
 
 #### Iterating over data <a href="#iterating-over-data" id="iterating-over-data"></a>
 
-\[SINCE Orbeon Forms 2019.1]
-
 **Basic usage**
-
-Copy
 
 ```
 <fr:data-iterate ref="...expression...">
@@ -192,8 +178,6 @@ Containing actions can include one or more calls to services.
 | `ref`     | Yes       | sequence XPath expression | runs in the current XPath evaluation context |
 
 In the following example, each repetition adds a row to the grid, calls a service, passing the attachment id, and sets the attachment value on the last row.
-
-Copy
 
 ```
 <fr:action name="populate-attachments" version="2018.2">
@@ -214,13 +198,9 @@ Copy
 
 **Nesting of iterations**
 
-\[SINCE Orbeon Forms 2019.2]
-
 Calls to `<fr:data-iterate>` can be nested. This allows, for example, filling nested repeated sections and/or grids with the result of a service call that returns hierarchical data.
 
 Example:
-
-Copy
 
 ```
 <fr:action name="my-action" version="2018.2">
@@ -243,10 +223,6 @@ Copy
 
 #### Conditions <a href="#conditions" id="conditions"></a>
 
-\[SINCE Orbeon Forms 2019.1]
-
-Copy
-
 ```
 <fr:if condition="...boolean expression...">
     ...
@@ -260,8 +236,6 @@ Copy
 | `condition` | Yes       | boolean XPath expression | runs in the current XPath evaluation context |
 
 In the following example, with the repetition performed by `<fr:data-iterate>`, the call to the service that retrieves an attachment depends on whether there is a non-blank attachment id provided.
-
-Copy
 
 ```
 <fr:action name="populate-attachments" version="2018.2">
@@ -284,8 +258,6 @@ Copy
 
 ### Asynchronous actions <a href="#asynchronous-actions" id="asynchronous-actions"></a>
 
-[\[SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1)
-
 Previously, actions were run synchronously. That is, they were blocking any other form processing until completed. It is now possible to run actions asynchronously. This means that the form processing can continue while the actions are running in the background. This is particularly useful when the actions call services.
 
 You can enable asynchronous actions:
@@ -294,8 +266,6 @@ You can enable asynchronous actions:
 * at the form level, using the `oxf.fr.detail.actions.async.*.*` property
 
 Example of configuration property:
-
-Copy
 
 ```
 <property 
@@ -312,8 +282,6 @@ An asynchronous action, by default, causes a response to the client (web browser
 * at the form level, using the `oxf.fr.detail.actions.response-must-await.*.*` property
 
 Example of configuration property:
-
-Copy
 
 ```
 <property 
@@ -362,13 +330,11 @@ A token can take the following values:
 * `start`: the first repetition
 * `end`: the last repetition
 * a strictly positive integer: the repetition at that specific position
-* `all`: all controls [\[SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1)
+* `all`: all controls
 
 When the `at` attribute is not present, it defaults to being relative to the action source. This usually means targeting the first repetition.
 
 The following example sets the value of the control `my-repeated-value` in all repetitions of the `my-repeated-value` repeated grid to `42`
-
-Copy
 
 ```
 <fr:control-setvalue 
@@ -378,8 +344,6 @@ Copy
 ```
 
 Assume now that the control `my-repeated-value` is within a repeated grid, itself nested within two levels of repeated sections. The following example sets the value of the control `my-repeated-value` in the third repetition of the last repetition of the first repetition to `42`:
-
-Copy
 
 ```
 <fr:control-setvalue 
@@ -391,8 +355,6 @@ Copy
 ### Individual actions <a href="#individual-actions" id="individual-actions"></a>
 
 #### Calling a service <a href="#calling-a-service" id="calling-a-service"></a>
-
-Copy
 
 ```
 <fr:service-call service="...service name...">
@@ -408,21 +370,17 @@ Copy
 
 **Passing a value**
 
-Copy
-
 ```
 <fr:value value="..." ref="..."/>
 ```
 
 or:
 
-Copy
-
 ```
 <fr:value control="..." ref="..."/>
 ```
 
-When calling an [HTTP service](https://doc.orbeon.com/form-builder/advanced/services-and-actions/http-services), you can set XML request body values using nested `<fr:value>` elements.
+When calling an HTTP service, you can set XML request body values using nested `<fr:value>` elements.
 
 | Attribute | Mandatory | Value                  | Comment                                              |
 | --------- | --------- | ---------------------- | ---------------------------------------------------- |
@@ -438,7 +396,7 @@ Copy
 <fr:url-param name="..." value="..."/>
 ```
 
-When calling an [HTTP service](https://doc.orbeon.com/form-builder/advanced/services-and-actions/http-services), you can pass URL parameters using nested `<fr:url-param>` elements.
+When calling an HTTP service, you can pass URL parameters using nested `<fr:url-param>` elements.
 
 | Attribute | Mandatory | Value            | Comment                                    |
 | --------- | --------- | ---------------- | ------------------------------------------ |
@@ -448,13 +406,11 @@ When calling an [HTTP service](https://doc.orbeon.com/form-builder/advanced/serv
 
 **Passing a SQL parameter**
 
-Copy
-
 ```
 <fr:sql-param index="..." value="..."/>
 ```
 
-When calling a [database service](https://doc.orbeon.com/form-builder/advanced/services-and-actions/database-services), you can pass parameters using nested `<fr:sql-param>` elements.
+When calling a database service, you can pass parameters using nested `<fr:sql-param>` elements.
 
 | Attribute | Mandatory | Value            | Comment                                    |
 | --------- | --------- | ---------------- | ------------------------------------------ |
@@ -463,8 +419,6 @@ When calling a [database service](https://doc.orbeon.com/form-builder/advanced/s
 | `index`   | Yes       | positive integer | SQL query parameter index                  |
 
 #### Removing all repetitions of a repeat <a href="#removing-all-repetitions-of-a-repeat" id="removing-all-repetitions-of-a-repeat"></a>
-
-Copy
 
 ```
 <fr:repeat-clear
@@ -483,36 +437,26 @@ With `my-repeated-grid` nested within `my-repeated-section`:
 
 *   Remove all repetitions of `my-repeated-section`:
 
-    Copy
-
     ```
     <fr:repeat-clear repeat="my-repeated-section"/>
     ```
 *   Remove all repetitions of the last `my-repeated-grid`:
-
-    Copy
 
     ```
     <fr:repeat-clear repeat="my-repeated-grid" at="end"/>
     ```
 *   Remove all repetitions of the first `my-repeated-grid`:
 
-    Copy
-
     ```
     <fr:repeat-clear repeat="my-repeated-grid" at="start"/>
     ```
 *   Remove all repetitions of the second `my-repeated-grid`:
-
-    Copy
 
     ```
     <fr:repeat-clear repeat="my-repeated-grid" at="2"/>
     ```
 
 #### Adding repetitions to a repeat <a href="#adding-repetitions-to-a-repeat" id="adding-repetitions-to-a-repeat"></a>
-
-Copy
 
 ```
 <fr:repeat-add-iteration
@@ -531,15 +475,11 @@ With `my-repeated-grid` nested within `my-repeated-section`:
 
 *   Insert a new repetition at the end of the last `my-repeated-grid`:
 
-    Copy
-
     ```
     <fr:repeat-add-iteration repeat="my-repeated-grid" at="end end"/>
     ```
 
     or:
-
-    Copy
 
     ```
     <fr:repeat-add-iteration repeat="my-repeated-grid" at="end"/>
@@ -547,35 +487,25 @@ With `my-repeated-grid` nested within `my-repeated-section`:
 
     or:
 
-    Copy
-
     ```
     <fr:repeat-add-iteration repeat="my-repeated-grid"/>
     ```
 *   Insert a new repetition at the end of the first `my-repeated-grid`:
-
-    Copy
 
     ```
     <fr:repeat-add-iteration repeat="my-repeated-grid" at="start end"/>
     ```
 *   Insert a new repetition at the start of the first `my-repeated-grid`:
 
-    Copy
-
     ```
     <fr:repeat-add-iteration repeat="my-repeated-grid" at="start start"/>
     ```
 *   Insert a new repetition after repetition 2 of the third `my-repeated-grid`:
 
-    Copy
-
     ```
     <fr:repeat-add-iteration repeat="my-repeated-grid" at="3 2"/>
     ```
 *   Insert a new repetition at the end of `my-repeated-section`:
-
-    Copy
 
     ```
     <fr:repeat-add-iteration repeat="my-repeated-section" at="end"/>
@@ -583,15 +513,11 @@ With `my-repeated-grid` nested within `my-repeated-section`:
 
     or:
 
-    Copy
-
     ```
     <fr:repeat-add-iteration repeat="my-repeated-section"/>
     ```
 
 #### Removing repetitions from a repeat <a href="#removing-repetitions-from-a-repeat" id="removing-repetitions-from-a-repeat"></a>
-
-Copy
 
 ```
 <fr:repeat-remove-iteration
@@ -610,15 +536,11 @@ With `my-repeated-grid` nested within `my-repeated-section`:
 
 *   Remove the last repetition of the last `my-repeated-grid`:
 
-    Copy
-
     ```
     <fr:repeat-remove-iteration repeat="my-repeated-grid" at="end end"/>
     ```
 
     or:
-
-    Copy
 
     ```
     <fr:repeat-remove-iteration repeat="my-repeated-grid" at="end"/>
@@ -626,29 +548,21 @@ With `my-repeated-grid` nested within `my-repeated-section`:
 
     or:
 
-    Copy
-
     ```
     <fr:repeat-remove-iteration repeat="my-repeated-grid"/>
     ```
 *   Remove the last repetition of the first `my-repeated-grid`:
-
-    Copy
 
     ```
     <fr:repeat-remove-iteration repeat="my-repeated-grid" at="start end"/>
     ```
 *   Remove repetition 2 of the third `my-repeated-grid`:
 
-    Copy
-
     ```
     <fr:repeat-remove-iteration repeat="my-repeated-grid" at="3 2"/>
     ```
 
 #### Setting the value of a control <a href="#setting-the-value-of-a-control" id="setting-the-value-of-a-control"></a>
-
-Copy
 
 ```
 <fr:control-setvalue/>
@@ -662,8 +576,6 @@ Copy
 | `value`   | Yes       | value expression                                                       | value to set                            |
 | `at`      | No        | space-delimited position tokens: `start`, `end`, or a positive integer | missing leading tokens default to `end` |
 
-Copy
-
 ```
 <fr:control-setvalue
     control="my-control"
@@ -671,10 +583,6 @@ Copy
 ```
 
 #### Clearing the value of a control <a href="#clearing-the-value-of-a-control" id="clearing-the-value-of-a-control"></a>
-
-\[SINCE Orbeon Forms 2020.1]
-
-Copy
 
 ```
 <fr:control-clear/>
@@ -689,15 +597,11 @@ Copy
 
 Example:
 
-Copy
-
 ```
 <fr:control-clear control="my-control"/>
 ```
 
 #### Setting the choices of a selection control <a href="#setting-the-choices-of-a-selection-control" id="setting-the-choices-of-a-selection-control"></a>
-
-Copy
 
 ```
 <fr:control-setitems/>
@@ -710,15 +614,11 @@ Copy
 | `control` | Yes       | control name                                                           |                                         |
 | `items`   | Yes       | XPath expression returning one XPath item for each choice              |                                         |
 | `label`   | Yes       | relative XPath expression returning the label for the current choice   |                                         |
-| `hint`    | No        | relative XPath expression returning the hint for the current choice    | \[SINCE Orbeon Forms 2020.1]            |
+| `hint`    | No        | relative XPath expression returning the hint for the current choice    |                                         |
 | `value`   | Yes       | relative XPath expression returning the value for the current choice   |                                         |
 | `at`      | No        | space-delimited position tokens: `start`, `end`, or a positive integer | missing leading tokens default to `end` |
 
-_NOTE: Hints are only supported for checkboxes and radio buttons as of Orbeon Forms 2020.1._
-
 #### Writing to a dataset <a href="#writing-to-a-dataset" id="writing-to-a-dataset"></a>
-
-Copy
 
 ```
 <fr:dataset-write
@@ -731,18 +631,12 @@ Copy
 
 This action takes the latest service result and saves it to the dataset specified by name. Example:
 
-Copy
-
 ```
 <fr:dataset-write
     name="my-dataset"/>
 ```
 
 #### Clearing a dataset <a href="#clearing-a-dataset" id="clearing-a-dataset"></a>
-
-\[SINCE Orbeon Forms 2022.1.2]
-
-Copy
 
 ```
 <fr:dataset-clear
@@ -764,10 +658,6 @@ Copy
 
 #### Calling a process <a href="#calling-a-process" id="calling-a-process"></a>
 
-\[SINCE Orbeon Forms 2019.1]
-
-Copy
-
 ```
 <fr:process-call
     scope="oxf.fr.detail.process"
@@ -781,10 +671,6 @@ Copy
 
 #### Navigating to a page or URL <a href="#navigating-to-a-page-or-url" id="navigating-to-a-page-or-url"></a>
 
-\[SINCE Orbeon Forms 2019.1]
-
-Copy
-
 ```
 <fr:navigate
     location="https://www.bbc.com/news"/>
@@ -797,10 +683,6 @@ Copy
 
 #### Setting the value of an attachment control <a href="#setting-the-value-of-an-attachment-control" id="setting-the-value-of-an-attachment-control"></a>
 
-\[SINCE Orbeon Forms 2019.1]
-
-Copy
-
 ```
 <fr:control-setattachment
     control="..."/>
@@ -811,8 +693,6 @@ Copy
 | `control` | Yes       | control name |         |
 
 When the response of a service is binary, this action allows setting the value of an attachment control to the content of the service response:
-
-Copy
 
 ```
 <fr:control-setattachment
@@ -833,10 +713,6 @@ See also the following actions:
 * `<fr:control-setsize>`
 
 #### Setting the filename of an attachment control <a href="#setting-the-filename-of-an-attachment-control" id="setting-the-filename-of-an-attachment-control"></a>
-
-\[SINCE Orbeon Forms 2019.1]
-
-Copy
 
 ```
 <fr:control-setfilename
@@ -866,10 +742,6 @@ This supports the following controls:
 
 #### Setting the mediatype of an attachment control <a href="#setting-the-mediatype-of-an-attachment-control" id="setting-the-mediatype-of-an-attachment-control"></a>
 
-\[SINCE Orbeon Forms 2019.1]
-
-Copy
-
 ```
 <fr:control-setmediatype
     control="..."
@@ -882,8 +754,6 @@ Copy
 | `value`   | Yes       | value expression | value of the mediatype to set |
 
 This action allows setting the mediatype of an attachment control. Example:
-
-Copy
 
 ```
 <fr:control-setmediatype
@@ -900,10 +770,6 @@ Note that the `<fr:control-setattachment>` action automatically sets a mediatype
 
 #### Setting the size of an attachment control <a href="#setting-the-size-of-an-attachment-control" id="setting-the-size-of-an-attachment-control"></a>
 
-[\[SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1)
-
-Copy
-
 ```
 <fr:control-setsize
     control="..."
@@ -916,8 +782,6 @@ Copy
 | `value`   | Yes       | value expression | value of the size to set |
 
 This action allows setting the mediatype of an attachment control. Example:
-
-Copy
 
 ```
 <fr:control-setsize
@@ -934,10 +798,6 @@ Note that the `<fr:control-setattachment>` action automatically sets a size.
 
 #### Setting the focus on a form control <a href="#setting-the-focus-on-a-form-control" id="setting-the-focus-on-a-form-control"></a>
 
-\[SINCE Orbeon Forms 2022.1.2]
-
-Copy
-
 ```
 <fr:control-setfocus
     control="..."/>
@@ -949,18 +809,12 @@ Copy
 
 This action allows setting the focus on a form control. Example:
 
-Copy
-
 ```
 <fr:control-setfocus
     control="my-text-field"/>
 ```
 
 #### Marking a form control visited or unvisited <a href="#marking-a-form-control-visited-or-unvisited" id="marking-a-form-control-visited-or-unvisited"></a>
-
-\[SINCE Orbeon Forms 2022.1.2]
-
-Copy
 
 ```
 <fr:control-setvisited
@@ -975,31 +829,25 @@ Copy
 
 This action allows setting whether a form control is visited or not. Example:
 
-Copy
-
 ```
 <fr:control-setvisited
     control="my-text-field"
     visited="false"/>
 ```
 
-In Orbeon Forms, a form control can be _visited_ or not. Visited controls have been visited by the user, which means that the user navigated through the form control, possibly without changing its value. One way to visit form controls is to navigate using the "Tab" key, or to click on the form control and then click outside of it. Another way is to use the default "Save" or "Send" buttons, which by default visit all the form controls before proceeding. The notion is used to determine whether to show validation errors associated with that form control. [\[SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1) Form controls can also be visited when they are calculated, visible, and their value changes.
+In Advanced Forms, a form control can be _visited_ or not. Visited controls have been visited by the user, which means that the user navigated through the form control, possibly without changing its value. One way to visit form controls is to navigate using the "Tab" key, or to click on the form control and then click outside of it. Another way is to use the default "Save" or "Send" buttons, which by default visit all the form controls before proceeding. The notion is used to determine whether to show validation errors associated with that form control. Form controls can also be visited when they are calculated, visible, and their value changes.
 
 When working with actions, some form controls can benefit from having their "visited" status reset so that the user doesn't see extra errors appear. The `<fr:control-setvisited>` action allows doing that.
 
 #### Alert for debugging <a href="#alert-for-debugging" id="alert-for-debugging"></a>
 
-\[SINCE Orbeon Forms 2022.1, 2021.1.2, 2020.1.7] The `<fr:alert>` action is intended to be used for debugging, allowing you to get some visibility on the value of intermediary results, or more generally the value of any expression is at a given point. The value of the `message` attribute uses the [AVT syntax](https://doc.orbeon.com/xforms/core/attribute-value-templates), so the example below would show a dialog with the message "The answer is 42".
-
-Copy
+The `<fr:alert>` action is intended to be used for debugging, allowing you to get some visibility on the value of intermediary results, or more generally the value of any expression is at a given point. The value of the `message` attribute uses the AVT syntax, so the example below would show a dialog with the message "The answer is 42".
 
 ```
 <fr:alert message="The answer is {40+2}"/>
 ```
 
 #### Copying control content <a href="#copying-control-content" id="copying-control-content"></a>
-
-[\[SINCE Orbeon Forms 2023.1\]](https://doc.orbeon.com/release-notes/orbeon-forms-2023.1)
 
 **Description**
 
@@ -1008,8 +856,6 @@ The `<fr:copy-content>` action allows you to copy form content:
 * from non-repeated form controls to other non-repeated form controls
 * from non-repeated form controls to repeated form controls
 * from repeated form controls to other repeated form controls
-
-See also [Synchronizing repeated content](https://doc.orbeon.com/form-builder/advanced/services-and-actions/synchronize-repeated-content).
 
 **Example**
 
@@ -1020,8 +866,6 @@ Assuming that:
 
 Then, in the following example, each `<fr:map>` expresses that all repeated controls denoted by the `left` attribute (source) are copied to the corresponding repeated controls denoted by the `right` attribute (destination).
 
-Copy
-
 ```
 <fr:copy-content warn="true">
     <fr:map left="control-1"            right="control-3"/>
@@ -1030,9 +874,7 @@ Copy
 </fr:copy-content>
 ```
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-f61b08c2a47aa981ff4e1277bcfcef57c5c1a36a%252Fcopy-content.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=16cf24074216f3a7858831467fb7a64850ca10f1b415b76a4bee19e790ffa8af)
-
-Example form showing copied content
+![Example form showing copied content](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-f61b08c2a47aa981ff4e1277bcfcef57c5c1a36a%252Fcopy-content.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=16cf24074216f3a7858831467fb7a64850ca10f1b415b76a4bee19e790ffa8af)
 
 **Repeated source and destination**
 
@@ -1072,16 +914,7 @@ The default is `false`.
 
 ### Error handling <a href="#error-handling" id="error-handling"></a>
 
-With Orbeon Forms 2018.2, errors when running services are silently ignored and the action continues.
-
-With Orbeon Forms 2019.1, errors:
-
-1. cause the entire action to stop.
-2. run the `oxf.fr.detail.process.action-service-error` process
-
 The default implementation of the service error process is as follows:
-
-Copy
 
 ```
 <property as="xs:string"  name="oxf.fr.detail.process.action-service-error.*.*">
@@ -1099,13 +932,9 @@ The context item used for XPath evaluations is set as follows:
 * Within an `<fr:data-iterate>`, and until a service response is available, it is the current iteration item.
 * After a service call, whether at the top-level or within an `<fr:data-iterate>`, it is the root element of the preceding action response.
 
-\[SINCE Orbeon Forms 2019.1]
-
 You can explicitly set the XPath evaluation context to the current iteration item within a `<fr:data-iterate>` with the `expression-context` attribute set to `current-iteration`.
 
 In the following example, without the `expression-context="current-iteration"` attribute, the second `<fr:value>` would evaluate within the context of the first service call's response.
-
-Copy
 
 ```
 <fr:data-iterate ref="/*/row">
@@ -1124,8 +953,6 @@ Copy
 ```
 
 To be more explicit, the attribute can also be set on the first `<fr:value>`:
-
-Copy
 
 ```
 <fr:data-iterate ref="/*/row">
