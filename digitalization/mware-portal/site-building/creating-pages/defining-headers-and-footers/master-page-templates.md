@@ -6,7 +6,7 @@ By default, the out-of-the-box Blank master page template doesn’t provide any 
 
 ![The blank master page template is the default for pages, and page templates.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/defining-headers-and-footers/master-page-templates/images/01.png)
 
-### [Building Master Page Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/defining-headers-and-footers/master-page-templates#building-master-page-templates) <a href="#building-master-page-templates" id="building-master-page-templates"></a>
+### Building Master Page Templates <a href="#building-master-page-templates" id="building-master-page-templates"></a>
 
 Building a master page template is similar to the process of creating a content page. A master page template can contain any number of page fragments, like a content page. However, a master page template differs in that it has one key area defined, called a Drop Zone, that specifies where you can place page fragments. This area can’t be removed, but it can be placed somewhere else in the page layout. You can also define which page fragments can be added to the Drop Zone. A typical use case for a master page template is to have a header, a footer, and a drop zone. See [Creating a Master Page Template](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/defining-headers-and-footers/creating-a-master-page-template) for more information.
 

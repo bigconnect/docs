@@ -1,13 +1,13 @@
 # Content Page Personalization
 
-You can tailor your Content Page to different groups of users, providing each group a personalized experience, rather than a generic one. You can also leverage Content Page personalization to conduct A/B Testing (for more information, see [Content Page Experiences and A/B Testing](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/content-page-personalization#content-page-experiences-and-ab-testing)).
+You can tailor your Content Page to different groups of users, providing each group a personalized experience, rather than a generic one. You can also leverage Content Page personalization to conduct A/B Testing (for more information, see Content Page Experiences and A/B Testing).
 
 Personalizing your Content Page for different users is a two-step process:
 
-1. [Define a Segment](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/creating-and-managing-user-segments) for the users you want to provide a personalized experience.
-2. [Create an Experience](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/creating-and-managing-experiences) with customized content for your Segment.
+1. Define a Segment for the users you want to provide a personalized experience.
+2. Create an Experience with customized content for your Segment.
 
-### [Understanding How Experiences Work](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/content-page-personalization#understanding-how-experiences-work) <a href="#understanding-how-experiences-work" id="understanding-how-experiences-work"></a>
+### Understanding How Experiences Work <a href="#understanding-how-experiences-work" id="understanding-how-experiences-work"></a>
 
 You can create multiple experiences for the same Content Page, each Experience covering a particular need. For example, you can create different experiences for those who log in and for those who browse anonymously. Each Experience contains the content and layout that is most appropriate for each Segment.
 
@@ -26,7 +26,7 @@ Consider the following information when you create multiple experiences for the 
 
     TIP
 
-    When multiple Experiences target the same Segment, Liferay DXP shows the active one next to the Experience’s name.
+    When multiple Experiences target the same Segment, the portal shows the active one next to the Experience’s name.
 
 To better understand how the Experiences’ preference works, consider this example of a Content Page with four custom Experiences:
 
@@ -42,12 +42,12 @@ In this example:
 * Authenticated users don’t see the _Authenticated user_ Experience, because the _No customization_ Experience applies to the _Anyone_ Segment and it’s listed first.
 * Anyone not in the _Anonymous User_ or _Authenticated User_ Segments sees the _No customization_ Experience because it targets _Anyone_.
 
-### [Content Page Experiences and A/B Testing](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/content-page-personalization#content-page-experiences-and-ab-testing) <a href="#content-page-experiences-and-ab-testing" id="content-page-experiences-and-ab-testing"></a>
+### Content Page Experiences and A/B Testing <a href="#content-page-experiences-and-ab-testing" id="content-page-experiences-and-ab-testing"></a>
 
-When you [create an A/B Test](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/creating-ab-tests) in Liferay DXP, you choose an Experience for the test. This Experience can be the Default one or any other you have created.
+When you create an A/B Test in the portal, you choose an Experience for the test. This Experience can be the Default one or any other you have created.
 
 To avoid changes in the Experience that can interfere with the A/B Test results, you cannot edit an Experience that is part of a running A/B Test. In this situation, the Experience shows a locker icon (![locker](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-lock.png)) next to its name.
 
-For more information about A/B Testing in Liferay DXP and Liferay Analytics, see [A/B Testing](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/ab-testing).
+For more information about A/B Testing in the portal and Analytics, see A/B Testing.
 
 \

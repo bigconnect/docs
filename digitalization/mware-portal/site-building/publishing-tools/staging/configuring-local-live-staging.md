@@ -1,10 +1,10 @@
 # Configuring Local Live Staging
 
-With Local Live staging, both your staging and live environments are hosted on the same Liferay server. When enabled, Liferay DXP creates a local clone of your site or asset library that serves as the staging environment, while the original becomes your live environment. Both environments share the same JVM, database, selected application data, and configurations (e.g., portal properties).
+With Local Live staging, both your staging and live environments are hosted on the same portal server. When enabled, the portal creates a local clone of your site or asset library that serves as the staging environment, while the original becomes your live environment. Both environments share the same JVM, database, selected application data, and configurations (e.g., portal properties).
 
 ![Local staging hosts both environments on the same server.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/staging/configuring-local-live-staging/images/01.png)
 
-### [Setting Up Local Live Staging for Sites](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/configuring-local-live-staging#setting-up-local-live-staging-for-sites) <a href="#setting-up-local-live-staging-for-sites" id="setting-up-local-live-staging-for-sites"></a>
+### Setting Up Local Live Staging for Sites <a href="#setting-up-local-live-staging-for-sites" id="setting-up-local-live-staging-for-sites"></a>
 
 1.  Go to _Site Menu_ → _Publishing_ → _Staging_.
 
@@ -21,16 +21,16 @@ With Local Live staging, both your staging and live environments are hosted on t
 
     WARNING
 
-    When applications are checked, their data is copied to the staging environment, and it may not be possible to edit them directly in the live environment. When unchecking an application, first make sure that any changes in staging are published, since they may be lost. See [Managing Data and Content Types in Staging](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/managing-data-and-content-types-in-staging) for more information.
+    When applications are checked, their data is copied to the staging environment, and it may not be possible to edit them directly in the live environment. When unchecking an application, first make sure that any changes in staging are published, since they may be lost. See Managing Data and Content Types in Staging for more information.
 5.  Click on _Save_ to initiate the cloning process. The duration of this process depends on the size of your site.
 
     TIP
 
     Stage your site early on to reduce cloning time and record a more complete history of your site’s update history, since updates are only recorded once you enable page versioning.
 
-Once the process is complete, you are ready to use Local Live staging. See [Site Staging UI Reference](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference) for information about navigating the staging environment’s publishing features.
+Once the process is complete, you are ready to use Local Live staging. See Site Staging UI Reference for information about navigating the staging environment’s publishing features.
 
-### [Setting Up Staging for Asset Libraries](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/configuring-local-live-staging#setting-up-staging-for-asset-libraries) <a href="#setting-up-staging-for-asset-libraries" id="setting-up-staging-for-asset-libraries"></a>
+### Setting Up Staging for Asset Libraries <a href="#setting-up-staging-for-asset-libraries" id="setting-up-staging-for-asset-libraries"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)) and click _Asset Libraries_ in the Applications tab.
 2. Open the desired asset library and click _Staging_ under Publishing.
@@ -46,13 +46,13 @@ Once the process is complete, you are ready to use Local Live staging. See [Site
 
     Once the process is complete, you are ready to use Local Live staging in your asset library.
 
-### [Disabling Local Live Staging](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/configuring-local-live-staging#disabling-local-live-staging) <a href="#disabling-local-live-staging" id="disabling-local-live-staging"></a>
+### Disabling Local Live Staging <a href="#disabling-local-live-staging" id="disabling-local-live-staging"></a>
 
 If for any reason you must disable staging for your site or asset library, you can do that from your staging environment. However, be aware that disabling Local Live staging deletes the staging environment, along with all unpublished content. For this reason, ensure all necessary information is published or preserved elsewhere before disabling staging.
 
 TIP
 
-This process may take some time, depending on the size of your staging environment. It’s best not to disable staging when your Liferay instance is busy.
+This process may take some time, depending on the size of your staging environment. It’s best not to disable staging when your portal instance is busy.
 
 Follow these steps to disable Local Live staging:
 

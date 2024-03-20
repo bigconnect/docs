@@ -4,7 +4,7 @@ Administrators can designate some or all sections (rows and columns of the page 
 
 Page customizations made in those customizable areas only appear for the user who made the customizations.
 
-### [Enabling Page Customizations](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-widget-pages/enabling-user-personalization-of-widget-pages#enabling-page-customizations) <a href="#enabling-page-customizations" id="enabling-page-customizations"></a>
+### Enabling Page Customizations <a href="#enabling-page-customizations" id="enabling-page-customizations"></a>
 
 1. Open the _Site Menu_ (![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) and navigate to _Site Builder_ → _Pages_.
 2. Open _Actions_ (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) next to the desired widget page and select _Configure_.
@@ -14,7 +14,7 @@ Page customizations made in those customizable areas only appear for the user wh
     ![To enable page customizations, click on the Configure Page button next to the page, expand the Customization Settings area, and check Customizable option.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/using-widget-pages/personalizing-pages/images/01.png)
 5. Toggle the _Not Customizable_ option to _Customizable_ for each section you want to make customizable.
 
-### [Customizing Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-widget-pages/enabling-user-personalization-of-widget-pages#customizing-pages) <a href="#customizing-pages" id="customizing-pages"></a>
+### Customizing Pages <a href="#customizing-pages" id="customizing-pages"></a>
 
 With customization activated for a page, site members can add apps to the customizable sections of the page from the Add menu in the top right. Site members can make two kinds of customizations to customizable regions:
 
@@ -37,9 +37,9 @@ Site members have access to these contextual options from the page’s Options m
 
 Administrators of customizable pages have the same two views as site members: the default page view and the customized page view. Changes they make to the non-customizable sections of the default page affect all users just like other pages, while changes they make to the customized sections affect only themselves and do not overwrite users’ customizations.
 
-### [Granting Roles Permission to Customize Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-widget-pages/enabling-user-personalization-of-widget-pages#granting-roles-permission-to-customize-pages) <a href="#granting-roles-permission-to-customize-pages" id="granting-roles-permission-to-customize-pages"></a>
+### Granting Roles Permission to Customize Pages <a href="#granting-roles-permission-to-customize-pages" id="granting-roles-permission-to-customize-pages"></a>
 
-By default, site members can make page customizations but non-site members and guests can’t. Administrators can update permissions for an existing role or [create a new role](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/creating-and-managing-roles) and assign it to other users to enable them to customize pages. Follow these steps to grant role permissions to customize pages:
+By default, site members can make page customizations but non-site members and guests can’t. Administrators can update permissions for an existing role or create a new role and assign it to other users to enable them to customize pages. Follow these steps to grant role permissions to customize pages:
 
 1. Open the _Global Menu_ (![Applications Menu icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), and navigate to _Control Panel_ → _Users_ → _Roles_.
 2. Open _Actions_ (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) next to the desired role and select _Edit_.

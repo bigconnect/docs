@@ -1,10 +1,10 @@
 # Personalizing Collections
 
-By default, any user can see all the collection’s content and is part of the Anyone personalized variation. However, you can create a personalized variation of the collection’s items using [segments](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/creating-and-managing-user-segments). When you use a personalized variation, the items that are part of your collection don’t change, but the collection page, collection display fragment, or asset display widget show the items filtered for the segment.
+By default, any user can see all the collection’s content and is part of the Anyone personalized variation. However, you can create a personalized variation of the collection’s items using segments. When you use a personalized variation, the items that are part of your collection don’t change, but the collection page, collection display fragment, or asset display widget show the items filtered for the segment.
 
 IMPORTANT
 
-To customize a collection using segments and set personalized variations for collections, you must define segments first. For more information, see [Creating and Managing User Segments](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/creating-and-managing-user-segments).
+To customize a collection using segments and set personalized variations for collections, you must define segments first. For more information, see Creating and Managing User Segments.
 
 ![Collections are available for anyone, by default](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/personalizing-site-experience/experience-personalization/personalizing-collections/images/01.png)
 
@@ -14,22 +14,22 @@ TIP
 
 Create multiple personalized variations for a collection, and edit or delete them as needed. You can also edit the Anyone personalized variation, but you cannot delete it.
 
-### [Creating Personalized Variations](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/personalizing-collections#creating-personalized-variations) <a href="#creating-personalized-variations" id="creating-personalized-variations"></a>
+### Creating Personalized Variations <a href="#creating-personalized-variations" id="creating-personalized-variations"></a>
 
-After you create [segments](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/creating-and-managing-user-segments) for your users, you can add personalized variations for collections based on those segments.
+After you create segments for your users, you can add personalized variations for collections based on those segments.
 
 1. Open the _Site Menu_ ( ![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png) ) and navigate to _Site Builder_ → _Collections_.
-2. Create a [collection](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections) or select an existing one.
+2. Create a collection or select an existing one.
 3.  Click _Add Personalized Variation_.
 
     If you already have a personalized variation in place and you have other available segments, add new personalized variations by clicking _Add_ (![add icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add-app.png)) next to Personalized Variations.
 4. Choose a Segment and customize the collection accordingly.
 
-You can now control what users can see by [prioritizing personalized variations](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/personalizing-collections#personalizing-collections) or [combining collection entries from all segments](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/personalizing-collections#combining-collection-entries-from-all-segments).
+You can now control what users can see by prioritizing personalized variations or combining collection entries from all segments.
 
-### [Prioritizing Variations](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/personalizing-collections#prioritizing-variations) <a href="#prioritizing-variations" id="prioritizing-variations"></a>
+### Prioritizing Variations <a href="#prioritizing-variations" id="prioritizing-variations"></a>
 
-for Liferay DXP 7.4+
+for version 7.4+
 
 For situations where a user may belong to multiple segments, you can [combine collections entries](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/personalizing-collections#combining-collection-entries-from-all-segments) from all the segments to which the users belong or prioritize a personalized variation to determine which personalized variation is displayed to a user.
 
@@ -41,9 +41,9 @@ Priority is assigned according to the position of each item in the list. The hig
 
 ![Prioritize collections variations to determine which variation is displayed for users](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/personalizing-site-experience/experience-personalization/personalizing-collections/images/02.png)
 
-### [Combining Collection Entries From All Segments](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/personalizing-collections#combining-collection-entries-from-all-segments) <a href="#combining-collection-entries-from-all-segments" id="combining-collection-entries-from-all-segments"></a>
+### Combining Collection Entries From All Segments <a href="#combining-collection-entries-from-all-segments" id="combining-collection-entries-from-all-segments"></a>
 
-With users that belong to multiple [segments](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/creating-and-managing-user-segments), you can combine and show collection entries from all the segments to which they belong instead of showing only the default entries or the [prioritized](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/personalizing-collections#prioritizing-variations) personalized variation.
+With users that belong to multiple segments, you can combine and show collection entries from all the segments to which they belong instead of showing only the default entries or the prioritized personalized variation.
 
 1. Open the _Global Menu_ ( ![Applications Menu icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png) ) and select the _Control Panel_ tab → _System Settings_ under Configuration.
 2. Under Content and Data, select _Assets_.
@@ -59,15 +59,15 @@ For example, there are three segments: Registered Users, Brazilian Users, and Ca
 
 ![Users that belong to multiple segments can see content from all segments](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/personalizing-site-experience/experience-personalization/personalizing-collections/images/04.png)
 
-### [Liferay DXP 7.2](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/personalizing-collections#liferay-dxp-72) <a href="#liferay-dxp-72" id="liferay-dxp-72"></a>
+### version 7.2 <a href="#liferay-dxp-72" id="liferay-dxp-72"></a>
 
-#### [Content Set Personalization](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/personalizing-collections#content-set-personalization) <a href="#content-set-personalization" id="content-set-personalization"></a>
+#### Content Set Personalization <a href="#content-set-personalization" id="content-set-personalization"></a>
 
-Now, you’ll use [segments](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/creating-and-managing-user-segments) to demonstrate content set personalization. For this example, create a content set to be the default displayed on the Home page. Then you’ll modify it to create a personalized variation containing technical articles for members of the American Engineers segment.
+Now, you’ll use segments to demonstrate content set personalization. For this example, create a content set to be the default displayed on the Home page. Then you’ll modify it to create a personalized variation containing technical articles for members of the American Engineers segment.
 
-If you’re not familiar with content sets, see the [Creating Content Sets](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections#creating-content-sets) article before you get started here.
+If you’re not familiar with content sets, see the Creating Content Sets article before you get started here.
 
-[**Creating and Setting the Default Content Set**](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/personalizing-collections#creating-and-setting-the-default-content-set)
+**Creating and Setting the Default Content Set**
 
 First create the default content set and configure it on the Home page using the asset publisher.
 
@@ -85,7 +85,7 @@ First create the default content set and configure it on the Home page using the
 
 Now the content set you configured appears in the Asset Publisher widget on the home page. Next configure the content set for personalization.
 
-[**Personalizing the Content Set**](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/personalizing-collections#personalizing-the-content-set)
+**Personalizing the Content Set**
 
 Now create the content set for engineers and configure its display.
 

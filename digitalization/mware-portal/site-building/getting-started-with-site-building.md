@@ -2,9 +2,9 @@
 
 Sites are a fundamental component of MWARE Portal. Essentially, a site is a collection of pages that contains content applications that provide additional functionality.
 
-When you first start and configure your portal nstance, a default site is included. By default the instance name is _Liferay_, but this value can be changed through the configuration of the Setup Wizard or the _Instance Settings_ in the Control Panel.
+When you first start and configure your portal instance, a default site is included. By default the instance name is MWARE Portal, but this value can be changed through the configuration of the Setup Wizard or the _Instance Settings_ in the Control Panel.
 
-![You can build powerful sites with MWARE Portal.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/getting-started-with-site-building/images/01.png)
+![You can build powerful sites with MWARE Portal.](../../../.gitbook/assets/01.png)
 
 ### Creating Sites <a href="#creating-sites" id="creating-sites"></a>
 
@@ -20,11 +20,11 @@ The Portal also provides tools to enable you to make changes to your site withou
 
 ### Displaying Content <a href="#displaying-content" id="displaying-content"></a>
 
-The portal's Content Management System (CMS) offers a variety of tools to create, manage and display content of many types (e.g. blogs, images, web content articles). You can use the [Web Content Display widget](displaying-content/additional-content-display-options/using-the-web-content-display-widget.md) to display web content articles of your choosing.
+The portal's Content Management System (CMS) offers a variety of tools to create, manage and display content of many types (e.g. blogs, images, web content articles). You can use the Web Content Display widget to display web content articles of your choosing.
 
-If you want to publish a mix of content types you can use the [Asset Publisher](displaying-content/using-the-asset-publisher-widget/) or Collections. You can manually select the content the Asset Publisher displays, or you can have it display assets dynamically based on specific criteria, giving you a great deal of control over the experience your users have. You can also embed content from other websites with the [Iframe widget](displaying-content/additional-content-display-options/using-the-iframe-widget.md) or by creating an embedded page.
+If you want to publish a mix of content types you can use the Asset Publisher or Collections. You can manually select the content the Asset Publisher displays, or you can have it display assets dynamically based on specific criteria, giving you a great deal of control over the experience your users have. You can also embed content from other websites with the Iframe widget or by creating an embedded page.
 
-You can create and edit content in line with [Fragments](creating-pages/page-fragments-and-widgets/using-fragments/). Fragments are individual pieces of code (CSS, HTML, and JavaScript) that you can arrange and combine to build a page. The portal provides many out-of-the-box fragments. If you need a customized solution, you can modify or create your own fragments.
+You can create and edit content in line with Fragments. Fragments are individual pieces of code (CSS, HTML, and JavaScript) that you can arrange and combine to build a page. The portal provides many out-of-the-box fragments. If you need a customized solution, you can modify or create your own fragments.
 
 Each piece of content has a default landing page, but you can create a Display Page Template to customize it. A Display Page Template maps portions of the web content (title, main body, image, etc.) to fragments, so you can create the look you want.
 

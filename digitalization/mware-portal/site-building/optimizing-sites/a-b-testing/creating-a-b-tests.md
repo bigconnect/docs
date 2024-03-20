@@ -7,17 +7,17 @@ Before creating A/B tests, remember these things:
 * You cannot edit an Experience that is part of a running A/B Test.
 * You cannot create a test for an Experience that already has an active A/B Test running.
 * When you delete a Content Page or Experience that is part of an A/B Test, you also delete the test.
-*   If you close the A/B Test side panel without [running the test](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/running-and-monitoring-ab-tests), the test is saved as a draft.
+*   If you close the A/B Test side panel without running the test, the test is saved as a draft.
 
     ![When you configure a test without running it, the test is saved as a draft](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/optimizing-sites/ab-testing/creating-ab-tests/images/05.png)
 
-To create the A/B test, [create the test](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/creating-ab-tests#creating-the-test) first, and then create a [test variant](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/creating-ab-tests#creating-the-test-variant).
+To create the A/B test, create the test first, and then create a test variant.
 
 IMPORTANT
 
-Verify that your environment [meets the requirements](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/verifying-ab-test-requirements) for A/B Testing before creating the test.
+Verify that your environment meets the requirements for A/B Testing before creating the test.
 
-### [Creating the Test](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/creating-ab-tests#creating-the-test) <a href="#creating-the-test" id="creating-the-test"></a>
+### Creating the Test <a href="#creating-the-test" id="creating-the-test"></a>
 
 1. Go to the Content Page you want to test.
 2. In the Control Menu, click _A/B Testing_ (![A/B Test icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-ab-testing.png)).
@@ -34,7 +34,7 @@ Verify that your environment [meets the requirements](https://learn.liferay.com/
 
     You can always edit or delete the new A/B Test by clicking the _Actions_ button next to the A/B Test name. Deleted tests are not recoverable (i.e., not sent to the Recycle Bin). These options are not available for an active running test.
 
-### [Creating the Test Variant](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/creating-ab-tests#creating-the-test-variant) <a href="#creating-the-test-variant" id="creating-the-test-variant"></a>
+### Creating the Test Variant <a href="#creating-the-test-variant" id="creating-the-test-variant"></a>
 
 A test variant is a customization of the Experience you want to optimize with A/B Testing. Each A/B Test supports one variant.
 
@@ -45,7 +45,7 @@ A test variant is a customization of the Experience you want to optimize with A/
        * You can target collection display fragments, links, buttons, and input fields with an Element ID for the _Click_ goal.
        * You can also enter the _Element ID_ of the element you want to test.
        * To highlight the Page element selected, click the Preview (![Preview](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-preview.png)) icon.
-       * While the [test is running](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/running-and-monitoring-ab-tests), the _Change Clickable Element_ button is unavailable and the _Element ID_ cannot be changed.
+       * While the test is running, the _Change Clickable Element_ button is unavailable and the _Element ID_ cannot be changed.
 
        ![Click the Content Page Element you want to test or enter its Element ID in the Click Goal section](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/optimizing-sites/ab-testing/creating-ab-tests/images/03.png)
    2. Click the element you want to test on the Content Page.
@@ -62,6 +62,6 @@ A test variant is a customization of the Experience you want to optimize with A/
 6. Edit the variant with the changes you want to test. For example, if you want to test different call-to-action text, update the button with the new text.
 7. Click _Save Variant_.
 
-After creating your test and test variant, you can [run the test](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/running-and-monitoring-ab-tests).
+After creating your test and test variant, you can run the test.
 
 \

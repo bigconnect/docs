@@ -1,6 +1,6 @@
 # Page Fragments and Widgets
 
-Liferay provides page fragments and widgets for building site pages and page templates.
+MWARE Portal provides page fragments and widgets for building site pages and page templates.
 
 NOTE
 

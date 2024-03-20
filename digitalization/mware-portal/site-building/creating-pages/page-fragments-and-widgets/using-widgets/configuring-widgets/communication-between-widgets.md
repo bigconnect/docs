@@ -1,6 +1,6 @@
 # Communication Between Widgets
 
-Portlet widgets can communicate with each other using public render parameters and events. Some Liferay portlets provide a configuration UI to help you get the most out of this communication mechanism:
+Portlet widgets can communicate with each other using public render parameters and events. Some portlets provide a configuration UI to help you get the most out of this communication mechanism:
 
 1. Click _Options_ (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png)) → _Configuration_ → _Communication_ tab.
 

@@ -4,7 +4,7 @@ After enabling Local or Remote Live Staging for your site, most page configurati
 
 Once staging is enabled, additional options appear in your Staging environment. These options are in the Staging Bar, Publish to Live menu, and Staging Page.
 
-### [Staging Bar and Editing Tools](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#staging-bar-and-editing-tools) <a href="#staging-bar-and-editing-tools" id="staging-bar-and-editing-tools"></a>
+### Staging Bar and Editing Tools <a href="#staging-bar-and-editing-tools" id="staging-bar-and-editing-tools"></a>
 
 When Staging is enabled for a site, you can access additional options via the staging bar on each of your site’s pages. In this bar, you can toggle between Staging and Live environments and click on _Publish to Live_ for staged pages.
 
@@ -12,24 +12,24 @@ When Staging is enabled for a site, you can access additional options via the st
 
 The following table and pictures describe the staging bar options and editing tools for widget pages:
 
-| Option                      | Widget Page                                                                                                                                                                                                                                                                                                                                                                                                              | # |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | - |
-| _Site Pages Variation_      | <ul><li>Toggle between variations of page sets in your staged site using the drop-down menu.</li><li>Manage and create page set variations by clicking on the <em>Actions</em> button in the Staging Bar and selecting <em>Site Pages Variation</em>. See <a href="https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/page-versioning">Page Versioning</a> for more information.</li></ul> | 1 |
-| _Page Variations_           | <ul><li>Toggle between variations of a single page in your staged site using the drop-down menu.</li><li>Manage and create page variations by clicking on the <em>Actions</em> button in the Staging Bar and selecting <em>Page Variations</em>. See <a href="https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/page-versioning">Page Versioning</a> for more information.</li></ul>      | 2 |
-| _Undo/Redo_                 | <ul><li>Click on the <em>Actions</em> button in the Staging Bar and select <em>Undo</em>/<em>Redo</em>.</li><li>Once you’ve marked a page as <em>Ready for Publish Process</em>, you can’t undo or redo recent changes.</li></ul>                                                                                                                                                                                        | 3 |
-| _History_                   | <ul><li>Manage the page revision history by clicking on the <em>Actions</em> button in the Staging Bar and selecting <em>History</em>.</li><li>Revert a page to an earlier version by clicking on the <em>Actions</em> button for the page version you want to restore and selecting <em>Mark as Ready for Publishing Process</em>.</li></ul>                                                                            | 4 |
-| _Ready for Publish Process_ | <ul><li>Click on <em>Ready for Publish Process</em> to change the page’s status from <em>Draft</em> to <em>Ready for Publish Process</em>.</li><li>Click <em>Publish to Live</em> to configure and initiate publishing for your changes.</li><li>When you publish a page to Live, only the version marked as <em>Ready for Publish Process</em> is published.</li></ul>                                                  | 5 |
-| Edit Content                | Use the _Add_ button in the Liferay application bar to edit your Widgets.                                                                                                                                                                                                                                                                                                                                                | 6 |
+| Option                      | Widget Page                                                                                                                                                                                                                                                                                                                                                             | # |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| _Site Pages Variation_      | <ul><li>Toggle between variations of page sets in your staged site using the drop-down menu.</li><li>Manage and create page set variations by clicking on the <em>Actions</em> button in the Staging Bar and selecting <em>Site Pages Variation</em>. See Page Versioning for more information.</li></ul>                                                               | 1 |
+| _Page Variations_           | <ul><li>Toggle between variations of a single page in your staged site using the drop-down menu.</li><li>Manage and create page variations by clicking on the <em>Actions</em> button in the Staging Bar and selecting <em>Page Variations</em>. See Page Versioning for more information.</li></ul>                                                                    | 2 |
+| _Undo/Redo_                 | <ul><li>Click on the <em>Actions</em> button in the Staging Bar and select <em>Undo</em>/<em>Redo</em>.</li><li>Once you’ve marked a page as <em>Ready for Publish Process</em>, you can’t undo or redo recent changes.</li></ul>                                                                                                                                       | 3 |
+| _History_                   | <ul><li>Manage the page revision history by clicking on the <em>Actions</em> button in the Staging Bar and selecting <em>History</em>.</li><li>Revert a page to an earlier version by clicking on the <em>Actions</em> button for the page version you want to restore and selecting <em>Mark as Ready for Publishing Process</em>.</li></ul>                           | 4 |
+| _Ready for Publish Process_ | <ul><li>Click on <em>Ready for Publish Process</em> to change the page’s status from <em>Draft</em> to <em>Ready for Publish Process</em>.</li><li>Click <em>Publish to Live</em> to configure and initiate publishing for your changes.</li><li>When you publish a page to Live, only the version marked as <em>Ready for Publish Process</em> is published.</li></ul> | 5 |
+| Edit Content                | Use the _Add_ button in the portal application bar to edit your Widgets.                                                                                                                                                                                                                                                                                                | 6 |
 
 ![Use the staging bar and editing tools in widget pages.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/staging/site-staging-ui-reference/images/02.png)
 
-### [Publish to Live](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#publish-to-live) <a href="#publish-to-live" id="publish-to-live"></a>
+### Publish to Live <a href="#publish-to-live" id="publish-to-live"></a>
 
 When you click on _Publish to Live_, a modal window appears with additional options for configuring your publish process. You can publish using _Simple_ or _Advanced_ settings.
 
 ![Click on Publish to Live to access the publishing modal window.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/staging/site-staging-ui-reference/images/03.png)
 
-### [Simple Publishing](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#simple-publishing) <a href="#simple-publishing" id="simple-publishing"></a>
+### Simple Publishing <a href="#simple-publishing" id="simple-publishing"></a>
 
 **Name**: Enter a descriptive name for your publish process into the _Name_ field.
 
@@ -45,7 +45,7 @@ When ready, click on _Publish to Live_ to initiate publishing.
 
 ![Click on Publish to Live to initiate publishing.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/staging/site-staging-ui-reference/images/04.png)
 
-### [Advanced Publishing](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#advanced-publishing) <a href="#advanced-publishing" id="advanced-publishing"></a>
+### Advanced Publishing <a href="#advanced-publishing" id="advanced-publishing"></a>
 
 With Advanced publishing, you can access information and settings that you can use to customize your publish process. In the _Custom_ tab, you can specify content, dates, pages, and more. Alternatively, you click on the _Publish Template_ tab to select a pre-configured template for your publish process. To access advanced settings, click on _Switch to Advanced Publish Process_ in the modal window.
 
@@ -84,23 +84,23 @@ NOTE
 
 After selecting your Content option, click _Refresh Counts_ to update the number of results.
 
-You can also click on _Change_ for each content type to manage items and other settings included in each type, such as _version history_, _vocabularies_, and _previews and thumbnails_. See [Managing Data and Content Types in Staging](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/managing-data-and-content-types-in-staging) for more information.
+You can also click on _Change_ for each content type to manage items and other settings included in each type, such as _version history_, _vocabularies_, and _previews and thumbnails_. See Managing Data and Content Types in Staging for more information.
 
 IMPORTANT
 
-By default, content displayed using the following widgets is always included in publishing processes: Dynamic Data Lists Display, Form, Web Content Display, and Wiki Display. For Liferay DXP/Portal 7.4+, you can disable this behavior so that displayed content is only published when explicitly included in the publishing process’s configuration. See [Configuring Automatic Publishing of Displayed Content](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/configuring-automatic-publishing-of-displayed-content) for more information.
+By default, content displayed using the following widgets is always included in publishing processes: Dynamic Data Lists Display, Form, Web Content Display, and Wiki Display. For versions 7.4+, you can disable this behavior so that displayed content is only published when explicitly included in the publishing process’s configuration. See Configuring Automatic Publishing of Displayed Content for more information.
 
 **Permissions**: Select whether to include permissions for the pages and widgets when your changes are published.
 
 ![Select whether to include permissions for the pages and widgets when your changes are published.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/staging/site-staging-ui-reference/images/10.png)
 
-Instead of configuring advanced options manually every time you publish a page or content, you can save your staging configuration as a [_publish template_](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#publish-templates) for future use. To view and select a saved template for your publish process, click on the _Publish Templates_ tab.
+Instead of configuring advanced options manually every time you publish a page or content, you can save your staging configuration as a _publish template_ for future use. To view and select a saved template for your publish process, click on the _Publish Templates_ tab.
 
 ![To view and select a saved template for your publish process, click on the Publish Templates tab.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/staging/site-staging-ui-reference/images/11.png)
 
 When ready, click on _Publish to Live_ to initiate publishing.
 
-### [Staging Page](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#staging-page) <a href="#staging-page" id="staging-page"></a>
+### Staging Page <a href="#staging-page" id="staging-page"></a>
 
 Once you’ve enabled Staging, the options available from the _Publishing_ tab are modified. When in the Live environment, you can only access the _Export_ feature. When in the Staging environment, you can only access the _Import_ and _Staging_ features.
 
@@ -108,7 +108,7 @@ You can also access new options in the Staging page: view publishing processes, 
 
 ![You can also access new options in the Staging page.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/staging/site-staging-ui-reference/images/12.png)
 
-#### [Previous and Future Publishing Processes](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#previous-and-future-publishing-processes) <a href="#previous-and-future-publishing-processes" id="previous-and-future-publishing-processes"></a>
+#### Previous and Future Publishing Processes <a href="#previous-and-future-publishing-processes" id="previous-and-future-publishing-processes"></a>
 
 When you publish with Staging, it’s captured as a _process_ and stored for future reference. To view and manage these processes, go to _Site Menu_ → _Publishing_ → _Staging_.
 
@@ -120,7 +120,7 @@ You can also click on the _Add_ (![Add button](https://resources.learn.liferay.c
 
 In the _Scheduled_ tab, you can view all scheduled publishing processes.
 
-#### [Publish Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#publish-templates) <a href="#publish-templates" id="publish-templates"></a>
+#### Publish Templates <a href="#publish-templates" id="publish-templates"></a>
 
 If you regularly create similar staging configurations, you can create your own _publish templates_ to save time. To create a template, click _Actions_ ( ![Actions button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png) ) in the _Application_ bar of the _Staging_ page. Then select _Publish Templates_.
 
@@ -130,14 +130,14 @@ From here, you can create and manage templates for frequent publishing configura
 
 ![Create and manage templates for frequent publishing configurations.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/staging/site-staging-ui-reference/images/15.png)
 
-You can use a template when publishing a page or content using the _Publish to Live_ button in the Staging Bar. See [Advanced Publishing](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#advanced-publishing) for more information.
+You can use a template when publishing a page or content using the _Publish to Live_ button in the Staging Bar. See Advanced Publishing for more information.
 
-#### [Staging Configuration](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#staging-configuration) <a href="#staging-configuration" id="staging-configuration"></a>
+#### Staging Configuration <a href="#staging-configuration" id="staging-configuration"></a>
 
 After setting up Staging, you can access the Staging Configuration page by clicking _Actions_ ( ![Actions button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png) ) in the _Application_ bar of the _Staging_ page. Then, select _Staging Configuration_.
 
 ![Click on the Actions button in the Application bar of the Staging page to access Staging Configuration.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/staging/site-staging-ui-reference/images/16.png)
 
-From here, you can disable Staging for your site, or modify your [page versioning](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/page-versioning) settings. However, _Staged Content_ options cannot be modified after the initial setup.
+From here, you can disable Staging for your site, or modify your page versioning settings. However, _Staged Content_ options cannot be modified after the initial setup.
 
 \

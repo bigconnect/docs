@@ -12,15 +12,15 @@ The _Estimated Time to Declare Winner_ provides an estimation of the test durati
 
 After you create the test, review the test status by clicking _A/B Testing_ (![A/B Test icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-ab-testing.png)).
 
-Liferay DXP only shows your test’s status and the winner when the test finishes. You can manage the other aspects of your A/B Test in Analytics Cloud. For more information, see [A/B Testing](https://learn.liferay.com/analytics-cloud/latest/en/optimization/a-b-testing.html) in the Analytics Cloud documentation.
+The portal only shows your test’s status and the winner when the test finishes. You can manage the other aspects of your A/B Test in Analytics Cloud. For more information, see A/B Testing in the Analytics Cloud documentation.
 
-When the A/B Test finishes, you can review the test results and publish the preferred variant. For more information, read [Reviewing A/B Test Results and Publishing Test Variants](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/reviewing-ab-test-results-and-publishing-test-variants).
+When the A/B Test finishes, you can review the test results and publish the preferred variant. For more information, read Reviewing A/B Test Results and Publishing Test Variants.
 
-### [Running the A/B Test](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/running-and-monitoring-ab-tests#running-the-ab-test) <a href="#running-the-ab-test" id="running-the-ab-test"></a>
+### Running the A/B Test <a href="#running-the-ab-test" id="running-the-ab-test"></a>
 
 NOTE
 
-Before running a test, you must create an A/B Test. For more information, read [Creating A/B Tests](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/creating-ab-tests).
+Before running a test, you must create an A/B Test. For more information, read Creating A/B Tests.
 
 1. Go to the Content Page where you want to run the A/B Test
 2. In the Control Menu, click the _A/B Testing_ button (![A/B Test icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-ab-testing.png)).

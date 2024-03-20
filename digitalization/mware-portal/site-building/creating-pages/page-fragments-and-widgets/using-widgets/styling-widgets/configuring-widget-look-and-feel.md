@@ -17,7 +17,7 @@ NOTE
 
 Look and Feel configuration options are not available for widgets on Content Pages for Display Pages Templates.
 
-### [General Settings](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/configuring-widget-look-and-feel#general-settings) <a href="#general-settings" id="general-settings"></a>
+### General Settings <a href="#general-settings" id="general-settings"></a>
 
 On the General tab are the following options:
 
@@ -31,7 +31,7 @@ Be careful about turning widget borders off; some themes assume widget borders a
 
 ![The General tab of the Look and Feel Configuration menu lets you define a custom widget title and select the widget contrast option using decorators.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/configuring-widget-look-and-feel/images/01.png)
 
-### [Text Styles](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/configuring-widget-look-and-feel#text-styles) <a href="#text-styles" id="text-styles"></a>
+### Text Styles <a href="#text-styles" id="text-styles"></a>
 
 _Text Styles_ configure the format of the text that appears in the widget:
 
@@ -53,13 +53,13 @@ _Text Styles_ configure the format of the text that appears in the widget:
 
 **Letter Spacing:** Set from -10 px to 50 px. 0 px is the default.
 
-### [Background Styles](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/configuring-widget-look-and-feel#background-styles) <a href="#background-styles" id="background-styles"></a>
+### Background Styles <a href="#background-styles" id="background-styles"></a>
 
 The Background Styles tab specifies the widget’s background color. When you select the text space, you’re given a color palette to choose your background color or you can enter any six digit hex color code manually.
 
 ![The Background Styles tab lets you specify the widget's background color.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/configuring-widget-look-and-feel/images/03.png)
 
-### [Border Styles](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/configuring-widget-look-and-feel#border-styles) <a href="#border-styles" id="border-styles"></a>
+### Border Styles <a href="#border-styles" id="border-styles"></a>
 
 The Border Styles tab configures your widget’s border width, style, and color. For each of these attributes, leave the _Same for All_ selector enabled to apply the same settings to top, right, bottom, and left borders.
 
@@ -67,7 +67,7 @@ The Border Styles tab configures your widget’s border width, style, and color.
 
 For border width, you can specify any % value, em value, or px value. For border style, you can select Dashed, Double, Dotted, Groove, Hidden, Inset, Outset, Ridge, or Solid. For border color, you can enter any six digit hex color code, just like for the text color and background color. You can also use the color palette.
 
-### [Margin and Padding](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/configuring-widget-look-and-feel#margin-and-padding) <a href="#margin-and-padding" id="margin-and-padding"></a>
+### Margin and Padding <a href="#margin-and-padding" id="margin-and-padding"></a>
 
 The Margin and Padding tab specifies margin and padding lengths for the edges of your widget. Just like for border styles, leave the _Same for All_ selector enabled to apply the same settings to each side (top, right, bottom, and left) of the widget.
 
@@ -75,11 +75,11 @@ The Margin and Padding tab specifies margin and padding lengths for the edges of
 
 For both padding and margin, you can specify any % value, em value, or px value.
 
-### [Advanced Styling](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/configuring-widget-look-and-feel#advanced-styling) <a href="#advanced-styling" id="advanced-styling"></a>
+### Advanced Styling <a href="#advanced-styling" id="advanced-styling"></a>
 
-The Advanced Styling tab displays current information about your widget, including your widget’s Liferay ID and CSS classes.
+The Advanced Styling tab displays current information about your widget, including your widget’s ID and CSS classes.
 
-![The Advanced Styling tab displays your widget's Liferay ID and allows you to enter CSS code to customize the look and feel of your widget.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/configuring-widget-look-and-feel/images/06.png)
+![The Advanced Styling tab displays your widget's ID and allows you to enter CSS code to customize the look and feel of your widget.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/configuring-widget-look-and-feel/images/06.png)
 
 You can also enter custom CSS class names for your widget and custom CSS code. Clicking the _Add a CSS rule for just this portlet_ or _Add a CSS rule for all portlets like this one_ links adds the CSS code shells into your custom CSS text box.
 

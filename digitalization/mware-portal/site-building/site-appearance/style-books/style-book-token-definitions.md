@@ -4,11 +4,11 @@ Style books have options grouped into categories defined per theme. Each option 
 
 When you assign a theme to your site’s pages, the token definition included with that theme is used when creating a style book for the site.
 
-### [Defining Tokens for Your Style Book](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/developer-guide/style-book-token-definitions#defining-tokens-for-your-style-book) <a href="#defining-tokens-for-your-style-book" id="defining-tokens-for-your-style-book"></a>
+### Defining Tokens for Your Style Book <a href="#defining-tokens-for-your-style-book" id="defining-tokens-for-your-style-book"></a>
 
 Since the token definition is tied to your theme, token definitions must correspond to a CSS variable contained within your theme module. Specify the token definitions in a `.json` file within your theme module’s `src/WEB-INF/` folder, named `frontend-token-definition.json`.
 
-#### [Token Categories](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/developer-guide/style-book-token-definitions#token-categories) <a href="#token-categories" id="token-categories"></a>
+#### Token Categories <a href="#token-categories" id="token-categories"></a>
 
 Tokens defining the options for configuring your style book are grouped into categories. Each category appears in the drop-down menu when editing your style book.
 
@@ -30,7 +30,7 @@ Use a `frontendTokenCategories` field to define each of these categories in your
 
 Define a `label` and a `name` for each of your token categories. The `label` value is interpreted as a language key and displayed as the option in the drop-down menu for your category.
 
-#### [Token Sets](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/developer-guide/style-book-token-definitions#token-sets) <a href="#token-sets" id="token-sets"></a>
+#### Token Sets <a href="#token-sets" id="token-sets"></a>
 
 Each category is further organized into _token sets_ which correspond to the collapsible groups of options that appear when editing a style book.
 
@@ -60,7 +60,7 @@ Define each token set inside a category’s `frontendTokenSets` field:
 
 Define a `label` and `name` for each token set just like with each category.
 
-#### [Token Definitions](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/developer-guide/style-book-token-definitions#token-definitions) <a href="#token-definitions" id="token-definitions"></a>
+#### Token Definitions <a href="#token-definitions" id="token-definitions"></a>
 
 Define the tokens within each token set’s `frontendTokens` field. Here’s a list of all the properties you can use for your tokens:
 
@@ -74,7 +74,7 @@ Define the tokens within each token set’s `frontendTokens` field. Here’s a l
 | `type`         | The type of data the token displays. Use `Integer`, `Float`, or `String` to display a text field holding those types of values. Use `Boolean` to display a checkbox. Use `Length` to provide customizable units of measurement (e.g. pixels, ems, percentages).                                                                 |
 | `validValues`  | Optional property that lists available options for the User in the UI. This field must contain a nested list of `label` and `value` pairs (`value` is the field’s value in CSS). This property cannot be used together with `editorType`. Defining a value for `validValues` makes the input type automatically a select input. |
 
-The JSON schema for token definitions is publicly available in [Liferay’s repository](https://github.com/liferay/liferay-portal/blob/master/modules/apps/frontend-token/frontend-token-definition-api/src/main/resources/com/liferay/frontend/token/definition/frontend-token-definition.schema.json).
+The JSON schema for token definitions is publicly available in the portal’s repository.
 
 Here’s an example list of tokens within a token set:
 
@@ -118,7 +118,7 @@ Here’s an example list of tokens within a token set:
 ]
 ```
 
-### [Matching CSS Variables to Style Book Tokens](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/developer-guide/style-book-token-definitions#matching-css-variables-to-style-book-tokens) <a href="#matching-css-variables-to-style-book-tokens" id="matching-css-variables-to-style-book-tokens"></a>
+### Matching CSS Variables to Style Book Tokens <a href="#matching-css-variables-to-style-book-tokens" id="matching-css-variables-to-style-book-tokens"></a>
 
 The `frontend-token-definition.json` file containing your token definition must be in the `src/WEB-INF/` folder of your theme module folder. Every token defined in your token definition must represent a style (color, spacing, font, etc.) in the CSS of your theme.
 

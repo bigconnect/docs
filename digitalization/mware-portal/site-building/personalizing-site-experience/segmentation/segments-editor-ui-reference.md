@@ -19,7 +19,7 @@ On the right side of the page, there’s a _Properties_ menu with these options:
 
 Operations and conjunctions are combined with the properties to define criteria.
 
-### [Operations and Conjunctions](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/segments-editor-ui-reference#operations-and-conjunctions) <a href="#operations-and-conjunctions" id="operations-and-conjunctions"></a>
+### Operations and Conjunctions <a href="#operations-and-conjunctions" id="operations-and-conjunctions"></a>
 
 Several types of information can be collected by the User Segment interface. Some data is entered in text boxes, while others use selectors to select specific criteria or tools like a date picker. Some fields use an operator, which, depending on the specific context lets you select the relationship between the user or agent data and the criteria.
 
@@ -36,7 +36,7 @@ Depending on the nature of the criteria, the operator selection may contain diff
 
 In between each criteria and each category, you can define an _And/Or_ conjunction. For _And_, all criteria must be true for the criteria to be satisfied. With _Or_, it is true if any of the defined criteria are true. You can also mix operators to create complex cases.
 
-### [User Properties](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/segments-editor-ui-reference#user-properties) <a href="#user-properties" id="user-properties"></a>
+### User Properties <a href="#user-properties" id="user-properties"></a>
 
 User properties are user attributes you want to capture. This is made up of user metadata as defined in their accounts, but also contains certain group memberships (like roles and user groups) as well as information like the date the user profile was last modified. These user properties are available:
 
@@ -59,14 +59,14 @@ NOTE
 
 To display content for guest users through segments, select the _Signed In_ session property and set its value to _False_. This action effectively represents an anonymous user, fulfilling the same purpose as the guest role.
 
-Since Liferay DXP 7.2 SP2+, these properties are also available for users:
+Since version 7.2 SP2+, these properties are also available for users:
 
 | Property      | Description                                                                                 |
 | ------------- | ------------------------------------------------------------------------------------------- |
 | Date of Birth | Provides a date picker and a relationship selector to select the date of birth of the user. |
 | Tag           | Enter the tags that apply to the users.                                                     |
 
-### [Organization Properties](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/segments-editor-ui-reference#organization-properties) <a href="#organization-properties" id="organization-properties"></a>
+### Organization Properties <a href="#organization-properties" id="organization-properties"></a>
 
 Organization properties is a selectable list of organizations to include in your segment. They contain similar criteria as the user selection, like _Name_ and _Date Modified_. These organization properties are available:
 
@@ -79,7 +79,7 @@ Organization properties is a selectable list of organizations to include in your
 | Parent Organization | Select a specific parent organization.                                    |
 | Type                | Select the type of organization, if organization types have been defined. |
 
-Since Liferay DXP 7.2 SP2+, these properties are also available for organizations:
+Since version 7.2 SP2+, these properties are also available for organizations:
 
 | Property | Description                                              |
 | -------- | -------------------------------------------------------- |
@@ -87,7 +87,7 @@ Since Liferay DXP 7.2 SP2+, these properties are also available for organization
 | Region   | Select a specific region connected to organization.      |
 | Tag      | Enter the tags that apply to the organization.           |
 
-### [Session Properties](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/segments-editor-ui-reference#session-properties) <a href="#session-properties" id="session-properties"></a>
+### Session Properties <a href="#session-properties" id="session-properties"></a>
 
 Session properties contains criteria based on the user’s activity, browser, and system information. You can use this to target the user’s device or OS, or for activity-based criteria like if a user entered the website through a specific campaign driven landing page. These session properties are available:
 
@@ -107,23 +107,23 @@ Session properties contains criteria based on the user’s activity, browser, an
 | URL                             | Enter the current URL.                             |
 | User Agent                      | Enter a user agent property.                       |
 
-Since Liferay DXP 7.2 SP2+, these properties are also available for the session:
+Since version 7.2 SP2+, these properties are also available for the session:
 
 | Property           | Description                                      |
 | ------------------ | ------------------------------------------------ |
 | Hostname           | Enter a virtual host name.                       |
 | Request Parameters | Enter the name and value of a request parameter. |
 
-Starting from Liferay DXP 7.4 U42+/GA42+, the following property is also available for the session:
+Starting from version 7.4+, the following property is also available for the session:
 
 | Property            | Description                                           |
 | ------------------- | ----------------------------------------------------- |
 | IP Geocoder Country | Select a country to match with the user’s IP address. |
 
-### [Segments Property](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/segments-editor-ui-reference#segments-property) <a href="#segments-property" id="segments-property"></a>
+### Segments Property <a href="#segments-property" id="segments-property"></a>
 
-> Available: Liferay DXP/Portal 7.3+.
+> Available: version 7.3+.
 
-With the segments property, you can combine existing segments into a new compound segment. The compound segment inherits the properties from the segments it is based on, and updates the members automatically. For more information, see [Compound Segments](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/creating-and-managing-user-segments#compound-segments).
+With the segments property, you can combine existing segments into a new compound segment. The compound segment inherits the properties from the segments it is based on, and updates the members automatically. For more information, see Compound Segments.
 
 \

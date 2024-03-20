@@ -1,10 +1,10 @@
 # Using Staging in Asset Libraries
 
-Liferay’s Staging application is a publishing tool for managing changes on DXP. For Asset Libraries, Staging provides a working environment for adding, removing, and editing assets in the Web Content or Documents and Media applications before making those changes live. You can access the Staging application for an Asset Library via its menu page.
+Staging application is a publishing tool for managing changes on the portal. For Asset Libraries, Staging provides a working environment for adding, removing, and editing assets in the Web Content or Documents and Media applications before making those changes live. You can access the Staging application for an Asset Library via its menu page.
 
 ![Access Staging via an Asset Library's menu page.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/staging/using-staging-in-asset-libraries/images/01.png)
 
-From here, you can enable [Local Live](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/configuring-local-live-staging) or [Remote Live](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/configuring-remote-live-staging) Staging for individual Asset Libraries following the same process as you would for a Site. The only difference is that staged content options are limited to the applications enabled for the Asset Library.
+From here, you can enable Local Live or Remote Live Staging for individual Asset Libraries following the same process as you would for a Site. The only difference is that staged content options are limited to the applications enabled for the Asset Library.
 
 WARNING
 
@@ -18,6 +18,6 @@ Once Staging is enabled for an Asset Library, you can toggle between Live and St
 
 Many editing options can only be accessed in the Staging environment. This is to maintain a clear development process and avoid data conflicts due to edits in the Live environment.
 
-When changes are made in the Staging environment, they can then be published all at once, or one at a time. As with [Sites](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#publish-to-live), you can use [simple](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#simple-publishing) or [advanced](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/site-staging-ui-reference#advanced-publishing) publishing options.
+When changes are made in the Staging environment, they can then be published all at once, or one at a time. As with Sites, you can use simple or advanced publishing options.
 
 \

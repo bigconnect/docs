@@ -1,8 +1,8 @@
 # Configuring Open Graph
 
-[Open Graph](https://ogp.me/) is an Internet protocol that standardizes previews of Site content when shared in application contexts that support it, such as Facebook, Slack, and Twitter. It does this by embedding structured data in page headers as `<meta>` tags, similar to [RDFa](https://en.wikipedia.org/wiki/RDFa).
+Open Graph is an Internet protocol that standardizes previews of Site content when shared in application contexts that support it, such as Facebook, Slack, and Twitter. It does this by embedding structured data in page headers as `<meta>` tags, similar to RDFa.
 
-By default, Open Graph `<meta>` tags are embedded in all public Liferay Pages, but you can disable this behavior at the Site level if desired. In Site settings, you can also set default `og:image` properties. These values are used for all Pages, unless they’re overridden at the [Page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-settings/configuring-individual-pages#open-graph) or [Display Page](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/configuring-seo-and-open-graph) level.
+By default, Open Graph `<meta>` tags are embedded in all public Pages, but you can disable this behavior at the Site level if desired. In Site settings, you can also set default `og:image` properties. These values are used for all Pages, unless they’re overridden at the Page or Display Page level.
 
 NOTE
 
@@ -17,7 +17,7 @@ Follow these steps to configure Open Graph for your Site:
     ![Enable or disable embedded Open Graph tags in your Site's Pages.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-settings/configuring-open-graph/images/01.png)
 4.  (Optional) Use the _Image_ and _Image Alt Description_ fields to set default `og:image` properties for the Site’s Pages.
 
-    These values are overridden by [Page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-settings/configuring-individual-pages#open-graph) and [Display Page](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/configuring-seo-and-open-graph) configurations.
+    These values are overridden by Page and Display Page configurations.
 
     ![Define the default og:image and og:image:alt properties used for your Site.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-settings/configuring-open-graph/images/02.png)
 5.  Preview your default `og:image` configuration.
@@ -27,9 +27,9 @@ Follow these steps to configure Open Graph for your Site:
     ![Preview your default Open Graph configuration.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-settings/configuring-open-graph/images/03.png)
 6. Click _Save_.
 
-### [Analyzing the `og:image` Properties](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/configuring-open-graph#analyzing-the-ogimage-properties) <a href="#analyzing-the-ogimage-properties" id="analyzing-the-ogimage-properties"></a>
+### Analyzing the `og:image` Properties <a href="#analyzing-the-ogimage-properties" id="analyzing-the-ogimage-properties"></a>
 
-When you select an image, DXP automatically adds a number of structured properties that determine how your selected image is displayed. The Image field defines the following `<meta>` tags.
+When you select an image, the portal automatically adds a number of structured properties that determine how your selected image is displayed. The Image field defines the following `<meta>` tags.
 
 ```html
 <meta property="og:image" content="http://example.com/ogp.jpg" />

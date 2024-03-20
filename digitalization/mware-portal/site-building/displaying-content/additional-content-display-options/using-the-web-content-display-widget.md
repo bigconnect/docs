@@ -1,11 +1,11 @@
 # Using the Web Content Display Widget
 
-After you create a [web content article](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-articles/adding-a-basic-web-content-article), the quickest way to display it is the web content display widget. Once a web content article is displayed, content updates appear immediately, unless you configure a [workflow](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/introduction-to-workflow) to review and approve the updates.
+After you create a web content article, the quickest way to display it is the web content display widget. Once a web content article is displayed, content updates appear immediately, unless you configure a workflow to review and approve the updates.
 
-### [Adding Web Content Display to a Page](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/additional-content-display-options/using-the-web-content-display-widget#adding-web-content-display-to-a-page) <a href="#adding-web-content-display-to-a-page" id="adding-web-content-display-to-a-page"></a>
+### Adding Web Content Display to a Page <a href="#adding-web-content-display-to-a-page" id="adding-web-content-display-to-a-page"></a>
 
 1. Go to _Site Menu_ ( ![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png) ) and navigate to _Site Builder_ → _Pages_.
-2. Click _Actions_ ( ![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png) ) next to the page you want to edit and select _Edit_ (alternatively, [create a new Content Page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/adding-a-page-to-a-site).)
+2. Click _Actions_ ( ![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png) ) next to the page you want to edit and select _Edit_ (alternatively, create a new Content Page.)
 3. Click _Add_ ( ![Add widget icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add-widget.png) ) to open the Fragments and Widgets panel.
 4.  Under the _Content Management_ category in the Widgets tab, drag the _Web Content Display_ widget to a place on the page.
 
@@ -23,17 +23,17 @@ After you create a [web content article](https://learn.liferay.com/web/guest/w/d
     TIP
 
     You can search for all content (\*) using the search bar. This returns a list with all the available folders and web content on the site.
-8. Set up optional [web content display options](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/additional-content-display-options/using-the-web-content-display-widget#web-content-display-setup-options).
+8. Set up optional web content display options.
 9. Click _Save_ and close the Web Content Display Configuration dialog.
 10. If you want to publish the Content Page, click _Publish_.
 
-### [Using Scopes in the Web Content Display Widget](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/additional-content-display-options/using-the-web-content-display-widget#using-scopes-in-the-web-content-display-widget) <a href="#using-scopes-in-the-web-content-display-widget" id="using-scopes-in-the-web-content-display-widget"></a>
+### Using Scopes in the Web Content Display Widget <a href="#using-scopes-in-the-web-content-display-widget" id="using-scopes-in-the-web-content-display-widget"></a>
 
-After adding a Web Content Display Widget to a page, you can set its scope to define the sites and libraries where the content available to be displayed in the widget can be found. For more information about scopes, see [Setting Widget Scopes](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-widgets/configuring-widgets/setting-widget-scopes)
+After adding a Web Content Display Widget to a page, you can set its scope to define the sites and libraries where the content available to be displayed in the widget can be found. For more information about scopes, see Setting Widget Scopes
 
 1. Click _Options_ ( ![Options icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png) ) at the top right of the widget → _Configuration_.
 2. In Web Content Display Configuration, click _Scope_ on the tab.
-3. Click _Liferay DXP_ to open the Scope menu. Here you can select the desired scope for the widget. Click _Save_.
+3. Click _Portal name_ to open the Scope menu. Here you can select the desired scope for the widget. Click _Save_.
 4. Click _Setup_ on the tab.
 5. Click _Select_ to open the Select Web Content Menu.
 6. Click _Sites and Libraries_ on the breadcrumb menu.
@@ -44,7 +44,7 @@ The available content to be displayed is defined according to the selected scope
 
 NOTE
 
-For Liferay DXP 7.3 and earlier, selecting a scope for the Web Content Display Widget does not affect the available content to be displayed in the widget.
+For version 7.3 and earlier, selecting a scope for the Web Content Display Widget does not affect the available content to be displayed in the widget.
 
 ```log
 

@@ -4,15 +4,15 @@ Alias redirects define absolute source and destination URLs explicitly. Because 
 
 **Permanent**: Use a 301 code to inform search engines and other tools accessing your site that the requested resource has been permanently relocated. Search engines replace the old URL with the new destination in search results, and browsers cache the new destination for an indeterminate amount of time. A 301 code should only be used when you intend to use the destination URL indefinitely. This improves SEO and helps avoid unintended caching.
 
-**Temporary**: Use a 302 code to inform search engines and other tools accessing your site that the requested resource is temporarily moved. A 302 code is useful when you want to conduct A/B testing or redirect traffic while fixing a problem, without impacting your site ranking. Liferay uses 302 codes by default.
+**Temporary**: Use a 302 code to inform search engines and other tools accessing your site that the requested resource is temporarily moved. A 302 code is useful when you want to conduct A/B testing or redirect traffic while fixing a problem, without impacting your site ranking. The portal uses 302 codes by default.
 
-See [Optimizing Sites](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites) to learn more about the implications of each redirect type for SEO. Also, see [A/B Testing](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/ab-testing) to learn about using 302 codes when testing.
+See Optimizing Sites to learn more about the implications of each redirect type for SEO. Also, see A/B Testing to learn about using 302 codes when testing.
 
 NOTE
 
-If you need to perform bulk redirects, see [Using Pattern Redirects](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/managing-site-urls/setting-up-redirects-and-404-tracking/using-pattern-redirects).
+If you need to perform bulk redirects, see Using Pattern Redirects.
 
-### [Creating Alias Redirects](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/managing-site-urls/setting-up-redirects-and-404-tracking/using-alias-redirects#creating-alias-redirects) <a href="#creating-alias-redirects" id="creating-alias-redirects"></a>
+### Creating Alias Redirects <a href="#creating-alias-redirects" id="creating-alias-redirects"></a>
 
 1.  Open the _Site Menu_ (![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) and go to _Configuration_ → _Redirection_.
 
@@ -34,15 +34,15 @@ If you need to perform bulk redirects, see [Using Pattern Redirects](https://lea
     ![Determine whether the redirect expires.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-settings/managing-site-urls/setting-up-redirects-and-404-tracking/using-alias-redirects/images/05.png)
 7. When finished, click _Create_ to save the redirect.
 
-Once saved, Liferay validates your configuration. If other redirects point to your specified source URL, Liferay notifies you and asks if you want to update the existing redirects to avoid a redirect chain. To help reduce conflicts, Liferay prevents users both from defining multiple alias redirects for the same source URL and from directly redirecting URLs to themselves.
+Once saved, the portal validates your configuration. If other redirects point to your specified source URL, the portal notifies you and asks if you want to update the existing redirects to avoid a redirect chain. To help reduce conflicts, the portal prevents users both from defining multiple alias redirects for the same source URL and from directly redirecting URLs to themselves.
 
-![Liferay helps you avoid creating redirect chains.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-settings/managing-site-urls/setting-up-redirects-and-404-tracking/using-alias-redirects/images/06.png)
+![MWARE Portal helps you avoid creating redirect chains.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-settings/managing-site-urls/setting-up-redirects-and-404-tracking/using-alias-redirects/images/06.png)
 
 WARNING
 
-Avoid creating circular redirects. These are easy to create when defining redirects for content friendly URLs (e.g. redirecting between different friendly URLs for the same content). Liferay cannot reliably detect these loops.
+Avoid creating circular redirects. These are easy to create when defining redirects for content friendly URLs (e.g. redirecting between different friendly URLs for the same content). The portal cannot reliably detect these loops.
 
-### [Editing and Removing Alias Redirects](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/managing-site-urls/setting-up-redirects-and-404-tracking/using-alias-redirects#editing-and-removing-alias-redirects) <a href="#editing-and-removing-alias-redirects" id="editing-and-removing-alias-redirects"></a>
+### Editing and Removing Alias Redirects <a href="#editing-and-removing-alias-redirects" id="editing-and-removing-alias-redirects"></a>
 
 Once you’ve added a URL redirect, edit or remove it at any time by clicking its Actions button (![Actions button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and selecting Edit or Delete.
 

@@ -1,8 +1,8 @@
 # Exporting/Importing Site Templates
 
-You can export and import site templates to share them between Liferay installations.
+You can export and import site templates to share them between portal installations.
 
-### [Exporting Individual Site Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/site-templates/exporting-importing-site-templates#exporting-individual-site-templates) <a href="#exporting-individual-site-templates" id="exporting-individual-site-templates"></a>
+### Exporting Individual Site Templates <a href="#exporting-individual-site-templates" id="exporting-individual-site-templates"></a>
 
 Follow these steps to export a site template:
 
@@ -22,7 +22,7 @@ Once finished, click the _Download_ button (![Download Button](https://resources
 
 ![Download the generated LAR file.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/sites/site-templates/exporting-importing-site-templates/images/02.png)
 
-### [Importing Individual Site Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/site-templates/exporting-importing-site-templates#importing-individual-site-templates) <a href="#importing-individual-site-templates" id="importing-individual-site-templates"></a>
+### Importing Individual Site Templates <a href="#importing-individual-site-templates" id="importing-individual-site-templates"></a>
 
 Follow these steps to import a site template:
 
@@ -41,7 +41,7 @@ Follow these steps to import a site template:
 
 Once complete, you can use the imported site template to [create sites](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/adding-a-site).
 
-### [Bulk Export/Import](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/site-templates/exporting-importing-site-templates#bulk-exportimport) <a href="#bulk-exportimport" id="bulk-exportimport"></a>
+### Bulk Export/Import <a href="#bulk-exportimport" id="bulk-exportimport"></a>
 
 If needed, follow these steps to perform bulk export/import operations for site templates:
 
@@ -51,10 +51,10 @@ If needed, follow these steps to perform bulk export/import operations for site 
     ![Click the Options icon in the Application Bar and select Export/Import.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/sites/site-templates/exporting-importing-site-templates/images/05.png)
 3.  Go to the _Export_ or _Import_ tab to start the desired process.
 
-    Configuration options for bulk export are mostly the same as when [exporting individual site templates](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/site-templates/exporting-importing-site-templates#exporting-individual-site-templates). However, you cannot configure the pages and content included for each template. Also unlike individual exports, you can determine whether page templates are included in your export.
+    Configuration options for bulk export are mostly the same as when exporting individual site templates. However, you cannot configure the pages and content included for each template. Also unlike individual exports, you can determine whether page templates are included in your export.
 
     ![Go to the Export tab to export all site templates in your instance.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/sites/site-templates/exporting-importing-site-templates/images/06.png)
 
-    Configuration options for bulk import are mostly the same as when [importing individual site templates](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/site-templates/exporting-importing-site-templates#importing-individual-site-templates). However, you can determine whether page templates included in the LAR file are imported with the site templates.
+    Configuration options for bulk import are mostly the same as when importing individual site templates. However, you can determine whether page templates included in the LAR file are imported with the site templates.
 
     ![Go to the Import tab to import a LAR file with multiple site templates.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/sites/site-templates/exporting-importing-site-templates/images/07.png)

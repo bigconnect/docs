@@ -2,37 +2,35 @@
 
 Display page templates define structures for displaying content at a dedicated friendly URL. These templates currently support the following content types:
 
-* [Blog Entries](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/blogs/getting-started-with-blogs)
-* [Categories](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content) Liferay DXP/Portal 7.4+
-* [Custom Objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/displaying-object-entries) Liferay DXP/Portal 7.4+
-* [Documents](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/publishing-documents)
-* [Web Content Articles](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-articles/adding-a-basic-web-content-article)
+* Blog Entries
+* Categories  7.4+
+* Custom Objects 7.4+
+* Documents
+* Web Content Articles
 
-See [Using Display Page Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates) to learn more.
+See Using Display Page Templates to learn more.
 
-### [Creating a Display Page Template](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates#creating-a-display-page-template) <a href="#creating-a-display-page-template" id="creating-a-display-page-template"></a>
+### Creating a Display Page Template <a href="#creating-a-display-page-template" id="creating-a-display-page-template"></a>
 
 1. Open the _Site Menu_ (![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) and click _Design_ → _Page Templates_.
 2. Click the _Display Page Templates_ tab and click _Add_ (![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)).
 3.  Enter a _Name_ for your template and select a _Content Type_ and _Subtype_, if applicable. Then click _Save_.
 
     ![Select the content type and subtype for your new template.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates/images/01.png)
-4. Design the template using the same interface and page elements as [content pages](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/content-page-editor-ui-reference).
-5.  Once you’ve added page elements, you can [map](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/configuring-fragments/fragment-sub-elements-reference#mapping-settings) them to content structure fields (e.g., title, description) by double-clicking on an editable field. Mapped fields are outlined in purple.
+4. Design the template using the same interface and page elements as content pages.
+5.  Once you’ve added page elements, you can map them to content structure fields (e.g., title, description) by double-clicking on an editable field. Mapped fields are outlined in purple.
 
     TIP
 
-    You can use mapped fields when configuring SEO and Open Graph settings for a display page template. See [Configuring SEO and Open Graph](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/configuring-seo-and-open-graph) for more information.
+    You can use mapped fields when configuring SEO and Open Graph settings for a display page template. See Configuring SEO and Open Graph for more information.
 
     ![Map page elements to structure fields.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates/images/02.png)
-6. Before publishing, you can preview your editable fields mappings with existing content using the [preview function](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates#previewing-the-display-page-template-content-mappings) (available 7.4+).
+6. Before publishing, you can preview your editable fields mappings with existing content using the preview function (available 7.4+).
 7. When finished, click _Publish_ to save your work.
 
-You can now use the template to [display your content](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/publishing-content-with-display-pages).
+You can now use the template to display your content.
 
-#### [Setting a Friendly URL for the Display Page Template](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates#setting-a-friendly-url-for-the-display-page-template) <a href="#setting-a-friendly-url-for-the-display-page-template" id="setting-a-friendly-url-for-the-display-page-template"></a>
-
-Liferay 2023.Q4+/GA102+
+#### Setting a Friendly URL for the Display Page Template <a href="#setting-a-friendly-url-for-the-display-page-template" id="setting-a-friendly-url-for-the-display-page-template"></a>
 
 You can set a friendly URL for your display page template. The friendly URL is used when the display page template is not marked as default or when it is manually selected for use.
 
@@ -49,11 +47,11 @@ To set a friendly URL for your display page template,
 3. Under the General section, define your friendly URL.
 4. Click _Save_
 
-#### [Mapping Links to Different Display Page Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates#mapping-links-to-different-display-page-templates) <a href="#mapping-links-to-different-display-page-templates" id="mapping-links-to-different-display-page-templates"></a>
+#### Mapping Links to Different Display Page Templates <a href="#mapping-links-to-different-display-page-templates" id="mapping-links-to-different-display-page-templates"></a>
 
 IMPORTANT
 
-This feature is currently behind a release feature flag. Read [Release Feature Flags](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/feature-flags#release-feature-flags) for more information.
+This feature is currently behind a release feature flag. Read Release Feature Flags for more information.
 
 If a content type (e.g., custom object, web content article, or blogs entry) more than one display page template, you can map links to any available template for that content type.
 
@@ -61,13 +59,11 @@ For example, you can create different display page templates for an object, each
 
 ![Map links to different display page templates](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates/images/04.png)
 
-This gives you more freedom when dealing with objects and [forms mapped from objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/using-fragments-to-build-forms) with multiple steps.
+This gives you more freedom when dealing with objects and forms mapped from objects with multiple steps.
 
-#### [Previewing the Display Page Template Content Mappings](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates#previewing-the-display-page-template-content-mappings) <a href="#previewing-the-display-page-template-content-mappings" id="previewing-the-display-page-template-content-mappings"></a>
+#### Previewing the Display Page Template Content Mappings <a href="#previewing-the-display-page-template-content-mappings" id="previewing-the-display-page-template-content-mappings"></a>
 
-Liferay DXP/Portal 7.4+
-
-While editing, Liferay provides two ways to preview display page templates with content items.
+While editing, the portal provides two ways to preview display page templates with content items.
 
 From the Application Menu, you can click the _Preview With_ drop-down menu and choose a content item. If no item appears, click _Select Other Item_ and browse for the desired content. This dynamically populates the template with content data according to your field mapping.
 
@@ -75,9 +71,7 @@ From the Application Menu, you can click the _Preview With_ drop-down menu and c
 
 Alternatively, from the display page template editor, click the _Options_ menu(![Options menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-options.png)) button at the top right corner and choose _Preview in a New Tab_.
 
-### [Viewing Display Page Template Usage](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates#viewing-display-page-template-usage) <a href="#viewing-display-page-template-usage" id="viewing-display-page-template-usage"></a>
-
-Liferay DXP/Portal 7.4+
+### Viewing Display Page Template Usage <a href="#viewing-display-page-template-usage" id="viewing-display-page-template-usage"></a>
 
 You can manage the different display page templates using the _Actions_ menu (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)). From here, the _View Usages_ option provides a list of content that uses a specific display page template other than the default template. This option is not available for default templates.
 
@@ -97,11 +91,9 @@ Follow these steps to view your display page template usage and unassign your co
 5. Click the _Actions_ menu (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) in the top-right corner and select _Assign to Default_ or _Unassign_.
 6. Click _OK_.
 
-If you assign your content to a new display page template, make sure the content appears as expected. To preview and display your content, see [Publishing Content with Display Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/publishing-content-with-display-pages).
+If you assign your content to a new display page template, make sure the content appears as expected. To preview and display your content, see Publishing Content with Display Pages.
 
-### [Duplicating a Display Page Template](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates#duplicating-a-display-page-template) <a href="#duplicating-a-display-page-template" id="duplicating-a-display-page-template"></a>
-
-Liferay 7.4 2023.Q4+/GA102+
+### Duplicating a Display Page Template <a href="#duplicating-a-display-page-template" id="duplicating-a-display-page-template"></a>
 
 You can duplicate a published display page template. The copy is linked to the original content type, and its mappings are the same as the original page.
 
@@ -119,9 +111,7 @@ IMPORTANT
 
 You can only make a copy of display page templates if they were published at some point. If a published template becomes a draft again, you can copy the last published version of the display page template.
 
-### [Changing the Content Type of Display Page Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates#changing-the-content-type-of-display-page-templates) <a href="#changing-the-content-type-of-display-page-templates" id="changing-the-content-type-of-display-page-templates"></a>
-
-Liferay 7.4 2023.Q4+/GA102+
+### Changing the Content Type of Display Page Templates <a href="#changing-the-content-type-of-display-page-templates" id="changing-the-content-type-of-display-page-templates"></a>
 
 WARNING
 
@@ -139,7 +129,7 @@ To change the content type linked to a display page template,
 
     If the content type has a subtype, you must select a subtype before saving the new content type.
 
-#### [Changing the Content Type of Assigned Display Page Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates#changing-the-content-type-of-assigned-display-page-templates) <a href="#changing-the-content-type-of-assigned-display-page-templates" id="changing-the-content-type-of-assigned-display-page-templates"></a>
+#### Changing the Content Type of Assigned Display Page Templates <a href="#changing-the-content-type-of-assigned-display-page-templates" id="changing-the-content-type-of-assigned-display-page-templates"></a>
 
 You cannot change the content type of a display page template if it’s assigned to an asset (e.g. web content article).
 

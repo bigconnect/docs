@@ -1,10 +1,10 @@
 # Upgrading a Theme
 
-Themes developed for previous versions of Liferay DXP must be upgraded in order to be deployed to a new version. The `gulp upgrade` task updates Liferay version references and theme dependencies. This allows you to deploy your theme to newer versions of Liferay.
+Themes developed for previous versions must be upgraded in order to be deployed to a new version. The `gulp upgrade` task updates the portal version references and theme dependencies. This allows you to deploy your theme to newer versions of the portal.
 
-### [Prerequisites](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/themes/upgrading-a-theme#prerequisites) <a href="#prerequisites" id="prerequisites"></a>
+### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-The Liferay Theme Generator is used to run the upgrade task. If you have not done so, then install it with this command:
+The Theme Generator is used to run the upgrade task. If you have not done so, then install it with this command:
 
 ```bash
 npm install -g generator-liferay-theme@10.x.x
@@ -16,7 +16,7 @@ Install the Yeoman and Gulp dependencies with this command:
 npm install -g yo gulp
 ```
 
-### [Running the Upgrade Task](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/themes/upgrading-a-theme#running-the-upgrade-task) <a href="#running-the-upgrade-task" id="running-the-upgrade-task"></a>
+### Running the Upgrade Task <a href="#running-the-upgrade-task" id="running-the-upgrade-task"></a>
 
 Use the upgrade task to update the theme’s version dependencies.
 
@@ -37,7 +37,7 @@ A warning appears reminding you to back up your files if you have not yet done s
 sure you wish to start the upgrade process?
 ```
 
-**If you are upgrading to Liferay 7.4**, another prompt appears asking if you want to add the Bootstrap 3 to 4 compatibility layer. If your theme requires compatibility with Bootstrap 3, enter “y” (or “yes”), and then enter it again when a warning appears to confirm. If you do not need compatibility with Bootstrap 3, then type “n” (or “no”).
+**If you are upgrading to version 7.4**, another prompt appears asking if you want to add the Bootstrap 3 to 4 compatibility layer. If your theme requires compatibility with Bootstrap 3, enter “y” (or “yes”), and then enter it again when a warning appears to confirm. If you do not need compatibility with Bootstrap 3, then type “n” (or “no”).
 
 ```log
 ? Would you like to add the Bootstrap 3 to 4 compatibility layer? Yes
@@ -50,4 +50,4 @@ Confirm that the upgrade task has completed with the messages in the console:
 Finished 'upgrade' after 36 s
 ```
 
-The version numbers in your theme are now updated, and you can now deploy it to the new version of Liferay DXP.
+The version numbers in your theme are now updated, and you can now deploy it to the new version of the portal.

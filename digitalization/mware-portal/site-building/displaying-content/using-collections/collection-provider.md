@@ -4,9 +4,9 @@ Collection providers group items into collections for display on your pages. Sev
 
 NOTE
 
-The term _items_ can refer to more than content, such as products and categories, and they can be located outside the current site or Liferay instance.
+The term _items_ can refer to more than content, such as products and categories, and they can be located outside the current site or portal instance.
 
-### [Default Collection Providers](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/collection-providers#default-collection-providers) <a href="#default-collection-providers" id="default-collection-providers"></a>
+### Default Collection Providers <a href="#default-collection-providers" id="default-collection-providers"></a>
 
 The following collection providers are available out-of-the-box and function the same as the widgets with the same name:
 
@@ -16,12 +16,12 @@ The following collection providers are available out-of-the-box and function the
 
 ![When configuring a collection display fragment, you can choose collection providers such as Most Viewed Assets, Highest Rated Assets, and Recent Content.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/collections-and-collection-pages/collection-providers/images/01.png)
 
-Some collection providers are created automatically by Liferay’s applications. For example,
+Some collection providers are created automatically by the portal’s applications. For example,
 
-* When an object is published, Liferay creates a collection provider for it. See [Using the Collection Provider for Objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/displaying-object-entries#using-the-collection-provider-for-objects) for more information.
-* \[Liferay DXP] When a search blueprint is published, Liferay creates a collection provider for it. See [Collections with Search Blueprints](https://learn.liferay.com/web/guest/w/dxp/using-search/liferay-enterprise-search/search-experiences/search-blueprints/collections-with-search-blueprints) for more information.
+* When an object is published, the portal creates a collection provider for it. See Using the Collection Provider for Objects for more information.
+* When a search blueprint is published, the portal creates a collection provider for it. See Collections with Search Blueprints for more information.
 
-### [Related Items Collection Providers](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/collection-providers#related-items-collection-providers) <a href="#related-items-collection-providers" id="related-items-collection-providers"></a>
+### Related Items Collection Providers <a href="#related-items-collection-providers" id="related-items-collection-providers"></a>
 
 Related items collection providers show lists of items related to the main items being displayed. You can access these collection providers in two ways:
 
@@ -40,9 +40,9 @@ Related items collection providers show lists of items related to the main items
 
 ![Items with the Same Categories requires you to choose an item type.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/collections-and-collection-pages/collection-providers/images/04.png)
 
-**Objects in a Relationship:** (when viewing an object) shows other objects that have a relationship to the object being viewed. A new related item collection provider appears for every relationship the main object has. For example, if the main object is a _country_ and has a [one-to-many relationship](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/relationships/defining-object-relationships) with a _city_ object (with many cities mapped to one country), all city object entries related to that country entry are shown.
+**Objects in a Relationship:** (when viewing an object) shows other objects that have a relationship to the object being viewed. A new related item collection provider appears for every relationship the main object has. For example, if the main object is a _country_ and has a one-to-many relationship with a _city_ object (with many cities mapped to one country), all city object entries related to that country entry are shown.
 
-#### [Advanced Rules for Items with the Same Categories](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/collection-providers#advanced-rules-for-items-with-the-same-categories) <a href="#advanced-rules-for-items-with-the-same-categories" id="advanced-rules-for-items-with-the-same-categories"></a>
+#### Advanced Rules for Items with the Same Categories <a href="#advanced-rules-for-items-with-the-same-categories" id="advanced-rules-for-items-with-the-same-categories"></a>
 
 You can further refine displayed items while filtering them based on their types.
 

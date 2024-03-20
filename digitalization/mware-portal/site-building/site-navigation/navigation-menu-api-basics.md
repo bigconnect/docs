@@ -1,20 +1,20 @@
 # Navigation Menu API Basics
 
-Liferay’s REST APIs provide services for Liferay’s navigation menus. You can create and edit navigation menus with the API. Start by seeing an example of adding a new navigation menu.
+MWARE Portal REST APIs provide services for the portal’s navigation menus. You can create and edit navigation menus with the API. Start by seeing an example of adding a new navigation menu.
 
-### [Adding a Navigation Menu](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#adding-a-navigation-menu) <a href="#adding-a-navigation-menu" id="adding-a-navigation-menu"></a>
+### Adding a Navigation Menu <a href="#adding-a-navigation-menu" id="adding-a-navigation-menu"></a>
 
-Start a new Liferay DXP instance by running
+Start a new portal instance by running
 
 ```bash
 docker run -it -m 8g -p 8080:8080 liferay/dxp:2023.q4.0
 ```
 
-Sign in to Liferay at [http://localhost:8080](http://localhost:8080/) using the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
+Sign in to the portal at http://localhost:8080 using the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
 
 Then, follow these steps:
 
-1.  Download and unzip [Categories and Vocabulary API Basics](https://resources.learn.liferay.com/dxp/latest/en/site-building/site-navigation/developer-guide/liferay-p7s4.zip).
+1.  Download and unzip Categories and Vocabulary API Basics.
 
     ```bash
     curl https://resources.learn.liferay.com/dxp/latest/en/site-building/site-navigation/developer-guide/liferay-p7s4.zip -O
@@ -23,7 +23,7 @@ Then, follow these steps:
     ```bash
     unzip liferay-p7s4.zip
     ```
-2. [Find your site’s ID](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#identify-the-site-containing-the-data). You’ll use this in different service calls below.
+2. Find your site’s ID. You’ll use this in different service calls below.
 3.  Use the cURL script to add a new navigation menu to your Site. On the command line, navigate to the `curl` folder. Execute the `NavigationMenu_POST_ToSite.sh` script with your site ID as a parameter.
 
     ```bash
@@ -64,7 +64,7 @@ Then, follow these steps:
     java -classpath .:* -DsiteId=1234 NavigationMenu_POST_ToSite
     ```
 
-### [Examine the cURL Command](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#examine-the-curl-command) <a href="#examine-the-curl-command" id="examine-the-curl-command"></a>
+### Examine the cURL Command <a href="#examine-the-curl-command" id="examine-the-curl-command"></a>
 
 The `NavigationMenu_POST_ToSite.sh` script calls the REST service with a cURL command.
 
@@ -92,11 +92,11 @@ Here are the command’s arguments:
 
 NOTE
 
-Basic authentication is used here for demonstration purposes. For production, you should authorize users via [OAuth2](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2). See [Using OAuth2 to Authorize Users](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/using-oauth2-to-authorize-users) for a sample React application that uses OAuth2.
+Basic authentication is used here for demonstration purposes. For production, you should authorize users via OAuth2. See Using OAuth2 to Authorize Users for a sample React application that uses OAuth2.
 
 The other cURL commands use similar JSON arguments.
 
-### [Examine the Java Class](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#examine-the-java-class) <a href="#examine-the-java-class" id="examine-the-java-class"></a>
+### Examine the Java Class <a href="#examine-the-java-class" id="examine-the-java-class"></a>
 
 The `NavigationMenu_POST_ToSite.java` class adds a navigation menu by calling the navigation menu related service.
 
@@ -140,15 +140,15 @@ The other example Java classes are similar to this one, but call different `Navi
 
 IMPORTANT
 
-See [NavigationMenuResource](https://github.com/liferay/liferay-portal/blob/7.4.3.102-ga102/modules/apps/headless/headless-delivery/headless-delivery-client/src/main/java/com/liferay/headless/delivery/client/resource/v1\_0/NavigationMenuResource.java) for service details.
+See NavigationMenuResource for service details.
 
 Below are examples of calling other `NavigationMenu` REST services using cURL and Java.
 
-### [Get Navigation Menus from Site](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#get-navigation-menus-from-site) <a href="#get-navigation-menus-from-site" id="get-navigation-menus-from-site"></a>
+### Get Navigation Menus from Site <a href="#get-navigation-menus-from-site" id="get-navigation-menus-from-site"></a>
 
 You can list a site’s navigation menus by executing the following cURL or Java command. As above, replace `1234` with your site’s ID.
 
-#### [NavigationMenus\_GET\_FromSite.sh](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#navigationmenus-get-fromsitesh) <a href="#navigationmenus-get-fromsitesh" id="navigationmenus-get-fromsitesh"></a>
+#### NavigationMenus\_GET\_FromSite.sh <a href="#navigationmenus-get-fromsitesh" id="navigationmenus-get-fromsitesh"></a>
 
 Command:
 
@@ -164,7 +164,7 @@ curl \
 	--user "test@liferay.com:learn"
 ```
 
-#### [NavigationMenus\_GET\_FromSite.java](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#navigationmenus-get-fromsitejava) <a href="#navigationmenus-get-fromsitejava" id="navigationmenus-get-fromsitejava"></a>
+#### NavigationMenus\_GET\_FromSite.java <a href="#navigationmenus-get-fromsitejava" id="navigationmenus-get-fromsitejava"></a>
 
 Command:
 
@@ -194,7 +194,7 @@ public static void main(String[] args) throws Exception {
 
 The site’s `NavigationMenu` objects are listed in JSON.
 
-### [Get a Navigation Menu](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#get-a-navigation-menu) <a href="#get-a-navigation-menu" id="get-a-navigation-menu"></a>
+### Get a Navigation Menu <a href="#get-a-navigation-menu" id="get-a-navigation-menu"></a>
 
 Get a specific navigation menu with the following cURL or Java command. Replace `1234` with the navigation menu’s ID.
 
@@ -202,7 +202,7 @@ TIP
 
 Use `NavigationMenus_GET_FromSite.[java|sh]` to get `NavigationMenu` IDs.
 
-#### [NavigationMenu\_GET\_ById.sh](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#navigationmenu-get-byidsh) <a href="#navigationmenu-get-byidsh" id="navigationmenu-get-byidsh"></a>
+#### NavigationMenu\_GET\_ById.sh <a href="#navigationmenu-get-byidsh" id="navigationmenu-get-byidsh"></a>
 
 Command:
 
@@ -218,7 +218,7 @@ curl \
 	--user "test@liferay.com:learn"
 ```
 
-#### [NavigationMenu\_GET\_ById.java](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#navigationmenu-get-byidjava) <a href="#navigationmenu-get-byidjava" id="navigationmenu-get-byidjava"></a>
+#### NavigationMenu\_GET\_ById.java <a href="#navigationmenu-get-byidjava" id="navigationmenu-get-byidjava"></a>
 
 Command:
 
@@ -245,11 +245,11 @@ public static void main(String[] args) throws Exception {
 
 The `NavigationMenu` fields are listed in JSON.
 
-### [Put a Navigation Menu](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#put-a-navigation-menu) <a href="#put-a-navigation-menu" id="put-a-navigation-menu"></a>
+### Put a Navigation Menu <a href="#put-a-navigation-menu" id="put-a-navigation-menu"></a>
 
 Do a complete overwrite of an existing navigation menu with the following cURL and Java commands. Note, replace `1234` with your navigation menu’s ID.
 
-#### [NavigationMenu\_PUT\_ById.sh](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#navigationmenu-put-byidsh) <a href="#navigationmenu-put-byidsh" id="navigationmenu-put-byidsh"></a>
+#### NavigationMenu\_PUT\_ById.sh <a href="#navigationmenu-put-byidsh" id="navigationmenu-put-byidsh"></a>
 
 Command:
 
@@ -271,7 +271,7 @@ curl \
 	--user "test@liferay.com:learn"
 ```
 
-#### [NavigationMenu\_PUT\_ById.java](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#navigationmenu-put-byidjava) <a href="#navigationmenu-put-byidjava" id="navigationmenu-put-byidjava"></a>
+#### NavigationMenu\_PUT\_ById.java <a href="#navigationmenu-put-byidjava" id="navigationmenu-put-byidjava"></a>
 
 Command:
 
@@ -303,11 +303,11 @@ public static void main(String[] args) throws Exception {
 }
 ```
 
-### [Delete a Navigation Menu](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#delete-a-navigation-menu) <a href="#delete-a-navigation-menu" id="delete-a-navigation-menu"></a>
+### Delete a Navigation Menu <a href="#delete-a-navigation-menu" id="delete-a-navigation-menu"></a>
 
 Delete an existing navigation menu with the following cURL and Java commands. Note, replace `1234` with your navigation menu’s ID.
 
-#### [NavigationMenu\_DELETE\_ById.sh](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#navigationmenu-delete-byidsh) <a href="#navigationmenu-delete-byidsh" id="navigationmenu-delete-byidsh"></a>
+#### NavigationMenu\_DELETE\_ById.sh <a href="#navigationmenu-delete-byidsh" id="navigationmenu-delete-byidsh"></a>
 
 Command:
 
@@ -324,7 +324,7 @@ curl \
 	--user "test@liferay.com:learn"
 ```
 
-#### [NavigationMenu\_DELETE\_ById.java](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/developer-guide/navigation-menu-api-basics#navigationmenu-delete-byidjava) <a href="#navigationmenu-delete-byidjava" id="navigationmenu-delete-byidjava"></a>
+#### NavigationMenu\_DELETE\_ById.java <a href="#navigationmenu-delete-byidjava" id="navigationmenu-delete-byidjava"></a>
 
 Command
 
@@ -348,4 +348,4 @@ public static void main(String[] args) throws Exception {
 }
 ```
 
-The [API Explorer](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services) lists all of the `NavigationMenu` services and schemas and has an interface to try out each service.
+The API Explorer lists all of the `NavigationMenu` services and schemas and has an interface to try out each service.

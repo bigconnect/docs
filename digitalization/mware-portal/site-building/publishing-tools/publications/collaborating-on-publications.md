@@ -4,7 +4,7 @@ By default, a publication can only be accessed by its creator. However, publicat
 
 Once users are invited to a publication, you can use the integrated comments feature to facilitate collaboration between contributors.
 
-### [Inviting Users to a Publication](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/publications/collaborating-on-publications#inviting-users-to-a-publication) <a href="#inviting-users-to-a-publication" id="inviting-users-to-a-publication"></a>
+### Inviting Users to a Publication <a href="#inviting-users-to-a-publication" id="inviting-users-to-a-publication"></a>
 
 Follow these steps to invite user to collaborate on a publication.
 
@@ -32,7 +32,7 @@ Follow these steps to invite user to collaborate on a publication.
 
 Invited users are notified and can begin collaborating on the publication.
 
-### [Commenting on a Publication](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/publications/collaborating-on-publications#commenting-on-a-publication) <a href="#commenting-on-a-publication" id="commenting-on-a-publication"></a>
+### Commenting on a Publication <a href="#commenting-on-a-publication" id="commenting-on-a-publication"></a>
 
 Collaborating users can add comments to a publication via its Changes page. Each comment is scoped to the publication in which they’re made.
 
@@ -45,7 +45,7 @@ Collaborating users can add comments to a publication via its Changes page. Each
 
 All collaborating users are notified of your comment and can reply as well.
 
-### [Removing Users from a Publication](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/publications/collaborating-on-publications#removing-users-from-a-publication) <a href="#removing-users-from-a-publication" id="removing-users-from-a-publication"></a>
+### Removing Users from a Publication <a href="#removing-users-from-a-publication" id="removing-users-from-a-publication"></a>
 
 Follow these steps to remove a collaborator from a publication.
 
@@ -55,11 +55,11 @@ Follow these steps to remove a collaborator from a publication.
     ![Open the permissions drop-down menu and select Remove.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/publications/collaborating-on-publications/images/06.png)
 3. Click _Save_.
 
-### [Sharing Publications Via Link](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/publications/collaborating-on-publications#sharing-publications-via-link) <a href="#sharing-publications-via-link" id="sharing-publications-via-link"></a>
+### Sharing Publications Via Link <a href="#sharing-publications-via-link" id="sharing-publications-via-link"></a>
 
-[Beta Feature](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/feature-flags#beta-feature-flags)
+Beta Feature
 
-Liferay 7.4 2023.Q3+/GA92+
+version 7.4 +
 
 If you need to share publication changes with people who are not site users, you can enable link sharing for the publication.
 

@@ -1,8 +1,8 @@
 # Exporting and Importing Style Books
 
-You can export and import style books to share them between Liferay installations as [ZIP files](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/exporting-and-importing-style-books#exporting-style-books-as-a-zip-file) or as [Liferay Archive (LAR) files](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/exporting-and-importing-style-books#exporting-style-books-as-a-lar-file).
+You can export and import style books to share them between the portal installations as ZIP files or as Archive (LAR) files.
 
-### [Exporting a Style Book as a ZIP File](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/exporting-and-importing-style-books#exporting-a-style-book-as-a-zip-file) <a href="#exporting-a-style-book-as-a-zip-file" id="exporting-a-style-book-as-a-zip-file"></a>
+### Exporting a Style Book as a ZIP File <a href="#exporting-a-style-book-as-a-zip-file" id="exporting-a-style-book-as-a-zip-file"></a>
 
 1. Open the _Site Menu_ ( ![Site Menu icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png) ) and navigate to _Design_ → _Style Books_.
 2. Find the style book you want to export and click _Actions_ ( ![Actions Icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png) ) → _Export_.
@@ -14,7 +14,7 @@ You can export and import style books to share them between Liferay installation
 
 You can now share and import your ZIP file.
 
-### [Importing Style Books from a ZIP File](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/exporting-and-importing-style-books#importing-style-books-from-a-zip-file) <a href="#importing-style-books-from-a-zip-file" id="importing-style-books-from-a-zip-file"></a>
+### Importing Style Books from a ZIP File <a href="#importing-style-books-from-a-zip-file" id="importing-style-books-from-a-zip-file"></a>
 
 1. Open the _Site Menu_ ( ![Site Menu icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png) ) and navigate to _Design_ → _Style Books_.
 2. On the Applications bar, click _Options_ ( ![Options icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-options.png) ) → _Import_.
@@ -25,7 +25,7 @@ You can now share and import your ZIP file.
 
 You can now use your imported style guide.
 
-### [Exporting Style Books as a LAR File](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/exporting-and-importing-style-books#exporting-style-books-as-a-lar-file) <a href="#exporting-style-books-as-a-lar-file" id="exporting-style-books-as-a-lar-file"></a>
+### Exporting Style Books as a LAR File <a href="#exporting-style-books-as-a-lar-file" id="exporting-style-books-as-a-lar-file"></a>
 
 1. Open the _Site Menu_ ( ![Site Menu icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png) ) and navigate to _Design_ → _Style Books_ .
 2.  Select the style book you want to export. On the Applications bar, click _Options_ ( ![Options Icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-options.png) ) → _Export / Import_.
@@ -37,14 +37,14 @@ You can now use your imported style guide.
     NOTE
 
     You can select the _Current and Previous_ tab to view a list of previous processes and download exported LAR files.
-5.  When starting a new export process, you can name the LAR file and [configure the process](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/exporting-and-importing-style-books#configuring-export-and-import-processes-as-a-lar-file).
+5.  When starting a new export process, you can name the LAR file and configure the process.
 
     ![You can choose to Export or Import a style book and start a new process or check current and previous processes.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-appearance/style-books/exporting-and-importing-style-books/images/02.png)
 6. Click _Export_ to begin the export process.
 
 You can now share and import your LAR file.
 
-### [Importing Style Books as a LAR File](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/exporting-and-importing-style-books#importing-style-books-as-a-lar-file) <a href="#importing-style-books-as-a-lar-file" id="importing-style-books-as-a-lar-file"></a>
+### Importing Style Books as a LAR File <a href="#importing-style-books-as-a-lar-file" id="importing-style-books-as-a-lar-file"></a>
 
 1. Open the _Site Menu_ ( ![Site Menu icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png) ) and navigate to _Design_ → _Style Books_.
 2. Select the style book you want to import. On the Applications bar, click _Options_ ( ![Options Icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-options.png) ) → _Export / Import_.
@@ -55,14 +55,14 @@ You can now share and import your LAR file.
 
     You can select the _Current and Previous_ tab to view a list of previous processes.
 5. Upload the LAR file and click _Continue_.
-6. [Configure the process](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/exporting-and-importing-style-books#configuring-export-and-import-processes-as-a-lar-file).
+6. Configure the process.
 7. Click _Import_ to begin the import process.
 
 You can now use your imported style book.
 
-### [Configuring Export and Import Processes as a LAR File](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/exporting-and-importing-style-books#configuring-export-and-import-processes-as-a-lar-file) <a href="#configuring-export-and-import-processes-as-a-lar-file" id="configuring-export-and-import-processes-as-a-lar-file"></a>
+### Configuring Export and Import Processes as a LAR File <a href="#configuring-export-and-import-processes-as-a-lar-file" id="configuring-export-and-import-processes-as-a-lar-file"></a>
 
-Liferay provides settings for configuring export and import processes.
+MWARE Portal provides settings for configuring export and import processes.
 
 | Setting                                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

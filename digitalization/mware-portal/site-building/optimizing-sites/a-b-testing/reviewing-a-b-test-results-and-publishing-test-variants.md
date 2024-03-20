@@ -1,10 +1,10 @@
 # Reviewing A/B Test Results and Publishing Test Variants
 
-When the A/B Test finishes, you can find the test results in Analytics Cloud and Liferay DXP. Analytics Cloud declares a winner when the _Confidence Level Required_ is achieved during the duration of the test. To understand how to configure the Confidence Level Required for your test, see [Creating A/B Tests](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/ab-testing/creating-ab-tests).
+When the A/B Test finishes, you can find the test results in Analytics Cloud and the portal. Analytics Cloud declares a winner when the _Confidence Level Required_ is achieved during the duration of the test. To understand how to configure the Confidence Level Required for your test, see Creating A/B Tests.
 
 TIP
 
-You receive a [notification in Liferay](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/notifications-and-requests/user-guide/managing-notifications-and-requests) when the A/B Test finishes.
+You receive a notification in the portal when the A/B Test finishes.
 
 To review the A/B Test results and publish your variant,
 
@@ -28,6 +28,6 @@ To review the A/B Test results and publish your variant,
 
     When you publish the A/B Test variant, the variant becomes active for all users visiting the Content Page.
 
-You can click the _View Data in Analytics Cloud_ button from the A/B Tests panel to go to the Analytics Cloud dashboard and view other test statistics. For more information, see [A/B Testing Analytics](https://learn.liferay.com/analytics-cloud/latest/en/optimization/a-b-testing.html).
+You can click the _View Data in Analytics Cloud_ button from the A/B Tests panel to go to the Analytics Cloud dashboard and view other test statistics. For more information, see A/B Testing Analytics.
 
 \

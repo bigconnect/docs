@@ -1,12 +1,12 @@
 # Validating Fragment Configurations
 
-When defining fragment [configuration options](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/adding-configuration-options-to-fragments), you can add `validation` properties to `text` type fields that determine rules for valid entries. Determine what type of data each field accepts by specifying the rule’s type: `text`, `number`, `email`, `url`, or `pattern`. You can also add custom error messages to notify users of invalid entries.
+When defining fragment configuration options, you can add `validation` properties to `text` type fields that determine rules for valid entries. Determine what type of data each field accepts by specifying the rule’s type: `text`, `number`, `email`, `url`, or `pattern`. You can also add custom error messages to notify users of invalid entries.
 
 IMPORTANT
 
-The validations addressed in this article are for validating fragment configuration fields, which is only applicable in the page editor view’s settings panel. To validate user inputs, use form fragments with [object validations](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/validations) or JavaScript validation.
+The validations addressed in this article are for validating fragment configuration fields, which is only applicable in the page editor view’s settings panel. To validate user inputs, use form fragments with object validations or JavaScript validation.
 
-### [Text Validation Rules](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/validating-fragment-configurations#text-validation-rules) <a href="#text-validation-rules" id="text-validation-rules"></a>
+### Text Validation Rules <a href="#text-validation-rules" id="text-validation-rules"></a>
 
 The following JSON code adds `text` validation rules to set the minimum and maximum number of characters used in valid entries (i.e., `minLength` and `maxLength`) for a `text` type field.
 
@@ -36,7 +36,7 @@ The following JSON code adds `text` validation rules to set the minimum and maxi
 
 ![Use text validation rules to set the minimum and maximum number of characters used in valid entries.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/developing-page-fragments/adding-validation-rules/images/01.png)
 
-### [Number Validation Rules](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/validating-fragment-configurations#number-validation-rules) <a href="#number-validation-rules" id="number-validation-rules"></a>
+### Number Validation Rules <a href="#number-validation-rules" id="number-validation-rules"></a>
 
 The following JSON code adds `number` validation rules to define the numerical range of valid entries (i.e., `min` and `max`) for a `text` type field.
 
@@ -67,7 +67,7 @@ The following JSON code adds `number` validation rules to define the numerical r
 
 ![Use number validation rules to define the numerical range of valid entries.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/developing-page-fragments/adding-validation-rules/images/02.png)
 
-### [Email Validation Rules](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/validating-fragment-configurations#email-validation-rules) <a href="#email-validation-rules" id="email-validation-rules"></a>
+### Email Validation Rules <a href="#email-validation-rules" id="email-validation-rules"></a>
 
 The following JSON code adds `email` validation rules to require email syntax and define the character length of valid entries (i.e., `minLength` and `maxLength`) for a `text` type field.
 
@@ -97,7 +97,7 @@ The following JSON code adds `email` validation rules to require email syntax an
 
 ![Use email validation rules to require email syntax and define the character length of valid entries.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/developing-page-fragments/adding-validation-rules/images/03.png)
 
-### [URL Validation Rules](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/validating-fragment-configurations#url-validation-rules) <a href="#url-validation-rules" id="url-validation-rules"></a>
+### URL Validation Rules <a href="#url-validation-rules" id="url-validation-rules"></a>
 
 The following JSON code adds `url` validation rules to require proper URL protocol and define the character length of valid URLs (i.e., `minLength` and `maxLength`) for a `text` type field.
 
@@ -127,7 +127,7 @@ The following JSON code adds `url` validation rules to require proper URL protoc
 
 ![Use url validation rules to require proper URL protocol and define the character length of valid URLs.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/developing-page-fragments/adding-validation-rules/images/04.png)
 
-### [Pattern Validation Rules](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/validating-fragment-configurations#pattern-validation-rules) <a href="#pattern-validation-rules" id="pattern-validation-rules"></a>
+### Pattern Validation Rules <a href="#pattern-validation-rules" id="pattern-validation-rules"></a>
 
 The following JSON code adds `pattern` validation rules to a `text` type field using regular expressions to define valid entries.
 

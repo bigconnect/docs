@@ -9,4 +9,4 @@
     ![You can optionally provide an API key for Google Maps.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-settings/site-content-configurations/configuring-geolocation-for-assets/images/02.png)
 4. Scroll down and click _Save_ to apply the changes.
 
-[Geolocalized assets](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/geolocating-assets) can be displayed for documents, web content articles, DDL records, etc.
+Geolocalized assets can be displayed for documents, web content articles, DDL records, etc.

@@ -2,9 +2,9 @@
 
 Liferay locks pages during editing to avoid conflicts when multiple users try to edit the same page.
 
-This feature works with [content](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages), [master](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/defining-headers-and-footers/master-page-templates), [utility](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/using-utility-pages), and [collection pages](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/collections-and-collection-pages), along with [page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/creating-a-page-template) and [display page](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates) templates.
+This feature works with content, master, utility, and collection pages, along with page and display page templates.
 
-### [Locking the Page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-settings/configuring-locked-pages#locking-the-page) <a href="#locking-the-page" id="locking-the-page"></a>
+### Locking the Page <a href="#locking-the-page" id="locking-the-page"></a>
 
 Whenever a user starts editing a page and adds new content to it, the page locks, preventing other users from accessing it.
 
@@ -18,15 +18,15 @@ Users can only discard drafts of unlocked pages.
 
 Not all events lock a page:
 
-* You can still modify a page’s [master page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/defining-headers-and-footers/managing-master-page-templates) or its [stylebook](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books) without locking the page.
-* You can propagate [Fragments](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments), even if a page is locked.
-* You can [import a page’s page template](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/exporting-and-importing-page-templates), even if a page is locked.
+* You can still modify a page’s master page or its stylebook without locking the page.
+* You can propagate Fragments, even if a page is locked.
+* You can import a page’s page template, even if a page is locked.
 
 TIP
 
-If you are working with [Publications](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/publications), the page and its publications are locked and unlocked together.
+If you are working with Publications, the page and its publications are locked and unlocked together.
 
-### [Unlocking a Page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-settings/configuring-locked-pages#unlocking-a-page) <a href="#unlocking-a-page" id="unlocking-a-page"></a>
+### Unlocking a Page <a href="#unlocking-a-page" id="unlocking-a-page"></a>
 
 Most of the time, you don’t have to worry about unlocking a page, as the system unlocks it automatically.
 

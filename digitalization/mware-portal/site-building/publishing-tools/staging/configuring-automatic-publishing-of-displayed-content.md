@@ -19,9 +19,9 @@ Follow these steps to configure this Staging behavior:
 
 ![Check or uncheck Publish Displayed Content by Default.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/staging/configuring-automatic-publishing-of-displayed-content/images/01.png)
 
-### [Configuring Publishing for Asset Publisher](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/configuring-automatic-publishing-of-displayed-content#configuring-publishing-for-asset-publisher) <a href="#configuring-publishing-for-asset-publisher" id="configuring-publishing-for-asset-publisher"></a>
+### Configuring Publishing for Asset Publisher <a href="#configuring-publishing-for-asset-publisher" id="configuring-publishing-for-asset-publisher"></a>
 
-By default, Asset Publisher does not export displayed content to Live automatically. This is because the widget’s content is usually available in Live. Liferay provides additional configurations for content items displayed using the Asset Publisher widget.
+By default, Asset Publisher does not export displayed content to Live automatically. This is because the widget’s content is usually available in Live. The portal provides additional configurations for content items displayed using the Asset Publisher widget.
 
 Follow these steps to enable dynamic or manual export for the Asset Publisher widget:
 

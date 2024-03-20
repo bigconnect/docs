@@ -1,19 +1,19 @@
 # Using Widgets on a Content Page
 
-The widgets section functions just like the [add menu on a widget page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-widget-pages/adding-widgets-to-a-page). The full list of available widgets appears, and you can add them to the page. The main difference is that only the main configuration options for widgets are available on content pages.
+The widgets section functions just like the add menu on a widget page. The full list of available widgets appears, and you can add them to the page. The main difference is that only the main configuration options for widgets are available on content pages.
 
 NOTE
 
-While widgets are rendered according to [render-weight](https://resources.learn.liferay.com/reference/latest/en/dxp/definitions/liferay-portlet-app\_7\_4\_0.dtd.html#render-weight) on widget pages, this is not true for content pages. Instead, they are rendered in the order they appear on the page (i.e. left to right, top to bottom).
+While widgets are rendered according to render-weight on widget pages, this is not true for content pages. Instead, they are rendered in the order they appear on the page (i.e. left to right, top to bottom).
 
-### [Adding Widgets on Content Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/using-widgets-on-a-content-page#adding-widgets-on-content-pages) <a href="#adding-widgets-on-content-pages" id="adding-widgets-on-content-pages"></a>
+### Adding Widgets on Content Pages <a href="#adding-widgets-on-content-pages" id="adding-widgets-on-content-pages"></a>
 
-1. While [adding elements to the content page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/adding-elements-to-content-pages), open the [widgets panel](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/content-page-editor-ui-reference) and browse the available widgets or search for widgets by name.
+1. While adding elements to the content page, open the widgets panel and browse the available widgets or search for widgets by name.
 2. Drag the widget to the column and row of the layout where you want to place it.
 
 A widget can be a wiki display or a dynamic publishing tool like the asset publisher. The content you display with widgets can be long-form text, an image gallery, or anything in between.
 
-### [Configuring Widgets on Content Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/using-widgets-on-a-content-page#configuring-widgets-on-content-pages) <a href="#configuring-widgets-on-content-pages" id="configuring-widgets-on-content-pages"></a>
+### Configuring Widgets on Content Pages <a href="#configuring-widgets-on-content-pages" id="configuring-widgets-on-content-pages"></a>
 
 1. Hover over the widget.
 2.  Click _Actions_ (![Actions menu icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Configuration_. From here you have several options, depending on the widget.
@@ -21,9 +21,9 @@ A widget can be a wiki display or a dynamic publishing tool like the asset publi
     ![You can configure widgets on content pages through their options menu.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/using-content-pages/using-widgets-on-a-content-page/images/01.png)
 3. Click _Save_ to apply the changes.
 
-### [Configuring Widget Permissions on Content Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/using-widgets-on-a-content-page#configuring-widget-permissions-on-content-pages) <a href="#configuring-widget-permissions-on-content-pages" id="configuring-widget-permissions-on-content-pages"></a>
+### Configuring Widget Permissions on Content Pages <a href="#configuring-widget-permissions-on-content-pages" id="configuring-widget-permissions-on-content-pages"></a>
 
-Since Liferay Portal 7.3 GA2, you can configure permissions for widgets from a content page. Follow these steps to configure widget permissions on a content page:
+You can configure permissions for widgets from a content page. Follow these steps to configure widget permissions on a content page:
 
 1. Hover over the widget.
 2. Click _Actions_ (![Actions menu icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Permissions_.
@@ -32,22 +32,22 @@ Since Liferay Portal 7.3 GA2, you can configure permissions for widgets from a c
 
 NOTE
 
-When you create a page based on a [page template](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/creating-a-page-template), permissions are copied too. Permissions for a master page are set in the [master page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/defining-headers-and-footers/managing-master-page-templates), not in the pages.
+When you create a page based on a page template, permissions are copied too. Permissions for a master page are set in the master page, not in the pages.
 
-### [Export/Import Widgets on Content Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/using-widgets-on-a-content-page#exportimport-widgets-on-content-pages) <a href="#exportimport-widgets-on-content-pages" id="exportimport-widgets-on-content-pages"></a>
+### Export/Import Widgets on Content Pages <a href="#exportimport-widgets-on-content-pages" id="exportimport-widgets-on-content-pages"></a>
 
 1. Hover over the widget.
 2. Click _Actions_ (![Actions menu icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Export / Import_.
 3. Select the export or import tab to begin configuring the respective process.
 
-### [Configuring Widget Configuration Templates on Content Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/using-widgets-on-a-content-page#configuring-widget-configuration-templates-on-content-pages) <a href="#configuring-widget-configuration-templates-on-content-pages" id="configuring-widget-configuration-templates-on-content-pages"></a>
+### Configuring Widget Configuration Templates on Content Pages <a href="#configuring-widget-configuration-templates-on-content-pages" id="configuring-widget-configuration-templates-on-content-pages"></a>
 
 1. Hover over the widget.
 2. Click _Actions_ (![Actions menu icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Configuration Templates_.
 3. Click _Save Current Configuration as Template_ to save the widget’s current settings.
 4. Enter a name for your template and click _Save_.
 
-### [Content Page Limitations for Widgets](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/using-widgets-on-a-content-page#content-page-limitations-for-widgets) <a href="#content-page-limitations-for-widgets" id="content-page-limitations-for-widgets"></a>
+### Content Page Limitations for Widgets <a href="#content-page-limitations-for-widgets" id="content-page-limitations-for-widgets"></a>
 
 Although you can access basic configuration options and permissions for widgets on content pages, there are still some options that are only available on widget pages:
 

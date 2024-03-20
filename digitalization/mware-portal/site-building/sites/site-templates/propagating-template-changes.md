@@ -4,17 +4,17 @@ When site template propagation is enabled, you can make changes to the template�
 
 NOTE
 
-By default, propagation is triggered for each connected site individually, when it is first visited by a user after changes are made. However, you can configure your system to also trigger propagation to connected sites simultaneously whenever users toggle a template to _Ready for Propagation_. See [Configuring Site Template Propagation](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/site-templates/configuring-site-template-propagation) for more information.
+By default, propagation is triggered for each connected site individually, when it is first visited by a user after changes are made. However, you can configure your system to also trigger propagation to connected sites simultaneously whenever users toggle a template to _Ready for Propagation_. See Configuring Site Template Propagation for more information.
 
-### [Which Template Changes are Propagated?](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/site-templates/propagating-template-changes#which-template-changes-are-propagated) <a href="#which-template-changes-are-propagated" id="which-template-changes-are-propagated"></a>
+### Which Template Changes are Propagated? <a href="#which-template-changes-are-propagated" id="which-template-changes-are-propagated"></a>
 
 Only changes to a template’s pages and page elements are propagated to connected sites. This includes newly created pages as well as any changes to fragments and widgets in existing pages. Other application data is only copied at initial site creation; subsequent changes are not automatically propagated.
 
-For this reason, site templates are primarily intended for maintaining pages across multiple sites. If you must create and maintain web content and other assets across sites, use [asset libraries](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/asset-libraries).
+For this reason, site templates are primarily intended for maintaining pages across multiple sites. If you must create and maintain web content and other assets across sites, use asset libraries.
 
-### [Enabling and Disabling Propagation](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/site-templates/propagating-template-changes#enabling-and-disabling-propagation) <a href="#enabling-and-disabling-propagation" id="enabling-and-disabling-propagation"></a>
+### Enabling and Disabling Propagation <a href="#enabling-and-disabling-propagation" id="enabling-and-disabling-propagation"></a>
 
-When [creating a template](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/site-templates/creating-site-templates), you determine whether to enable or disable automatic propagation, but you can change this setting at any time.
+When creating a template, you determine whether to enable or disable automatic propagation, but you can change this setting at any time.
 
 ![Enable or disable automatic propagation during template creation.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/sites/site-templates/propagating-template-changes/images/01.png)
 
@@ -36,7 +36,7 @@ Alternatively, you can enable or disable automatic propagation via the site temp
 
 ![Click the Actions button for the desired site template and select Disable Propagation or Ready for Propagation.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/sites/site-templates/propagating-template-changes/images/04.png)
 
-### [Reconnecting Inherited Pages to Their Template](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/site-templates/propagating-template-changes#reconnecting-inherited-pages-to-their-template) <a href="#reconnecting-inherited-pages-to-their-template" id="reconnecting-inherited-pages-to-their-template"></a>
+### Reconnecting Inherited Pages to Their Template <a href="#reconnecting-inherited-pages-to-their-template" id="reconnecting-inherited-pages-to-their-template"></a>
 
 If you make changes to a site page inherited from a template, it is disconnected from the template’s page and is not automatically propagated. To reconnect the site page to the template, you must discard your changes to the site page.
 

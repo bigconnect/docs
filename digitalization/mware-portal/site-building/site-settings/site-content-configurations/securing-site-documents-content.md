@@ -4,21 +4,21 @@ By default, your Site’s Documents and Media files and folders are not visible 
 
 Once enabled, your can browse your Site’s Documents and Media files at `http://localhost:8080/documents/site-name` (e.g. `http://localhost:8080/documents/marketing` for a Site called _Marketing_).
 
-### [Configuring Document Visibility in the Web Server Directory Index](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/site-content-configurations/securing-site-documents-content#configuring-document-visibility-in-the-web-server-directory-index) <a href="#configuring-document-visibility-in-the-web-server-directory-index" id="configuring-document-visibility-in-the-web-server-directory-index"></a>
+### Configuring Document Visibility in the Web Server Directory Index <a href="#configuring-document-visibility-in-the-web-server-directory-index" id="configuring-document-visibility-in-the-web-server-directory-index"></a>
 
 1. Access the Enable Directory Indexing option:
-   *   In Liferay DXP 7.4+
+   *   In version 7.4+
 
        1. From the Site Menu, go to _Configuration_ → _Site Settings_.
        2. In the Content and Data section, click _Documents and Media_.
 
-       ![In Liferay DXP 7.4+, change the Enable Directory Indexing option from the Site Settings section.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-settings/site-content-configurations/securing-site-documents-content/images/02.png)
-   *   In previous Liferay DXP versions
+       ![In version 7.4+, change the Enable Directory Indexing option from the Site Settings section.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-settings/site-content-configurations/securing-site-documents-content/images/02.png)
+   *   In previous versions
 
        1. From the Site Menu, go to _Configuration_ → _Settings_.
        2. Under the General area, expand the _Documents and Media_ section.
 
-       ![In previous Liferay DXP versions, change the Enable Directory Indexing option from the Settings section.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-settings/site-content-configurations/securing-site-documents-content/images/01.png)
+       ![In previous versions, change the Enable Directory Indexing option from the Settings section.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-settings/site-content-configurations/securing-site-documents-content/images/01.png)
 2.  Toggle the _Enable Directory Indexing_ setting to enable or disable this setting.
 
     IMPORTANT

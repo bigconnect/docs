@@ -6,7 +6,7 @@ Follow these steps to define a drop zone:
 
 1. Go to _Site Administration_ → _Design_ → _Fragments_.
 2. Under Fragment Sets, select the set with the fragment you want to edit.
-3. Click the fragment’s _Actions_ (![Action](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) button and select _Edit_ to open the [Fragments Editor](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/using-the-fragments-editor).
+3. Click the fragment’s _Actions_ (![Action](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) button and select _Edit_ to open the Fragments Editor.
 4.  In the HTML code area, add the `<lfr-drop-zone></lfr-drop-zone>` label to define a drop zone within a fragment.
 
     IMPORTANT
@@ -31,7 +31,7 @@ This image shows the result in the Content Page editor sidebar:
 
 Once defined, you can drag and drop any fragment or widget into the drop zone.
 
-### [Fragment Drop Zone IDs](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/defining-fragment-drop-zones#fragment-drop-zone-ids) <a href="#fragment-drop-zone-ids" id="fragment-drop-zone-ids"></a>
+### Fragment Drop Zone IDs <a href="#fragment-drop-zone-ids" id="fragment-drop-zone-ids"></a>
 
 To ensure fragments remain in their designated drop zones, you can add drop zone IDs with the `data-lfr-drop-zone-id` attribute. When you reorder drop zones or insert new drop zones between existing ones, drop zone IDs ensure fragments stay in their original drop zones.
 

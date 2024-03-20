@@ -2,9 +2,9 @@
 
 You can publish single assets and widgets when needed without going through the entire publishing process. This is much faster than publishing all content at once.
 
-### [Publishing Single Assets](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/publishing-single-assets-and-widgets#publishing-single-assets) <a href="#publishing-single-assets" id="publishing-single-assets"></a>
+### Publishing Single Assets <a href="#publishing-single-assets" id="publishing-single-assets"></a>
 
-To publish assets in this way, Users must have the following permissions: _Export/Import Application Info_ and _Publish Staging_. See [Managing Staging Permissions](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/managing-staging-permissions) for more information.
+To publish assets in this way, Users must have the following permissions: _Export/Import Application Info_ and _Publish Staging_. See Managing Staging Permissions for more information.
 
 1. Go to _Content & Data_ in the _Product_ menu and select the content or data type you want to publish.
 2.  Click on the _Actions_ button ( ![Actions button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png) ) for the asset you want to publish and select _Publish to Live_.
@@ -19,7 +19,7 @@ NOTE
 
 Single asset publishing is not supported for page-scoped content.
 
-### [Publishing Single Widgets](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/publishing-single-assets-and-widgets#publishing-single-widgets) <a href="#publishing-single-widgets" id="publishing-single-widgets"></a>
+### Publishing Single Widgets <a href="#publishing-single-widgets" id="publishing-single-widgets"></a>
 
 > Only Available for Widget Pages
 

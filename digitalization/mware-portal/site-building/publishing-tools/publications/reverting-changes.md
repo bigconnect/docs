@@ -1,6 +1,6 @@
 # Reverting Changes
 
-Liferay Publications maintains a history of all published changes. You can use this publishing history to easily create publications that revert earlier changes to production. While reverting a publication, you can also make additional changes.
+Publications maintains a history of all published changes. You can use this publishing history to easily create publications that revert earlier changes to production. While reverting a publication, you can also make additional changes.
 
 Follow these steps to revert published changes.
 

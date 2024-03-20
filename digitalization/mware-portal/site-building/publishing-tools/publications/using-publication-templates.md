@@ -14,9 +14,9 @@ To create a publication template,
     ![Enter a name and description for the template.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/publications/using-publication-templates/images/02.png)
 5.  (Optional) Set this template as the default for new publications.
 
-    **Default Template**: Manually created publications use this template by default, but you can select an alternative template during publication creation. When [Sandbox Only mode](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/publications/enabling-publications#how-to-enable-publications) is enabled, automatically created publications use the template if a Default Sandbox Template isn’t set.
+    **Default Template**: Manually created publications use this template by default, but you can select an alternative template during publication creation. When Sandbox Only mode is enabled, automatically created publications use the template if a Default Sandbox Template isn’t set.
 
-    **Default Sandbox Template**: Automatically created publications use this template when [Sandbox Only mode](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/publications/enabling-publications#how-to-enable-publications) is enabled. You can still create publications manually using an alternative template.
+    **Default Sandbox Template**: Automatically created publications use this template when Sandbox Only mode is enabled. You can still create publications manually using an alternative template.
 
     NOTE
 
@@ -34,20 +34,20 @@ To create a publication template,
 
     ![Click Invite Users to specify the default users and role assignments for publications created with the template.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/publications/using-publication-templates/images/04.png)
 
-    To add contributors, search for users and select a role. See [Collaborating on Publications](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/publications/collaborating-on-publications) for more information.
+    To add contributors, search for users and select a role. See Collaborating on Publications for more information.
 
     ![Search for users and select a role.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/publications/using-publication-templates/images/05.png)
 
     NOTE
 
-    If you invite users without permission to access the Publications application, Liferay automatically assigns them the [Publications User](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/publications/publications-permissions#publications-user-role) role.
+    If you invite users without permission to access the Publications application, the portal automatically assigns them the Publications User role.
 8. Click _Save_.
 
 The new template appears in the Publication Templates page.
 
 ![Templates appear in the Publication Templates page](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/publications/using-publication-templates/images/06.png)
 
-Users can select the template when [creating a publication](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/publications/creating-and-managing-publications#creating-a-publication). Selecting the template automatically populates the name and description fields and invites the default contributors.
+Users can select the template when creating a publication. Selecting the template automatically populates the name and description fields and invites the default contributors.
 
 ![Users can select the template when creating a publication.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/publications/using-publication-templates/images/07.png)
 

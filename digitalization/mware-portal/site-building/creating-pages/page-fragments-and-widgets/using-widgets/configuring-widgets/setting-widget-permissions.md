@@ -1,6 +1,6 @@
 # Setting Widget Permissions
 
-All of Liferay’s widgets support Liferay’s robust, fine-grained permissions system. Some higher level permissions can be configured in the permissions tab of the widget’s configuration dialog box.
+All of the portal’s widgets support MWARE Portal’s robust, fine-grained permissions system. Some higher level permissions can be configured in the permissions tab of the widget’s configuration dialog box.
 
 1. Go to the widget’s _Options_ icon (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png)) and select _Permissions_. This shows you a table of roles.
 2. Use the check boxes to grant certain permissions to different roles. Click _Save_ after you’ve made your selections.

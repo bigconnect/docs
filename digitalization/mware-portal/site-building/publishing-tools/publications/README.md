@@ -1,6 +1,6 @@
 # Publications
 
-You can use _Publications_ to develop, track, and publish changes across your DXP instance. It works by creating a database column to determine which version of your content is displayed on your live Sites. With it, Users create separate _publications_ to group their changes into publishable blocks.
+You can use _Publications_ to develop, track, and publish changes across your portal instance. It works by creating a database column to determine which version of your content is displayed on your live Sites. With it, Users create separate _publications_ to group their changes into publishable blocks.
 
 ![Group changes into publishable blocks.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/publications/images/01.png)
 

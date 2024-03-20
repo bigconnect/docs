@@ -29,6 +29,6 @@ You can revert any action using the _Undo_ (![Undo icon](https://resources.learn
 
 NOTE
 
-If a custom master page template is used for a page, the theme for the page is defined through the master page template and can’t be changed through the page’s settings. See [Changing a Master Page Template’s Design](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/defining-headers-and-footers/managing-master-page-templates#changing-a-master-page-templates-design) for more information.
+If a custom master page template is used for a page, the theme for the page is defined through the master page template and can’t be changed through the page’s settings. See Changing a Master Page Template’s Design for more information.
 
 \

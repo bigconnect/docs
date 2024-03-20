@@ -1,22 +1,22 @@
 # Configuring the Asset Recycle Bin for Sites
 
-The Recycle Bin stores content and assets that have been flagged for deletion, before they are permanently removed from the system. This functionality can be enabled globally by default and can be configured on a per-site basis. See the [Recycle Bin](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/recycle-bin/recycle-bin-overview) section for more information on the Recycle Bin.
+The Recycle Bin stores content and assets that have been flagged for deletion, before they are permanently removed from the system. This functionality can be enabled globally by default and can be configured on a per-site basis. See the Recycle Bin section for more information on the Recycle Bin.
 
 WARNING
 
 If you disable the Recycle Bin for a Site, the content and assets deleted in the Site are permanently deleted.
 
-### [Configuring the Recycle Bin for Sites](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/site-content-configurations/configuring-the-asset-recycle-bin-for-sites#configuring-the-recycle-bin-for-sites) <a href="#configuring-the-recycle-bin-for-sites" id="configuring-the-recycle-bin-for-sites"></a>
+### Configuring the Recycle Bin for Sites <a href="#configuring-the-recycle-bin-for-sites" id="configuring-the-recycle-bin-for-sites"></a>
 
 To enable or disable the Recycle Bin for a particular site, follow these steps:
 
 1. Access the Recycle Bin option:
-   * In Liferay DXP 7.4+
+   * In version 7.4+
      1. From the Site Menu, go to _Configuration_ → _Site Settings_.
      2.  In the Content and Data section, click _Recycle Bin_.
 
          ![In Liferay DXP 7.4+, change the Recycle Bin options from the Site Settings section.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-settings/site-content-configurations/configuring-the-asset-recycle-bin-for-sites/images/02.png)
-   * In previous Liferay DXP versions
+   * In previous versions
      1. From the Site Menu, go to _Configuration_ → _Settings_.
      2.  Under the Advanced area, expand the _Recycle Bin_ section.
 

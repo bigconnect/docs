@@ -2,7 +2,7 @@
 
 The Asset Publisher supports two kinds of subscriptions: email subscriptions and RSS feed subscriptions.
 
-### [Email Subscriptions](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-subscriptions#email-subscriptions) <a href="#email-subscriptions" id="email-subscriptions"></a>
+### Email Subscriptions <a href="#email-subscriptions" id="email-subscriptions"></a>
 
 Users can subscribe to the Asset Publisher to receive email notifications when new assets are published. You must enable this notification first. Follow these steps:
 
@@ -15,9 +15,9 @@ Users can subscribe to the Asset Publisher to receive email notifications when n
 
 ![Enabling Email Subscription adds a Subscribe link to the Asset Publisher.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-subscriptions/images/02.png)
 
-#### [Configuring the Asset Check Interval](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-subscriptions#configuring-the-asset-check-interval) <a href="#configuring-the-asset-check-interval" id="configuring-the-asset-check-interval"></a>
+#### Configuring the Asset Check Interval <a href="#configuring-the-asset-check-interval" id="configuring-the-asset-check-interval"></a>
 
-Liferay Portal periodically checks for new assets and sends emails to subscribed users informing them about the new assets. By default, assets are checked every twenty-four hours. You can change the check interval through System Settings. Follow these steps:
+MWARE Portal periodically checks for new assets and sends emails to subscribed users informing them about the new assets. By default, assets are checked every twenty-four hours. You can change the check interval through System Settings. Follow these steps:
 
 1. Open the Product Menu and go to _Control Panel_ → _Configuration_ → _System Settings_.
 2. Select _Assets_ under the _Content and Data_ heading.
@@ -30,17 +30,17 @@ WARNING
 
 If you require this feature to be disabled, [blacklist](https://learn.liferay.com/web/guest/w/dxp/system-administration/installing-and-managing-apps/managing-apps/blacklisting-osgi-components) the component. Do not enter zero or a negative number for the interval.
 
-### [RSS Feed Subscriptions](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-subscriptions#rss-feed-subscriptions) <a href="#rss-feed-subscriptions" id="rss-feed-subscriptions"></a>
+### RSS Feed Subscriptions <a href="#rss-feed-subscriptions" id="rss-feed-subscriptions"></a>
 
 NOTE
 
-RSS feeds are deprecated for Liferay Portal 7.2+ and are disabled by default. To leverage RSS feeds, you must enable this feature.
+RSS feeds are deprecated for versions 7.2+ and are disabled by default. To leverage RSS feeds, you must enable this feature.
 
 To enable RSS feed subscriptions for the Asset Publisher, follow these steps:
 
 1. Open the Product Menu and go to _Control Panel_ → _Configuration_ → _System Settings_.
 2. Select _Web Content_ under the _Content and Data_ heading.
-3.  Under the _System Scope_ → _Administration_ tab, check the _Show Feeds_ box. For more information on deprecated apps, see [this article](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/upgrading-liferay/reference/maintenance-mode-and-deprecations-in-7-4).
+3.  Under the _System Scope_ → _Administration_ tab, check the _Show Feeds_ box. For more information on deprecated apps, see this article.
 
     ![Enable RSS feeds through System Settings.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-subscriptions/images/04.png)
 4. Navigate back to the Asset Publisher widget, hover over it and click the Options icon (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png)) in the widget’s menu and select _Configuration_.

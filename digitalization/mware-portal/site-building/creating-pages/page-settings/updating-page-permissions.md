@@ -17,7 +17,7 @@ Follow these steps to update page permissions:
     ![The permissions offer many options for each role.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/page-settings/updating-page-permissions/images/02.png)
 4. Click _Save_ to apply the changes.
 
-### [Copying a Page with Permissions](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-settings/updating-page-permissions#copying-a-page-with-permissions) <a href="#copying-a-page-with-permissions" id="copying-a-page-with-permissions"></a>
+### Copying a Page with Permissions <a href="#copying-a-page-with-permissions" id="copying-a-page-with-permissions"></a>
 
 To copy a page with its permissions,
 

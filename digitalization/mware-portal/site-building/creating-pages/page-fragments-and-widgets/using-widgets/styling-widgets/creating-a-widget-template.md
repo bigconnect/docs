@@ -1,10 +1,10 @@
 # Creating a Widget Template
 
-Widget Templates use [FreeMarker](https://freemarker.apache.org/) to determine how widgets are rendered in site pages. Each template is designed for a specific widget type and can be selected while configuring the widget in a page.
+Widget Templates use FreeMarker to determine how widgets are rendered in site pages. Each template is designed for a specific widget type and can be selected while configuring the widget in a page.
 
 NOTE
 
-For Liferay DXP/Portal 7.4+, widget templates only support FreeMarker. Velocity is no longer supported.
+For versions 7.4+, widget templates only support FreeMarker. Velocity is no longer supported.
 
 Follow these steps to create a Widget Template:
 
@@ -26,21 +26,21 @@ Follow these steps to create a Widget Template:
 6. (Optional) In the Details side panel (![Details](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-cog3.png)), enter a _description_ and select an _image_ for the template.
 7. Click _Save_.
 
-### [The Template Editor](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/creating-a-widget-template#the-template-editor) <a href="#the-template-editor" id="the-template-editor"></a>
+### The Template Editor <a href="#the-template-editor" id="the-template-editor"></a>
 
 On the right side of the template editor is a palette of common variables used for making templates. This is a great reference when creating your template. To place one of the variables into the template editor, position your text cursor where you want it placed, and click the variable name.
 
 Each variable also has a tooltip which displays a detailed description. Because there are multiple kinds of widget templates, there are also different variables for each widget template. Thus, each template has a different set of variables only applicable for that specific template.
 
-![Liferay offers a versatile script editor to customize your widget template.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/creating-a-widget-template/images/03.png)
+![The portal offers a versatile script editor to customize your widget template.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/creating-a-widget-template/images/03.png)
 
 You can also use the autocomplete feature to add variables to your template. It can be invoked by typing `${` which opens a drop-down menu of available variables. By clicking one of the variables the editor inserts the variable into the editor.
 
 You can also embed same-type templates into other templates. For example, suppose you have an existing Wiki widget template and want to create another Wiki widget template. Instead of starting from scratch, you can import the existing Wiki widget template into your new one and build from it. In other words, you can use widget templates as generic templates to reuse code imported by Velocity or FreeMarker templates in the system.
 
-### [Calling Headless APIs in the Template Editor](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/creating-a-widget-template#calling-headless-apis-in-the-template-editor) <a href="#calling-headless-apis-in-the-template-editor" id="calling-headless-apis-in-the-template-editor"></a>
+### Calling Headless APIs in the Template Editor <a href="#calling-headless-apis-in-the-template-editor" id="calling-headless-apis-in-the-template-editor"></a>
 
-You can call Liferay’s [Headless](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-liferay-as-a-headless-platform) API services directly in the template editor. Use the `restClient` object with the relative URL of an API endpoint to inject headless resources into your templates.
+You can call the portal’s Headless API services directly in the template editor. Use the `restClient` object with the relative URL of an API endpoint to inject headless resources into your templates.
 
 NOTE
 
@@ -70,11 +70,11 @@ You can filter, sort, search, and paginate your API responses the same way you w
 </#list>
 ```
 
-See [API Query Parameters](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/api-query-parameters) for more information on filtering APIs.
+See API Query Parameters for more information on filtering APIs.
 
-Use the [API Explorer](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services) to find API endpoints and schemas for Headless resources.
+Use the API Explorer to find API endpoints and schemas for Headless resources.
 
-### [Configuring Widget Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-widgets/styling-widgets/creating-a-widget-template#configuring-widget-templates) <a href="#configuring-widget-templates" id="configuring-widget-templates"></a>
+### Configuring Widget Templates <a href="#configuring-widget-templates" id="configuring-widget-templates"></a>
 
 After you’ve saved your widget template, you can manage it through its Actions button (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)). This provides several options:
 
@@ -83,7 +83,7 @@ After you’ve saved your widget template, you can manage it through its Actions
 * _Copy_: creates a copy of the widget template.
 * _Delete_: deletes the widget template.
 
-Additionally, your widget template generates a static URL and a WebDAV URL. These values access the XML source of your template. You can find these URLs by clicking the widget template from the menu and expanding the _Details_ section. With the WebDAV URL, Site administrators can add, browse, edit, and delete widget templates on a remote server. If you want to learn more about what the WebDAV URL can do, see [WebDAV access](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/accessing-documents-with-webdav).
+Additionally, your widget template generates a static URL and a WebDAV URL. These values access the XML source of your template. You can find these URLs by clicking the widget template from the menu and expanding the _Details_ section. With the WebDAV URL, Site administrators can add, browse, edit, and delete widget templates on a remote server. If you want to learn more about what the WebDAV URL can do, see WebDAV access.
 
 NOTE
 

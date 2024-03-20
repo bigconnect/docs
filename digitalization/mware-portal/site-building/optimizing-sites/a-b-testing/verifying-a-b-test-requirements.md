@@ -2,12 +2,12 @@
 
 Before running A/B Testing on your Content pages, you must verify these requirements are met:
 
-* Liferay DXP is connected to Analytics Cloud. Fore information on how to set up this connection, see [Connecting your Liferay DXP site to Analytics Cloud](https://learn.liferay.com/analytics-cloud/latest/en/connecting-data-sources/connecting-liferay-dxp-to-analytics-cloud.html).
-* Your page is a [Content Page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/understanding-pages/understanding-pages). Widget Pages do not support Experiences for different Segments.
+* The portal is connected to Analytics Cloud. Fore information on how to set up this connection, see Connecting your site to Analytics Cloud.
+* Your page is a Content Page. Widget Pages do not support Experiences for different Segments.
 * The Content Page you intend to test is published.
 *   You have the _Update_ permission in the Content Page.
 
-    ![Selecting the Site in the Liferay DXP configuration for Analytics Cloud](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/optimizing-sites/ab-testing/verifying-ab-test-requirements/images/01.png)
+    ![Selecting the Site in the portal configuration for Analytics Cloud](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/optimizing-sites/ab-testing/verifying-ab-test-requirements/images/01.png)
 
     NOTE
 

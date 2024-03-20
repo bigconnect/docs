@@ -2,7 +2,7 @@
 
 You can use widget templates to customize the appearance and functionality of out-of-the-box widgets, such as the _Asset Publisher_ and _Media Gallery_ widgets.
 
-### [Creating a Widget Template](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/additional-content-display-options/styling-widgets-with-widget-templates#creating-a-widget-template) <a href="#creating-a-widget-template" id="creating-a-widget-template"></a>
+### Creating a Widget Template <a href="#creating-a-widget-template" id="creating-a-widget-template"></a>
 
 1. From the _Site Menu_ ![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png), click _Design_ → _Templates_.
 2.  Go to the _Widget Templates_ tab.
@@ -16,12 +16,12 @@ You can use widget templates to customize the appearance and functionality of ou
 
     NOTE
 
-    For Liferay DXP/Portal 7.4+, widget templates only support FreeMarker. Velocity is no longer supported.
+    For versions 7.4+, widget templates only support FreeMarker. Velocity is no longer supported.
 6. Click _Save_.
 
 This creates a new widget template, which you can apply to the corresponding type of widget on a page.
 
-### [Applying a Widget Template](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/additional-content-display-options/styling-widgets-with-widget-templates#applying-a-widget-template) <a href="#applying-a-widget-template" id="applying-a-widget-template"></a>
+### Applying a Widget Template <a href="#applying-a-widget-template" id="applying-a-widget-template"></a>
 
 1. Click the _Actions_ button (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) for the appropriate widget, then click _Configuration._
 2.  Find the Display Template drop-down menu and select the desired template.

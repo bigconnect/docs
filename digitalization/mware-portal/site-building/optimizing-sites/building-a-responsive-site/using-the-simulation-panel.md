@@ -2,9 +2,9 @@
 
 You can verify your page’s responsiveness by simulating different scenarios.
 
-With Liferay, use the Simulation panel to simulate different [screen sizes](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/building-a-responsive-site/using-the-simulation-panel#simulation-panel-screen-size) and combine it with [page content](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/building-a-responsive-site/using-the-simulation-panel#simulation-panel-page-content) directed at available [segments](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/creating-and-managing-user-segments) or with different [experiences](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/creating-and-managing-experiences) applied to the page.
+Use the Simulation panel to simulate different screen sizes and combine it with page content directed at available segments or with different experiences applied to the page.
 
-### [Accessing the Simulation Panel](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/building-a-responsive-site/using-the-simulation-panel#accessing-the-simulation-panel) <a href="#accessing-the-simulation-panel" id="accessing-the-simulation-panel"></a>
+### Accessing the Simulation Panel <a href="#accessing-the-simulation-panel" id="accessing-the-simulation-panel"></a>
 
 The Simulation panel (![Simulation panel](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-simulation.png)) is in the application bar.
 
@@ -17,9 +17,9 @@ Access the page using its address or through the Pages application to use the Si
 
 IMPORTANT
 
-You need the Preview in Device permission to use the Simulation panel. It’s located under Control Panel → Sites → Sites → Resource Permissions → Site. See [Defining Role Permissions](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/defining-role-permissions) to learn more about permissions.
+You need the Preview in Device permission to use the Simulation panel. It’s located under Control Panel → Sites → Sites → Resource Permissions → Site. See Defining Role Permissions to learn more about permissions.
 
-### [Simulation Panel: Screen Size](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/building-a-responsive-site/using-the-simulation-panel#simulation-panel-screen-size) <a href="#simulation-panel-screen-size" id="simulation-panel-screen-size"></a>
+### Simulation Panel: Screen Size <a href="#simulation-panel-screen-size" id="simulation-panel-screen-size"></a>
 
 You have five options when simulating the screen size, three pre-defined values (desktop, tablet, or mobile), and two variable ones (autosize and custom). To simulate the content, click _Options_ ([Options](https://learn.liferay.com/web/guest/w/dxp/images/icon-options.png)).
 
@@ -33,7 +33,7 @@ You have five options when simulating the screen size, three pre-defined values 
 
 ![Simulating a desktop using the default experience.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/optimizing-sites/building-a-responsive-site/using-the-simulation-panel/images/02.png)
 
-### [Simulation Panel: Page Content](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/building-a-responsive-site/using-the-simulation-panel#simulation-panel-page-content) <a href="#simulation-panel-page-content" id="simulation-panel-page-content"></a>
+### Simulation Panel: Page Content <a href="#simulation-panel-page-content" id="simulation-panel-page-content"></a>
 
 If you have segments or experiences in place, you can also simulate the content based on segment or experience applied. With the simulation panel, you can visualize how the experiences and segments look in a simulated screen.
 

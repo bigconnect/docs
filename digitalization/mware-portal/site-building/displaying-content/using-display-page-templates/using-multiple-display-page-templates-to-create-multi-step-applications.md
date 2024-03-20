@@ -2,19 +2,19 @@
 
 Display page templates display content at a dedicated URL. To use this URL and view the content, you have to first define a template to display it.
 
-Generally, a default display page template is set for a specific content type. You can, however, associate multiple display page templates with the same content type and map any of those options to links. This means users can create applications (e.g., [forms mapped from custom objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/using-fragments-to-build-forms)) with multiple steps. By using multiple display templates, you can create forms with multiple steps, because each step is linked to a different display page template.
+Generally, a default display page template is set for a specific content type. You can, however, associate multiple display page templates with the same content type and map any of those options to links. This means users can create applications (e.g., forms mapped from custom objects) with multiple steps. By using multiple display templates, you can create forms with multiple steps, because each step is linked to a different display page template.
 
-Using display page templates, objects, and Form Container fragments, you can create a page that allows users to add an object entry and edit it in a different page. To do that, it is necessary to create a [custom object](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications#tasks-custom-object), a [display page template](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications#edit-display-page-template) to edit the object entry, and a [content page](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications#content-page-to-display-the-application) where the user can enter a new object entry and view a list of existing object entries.
+Using display page templates, objects, and Form Container fragments, you can create a page that allows users to add an object entry and edit it in a different page. To do that, it is necessary to create a custom object, a display page template to edit the object entry, and a content page where the user can enter a new object entry and view a list of existing object entries.
 
-### [Tasks Custom Object](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications#tasks-custom-object) <a href="#tasks-custom-object" id="tasks-custom-object"></a>
+### Tasks Custom Object <a href="#tasks-custom-object" id="tasks-custom-object"></a>
 
-1. [Create a custom object](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/creating-objects) and label it _Task_.
+1. Create a custom object and label it _Task_.
 2. Click on the _Task_ object.
 3. Under the Fields tab, add a text-type Field labeled _Description_.
 4. Under the Actions tab, add an _Action_ and label it _Edit_.
 5.  Under Action Builder, select _Standalone_ as the Trigger.
 
-    This option allows the [action to be mapped to a button](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions/using-manual-actions#mapping-buttons-to-object-actions-in-content-pages).
+    This option allows the action to be mapped to a button.
 6.  Select _Update an Object Entry_ as the Action.
 
     This option updates the object entry using a selected value whenever the trigger is activated.
@@ -28,9 +28,9 @@ Your object is now published, and it can be used to generate a form using a Form
 
 ![Creating the Task object](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications/images/02.gif)
 
-### [Content Page to Display the Application](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications#content-page-to-display-the-application) <a href="#content-page-to-display-the-application" id="content-page-to-display-the-application"></a>
+### Content Page to Display the Application <a href="#content-page-to-display-the-application" id="content-page-to-display-the-application"></a>
 
-1. [Create a content page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/adding-a-page-to-a-site). Use the Blank template and name the page _List of Tasks_.
+1. Create a content page. Use the Blank template and name the page _List of Tasks_.
 2. Add a _Grid_ fragment to the page. Click on it and set the _Number of Modules_ to _two_ on the right panel.
 3.  In the Fragments and Widgets sidebar, look for the Form Container fragment. Drag and drop it on the left grid module, click _None_, and map it to the Task object.
 
@@ -54,13 +54,13 @@ Your object is now published, and it can be used to generate a form using a Form
 10. Add a _Button_ fragment to the right grid module in your collection display and click on the text twice to edit it. Change the text to _Edit_.
 11. Publish the page
 
-Although you can view the page, add an object entry, and see the list of tasks updated, it is still incomplete. The [Edit display page template](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications#edit-display-page-template) needs to be created and you need to map the Edit button to the page in order to direct the user to the Edit display page template.
+Although you can view the page, add an object entry, and see the list of tasks updated, it is still incomplete. The Edit display page template needs to be created and you need to map the Edit button to the page in order to direct the user to the Edit display page template.
 
 ![Creating a content page to display the application](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications/images/04.gif)
 
-### [Edit Display Page Template](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications#edit-display-page-template) <a href="#edit-display-page-template" id="edit-display-page-template"></a>
+### Edit Display Page Template <a href="#edit-display-page-template" id="edit-display-page-template"></a>
 
-1.  Create a [display page template](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/creating-and-managing-display-page-templates), name it _Edit_, and select _Task_ as the content type.
+1.  Create a display page template, name it _Edit_, and select _Task_ as the content type.
 
     The display page template is now associated with the Task object.
 2.  In the Fragments and Widgets sidebar, look for the Form Container fragment. Drag and drop it into the page, click _None_, and map it to the Task object.
@@ -85,7 +85,7 @@ Edit the fragments as you see fit and save the Form Container fragment as a comp
 
 ![Creating the Edit display page template](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications/images/05.gif)
 
-### [SEO Considerations About the Display Page Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications#seo-considerations-about-the-display-page-templates) <a href="#seo-considerations-about-the-display-page-templates" id="seo-considerations-about-the-display-page-templates"></a>
+### SEO Considerations About the Display Page Templates <a href="#seo-considerations-about-the-display-page-templates" id="seo-considerations-about-the-display-page-templates"></a>
 
 If the display page is marked as default,
 
@@ -102,7 +102,7 @@ These changes are made automatically if the display page is not marked as defaul
 
 ![SEO configuration page for the display page template.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications/images/06.png)
 
-### [Resulting Application](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/using-multiple-display-page-templates-to-create-multi-step-applications#resulting-application) <a href="#resulting-application" id="resulting-application"></a>
+### Resulting Application <a href="#resulting-application" id="resulting-application"></a>
 
 Before using the resulting application,
 

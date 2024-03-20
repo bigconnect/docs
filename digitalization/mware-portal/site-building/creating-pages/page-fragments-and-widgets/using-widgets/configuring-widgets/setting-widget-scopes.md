@@ -1,10 +1,10 @@
 # Setting Widget Scopes
 
-By default, Liferay’s page widgets are _scoped_ by site. This means all widget instances in a site share the same data and display the same content. For example, adding the Message Boards widget to two pages in the same site creates two copies of the same widget, because they use the same data. Adding the Message Boards widget to two different sites creates two different Message Boards with different data.
+By default, portal’s page widgets are _scoped_ by site. This means all widget instances in a site share the same data and display the same content. For example, adding the Message Boards widget to two pages in the same site creates two copies of the same widget, because they use the same data. Adding the Message Boards widget to two different sites creates two different Message Boards with different data.
 
 You can, however, scope widget instances to the page instead of to the site. Then you can add the Message Boards widget to multiple site pages, and each instance has its own categories and threads.
 
-Liferay provides three scope options for page widgets:
+The portal provides three scope options for page widgets:
 
 | Scope   | Description                                                                                                                                                                        |
 | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -18,7 +18,7 @@ Follow these steps to configure a widget’s scope:
 2. Hover over the desired widget, click its _Options_ button (![Options Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png)), and select _Configuration_.
 3.  Go to the _Scope_ tab and use the drop-down menu to select a scope.
 
-    This menu includes the current site (e.g., Liferay DXP. The current site refers to the default scope), the Global site, the current page, and any other page scopes available in the site.
+    This menu includes the current site (the current site refers to the default scope), the Global site, the current page, and any other page scopes available in the site.
 
     If you haven’t created a scope for the current page, its name is followed by `(Create New)` (e.g., Home (Create New)).
 

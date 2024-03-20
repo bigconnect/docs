@@ -30,9 +30,9 @@ NOTE
 
 After changes are made and published, they are propagated to all pages that use the master page template.
 
-### [Changing the Master Page Template of a Page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/defining-headers-and-footers/managing-master-page-templates#changing-the-master-page-template-of-a-page) <a href="#changing-the-master-page-template-of-a-page" id="changing-the-master-page-template-of-a-page"></a>
+### Changing the Master Page Template of a Page <a href="#changing-the-master-page-template-of-a-page" id="changing-the-master-page-template-of-a-page"></a>
 
-You can change a page’s master page template in the [content page editor](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/content-page-editor-ui-reference). Follow these steps to change the template of a page:
+You can change a page’s master page template in the content page editor. Follow these steps to change the template of a page:
 
 1. Navigate to the page where you want to change the master page template.
 2. Click _Edit_ (![Edit icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-edit.png))
@@ -41,7 +41,7 @@ You can change a page’s master page template in the [content page editor](http
 
     ![Select the master page template you want to use through the page design options menu.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/defining-headers-and-footers/managing-master-page-templates/images/02.png)
 
-### [Changing a Master Page Template’s Design](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/defining-headers-and-footers/managing-master-page-templates#changing-a-master-page-templates-design) <a href="#changing-a-master-page-templates-design" id="changing-a-master-page-templates-design"></a>
+### Changing a Master Page Template’s Design <a href="#changing-a-master-page-templates-design" id="changing-a-master-page-templates-design"></a>
 
 1. Open the _Site Menu_ (![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) and navigate to _Design_ → _Page Templates_.
 2. Select the _Masters_ tab.
@@ -59,13 +59,13 @@ You can change a page’s master page template in the [content page editor](http
 
 **Style Book:** Change the default style book applied from the theme.
 
-**Theme CSS Client Extension:** Add [theme CSS client extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/front-end-client-extensions#theme-css-client-extensions) to replace the default CSS fully from a theme without deploying an entire theme.
+**Theme CSS Client Extension:** Add theme CSS client extensions to replace the default CSS fully from a theme without deploying an entire theme.
 
-**CSS Client Extensions:** Add [CSS client extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/front-end-client-extensions#css-client-extensions) to override CSS styling of a content page that uses the master page template.
+**CSS Client Extensions:** Add CSS client extensions to override CSS styling of a content page that uses the master page template.
 
 **Custom CSS:** Custom CSS can also be applied and is loaded after the theme. Custom CSS is disabled when using the inherited theme.
 
-**JavaScript Client Extension and Custom JavaScript:** [JavaScript client extentions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/front-end-client-extensions#javascript-client-extensions) can be added to have JavaScript run when the page using this master page template is visited. Custom JavaScript code can be added that is executed at the bottom of the page.
+**JavaScript Client Extension and Custom JavaScript:** JavaScript client extentions can be added to have JavaScript run when the page using this master page template is visited. Custom JavaScript code can be added that is executed at the bottom of the page.
 
 NOTE
 

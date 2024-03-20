@@ -1,26 +1,26 @@
 # Fragment Configuration Types Reference
 
-This reference lists the available configuration types for fragments. See [Adding Configuration Options to Fragments](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/adding-configuration-options-to-fragments) for more information on how to make a fragment configurable.
+This reference lists the available configuration types for fragments. See Adding Configuration Options to Fragments for more information on how to make a fragment configurable.
 
 These are the configurable fragment types available to implement:
 
 * `text`
 * `select`
 * `checkbox`
-* `colorPicker` (Available Liferay 7.4+)
-* `length` (Available Liferay 7.4+ U44/GA44)
+* `colorPicker` (Available 7.4+)
+* `length` (Available 7.4+ )
 * `itemSelector`
-* `url` (Available Liferay 7.4+)
-* `videoSelector` (Available Liferay 7.4+)
+* `url` (Available 7.4+)
+* `videoSelector` (Available 7.4+)
 * `collectionSelector`
 * `colorPalette`
-* `navigationMenuSelector` (Available Liferay 7.4+)
+* `navigationMenuSelector` (Available 7.4+)
 
 NOTE
 
 Configuration values inserted into the FreeMarker context honor the defined `datatype` value specified in the JSON file. For example, if the `dataType` is String, `configuration.[name-value]?is_string` is `true`.
 
-### [Text Configuration](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#text-configuration) <a href="#text-configuration" id="text-configuration"></a>
+### Text Configuration <a href="#text-configuration" id="text-configuration"></a>
 
 This JSON configuration creates an input text field you can implement for cases where you must enter a text option manually:
 
@@ -48,7 +48,7 @@ This JSON configuration creates an input text field you can implement for cases 
 
 ![The text configuration is useful when an input text option is necessary.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference/images/01.png)
 
-### [Select Configuration](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#select-configuration) <a href="#select-configuration" id="select-configuration"></a>
+### Select Configuration <a href="#select-configuration" id="select-configuration"></a>
 
 This JSON configuration creates a selector you can implement for cases where you must select a predefined option:
 
@@ -80,7 +80,7 @@ This JSON configuration creates a selector you can implement for cases where you
 
 ![The select configuration is useful when an option choice is necessary.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference/images/02.png)
 
-### [Checkbox Configuration](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#checkbox-configuration) <a href="#checkbox-configuration" id="checkbox-configuration"></a>
+### Checkbox Configuration <a href="#checkbox-configuration" id="checkbox-configuration"></a>
 
 This JSON configuration creates a checkbox you can implement for cases where a boolean value selection is necessary:
 
@@ -104,22 +104,22 @@ This JSON configuration creates a checkbox you can implement for cases where a b
 
 ![The checkbox configuration is useful when a boolean selection is necessary.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference/images/03.png)
 
-### [Color Picker Configuration](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#color-picker-configuration) <a href="#color-picker-configuration" id="color-picker-configuration"></a>
+### Color Picker Configuration <a href="#color-picker-configuration" id="color-picker-configuration"></a>
 
-Liferay 7.4+
+Version 7.4+
 
 The color picker JSON configuration creates a flexible color selector where any color can be selected. You can use any of these methods to select a color:
 
 * Click the color on the left side to open a color picker to choose a color.
 * Enter a color’s hex code into the text box.
-* Click the _Value from Stylebook_ button to open a menu of pre-defined colors to choose defined in your currently used [style book](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/using-a-style-book-to-standardize-site-appearance). This links the field’s value to the selected token, until you press the button again to unlink it. Unlinking the token value converts the chosen color to its equivalent hex code value again.
+* Click the _Value from Stylebook_ button to open a menu of pre-defined colors to choose defined in your currently used style book. This links the field’s value to the selected token, until you press the button again to unlink it. Unlinking the token value converts the chosen color to its equivalent hex code value again.
 * If the color picker has no default value defined, click the _Default_ drop-down menu to select any color from your currently used style book. This works the same as the Value from Stylebook button when you select a value.
 
 ![The color picker configuration lets you directly input a color value, select one from a range, or select one from your style book.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference/images/04.png)
 
 NOTE
 
-If the theme you are using has no [token definitions for style books](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/developer-guide/style-book-token-definitions), color picker configurations on the page are replaced with \[color palette]\(#color-palette configuration) configurations.
+If the theme you are using has no token definitions for style books, color picker configurations on the page are replaced with \[color palette]\(#color-palette configuration) configurations.
 
 This JSON configuration creates a color picker field called `headingColor`:
 
@@ -157,9 +157,9 @@ When the fragment is rendered, the token `${configuration.OBJECT_NAME}` is repla
 * If you chose a color from the current style book, it’s replaced with a CSS variable for the linked token (for example, `var(--danger)`).
 * If the current theme does not have any token definitions to use (so a [color palette](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#color-palette-configuration) is used instead), it is replaced with a CSS color (for example, `rgb(255, 0, 0)`).
 
-### [Length Configuration](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#length-configuration) <a href="#length-configuration" id="length-configuration"></a>
+### Length Configuration <a href="#length-configuration" id="length-configuration"></a>
 
-Liferay 7.4 U44 and GA44+
+Version 7.4+
 
 The `length` configuration type creates a field where you can enter a number and choose predefined units or specify your own units for settings like width, margins, and padding.
 
@@ -186,9 +186,9 @@ In the user interface, you can choose from the available units or specify a cust
 
 ![A field labeled Size from a custom fragment uses the length configuration to show a drop-down of available units.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference/images/05.png)
 
-### [Item Selector Configuration](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#item-selector-configuration) <a href="#item-selector-configuration" id="item-selector-configuration"></a>
+### Item Selector Configuration <a href="#item-selector-configuration" id="item-selector-configuration"></a>
 
-Liferay 7.3+
+Version 7.3+
 
 This configuration creates a selector for selecting one existing piece of content (a document, web content article, blog entry, category, product, or knowledge base article by default) to include in the fragment.
 
@@ -306,7 +306,7 @@ NOTE
 
 Placing a fragment with an item selector configuration into a collection display widget automatically maps the collection item as the selected content.
 
-### [URL Configuration](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#url-configuration) <a href="#url-configuration" id="url-configuration"></a>
+### URL Configuration <a href="#url-configuration" id="url-configuration"></a>
 
 This configuration adds a field specifically for a URL to use in your fragment’s markup:
 
@@ -336,9 +336,9 @@ Here is an example of fragment HTML that uses the URL configuration in the above
 </div>
 ```
 
-### [Video Selector](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#video-selector) <a href="#video-selector" id="video-selector"></a>
+### Video Selector <a href="#video-selector" id="video-selector"></a>
 
-Liferay 7.4+
+Version 7.4+
 
 Using the `videoSelector` type, you can create a video selector to incorporate an [external video](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/default-fragments-reference) fragment in another fragment.
 
@@ -406,9 +406,9 @@ NOTE
 
 The `videoSelector` type is compatible with the [external video](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/default-fragments-reference#external-video) fragment, but not with the [video URL](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/default-fragments-reference) fragment.
 
-### [Collection Selector](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#collection-selector) <a href="#collection-selector" id="collection-selector"></a>
+### Collection Selector <a href="#collection-selector" id="collection-selector"></a>
 
-Liferay 7.3+
+Version 7.3+
 
 Using the `collectionSelector` configuration type, you can develop a fragment that includes a [collection](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/about-collections-and-collection-pages) or [collection provider](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/collection-providers). You can use the `collectionSelector` with both manual and dynamic collections.
 
@@ -455,7 +455,7 @@ To reference this collection in the HTML, use the collection `name` in the JSON 
 
 ![You can develop a fragment with a collection selector using the collection configuration.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference/images/08.png)
 
-#### [Filtering the Collection Selector](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#filtering-the-collection-selector) <a href="#filtering-the-collection-selector" id="filtering-the-collection-selector"></a>
+#### Filtering the Collection Selector <a href="#filtering-the-collection-selector" id="filtering-the-collection-selector"></a>
 
 You can filter the collection selector using `itemType` in the `collectionSelector` configuration. For example, if you have different collections including web content and blogs, you can restrict the collection selector to show only blog collections. This JSON sample illustrates this configuration:
 
@@ -486,7 +486,7 @@ TIP
 
 In addition to the `itemType`, you can specify the `itemSubtype` in the configuration. The `itemSubtype` corresponds to the asset `classPK`.
 
-#### [Defining a Maximum Number of Returned Collection Items](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#defining-a-maximum-number-of-returned-collection-items) <a href="#defining-a-maximum-number-of-returned-collection-items" id="defining-a-maximum-number-of-returned-collection-items"></a>
+#### Defining a Maximum Number of Returned Collection Items <a href="#defining-a-maximum-number-of-returned-collection-items" id="defining-a-maximum-number-of-returned-collection-items"></a>
 
 By default, all items in the collection are returned if you do not define a limit to the maximum number of items. You can set this limit using `numberOfItems` in your JSON configuration.
 
@@ -509,9 +509,9 @@ By default, all items in the collection are returned if you do not define a limi
 }
 ```
 
-### [Color Palette Configuration](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#color-palette-configuration) <a href="#color-palette-configuration" id="color-palette-configuration"></a>
+### Color Palette Configuration <a href="#color-palette-configuration" id="color-palette-configuration"></a>
 
-The color palette JSON configuration creates a color selector you can implement for cases where you must select a color. Unlike the [color picker configuration](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#color-picker-configuration), it only provides options based on the theme colors configured in the currently used [style book](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/using-a-style-book-to-standardize-site-appearance)’s color system.
+The color palette JSON configuration creates a color selector you can implement for cases where you must select a color. Unlike the color picker configuration, it only provides options based on the theme colors configured in the currently used style book’s color system.
 
 This configuration creates a color palette field called `textColor`:
 
@@ -547,13 +547,13 @@ If you were to choose the color white, the `h3` tag heading would have the class
 
 ![The color palette configuration is useful when a color selection is necessary.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference/images/10.png)
 
-### [Navigation Menu Selector Configuration](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-configuration-types-reference#navigation-menu-selector-configuration) <a href="#navigation-menu-selector-configuration" id="navigation-menu-selector-configuration"></a>
+### Navigation Menu Selector Configuration <a href="#navigation-menu-selector-configuration" id="navigation-menu-selector-configuration"></a>
 
-Liferay DXP 2024.Q1
+Versions 2024.Q1+
 
 Using the `navigationMenuSelector` configuration type, you can access FreeMarker variables through the fragment HTML editor and define markup for rendering custom navigation menus.
 
-To use FreeMarker variables in the fragment HTML editor, start by setting `navigationMenuSelector` as the [configuration type](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/adding-configuration-options-to-fragments#modify-the-configuration). You can use the JSON snippet below as a model.
+To use FreeMarker variables in the fragment HTML editor, start by setting `navigationMenuSelector` as the configuration type. You can use the JSON snippet below as a model.
 
 ```json
 "fieldSets": [
@@ -580,6 +580,6 @@ These are the available variables for the navigation menu selector configuration
 | `rootLayoutLevel` | Defines the level in the hierarchy.                                                                         |
 | `rootLayoutType`  | Specifies how to interpret the root layout in relation to the current page (absolute, relative, or select). |
 
-To get a better look at the `navigationMenuSelector` type, download the [navigation-menu fragment](https://resources.learn.liferay.com/dxp/latest/en/site-building/developer-guide/reference/fragments/liferay-r5q5.zip) and import it into a fragment set. See [Managing Fragments](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/managing-fragments) to learn more about importing a fragment.
+To get a better look at the `navigationMenuSelector` type, download the navigation-menu fragment and import it into a fragment set. See Managing Fragments to learn more about importing a fragment.
 
 \

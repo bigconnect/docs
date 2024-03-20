@@ -4,7 +4,7 @@ When building a Page or Template with Fragments, you can duplicate configured Fr
 
 TIP
 
-If you want to save Fragment configurations for reuse in other Pages and Templates, you can save them as new Fragments. See [Saving Fragment Compositions](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions) for more information.
+If you want to save Fragment configurations for reuse in other Pages and Templates, you can save them as new Fragments. See Saving Fragment Compositions for more information.
 
 Follow these steps to duplicate a Fragment:
 

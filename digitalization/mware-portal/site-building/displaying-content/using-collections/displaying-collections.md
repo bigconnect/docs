@@ -1,20 +1,20 @@
 # Displaying Collections
 
-You can display a collection by adding a collection page, or a collection display fragment. For more information about these display options, see [About Collections and Collection Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/about-collections-and-collection-pages#displaying-collections).
+You can display a collection by adding a collection page, or a collection display fragment. For more information about these display options, see About Collections and Collection Pages.
 
-By default, any user can see a collection’s content. However, you can [personalize how users see this content using segments](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/about-collections-and-collection-pages#customizing-collections).
+By default, any user can see a collection’s content. However, you can personalize how users see this content using segments.
 
 NOTE
 
-You must [create a collection](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections) before displaying it on a page.
+You must create a collection before displaying it on a page.
 
-### [Displaying Collections on a Page](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#displaying-collections-on-a-page) <a href="#displaying-collections-on-a-page" id="displaying-collections-on-a-page"></a>
+### Displaying Collections on a Page <a href="#displaying-collections-on-a-page" id="displaying-collections-on-a-page"></a>
 
 The two easiest ways to display a collection are to add a collection page or to add a collection display fragment to an existing page.
 
-#### [Displaying Collections on a Collection Page](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#displaying-collections-on-a-collection-page) <a href="#displaying-collections-on-a-collection-page" id="displaying-collections-on-a-collection-page"></a>
+#### Displaying Collections on a Collection Page <a href="#displaying-collections-on-a-collection-page" id="displaying-collections-on-a-collection-page"></a>
 
-A collection page links a page to a collection. Collection pages include [collection display fragments](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#adding-a-collection-display-fragment-to-a-page) as part of the page.
+A collection page links a page to a collection. Collection pages include collection display fragments as part of the page.
 
 Follow these steps to add a collection page:
 
@@ -22,10 +22,10 @@ Follow these steps to add a collection page:
 2.  Click _New Page_ ( ![New Page](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ) and select _Collection Page_.
 
     ![Create a new collection page from the pages administration.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/collections-and-collection-pages/displaying-collections/images/01.png)
-3. From the Collections tab, select one of your collections or click _Add_ ( ![Add Icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ) to [create a new collection](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections).
+3. From the Collections tab, select one of your collections or click _Add_ ( ![Add Icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ) to create a new collection.
 4. Select the _Master Page_ you want to use.
 5. Enter the name of your collection page and click _Add_.
-6. To show the collection, [map its content to page elements](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#mapping-components-to-display-a-collections-assets).
+6. To show the collection, map its content to page elements.
 
 IMPORTANT
 
@@ -33,7 +33,7 @@ You cannot create a child page under a collection page.
 
 You now have a collection page displaying your chosen collection, within a collection display fragment.
 
-#### [Adding a Collection Display Fragment to a Page](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#adding-a-collection-display-fragment-to-a-page) <a href="#adding-a-collection-display-fragment-to-a-page" id="adding-a-collection-display-fragment-to-a-page"></a>
+#### Adding a Collection Display Fragment to a Page <a href="#adding-a-collection-display-fragment-to-a-page" id="adding-a-collection-display-fragment-to-a-page"></a>
 
 A collection display fragment shows a collection in a content page. It can be configured to display a collection in any style or layout.
 
@@ -41,7 +41,7 @@ A collection display fragment shows a collection in a content page. It can be co
 
 To add an existing collection to a collection display fragment,
 
-1. [Create a new page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/adding-a-page-to-a-site) or [start editing a content page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/adding-elements-to-content-pages).
+1. Create a new page or start editing a content page.
 2. Click _Add_ ( ![Add widget icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add-widget.png) ) to open the Fragments and Widgets panel.
 3. Under the Content Display category in the Fragments tab, drag the _Collection Display_ fragment to a place on the page.
 4. Click on the _Collection Display_ fragment to show the configuration in the Selection panel.
@@ -55,9 +55,9 @@ IMPORTANT
 
 When adding a Collection Display Fragment to a page, only collections that can be mapped to editable fragments are available (Blog Entries, Documents, Knowledge Base Articles, Web Content Articles, and Custom Object Entries).
 
-### [Configuring a Collection Display Fragment](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#configuring-a-collection-display-fragment) <a href="#configuring-a-collection-display-fragment" id="configuring-a-collection-display-fragment"></a>
+### Configuring a Collection Display Fragment <a href="#configuring-a-collection-display-fragment" id="configuring-a-collection-display-fragment"></a>
 
-Whether you added a collection display fragment manually or via a collection page, you can configure it by [editing the page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/adding-elements-to-content-pages) and selecting the fragment.
+Whether you added a collection display fragment manually or via a collection page, you can configure it by editing the page and selecting the fragment.
 
 Selecting a collection display fragment divides it into sections for each asset in the collection. New options appear under the fragment’s general configuration after you’ve selected a collection:
 
@@ -83,9 +83,9 @@ Publish the page when you’re ready for the assets in the collection to be disp
 
 TIP
 
-In Liferay 7.4 GA23+ or U23+, if you have chosen the Grid style for a collection display fragment, you can configure the layout setting individually for each type of device. Click the device viewport buttons at the top of the screen to set this setting for each device. The tablet setting defaults to the same as the desktop’s setting, and the portrait and landscape phone settings default to 1 column.
+In version 7.4 if you have chosen the Grid style for a collection display fragment, you can configure the layout setting individually for each type of device. Click the device viewport buttons at the top of the screen to set this setting for each device. The tablet setting defaults to the same as the desktop’s setting, and the portrait and landscape phone settings default to 1 column.
 
-#### [Mapping Components to Display a Collection’s Assets](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#mapping-components-to-display-a-collections-assets) <a href="#mapping-components-to-display-a-collections-assets" id="mapping-components-to-display-a-collections-assets"></a>
+#### Mapping Components to Display a Collection’s Assets <a href="#mapping-components-to-display-a-collections-assets" id="mapping-components-to-display-a-collections-assets"></a>
 
 You can also configure the item style (how each asset is individually displayed) in the fragment by mapping display components to them.
 
@@ -113,7 +113,7 @@ Depending on the option you chose for a collection display fragment’s list sty
     ![Add fragments and widgets to the collection display and map the content fields.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/collections-and-collection-pages/displaying-collections/images/07.gif)
 7. Click _Publish_.
 
-### [Paginating Display Items](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#paginating-display-items) <a href="#paginating-display-items" id="paginating-display-items"></a>
+### Paginating Display Items <a href="#paginating-display-items" id="paginating-display-items"></a>
 
 7.4+
 
@@ -124,7 +124,7 @@ You can paginate the collection items using the pagination configuration. This o
 
 NOTE
 
-In Liferay 7.4 versions earlier than U18 and GA18, fewer pagination options are available. In these versions, you can still enable pagination and choose the maximum number of items to display at once, but you cannot change the number of pages shown in the pagination menu.
+In  earlier versions, fewer pagination options are available. In these versions, you can still enable pagination and choose the maximum number of items to display at once, but you cannot change the number of pages shown in the pagination menu.
 
 To paginate the display items in the collection display,
 
@@ -149,7 +149,7 @@ NOTE
 
 By default, the collection display fragment displays up to 20 items at a time in edit mode. You can change this limit by navigating to _Control Panel_ → _Instance Settings_ → _Pages_ → _Page Editor_, and changing the number in the _Maximum Number of Items in Edit mode_ field. Displaying more than 20 items at once in edit mode, may negatively impact performance. This setting does not affect what users see on the page in View mode.
 
-### [Viewing Collections Usage Throughout the Site](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#viewing-collections-usage-throughout-the-site) <a href="#viewing-collections-usage-throughout-the-site" id="viewing-collections-usage-throughout-the-site"></a>
+### Viewing Collections Usage Throughout the Site <a href="#viewing-collections-usage-throughout-the-site" id="viewing-collections-usage-throughout-the-site"></a>
 
 You can find usage statistics for the collections on your site.
 
@@ -158,17 +158,15 @@ You can find usage statistics for the collections on your site.
 
 ![Select View Usages to understand how your collections are being used through the site](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/collections-and-collection-pages/displaying-collections/images/09.png)
 
-### [Liferay DXP 7.2](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#liferay-dxp-72) <a href="#liferay-dxp-72" id="liferay-dxp-72"></a>
+#### Displaying Content Sets <a href="#displaying-content-sets" id="displaying-content-sets"></a>
 
-#### [Displaying Content Sets](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#displaying-content-sets) <a href="#displaying-content-sets" id="displaying-content-sets"></a>
+Content sets are primarily displayed through the Asset Publisher. It is currently the only method to display them out-of-the-box, but you can develop your own external applications or widgets to utilize content sets. In Creating Content Sets you created two content sets. Now display them on a page.
 
-Content sets are primarily displayed through the Asset Publisher. It is currently the only method to display them out-of-the-box, but you can develop your own external applications or widgets to utilize content sets. In [Creating Content Sets](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections#creating-content-sets) you created two content sets. Now display them on a page.
-
-[**Configuring the Asset Publisher for Content Sets**](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#configuring-the-asset-publisher-for-content-sets)
+**Configuring the Asset Publisher for Content Sets**
 
 To display the content sets, start with a blank page, and then add the necessary asset publishers and configure them to display the content sets.
 
-1. Create a new home page for your site as a widget page with a 1 column layout. If you’re using a fresh Liferay DXP bundle, you can just remove the Hello World widget from the sample Home page.
+1. Create a new home page for your site as a widget page with a 1 column layout. If you’re using a fresh portal bundle, you can just remove the Hello World widget from the sample Home page.
 2. Open the _Add_ menu and add two _Content Management_ → _Asset Publishers_ to the page stacked vertically.
 3. Click Options ( ![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png) ) → _Configuration_ for the top asset publisher.
 4.  Under Asset Selection choose _Content Set_.
@@ -194,7 +192,7 @@ Again, you can manage various display settings, but the displayed items and thei
 
 ![You can see the results as the standard asset publisher output. You can create widget templates to add more style and pizzazz here.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/collections-and-collection-pages/displaying-collections/images/12.png)
 
-[**Adding Items to an Existing Content Set**](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#adding-items-to-an-existing-content-set)
+**Adding Items to an Existing Content Set**
 
 To demonstrate the management of both static and dynamic content sets, upload a new image, tag it, and add it to the static set manually.
 

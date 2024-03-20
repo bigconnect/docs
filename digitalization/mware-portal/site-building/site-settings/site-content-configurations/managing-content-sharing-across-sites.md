@@ -1,6 +1,6 @@
 # Managing Content Sharing Across Sites
 
-You can allow Liferay DXP child Sites to display content from parent Sites. This content includes
+You can allow child Sites to display content from parent Sites. This content includes
 
 * Web Content Structures
 * Web Content Templates
@@ -11,30 +11,30 @@ You can allow Liferay DXP child Sites to display content from parent Sites. This
 
 You can configure the Content Sharing settings at the Instance or Site scope. The Instance scope configuration determines the default Site scope configuration. For example, if you disable Content Sharing at the Instance scope, the setting is disabled by default at the Site scope.
 
-### [Configuring Content Sharing at the Instance Scope](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/site-content-configurations/managing-content-sharing-across-sites#configuring-content-sharing-at-the-instance-scope) <a href="#configuring-content-sharing-at-the-instance-scope" id="configuring-content-sharing-at-the-instance-scope"></a>
+### Configuring Content Sharing at the Instance Scope <a href="#configuring-content-sharing-at-the-instance-scope" id="configuring-content-sharing-at-the-instance-scope"></a>
 
 1. Open the Product Menu and go to _Control Panel_ → _Configuration_ → _Instance Settings_.
 2. Under the Content and Data section, click _Sharing_.
 3. Under the Virtual instance scope, click _Content Sharing_.
 4. Check the _Allow site administrators to display content from other sites they administer_ box to allow Site Administrators to share content between the Sites they administer.
-5. [Configure the Content Sharing setting](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/site-content-configurations/managing-content-sharing-across-sites#configure-the-content-sharing-setting-between-sites-and-subsites) between Sites and Subsites.
+5. Configure the Content Sharing setting between Sites and Subsites.
 
-### [Configuring Content Sharing at the Site Scope](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/site-content-configurations/managing-content-sharing-across-sites#configuring-content-sharing-at-the-site-scope) <a href="#configuring-content-sharing-at-the-site-scope" id="configuring-content-sharing-at-the-site-scope"></a>
+### Configuring Content Sharing at the Site Scope <a href="#configuring-content-sharing-at-the-site-scope" id="configuring-content-sharing-at-the-site-scope"></a>
 
 NOTE
 
 If you disable Content Sharing at the Instance scope, the option is unavailable at the Site scope.
 
 1. Access the Content Sharing settings.
-   * In Liferay DXP 7.4+
+   * In version 7.4+
      1. From the Site Menu, go to _Configuration_ → _Site Settings_.
      2. In the Content and Data section, click _Sharing_.
-   * In previous Liferay DXP versions
+   * In previous versions
      1. From the Site Menu, go to _Configuration_ → _Settings_.
      2. Under the General area, expand the _Documents and Media_ section.
-2. [Configure the Content Sharing setting](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/site-content-configurations/managing-content-sharing-across-sites#configure-the-content-sharing-setting-between-sites-and-subsites) between Sites and Subsites.
+2. Configure the Content Sharing setting between Sites and Subsites.
 
-### [Configure the Content Sharing Setting Between Sites and Subsites](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/site-content-configurations/managing-content-sharing-across-sites#configure-the-content-sharing-setting-between-sites-and-subsites) <a href="#configure-the-content-sharing-setting-between-sites-and-subsites" id="configure-the-content-sharing-setting-between-sites-and-subsites"></a>
+### Configure the Content Sharing Setting Between Sites and Subsites <a href="#configure-the-content-sharing-setting-between-sites-and-subsites" id="configure-the-content-sharing-setting-between-sites-and-subsites"></a>
 
 In the _Allow subsites to display content from parent sites_ drop-down menu, select one of the following options:
 

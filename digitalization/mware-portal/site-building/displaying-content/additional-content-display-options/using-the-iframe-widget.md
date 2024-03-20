@@ -1,10 +1,10 @@
 # Using the Iframe Widget
 
-The _Iframe_ widget creates an [iframe](https://www.w3schools.com/html/html\_iframe.asp) that can embed and display a web page.
+The _Iframe_ widget creates an iframe that can embed and display a web page.
 
-### [Setting Up the Iframe Widget](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/additional-content-display-options/using-the-iframe-widget#setting-up-the-iframe-widget) <a href="#setting-up-the-iframe-widget" id="setting-up-the-iframe-widget"></a>
+### Setting Up the Iframe Widget <a href="#setting-up-the-iframe-widget" id="setting-up-the-iframe-widget"></a>
 
-1. [Create a new page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/adding-a-page-to-a-site) or [start editing a content page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/adding-elements-to-content-pages).
+1. Create a new page or start editing a content page.
 2. Click _Add_ ( ![Add widget icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add-widget.png) ) to open the Fragments and Widgets panel.
 3. Under the Sample category in the Widgets tab, drag the _iFrame_ widget to a place on the page.
 4.  Click _Options_ ( ![Options icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png) ) at the top right of the widget → _Configuration_.
@@ -18,7 +18,7 @@ The _Iframe_ widget creates an [iframe](https://www.w3schools.com/html/html\_ifr
 
     Note that not all websites allow you to display their page in an _Iframe_ widget.
 
-### [Using the Iframe Widget](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/additional-content-display-options/using-the-iframe-widget#using-the-iframe-widget-1) <a href="#using-the-iframe-widget-1" id="using-the-iframe-widget-1"></a>
+### Using the Iframe Widget <a href="#using-the-iframe-widget-1" id="using-the-iframe-widget-1"></a>
 
 Using the _Iframe_ widget is as simple as navigating any other typical website. Once you have finished setting up your widget, you can navigate to your page and view the embedded website.
 

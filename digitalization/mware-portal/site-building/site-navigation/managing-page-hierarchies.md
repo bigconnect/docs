@@ -1,6 +1,6 @@
 # Managing Page Hierarchies
 
-With Liferay, you can organize pages into hierarchies to achieve the desired structure for your site. This can be done by directly [adding child pages](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/adding-a-page-to-a-site#adding-a-child-page) to an existing page or by reorganizing existing pages into parent/child relationships.
+With MWARE Portal, you can organize pages into hierarchies to achieve the desired structure for your site. This can be done by directly adding child pages to an existing page or by reorganizing existing pages into parent/child relationships.
 
 To view a site’s page hierarchy, open the _Site Menu_ (![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)), expand _Site Builder_, and click _Pages_. This is the main reference for the organization of pages on that site. While Navigation Menus are customized to show some of the pages, this menu is always the primary reference for the pages on your site.
 
@@ -12,9 +12,9 @@ You can drag and drop pages to reorganize them in the hierarchy. Pages can be ne
 
 ![Drag and drop pages to create the desired hierarchy.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-navigation/managing-page-hierarchies/images/02.png)
 
-Create new pages in _Site Builder_ → _Pages_. See [Adding a Page to a Site](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/adding-a-page-to-a-site) to learn how to add a page.
+Create new pages in _Site Builder_ → _Pages_. See Adding a Page to a Site to learn how to add a page.
 
-### [Configuring Page Options](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/managing-page-hierarchies#configuring-page-options) <a href="#configuring-page-options" id="configuring-page-options"></a>
+### Configuring Page Options <a href="#configuring-page-options" id="configuring-page-options"></a>
 
 Users can access page options by clicking _Options_ (![Option](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-options.png)).
 
@@ -27,7 +27,7 @@ Users can access page options by clicking _Options_ (![Option](https://resources
 | **Orphan Widgets** | Clears the data related to widgets that have been removed from the page. |
 | **Delete**         | Deletes the page and all its data.                                       |
 
-### [Using the Page Tree](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/managing-page-hierarchies#using-the-page-tree) <a href="#using-the-page-tree" id="using-the-page-tree"></a>
+### Using the Page Tree <a href="#using-the-page-tree" id="using-the-page-tree"></a>
 
 Another way to manage a site’s page hierarchy is to use the _Page Tree_. Here, you can view and configure the pages in the current site.
 

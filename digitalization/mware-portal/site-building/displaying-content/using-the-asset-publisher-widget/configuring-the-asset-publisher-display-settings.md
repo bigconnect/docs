@@ -2,30 +2,30 @@
 
 When using an Asset Publisher widget, you can configure several display settings to specify how users view your content.
 
-1. Create a [new page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/adding-a-page-to-a-site) or [edit an existing one](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/adding-elements-to-content-pages)
+1. Create a new page or edit an existing one
 2. While editing the page, look at the Fragments and Widgets tab on the left of the page editor and search for the _Asset Publisher_ widget.
 3. Drag and drop the _Asset Publisher_ widget into the editing area.
-4. [Select your assets](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/selecting-assets-in-the-asset-publisher-widget).
+4. Select your assets.
 5. Hover over the Asset Publisher and click _Options_ (![Options icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png)) in the widget’s menu → _Configuration_.
-6. Follow the [Asset Publisher Display Configuration Reference](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-display-settings#asset-publisher-display-configuration-reference) and configure your widget.
+6. Follow the Asset Publisher Display Configuration Reference and configure your widget.
 7. Click _Save_ to apply your display settings.
 
 Now, users can view the Asset Publisher widget displayed in the page as you configured it.
 
-### [Asset Publisher Display Configuration Reference](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-display-settings#asset-publisher-display-configuration-reference) <a href="#asset-publisher-display-configuration-reference" id="asset-publisher-display-configuration-reference"></a>
+### Asset Publisher Display Configuration Reference <a href="#asset-publisher-display-configuration-reference" id="asset-publisher-display-configuration-reference"></a>
 
-#### [Display Settings](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-display-settings#display-settings) <a href="#display-settings" id="display-settings"></a>
+#### Display Settings <a href="#display-settings" id="display-settings"></a>
 
 These templates are in every site by default:
 
-| Display Template | Scope    | Description                                                                                                                                                                                                                                                                                                                      |
-| ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Abstracts        | instance | Displays the first 200-500 characters of the content, defined by the **Abstract Length** field. This is the default display template.                                                                                                                                                                                            |
-| Table            | instance | Displays the content in an HTML table which can be styled by a theme developer                                                                                                                                                                                                                                                   |
-| Title List       | instance | Displays the content’s title as defined by the user who entered it                                                                                                                                                                                                                                                               |
-| Full Content     | instance | Displays the entire content of the entry                                                                                                                                                                                                                                                                                         |
-| Map              | global   | displays [geo-localized assets](https://learn.liferay.com/web/guest/w/dxp/site-building/site-settings/site-content-configurations/configuring-geolocation-for-assets) in either a Google Map or an Open Street Map provider. The map provider can be configured in Instance Settings, and Site Settings in the Advanced section. |
-| Rich Summary     | global   | Displays a summary view of each asset along with a Read More link to the article’s full content                                                                                                                                                                                                                                  |
+| Display Template | Scope    | Description                                                                                                                                                                              |
+| ---------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Abstracts        | instance | Displays the first 200-500 characters of the content, defined by the **Abstract Length** field. This is the default display template.                                                    |
+| Table            | instance | Displays the content in an HTML table which can be styled by a theme developer                                                                                                           |
+| Title List       | instance | Displays the content’s title as defined by the user who entered it                                                                                                                       |
+| Full Content     | instance | Displays the entire content of the entry                                                                                                                                                 |
+| Map              | global   | displays geo-localized assets in either a Google Map or an Open Street Map provider. The map provider can be configured in Instance Settings, and Site Settings in the Advanced section. |
+| Rich Summary     | global   | Displays a summary view of each asset along with a Read More link to the article’s full content                                                                                          |
 
 These are the remaining settings for the Display Settings section:
 
@@ -44,7 +44,7 @@ However, when there is only one dynamic Asset Publisher with the View on New Pag
 
 ![Several display settings are available for the Asset Publisher.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-display-settings/images/01.png)
 
-#### [Set and Enable Options](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-display-settings#set-and-enable-options) <a href="#set-and-enable-options" id="set-and-enable-options"></a>
+#### Set and Enable Options <a href="#set-and-enable-options" id="set-and-enable-options"></a>
 
 Many of these options, such as printing, flags, ratings, comments, comment ratings, and social bookmarks work the same way they do in other applications.
 
@@ -66,18 +66,18 @@ TIP
 
 An alternate way to add flags, comments, and ratings to a page is through the Page Flags, Page Comments, and Page Ratings applications. Add the applications in the appropriate location near the asset that should have feedback.
 
-#### [Metadata](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-display-settings#metadata) <a href="#metadata" id="metadata"></a>
+#### Metadata <a href="#metadata" id="metadata"></a>
 
 This section specifies what metadata to display with the asset entry. Move metadata from the Available box to the Current box to include it.
 
 ![You can display several different types of metadata with the asset.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-display-settings/images/03.png)
 
-#### [Grouping](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-display-settings#grouping) <a href="#grouping" id="grouping"></a>
+#### Grouping <a href="#grouping" id="grouping"></a>
 
-The Grouping section specifies dividing the displayed assets into groups. You can group assets by type or by [vocabulary](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content).
+The Grouping section specifies dividing the displayed assets into groups. You can group assets by type or by vocabulary.
 
 ![You can separate assets into different groups.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-display-settings/images/04.png)
 
-For example, suppose you have a vocabulary called Membership Type with two categories: Premium and Regular. If you group assets by Membership Type, all assets with the Premium category appear in one group and all assets with the Regular category appear in another group. Grouping rules are applied before any [ordering rules](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/selecting-assets-in-the-asset-publisher-widget#dynamic). The ordering rules are applied separately to each group of assets.
+For example, suppose you have a vocabulary called Membership Type with two categories: Premium and Regular. If you group assets by Membership Type, all assets with the Premium category appear in one group and all assets with the Regular category appear in another group. Grouping rules are applied before any ordering rules. The ordering rules are applied separately to each group of assets.
 
 \

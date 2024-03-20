@@ -28,9 +28,7 @@ NOTE
 
 Editing inline text requires the edit inline content permission.
 
-### [For Liferay DXP/Portal 7.3](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/managing-content-in-content-pages#for-liferay-dxpportal-73) <a href="#for-liferay-dxpportal-73" id="for-liferay-dxpportal-73"></a>
-
-For Liferay DXP/Portal 7.3, you can review web content deployed using fragments and widgets in the Contents panel (![Contents](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-list-ul.png)).
+You can review web content deployed using fragments and widgets in the Contents panel (![Contents](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-list-ul.png)).
 
 1. Edit or create a content page, master page template, page template, or display page template.
 2. Open the _Contents_ panel ( ![Contents panel](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-list-ul.png) ) in the sidebar.

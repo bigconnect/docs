@@ -1,12 +1,12 @@
 # Using Custom Fields in Page Fragments
 
-If you’ve added [custom fields](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/adding-custom-fields) to Liferay’s users or pages, you can access them in fragments. To get the value of a page custom field, use
+If you’ve added custom fields to the portal’s users or pages, you can access them in fragments. To get the value of a page custom field, use
 
 ```ftl
 layout.getExpandoBridge().getAttribute("ATTRIBUTE_NAME")
 ```
 
-To use a page custom field in a fragment, first [add the custom field](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/adding-custom-fields), then add or edit a page fragment via the fragments editor, from the Site Menu → Fragments.
+To use a page custom field in a fragment, first add the custom field, then add or edit a page fragment via the fragments editor, from the Site Menu → Fragments.
 
 This example HTML uses the custom field `showFooter` to show or hide the placeholder `footer` element on a page:
 

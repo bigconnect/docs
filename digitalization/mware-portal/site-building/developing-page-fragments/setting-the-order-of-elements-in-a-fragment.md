@@ -1,18 +1,18 @@
 # Setting the Order of Elements in a Fragment
 
-The [Slider](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/default-fragments-reference) or [Tab](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/default-fragments-reference) fragments are typically used to show different areas of information. Sliders present this information in a carousel of slides. Tabs have multiple tabs, each one containing different information.
+The Slider or Tab fragments are typically used to show different areas of information. Sliders present this information in a carousel of slides. Tabs have multiple tabs, each one containing different information.
 
-When configuring Slider or Tab Fragments in a Page or Template, their sub-elements are listed in the _Selection_ panel (![Selection](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-pages-tree.png)) in the sidebar menu. Before Liferay DXP 7.4, these elements were not presented in order. This made it difficult to identify how the Slider or Tab elements were grouped, especially for Fragments with many elements.
+When configuring Slider or Tab Fragments in a Page or Template, their sub-elements are listed in the _Selection_ panel (![Selection](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-pages-tree.png)) in the sidebar menu. Before version 7.4, these elements were not presented in order. This made it difficult to identify how the Slider or Tab elements were grouped, especially for Fragments with many elements.
 
-![Liferay DXP 7.4+ shows the order of elements in a Fragment in order.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/developing-page-fragments/setting-the-order-of-elements-in-a-fragment/images/01.png)
+![Version 7.4+ shows the order of elements in a Fragment in order.](<../../../../.gitbook/assets/01 (2).png>)
 
-Starting with Liferay DXP 7.4, the Slider and Tab Fragments show their elements in order. Additionally, Liferay DXP 7.4 includes the new `data-lfr-priority` HTML attribute to set the order of elements in a Fragment. Elements with a lower `data-lfr-priority` value have precedence in the Selection list, independently of their order in the HTML code.
+Starting with version 7.4, the Slider and Tab Fragments show their elements in order. Additionally, version 7.4 includes the new `data-lfr-priority` HTML attribute to set the order of elements in a Fragment. Elements with a lower `data-lfr-priority` value have precedence in the Selection list, independently of their order in the HTML code.
 
-### [Customizing the Order of Elements in the Slider Fragment](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/setting-the-order-of-elements-in-a-fragment#customizing-the-order-of-elements-in-the-slider-fragment) <a href="#customizing-the-order-of-elements-in-the-slider-fragment" id="customizing-the-order-of-elements-in-the-slider-fragment"></a>
+### Customizing the Order of Elements in the Slider Fragment <a href="#customizing-the-order-of-elements-in-the-slider-fragment" id="customizing-the-order-of-elements-in-the-slider-fragment"></a>
 
 1. Go to _Site Administration_ → _Design_ → _Fragments_.
 2. Under _Fragment Sets_, click the Set with the Fragment you want to customize.
-3.  Click on the Slider or Tab Fragment’s _Actions_ (![Action](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) button and select _Edit_ to open the [Fragments Editor](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/using-the-fragments-editor).
+3.  Click on the Slider or Tab Fragment’s _Actions_ (![Action](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) button and select _Edit_ to open the Fragments Editor.
 
     ![Edit the imported Fragment to open the Fragment Editor.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/developer-guide/developing-page-fragments/setting-the-order-of-elements-in-a-fragment/images/06.png)
 4.  In the HTML code area, you can Edit the Slider Fragment code. Add the `data-lfr-priority` attribute to the Editable or Drop Zone areas. This example configures the carousel elements to use this order:
@@ -61,10 +61,10 @@ Starting with Liferay DXP 7.4, the Slider and Tab Fragments show their elements 
 
     You don’t need to edit other parts of the Fragment’s code, like JavaScript, CSS, or configuration.
 
-### [Verifying the New Order of Elements in the Content Page Editor](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/setting-the-order-of-elements-in-a-fragment#verifying-the-new-order-of-elements-in-the-content-page-editor) <a href="#verifying-the-new-order-of-elements-in-the-content-page-editor" id="verifying-the-new-order-of-elements-in-the-content-page-editor"></a>
+### Verifying the New Order of Elements in the Content Page Editor <a href="#verifying-the-new-order-of-elements-in-the-content-page-editor" id="verifying-the-new-order-of-elements-in-the-content-page-editor"></a>
 
 1. Go to _Site Administration_ → _Site Builder_ → _Pages_.
-2. Edit the Content Page where you want to add the Slider Fragment sample (or [add a new Page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/adding-a-page-to-a-site)).
+2. Edit the Content Page where you want to add the Slider Fragment sample (or add a new Page).
 3. From the Content Page sidebar, click _Fragments and Widgets_ (![Fragments and Widgets](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add-widget.png)).
 4. Under the Fragments column, find the Slider or Tab Fragment you want to show.
 5. Drag and drop the Fragment onto the editing area.
@@ -72,6 +72,6 @@ Starting with Liferay DXP 7.4, the Slider and Tab Fragments show their elements 
 
     NOTE
 
-    Slider or Tab Fragments that you import from a version prior to Liferay DXP 7.4 appear in order in the Content Page Editor sidebar but don’t include the `data-lfr-priority` HTML attribute. You must edit the HTML Fragment code to include this attribute.
+    Slider or Tab Fragments that you import from a version prior to version 7.4 appear in order in the Content Page Editor sidebar but don’t include the `data-lfr-priority` HTML attribute. You must edit the HTML Fragment code to include this attribute.
 
 \

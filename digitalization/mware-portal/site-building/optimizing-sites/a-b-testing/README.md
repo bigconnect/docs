@@ -6,17 +6,17 @@ Consider the following example. A bank’s marketing team creates a Content Page
 
 ![Using A/B Test to compare the efficiency of two different call-to-action buttons](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/optimizing-sites/ab-testing/ab-testing/images/01.png)
 
-To run A/B Tests, you must have your Liferay DXP instance [connected to Liferay Analytics Cloud](https://learn.liferay.com/analytics-cloud/latest/en/connecting-data-sources/connecting-liferay-dxp-to-analytics-cloud.html). Here’s the process:
+To run A/B Tests, you must have your portal instance connected to Liferay Analytics Cloud. Here’s the process:
 
-* You create the A/B test in Liferay DXP.
+* You create the A/B test in the portal.
 * The A/B test automatically synchronizes with Analytics Cloud.
-* Start or terminate the A/B test in Liferay DXP.
-* Liferay DXP and Analytics Cloud show your test’s status and the results of the variant.
+* Start or terminate the A/B test in the portal.
+* The portal and Analytics Cloud show your test’s status and the results of the variant.
 * You manage other aspects of your A/B test in Analytics Cloud (test history, statistics, variant performance, etc.)
 
 IMPORTANT
 
-A/B testing is not supported if [staging](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging) is enabled in your Liferay instance.
+A/B testing is not supported if staging is enabled in your portal instance.
 
-For more information about working with A/B Testing in Analytics Cloud, [A/B Testing](https://learn.liferay.com/analytics-cloud/latest/en/optimization/a-b-testing.html).
+For more information about working with A/B Testing in Analytics Cloud, A/B Testing.
 

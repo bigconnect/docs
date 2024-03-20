@@ -18,7 +18,7 @@ Follow these steps to save a Fragment composition:
 4. Enter a Name for the Fragment.
 5. (Optional) Add a _thumbnail_ and _description_ for the new Fragment.
 6. Determine whether to save the composition’s _inline content_ (e.g., links, text, images)
-7. Determine whether to save the composition’s [_mapping configuration_](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/configuring-fragments/fragment-sub-elements-reference#mapping-settings).
+7. Determine whether to save the composition’s _mapping configuration_.
 8.  Select the desired Fragment Set for the new Fragment.
 
     If no available Fragment Set exists, the composition is saved automatically to a new Set called Saved Fragments.
@@ -32,35 +32,35 @@ To view and manage saved compositions, open the _Site Menu_ and go to _Design_ �
 
 NOTE
 
-In Liferay DXP 7.1 and 7.2, open the _Product Menu_, and go to _Site_ → _Site Builder_ → _Page Fragments_.
+In version 7.1 and 7.2, open the _Product Menu_, and go to _Site_ → _Site Builder_ → _Page Fragments_.
 
-From here, you can rename saved compositions, change their thumbnail image, or export them as a `.zip` file, move them between Sets, or delete them. See [Managing Fragments](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/managing-fragments) for more information.
+From here, you can rename saved compositions, change their thumbnail image, or export them as a `.zip` file, move them between Sets, or delete them. See Managing Fragments for more information.
 
 ![The saved Fragment composition can be used immediately.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions/images/03.png)
 
 NOTE
 
-The latest version of the [Liferay Fragments Toolkit](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragments-toolkit-command-reference) supports creation, export/import, and preview of Fragment compositions.
+The latest version of the Fragments Toolkit supports creation, export/import, and preview of Fragment compositions.
 
-### [Example: Creating a Banner Composition](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions#example-creating-a-banner-composition) <a href="#example-creating-a-banner-composition" id="example-creating-a-banner-composition"></a>
+### Example: Creating a Banner Composition <a href="#example-creating-a-banner-composition" id="example-creating-a-banner-composition"></a>
 
 This step-by-step example shows you how to create a banner-style composition using nested Container Fragments. The example also illustrates how to save the composition and adjust its settings in the Style Book.
 
 ![Example of a sample Fragment composition using the Container Fragment](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions/images/04.png)
 
-* [Step 1: Creating a New Content Page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions#step-1-creating-a-new-content-page).
-* [Step 2: Configuring the Container Fragment](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions#step-2-configuring-the-container-fragment).
-* [Step 3: Saving the Fragment Composition](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions#step-3-saving-the-fragment-composition).
-* [Step 4: Setting the Default Container Width in the Style Book](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions#step-4-setting-the-default-container-width-in-the-style-book).
+* Step 1: Creating a New Content Page.
+* Step 2: Configuring the Container Fragment.
+* Step 3: Saving the Fragment Composition.
+* Step 4: Setting the Default Container Width in the Style Book.
 
-#### [Step 1: Creating a New Content Page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions#step-1-creating-a-new-content-page) <a href="#step-1-creating-a-new-content-page" id="step-1-creating-a-new-content-page"></a>
+#### Step 1: Creating a New Content Page <a href="#step-1-creating-a-new-content-page" id="step-1-creating-a-new-content-page"></a>
 
 1. Under the Site Menu, go to _Site Builder_ → _Pages_.
 2. Click _Add_ (![Add Page](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-plus.png)) at the level where you want to add the new Page and select _Add Page_.
 3. Select the _Blank_ template or one of the existing templates.
 4. In the _Add Page_ dialog, type your Page’s _Name_.
 
-#### [Step 2: Configuring the Container Fragment](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions#step-2-configuring-the-container-fragment) <a href="#step-2-configuring-the-container-fragment" id="step-2-configuring-the-container-fragment"></a>
+#### Step 2: Configuring the Container Fragment <a href="#step-2-configuring-the-container-fragment" id="step-2-configuring-the-container-fragment"></a>
 
 1.  From the Content Page sidebar, select _Fragments and Widgets_ (![Fragments and Widgets](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-plus.png)) and drag and drop the _Container_ Fragment over the default drop-zone.
 
@@ -90,15 +90,15 @@ NOTE
 
 You don’t need to Publish the Content Page. In-progress work on a Content Page is automatically saved as a draft.
 
-#### [Step 3: Saving the Fragment Composition](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions#step-3-saving-the-fragment-composition) <a href="#step-3-saving-the-fragment-composition" id="step-3-saving-the-fragment-composition"></a>
+#### Step 3: Saving the Fragment Composition <a href="#step-3-saving-the-fragment-composition" id="step-3-saving-the-fragment-composition"></a>
 
 Follow the above steps to save the composition as a new fragment.
 
 ![Saving your Fragment Composition from the Container Option menu.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions/images/12.png)
 
-#### [Step 4: Setting the Default Container Width in the Style Book](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions#step-4-setting-the-default-container-width-in-the-style-book) <a href="#step-4-setting-the-default-container-width-in-the-style-book" id="step-4-setting-the-default-container-width-in-the-style-book"></a>
+#### Step 4: Setting the Default Container Width in the Style Book <a href="#step-4-setting-the-default-container-width-in-the-style-book" id="step-4-setting-the-default-container-width-in-the-style-book"></a>
 
-By default, the Container Fragment uses a _Fluid_ width configuration. You can change the default setting to _Fixed Width_, and make this property available for other Content Pages based on the same Style Book. In this example with two nested Containers, you may want to configure the outer Container to adapt to the Page width while limiting the maximum width of Container with the text. To learn more about Style Books in Liferay DXP, read [Using a Style Book to Standardize Site Appearance](https://learn.liferay.com/web/guest/w/dxp/site-building/site-appearance/style-books/using-a-style-book-to-standardize-site-appearance).
+By default, the Container Fragment uses a _Fluid_ width configuration. You can change the default setting to _Fixed Width_, and make this property available for other Content Pages based on the same Style Book. In this example with two nested Containers, you may want to configure the outer Container to adapt to the Page width while limiting the maximum width of Container with the text. To learn more about Style Books in MWARE Portal, read Using a Style Book to Standardize Site Appearance.
 
 ![You can change the Container Width property to use a fixed width or adapt to the Page width.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions/images/14.gif)
 
@@ -125,14 +125,12 @@ To avoid breaking your Site layout configuration, use a test environment when wo
     ![Change the Extra Large option under the Style Book Layout setting to update the Container Fragment maximum width.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions/images/19.png)
 8. Click _Publish_ to update your Style Book with the new configuration.
 
-### [Creating Advanced Compositions with the Container Fragment](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions#creating-advanced-compositions-with-the-container-fragment) <a href="#creating-advanced-compositions-with-the-container-fragment" id="creating-advanced-compositions-with-the-container-fragment"></a>
-
-> Available: Liferay DXP/Portal 7.4+.
+### Creating Advanced Compositions with the Container Fragment <a href="#creating-advanced-compositions-with-the-container-fragment" id="creating-advanced-compositions-with-the-container-fragment"></a>
 
 When you configure one or more Containers inside another Container Fragment, you can define advanced display options using a _Flex_ display.
 
 1. Under the Site Menu, go to _Site Builder_ → _Pages_.
-2. [Create a new Content Page](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/adding-pages/adding-a-page-to-a-site) or open an existing page with a Container-based composition. You can use [this example](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/saving-fragment-compositions#example-creating-a-banner-composition) to create a basic composition using the Container Fragment.
+2. Create a new Content Page or open an existing page with a Container-based composition. You can use this example to create a basic composition using the Container Fragment.
 3. Click the _Browser_ (![Browser](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-hierarchy.png)) button.
 4. Select the Container Fragment that groups the elements where you want to apply the advanced composition. For example, if you have a Container with Fragments in it, select the outer Container.
 5. Under the Styles section, click the _Content Display_ drop-down menu and select one of the available _Flex_ options.

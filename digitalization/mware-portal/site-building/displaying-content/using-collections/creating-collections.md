@@ -1,8 +1,8 @@
 # Creating Collections
 
-You can create _Manual_ or _Dynamic_ Collections. For information about the different types of Collections, see [About Collections and Collection Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/about-collections-and-collection-pages).
+You can create _Manual_ or _Dynamic_ Collections. For information about the different types of Collections, see About Collections and Collection Pages.
 
-### [Creating a Manual Collection](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections#creating-a-manual-collection) <a href="#creating-a-manual-collection" id="creating-a-manual-collection"></a>
+### Creating a Manual Collection <a href="#creating-a-manual-collection" id="creating-a-manual-collection"></a>
 
 1. Go to _Site Administration_ → _Site Builder_ → _Collections_.
 2. Click on the _New_ button (![Add](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) and select _Manual Collection_.
@@ -35,7 +35,7 @@ NOTE
 
 While Documents and Media and Web Content folders can be added to a collection, the content is not displayed when the folder is published on a Collections Page or in an Asset Publisher widget. Even if these assets are added to a collection, they can only be viewed separately. This is a known limitation and will be fixed in a future release.
 
-### [Creating a Dynamic Collection](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections#creating-a-dynamic-collection) <a href="#creating-a-dynamic-collection" id="creating-a-dynamic-collection"></a>
+### Creating a Dynamic Collection <a href="#creating-a-dynamic-collection" id="creating-a-dynamic-collection"></a>
 
 1. Go to _Site Administration_ → _Site Builder_ → _Collections_.
 2. Click on the _New_ button (![Add](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) and select _Dynamic Collection_.
@@ -67,7 +67,7 @@ While Documents and Media and Web Content folders can be added to a collection, 
 
     You can add multiple rules to your Filter clicking on the Add button. The final content in the Dynamic Collection is the result of adding all the rules.
 
-    **Content Recommendation:** Enable this option to display content based on user behavior. For more information, see [Configuring Content Recommendations](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/configuring-content-recommendations).
+    **Content Recommendation:** Enable this option to display content based on user behavior. For more information, see Configuring Content Recommendations.
 
     NOTE
 
@@ -76,9 +76,9 @@ While Documents and Media and Web Content folders can be added to a collection, 
     **Ordering:** Items in the collection appear using the order criteria you define here.
 6. Click _Save_.
 
-### [Creating a Collection from an Asset Publisher](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections#creating-a-collection-from-an-asset-publisher) <a href="#creating-a-collection-from-an-asset-publisher" id="creating-a-collection-from-an-asset-publisher"></a>
+### Creating a Collection from an Asset Publisher <a href="#creating-a-collection-from-an-asset-publisher" id="creating-a-collection-from-an-asset-publisher"></a>
 
-You can create a new Collection from an [Asset Publisher Widget](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/displaying-assets-using-the-asset-publisher-widget). This is useful when you have an Asset Publisher customization that you want to use as a Collection in other pages.
+You can create a new Collection from an Asset Publisher Widget. This is useful when you have an Asset Publisher customization that you want to use as a Collection in other pages.
 
 ![You can transform an Asset Publisher widget into a Collection.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/displaying-content/collections-and-collection-pages/creating-collections/images/06.png)
 
@@ -97,13 +97,11 @@ You can create a new Collection from an [Asset Publisher Widget](https://learn.l
 7. Close the _Asset Publisher - Configuration_ dialog.
 8. Find your new Collection in _Site Administration_ → _Site Builder_ → _Collections_.
 
-### [Liferay DXP 7.2](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections#liferay-dxp-72) <a href="#liferay-dxp-72" id="liferay-dxp-72"></a>
+#### Creating Content Sets <a href="#creating-content-sets" id="creating-content-sets"></a>
 
-#### [Creating Content Sets](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections#creating-content-sets) <a href="#creating-content-sets" id="creating-content-sets"></a>
+You can create Content Sets through the Content Sets interface in Site Administration. Content Sets can use either Manual or Dynamic selection. You can create any number of Content Sets and display them through the Asset Publisher or custom applications. Content Sets can also have personalized variations that provide different experiences for different users based on criteria that you specify. Criteria management is shared with the Asset Publisher. For more information on each option, see Selecting Assets in the Asset Publisher.
 
-You can create Content Sets through the Content Sets interface in Site Administration. Content Sets can use either Manual or Dynamic selection. You can create any number of Content Sets and display them through the Asset Publisher or custom applications. Content Sets can also have [personalized variations](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/experience-personalization/personalizing-collections#content-set-personalization) that provide different experiences for different users based on criteria that you specify. Criteria management is shared with the Asset Publisher. For more information on each option, see [Selecting Assets in the Asset Publisher](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/selecting-assets-in-the-asset-publisher-widget).
-
-[**Creating a Manual Content Set**](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections#creating-a-manual-content-set)
+**Creating a Manual Content Set**
 
 To demonstrate the creation of a Manual Content Set, create a Content Set that contains a number of images to be displayed on the Frontpage of the fictitious Space Program website. To prepare for this exercise, upload some appropriate images to _Documents and Media_ to use for the Content Set.
 
@@ -122,7 +120,7 @@ On the next screen, you can select the assets to include in the Content Set.
 
 Now this Content Set can be displayed anywhere on the site where it was created. You can add or remove items from the set, and it will automatically update it wherever it is displayed.
 
-[**Creating a Dynamic Content Set**](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections#creating-a-dynamic-content-set)
+**Creating a Dynamic Content Set**
 
 To demonstrate the creation of a Dynamic Content Set, create a Content Set that contains a number of varied assets that are tagged as “trending.” In order for this to work, you will need some number of existing assets with the appropriate tag.
 
@@ -140,11 +138,11 @@ With Dynamic Content Sets, you can choose the _Source_, _Scope_, _Filter_, and _
 
 This will create a Content Set which will contain any items that are currently tagged as _trending_ and any future items with the _trending_ tag will be added to the Content Set automatically.
 
-Now that you have your Content Sets created, you can [display them on a page](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#displaying-content-sets).
+Now that you have your Content Sets created, you can display them on a page.
 
-#### [Converting Asset Publisher Configurations to Content Sets](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections#converting-asset-publisher-configurations-to-content-sets) <a href="#converting-asset-publisher-configurations-to-content-sets" id="converting-asset-publisher-configurations-to-content-sets"></a>
+#### Converting Asset Publisher Configurations to Content Sets <a href="#converting-asset-publisher-configurations-to-content-sets" id="converting-asset-publisher-configurations-to-content-sets"></a>
 
-In the previous two guides in this section, you’ve seen [Creating Content Sets](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/creating-collections#creating-content-sets) and [Displaying Content Sets](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#displaying-content-sets) demonstrated. Next, try out converting an existing Asset Publisher configuration to a Content Set.
+In the previous two guides in this section, you’ve seen Creating Content Sets and Displaying Content Sets demonstrated. Next, try out converting an existing Asset Publisher configuration to a Content Set.
 
 In this case, you have an Asset Publisher on a page, which is configured to display images tagged as _trending_ in reverse alphabetical order by title. This might not be too hard to reproduce in the _Content Set_ creator, but it’s even easier to create the Content Set definition directly from the Asset Publisher.
 

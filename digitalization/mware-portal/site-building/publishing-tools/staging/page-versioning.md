@@ -4,7 +4,7 @@ With Page Versioning enabled, you and your team can work in parallel on multiple
 
 NOTE
 
-Staging only supports variations and page history for widget pages. For content page versioning, use Publications. See [Comparing Publishing Tools](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/comparing-publishing-tools) for more information.
+Staging only supports variations and page history for widget pages. For content page versioning, use Publications. See Comparing Publishing Tools for more information.
 
 Enable page versioning during initial page setup or anytime afterward via the Staging Configuration page. Once enabled, you can create, merge, and publish variations for individual pages or groups of pages. You can also manage variation permissions for different user roles.
 
@@ -12,7 +12,7 @@ IMPORTANT
 
 If you use page versioning and later disable it, the history of page versions is removed and only the latest published page versions are preserved. This is true for both Local Live and Remote Live Staging.
 
-### [Types of Variations](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/page-versioning#types-of-variations) <a href="#types-of-variations" id="types-of-variations"></a>
+### Types of Variations <a href="#types-of-variations" id="types-of-variations"></a>
 
 Staging provides two types of variations:
 
@@ -33,7 +33,7 @@ IMPORTANT
 
 Page templates are not recognized by the Staging framework. This means that existing page templates are not viewable or editable on a staged site. If they’re created on a staged site, they are lost if staging is disabled.
 
-### [Creating Variations](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/page-versioning#creating-variations) <a href="#creating-variations" id="creating-variations"></a>
+### Creating Variations <a href="#creating-variations" id="creating-variations"></a>
 
 1.  Click the _Actions_ button ( ![Actions button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png) ) in the Staging bar and select _Site Pages Variation_ or _Page Variations_.
 
@@ -62,7 +62,7 @@ Once created, you can switch between each version of a page or group of pages vi
 
 ![You can switch between each version of a page or group of pages via the drop-down menus in the Staging bar](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/publishing-tools/staging/page-versioning/images/02.png)
 
-### [Merging Variations](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/page-versioning#merging-variations) <a href="#merging-variations" id="merging-variations"></a>
+### Merging Variations <a href="#merging-variations" id="merging-variations"></a>
 
 You can merge two site pages variations. This adds all pages and page variations into a site pages variation without affecting or overwriting its content.
 
@@ -78,8 +78,8 @@ You can merge two site pages variations. This adds all pages and page variations
 
 When two variations of site pages are merged, new pages that don’t exist in the base variation are added to it. And if a page exists in both variations, and at least one version of the page is marked as ready for publishing, the latest version marked as ready is added as a new variation for its corresponding page in the base variation. Older variations not marked as ready for publishing are not copied.
 
-### [Managing Variation Permissions](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/page-versioning#managing-variation-permissions) <a href="#managing-variation-permissions" id="managing-variation-permissions"></a>
+### Managing Variation Permissions <a href="#managing-variation-permissions" id="managing-variation-permissions"></a>
 
-You can use permissions to manage user access to variations. See [Managing Staging Permissions](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/managing-staging-permissions) for more information.
+You can use permissions to manage user access to variations. See Managing Staging Permissions for more information.
 
 \

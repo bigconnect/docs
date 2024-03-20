@@ -1,35 +1,35 @@
 # Configuring Menu Displays
 
-To display and configure a [menu display](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/using-the-navigation-menus-application), you can use the [Menu display fragment](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/configuring-menu-displays#configuring-the-menu-display-fragment) or a [menu display widget](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/configuring-menu-displays#configuring-the-menu-display-widget). With either of these two options, you can define the menu display options, levels, and behavior for your site.
+To display and configure a menu display, you can use the Menu display fragment or a menu display widget. With either of these two options, you can define the menu display options, levels, and behavior for your site.
 
 TIP
 
-If you are new to Liferay, use the menu display fragment to get started with building your site’s navigation menus. The menu display fragment provides preview options that work with [master page templates](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/defining-headers-and-footers/creating-a-master-page-template) and ease of configuration that menu display widgets do not provide.
+If you are new to MWARE Portal, use the menu display fragment to get started with building your site’s navigation menus. The menu display fragment provides preview options that work with master page templates and ease of configuration that menu display widgets do not provide.
 
-### [Configuring the Menu Display Fragment](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/configuring-menu-displays#configuring-the-menu-display-fragment) <a href="#configuring-the-menu-display-fragment" id="configuring-the-menu-display-fragment"></a>
+### Configuring the Menu Display Fragment <a href="#configuring-the-menu-display-fragment" id="configuring-the-menu-display-fragment"></a>
 
 Available 7.4+
 
-You can create a navigation menu anywhere in your content page. This navigation menu is based on your site’s pages hierarchy or any other hierarchy you define using Liferay’s [navigation menus application](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/using-the-navigation-menus-application). You can also define the menu display style options and the number of sub-levels to include in the navigation.
+You can create a navigation menu anywhere in your content page. This navigation menu is based on your site’s pages hierarchy or any other hierarchy you define using the portal’s navigation menus application. You can also define the menu display style options and the number of sub-levels to include in the navigation.
 
-The Menu Display fragment appears under the Fragments and Widget section of your content page. You add and configure this fragment as with other fragments in your content pages. For more information, see [Adding Elements to Content Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/using-content-pages/adding-elements-to-content-pages) and [Configuring Fragments](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/configuring-fragments).
+The Menu Display fragment appears under the Fragments and Widget section of your content page. You add and configure this fragment as with other fragments in your content pages. For more information, see Adding Elements to Content Pages and Configuring Fragments.
 
 ![The Menu Display fragment appears under the Fragments and Widget section of your content page.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-navigation/configuring-menu-displays/images/01.png)
 
 You can build the hierarchy of pages and subpages in the Menu Display fragment using two methods:
 
-* **Site Navigation Menus** (A) uses the menus you define using the Liferay DXP navigation menu for site navigation. By default, Liferay DXP provides two site menus based on the pages hierarchy in your site.
+* **Site Navigation Menus** (A) uses the menus you define using the portal navigation menu for site navigation. By default, the portal provides two site menus based on the pages hierarchy in your site.
 * **Contextual Menus** (B) shows a menu that is based on the page context. For example, you can create a more advanced navigation by combining a first-level Menu Display fragment linked to one of your site menus with a second-level Menu Display fragment that only shows the child pages. This way, when the user clicks through the different pages in the first-level menu, the second-level menu changes dynamically to show the children pages.
 
 ![You can define the hierarchy of the Menu Display fragment from your site menus or from contextual menus.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-navigation/configuring-menu-displays/images/02.png)
 
-### [Configuring the Menu Display Widget](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/configuring-menu-displays#configuring-the-menu-display-widget) <a href="#configuring-the-menu-display-widget" id="configuring-the-menu-display-widget"></a>
+### Configuring the Menu Display Widget <a href="#configuring-the-menu-display-widget" id="configuring-the-menu-display-widget"></a>
 
 Below are all the options possible in the Menu Display widget. To access the configuration menu, click _Options_ ( ![Options icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-widget-options.png) ) at the top of the Menu Display widget.
 
 ![Navigate to the configuration menu.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-navigation/configuring-menu-displays/images/03.png)
 
-#### [Navigation Menu](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/configuring-menu-displays#navigation-menu) <a href="#navigation-menu" id="navigation-menu"></a>
+#### Navigation Menu <a href="#navigation-menu" id="navigation-menu"></a>
 
 Select the desired navigation menu type; the desired navigation menu type appears in the preview box.
 
@@ -44,9 +44,9 @@ Alternately, you can choose an existing navigation menu by selecting _Choose Men
 
 ![Select the type of navigation menu.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-navigation/configuring-menu-displays/images/04.png)
 
-#### [Display Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/configuring-menu-displays#display-templates) <a href="#display-templates" id="display-templates"></a>
+#### Display Templates <a href="#display-templates" id="display-templates"></a>
 
-You can select a [widget template](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/additional-content-display-options/styling-widgets-with-widget-templates) for navigation menus:
+You can select a widget template for navigation menus:
 
 ![Select the display template.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/site-navigation/configuring-menu-displays/images/05.png)
 
@@ -63,7 +63,7 @@ You can select a [widget template](https://learn.liferay.com/web/guest/w/dxp/sit
 | **Bar Default Styled**             | The default embedded menu.                                                                   |
 | **Split Button Dropdowns**         | Displays each item as a button with a dropdown for multiple navigation levels.               |
 
-#### [Menu Items to Show](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/configuring-menu-displays#menu-items-to-show) <a href="#menu-items-to-show" id="menu-items-to-show"></a>
+#### Menu Items to Show <a href="#menu-items-to-show" id="menu-items-to-show"></a>
 
 You can configure which pages at what level from the menu appear in the widget. You can choose the starting level, how many levels deep to display, and how to display sub-levels.
 

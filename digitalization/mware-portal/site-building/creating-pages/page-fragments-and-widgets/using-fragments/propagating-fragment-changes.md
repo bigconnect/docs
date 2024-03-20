@@ -1,15 +1,15 @@
 # Propagating Fragment Changes
 
-By default, [changes](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/using-the-fragments-editor) made to a custom fragment’s code are not propagated to deployed instances of the fragment. Using Fragment Propagation, you can propagate changes to fragment instances in one of two ways:
+By default, changes made to a custom fragment’s code are not propagated to deployed instances of the fragment. Using Fragment Propagation, you can propagate changes to fragment instances in one of two ways:
 
-* [Manually for individual instances of a fragment](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/propagating-fragment-changes#manually-propagating-changes)
-* [Automatically for all instances of a fragment](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/propagating-fragment-changes#automatically-propagating-changes)
+* Manually for individual instances of a fragment
+* Automatically for all instances of a fragment
 
 IMPORTANT
 
-To avoid overwriting data, changes made to editable fields cannot be propagated to the fragment directly. However, you can force propagation by changing the fragment’s field ID. When propagated, the field’s content is no longer displayed, though you can retrieve its content from the database using the old field ID. To learn more, see [Fragment Specific Tags and Attributes Reference](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/reference/fragments/fragment-specific-tags-reference) in the developer documentation.
+To avoid overwriting data, changes made to editable fields cannot be propagated to the fragment directly. However, you can force propagation by changing the fragment’s field ID. When propagated, the field’s content is no longer displayed, though you can retrieve its content from the database using the old field ID. To learn more, see Fragment Specific Tags and Attributes Reference in the developer documentation.
 
-### [Manually Propagating Changes](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/propagating-fragment-changes#manually-propagating-changes) <a href="#manually-propagating-changes" id="manually-propagating-changes"></a>
+### Manually Propagating Changes <a href="#manually-propagating-changes" id="manually-propagating-changes"></a>
 
 Follow these steps to manually propagate changes to individual instances of a fragment:
 
@@ -31,7 +31,7 @@ Follow these steps to manually propagate changes to individual instances of a fr
 
 Changes made to non-editable fields are automatically propagated to the selected fragment instances.
 
-### [Automatically Propagating Changes](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/propagating-fragment-changes#automatically-propagating-changes) <a href="#automatically-propagating-changes" id="automatically-propagating-changes"></a>
+### Automatically Propagating Changes <a href="#automatically-propagating-changes" id="automatically-propagating-changes"></a>
 
 Follow these steps to automatically propagate changes to all instances of a fragment:
 
