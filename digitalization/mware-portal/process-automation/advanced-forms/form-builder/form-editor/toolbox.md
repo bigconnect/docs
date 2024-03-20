@@ -1,14 +1,12 @@
 # Toolbox
 
-### Introduction <a href="#introduction" id="introduction"></a>
-
 The Form Builder toolbox provides the following:
 
 * **Global icons:**
-  * Form Settings \[SINCE Orbeon Forms 2017.2]
+  * Form Settings
   * Cut/copy/paste
-  * Undo/redo \[SINCE Orbeon Forms 2017.2]
-  * "Reload toolbox" \[UNTIL Orbeon Forms 2017.1]
+  * Undo/redo
+  * "Reload toolbox"
 * **Form structure:**
   * New Section
   * New Grid
@@ -28,16 +26,16 @@ Depending on your monitor or browser size, you can use the scrollbar to the righ
 
 The toolbox can be configured via:
 
-* [Properties](https://doc.orbeon.com/configuration/properties/form-builder#toolbox): for selecting and ordering the components that show in the toolbox.
-* [Component metadata](https://github.com/orbeon/orbeon-forms-doc/blob/master/form-builder/form-builder/metadata.md): for the component names.
+* Properties: for selecting and ordering the components that show in the toolbox.
+* Component metadata: for the component names.
 
 ### Cut, copy and paste <a href="#cut-copy-and-paste" id="cut-copy-and-paste"></a>
 
-See [Cut, copy and paste](https://github.com/orbeon/orbeon-forms-doc/blob/master/form-builder/form-builder/cut-copy-paste.md).
+See Cut, copy and paste.
 
 ### Undo and redo <a href="#undo-and-redo" id="undo-and-redo"></a>
 
-See [Undo and redo](https://github.com/orbeon/orbeon-forms-doc/blob/master/form-builder/form-builder/undo-redo.md).
+See Undo and redo.
 
 ### Reloading the toolbox <a href="#reloading-the-toolbox" id="reloading-the-toolbox"></a>
 
@@ -45,32 +43,15 @@ See [Undo and redo](https://github.com/orbeon/orbeon-forms-doc/blob/master/form-
 
 The "Reload Toolbox" icon or button reloads all the components in the toolbox. After reloading:
 
-* The list of controls in the toolbox updates to reflect changes to the [`oxf.fb.toolbox.group` properties](https://doc.orbeon.com/configuration/properties/form-builder#groups-of-controls).
-* The [section templates](https://doc.orbeon.com/form-builder/advanced/section-templates) libraries update.
-* [Section templates](https://doc.orbeon.com/form-builder/advanced/section-templates) used in your form also update to their latest published version.
-
-\[SINCE Orbeon Forms 2019.1]
-
+* The list of controls in the toolbox updates to reflect changes to the `oxf.fb.toolbox.group` properties.
+* The section templates libraries update.
+* Section templates used in your form also update to their latest published version.
 * The list of all available (published) _versions_ of section templates is updated.
 * The currently-selected versions of section templates, if still available, are updated to reflect their latest published.
 
-For more, see [Versioning of section templates](https://doc.orbeon.com/form-builder/advanced/section-templates#versioning-of-section-templates).
-
-#### Orbeon Forms 2017.2 and newer <a href="#orbeon-forms-2017.2-and-newer" id="orbeon-forms-2017.2-and-newer"></a>
-
 The "Reload Toolbox" button is located at the top of the "Advanced" tab.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-6792fc8450886ca68dd55af58966e8f411c03d84%252Fadvanced-menu.png%3Falt=media\&width=300\&dpr=4\&quality=100\&sign=c039813767652bbadfcfb4099a826517472a86b8f50e0350b4ca02727157c4d0)
-
-#### Orbeon Forms 2017.1 and earlier <a href="#orbeon-forms-2017.1-and-earlier" id="orbeon-forms-2017.1-and-earlier"></a>
-
-The "Reload Toolbox" icon is located at the top of the toolbox:
-
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkBvk-GBZtVovi9uko%252Ftoolbox-reload.png%3Fgeneration=1528743340808168%26alt=media\&width=300\&dpr=4\&quality=100\&sign=a46b59c8b065d5fd4a31c9a76c2a64e9fd83fac312ec10cdfbb841049e8c584c)
-
-### Form structure <a href="#form-structure" id="form-structure"></a>
-
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252Fsync%252F08d98dd43484e6224766745e10b57f0189046e15.png%3Fgeneration=1591201837543560%26alt=media\&width=768\&dpr=4\&quality=100\&sign=e2481d447be260b0311827e2c520c123cead0e55aadeaac046171486a2307491)
+<figure><img src="https://doc.orbeon.com/~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-6792fc8450886ca68dd55af58966e8f411c03d84%252Fadvanced-menu.png%3Falt=media&#x26;width=300&#x26;dpr=4&#x26;quality=100&#x26;sign=c039813767652bbadfcfb4099a826517472a86b8f50e0350b4ca02727157c4d0" alt=""><figcaption></figcaption></figure>
 
 #### New Section button <a href="#new-section-button" id="new-section-button"></a>
 
@@ -86,11 +67,9 @@ Pressing this button inserts a new grid into the form. The grid is inserted afte
 
 Pressing this button inserts a new repeated grid into the form. The grid is inserted after the currently selected grid within the currently selected section (the section and grid containing the currently selected control).
 
-See also [Repeated grids](https://doc.orbeon.com/form-builder/form-editor/repeated-grids).
+See also Repeated grids.
 
-\[SINCE Orbeon Forms 2019.1]
-
-You can also switch a regular grid to be repeated. See [Repeat settings](https://doc.orbeon.com/form-builder/form-editor/repeat-settings).
+You can also switch a regular grid to be repeated. See Repeat settings.
 
 ### Form controls <a href="#form-controls" id="form-controls"></a>
 
@@ -117,8 +96,6 @@ To add a control to your form, simply click on the control. The following insert
 
 Once a form control is inserted into the form, you can drag it to a different grid cell in the form: simply click on the arrow icon that shows when you hover over the grid cell, and drag it to the new location.
 
-\[SINCE Orbeon Forms 2022.1]
-
 You can also drag a control directly from the toolbox to a grid cell in the form.
 
 #### Text Controls <a href="#text-controls" id="text-controls"></a>
@@ -142,9 +119,9 @@ The controls appear like this at design time:
 
 | Name                 | Description                                                                                                                                                                                         |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Explanatory Text** | Explanatory text which does not capture a value ([blog post](https://blog.orbeon.com/2015/04/adding-explanatory-text-to-your-forms.html))                                                           |
+| **Explanatory Text** | Explanatory text which does not capture a value                                                                                                                                                     |
 | **Calculated Value** | Like most other controls, this control has a label and hint, but unlike most controls it is not used to enter a value. Instead, it just _shows_ a value, either fixed or calculated with a formula. |
-| **Hidden Field**     | This control supports most features of regular controls, but doesn't show in the form at runtime. See [Hidden field component](https://doc.orbeon.com/form-runner/component/hidden).                |
+| **Hidden Field**     | This control supports most features of regular controls, but doesn't show in the form at runtime.                                                                                                   |
 
 #### Typed Controls <a href="#typed-controls" id="typed-controls"></a>
 
@@ -193,38 +170,28 @@ The controls appear like this at design time:
 | **Dynamic Data Dropdown**      | single    | dynamic dropdown bound to a REST service                     |
 | **Autocomplete**               | single    | autocompletion                                               |
 
-You edit the choices of most selection controls with the [Choices editor](https://doc.orbeon.com/form-builder/form-editor/itemset-editor).
+You edit the choices of most selection controls with the Choices editor.
 
 The controls appear like this at design time:
 
 ![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252Fsync%252Fe09957e0cb20ceb0a70db1f1f7aa7f2b707f986e.png%3Fgeneration=1591206903283281%26alt=media\&width=768\&dpr=4\&quality=100\&sign=de46d75739f48a04f6faa8cf01649a0d0448654cd4c85cb1bd1521a6a46e39bd)
 
-_NOTE: The "Scrollable List" control is deprecated since Orbeon Forms 2016.1 and removed from the toolbox._
-
 #### Attachment Controls <a href="#attachment-controls" id="attachment-controls"></a>
 
 ![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252Fsync%252F95e112086e63dd75ad37e018c2a5e406f245a756.png%3Fgeneration=1591201833651775%26alt=media\&width=768\&dpr=4\&quality=100\&sign=1e0da93c4c4b5f46586fe85d02e681bbde24d8d930db6b15a4f0c77cb6305db7)
 
-| Name                          | Description                                                                                                                                                                                                                                             |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Single File Attachment**    | - file which can be attached to the form at design time or at runtime - the file can also be replaced or downloaded once attached                                                                                                                       |
-| **Multiple File Attachments** | - \[SINCE Orbeon Forms 2020.1] - files which can be attached to the form at design time or at runtime - the files can also be replaced or downloaded once attached                                                                                      |
-| **Image Attachment**          | - image which can be attached to the form at design time or at runtime - the image can also be changed at runtime once attached                                                                                                                         |
-| **Image**                     | - image attached to the form at design time - it is not possible to change the image at runtime                                                                                                                                                         |
-| **Image Annotation**          | - image which can be attached to the form at design time or at runtime - the image can then be annotated with graphic objects - see also the [blog post](https://blog.orbeon.com/2013/08/new-image-annotation-control.html) - SINCE Orbeon Forms 2016.3 |
-| **Handwritten Signature**     | signature drawn with a mouse or touch screen                                                                                                                                                                                                            |
+| Name                          | Description                                                                                                                         |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **Single File Attachment**    | - file which can be attached to the form at design time or at runtime - the file can also be replaced or downloaded once attached   |
+| **Multiple File Attachments** | - files which can be attached to the form at design time or at runtime - the files can also be replaced or downloaded once attached |
+| **Image Attachment**          | - image which can be attached to the form at design time or at runtime - the image can also be changed at runtime once attached     |
+| **Image**                     | - image attached to the form at design time - it is not possible to change the image at runtime                                     |
+| **Image Annotation**          | - image which can be attached to the form at design time or at runtime - the image can then be annotated with graphic objects       |
+| **Handwritten Signature**     | signature drawn with a mouse or touch screen                                                                                        |
 
 The controls appear like this at design time:
 
 ![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252Fsync%252Fffb5b5f5515e477288a2e2f70821ab92807ebf4f.png%3Fgeneration=1591206896706960%26alt=media\&width=768\&dpr=4\&quality=100\&sign=b01086f8048a58633f1114044db506820af278d4e5e7f078280cff106a66af2b)
-
-Here is an example of attachment control with multiple selection enabled:
-
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2Fgithub.com%2Forbeon%2Forbeon-forms-doc%2Fblob%2Fmaster%2Fform-runner%2Fcomponent%2Fimages%2Fattachment-controls-design-time.png\&width=768\&dpr=4\&quality=100\&sign=bd28b2237373f2bba2288afe7ca8250c6306e327e2ac6d6d08ec235c7856b706)
-
-The attachment control with mulltiple selection enabled
-
-/form-runner/component/images/xbl-attachment-multiple.png
 
 This is the Handwritten Signature control (which of course you usually leave blank at design time):
 
@@ -251,17 +218,13 @@ The controls appear like this at design time:
 
 Choices (sometimes called options) refer to the items which are part of a selection control such as a dropdown menu or checkboxes.
 
-For more, see the [Itemset Editor](https://doc.orbeon.com/form-builder/form-editor/itemset-editor).
-
 #### Data dropdown <a href="#data-dropdown" id="data-dropdown"></a>
 
 From the perspective of people who will be filling out your form, the data dropdown works just like a regular dropdown. However, the data in the dropdown comes from a service. For instance, imagine you have a list to select a state and that you don't want to hard code the list of states in the form, either for convenience, or because the subset of selectable states is dynamic:
 
 1. Insert a data dropdown field.
 2. Click on cogwheel to bring up a _Control Settings_ dialog, similar to the one shown to the right.
-3. In the _Resource URI_, enter the address of an HTTP service that returns the data you want to use to populate the dropdown. In most cases, the URL will look like `http://your-host/your-service`. If the address you specify start with a `/`, it is relative to the Orbeon Forms web app, which allows you to access a service you might have implemented in Orbeon Forms with XPL. For this example, let's assuming your service returns a list of states that looks like:
-
-Copy
+3. In the _Resource URI_, enter the address of an HTTP service that returns the data you want to use to populate the dropdown. In most cases, the URL will look like `http://your-host/your-service`. If the address you specify start with a `/`, it is relative to the Advanced Forms web app, which allows you to access a service you might have implemented in Advanced Forms with XPL. For this example, let's assuming your service returns a list of states that looks like:
 
 ```
 <states>
@@ -276,8 +239,6 @@ Copy
 2. For each state (_item_), specify an expression relative to the node returning the label (shown to users in the dropdown) and the value (stored in the data). In this case, those expressions will be, respectively: `@name` and `@abbreviation`.
 
 If the data in the dropdown depends on a value entered by users in another form field, you can pass that value to the service as a request parameter. For instance, let's say that in addition to the _State_ dropdown, you have a _City_ dropdown where you want to list all the cities in the currently selected state. If the service is at `/xforms-sandbox/service/zip-cities` and takes a request parameter `state-abbreviation`, assuming you named your _State_ field `state`, in the _Resource URI_ enter:
-
-Copy
 
 ```
 /xforms-sandbox/service/zip-cities?state-abbreviation={$state}

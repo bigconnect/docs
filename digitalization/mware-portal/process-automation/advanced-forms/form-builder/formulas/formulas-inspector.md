@@ -1,18 +1,10 @@
 # Formulas inspector
 
-With Orbeon Forms, [formulas](https://doc.orbeon.com/form-builder/formulas) are very important: they are used for calculating values, making parts of the form visible or readonly, and more. However, they can be difficult to debug, and so far Form Builder didn't have a way to show all formulas in a central location.
+With Advanced Forms, formulas are very important: they are used for calculating values, making parts of the form visible or readonly, and more. However, they can be difficult to debug, and so far Form Builder didn't have a way to show all formulas in a central location.
 
 This new, still experimental feature allows you to inspect formulas. You access it under the "Test" menu.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-515a9c8bac1f91af2f9d5ae5056af181819c2a0d%252Finspect-formulas-button.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=82ed348ee67b2843ceb4e35e5ef41d055fcc0a17b6f8b15ad26e7b013dc027e2)
-
-The "Inspect Formulas" button
-
-### Availability <a href="#availability" id="availability"></a>
-
-\[SINCE Orbeon Forms 2021.1]
-
-This feature considered experimental with Orbeon Forms 2021.1, but only because it is still fairly basic! However, it is still useful, and we hope to improve it in newer versions of Orbeon Forms.
+![The "Inspect Formulas" button](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-515a9c8bac1f91af2f9d5ae5056af181819c2a0d%252Finspect-formulas-button.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=82ed348ee67b2843ceb4e35e5ef41d055fcc0a17b6f8b15ad26e7b013dc027e2)
 
 ### Usage <a href="#usage" id="usage"></a>
 

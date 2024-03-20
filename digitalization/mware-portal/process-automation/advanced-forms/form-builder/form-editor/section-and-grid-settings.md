@@ -12,10 +12,6 @@ Each section or grid has a _name_ or identifier, which determines how data is re
 
 A section or grid name can be changed, provided it doesn't collide with another control name (an error will show otherwise).
 
-\[SINCE Orbeon Forms 2019.1]
-
-See [Renaming of controls and formulas](https://doc.orbeon.com/form-builder/formulas#renaming-of-controls-and-formulas).
-
 #### Page breaks <a href="#page-breaks" id="page-breaks"></a>
 
 When producing PDF automatically, the "Page break before" checkbox, when enabled, ensures that the given section starts at the top of a new page.
@@ -23,8 +19,6 @@ When producing PDF automatically, the "Page break before" checkbox, when enabled
 #### Custom CSS classes <a href="#custom-css-classes" id="custom-css-classes"></a>
 
 The "Custom CSS classes" field allows adding CSS classes which will be placed on the control in the resulting HTML. This can be used for custom styling.
-
-See [Control Settings](https://doc.orbeon.com/form-builder/form-editor/control-settings#custom-css-classes) for more about custom CSS classes.
 
 #### Formulas <a href="#formulas" id="formulas"></a>
 
@@ -35,12 +29,12 @@ See [Control Settings](https://doc.orbeon.com/form-builder/form-editor/control-s
   * If this field is left blank, then the section or grid is editable unless an enclosing section is read-only.
   * Otherwise, it is editable only if the result of the Boolean expression is `false()`.
 
-XPath expressions are described in more details in [Formulas](https://doc.orbeon.com/form-builder/formulas).
+XPath expressions are described in more details in [Formulas](../formulas/).
 
 ### Repeat settings <a href="#repeat-settings" id="repeat-settings"></a>
 
-See [Repeat settings](https://doc.orbeon.com/form-builder/form-editor/repeat-settings).
+See [Repeat settings](repeat-settings.md).
 
 ### Settings specific to sections <a href="#settings-specific-to-sections" id="settings-specific-to-sections"></a>
 
-See [Section settings](https://doc.orbeon.com/form-builder/form-editor/section-settings).
+See [Section settings](section-settings.md).

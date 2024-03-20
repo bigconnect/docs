@@ -1,7 +1,5 @@
 # Cut, copy and paste
 
-### Introduction <a href="#introduction" id="introduction"></a>
-
 ### Cut, copy and paste from the toolbox <a href="#cut-copy-and-paste-from-the-toolbox" id="cut-copy-and-paste-from-the-toolbox"></a>
 
 The top of the toolbox has the usual cut, copy, and paste icons:
@@ -41,8 +39,6 @@ When a control is pasted, if the control name of the clipboard control is curren
 
 ### Keyboard shortcuts <a href="#keyboard-shortcuts" id="keyboard-shortcuts"></a>
 
-\[SINCE Orbeon Forms 2020.1]
-
 You can use the following keyboard shortcuts:
 
 macOS:
@@ -59,22 +55,12 @@ All operating systems:
 
 ### Copying and pasting between forms <a href="#copying-and-pasting-between-forms" id="copying-and-pasting-between-forms"></a>
 
-\[SINCE Orbeon Forms 2020.1]
-
-Before Orbeon Forms 2020.1, the cut, copy, and paste operations were restricted to the currently running instance of Form Builder and did not apply between different Form Builder windows or tabs, or between edition sessions of a same form.
-
-With Orbeon Forms 2020.1, these operations are shared between forms belonging to the same user session. For example, the following scenarios work:
-
 1. You can copy an item, go back to the Form Builder Summary page, reopen the same form or open a different form, and paste the item just copied.
 2. You can open several forms with Form Builder in different tabs or windows of the same browser (and the same browser user), and copy/paste items between these forms.
 
 _NOTE: It is for now not possible to copy and paste items between different browsers, different users, or different user sessions (for example after logging out and logging back in)._
 
 ### Cut, copy and paste of grids and sections <a href="#cut-copy-and-paste-of-grids-and-sections" id="cut-copy-and-paste-of-grids-and-sections"></a>
-
-\[SINCE Orbeon Forms 2017.2]
-
-When hovering over a grid or section, "Cut" and "Copy" icons are available:
 
 ![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkC7J9AvQ\_1aTR7ZEL%252Fcut-copy-grids-sections.png%3Fgeneration=1528743365775022%26alt=media\&width=768\&dpr=4\&quality=100\&sign=e6b9431877f9e836452d9fec640069d2495337609760a5885c07c0efff69c560)
 
@@ -110,8 +96,6 @@ You can optionally set a prefix and/or a suffix for all names. This can help pre
 Control Names dialog with prefix
 
 ### Undoing and redoing cut and paste operations <a href="#undoing-and-redoing-cut-and-paste-operations" id="undoing-and-redoing-cut-and-paste-operations"></a>
-
-\[SINCE Orbeon Forms 2017.2]
 
 The "Cut" and "Paste" operations are undoable in the following way:
 

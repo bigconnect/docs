@@ -14,11 +14,7 @@ In addition, some values might be correct, but the user should be encouraged to 
 
 Form Builder supports this kind of validations via the "Validations and Alerts" tab of the "Control Settings" dialog. You open the dialog with the "Control Settings" icon to the right of each control.
 
-_NOTE: Prior to Orbeon Forms 4.3, the dialog was called "Validation Properties". Orbeon Forms 4.3 combines dialogs and adds functionality._
-
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LY8kXxiKo1JfSTk7new%252F-LEkC5V\_Hi-90aIve8oZ%252Fvalidation.png%3Fgeneration=1549573222079977%26alt=media\&width=768\&dpr=4\&quality=100\&sign=a0019555d6ce20e136757ae5fb278cc2dbed18e24d296afa370688134e5c6210)
-
-Control validation settings
+![Control validation settings](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LY8kXxiKo1JfSTk7new%252F-LEkC5V\_Hi-90aIve8oZ%252Fvalidation.png%3Fgeneration=1549573222079977%26alt=media\&width=768\&dpr=4\&quality=100\&sign=a0019555d6ce20e136757ae5fb278cc2dbed18e24d296afa370688134e5c6210)
 
 ### Validation types <a href="#validation-types" id="validation-types"></a>
 
@@ -29,7 +25,7 @@ The value associated with a control can be validated with 3 different validation
 1. _Required_. This indicates whether the value can be empty or not.
 2. _Data Type_. For example `string`, `decimal`, `date`, or `time`.
 3. _Formula_. A custom formula, expressed in XPath, which determines whether the value is valid or not for a certain validation level.
-4. _Common Constraints_. This includes constraints such as "Maximum Length", "Minimum Length", and more. \[SINCE Orbeon Forms 4.10]
+4. _Common Constraints_. This includes constraints such as "Maximum Length", "Minimum Length", and more.&#x20;
 
 #### Required validation <a href="#required-validation" id="required-validation"></a>
 
@@ -37,7 +33,7 @@ This simple validation has 3 possibilities:
 
 * _Yes_: a value is required and cannot be empty. (_NOTE: Blank spaces count as "not empty"._)
 * _No_: a value is not required and can be empty.
-* _Formula_: an XPath expression to dynamically control whether the control is valid or not. \[SINCE Orbeon Forms 4.7]
+* _Formula_: an XPath expression to dynamically control whether the control is valid or not.
 
 ![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LY8kXxiKo1JfSTk7new%252F-LEkC5VwndfWtxEALqSA%252Frequired-formula.png%3Fgeneration=1549573233672493%26alt=media\&width=768\&dpr=4\&quality=100\&sign=0a46124c5ca027f2191390f6ed70b0c7c9b0266d31e50464abfc3a82511c29d9)
 
@@ -47,13 +43,9 @@ When the value is required, an asterisk appears next to the control to signify t
 
 At runtime, if the value is required but not empty, the value is marked as invalid.
 
-\[SINCE Orbeon Forms 4.9]
-
 The Required validation can have a custom alert message.
 
 #### Trimming leading and trailing spaces <a href="#trimming-leading-and-trailing-spaces" id="trimming-leading-and-trailing-spaces"></a>
-
-\[SINCE Orbeon Forms 2016.1]
 
 When the "Trim leading and trailing spaces" option is enabled, leading and trailing spaces are removed from the value of the control before validation. This option is enabled by default for text and email fields.
 
@@ -61,11 +53,7 @@ When used in conjunction with the Required validation, this allows making sure t
 
 This option is also useful for non-required fields which must not contain leading or trailing spaces. For example if the user enters " Sam", the value is automatically converted into "Sam" as the user focuses out of the field.
 
-See also [Required fields: more subtle than you might think](https://blog.orbeon.com/2016/02/required-fields-more-subtle-than-you.html).
-
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LY8kXxiKo1JfSTk7new%252F-LEkC5W-Ff\_PhkPn1g2X%252Fwhitespace-trimming.png%3Fgeneration=1549573222005087%26alt=media\&width=768\&dpr=4\&quality=100\&sign=47791cf811fec593c3e6dbdfbc8a67f804034eecc291280331f45f5f4a8d3ae2)
-
-Whitespace trimming
+![Whitespace trimming](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LY8kXxiKo1JfSTk7new%252F-LEkC5W-Ff\_PhkPn1g2X%252Fwhitespace-trimming.png%3Fgeneration=1549573222005087%26alt=media\&width=768\&dpr=4\&quality=100\&sign=47791cf811fec593c3e6dbdfbc8a67f804034eecc291280331f45f5f4a8d3ae2)
 
 #### Data type validation <a href="#data-type-validation" id="data-type-validation"></a>
 
@@ -84,8 +72,6 @@ Built-in types include:
   * Decimal: positive or negative decimal number, which can be fractional with an optional decimal point `.`
   * Integer: positive or negative integer decimal number
   * Double-precision floating-point
-    * \[UNTIL Orbeon Forms 4.10]
-    * \[SINCE Orbeon Forms 2021.1] (again, see below)
 * Date and Time Types
   * Date: date stored in ISO format
   * Time: time stored in ISO format
@@ -95,10 +81,6 @@ Built-in types include:
 
 Built-in Types
 
-_NOTE: Prior to Orbeon Forms 4.3, the list of available types was longer, as explained in_ [_this blog post_](https://blog.orbeon.com/2013/07/simplifying-list-of-data-types-in-form.html)_._
-
-_NOTE: Until Orbeon Forms 4.10, the "Double-precision floating point" data type was available. It was removed with Orbeon Forms 2016.1, as explained in this_ [_blog post_](https://blog.orbeon.com/2016/01/removing-double-datatype.html)_, and re-added with Orbeon Forms 2021.1._
-
 _The reason for the removal was that in the vast majority of cases, this is not the appropriate type ("Integer" or "Decimal" are), and users would often select the incorrect type and then get rounding errors in fields such as the Currency field._
 
 _The reason for re-adding the double-precisiong floating-point data type is that it is appropriate for certain scientific calculations. This said, we recommend its use only in very specific circumstances._
@@ -107,7 +89,7 @@ At runtime, if the value is required and does not match the specified datatype, 
 
 _NOTE: When selecting certain controls from the toolbox, such as "Email", "Date", "Time", and "Date and Time", the appropriate data type is already selected by Form Builder. Changing the type to a different type might change the appearance of the control to match the type selected._
 
-If an XML Schema containing simple types has been attached to the form \[Orbeon Forms PE only], the simples types are listed in the Schema Type menu.
+If an XML Schema containing simple types has been attached to the form, the simples types are listed in the Schema Type menu.
 
 ![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkC5WECdrg8lFENX1x%252Fschema-types.png%3Fgeneration=1528743370885318%26alt=media\&width=768\&dpr=4\&quality=100\&sign=e00042d710193452c254b283edb9a3d2c8d6df529e9c71fec5fdc155276c42b6)
 
@@ -124,15 +106,11 @@ When an XML Schema data type is selected:
 * If _Required_ is set to _Yes_, the control is still made required, and an asterisk appears.
 * If _Required_ is set to _No_, the value must still match the definition of the XML Schema type to be valid. If the XML Schema type requires a non-empty value, setting _Required_ to _No_ does not make the value optional.
 
-\[SINCE Orbeon Forms 4.9]
-
 The Required validation can have a custom alert message.
 
 #### Formula validation <a href="#formula-validation" id="formula-validation"></a>
 
 A formula validation is a boolean XPath expression running with the XML element containing the value as context item. The validation _fails_ if the expression doesn't return `true()`. This also means that it fails if there is an error while running the validation.
-
-See also [Form Builder Formulas](https://doc.orbeon.com/form-builder/formulas).
 
 For example the following expression, which would make sense for a birthday date field, checks that the user is 18 year old or older:
 
@@ -142,23 +120,17 @@ Copy
 . <= (current-date() - xs:yearMonthDuration("P18Y"))
 ```
 
-\[SINCE Orbeon Forms 4.3]
-
 There can be more than one formulas applied to a given control. You add formulas with the `+` icon and remove them with the `-` icon.
-
-\[SINCE Orbeon Forms 4.3]
 
 Each formula can have a _level_ associated with it and a custom alert message.
 
 #### Dates to Exclude constraint <a href="#dates-to-exclude-constraint" id="dates-to-exclude-constraint"></a>
 
-\[SINCE Orbeon Forms 2018.2]
-
 The Dates to Exclude constraint takes a list (sequence) of dates to exclude, provided by a formula. The constraint fails if users type a date that is in the supplied list of dates to exclude. Also, dates in this list are disabled in the non-native date picker, so users cannot select them, as in the case of the 18th and 20th in the screenshot below. When the date picker is native, the dates are not disabled because the native date picker doesn't support disabling specific dates, but the validation still applies.
 
 ![Dates disabled in date picker](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LU9GQQUFuTgG-po\_RuD%252F-LU9G\_eqXh56gujs50oC%252Fvalidation-excluded-dates.png%3Fgeneration=1545286870583215%26alt=media\&width=768\&dpr=4\&quality=100\&sign=91b96189a9c1812bcd9ba4f1a62f7051b64736b528430f37dc87222b118c955c)
 
-You might have a service storing a the list of dates to exclude in a [dataset](https://doc.orbeon.com/form-runner/features/datasets), for example. From that dataset, you can extract and convert the dates to XPath dates.
+You might have a service storing a the list of dates to exclude in a dataset, for example. From that dataset, you can extract and convert the dates to XPath dates.
 
 For example, assuming the following `my-excluded-dates` dataset, with dates in the ISO format:
 
@@ -174,8 +146,6 @@ Copy
 
 You can pass the following expression as parameter to the "Dates to Exclude" common constraint:
 
-Copy
-
 ```
 for $d in fr:dataset('my-excluded-dates')/date return xs:date($d)
 ```
@@ -183,47 +153,35 @@ for $d in fr:dataset('my-excluded-dates')/date return xs:date($d)
 #### Other common constraints <a href="#other-common-constraints" id="other-common-constraints"></a>
 
 * "Maximum Length"
-  * SINCE Orbeon Forms 4.10
   * applies to "String" and "Email" types only
   * the constraint fails if the length of the value converted to a string is larger than the specified integer value
 * "Minimum Length"
-  * SINCE Orbeon Forms 4.10
   * applies to "String" and "Email" types only
   * the constraint fails if the length of the value converted to a string is smaller than the specified integer value
 * "Positive"
-  * SINCE Orbeon Forms 2016.1
   * applies to "Decimal" and "Integer" types only
   * the constraint fails if the number is not positive
 * "Positive or Zero"
-  * SINCE Orbeon Forms 2016.1
   * applies to "Decimal" and "Integer" types only
   * the constraint fails if the number is not positive or zero
 * "Negative or Zero"
-  * SINCE Orbeon Forms 2016.1
   * applies to "Decimal" and "Integer" types only
   * the constraint fails if the number is not negative or zero
 * "Negative"
-  * SINCE Orbeon Forms 2016.1
   * applies to "Decimal" and "Integer" types only
   * the constraint fails if the number is not negative
 * "Maximum Fractional Digits"
-  * SINCE Orbeon Forms 2016.1
   * applies to "Decimal" type only
   * the constraint fails if the decimal number has more than the specified number of significant digits (trailing zeros are ignored)
 * "Maximum Attachment Size" ("Maximum Attachment Size per File" in Multiple File Attachments controls)
-  * SINCE Orbeon Forms 2017.1
   * applies to Single and Multiple File Attachments controls only
   * the constraint fails if the attachment size is larger than the specified size
 * "Maximum Aggregate Attachment Size"
-  * SINCE Orbeon Forms 2024.1
   * applies to Multiple File Attachments controls only
   * the constraint fails if the attachment size is larger than the remaining allowed size for the control
 * "Supported File Types"
-  * SINCE Orbeon Forms 2017.1
   * applies to Single and Multiple File Attachments controls only
   * the constraint fails if the attachment mediatype doest not match one of the included mediatypes or mediatype wildcards
-
-In the future, it is expected that more common constraints will be added (see [#2281](https://github.com/orbeon/orbeon-forms/issues/2281)).
 
 ![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LY8kXxiKo1JfSTk7new%252F-LEkC5WNsb5f8E5orVr-%252Fmin-max-constraints.png%3Fgeneration=1549573225882970%26alt=media\&width=768\&dpr=4\&quality=100\&sign=b61c26a1afa158d0cbed9dc5ed9dbe6fac1f7eac59506853e4a752d0928c9b66)
 
@@ -239,8 +197,6 @@ A control value (entered by the user, constant, or calculated) is either _valid_
 
 ### Validation levels <a href="#validation-levels" id="validation-levels"></a>
 
-\[SINCE Orbeon Forms 4.3]
-
 If a control is valid, it can have a _warning_ level. This is the case if there is at least one failed warning validation.
 
 If a control doesn't have a warning level, it can have an _info_ level. This is the case if there is at least one failed info validation.
@@ -250,8 +206,6 @@ A warning or info level does not make the control value invalid and it is still 
 _NOTE: It is not possible to associate a validation level to the required or data type validations: they always use the error level._
 
 ### Localization of messages <a href="#localization-of-messages" id="localization-of-messages"></a>
-
-\[Orbeon Forms PE only]
 
 All alert messages can be localized.
 
@@ -264,8 +218,6 @@ When opening the dialog, the current language of the form determines the languag
 ### Alert messages <a href="#alert-messages" id="alert-messages"></a>
 
 When the user enters data, if the value is invalid or if the control has a warning or info level, the control is highlighted and one or more alert messages are shown. The message is selected as follows, generally following the philosophy of "more specific messages win over less specific messages":
-
-_NOTE: Since 4.6.2, required validations take precedence over other validations, see_ [_#1830_](https://github.com/orbeon/orbeon-forms/issues/1830)_._
 
 * If a required validation has failed:
   * The default alert message for the control is used if available, or a global default Form Runner message is used otherwise.
@@ -293,9 +245,7 @@ Alert messages appear:
 * as badge counts in the navigation bar
 * as general count in the browser's title bar
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LYDetF2V5j1m6fTZmmq%252F-LEkC5Wegthix-1JvV-f%252Fvalidation.png%3Fgeneration=1549655633402419%26alt=media\&width=768\&dpr=4\&quality=100\&sign=1012da898f160b1eabf6b4be9992618a35fac50580e0ee74770aff261c60e2b1)
-
-Alert Messages
+![Alert Messages](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LYDetF2V5j1m6fTZmmq%252F-LEkC5Wegthix-1JvV-f%252Fvalidation.png%3Fgeneration=1549655633402419%26alt=media\&width=768\&dpr=4\&quality=100\&sign=1012da898f160b1eabf6b4be9992618a35fac50580e0ee74770aff261c60e2b1)
 
 ### Validation errors and review messages dialog <a href="#validation-errors-and-review-messages-dialog" id="validation-errors-and-review-messages-dialog"></a>
 
@@ -303,7 +253,7 @@ By default, when saving or sending form data, the following happens:
 
 * If any control value is invalid, a dialog shows and the operation is stopped.
 * If all controls are valid and there are no warning or info messages, the operation continues.
-* If all controls are valid and there is at least one warning or info message, the "Review Messages" dialog shows. \[SINCE Orbeon Forms 4.3]
+* If all controls are valid and there is at least one warning or info message, the "Review Messages" dialog shows.&#x20;
 
 ![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LEkBmMpnaxnftLGDglW%252F-LEkC5KBEjDkuvu6WRcF%252Freview-messages.png%3Fgeneration=1528743371046481%26alt=media\&width=768\&dpr=4\&quality=100\&sign=70f86f77fa14aa06c7bd0a9a2c2fa969fab1a219acf018fa0d2bb3cc5ca36b0b)
 
@@ -314,9 +264,9 @@ The user has the following choices:
 * Stop the operation, close the dialog and review the warnings and/or informational messages.
 * Continue the operation, ignoring the warnings and/or informational messages.
 
-These processes are entirely configurable. See [Buttons and Processes](https://doc.orbeon.com/form-runner/advanced/buttons-and-processes) for more information.
+These processes are entirely configurable.&#x20;
 
-Optionally, it is possible to annotate the XML data submitted with error, warning or informational messages. See [Buttons and Processes](https://doc.orbeon.com/form-runner/advanced/buttons-and-processes) for more information.
+Optionally, it is possible to annotate the XML data submitted with error, warning or informational messages.&#x20;
 
 ### Using an external validation service <a href="#using-an-external-validation-service" id="using-an-external-validation-service"></a>
 
@@ -324,7 +274,7 @@ You can validate a field using an external validation service as follows:
 
 1. In your form, you'll want to have:
    * (a) the field you want to validate,
-   * (b) a [hidden field](https://doc.orbeon.com/form-runner/component/hidden) used to store the result from the validation.
+   * (b) a hidden field used to store the result from the validation.
 2. You create (c) an HTTP Service for your validation service
 3. You create an action, which, when the value of the field you want to validate (a) changes, calls the service (c), passing the value of the field (a), and stores the result from the validation in the hidden field (b). That result is typically be a boolean, `true` if valid, and `false` if invalid.
 4. In the Control Settings for the field you want to validate (a), in the Validations and Alerts tab, you use a formula to declare that the field is valid only of the value of the hidden field (b) is `true`.

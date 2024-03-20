@@ -17,6 +17,4 @@ The shortcut opens a small dialog. Clicking or pressing the Enter key and then t
 
 If the "Open Settings Dialog" option is selected, the "Control Settings" dialog for the control also opens right away.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-6e25680d77ee4a899155a8c7a6a3125778bf9943%252Fquick-search.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=33cd92ed8c2d49a665174e19dc8d4cd5ddbca084e07b975860ec6a198adbdfce)
-
-The quick search dialog
+![The quick search dialog](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-6e25680d77ee4a899155a8c7a6a3125778bf9943%252Fquick-search.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=33cd92ed8c2d49a665174e19dc8d4cd5ddbca084e07b975860ec6a198adbdfce)

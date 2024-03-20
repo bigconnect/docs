@@ -45,8 +45,6 @@ When the form has more than one language, the choices editor opens in the langua
 
 ### Removing all items <a href="#removing-all-items" id="removing-all-items"></a>
 
-\[SINCE Orbeon Forms 2016.3]
-
 The "Remove All" button removes all the items in the itemset. This is particularly useful when opening the choices editor for the first time for a given control, since by default itemsets contain default values.
 
 ### Usability notes <a href="#usability-notes" id="usability-notes"></a>
@@ -62,15 +60,11 @@ While for _single selection controls_ (e.g. radio buttons), the value can be any
 
 The reason for this restriction is that, in the data, the values of checkboxes are stored as _space-separated tokens_. So if you have values `chocolate` and `strawberry` selected, you'll have in the data:
 
-Copy
-
 ```
 chocolate strawberry
 ```
 
 If the value has a space in it, say `chocolate chip`, then the result would be:
-
-Copy
 
 ```
 chocolate chip strawberry

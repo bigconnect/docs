@@ -16,8 +16,6 @@ You can undo most operations which change important aspects of the form:
 
 ### Keyboard shortcuts <a href="#keyboard-shortcuts" id="keyboard-shortcuts"></a>
 
-\[SINCE Orbeon Forms 2020.1]
-
 You can use the following keyboard shortcuts:
 
 macOS:
@@ -40,7 +38,7 @@ All operating systems:
 * settings
   * rename control, grid or section
   * other control, grid or section settings, including itemsets, labels, hint, and validations
-* section template merging (new in 2017.2)
+* section template merging
 
 ### Limitations <a href="#limitations" id="limitations"></a>
 

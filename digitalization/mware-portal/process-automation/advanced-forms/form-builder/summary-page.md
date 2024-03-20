@@ -16,7 +16,7 @@ You access the summary page from your web browser through a URL (or web address)
 Copy
 
 ```
-http://[SERVER NAME]/orbeon/fr/orbeon/builder/summary
+http://[SERVER NAME]/forms/fr/forms/builder/summary
 ```
 
 _NOTE: The exact URL might be provided by your IT organization._
@@ -67,4 +67,4 @@ Using the checkboxes that appear on each row, select the form definitions you wi
 
 ### Permissions <a href="#permissions" id="permissions"></a>
 
-The Summary page follows the [access control rules for deployed forms](https://github.com/orbeon/orbeon-forms-doc/tree/f9c4c489b0f674f20b2269ec1d76c98482f25e54/form-builder/form-runner/access-control/deployed-forms.md). This means that a user accessing the Summary page will only see the data to which she has access to.
+The Summary page follows the access control rules for deployed forms. This means that a user accessing the Summary page will only see the data to which she has access to.
