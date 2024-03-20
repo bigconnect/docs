@@ -9,7 +9,7 @@ By default, Form Runner produces automatic PDF files with the following header a
 
 PDF output with header and footer
 
-Starting Orbeon Forms 2023.1, header and footers are entirely configurable, and you can control exactly what is shown in all six header or footer positions:
+Header and footers are entirely configurable, and you can control exactly what is shown in all six header or footer positions:
 
 * Header left
 * Header center
@@ -26,13 +26,11 @@ For each position, you can specify:
 * that it should use the default
 * that it should use custom content
 
-Custom content is based on the Form Runner system of _templates_ with parameters. For more information, see [Template syntax](https://doc.orbeon.com/form-builder/advanced/template-syntax).
+Custom content is based on the Form Runner system of _templates_ with parameters.&#x20;
 
 ### Example of header and footer configurations <a href="#example-of-header-and-footer-configurations" id="example-of-header-and-footer-configurations"></a>
 
 The default global configuration is expressed in JSON Format and is as follows:
-
-Copy
 
 ```
 {
@@ -94,8 +92,6 @@ Copy
 ```
 
 The following is an example of custom configuration that updates the default configuration to add a submission date in the footer's right position:
-
-Copy
 
 ```
 <property as="xs:string" name="oxf.fr.detail.pdf.header-footer.*.*">

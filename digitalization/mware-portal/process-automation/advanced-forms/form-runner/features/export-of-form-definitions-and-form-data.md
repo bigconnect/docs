@@ -4,15 +4,11 @@ Form definitions and form data can be exported as a zip file. This can be done i
 
 You can either export the forms that were explicitly selected:
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-2bf1879453a168831274db36c1c56eb8cf5238ea%252Fexport-selected-forms.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=726d9d2e897ab535595ed2939afa0ed881db6903a16671e4d7a161032f2bcc42)
-
-Export selected forms
+![Export selected forms](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-2bf1879453a168831274db36c1c56eb8cf5238ea%252Fexport-selected-forms.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=726d9d2e897ab535595ed2939afa0ed881db6903a16671e4d7a161032f2bcc42)
 
 Or you can export forms by specifying a list of application, form, and version filters:
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-3e7cbbb2519407b8edb1daf3cd8ee31277e65fbd%252Fexport-following-forms.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=f3f360040928cc8461e51a6366647bf589dcf7ade0da877474276803a761e5a4)
-
-Export following forms
+![Export following forms](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LEkBiSDvlXs3VWiO0Zu%252Fuploads%252Fgit-blob-3e7cbbb2519407b8edb1daf3cd8ee31277e65fbd%252Fexport-following-forms.png%3Falt=media\&width=768\&dpr=4\&quality=100\&sign=f3f360040928cc8461e51a6366647bf589dcf7ade0da877474276803a761e5a4)
 
 The application filter can either be set to "All applications" or to a specific application. When a specific application is selected, the form filter can either be set to "All forms" or to a specific form. The version filter can always be set to "All versions" or "Latest version" and when a specific form is selected, it can also be set to a specific version.
 
@@ -32,7 +28,7 @@ The form data are stored in `data.xml` files, located in paths following the str
 
 Example:
 
-`orbeon/acme-order-form/2/data/06ae53279bd3b74d20ee58e6a2a3240ab03206fa/2023-11-30T13:29:03.919Z/data.xml`
+`forms/acme-order-form/2/data/06ae53279bd3b74d20ee58e6a2a3240ab03206fa/2023-11-30T13:29:03.919Z/data.xml`
 
 Form definitions are stored in `form.xhtml` files, located in similarly structured paths:
 
@@ -40,17 +36,17 @@ Form definitions are stored in `form.xhtml` files, located in similarly structur
 
 Example:
 
-`orbeon/acme-order-form/2/form/latest/form.xhtml`
+`forms/acme-order-form/2/form/latest/form.xhtml`
 
 Attachments are stored alongside the form data and definitions. Examples:
 
 `test-app/test-form/2/data/8679184c2b13c55fe74e84fa5c76b3aa643ca7f2/latest/b7dfdf7fa55954548c4bf1c3f1964f9cb276d20f.bin`
 
-`orbeon/pta-remittance/1/form/latest/4ccffb5e691d8b2ec4c29f9bea88feb2e625580c.bin`
+`forms/pta-remittance/1/form/latest/4ccffb5e691d8b2ec4c29f9bea88feb2e625580c.bin`
 
 Form data, form definitions, and attachments can have metadata, in which case `.metadata.xml` files will be included as well. Example:
 
-`orbeon/bookshelf/1/data/5bba537614484bd9e33c97bfc7649889/2023-08-21T09:16:09.914Z/data.xml.metadata.xml`
+`forms/bookshelf/1/data/5bba537614484bd9e33c97bfc7649889/2023-08-21T09:16:09.914Z/data.xml.metadata.xml`
 
 Metadata include information such as:
 

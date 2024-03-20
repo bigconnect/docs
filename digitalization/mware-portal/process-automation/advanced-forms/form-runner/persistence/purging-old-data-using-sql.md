@@ -8,25 +8,23 @@ This is done in 2 steps, starting by removing form data, and then the correspond
 
 ### Form Builder data <a href="#form-builder-data" id="form-builder-data"></a>
 
-The following queries purge data that users manually deleted. However, should you want to adapt those queries to also purge "historical data", keep in mind that forms you edit in Form Builder are also stored in the `orbeon_form_data` and `orbeon_form_data_attach` tables. This means that in your own version of those queries, you might want to avoid rows with with `app = 'orbeon' AND form = 'builder'`, so not to delete any Form Builder data and so not to loose the ability to open forms from the Form Builder summary page.
+The following queries purge data that users manually deleted. However, should you want to adapt those queries to also purge "historical data", keep in mind that forms you edit in Form Builder are also stored in the `forms_form_data` and `forms_form_data_attach` tables. This means that in your own version of those queries, you might want to avoid rows with with `app = 'forms' AND form = 'builder'`, so not to delete any Form Builder data and so not to loose the ability to open forms from the Form Builder summary page.
 
 ### Removing form data <a href="#removing-form-data" id="removing-form-data"></a>
 
 The following statement is for Oracle (if you're using another database, replace `ADD_MONTHS(SYSDATE, -1)` by an equivalent function on that database). It will return the data marked for deletion more than 1 month ago. If you want to delete that data, replace `SELECT *` by `DELETE` in the statement, and run it again.
 
-Copy
-
 ```
 SELECT *
-FROM   orbeon_form_data
+FROM   forms_form_data
 WHERE  document_id IN
        (
            SELECT t.document_id
-           FROM   orbeon_form_data t,
+           FROM   forms_form_data t,
                   (
                       SELECT   max(last_modified_time) last_modified_time,
                                app, form, document_id
-                      FROM     orbeon_form_data
+                      FROM     forms_form_data
                       GROUP BY app, form, document_id
                   ) m
            WHERE  -- Look at "last row" in the "journal"
@@ -49,18 +47,18 @@ Copy
 
 ```
 SELECT *
-FROM   orbeon_form_data_attach
+FROM   forms_form_data_attach
 WHERE  document_id NOT IN
        (
            SELECT document_id
-           FROM orbeon_form_data
+           FROM forms_form_data
        )
 ```
 
 ### Removing other content <a href="#removing-other-content" id="removing-other-content"></a>
 
-The `orbeon_i_current` and `orbeon_i_control_text` tables may contain references, via the `data_id` column, to entries in `orbeon_form_data`. The content of these tables is recreated when a [full database reindex](https://doc.orbeon.com/form-runner/pages/forms-admin-page#reindexing) is performed.
+The `forms_i_current` and `forms_i_control_text` tables may contain references, via the `data_id` column, to entries in `forms_form_data`. The content of these tables is recreated when a full database reindex is performed.
 
-If the [lease feature](https://doc.orbeon.com/form-runner/features/lease) is enabled and in use, the `orbeon_form_data_lease` table may also contain references, via the `document_id` column, to entries in `orbeon_form_data`.
+If the lease feature is enabled and in use, the `forms_form_data_lease` table may also contain references, via the `document_id` column, to entries in forms`_form_data`.
 
 \
