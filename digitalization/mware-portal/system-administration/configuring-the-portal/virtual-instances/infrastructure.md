@@ -45,11 +45,9 @@ The Staging category contains settings that specify the default behavior of stag
 | Delete temporary LAR during a successful staging publication process. | Uncheck to avoid deleting the temporary LAR during a successful staging publication process. In remote staging contexts, this only applies to the staging environment.                                                                |
 | Use the virtual host of the remote site.                              | The remote environment’s virtual host is used when accessing the remote live site from the staged site.                                                                                                                               |
 
-### Session Timeout <a href="#session-timeout" id="session-timeout"></a>
+### Sessions <a href="#session-timeout" id="session-timeout"></a>
 
-Version 2024.Q1+
-
-The Session Timeout category contains settings that specify `session.timeout.auto.extend` and `session.timeout.auto.extend.offset` portal properties via UI without altering the `portal-ext.properties` file.
+The portal keeps a session for each connected user, for a specific period of time. The Session Timeout category contains settings that specify `session.timeout.auto.extend` and `session.timeout.auto.extend.offset` portal properties via UI without altering the `portal-ext.properties` file.
 
 NOTE
 
