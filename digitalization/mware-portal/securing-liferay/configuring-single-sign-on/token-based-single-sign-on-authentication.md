@@ -23,7 +23,7 @@ Incompatible setting for: company.security.auth.type
 
 Furthermore, you must use a security mechanism external to Liferay Portal, such as a fronting web server like Apache with a module or plugin for the authentication mechanism. Having a reverse proxy prevents malicious User impersonation that otherwise might be possible by sending HTTP requests directly to Liferay Portal’s app server from the client’s web browser.
 
-### [Configuring Token Based Authentication](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/token-based-authentication#configuring-token-based-authentication) <a href="#configuring-token-based-authentication" id="configuring-token-based-authentication"></a>
+### Configuring Token Based Authentication <a href="#configuring-token-based-authentication" id="configuring-token-based-authentication"></a>
 
 Token-based authentication is disabled by default. To manage token-based SSO authentication, navigate to Control Panel → _System Settings_, → _Security_ → _SSO_.
 
@@ -42,7 +42,7 @@ Here are the configuration options for the Token-Based SSO module:
 
 Remember to click _Save_ to activate Token Based SSO.
 
-### [Required SiteMinder Configuration](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/token-based-authentication#required-siteminder-configuration) <a href="#required-siteminder-configuration" id="required-siteminder-configuration"></a>
+### Required SiteMinder Configuration <a href="#required-siteminder-configuration" id="required-siteminder-configuration"></a>
 
 If you use SiteMinder, note that Liferay Portal sometimes uses the tilde character in its URLs. By default, SiteMinder treats the tilde character (and others) as bad characters and returns an HTTP 500 error if it processes a URL containing any of them. To avoid this issue, change this default setting in the SiteMinder configuration to this one:
 
@@ -52,6 +52,6 @@ BadUrlChars       //,./,/.,/*,*.,\,%00-%1f,%7f-%ff,%25
 
 The configuration above is the same as the default except without the `~` character. Restart SiteMinder to make your configuration update take effect. For more information, please refer to SiteMinder’s [documentation](https://techdocs.broadcom.com/us/product-content/recommended-reading/technical-document-index/ca-siteminder-informational-documentation-index.html).
 
-### [Summary](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/token-based-authentication#summary) <a href="#summary" id="summary"></a>
+### Summary <a href="#summary" id="summary"></a>
 
 Liferay Portal’s token-based SSO authentication mechanism is highly flexible and compatible with any SSO solution that provides it with a valid Liferay Portal user’s screen name or email address. These include Shibboleth and SiteMinder.

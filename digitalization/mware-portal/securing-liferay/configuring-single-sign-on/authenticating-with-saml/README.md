@@ -18,13 +18,13 @@ Both the IdP and the SP can initiate the Single Sign On process, and the SSO flo
 
 Consider IdP initiated SSO first.
 
-### [Identity Provider Initiated SSO](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#identity-provider-initiated-sso) <a href="#identity-provider-initiated-sso" id="identity-provider-initiated-sso"></a>
+### Identity Provider Initiated SSO <a href="#identity-provider-initiated-sso" id="identity-provider-initiated-sso"></a>
 
 Sometimes a user enters the SSO cycle by sending a request directly from the browser to the IdP.
 
 ![Identity Provider Initiated SSO authenticates directly.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview/images/01.png)
 
-#### [The SSO Request to the IdP](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#the-sso-request-to-the-idp) <a href="#the-sso-request-to-the-idp" id="the-sso-request-to-the-idp"></a>
+#### The SSO Request to the IdP <a href="#the-sso-request-to-the-idp" id="the-sso-request-to-the-idp"></a>
 
 If Liferay is the IdP, the IdP initiated SSO URL
 
@@ -36,9 +36,9 @@ For non-Liferay IdPs (Siteminder, ADFS, etc.), consult the vendor’s documentat
 
 If the IdP determines that the user isn’t authenticated, it prompts the user with the appropriate login screen.
 
-#### [The SSO Response from the IdP](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#the-sso-response-from-the-idp) <a href="#the-sso-response-from-the-idp" id="the-sso-response-from-the-idp"></a>
+#### The SSO Response from the IdP <a href="#the-sso-response-from-the-idp" id="the-sso-response-from-the-idp"></a>
 
-Upon successful authentication, the IdP constructs a SAML Response. It includes attribute statements configured in the designated Service Provider Connection (SPC; see [Configuring SAML at the Instance Level](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/configuring-saml-at-the-instance-level) on setting up the SPC in Liferay’s SAML adapter).
+Upon successful authentication, the IdP constructs a SAML Response. It includes attribute statements configured in the designated Service Provider Connection (SPC; see Configuring SAML at the Instance Level on setting up the SPC in Liferay’s SAML adapter).
 
 The IdP sends the response to the Assertion Consumer Service URL. The request contains two parameters: `SAMLResponse` and `RelayState`.
 
@@ -46,7 +46,7 @@ NOTE
 
 The method for sending the SAML response (for example, HTTP-POST) and the Assertion Consumer Service URL are usually imported as part of the SAML metadata XML provided by the SP. In Liferay DXP, you import the SP’s metadata in the SAML Adapter’s Service Provider Connections tab.
 
-#### [The SP Processes the SSO Response](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#the-sp-processes-the-sso-response) <a href="#the-sp-processes-the-sso-response" id="the-sp-processes-the-sso-response"></a>
+#### The SP Processes the SSO Response <a href="#the-sp-processes-the-sso-response" id="the-sp-processes-the-sso-response"></a>
 
 The SP validates and processes the SAML Response. Liferay’s SAML solution requires signed `SAMLResponse` messages. This signature process ensures proper identification for the IdP and prevents potential SAML Response spoofing.
 
@@ -55,23 +55,23 @@ The SP validates and processes the SAML Response. Liferay’s SAML solution requ
 
 If a `RelayState` is included in the SAML Response, the user is redirected to it. Otherwise the home page of the SP is served.
 
-### [Service Provider Initiated SSO](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#service-provider-initiated-sso) <a href="#service-provider-initiated-sso" id="service-provider-initiated-sso"></a>
+### Service Provider Initiated SSO <a href="#service-provider-initiated-sso" id="service-provider-initiated-sso"></a>
 
 Most of the time, authentication requests come from the Service Provider.
 
 ![Service Provider Initiated SSO is the usual source of authentication requests.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview/images/02.png)
 
-#### [The SSO Request to the SP](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#the-sso-request-to-the-sp) <a href="#the-sso-request-to-the-sp" id="the-sso-request-to-the-sp"></a>
+#### The SSO Request to the SP <a href="#the-sso-request-to-the-sp" id="the-sso-request-to-the-sp"></a>
 
-When the user’s browser requests a protected resource or login URL on the SP, it triggers the SP initiated SSO process. When Liferay DXP is the SAML SP, SSO is initiated either by requesting `/c/portal/login` URL or a protected resource that requires authentication (for example, a document not viewable by the Guest Role). If the user requests a protected resource, its URL is recorded in the `RelayState` parameter. If the user requested `/c/portal/login`, the `RelayState` can be set by providing the `redirect` parameter. Otherwise, if the [portal property](http://docs.liferay.com/dxp/portal/7.3-latest/propertiesdoc/portal.properties.html) `auth.forward.by.last.path` is set to `true`, the last accessed path is set as the `RelayState`. For non-Liferay SPs, consult the vendor documentation on initiating SSO.
+When the user’s browser requests a protected resource or login URL on the SP, it triggers the SP initiated SSO process. When Liferay DXP is the SAML SP, SSO is initiated either by requesting `/c/portal/login` URL or a protected resource that requires authentication (for example, a document not viewable by the Guest Role). If the user requests a protected resource, its URL is recorded in the `RelayState` parameter. If the user requested `/c/portal/login`, the `RelayState` can be set by providing the `redirect` parameter. Otherwise, if the portal property `auth.forward.by.last.path` is set to `true`, the last accessed path is set as the `RelayState`. For non-Liferay SPs, consult the vendor documentation on initiating SSO.
 
-#### [The AuthnRequest to the IdP](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#the-authnrequest-to-the-idp) <a href="#the-authnrequest-to-the-idp" id="the-authnrequest-to-the-idp"></a>
+#### The AuthnRequest to the IdP <a href="#the-authnrequest-to-the-idp" id="the-authnrequest-to-the-idp"></a>
 
 The SP looks up the IdP’s Single Sign On service URL and sends an `AuthnRequest`. When Liferay is the SP it looks up the configured SAML Identity Provider Connection and sends a SAML `AuthnRequest` to the IdP’s Single Sign On service URL as defined in the SAML metadata XML document. Liferay supports sending and receiving the `AuthnRequest` using HTTP-POST or HTTP-Redirect binding. HTTP-POST is preferred.
 
 If the user doesn’t have an active session or if `ForceAuthn` was requested by the SP, the user must authenticate by providing credentials. When Liferay is the IdP, authentication occurs in the Login Portlet. Liferay decodes and verifies the `AuthnRequest` before requesting the user to authenticate.
 
-#### [The SSO Response from the IdP](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#the-sso-response-from-the-idp-1) <a href="#the-sso-response-from-the-idp-1" id="the-sso-response-from-the-idp-1"></a>
+#### The SSO Response from the IdP <a href="#the-sso-response-from-the-idp-1" id="the-sso-response-from-the-idp-1"></a>
 
 After authentication, a SAML Response is constructed, sent to the Assertion Consumer Service URL of the SP, and verified. The IdP automatically makes this choice based on the SP metadata.
 
@@ -81,15 +81,15 @@ When Liferay is configured as the SP, response and assertion signatures are veri
 
 The user is redirected to the requested resource or to the URL contained in the `RelayState` parameter (for example, the last page the user accessed before initiating SSO).
 
-### [Single Log Off](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#single-log-off) <a href="#single-log-off" id="single-log-off"></a>
+### Single Log Off <a href="#single-log-off" id="single-log-off"></a>
 
 The Single Log Off request is sent from the user’s browser to the IdP or an SP, and the SLO flow differs in each case. First consider IdP initiated SLO.
 
-### [Identity Provider Initiated SLO](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#identity-provider-initiated-slo) <a href="#identity-provider-initiated-slo" id="identity-provider-initiated-slo"></a>
+### Identity Provider Initiated SLO <a href="#identity-provider-initiated-slo" id="identity-provider-initiated-slo"></a>
 
 ![Identity Provider Initiated SLO is sent directly to the IdP by the user's browser.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview/images/03.png)
 
-#### [The SLO Request to the IdP](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#the-slo-request-to-the-idp) <a href="#the-slo-request-to-the-idp" id="the-slo-request-to-the-idp"></a>
+#### The SLO Request to the IdP <a href="#the-slo-request-to-the-idp" id="the-slo-request-to-the-idp"></a>
 
 An IdP initiated SLO request is sent directly to the IdP by the user’s browser. When Liferay is the IdP, the IdP initiated SSO URL must specify the URL path as
 
@@ -103,7 +103,7 @@ The IdP sends a SAML `LogoutRequest` to the SP.
 * When Liferay is configured as the SP, supported bindings for `LogoutRequest` are HTTP-Post, HTTP-Redirect, or SOAP.
 * For other IdPs or SPs, please consult the vendor’s documentation.
 
-#### [The SLO Response from the SP](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#the-slo-response-from-the-sp) <a href="#the-slo-response-from-the-sp" id="the-slo-response-from-the-sp"></a>
+#### The SLO Response from the SP <a href="#the-slo-response-from-the-sp" id="the-slo-response-from-the-sp"></a>
 
 The SP delivers a `LogoutResponse` to the IdP.
 
@@ -111,11 +111,11 @@ The IdP sends a SAML `LogoutRequest` to the second SP.
 
 The second SP then delivers the `LogoutResponse` to the IdP. The process is repeated for all SPs the user is logged into. When Liferay is the IdP, Liferay logs the user out after the last SP has delivered its `LogoutResponse` or has timed out.
 
-### [Service Provider Initiated SLO](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#service-provider-initiated-slo) <a href="#service-provider-initiated-slo" id="service-provider-initiated-slo"></a>
+### Service Provider Initiated SLO <a href="#service-provider-initiated-slo" id="service-provider-initiated-slo"></a>
 
 ![Service Provider Initiated SLO happens when the user's browser sends a logout request to the SP.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview/images/04.png)
 
-#### [The SLO Request to the SP](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#the-slo-request-to-the-sp) <a href="#the-slo-request-to-the-sp" id="the-slo-request-to-the-sp"></a>
+#### The SLO Request to the SP <a href="#the-slo-request-to-the-sp" id="the-slo-request-to-the-sp"></a>
 
 In SP initiated SLO, the user’s browser sends a logout request directly to the SP. When Liferay is configured as the SP, the SLO is initiated by requesting this logout URL:
 
@@ -127,10 +127,10 @@ For other SPs, consult the vendor’s documentation on initiating SLO.
 
 A SAML `LogoutRequest` is sent to the Single Log Out service URL of the IdP.
 
-* If Liferay serves as the SP, the `LogoutRequest` is sent to the IdP configured by the IdP Connections tab of the SAML provider (see [Setting Up Liferay as an Identity Provider](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-admin) to set up the IdP Connection) and the SLO service URL defined in the SAML metadata.
+* If Liferay serves as the SP, the `LogoutRequest` is sent to the IdP configured by the IdP Connections tab of the SAML provider (see Setting Up Liferay as an Identity Provider to set up the IdP Connection) and the SLO service URL defined in the SAML metadata.
 * When Liferay is the IdP, if the user has logged on to other SPs, the user is presented with a single logout screen with the status of each SP logout, flagging any that can’t be logged out of (some SPs might not support SLO or are currently down). If there are no other SPs to log out of, the SAML session terminates and the IdP destroys its session.
 
-#### [The SLO Response from the SP](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview#the-slo-response-from-the-sp-1) <a href="#the-slo-response-from-the-sp-1" id="the-slo-response-from-the-sp-1"></a>
+#### The SLO Response from the SP <a href="#the-slo-response-from-the-sp-1" id="the-slo-response-from-the-sp-1"></a>
 
 If the user is logged in to additional SPs (beyond just the initiating SP), the IdP sends the SAML `LogoutRequest` to each one. When Liferay is the IdP, the `LogoutResponse` is sent using either HTTP-Post, HTTP-Redirect, or SOAP binding.
 

@@ -57,3 +57,4 @@ The `session.timeout.auto.extend` and `session.timeout.auto.extend.offset` prope
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Auto Extend        | If checked, automatically extends the session without prompting the user, keeping the session open as long as the user’s browser is open with a loaded page. |
 | Auto Extend Offset | When Auto Extend is enabled, set the number of seconds between when the extend process is initiated and the actual session expiration.                       |
+| Single Instance    | Keep a single portal session for a connected user.                                                                                                           |
