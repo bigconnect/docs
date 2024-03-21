@@ -5,7 +5,7 @@ This article documents configuration settings available in the _Message Boards_ 
 1. Navigate to _Site Administration_ → _Content & Data_ → _Message Boards_.
 2. Click the _Options_ menu → _Configuration_.
 
-### [General Tab](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#general-tab) <a href="#general-tab" id="general-tab"></a>
+### General Tab <a href="#general-tab" id="general-tab"></a>
 
 ![General Tab](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/01.png)
 
@@ -19,7 +19,7 @@ This article documents configuration settings available in the _Message Boards_ 
 | Thread as Question by Default       | If enabled, the first threads are always questions and subsequent threads can be marked as answers; disabled by default     |
 | Show Recent Posts from Last         | Dropdown menu to select how many previous posts are displayed based on time: _24 Hours_, _7 Days_, _30 Days_, or _365 Days_ |
 
-### [Email From](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#email-from) <a href="#email-from" id="email-from"></a>
+### Email From <a href="#email-from" id="email-from"></a>
 
 ![Email From Tab](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/02.png)
 
@@ -33,7 +33,7 @@ Expand the _Definition of Terms_ menu to learn more about how to create an autom
 
 ![Email From Definition of Terms](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/08.png)
 
-### [Message Added Email](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#message-added-email) <a href="#message-added-email" id="message-added-email"></a>
+### Message Added Email <a href="#message-added-email" id="message-added-email"></a>
 
 The _Message Added Email_ tab contains the template for emails that are sent whenever a message board thread is created.
 
@@ -43,7 +43,7 @@ Expand the _Definition of Terms_ menu to learn more about how the variables used
 
 ![Message Added Email Definition of Terms](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/09.png)
 
-### [Message Updated Email](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#message-updated-email) <a href="#message-updated-email" id="message-updated-email"></a>
+### Message Updated Email <a href="#message-updated-email" id="message-updated-email"></a>
 
 The _Message Added Email_ tab contains the template for emails that are sent whenever a message board thread is updated.
 
@@ -53,7 +53,7 @@ Expand the _Definition of Terms_ menu to learn more about how to create an autom
 
 ![Message Added Email Definition of Terms](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/09.png)
 
-### [Thread Priorities](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#thread-priorities) <a href="#thread-priorities" id="thread-priorities"></a>
+### Thread Priorities <a href="#thread-priorities" id="thread-priorities"></a>
 
 ![Message Updated Email](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/05.png)
 
@@ -65,7 +65,7 @@ Expand the _Definition of Terms_ menu to learn more about how to create an autom
 | Image              | Name of the icon associated with the priority level; can be a complete URL or a path relative to the theme         |
 | Priority           | Priority level of the thread; threads with a higher number are more important; enter them in the descending order. |
 
-### [User Ranks](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#user-ranks) <a href="#user-ranks" id="user-ranks"></a>
+### User Ranks <a href="#user-ranks" id="user-ranks"></a>
 
 ![User Ranks](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/06.png)
 
@@ -77,7 +77,7 @@ Message Boards users can configured to have a visible rank based on the number o
 | Localized Language   | Dropdown menu for all supported languages; allows administrators to input different ranks in different languages. |
 | User Ranks Text Area | Text area where the user-defined ranks are entered                                                                |
 
-### [RSS](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference#rss) <a href="#rss" id="rss"></a>
+### RSS <a href="#rss" id="rss"></a>
 
 ![RSS](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-configuration-reference/images/07.png)
 

@@ -1,18 +1,18 @@
 # Assigning Task Nodes
 
-Task nodes require interaction by people. To alert and associate tasks with the right people, use [notifications](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/configuring-workflow-actions-and-notifications#adding-notifications) and assignments, respectively. You can assign task nodes to
+Task nodes require interaction by people. To alert and associate tasks with the right people, use notifications and assignments, respectively. You can assign task nodes to
 
 * Specific roles
-* Multiple roles of a [role type](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/understanding-roles-and-permissions) (organization, site, asset library, account, or regular role types)
+* Multiple roles of a role type (organization, site, asset library, account, or regular role types)
 * The content creator
 * Resource actions
 * Specific users
 
-Additionally, you can write a [script](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/developer-guide/using-the-script-engine-in-workflow) to define the assignment (see [Scripted Assignments](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/assigning-task-nodes#scripted-assignments)).
+Additionally, you can write a script to define the assignment (see Scripted Assignments).
 
 ![You can add an assignment to a task node.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/workflow/designing-and-managing-workflows/workflow-designer/assigning-task-nodes/images/01.png)
 
-### [Resource Action Assignments](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/assigning-task-nodes#resource-action-assignments) <a href="#resource-action-assignments" id="resource-action-assignments"></a>
+### Resource Action Assignments <a href="#resource-action-assignments" id="resource-action-assignments"></a>
 
 You can assign a workflow task to a _resource action_. Resource actions are operations performed by users on an application or entity. For example, a user might have permission to update message boards messages. This is called an UPDATE resource action, because the user can update the resource. If your workflow definition specifies the UPDATE action in an assignment, anyone with permission to update the asset type being processed in the workflow is assigned to the task. You can configure multiple assignments for a task.
 
@@ -48,7 +48,7 @@ Use all upper case letters for resource action names. To enter more than one, us
 
 You can determine the probable resource action name from the permissions screen for that resource. For example, in message boards, one of the permissions displayed on that screen is _Add Discussion_. Convert that to all uppercase and replace the space with an underscore, and you have the action name.
 
-### [Scripted Assignments](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/assigning-task-nodes#scripted-assignments) <a href="#scripted-assignments" id="scripted-assignments"></a>
+### Scripted Assignments <a href="#scripted-assignments" id="scripted-assignments"></a>
 
 You can use a script to manage the assignment. Set a single user in the `user` variable, or add users to a list in the `users` variable. To specify role assignments, add a list of roles (even if there’s just one) to the `roles` variable.
 
@@ -67,7 +67,7 @@ In the XML source, scripted assignments are written in the `<scripted-assignment
 </assignments>
 ```
 
-#### [Assigning to Roles](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/assigning-task-nodes#assigning-to-roles) <a href="#assigning-to-roles" id="assigning-to-roles"></a>
+#### Assigning to Roles <a href="#assigning-to-roles" id="assigning-to-roles"></a>
 
 The script for the review task assignment in the Scripted Single Approver workflow definition (`single-approver-scripted-assignment-workflow-definition.xml`) sets `roles`:
 
@@ -107,9 +107,9 @@ This script assigns the task to the administrator role, then checks if the asset
 
 Note the `roles = new ArrayList<Role>();` line. In a scripted assignment, the `roles` variable is where you assign roles to tasks. For example, when `roles.add(adminRole);` is called, the administrator role is added to the assignment.
 
-The `roles` variable assignment defines the assignable candidates for the task. Once the entry is submitted to the workflow, one of the candidate users must assign the task to themselves. See [Reviewing Assets](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/reviewing-assets) for more information.
+The `roles` variable assignment defines the assignable candidates for the task. Once the entry is submitted to the workflow, one of the candidate users must assign the task to themselves. See Reviewing Assets for more information.
 
-#### [Assigning to Users](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/assigning-task-nodes#assigning-to-users) <a href="#assigning-to-users" id="assigning-to-users"></a>
+#### Assigning to Users <a href="#assigning-to-users" id="assigning-to-users"></a>
 
 Assign a user or list of users to a task. These assignments appear in the My Workflow Tasks application under Assigned to Me. To assign a list of users as possible candidates, use code like this:
 
@@ -126,7 +126,7 @@ users.add(UserLocalServiceUtil.getUserByEmailAddress(companyId, "user1@liferay.c
 users.add(UserLocalServiceUtil.getUserByEmailAddress(companyId, "user2@liferay.com"));
 ```
 
-The `users` variable assignment, like `roles`, defines the assignable candidates for the task. Once the entry is submitted to the workflow, one of the candidate users must assign the task to themselves. See [Reviewing Assets](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/reviewing-assets) for more information.
+The `users` variable assignment, like `roles`, defines the assignable candidates for the task. Once the entry is submitted to the workflow, one of the candidate users must assign the task to themselves. See Reviewing Assets for more information.
 
 To assign a single user to the task,
 

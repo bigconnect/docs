@@ -1,6 +1,6 @@
 # Using Fragments to Build Forms
 
-Liferay includes form fragments for building object forms in content pages. To build a form, add a form container to a content page or page template and map it to a published object. The container automatically populates fragments mapped to each object field. You can organize, remove, or add fragments manually. Once published, end users can create object entries using the form.
+MWARE Portal includes form fragments for building object forms in content pages. To build a form, add a form container to a content page or page template and map it to a published object. The container automatically populates fragments mapped to each object field. You can organize, remove, or add fragments manually. Once published, end users can create object entries using the form.
 
 To build forms in content pages,
 
@@ -12,20 +12,20 @@ To build forms in content pages,
 
 NOTE
 
-When mapping an object to a Form Container fragment, a submit button is generated. You can map its text using [mapping settings](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/configuring-fragments/fragment-sub-elements-reference#mapping-settings).
+When mapping an object to a Form Container fragment, a submit button is generated. You can map its text using mapping settings.
 
-To create a button with [link settings](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/configuring-fragments/fragment-sub-elements-reference#link-settings) for redirection, add `type="button"` to the button fragment.
+To create a button with link settings for redirection, add `type="button"` to the button fragment.
 
-By default, Liferay includes the [Form Components](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/default-fragments-reference#form-components) fragment set, but you can create your own. See [Creating Form Fragments](https://learn.liferay.com/web/guest/w/dxp/site-building/developer-guide/developing-page-fragments/creating-form-fragments) for more information.
+By default, the portal includes the Form Components fragment set, but you can create your own. See Creating Form Fragments for more information.
 
-In addition, form fragments can only be used with [custom objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/creating-objects). Therefore, Liferay hides the Form Components fragment set until you have at least one published object. Once published, users with access to the object can view and use the Form Components fragments.
+In addition, form fragments can only be used with custom objects. Therefore, the portal hides the Form Components fragment set until you have at least one published object. Once published, users with access to the object can view and use the Form Components fragments.
 
-### [Creating a Form](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/using-fragments-to-build-forms#creating-a-form) <a href="#creating-a-form" id="creating-a-form"></a>
+### Creating a Form <a href="#creating-a-form" id="creating-a-form"></a>
 
 1.  Begin editing a content page or page template.
 
     Display page templates do not support form fragments.
-2. (Optional) Design a layout using fragments. See [Building Responsive Layouts with Fragments](https://learn.liferay.com/web/guest/w/dxp/site-building/optimizing-sites/building-a-responsive-site/building-responsive-layouts-with-the-grid-fragment) for more information.
+2. (Optional) Design a layout using fragments. See Building Responsive Layouts with Fragments for more information.
 3.  Add the _Form Container_ fragment to the page and map it to an object.
 
     The container automatically generates a Submit button and fragments for all object fields. They appear in alphabetical order. Mandatory fields are marked accordingly.
@@ -43,7 +43,7 @@ In addition, form fragments can only be used with [custom objects](https://learn
     Form fragment configuration options become available after mapping the fragment to an object field.
 
     ![Configure the form fragments.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/using-fragments-to-build-forms/images/03.png)
-8.  [Beta Feature](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/feature-flags#beta-feature-flags) (Optional) If draft mode is enabled for the object, configure the Submitted Entry Status for the form’s submit button: _Approved_ or _Draft_.
+8.  Beta Feature (Optional) If draft mode is enabled for the object, configure the Submitted Entry Status for the form’s submit button: _Approved_ or _Draft_.
 
     IMPORTANT
 
@@ -52,7 +52,7 @@ In addition, form fragments can only be used with [custom objects](https://learn
     ![Configure the Submitted Entry Status for the form's submit button.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/using-fragments-to-build-forms/images/04.png)
 9. Click _Publish_ when finished.
 
-### [Supported Field Types for Form Components](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/using-fragments-to-build-forms#supported-field-types-for-form-components) <a href="#supported-field-types-for-form-components" id="supported-field-types-for-form-components"></a>
+### Supported Field Types for Form Components <a href="#supported-field-types-for-form-components" id="supported-field-types-for-form-components"></a>
 
 Each form fragment can support one or more object field types. The default form components support these fields.
 

@@ -8,7 +8,7 @@ A table view of all installed workflow processes shows you how many items are ov
 
 Access more detailed reports by clicking on one of the workflow processes.
 
-The Reports UI has two main views, represented as tabs: _Dashboard_ and _Performance_. At the top of both screens, a piece of important information is displayed: the detailed date and time that the SLA metrics were last recalculated. To learn about the configurability of the metrics recalculation, see [Configuring the SLA Job Interval](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/using-workflow-metrics#configuring-the-sla-job-interval).
+The Reports UI has two main views, represented as tabs: _Dashboard_ and _Performance_. At the top of both screens, a piece of important information is displayed: the detailed date and time that the SLA metrics were last recalculated. To learn about the configurability of the metrics recalculation, see Configuring the SLA Job Interval.
 
 ![The last time SLA metrics were recaluclated is displayed prominently.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/workflow/using-workflows/workflow-metrics-reports/images/13.png)
 
@@ -18,9 +18,9 @@ The Performance view shows metrics for items that have completed processing in t
 
 NOTE
 
-**Requires Elasticsearch:** To use Workflow Metrics, you must be using Elasticsearch to index your Liferay DXP data. Read [here](https://learn.liferay.com/web/guest/w/dxp/using-search/installing-and-upgrading-a-search-engine/installing-a-search-engine) to learn about installing Elasticsearch.
+**Requires Elasticsearch:** To use Workflow Metrics, you must be using Elasticsearch to index your portal  data.
 
-### [Understanding the Dashboard](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/workflow-metrics-reports#understanding-the-dashboard) <a href="#understanding-the-dashboard" id="understanding-the-dashboard"></a>
+### Understanding the Dashboard <a href="#understanding-the-dashboard" id="understanding-the-dashboard"></a>
 
 Three valuable reports on pending items are provided in the Dashboard: the Pending Items overview, the Workload by Step table, and the Workflow by Assignee table.
 
@@ -32,7 +32,7 @@ Three valuable reports on pending items are provided in the Dashboard: the Pendi
 
 **Workload by Assignee:** The Workload by Assignee chart shows a breakdown of the workflow process’s assignees, in descending order by the number of items in their queue. This chart offers a valuable glimpse to identify overloaded assignees. Click the _View all Assignees_ link to see the [All Items](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/workflow-metrics-reports#viewing-all-workflow-items) view, featuring a more robust table with better filtering and search capabilities. Filtering by workflow step, for example, helps identify assignees that are overloaded and assignees that have a lighter load. Re-assigning some tasks could remove a bottleneck.
 
-### [Understanding Process Performance](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/workflow-metrics-reports#understanding-process-performance) <a href="#understanding-process-performance" id="understanding-process-performance"></a>
+### Understanding Process Performance <a href="#understanding-process-performance" id="understanding-process-performance"></a>
 
 The _Performance_ tab shows metrics for items that have completed the workflow process. The time period is configurable for each data presentation (with a default of 30 days).
 
@@ -52,7 +52,7 @@ The overall throughput rate for the time period appears in the top of the chart 
 
 NOTE
 
-In Liferay 7.4, a version selector was added to the Performance by Step metric. It defaults to displaying metrics for all the workflow definition’s versions, but you can choose to display metrics for just one version.
+In version 7.4, a version selector was added to the Performance by Step metric. It defaults to displaying metrics for all the workflow definition’s versions, but you can choose to display metrics for just one version.
 
 To see a full view of all the step performance metrics, click _View All Steps_.
 
@@ -62,11 +62,11 @@ To see a full view of all the step performance metrics, click _View All Steps_.
 
 To see a full view of the workflow assignees, click _View All Assignees_.
 
-### [Filtering Metrics by Time](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/workflow-metrics-reports#filtering-metrics-by-time) <a href="#filtering-metrics-by-time" id="filtering-metrics-by-time"></a>
+### Filtering Metrics by Time <a href="#filtering-metrics-by-time" id="filtering-metrics-by-time"></a>
 
 You can filter by time, including events from today, yesterday, the last seven days, the last 30 days, 90 days, 180 days, or the last year. As you change the time period, the metric changes (e.g., Instances per hour, week, etc.) to provide a reasonable view of the data.
 
-### [Viewing all Workflow Items](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/workflow-metrics-reports#viewing-all-workflow-items) <a href="#viewing-all-workflow-items" id="viewing-all-workflow-items"></a>
+### Viewing all Workflow Items <a href="#viewing-all-workflow-items" id="viewing-all-workflow-items"></a>
 
 There’s a table view for all the items in the workflow that provides handy filters for detailed inquiries. To access it, hover over the SLA status you want, from either the Dashboard or Performance tabs. Click it to enter the All Items screen from the overview report, and a more detailed table appears, including the following columns:
 
@@ -98,7 +98,7 @@ Each item has an Actions menu (![Actions](https://resources.learn.liferay.com/im
 
 In addition, workflow items can be filtered so you can find the subset you want to analyze.
 
-#### [Filtering by SLA Status](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/workflow-metrics-reports#filtering-by-sla-status) <a href="#filtering-by-sla-status" id="filtering-by-sla-status"></a>
+#### Filtering by SLA Status <a href="#filtering-by-sla-status" id="filtering-by-sla-status"></a>
 
 Filter items based on whether they’re Overdue, On Time, or Untracked.
 
@@ -110,7 +110,7 @@ Filter items based on whether they’re Overdue, On Time, or Untracked.
 
 **Untracked**: Untracked items are in the workflow process but aren’t currently under the purview of an SLA. They might be in the workflow process but haven’t reached the step identified as the SLA start, or they might pre-date the SLA definition entirely.
 
-#### [Filtering by Process Status and Completion Period](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/workflow-metrics-reports#filtering-by-process-status-and-completion-period) <a href="#filtering-by-process-status-and-completion-period" id="filtering-by-process-status-and-completion-period"></a>
+#### Filtering by Process Status and Completion Period <a href="#filtering-by-process-status-and-completion-period" id="filtering-by-process-status-and-completion-period"></a>
 
 Filter items based on whether they’re Pending or Completed in the workflow process.
 
@@ -118,17 +118,17 @@ If you filter by the Completed status, you’ll get an additional filtering opti
 
 ![Filter by Process Status and Completion Period.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/workflow/using-workflows/workflow-metrics-reports/images/09.png)
 
-#### [Filtering by Process Step](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/workflow-metrics-reports#filtering-by-process-step) <a href="#filtering-by-process-step" id="filtering-by-process-step"></a>
+#### Filtering by Process Step <a href="#filtering-by-process-step" id="filtering-by-process-step"></a>
 
 Filter items based on where they are in the workflow definition. For example, in the Single Approver workflow process, you can choose to see a report including all items in the Review task. This is different for each workflow definition.
 
-#### [Combining Filters](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/workflow-metrics-reports#combining-filters) <a href="#combining-filters" id="combining-filters"></a>
+#### Combining Filters <a href="#combining-filters" id="combining-filters"></a>
 
 Use a combination of filters to find just the items you need to see. For example, below are all items in the Single Approver process’s Review task that have the status Completed or Pending, whether On time or Overdue. Untracked items aren’t shown.
 
 ![Combine filters to see just the items you want.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/workflow/using-workflows/workflow-metrics-reports/images/08.png)
 
-### [Item Details](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/workflow-metrics-reports#item-details) <a href="#item-details" id="item-details"></a>
+### Item Details <a href="#item-details" id="item-details"></a>
 
 To see the metrics for a single workflow process item, click the ID field while in the All Items view. A pop-up shows you more detailed information on the item.
 

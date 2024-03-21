@@ -14,7 +14,7 @@ IMPORTANT
 
 Customers are advised to deploy security patches as they are released. For community and CE installations, we recommend always using the latest community release, which contains all previous security patches.
 
-### [Authentication](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay#authentication) <a href="#authentication" id="authentication"></a>
+### Authentication <a href="#authentication" id="authentication"></a>
 
 MWARE Portal authentication is flexible. By default, users log into the portal by using the _Sign In_ widget, which uses the database to authenticate the user. By default, guests can use the Sign In widget to create accounts with default permissions. Nearly every element of the default authentication experience can be changed by an administrator. For example,
 

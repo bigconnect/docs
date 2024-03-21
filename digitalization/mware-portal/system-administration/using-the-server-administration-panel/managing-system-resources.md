@@ -4,7 +4,7 @@ The Server Administration panel’s Resources tab contains several features, all
 
 | Function             | Purpose                                                                                                                           |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| System Information   | Obtain the Liferay DXP version and uptime data                                                                                    |
+| System Information   | Obtain the portal version and uptime data                                                                                         |
 | Memory Monitor       | Monitor the Used Memory against the Total Memory and Max Memory                                                                   |
 | System Actions       | Run the garbage collector and generate thread dumps                                                                               |
 | Cache Actions        | Clear cached content at various levels                                                                                            |
@@ -13,7 +13,7 @@ The Server Administration panel’s Resources tab contains several features, all
 
 ![You can execute several server maintenance tasks from the Resources tab of Server Administration.](https://resources.learn.liferay.com/images/dxp/latest/en/system-administration/using-the-server-administration-panel/managing-system-resources/images/01.png)
 
-### [Server Administration: Resources Reference](https://learn.liferay.com/web/guest/w/dxp/system-administration/using-the-server-administration-panel/managing-system-resources#server-administration-resources-reference) <a href="#server-administration-resources-reference" id="server-administration-resources-reference"></a>
+### Server Administration: Resources Reference <a href="#server-administration-resources-reference" id="server-administration-resources-reference"></a>
 
 **Run the Garbage Collector:** Tell the JVM to free memory by running the garbage collector.
 

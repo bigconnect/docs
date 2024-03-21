@@ -1,6 +1,6 @@
 # Other Knowledge Base Widgets
 
-There are other Knowledge Base widgets you can add to pages besides the [Knowledge Base Display widget](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/knowledge-base-display-widget):
+There are other Knowledge Base widgets you can add to pages besides the Knowledge Base Display widget:
 
 **Knowledge Base Article**: Display a single article’s content.
 
@@ -10,7 +10,7 @@ There are other Knowledge Base widgets you can add to pages besides the [Knowled
 
 You can add these widgets from _Add_ (![Add icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) → _Widgets_ → _Content Management_.
 
-### [Knowledge Base Article Widget](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/other-knowledge-base-widgets#knowledge-base-article-widget) <a href="#knowledge-base-article-widget" id="knowledge-base-article-widget"></a>
+### Knowledge Base Article Widget <a href="#knowledge-base-article-widget" id="knowledge-base-article-widget"></a>
 
 The Knowledge Base Article widget displays a single article’s content. It even shows abstracts of child articles. You can add multiple Knowledge Base article instances to a page, and each one can show a different article.
 
@@ -23,19 +23,19 @@ After adding the Knowledge Base Article widget to a site page,
 
     ![Use the Knowledge Base Article widget to display an individual article.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/knowledge-base/other-knowledge-base-widgets/images/01.png)
 
-The Knowledge Base Article widget shares the same UI as the Knowledge Base Display widget to display and manage its articles. Refer to the [Knowledge Base Display widget](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/knowledge-base-display-widget) documentation for a detailed description of the widget’s UI.
+The Knowledge Base Article widget shares the same UI as the Knowledge Base Display widget to display and manage its articles. Refer to the Knowledge Base Display widget documentation for a detailed description of the widget’s UI.
 
-### [Knowledge Base Section Widget](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/other-knowledge-base-widgets#knowledge-base-section-widget) <a href="#knowledge-base-section-widget" id="knowledge-base-section-widget"></a>
+### Knowledge Base Section Widget <a href="#knowledge-base-section-widget" id="knowledge-base-section-widget"></a>
 
 NOTE
 
-As of Knowledge Base 3.0.0, the Knowledge Base Sections widget is deprecated and replaced by [categories](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/organizing-content-with-categories-and-tags).
+As of Knowledge Base 3.0.0, the Knowledge Base Sections widget is deprecated and replaced by categories.
 
 The Knowledge Base Section widget can publish articles associated with a specific topic (section). For example, a site about the Summer Olympics might have the sections Team Sports, Water Sports and Martial Arts.
 
 ![The widget displays articles based on specific sections.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/knowledge-base/other-knowledge-base-widgets/images/02.png)
 
-To use sections, you must first configure the feature in System Settings, creating the section names for use in the Knowledge Base Section widget. This process is covered in detail in [Knowledge Base System Settings](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/knowledge-base-system-settings).
+To use sections, you must first configure the feature in System Settings, creating the section names for use in the Knowledge Base Section widget. This process is covered in detail in Knowledge Base System Settings.
 
 When creating or editing a Knowledge Base article, authors can then select the article’s section in the Configuration → Section field.
 
@@ -53,11 +53,11 @@ To configure the Knowledge Base Section widget,
 
 The matching articles are displayed in the app beneath their section heading.
 
-### [Knowledge Base Search Widget](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/other-knowledge-base-widgets#knowledge-base-search-widget) <a href="#knowledge-base-search-widget" id="knowledge-base-search-widget"></a>
+### Knowledge Base Search Widget <a href="#knowledge-base-search-widget" id="knowledge-base-search-widget"></a>
 
 NOTE
 
-As of Knowledge Base 3.0.0, the Knowledge Base Search widget is deprecated and replaced by Liferay Search.
+As of Knowledge Base 3.0.0, the Knowledge Base Search widget is deprecated and replaced by Search.
 
 Even though the Knowledge Base can show the structure of its articles, it may be difficult to find exactly what you’re looking for by browsing. For this, you can use the Knowledge Base Search widget.
 

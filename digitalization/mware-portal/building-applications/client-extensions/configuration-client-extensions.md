@@ -1,12 +1,12 @@
 # Configuration Client Extensions
 
-Liferay instance configurations are deployable with client extensions. For example, you can deploy OAuth2 authentication profiles as configuration client extensions, enabling your other client extensions that require authentication.
+The portal instance configurations are deployable with client extensions. For example, you can deploy OAuth2 authentication profiles as configuration client extensions, enabling your other client extensions that require authentication.
 
-### [Instance Settings Client Extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/configuration-client-extensions#instance-settings-client-extensions) <a href="#instance-settings-client-extensions" id="instance-settings-client-extensions"></a>
+### Instance Settings Client Extensions <a href="#instance-settings-client-extensions" id="instance-settings-client-extensions"></a>
 
-Available Liferay DXP 7.4 (self-hosted)`{bdg-secondary}`Available Liferay SaaS
+Available version 7.4 (self-hosted)`{bdg-secondary}`Available SaaS
 
-You can use an instance settings client extension to configure a wide variety of Liferay configurations. Each configuration is referenced by its PID (Persistent IDentity).
+You can use an instance settings client extension to configure a wide variety of portal configurations. Each configuration is referenced by its PID (Persistent IDentity).
 
 Specify an instance settings client extension in your `client-extension.yaml` file:
 
@@ -14,9 +14,9 @@ Specify an instance settings client extension in your `client-extension.yaml` fi
 type: instanceSettings
 ```
 
-### [OAuth Headless Server Client Extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/configuration-client-extensions#oauth-headless-server-client-extensions) <a href="#oauth-headless-server-client-extensions" id="oauth-headless-server-client-extensions"></a>
+### OAuth Headless Server Client Extensions <a href="#oauth-headless-server-client-extensions" id="oauth-headless-server-client-extensions"></a>
 
-You can use a client extension to configure a Liferay OAuth2 application pre-configured with a `Headless Server` client profile. This kind of authentication profile is required for API calls that are not authorized by a specific user.
+You can use a client extension to configure a OAuth2 application pre-configured with a `Headless Server` client profile. This kind of authentication profile is required for API calls that are not authorized by a specific user.
 
 Specify an OAuth headless server client extension in your `client-extension.yaml` file:
 
@@ -24,9 +24,9 @@ Specify an OAuth headless server client extension in your `client-extension.yaml
 type: oAuthApplicationHeadlessServer
 ```
 
-#### [Special Behavior of `oAuthApplicationHeadlessServer`](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/configuration-client-extensions#special-behavior-of-oauthapplicationheadlessserver) <a href="#special-behavior-of-oauthapplicationheadlessserver" id="special-behavior-of-oauthapplicationheadlessserver"></a>
+#### Special Behavior of `oAuthApplicationHeadlessServer` <a href="#special-behavior-of-oauthapplicationheadlessserver" id="special-behavior-of-oauthapplicationheadlessserver"></a>
 
-OAuth headless server client extensions depend on metadata that Liferay provides as a _route_ (see [Context-Sensitive Information](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/working-with-client-extensions#context-sensitive-information)). Any executable workload deployed with this client extension must wait for this route before it runs.
+OAuth headless server client extensions depend on metadata that the portal provides as a _route_ (see Context-Sensitive Information). Any executable workload deployed with this client extension must wait for this route before it runs.
 
 Here is an example of the route defined by the environment variable `LIFERAY_ROUTES_CLIENT_EXTENSION` when a `oAuthApplicationHeadlessServer` client extension is defined in the project:
 
@@ -50,11 +50,11 @@ Here is an example of the route defined by the environment variable `LIFERAY_ROU
 └── <oAuth2ApplicationExternalReferenceCode>.oauth2.token.uri
 ```
 
-Application logic that communicates with Liferay DXP using an `oAuthApplicationHeadlessServer` client extension must use the information provided by this route metadata to secure the transmitted data. All necessary OAuth 2 metadata is provided this way, so you don’t need to hard-code it.
+Application logic that communicates with the portal using an `oAuthApplicationHeadlessServer` client extension must use the information provided by this route metadata to secure the transmitted data. All necessary OAuth 2 metadata is provided this way, so you don’t need to hard-code it.
 
-### [OAuth User Agent Client Extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/configuration-client-extensions#oauth-user-agent-client-extensions) <a href="#oauth-user-agent-client-extensions" id="oauth-user-agent-client-extensions"></a>
+### OAuth User Agent Client Extensions <a href="#oauth-user-agent-client-extensions" id="oauth-user-agent-client-extensions"></a>
 
-You can use a client extension to configure a Liferay OAuth2 application pre-configured with a `User Agent Application` client profile. This kind of authentication profile is required for API calls authorized by a specific user (for example, making a REST call to a Liferay API using your other [microservice client extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions)).
+You can use a client extension to configure a OAuth2 application pre-configured with a `User Agent Application` client profile. This kind of authentication profile is required for API calls authorized by a specific user (for example, making a REST call to a API using your other microservice client extensions).
 
 Specify an OAuth user agent client extension in your `client-extension.yaml` file:
 
@@ -62,9 +62,9 @@ Specify an OAuth user agent client extension in your `client-extension.yaml` fil
 type: oAuthApplicationUserAgent
 ```
 
-#### [Special Behavior of `oAuthApplicationUserAgent`](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/configuration-client-extensions#special-behavior-of-oauthapplicationuseragent) <a href="#special-behavior-of-oauthapplicationuseragent" id="special-behavior-of-oauthapplicationuseragent"></a>
+#### Special Behavior of `oAuthApplicationUserAgent` <a href="#special-behavior-of-oauthapplicationuseragent" id="special-behavior-of-oauthapplicationuseragent"></a>
 
-OAuth headless user agent client extensions depend on metadata that Liferay provides as a _route_ (see [Context-Sensitive Information](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/working-with-client-extensions#context-sensitive-information)). Any executable workload deployed with this client extension must wait for this route before it runs.
+OAuth headless user agent client extensions depend on metadata that the portal provides as a _route_ (see Context-Sensitive Information). Any executable workload deployed with this client extension must wait for this route before it runs.
 
 Here is an example of the route defined by the environment variable `LIFERAY_ROUTES_CLIENT_EXTENSION` when a `oAuthApplicationUserAgent` client extension is defined in the project:
 
@@ -88,6 +88,6 @@ Here is an example of the route defined by the environment variable `LIFERAY_ROU
 └── <oAuth2ApplicationExternalReferenceCode>.oauth2.user.agent.scopes
 ```
 
-Application logic that communicates with Liferay DXP using an `oAuthApplicationUserAgent` client extension must use the information provided by this route metadata to secure the transmitted data. All necessary OAuth 2 metadata is provided this way, so you don’t have to hard-code it.
+Application logic that communicates with the portal using an `oAuthApplicationUserAgent` client extension must use the information provided by this route metadata to secure the transmitted data. All necessary OAuth 2 metadata is provided this way, so you don’t have to hard-code it.
 
 \

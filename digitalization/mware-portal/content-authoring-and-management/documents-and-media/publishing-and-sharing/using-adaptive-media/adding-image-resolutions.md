@@ -1,14 +1,14 @@
 # Adding Image Resolutions
 
-By default, Adaptive Media includes two image resolutions: preview and thumbnail. You can define additional image resolutions to help optimize site performance for common devices (e.g., desktops, laptops, tablets, mobile phones). When you upload an image, Adaptive Media uses the existing resolutions to generate each version of the image automatically. All generated images maintain the original aspect ratio. If images are uploaded before you add custom resolutions, you must [manually generate](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/managing-image-resolutions#manually-generating-adapted-images) the resolution version for those images.
+By default, Adaptive Media includes two image resolutions: preview and thumbnail. You can define additional image resolutions to help optimize site performance for common devices (e.g., desktops, laptops, tablets, mobile phones). When you upload an image, Adaptive Media uses the existing resolutions to generate each version of the image automatically. All generated images maintain the original aspect ratio. If images are uploaded before you add custom resolutions, you must manually generate the resolution version for those images.
 
 IMPORTANT
 
-Generating additional resolutions requires more computational resources and storage space. To optimize performance, you can configure the max number of asynchronous processes and available core processes. See [Adaptive Media Configuration Reference](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/adaptive-media-configuration-reference#processes) for more information.
+Generating additional resolutions requires more computational resources and storage space. To optimize performance, you can configure the max number of asynchronous processes and available core processes. See Adaptive Media Configuration Reference for more information.
 
 ![Add and manage images resolutions in the Adaptive Media application.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/adding-image-resolutions/images/01.png)
 
-### [Adding a New Image Resolution](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/adding-image-resolutions#adding-a-new-image-resolution) <a href="#adding-a-new-image-resolution" id="adding-a-new-image-resolution"></a>
+### Adding a New Image Resolution <a href="#adding-a-new-image-resolution" id="adding-a-new-image-resolution"></a>
 
 1. Open the _Global Menu_ ( ![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png) ), go to the _Control Panel_ tab, and click _Adaptive Media_.
 2. Click _Add_ ( ![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ).
@@ -30,7 +30,7 @@ Generating additional resolutions requires more computational resources and stor
     ![Enter a name, description, size, and identifier for the resolution.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/adding-image-resolutions/images/02.png)
 7. Click _Save_.
 
-While the resolution is enabled, Adaptive Media uses it to generates images for all new uploads. You can also [manually generate](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/managing-image-resolutions#manually-generating-adapted-images) adapted images for previously uploaded images.
+While the resolution is enabled, Adaptive Media uses it to generates images for all new uploads. You can also manually generate adapted images for previously uploaded images.
 
 IMPORTANT
 

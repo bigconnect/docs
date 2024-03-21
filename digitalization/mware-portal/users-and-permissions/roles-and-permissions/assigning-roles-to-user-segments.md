@@ -1,15 +1,15 @@
 # Assigning Roles to User Segments
 
-User segments are dynamically assigned user collections. If a [segment can be well-defined with the available criteria](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/creating-and-managing-user-segments), the administrative overhead of user management can be greatly reduced. On top of this, you can define [personalized experiences](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience) for user segments created at the site scope, ensuring that users see the most relevant content in your site.
+User segments are dynamically assigned user collections. If a segment can be well-defined with the available criteria, the administrative overhead of user management can be greatly reduced. On top of this, you can define personalized experiences for user segments created at the site scope, ensuring that users see the most relevant content in your site.
 
 | Where do I create user segments?                                  | What are they for?                                              | Where do I assign roles to a segment?         |
 | ----------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------- |
 | Site Segments (Site Menu → People → Segments)                     | Create personalized experiences for a site’s users.             | Site Menu → People → Segments (Actions)       |
 | Instance Segments (Control Panel → Users → Roles (Regular Roles)) | Efficiently and dynamically manage users and their permissions. | Control Panel → Users → Roles (Regular Roles) |
 
-### [Assigning a Regular Role to a User Segment](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/assigning-roles-to-user-segments#assigning-a-regular-role-to-a-user-segment) <a href="#assigning-a-regular-role-to-a-user-segment" id="assigning-a-regular-role-to-a-user-segment"></a>
+### Assigning a Regular Role to a User Segment <a href="#assigning-a-regular-role-to-a-user-segment" id="assigning-a-regular-role-to-a-user-segment"></a>
 
-Liferay DXP 7.2 SP2+
+Version 7.2 SP2+
 
 Analytics Administrator, Portal Content Reviewer, Power User, Publications User and any other regular roles you create can be assigned to user segments created at the global scope. To assign regular roles to a user segment,
 
@@ -28,11 +28,11 @@ The selected user segment(s) appear(s) in the list of assignees for the role.
 
 ![The user segment appears under the list of assignees for the role.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/roles-and-permissions/assigning-roles-to-user-segments/images/04.png)
 
-### [Assigning a Site Role to a User Segment](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/assigning-roles-to-user-segments#assigning-a-site-role-to-a-user-segment) <a href="#assigning-a-site-role-to-a-user-segment" id="assigning-a-site-role-to-a-user-segment"></a>
+### Assigning a Site Role to a User Segment <a href="#assigning-a-site-role-to-a-user-segment" id="assigning-a-site-role-to-a-user-segment"></a>
 
-Liferay DXP 7.2 SP3+
+Version 7.2 SP3+
 
-[Site roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/understanding-roles-and-permissions) can be assigned to segments, with two exceptions: Site Administrator and Site Owner.
+Site roles can be assigned to segments, with two exceptions: Site Administrator and Site Owner.
 
 1. Open the Product Menu (![Product Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) and navigate to _People_ → _Segments_.
 2. Open the segment’s _Actions_ (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and click _Assign Site Roles_.

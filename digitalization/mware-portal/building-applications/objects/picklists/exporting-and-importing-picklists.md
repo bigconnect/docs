@@ -1,8 +1,8 @@
 # Exporting and Importing Picklists
 
-You can transfer picklists between environments as JSON files using Liferay’s export/import framework.
+You can transfer picklists between environments as JSON files using the portal’s export/import framework.
 
-### [Exporting Picklists](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/picklists/exporting-and-importing-picklists#exporting-picklists) <a href="#exporting-picklists" id="exporting-picklists"></a>
+### Exporting Picklists <a href="#exporting-picklists" id="exporting-picklists"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), go to the _Control Panel_ tab, and click _Picklists_.
 2.  Click _Actions_ (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) for the desired list and select _Export as JSON_.
@@ -11,7 +11,7 @@ You can transfer picklists between environments as JSON files using Liferay’s 
 
     ![Click the Actions button for the desired list and select Export as JSON.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/picklists/exporting-and-importing-picklists/images/01.png)
 
-### [Importing Picklists](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/picklists/exporting-and-importing-picklists#importing-picklists) <a href="#importing-picklists" id="importing-picklists"></a>
+### Importing Picklists <a href="#importing-picklists" id="importing-picklists"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), go to the _Control Panel_ tab, and click _Picklists_.
 2.  Click _Actions_ (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) in the Application Bar and select _Import Picklist_.

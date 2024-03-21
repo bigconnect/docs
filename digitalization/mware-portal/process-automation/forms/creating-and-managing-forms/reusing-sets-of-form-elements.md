@@ -9,7 +9,7 @@ NOTE
 
     ![Field Grooups offer simpler field reusability and bulk management within a single form.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/reusing-sets-of-form-elements/images/04.png)
 
-### [Creating Element Sets](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/reusing-sets-of-form-elements#creating-element-sets) <a href="#creating-element-sets" id="creating-element-sets"></a>
+### Creating Element Sets <a href="#creating-element-sets" id="creating-element-sets"></a>
 
 To create an Element Set:
 
@@ -21,7 +21,7 @@ To create an Element Set:
     ![Element Sets Tab](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/reusing-sets-of-form-elements/images/01.png)
 5. Click the _Add_ button (![Add](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)).
 
-The steps to create an Element Set are the same as [creating a form](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/creating-forms). For demonstration, create an Element Set for users to submit their contact information.
+The steps to create an Element Set are the same as creating a form. For demonstration, create an Element Set for users to submit their contact information.
 
 1.  Enter the following:
 
@@ -36,7 +36,7 @@ TIP
 
 You can use Element Sets to create Element Sets.
 
-### [Using Element Sets](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/reusing-sets-of-form-elements#using-element-sets) <a href="#using-element-sets" id="using-element-sets"></a>
+### Using Element Sets <a href="#using-element-sets" id="using-element-sets"></a>
 
 To use an Element Set in a Form:
 

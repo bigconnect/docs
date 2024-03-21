@@ -1,12 +1,12 @@
 # Creating and Managing Roles
 
-Once you [understand](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/understanding-roles-and-permissions) roles and permissions, you can create the roles you need to empower your users to work within your Liferay DXP solution.
+Once you understand roles and permissions, you can create the roles you need to empower your users to work within your portal solution.
 
 Create and manage roles in Control Panel → Users → Roles.
 
-### [Creating Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/creating-and-managing-roles#creating-roles) <a href="#creating-roles" id="creating-roles"></a>
+### Creating Roles <a href="#creating-roles" id="creating-roles"></a>
 
-First, [determine the scope](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/understanding-roles-and-permissions) of the role you must create. Roles can be scoped globally (regular roles), by site, organization, asset library, or account.
+First, determine the scope of the role you must create. Roles can be scoped globally (regular roles), by site, organization, asset library, or account.
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), go to the _Control Panel_ tab, and click _Roles_.
 2. Click _Add_ (![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)).
@@ -25,12 +25,12 @@ You can update a role’s title, description, and key at any time, but you canno
 
 To do this, click the role’s _Actions_ button (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Edit_. When finished, click _Save_.
 
-### [Role Management Permissions](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/creating-and-managing-roles#role-management-permissions) <a href="#role-management-permissions" id="role-management-permissions"></a>
+### Role Management Permissions <a href="#role-management-permissions" id="role-management-permissions"></a>
 
 You can assign permissions for managing individual roles.
 
 1. Click the role’s _Actions_ button (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Permissions_.
-2.  Specify the actions that existing regular roles can perform on the selected role. This assignment is for each individual role and is different from [defining permission for the Roles application](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/defining-role-permissions).
+2.  Specify the actions that existing regular roles can perform on the selected role. This assignment is for each individual role and is different from defining permission for the Roles application.
 
     ![Permissions can be configured for role creation and management.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/roles-and-permissions/creating-and-managing-roles/images/02.png)
 
@@ -47,9 +47,9 @@ Be careful about granting these permissions. This is administrative functionalit
 
     ![Click OK to delete the role.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/roles-and-permissions/creating-and-managing-roles/images/03.png)
 
-### [Exporting and Importing Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/creating-and-managing-roles#exporting-and-importing-roles) <a href="#exporting-and-importing-roles" id="exporting-and-importing-roles"></a>
+### Exporting and Importing Roles <a href="#exporting-and-importing-roles" id="exporting-and-importing-roles"></a>
 
-If needed, you can export and import roles. However, Liferay only exports company-wide and personal site permissions. Site and asset library-related permissions are not exported.
+If needed, you can export and import roles. However, the portal only exports company-wide and personal site permissions. Site and asset library-related permissions are not exported.
 
 To begin an export or import process,
 
@@ -60,7 +60,7 @@ To begin an export or import process,
 
     ![Configure and review export/import processes.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/roles-and-permissions/creating-and-managing-roles/images/05.png)
 
-### [Deleting Asset Containers Deletes their Assets](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/creating-and-managing-roles#deleting-asset-containers-deletes-their-assets) <a href="#deleting-asset-containers-deletes-their-assets" id="deleting-asset-containers-deletes-their-assets"></a>
+### Deleting Asset Containers Deletes their Assets <a href="#deleting-asset-containers-deletes-their-assets" id="deleting-asset-containers-deletes-their-assets"></a>
 
 A Web Content folder contains Web Content articles. The Web Content folder is an asset container, and the Web Content article is an asset. It’s possible to give a role permission to delete an asset container without giving the role permission to delete individual assets. In that case, beware: if a role assignee deletes an asset container with individual assets in it, the individual assets themselves are deleted as well.
 

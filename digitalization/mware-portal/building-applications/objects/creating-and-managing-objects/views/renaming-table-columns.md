@@ -8,7 +8,7 @@ With custom views, you can change and localize the display name for table column
     ![Click the Actions button for the desired column and select Edit.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/views/renaming-table-columns/images/01.png)
 3.  For Column Label, enter a localizable display name and click _Edit_.
 
-    This value only affects the column’s display name and does not change the [field’s label](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/adding-fields-to-objects).
+    This value only affects the column’s display name and does not change the field’s label.
 
     ![Enter a localizable display name and click Edit.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/views/renaming-table-columns/images/02.png)
 4. Click _Save_.

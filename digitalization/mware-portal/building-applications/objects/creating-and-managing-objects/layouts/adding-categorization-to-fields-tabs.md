@@ -1,18 +1,18 @@
 # Adding Categorization to Fields Tabs
 
-You can add categorization blocks to [fields tabs](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/layouts/designing-object-layouts#fields-tabs) so end users can apply tags and categories to object entries. Follow these steps:
+You can add categorization blocks to fields tabs so end users can apply tags and categories to object entries. Follow these steps:
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), go to the _Control Panel_ tab, and click _Objects_.
 2.  Begin editing the desired object definition.
 
     NOTE
 
-    System objects do not support custom layouts. See [Extending System Objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/extending-system-objects) for more information.
+    System objects do not support custom layouts. See Extending System Objects for more information.
 3.  In the Details tab, enable categorization and click _Save_.
 
     ![Enable categorization.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/layouts/adding-categorization-to-fields-tabs/images/01.png)
 4. Click the _Layouts_ tab and select the desired layout.
-5.  Go to the _Layout_ tab, click _Actions_ (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) for the desired [Fields tab](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/layouts/designing-object-layouts#fields-tabs), and select _Add Categorization_.
+5.  Go to the _Layout_ tab, click _Actions_ (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) for the desired Fields tab, and select _Add Categorization_.
 
     ![Click the Actions button and select Add Categorization.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/layouts/adding-categorization-to-fields-tabs/images/02.png)
 

@@ -23,7 +23,7 @@ To configure the search scope,
 
     Once finished, click the _Save_ button.
 
-### [Configuring the Site Facet](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-facets/site-facet#configuring-the-site-facet) <a href="#configuring-the-site-facet" id="configuring-the-site-facet"></a>
+### Configuring the Site Facet <a href="#configuring-the-site-facet" id="configuring-the-site-facet"></a>
 
 To configure the Site Facet, open the Options menu (![Click on the options icon of the search bar.](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png)) of the facet and click _Configuration_.
 
@@ -41,7 +41,7 @@ The Advanced Configuration section contains additional options:
 
 **Display Frequencies:** Choose whether or not to display the term frequencies.
 
-**Order Terms By:** For Liferay 7.4 U54+/GA54+, you can choose the facet term sorting strategy: Term Frequency Descending (default), Term Frequency Ascending, Term Value Ascending, or Term Value Descending. The default sorting orders facet terms from most matches to least. Term value options order facet terms alphabetically.
+**Order Terms By:** For 7.4 +, you can choose the facet term sorting strategy: Term Frequency Descending (default), Term Frequency Ascending, Term Value Ascending, or Term Value Descending. The default sorting orders facet terms from most matches to least. Term value options order facet terms alphabetically.
 
 Once finished, click the _Save_ button.
 

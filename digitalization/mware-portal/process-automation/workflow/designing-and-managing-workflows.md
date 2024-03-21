@@ -4,23 +4,23 @@ With the workflow framework, Users manage asset publication in custom-built work
 
 ### Workflow Definition Publication Permissions <a href="#workflow-definition-publication-permissions" id="workflow-definition-publication-permissions"></a>
 
-Users with permission to edit or publish workflow definitions can add [Groovy scripts](https://learn.liferay.com/web/guest/w/dxp/system-administration/using-the-script-engine) to the workflow. Access to the scripting engine means access to the server’s Java Virtual Machine (JVM). Users with permission to publish (or edit) can therefore access any data within the reach of the JVM, such as data contained in a separate [Virtual Instance](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/virtual-instances/understanding-virtual-instances) of Liferay DXP.
+Users with permission to edit or publish workflow definitions can add Groovy scripts to the workflow. Access to the scripting engine means access to the server’s Java Virtual Machine (JVM). Users with permission to publish (or edit) can therefore access any data within the reach of the JVM, such as data contained in a separate Virtual Instance of the portal.
 
-Because of this far-reaching access, permission to create or edit workflow definitions is limited to Regular Administrators of the Default Virtual Instance. For Liferay DXP customers, Users (e.g., Site Administrators) can also edit and publish workflows with their access to the Kaleo Designer and Kaleo Forms Admin applications.
+Because of this far-reaching access, permission to create or edit workflow definitions is limited to Regular Administrators of the Default Virtual Instance. For the portal customers, Users (e.g., Site Administrators) can also edit and publish workflows with their access to the Kaleo Designer and Kaleo Forms Admin applications.
 
 To grant Users with these Roles the workflow publication access in additional Virtual Instances,
 
-1. Make sure you understand the [access you’re granting these administrators](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/understanding-roles-and-permissions).
+1. Make sure you understand the access you’re granting these administrators.
 2. Navigate to Control Panel → System Settings → Workflow → Workflow Definition.
 3. Check the box for the setting _Allow Administrators to Publish and Edit Workflows_.
 
 ![Explicit permission must be granted before administrators are allowed to publish and edit workflow definitions.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/workflow/designing-and-managing-workflows/managing-workflows/images/06.png)
 
-This only applies to Virtual Instances that have been added to the system. The Default Virtual Instance provides out of the box workflow publication access to Regular Administrators, via Control Panel → Workflow → Process Builder and for Liferay DXP subscribers via the Kaleo Forms Admin application.
+This only applies to Virtual Instances that have been added to the system. The Default Virtual Instance provides out of the box workflow publication access to Regular Administrators, via Control Panel → Workflow → Process Builder and for the portal subscribers via the Kaleo Forms Admin application.
 
-### [Uploading a New Workflow Definition](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/managing-workflows#uploading-a-new-workflow-definition) <a href="#uploading-a-new-workflow-definition" id="uploading-a-new-workflow-definition"></a>
+### Uploading a New Workflow Definition <a href="#uploading-a-new-workflow-definition" id="uploading-a-new-workflow-definition"></a>
 
-Workflow process definitions can be [built in Liferay](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/building-workflows) or uploaded in `XML` format. DXP workflow definitions are written in `XML` format; see the [Introduction to Crafting XML Workflow Definitions](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/developer-guide/crafting-xml-workflow-definitions) to learn more.
+Workflow process definitions can be built in the portal or uploaded in `XML` format. DXP workflow definitions are written in `XML` format; see the Introduction to Crafting XML Workflow Definitions to learn more.
 
 To upload a new definition:
 
@@ -36,7 +36,7 @@ To upload a new definition:
 
 The newly added definition is ready to be used as a workflow process.
 
-### [Editing a Workflow Definition](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/managing-workflows#editing-a-workflow-definition) <a href="#editing-a-workflow-definition" id="editing-a-workflow-definition"></a>
+### Editing a Workflow Definition <a href="#editing-a-workflow-definition" id="editing-a-workflow-definition"></a>
 
 To edit a workflow:
 
@@ -47,7 +47,7 @@ To edit a workflow:
 
 Changes to Workflow Definitions are tracked in the _Details_ and _Revision History_ menus.
 
-#### [Viewing and Restoring Workflow Revisions](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/managing-workflows#viewing-and-restoring-workflow-revisions) <a href="#viewing-and-restoring-workflow-revisions" id="viewing-and-restoring-workflow-revisions"></a>
+#### Viewing and Restoring Workflow Revisions <a href="#viewing-and-restoring-workflow-revisions" id="viewing-and-restoring-workflow-revisions"></a>
 
 To view the workflow definition details and the revision history:
 
@@ -58,7 +58,7 @@ To view the workflow definition details and the revision history:
 3. When you click _Restore_ and see the success message, the prior version is the current version of the workflow. You can now edit the restored version of the workflow.
 4. If edits are necessary, edit and click _Update_. This creates another version of the workflow.
 
-### [Deleting a Workflow Definition](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/managing-workflows#deleting-a-workflow-definition) <a href="#deleting-a-workflow-definition" id="deleting-a-workflow-definition"></a>
+### Deleting a Workflow Definition <a href="#deleting-a-workflow-definition" id="deleting-a-workflow-definition"></a>
 
 There are two statuses for a workflow:
 

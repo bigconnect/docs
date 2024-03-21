@@ -6,7 +6,7 @@ You can find the widget under _Content Management_ in the Fragments and Widgets 
 
 ![The Knowledge Base Display widget appears under Content Management in the widget menu.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/knowledge-base/knowledge-base-display-widget/images/01.png)
 
-### [Configuring the Widget](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/knowledge-base-display-widget#configuring-the-widget) <a href="#configuring-the-widget" id="configuring-the-widget"></a>
+### Configuring the Widget <a href="#configuring-the-widget" id="configuring-the-widget"></a>
 
 1. Begin editing a page that includes the Knowledge Base Display widget.
 2.  Click the _Options_ button (![Options Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) for the widget and select _Configuration_.
@@ -68,7 +68,7 @@ You can find the widget under _Content Management_ in the Fragments and Widgets 
     ```
 9. Click _Save_.
 
-### [Exploring the Widget’s Features](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/knowledge-base-display-widget#exploring-the-widgets-features) <a href="#exploring-the-widgets-features" id="exploring-the-widgets-features"></a>
+### Exploring the Widget’s Features <a href="#exploring-the-widgets-features" id="exploring-the-widgets-features"></a>
 
 The Knowledge Base Display’s navigation menu and display options make it a great candidate for a full page widget. If you display a folder of articles, the navigation on the left side of the widget displays links to all the folder’s articles. If your articles are organized into [folders](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/managing-the-knowledge-base#adding-folders), this widget provides users with a selector for switching between folders.
 
@@ -94,8 +94,8 @@ Administrators have access to an additional set of links at the top of the widge
 * Move the article
 * Delete the article
 
-Below the article’s content is the rating interface, showing thumbs up/down icons. Users can also submit suggestions or comments below the article in the text box labeled _Do you have any suggestions_?. Administrators can view the [suggestions and mark progress on them](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/responding-to-knowledge-base-feedback).
+Below the article’s content is the rating interface, showing thumbs up/down icons. Users can also submit suggestions or comments below the article in the text box labeled _Do you have any suggestions_?. Administrators can view the suggestions and mark progress on them.
 
-If the administrator enables the Knowledge Base source URL feature and an article has an assigned source URL, an _Edit on GitHub_ button (![GitHub icon](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/knowledge-base/knowledge-base-display-widget/images/11.png)) appears to the right of the article’s title. This button links to the article’s source in GitHub. You can use this feature to encourage people to contribute fixes or improvements to articles. See [Knowledge Base System Settings](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/knowledge-base-system-settings) for more information.
+If the administrator enables the Knowledge Base source URL feature and an article has an assigned source URL, an _Edit on GitHub_ button (![GitHub icon](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/knowledge-base/knowledge-base-display-widget/images/11.png)) appears to the right of the article’s title. This button links to the article’s source in GitHub. You can use this feature to encourage people to contribute fixes or improvements to articles. See Knowledge Base System Settings for more information.
 
 \

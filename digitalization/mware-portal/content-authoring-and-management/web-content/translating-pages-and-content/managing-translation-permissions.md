@@ -5,17 +5,17 @@ The required permissions for translating content pages and web content depend on
 * Manual translation requires either Update permissions for the resource type, or Translate permissions for one or more languages.
 * Exporting and importing translations requires Update permissions for the resource type.
 
-### [Assigning Update Permissions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/managing-translation-permissions#assigning-update-permissions) <a href="#assigning-update-permissions" id="assigning-update-permissions"></a>
+### Assigning Update Permissions <a href="#assigning-update-permissions" id="assigning-update-permissions"></a>
 
-Users with Update permissions for pages and web content can translate them manually into any available language. They can also export them as XLIFF files for translation and then import the translations when finished. See [Defining Role Permissions](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/defining-role-permissions) to learn how to assign these permissions at the application level.
+Users with Update permissions for pages and web content can translate them manually into any available language. They can also export them as XLIFF files for translation and then import the translations when finished. See Defining Role Permissions to learn how to assign these permissions at the application level.
 
-### [Assigning Translate Permissions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/managing-translation-permissions#assigning-translate-permissions) <a href="#assigning-translate-permissions" id="assigning-translate-permissions"></a>
+### Assigning Translate Permissions <a href="#assigning-translate-permissions" id="assigning-translate-permissions"></a>
 
 Translate permissions are language-specific and grant access to the Translate action for content pages and web content. Users with Translate permissions can only use languages they’ve been assigned. Once granted, these permissions cannot be restricted by individual assets.
 
 NOTE
 
-The languages available for translation are determined by your instance’s localization settings. See [Initial Instance Localization](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/initial-instance-localization) and [Virtual Instance Localization](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/virtual-instances/localization) for more information.
+The languages available for translation are determined by your instance’s localization settings. See Initial Instance Localization and Virtual Instance Localization for more information.
 
 Follow these steps to assign Translate permissions for specific languages:
 

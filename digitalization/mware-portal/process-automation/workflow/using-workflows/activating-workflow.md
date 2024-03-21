@@ -4,11 +4,11 @@ You can activate a workflow process for an asset type either across the DXP inst
 
 WARNING
 
-Workflow cannot be used with [Publications](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/publications) in Liferay 7.3.
+Workflow cannot be used with Publications in version 7.3.
 
 You can enable or disable workflow on individual sites. By default, workflow is disabled on a site.
 
-### [Activating Workflow Across a DXP Instance](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/activating-workflow#activating-workflow-across-a-dxp-instance) <a href="#activating-workflow-across-a-dxp-instance" id="activating-workflow-across-a-dxp-instance"></a>
+### Activating Workflow Across a portal Instance <a href="#activating-workflow-across-a-dxp-instance" id="activating-workflow-across-a-dxp-instance"></a>
 
 1. Open the _Product Menu_ (![Product Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) and click _Control Panel_.
 2. Click _Workflow_ then _Process Builder_.
@@ -22,7 +22,7 @@ You can enable or disable workflow on individual sites. By default, workflow is 
 6. Click _Save_.
 7. Repeat for all the other asset types which require workflow.
 
-### [Activating Workflow on a Site](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/activating-workflow#activating-workflow-on-a-site) <a href="#activating-workflow-on-a-site" id="activating-workflow-on-a-site"></a>
+### Activating Workflow on a Site <a href="#activating-workflow-on-a-site" id="activating-workflow-on-a-site"></a>
 
 When a workflow process is enabled on a site, other sites on the same instances remain disabled. To enable a workflow process for each asset type per site:
 
@@ -42,11 +42,11 @@ TIP
 
 You can always disable workflow for an asset type on a site even if it was enabled instance wide.
 
-### [Activating Workflow For Specific Applications](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/activating-workflow#activating-workflow-for-specific-applications) <a href="#activating-workflow-for-specific-applications" id="activating-workflow-for-specific-applications"></a>
+### Activating Workflow For Specific Applications <a href="#activating-workflow-for-specific-applications" id="activating-workflow-for-specific-applications"></a>
 
 There are several assets types where workflow is enabled in their respective applications.
 
-#### [Web Content Folders](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/activating-workflow#web-content-folders) <a href="#web-content-folders" id="web-content-folders"></a>
+#### Web Content Folders <a href="#web-content-folders" id="web-content-folders"></a>
 
 To activate a workflow for a _Web Content Folder_:
 
@@ -62,7 +62,7 @@ To activate a workflow for a _Web Content Folder_:
 6. Select the workflow definition (for example, _Single Approver_).
 7. Click the _Save_ button.
 
-#### [Documents and Media Folders](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/activating-workflow#documents-and-media-folders) <a href="#documents-and-media-folders" id="documents-and-media-folders"></a>
+#### Documents and Media Folders <a href="#documents-and-media-folders" id="documents-and-media-folders"></a>
 
 Workflow can be enabled for the entire _Documents and Media_ application in the _Root_ folder or for individual folders.
 
@@ -80,7 +80,7 @@ To activate a workflow for a _Documents and Media Folder_:
 6. Select the workflow definition (for example, _Single Approver_).
 7. Click the _Save_ button.
 
-#### [Dynamic Data Lists](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/activating-workflow#dynamic-data-lists) <a href="#dynamic-data-lists" id="dynamic-data-lists"></a>
+#### Dynamic Data Lists <a href="#dynamic-data-lists" id="dynamic-data-lists"></a>
 
 To activate a workflow for a _DDL Form_:
 
@@ -97,7 +97,7 @@ To activate a workflow for a _DDL Form_:
 
 This particular DDL form now goes through the submission process.
 
-#### [Forms](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/activating-workflow#forms) <a href="#forms" id="forms"></a>
+#### Forms <a href="#forms" id="forms"></a>
 
 To activate workflow for each individual form’s entries
 

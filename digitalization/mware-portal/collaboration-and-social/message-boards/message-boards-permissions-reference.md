@@ -1,12 +1,12 @@
 # Message Boards Permissions Reference
 
-This article documents permissions in the _Message Boards_ widget and serves as a reference when assigning permissions to users and roles. To learn more about DXP Roles and Permissions in general, see [Roles and Permissions](https://help.liferay.com/hc/articles/360017895212-Roles-and-Permissions).
+This article documents permissions in the _Message Boards_ widget and serves as a reference when assigning permissions to users and roles. To learn more about Roles and Permissions in general, see Roles and Permissions.
 
-### [Home Category Permissions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-permissions-reference#home-category-permissions) <a href="#home-category-permissions" id="home-category-permissions"></a>
+### Home Category Permissions <a href="#home-category-permissions" id="home-category-permissions"></a>
 
 The _Message Boards_ permissions screen is for granting and revoking access to _Message Boards_ functions.
 
-1. Navigate to the _Site Administration_ for the host site (for example, Liferay DXP’s guest site).
+1. Navigate to the _Site Administration_ for the host site (for example, the portal’s guest site).
 2. Click _Content & Data_ → _Message Boards_.
 3.  Click the _Options_ icon (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-permissions-reference/images/01.png)) then _Home Category Permissions_.
 
@@ -28,7 +28,7 @@ The permissions enable users who have a particular Role to perform the following
 | **Move Thread:**            | Move a thread to a different category or subcategory.                        |
 | **Update Thread Priority:** | Modify a thread’s priority.                                                  |
 
-### [Widget Permissions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-permissions-reference#widget-permissions) <a href="#widget-permissions" id="widget-permissions"></a>
+### Widget Permissions <a href="#widget-permissions" id="widget-permissions"></a>
 
 After adding a Message Boards widget to a page, administrators can access that widget instance’s general permissions. To do so, select the widget’s _Options_ menu (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/message-boards-permissions-reference/images/02.png)) and select _Permissions_.
 
@@ -42,7 +42,7 @@ After adding a Message Boards widget to a page, administrators can access that w
 | **View:**          | Grants the ability to view the widget.                             |
 | **Add to Page:**   | Grants the ability to add the widget to a site page.               |
 
-### [General Category Permissions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-permissions-reference#general-category-permissions) <a href="#general-category-permissions" id="general-category-permissions"></a>
+### General Category Permissions <a href="#general-category-permissions" id="general-category-permissions"></a>
 
 This set of permissions determine what changes Guests and Site Members can make to a Category.
 
@@ -63,7 +63,7 @@ This set of permissions determine what changes Guests and Site Members can make 
 | **Add Subcategory:**        | Add a new category within this category.                            |
 | **Update Thread Priority:** | Modify a thread’s priority.                                         |
 
-### [Thread Permissions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-permissions-reference#thread-permissions) <a href="#thread-permissions" id="thread-permissions"></a>
+### Thread Permissions <a href="#thread-permissions" id="thread-permissions"></a>
 
 This set of permissions determine what changes users can make to a Thread.
 

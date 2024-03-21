@@ -10,7 +10,7 @@ Although the setting is global, each instance keeps track of its current consume
 
 By default, the `data.limit.dl.storage.max.size` portal property is disabled. You can override this value using a `portal-ext.properties` file.
 
-Follow these steps to set a global storage quota for Documents and Media in a Liferay instance:
+Follow these steps to set a global storage quota for Documents and Media in a portal instance:
 
 1. Create a `portal-ext.properties` file.
 2.  Add the `data.limit.dl.storage.max.size` property to your new properties file and set its value to the storage quota you want.
@@ -22,8 +22,8 @@ Follow these steps to set a global storage quota for Documents and Media in a Li
     ```
 
     Assigning a negative number or `0` disables the property.
-3. Deploy the `portal-ext.properties` file to your [Liferay Home](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/liferay-home) folder or `[USER_HOME]` folder. See [Portal Properties](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/portal-properties) for more details.
-4. Restart the Liferay server to apply your new properties file.
+3. Deploy the `portal-ext.properties` file to your Home folder or `[USER_HOME]` folder. See Portal Properties for more details.
+4. Restart the portal server to apply your new properties file.
 
 Under normal circumstances, the system dynamically updates the storage quota. However, in some cases, a manual update may be required due to database corruption, runtime errors, or some other cause. To do this, run the `documentLibrary:update` OSGi command from the Gogo Shell.
 

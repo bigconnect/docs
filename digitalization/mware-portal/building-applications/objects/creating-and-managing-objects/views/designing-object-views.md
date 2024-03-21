@@ -11,7 +11,7 @@ Follow these steps:
 
     NOTE
 
-    System objects do not support custom views. See [Extending System Objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/extending-system-objects) for more information.
+    System objects do not support custom views. See Extending System Objects for more information.
 3.  Enter a _name_ and click _Save_.
 
     ![Enter a name and click Save.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/views/designing-object-views/images/02.png)
@@ -24,12 +24,12 @@ Follow these steps:
 6. Go to the _View Builder_ tab and click the _Add_ button (![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)).
 7.  Check the _fields_ you want to include in the view table and click _Save_.
 
-    Each selected field becomes a column in the view table. Available options include both [custom fields](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/adding-fields-to-objects) and default system fields (i.e., ID, Author, Creation Date, Modified Date, and Workflow Status). However, custom views do not support columns containing multiple entries (e.g., relationships tables from one-to-many or many-to-many relationships)
+    Each selected field becomes a column in the view table. Available options include both custom fields and default system fields (i.e., ID, Author, Creation Date, Modified Date, and Workflow Status). However, custom views do not support columns containing multiple entries (e.g., relationships tables from one-to-many or many-to-many relationships)
 8.  Drag and drop fields to determine their order in the view table.
 
     ![Arrange the fields in any order.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/views/designing-object-views/images/04.png)
 9. Click _Save_.
 
-Once saved, the view table displays the selected fields. If desired, you can also rename and localize [column display names](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/views/renaming-table-columns), add a [default sorting](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/views/setting-a-default-sorting), and select which fields to use as [table filters](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/views/adding-filters-to-views).
+Once saved, the view table displays the selected fields. If desired, you can also rename and localize column display names, add a default sorting, and select which fields to use as table filters.
 
 ![The view table only displays the selected fields.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/views/designing-object-views/images/05.png)

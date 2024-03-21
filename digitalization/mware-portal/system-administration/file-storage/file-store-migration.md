@@ -6,13 +6,13 @@ Files can be migrated from one file store type to another. Here are some migrati
 * Migrating from Simple, Advanced, or S3 to DBStore to avoid transaction rollback vulnerabilities.
 * Migrating from DBStore to Advanced File System Store to accommodate files larger than 1 gigabyte.
 
-The Data Migration utility in [Server Administration](https://learn.liferay.com/web/guest/w/dxp/system-administration/using-the-server-administration-panel) facilitates the migration.
+The Data Migration utility in Server Administration facilitates the migration.
 
 WARNING
 
-**Always** [back up](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/maintaining-a-liferay-installation/backing-up) your file store and database before migrating. Testing the migration process on backup copies is advised.
+**Always** back up your file store and database before migrating. Testing the migration process on backup copies is advised.
 
-### [Migrating Files](https://learn.liferay.com/web/guest/w/dxp/system-administration/file-storage/file-store-migration#migrating-files) <a href="#migrating-files" id="migrating-files"></a>
+### Migrating Files <a href="#migrating-files" id="migrating-files"></a>
 
 Here are the migration steps:
 
@@ -21,7 +21,7 @@ Here are the migration steps:
 
     ![Data Migration utility](https://resources.learn.liferay.com/images/dxp/latest/en/system-administration/file-storage/file-store-migration/images/01.png)
 3. Make sure the data migrated correctly.
-4.  Configure [`portal-ext.properties`](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/portal-properties) to the target file store type, using one of these settings:
+4.  Configure `portal-ext.properties` to the target file store type, using one of these settings:
 
     ```properties
     dl.store.impl=com.liferay.portal.store.db.DBStore
@@ -29,9 +29,9 @@ Here are the migration steps:
     dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
     dl.store.impl=com.liferay.portal.store.s3.S3Store
     ```
-5. Restart DXP.
+5. Restart the portal.
 
-Your DXP instance is using the migrated files on the newly configured file store.
+Your portal instance is using the migrated files on the newly configured file store.
 
 WARNING
 

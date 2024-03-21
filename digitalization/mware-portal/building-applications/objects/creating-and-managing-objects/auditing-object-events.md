@@ -1,8 +1,8 @@
 # Auditing Object Events
 
-You can use Liferay’s audit framework to track events for custom object definitions and their entries. To track entry events, you must [enable entry history](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/auditing-object-events#enabling-entry-history) for the object definition. While enabled, you can view an entry’s history via the [Audit application](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/auditing-object-events#using-the-audit-application) or [REST APIs](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/auditing-object-events#using-rest-apis).
+You can use the portal’s audit framework to track events for custom object definitions and their entries. To track entry events, you must enable entry history for the object definition. While enabled, you can view an entry’s history via the Audit application or REST APIs.
 
-### [Using the Audit Application](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/auditing-object-events#using-the-audit-application) <a href="#using-the-audit-application" id="using-the-audit-application"></a>
+### Using the Audit Application <a href="#using-the-audit-application" id="using-the-audit-application"></a>
 
 Subscription
 
@@ -28,17 +28,17 @@ Object entry events use the `ObjectDefinition#[ObjectID]` naming pattern.
 
 ![Click an event field to view more details.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/auditing-object-events/images/02.png)
 
-### [Using REST APIs](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/auditing-object-events#using-rest-apis) <a href="#using-rest-apis" id="using-rest-apis"></a>
+### Using REST APIs <a href="#using-rest-apis" id="using-rest-apis"></a>
 
-You can use the `nestedFields` parameter with the `auditEvents` value to return an entry’s history in GET API calls (e.g., `http://localhost:8080/o/c/tickets/?nestedFields=auditEvents`). See [Using nestedFields to Audit Entry History](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/understanding-object-integrations/using-custom-object-apis/using-nestedfields-to-audit-entry-history) for a basic tutorial.
+You can use the `nestedFields` parameter with the `auditEvents` value to return an entry’s history in GET API calls (e.g., `http://localhost:8080/o/c/tickets/?nestedFields=auditEvents`). See Using nestedFields to Audit Entry History for a basic tutorial.
 
 IMPORTANT
 
-Using REST APIs to view an entry’s history requires both the `View` and `Object Entry History` permissions for the entry. See [Permissions Framework Integration](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/understanding-object-integrations/permissions-framework-integration) for more information.
+Using REST APIs to view an entry’s history requires both the `View` and `Object Entry History` permissions for the entry. See Permissions Framework Integration for more information.
 
-### [Enabling Entry History](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/auditing-object-events#enabling-entry-history) <a href="#enabling-entry-history" id="enabling-entry-history"></a>
+### Enabling Entry History <a href="#enabling-entry-history" id="enabling-entry-history"></a>
 
-By default, entry history is disabled for custom objects. For 7.4 U72+/GA72+, you can configure this setting at any time. In earlier versions, you can only configure this setting before [publishing the object definition](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/creating-objects#publishing-object-drafts).
+By default, entry history is disabled for custom objects. For 7.4 +, you can configure this setting at any time. In earlier versions, you can only configure this setting before publishing the object definition.
 
 To enable entry history,
 
@@ -49,6 +49,6 @@ To enable entry history,
     ![Enable entry history.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/auditing-object-events/images/03.png)
 4. Click _Save_.
 
-While enabled, Liferay keeps a history of entry events that you can view in the Audit application or via REST API calls.
+While enabled, the portal keeps a history of entry events that you can view in the Audit application or via REST API calls.
 
 \

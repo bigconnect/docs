@@ -1,6 +1,6 @@
 # Creating Picklists
 
-Picklists are lists of name/key pairs stored as string values. Once defined, you can use the lists with object definitions to populate single or multiple selection fields. See [Picklists](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/picklists) for more picklist use cases.
+Picklists are lists of name/key pairs stored as string values. Once defined, you can use the lists with object definitions to populate single or multiple selection fields. See Picklists for more picklist use cases.
 
 To create a picklist,
 
@@ -28,6 +28,6 @@ To create a picklist,
 
     ![Add multiple items to a picklist.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/picklists/creating-picklists/images/04.png)
 
-Once created, you can select a picklist when creating object fields. Select the _Picklist_ (single select) or _Multiselect Picklist_ field type and choose the list. See [Adding Fields to Objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/adding-fields-to-objects) and [Picklist Fields](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/picklist-fields) for more information.
+Once created, you can select a picklist when creating object fields. Select the _Picklist_ (single select) or _Multiselect Picklist_ field type and choose the list. See Adding Fields to Objects and Picklist Fields for more information.
 
 ![Users can select the picklist when creating new object fields.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/picklists/creating-picklists/images/05.png)

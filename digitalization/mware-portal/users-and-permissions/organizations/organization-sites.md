@@ -1,8 +1,8 @@
 # Organization Sites
 
-Liferay [Organizations](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/understanding-organizations) enable distributed User management, providing a convenient way to organize and manage instance users and roles to reflect your organizational hierarchy. Once an organization is created, you can also enable a dedicated Site for your Organization to facilitate distributed portal administration. This feature is available for both parent and child Organizations, so you can quickly create a hierarchy of Sites with content created, administered, and tailored specifically to each group’s needs.
+Organizations enable distributed User management, providing a convenient way to organize and manage instance users and roles to reflect your organizational hierarchy. Once an organization is created, you can also enable a dedicated Site for your Organization to facilitate distributed portal administration. This feature is available for both parent and child Organizations, so you can quickly create a hierarchy of Sites with content created, administered, and tailored specifically to each group’s needs.
 
-### [Creating an Organization Site](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/organization-sites#creating-an-organization-site) <a href="#creating-an-organization-site" id="creating-an-organization-site"></a>
+### Creating an Organization Site <a href="#creating-an-organization-site" id="creating-an-organization-site"></a>
 
 Follow these steps to create an Organization Site:
 
@@ -17,8 +17,8 @@ Follow these steps to create an Organization Site:
 
 This creates a new blank Site with your Organization’s Users and general information.
 
-### [Organization Site Users and Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/organization-sites#organization-site-users-and-roles) <a href="#organization-site-users-and-roles" id="organization-site-users-and-roles"></a>
+### Organization Site Users and Roles <a href="#organization-site-users-and-roles" id="organization-site-users-and-roles"></a>
 
-When you create an Organization Site, your Organization’s Users are automatically assigned to it with implicit Site roles that correspond to their Organization roles. For example, Organization Users are functionally equivalent to Site Members, possessing basic Site privileges, while Organization Administrators function as Site Administrators and can manage Site pages, widgets, and content. See [Organization Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/organization-roles) and the [Default Roles Reference](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/default-roles-reference#organization-roles) for more information.
+When you create an Organization Site, your Organization’s Users are automatically assigned to it with implicit Site roles that correspond to their Organization roles. For example, Organization Users are functionally equivalent to Site Members, possessing basic Site privileges, while Organization Administrators function as Site Administrators and can manage Site pages, widgets, and content. See Organization Roles and the Default Roles Reference for more information.
 
 \

@@ -2,18 +2,18 @@
 
 You can manually tag most assets, such as Message Boards, Blogs, Documents, Images, and Web Content Articles. You can tag certain assets, however, automatically when they are created. Tags applied automatically are in only English.
 
-Auto tagging is only available for text-based documents, text-based web content, and blog entries, as well as [images](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/auto-tagging/auto-tagging-images).
+Auto tagging is only available for text-based documents, text-based web content, and blog entries, as well as images.
 
-Text Auto Tagging is disabled by default. You must [enable Auto Tagging](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/auto-tagging/configuring-asset-auto-tagging) in DXP and then enable a text auto tagging provider. Finally, you must choose the asset to auto-tag. There are two text auto-tagging providers available for DXP:
+Text Auto Tagging is disabled by default. You must enable Auto Tagging in the portal and then enable a text auto tagging provider. Finally, you must choose the asset to auto-tag. There are two text auto-tagging providers available:
 
-* **Google Cloud Natural Language Text Auto Tagging**: Uses the [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) to analyze and automatically tag content.
-* **OpenNLP Text Auto Tagging**: Uses the open source [Apache OpenNLP](https://opennlp.apache.org/) library to analyze and automatically tag portal content. Three models are used: location name finder, organization finder, and person name finder.
+* **Google Cloud Natural Language Text Auto Tagging**: Uses the Google Cloud Natural Language API to analyze and automatically tag content.
+* **OpenNLP Text Auto Tagging**: Uses the open source Apache OpenNLP library to analyze and automatically tag portal content. Three models are used: location name finder, organization finder, and person name finder.
 
 TIP
 
 Use this provider with caution because its accuracy may be limited.
 
-### [Configuring Google Cloud Natural Language Text Auto Tagging](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/auto-tagging/auto-tagging-assets#configuring-google-cloud-natural-language-text-auto-tagging) <a href="#configuring-google-cloud-natural-language-text-auto-tagging" id="configuring-google-cloud-natural-language-text-auto-tagging"></a>
+### Configuring Google Cloud Natural Language Text Auto Tagging <a href="#configuring-google-cloud-natural-language-text-auto-tagging" id="configuring-google-cloud-natural-language-text-auto-tagging"></a>
 
 1. Click the _Global Menu_ → _Control Panel_
 2.  Click _System Settings_.
@@ -28,7 +28,7 @@ Use this provider with caution because its accuracy may be limited.
 
 The form asks for this information:
 
-**API Key:** The API key to use for the Google Cloud Natural Language API. For more information, see [Google’s documentation on API keys](https://cloud.google.com/docs/authentication/api-keys).
+**API Key:** The API key to use for the Google Cloud Natural Language API. For more information, see Google’s documentation on API keys.
 
 **Classification Endpoint Enabled:** Whether to enable auto tagging of text using the Google Cloud Natural Language API Classification endpoint.
 
@@ -46,7 +46,7 @@ The Google Cloud Natural Language provider has been configured.
 
 If there are multiple virtual instances on the server, you can override these settings for each instance from _Control Panel_ → _Instance Settings_ → _Assets_.
 
-### [Configuring OpenNLP Text Auto Tagging](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/auto-tagging/auto-tagging-assets#configuring-opennlp-text-auto-tagging) <a href="#configuring-opennlp-text-auto-tagging" id="configuring-opennlp-text-auto-tagging"></a>
+### Configuring OpenNLP Text Auto Tagging <a href="#configuring-opennlp-text-auto-tagging" id="configuring-opennlp-text-auto-tagging"></a>
 
 1. Click the _Global Menu_ → _Control Panel_
 2. Click _System Settings_.

@@ -1,6 +1,6 @@
 # Editing Images
 
-Liferay’s Documents and Media includes a built-in image editor for cropping and rotating images without switching contexts.
+Documents and Media includes a built-in image editor for cropping and rotating images without switching contexts.
 
 To use the image editor, open Documents and Media, click the _Actions_ button (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) for the desired image, and select _Edit Image_.
 
@@ -22,7 +22,7 @@ When editing an image in Documents and Media, you have these options:
 
 ![Crop and rotate images.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/editing-images/images/02.png)
 
-### [For Liferay 7.3.x and Earlier](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/editing-images#for-liferay-73x-and-earlier) <a href="#for-liferay-73x-and-earlier" id="for-liferay-73x-and-earlier"></a>
+### For version 7.3.x and Earlier <a href="#for-liferay-73x-and-earlier" id="for-liferay-73x-and-earlier"></a>
 
 The Documents and Media application comes with a built-in image editor. Edit images right from your browser and apply filters, adjust contrast, or crop.
 
@@ -34,13 +34,13 @@ The image editor offers a minimal, user-friendly UI with the following tools.
 
 ![There are different editing tools below the image.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/editing-images/images/04.png)
 
-#### [Effects Tool (Filters)](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/editing-images#effects-tool-filters) <a href="#effects-tool-filters" id="effects-tool-filters"></a>
+#### Effects Tool (Filters) <a href="#effects-tool-filters" id="effects-tool-filters"></a>
 
 Select from and apply predefined filters to your image.
 
 ![The Effects tool brings up predefined filters you can apply to your image.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/editing-images/images/05.png)
 
-#### [Transform Tools (Transform Option)](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/editing-images#transform-tools-transform-option) <a href="#transform-tools-transform-option" id="transform-tools-transform-option"></a>
+#### Transform Tools (Transform Option) <a href="#transform-tools-transform-option" id="transform-tools-transform-option"></a>
 
 **Rotate**: Rotates the image to the left or right, in 90 degree increments.
 
@@ -48,7 +48,7 @@ Select from and apply predefined filters to your image.
 
 **Crop**: Reframes the image by removing the outer portions.
 
-#### [Adjustment Tools (Color Adjustment)](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/editing-images#adjustment-tools-color-adjustment) <a href="#adjustment-tools-color-adjustment" id="adjustment-tools-color-adjustment"></a>
+#### Adjustment Tools (Color Adjustment) <a href="#adjustment-tools-color-adjustment" id="adjustment-tools-color-adjustment"></a>
 
 **Saturation**: Adjusts the color saturation in the image. The default value of 50 is the current saturation. The slider values range from 0 (completely desaturated) to 100 (completely saturated).
 

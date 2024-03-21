@@ -1,10 +1,10 @@
 # Enabling Workflow for Objects
 
-Every published object is integrated automatically with the Workflow framework, so you can direct object entry creation through a defined review and approval process. How you enable a Workflow for an object depends on the object’s scope: [Company](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/enabling-workflows-for-objects#company-scoped-objects) or [Site](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/enabling-workflows-for-objects#site-scoped-objects).
+Every published object is integrated automatically with the Workflow framework, so you can direct object entry creation through a defined review and approval process. How you enable a Workflow for an object depends on the object’s scope: Company or Site.
 
-See [Workflow](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow) documentation to learn more about general workflow features.
+See Workflow documentation to learn more about general workflow features.
 
-### [Company-Scoped Objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/enabling-workflows-for-objects#company-scoped-objects) <a href="#company-scoped-objects" id="company-scoped-objects"></a>
+### Company-Scoped Objects <a href="#company-scoped-objects" id="company-scoped-objects"></a>
 
 Follow these steps to enable a custom Workflow for a company-scoped object:
 
@@ -16,7 +16,7 @@ Follow these steps to enable a custom Workflow for a company-scoped object:
 4. Select the desired _Workflow_.
 5. Click _Save_.
 
-### [Site-Scoped Objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/enabling-workflows-for-objects#site-scoped-objects) <a href="#site-scoped-objects" id="site-scoped-objects"></a>
+### Site-Scoped Objects <a href="#site-scoped-objects" id="site-scoped-objects"></a>
 
 Follow these steps to enable a custom Workflow for a site-scoped object:
 

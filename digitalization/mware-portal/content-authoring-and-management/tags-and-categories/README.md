@@ -2,11 +2,11 @@
 
 Categories and Tags are two essential tools for helping users find content through search or navigation.
 
-Using Categories, you can group similar assets and organize your content. For example, you can create a _Success Stories_ Category and group all customer success articles website under this Category. You can also create a hierarchy of Categories. For example, the Success Stories categories can have Finance and Healthcare Subcategories. To start using Categories, see [Defining Categories and Vocabularies for Content](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content).
+Using Categories, you can group similar assets and organize your content. For example, you can create a _Success Stories_ Category and group all customer success articles website under this Category. You can also create a hierarchy of Categories. For example, the Success Stories categories can have Finance and Healthcare Subcategories. To start using Categories, see Defining Categories and Vocabularies for Content.
 
-You can group Categories using Vocabularies, which can be either internal or public. The Marketing department may want to use Categories based on different customer segments, while the Human Resources department may want to use Categories based on the company organization. For more information, see [Vocabulary Visibility](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/organizing-content-with-categories-and-tags#vocabulary-visibility). Liferay DXP includes [built-in Vocabularies](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/organizing-content-with-categories-and-tags#default-vocabularies) that you can use to audit your content in the [Content Dashboard](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/content-dashboard/about-the-content-dashboard).
+You can group Categories using Vocabularies, which can be either internal or public. The Marketing department may want to use Categories based on different customer segments, while the Human Resources department may want to use Categories based on the company organization. For more information, see Vocabulary Visibility. MWARE Portal includes built-in Vocabularies that you can use to audit your content in the Content Dashboard.
 
-Tags are keywords for organizing your assets. Tags tell visitors of your website what the content is about, so they can find relevant information through search or navigation. For example, a Kitchenware Store might have different tags describing the store items, like _glass_, _clay_, or _dishwasher-safe_. Using these Tags in your content, visitors interested in clay kitchenware can quickly find relevant articles. Tags are not hierarchical, so you cannot group tags inside other tags. To start using Tags, see [Tagging Content and Managing Tags](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/tagging-content-and-managing-tags).
+Tags are keywords for organizing your assets. Tags tell visitors of your website what the content is about, so they can find relevant information through search or navigation. For example, a Kitchenware Store might have different tags describing the store items, like _glass_, _clay_, or _dishwasher-safe_. Using these Tags in your content, visitors interested in clay kitchenware can quickly find relevant articles. Tags are not hierarchical, so you cannot group tags inside other tags. To start using Tags, see Tagging Content and Managing Tags.
 
 The following table summarizes the main differences between Categories and Tags:
 
@@ -29,11 +29,11 @@ In addition to the Categorization panel, you can tag or categorize an asset at c
 
 ![Tag and Categorize your content using the Categorization section](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/tags-and-categories/organizing-content-with-categories-and-tags/images/02.png)
 
-### [Vocabulary Visibility](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/organizing-content-with-categories-and-tags#vocabulary-visibility) <a href="#vocabulary-visibility" id="vocabulary-visibility"></a>
+### Vocabulary Visibility <a href="#vocabulary-visibility" id="vocabulary-visibility"></a>
 
-> Available: Liferay 7.3+.
+> Available: 7.3+.
 
-When you [create a new Vocabulary](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content#defining-vocabularies), you define its visibility and the visibility of the Categories included:
+When you create a new Vocabulary, you define its visibility and the visibility of the Categories included:
 
 * _Public Visibility_: Visitors can use Public categories to find the content through search or navigation. Public Categories are exposed to everyone.
 *   _Internal Visibility_: You can use Internal categories to organize and search your content internally. Internal Categories are only exposed to Site members.
@@ -46,7 +46,7 @@ The visibility option is useful when you need to separate internal and external 
 
 Before configuring your vocabulary’s visibility, consider these things:
 
-* Existing vocabularies from upgraded Liferay installations default to public visibility.
+* Existing vocabularies from upgraded installations default to public visibility.
 *   Content editors and administrators can use public or internal categories for asset categorization and search.
 
     ![Administrators can search for assets using Categories in Internal Vocabularies](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/tags-and-categories/organizing-content-with-categories-and-tags/images/09.png)
@@ -58,11 +58,11 @@ Before configuring your vocabulary’s visibility, consider these things:
 
     ![Add new Categories from the Categorization section in the Content Editor](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/tags-and-categories/organizing-content-with-categories-and-tags/images/05.png)
 
-### [Default Vocabularies](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/organizing-content-with-categories-and-tags#default-vocabularies) <a href="#default-vocabularies" id="default-vocabularies"></a>
+### Default Vocabularies <a href="#default-vocabularies" id="default-vocabularies"></a>
 
-> Available: Liferay 7.3+.
+> Available: 7.3+.
 
-In addition to the _Topic_ Vocabulary from previous Liferay releases, there are two new vocabularies: _Audience_ and _Stage_. These vocabularies are industry standards that Content Authors, Content Strategists, and Marketers can use in combination with the [Content Dashboard](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/content-dashboard/about-the-content-dashboard) to address common content strategy topics:
+In addition to the _Topic_ Vocabulary from previous releases, there are two new vocabularies: _Audience_ and _Stage_. These vocabularies are industry standards that Content Authors, Content Strategists, and Marketers can use in combination with the Content Dashboard to address common content strategy topics:
 
 * Determine content areas with enough content as well as content gaps
 * Audit of existing content
@@ -74,6 +74,6 @@ You edit the Audience and Stage vocabularies in the Global Site. You can use the
 
 NOTE
 
-In previous Liferay versions, the _Topic_ vocabulary exists on each Site. For 7.3+, the _Topic_ vocabulary exists now at the Global Site.
+In previous versions, the _Topic_ vocabulary exists on each Site. For 7.3+, the _Topic_ vocabulary exists now at the Global Site.
 
 \

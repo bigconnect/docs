@@ -1,8 +1,8 @@
 # Moderating Message Boards
 
-_Message Boards_ includes features that enable effective forum moderation. This includes thread locking, thread moving and merging, user bans, and thread flagging. Users with the appropriately designated permissions are able to use these tools. See the [Message Boards Permissions Reference](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-permissions-reference) for more information on assigning _Message Boards_ permissions to a role. To learn more about the generic Roles and Permissions, see [Roles and Permissions](https://help.liferay.com/hc/articles/360017895212-Roles-and-Permissions).
+_Message Boards_ includes features that enable effective forum moderation. This includes thread locking, thread moving and merging, user bans, and thread flagging. Users with the appropriately designated permissions are able to use these tools. See the Message Boards Permissions Reference for more information on assigning _Message Boards_ permissions to a role. To learn more about the generic Roles and Permissions, see Roles and Permissions.
 
-### [Locking Threads](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/moderating-message-boards#locking-threads) <a href="#locking-threads" id="locking-threads"></a>
+### Locking Threads <a href="#locking-threads" id="locking-threads"></a>
 
 Site administrators can halt activity on a thread by selecting _Lock_ from the thread’s Actions menu. Once a thread is locked, additional responses are disallowed.
 
@@ -20,7 +20,7 @@ To unlock a thread:
 
 The thread is now unlocked.
 
-### [Moving Threads](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/moderating-message-boards#moving-threads) <a href="#moving-threads" id="moving-threads"></a>
+### Moving Threads <a href="#moving-threads" id="moving-threads"></a>
 
 Moderators can move threads from one category to another. To move a thread, follow these steps:
 
@@ -33,7 +33,7 @@ Moderators can move threads from one category to another. To move a thread, foll
 
 The thread is now in the new category.
 
-### [Banning Users](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/moderating-message-boards#banning-users) <a href="#banning-users" id="banning-users"></a>
+### Banning Users <a href="#banning-users" id="banning-users"></a>
 
 1. Click on the thread that contains the user to be banned.
 2. Click the post’s Actions menu (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Ban this User_.
@@ -53,7 +53,7 @@ To reinstate a banned user:
 
 This user has been reinstated.
 
-### [Reviewing Flagged Threads](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/moderating-message-boards#reviewing-flagged-threads) <a href="#reviewing-flagged-threads" id="reviewing-flagged-threads"></a>
+### Reviewing Flagged Threads <a href="#reviewing-flagged-threads" id="reviewing-flagged-threads"></a>
 
 When a thread has been reported for possible abuse, the _Message Boards_ app uses the _Notifications_ widget to notify a moderator to review the thread. A red number around their icon appears around their profile icon.
 

@@ -20,7 +20,7 @@ By default, all available Asset Types are displayed as facet terms:
 * Web Content Folder
 * Wiki Page
 
-### [Configuring the Type Facet](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-facets/type-facet#configuring-the-type-facet) <a href="#configuring-the-type-facet" id="configuring-the-type-facet"></a>
+### Configuring the Type Facet <a href="#configuring-the-type-facet" id="configuring-the-type-facet"></a>
 
 To configure the Type Facet, open the Options menu (![options icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png)) of the facet and click _Configuration_.
 
@@ -36,7 +36,7 @@ The Advanced Configuration section contains additional options:
 
 **Display Frequencies:** Choose whether or not to display the term frequencies.
 
-**Order Terms By:** For Liferay 7.4 U60+/GA60+, you can choose the facet term sorting strategy: Term Frequency Descending (default), Term Frequency Ascending, Term Value Ascending, or Term Value Descending. The default sorting orders facet terms from most matches to least. Term value options order facet terms alphabetically.
+**Order Terms By:** For 7.4 +, you can choose the facet term sorting strategy: Term Frequency Descending (default), Term Frequency Ascending, Term Value Ascending, or Term Value Descending. The default sorting orders facet terms from most matches to least. Term value options order facet terms alphabetically.
 
 **Current and Available:** Choose which asset types are visible in the facet. To remove types, select from the Current section by clicking and highlighting. Click the right arrow and move the Asset Type from _Current_ to _Available_. Add Asset Types by moving them to the Current section.
 

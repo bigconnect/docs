@@ -2,16 +2,16 @@
 
 In the Shutdown tab you can initiate a graceful shutdown event, warning Users of the impending shutdown and instructing them to save any work in progress.
 
-When you schedule a shutdown, Liferay DXP displays a system warning message and a message you define at the top of users’ pages. When time expires, all pages display your custom message. Once the server is restarted, access is restored.
+When you schedule a shutdown, the portal displays a system warning message and a message you define at the top of users’ pages. When time expires, all pages display your custom message. Once the server is restarted, access is restored.
 
-### [Adding a Shutdown Event](https://learn.liferay.com/web/guest/w/dxp/system-administration/using-the-server-administration-panel/configuring-a-shutdown-event#adding-a-shutdown-event) <a href="#adding-a-shutdown-event" id="adding-a-shutdown-event"></a>
+### Adding a Shutdown Event <a href="#adding-a-shutdown-event" id="adding-a-shutdown-event"></a>
 
 To add a shutdown event, first enable the Inactive Request Handler configuration in system Settings:
 
 1. Navigate to Control Panel → Configuration → System Settings, and search for _Inactive Request Handler_.
 2. Enable _Show Inactive Request Message_ and click _Save_.
 
-This enables display of a message to Users that try to navigate somewhere in Liferay DXP after the shutdown happens. Without this they’ll have the unfriendly experience of seeing a totally blank page.
+This enables display of a message to Users that try to navigate somewhere in the portal after the shutdown happens. Without this they’ll have the unfriendly experience of seeing a totally blank page.
 
 Now configure the shutdown itself:
 
@@ -30,11 +30,11 @@ Right away, all logged in Users see the system message and your appended custom 
 
 ![Users are showed a warning about the impending shutdown.](https://resources.learn.liferay.com/images/dxp/latest/en/system-administration/using-the-server-administration-panel/configuring-a-shutdown-event/images/03.png)
 
-Once the time has expired, logged in Users trying to navigate to a page in Liferay DXP see your custom message (perhaps with an invitation to return later), rather than a blank page with no information.
+Once the time has expired, logged in Users trying to navigate to a page in the portal see your custom message (perhaps with an invitation to return later), rather than a blank page with no information.
 
 ![Your custom message is displayed to Users after the shutdown.](https://resources.learn.liferay.com/images/dxp/latest/en/system-administration/using-the-server-administration-panel/configuring-a-shutdown-event/images/02.png)
 
-### [Canceling a Shutdown Event](https://learn.liferay.com/web/guest/w/dxp/system-administration/using-the-server-administration-panel/configuring-a-shutdown-event#canceling-a-shutdown-event) <a href="#canceling-a-shutdown-event" id="canceling-a-shutdown-event"></a>
+### Canceling a Shutdown Event <a href="#canceling-a-shutdown-event" id="canceling-a-shutdown-event"></a>
 
 At any time before the shutdown has occurred, you can cancel it.
 

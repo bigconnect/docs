@@ -1,6 +1,6 @@
 # Adding a New Organization Type
 
-By default, Liferay DXP only includes the _Organization_ type. You can configure the existing type or add additional types in System Settings → Users → Organization Type. There are two main reasons to configure Organization types:
+By default, the portal only includes the _Organization_ type. You can configure the existing type or add additional types in System Settings → Users → Organization Type. There are two main reasons to configure Organization types:
 
 1. Organizations usually correlate to real-life hierarchical structures. Calling them by their real names is helpful for administrators and Users. For example, in a baseball organization, you might want _League_, _Division_, and _Team_ Organization types.
 2. Enforce control over which Organizations can be top level Organizations and the type of sub-Organization allowed for each parent Organization type. For example, a baseball organization would not allow Division Organization types to be sub-Organizations of Team Organizations.

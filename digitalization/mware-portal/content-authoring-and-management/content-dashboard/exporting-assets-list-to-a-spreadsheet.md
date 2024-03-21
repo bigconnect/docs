@@ -21,7 +21,7 @@ Navigating away from the page while the `.xls` file is being generated stops the
 
 ![A prompt appears to confirm navigating away from the page while an export is being processed.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/content-dashboard/exporting-the-assets-list-to-a-spreadsheet/images/03.png)
 
-### [XLS File Content](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/content-dashboard/exporting-the-assets-list-to-a-spreadsheet#xls-file-content) <a href="#xls-file-content" id="xls-file-content"></a>
+### XLS File Content <a href="#xls-file-content" id="xls-file-content"></a>
 
 All metadata is exported from contents and documents, so the `.xls` file contains the following columns:
 

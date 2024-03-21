@@ -8,11 +8,11 @@ You can control how the app behaves for all blogs in your site.
     ![Click on the options icon to configure your blogs app.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/blogs/configuring-the-blogs-app/images/01.png)
 3. Configure the available options below.
 
-**Export/Import:** Export or import a LAR file that contains the blogs app’s content. See [Exporting/Importing Widget Data](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-widgets/configuring-widgets/exporting-importing-widget-data) to learn more about the process.
+**Export/Import:** Export or import a LAR file that contains the blogs app’s content. See Exporting/Importing Widget Data to learn more about the process.
 
 ![Export/import the blogs app's content.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/blogs/configuring-the-blogs-app/images/02.png)
 
-**Entries Permissions:** Configure the [permissions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/blogs/blog-permissions-reference) for blog entries. You can control which roles can add an entry, configure entry permissions, and subscribe to entries.
+**Entries Permissions:** Configure the permissions for blog entries. You can control which roles can add an entry, configure entry permissions, and subscribe to entries.
 
 **Configuration:** Configure the following options for the blogs app, in these tabs:
 

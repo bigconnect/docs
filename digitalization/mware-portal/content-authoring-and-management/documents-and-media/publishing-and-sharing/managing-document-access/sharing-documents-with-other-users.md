@@ -1,24 +1,24 @@
 # Sharing Documents with Other Users
 
-Using DXP’s Documents and Media app, users can share files directly with each other.
+Using Documents and Media app, users can share files directly with each other.
 
-You can disable sharing. For instructions on this, see [Enabling and Configuring Sharing](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/enabling-and-configuring-sharing).
+You can disable sharing. For instructions on this, see Enabling and Configuring Sharing.
 
 When you share, you grant some of your own permissions for that file to the receiving user. There are some important caveats:
 
 * You can only grant View, Comment, or Update permissions. For example, you can’t grant Delete or Override Checkout permissions even if you have those permissions on the file.
 * You can only grant permissions you have on the file. For example, you can’t grant Update permission if you only have View and Comment permissions on the file.
 * You must grant at least View permission.
-* Traditional [role-based permissions](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/understanding-roles-and-permissions) always take precedence over sharing permissions. So although sharing can extend permissions, it can’t remove those granted via Roles in the portal.
+* Traditional role-based permissions always take precedence over sharing permissions. So although sharing can extend permissions, it can’t remove those granted via Roles in the portal.
 * By default, the Guest role has Add Discussion permission. This overlaps with the Comment permission in sharing. Therefore, all users can comment on a file regardless of whether the Comment permission was granted via sharing. You can change this by removing the Add Discussion permission from the Guest role.
 
 Also, note that the receiving user must be part of the same instance, but doesn’t have to be a member of the same site.
 
-### [Sharing Files in Documents and Media](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/sharing-documents-with-other-users#sharing-files-in-documents-and-media) <a href="#sharing-files-in-documents-and-media" id="sharing-files-in-documents-and-media"></a>
+### Sharing Files in Documents and Media <a href="#sharing-files-in-documents-and-media" id="sharing-files-in-documents-and-media"></a>
 
 To share a file, you must own that file or be an administrator. There are two ways to share a file: through the Documents and Media widget on a page, or in Site Administration. If using the latter method, ensure you have access to Site Administration.
 
-#### [Sharing a File on a Site Page](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/sharing-documents-with-other-users#sharing-a-file-on-a-site-page) <a href="#sharing-a-file-on-a-site-page" id="sharing-a-file-on-a-site-page"></a>
+#### Sharing a File on a Site Page <a href="#sharing-a-file-on-a-site-page" id="sharing-a-file-on-a-site-page"></a>
 
 1.  Navigate to the page where the Documents and Media widget has been deployed.
 
@@ -41,7 +41,7 @@ To share a file, you must own that file or be an administrator. There are two wa
 
 The file has been shared.
 
-#### [Share a File Using Site Administration](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/sharing-documents-with-other-users#share-a-file-using-site-administration) <a href="#share-a-file-using-site-administration" id="share-a-file-using-site-administration"></a>
+#### Share a File Using Site Administration <a href="#share-a-file-using-site-administration" id="share-a-file-using-site-administration"></a>
 
 1. To access Site Administration, open the _Menu_ (![Product Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-menu.png)) and click your site’s name.
 2. Click _Content & Data_ → _Documents and Media_.
@@ -57,21 +57,21 @@ The file has been shared.
    * **View:** View only.
 8. Click _Share_.
 
-### [Working with Shared Files](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/sharing-documents-with-other-users#working-with-shared-files) <a href="#working-with-shared-files" id="working-with-shared-files"></a>
+### Working with Shared Files <a href="#working-with-shared-files" id="working-with-shared-files"></a>
 
 You can access files shared with you in three places:
 
 1.  **The Documents and Media Library:** Files shared with you are visible in their existing Documents and Media locations. For example, if someone shares a file with you that resides in the Documents and Media library’s Home folder, you can access the file in that folder.
 
     ![You can view a shared file in the same folder where it was first uploaded.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/sharing-documents-with-other-users/images/05.png)
-2.  **The Notifications app:** When a file is shared with you, you get a notification. Clicking the notification takes you to the file in Documents and Media. For information on notifications, see [Managing Notifications and Requests](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/notifications-and-requests/user-guide/managing-notifications-and-requests).
+2.  **The Notifications app:** When a file is shared with you, you get a notification. Clicking the notification takes you to the file in Documents and Media. For information on notifications, see Managing Notifications and Requests.
 
     ![The Notifications app contains the notifications that are sent when a user shares a file with you.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/sharing-documents-with-other-users/images/06.png)
 3.  **The Shared Content app:** You can access this app from your user menu. It lists all the content shared with you and the content you shared. Each file has an Actions button (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) for performing permitted actions on the file (e.g., view, comment, update).
 
     ![The Shared Content app lists the files shared with you, and the files you shared.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/sharing-documents-with-other-users/images/07.png)
 
-### [Managing Shared Files](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/sharing-documents-with-other-users#managing-shared-files) <a href="#managing-shared-files" id="managing-shared-files"></a>
+### Managing Shared Files <a href="#managing-shared-files" id="managing-shared-files"></a>
 
 After sharing a file, you can un-share it or modify its permissions on a per-user basis. This can only be done by Administrators, the file’s owner, or any user with Update permission and permission to share the file. You can take these actions from the file’s Info panel in Documents and Media. Follow these steps:
 

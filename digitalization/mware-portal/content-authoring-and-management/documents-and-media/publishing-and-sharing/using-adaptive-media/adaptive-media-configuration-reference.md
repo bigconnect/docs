@@ -14,7 +14,7 @@ Configuration options appear in four tabs:
 * ImageMagick: Configure which media types are generated using ImageMagick.
 * Processes: Configure asynchronous processing.
 
-### [Systems Images Resolutions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/adaptive-media-configuration-reference#systems-images-resolutions) <a href="#systems-images-resolutions" id="systems-images-resolutions"></a>
+### Systems Images Resolutions <a href="#systems-images-resolutions" id="systems-images-resolutions"></a>
 
 Here you can override Adaptive Media’s default behavior for document library previews and thumbnails. By default, Adaptive Media chooses the best image resolution for previews and thumbnails based on the closest dimensions to the user’s screen type and resolution. But you can enter resolution IDs to override this process (e.g., `Preview-1000x0`).
 
@@ -27,9 +27,9 @@ Here you can override Adaptive Media’s default behavior for document library p
 | Custom Thumbnail Configuration 1 | Enter a resolution ID to override the default adaptive media behavior for document library custom thumbnail 1. |
 | Custom Thumbnail Configuration 2 | Enter a resolution ID to override the default adaptive media behavior for document library custom thumbnail 2. |
 
-### [Images](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/adaptive-media-configuration-reference#images) <a href="#images" id="images"></a>
+### Images <a href="#images" id="images"></a>
 
-Here you can determine the media types processed by Adaptive Media and enable or disable [Gifsicle](https://www.lcdf.org/gifsicle/).
+Here you can determine the media types processed by Adaptive Media and enable or disable Gifsicle.
 
 ![Determine supported media types.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/adaptive-media-configuration-reference/images/03.png)
 
@@ -39,21 +39,21 @@ Here you can determine the media types processed by Adaptive Media and enable or
 
 ![Enable or disable Gifsicle.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/adaptive-media-configuration-reference/images/04.png)
 
-| Field    | Description                                                                                                                                                                                                                                                  |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Gifsicle | You can enable Gifsicle to adapt gif files. See [Enabling Optimization of Animated GIFs](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/devops/enabling-optimization-of-animated-gifs) for more information. |
+| Field    | Description                                                                                                  |
+| -------- | ------------------------------------------------------------------------------------------------------------ |
+| Gifsicle | You can enable Gifsicle to adapt gif files. See Enabling Optimization of Animated GIFs for more information. |
 
-### [ImageMagick](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/adaptive-media-configuration-reference#imagemagick) <a href="#imagemagick" id="imagemagick"></a>
+### ImageMagick <a href="#imagemagick" id="imagemagick"></a>
 
-Here you can determine which media types are processed using [ImageMagick](http://www.imagemagick.org/). To use ImageMagick, you must first install it on your Liferay server. See [Enabling ImageMagick and Ghostscript](https://learn.liferay.com/web/guest/w/dxp/system-administration/using-the-server-administration-panel/configuring-external-services#enabling-imagemagick-and-ghostscript) for more information.
+Here you can determine which media types are processed using ImageMagick. To use ImageMagick, you must first install it on your portal server. See Enabling ImageMagick and Ghostscript for more information.
 
 ![Determine which media types are processed using ImageMagick.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/adaptive-media-configuration-reference/images/05.png)
 
-| Field               | Description                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Supported MIME Type | Determine the media types processed by ImageMagick in Adaptive Media. If an image is uploaded and its media type isn’t in this list, Adaptive Media does not use ImageMagick for generating its preview. By default, this list contains `avif`, `gif`, `heic`, `tiff`, and `webp`, but you can add other media types. See [ImageMagick documentation](https://imagemagick.org/script/formats.php) for a list of supported media types. |
+| Field               | Description                                                                                                                                                                                                                                                                                                                                                                              |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Supported MIME Type | Determine the media types processed by ImageMagick in Adaptive Media. If an image is uploaded and its media type isn’t in this list, Adaptive Media does not use ImageMagick for generating its preview. By default, this list contains `avif`, `gif`, `heic`, `tiff`, and `webp`, but you can add other media types. See ImageMagick documentation for a list of supported media types. |
 
-### [Processes](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/using-adaptive-media/adaptive-media-configuration-reference#processes) <a href="#processes" id="processes"></a>
+### Processes <a href="#processes" id="processes"></a>
 
 Here you can configure Adaptive Media’s asynchronous processing. Modify these values to improve performance.
 

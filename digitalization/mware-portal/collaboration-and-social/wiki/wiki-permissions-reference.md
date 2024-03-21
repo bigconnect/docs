@@ -1,8 +1,8 @@
 # Wiki Permissions Reference
 
-This article documents permissions in the _Wiki_ widget and serves as a reference when assigning permissions to users and roles. To learn more about DXP Roles and Permissions in general, see [Roles and Permissions](https://help.liferay.com/hc/articles/360017895212-Roles-and-Permissions).
+This article documents permissions in the _Wiki_ widget and serves as a reference when assigning permissions to users and roles. To learn more about Roles and Permissions in general, see Roles and Permissions.
 
-### [Wiki Node Permissions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/wiki-permissions#wiki-node-permissions) <a href="#wiki-node-permissions" id="wiki-node-permissions"></a>
+### Wiki Node Permissions <a href="#wiki-node-permissions" id="wiki-node-permissions"></a>
 
 1. Navigate to _Site Administration_ → _Content & Data_ → _Wiki_.
 2.  Click _Options_ (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-options.png)) next to the node (for example, _New Node_) then _Permissions_.
@@ -13,18 +13,18 @@ The available _wiki node_ permissions are:
 
 ![Viewing Wiki Node Permissions](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/wiki/wiki-permissions/images/05.png)
 
-| Permission     | Description                                                                                                                                                                                                                                                               |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Add Page       | Grants users the ability to add a wiki page to the node                                                                                                                                                                                                                   |
-| Import         | Grants users the ability to import wiki pages as a `.lar` file; see [Exporting and Importing a Wiki](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-widgets/configuring-widgets/exporting-importing-widget-data) |
-| Delete         | Grants users the ability to delete a _Wiki Node_                                                                                                                                                                                                                          |
-| Permissions    | Grants users the ability to view a wiki node’s permissions                                                                                                                                                                                                                |
-| Update         | Grants users the ability to modify the _Wiki Node_                                                                                                                                                                                                                        |
-| Add Attachment | Grants users the ability to add an attachment                                                                                                                                                                                                                             |
-| Subscribe      | Grants users the ability to subscribe to the node                                                                                                                                                                                                                         |
-| View           | Allows users to view the _Wiki Node_                                                                                                                                                                                                                                      |
+| Permission     | Description                                                                                        |
+| -------------- | -------------------------------------------------------------------------------------------------- |
+| Add Page       | Grants users the ability to add a wiki page to the node                                            |
+| Import         | Grants users the ability to import wiki pages as a `.lar` file; see Exporting and Importing a Wiki |
+| Delete         | Grants users the ability to delete a _Wiki Node_                                                   |
+| Permissions    | Grants users the ability to view a wiki node’s permissions                                         |
+| Update         | Grants users the ability to modify the _Wiki Node_                                                 |
+| Add Attachment | Grants users the ability to add an attachment                                                      |
+| Subscribe      | Grants users the ability to subscribe to the node                                                  |
+| View           | Allows users to view the _Wiki Node_                                                               |
 
-### [Wiki Page Permissions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/wiki-permissions#wiki-page-permissions) <a href="#wiki-page-permissions" id="wiki-page-permissions"></a>
+### Wiki Page Permissions <a href="#wiki-page-permissions" id="wiki-page-permissions"></a>
 
 To view a wiki page’s permissions:
 
@@ -43,7 +43,7 @@ To view a wiki page’s permissions:
 | View              | Allows users to view the _Wiki Page_                          |
 | Add Discussion    | Allows users to comment on the _Wiki Page_                    |
 
-### [Wiki Widget Permissions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/wiki-permissions#wiki-widget-permissions) <a href="#wiki-widget-permissions" id="wiki-widget-permissions"></a>
+### Wiki Widget Permissions <a href="#wiki-widget-permissions" id="wiki-widget-permissions"></a>
 
 1. Navigate to the site page where the _Wiki_ widget has been deployed.
 2. Mouse over the _Wiki_ and click _Options_ (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-widget-options.png))
@@ -60,7 +60,7 @@ To view a wiki page’s permissions:
 | View                 | Allows users to view the _Wiki_ widget                                  |
 | Add to Page          | Grants the ability to add a _Wiki_ widget to a site page                |
 
-### [Wikis Permissions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/wiki-permissions#wikis-permissions) <a href="#wikis-permissions" id="wikis-permissions"></a>
+### Wikis Permissions <a href="#wikis-permissions" id="wikis-permissions"></a>
 
 These permissions are found in the _Site Administration_.
 

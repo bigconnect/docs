@@ -1,6 +1,6 @@
 # Defining Document Types
 
-In Liferay, Document Types are templates used for uploading files and categorizing them in Documents and Media. These templates are created using metadata fields and provide additional, searchable information for uploaded files.
+Document Types are templates used for uploading files and categorizing them in Documents and Media. These templates are created using metadata fields and provide additional, searchable information for uploaded files.
 
 Follow these steps to define a custom Document Type.
 
@@ -34,7 +34,7 @@ Follow these steps to define a custom Document Type.
 6.  (Optional) Click on the _Details_ tab, and enter a _description_.
 
     ![Enter a description in the Details tab.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-document-types/images/06.png)
-7.  (Optional) Click on the _Additional Metadata Fields_ tab and select any existing [Metadata Sets](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-metadata-sets) you want to add to the new Document Type.
+7.  (Optional) Click on the _Additional Metadata Fields_ tab and select any existing Metadata Sets you want to add to the new Document Type.
 
     ![Add Metadata Sets in the Additional Metadata Fields tab.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-document-types/images/07.png)
 8.  (Optional) Click on the _Permissions_ tab, and configure who can view, edit, and manage the new Document Type.
@@ -48,7 +48,7 @@ Once saved, the new Document Type can now be accessed in the Documents and Media
 
 When the Document Type is selected, users see your configured metadata fields. See [Uploading Files](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/uploading-files) for more information.
 
-### [For Liferay 7.3.x and Earlier Versions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-document-types#for-liferay-73x-and-earlier-versions) <a href="#for-liferay-73x-and-earlier-versions" id="for-liferay-73x-and-earlier-versions"></a>
+### For 7.3.x and Earlier Versions <a href="#for-liferay-73x-and-earlier-versions" id="for-liferay-73x-and-earlier-versions"></a>
 
 1. Open the _Product Menu_ (![Product Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) then click the compass icon (![Compass](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-compass.png)) on the _Site Administration_ menu.
 2. Select the site where the form will be created.
@@ -62,7 +62,7 @@ When the Document Type is selected, users see your configured metadata fields. S
 
     ![Drag and drop main metadata fields](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-document-types/images/10.png)
 10. Expand the _Additional Metadata Fields_.
-11. Select a metadata set to associate with the document type. To learn more, see [Defining Metadata Sets](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-metadata-sets).
+11. Select a metadata set to associate with the document type. To learn more, see Defining Metadata Sets.
 
     ![Associate additional metadata sets.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-document-types/images/11.png)
 12. Click _Save_.

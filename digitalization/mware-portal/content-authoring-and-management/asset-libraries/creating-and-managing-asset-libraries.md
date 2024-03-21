@@ -4,7 +4,7 @@ You can create and manage libraries for your assets via the Asset Libraries appl
 
 ![Create and manage asset libraries via the Asset Libraries application.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/asset-libraries/creating-and-managing-asset-libraries/images/01.png)
 
-### [Creating an Asset Library](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/asset-libraries/creating-and-managing-asset-libraries#creating-an-asset-library) <a href="#creating-an-asset-library" id="creating-an-asset-library"></a>
+### Creating an Asset Library <a href="#creating-an-asset-library" id="creating-an-asset-library"></a>
 
 1. In the Asset Library application, click _Add_ (![Add button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)).
 2. Enter a _Name_ for your new library.
@@ -12,13 +12,13 @@ You can create and manage libraries for your assets via the Asset Libraries appl
 
 You can now configure the asset library now or accept the default settings and begin adding content to it.
 
-### [Configuring Asset Libraries](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/asset-libraries/creating-and-managing-asset-libraries#configuring-asset-libraries) <a href="#configuring-asset-libraries" id="configuring-asset-libraries"></a>
+### Configuring Asset Libraries <a href="#configuring-asset-libraries" id="configuring-asset-libraries"></a>
 
-When you create an asset library, Liferay directs you to its configuration page. Afterwards, you can configure a library by clicking its _Actions_ (![Actions button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and selecting _Edit_. Configuration options appear in three sections: _General_, _Sites_, and _Languages_.
+When you create an asset library, the portal directs you to its configuration page. Afterwards, you can configure a library by clicking its _Actions_ (![Actions button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and selecting _Edit_. Configuration options appear in three sections: _General_, _Sites_, and _Languages_.
 
 You can also access these options from the library’s dashboard page by clicking _Asset Library Settings_.
 
-#### [General Settings](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/asset-libraries/creating-and-managing-asset-libraries#general-settings) <a href="#general-settings" id="general-settings"></a>
+#### General Settings <a href="#general-settings" id="general-settings"></a>
 
 Here you can configure an asset library’s basic information.
 
@@ -28,15 +28,15 @@ Here you can configure an asset library’s basic information.
 
 **Sharing**: Enable or disable sharing for assets. When enabled, asset library members can share its assets with other users.
 
-**Asset Auto Tagging**: Enable or disable [auto tagging](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/auto-tagging/auto-tagging-assets). When enabled, assets are automatically tagged using the providers configured at the instance level.
+**Asset Auto Tagging**: Enable or disable auto tagging. When enabled, assets are automatically tagged using the providers configured at the instance level.
 
-**Documents and Media**: Enable or disable HTTP directory browsing for this library. By default, this setting is disabled. When enabled, users with view permission for an asset library can view files and folders in its document library in their browsers (e.g., `http://localhost:8080/documents/asset-library-{assetLibraryId}`). For Liferay 2024.Q1+/GA105+, also set a max file size for uploaded assets. This value cannot exceed the maximum upload request size set at the instance or system levels. Setting the value to 0 sets no limit for uploaded files.
+**Documents and Media**: Enable or disable HTTP directory browsing for this library. By default, this setting is disabled. When enabled, users with view permission for an asset library can view files and folders in its document library in their browsers (e.g., `http://localhost:8080/documents/asset-library-{assetLibraryId}`). For versions 2024.Q1+, also set a max file size for uploaded assets. This value cannot exceed the maximum upload request size set at the instance or system levels. Setting the value to 0 sets no limit for uploaded files.
 
 **Recycle Bin**: Enable or disable Recycle Bin for a library, and set the maximum age for recycled assets. By default, the maximum age is set to 43200 minutes (i.e., 30 days).
 
-#### [Sites](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/asset-libraries/creating-and-managing-asset-libraries#sites) <a href="#sites" id="sites"></a>
+#### Sites <a href="#sites" id="sites"></a>
 
-Here you can connect the asset library to Liferay sites and configure their relationship.
+Here you can connect the asset library to sites and configure their relationship.
 
 ![Connect sites to an asset library and configure their connection.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/asset-libraries/creating-and-managing-asset-libraries/images/02.png)
 
@@ -48,7 +48,7 @@ Here you can connect the asset library to Liferay sites and configure their rela
 
 **Disconnect**: Disconnect the selected site from the library. When disconnected, the library’s assets are no longer accessible from the site. You cannot disconnect a library from a site while _Make Web Content Structures Available_ is enabled. This is to avoid breaking site content that uses the library’s structures and templates.
 
-#### [Languages](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/asset-libraries/creating-and-managing-asset-libraries#languages) <a href="#languages" id="languages"></a>
+#### Languages <a href="#languages" id="languages"></a>
 
 Here you can choose whether to use your instance’s default language configuration for the library or define your own. If you choose a custom configuration, click _Edit_ to determine which languages are available in the library. Then you can drag and drop languages to set their relative priority.
 
@@ -56,7 +56,7 @@ Here you can choose whether to use your instance’s default language configurat
 
 To set a custom default language, click the desired language’s _Actions_ (![Actions button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Make Default_.
 
-### [Managing Asset Library Memberships](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/asset-libraries/creating-and-managing-asset-libraries#managing-asset-library-memberships) <a href="#managing-asset-library-memberships" id="managing-asset-library-memberships"></a>
+### Managing Asset Library Memberships <a href="#managing-asset-library-memberships" id="managing-asset-library-memberships"></a>
 
 You can view and manage user memberships for an asset library by going to its dashboard page and clicking _Memberships_. From here, you can click _Add_ (![Add button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) to add new users, organizations, and user groups to the selected library. You can also assign roles or remove memberships for each existing member by clicking its _Actions_ (![Actions button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)).
 
@@ -74,9 +74,9 @@ NOTE
 
 By default, the asset library member’s permissions are more restricted than those of its site counterpart. This means you must manually grant access to applications, update/delete permissions for content, and more if you want members to be responsible for managing content.
 
-Creating or customizing an asset library role is the same process as for other kinds of roles. See [Roles and Permissions](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions) for how to create, customize, manage, and assign roles.
+Creating or customizing an asset library role is the same process as for other kinds of roles. See Roles and Permissions for how to create, customize, manage, and assign roles.
 
-### [Deleting an Asset Library](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/asset-libraries/creating-and-managing-asset-libraries#deleting-an-asset-library) <a href="#deleting-an-asset-library" id="deleting-an-asset-library"></a>
+### Deleting an Asset Library <a href="#deleting-an-asset-library" id="deleting-an-asset-library"></a>
 
 To remove an asset library and its contents from your instance, click its _Actions_ (![Actions button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Delete_. You are then prompted to confirm the deletion. Once deleted, all contained assets are removed from your database and are no longer available to previously connected sites.
 

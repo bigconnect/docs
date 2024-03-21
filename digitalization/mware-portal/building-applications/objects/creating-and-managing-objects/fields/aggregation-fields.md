@@ -1,12 +1,12 @@
 # Aggregation Fields
 
-Aggregation fields perform basic calculations on the entries from a relationship table and display the resulting values. Available [aggregation functions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/aggregation-fields#functions-reference) include count, sum, average, min, and max. Each function determines how values are calculated for the field. Aggregation field values are read-only.
+Aggregation fields perform basic calculations on the entries from a relationship table and display the resulting values. Available aggregation functions include count, sum, average, min, and max. Each function determines how values are calculated for the field. Aggregation field values are read-only.
 
 To include aggregation fields, an object must be on the parent side of a one-to-many relationship or on either side of a many-to-many relationship. The related object must have a numeric field (i.e., integer, long integer, decimal, or precision decimal) to use the sum, average, min, and max functions.
 
-After adding an aggregation field, you can add [filters](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/aggregation-fields#using-aggregation-filters) to it. These filters can use date, integer, or picklist fields in the related object to limit the entries included in the calculation. Only entries that meet all filter criteria are included in the aggregation field’s calculations.
+After adding an aggregation field, you can add filters to it. These filters can use date, integer, or picklist fields in the related object to limit the entries included in the calculation. Only entries that meet all filter criteria are included in the aggregation field’s calculations.
 
-### [Functions Reference](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/aggregation-fields#functions-reference) <a href="#functions-reference" id="functions-reference"></a>
+### Functions Reference <a href="#functions-reference" id="functions-reference"></a>
 
 Aggregation fields can have these functions:
 
@@ -28,7 +28,7 @@ Consider a scenario with two insurance objects: policies and claims. If you rela
 * Min: Identify and display the lowest value claim for each policy.
 * Max: Identify and display the highest value claim for each policy.
 
-### [Using Aggregation Filters](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/aggregation-fields#using-aggregation-filters) <a href="#using-aggregation-filters" id="using-aggregation-filters"></a>
+### Using Aggregation Filters <a href="#using-aggregation-filters" id="using-aggregation-filters"></a>
 
 1. Begin editing an aggregation field.
 2. Under Filters, click _Add_ (![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)).

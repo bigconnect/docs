@@ -1,10 +1,10 @@
 # Default Roles Reference
 
-All roles available in a Liferay DXP installation can be viewed in the Roles administrative application, organized by scope. Navigate there using Control Panel → Users → Roles. Roles that are available out of the box are described in detail below.
+All roles available in a MWARE Portal installation can be viewed in the Roles administrative application, organized by scope. Navigate there using Control Panel → Users → Roles. Roles that are available out of the box are described in detail below.
 
-![Roles Admin is the hub of permissions management in Liferay DXP.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/roles-and-permissions/default-roles-reference/images/01.png)
+![Roles Admin is the hub of permissions management in the portal.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/roles-and-permissions/default-roles-reference/images/01.png)
 
-### [Regular Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/default-roles-reference#regular-roles) <a href="#regular-roles" id="regular-roles"></a>
+### Regular Roles <a href="#regular-roles" id="regular-roles"></a>
 
 **Guest:** The Guest Role is assigned to unauthenticated visitors and has the lowest-level permissions.
 
@@ -16,7 +16,7 @@ All roles available in a Liferay DXP installation can be viewed in the Roles adm
 
 **Administrator:** The administrator Role grants permission to manage the entire installation, including global settings and individual Sites, Organizations, and Users. The Administrator’s permissions are hard-coded and cannot be overridden.
 
-### [Site Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/default-roles-reference#site-roles) <a href="#site-roles" id="site-roles"></a>
+### Site Roles <a href="#site-roles" id="site-roles"></a>
 
 **Site Member:** The Site Member Role grants basic privileges within a Site, such as permission to visit the Site’s Pages.
 
@@ -24,11 +24,11 @@ All roles available in a Liferay DXP installation can be viewed in the Roles adm
 
 NOTE
 
-The built-in Site Administrator Role intentionally grants a permission that is not normally possible for a Site-scoped Role: Site Administrators can view Users that are not yet part of the Site. This view permission is required to add Users to the Site. A custom Site Role cannot duplicate this ability because of the Regular-scoped permission that’s required: `View Users`. Therefore, to duplicate the Site Administrator’s permissions within a custom Role, you must create two Roles: the Site Role and a separate [Regular Role with permission](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/defining-role-permissions) to view the globally scoped User resource.
+The built-in Site Administrator Role intentionally grants a permission that is not normally possible for a Site-scoped Role: Site Administrators can view Users that are not yet part of the Site. This view permission is required to add Users to the Site. A custom Site Role cannot duplicate this ability because of the Regular-scoped permission that’s required: `View Users`. Therefore, to duplicate the Site Administrator’s permissions within a custom Role, you must create two Roles: the Site Role and a separate Regular Role with permission to view the globally scoped User resource.
 
 **Site Owner:** The Site Owner Role is the same as the Site Administrator Role except that it grants permission to manage _all_ aspects of a Site, including permission to delete the membership of or remove Roles from Site Administrators or other Site Owners. They _can_ assign other Users as Site Administrators or Site Owners.
 
-### [Organization Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/default-roles-reference#organization-roles) <a href="#organization-roles" id="organization-roles"></a>
+### Organization Roles <a href="#organization-roles" id="organization-roles"></a>
 
 **Organization User:** The Organization User Role grants basic privileges within an Organization. If the Organization has an attached Site, the Organization User Role implicitly grants the Site member Role within the attached Site.
 
@@ -38,7 +38,7 @@ The built-in Site Administrator Role intentionally grants a permission that is n
 
 **Account Manager:** The Account Manager Role is a unique Organization Role that allows any User with the Role and membership in an Organization to administer _all_ accounts associated to the Organization. It grants permission to manage _all_ aspects of the Accounts it has access to, including permission to delete the membership of or remove Roles from Account Administrators. Account Managers _can_ assign other Users as Account Administrators or Account Managers.
 
-### [Asset Library Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/default-roles-reference#asset-library-roles) <a href="#asset-library-roles" id="asset-library-roles"></a>
+### Asset Library Roles <a href="#asset-library-roles" id="asset-library-roles"></a>
 
 **Asset Library Member:** The Asset Library Member Role grants basic privileges within an Asset Library, such as permission to view Asset Library content.
 

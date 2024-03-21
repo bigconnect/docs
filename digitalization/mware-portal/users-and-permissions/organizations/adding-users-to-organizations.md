@@ -1,12 +1,12 @@
 # Adding Users to Organizations
 
-With Liferay [Organizations](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/understanding-organizations), you can manage Users and permissions to model your real-life organizational hierarchy, which can then be quickly implemented in [Organization Sites](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/organization-sites). You can either assign existing portal Users to an Organization, or create new Users with a specific Organization affiliation.
+With Organizations, you can manage Users and permissions to model your real-life organizational hierarchy, which can then be quickly implemented in Organization Sites. You can either assign existing portal Users to an Organization, or create new Users with a specific Organization affiliation.
 
 NOTE
 
 Portal Administrators can assign any existing Users to any Organization, or create new Users with any Organization affiliation. By contrast, Organization Owners and Administrators can can only assign existing portal Users to child Organizations if the User is already affiliated with their parent Organization. They can also only create new portal Users within their own Organization, or a child Organization.
 
-### [Assigning Existing Portal Users to an Organization](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/adding-users-to-organizations#assigning-existing-portal-users-to-an-organization) <a href="#assigning-existing-portal-users-to-an-organization" id="assigning-existing-portal-users-to-an-organization"></a>
+### Assigning Existing Portal Users to an Organization <a href="#assigning-existing-portal-users-to-an-organization" id="assigning-existing-portal-users-to-an-organization"></a>
 
 Follow these steps to assign existing Users to an Organization:
 
@@ -25,7 +25,7 @@ Follow these steps to assign existing Users to an Organization:
 
 When added to an Organization, the User is implicitly assigned the basic Organization User role, though you can assign additional Organization-scoped roles if desired. See [Organization Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/organization-roles) to learn more.
 
-### [Adding New Portal Users to an Organization](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/adding-users-to-organizations#adding-new-portal-users-to-an-organization) <a href="#adding-new-portal-users-to-an-organization" id="adding-new-portal-users-to-an-organization"></a>
+### Adding New Portal Users to an Organization <a href="#adding-new-portal-users-to-an-organization" id="adding-new-portal-users-to-an-organization"></a>
 
 Follow these steps to add a new portal User to an Organization:
 
@@ -39,6 +39,6 @@ Follow these steps to add a new portal User to an Organization:
     ![Select Add User.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/organizations/adding-users-to-organizations/images/03.png)
 3. Enter _information_ for the new User, and click on _Save_ when finished.
 
-This creates a new portal User already assigned to the selected Organization and implicitly given the basic Organization User role. You can assign additional Organization-scoped roles if desired. See [Organization Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/organization-roles) to learn more.
+This creates a new portal User already assigned to the selected Organization and implicitly given the basic Organization User role. You can assign additional Organization-scoped roles if desired. See Organization Roles to learn more.
 
 \

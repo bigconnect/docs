@@ -2,7 +2,7 @@
 
 The blog entry editor provides context appropriate editing tools for formatting text, managing images, tables, and other rich features. Users are able to switch to code view to directly edit the content’s HTML. All draft entries are automatically saved every 25 seconds.
 
-### [Using the Editor’s Text View](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/blogs/blog-entry-editor-reference#using-the-editors-text-view) <a href="#using-the-editors-text-view" id="using-the-editors-text-view"></a>
+### Using the Editor’s Text View <a href="#using-the-editors-text-view" id="using-the-editors-text-view"></a>
 
 The Text view is a WYSIWYG editor that lets you enter and edit text and other types of content.
 
@@ -29,7 +29,7 @@ When the cursor hovers in the entry’s content area, the Add icon (+) appears. 
 
 ![Add elements to your blog entry](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/blogs/blog-entry-editor-reference/images/02.png)
 
-### [Using the Editor’s Code View](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/blogs/blog-entry-editor-reference#using-the-editors-code-view) <a href="#using-the-editors-code-view" id="using-the-editors-code-view"></a>
+### Using the Editor’s Code View <a href="#using-the-editors-code-view" id="using-the-editors-code-view"></a>
 
 To switch to code view, click the the Source icon (\</>) that appears when you place your cursor in the content area. The following buttons exist at the top-right of code view:
 

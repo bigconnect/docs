@@ -2,7 +2,7 @@
 
 The Account Management widget makes it easy to manage and access account information. Deploy the widget to any Page. This is a useful way to provide access for those without permission to view the Control Panel.
 
-### [Adding the Account Management Widget to a Page](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/account-management-widget#adding-the-account-management-widget-to-a-page) <a href="#adding-the-account-management-widget-to-a-page" id="adding-the-account-management-widget-to-a-page"></a>
+### Adding the Account Management Widget to a Page <a href="#adding-the-account-management-widget-to-a-page" id="adding-the-account-management-widget-to-a-page"></a>
 
 To add the Account Management widget to a page,
 
@@ -13,7 +13,7 @@ To add the Account Management widget to a page,
     ![Locate the widget and drag it to the page.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/accounts/account-management-widget/images/01.png)
 4. A list of Accounts should now be displayed by the widget.
 
-### [Using the Account Management Widget](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/account-management-widget#using-the-account-management-widget) <a href="#using-the-account-management-widget" id="using-the-account-management-widget"></a>
+### Using the Account Management Widget <a href="#using-the-account-management-widget" id="using-the-account-management-widget"></a>
 
 The Account management widget displays a list of different Accounts. Note that what is shown is dependent on the Accounts the current User can access. Click _Filter and Order_ and filter the list or use the search bar to quickly locate a specific account.
 

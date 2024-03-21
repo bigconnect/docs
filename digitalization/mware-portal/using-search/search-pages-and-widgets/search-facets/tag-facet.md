@@ -4,7 +4,7 @@ The Tag Facet narrows search results for any assets with tags that match the sea
 
 ![Example of tag facet results.](https://resources.learn.liferay.com/images/dxp/latest/en/using-search/search-pages-and-widgets/search-facets/tag-facet/images/01.png)
 
-### [Configuring the Tag Facet](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-facets/tag-facet#configuring-the-tag-facet) <a href="#configuring-the-tag-facet" id="configuring-the-tag-facet"></a>
+### Configuring the Tag Facet <a href="#configuring-the-tag-facet" id="configuring-the-tag-facet"></a>
 
 To configure the Tag Facet, open the facet’s Options menu (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png)) and click _Configuration_.
 
@@ -22,6 +22,6 @@ The Advanced Configuration section contains additional options:
 
 **Display Frequencies:** Choose whether or not to display the term frequencies.
 
-**Order Terms By:** For Liferay 7.4 U53+/GA53+, you can choose the facet term sorting strategy: Term Frequency Descending (default), Term Frequency Ascending, Term Value Ascending, or Term Value Descending. The default sorting orders facet terms from most matches to least. Term value options order facet terms alphabetically.
+**Order Terms By:** For 7.4 +, you can choose the facet term sorting strategy: Term Frequency Descending (default), Term Frequency Ascending, Term Value Ascending, or Term Value Descending. The default sorting orders facet terms from most matches to least. Term value options order facet terms alphabetically.
 
 \

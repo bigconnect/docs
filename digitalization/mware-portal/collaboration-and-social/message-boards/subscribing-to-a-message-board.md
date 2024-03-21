@@ -2,7 +2,7 @@
 
 Users can receive email updates and in-product notifications by subscribing to a Message Board. By default, users are automatically subscribed to any threads they create and can opt in to subscribe to categories or specific threads via email or RSS feed.
 
-### [Subscribing to a Category or Thread](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/subscribing-to-a-message-board#subscribing-to-a-category-or-thread) <a href="#subscribing-to-a-category-or-thread" id="subscribing-to-a-category-or-thread"></a>
+### Subscribing to a Category or Thread <a href="#subscribing-to-a-category-or-thread" id="subscribing-to-a-category-or-thread"></a>
 
 To subscribe to a thread or category:
 
@@ -19,8 +19,8 @@ To see which categories and threads you have subscribed to:
 
     ![Managing your subscriptions](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/subscribing-to-a-message-board/images/03.png)
 
-### [Subscribing using RSS Feeds](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/subscribing-to-a-message-board#subscribing-using-rss-feeds) <a href="#subscribing-using-rss-feeds" id="subscribing-using-rss-feeds"></a>
+### Subscribing using RSS Feeds <a href="#subscribing-using-rss-feeds" id="subscribing-using-rss-feeds"></a>
 
-Message Boards can be published as [RSS](https://en.wikipedia.org/wiki/RSS) feeds. RSS for _Message Boards_ are enabled by default and Liferay DXP supports RSS 1.0, RSS 2.0, or Atom 1.0.
+Message Boards can be published as RSS feeds. RSS for _Message Boards_ are enabled by default and the portal supports RSS 1.0, RSS 2.0, or Atom 1.0.
 
 \

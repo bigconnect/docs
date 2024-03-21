@@ -1,10 +1,10 @@
 # Assigning Users to Roles
 
-The location of a Role’s assignment UI corresponds with the [Role’s scope](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/understanding-roles-and-permissions#roles-and-scope).
+The location of a Role’s assignment UI corresponds with the Role’s scope.
 
-### [Regular Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/assigning-users-to-roles#regular-roles) <a href="#regular-roles" id="regular-roles"></a>
+### Regular Roles <a href="#regular-roles" id="regular-roles"></a>
 
-Globally scoped regular roles are available for configuration in the DXP [Control Panel](https://learn.liferay.com/web/guest/w/dxp/getting-started/navigating-dxp#control-panel).
+Globally scoped regular roles are available for configuration in the Control Panel.
 
 | Permission Scope                         | Available Assignments                                                        |
 | ---------------------------------------- | ---------------------------------------------------------------------------- |
@@ -21,7 +21,7 @@ You can assign Users to a Regular Role in the Assignees tab of the Add/Edit Role
 
 ![You can assign a Regular Role to an entire Organization of Users.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/roles-and-permissions/assigning-users-to-roles/images/05.png)
 
-### [Site Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/assigning-users-to-roles#site-roles) <a href="#site-roles" id="site-roles"></a>
+### Site Roles <a href="#site-roles" id="site-roles"></a>
 
 You can assign Users to a Site Role in the Memberships section of a Site’s People sub-menu.
 
@@ -40,9 +40,9 @@ You can assign Users to a Site Role in the Memberships section of a Site’s Peo
 
 NOTE
 
-As of Liferay CE 7.3.1 GA2 and Liferay DXP 7.2 SP3+, you can assign Site Roles to [User Segments](https://learn.liferay.com/web/guest/w/dxp/site-building/personalizing-site-experience/segmentation/creating-and-managing-user-segments). See [Assigning Roles to User Segments](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/assigning-roles-to-user-segments) for more details.
+As of version 7.2 SP3+, you can assign Site Roles to User Segments. See Assigning Roles to User Segments for more details.
 
-### [Organization Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/assigning-users-to-roles#organization-roles) <a href="#organization-roles" id="organization-roles"></a>
+### Organization Roles <a href="#organization-roles" id="organization-roles"></a>
 
 You can assign Users to a Organization Role in the Organizations tab of the Users and Organizations Control Panel section.
 
@@ -58,7 +58,7 @@ You can assign Users to a Organization Role in the Organizations tab of the User
 
 ![Assign an Organization Role within the Organizations section of the Control Panel.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/roles-and-permissions/assigning-users-to-roles/images/02.png)
 
-### [Asset Library Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/assigning-users-to-roles#asset-library-roles) <a href="#asset-library-roles" id="asset-library-roles"></a>
+### Asset Library Roles <a href="#asset-library-roles" id="asset-library-roles"></a>
 
 Making Role assignments for Asset Libraries is nearly identical to making assignments for Sites: assign Users to an Asset Library Role in the Memberships section of the Asset Library’s People sub-menu.
 
@@ -66,7 +66,7 @@ Making Role assignments for Asset Libraries is nearly identical to making assign
 | ---------------------- | ------------------------------------------------------- |
 | A single Asset Library | <p>Organizations<br>User Groups<br>Individual Users</p> |
 
-1. Go to the [Asset Library](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/asset-libraries) Menu → People → Memberships.
+1. Go to the Asset Library Menu → People → Memberships.
 2. Click the tab for the membership type you’re assigning the Role. Like Sites, Asset Libraries are assigned to Users (i.e., individual Site members), Organizations, or User Groups.
 3. Click the Actions button ![Add](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png) → Assign Roles.
 4.  Choose the Roles to assign and click _Done_.
@@ -75,7 +75,7 @@ Making Role assignments for Asset Libraries is nearly identical to making assign
 
 ![Assign a Asset Library Role within the Asset Library Menu's People → Memberships section.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/roles-and-permissions/assigning-users-to-roles/images/03.png)
 
-### [Default User Associations](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/assigning-users-to-roles#default-user-associations) <a href="#default-user-associations" id="default-user-associations"></a>
+### Default User Associations <a href="#default-user-associations" id="default-user-associations"></a>
 
 By default, new Users receive only the Users Role, but you can manage the default Role associations to add new Roles or remove the User assignment.
 
@@ -88,8 +88,8 @@ By default, new Users receive only the Users Role, but you can manage the defaul
 3. Click _Default User Associations_ from the left menu.
 4. Use the Regular Roles configuration field to enter a comma-separated list of Regular Roles that all new Users should inherit.
 
-Read more in the [Default User Associations](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/virtual-instances/users#default-user-associations) documentation.
+Read more in the Default User Associations documentation.
 
 ![Use Instance Settings to set the default Regular Roles for all new Users.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/roles-and-permissions/assigning-users-to-roles/images/06.png)
 
-Assignment is important, but a Role isn’t worth the database row it occupies without permissions. Read about [defining permissions](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/defining-role-permissions) for a Role next.
+Assignment is important, but a Role isn’t worth the database row it occupies without permissions. Read about defining permissions for a Role next.

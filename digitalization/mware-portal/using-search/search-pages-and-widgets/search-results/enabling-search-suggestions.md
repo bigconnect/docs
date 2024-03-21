@@ -7,13 +7,13 @@ To configure the spell check settings:
 1.  You must first reindex the spell check indexes. Go to _Control Panel_ → _Configuration_ → _Search_, and open the Index Actions screen.
 
     Click _Execute_ next to _Reindex all spell check indexes_.
-2. Make sure that one _Suggestions_ widget is on the search page (it’s added by default if using the [Search Page Template](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/working-with-search-pages/using-a-search-page-template)).
+2. Make sure that one _Suggestions_ widget is on the search page (it’s added by default if using the Search Page Template).
 3.  Open the _Suggestions_ widget configuration screen. Click the widget Options button (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-widget-options.png)) and select _Configuration_.
 
     ![Configure the suggestion settings to allow for user input mistakes and help lead users to results.](https://resources.learn.liferay.com/images/dxp/latest/en/using-search/search-pages-and-widgets/search-results/enabling-search-suggestions/images/01.png)
 4. Configure as desired and click _Save_.
 
-### [Suggestions Configuration Reference](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/enabling-search-suggestions#suggestions-configuration-reference) <a href="#suggestions-configuration-reference" id="suggestions-configuration-reference"></a>
+### Suggestions Configuration Reference <a href="#suggestions-configuration-reference" id="suggestions-configuration-reference"></a>
 
 There are three main settings available for the Suggestions widget:
 

@@ -14,21 +14,21 @@ NOTE
 * Result Rankings affect only searches using the newer search widgets (Search Bar, Search Results, etc.). The rankings you customize do not apply to the legacy Search portlet results or to the individual application search bars.
 * For the ranking to be applied, the user’s search phrase must match the result ranking’s keyword or one of its defined aliases exactly.
 
-### [Requirements and Limitations](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/result-rankings#requirements-and-limitations) <a href="#requirements-and-limitations" id="requirements-and-limitations"></a>
+### Requirements and Limitations <a href="#requirements-and-limitations" id="requirements-and-limitations"></a>
 
-#### [Elasticsearch is Required for Result Rankings](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/result-rankings#elasticsearch-is-required-for-result-rankings) <a href="#elasticsearch-is-required-for-result-rankings" id="elasticsearch-is-required-for-result-rankings"></a>
+#### Elasticsearch is Required for Result Rankings <a href="#elasticsearch-is-required-for-result-rankings" id="elasticsearch-is-required-for-result-rankings"></a>
 
-Result Rankings are only supported when using Elasticsearch as your search engine. Learn about installing Elasticsearch in [Getting Started with Elasticsearch](https://learn.liferay.com/web/guest/w/dxp/using-search/installing-and-upgrading-a-search-engine/elasticsearch/getting-started-with-elasticsearch).
+Result Rankings are only supported when using Elasticsearch as your search engine. Learn about installing Elasticsearch in Getting Started with Elasticsearch.
 
-#### [Result Rankings Cannot Be Renamed](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/result-rankings#result-rankings-cannot-be-renamed) <a href="#result-rankings-cannot-be-renamed" id="result-rankings-cannot-be-renamed"></a>
+#### Result Rankings Cannot Be Renamed <a href="#result-rankings-cannot-be-renamed" id="result-rankings-cannot-be-renamed"></a>
 
-An existing ranking entry cannot be renamed. Renaming requires recreating the ranking under a different name. See [LPS-96357](https://issues.liferay.com/browse/LPS-96357) for more information.
+An existing ranking entry cannot be renamed. Renaming requires recreating the ranking under a different name.
 
-#### [Result Rankings and Blueprints](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/result-rankings#result-rankings-and-blueprints) <a href="#result-rankings-and-blueprints" id="result-rankings-and-blueprints"></a>
+#### Result Rankings and Blueprints <a href="#result-rankings-and-blueprints" id="result-rankings-and-blueprints"></a>
 
-Result Rankings does not work well with [Search Blueprints](https://learn.liferay.com/web/guest/w/dxp/using-search/liferay-enterprise-search/search-experiences/search-blueprints). If a result pinned by Result Rankings is filtered out in the blueprint, it still appears at the top of the results. If possible, avoid using these features together.
+Result Rankings does not work well with Search Blueprints. If a result pinned by Result Rankings is filtered out in the blueprint, it still appears at the top of the results. If possible, avoid using these features together.
 
-### [Creating and Managing Result Rankings](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/result-rankings#creating-and-managing-result-rankings) <a href="#creating-and-managing-result-rankings" id="creating-and-managing-result-rankings"></a>
+### Creating and Managing Result Rankings <a href="#creating-and-managing-result-rankings" id="creating-and-managing-result-rankings"></a>
 
 To create a new Result Rankings,
 
@@ -72,7 +72,7 @@ To make a Result Rankings active again, click _Options_ (![Options](https://reso
 
 If you wish to permanently delete a Result Rankings, click _Options_ (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-options.png)) → _Delete_.
 
-### [Result Rankings Scope and Permissions](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/result-rankings#result-rankings-scope-and-permissions) <a href="#result-rankings-scope-and-permissions" id="result-rankings-scope-and-permissions"></a>
+### Result Rankings Scope and Permissions <a href="#result-rankings-scope-and-permissions" id="result-rankings-scope-and-permissions"></a>
 
 Because configuration of Result Rankings happens at the virtual instance scope, there are scoping and permissions behaviors to note.
 
@@ -82,9 +82,9 @@ Search from Result Rankings is global. When searching for results in Result Rank
 
 Permissions are applied as usual. If a User doesn’t have permission to see an asset, pinning it does not make it appear in the search results for that User.
 
-### [Result Rankings Aliases versus Synonyms Sets](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/result-rankings#result-rankings-aliases-versus-synonyms-sets) <a href="#result-rankings-aliases-versus-synonyms-sets" id="result-rankings-aliases-versus-synonyms-sets"></a>
+### Result Rankings Aliases versus Synonyms Sets <a href="#result-rankings-aliases-versus-synonyms-sets" id="result-rankings-aliases-versus-synonyms-sets"></a>
 
-The similarities between result rankings and [synonym sets](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/synonym-sets) might cause some confusion. Synonym sets expand the search to include results matched by additional (synonymous) keywords, so more results are returned if there are matches to the synonyms.
+The similarities between result rankings and synonym sets might cause some confusion. Synonym sets expand the search to include results matched by additional (synonymous) keywords, so more results are returned if there are matches to the synonyms.
 
 Result rankings are keywords with manual ranking interventions applied. If the user searches for the result ranking’s configured keyword or its aliases, then the pins, hides, re-ordering, and additional results take effect.
 

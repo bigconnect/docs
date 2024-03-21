@@ -10,9 +10,9 @@ Whenever possible, the portal generates previews of documents added to the Docum
 
 While PDFBox provides a default implementation of image generation for document previews and thumbnails, you must install and configure additional tools to harness the full power of document previews. These tools include:
 
-* [OpenOffice](http://www.openoffice.org/) or [LibreOffice](http://www.libreoffice.org/): Using one of these in server mode lets you generate thumbnails and previews for supported file types (`.pdf`, `.docx`, `.odt`, `.ppt`, `.odp`, etc.), view documents in your browser, and convert documents.
-* [ImageMagick](http://www.imagemagick.org/) (also requires [Ghostscript](http://www.ghostscript.com/)): Enables faster and higher-quality previews and conversions.
-* [Xuggler](http://www.xuggle.com/xuggler): Enables audio and video previews, lets you play audio and video files in your browser, and extracts thumbnails from video files.
+* OpenOffice or LibreOffice: Using one of these in server mode lets you generate thumbnails and previews for supported file types (`.pdf`, `.docx`, `.odt`, `.ppt`, `.odp`, etc.), view documents in your browser, and convert documents.
+* ImageMagick (also requires Ghostscript): Enables faster and higher-quality previews and conversions.
+* Xuggler: Enables audio and video previews, lets you play audio and video files in your browser, and extracts thumbnails from video files.
 
 After installing these tools, you can configure them via portal properties in the Control Panel’s Server Administration screen, or in a `portal-ext.properties` file.
 

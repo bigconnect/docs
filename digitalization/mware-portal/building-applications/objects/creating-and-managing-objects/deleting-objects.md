@@ -4,9 +4,9 @@ You can delete draft and published object definitions. Deleting a definition rem
 
 IMPORTANT
 
-For versions before Liferay 7.4 U26/GA26, users cannot delete [published object definitions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/creating-objects#publishing-object-drafts).
+For versions before 7.4 , users cannot delete published object definitions.
 
-If a definition has active relationships, you must remove them before you can delete the definition. See [Removing Relationships](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/relationships/removing-relationships) for more information.
+If a definition has active relationships, you must remove them before you can delete the definition. See Removing Relationships for more information.
 
 ![You must remove all active relationships before deleting an object definition.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/deleting-objects/images/01.png)
 

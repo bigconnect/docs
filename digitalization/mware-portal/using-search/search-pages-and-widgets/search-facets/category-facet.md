@@ -4,7 +4,7 @@ The Category Facet narrows search results for categorized assets that match the 
 
 ![Example of category facet results.](https://resources.learn.liferay.com/images/dxp/latest/en/using-search/search-pages-and-widgets/search-facets/category-facet/images/02.png)
 
-### [Configuring the Category Facet](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-facets/category-facet#configuring-the-category-facet) <a href="#configuring-the-category-facet" id="configuring-the-category-facet"></a>
+### Configuring the Category Facet <a href="#configuring-the-category-facet" id="configuring-the-category-facet"></a>
 
 To configure the Category Facet, open the facet’s _Options_ menu (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png)) and click _Configuration_.
 
@@ -12,7 +12,7 @@ To configure the Category Facet, open the facet’s _Options_ menu (![Options](h
 
 The Display Settings appear first:
 
-**Display Template:** Choose between _Default_, _Cloud Layout_, _Compact Layout_, _Label Layout_, and _Vocabulary Layout_ (available in 7.4 Update/GA 48+). The Default Layout shows checkboxes next to each term, but the Compact layout does not. The Label layout shows small clickable labels for each term. The [Vocabulary Layout](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-facets/category-facet#display-facet-terms-categories-by-vocabulary) shows the facet terms (categories) organized by vocabulary.
+**Display Template:** Choose between _Default_, _Cloud Layout_, _Compact Layout_, _Label Layout_, and _Vocabulary Layout_ (available in 7.4 Update/GA 48+). The Default Layout shows checkboxes next to each term, but the Compact layout does not. The Label layout shows small clickable labels for each term. The Vocabulary Layout shows the facet terms (categories) organized by vocabulary.
 
 The Advanced Configuration section contains additional options:
 
@@ -20,7 +20,7 @@ The Advanced Configuration section contains additional options:
 
 IMPORTANT
 
-To achieve AND style selection between facet widgets, you must configure a different Category Parameter Name for each widget. By default all Category Facet widgets have this field set to _category_. The [example below](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-facets/category-facet#example-creating-a-hierarchic-filtering-experience-in-the-category-facet-using-vocabularies) demonstrates a use case.
+To achieve AND style selection between facet widgets, you must configure a different Category Parameter Name for each widget. By default all Category Facet widgets have this field set to _category_. The example below demonstrates a use case.
 
 **Max Terms:** Set the maximum number of facet terms to display, regardless of how many matching terms are found for the facet.
 
@@ -28,21 +28,21 @@ To achieve AND style selection between facet widgets, you must configure a diffe
 
 **Display Frequencies:** Choose whether to display the term frequencies.
 
-**Order Terms By:** For Liferay 7.4 U56+/GA56+, you can choose the facet term sorting strategy: Term Frequency Descending (default), Term Frequency Ascending, Term Value Ascending, or Term Value Descending. The default sorting orders facet terms from most matches to least. Term value options order facet terms alphabetically.
+**Order Terms By:** For 7.4 +, you can choose the facet term sorting strategy: Term Frequency Descending (default), Term Frequency Ascending, Term Value Ascending, or Term Value Descending. The default sorting orders facet terms from most matches to least. Term value options order facet terms alphabetically.
 
-#### [Displaying and Filtering Facet Terms by Vocabulary](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-facets/category-facet#displaying-and-filtering-facet-terms-by-vocabulary) <a href="#displaying-and-filtering-facet-terms-by-vocabulary" id="displaying-and-filtering-facet-terms-by-vocabulary"></a>
+#### Displaying and Filtering Facet Terms by Vocabulary <a href="#displaying-and-filtering-facet-terms-by-vocabulary" id="displaying-and-filtering-facet-terms-by-vocabulary"></a>
 
-7.4 U48+ and GA48+
+7.4 +
 
 By default the Category Facet widget collects the categories of the matching results from every vocabulary in the site and displays them in a flat list. With the enhancements made in Update 48, you gain new display and filtering behaviors.
 
-[**Display Facet Terms (Categories) by Vocabulary**](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-facets/category-facet#display-facet-terms-categories-by-vocabulary)
+**Display Facet Terms (Categories) by Vocabulary**
 
 Display categories under their vocabulary by selecting the Vocabulary Layout in the Category Facet’s configuration screen.
 
 ![Categories are displayed under their vocabulary.](https://resources.learn.liferay.com/images/dxp/latest/en/using-search/search-pages-and-widgets/search-facets/category-facet/images/04.png)
 
-[**Filter Facet Terms (Categories) by Vocabulary**](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-facets/category-facet#filter-facet-terms-categories-by-vocabulary)
+**Filter Facet Terms (Categories) by Vocabulary**
 
 Select the vocabularies and categories to display in the facet.
 
@@ -54,7 +54,7 @@ If you’re upgrading from a Liferay version or update prior to 7.4 Update/GA 48
 
 With this behavior you can provide a powerful search facet experience: see the [example below](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-facets/category-facet#example-creating-a-hierarchic-filtering-experience-in-the-category-facet-using-vocabularies) for one use case.
 
-### [Example: Creating a Hierarchic Filtering Experience in the Category Facet Using Vocabularies](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-facets/category-facet#example-creating-a-hierarchic-filtering-experience-in-the-category-facet-using-vocabularies) <a href="#example-creating-a-hierarchic-filtering-experience-in-the-category-facet-using-vocabularies" id="example-creating-a-hierarchic-filtering-experience-in-the-category-facet-using-vocabularies"></a>
+### Example: Creating a Hierarchic Filtering Experience in the Category Facet Using Vocabularies <a href="#example-creating-a-hierarchic-filtering-experience-in-the-category-facet-using-vocabularies" id="example-creating-a-hierarchic-filtering-experience-in-the-category-facet-using-vocabularies"></a>
 
 Consider a commerce portal for buying auto parts. Each part is a commerce product categorized in distinct vocabularies:
 
@@ -75,7 +75,7 @@ Consider a commerce portal for buying auto parts. Each part is a commerce produc
     * Premium
     * Standard
 
-When users select Engine and Exhaust System, they expect to see products matching either category. If they then select the Premium category from the Quality vocabulary, they expect the results to be narrowed to just premium auto parts for the engine and exhaust systems. This can be accomplished out-of-the-box as of 7.4 Update/GA 48.
+When users select Engine and Exhaust System, they expect to see products matching either category. If they then select the Premium category from the Quality vocabulary, they expect the results to be narrowed to just premium auto parts for the engine and exhaust systems. This can be accomplished out-of-the-box as of 7.4 .
 
 To configure the use case above,
 

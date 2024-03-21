@@ -10,7 +10,7 @@ Use a Search Location field so a user can interact with Google’s Maps JavaScri
 
 You don’t have to display all the fields in the form.
 
-### [Adding and Configuring the Search Location Field](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/using-the-search-location-field#adding-and-configuring-the-search-location-field) <a href="#adding-and-configuring-the-search-location-field" id="adding-and-configuring-the-search-location-field"></a>
+### Adding and Configuring the Search Location Field <a href="#adding-and-configuring-the-search-location-field" id="adding-and-configuring-the-search-location-field"></a>
 
 To add the Search Location field to a form,
 
@@ -28,8 +28,8 @@ To add the Search Location field to a form,
    * **Visible Fields** configures which subfields should be shown, and autofilled, in the form. The _Search Location_ text field is always displayed (though the label can be customized). Choose to include Address, City, State, Postal Code, and/or Country subfields.
    * **Layout** determines whether Search Location and its subfields are displayed in a single column or in two columns.
 
-### [Entering Data into the Search Location Field](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/using-the-search-location-field#entering-data-into-the-search-location-field) <a href="#entering-data-into-the-search-location-field" id="entering-data-into-the-search-location-field"></a>
+### Entering Data into the Search Location Field <a href="#entering-data-into-the-search-location-field" id="entering-data-into-the-search-location-field"></a>
 
-Once the [form is published](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/creating-forms#publishing-a-form) a user interacts with the Search Location field by entering something about the location: whatever fields have been configured as visible in the field settings are autofilled when a location is selected from the presented options.
+Once the form is published a user interacts with the Search Location field by entering something about the location: whatever fields have been configured as visible in the field settings are autofilled when a location is selected from the presented options.
 
 ![Begin entering a location and the Google APIs autocomplete valid locations you can select from.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/using-the-search-location-field/images/03.png)

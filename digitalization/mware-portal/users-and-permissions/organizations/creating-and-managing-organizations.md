@@ -1,6 +1,6 @@
 # Creating and Managing Organizations
 
-### [Adding Organizations](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/creating-and-managing-organizations#adding-organizations) <a href="#adding-organizations" id="adding-organizations"></a>
+### Adding Organizations <a href="#adding-organizations" id="adding-organizations"></a>
 
 1. Click _Users and Organizations_ from Control Panel → Users.
 2.  Go to the _Organizations_ tab and click the Add button (![Add](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)). Fill out the Name field at a minimum.
@@ -21,7 +21,7 @@ After creating an Organization, assign a user to the Organization Owner Role. Th
 
 Organization Administrators can’t make these Role assignments and can’t manage the memberships of other Organization Administrators or Owners.
 
-### [Editing Organizations](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/creating-and-managing-organizations#editing-organizations) <a href="#editing-organizations" id="editing-organizations"></a>
+### Editing Organizations <a href="#editing-organizations" id="editing-organizations"></a>
 
 1. Go to the Users and Organizations section of the Control Panel
 2. Click the _Organizations_ tab. All active Organizations are listed.
@@ -41,6 +41,6 @@ Organization Administrators can’t make these Role assignments and can’t mana
 
 If you click the Organization name you can view both a list of Users who are members of this Organization and a list of all the sub-Organizations of this Organization.
 
-### [Viewing Organizations](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/creating-and-managing-organizations#viewing-organizations) <a href="#viewing-organizations" id="viewing-organizations"></a>
+### Viewing Organizations <a href="#viewing-organizations" id="viewing-organizations"></a>
 
-You can view the hierarchical structure of organizations by going into the _Organization Chart_ tab. This displays all the currently available organizations. See [Using the new Organization Management Chart Widget](https://learn.liferay.com/w/commerce/creating-store-content/liferay-commerce-widgets/using-the-new-organization-management-chart-widget) for more information.
+You can view the hierarchical structure of organizations by going into the _Organization Chart_ tab. This displays all the currently available organizations. See Using the new Organization Management Chart Widget for more information.

@@ -2,7 +2,7 @@
 
 Use Account Groups to group Accounts together based on need. For example, group accounts by geography (Americas, Asia Pacific, Europe, etc.).
 
-### [Creating an Account Group](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/account-groups#creating-an-account-group) <a href="#creating-an-account-group" id="creating-an-account-group"></a>
+### Creating an Account Group <a href="#creating-an-account-group" id="creating-an-account-group"></a>
 
 1. Open the Global Menu (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)). Navigate to _Control Panel_ → _Account Groups_.
 2. Click the _Add_ icon (![Add icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) to create a new account group.
@@ -13,7 +13,7 @@ Use Account Groups to group Accounts together based on need. For example, group 
 
     Check the box next to the accounts you want to include. Use the search bar to find specific accounts. Click _Assign_ to save the changes.
 
-### [Editing an Account Group](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/account-groups#editing-an-account-group) <a href="#editing-an-account-group" id="editing-an-account-group"></a>
+### Editing an Account Group <a href="#editing-an-account-group" id="editing-an-account-group"></a>
 
 1. In Account Groups, click the _Options_ icon (![Options icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) of the account group you want to edit. Click _Edit_ to see the details page.
 2. View or make changes to the name or description under the Details tab.

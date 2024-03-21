@@ -1,8 +1,8 @@
 # Creating Message Boards Categories
 
-Message Boards Categories organize threads by topic. Only authenticated users with the [requisite permissions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-permissions-reference) (at minimum, _Add Category_, _Add Subcategory_) have the ability to create categories. To learn more about DXP Roles and Permissions in general, see [Roles and Permissions](https://help.liferay.com/hc/articles/360017895212-Roles-and-Permissions).
+Message Boards Categories organize threads by topic. Only authenticated users with the requisite permissions (at minimum, _Add Category_, _Add Subcategory_) have the ability to create categories. To learn more about Roles and Permissions in general, see Roles and Permissions.
 
-### [Adding Categories](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/creating-message-boards-categories#adding-categories) <a href="#adding-categories" id="adding-categories"></a>
+### Adding Categories <a href="#adding-categories" id="adding-categories"></a>
 
 The most common way to add a new category is by directly using the _Message Boards_ widget.
 
@@ -21,14 +21,14 @@ The most common way to add a new category is by directly using the _Message Boar
 6.  Leave the _Allow Anonymous Emails_ toggle to _NO_ to prevent anonymous users from posting to the category. Otherwise, if you want to allow anonymous users to send emails and post to the category, toggle the switch to _YES_.
 
     ![Configure the message board category.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/creating-message-boards-categories/images/02.png)
-7. Leave the _Viewable by_ to **Anyone (Guest Role)** for now. For more information about the different permissions available, see the [Message Boards Permissions Reference](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-permissions-reference)
+7. Leave the _Viewable by_ to **Anyone (Guest Role)** for now. For more information about the different permissions available, see the Message Boards Permissions Reference
 8. Click _Save_.
 
 The new category now appears in the table.
 
 New categories appear on the message board’s home screen. The list displays the category names and the numbers of subcategories, threads, and posts in each one.
 
-### [Modifying Permissions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/creating-message-boards-categories#modifying-permissions) <a href="#modifying-permissions" id="modifying-permissions"></a>
+### Modifying Permissions <a href="#modifying-permissions" id="modifying-permissions"></a>
 
 Follow these steps to configure permissions for a Message Board category:
 
@@ -36,12 +36,12 @@ Follow these steps to configure permissions for a Message Board category:
 2. Click _Permissions_.
 3.  Check the boxes to grant permissions to the desired roles.
 
-    For more information about each permission, see [Message Boards Permissions Reference](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/message-boards-permissions-reference#general-category-permissions).
+    For more information about each permission, see Message Boards Permissions Reference.
 
     ![Modify permissions for a Message Board category.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/creating-message-boards-categories/images/06.png)
 4. Click _Save_ when finished.
 
-### [Adding Subcategories](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/creating-message-boards-categories#adding-subcategories) <a href="#adding-subcategories" id="adding-subcategories"></a>
+### Adding Subcategories <a href="#adding-subcategories" id="adding-subcategories"></a>
 
 Categories can contain as many subcategories as you like.
 
@@ -58,7 +58,7 @@ The subcategory now appears in the table.
 
 ![Adding a subcategory](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/creating-message-boards-categories/images/07.png)
 
-### [Moving and Merging Categories](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/creating-message-boards-categories#moving-and-merging-categories) <a href="#moving-and-merging-categories" id="moving-and-merging-categories"></a>
+### Moving and Merging Categories <a href="#moving-and-merging-categories" id="moving-and-merging-categories"></a>
 
 Administrators can also move and merge categories.
 
@@ -71,6 +71,6 @@ Follow these steps to move a category or merge it with another:
 
     ![Move and merge categories.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/message-boards/user-guide/creating-message-boards-categories/images/03.png)
 
-Regardless of how many categories (and subcategories) there are, a category is just a container to organize a message board’s threads. To start creating threads, see the [Creating Threads](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/creating-message-boards-threads) article.
+Regardless of how many categories (and subcategories) there are, a category is just a container to organize a message board’s threads. To start creating threads, see the Creating Threads article.
 
 \

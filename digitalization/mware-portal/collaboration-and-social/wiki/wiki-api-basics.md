@@ -1,26 +1,26 @@
 # Wiki API Basics
 
-Liferay’s Headless Delivery application provides REST services for the [Wiki](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/getting-started-with-wikis) application. With these services, you can add Wiki nodes and pages, list their information, modify their content, or remove them altogether. Here you’ll call those services using cURL commands and Java classes.
+Headless Delivery application provides REST services for the [Wiki](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/getting-started-with-wikis) application. With these services, you can add Wiki nodes and pages, list their information, modify their content, or remove them altogether. Here you’ll call those services using cURL commands and Java classes.
 
-### [Preparing Tutorial Resources](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#preparing-tutorial-resources) <a href="#preparing-tutorial-resources" id="preparing-tutorial-resources"></a>
+### Preparing Tutorial Resources <a href="#preparing-tutorial-resources" id="preparing-tutorial-resources"></a>
 
-Before proceeding with the tutorial, first set up a clean Liferay Docker container and prepare the provided tutorial code for use.
+Before proceeding with the tutorial, first set up a clean Docker container and prepare the provided tutorial code for use.
 
-#### [Liferay Docker Container](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#liferay-docker-container) <a href="#liferay-docker-container" id="liferay-docker-container"></a>
+#### Docker Container <a href="#liferay-docker-container" id="liferay-docker-container"></a>
 
-Start a new Liferay instance by running
+Start a new portal instance by running
 
 ```bash
 docker run -it -m 8g -p 8080:8080 liferay/portal:7.4.3.112-ga112
 ```
 
-Sign in to Liferay at [http://localhost:8080](http://localhost:8080/). Use the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
+Sign in to the portal at [http://localhost:8080](http://localhost:8080/). Use the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
 
 Once started, retrieve the Site ID. To find your Site ID, open the _Site Menu_ (![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-menu.png)), and go to _Configuration_ → _Site Settings_ → _Site Configuration_.
 
 ![Find the Site ID under Site Configuration settings.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/wiki/developer-guide/wiki-api-basics/images/01.png)
 
-#### [Tutorial Code](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#tutorial-code) <a href="#tutorial-code" id="tutorial-code"></a>
+#### Tutorial Code <a href="#tutorial-code" id="tutorial-code"></a>
 
 This tutorial provides sample code to demonstrate the Headless API. This code includes both sample cURL and Java files for use throughout the tutorial.
 
@@ -46,13 +46,13 @@ javac -classpath .:* *.java
 
 Note that the project includes the `com.liferay.headless.delivery.client.jar` file as a dependency. You can find client JAR dependency information for all REST applications in the API explorer in your installation at `/o/api`.
 
-The provided code includes APIs for the `WikiNode` and `WikiPage` services. See [Tutorial Code Reference](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#tutorial-code-reference) for a list of all included sample APIs.
+The provided code includes APIs for the `WikiNode` and `WikiPage` services. See Tutorial Code Reference for a list of all included sample APIs.
 
 IMPORTANT
 
-The provided code uses basic authentication for demonstration purposes. For production, you should authorize users with [OAuth2](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2).
+The provided code uses basic authentication for demonstration purposes. For production, you should authorize users with OAuth2.
 
-### [Calling the Sample WikiNode APIs](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#calling-the-sample-wikinode-apis) <a href="#calling-the-sample-wikinode-apis" id="calling-the-sample-wikinode-apis"></a>
+### Calling the Sample WikiNode APIs <a href="#calling-the-sample-wikinode-apis" id="calling-the-sample-wikinode-apis"></a>
 
 In this exercise, you can use either the cURL commands or Java classes to call the `WikiNode` APIs. The following output examples correspond to the cURL commands, which slightly differ from the output for the provided Java classes.
 
@@ -173,7 +173,7 @@ In this exercise, you can use either the cURL commands or Java classes to call t
     }
     ```
 
-### [Calling the Sample WikiPage APIs](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#calling-the-sample-wikipage-apis) <a href="#calling-the-sample-wikipage-apis" id="calling-the-sample-wikipage-apis"></a>
+### Calling the Sample WikiPage APIs <a href="#calling-the-sample-wikipage-apis" id="calling-the-sample-wikipage-apis"></a>
 
 You can use either the cURL commands or Java classes to call the `WikiPage` APIs. The following output examples correspond to the cURL commands, which differ slightly from the output for the provided Java classes.
 
@@ -361,7 +361,7 @@ You can use either the cURL commands or Java classes to call the `WikiPage` APIs
     }
     ```
 
-### [Tutorial Code Reference](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#tutorial-code-reference) <a href="#tutorial-code-reference" id="tutorial-code-reference"></a>
+### Tutorial Code Reference <a href="#tutorial-code-reference" id="tutorial-code-reference"></a>
 
 The provided sample code includes cURL scripts and Java classes for the following `WikiNode` and `WikiPage` APIs.
 
@@ -375,7 +375,7 @@ The provided sample code includes cURL scripts and Java classes for the followin
 | WikiNode | `PUT`       | `/v1.0/wiki-nodes/[wikiNodeId]`   | Replaces the specified node’s details with those provided in the API call                                                 |
 | WikiNode | `DELETE`    | `/v1.0/wiki-nodes/[wikiNodeId]`   | Deletes the specified node and returns a 204 if the operation succeeds                                                    |
 
-#### [Sample WikiPage APIs](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#sample-wikipage-apis) <a href="#sample-wikipage-apis" id="sample-wikipage-apis"></a>
+#### Sample WikiPage APIs <a href="#sample-wikipage-apis" id="sample-wikipage-apis"></a>
 
 | Service  | HTTP Method | HTTP Endpoint                                    | Description                                                                                                                                |
 | -------- | ----------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -391,7 +391,7 @@ IMPORTANT
 
 When using POST and PUT methods for Wiki pages, you must define both the `headline` and `encodingFormat` fields. The `headline` field sets the page’s main title, while the `encodingFormat` field determines the page’s media format (e.g., HTML, BBCode, etc.).
 
-### [Examining the Sample cURL Scripts](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#examining-the-sample-curl-scripts) <a href="#examining-the-sample-curl-scripts" id="examining-the-sample-curl-scripts"></a>
+### Examining the Sample cURL Scripts <a href="#examining-the-sample-curl-scripts" id="examining-the-sample-curl-scripts"></a>
 
 The following are representative examples of the tutorial’s cURL commands.
 
@@ -432,11 +432,11 @@ curl \
 	--user "test@liferay.com:learn"
 ```
 
-### [Examining the Sample Java Classes](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#examining-the-sample-java-classes) <a href="#examining-the-sample-java-classes" id="examining-the-sample-java-classes"></a>
+### Examining the Sample Java Classes <a href="#examining-the-sample-java-classes" id="examining-the-sample-java-classes"></a>
 
 The following are representative examples of the tutorial’s Java commands.
 
-#### [`WikiNode_POST_ToSite.java`](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#wikinode-post-tositejava) <a href="#wikinode-post-tositejava" id="wikinode-post-tositejava"></a>
+#### `WikiNode_POST_ToSite.java` <a href="#wikinode-post-tositejava" id="wikinode-post-tositejava"></a>
 
 ```java
 public class WikiNode_POST_ToSite {
@@ -466,7 +466,7 @@ public class WikiNode_POST_ToSite {
 }
 ```
 
-#### [`WikiPage_POST_ToNode.java`](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#wikipage-post-tonodejava) <a href="#wikipage-post-tonodejava" id="wikipage-post-tonodejava"></a>
+#### `WikiPage_POST_ToNode.java` <a href="#wikipage-post-tonodejava" id="wikipage-post-tonodejava"></a>
 
 ```java
 public class WikiPage_POST_ToNode {
@@ -497,7 +497,7 @@ public class WikiPage_POST_ToNode {
 }
 ```
 
-#### [`WikiPages_GET_FromNode.java`](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/developer-guide/wiki-api-basics#wikipages-get-fromnodejava) <a href="#wikipages-get-fromnodejava" id="wikipages-get-fromnodejava"></a>
+#### `WikiPages_GET_FromNode.java` <a href="#wikipages-get-fromnodejava" id="wikipages-get-fromnodejava"></a>
 
 ```java
 public class WikiPages_GET_FromNode {

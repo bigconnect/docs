@@ -6,7 +6,7 @@ When exporting definitions with relationships, the JSON file includes all relati
 
 If an imported definition references picklists or objects that do not exist, Liferay automatically generates them using the external reference codes provided in the JSON file.
 
-### [Exporting Definitions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/exporting-and-importing-object-definitions#exporting-definitions) <a href="#exporting-definitions" id="exporting-definitions"></a>
+### Exporting Definitions <a href="#exporting-definitions" id="exporting-definitions"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), go to the _Control Panel_ tab, and click _Objects_.
 2.  Click the _Actions_ button (![Action Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) for the desired object and select _Export as JSON_.
@@ -16,7 +16,7 @@ If an imported definition references picklists or objects that do not exist, Lif
 
 Once exported, you can import the object definition into compatible Liferay environments.
 
-### [Importing Definitions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/exporting-and-importing-object-definitions#importing-definitions) <a href="#importing-definitions" id="importing-definitions"></a>
+### Importing Definitions <a href="#importing-definitions" id="importing-definitions"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), go to the _Control Panel_ tab, and click _Objects_.
 2.  Click the _Actions_ button (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) in the Application Bar and select _Import Object_.

@@ -15,7 +15,7 @@ To configure through System Settings,
 
     ![Navigate to the Questions app settings in system settings.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/questions-application/configuring-the-questions-app/images/05.png)
 
-### [Topic Display Style](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/configuring-the-questions-app#topic-display-style) <a href="#topic-display-style" id="topic-display-style"></a>
+### Topic Display Style <a href="#topic-display-style" id="topic-display-style"></a>
 
 Topics can be displayed as cards or as a list.
 
@@ -28,7 +28,7 @@ If this is checked, the app will display separate cards for each question topic.
 
 ![The configuration window opens with different options.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/questions-application/configuring-the-questions-app/images/02.png)
 
-### [Limiting Topic Display](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/configuring-the-questions-app#limiting-topic-display) <a href="#limiting-topic-display" id="limiting-topic-display"></a>
+### Limiting Topic Display <a href="#limiting-topic-display" id="limiting-topic-display"></a>
 
 Questions default display behavior is to show all Topics. You can opt to only display certain topics by configuring a Root Topic. To only display specific sub-topics or questions do the following,
 
@@ -40,7 +40,7 @@ Questions default display behavior is to show all Topics. You can opt to only di
     ![Select an individual topic as the root topic.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/questions-application/configuring-the-questions-app/images/03.png)
 3. Select a topic and click _Save_. The app will now only show sub-topics and questions for the selected topic.
 
-### [Managing App Permissions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/configuring-the-questions-app#managing-app-permissions) <a href="#managing-app-permissions" id="managing-app-permissions"></a>
+### Managing App Permissions <a href="#managing-app-permissions" id="managing-app-permissions"></a>
 
 To modify permissions for the app,
 
@@ -52,7 +52,7 @@ To modify permissions for the app,
     ![Assign permissions for different roles on this page.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/questions-application/configuring-the-questions-app/images/04.png)
 3. Assign permissions for different Roles. Click _Save_.
 
-### [Redirecting Guest Users to Login](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/configuring-the-questions-app#redirecting-guest-users-to-login) <a href="#redirecting-guest-users-to-login" id="redirecting-guest-users-to-login"></a>
+### Redirecting Guest Users to Login <a href="#redirecting-guest-users-to-login" id="redirecting-guest-users-to-login"></a>
 
 To enable this functionality you must configure it through System Settings,
 
@@ -67,7 +67,7 @@ NOTE
 
 A Service Access Policy needs to be created to allow Guest users to view the app.
 
-#### [Creating a Service Access Policy to Allow Guest Viewers](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/configuring-the-questions-app#creating-a-service-access-policy-to-allow-guest-viewers) <a href="#creating-a-service-access-policy-to-allow-guest-viewers" id="creating-a-service-access-policy-to-allow-guest-viewers"></a>
+#### Creating a Service Access Policy to Allow Guest Viewers <a href="#creating-a-service-access-policy-to-allow-guest-viewers" id="creating-a-service-access-policy-to-allow-guest-viewers"></a>
 
 To create a new policy,
 
@@ -82,7 +82,7 @@ To create a new policy,
     ![Create a new policy and add the signatures.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/questions-application/configuring-the-questions-app/images/06.png)
 3. Click _Save_ to save the new policy.
 
-### [System Configuration Reference](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/configuring-the-questions-app#system-configuration-reference) <a href="#system-configuration-reference" id="system-configuration-reference"></a>
+### System Configuration Reference <a href="#system-configuration-reference" id="system-configuration-reference"></a>
 
 | Setting                         | Description                                                                                                                                              |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |

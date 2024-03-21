@@ -1,6 +1,6 @@
 # Notifications and Requests
 
-Users receive notifications and requests if they have subscribed to a blog or message board or are [mentioned](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/notifications-and-requests/user-guide/mentioning-users) in a post. They may also be notified if someone sent them a private message, invitation to join a site, or an event reminder. Lastly, users are notified to review content and asset creation when those activities are used with Liferay’s built-in [Workflow](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/introduction-to-workflow) capabilities.
+Users receive notifications and requests if they have subscribed to a blog or message board or are mentioned in a post. They may also be notified if someone sent them a private message, invitation to join a site, or an event reminder. Lastly, users are notified to review content and asset creation when those activities are used with the portal’s built-in Workflow capabilities.
 
 To access notifications and requests:
 
@@ -11,7 +11,7 @@ To access notifications and requests:
 
     ![User Avatar and notifications](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/notifications-and-requests/user-guide/managing-notifications-and-requests/images/02.png)
 
-### [Managing Notifications](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/notifications-and-requests/user-guide/managing-notifications-and-requests#managing-notifications) <a href="#managing-notifications" id="managing-notifications"></a>
+### Managing Notifications <a href="#managing-notifications" id="managing-notifications"></a>
 
 To manage and sort accumulated notifications:
 
@@ -34,7 +34,7 @@ To change your notification’s status:
 2. Click _Mark as Read_ or _Mark as Unread_ to keep the notification fresh.
 3. Alternately, click _Delete_ to remove the notification completely.
 
-#### [Managing Multiple Notifications](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/notifications-and-requests/user-guide/managing-notifications-and-requests#managing-multiple-notifications) <a href="#managing-multiple-notifications" id="managing-multiple-notifications"></a>
+#### Managing Multiple Notifications <a href="#managing-multiple-notifications" id="managing-multiple-notifications"></a>
 
 You can also manage multiple notifications at once:
 
@@ -47,7 +47,7 @@ You can also manage multiple notifications at once:
 
     ![Managing Multiple Notification status](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/notifications-and-requests/user-guide/managing-notifications-and-requests/images/05.png)
 
-### [Managing Requests to Join a Site](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/notifications-and-requests/user-guide/managing-notifications-and-requests#managing-requests-to-join-a-site) <a href="#managing-requests-to-join-a-site" id="managing-requests-to-join-a-site"></a>
+### Managing Requests to Join a Site <a href="#managing-requests-to-join-a-site" id="managing-requests-to-join-a-site"></a>
 
 When a user gets a request to join a site, it appears in the _Requests List_ tab. Users have the option to click _Confirm_ to join the site or click _Ignore_ to decline.
 

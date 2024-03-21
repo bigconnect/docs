@@ -4,7 +4,7 @@ You can remove relationships from both draft and published object definitions. R
 
 IMPORTANT
 
-For versions before Liferay 7.4 U26/GA26, users cannot delete relationships included in an object at the time of [publishing](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/creating-objects#publishing-object-drafts).
+For versions before 7.4, users cannot delete relationships included in an object at the time of publishing.
 
 Follow these steps to remove relationships from published object definitions:
 

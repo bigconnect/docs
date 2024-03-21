@@ -14,17 +14,17 @@ If the Recycle Bin is disabled on a Site, deleted assets are permanently deleted
 
 ![Delete an asset.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/recycle-bin/recycle-bin-overview/images/03.png)
 
-### [Recycle Bin and Staging](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/recycle-bin/recycle-bin-overview#recycle-bin-and-staging) <a href="#recycle-bin-and-staging" id="recycle-bin-and-staging"></a>
+### Recycle Bin and Staging <a href="#recycle-bin-and-staging" id="recycle-bin-and-staging"></a>
 
-If you have a [Staging](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging) environment enabled for your Site, you have a separate Recycle Bin for both the Staging environment and the Live environment. This prevents staged assets and live assets from mixing.
+If you have a Staging environment enabled for your Site, you have a separate Recycle Bin for both the Staging environment and the Live environment. This prevents staged assets and live assets from mixing.
 
 To move an asset to the Recycle Bin, first switch to the environment containing the asset. Click on Staging or Live.
 
 ![Check which environment you are working in. Click on Staging or Live to switch.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/recycle-bin/recycle-bin-overview/images/04.png)
 
-[Using the Recycle Bin](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/recycle-bin/using-the-recycle-bin) has the same functionality whether you are working in a Staging environment or a Live environment.
+Using the Recycle Bin has the same functionality whether you are working in a Staging environment or a Live environment.
 
-Note that the Recycle Bin is enabled for different asset types when the Staging environment is initially configured. See [Managing Data and Content Types in Staging](https://learn.liferay.com/web/guest/w/dxp/site-building/publishing-tools/staging/managing-data-and-content-types-in-staging) to make any changes.
+Note that the Recycle Bin is enabled for different asset types when the Staging environment is initially configured. See Managing Data and Content Types in Staging to make any changes.
 
 WARNING
 

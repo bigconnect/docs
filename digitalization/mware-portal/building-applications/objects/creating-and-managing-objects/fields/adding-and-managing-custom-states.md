@@ -1,15 +1,15 @@
 # Adding and Managing Custom States
 
-Some use cases may require assigning multiple states to an object entry at the same time. For example, when building an Order application, you may need to assign and manage order, payment, and delivery statuses for the same entry, each with its own flow and associated business logic. Using Liferay picklists with custom objects, you can achieve this functionality.
+Some use cases may require assigning multiple states to an object entry at the same time. For example, when building an Order application, you may need to assign and manage order, payment, and delivery statuses for the same entry, each with its own flow and associated business logic. Using picklists with custom objects, you can achieve this functionality.
 
-With [picklists](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/picklists), you can define lists of strings and use them as object fields to define custom states for entries. Once added to an object definition, you can design the flow for each state and use [validations](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/validations/adding-field-validations) and [actions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions/defining-object-actions) to add business logic for different states. States can also be used alongside [workflow statuses](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/enabling-workflows-for-objects) to define more complex review and approval processes.
+With picklists, you can define lists of strings and use them as object fields to define custom states for entries. Once added to an object definition, you can design the flow for each state and use validations and actions to add business logic for different states. States can also be used alongside workflow statuses to define more complex review and approval processes.
 
 ![Use picklists to add custom states to object definitions.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/fields/adding-and-managing-custom-states/images/01.png)
 
-### [Adding a State Field to Object Definitions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/adding-and-managing-custom-states#adding-a-state-field-to-object-definitions) <a href="#adding-a-state-field-to-object-definitions" id="adding-a-state-field-to-object-definitions"></a>
+### Adding a State Field to Object Definitions <a href="#adding-a-state-field-to-object-definitions" id="adding-a-state-field-to-object-definitions"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), go to the _Control Panel_ tab, and click _Picklists_.
-2.  Create a picklist with the desired items. These items define object entry states. See [Creating Picklists](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/picklists/creating-picklists) for more detailed steps.
+2.  Create a picklist with the desired items. These items define object entry states. See Creating Picklists for more detailed steps.
 
     NOTE
 
@@ -33,9 +33,9 @@ With [picklists](https://learn.liferay.com/web/guest/w/dxp/building-applications
     ![Select a picklist, toggle Mark as State, and set a default value for the field.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/fields/adding-and-managing-custom-states/images/04.png)
 10. Click _Save_.
 
-After adding the field to a definition, you can [set up a flow](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/adding-and-managing-custom-states#setting-up-a-flow-for-state-fields) to determine which transitions are available for each state.
+After adding the field to a definition, you can set up a flow to determine which transitions are available for each state.
 
-### [Setting Up a Flow for State Fields](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/adding-and-managing-custom-states#setting-up-a-flow-for-state-fields) <a href="#setting-up-a-flow-for-state-fields" id="setting-up-a-flow-for-state-fields"></a>
+### Setting Up a Flow for State Fields <a href="#setting-up-a-flow-for-state-fields" id="setting-up-a-flow-for-state-fields"></a>
 
 By default, each state can transition to all other states. However, you can restrict transitions to ensure the entry goes through the desired process.
 

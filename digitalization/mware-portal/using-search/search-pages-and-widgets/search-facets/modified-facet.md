@@ -6,7 +6,7 @@ The Modified Facet narrows search results down to those that match the searched 
 
 In addition to selecting a pre-configured time period, Users can select a Custom Range, specifying a From and To date using a date picker.
 
-### [Configuring the Modified Facet](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-facets/modified-facet#configuring-the-modified-facet) <a href="#configuring-the-modified-facet" id="configuring-the-modified-facet"></a>
+### Configuring the Modified Facet <a href="#configuring-the-modified-facet" id="configuring-the-modified-facet"></a>
 
 To configure the Modified Facet, open the Options menu (![Click on the options icon of the search bar.](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png)) of the facet and click _Configuration_.
 
@@ -18,7 +18,7 @@ The Advanced Configuration section contains additional options:
 
 **Frequency Threshold:** Set the minimum frequency required for terms to appear in the list of facet terms. For example, if the frequency threshold of a facet is set to `3`, a term with two matching results is omitted in the facet’s term result list.
 
-**Order Terms By:** For Liferay 7.4 U63+/GA63+, you can choose a facet term sorting strategy: Term Frequency Descending or Term Frequency Ascending. Term Frequency Descending orders facet terms from most matches to least. By default, facet terms appear statically in the order the timer periods configuration.
+**Order Terms By:** For 7.4 +, you can choose a facet term sorting strategy: Term Frequency Descending or Term Frequency Ascending. Term Frequency Descending orders facet terms from most matches to least. By default, facet terms appear statically in the order the timer periods configuration.
 
 In Ranges Configuration, you can modify, delete, or create time ranges:
 

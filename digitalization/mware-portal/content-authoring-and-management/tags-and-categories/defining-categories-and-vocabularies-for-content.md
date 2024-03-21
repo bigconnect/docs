@@ -1,14 +1,14 @@
 # Defining Categories and Vocabularies for Content
 
-Using Categories, you can group similar assets and organize your content. Along with [Tags](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/tagging-content-and-managing-tags), Categories help people find relevant information through search or navigation. For more information about Categories in Liferay DXP and the different usage scenarios, see [Organizing Content with Categories and Tags](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/organizing-content-with-categories-and-tags).
+Using Categories, you can group similar assets and organize your content. Along with [Tags](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/tagging-content-and-managing-tags), Categories help people find relevant information through search or navigation. For more information about Categories and the different usage scenarios, see Organizing Content with Categories and Tags.
 
-You group categories using [vocabularies](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content#defining-vocabularies), and you create a hierarchy of categories using [subcategories](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content#creating-subcategories). You can use the vocabularies and categories at the Global Site in any other Site, but you can only create or edit Global Vocabularies at the Global Site.
+You group categories using vocabularies, and you create a hierarchy of categories using subcategories. You can use the vocabularies and categories at the Global Site in any other Site, but you can only create or edit Global Vocabularies at the Global Site.
 
 NOTE
 
 Only Site administrators can manage Categories and Vocabularies in the Categories panel.
 
-### [Defining Vocabularies](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content#defining-vocabularies) <a href="#defining-vocabularies" id="defining-vocabularies"></a>
+### Defining Vocabularies <a href="#defining-vocabularies" id="defining-vocabularies"></a>
 
 1. Go to the Site where you want to create the Vocabulary.
 2. Open the Product Menu and, under the Site Menu, go to _Categorization_ → _Categories_.
@@ -18,7 +18,7 @@ Only Site administrators can manage Categories and Vocabularies in the Categorie
 
     **Allow Multiple Categories:** Enable this option to use more than one Category from the Vocabulary to categorize the asset. When disabled, you can use only one Category from the Vocabulary.
 
-    **Visibility:** See [Vocabularies Visibility](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/organizing-content-with-categories-and-tags#vocabulary-visibility) for more information.
+    **Visibility:** See Vocabularies Visibility for more information.
 
     IMPORTANT
 
@@ -36,7 +36,7 @@ Only Site administrators can manage Categories and Vocabularies in the Categorie
 
     ![Edit an existing Vocabulary using the Actions menu.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content/images/08.png)
 
-### [Defining Categories](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content#defining-categories) <a href="#defining-categories" id="defining-categories"></a>
+### Defining Categories <a href="#defining-categories" id="defining-categories"></a>
 
 You create and manage Categories in the Site Menu → _Categorization_ → _Categories_ panel. You can also create new categories from the Categorization section in the Content Editor, using the Select button for each Vocabulary.
 
@@ -46,7 +46,7 @@ You can create a maximum of 150 Categories in one Vocabulary.
 
 ![Add new Categories from the Categorization section in the Content Editor.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content/images/04.png)
 
-#### [Creating Categories](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content#creating-categories) <a href="#creating-categories" id="creating-categories"></a>
+#### Creating Categories <a href="#creating-categories" id="creating-categories"></a>
 
 1. Open the Product Menu and, under the Site Menu, go to _Categorization_ → _Categories_.
 2. Under the _Vocabularies_ list, click the Vocabulary to add the new Category.
@@ -56,11 +56,11 @@ You can create a maximum of 150 Categories in one Vocabulary.
 
     NOTE
 
-    Display Pages for Categories are available starting with Liferay DXP 7.4. For more information, read [Displaying Categories Using Display Pages](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates/displaying-categories-using-display-pages).
+    Display Pages for Categories are available starting with version 7.4. For more information, read Displaying Categories Using Display Pages.
 6. Click _Save_ or _Save and Add a New One_ to add more categories.
 7. To edit an existing category, click the _Actions_ (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) menu next to the category’s name.
 
-#### [Creating Subcategories](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content#creating-subcategories) <a href="#creating-subcategories" id="creating-subcategories"></a>
+#### Creating Subcategories <a href="#creating-subcategories" id="creating-subcategories"></a>
 
 You can create a nested hierarchy of Categories and Subcategories:
 
@@ -70,7 +70,7 @@ You can create a nested hierarchy of Categories and Subcategories:
 4. In the _Add New Subcategory_ screen, enter the subcategory’s _Name_ and, optionally, a _Description_.
 5. Click _Save_ or _Save and Add a New One_ to add more subcategories.
 
-#### [Moving Categories](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content#moving-categories) <a href="#moving-categories" id="moving-categories"></a>
+#### Moving Categories <a href="#moving-categories" id="moving-categories"></a>
 
 You can move a category to a different Vocabulary, or as a subcategory in the same Vocabulary.
 
@@ -82,9 +82,9 @@ You can move a category to a different Vocabulary, or as a subcategory in the sa
 
     NOTE
 
-    You can only move a Category into a Vocabulary of the same [Visibility type](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/organizing-content-with-categories-and-tags#vocabulary-visibility).
+    You can only move a Category into a Vocabulary of the same Visibility type.
 
-#### [Editing Additional Category Properties](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content#editing-additional-category-properties) <a href="#editing-additional-category-properties" id="editing-additional-category-properties"></a>
+#### Editing Additional Category Properties <a href="#editing-additional-category-properties" id="editing-additional-category-properties"></a>
 
 After creating a Category, you can define these additional options:
 
@@ -97,7 +97,7 @@ To access these options, click the _Actions_ (![Actions](https://resources.learn
 
 ![Edit the Category to define additional options.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content/images/10.png)
 
-#### [Changing the Maximum Number of Categories per Vocabulary](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content#changing-the-maximum-number-of-categories-per-vocabulary) <a href="#changing-the-maximum-number-of-categories-per-vocabulary" id="changing-the-maximum-number-of-categories-per-vocabulary"></a>
+#### Changing the Maximum Number of Categories per Vocabulary <a href="#changing-the-maximum-number-of-categories-per-vocabulary" id="changing-the-maximum-number-of-categories-per-vocabulary"></a>
 
 You can create a maximum of 150 Categories for each Vocabulary. But a very large number of categories may impact performance and load times. To set a lower maximum number,
 

@@ -1,8 +1,8 @@
 # Activating and Deactivating Objects
 
-Custom objects are _activated_ when [published](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/creating-objects#publishing-object-drafts). While active, you can use the object to create entries via the Liferay UI or dedicated REST APIs. If needed, you can deactivate custom objects at any time.
+Custom objects are _activated_ when published. While active, you can use the object to create entries via the portal UI or dedicated REST APIs. If needed, you can deactivate custom objects at any time.
 
-This prevents users from creating or accessing its entries. While inactive, its data is unavailable, and you can only edit the object’s definition. If the object has relationships, it no longer appears in its related objects’ layouts. Additionally, the object does not appear in any [integrated frameworks](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/understanding-object-integrations) (e.g., permissions, workflow). This means that site elements referencing the object’s entries become blank.
+This prevents users from creating or accessing its entries. While inactive, its data is unavailable, and you can only edit the object’s definition. If the object has relationships, it no longer appears in its related objects’ layouts. Additionally, the object does not appear in any integrated frameworks (e.g., permissions, workflow). This means that site elements referencing the object’s entries become blank.
 
 Deactivating an object does not affect its data; it only prevents users from accessing it until the object is reactivated.
 

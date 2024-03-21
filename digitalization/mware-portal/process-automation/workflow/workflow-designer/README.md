@@ -4,17 +4,17 @@ The Process Builder’s workflow designer is a graphical interface for creating 
 
 <figure><img src="../../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-The workflow designer supports all [workflow node](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/workflow-nodes) types:
+The workflow designer supports all workflow node types:
 
-* [Start and End nodes](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/workflow-nodes#start-and-end-nodes)
-* [Fork and Join nodes](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/using-forks-and-joins)
-* [Condition nodes](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/using-condition-nodes)
-* [State nodes](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/workflow-nodes#state-nodes)
-* [Task nodes](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/creating-workflow-tasks)
+* Start and End nodes
+* Fork and Join nodes
+* Condition nodes
+* State nodes
+* Task nodes
 
-In addition to the functionality provided by the drag and drop interface, you have the full power of Groovy (a Java-based scripting language) to perform [programmatic actions](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/developer-guide/using-the-script-engine-in-workflow) on assets being moved through your workflows.
+In addition to the functionality provided by the drag and drop interface, you have the full power of Groovy (a Java-based scripting language) to perform programmatic actions on assets being moved through your workflows.
 
-### [Building Workflows](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/workflow-designer-overview#building-workflows) <a href="#building-workflows" id="building-workflows"></a>
+### Building Workflows <a href="#building-workflows" id="building-workflows"></a>
 
 To build a workflow, navigate to the Global Menu (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)) → Control Panel → Process Builder.
 
@@ -22,9 +22,9 @@ Click the (![Add icon](https://resources.learn.liferay.com/images/dxp/latest/en/
 
 Each Workflow Node represents a specific point in an approval process, whether it starts the review process, approves or rejects the asset, or reassigns the task.
 
-[Workflow transitions](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/workflow-transitions) link each node to create the desired flow in the review process. On exiting the first node, processing continues to the next node indicated by the transition.
+Workflow transitions link each node to create the desired flow in the review process. On exiting the first node, processing continues to the next node indicated by the transition.
 
-### [Localizing the Workflow](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/workflow-designer-overview#localizing-the-workflow) <a href="#localizing-the-workflow" id="localizing-the-workflow"></a>
+### Localizing the Workflow <a href="#localizing-the-workflow" id="localizing-the-workflow"></a>
 
 A workflow process’s text is experienced by Users in these ways:
 
@@ -44,4 +44,4 @@ To translate the workflow,
 5. Go through the workflow and translate the node labels, transition labels, and the workflow title.
 6. Save the workflow.
 
-Once the workflow definition is published and [associated to an asset](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/activating-workflow), participants like workflow task assignees will interact with the workflow in their language.
+Once the workflow definition is published and associated to an asset, participants like workflow task assignees will interact with the workflow in their language.

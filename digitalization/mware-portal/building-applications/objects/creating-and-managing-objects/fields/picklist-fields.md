@@ -2,9 +2,9 @@
 
 Picklists define lists of text values usable as single select or multi-select fields in object definitions. By default, single select fields appear as drop-down menus, while multi-select fields appear as checkboxes.
 
-You can configure a single select field to use a default value, which can be static or dynamic. Additionally, you can use single select fields to define custom states for object entries and integrate [validations](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/validations/adding-field-validations), [actions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions/defining-object-actions), and [workflow processes](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/enabling-workflows-for-objects) with the object definition to implement complex business logic.
+You can configure a single select field to use a default value, which can be static or dynamic. Additionally, you can use single select fields to define custom states for object entries and integrate validations, actions, and workflow processes with the object definition to implement complex business logic.
 
-### [Setting Default Values](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/picklist-fields#setting-default-values) <a href="#setting-default-values" id="setting-default-values"></a>
+### Setting Default Values <a href="#setting-default-values" id="setting-default-values"></a>
 
 1. Begin editing the desired Picklist field.
 2.  Go to the _Advanced_ tab and toggle _Use Default Value_.
@@ -25,7 +25,7 @@ You cannot delete a list if it is used by an object field, though you can edit a
 
 Updating or deleting a picklist item automatically updates all object entries using the item value.
 
-### [Using Picklist Fields with APIs](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/picklist-fields#using-picklist-fields-with-apis) <a href="#using-picklist-fields-with-apis" id="using-picklist-fields-with-apis"></a>
+### Using Picklist Fields with APIs <a href="#using-picklist-fields-with-apis" id="using-picklist-fields-with-apis"></a>
 
 When making POST, PATCH, and PUT API calls for objects that include a picklist field, you must use the following request payload formats for Picklist and Multiselect Picklist fields, respectively.
 

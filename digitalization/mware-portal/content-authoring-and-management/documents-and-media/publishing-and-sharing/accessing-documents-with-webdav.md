@@ -4,11 +4,11 @@ You can access the Document Library from your desktop file manager via [WebDAV](
 
 To access the Document Library folder from a file browser, you must use your log-in credentials and the WebDAV URL of the folder you want to access.
 
-### [Generating WebDAV Password](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/accessing-documents-with-webdav#generating-webdav-password) <a href="#generating-webdav-password" id="generating-webdav-password"></a>
+### Generating WebDAV Password <a href="#generating-webdav-password" id="generating-webdav-password"></a>
 
-Liferay DXP 2023.Q4+/Portal 7.4 GA98+
+Version 2023.Q4+
 
-In the latest Liferay versions, you must generate a WebDAV password from your account settings to use in your WebDAV client. This is to avoid storing weak hashes used in digest authentication by WebDAV. Digest authentication is insecure and deprecated in Liferay. When trying to access a document through WebDAV for the first time, you’re prompted to generate a WebDAV password.
+In the latest versions, you must generate a WebDAV password from your account settings to use in your WebDAV client. This is to avoid storing weak hashes used in digest authentication by WebDAV. Digest authentication is insecure and deprecated in the portal. When trying to access a document through WebDAV for the first time, you’re prompted to generate a WebDAV password.
 
 ![You must generate a WebDAV password before using it for the first time.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/publishing-and-sharing/accessing-documents-with-webdav/images/03.png)
 
@@ -22,9 +22,9 @@ To generate a WebDAV password,
 
     This displays your WebDAV username and an auto-generated password. This is a read-only field, so you must copy it for future use. If you click the button to generate the WebDAV password again, it generates a new one, rendering the existing one useless.
 
-Now, [follow the instructions below](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/accessing-documents-with-webdav#using-the-webdav-client-to-access-documents) and use the WebDAV username and password when prompted.
+Now, follow the instructions below and use the WebDAV username and password when prompted.
 
-### [Using the WebDAV Client to Access Documents](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/accessing-documents-with-webdav#using-the-webdav-client-to-access-documents) <a href="#using-the-webdav-client-to-access-documents" id="using-the-webdav-client-to-access-documents"></a>
+### Using the WebDAV Client to Access Documents <a href="#using-the-webdav-client-to-access-documents" id="using-the-webdav-client-to-access-documents"></a>
 
 1. Open the Documents and Media application in the desired Site or Asset Library.
 2.  Click the _Actions_ button for the desired folder (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Access from Desktop_.
@@ -38,6 +38,6 @@ Now, [follow the instructions below](https://learn.liferay.com/web/guest/w/dxp/c
    * **macOS:** Open Finder and select _Go_ → _Connect to Server_. In the Server Address field, enter the WebDAV URL of the folder you want to access, then click _Connect_ and enter your credentials when prompted.
    * **Linux:** For Linux, you must slightly modify the folder’s WebDAV URL. For KDE Dolphin, change the URL’s protocol to `webdav://` instead of `http://`. For GNOME Files, change the URL’s protocol to `dav://` instead of `http://`. Paste the modified URL in your file manager, press _Enter_, and enter your credentials when prompted.
 
-Once set up, you can use your operating system’s file browser to add, edit, and delete files in the connected Documents and Media folder. If you edit a file in this folder on your file system, all changes appear in Liferay and the file’s minor version is incremented.
+Once set up, you can use your operating system’s file browser to add, edit, and delete files in the connected Documents and Media folder. If you edit a file in this folder on your file system, all changes appear in the portal and the file’s minor version is incremented.
 
 \

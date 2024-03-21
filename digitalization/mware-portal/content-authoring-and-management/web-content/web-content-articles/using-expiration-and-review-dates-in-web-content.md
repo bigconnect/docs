@@ -6,7 +6,7 @@ When an article expires, it is deactivated and cannot be used or edited. To reac
 
 By contrast, when an article requires review, it remains available for use. Reaching the article’s review date only triggers user notifications and does not affect the article’s availability.
 
-### [Enabling Expiration and Review Dates](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-articles/using-expiration-and-review-dates-in-web-content#enabling-expiration-and-review-dates) <a href="#enabling-expiration-and-review-dates" id="enabling-expiration-and-review-dates"></a>
+### Enabling Expiration and Review Dates <a href="#enabling-expiration-and-review-dates" id="enabling-expiration-and-review-dates"></a>
 
 By default, web content articles never expire or require review. You can change this, however, when creating or editing articles.
 
@@ -18,9 +18,9 @@ When editing multiple articles, expiration is done through the toolbar or action
 
 To activate expiration or review, uncheck the _Never Expire_ or _Never Review_ checkbox. The default review and expiration dates are set to one year from the time of activation. Change the dates if needed.
 
-Liferay checks for articles that have reached their expiration or review dates at a specific [check interval](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-articles/using-expiration-and-review-dates-in-web-content#configuring-the-check-interval).
+The portal checks for articles that have reached their expiration or review dates at a specific check interval.
 
-### [Configuring the Check Interval](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-articles/using-expiration-and-review-dates-in-web-content#configuring-the-check-interval) <a href="#configuring-the-check-interval" id="configuring-the-check-interval"></a>
+### Configuring the Check Interval <a href="#configuring-the-check-interval" id="configuring-the-check-interval"></a>
 
 By default, Web Content checks article expiration and review dates every 15 minutes. You can customize this.
 
@@ -34,11 +34,11 @@ Now the system checks for expiration or review dates according to the interval y
 
 WARNING
 
-If you require this feature to be disabled, [blacklist](https://learn.liferay.com/web/guest/w/dxp/system-administration/installing-and-managing-apps/managing-apps/blacklisting-osgi-components) the component. Do not enter zero or a negative number for the interval.
+If you require this feature to be disabled, blacklist the component. Do not enter zero or a negative number for the interval.
 
-### [Configuring Notification Emails](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-articles/using-expiration-and-review-dates-in-web-content#configuring-notification-emails) <a href="#configuring-notification-emails" id="configuring-notification-emails"></a>
+### Configuring Notification Emails <a href="#configuring-notification-emails" id="configuring-notification-emails"></a>
 
-When an article expires or requires review, Liferay sends a notification email to the article’s owners, reviewers, or any users subscribed to the folder containing the article. There’s a default notification message, but you can customize it.
+When an article expires or requires review, the portal sends a notification email to the article’s owners, reviewers, or any users subscribed to the folder containing the article. There’s a default notification message, but you can customize it.
 
 1. Navigate to the Web Content application in a site or asset library.
 2. Click the _Actions_ button (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) in the Application Bar and select _Configuration_.

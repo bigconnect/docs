@@ -7,11 +7,11 @@ You can edit structure fields and their properties:
 3.  Click the name of the structure you want to modify.
 
     You can also open the _Actions_ Menu ( ![Actions icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png) ) next to the structure and select _Edit_.
-4. Add, [remove](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/configuring-structure-fields#structure-field-options), or reorganize the fields in the structure.
-5. Select the field you want to configure. You can also perform [other actions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/configuring-structure-fields#structure-field-options) in the context menu.
-6. Once the sidebar expands, [configure your desired settings](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/configuring-structure-fields#configurable-settings) for the selected field and _Save_ the changes.
+4. Add, remove, or reorganize the fields in the structure.
+5. Select the field you want to configure. You can also perform other actions in the context menu.
+6. Once the sidebar expands, configure your desired settings for the selected field and _Save_ the changes.
 
-### [Configurable Settings](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/configuring-structure-fields#configurable-settings) <a href="#configurable-settings" id="configurable-settings"></a>
+### Configurable Settings <a href="#configurable-settings" id="configurable-settings"></a>
 
 IMPORTANT
 
@@ -29,7 +29,7 @@ Field settings depend on the type of field. A setting listed below may not apply
 
 TIP
 
-Liferay DXP assigns a random field reference for each new field in the structure. Replace the default value with something more descriptive, so template developers can identify the field to place its data in a web content template or display page.
+The portal assigns a random field reference for each new field in the structure. Replace the default value with something more descriptive, so template developers can identify the field to place its data in a web content template or display page.
 
 **Help Text:** Add a comment to help users understand the field label. The help text works as a subheading for your field to provide additional guidance.
 
@@ -49,7 +49,7 @@ Liferay DXP assigns a random field reference for each new field in the structure
 
 **Style:** Optional CSS styles for the Separator field.
 
-### [Structure Field Options](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/configuring-structure-fields#structure-field-options) <a href="#structure-field-options" id="structure-field-options"></a>
+### Structure Field Options <a href="#structure-field-options" id="structure-field-options"></a>
 
 When you hover over a structure field and click _Actions_ ( ![Actions button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-options.png) ), these options appear in its context menu:
 

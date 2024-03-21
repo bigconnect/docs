@@ -1,8 +1,8 @@
 # Tagging Content and Managing Tags
 
-Tags are keywords you can use to organize your assets and describe specific information about its content. Tags tell website visitors what the content is about so they can find relevant information through search or navigation. For more information about tags in Liferay DXP and the different usage scenarios, see [Organizing Content with Categories and Tags](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/organizing-content-with-categories-and-tags).
+Tags are keywords you can use to organize your assets and describe specific information about its content. Tags tell website visitors what the content is about so they can find relevant information through search or navigation. For more information about tags in the portal and the different usage scenarios, see Organizing Content with Categories and Tags.
 
-### [Tagging Content](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/tagging-content-and-managing-tags#tagging-content) <a href="#tagging-content" id="tagging-content"></a>
+### Tagging Content <a href="#tagging-content" id="tagging-content"></a>
 
 Use the Categorization section in the sidebar panel to tag assets as you create new content.
 
@@ -14,7 +14,7 @@ Use the Categorization section in the sidebar panel to tag assets as you create 
 4. Select the tags you want to use from the list of existing tags and click _Done_.
 5. If you want to create new tags for the content, type the new tag in the _Tags_ field and press Enter.
 
-### [Managing Tags](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/tagging-content-and-managing-tags#managing-tags) <a href="#managing-tags" id="managing-tags"></a>
+### Managing Tags <a href="#managing-tags" id="managing-tags"></a>
 
 You can manage tags under the Categorization panel in the Site Menu. From here, you can create new tags or customize the existing ones.
 
@@ -30,7 +30,7 @@ Only site administrators can manage tags in the Tags panel.
 
     NOTE
 
-    Tags are all lowercase, unless you enable a release feature flag that makes them case-sensitive. Read [Release Feature Flags](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/feature-flags#release-feature-flags) for more information.
+    Tags are all lowercase, unless you enable a release feature flag that makes them case-sensitive. Read Release Feature Flags for more information.
 4. To edit an existing tag, click _Actions_ (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) next to the tag’s name and select _Edit_.
 5. If you want to merge one or more tags,
    1. Check the box next to the tags you want to merge and click _Merge_ (![Merge](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-merge.png)).

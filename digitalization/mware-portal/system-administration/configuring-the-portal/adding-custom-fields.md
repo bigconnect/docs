@@ -1,6 +1,6 @@
 # Adding Custom Fields
 
-Many of Liferay’s assets and resources can be extended with custom fields. Adding custom fields can give you greater control and flexibility over your Site. Here are all the different places custom fields can be used:
+Many of the portal’s assets and resources can be extended with custom fields. Adding custom fields can give you greater control and flexibility over your Site. Here are all the different places custom fields can be used:
 
 * Blogs Entry
 * Calendar Event
@@ -25,7 +25,7 @@ There are many reasons for using custom fields. Here’s one example.
 
 **Max Role Use Case**: Suppose you want to limit the number of users that can be assigned to a particular Role on your Site. To accomplish this, you could create a _max-users_ custom field for the Role. Then ask your developer to create logic to keep track and prevent more Users to be added once the set limit was reached.
 
-### [Adding Custom Fields](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/adding-custom-fields#adding-custom-fields-1) <a href="#adding-custom-fields-1" id="adding-custom-fields-1"></a>
+### Adding Custom Fields <a href="#adding-custom-fields-1" id="adding-custom-fields-1"></a>
 
 Follow these steps to see how a custom field can be created for the example use case above:
 
@@ -70,7 +70,7 @@ For example, the _max-users_ custom field is now visible for all Roles:
 
     Notice the _Max Users_ field at the bottom.
 
-### [Editing Custom Fields](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/adding-custom-fields#editing-custom-fields) <a href="#editing-custom-fields" id="editing-custom-fields"></a>
+### Editing Custom Fields <a href="#editing-custom-fields" id="editing-custom-fields"></a>
 
 Click the Options icon (![Click on the options icon for the custom field.](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-options.png)) next to the name of the custom field to edit. These options appear:
 

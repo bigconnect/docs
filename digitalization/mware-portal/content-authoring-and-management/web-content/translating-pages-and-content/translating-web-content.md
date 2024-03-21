@@ -1,18 +1,18 @@
 # Translating Web Content
 
-Liferay provides integrated tools for translating web content articles, so you can create engaging, localized content for your global users. With these tools, you can manually translate web content or import translations as XLIFF files.
+MWARE Portal provides integrated tools for translating web content articles, so you can create engaging, localized content for your global users. With these tools, you can manually translate web content or import translations as XLIFF files.
 
-If desired, you can [enable a custom workflow](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/enabling-workflows-for-translations) to direct the review and publishing process for translations.
-
-NOTE
-
-The languages available for translation are determined by your instance’s localization settings. See [Initial Instance Localization](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/initial-instance-localization) and [Virtual Instance Localization](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/virtual-instances/localization) for more information.
-
-### [Manually Translating Content](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-web-content#manually-translating-content) <a href="#manually-translating-content" id="manually-translating-content"></a>
+If desired, you can enable a custom workflow to direct the review and publishing process for translations.
 
 NOTE
 
-To manually translate web content, users must have either View and Update permissions for the asset or Translation permissions for one or more languages. See [Managing Permissions for Translation](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/managing-translation-permissions) for more information.
+The languages available for translation are determined by your instance’s localization settings. See Initial Instance Localization and Virtual Instance Localization for more information.
+
+### Manually Translating Content <a href="#manually-translating-content" id="manually-translating-content"></a>
+
+NOTE
+
+To manually translate web content, users must have either View and Update permissions for the asset or Translation permissions for one or more languages. See Managing Permissions for Translation for more information.
 
 1. Open the _Site Menu_ (![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) and navigate to _Content & Data_ → _Web Content_.
 2.  Click _Actions_ (![Actions icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) for the content you want to translate and select _Translate_.
@@ -40,9 +40,9 @@ To manually translate web content, users must have either View and Update permis
 
     Alternatively, click _Save as Draft_ to save and publish your translation later.
 
-### [Publishing Translated Web Content Using Localizable Fields](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-web-content#publishing-translated-web-content-using-localizable-fields) <a href="#publishing-translated-web-content-using-localizable-fields" id="publishing-translated-web-content-using-localizable-fields"></a>
+### Publishing Translated Web Content Using Localizable Fields <a href="#publishing-translated-web-content-using-localizable-fields" id="publishing-translated-web-content-using-localizable-fields"></a>
 
-Translated web content in localizable fields can be different structurally from the content displayed in the original language. Liferay does this so your changes don’t override content that has been already translated. To see how this works, follow these steps:
+Translated web content in localizable fields can be different structurally from the content displayed in the original language. The portal does this so your changes don’t override content that has been already translated. To see how this works, follow these steps:
 
 1. In Web Content, go to Structures and Click _Add_.
 2. Create a structure using a repeatable fieldset. For example, add a Text and an Image field to your fieldset. Make them both required and click _Save_.
@@ -65,26 +65,26 @@ Translated web content in localizable fields can be different structurally from 
 
 This behavior frees you to manage your translations independently from the original language.
 
-### [Exporting and Importing Translations](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-web-content#exporting-and-importing-translations) <a href="#exporting-and-importing-translations" id="exporting-and-importing-translations"></a>
+### Exporting and Importing Translations <a href="#exporting-and-importing-translations" id="exporting-and-importing-translations"></a>
 
 NOTE
 
-To translate content page experiences manually, users must have either View and Update permissions for content pages or Translation permissions for one or more languages. See [Managing Translation Permissions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/managing-translation-permissions) for more information.
+To translate content page experiences manually, users must have either View and Update permissions for content pages or Translation permissions for one or more languages. See Managing Translation Permissions for more information.
 
-With Liferay, you can export web content for translation as `.xliff` or `.xlf` files. You can send these files to translators and then import the translations together as a `.zip` file or individually as `.xliff` or `.xlf` files.
+You can export web content for translation as `.xliff` or `.xlf` files. You can send these files to translators and then import the translations together as a `.zip` file or individually as `.xliff` or `.xlf` files.
 
 IMPORTANT
 
-Liferay supports both XLIFF 1.2 and 2.0 files. However, it may not support all features and capabilities those formats provide.
+The portal supports both XLIFF 1.2 and 2.0 files. However, it may not support all features and capabilities those formats provide.
 
-#### [Exporting Content for Translation](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-web-content#exporting-content-for-translation) <a href="#exporting-content-for-translation" id="exporting-content-for-translation"></a>
+#### Exporting Content for Translation <a href="#exporting-content-for-translation" id="exporting-content-for-translation"></a>
 
 1. Open the _Site Menu_ (![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) and navigate to _Content & Data_ → _Web Content_.
 2.  Click _Actions_ (![Actions icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) for the content you want to translate and select _Export for Translation_. This opens a modal window for configuring your export.
 
     ![Select Export for Translation.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-web-content/images/04.png)
 
-    In Liferay Portal 7.4 GA26+, you can select multiple articles and click the _Export for Translation_ button.
+    In version 7.4 +, you can select multiple articles and click the _Export for Translation_ button.
 
     ![Select multiple articles and click Export for Translation](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-web-content/images/05.png)
 3. Select an export format: _XLIFF 1.2_ or _XLIFF 2.0_.
@@ -94,16 +94,16 @@ Liferay supports both XLIFF 1.2 and 2.0 files. However, it may not support all f
     ![Select the languages you want to translate the content into.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-web-content/images/06.png)
 6. Click _Export_.
 
-Liferay generates a ZIP archive that contains an XLIFF file for each selected language. You can then use these files with compatible translation software.
+The portal generates a ZIP archive that contains an XLIFF file for each selected language. You can then use these files with compatible translation software.
 
-#### [Importing Content Translations](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-web-content#importing-content-translations) <a href="#importing-content-translations" id="importing-content-translations"></a>
+#### Importing Content Translations <a href="#importing-content-translations" id="importing-content-translations"></a>
 
 1. Open the _Site Menu_ (![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) and navigate to _Content & Data_ → _Web Content_.
 2.  Click _Actions_ (![Actions icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) for the translated web content and select _Import Translation_.
 
     ![Select Import Translation.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-web-content/images/07.png)
 
-    In Liferay Portal 7.4 GA26+, you can import translations for multiple articles at once by clicking the _Actions_ button (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) in the Application Bar and selecting _Import Translations_.
+    In version 7.4+, you can import translations for multiple articles at once by clicking the _Actions_ button (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) in the Application Bar and selecting _Import Translations_.
 
     ![Upload translations for multiple articles.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-web-content/images/08.png)
 3.  Select the `.xliff`, `.xlf`, and `.zip` files you want to import.
@@ -112,19 +112,19 @@ Liferay generates a ZIP archive that contains an XLIFF file for each selected la
 
     IMPORTANT
 
-    While Liferay supports importing XLIFF files created using the [Export for Translation](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-web-content#exporting-content-for-translation) action, it cannot guarantee the successful import of files generated by other means.
+    While the portal supports importing XLIFF files created using the Export for Translation action, it cannot guarantee the successful import of files generated by other means.
 4.  Click _Publish_.
 
-    If successful, Liferay displays a success message with the imported files. The web content is updated with all changes included in the translation files. If workflow is enabled, this change must be approved as with other content updates.
+    If successful, the portal displays a success message with the imported files. The web content is updated with all changes included in the translation files. If workflow is enabled, this change must be approved as with other content updates.
 
-    ![If successful, Liferay displays a success message with the imported files.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-web-content/images/10.png)
+    ![If successful, the portal displays a success message with the imported files.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-web-content/images/10.png)
 
-    However, if errors occur during import, Liferay notifies you of the failing files and provides a downloadable CSV error report.
+    However, if errors occur during import, the portal notifies you of the failing files and provides a downloadable CSV error report.
 
-    ![If errors occur during import, Liferay notifies you of the failing files and provides a downloadable CSV error report.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-web-content/images/11.png)
+    ![If errors occur during import, the portal notifies you of the failing files and provides a downloadable CSV error report.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-web-content/images/11.png)
 
-### [Translating Web Content Using Third Party Services](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-web-content#translating-web-content-using-third-party-services) <a href="#translating-web-content-using-third-party-services" id="translating-web-content-using-third-party-services"></a>
+### Translating Web Content Using Third Party Services <a href="#translating-web-content-using-third-party-services" id="translating-web-content-using-third-party-services"></a>
 
-If you’ve enabled Liferay’s integration with [Google Cloud Translation](https://cloud.google.com/translate/docs/setup), [Amazon Translate](https://docs.aws.amazon.com/translate/latest/dg/what-is.html), or [Microsoft Translator](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/), you can use them to automatically translate web content. See [Using Third Parties for Translation](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation) for more information.
+If you’ve enabled the portal’s integration with Google Cloud Translation, Amazon Translate, or Microsoft Translator, you can use them to automatically translate web content. See Using Third Parties for Translation for more information.
 
 \

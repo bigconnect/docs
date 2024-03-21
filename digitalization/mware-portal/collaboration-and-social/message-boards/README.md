@@ -1,10 +1,10 @@
 # Message Boards
 
-Liferay DXP’s Message Boards app is a forum application that can be added to any DXP site page. A Message Board on DXP can be [scoped to a site](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/understanding-configuration-scope), including a regular site, an organization’s site, or a user’s profile site or dashboard site.
+Message Boards app is a forum application that can be added to any site page. A Message Board can be scoped to a site, including a regular site, an organization’s site, or a user’s profile site or dashboard site.
 
-### [Adding Message Boards to a Site](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/message-boards/user-guide/getting-started-with-message-boards#adding-message-boards-to-a-site) <a href="#adding-message-boards-to-a-site" id="adding-message-boards-to-a-site"></a>
+### Adding Message Boards to a Site <a href="#adding-message-boards-to-a-site" id="adding-message-boards-to-a-site"></a>
 
-The fastest way to begin using the _Message Boards_ app is to deploy the widget to a [Site Page](https://help.liferay.com/hc/articles/360029132211-Creating-Pages).
+The fastest way to begin using the _Message Boards_ app is to deploy the widget to a Site Page.
 
 1.  Navigate to the site and page desired (e.g. _Forum Page_).
 

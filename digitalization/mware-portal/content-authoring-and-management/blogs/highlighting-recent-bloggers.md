@@ -6,7 +6,7 @@ To configure the widget, click _Options_ (![Options icon](https://resources.lear
 
 ![There are different setup options for the Recent Bloggers widget](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/blogs/highlighting-recent-bloggers/images/02.png)
 
-### [Setup](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/blogs/highlighting-recent-bloggers#setup) <a href="#setup" id="setup"></a>
+### Setup <a href="#setup" id="setup"></a>
 
 The Setup tab contains these options:
 
@@ -18,11 +18,11 @@ The Setup tab contains these options:
 
 **Maximum Bloggers to Display:** Select the maximum number of recent bloggers the widget displays.
 
-### [Sharing](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/blogs/highlighting-recent-bloggers#sharing) <a href="#sharing" id="sharing"></a>
+### Sharing <a href="#sharing" id="sharing"></a>
 
 Embed the widget instance as a widget on any website, Facebook, Netvibes, or as an OpenSocial Gadget.
 
-### [Scope](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/blogs/highlighting-recent-bloggers#scope) <a href="#scope" id="scope"></a>
+### Scope <a href="#scope" id="scope"></a>
 
 Specify the blog instance the widget displays: the current site’s blog (default), the global blog, or the page’s blog.
 

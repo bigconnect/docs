@@ -2,9 +2,9 @@
 
 You can export all your forms as a `LAR` file and then import them into a different Site for reuse.
 
-See [Exporting/Importing Site Pages and Content](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/exporting-importing-site-pages-and-content) to learn about the Import/Export process.
+See Exporting/Importing Site Pages and Content to learn about the Import/Export process.
 
-### [Exporting Forms as a LAR File](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/exporting-and-importing-forms#exporting-forms-as-a-lar-file) <a href="#exporting-forms-as-a-lar-file" id="exporting-forms-as-a-lar-file"></a>
+### Exporting Forms as a LAR File <a href="#exporting-forms-as-a-lar-file" id="exporting-forms-as-a-lar-file"></a>
 
 1. Navigate to _Site Administration_ → _Content and Data_ → _Forms_.
 2. Click the ![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-options.png) icon in the upper right then _Export / Import_.
@@ -25,7 +25,7 @@ See [Exporting/Importing Site Pages and Content](https://learn.liferay.com/web/g
 
 The Forms `LAR` file has been downloaded. You can import this to another Site.
 
-### [Importing Forms into a Site](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/exporting-and-importing-forms#importing-forms-into-a-site) <a href="#importing-forms-into-a-site" id="importing-forms-into-a-site"></a>
+### Importing Forms into a Site <a href="#importing-forms-into-a-site" id="importing-forms-into-a-site"></a>
 
 1. Navigate to another Site.
 2. Navigate to _Site Administration_ → _Content and Data_ → _Forms_.

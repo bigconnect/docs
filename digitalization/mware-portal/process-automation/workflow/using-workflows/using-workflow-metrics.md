@@ -7,11 +7,11 @@ IMPORTANT
 * _Editing a Workflow with SLAs:_ Editing a workflow (e.g., removing nodes, editing a task name) with SLAs defined on it may invalidate the SLA for items already in the workflow/SLA pipeline.
 * _Creating or Editing SLAs for Active Processes:_ Editing an SLA’s duration or defining a new SLA while items are already in the workflow process causes a recalculation for all instances currently in the workflow. Completed workflow instances are not recalculated.
 
-### [Prerequisites](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/using-workflow-metrics#prerequisites) <a href="#prerequisites" id="prerequisites"></a>
+### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-To use _Workflow Metrics_, you must be using Elasticsearch to index your DXP data. To learn more, read the [Installing Elasticsearch](https://learn.liferay.com/web/guest/w/dxp/using-search/installing-and-upgrading-a-search-engine/elasticsearch/installing-elasticsearch) article.
+To use _Workflow Metrics_, you must be using Elasticsearch to index your DXP data. To learn more, read the Installing Elasticsearch article.
 
-### [Adding SLAs](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/using-workflow-metrics#adding-slas) <a href="#adding-slas" id="adding-slas"></a>
+### Adding SLAs <a href="#adding-slas" id="adding-slas"></a>
 
 To add a SLA,
 
@@ -38,7 +38,7 @@ To add a SLA,
 
 ![Manage SLAs from the SLAs screen.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/workflow/using-workflows/using-workflow-metrics/images/02.png)
 
-#### [Valid Start and Stop Events](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/using-workflow-metrics#valid-start-and-stop-events) <a href="#valid-start-and-stop-events" id="valid-start-and-stop-events"></a>
+#### Valid Start and Stop Events <a href="#valid-start-and-stop-events" id="valid-start-and-stop-events"></a>
 
 Any workflow task can be used as a start or end parameter for the SLA.
 
@@ -60,14 +60,14 @@ If the item makes it to the Stop event before the defined SLA duration (the dead
 
 The Pause field defines an event in the workflow when time should stop counting. For the Single Approver workflow, you might choose to pause the SLA timer when the item is in the Update task. The SLA can be paused at any task that falls between the start node and the end node, and it is defined by setting the node(s) when the SLA should be paused. _The SLA timer is paused the entire time a workflow item is in the specified node_.
 
-#### [Durations](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/using-workflow-metrics#durations) <a href="#durations" id="durations"></a>
+#### Durations <a href="#durations" id="durations"></a>
 
 | Unit of Time | Instruction                                                                                                                                                              |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Days         | Enter a whole number for number of days. If there are partial days such as 36 hours, use in combination with the _Hours_ field; express it 1 Day and 12 Hours.           |
 | Hours        | Enter the number of hours and minutes. The values in the _Hours_ box must not exceed _23:59_; if the duration exceeds one day, use in combination with the _Days_ field. |
 
-### [Configuring the SLA Job Interval](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/using-workflow-metrics#configuring-the-sla-job-interval) <a href="#configuring-the-sla-job-interval" id="configuring-the-sla-job-interval"></a>
+### Configuring the SLA Job Interval <a href="#configuring-the-sla-job-interval" id="configuring-the-sla-job-interval"></a>
 
 The time interval between metrics recalculation is called the _SLA Job Interval_. The default value is 1 minute. To change it,
 
@@ -86,29 +86,29 @@ Alternatively,
     ```properties
     checkSLAJobInterval="1"
     ```
-3. Place it in `[Liferay Home]/osgi/configs`.
+3. Place it in `[Home]/osgi/configs`.
 
 Workflow Metrics data is read from the search engine to calculate metrics. When configuring the interval value, consider these competing performance concerns:
 
 * A long time between metrics recalculation events corresponds with more search documents being read during each recalculation.
 * A short time between metrics recalculation events corresponds with a higher frequency of read requests to the search engine.
 
-### [Re-Indexing Workflow Metrics](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/using-workflow-metrics#re-indexing-workflow-metrics) <a href="#re-indexing-workflow-metrics" id="re-indexing-workflow-metrics"></a>
+### Re-Indexing Workflow Metrics <a href="#re-indexing-workflow-metrics" id="re-indexing-workflow-metrics"></a>
 
-A _Re-Index_ action in Liferay DXP completely deletes, then recreates, search indexes based on mapping files. Because metrics are also stored in the database, there’s no danger of data loss when re-indexing. To Re-index Workflow Metrics on Liferay 7.3,
+A _Re-Index_ action in the portal completely deletes, then recreates, search indexes based on mapping files. Because metrics are also stored in the database, there’s no danger of data loss when re-indexing. To Re-index Workflow Metrics on version 7.3,
 
 1. From the Metrics application, open the Options menu (![Options](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-options.png)) and click _Settings_.
 2.  Now in the Workflow Index Actions screen, click _Reindex All_ for the Workflow Indexes entry.
 
     This option acts on every index in the Workflow Metrics application. More granular options are available as well. If you have multiple Virtual Instances, you must reindex each one’s Workflow Metrics separately.
 
-On Liferay 7.2, Workflow Metrics are re-indexed from the Search administrative panel (Control Panel → Configuration → Search).
+On version 7.2, Workflow Metrics are re-indexed from the Search administrative panel (Control Panel → Configuration → Search).
 
-A re-index of Workflow Metrics is required when the [search engine](https://learn.liferay.com/web/guest/w/dxp/using-search/installing-and-upgrading-a-search-engine/installing-a-search-engine) is first configured and each time it’s upgraded. A good rule of thumb is that Workflow Metrics should be re-indexed each time Liferay DXP’s main search indexes are re-indexed.
+A re-index of Workflow Metrics is required when the search engine is first configured and each time it’s upgraded. A good rule of thumb is that Workflow Metrics should be re-indexed each time the portal’s main search indexes are re-indexed.
 
-From the overall metrics of a workflow process down to the details on a single item in the workflow, the new Workflow Metrics functionality gives you insights into the time it takes to _get things done_ in Liferay DXP.
+From the overall metrics of a workflow process down to the details on a single item in the workflow, the new Workflow Metrics functionality gives you insights into the time it takes to _get things done_ in the portal.
 
-### [Managing Workflow Tasks in Bulk](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/using-workflow-metrics#managing-workflow-tasks-in-bulk) <a href="#managing-workflow-tasks-in-bulk" id="managing-workflow-tasks-in-bulk"></a>
+### Managing Workflow Tasks in Bulk <a href="#managing-workflow-tasks-in-bulk" id="managing-workflow-tasks-in-bulk"></a>
 
 Within the metrics UI you can manage workflow tasks in bulk. For example, you can assign multiple tasks to a single user without going into each task separately. To explore this functionality make sure you have some items that need managing inside a workflow process. For example, [activate](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/activating-workflow) the Single Approver workflow process for blogs, then submit a few blogs to the workflow.
 

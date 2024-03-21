@@ -1,6 +1,6 @@
 # Using the Page Menu Widget
 
-The _Page Menu_ widget presents links that can include links to other [Wiki Pages](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/wiki/getting-started-with-wikis),other DXP site pages, Documents and Media assets, external websites, and more. Once you’ve added the widget to a Page, you need to configure which Wiki Page it uses and its sources for links. Follow these steps:
+The _Page Menu_ widget presents links that can include links to other Wiki Pages, other site pages, Documents and Media assets, external websites, and more. Once you’ve added the widget to a Page, you need to configure which Wiki Page it uses and its sources for links. Follow these steps:
 
 1.  Click on the widget’s _Options_ icon (![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Configuration_.
 

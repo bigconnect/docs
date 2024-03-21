@@ -1,8 +1,8 @@
 # Using Taglibs in Templates
 
-Liferay’s taglibs are accessible when developing templates in FreeMarker. There is no need to instantiate these taglibs within your FreeMarker template; they’re already provided for you automatically. You can access these taglibs by indicating the Tag Library Descriptor’s (TLD) file name with underscores.
+Taglibs are accessible when developing templates in FreeMarker. There is no need to instantiate these taglibs within your FreeMarker template; they’re already provided for you automatically. You can access these taglibs by indicating the Tag Library Descriptor’s (TLD) file name with underscores.
 
-When you’re using DXP’s template editor, you can find variables on the right side of the template editor under the Elements tab. To place one of the variables onto the template editor,
+When you’re using the portal’s template editor, you can find variables on the right side of the template editor under the Elements tab. To place one of the variables onto the template editor,
 
 1. Open the _Site Menu_( ![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png) ) and select _Content & Data_ → _Web Content_.
 2. Click the _Templates_ tab and click _Add_( ![Add Fremarker(.ftl)](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ).
@@ -22,9 +22,9 @@ NOTE
 
 The `utilLocator`, `objectUtil`, and `staticUtil` variables for FreeMarker are disabled by default. These variables are vulnerable to remote code execution and privilege escalation, and should only be enabled for trusted template developers.
 
-After you save your template, DXP provides a WebDAV URL and static URL. These values access the XML source of your structure. You can find these URLs by returning to your template after saving it and expanding the _Details_ section. For more information on WebDAV and the uses of the WebDAV URL, reference the [WebDAV Access](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/accessing-documents-with-webdav) section.
+After you save your template, the portal provides a WebDAV URL and static URL. These values access the XML source of your structure. You can find these URLs by returning to your template after saving it and expanding the _Details_ section. For more information on WebDAV and the uses of the WebDAV URL, reference the WebDAV Access section.
 
-### [Reserved Variables Under Journal](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-templates/using-taglibs-in-templates#reserved-variables-under-journal) <a href="#reserved-variables-under-journal" id="reserved-variables-under-journal"></a>
+### Reserved Variables Under Journal <a href="#reserved-variables-under-journal" id="reserved-variables-under-journal"></a>
 
 Here is a list of reserved variables you can find under Journal, what they return, and the methods called:
 

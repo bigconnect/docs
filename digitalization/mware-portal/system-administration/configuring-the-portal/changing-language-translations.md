@@ -1,8 +1,8 @@
 # Changing Language Translations
 
-Use the Language Override tool to override existing translations or add new language keys and translations. Note that these overrides take place at the Instance level of [Configuration Scope](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/understanding-configuration-scope). For previous Liferay versions, see [Overriding Global Language Translations](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/extending-liferay/overriding-global-language-translations).
+Use the Language Override tool to override existing translations or add new language keys and translations. Note that these overrides take place at the Instance level of Configuration Scope. For previous portal versions, see Overriding Global Language Translations.
 
-### [Overriding a Translation](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/changing-language-translations#overriding-a-translation) <a href="#overriding-a-translation" id="overriding-a-translation"></a>
+### Overriding a Translation <a href="#overriding-a-translation" id="overriding-a-translation"></a>
 
 1. Open the Global Menu (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)). Navigate to _Control Panel_ → _Configuration_ → _Language Override_.
 2.  Use the search bar to find the translation you wish to override. For example, if you want to override `home` found at the top of the Product Menu, search for the term `home`.
@@ -18,7 +18,7 @@ Use the Language Override tool to override existing translations or add new lang
 
     ![The translation for home is now overridden.](https://resources.learn.liferay.com/images/dxp/latest/en/system-administration/configuring-liferay/changing-language-translations/images/03.png)
 
-### [Modifying a Translation Override](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/changing-language-translations#modifying-a-translation-override) <a href="#modifying-a-translation-override" id="modifying-a-translation-override"></a>
+### Modifying a Translation Override <a href="#modifying-a-translation-override" id="modifying-a-translation-override"></a>
 
 1. Open the Global Menu (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)). Navigate to _Control Panel_ → _Configuration_ → _Language Override_.
 2.  Use the search bar to find the override you wish to modify. To filter the results for only the translations that have overrides, click _Filter and Order_ and select _Any Language_. Or click _Selected Language_ to only show overrides within the locale selected.
@@ -31,27 +31,27 @@ Use the Language Override tool to override existing translations or add new lang
     ![The Actions icon has an option to remove translation overrides.](https://resources.learn.liferay.com/images/dxp/latest/en/system-administration/configuring-liferay/changing-language-translations/images/04.png)
 4. Enter your changes and click _Save_ at the bottom of the page. If you wish to remove all overrides and revert back to the original translations, click _Clear All Overrides_.
 
-### [Adding a Language Key and Translation](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/changing-language-translations#adding-a-language-key-and-translation) <a href="#adding-a-language-key-and-translation" id="adding-a-language-key-and-translation"></a>
+### Adding a Language Key and Translation <a href="#adding-a-language-key-and-translation" id="adding-a-language-key-and-translation"></a>
 
 1. Open the Global Menu (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)). Navigate to _Control Panel_ → _Configuration_ → _Language Override_.
 2. Click _Add_ (![Add button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) and a new window opens.
 3. Enter a key and at least one language translation. Note, the maximum length is 1,000 characters for the key. Click _Save_ when finished.
 
-### [Importing and Exporting Language Translations](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/changing-language-translations#importing-and-exporting-language-translations) <a href="#importing-and-exporting-language-translations" id="importing-and-exporting-language-translations"></a>
+### Importing and Exporting Language Translations <a href="#importing-and-exporting-language-translations" id="importing-and-exporting-language-translations"></a>
 
 Language overrides can be easily imported or exported with language properties files.
 
-#### [Importing Language Translations](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/changing-language-translations#importing-language-translations) <a href="#importing-language-translations" id="importing-language-translations"></a>
+#### Importing Language Translations <a href="#importing-language-translations" id="importing-language-translations"></a>
 
 1. To import, click the _Actions_ (![Actions icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) to the left of the Global Menu icon.
 2.  Select _Import Translations_ and a new window will open.
 
     ![Select import translations and a new window will open.](https://resources.learn.liferay.com/images/dxp/latest/en/system-administration/configuring-liferay/changing-language-translations/images/05.png)
 3. Use the drop-down menu to select the language.
-4. Click _Choose File_ and select the `Language.properties` file that contains your overrides. Note, that you must supply a separate file for each language you wish to override. Each language has its own [language properties file](https://github.com/liferay/liferay-portal/tree/master/modules/apps/portal-language/portal-language-lang/src/main/resources/content) containing keys for its language.
+4. Click _Choose File_ and select the `Language.properties` file that contains your overrides. Note, that you must supply a separate file for each language you wish to override. Each language has its own language properties file containing keys for its language.
 5. Click _Save_ and the overrides are now saved.
 
-#### [Exporting Language Translations](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/changing-language-translations#exporting-language-translations) <a href="#exporting-language-translations" id="exporting-language-translations"></a>
+#### Exporting Language Translations <a href="#exporting-language-translations" id="exporting-language-translations"></a>
 
 1. To export, click the _Actions_ (![Actions icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) to the left of the Global Menu icon.
 2. Select _Export_ and a ZIP file containing `Language.properties` files for each language with overrides will begin downloading.

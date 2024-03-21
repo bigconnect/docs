@@ -6,9 +6,9 @@ IMPORTANT
 
 Caching configurations only apply to documents that are visible to the Guest role.
 
-Follow these steps to configure caching for your Liferay system or instance:
+Follow these steps to configure caching for your portal system or instance:
 
-1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), go to the _Control Panel_ tab, and click _System Settings_ or _Instance Settings_. See [Understanding Configuration Scope](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/understanding-configuration-scope) to learn more about scoping configurations.
+1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), go to the _Control Panel_ tab, and click _System Settings_ or _Instance Settings_. See Understanding Configuration Scope to learn more about scoping configurations.
 2.  Go to _Documents and Media_ → _Cache Control_.
 
     ![Go to Cache Control under Documents and Media settings.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/devops/configuring-cache-control-for-documents-and-media/images/01.png)

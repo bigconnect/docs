@@ -1,6 +1,6 @@
 # Adding a Virtual Instance
 
-Before you do anything in Liferay DXP to add a Virtual Instance, you must configure its domain name in your network to point to your installed Liferay DXP system.
+Before you do anything in the portal to add a Virtual Instance, you must configure its domain name in your network to point to your installed portal system.
 
 ![There's one Virtual Instance by default.](https://resources.learn.liferay.com/images/dxp/latest/en/system-administration/configuring-liferay/virtual-instances/adding-a-virtual-instance/images/01.png)
 
@@ -24,6 +24,6 @@ Once the domain name is ready, create the Virtual Instance:
 
 Click _Save_ when you’re done filling out the form.
 
-Now you can navigate to the instance using its domain name. You’re brought to what looks like a clean install of Liferay DXP. This is your new Virtual Instance! You can configure it any way you like.
+Now you can navigate to the instance using its domain name. You’re brought to what looks like a clean install of the portal. This is your new Virtual Instance! You can configure it any way you like.
 
 What follows is a description of all Virtual Instance options.

@@ -2,7 +2,7 @@
 
 Core user management activities include adding, editing, and deleting users. These activities are typically restricted to Administrative users.
 
-### [Adding Users](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/users/adding-and-managing-users#adding-users) <a href="#adding-users" id="adding-users"></a>
+### Adding Users <a href="#adding-users" id="adding-users"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)) and go to _Control Panel_ → _Users and Organizations_.
 2.  In the Users tab, click the _New_ button.
@@ -18,46 +18,46 @@ Core user management activities include adding, editing, and deleting users. The
 
 You can add additional information after creating the user.
 
-#### [Setting Passwords for New Users](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/users/adding-and-managing-users#setting-passwords-for-new-users) <a href="#setting-passwords-for-new-users" id="setting-passwords-for-new-users"></a>
+#### Setting Passwords for New Users <a href="#setting-passwords-for-new-users" id="setting-passwords-for-new-users"></a>
 
-When you create users, Liferay generates their passwords. If a [mail server was set up](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/configuring-mail), Liferay sends an email message with the users’ new passwords.
+When you create users, the portal generates their passwords. If a mail server was set up, the portal sends an email message with the users’ new passwords.
 
 If you haven’t set up a mail server, click the _Password_ item from the general menu and manually set a password for your new user. Enter the new password twice.
 
 ![Enter the password twice to manually set the password for a user. If the password policy you're using is configured to allow it, select whether to require the user to reset their password the first time they sign in to the portal.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/users/adding-and-managing-users/images/03.png)
 
-### [Editing Users](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/users/adding-and-managing-users#editing-users) <a href="#editing-users" id="editing-users"></a>
+### Editing Users <a href="#editing-users" id="editing-users"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)) and go to _Control Panel_ → _Users and Organizations_.
 2.  Click _Actions_ (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) next to a user.
 
     The following options are available:
 
-    | Option               | Description                                                                                                                                       |
-    | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Edit                 | Modify any aspect of the User account.                                                                                                            |
-    | Permissions          | Define which Roles have permissions to edit the User.                                                                                             |
-    | Manage Pages         | Configure the personal pages of a User.                                                                                                           |
-    | Impersonate User     | Browse the Site in another window as though you were that User.                                                                                   |
-    | Deactivate           | [Disable the user’s account](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/users/adding-and-managing-users#deactivating-users). |
-    | Erase Personal Data  | [Delete the User’s personal data](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/managing-user-data/sanitizing-user-data).       |
-    | Export Personal Data | [Download the User’s personal data](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/managing-user-data/exporting-user-data).      |
+    | Option               | Description                                                     |
+    | -------------------- | --------------------------------------------------------------- |
+    | Edit                 | Modify any aspect of the User account.                          |
+    | Permissions          | Define which Roles have permissions to edit the User.           |
+    | Manage Pages         | Configure the personal pages of a User.                         |
+    | Impersonate User     | Browse the Site in another window as though you were that User. |
+    | Deactivate           | Disable the user’s account.                                     |
+    | Erase Personal Data  | Delete the User’s personal data.                                |
+    | Export Personal Data | Download the User’s personal data.                              |
 
-### [Deactivating and Deleting Users](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/users/adding-and-managing-users#deactivating-and-deleting-users) <a href="#deactivating-and-deleting-users" id="deactivating-and-deleting-users"></a>
+### Deactivating and Deleting Users <a href="#deactivating-and-deleting-users" id="deactivating-and-deleting-users"></a>
 
 Removing users is a two-step process for several reasons:
 
 * You or the user may decide you really wanted that account.
-* Users are often tied to content with possible [legal ramifications](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/managing-user-data) in your country.
+* Users are often tied to content with possible legal ramifications in your country.
 * You may need time to review a user’s account activity before removing all evidence of that user’s existence.
 
 For these and more reasons, you must first _deactivate_ a user before _deleting_ them.
 
 NOTE
 
-A user with the `Delete` permission can activate, deactivate, and delete users. Starting from Liferay DXP 2023.Q4+/Portal 7.4 GA98+, two new permissions, `Activate` and `Deactivate`, have been added to give more granular control over who can activate and deactivate other users.
+A user with the `Delete` permission can activate, deactivate, and delete users. Starting from version 2023.Q4+, two new permissions, `Activate` and `Deactivate`, have been added to give more granular control over who can activate and deactivate other users.
 
-#### [Deactivating Users](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/users/adding-and-managing-users#deactivating-users) <a href="#deactivating-users" id="deactivating-users"></a>
+#### Deactivating Users <a href="#deactivating-users" id="deactivating-users"></a>
 
 Deactivating a user prevents the user from logging in, but preserves the user. You can toggle between active and inactive users in the users view. If all the users are active, this filtering option doesn’t appear.
 
@@ -69,7 +69,7 @@ To deactivate a user,
 
 The user is now deactivated and can no longer log in. Users can be reactivated by finding them in the users table (be sure you’re filtering the table results by deactivated users), clicking _Actions_ (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)), and selecting _Activate_. There’s no confirmation window for activation: users are automatically restored to their former status after activation.
 
-#### [Deleting Users](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/users/adding-and-managing-users#deleting-users) <a href="#deleting-users" id="deleting-users"></a>
+#### Deleting Users <a href="#deleting-users" id="deleting-users"></a>
 
 To guard against accidental deletion of users, users must be deactivated first, and then can be deleted.
 
@@ -81,7 +81,7 @@ To guard against accidental deletion of users, users must be deactivated first, 
 
 The user is now deleted. There is no way to recover the user once deleted besides restoring from a prior backup.
 
-### [Impersonating Users](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/users/adding-and-managing-users#impersonating-users) <a href="#impersonating-users" id="impersonating-users"></a>
+### Impersonating Users <a href="#impersonating-users" id="impersonating-users"></a>
 
 You can impersonate users to view the system as the user would see it. This helps to diagnose permission issues an administrator can’t see, such as making sure a user doesn’t have access to sensitive data. Only users with the administrator role can impersonate.
 
@@ -91,7 +91,7 @@ You can impersonate users to view the system as the user would see it. This help
 
 This opens another browser window logged in as that user.
 
-### [Resetting a User Password](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/users/adding-and-managing-users#resetting-a-user-password) <a href="#resetting-a-user-password" id="resetting-a-user-password"></a>
+### Resetting a User Password <a href="#resetting-a-user-password" id="resetting-a-user-password"></a>
 
 The Add User functionality includes a _Require Password Reset_ check box at the bottom of the password form. The default password policy prevents administrators from de-selecting this option. You can, however, modify the default password policy to make this box usable.
 
@@ -99,6 +99,6 @@ The Add User functionality includes a _Require Password Reset_ check box at the 
 2. Click on the _Default Password Policy_.
 3. De-select the _Change Required_ switcher in the _Password Changes_ section. Now you can decide whether users you add must reset their passwords.
 
-See [Password Policies](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/configuring-a-password-policy) for more information on editing the default policy or creating your own.
+See Password Policies for more information on editing the default policy or creating your own.
 
 \

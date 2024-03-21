@@ -4,7 +4,7 @@ This article documents how to configure a mailing list for a message board categ
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-Before configuring the Message Boards app’s email lists, see the Configuring Mail article for general instructions on how to configure a mail server for the entire DXP instance.
+Before configuring the Message Boards app’s email lists, see the Configuring Mail article for general instructions on how to configure a mail server for the entire portal instance.
 
 ### Adding a Mailing List to a Message Boards Category <a href="#adding-a-mailing-list-to-a-message-boards-category" id="adding-a-mailing-list-to-a-message-boards-category"></a>
 

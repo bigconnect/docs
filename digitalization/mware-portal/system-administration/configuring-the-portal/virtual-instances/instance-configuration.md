@@ -9,7 +9,7 @@ The Instance Configuration settings define the configuration information for the
 | General             | Specify landing pages, legal information, and other details                                 |
 | Terms of Use        | Provide custom Terms of Use for the instance                                                |
 
-### [Appearance](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/virtual-instances/instance-configuration#appearance) <a href="#appearance" id="appearance"></a>
+### Appearance <a href="#appearance" id="appearance"></a>
 
 The Appearance configuration entry defines the default logo and overall look and feel for the Virtual Instance. It’s organized into LOGO and LOOK AND FEEL sections:
 
@@ -19,7 +19,7 @@ The Appearance configuration entry defines the default logo and overall look and
 
 ![Configure the appearance of the Virtual Instance.](https://resources.learn.liferay.com/images/dxp/latest/en/system-administration/configuring-liferay/virtual-instances/instance-configuration/images/01.png)
 
-### [Contact Information](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/virtual-instances/instance-configuration#contact-information) <a href="#contact-information" id="contact-information"></a>
+### Contact Information <a href="#contact-information" id="contact-information"></a>
 
 The Contact Information configuration entry specifies how to contact the organization that owns the Virtual Instance. It’s divided into several sections:
 
@@ -35,7 +35,7 @@ Developers can query for this contact information in their applications. Note th
 
 ![Configure contact information for the Virtual Instance.](https://resources.learn.liferay.com/images/dxp/latest/en/system-administration/configuring-liferay/virtual-instances/instance-configuration/images/02.png)
 
-### [General](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/virtual-instances/instance-configuration#general) <a href="#general" id="general"></a>
+### General <a href="#general" id="general"></a>
 
 The General entry specifies the Virtual Instance’s configuration information, landing pages, and the associated organization’s basic legal information. It has two sections:
 
@@ -60,13 +60,13 @@ default.logout.page.path=
 company.default.home.url=
 ```
 
-All Virtual Instances share the values specified in the properties file. Changes made in Instance Settings override the values set in the properties file. For more information, see the [Portal Properties documentation](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html).
+All Virtual Instances share the values specified in the properties file. Changes made in Instance Settings override the values set in the properties file. For more information, see the Portal Properties documentation.
 
 **Additional Information:** Specify a Legal name, ID, company type, SIC code, ticker symbol, industry and industry type for the owner of the virtual instance.
 
 ![Configure general information for the Virtual Instance.](https://resources.learn.liferay.com/images/dxp/latest/en/system-administration/configuring-liferay/virtual-instances/instance-configuration/images/03.png)
 
-### [Terms of Use](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/virtual-instances/instance-configuration#terms-of-use) <a href="#terms-of-use" id="terms-of-use"></a>
+### Terms of Use <a href="#terms-of-use" id="terms-of-use"></a>
 
 The Terms of Use page is enabled by default, so one of your first actions should be to disable or replace the placeholder terms. You can disable the requirement for all Users to read the Terms of Use or set the Group ID and Article ID for the Web Content Article that contains your Terms of Use. Either way, the Terms of Use entry contains everything you need to configure Terms of Use for your Users.
 

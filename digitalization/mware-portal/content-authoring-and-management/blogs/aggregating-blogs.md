@@ -10,7 +10,7 @@ To configure the widget, click _Options_ (![Options icon](https://resources.lear
 
 Within the configuration screen there are several tabs with different options.
 
-### [Setup](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/blogs/aggregating-blogs#setup) <a href="#setup" id="setup"></a>
+### Setup <a href="#setup" id="setup"></a>
 
 The Setup tab contains these options:
 
@@ -24,7 +24,7 @@ The Setup tab contains these options:
 
 **Show Tags:** Set whether to display each entry’s tags.
 
-#### [RSS Settings](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/blogs/aggregating-blogs#rss-settings) <a href="#rss-settings" id="rss-settings"></a>
+#### RSS Settings <a href="#rss-settings" id="rss-settings"></a>
 
 **Enable RSS Subscription:** Enable an RSS feed of the aggregated entries. Below this option, you can configure how you want to display the RSS feed:
 
@@ -34,15 +34,15 @@ The Setup tab contains these options:
 
 **Format:** Set the language to use for your RSS feed: _Atom 1.0_, _RSS 1.0_, or _RSS 2.0_.
 
-### [Sharing](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/blogs/aggregating-blogs#sharing) <a href="#sharing" id="sharing"></a>
+### Sharing <a href="#sharing" id="sharing"></a>
 
 Use the options here to embed the widget instance as a widget on any website, Facebook, Netvibes, or as an OpenSocial Gadget.
 
-### [Scope](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/blogs/aggregating-blogs#scope) <a href="#scope" id="scope"></a>
+### Scope <a href="#scope" id="scope"></a>
 
 Specify the blog instance the widget displays: the current Site’s blog (default), the global blog, or the page’s blog.
 
-### [Conclusion](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/blogs/aggregating-blogs#conclusion) <a href="#conclusion" id="conclusion"></a>
+### Conclusion <a href="#conclusion" id="conclusion"></a>
 
 When you finish setting the options, click _Save_ and then close the dialog box.
 

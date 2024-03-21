@@ -1,8 +1,8 @@
 # Using the Ratings System
 
-Liferay DXP’s asset framework supports a content rating system that allows Users to rate or value content. Many of DXP’s built-in content types have ratings enabled by default.
+MWARE Portal’s asset framework supports a content rating system that allows Users to rate or value content. Many of the portal’s built-in content types have ratings enabled by default.
 
-### [Ratings Types](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/social-tools/user-guide/using-the-ratings-system#ratings-types) <a href="#ratings-types" id="ratings-types"></a>
+### Ratings Types <a href="#ratings-types" id="ratings-types"></a>
 
 The following types of ratings are available out-of-the-box for compatible assets:
 
@@ -19,7 +19,7 @@ The following types of ratings are available out-of-the-box for compatible asset
 
     ![Users can give content either a thumbs up or thumbs down with the Thumbs rating type.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/social-tools/user-guide/using-the-ratings-system/images/04.png)
 
-### [Ratings Value Conversion](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/social-tools/user-guide/using-the-ratings-system#ratings-value-conversion) <a href="#ratings-value-conversion" id="ratings-value-conversion"></a>
+### Ratings Value Conversion <a href="#ratings-value-conversion" id="ratings-value-conversion"></a>
 
 Because the different types of configurable ratings (likes, stars, etc.) are presented differently, the database stores a normalized ratings value for assets that have them enabled. If the ratings type of an asset is changed, then the ratings are converted and carry over to the new type.
 
@@ -31,7 +31,7 @@ The following table shows how ratings from each type can be converted to the oth
 | **Stars**  | 3-5 Stars = 1 Like; 1-2 Stars are omitted     | No change                                                  | 3-5 Stars = 1 Thumbs Up; 1-2 Stars = 1 Thumbs Down |
 | **Thumbs** | 1 Thumbs Up = 1 Like; Thumbs Down are omitted | 1 Thumbs Up = 5 Star rating; 1 Thumbs Down = 1 Star rating | No change                                          |
 
-### [Enabling Ratings for Your Content](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/social-tools/user-guide/using-the-ratings-system#enabling-ratings-for-your-content) <a href="#enabling-ratings-for-your-content" id="enabling-ratings-for-your-content"></a>
+### Enabling Ratings for Your Content <a href="#enabling-ratings-for-your-content" id="enabling-ratings-for-your-content"></a>
 
 Ratings can be configured for your content from the Site Settings menu (individually per Site).
 
@@ -39,7 +39,7 @@ From the Site menu, navigate to _Configuration_ → _Settings_, and then click t
 
 ![You can set the specific rating type for each asset type from the Site Settings menu.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/social-tools/user-guide/using-the-ratings-system/images/05.png)
 
-Administrators can also enable or disable ratings for specific widgets across multiple Sites via the Control Panel, in either _Instance Settings_ (for a single virtual DXP instance) or _System Settings_ (globally).
+Administrators can also enable or disable ratings for specific widgets across multiple Sites via the Control Panel, in either _Instance Settings_ (for a single virtual portal instance) or _System Settings_ (globally).
 
 From either of these settings menus, find the icon for the chosen asset type under _Content and Data_ (for example, _Blogs_ or _Wiki_). Then, choose the menu option for the specific widget under the _WIDGET SCOPE_ header (e.g., _Widgets Display_):
 

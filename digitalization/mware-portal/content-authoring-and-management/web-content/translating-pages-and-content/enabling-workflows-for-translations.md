@@ -1,6 +1,6 @@
 # Enabling Workflows for Translations
 
-You can enable a [custom workflow](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/introduction-to-workflow) for translation processes to guide the review and publishing process.
+You can enable a custom workflow for translation processes to guide the review and publishing process.
 
 Once you’ve defined your custom workflow, follow these steps:
 

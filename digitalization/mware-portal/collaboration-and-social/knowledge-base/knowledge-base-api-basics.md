@@ -1,20 +1,20 @@
 # Knowledge Base API Basics
 
-You can [Create Knowledge Base Articles](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/creating-knowledge-base-articles) and [Manage the Knowledge Base](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/managing-the-knowledge-base) with Liferay’s Knowledge Base app, but you can also use Liferay’s REST APIs. Call these services to create and manage content for your Knowledge Base.
+You can Create Knowledge Base Articles and Manage the Knowledge Base with the portal’s Knowledge Base app, but you can also use the portal’s REST APIs. Call these services to create and manage content for your Knowledge Base.
 
-### [Adding a Knowledge Base Article](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#adding-a-knowledge-base-article) <a href="#adding-a-knowledge-base-article" id="adding-a-knowledge-base-article"></a>
+### Adding a Knowledge Base Article <a href="#adding-a-knowledge-base-article" id="adding-a-knowledge-base-article"></a>
 
-Start a new Liferay DXP instance by running
+Start a new portal instance by running
 
 ```bash
 docker run -it -m 8g -p 8080:8080 liferay/dxp:2024.q1.1
 ```
 
-Sign in to Liferay at [http://localhost:8080](http://localhost:8080/) using the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
+Sign in to the portal at [http://localhost:8080](http://localhost:8080/) using the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
 
 Then follow these steps:
 
-1.  Download and unzip [Knowledge Base API Basics](https://resources.learn.liferay.com/dxp/latest/en/collaboration-and-social/knowledge-base/developer-guide/liferay-t3x7.zip).
+1.  Download and unzip Knowledge Base API Basics.
 
     ```bash
     curl https://resources.learn.liferay.com/dxp/latest/en/collaboration-and-social/knowledge-base/developer-guide/liferay-t3x7.zip -O
@@ -23,7 +23,7 @@ Then follow these steps:
     ```bash
     unzip liferay-t3x7.zip
     ```
-2. When signed in, [retrieve the site’s ID](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#identify-the-site-containing-the-data). You’ll use this ID in several service calls.
+2. When signed in, retrieve the site’s ID. You’ll use this ID in several service calls.
 3.  Use the cURL script to add a new Knowledge Base article to your site. On the command line, navigate to the `curl` folder. Execute the `KnowledgeBaseArticle_POST_ToSite.sh` script with your site ID as a parameter. For example,
 
     ```bash
@@ -78,7 +78,7 @@ Then follow these steps:
 
     The Java class created a new Knowledge Base article.
 
-### [Examine the cURL Command](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#examine-the-curl-command) <a href="#examine-the-curl-command" id="examine-the-curl-command"></a>
+### Examine the cURL Command <a href="#examine-the-curl-command" id="examine-the-curl-command"></a>
 
 The `KnowledgeBaseArticle_POST_ToSite.sh` script calls the REST service with a cURL command.
 
@@ -107,7 +107,7 @@ Here are the command’s arguments:
 
 NOTE
 
-Basic authentication is used for demonstration purposes. For production, you should authorize users via [OAuth2](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2). See [Using OAuth2 to Authorize Users](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/using-oauth2-to-authorize-users) for a sample React application that uses OAuth2.
+Basic authentication is used for demonstration purposes. For production, you should authorize users via OAuth2. See Using OAuth2 to Authorize Users for a sample React application that uses OAuth2.
 
 The other cURL commands use similar JSON arguments.
 
@@ -157,15 +157,15 @@ The other example Java classes are similar to this one, but call different `Know
 
 IMPORTANT
 
-See [KnowledgeBaseArticleResource](https://github.com/liferay/liferay-portal/blob/7.4.3.112-ga112/modules/apps/headless/headless-delivery/headless-delivery-client/src/main/java/com/liferay/headless/delivery/client/resource/v1\_0/KnowledgeBaseArticleResource.java) for service details.
+See KnowledgeBaseArticleResource for service details.
 
 Below are examples of calling other `KnowledgeBaseArticle` REST services using cURL and Java.
 
-### [Get Knowledge Base Articles from Site](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#get-knowledge-base-articles-from-site) <a href="#get-knowledge-base-articles-from-site" id="get-knowledge-base-articles-from-site"></a>
+### Get Knowledge Base Articles from Site <a href="#get-knowledge-base-articles-from-site" id="get-knowledge-base-articles-from-site"></a>
 
 You can retrieve Knowledge Base articles from any site by executing the following cURL or Java command. Replace `1234` with your site’s ID.
 
-#### [KnowledgeBaseArticles\_GET\_FromSite.sh](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#knowledgebasearticles-get-fromsitesh) <a href="#knowledgebasearticles-get-fromsitesh" id="knowledgebasearticles-get-fromsitesh"></a>
+#### KnowledgeBaseArticles\_GET\_FromSite.sh <a href="#knowledgebasearticles-get-fromsitesh" id="knowledgebasearticles-get-fromsitesh"></a>
 
 Command:
 
@@ -181,7 +181,7 @@ curl \
 	--user "test@liferay.com:learn"
 ```
 
-#### [KnowledgeBaseArticles\_GET\_FromSite.java](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#knowledgebasearticles-get-fromsitejava) <a href="#knowledgebasearticles-get-fromsitejava" id="knowledgebasearticles-get-fromsitejava"></a>
+#### KnowledgeBaseArticles\_GET\_FromSite.java <a href="#knowledgebasearticles-get-fromsitejava" id="knowledgebasearticles-get-fromsitejava"></a>
 
 Command:
 
@@ -212,7 +212,7 @@ public static void main(String[] args) throws Exception {
 
 The Instance’s `KnowledgeBaseArticles` objects appear in JSON.
 
-### [Get a Knowledge Base Article](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#get-a-knowledge-base-article) <a href="#get-a-knowledge-base-article" id="get-a-knowledge-base-article"></a>
+### Get a Knowledge Base Article <a href="#get-a-knowledge-base-article" id="get-a-knowledge-base-article"></a>
 
 Get a specific Knowledge Base article by its ID with the following cURL or Java command.
 
@@ -220,7 +220,7 @@ TIP
 
 Use `KnowledgeBaseArticles_GET_FromSite.[java|sh]` to get instance `Knowledge Base Article` IDs.
 
-#### [KnowledgeBaseArticle\_GET\_ById.sh](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#knowledgebasearticle-get-byidsh) <a href="#knowledgebasearticle-get-byidsh" id="knowledgebasearticle-get-byidsh"></a>
+#### KnowledgeBaseArticle\_GET\_ById.sh <a href="#knowledgebasearticle-get-byidsh" id="knowledgebasearticle-get-byidsh"></a>
 
 Command:
 
@@ -236,7 +236,7 @@ curl \
 	--user "test@liferay.com:learn"
 ```
 
-#### [KnowledgeBaseArticle\_GET\_ById.java](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#knowledgebasearticle-get-byidjava) <a href="#knowledgebasearticle-get-byidjava" id="knowledgebasearticle-get-byidjava"></a>
+#### KnowledgeBaseArticle\_GET\_ById.java <a href="#knowledgebasearticle-get-byidjava" id="knowledgebasearticle-get-byidjava"></a>
 
 Command:
 
@@ -264,11 +264,11 @@ public static void main(String[] args) throws Exception {
 
 The `KnowledgeBaseArticle` fields appear in JSON.
 
-### [Patch a Knowledge Base Article](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#patch-a-knowledge-base-article) <a href="#patch-a-knowledge-base-article" id="patch-a-knowledge-base-article"></a>
+### Patch a Knowledge Base Article <a href="#patch-a-knowledge-base-article" id="patch-a-knowledge-base-article"></a>
 
 Do a partial edit of an existing Knowledge Base article with the following cURL and Java commands. Replace `1234` with your Knowledge Base article’s ID. Specify the field you want to modify and its new value.
 
-#### [KnowledgeBaseArticle\_PATCH\_ById.sh](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#knowledgebasearticle-patch-byidsh) <a href="#knowledgebasearticle-patch-byidsh" id="knowledgebasearticle-patch-byidsh"></a>
+#### KnowledgeBaseArticle\_PATCH\_ById.sh <a href="#knowledgebasearticle-patch-byidsh" id="knowledgebasearticle-patch-byidsh"></a>
 
 Command:
 
@@ -290,7 +290,7 @@ curl \
 	--user "test@liferay.com:learn"
 ```
 
-#### [KnowledgeBaseArticle\_PATCH\_ById.java](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#knowledgebasearticle-patch-byidjava) <a href="#knowledgebasearticle-patch-byidjava" id="knowledgebasearticle-patch-byidjava"></a>
+#### KnowledgeBaseArticle\_PATCH\_ById.java <a href="#knowledgebasearticle-patch-byidjava" id="knowledgebasearticle-patch-byidjava"></a>
 
 Command:
 
@@ -323,11 +323,11 @@ public static void main(String[] args) throws Exception {
 }
 ```
 
-### [Put a Knowledge Base Article](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#put-a-knowledge-base-article) <a href="#put-a-knowledge-base-article" id="put-a-knowledge-base-article"></a>
+### Put a Knowledge Base Article <a href="#put-a-knowledge-base-article" id="put-a-knowledge-base-article"></a>
 
 Completely overwrite an existing Knowledge Base article with the following cURL and Java commands. Replace `1234` with your Knowledge Base article’s ID.
 
-#### [KnowledgeBaseArticle\_PUT\_ById.sh](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#knowledgebasearticle-put-byidsh) <a href="#knowledgebasearticle-put-byidsh" id="knowledgebasearticle-put-byidsh"></a>
+#### KnowledgeBaseArticle\_PUT\_ById.sh <a href="#knowledgebasearticle-put-byidsh" id="knowledgebasearticle-put-byidsh"></a>
 
 Command:
 
@@ -350,7 +350,7 @@ curl \
 	--user "test@liferay.com:learn"
 ```
 
-#### [KnowledgeBaseArticle\_PUT\_ById.java](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#knowledgebasearticle-put-byidjava) <a href="#knowledgebasearticle-put-byidjava" id="knowledgebasearticle-put-byidjava"></a>
+#### KnowledgeBaseArticle\_PUT\_ById.java <a href="#knowledgebasearticle-put-byidjava" id="knowledgebasearticle-put-byidjava"></a>
 
 Command:
 
@@ -384,11 +384,11 @@ public static void main(String[] args) throws Exception {
 }
 ```
 
-### [Delete a Knowledge Base Article](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#delete-a-knowledge-base-article) <a href="#delete-a-knowledge-base-article" id="delete-a-knowledge-base-article"></a>
+### Delete a Knowledge Base Article <a href="#delete-a-knowledge-base-article" id="delete-a-knowledge-base-article"></a>
 
 Delete an existing Knowledge Base article with the following cURL and Java commands. Replace `1234` with your Knowledge Base article’s ID.
 
-#### [KnowledgeBaseArticle\_DELETE\_ById.sh](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#knowledgebasearticle-delete-byidsh) <a href="#knowledgebasearticle-delete-byidsh" id="knowledgebasearticle-delete-byidsh"></a>
+#### KnowledgeBaseArticle\_DELETE\_ById.sh <a href="#knowledgebasearticle-delete-byidsh" id="knowledgebasearticle-delete-byidsh"></a>
 
 Command:
 
@@ -405,7 +405,7 @@ curl \
 	--user "test@liferay.com:learn"
 ```
 
-#### [KnowledgeBaseArticle\_DELETE\_ById.java](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#knowledgebasearticle-delete-byidjava) <a href="#knowledgebasearticle-delete-byidjava" id="knowledgebasearticle-delete-byidjava"></a>
+#### KnowledgeBaseArticle\_DELETE\_ById.java <a href="#knowledgebasearticle-delete-byidjava" id="knowledgebasearticle-delete-byidjava"></a>
 
 Command
 
@@ -430,7 +430,7 @@ public static void main(String[] args) throws Exception {
 }
 ```
 
-### [Knowledge Base Folder services](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/developer-guide/knowledge-base-api-basics#knowledge-base-folder-services) <a href="#knowledge-base-folder-services" id="knowledge-base-folder-services"></a>
+### Knowledge Base Folder services <a href="#knowledge-base-folder-services" id="knowledge-base-folder-services"></a>
 
 The cURL commands and Java classes for Knowledge Base folders works in the same way as Knowledge Base articles.
 
@@ -443,6 +443,6 @@ The cURL commands and Java classes for Knowledge Base folders works in the same 
 | `KnowledgeBaseFolder_PUT_ToSite.[java\\|sh]`    | Put a Knowledge Base folder by ID.                |
 | `KnowledgeBaseFolders_GET_FromSite.[java\\|sh]` | Get a list of Knowledge Base folders from a site. |
 
-The [API Explorer](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services) shows all of the `KnowledgeBaseArticle` and `KnowledgeBaseFolder` services and schemas and has an interface to try out each service.
+The API Explorer shows all of the `KnowledgeBaseArticle` and `KnowledgeBaseFolder` services and schemas and has an interface to try out each service.
 
 \

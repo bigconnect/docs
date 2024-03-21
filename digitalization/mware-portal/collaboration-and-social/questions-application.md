@@ -6,7 +6,7 @@ The Questions app is a new UI of the Message Boards application, focused on pres
 
 When questions are created, Tags can also be used to help others find relevant content.
 
-### [Adding a Questions App to a Site](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/using-the-questions-app#adding-a-questions-app-to-a-site) <a href="#adding-a-questions-app-to-a-site" id="adding-a-questions-app-to-a-site"></a>
+### Adding a Questions App to a Site <a href="#adding-a-questions-app-to-a-site" id="adding-a-questions-app-to-a-site"></a>
 
 To add the Questions app to a Site,
 
@@ -18,7 +18,7 @@ To add the Questions app to a Site,
 
 After adding the Questions app to a Site, topics can be created and users can begin asking and answering questions.
 
-### [Creating Topics](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/using-the-questions-app#creating-topics) <a href="#creating-topics" id="creating-topics"></a>
+### Creating Topics <a href="#creating-topics" id="creating-topics"></a>
 
 1.  Click the _New Topic_ button.
 
@@ -29,7 +29,7 @@ After adding the Questions app to a Site, topics can be created and users can be
 
     You can create as many different topics as you like.
 
-### [Asking Questions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/using-the-questions-app#asking-questions) <a href="#asking-questions" id="asking-questions"></a>
+### Asking Questions <a href="#asking-questions" id="asking-questions"></a>
 
 1.  Once you’ve created a topic, you can begin asking questions. Click on the _Ask Question_ button to create a new question.
 
@@ -40,7 +40,7 @@ After adding the Questions app to a Site, topics can be created and users can be
 
     To finish, click the _Post Your Question_ button.
 
-### [Answering Questions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/using-the-questions-app#answering-questions) <a href="#answering-questions" id="answering-questions"></a>
+### Answering Questions <a href="#answering-questions" id="answering-questions"></a>
 
 1. Users can view existing questions and give their replies. To give an answer, click on an existing question.
 2.  Type your answer into the Your Answer box and click the _Post Answer_ button.
@@ -50,7 +50,7 @@ After adding the Questions app to a Site, topics can be created and users can be
 
     ![The answers are visible below the question.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/questions-application/using-the-questions-app/images/06.png)
 
-#### [Managing Answers](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/using-the-questions-app#managing-answers) <a href="#managing-answers" id="managing-answers"></a>
+#### Managing Answers <a href="#managing-answers" id="managing-answers"></a>
 
 Once a question has been answered, those answers can be managed in the following ways:
 
@@ -68,7 +68,7 @@ Once a question has been answered, those answers can be managed in the following
 
 **Edit:** Users can edit their answers.
 
-### [Searching Questions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/using-the-questions-app#searching-questions) <a href="#searching-questions" id="searching-questions"></a>
+### Searching Questions <a href="#searching-questions" id="searching-questions"></a>
 
 There are a few different ways to search for questions:
 
@@ -82,7 +82,7 @@ There are a few different ways to search for questions:
 
 ![Click on the tags tab to see all tags.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/questions-application/using-the-questions-app/images/09.png)
 
-### [Subscriptions to Topics and Questions](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/using-the-questions-app#subscriptions-to-topics-and-questions) <a href="#subscriptions-to-topics-and-questions" id="subscriptions-to-topics-and-questions"></a>
+### Subscriptions to Topics and Questions <a href="#subscriptions-to-topics-and-questions" id="subscriptions-to-topics-and-questions"></a>
 
 You can subscribe to both topics and questions to receive in-site and email notifications for updates.
 
@@ -98,7 +98,7 @@ To view your subscriptions, click on the _My Subscriptions_ tab. A list of all t
 
 ![Click on the My Subscriptions tab to see all the things you are subscribed to.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/questions-application/using-the-questions-app/images/12.png)
 
-### [My Activity](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/questions-application/using-the-questions-app#my-activity) <a href="#my-activity" id="my-activity"></a>
+### My Activity <a href="#my-activity" id="my-activity"></a>
 
 You can track your use of the Questions app by clicking on the _My Activity_ tab.
 

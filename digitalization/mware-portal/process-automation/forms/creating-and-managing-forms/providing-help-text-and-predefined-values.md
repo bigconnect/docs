@@ -8,7 +8,7 @@ Form fields can be configured to have help text, placeholder text, and predefine
 
 All form field types can have help text, and all form field types that accept user input can have predefined values. Only text and numeric fields can have placeholder text.
 
-### [Entering Help or Placeholder Texts](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/providing-help-text-and-predefined-values#entering-help-or-placeholder-texts) <a href="#entering-help-or-placeholder-texts" id="entering-help-or-placeholder-texts"></a>
+### Entering Help or Placeholder Texts <a href="#entering-help-or-placeholder-texts" id="entering-help-or-placeholder-texts"></a>
 
 To enter placeholder text:
 
@@ -25,7 +25,7 @@ The form now has placeholder values.
 
 ![Enter predefined values and placeholder text.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/providing-help-text-and-predefined-values/images/02.png)
 
-### [Entering a Predefined Value](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/providing-help-text-and-predefined-values#entering-a-predefined-value) <a href="#entering-a-predefined-value" id="entering-a-predefined-value"></a>
+### Entering a Predefined Value <a href="#entering-a-predefined-value" id="entering-a-predefined-value"></a>
 
 1. Click the _Advanced_ tab.
 2.  Enter the Predefined Value.

@@ -9,7 +9,7 @@ To add an action,
 
     NOTE
 
-    For Liferay 7.4 U22+/GA22+, you can add actions to system objects.
+    For version 7.4 +, you can add actions to system objects.
 3. Go to the _Actions_ tab and click _Add_ ( ![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ).
 4.  In the Basic Info tab, enter a _Name_ and _Description_ for the action.
 
@@ -27,12 +27,12 @@ To add an action,
     | On After Update              | When an entry is updated               |
     | Standalone                   | Triggered manually                     |
 
-    All triggers besides standalone are automatic. Standalone triggers are for running any type of action manually. See [Using Manual Actions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions/using-manual-actions) for more information.
+    All triggers besides standalone are automatic. Standalone triggers are for running any type of action manually. See Using Manual Actions for more information.
 
     ![Determine when the action is performed.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/actions/defining-object-actions/images/03.png)
 7.  (Optional) Enable a condition for automatic triggers. Click _Code_ ( ![Code](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-code.png) ) to view available expressions.
 
-    On Liferay 7.4 U33+/GA33+, Liferay validates the condition’s syntax when you click _Done_. If the expression is invalid, Liferay displays an error message. See [Expression Builder Validations Reference](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/validations/expression-builder-validations-reference) for more information on available fields, operators, and functions.
+    On version 7.4 +, the portal validates the condition’s syntax when you click _Done_. If the expression is invalid, Liferay displays an error message. See Expression Builder Validations Reference for more information on available fields, operators, and functions.
 
     ![Use expressions to set additional conditions for the trigger.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/actions/defining-object-actions/images/04.png)
 8.  Select the type of action to perform and fill out all additional fields.
@@ -43,13 +43,13 @@ To add an action,
     | Add an Object Entry    | Create entries in an active object.                           |
     | Update an Object Entry | Update fields in the current object entry.                    |
     | Webhook                | Deliver a payload to a URL.                                   |
-    | Groovy Script          | Execute custom [Groovy](https://groovy-lang.org/) scripts.    |
+    | Groovy Script          | Execute custom Groovy scripts.                                |
 
     IMPORTANT
 
     Groovy script actions are only available for Liferay PaaS and Liferay DXP Self-Hosted.
 
-    See [Understanding Action Types](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions/understanding-action-types#understanding-action-types) for more information.
+    See Understanding Action Types for more information.
 9. Click _Save_.
 
 Once created, the action is active and triggered according to your configuration.

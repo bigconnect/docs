@@ -1,12 +1,12 @@
 # Organizations
 
-Liferay Organizations can enable distributed User and Site management that reflects real world organizational hierarchies. Organizations can nest to an unlimited number of hierarchical levels. Consider a typical organization chart:
+Organizations can enable distributed User and Site management that reflects real world organizational hierarchies. Organizations can nest to an unlimited number of hierarchical levels. Consider a typical organization chart:
 
-![An organization chart shows how a typical grouping of company, governmental department, non profit, or any other collection of people is organized. Liferay's Organizations can model these.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/organizations/understanding-organizations/images/01.png)
+![An organization chart shows how a typical grouping of company, governmental department, non profit, or any other collection of people is organized. Organizations can model these.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/organizations/understanding-organizations/images/01.png)
 
-This structure can be modeled in Liferay DXP, empowering you to delegate administrative responsibility and organize Users in a way that reflects your organization. If you apply permissions to those Users through Organization Roles, Users who move from one Organization to another in a defined hierarchy automatically receive permissions appropriate to them.
+This structure can be modeled in the portal, empowering you to delegate administrative responsibility and organize Users in a way that reflects your organization. If you apply permissions to those Users through Organization Roles, Users who move from one Organization to another in a defined hierarchy automatically receive permissions appropriate to them.
 
-### [Organization Roles and Permissions](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/understanding-organizations#organization-roles-and-permissions) <a href="#organization-roles-and-permissions" id="organization-roles-and-permissions"></a>
+### Organization Roles and Permissions <a href="#organization-roles-and-permissions" id="organization-roles-and-permissions"></a>
 
 Organizations can have Roles scoped only to them. An Organization Role’s permissions affect only applications and content within that Organization hierarchy. For example, the difference between a portal-scoped Role versus an Organization-scoped Role that define access to Message Boards is twofold:
 
@@ -15,21 +15,21 @@ Organizations can have Roles scoped only to them. An Organization Role’s permi
 
 ![Organization Roles take effect only within the Organization.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/organizations/understanding-organizations/images/02.png)
 
-This has great benefits. If, for example, a large company has modeled its organization chart in Liferay DXP as Organizations, administration becomes an easy task. An IT User who has permission to use IT’s provisioning application can transfer to HR, and by moving that User from IT to HR, permissions to the provisioning tool are removed automatically, while permissions to HR’s compensation tool are granted automatically.
+This has great benefits. If, for example, a large company has modeled its organization chart in the portal as Organizations, administration becomes an easy task. An IT User who has permission to use IT’s provisioning application can transfer to HR, and by moving that User from IT to HR, permissions to the provisioning tool are removed automatically, while permissions to HR’s compensation tool are granted automatically.
 
-#### [Organization Administrators](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/understanding-organizations#organization-administrators) <a href="#organization-administrators" id="organization-administrators"></a>
+#### Organization Administrators <a href="#organization-administrators" id="organization-administrators"></a>
 
 Organization administrators are _delegated_ administrators. This means they get a piece of your portal—a piece you define—to take some of the load of administration off of your shoulders. Organization Administrators can do these things:
 
 * Manage all the Users in their Organization and in any child Organization.
-* Optionally, assign Users to their Organization (see the `Organizations` [section of the portal-ext.properties](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#Organizations)).
+* Optionally, assign Users to their Organization (see the `Organizations` section of the portal-ext.properties).
 * Manage an Organization’s Site, just like a Site Administrator.
 
 Organization administrators can’t access the Control Panel by default. Instead, they can click the _My Organizations_ link to gain access to any Organizations they manage.
 
 ![Organization administrators can access their Organizations from their profile.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/organizations/understanding-organizations/images/03.png)
 
-### [Organization Sites](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/understanding-organizations#organization-sites) <a href="#organization-sites" id="organization-sites"></a>
+### Organization Sites <a href="#organization-sites" id="organization-sites"></a>
 
 An Organization can have its own Site. Organization Sites are owned by Organization Administrators, who have permissions similar to the Site Administrators: they can manage the Site’s pages, widgets, content, and Users. Members of an Organization with an attached Site are members of the Organization’s Site. This means that they can access pages in the Organization’s Site, along with any portlets or content there.
 

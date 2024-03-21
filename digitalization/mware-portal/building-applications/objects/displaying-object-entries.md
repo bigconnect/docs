@@ -1,20 +1,20 @@
 # Displaying Object Entries
 
-With Liferay Objects, you can use existing DXP frameworks to display Object entries dynamically in Sites. This includes collection displays for multiple entries and display pages for individual entries.
+With Objects, you can use existing portal frameworks to display Object entries dynamically in Sites. This includes collection displays for multiple entries and display pages for individual entries.
 
-When an Object is published, Liferay creates a Collection Provider for use with the [Collection Display fragment](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/collections-and-collection-pages/displaying-collections#adding-a-collection-display-fragment-to-a-page) to display multiple Object entries. You can also configure the fragment to style, filter, and paginate the collection. See [Displaying Object Entries with Collection Providers](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/displaying-object-entries-with-collection-providers) for more information.
+When an Object is published, the portal creates a Collection Provider for use with the Collection Display fragment to display multiple Object entries. You can also configure the fragment to style, filter, and paginate the collection. See Displaying Object Entries with Collection Providers for more information.
 
-And since published Objects are integrated with the Info framework, you can select them as the content type for [Display Page Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates). When selected, the Object is set as the template’s mapping source, so you can easily map fragment fields to Object fields to create flexible page displays for individual Object entries.
+And since published Objects are integrated with the Info framework, you can select them as the content type for Display Page Templates. When selected, the Object is set as the template’s mapping source, so you can easily map fragment fields to Object fields to create flexible page displays for individual Object entries.
 
-Additionally, you can use FreeMarker to create [Information Templates for Objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/displaying-object-entries#creating-information-templates-for-objects). Once created, you can map fragment fields to your template to determine how entries are rendered in Content Pages and Display Pages.
+Additionally, you can use FreeMarker to create Information Templates for Objects. Once created, you can map fragment fields to your template to determine how entries are rendered in Content Pages and Display Pages.
 
 NOTE
 
-Information Templates can be used in Content Display fragments and any other fragment with [sub-elements](https://learn.liferay.com/web/guest/w/dxp/site-building/creating-pages/page-fragments-and-widgets/using-fragments/configuring-fragments/fragment-sub-elements-reference) (e.g., text, rich text) that can be mapped to Objects.
+Information Templates can be used in Content Display fragments and any other fragment with sub-elements (e.g., text, rich text) that can be mapped to Objects.
 
-Together, these integrations enable users to leverage Liferay’s WYSIWYG page building capabilities while delivering personalized user experiences.
+Together, these integrations enable users to leverage the portal’s WYSIWYG page building capabilities while delivering personalized user experiences.
 
-### [Creating Display Page Templates for Objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/displaying-object-entries#creating-display-page-templates-for-objects) <a href="#creating-display-page-templates-for-objects" id="creating-display-page-templates-for-objects"></a>
+### Creating Display Page Templates for Objects <a href="#creating-display-page-templates-for-objects" id="creating-display-page-templates-for-objects"></a>
 
 When created, each Object entry is assigned automatically a dedicated friendly URL that uses the following pattern: `server-address/l/objectEntryId` (e.g., `https://mysite.com/l/44337`). To view an entry at its URL, you must first create a Display Page Template for the Object.
 
@@ -31,7 +31,7 @@ Follow these steps:
 5.  Click _Save_.
 
     This creates a blank template with the selected Object as its default mapping source and redirects you to the template editing page.
-6.  Use page fragments and widgets to create flexible, dynamic displays for Object entries. See [Using Display Page Templates](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-display-page-templates) for information.
+6.  Use page fragments and widgets to create flexible, dynamic displays for Object entries. See Using Display Page Templates for information.
 
     ![Map fragment elements to Object fields to dynamically populate Display Pages for individual entries.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/displaying-object-entries/images/02.png)
 7.  Add the Page Comments widget so end users can comment on entry display pages.
@@ -46,7 +46,7 @@ Follow these steps:
 
     ![Click the Actions button for the template and select Mark as Default.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/displaying-object-entries/images/03.png)
 
-#### [Enabling Comments](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/displaying-object-entries#enabling-comments) <a href="#enabling-comments" id="enabling-comments"></a>
+#### Enabling Comments <a href="#enabling-comments" id="enabling-comments"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), go to the _Control Panel_ tab, and click _Objects_.
 2. Edit an object definition.
@@ -54,7 +54,7 @@ Follow these steps:
 
     ![Enable comments.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/displaying-object-entries/images/04.png)
 
-### [Creating Information Templates for Objects](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/displaying-object-entries#creating-information-templates-for-objects) <a href="#creating-information-templates-for-objects" id="creating-information-templates-for-objects"></a>
+### Creating Information Templates for Objects <a href="#creating-information-templates-for-objects" id="creating-information-templates-for-objects"></a>
 
 1. Open the _Site Menu_ (![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) and go to _Design_ → _Templates_ → _Information Templates_.
 2. Click _Add_ (![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png))
@@ -79,8 +79,8 @@ You can now select from the template when mapping Object entries to fragment fie
 
 ![Select the template when mapping fragment elements.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/displaying-object-entries/images/09.png)
 
-### [Adding Entries to Navigation Menus](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/displaying-object-entries#adding-entries-to-navigation-menus) <a href="#adding-entries-to-navigation-menus" id="adding-entries-to-navigation-menus"></a>
+### Adding Entries to Navigation Menus <a href="#adding-entries-to-navigation-menus" id="adding-entries-to-navigation-menus"></a>
 
-Since Objects are integrated with the info framework, you can add Object entries to navigation menus to provide quick access. All published Objects automatically appear as available sources for menu elements. See [Using the Navigation Menus Application](https://learn.liferay.com/web/guest/w/dxp/site-building/site-navigation/using-the-navigation-menus-application) for more information.
+Since Objects are integrated with the info framework, you can add Object entries to navigation menus to provide quick access. All published Objects automatically appear as available sources for menu elements. See Using the Navigation Menus Application for more information.
 
 \

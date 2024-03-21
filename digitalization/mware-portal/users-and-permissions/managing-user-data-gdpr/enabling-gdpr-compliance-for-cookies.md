@@ -1,6 +1,6 @@
 # Enabling GDPR Compliance for Cookies
 
-You can ensure [GDPR compliance](https://gdpr.eu/cookies) for your cookies using Liferay’s configuration interface.
+You can ensure [GDPR compliance](https://gdpr.eu/cookies) for your cookies using the portal’s configuration interface.
 
 1.  Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), and navigate to _Control Panel_ → _System Settings_ → _Platform_ → _Cookies_.
 
@@ -28,7 +28,7 @@ You can ensure [GDPR compliance](https://gdpr.eu/cookies) for your cookies using
     ![Find customizable options for the consent panel under the Consent Panel tab.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/managing-user-data/enabling-gdpr-compliance-for-cookies/images/05.png)
 7. Click _Save_.
 
-### [Banner Options](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/managing-user-data/enabling-gdpr-compliance-for-cookies#banner-options) <a href="#banner-options" id="banner-options"></a>
+### Banner Options <a href="#banner-options" id="banner-options"></a>
 
 Your cookie policy appears when users log in through a banner. It displays the text from the Content field, your privacy Policy Link, and Link Display Text. Users can select from three options: _Configuration_, _Accept All_ and _Decline All_. You can customize these options in the Banner tab.
 
@@ -42,7 +42,7 @@ Your cookie policy appears when users log in through a banner. It displays the t
 
 **Include “Decline All” Button**: Check this option to add a _Decline All_ button on the cookie banner.
 
-### [Consent Panel Options](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/managing-user-data/enabling-gdpr-compliance-for-cookies#consent-panel-options) <a href="#consent-panel-options" id="consent-panel-options"></a>
+### Consent Panel Options <a href="#consent-panel-options" id="consent-panel-options"></a>
 
 The Consent Panel appears when users click the _Configuration_ link on the banner. Users can use it to select the types of cookies they consent to have stored.
 

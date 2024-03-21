@@ -1,6 +1,6 @@
 # Channel Defaults
 
-After creating a business account, you can set [channel](https://learn.liferay.com/web/guest/w/commerce/store-management/channels/introduction-to-channels) defaults for it. This can improve customer experience by reducing the time it takes to create orders and help account managers tailor Commerce behavior for specific accounts. You can set these channel defaults:
+After creating a business account, you can set channel defaults for it. This can improve customer experience by reducing the time it takes to create orders and help account managers tailor Commerce behavior for specific accounts. You can set these channel defaults:
 
 * Billing Address
 * Shipping Address
@@ -15,13 +15,13 @@ After creating a business account, you can set [channel](https://learn.liferay.c
 
 Depending on user roles and permissions, you can change the defaults of an order during checkout. You can also set permissions so users can only place orders with the channel defaults.
 
-### [Understanding Eligibility and Channel Defaults](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults#understanding-eligibility-and-channel-defaults) <a href="#understanding-eligibility-and-channel-defaults" id="understanding-eligibility-and-channel-defaults"></a>
+### Understanding Eligibility and Channel Defaults <a href="#understanding-eligibility-and-channel-defaults" id="understanding-eligibility-and-channel-defaults"></a>
 
 Channel defaults work in conjunction with eligibility. This means if an order is not eligible for the set default, Liferay uses the next highest priority value that is eligible. For some channel defaults, you can override this behavior to apply the default regardless of eligibility.
 
 For example, if Discount A is the channel default for a business account but only Order Type X is eligible for Discount A, Liferay does not apply Discount A to orders of a different type. Instead, Liferay applies the next highest priority discount for which the order is eligible, if any exists. However, if you override eligibility, Liferay applies Discount A to all account orders, regardless of eligibility.
 
-## [Setting Channel Defaults](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/setting-channel-defaults#setting-channel-defaults) <a href="#setting-channel-defaults" id="setting-channel-defaults"></a>
+## Setting Channel Defaults <a href="#setting-channel-defaults" id="setting-channel-defaults"></a>
 
 Users with the necessary account management permissions can set channel defaults for business accounts.
 
@@ -32,9 +32,9 @@ Here you can set the following defaults.
 
 NOTE
 
-If you set defaults for individual channels and all other channels, the individual defaults takes priority if eligible. Liferay DXP 2024.Q1+/Portal 7.4 GA112+`There are two new permissions to control user access to view and manage channel defaults. A user with the`Accounts > Account Entry: View Channel Defaults`permission can only view the defaults under the Channel Defaults tab. Users with the`Accounts > Account Entry: Manage Channel Defaults permission can view and edit channel defaults.
+If you set defaults for individual channels and all other channels, the individual defaults takes priority if eligible. Version 2024.Q1+`There are two new permissions to control user access to view and manage channel defaults. A user with the`Accounts > Account Entry: View Channel Defaults`permission can only view the defaults under the Channel Defaults tab. Users with the`Accounts > Account Entry: Manage Channel Defaults permission can view and edit channel defaults.
 
-### [Default Billing and Shipping Addresses](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/setting-channel-defaults#default-billing-and-shipping-addresses) <a href="#default-billing-and-shipping-addresses" id="default-billing-and-shipping-addresses"></a>
+### Default Billing and Shipping Addresses <a href="#default-billing-and-shipping-addresses" id="default-billing-and-shipping-addresses"></a>
 
 1. Click _Add_ ( ![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ) under Billing Addresses or Shipping Addresses.
 2. Select _All Channels_ or an individual channel.
@@ -47,7 +47,7 @@ NOTE
 
 Only users with account management permissions can manage channel defaults. However, account users can set their default billing and shipping addresses for all channels via the Account Details tab.
 
-### [Default Terms and Conditions](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/setting-channel-defaults#default-terms-and-conditions) <a href="#default-terms-and-conditions" id="default-terms-and-conditions"></a>
+### Default Terms and Conditions <a href="#default-terms-and-conditions" id="default-terms-and-conditions"></a>
 
 1. Click _Add_ ( ![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ) under Delivery Terms and Conditions or Payment Terms and Conditions.
 2. Select _All Channels_ or an individual channel.
@@ -55,13 +55,13 @@ Only users with account management permissions can manage channel defaults. Howe
 
     IMPORTANT
 
-    Payment terms are linked to a payment method and delivery terms are linked to a shipping option. When there are multiple eligible terms and conditions for a payment method or shipping option, overriding eligibility sets the selected terms and conditions as the default, regardless of eligibility. See [Understanding Eligibility and Channel Defaults](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults#understanding-eligibility-and-channel-defaults) to learn more.
+    Payment terms are linked to a payment method and delivery terms are linked to a shipping option. When there are multiple eligible terms and conditions for a payment method or shipping option, overriding eligibility sets the selected terms and conditions as the default, regardless of eligibility. See Understanding Eligibility and Channel Defaults to learn more.
 4. Select a _term_.
 5.  Click _Save_.
 
     ![Set default terms and conditions for all or individual channels.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/accounts/channel-defaults/setting-channel-defaults/images/02.png)
 
-### [Default Shipping Options](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/setting-channel-defaults#default-shipping-options) <a href="#default-shipping-options" id="default-shipping-options"></a>
+### Default Shipping Options <a href="#default-shipping-options" id="default-shipping-options"></a>
 
 The default shipping value is determined by existing priority settings for the channel. If other shipping options are available, you can select one of them as the default:
 
@@ -71,7 +71,7 @@ The default shipping value is determined by existing priority settings for the c
 
     ![Set a default shipping option for individual channels.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/accounts/channel-defaults/setting-channel-defaults/images/03.png)
 
-### [Default Price Lists and Discounts](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/setting-channel-defaults#default-price-lists-and-discounts) <a href="#default-price-lists-and-discounts" id="default-price-lists-and-discounts"></a>
+### Default Price Lists and Discounts <a href="#default-price-lists-and-discounts" id="default-price-lists-and-discounts"></a>
 
 1. Click _Add_ ( ![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ) under Price Lists or Discounts.
 2. Select _All Channels_ or an individual channel.
@@ -81,7 +81,7 @@ The default shipping value is determined by existing priority settings for the c
 
     ![Set a default price list or discount for all or individual channels.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/accounts/channel-defaults/setting-channel-defaults/images/04.png)
 
-### [Default Currencies](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/setting-channel-defaults#default-currencies) <a href="#default-currencies" id="default-currencies"></a>
+### Default Currencies <a href="#default-currencies" id="default-currencies"></a>
 
 1. Click _Add_ ( ![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ) under Currencies.
 2. Select _All Channels_ or an individual channel.
@@ -94,7 +94,7 @@ The default shipping value is determined by existing priority settings for the c
 
     ![Set a default currency for all or individual channels.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/accounts/channel-defaults/setting-channel-defaults/images/05.png)
 
-### [Default Payment Methods](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/setting-channel-defaults#default-payment-methods) <a href="#default-payment-methods" id="default-payment-methods"></a>
+### Default Payment Methods <a href="#default-payment-methods" id="default-payment-methods"></a>
 
 The default payment method is determined by existing priority settings for the channel. If other payment methods are available, you can select one of them as the default:
 
@@ -104,7 +104,7 @@ The default payment method is determined by existing priority settings for the c
 
     ![Set a default payment method for individual channels.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/accounts/channel-defaults/setting-channel-defaults/images/06.png)
 
-### [Default Channel Account Managers](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/setting-channel-defaults#default-channel-account-managers) <a href="#default-channel-account-managers" id="default-channel-account-managers"></a>
+### Default Channel Account Managers <a href="#default-channel-account-managers" id="default-channel-account-managers"></a>
 
 1. Click _Add_ ( ![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ) under Channel Account Managers.
 2.  Select _All Channels_ or an individual channel.
@@ -114,22 +114,22 @@ The default payment method is determined by existing priority settings for the c
     You can assign multiple channel account managers to the same channel.
 3.  Select a user.
 
-    All users with a regular role having the `Accounts > Account Entry: Manage Available Accounts via User Channel Rel` permission appear in the channel account manager drop-down. See [Understanding Channel Account Managers](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/setting-channel-defaults#understanding-channel-account-managers) for more information.
+    All users with a regular role having the `Accounts > Account Entry: Manage Available Accounts via User Channel Rel` permission appear in the channel account manager drop-down. See Understanding Channel Account Managers for more information.
 4.  Click _Save_.
 
     ![Select default channel account manager for all or individual channels.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/accounts/channel-defaults/setting-channel-defaults/images/07.png)
 
-#### [Understanding Channel Account Managers](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/setting-channel-defaults#understanding-channel-account-managers) <a href="#understanding-channel-account-managers" id="understanding-channel-account-managers"></a>
+#### Understanding Channel Account Managers <a href="#understanding-channel-account-managers" id="understanding-channel-account-managers"></a>
 
 When selecting default Channel Account Managers, only users with a regular role that have the `Accounts > Account Entry: Manage Available Accounts via User Channel Rel` permission appear. You can use this permission to grant users access to accounts without requiring them to be account members or organization account managers.
 
 ![Users with this permission appear in the channel account manager dropdown menu.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/accounts/channel-defaults/setting-channel-defaults/images/08.png)
 
-By itself, this permission does not grant access to the Accounts application, or to view and update individual accounts. It also does not grant allow managing orders or setting channel defaults for price lists and other Commerce entities. If you want Channel Account Managers to perform these administrative actions, you must grant them the necessary permissions for each application (e.g., Accounts, Orders, Price Lists). See [Channel Defaults Permissions Reference](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/channel-defaults-permissions-reference) for more information.
+By itself, this permission does not grant access to the Accounts application, or to view and update individual accounts. It also does not grant allow managing orders or setting channel defaults for price lists and other Commerce entities. If you want Channel Account Managers to perform these administrative actions, you must grant them the necessary permissions for each application (e.g., Accounts, Orders, Price Lists). See Channel Defaults Permissions Reference for more information.
 
 NOTE
 
-If you use [organizations](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations/understanding-organizations), users can continue to manage the organization accounts they have permission to manage along with accounts for which they are default Channel Account Managers.
+If you use organizations, users can continue to manage the organization accounts they have permission to manage along with accounts for which they are default Channel Account Managers.
 
 ## Channel Defaults Permissions Reference
 
@@ -137,18 +137,18 @@ Setting channel defaults for an account ensures that addresses, shipping options
 
 Only users with specific permissions can change these defaults at checkout. Users without these permissions do not see the associated checkout steps.
 
-### [Checkout Flow Permissions](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/channel-defaults-permissions-reference#checkout-flow-permissions) <a href="#checkout-flow-permissions" id="checkout-flow-permissions"></a>
+### Checkout Flow Permissions <a href="#checkout-flow-permissions" id="checkout-flow-permissions"></a>
 
 Users with the following permissions can change an account’s billing address, payment methods, and shipping options during checkout.
 
-#### [Billing Addresses](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/channel-defaults-permissions-reference#billing-addresses) <a href="#billing-addresses" id="billing-addresses"></a>
+#### Billing Addresses <a href="#billing-addresses" id="billing-addresses"></a>
 
 | Permissions                                                            | Description                                                                                                             |
 | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Commerce > Order Management > Commerce Orders > View Billing Address   | View an account’s billing address during checkout and in these pages: Order Summary, Placed Orders, and Pending Orders. |
 | Control Panel > Accounts > Accounts > Account Entry > Manage Addresses | View, add, and edit an account’s addresses during checkout.                                                             |
 
-#### [Payment Methods](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/channel-defaults-permissions-reference#payment-methods) <a href="#payment-methods" id="payment-methods"></a>
+#### Payment Methods <a href="#payment-methods" id="payment-methods"></a>
 
 | Permissions                                                                           | Description                                                                           |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
@@ -156,7 +156,7 @@ Users with the following permissions can change an account’s billing address, 
 
 When one or more payment methods are active for the channel, the highest priority eligible payment method is pre-selected. With this permission, you can choose an alternative payment method. Otherwise, this checkout step does not appear.
 
-#### [Shipping Options](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/channel-defaults/channel-defaults-permissions-reference#shipping-options) <a href="#shipping-options" id="shipping-options"></a>
+#### Shipping Options <a href="#shipping-options" id="shipping-options"></a>
 
 | Permissions                                                                            | Description                                                                             |
 | -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |

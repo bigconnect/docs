@@ -4,7 +4,7 @@ When a User is finished entering data into a form, they must submit the form. By
 
 Sometimes _Submit_ isn’t the clearest word for the action the User is taking when submitting the form. For example, you might want to use _Register Now_:
 
-1. [Create a form](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/creating-forms) with a text field called _Email Address_. Give it a name and publish it.
+1. Create a form with a text field called _Email Address_. Give it a name and publish it.
 2.  Go to the form and see its Submit button:
 
     ![A User submits their form with the Submit button.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/customizing-the-submit-button/images/02.png)
@@ -14,12 +14,12 @@ Sometimes _Submit_ isn’t the clearest word for the action the User is taking w
 
     ![The button label can be customized.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/customizing-the-submit-button/images/01.png)
 
-### [Localizing the Button Label](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/customizing-the-submit-button#localizing-the-button-label) <a href="#localizing-the-button-label" id="localizing-the-button-label"></a>
+### Localizing the Button Label <a href="#localizing-the-button-label" id="localizing-the-button-label"></a>
 
-Forms are [translatable](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/translating-forms). If you have a translated form and you’re customizing the form label for the default language, you should translate the label, too.
+Forms are translatable. If you have a translated form and you’re customizing the form label for the default language, you should translate the label, too.
 
-1. [Create a form](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/creating-forms).
-2. [Translate the form](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/translating-forms).
+1. Create a form.
+2. Translate the form.
 3. In the default language, customize the button label from the ![Settings](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-settings.png) menu.
 4.  Switch to the translated form and repeat the procedure for the translation. You’ll see the flag for the locale you’re translating into next to the Submit Button Label field.
 

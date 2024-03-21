@@ -4,17 +4,17 @@ A Synonym Set is a group of words or phrases with the same meaning. An administr
 
 For example, a user might search for the word “US”. Most likely, the user would want search results that also included synonyms such as _America_, _U.S.A_, _United States_, etc. By creating Synonym Sets, you can ensure your users get the most out of their searches.
 
-### [Requirements and Limitations](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/synonym-sets#requirements-and-limitations) <a href="#requirements-and-limitations" id="requirements-and-limitations"></a>
+### Requirements and Limitations <a href="#requirements-and-limitations" id="requirements-and-limitations"></a>
 
-Synonym Sets are only supported when using Elasticsearch as your search engine. Learn about installing Elasticsearch in [Getting Started with Elasticsearch](https://learn.liferay.com/web/guest/w/dxp/using-search/installing-and-upgrading-a-search-engine/elasticsearch/getting-started-with-elasticsearch).
+Synonym Sets are only supported when using Elasticsearch as your search engine. Learn about installing Elasticsearch in Getting Started with Elasticsearch.
 
-Synonym Sets currently work with fields indexed in either of the following out-of-the-box locales: English or Spanish. Liferay assets with localizable fields in either of these two languages work with Synonym Sets.
+Synonym Sets currently work with fields indexed in either of the following out-of-the-box locales: English or Spanish. Assets with localizable fields in either of these two languages work with Synonym Sets.
 
 The [`=>` format](https://www.elastic.co/guide/en/elasticsearch/guide/current/synonyms.html) supported in Elasticsearch is not supported through the Synonyms Set UI.
 
-### [Creating and Managing Synonym Sets](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/synonym-sets#creating-and-managing-synonym-sets) <a href="#creating-and-managing-synonym-sets" id="creating-and-managing-synonym-sets"></a>
+### Creating and Managing Synonym Sets <a href="#creating-and-managing-synonym-sets" id="creating-and-managing-synonym-sets"></a>
 
-Create a synonym set by adding as many synonymous keywords to a set as you like. Once the synonym set is saved, searches in the same company scope (any site from the [Virtual Instance](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/virtual-instances/understanding-virtual-instances) where the synonyms were configured) take effect.
+Create a synonym set by adding as many synonymous keywords to a set as you like. Once the synonym set is saved, searches in the same company scope (any site from the Virtual Instance where the synonyms were configured) take effect.
 
 To create a new synonym set,
 
@@ -32,7 +32,7 @@ To create a new synonym set,
 
     Once your synonym set is published, it is ready to be used.
 
-### [Using Synonym Sets](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/synonym-sets#using-synonym-sets) <a href="#using-synonym-sets" id="using-synonym-sets"></a>
+### Using Synonym Sets <a href="#using-synonym-sets" id="using-synonym-sets"></a>
 
 You can test your synonym set by searching for one of the synonym keywords you saved in the set. Results matching the keyword and any synonyms are returned in the Search Results widget.
 
@@ -40,22 +40,22 @@ You can test your synonym set by searching for one of the synonym keywords you s
 
 In the example above, this blog article about a lunar rover does not contain the word “LRV” but is now returned as a search result match. Note that the synonym is also highlighted.
 
-### [Creating New Synonym Language Filters](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/synonym-sets#creating-new-synonym-language-filters) <a href="#creating-new-synonym-language-filters" id="creating-new-synonym-language-filters"></a>
+### Creating New Synonym Language Filters <a href="#creating-new-synonym-language-filters" id="creating-new-synonym-language-filters"></a>
 
-> **Availability: Liferay DXP 7.3 FP2+ and Liferay DXP 7.2 FP13+**
+> **Availability: 7.3 +**
 
-Out of the box, Synonyms Sets supports synonyms in [English and Spanish only](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/synonym-sets#requirements-and-limitations). To add support for other languages use the configuration steps below:
+Out of the box, Synonyms Sets supports synonyms in English and Spanish only. To add support for other languages use the configuration steps below:
 
 * Create a [custom analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/analysis-custom-analyzer.html) by re-implementing the default [French](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/analysis-lang-analyzer.html#french-analyzer) analyzer with the necessary changes (including an extra [Synonym graph token filter](https://www.elastic.co/guide/en/elasticsearch/reference/8.8/analysis-synonym-graph-tokenfilter.html) in the pipeline)
 * Add the custom analyzer definition to the index settings, using the Additional Index Configurations of the connector configuration.
-* Apply the custom analyzer on the desired fields by overriding Liferay DXP’s default type mappings, using the Override Type Mappings setting of the connector configuration.
+* Apply the custom analyzer on the desired fields by overriding the portal’s default type mappings, using the Override Type Mappings setting of the connector configuration.
 * Re-index to apply the new settings.
 
-#### [Prerequisite: Obtain the Default Mappings](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/synonym-sets#prerequisite-obtain-the-default-mappings) <a href="#prerequisite-obtain-the-default-mappings" id="prerequisite-obtain-the-default-mappings"></a>
+#### Prerequisite: Obtain the Default Mappings <a href="#prerequisite-obtain-the-default-mappings" id="prerequisite-obtain-the-default-mappings"></a>
 
 You must obtain the Elasticsearch connector’s default JSON mappings before customizing it:
 
-To get the mappings from your running Liferay,
+To get the mappings from your running the portal,
 
 1. Open the global menu (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)) and go to _Control Panel_ → _Search_.
 2. Click the _Field Mappings_ tab.
@@ -63,9 +63,9 @@ To get the mappings from your running Liferay,
 
 WARNING
 
-Index mappings and settings can change between versions, and sometimes within a minor version (via a Fix Pack or Service Pack). Customizations to the mappings and settings must be reviewed and adapted as necessary when upgrading or moving to a new patch level. In addition, Liferay’s Search team plans to add support for more languages out-of-the-box in future verisons, making customizations unnecessary.
+Index mappings and settings can change between versions, and sometimes within a minor version (via a Fix Pack or Service Pack). Customizations to the mappings and settings must be reviewed and adapted as necessary when upgrading or moving to a new patch level. In addition, the portal’s Search team plans to add support for more languages out-of-the-box in future verisons, making customizations unnecessary.
 
-#### [Adding a Language](https://learn.liferay.com/web/guest/w/dxp/using-search/search-administration-and-tuning/synonym-sets#adding-a-language) <a href="#adding-a-language" id="adding-a-language"></a>
+#### Adding a Language <a href="#adding-a-language" id="adding-a-language"></a>
 
 Now that you have the default mapping file, make the necessary changes to add the necessary settings for French language synonyms:
 
@@ -132,12 +132,12 @@ Now that you have the default mapping file, make the necessary changes to add th
 
     NOTE
 
-    For Liferay 7.4 U80 or earlier, you must include the `LiferayDocumentType` declaration at the beginning of the JSON file. For example, see the [Liferay 7.4 GA80 mappings](https://github.com/liferay/liferay-portal/blob/7.4.3.80-ga80/modules/apps/portal-search-elasticsearch7/portal-search-elasticsearch7-impl/src/main/resources/META-INF/mappings/liferay-type-mappings.json)
+    For 7.4 or earlier, you must include the `LiferayDocumentType` declaration at the beginning of the JSON file. For example, see the version 7.4 mappings
 4.  Using the Override Type Mappings field, change the analyzer for the `template_fr` dynamic field to use the custom analyzer (`custom_liferay_analyzer_fr`):
 
     IMPORTANT
 
-    This example is clipped for brevity. Override Type Mappings completely overrides and ignores Liferay’s default type mappings, so you must provide a complete mappings file, not just the overridden portion.
+    This example is clipped for brevity. Override Type Mappings completely overrides and ignores the portal’s default type mappings, so you must provide a complete mappings file, not just the overridden portion.
 
     ```json
      {
@@ -165,14 +165,14 @@ Now that you have the default mapping file, make the necessary changes to add th
 
     TIP
 
-    If you’re using the Sidecar Elasticsearch server, you may see an error in the console. Restart Liferay DXP to resolve the issue.
+    If you’re using the Sidecar Elasticsearch server, you may see an error in the console. Restart the portal to resolve the issue.
 6. Now go to System Settings → Search → Synonyms.
 7. Add the custom filter name (e.g., `custom-synonym-filter-fr`) to the Filter Names setting and save the configuration.
 8.  Perform a full re-index: in Control Panel → Search → Index Actions, click _Reindex_ for All Search Indexes.
 
     To verify that the custom mapping has been applied successfully, go to the Field Mappings tab, choose your index (for example `liferay-20101`) and look for `template_fr` in the right panel.
 
-    To verify that the additional index settings including your custom analyzer has also been added, make the following API call to Elasticsearch: `http://<host>:<port>/liferay-[company-id]/_settings` and look for your analyzer name in the response. For example, to see the index settings for the sidecar Elasticsearch server of a Liferay DXP server running at `localhost`, with a `20101`, visit [http://localhost:9201/liferay-20101/\_settings](http://localhost:9201/liferay-20101/\_settings).
+    To verify that the additional index settings including your custom analyzer has also been added, make the following API call to Elasticsearch: `http://<host>:<port>/liferay-[company-id]/_settings` and look for your analyzer name in the response. For example, to see the index settings for the sidecar Elasticsearch server of a portal server running at `localhost`, with a `20101`, visit [http://localhost:9201/liferay-20101/\_settings](http://localhost:9201/liferay-20101/\_settings).
 
 To verify the new filter is working,
 

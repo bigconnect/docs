@@ -1,8 +1,8 @@
 # SharePoint Integration
 
-Liferay’s REST Connector to SharePoint provides Documents and Media integration with SharePoint libraries. With it, you can create Documents and Media repositories for mounting a SharePoint library. You can then read/write SharePoint documents and folders, perform document check-in/check-out, download documents, and more. Each action performed in one context is propagated in the other.
+REST Connector to SharePoint provides Documents and Media integration with SharePoint libraries. With it, you can create Documents and Media repositories for mounting a SharePoint library. You can then read/write SharePoint documents and folders, perform document check-in/check-out, download documents, and more. Each action performed in one context is propagated in the other.
 
-### [Integration Limitations](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/devops/sharepoint-integration/enabling-liferays-rest-connector-to-sharepoint#integration-limitations) <a href="#integration-limitations" id="integration-limitations"></a>
+### Integration Limitations <a href="#integration-limitations" id="integration-limitations"></a>
 
 This application uses SharePoint’s API and has the following limitations:
 
@@ -13,14 +13,14 @@ This application uses SharePoint’s API and has the following limitations:
 * Queries for suffixes or intermediate wildcards convert to queries for containment.
 * Comments, ratings, and using a SharePoint folder as a Documents and Media root folder are unsupported.
 
-For more information on how the REST connector works, see the [javadocs API reference](https://docs.liferay.com/dxp/apps/sharepoint-rest/latest/javadocs/).
+For more information on how the REST connector works, see the javadocs API reference.
 
-### [Installing the REST Connector](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/devops/sharepoint-integration/enabling-liferays-rest-connector-to-sharepoint#installing-the-rest-connector) <a href="#installing-the-rest-connector" id="installing-the-rest-connector"></a>
+### Installing the REST Connector <a href="#installing-the-rest-connector" id="installing-the-rest-connector"></a>
 
-Follow these steps to install the Liferay REST Connector to SharePoint.
+Follow these steps to install the REST Connector to SharePoint.
 
-1. Download the [Liferay REST Connector to SharePoint](https://web.liferay.com/marketplace/-/mp/application/105406871) as an LPKG file via the Liferay Marketplace.
-2.  Copy the file to the instance’s [`[LIFERAY_HOME]/deploy`](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/liferay-home) folder to [deploy](https://learn.liferay.com/web/guest/w/dxp/system-administration/installing-and-managing-apps/installing-apps) it.
+1. Download the REST Connector to SharePoint as an LPKG file via the Marketplace.
+2.  Copy the file to the instance’s `[LIFERAY_HOME]/deploy` folder to deploy it.
 
     If successful, you should see the following message in the console’s logs:
 
@@ -36,20 +36,20 @@ IMPORTANT
 
 Since the REST connector uses Azure ACS with OAuth2 for SharePoint server authorization, ensure HTTPS support is enabled in your Server.
 
-### [Updating to the Latest Version](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/devops/sharepoint-integration/enabling-liferays-rest-connector-to-sharepoint#updating-to-the-latest-version) <a href="#updating-to-the-latest-version" id="updating-to-the-latest-version"></a>
+### Updating to the Latest Version <a href="#updating-to-the-latest-version" id="updating-to-the-latest-version"></a>
 
-Previously, the Liferay REST Connector to SharePoint was named Liferay Connector for SharePoint. If the older version of the application is installed on your Liferay server, follow these steps to install the latest version.
+Previously, the REST Connector to SharePoint was named Connector for SharePoint. If the older version of the application is installed on your portal server, follow these steps to install the latest version.
 
-1. Download the [Liferay REST Connector to SharePoint](https://web.liferay.com/marketplace/-/mp/application/105406871) as an LPKG file via the Liferay Marketplace.
-2. Stop the Liferay DXP server.
-3. Navigate to the [`[LIFERAY_HOME]/osgi/marketplace`](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/liferay-home) folder and replace the old LPKG file with the new one.
-4. Restart the Liferay DXP server.
+1. Download the REST Connector to SharePoint as an LPKG file via the Marketplace.
+2. Stop the portal server.
+3. Navigate to the `[LIFERAY_HOME]/osgi/marketplace` folder and replace the old LPKG file with the new one.
+4. Restart the portal server.
 
 Once the server has finished restarting, the application is ready for use.
 
-### [Adding a SharePoint OAuth2 Configuration](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/devops/sharepoint-integration/enabling-liferays-rest-connector-to-sharepoint#adding-a-sharepoint-oauth2-configuration) <a href="#adding-a-sharepoint-oauth2-configuration" id="adding-a-sharepoint-oauth2-configuration"></a>
+### Adding a SharePoint OAuth2 Configuration <a href="#adding-a-sharepoint-oauth2-configuration" id="adding-a-sharepoint-oauth2-configuration"></a>
 
-Follow these steps to add a new SharePoint OAuth2 configuration via the Liferay Control Panel.
+Follow these steps to add a new SharePoint OAuth2 configuration via the Control Panel.
 
 1.  Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), click on the _Control Panel_ tab, and go to _System Settings_ → _Documents & Media_ → _SharePoint OAuth 2_.
 
@@ -78,7 +78,7 @@ Follow these steps to add a new SharePoint OAuth2 configuration via the Liferay 
 
 Once saved, the SharePoint configuration can be used to create repositories in Documents and Media that are mounted to SharePoint libraries.
 
-### [Adding a SharePoint Search Configuration](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/devops/sharepoint-integration/enabling-liferays-rest-connector-to-sharepoint#adding-a-sharepoint-search-configuration) <a href="#adding-a-sharepoint-search-configuration" id="adding-a-sharepoint-search-configuration"></a>
+### Adding a SharePoint Search Configuration <a href="#adding-a-sharepoint-search-configuration" id="adding-a-sharepoint-search-configuration"></a>
 
 With SharePoint, you can define custom source IDs to restrict and fine-tune search results. By default, the connector uses the Documents source ID.
 

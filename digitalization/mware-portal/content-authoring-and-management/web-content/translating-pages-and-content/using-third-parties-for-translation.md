@@ -1,20 +1,20 @@
 # Using Third Parties for Translation
 
-Liferay can integrate with the following service APIs to generate automatic translations of Content Pages and Web Content.
+MWARE Portal can integrate with the following service APIs to generate automatic translations of Content Pages and Web Content.
 
-* [Google Cloud Translation](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation#enabling-google-cloud-translation)
-* [Amazon Translate](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation#enabling-amazon-translate)
-* [Microsoft Translator](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation#enabling-microsoft-translator)
+* Google Cloud Translation
+* Amazon Translate
+* Microsoft Translator
 
-To use this feature, you must first set up the translation service you are using and then enable it in Liferay’s system settings. Once enabled, you can use the service to [generate translations](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation#using-automatic-translation) for Content Pages and Web Content.
+To use this feature, you must first set up the translation service you are using and then enable it in system settings. Once enabled, you can use the service to generate translations for Content Pages and Web Content.
 
 IMPORTANT
 
 Only one service can be active at a time. If you enable multiple services, the system uses the first one available.
 
-### [Enabling Google Cloud Translation](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation#enabling-google-cloud-translation) <a href="#enabling-google-cloud-translation" id="enabling-google-cloud-translation"></a>
+### Enabling Google Cloud Translation <a href="#enabling-google-cloud-translation" id="enabling-google-cloud-translation"></a>
 
-Enabling Google Cloud Translation requires an active account and a Google Cloud project with Cloud Translation API enabled. This project must also have a service account with a JSON account key. See official [Google Cloud Translation](https://cloud.google.com/translate/docs/setup) documentation for more information.
+Enabling Google Cloud Translation requires an active account and a Google Cloud project with Cloud Translation API enabled. This project must also have a service account with a JSON account key. See official Google Cloud Translation documentation for more information.
 
 When ready, follow these steps:
 
@@ -25,11 +25,11 @@ When ready, follow these steps:
 3. Enter a valid Google Cloud service account key in JSON format.
 4. Click _Save_.
 
-### [Enabling Amazon Translate](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation#enabling-amazon-translate) <a href="#enabling-amazon-translate" id="enabling-amazon-translate"></a>
+### Enabling Amazon Translate <a href="#enabling-amazon-translate" id="enabling-amazon-translate"></a>
 
-Available 7.4 U9+ and GA13+
+Available 7.4 +
 
-Enabling Amazon Translate requires an active Amazon AWS account. See official [Amazon Translate](https://docs.aws.amazon.com/translate/latest/dg/what-is.html) documentation for more information.
+Enabling Amazon Translate requires an active Amazon AWS account. See official Amazon Translate documentation for more information.
 
 When ready, follow these steps:
 
@@ -41,11 +41,11 @@ When ready, follow these steps:
 4. Enter your region. The default value is `us-west-1`.
 5. Click _Save_.
 
-### [Enabling Microsoft Translator](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation#enabling-microsoft-translator) <a href="#enabling-microsoft-translator" id="enabling-microsoft-translator"></a>
+### Enabling Microsoft Translator <a href="#enabling-microsoft-translator" id="enabling-microsoft-translator"></a>
 
-Available 7.4 U6+ and GA10+
+Available 7.4 +
 
-Enabling Microsoft Translator requires an active Microsoft Azure account. See official [Microsoft Translator](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/) documentation for more information.
+Enabling Microsoft Translator requires an active Microsoft Azure account. See official Microsoft Translator documentation for more information.
 
 When ready, follow these steps:
 
@@ -56,7 +56,7 @@ When ready, follow these steps:
 3. Enter a valid _Subscription Key_ and _Resource Location_ (region).
 4. Click _Save_.
 
-### [Using Automatic Translation](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation#using-automatic-translation) <a href="#using-automatic-translation" id="using-automatic-translation"></a>
+### Using Automatic Translation <a href="#using-automatic-translation" id="using-automatic-translation"></a>
 
 Once a translation service is enabled, auto translate buttons are added to the translation interface for Content Pages and Web Content.
 
@@ -70,7 +70,7 @@ Follow these steps to automatically translate fields:
 
     NOTE
 
-    The languages available for translation are determined by your instance’s localization settings. See [Initial Instance Localization](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/initial-instance-localization) and [Virtual Instance Localization](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/virtual-instances/localization) for more information.
+    The languages available for translation are determined by your instance’s localization settings. See Initial Instance Localization and Virtual Instance Localization for more information.
 4.  Click the _Auto Translate_ button to translate all Web Content fields into the selected language.
 
     ![Click the top left Auto Translate button to translate all Web Content fields.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation/images/05.png)

@@ -4,7 +4,7 @@ Templates give authors a starting point with default headers or other content fo
 
 ![Create and manage templates in the Knowledge Base application.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/knowledge-base/knowledge-base-templates/images/01.png)
 
-### [Creating Templates](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/knowledge-base-templates#creating-templates) <a href="#creating-templates" id="creating-templates"></a>
+### Creating Templates <a href="#creating-templates" id="creating-templates"></a>
 
 1. Open the _Site Menu_ (![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-menu.png)) and go to _Content and Data_ → _Knowledge Base_.
 2. Go to _Templates_ (![Template](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-page-template.png)) and click _Add_ (![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)).
@@ -14,7 +14,7 @@ Templates give authors a starting point with default headers or other content fo
     ![Enter a title and content.](https://resources.learn.liferay.com/images/dxp/latest/en/collaboration-and-social/knowledge-base/knowledge-base-templates/images/02.png)
 5. Click _Publish_ to finish creating the template.
 
-### [Managing Templates](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/knowledge-base/knowledge-base-templates#managing-templates) <a href="#managing-templates" id="managing-templates"></a>
+### Managing Templates <a href="#managing-templates" id="managing-templates"></a>
 
 Each template appears in a list in the Templates section. You can take the following actions on each template via its Actions icon (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)):
 

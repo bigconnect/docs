@@ -13,7 +13,7 @@ With the _Enable Score Explanation_ option (enabled by default), the Insights wi
 
 When Elasticsearch processes a search query, it returns results. The concept of _Relevance_ determines how well results match the query. The Score explanation for returned search documents helps clarify seemingly odd results, letting you adjust the relevancy scoring process by _boosting_ results—making matches in certain fields count for more.
 
-### [Inspecting The Search Query String](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-insights#inspecting-the-search-query-string) <a href="#inspecting-the-search-query-string" id="inspecting-the-search-query-string"></a>
+### Inspecting The Search Query String <a href="#inspecting-the-search-query-string" id="inspecting-the-search-query-string"></a>
 
 To see the Search Insights widget in action, navigate to a Search Page in your test server and add it from the Add menu (![Add](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add-widget.png)).
 
@@ -23,9 +23,9 @@ Once you search for keywords that return Search Results, the Search Insights wid
 
 ![The full query string isn't for the faint of heart. This example is clipped to spare the reader.](https://resources.learn.liferay.com/images/dxp/latest/en/using-search/search-pages-and-widgets/search-insights/images/02.png)
 
-Some enhancements to the Search Insights interface were introduced in Liferay 7.4; you can browse the formatted JSON of the request and the response in the widget, and copy either with the click of a button.
+Some enhancements to the Search Insights interface were introduced in version 7.4; you can browse the formatted JSON of the request and the response in the widget, and copy either with the click of a button.
 
-### [Explaining Search Results](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-insights#explaining-search-results) <a href="#explaining-search-results" id="explaining-search-results"></a>
+### Explaining Search Results <a href="#explaining-search-results" id="explaining-search-results"></a>
 
 To enable or disable the Explain option,
 

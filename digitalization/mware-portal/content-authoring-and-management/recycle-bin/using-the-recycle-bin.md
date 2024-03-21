@@ -14,7 +14,7 @@ NOTE
 
 Attachments added to Wiki and Message Board entries do not go to the Recycle Bin when they are deleted. They can be restored in a similar fashion from the _Removed Attachments_ menu within the application.
 
-### [Moving Items to the Recycle Bin](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/recycle-bin/using-the-recycle-bin#moving-items-to-the-recycle-bin) <a href="#moving-items-to-the-recycle-bin" id="moving-items-to-the-recycle-bin"></a>
+### Moving Items to the Recycle Bin <a href="#moving-items-to-the-recycle-bin" id="moving-items-to-the-recycle-bin"></a>
 
 1. Open the _Site Menu_ (![Product Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) → _Content & Data_ → _Web Content_.
 2.  Use the checkboxes to select the folders and assets you want to delete, and then click _Delete_ (![Delete](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-app-trash.png)).
@@ -26,9 +26,9 @@ Attachments added to Wiki and Message Board entries do not go to the Recycle Bin
 
 A status message appears indicating how many items have been moved to the Recycle Bin along with a quick access link and an Undo button to restore the recycled assets.
 
-![DXP displays a status message with a quick access link to the Recycle bin and an Undo button.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/recycle-bin/using-the-recycle-bin/images/03.png)
+![The portal displays a status message with a quick access link to the Recycle bin and an Undo button.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/recycle-bin/using-the-recycle-bin/images/03.png)
 
-#### [Drag and Drop](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/recycle-bin/using-the-recycle-bin#drag-and-drop) <a href="#drag-and-drop" id="drag-and-drop"></a>
+#### Drag and Drop <a href="#drag-and-drop" id="drag-and-drop"></a>
 
 You can also drag and drop items into the Recycle Bin:
 
@@ -37,7 +37,7 @@ You can also drag and drop items into the Recycle Bin:
 
     ![Drag and drop multiple folders and assets into the Recycle Bin.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/recycle-bin/using-the-recycle-bin/images/04.png)
 
-### [Restoring Items from the Recycle Bin](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/recycle-bin/using-the-recycle-bin#restoring-items-from-the-recycle-bin) <a href="#restoring-items-from-the-recycle-bin" id="restoring-items-from-the-recycle-bin"></a>
+### Restoring Items from the Recycle Bin <a href="#restoring-items-from-the-recycle-bin" id="restoring-items-from-the-recycle-bin"></a>
 
 1. Open the _Site Menu_ → _Recycle Bin_.
 2.  Use the checkboxes to select the folders and assets you want to restore, and then click the _Restore_ button (![Restore](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-restore.png)).
@@ -48,9 +48,9 @@ You can also drag and drop items into the Recycle Bin:
 
 A status message appears indicating which items have been restored, along with quick access links to view them in your Site.
 
-![DXP displays a status message with a quick access links to the restored items.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/recycle-bin/using-the-recycle-bin/images/06.png)
+![The portal displays a status message with a quick access links to the restored items.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/recycle-bin/using-the-recycle-bin/images/06.png)
 
-### [Deleting Items Permanently](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/recycle-bin/using-the-recycle-bin#deleting-items-permanently) <a href="#deleting-items-permanently" id="deleting-items-permanently"></a>
+### Deleting Items Permanently <a href="#deleting-items-permanently" id="deleting-items-permanently"></a>
 
 1. Open the _Site Menu_ → _Recycle Bin_.
 2.  Use the checkboxes to select the recycled folders and assets you want to delete permanently from you instance and click the _Delete_ button (![Delete](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-delete.png)).
@@ -65,7 +65,7 @@ Deleting your content is the permanent and cannot be undone. Deleted files canno
 
 A status message appears indicating whether your request was successful.
 
-![DXP displays a status message indicating whether your request was successful.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/recycle-bin/using-the-recycle-bin/images/08.png)
+![The portal displays a status message indicating whether your request was successful.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/recycle-bin/using-the-recycle-bin/images/08.png)
 
 To delete all recycled items, click on the _Actions_ button (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) in the Application bar, and select _Empty the Recycle Bin_.
 

@@ -1,6 +1,6 @@
-# Liferay npm Bundler
+# npm Bundler
 
-The liferay-npm-bundler is a bundler (like [Webpack](https://webpack.github.io/) or [Browserify](http://browserify.org/)) that targets Liferay Portal as a platform and assumes you’re using your npm packages from widgets (as opposed to typical web applications).
+The liferay-npm-bundler is a bundler (like [Webpack](https://webpack.github.io/) or [Browserify](http://browserify.org/)) that targets MWARE Portal as a platform and assumes you’re using your npm packages from widgets (as opposed to typical web applications).
 
 The workflow for running npm packages inside widgets is slightly different from standard bundlers. Instead of bundling the JavaScript in a single file, you must _link_ all packages together in the browser when the full web page is assembled. Widgets can then share common versions of modules rather than each loading its own copy. The liferay-npm-bundler handles this for you.
 

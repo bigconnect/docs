@@ -2,22 +2,22 @@
 
 With Notification Templates, you can design automated email and user notifications for Liferay services. Each template identifies a sender, recipients, and message content. While designing the template, you can search supported entities and add field references that insert their data dynamically into emails.
 
-Currently, notification templates only support [object actions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions/defining-object-actions). However, Commerce Channels include built-in notification template capabilities for channel events. See [Store Emails](https://learn.liferay.com/w/commerce/store-management/sending-emails) for more information.
+Currently, notification templates only support object actions. However, Commerce Channels include built-in notification template capabilities for channel events. See Store Emails for more information.
 
 IMPORTANT
 
-To use email notifications, your instance must have a configured [mail server](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/configuring-mail). Once configured, you can access additional [email notification settings](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/virtual-instances/email-settings) at the instance level.
+To use email notifications, your instance must have a configured mail server. Once configured, you can access additional email notification settings at the instance level.
 
-If the out-of-the-box notification types don’t meet your needs, you can create custom notification types using client extensions. See [Microservice Client Extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions) for more information.
+If the out-of-the-box notification types don’t meet your needs, you can create custom notification types using client extensions. See Microservice Client Extensions for more information.
 
-### [Adding Email Notification Templates](https://learn.liferay.com/web/guest/w/dxp/process-automation/notifications/creating-notification-templates#adding-email-notification-templates) <a href="#adding-email-notification-templates" id="adding-email-notification-templates"></a>
+### Adding Email Notification Templates <a href="#adding-email-notification-templates" id="adding-email-notification-templates"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), go to the _Control Panel_ tab, and click _Notification Templates_.
 2.  Click _Add_ (![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) and select _Email_.
 
     ![Click the Add button and select Email.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/notifications/creating-notification-templates/images/01.png)
 
-    You can use field references to populate messages dynamically with entry and user data. In the Definition of Terms section you can select an object definition to reference its supported fields. In the General Terms section you can find terms for referencing fields for the user who triggers the notification action. Use these reference terms in the template fields as desired. See [Definition of Terms Reference](https://learn.liferay.com/web/guest/w/dxp/process-automation/notifications/creating-notification-templates#definition-of-terms-reference) for more information.
+    You can use field references to populate messages dynamically with entry and user data. In the Definition of Terms section you can select an object definition to reference its supported fields. In the General Terms section you can find terms for referencing fields for the user who triggers the notification action. Use these reference terms in the template fields as desired. See Definition of Terms Reference for more information.
 
     ![Search entities to add references to supported fields.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/notifications/creating-notification-templates/images/02.png)
 3.  In Basic Info, enter a name and description for the template.
@@ -51,7 +51,7 @@ If the out-of-the-box notification types don’t meet your needs, you can create
 
 Once created, you can use notification templates with object actions. See [Defining Object Actions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions/defining-object-actions) for more information.
 
-### [Adding User Notification Templates](https://learn.liferay.com/web/guest/w/dxp/process-automation/notifications/creating-notification-templates#adding-user-notification-templates) <a href="#adding-user-notification-templates" id="adding-user-notification-templates"></a>
+### Adding User Notification Templates <a href="#adding-user-notification-templates" id="adding-user-notification-templates"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)), go to the _Control Panel_ tab, and click _Notification Templates_.
 2.  Click _Add_ (![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) and select _User Notification_.
@@ -82,7 +82,7 @@ Once created, you can use notification templates with object actions. See [Defin
 
 Once created, you can use notification templates with object actions. See [Defining Object Actions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions/defining-object-actions) for more information.
 
-### [Definition of Terms Reference](https://learn.liferay.com/web/guest/w/dxp/process-automation/notifications/creating-notification-templates#definition-of-terms-reference) <a href="#definition-of-terms-reference" id="definition-of-terms-reference"></a>
+### Definition of Terms Reference <a href="#definition-of-terms-reference" id="definition-of-terms-reference"></a>
 
 You can use reference terms to access user and entry data, dynamically populating a template’s fields. You can reference any entries and users involved in the event triggering the [notification action](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions/understanding-action-types#notification). You can also reference fields in related object entries if the current entry is on the child side of a one-to-many relationship. References to related entry fields use this pattern, `[%RELATIONSHIPNAME_PARENTOBJECTNAME_OBJECTFIELD%]`.
 
@@ -94,7 +94,7 @@ IMPORTANT
 
 You can only reference fields for entries and users directly involved in the event that triggers the notification action.
 
-#### [Default Terms for Current Entry](https://learn.liferay.com/web/guest/w/dxp/process-automation/notifications/creating-notification-templates#default-terms-for-current-entry) <a href="#default-terms-for-current-entry" id="default-terms-for-current-entry"></a>
+#### Default Terms for Current Entry <a href="#default-terms-for-current-entry" id="default-terms-for-current-entry"></a>
 
 Use these terms to access information about the current object entry.
 
@@ -113,7 +113,7 @@ Use these terms to access information about the current object entry.
 | Modified Date           | `[%OBJECTNAME_MODIFIEDDATE%]`          |
 | Status                  | `[%OBJECTNAME_STATUS%]`                |
 
-#### [Default Terms for Current User](https://learn.liferay.com/web/guest/w/dxp/process-automation/notifications/creating-notification-templates#default-terms-for-current-user) <a href="#default-terms-for-current-user" id="default-terms-for-current-user"></a>
+#### Default Terms for Current User <a href="#default-terms-for-current-user" id="default-terms-for-current-user"></a>
 
 Use these terms to access information about the current user triggering the notification action.
 

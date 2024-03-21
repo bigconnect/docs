@@ -4,11 +4,11 @@ Certain Forms fields can be validated (Text, Date, and Numeric fields) and maske
 
 NOTE
 
-Date Fields can be validated beginning in Liferay 7.4.
+Date Fields can be validated beginning in version 7.4.
 
 Enable input validation to ensure that only certain values are accepted in a Text or Numeric field.
 
-### [Enabling Field Validation](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/validation-and-masking#enabling-field-validation) <a href="#enabling-field-validation" id="enabling-field-validation"></a>
+### Enabling Field Validation <a href="#enabling-field-validation" id="enabling-field-validation"></a>
 
 To enable validation:
 
@@ -24,11 +24,11 @@ The Field validation rule is triggered as soon as a User navigates away from a v
 
 ![Validation is triggered when the User leaves a validated field.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/validating-text-and-numeric-field-entries/images/06.png)
 
-### [Validating Text Fields](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/validation-and-masking#validating-text-fields) <a href="#validating-text-fields" id="validating-text-fields"></a>
+### Validating Text Fields <a href="#validating-text-fields" id="validating-text-fields"></a>
 
-See the [Validation Conditions Reference](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/validation-conditions-reference) for more information about the other validation conditions.
+See the Validation Conditions Reference for more information about the other validation conditions.
 
-#### [Validating Email Addresses](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/validation-and-masking#validating-email-addresses) <a href="#validating-email-addresses" id="validating-email-addresses"></a>
+#### Validating Email Addresses <a href="#validating-email-addresses" id="validating-email-addresses"></a>
 
 Forms can be configured to validate email addresses. To ensure that the user has entered a valid email address:
 
@@ -38,7 +38,7 @@ Forms can be configured to validate email addresses. To ensure that the user has
 
     ![Use text field validation to make sure users enter a valid email address or URL.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/validating-text-and-numeric-field-entries/images/04.png)
 
-#### [Validating URLs](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/validation-and-masking#validating-urls) <a href="#validating-urls" id="validating-urls"></a>
+#### Validating URLs <a href="#validating-urls" id="validating-urls"></a>
 
 Similar to emails, Forms can be configured to validate URLs.
 
@@ -48,9 +48,9 @@ To validate URLs:
 2. Enter an error message.
 3. Click _Save_ when finished.
 
-#### [Using Regular Expressions](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/validation-and-masking#using-regular-expressions) <a href="#using-regular-expressions" id="using-regular-expressions"></a>
+#### Using Regular Expressions <a href="#using-regular-expressions" id="using-regular-expressions"></a>
 
-Forms can be configured to use [regular expressions](https://en.wikipedia.org/wiki/Regular\_expression) to create custom validation criteria. For example, use this regular expression to ensure that ten consecutive numeric digits are entered in a phone number field:
+Forms can be configured to use regular expressions to create custom validation criteria. For example, use this regular expression to ensure that ten consecutive numeric digits are entered in a phone number field:
 
 ```log
 ^[0-9]{10}$
@@ -65,7 +65,7 @@ To validate a text field using a regular expression:
     ![Regular expression text validation opens up countless possibilities.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/validating-text-and-numeric-field-entries/images/05.png)
 4. Click _Save Form_ when finished.
 
-### [Validating Numeric Fields](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/validation-and-masking#validating-numeric-fields) <a href="#validating-numeric-fields" id="validating-numeric-fields"></a>
+### Validating Numeric Fields <a href="#validating-numeric-fields" id="validating-numeric-fields"></a>
 
 Numeric field validation is similar to text field validation, but the conditions compare the value of the number entered to some other value.
 
@@ -78,7 +78,7 @@ To validate numeric fields:
     ![Numeric conditions constrain user-entered numeric data.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/validating-text-and-numeric-field-entries/images/02.png)
 4. Click _Save Form_ when finished.
 
-#### [Requiring Only Integers](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/validation-and-masking#requiring-only-integers) <a href="#requiring-only-integers" id="requiring-only-integers"></a>
+#### Requiring Only Integers <a href="#requiring-only-integers" id="requiring-only-integers"></a>
 
 Forms can be configured to require numeric values to be integers. By default, the _My numeric type is_ value is set to Decimal.
 
@@ -90,9 +90,9 @@ To configure the Numeric field to accept only integers:
     ![Specify whether numbers can be decimals or integers only.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/validating-text-and-numeric-field-entries/images/03.png)
 3. Click _Save Form_ to apply the changes.
 
-### [Validating Date Fields](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/validation-and-masking#validating-date-fields) <a href="#validating-date-fields" id="validating-date-fields"></a>
+### Validating Date Fields <a href="#validating-date-fields" id="validating-date-fields"></a>
 
-As of Liferay 7.4, the Advanced configuration of the Date Field includes Validation.
+As of version 7.4, the Advanced configuration of the Date Field includes Validation.
 
 ![Enter validation rules for date fields.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/validating-text-and-numeric-field-entries/images/07.png)
 
@@ -104,7 +104,7 @@ Validation options include
 
 **Error Message:** The error message can be customized to better suit the specific validation rule.
 
-### [Masking Numeric Fields](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/validation-and-masking#masking-numeric-fields) <a href="#masking-numeric-fields" id="masking-numeric-fields"></a>
+### Masking Numeric Fields <a href="#masking-numeric-fields" id="masking-numeric-fields"></a>
 
 The Input Mask configuration lets you you display the correct number format as the user enters numeric data. The configuration behavior differs between integer fields and decimal fields:
 

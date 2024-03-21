@@ -2,7 +2,7 @@
 
 Account addresses are the billing or shipping addresses associated with a Business account or a Person account.
 
-### [Adding an Account Address](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/account-addresses#adding-an-account-address) <a href="#adding-an-account-address" id="adding-an-account-address"></a>
+### Adding an Account Address <a href="#adding-an-account-address" id="adding-an-account-address"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)). Navigate to _Control Panel_ → _Accounts_.
 2. Select an account by clicking its name, or click _Options_ (![Options icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) on the account and click _Edit_.
@@ -13,23 +13,23 @@ Account addresses are the billing or shipping addresses associated with a Busine
 
     Click _Save_ to save the address.
 
-### [Editing an Account Address](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/account-addresses#editing-an-account-address) <a href="#editing-an-account-address" id="editing-an-account-address"></a>
+### Editing an Account Address <a href="#editing-an-account-address" id="editing-an-account-address"></a>
 
 1.  Under the _Addresses_ tab, click the _Options_ icon (![Options icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) of the address and click _Edit_. Use the filter tool to filter addresses by billing addresses or shipping addresses. Use the search bar to locate a specific address quickly.
 
     ![Click the address's Options icon and click edit.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/accounts/account-addresses/images/02.png)
 2. Make your changes and click _Save_.
 
-### [Setting Default Account Addresses](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/account-addresses#setting-default-account-addresses) <a href="#setting-default-account-addresses" id="setting-default-account-addresses"></a>
+### Setting Default Account Addresses <a href="#setting-default-account-addresses" id="setting-default-account-addresses"></a>
 
 1.  Under the _Details_ tab, click _Set Default Address_ either under Billing or Shipping.
 
     ![Click Set Default Address under Billing or Shipping.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/accounts/account-addresses/images/03.png)
 2. A new window opens. Select an address from the list and click _Save_. Your default address is now set for the account.
 
-### [Address Eligibility](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/account-addresses#address-eligibility) <a href="#address-eligibility" id="address-eligibility"></a>
+### Address Eligibility <a href="#address-eligibility" id="address-eligibility"></a>
 
-Liferay DXP 2024.Q1+/Portal 7.4 GA112+
+Version 2024.Q1+
 
 By default, an account’s address is eligible for all channels. You can control address eligibility in the _Eligibility_ tab.
 

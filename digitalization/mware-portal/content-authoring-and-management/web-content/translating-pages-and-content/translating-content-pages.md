@@ -1,22 +1,22 @@
 # Translating Content Pages
 
-Liferay provides integrated tools for translating _Content Pages_, so you can create engaging, localized experiences for your global users. With these tools, you can manually translate Content Page experiences or import translations as XLIFF files.
+MWARE Portal provides integrated tools for translating _Content Pages_, so you can create engaging, localized experiences for your global users. With these tools, you can manually translate Content Page experiences or import translations as XLIFF files.
 
 IMPORTANT
 
 When translating a Content Page, users can only translate a Page’s name and inline fragment text (e.g. HTML, Header, etc.). They cannot translate Widgets or mapped fragment fields.
 
-If desired, you can [enable a custom workflow](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/enabling-workflows-for-translations) to direct the review and publishing process for translations.
+If desired, you can enable a custom workflow to direct the review and publishing process for translations.
 
 NOTE
 
-The languages available for translation are determined by your instance’s localization settings. See [Initial Instance Localization](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/initial-instance-localization) and [Virtual Instance Localization](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/virtual-instances/localization) for more information.
+The languages available for translation are determined by your instance’s localization settings. See Initial Instance Localization and Virtual Instance Localization for more information.
 
-### [Manually Translating Content Pages](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-content-pages#manually-translating-content-pages) <a href="#manually-translating-content-pages" id="manually-translating-content-pages"></a>
+### Manually Translating Content Pages <a href="#manually-translating-content-pages" id="manually-translating-content-pages"></a>
 
 NOTE
 
-To manually translate Content Page experiences, users must have either _View_ and _Update_ permissions for Content Pages or Translation permissions for one or more languages. See [Managing Translation Permissions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/managing-translation-permissions) for more information.
+To manually translate Content Page experiences, users must have either _View_ and _Update_ permissions for Content Pages or Translation permissions for one or more languages. See Managing Translation Permissions for more information.
 
 Follow these steps to manually translate Content Page experiences:
 
@@ -48,19 +48,19 @@ Follow these steps to manually translate Content Page experiences:
 
     Alternatively, you can click _Save as Draft_ to apply your translations at a later time.
 
-### [Exporting and Importing Translations](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-content-pages#exporting-and-importing-translations) <a href="#exporting-and-importing-translations" id="exporting-and-importing-translations"></a>
+### Exporting and Importing Translations <a href="#exporting-and-importing-translations" id="exporting-and-importing-translations"></a>
 
 NOTE
 
-To export pages for translation or import XLIFF translations, you must have _View_ and _Update_ permissions for the selected page. See [Managing Translation Permissions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/managing-translation-permissions) for more information.
+To export pages for translation or import XLIFF translations, you must have _View_ and _Update_ permissions for the selected page. See Managing Translation Permissions for more information.
 
-With Liferay, you can export Content Page experiences for translation as `.xliff` or `.xlf` files. You can send these files to translators and then import the translations together as a `.zip` file or individually as `.xliff` or `.xlf` files.
+You can export Content Page experiences for translation as `.xliff` or `.xlf` files. You can send these files to translators and then import the translations together as a `.zip` file or individually as `.xliff` or `.xlf` files.
 
 IMPORTANT
 
-Liferay supports both XLIFF 1.2 and 2.0 files. However, it may not support all features and capabilities those formats provide.
+The portal supports both XLIFF 1.2 and 2.0 files. However, it may not support all features and capabilities those formats provide.
 
-#### [Exporting Pages for Translation](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-content-pages#exporting-pages-for-translation) <a href="#exporting-pages-for-translation" id="exporting-pages-for-translation"></a>
+#### Exporting Pages for Translation <a href="#exporting-pages-for-translation" id="exporting-pages-for-translation"></a>
 
 Follow theses steps:
 
@@ -76,9 +76,9 @@ Follow theses steps:
     ![Configure the export.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-content-pages/images/04.png)
 7. Click _Export_.
 
-Liferay generates a ZIP archive that contains an XLIFF file for each selected experience. You can then use these files with compatible translation software.
+The portal generates a ZIP archive that contains an XLIFF file for each selected experience. You can then use these files with compatible translation software.
 
-#### [Importing Page Translations](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-content-pages#importing-page-translations) <a href="#importing-page-translations" id="importing-page-translations"></a>
+#### Importing Page Translations <a href="#importing-page-translations" id="importing-page-translations"></a>
 
 Follow theses steps:
 
@@ -92,19 +92,19 @@ Follow theses steps:
 
     IMPORTANT
 
-    While Liferay supports importing XLIFF files created using the [Export for Translation](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-content-pages#exporting-pages-for-translation) action, it cannot guarantee the successful import of files generated by other means.
+    While the portal supports importing XLIFF files created using the Export for Translation action, it cannot guarantee the successful import of files generated by other means.
 4.  Click _Publish_.
 
-    If import is successful, Liferay displays a success message with the imported files. The translations are applied to the Content Page and the Page is saved as a draft. If workflow is enabled, the translations must be approved before they’re applied to the Page.
+    If import is successful, the portal displays a success message with the imported files. The translations are applied to the Content Page and the Page is saved as a draft. If workflow is enabled, the translations must be approved before they’re applied to the Page.
 
-    ![If import is successful, Liferay displays a success message with the imported files.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-content-pages/images/07.png)
+    ![If import is successful, the portal displays a success message with the imported files.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-content-pages/images/07.png)
 
-    However, if errors occur during import, Liferay notifies you of the failing files and provides a downloadable CSV error report.
+    However, if errors occur during import, the portal notifies you of the failing files and provides a downloadable CSV error report.
 
-    ![If errors occur during import, Liferay notifies you of the failing files and provides a downloadable CSV error report.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-content-pages/images/08.png)
+    ![If errors occur during import, the portal notifies you of the failing files and provides a downloadable CSV error report.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/translating-pages-and-content/translating-content-pages/images/08.png)
 
-### [Translating Content Pages Using Third Party Services](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/translating-content-pages#translating-content-pages-using-third-party-services) <a href="#translating-content-pages-using-third-party-services" id="translating-content-pages-using-third-party-services"></a>
+### Translating Content Pages Using Third Party Services <a href="#translating-content-pages-using-third-party-services" id="translating-content-pages-using-third-party-services"></a>
 
-If you’ve enabled Liferay’s integration with [Google Cloud Translation](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation#enabling-google-cloud-translation), [Amazon Translate](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation#enabling-amazon-translate), or [Microsoft Translator](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation#enabling-microsoft-translator), you can use them to automatically translate Web Content. See [Using Third Parties for Translation](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/translating-pages-and-content/using-third-parties-for-translation) for more information.
+If you’ve enabled the portal’s integration with Google Cloud Translation, Amazon Translate, or Microsoft Translator, you can use them to automatically translate Web Content. See Using Third Parties for Translation for more information.
 
 \

@@ -1,8 +1,8 @@
 # Linking to Files on Google Drive
 
-You can create files in your Document Library that link to files in Google Drive™ or images in Google Photos™. To enable this functionality, see [Enabling Links to Google Drive Documents](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/devops/google-drive-integration/enabling-links-to-google-drive-documents).
+You can create files in your Document Library that link to files in Google Drive™ or images in Google Photos™. To enable this functionality, see Enabling Links to Google Drive Documents.
 
-### [Creating Linked Files](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/linking-to-files-on-google-drive#creating-linked-files) <a href="#creating-linked-files" id="creating-linked-files"></a>
+### Creating Linked Files <a href="#creating-linked-files" id="creating-linked-files"></a>
 
 Follow these steps to create files in your Document Library that link to files in Google Drive™ or images in Google Photos™:
 
@@ -19,6 +19,6 @@ A new file entry appears for the linked Google document. You can view the file e
 
 TIP
 
-You can also use Google Docs™ for online file creation and editing. See [Creating and Editing Documents with Google Drive](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/creating-documents/creating-and-editing-documents-with-google-drive).
+You can also use Google Docs™ for online file creation and editing. See Creating and Editing Documents with Google Drive.
 
 \

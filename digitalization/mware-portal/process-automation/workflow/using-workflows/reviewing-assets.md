@@ -1,20 +1,20 @@
 # Reviewing Assets
 
-When an asset’s workflow is [activated](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/activating-workflow), one or more users must review it before publication. You can assign workflow review processes to specific users or to a particular Role (for example: Portal or Site Content Reviewer). In the latter case, anyone assigned to that Role may approve or reject the submission. For example, with the out-of-the-box _Single Approver_ process, the workflow tasks are assigned to a Portal or Site Content Reviewer or anyone with administrator rights.
+When an asset’s workflow is activated, one or more users must review it before publication. You can assign workflow review processes to specific users or to a particular Role (for example: Portal or Site Content Reviewer). In the latter case, anyone assigned to that Role may approve or reject the submission. For example, with the out-of-the-box _Single Approver_ process, the workflow tasks are assigned to a Portal or Site Content Reviewer or anyone with administrator rights.
 
 TIP
 
-DXP subscribers: bulk management of workflow items is possible using the [Workflow Metrics application](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/using-workflow-metrics#managing-workflow-tasks-in-bulk).
+Bulk management of workflow items is possible using the Workflow Metrics application.
 
 Once an asset has been submitted, the _Workflow_ application sends a notification to all the potential reviewers. To access notifications, click your avatar and select _Notifications_.
 
 ![Workflow sends a notification an asset is ready for review.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/workflow/using-workflows/reviewing-assets/images/01.png)
 
-### [Reviewing an Asset](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/reviewing-assets#reviewing-an-asset) <a href="#reviewing-an-asset" id="reviewing-an-asset"></a>
+### Reviewing an Asset <a href="#reviewing-an-asset" id="reviewing-an-asset"></a>
 
-In order to begin reviewing an asset, you must assign the task to yourself. Note that when using the Single Approver workflow, tasks are by default assigned to a Role. (You can also [build custom workflows](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/building-workflows) which assign review tasks to specific users instead of by Roles.)
+In order to begin reviewing an asset, you must assign the task to yourself. Note that when using the Single Approver workflow, tasks are by default assigned to a Role. (You can also build custom workflows which assign review tasks to specific users instead of by Roles.)
 
-#### [Assigning the Review Task](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/reviewing-assets#assigning-the-review-task) <a href="#assigning-the-review-task" id="assigning-the-review-task"></a>
+#### Assigning the Review Task <a href="#assigning-the-review-task" id="assigning-the-review-task"></a>
 
 1. Click your avatar and select _My Workflow Tasks_.
 2.  All workflow tasks assigned directly to a user are listed in the My Workflow Task widget’s _Assigned to Me_ tab.
@@ -29,7 +29,7 @@ In order to begin reviewing an asset, you must assign the task to yourself. Note
 5. Enter an optional comment in the _Comment_ text field.
 6. Click _Done_.
 
-#### [Approving or Rejecting a Task](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/reviewing-assets#approving-or-rejecting-a-task) <a href="#approving-or-rejecting-a-task" id="approving-or-rejecting-a-task"></a>
+#### Approving or Rejecting a Task <a href="#approving-or-rejecting-a-task" id="approving-or-rejecting-a-task"></a>
 
 Once you have assigned to task to yourself, you can approve or reject the submission.
 

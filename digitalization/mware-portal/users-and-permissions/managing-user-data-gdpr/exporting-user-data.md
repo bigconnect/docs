@@ -6,7 +6,7 @@ Data portability means that users have the right to receive their personal data 
 
 The Control Panel’s User Management system natively supports the export of a User’s personal data to a ZIP file for download. The format is in XML format.
 
-### [Exporting and Downloading](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/managing-user-data/exporting-user-data#exporting-and-downloading) <a href="#exporting-and-downloading" id="exporting-and-downloading"></a>
+### Exporting and Downloading <a href="#exporting-and-downloading" id="exporting-and-downloading"></a>
 
 To export user data,
 
@@ -24,7 +24,7 @@ To export user data,
     ![Once User data is successfully exported, the export process appears in the User's Export Personal Data list.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/managing-user-data/exporting-user-data/images/02.png)
 7. Download the data. Click the Actions button (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) for the process and select _Download_.
 
-### [Examining Exported Data](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/managing-user-data/exporting-user-data#examining-exported-data) <a href="#examining-exported-data" id="examining-exported-data"></a>
+### Examining Exported Data <a href="#examining-exported-data" id="examining-exported-data"></a>
 
 The exported data looks like this:
 

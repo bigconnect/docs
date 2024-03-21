@@ -1,14 +1,14 @@
 # Encrypted Fields
 
-Liferay provides the encrypted field type for storing sensitive user data. To use encrypted fields, first add an encryption algorithm and key to your portal properties. Then add an encrypted field to your object definition. Once data is encrypted, only users with the decryption key can read it.
+MWARE Portal provides the encrypted field type for storing sensitive user data. To use encrypted fields, first add an encryption algorithm and key to your portal properties. Then add an encrypted field to your object definition. Once data is encrypted, only users with the decryption key can read it.
 
 IMPORTANT
 
-Encrypted fields store string values and cannot be used to encrypt images or file types. Filtering, sorting, and indexing are not supported for encrypted fields. Additionally, field encryption is not available for [proxy object definitions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/integrating-objects-with-third-party-services/managing-data-from-external-systems).
+Encrypted fields store string values and cannot be used to encrypt images or file types. Filtering, sorting, and indexing are not supported for encrypted fields. Additionally, field encryption is not available for proxy object definitions.
 
-### [Adding an Encryption Algorithm and Key](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/encrypted-fields#adding-an-encryption-algorithm-and-key) <a href="#adding-an-encryption-algorithm-and-key" id="adding-an-encryption-algorithm-and-key"></a>
+### Adding an Encryption Algorithm and Key <a href="#adding-an-encryption-algorithm-and-key" id="adding-an-encryption-algorithm-and-key"></a>
 
-To use encryption algorithms and keys for objects, you must add these properties to your [`portal-ext.properties`](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/portal-properties) file:
+To use encryption algorithms and keys for objects, you must add these properties to your `portal-ext.properties` file:
 
 ```properties
 object.encryption.algorithm=[value]
@@ -24,7 +24,7 @@ object.encryption.algorithm=AES
 object.encryption.key=D9z5Rwxkn+8SctNWW/q/OA==
 ```
 
-### [Adding an Encrypted Field](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/encrypted-fields#adding-an-encrypted-field) <a href="#adding-an-encrypted-field" id="adding-an-encrypted-field"></a>
+### Adding an Encrypted Field <a href="#adding-an-encrypted-field" id="adding-an-encrypted-field"></a>
 
 1. Open the _Global Menu_ ( ![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png) ), go to the _Control Panel_ tab, and click _Objects_.
 2. Begin editing the desired object definition.
@@ -40,9 +40,9 @@ object.encryption.key=D9z5Rwxkn+8SctNWW/q/OA==
 
 You can use this field to store encrypted string values. If desired, you can configure the field limit the number of characters allowed.
 
-### [Accessing Encrypted Data](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/encrypted-fields#accessing-encrypted-data) <a href="#accessing-encrypted-data" id="accessing-encrypted-data"></a>
+### Accessing Encrypted Data <a href="#accessing-encrypted-data" id="accessing-encrypted-data"></a>
 
-Only users with the decryption key can read encrypted field values. If your Liferay instance has a valid encryption key, authorized users can view and export the field’s data via the Liferay UI or REST APIs. However, if an encryption key is lost or becomes invalid, users cannot access or export entries for any object definition with encrypted fields. When attempted, Liferay returns a 400 error and directs users to either insert a valid encryption key or remove the object’s encrypted fields to recover your entries.
+Only users with the decryption key can read encrypted field values. If your portal instance has a valid encryption key, authorized users can view and export the field’s data via the portal UI or REST APIs. However, if an encryption key is lost or becomes invalid, users cannot access or export entries for any object definition with encrypted fields. When attempted, the portal returns a 400 error and directs users to either insert a valid encryption key or remove the object’s encrypted fields to recover your entries.
 
 IMPORTANT
 

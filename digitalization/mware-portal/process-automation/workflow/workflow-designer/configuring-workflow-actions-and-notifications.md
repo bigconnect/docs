@@ -10,9 +10,9 @@ Workflow Notifications are sent to tell task assignees that the workflow needs a
 
 However, not every node requires a Workflow Action or a notification. Generally, Start and End nodes do not have actions or notifications, unless you want to notify the original author that the review process has begun or ended.
 
-In the Single Approver definition, the two [Task nodes (Review and Update)](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/creating-workflow-tasks) have Actions and Notifications.
+In the Single Approver definition, the two Task nodes (Review and Update) have Actions and Notifications.
 
-### [Adding Actions](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/configuring-workflow-actions-and-notifications#adding-actions) <a href="#adding-actions" id="adding-actions"></a>
+### Adding Actions <a href="#adding-actions" id="adding-actions"></a>
 
 If you’re creating the Single Approver workflow definition, you must add a Reject _Action_ to the _Update_ Task node. This Reject Action contains a Groovy script which, when executed, sets the asset’s status as _denied_ then _pending_.
 
@@ -42,7 +42,7 @@ Follow the steps below:
 
 Next add a notification that informs the asset creator that the submission has been rejected at this time and needs more work.
 
-### [Adding Notifications](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/workflow-designer/configuring-workflow-actions-and-notifications#adding-notifications) <a href="#adding-notifications" id="adding-notifications"></a>
+### Adding Notifications <a href="#adding-notifications" id="adding-notifications"></a>
 
 Add notifications to the _Update_ Task node which informs the asset creator that the submission needs more work and has been reassigned back to him.
 
@@ -60,7 +60,7 @@ Follow the steps below:
 
     * `Your submission was rejected by ${userName}, please modify and resubmit.`
 
-    See [Workflow Notification Template Variables](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/developer-guide/workflow-notification-template-variables) to learn about the injected template variables.
+    See Workflow Notification Template Variables to learn about the injected template variables.
 4. Select the Notification Type(s):
    * Email
    * User Notification

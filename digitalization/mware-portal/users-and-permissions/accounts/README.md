@@ -1,10 +1,10 @@
 # Accounts
 
-Accounts provide administrators with a way to organize and manage users for various commerce or business needs. Unlike [organizations](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/organizations) or [user groups](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/user-groups), accounts help facilitate interactions that might take place in business situations such as the purchasing of goods and services or managing existing customers.
+Accounts provide administrators with a way to organize and manage users for various commerce or business needs. Unlike organizations or user groups, accounts help facilitate interactions that might take place in business situations such as the purchasing of goods and services or managing existing customers.
 
 There are three different account types, _Business_, _Person_, and _Guest_ types. Business accounts all you to associate multiple users to an account. Person type accounts can only have one account associated with them. Guest accounts provide a way for unregistered users to interact with your business or site.
 
-### [Creating an Account](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts#creating-an-account) <a href="#creating-an-account" id="creating-an-account"></a>
+### Creating an Account <a href="#creating-an-account" id="creating-an-account"></a>
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)) and navigate to _Control Panel_ → _Accounts_.
 2. Click _New_.
@@ -14,25 +14,25 @@ There are three different account types, _Business_, _Person_, and _Guest_ types
 
     NOTE
 
-    Starting from Liferay DXP 2024.Q1+/Portal 7.4 GA112+, account names can be up to 250 characters long. The earlier limit was 100.
+    Starting from version 2024.Q1+, account names can be up to 250 characters long. The earlier limit was 100.
 4. Add additional information for your account such as Tax ID or description. Click _Save_ to create the new account.
 5.  After creating an account, tabs appear at the top of the page.
 
     ![New tabs appear after creating an account.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/accounts/images/02.png)
 
-#### [Details Tab](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts#details-tab) <a href="#details-tab" id="details-tab"></a>
+#### Details Tab <a href="#details-tab" id="details-tab"></a>
 
-The Details tab displays the main information about the account such as the account name and type. A default billing address and shipping address can also be set here. [Categories](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/defining-categories-and-vocabularies-for-content) or [Custom Fields](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/adding-custom-fields) can also be added for further customization of the account.
+The Details tab displays the main information about the account such as the account name and type. A default billing address and shipping address can also be set here. Categories or Custom Fields can also be added for further customization of the account.
 
-#### [Addresses Tab](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts#addresses-tab) <a href="#addresses-tab" id="addresses-tab"></a>
+#### Addresses Tab <a href="#addresses-tab" id="addresses-tab"></a>
 
 The Addresses tab displays the different addresses associated with the account. To add a new address, click _New_ and fill out the address information. Then, click _Save_.
 
 ![Fill out the address information and click Save.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/accounts/images/03.png)
 
-See [Account Addresses](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/account-addresses) to learn more.
+See Account Addresses to learn more.
 
-#### [Users Tab](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts#users-tab) <a href="#users-tab" id="users-tab"></a>
+#### Users Tab <a href="#users-tab" id="users-tab"></a>
 
 The Users tab displays the different users associated with the account. Note, this tab does not exist for Person type accounts or Guest type accounts. To associate a user to the account,
 
@@ -40,17 +40,17 @@ The Users tab displays the different users associated with the account. Note, th
 2. Select users by checking the box next to a user’s name and click the _Assign_ button.
 3. A new user can also be created from this view. Click the _Add_ icon (![Add icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) and see an add new user page.
 4. Fill in the information for the new user and click the _Save_ button.
-5. Any new user that was created or associated with the account is displayed in the users tab. See [Account Users](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/account-users) to learn more.
+5. Any new user that was created or associated with the account is displayed in the users tab. See Account Users to learn more.
 
-#### [Organizations Tab](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts#organizations-tab) <a href="#organizations-tab" id="organizations-tab"></a>
+#### Organizations Tab <a href="#organizations-tab" id="organizations-tab"></a>
 
 The Organizations tab displays the different organizations associated with the account. To associate an organization, click the _Add_ icon (![Add icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)). Select the organization to associate and click the _Assign_ button.
 
-#### [Account Groups Tab](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts#account-groups-tab) <a href="#account-groups-tab" id="account-groups-tab"></a>
+#### Account Groups Tab <a href="#account-groups-tab" id="account-groups-tab"></a>
 
-The Account Groups tab displays the different group memberships for the account. To learn more about creating or managing these groups, see [Account Groups](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/account-groups).
+The Account Groups tab displays the different group memberships for the account. To learn more about creating or managing these groups, see Account Groups.
 
-#### [Roles Tab](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts#roles-tab) <a href="#roles-tab" id="roles-tab"></a>
+#### Roles Tab <a href="#roles-tab" id="roles-tab"></a>
 
 The Roles tab displays the different roles available for the account. Note, this tab does not exist for Guest type accounts.
 
@@ -61,9 +61,9 @@ To create an account role,
 3. Once the role is created, you can define permissions and assign users. Click the _Define Permissions_ tab and choose the permissions for the role.
 4. Click the _Assignees_ tab to assign a user to the role. Click the _Add_ icon (![Add icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) to select a user and click the _Assign_ button.
 
-See [Account Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts/account-roles) to learn more.
+See Account Roles to learn more.
 
-### [Making Changes to an Account](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/accounts#making-changes-to-an-account) <a href="#making-changes-to-an-account" id="making-changes-to-an-account"></a>
+### Making Changes to an Account <a href="#making-changes-to-an-account" id="making-changes-to-an-account"></a>
 
 1. Click the _Actions_ icon (![Actions icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) of the account you want to edit.
 2.  Make one of the following selections:

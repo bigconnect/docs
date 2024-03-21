@@ -1,6 +1,6 @@
 # Defining Metadata Sets
 
-With Documents and Media, you can define reusable groups of metadata fields that can be added to custom Document Types. Once created, these Metadata Sets can be selected while [creating or editing a Document Type](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-document-types) and are added after any fields defined directly in the Document Type form.
+With Documents and Media, you can define reusable groups of metadata fields that can be added to custom Document Types. Once created, these Metadata Sets can be selected while creating or editing a Document Type and are added after any fields defined directly in the Document Type form.
 
 Follow these steps to define a new Metadata Set.
 
@@ -26,11 +26,11 @@ Follow these steps to define a new Metadata Set.
 6. (Optional) Click on the _Properties_ tab, and enter a _description_.
 7. Click on _Save_.
 
-Once saved, the new Metadata Set can be accessed and selected when creating or editing Document Types. See [Defining Document Types](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-document-types) or more information.
+Once saved, the new Metadata Set can be accessed and selected when creating or editing Document Types. See Defining Document Types or more information.
 
-### [For 7.3.x and Earlier Versions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-metadata-sets#for-73x-and-earlier-versions) <a href="#for-73x-and-earlier-versions" id="for-73x-and-earlier-versions"></a>
+### For 7.3.x and Earlier Versions <a href="#for-73x-and-earlier-versions" id="for-73x-and-earlier-versions"></a>
 
-#### [Creating Metadata Sets](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-metadata-sets#creating-metadata-sets) <a href="#creating-metadata-sets" id="creating-metadata-sets"></a>
+#### Creating Metadata Sets <a href="#creating-metadata-sets" id="creating-metadata-sets"></a>
 
 1. Open the _Product Menu_ (![Product Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) then click the compass icon (![Compass](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-compass.png)) on the _Site Administration_ menu.
 2. Select the site where the form will be created.
@@ -66,7 +66,7 @@ The following metadata fields are available:
 | Text Box            | Enter multiple lines of text or separate paragraphs.                                                             |
 | Web Content         | Select a Web Content article.                                                                                    |
 
-#### [Editing Metadata Sets](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-metadata-sets#editing-metadata-sets) <a href="#editing-metadata-sets" id="editing-metadata-sets"></a>
+#### Editing Metadata Sets <a href="#editing-metadata-sets" id="editing-metadata-sets"></a>
 
 You can edit your fields to reflect their intended metadata. For example, a text field’s default label is _Text_. If you want to use the text field as a title, for instance, then you should change the field’s label to _Title_. Besides the Label field, you can also configure the default values, variable names, mouse-over tips, widths, and other settings. Some fields have a _Required_ setting for specifying whether users must populate the field. If a field’s _Repeatable_ setting is _Yes_, users can add multiple consecutive instances of the field to the document’s metadata.
 
@@ -76,7 +76,7 @@ You can edit your fields to reflect their intended metadata. For example, a text
     ![Editing a field's values](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-metadata-sets/images/06.png)
 3. Click _Save_ when finished.
 
-#### [Translating a Metadata Set](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-metadata-sets#translating-a-metadata-set) <a href="#translating-a-metadata-set" id="translating-a-metadata-set"></a>
+#### Translating a Metadata Set <a href="#translating-a-metadata-set" id="translating-a-metadata-set"></a>
 
 You can translate each of a metadata set’s field values to any supported locales.
 

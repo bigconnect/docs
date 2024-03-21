@@ -1,8 +1,8 @@
 # Connecting to a User Directory
 
-Lightweight Directory Access Protocol (LDAP) servers are common user stores for Liferay DXP. You can configure LDAP at the system scope in System Settings or at the instance scope in Instance settings. Users can be imported from or exported to LDAP.
+Lightweight Directory Access Protocol (LDAP) servers are common user stores for the portal. You can configure LDAP at the system scope in System Settings or at the instance scope in Instance settings. Users can be imported from or exported to LDAP.
 
-### [Adding a New LDAP Server Connection](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/connecting-to-a-user-directory/connecting-to-an-ldap-directory#adding-a-new-ldap-server-connection) <a href="#adding-a-new-ldap-server-connection" id="adding-a-new-ldap-server-connection"></a>
+### Adding a New LDAP Server Connection <a href="#adding-a-new-ldap-server-connection" id="adding-a-new-ldap-server-connection"></a>
 
 To access LDAP configuration settings at the Instance level,
 
@@ -11,13 +11,13 @@ To access LDAP configuration settings at the Instance level,
     ![LDAP configurations are available at the instance level and at the System level.](https://resources.learn.liferay.com/images/dxp/latest/en/users-and-permissions/connecting-to-a-user-directory/connecting-to-an-ldap-directory/images/01.png)
 2. Click _LDAP_ → and click _Servers_
 3. Click the _Add_ button to add an LDAP server connection.
-4. Enter configuration values for your LDAP server. See the [configuration reference](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/connecting-to-a-user-directory/connecting-to-an-ldap-directory#ldap-server-configuration-reference) for details.
+4. Enter configuration values for your LDAP server. See the configuration reference for details.
 
-You may, however, need to customize the rest of the configuration, as it represents “best guesses” as to correct defaults. The default attribute mappings usually provide enough data to synchronize back to the Liferay database when a user attempts to log in. To test the connection to your LDAP server, click the _Test LDAP Connection_ button.
+You may, however, need to customize the rest of the configuration, as it represents “best guesses” as to correct defaults. The default attribute mappings usually provide enough data to synchronize back to the portal database when a user attempts to log in. To test the connection to your LDAP server, click the _Test LDAP Connection_ button.
 
 If you have more than one LDAP server, you can arrange the servers by order of preference using the up/down arrows. Regardless of how many LDAP servers you add, each server has the same configuration options.
 
-#### [Using the System Settings Scope](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/connecting-to-a-user-directory/connecting-to-an-ldap-directory#using-the-system-settings-scope) <a href="#using-the-system-settings-scope" id="using-the-system-settings-scope"></a>
+#### Using the System Settings Scope <a href="#using-the-system-settings-scope" id="using-the-system-settings-scope"></a>
 
 Alternatively, you can define an LDAP server connection at the System Settings scope through the System Settings menu or with the usage of OSGi `.config` files.
 
@@ -37,7 +37,7 @@ companyId=1234
 
 You can find your Virtual Instance ID in _Control Panel_ -> _Configuration_ -> _Virtual Instances_.
 
-### [LDAP Server Configuration Reference](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/connecting-to-a-user-directory/connecting-to-an-ldap-directory#ldap-server-configuration-reference) <a href="#ldap-server-configuration-reference" id="ldap-server-configuration-reference"></a>
+### LDAP Server Configuration Reference <a href="#ldap-server-configuration-reference" id="ldap-server-configuration-reference"></a>
 
 **Server Name:** Enter a name for your LDAP server.
 
@@ -45,23 +45,23 @@ You can find your Virtual Instance ID in _Control Panel_ -> _Configuration_ -> _
 
 These settings cover the connection to LDAP.
 
-**Base Provider URL:** The link to the LDAP server. Make sure the Liferay server can communicate with the LDAP server. If there is a firewall between the two systems, make sure the appropriate ports are opened.
+**Base Provider URL:** The link to the LDAP server. Make sure the portal server can communicate with the LDAP server. If there is a firewall between the two systems, make sure the appropriate ports are opened.
 
 **Base DN:** The Base Distinguished Name for your LDAP directory, usually modeled after your organization. It may look like this: `dc=companynamehere,dc=com`.
 
-**Principal:** The default LDAP administrator user ID is populated here. If your administrator ID differs, use that credential instead. You need an administrative credential because Liferay uses this ID to synchronize user accounts to and from LDAP.
+**Principal:** The default LDAP administrator user ID is populated here. If your administrator ID differs, use that credential instead. You need an administrative credential because the portal uses this ID to synchronize user accounts to and from LDAP.
 
 **Credentials:** Enter the password for the LDAP administrative user.
 
-### [Checkpoint](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/connecting-to-a-user-directory/connecting-to-an-ldap-directory#checkpoint) <a href="#checkpoint" id="checkpoint"></a>
+### Checkpoint <a href="#checkpoint" id="checkpoint"></a>
 
-Before proceeding to fine tune Liferay’s LDAP connections, ensure the following steps have been taken:
+Before proceeding to fine tune the portal’s LDAP connections, ensure the following steps have been taken:
 
 1. The LDAP connection is enabled. Depending on your needs, LDAP authentication may be required so that only users who have been bound may log in.
 2. _Export/Import_: for users in a clustered environment, Enable Import/Export on Startup should be disabled so that there are no massive imports on every node upon start up.
 3. When adding the LDAP server, the _Server Name_, _Default Values_, _Connection_ values are correct. It is always a good idea to click the _Test LDAP Connection_ before saving.
 
-### [Using SSL to Connect to an LDAP Server](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/connecting-to-a-user-directory/connecting-to-an-ldap-directory#using-ssl-to-connect-to-an-ldap-server) <a href="#using-ssl-to-connect-to-an-ldap-server" id="using-ssl-to-connect-to-an-ldap-server"></a>
+### Using SSL to Connect to an LDAP Server <a href="#using-ssl-to-connect-to-an-ldap-server" id="using-ssl-to-connect-to-an-ldap-server"></a>
 
 If you run your LDAP directory in SSL mode to encrypt credential information on the network, you must perform extra steps to share the encryption key and certificate between the two systems.
 
@@ -87,4 +87,4 @@ For example, if your LDAP directory is Microsoft Active Directory on Windows Ser
 
 Save the changes. Communication to LDAP is now encrypted.
 
-To tune or configure how Liferay DXP matches users in LDAP for syncing, please see [configuring import and export](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/connecting-to-a-user-directory/configuring-user-import-and-export).
+To tune or configure how the portal matches users in LDAP for syncing, please see configuring import and export.

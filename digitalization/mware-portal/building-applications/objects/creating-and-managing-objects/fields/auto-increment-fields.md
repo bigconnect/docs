@@ -1,6 +1,6 @@
 # Auto-Increment Fields
 
-Auto-Increment fields are configurable [read-only fields](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/using-read-only-fields) for uniquely identifying object entries in a human-readable format. For example, an IT ticketing system should generate a unique but meaningful identifier for each ticket, so users can refer to each entry easily.
+Auto-Increment fields are configurable read-only fields for uniquely identifying object entries in a human-readable format. For example, an IT ticketing system should generate a unique but meaningful identifier for each ticket, so users can refer to each entry easily.
 
 | Prefix | Starting Value | Suffix | Example Values                                                               |
 | ------ | -------------- | ------ | ---------------------------------------------------------------------------- |
@@ -10,7 +10,7 @@ Auto-Increment fields are configurable [read-only fields](https://learn.liferay.
 
 To add an auto-increment field, first enable its release feature flag. Go to _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)) → _Control Panel_ → _Instance Settings_ → _Feature Flags_. Open the _Release_ section and enable _Auto-Increment Field Type for Objects (LPS-196724)_.
 
-You must configure the starting numeric value. Liferay adds `1` to this value for each subsequent object entry. Optionally, you can add a meaningful suffix and/or prefix to each numeric value.
+You must configure the starting numeric value. The portal adds `1` to this value for each subsequent object entry. Optionally, you can add a meaningful suffix and/or prefix to each numeric value.
 
 ![You must provide the initial value of an auto-increment field.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/fields/auto-increment-fields/images/01.png)
 
@@ -18,13 +18,13 @@ When editing the field, you can change its label and configure how it’s search
 
 ![After creating an auto-increment field, you can edit the label and the searchable settings.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/fields/auto-increment-fields/images/02.png)
 
-### [Exporting and Importing Entries with Auto-Increment Fields](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/auto-increment-fields#exporting-and-importing-entries-with-auto-increment-fields) <a href="#exporting-and-importing-entries-with-auto-increment-fields" id="exporting-and-importing-entries-with-auto-increment-fields"></a>
+### Exporting and Importing Entries with Auto-Increment Fields <a href="#exporting-and-importing-entries-with-auto-increment-fields" id="exporting-and-importing-entries-with-auto-increment-fields"></a>
 
-Object entries are imported and exported using the [Data Migration Center](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/data-migration-center), a [batch client extension](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/batch-client-extensions), or by calling the [batch engine’s import/export task](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/batch-engine-api-basics-exporting-data) endpoints.
+Object entries are imported and exported using the Data Migration Center, a batch client extension, or by calling the batch engine’s import/export task endpoints.
 
 Exporting entries with auto-increment fields preserves the values in the exported JSON. When importing entries that contain auto-increment fields, you must carefully consider whether the data is compatible with the object definition’s existing entries.
 
-Imported entries must have both unique [External Reference Codes (ERCs)](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/using-external-reference-codes) and unique auto-increment values.
+Imported entries must have both unique External Reference Codes (ERCs) and unique auto-increment values.
 
 | Unique ERC | Unique Auto-Increment Value | Successful Import |
 | ---------- | --------------------------- | ----------------- |
@@ -48,7 +48,7 @@ When you import entries, the highest numeric value in the system after the impor
 
 If you import entries with no value in an auto-increment field, the system generates one according to the specified prefix/suffix format and uses the next numeric value in the series.
 
-### [Using Auto-Increment Fields with APIs](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/auto-increment-fields#using-auto-increment-fields-with-apis) <a href="#using-auto-increment-fields-with-apis" id="using-auto-increment-fields-with-apis"></a>
+### Using Auto-Increment Fields with APIs <a href="#using-auto-increment-fields-with-apis" id="using-auto-increment-fields-with-apis"></a>
 
 When you make a GET request to return object entries with an auto-increment field, the value is returned as a JSON string:
 
@@ -56,7 +56,7 @@ When you make a GET request to return object entries with an auto-increment fiel
 "ticket" : "ticket-12"
 ```
 
-To [add an object definition field](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/managing-objects-with-headless-apis) with the headless API, use a POST request body like this one, which defines this auto-increment field format: `foo-01-bar`, `foo-02-bar`, etc.
+To add an object definition field with the headless API, use a POST request body like this one, which defines this auto-increment field format: `foo-01-bar`, `foo-02-bar`, etc.
 
 ```json
 {

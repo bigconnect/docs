@@ -1,14 +1,14 @@
 # Microservice Client Extensions
 
-Define microservice client extensions to run your own code in response to events in your Liferay instance. How you implement the code is up to you: use the patterns and technologies you like. Microservice client extensions are hosted outside of Liferay and are triggered by cues from Liferay itself.
+Define microservice client extensions to run your own code in response to events in your portal instance. How you implement the code is up to you: use the patterns and technologies you like. Microservice client extensions are hosted outside of the portal and are triggered by cues from the portal itself.
 
-Microservice client extensions require pre-configured authentication profiles to handle requests properly and call protected Liferay APIs. You can add authentication profiles by including them as client extensions within the same project (e.g., [OAuth user agent client extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/configuration-client-extensions#oauth-user-agent-client-extensions)).
+Microservice client extensions require pre-configured authentication profiles to handle requests properly and call protected APIs. You can add authentication profiles by including them as client extensions within the same project (e.g., OAuth user agent client extensions).
 
-Microservice client extensions are hosted automatically when deployed within Liferay Cloud. If self-hosting a Liferay instance, you must host the microservices that these client extensions use separately.
+Microservice client extensions are hosted automatically when deployed within Cloud. If self-hosting a portal instance, you must host the microservices that these client extensions use separately.
 
-### [Object Action Client Extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions#object-action-client-extensions) <a href="#object-action-client-extensions" id="object-action-client-extensions"></a>
+### Object Action Client Extensions <a href="#object-action-client-extensions" id="object-action-client-extensions"></a>
 
-Object action client extensions define external action handlers that bind to an [object definition’s](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects) action events. Your microservice’s handler code is executed when the object action occurs.
+Object action client extensions define external action handlers that bind to an object definition’s action events. Your microservice’s handler code is executed when the object action occurs.
 
 Use the `type` value in your `client-extension.yaml` file to specify an object action client extension:
 
@@ -16,9 +16,9 @@ Use the `type` value in your `client-extension.yaml` file to specify an object a
 type: objectAction
 ```
 
-### [Object Validation Rule Client Extension](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions#object-validation-rule-client-extension) <a href="#object-validation-rule-client-extension" id="object-validation-rule-client-extension"></a>
+### Object Validation Rule Client Extension <a href="#object-validation-rule-client-extension" id="object-validation-rule-client-extension"></a>
 
-Object Validation Rule client extensions define custom [validations](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/validations) that you can add to object definitions. They work by defining external event handlers that bind to object entry submission events and execute when users create or update entries. When creating these client extensions, you can use any number of conditions for determining valid field inputs, but each condition must set and return the `validationCriteriaMet` key as either `true` or `false`. See [`ObjectValidationRule1RestController`](https://github.com/liferay/liferay-portal/blob/master/workspaces/liferay-sample-workspace/client-extensions/liferay-sample-etc-spring-boot/src/main/java/com/liferay/sample/ObjectValidationRule1RestController.java) for a basic example.
+Object Validation Rule client extensions define custom validations that you can add to object definitions. They work by defining external event handlers that bind to object entry submission events and execute when users create or update entries. When creating these client extensions, you can use any number of conditions for determining valid field inputs, but each condition must set and return the `validationCriteriaMet` key as either `true` or `false`. See `ObjectValidationRule1RestController` for a basic example.
 
 To use this type of client extension, add the `objectValidationRule` type to your `client-extension.yaml` file:
 
@@ -26,13 +26,13 @@ To use this type of client extension, add the `objectValidationRule` type to you
 type: objectValidationRule
 ```
 
-Once deployed, these client extensions appear as options when adding validations to an object definition. See [Adding Field Validations](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/validations/adding-field-validations) for more information.
+Once deployed, these client extensions appear as options when adding validations to an object definition. See Adding Field Validations for more information.
 
 ![These client extensions appear as options when adding validations to an object definition.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/client-extensions/microservice-client-extensions/images/01.png)
 
-### [Workflow Action Client Extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions#workflow-action-client-extensions) <a href="#workflow-action-client-extensions" id="workflow-action-client-extensions"></a>
+### Workflow Action Client Extensions <a href="#workflow-action-client-extensions" id="workflow-action-client-extensions"></a>
 
-Workflow action client extensions define external workflow action handlers that bind to action events from a [Liferay workflow](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/introduction-to-workflow). Your microservice’s handler code is executed when the workflow action occurs.
+Workflow action client extensions define external workflow action handlers that bind to action events from a workflow. Your microservice’s handler code is executed when the workflow action occurs.
 
 Use the `type` value in your `client-extension.yaml` file to specify a workflow action client extension:
 
@@ -40,9 +40,9 @@ Use the `type` value in your `client-extension.yaml` file to specify a workflow 
 type: workflowAction
 ```
 
-### [Notification Type Client Extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions#notification-type-client-extensions) <a href="#notification-type-client-extensions" id="notification-type-client-extensions"></a>
+### Notification Type Client Extensions <a href="#notification-type-client-extensions" id="notification-type-client-extensions"></a>
 
-Notification type client extensions define external notification handlers that bind to [notification events](https://learn.liferay.com/web/guest/w/dxp/process-automation/notifications) in Liferay. Your microservice’s handler code is executed when the notification event occurs.
+Notification type client extensions define external notification handlers that bind to notification events in the portal. Your microservice’s handler code is executed when the notification event occurs.
 
 Use the `type` value in your `client-extension.yaml` file to specify a notification type client extension:
 
@@ -52,23 +52,23 @@ type: notificationType
 
 ## Using a Microservice Client Extension <a href="#using-a-microservice-client-extension" id="using-a-microservice-client-extension"></a>
 
-A microservice client extension is a standalone server process that relies on OAuth 2 for communication with Liferay. The microservice is a resource server and Liferay is the authorization server. See [Using OAuth 2](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2) for more information. The sample projects in this demonstration ingest the payload from a protected route in the resource server (microservice) and display it in a front-end widget based on a [custom element](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/front-end-client-extensions/understanding-custom-element-and-iframe-client-extensions) client extension. In order to coordinate with the standalone [Spring Boot application](https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started), two client extension types are used in this example:
+A microservice client extension is a standalone server process that relies on OAuth 2 for communication with the portal. The microservice is a resource server and the portal is the authorization server. See Using OAuth 2 for more information. The sample projects in this demonstration ingest the payload from a protected route in the resource server (microservice) and display it in a front-end widget based on a custom element client extension. In order to coordinate with the standalone [Spring Boot application](https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started), two client extension types are used in this example:
 
-| Deployable or Runnable Code                            | Type                                                                                                                                                                                                             | Description                                                                                                       | Workspace Sample                |
-| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| Deploy the Liferay Sample OAuth Application User Agent | Client extension: [`oAuthApplicationUserAgent`](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/configuration-client-extensions/oauth-user-agent-yaml-configuration-reference) | Configures the authorization channel so the logged in user sees the microservice’s payload in the custom element. | liferay-sample-etc-spring-boot  |
-| Run the Spring Boot microservice application           | Protected endpoint: `/dad/joke`                                                                                                                                                                                  | A protected endpoint to the resource server. It takes a JWT token and returns a payload.                          | liferay-sample-etc-spring-boot  |
-| Deploy the Liferay Sample Custom Element 2             | Client extension: [`customElement`](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/front-end-client-extensions/custom-element-yaml-configuration-reference)                   | Defines a custom element and requests the payload from the resource server, through its OAuth 2 client code.      | liferay-sample-custom-element-2 |
+| Deployable or Runnable Code                    | Type                                          | Description                                                                                                       | Workspace Sample                |
+| ---------------------------------------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| Deploy the Sample OAuth Application User Agent | Client extension: `oAuthApplicationUserAgent` | Configures the authorization channel so the logged in user sees the microservice’s payload in the custom element. | liferay-sample-etc-spring-boot  |
+| Run the Spring Boot microservice application   | Protected endpoint: `/dad/joke`               | A protected endpoint to the resource server. It takes a JWT token and returns a payload.                          | liferay-sample-etc-spring-boot  |
+| Deploy the Sample Custom Element 2             | Client extension: `customElement`             | Defines a custom element and requests the payload from the resource server, through its OAuth 2 client code.      | liferay-sample-custom-element-2 |
 
 NOTE
 
 For convenience, this tutorial uses the ready-to-deploy custom element from the sample workspace. However, the custom element client extension isn’t the focus here. Any front-end technology that can call the authorization server and display the payload from the resource server can be used in place of the custom element.
 
-The resource server has the protected route `/dad/joke`. On the behalf of the logged in user, the client (i.e., widget) requests an authorization code from the authorization server (Liferay). Once a token is granted, the client communicates with the resource server (Spring Boot application).
+The resource server has the protected route `/dad/joke`. On the behalf of the logged in user, the client (i.e., widget) requests an authorization code from the authorization server (the portal). Once a token is granted, the client communicates with the resource server (Spring Boot application).
 
 Extensions of type `oAuthApplicationUserAgent` are registered as having a client profile User Agent Application, meaning that the authorization code flow is used.
 
-### [Prerequisites](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions/using-a-microservice-client-extension#prerequisites) <a href="#prerequisites" id="prerequisites"></a>
+### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 To start developing client extensions,
 
@@ -76,7 +76,7 @@ To start developing client extensions,
 
     NOTE
 
-    Check the [compatibility matrix](https://help.liferay.com/hc/en-us/articles/4411310034829-Liferay-DXP-7-4-Compatibility-Matrix) for supported JDKs, databases, and environments. See [JVM Configuration](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/jvm-configuration) for recommended JVM settings.
+    Check the compatibility matrix for supported JDKs, databases, and environments. See JVM Configuration for recommended JVM settings.
 2.  Download and unzip the sample workspace:
 
     ```bash
@@ -87,17 +87,17 @@ To start developing client extensions,
     unzip -d liferay-sample-workspace com.liferay.sample.workspace-latest.zip
     ```
 
-Now you have the tools to start the microservice and deploy the client extension(s) to Liferay.
+Now you have the tools to start the microservice and deploy the client extension(s) to the portal.
 
-Start a new Liferay instance by running
+Start a new portal instance by running
 
 ```bash
 docker run -it -m 8g -p 8080:8080 liferay/portal:7.4.3.112-ga112
 ```
 
-Sign in to Liferay at [http://localhost:8080](http://localhost:8080/). Use the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
+Sign in to the portal at [http://localhost:8080](http://localhost:8080/). Use the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
 
-### [Examine the Microservice Project’s Client Extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions/using-a-microservice-client-extension#examine-the-microservice-projects-client-extensions) <a href="#examine-the-microservice-projects-client-extensions" id="examine-the-microservice-projects-client-extensions"></a>
+### Examine the Microservice Project’s Client Extensions <a href="#examine-the-microservice-projects-client-extensions" id="examine-the-microservice-projects-client-extensions"></a>
 
 The `client-extensions/liferay-sample-etc-spring-boot/client-extension.yaml` file defines the microservice client extension project in the sample workspace. Most of the defined client extensions (e.g., the ones with `type: *Action`) are not needed for this example. The necessary lines from the `client-extension.yaml` can be boiled down to
 
@@ -113,11 +113,11 @@ liferay-sample-etc-spring-boot-oauth-application-user-agent:
     type: oAuthApplicationUserAgent
 ```
 
-The external application/microservice is created with the `bootJar` command that is available from the [Spring Boot Gradle Plugin](https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/). The application JAR must be included in the LUFFA for deployment in Liferay SaaS.
+The external application/microservice is created with the `bootJar` command that is available from the Spring Boot Gradle Plugin. The application JAR must be included in the LUFFA for deployment in SaaS.
 
-The most important part of the `client-extension.yaml` is in the `liferay-sample-etc-spring-boot-oauth-application-user-agent` definition. This sets up Liferay as the authorization server, so that the front-end client extension you deploy next can call the resource server’s secure endpoint and display its payload.
+The most important part of the `client-extension.yaml` is in the `liferay-sample-etc-spring-boot-oauth-application-user-agent` definition. This sets up the portal as the authorization server, so that the front-end client extension you deploy next can call the resource server’s secure endpoint and display its payload.
 
-### [Examine the Custom Element Project’s Client Extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions/using-a-microservice-client-extension#examine-the-custom-element-projects-client-extensions) <a href="#examine-the-custom-element-projects-client-extensions" id="examine-the-custom-element-projects-client-extensions"></a>
+### Examine the Custom Element Project’s Client Extensions <a href="#examine-the-custom-element-projects-client-extensions" id="examine-the-custom-element-projects-client-extensions"></a>
 
 The `client-extensions/liferay-sample-custom-element-2/client-extension.yaml` file defines the custom-element client extension project in the sample workspace:
 
@@ -139,9 +139,9 @@ liferay-sample-custom-element-2:
     useESM: true
 ```
 
-See [Understanding Custom Element and IFrame Client Extensions](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/front-end-client-extensions/understanding-custom-element-and-iframe-client-extensions) for more information.
+See Understanding Custom Element and IFrame Client Extensions for more information.
 
-### [Deploy the OAuth Application User Agent Client Extension](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions/using-a-microservice-client-extension#deploy-the-oauth-application-user-agent-client-extension) <a href="#deploy-the-oauth-application-user-agent-client-extension" id="deploy-the-oauth-application-user-agent-client-extension"></a>
+### Deploy the OAuth Application User Agent Client Extension <a href="#deploy-the-oauth-application-user-agent-client-extension" id="deploy-the-oauth-application-user-agent-client-extension"></a>
 
 1. Go to the sample workspace’s `client-extensions/liferay-sample-etc-spring-boot` folder.
 2.  Run
@@ -149,7 +149,7 @@ See [Understanding Custom Element and IFrame Client Extensions](https://learn.li
     ```bash
     ../../gradlew clean deploy -Ddeploy.docker.container.id=$(docker ps -lq)
     ```
-3.  In Liferay’s log, confirm that the client extension deployed and started:
+3.  In the portal’s log, confirm that the client extension deployed and started:
 
     ```log
     STARTED liferay-sample-etc-spring-boot_1.0.0 [1588]
@@ -159,17 +159,17 @@ See [Understanding Custom Element and IFrame Client Extensions](https://learn.li
     ```
 
     In addition, messages about the OAuth user agent are logged.
-4.  Verify that the OAuth Application User Agent was added to Liferay. Go to _Control Panel_ → _OAuth2 Administration_.
+4.  Verify that the OAuth Application User Agent was added to the portal. Go to _Control Panel_ → _OAuth2 Administration_.
 
-    ![The Liferay Sample OAuth Application User Agent is added when you deploy the client extension.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/client-extensions/microservice-client-extensions/using-a-microservice-client-extension/images/01.png)
+    ![The Sample OAuth Application User Agent is added when you deploy the client extension.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/client-extensions/microservice-client-extensions/using-a-microservice-client-extension/images/01.png)
 
-The Liferay Sample OAuth Application User Agent provides the [OAuth 2 authorization](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2) needed so that Liferay can access the Spring Boot application’s data through its protected endpoint. All that is needed for Liferay to authorize the application in this case is declaring the external reference code in the `application-default.properties`:
+The Sample OAuth Application User Agent provides the OAuth 2 authorization needed so that the portal can access the Spring Boot application’s data through its protected endpoint. All that is needed for the portal to authorize the application in this case is declaring the external reference code in the `application-default.properties`:
 
 ```properties
 liferay.oauth.application.external.reference.codes=liferay-sample-etc-spring-boot-oauth-application-user-agent
 ```
 
-### [Start the Microservice](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions/using-a-microservice-client-extension#start-the-microservice) <a href="#start-the-microservice" id="start-the-microservice"></a>
+### Start the Microservice <a href="#start-the-microservice" id="start-the-microservice"></a>
 
 From the `client-extensions/liferay-etc-spring-boot/` folder, run
 
@@ -187,9 +187,9 @@ The Spring Boot application starts and prints messages in the log:
 > :client-extensions:liferay-sample-etc-spring-boot:bootRun
 ```
 
-### [Deploy the Custom Element Client Extension](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions/using-a-microservice-client-extension#deploy-the-custom-element-client-extension) <a href="#deploy-the-custom-element-client-extension" id="deploy-the-custom-element-client-extension"></a>
+### Deploy the Custom Element Client Extension <a href="#deploy-the-custom-element-client-extension" id="deploy-the-custom-element-client-extension"></a>
 
-The microservice is running, and the OAuth2 Application communication channel is now provisioned and available in DXP. This example uses a [Custom Element client extension](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/front-end-client-extensions/understanding-custom-element-and-iframe-client-extensions) to display the data generated by the microservice. To deploy it,
+The microservice is running, and the OAuth2 Application communication channel is now provisioned and available in the portal. This example uses a Custom Element client extension to display the data generated by the microservice. To deploy it,
 
 1. Go to the `client-extensions/liferay-sample-custom-element-2` folder.
 2.  Run
@@ -198,15 +198,15 @@ The microservice is running, and the OAuth2 Application communication channel is
     ../../gradlew clean deploy -Ddeploy.docker.container.id=$(docker ps -lq)
     ```
 
-### [Display Dad Jokes on a Page](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions/using-a-microservice-client-extension#display-dad-jokes-on-a-page) <a href="#display-dad-jokes-on-a-page" id="display-dad-jokes-on-a-page"></a>
+### Display Dad Jokes on a Page <a href="#display-dad-jokes-on-a-page" id="display-dad-jokes-on-a-page"></a>
 
-Add the Liferay Sample Custom Element 2 widget to a page in your running Liferay. When you publish the page, dad jokes appear in the widget:
+Add the Sample Custom Element 2 widget to a page in your running portal. When you publish the page, dad jokes appear in the widget:
 
 ![Custom Element 2 displays a bad joke each time the page is loaded.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/client-extensions/microservice-client-extensions/using-a-microservice-client-extension/images/02.png)
 
-### [How OAuth2 Authorizes the Request](https://learn.liferay.com/web/guest/w/dxp/building-applications/client-extensions/microservice-client-extensions/using-a-microservice-client-extension#how-oauth2-authorizes-the-request) <a href="#how-oauth2-authorizes-the-request" id="how-oauth2-authorizes-the-request"></a>
+### How OAuth2 Authorizes the Request <a href="#how-oauth2-authorizes-the-request" id="how-oauth2-authorizes-the-request"></a>
 
-When an authenticated user loads a page with the client application on it (the custom element), it requests an authorization code, which is available because of the communication channel configured by the user agent extension (i.e., Liferay is the authorization server). Liferay returns the code, then the client asks for the access token. With the token, the client can access the endpoint in the microservice. The resource server validates the JWT token with Liferay using the JWKS URI endpoint. This is done automatically in the background.
+When an authenticated user loads a page with the client application on it (the custom element), it requests an authorization code, which is available because of the communication channel configured by the user agent extension (i.e., the portal is the authorization server). The portal returns the code, then the client asks for the access token. With the token, the client can access the endpoint in the microservice. The resource server validates the JWT token with the portal using the JWKS URI endpoint. This is done automatically in the background.
 
 In the `DadJoke.js` file of the `liferay-sample-custom-element-2` client extension, there’s an important call that initiates the authorization pipeline:
 
@@ -218,7 +218,7 @@ try {
 }
 ```
 
-This call provides the client with a token, which the client can use as a bearer token when requesting the resources from the `/dad/joke` route in the resource server. The client code doesn’t need to worry about the location of the server it’s requesting, as this information is encapsulated in the OAuth 2 application. In self-hosted environments it’s declared in the OAuth application user agent’s `client-extension.yaml` properties, as `.serviceAddress` and `.serviceScheme`. In Liferay SaaS environments the resource server is controlled by Liferay, so no declaration of its location is necessary. This sets up authorization code flow for the client and resource server communication, so all that’s left is for the client to call the endpoint in the resource server. `DadJoke.js` fetches from the `/dad/joke` route like this:
+This call provides the client with a token, which the client can use as a bearer token when requesting the resources from the `/dad/joke` route in the resource server. The client code doesn’t need to worry about the location of the server it’s requesting, as this information is encapsulated in the OAuth 2 application. In self-hosted environments it’s declared in the OAuth application user agent’s `client-extension.yaml` properties, as `.serviceAddress` and `.serviceScheme`. In SaaS environments the resource server is controlled by the portal, so no declaration of its location is necessary. This sets up authorization code flow for the client and resource server communication, so all that’s left is for the client to call the endpoint in the resource server. `DadJoke.js` fetches from the `/dad/joke` route like this:
 
 ```js
 React.useEffect(() => {

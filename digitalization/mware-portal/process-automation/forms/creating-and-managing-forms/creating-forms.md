@@ -1,6 +1,6 @@
 # Creating Forms
 
-You can create multi-field forms with the _Forms_ application. Only authenticated users with the requisite [Process Automation Permissions](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/forms-permissions-reference) can create forms. At minimum, they should have permission to access the _Site Administration_ menu and the _Forms_ application.) To learn more about DXP Roles and Permissions, see [Roles and Permissions](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/understanding-roles-and-permissions).
+You can create multi-field forms with the _Forms_ application. Only authenticated users with the requisite Process Automation Permissions can create forms. At minimum, they should have permission to access the _Site Administration_ menu and the _Forms_ application.) To learn more about Roles and Permissions, see Roles and Permissions.
 
 ![Forms are displayed in List format by default.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/creating-forms/images/01.png)
 
@@ -22,7 +22,7 @@ The sample below is a hotel guest feedback survey form.
    * **Label**: _Rate your visit to the hotel._
    * **Help Text**: Leave this blank for now. If you want a subheading for your field to provide additional guidance, this would be useful.
    * Switch the Toggle to _YES_ in the **Required Field** selector.
-   * Leave the manual option checked for creating-forms the list of selections. To learn about populating the field with a data provider, see [Data Providers](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/data-providers/using-the-rest-data-provider-to-populate-form-options).
+   * Leave the manual option checked for creating-forms the list of selections. To learn about populating the field with a data provider, see Data Providers.
 10. In the _Options_ section, enter the values for the survey question:
 
     * **Excellent**
@@ -44,9 +44,9 @@ The sample below is a hotel guest feedback survey form.
 13. Close the sidebar.
 14. Click _Save Form_ to save the form as a draft.
 
-#### [Adding Form Pages](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/creating-forms#adding-form-pages) <a href="#adding-form-pages" id="adding-form-pages"></a>
+#### Adding Form Pages <a href="#adding-form-pages" id="adding-form-pages"></a>
 
-If you decide multiple pages are appropriate for your form, Liferay Forms supports multi-page forms.
+If you decide multiple pages are appropriate for your form, Forms supports multi-page forms.
 
 To add Form Pages,
 
@@ -59,11 +59,11 @@ To add Form Pages,
 5. Drag and drop additional elements.
 6. Add even more pages if necessary.
 
-In Liferay 7.3, you can reorder existing form pages. In the form builder, click the up or down arrows in the right corner of the page.
+In version 7.3, you can reorder existing form pages. In the form builder, click the up or down arrows in the right corner of the page.
 
 ![You can reorder Form Pages.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/creating-forms/images/13.png)
 
-#### [Adding a Success Page](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/creating-forms#adding-a-success-page) <a href="#adding-a-success-page" id="adding-a-success-page"></a>
+#### Adding a Success Page <a href="#adding-a-success-page" id="adding-a-success-page"></a>
 
 The _Success Page_ provides resolution for Form submitters by letting them know they have reached the end of form and that the form has been successfully submitted.
 
@@ -80,7 +80,7 @@ To customize the Success Page,
 
 ![The default Success Page is customizable.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/creating-forms/images/12.png)
 
-#### [Publishing a Form](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/creating-forms#publishing-a-form) <a href="#publishing-a-form" id="publishing-a-form"></a>
+#### Publishing a Form <a href="#publishing-a-form" id="publishing-a-form"></a>
 
 Once you have completed your form, click the _Publish_ button to make it publicly available for your target audience.
 
@@ -88,9 +88,9 @@ When you publish a form, a URL is generated that can be sent to users to fill ou
 
 ![Once a form has been published, a URL is generated that can be shared.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/forms/creating-and-managing-forms/creating-forms/images/11.png)
 
-See [Sharing Forms](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/sharing-forms-and-managing-submissions/sharing-forms) to learn more.
+See Sharing Forms to learn more.
 
-### [Duplicating a Form](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/creating-and-managing-forms/creating-forms#duplicating-a-form) <a href="#duplicating-a-form" id="duplicating-a-form"></a>
+### Duplicating a Form <a href="#duplicating-a-form" id="duplicating-a-form"></a>
 
 Forms can be duplicated in order to create similar forms without having to create one from scratch. To duplicate a form follow these steps:
 

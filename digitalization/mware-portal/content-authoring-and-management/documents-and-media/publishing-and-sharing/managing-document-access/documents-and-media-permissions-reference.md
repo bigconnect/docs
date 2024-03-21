@@ -1,6 +1,6 @@
 # Documents and Media Permissions Reference
 
-Manage access to Documents and Media assets using [application](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#general-permissions) and [resource](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#resource-permissions) permissions. With role-based access control, you can ensure only the intended users can create, view, download, and manage documents.
+Manage access to Documents and Media assets using application and resource permissions. With role-based access control, you can ensure only the intended users can create, view, download, and manage documents.
 
 You can grant these permissions in the Roles application under Content & Data in the permissions side panel.
 
@@ -10,11 +10,11 @@ Alternatively, you can assign individual resource permissions in the Documents a
 
 ![Assign individual resource permissions in the Documents and Media application.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference/images/02.png)
 
-See [Defining Role Permissions](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/defining-role-permissions) for more information.
+See Defining Role Permissions for more information.
 
-### [General Permissions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#general-permissions) <a href="#general-permissions" id="general-permissions"></a>
+### General Permissions <a href="#general-permissions" id="general-permissions"></a>
 
-General permissions grant access to the Documents and Media application itself and do not grant [resource-related permissions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#resource-permissions).
+General permissions grant access to the Documents and Media application itself and do not grant resource-related permissions.
 
 | Permission                                      | Description                                                                                                                                                                           |
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -24,11 +24,11 @@ General permissions grant access to the Documents and Media application itself a
 | Preferences                                     | N/A                                                                                                                                                                                   |
 | View                                            | View the Documents and Media application page.                                                                                                                                        |
 
-### [Resource Permissions](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#resource-permissions) <a href="#resource-permissions" id="resource-permissions"></a>
+### Resource Permissions <a href="#resource-permissions" id="resource-permissions"></a>
 
-Resource permissions grant access to view and act on resources in the Documents and Media application. Some of these permissions are for [creating entities](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#documents), while others are for acting on existing entities (e.g., [folders](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#documents-folder), [documents](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#document)).
+Resource permissions grant access to view and act on resources in the Documents and Media application. Some of these permissions are for creating entities, while others are for acting on existing entities (e.g., folders, documents).
 
-#### [Documents](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#documents) <a href="#documents" id="documents"></a>
+#### Documents <a href="#documents" id="documents"></a>
 
 | Permission        | Description                                                                                    |
 | ----------------- | ---------------------------------------------------------------------------------------------- |
@@ -43,7 +43,7 @@ Resource permissions grant access to view and act on resources in the Documents 
 | Update            | Edit resources in Documents and Media.                                                         |
 | View              | View resources in Documents and Media.                                                         |
 
-#### [Documents Folder](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#documents-folder) <a href="#documents-folder" id="documents-folder"></a>
+#### Documents Folder <a href="#documents-folder" id="documents-folder"></a>
 
 | Permission    | Description                                                                              |
 | ------------- | ---------------------------------------------------------------------------------------- |
@@ -57,7 +57,7 @@ Resource permissions grant access to view and act on resources in the Documents 
 | Update        | Edit or move folders.                                                                    |
 | View          | View folders.                                                                            |
 
-#### [Document](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#document) <a href="#document" id="document"></a>
+#### Document <a href="#document" id="document"></a>
 
 | Permission        | Description                                                                                                                                                                                                          |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -73,9 +73,9 @@ Resource permissions grant access to view and act on resources in the Documents 
 
 IMPORTANT
 
-For Liferay 7.4 U75/GA75 and earlier versions, the view permission grants users permission to download assets. For 7.4 U76+/GA76+, Documents and Media includes a separate download permission, so you can manage view and download access separately. When upgrading, Liferay automatically assigns the download permission to all roles with the view permission. By default all users, including unauthenticated users, can download files. If you want to limit download access, you must remove this permission from roles that should not be able to download files.
+For version 7.4 U75/GA75 and earlier versions, the view permission grants users permission to download assets. For 7.4 U76+/GA76+, Documents and Media includes a separate download permission, so you can manage view and download access separately. When upgrading, the portal automatically assigns the download permission to all roles with the view permission. By default all users, including unauthenticated users, can download files. If you want to limit download access, you must remove this permission from roles that should not be able to download files.
 
-#### [Shortcut](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#shortcut) <a href="#shortcut" id="shortcut"></a>
+#### Shortcut <a href="#shortcut" id="shortcut"></a>
 
 | Permission  | Description                           |
 | ----------- | ------------------------------------- |
@@ -84,7 +84,7 @@ For Liferay 7.4 U75/GA75 and earlier versions, the view permission grants users 
 | Update      | Edit or move shortcuts.               |
 | View        | View shortcuts.                       |
 
-#### [Document Type](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#document-type) <a href="#document-type" id="document-type"></a>
+#### Document Type <a href="#document-type" id="document-type"></a>
 
 | Permission  | Description                                     |
 | ----------- | ----------------------------------------------- |
@@ -93,7 +93,7 @@ For Liferay 7.4 U75/GA75 and earlier versions, the view permission grants users 
 | Update      | Edit document types.                            |
 | View        | View document types.                            |
 
-#### [Document Metadata](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/documents-and-media-permissions-reference#document-metadata) <a href="#document-metadata" id="document-metadata"></a>
+#### Document Metadata <a href="#document-metadata" id="document-metadata"></a>
 
 | Permission  | Description                                    |
 | ----------- | ---------------------------------------------- |

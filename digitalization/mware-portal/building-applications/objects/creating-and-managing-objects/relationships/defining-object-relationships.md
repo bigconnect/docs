@@ -28,13 +28,13 @@ Relationships add fields and tables to object definitions for relating their ent
 
 Once saved, you can use the relationship to relate entries.
 
-You can edit the relationship to configure its [deletion type](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/relationships/defining-object-relationships#configuring-deletion-type) or make it [mandatory](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/relationships/defining-object-relationships#making-relationship-fields-mandatory).
+You can edit the relationship to configure its deletion type or make it mandatory.
 
 IMPORTANT
 
-Relationship fields automatically appear in an object’s default layout. Displaying relationship tables requires a custom layout with a [Relationships tab](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/layouts/designing-object-layouts#adding-relationships-tabs). This tab lists all entries related to the current entry. System objects do not support custom layouts, so they cannot display relationship fields or tables. You can only access their relationship fields via REST APIs. See [Designing Object Layouts](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/layouts/designing-object-layouts) for more information.
+Relationship fields automatically appear in an object’s default layout. Displaying relationship tables requires a custom layout with a Relationships tab. This tab lists all entries related to the current entry. System objects do not support custom layouts, so they cannot display relationship fields or tables. You can only access their relationship fields via REST APIs. See Designing Object Layouts for more information.
 
-### [Configuring Deletion Type](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/relationships/defining-object-relationships#configuring-deletion-type) <a href="#configuring-deletion-type" id="configuring-deletion-type"></a>
+### Configuring Deletion Type <a href="#configuring-deletion-type" id="configuring-deletion-type"></a>
 
 After defining a relationship, you can configure its deletion type. This setting determines how entry deletion is handled when an entry relates to another entry.
 
@@ -48,11 +48,11 @@ Available options include _Prevent_, _Disassociate_, and _Cascade_.
 
 **Cascade**: Allow users to delete parent entries while they are related to child entries. Deleting parent entries also deletes their related entries if the user has permission to delete entries in the child object.
 
-### [Making Relationship Fields Mandatory](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/relationships/defining-object-relationships#making-relationship-fields-mandatory) <a href="#making-relationship-fields-mandatory" id="making-relationship-fields-mandatory"></a>
+### Making Relationship Fields Mandatory <a href="#making-relationship-fields-mandatory" id="making-relationship-fields-mandatory"></a>
 
-Liferay 7.4 U47+/GA47+
+Version 7.4 +
 
-Objects on the child side of a one-to-many relationship inherit relationship fields. In some scenarios, you may want to make these fields mandatory. For example, if you’re creating a Ticket object, you may want to define a mandatory relationship field for selecting an ‘assignee’. Or if you want to [restrict access to object data](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/using-system-objects-with-custom-objects/restricting-access-to-object-data-by-account) by account, you should make the object’s relationship with the account object mandatory.
+Objects on the child side of a one-to-many relationship inherit relationship fields. In some scenarios, you may want to make these fields mandatory. For example, if you’re creating a Ticket object, you may want to define a mandatory relationship field for selecting an ‘assignee’. Or if you want to restrict access to object data by account, you should make the object’s relationship with the account object mandatory.
 
 Follow these steps to make a relationship field mandatory:
 

@@ -17,7 +17,7 @@ TIP
 
 If you edit a file without checking it out, the file’s edit screen displays a toggle for _Customize the Version Number Increment and Describe My Changes_. Setting this to _YES_ lets you specify the version increment’s type and description.
 
-### [Viewing the File’s Version History](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/managing-document-changes-with-checkout#viewing-the-files-version-history) <a href="#viewing-the-files-version-history" id="viewing-the-files-version-history"></a>
+### Viewing the File’s Version History <a href="#viewing-the-files-version-history" id="viewing-the-files-version-history"></a>
 
 Follow these steps to access a file’s version history:
 
@@ -25,7 +25,7 @@ Follow these steps to access a file’s version history:
 2. Click the file’s _Info_ button (![i](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-information.png)) at the top-right of the screen. This opens the file’s info panel.
 3.  Select the _Versions_ tab in the info panel.
 
-    ![Liferay keeps track of the version history.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/managing-document-changes-with-checkout/images/02.png)
+    ![MWARE Portal keeps track of the version history.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/managing-document-changes-with-checkout/images/02.png)
 
 Each file version has an Actions menu (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) that you can use to perform the following actions on that file version:
 
@@ -36,8 +36,8 @@ Each file version has an Actions menu (![Actions](https://resources.learn.lifera
 | **Revert**         | Restores the selected file version as a new major file version. Note that this option isn’t available for the newest file version. |
 | **Delete Version** | Remove the file version from the Document Library. All other file versions remain intact.                                          |
 
-### [Using WebDAV](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/managing-document-access/managing-document-changes-with-checkout#using-webdav) <a href="#using-webdav" id="using-webdav"></a>
+### Using WebDAV <a href="#using-webdav" id="using-webdav"></a>
 
-You can manage files using WebDAV and continue to track version history. To learn more, see [Accessing Documents with WebDAV](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/publishing-and-sharing/accessing-documents-with-webdav).
+You can manage files using WebDAV and continue to track version history. To learn more, see Accessing Documents with WebDAV.
 
 \

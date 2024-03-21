@@ -1,8 +1,8 @@
 # Geolocating Assets
 
-Geolocation adds the geographic coordinates where an asset was created as metadata to an asset. This feature is provided as an optional field which can be included in a [Web Content structure](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/understanding-web-content-structures), Dynamic Data List field, or a Documents and Media [Document Type](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-document-types) or a [Metadata Set](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-metadata-sets).
+Geolocation adds the geographic coordinates where an asset was created as metadata to an asset. This feature is provided as an optional field which can be included in a Web Content structure, Dynamic Data List field, or a Documents and Media Document Type or a Metadata Set.
 
-### [Geolocating Web Content](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/geolocating-assets#geolocating-web-content) <a href="#geolocating-web-content" id="geolocating-web-content"></a>
+### Geolocating Web Content <a href="#geolocating-web-content" id="geolocating-web-content"></a>
 
 To use geolocation in your web content, you must create a [structure and template](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/understanding-web-content-structures) that includes a Geolocation field.
 
@@ -24,11 +24,11 @@ NOTE
 
 Depending on your browser settings, you may need to configure it to share your location.
 
-### [Geolocating Data Lists](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/geolocating-assets#geolocating-data-lists) <a href="#geolocating-data-lists" id="geolocating-data-lists"></a>
+### Geolocating Data Lists <a href="#geolocating-data-lists" id="geolocating-data-lists"></a>
 
 To use geolocation in your Dynamic Data Lists, you must first create a data definition that includes a geolocation field.
 
-#### [Creating a New Data List Definition](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/geolocating-assets#creating-a-new-data-list-definition) <a href="#creating-a-new-data-list-definition" id="creating-a-new-data-list-definition"></a>
+#### Creating a New Data List Definition <a href="#creating-a-new-data-list-definition" id="creating-a-new-data-list-definition"></a>
 
 1. Open the Product Menu and navigate to your site.
 2.  Click _Content & Data_ → _Dynamic Data Lists_.
@@ -46,7 +46,7 @@ To use geolocation in your Dynamic Data Lists, you must first create a data defi
 
 Now that the Data Definition has been created, create a new Data List using this definition.
 
-#### [Creating a New Data List](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/geolocating-assets#creating-a-new-data-list) <a href="#creating-a-new-data-list" id="creating-a-new-data-list"></a>
+#### Creating a New Data List <a href="#creating-a-new-data-list" id="creating-a-new-data-list"></a>
 
 To create a data list that uses the new data definition:
 
@@ -60,11 +60,11 @@ To create a data list that uses the new data definition:
 
 Now that your data list is complete, you can use the [Data List Display portlet](https://learn.liferay.com/web/guest/w/dxp/process-automation/forms/dynamic-data-lists/getting-started-with-dynamic-data-lists) to display it.
 
-### [Geolocating Documents and Media](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/geolocating-assets#geolocating-documents-and-media) <a href="#geolocating-documents-and-media" id="geolocating-documents-and-media"></a>
+### Geolocating Documents and Media <a href="#geolocating-documents-and-media" id="geolocating-documents-and-media"></a>
 
 To enable geolocation in Documents and Media, you must first create a [Document Type](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-document-types) that includes geolocation metadata. Alternately, you can add geolocation metadata as part of a [Metadata Set](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-metadata-sets). Once you have created that Metadata Set, it can be included as part of a Document Type.
 
-#### [Adding Geolocation in a Metadata Set](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/geolocating-assets#adding-geolocation-in-a-metadata-set) <a href="#adding-geolocation-in-a-metadata-set" id="adding-geolocation-in-a-metadata-set"></a>
+#### Adding Geolocation in a Metadata Set <a href="#adding-geolocation-in-a-metadata-set" id="adding-geolocation-in-a-metadata-set"></a>
 
 Follow the steps below:
 
@@ -79,7 +79,7 @@ Follow the steps below:
     ![Drag and drop the Geolocation field along with other fields to create your Metadata Set.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/tags-and-categories/geolocating-assets/images/08.png)
 6. Click _Save_ when finished.
 
-#### [Adding a Geolocation Field in a Document Type](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/geolocating-assets#adding-a-geolocation-field-in-a-document-type) <a href="#adding-a-geolocation-field-in-a-document-type" id="adding-a-geolocation-field-in-a-document-type"></a>
+#### Adding a Geolocation Field in a Document Type <a href="#adding-a-geolocation-field-in-a-document-type" id="adding-a-geolocation-field-in-a-document-type"></a>
 
 Follow the steps below:
 
@@ -96,7 +96,7 @@ Follow the steps below:
 7. Choose your Metadata Set with the geolocation metadata.
 8. Click _Save_.
 
-#### [Adding Geolocation to a Document](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/tags-and-categories/geolocating-assets#adding-geolocation-to-a-document) <a href="#adding-geolocation-to-a-document" id="adding-geolocation-to-a-document"></a>
+#### Adding Geolocation to a Document <a href="#adding-geolocation-to-a-document" id="adding-geolocation-to-a-document"></a>
 
 Follow the steps below:
 
@@ -111,6 +111,6 @@ Follow the steps below:
     ![Navigate to the Documents and Media tab in DM.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/tags-and-categories/geolocating-assets/images/13.png)
 4. Click _Publish_ when finished.
 
-Once your assets are geolocation-enabled, the [Asset Publisher](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/displaying-assets-using-the-asset-publisher-widget) can display the location of the assets on a map, using the map display template. Check out [Configuring the Asset Publisher Display Settings](https://learn.liferay.com/web/guest/w/dxp/site-building/displaying-content/using-the-asset-publisher-widget/configuring-asset-publisher-display-settings) to learn more.
+Once your assets are geolocation-enabled, the Asset Publisher can display the location of the assets on a map, using the map display template. Check out Configuring the Asset Publisher Display Settings to learn more.
 
 ![The Asset Publisher can display your geolocated assets on a map.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/tags-and-categories/geolocating-assets/images/14.png)

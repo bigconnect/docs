@@ -1,10 +1,10 @@
 # Using Read-Only Fields
 
-Some use cases may require data fields to be read-only. For example, data integrity may require some field values to remain immutable, or you may need to prevent unauthorized users from updating specific fields (e.g., [state fields](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/adding-and-managing-custom-states)). You can configure any custom field to be read-only. This prevents users from directly updating the field’s value except under specified conditions. You can also use [actions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions) to update these field values.
+Some use cases may require data fields to be read-only. For example, data integrity may require some field values to remain immutable, or you may need to prevent unauthorized users from updating specific fields (e.g., state fields). You can configure any custom field to be read-only. This prevents users from directly updating the field’s value except under specified conditions. You can also use actions to update these field values.
 
-### [Adding a Read-Only Field](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/using-read-only-fields#adding-a-read-only-field) <a href="#adding-a-read-only-field" id="adding-a-read-only-field"></a>
+### Adding a Read-Only Field <a href="#adding-a-read-only-field" id="adding-a-read-only-field"></a>
 
-1. Begin editing the desired [custom field](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/adding-fields-to-objects).
+1. Begin editing the desired custom field.
 2. Go to the _Advanced_ tab.
 3.  Select a Read Only option:
 
@@ -17,7 +17,7 @@ Some use cases may require data fields to be read-only. For example, data integr
     ![Select a Read Only option: true, false, or conditional.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/objects/creating-and-managing-objects/fields/using-read-only-fields/images/01.png)
 4. Click _Save_.
 
-### [Example Use Case: Event Speaker Applications](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/using-read-only-fields#example-use-case-event-speaker-applications) <a href="#example-use-case-event-speaker-applications" id="example-use-case-event-speaker-applications"></a>
+### Example Use Case: Event Speaker Applications <a href="#example-use-case-event-speaker-applications" id="example-use-case-event-speaker-applications"></a>
 
 Consider an event solution with these requirements:
 
@@ -25,8 +25,8 @@ Consider an event solution with these requirements:
 * Event managers must track each application’s status during the review process.
 * Event managers must track when the state field was last updated.
 
-To achieve this, first create a picklist for defining application statuses. Then, create an object for storing submissions and use the picklist as a [state field](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/fields/adding-and-managing-custom-states). Set this field to read-only and add [standalone actions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions/using-manual-actions) for manually updating the field to specific values. Only assign the [action permissions](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions/using-manual-actions#action-permissions) to event managers, so only they can update the state field.
+To achieve this, first create a picklist for defining application statuses. Then, create an object for storing submissions and use the picklist as a state field. Set this field to read-only and add standalone actions for manually updating the field to specific values. Only assign the action permissions to event managers, so only they can update the state field.
 
-For the final requirement, add a read-only date field. Then, create an [automatic action](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/actions/defining-object-actions) that updates the field to the `modifiedDate` value whenever the state field is updated.
+For the final requirement, add a read-only date field. Then, create an automatic action that updates the field to the `modifiedDate` value whenever the state field is updated.
 
 \

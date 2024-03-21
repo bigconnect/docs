@@ -1,10 +1,10 @@
 # Enabling DocuSign Digital Signatures
 
-You can now integrate [DocuSign](https://www.docusign.com/) digital signatures into your Liferay documents. DocuSign is a service that manages documents to be signed electronically. With this integration, you can manage and collect signatures on your documents.
+You can now integrate DocuSign digital signatures into your portal documents. DocuSign is a service that manages documents to be signed electronically. With this integration, you can manage and collect signatures on your documents.
 
-Before you enable digital signatures in Liferay, make sure you’ve generated and retrieved your User ID key, API Account key, Account Base URI, Integration key, and RSA Private key. Instructions for doing this can be found on [DocuSign’s website](https://support.docusign.com/en/guides/ndse-admin-guide-api-and-keys).
+Before you enable digital signatures in the portal, make sure you’ve generated and retrieved your User ID key, API Account key, Account Base URI, Integration key, and RSA Private key. Instructions for doing this can be found on DocuSign’s website.
 
-### [Enabling Digital Signatures](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/enabling-docusign-digital-signatures#enabling-digital-signatures) <a href="#enabling-digital-signatures" id="enabling-digital-signatures"></a>
+### Enabling Digital Signatures <a href="#enabling-digital-signatures" id="enabling-digital-signatures"></a>
 
 1. Open the Global menu in the top right corner. ![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)
 2.  Click _Control Panel_ → _Instance Settings_ → _Digital Signature_.
@@ -26,11 +26,11 @@ You have three options for your Site settings strategy:
 
 **Inherit or Override:** Can be defined in both Instance Settings and Site Settings. If defined in both, Site settings take precedence over Instance settings.
 
-You must now add your digital keys from DocuSign at the appropriate scope in Liferay.
+You must now add your digital keys from DocuSign at the appropriate scope in the portal.
 
-### [Adding Digital Keys](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/enabling-docusign-digital-signatures#adding-digital-keys) <a href="#adding-digital-keys" id="adding-digital-keys"></a>
+### Adding Digital Keys <a href="#adding-digital-keys" id="adding-digital-keys"></a>
 
-Depending on what you chose for your Site Settings strategy, add your digital keys at the [appropriate scope](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/understanding-configuration-scope):
+Depending on what you chose for your Site Settings strategy, add your digital keys at the appropriate scope:
 
 * If you chose Always Inherit, add the keys in Instance Settings.
 * If you chose Always Override, add the keys in Site Settings.
@@ -41,7 +41,7 @@ Depending on what you chose for your Site Settings strategy, add your digital ke
 3. Enter the User ID, API Account ID, Account’s Base URI, Integration Key, and the RSA Private Key you previously retrieved from the DocuSign website.
 4. Click _Save_ to enable digital signatures.
 
-### [Collecting Document Signatures in Documents and Media](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/enabling-docusign-digital-signatures#collecting-document-signatures-in-documents-and-media) <a href="#collecting-document-signatures-in-documents-and-media" id="collecting-document-signatures-in-documents-and-media"></a>
+### Collecting Document Signatures in Documents and Media <a href="#collecting-document-signatures-in-documents-and-media" id="collecting-document-signatures-in-documents-and-media"></a>
 
 1.  Find the document where you want to collect the digital signatures and click _Actions_ → _Collect Digital Signature_.
 
@@ -52,15 +52,15 @@ Depending on what you chose for your Site Settings strategy, add your digital ke
 3.  Fill in the _Envelope_’s information and click _Send_.
 
     ![Fill in the envelope's information.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/enabling-docusign-digital-signatures/images/06.png)
-4. When the envelope is sent, Recipients must go through [DocuSign’s process](https://www.docusign.com/products/electronic-signature/how-docusign-works) to sign the document.
+4. When the envelope is sent, Recipients must go through DocuSign’s process to sign the document.
 
-### [Tracking an Envelope’s Status](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/enabling-docusign-digital-signatures#tracking-an-envelopes-status) <a href="#tracking-an-envelopes-status" id="tracking-an-envelopes-status"></a>
+### Tracking an Envelope’s Status <a href="#tracking-an-envelopes-status" id="tracking-an-envelopes-status"></a>
 
-DocuSign uses the term _envelope_ to denote a document or collection of documents to be signed. Once sent, you can track your envelope status from within Liferay.
+DocuSign uses the term _envelope_ to denote a document or collection of documents to be signed. Once sent, you can track your envelope status from within the portal.
 
 TIP
 
-You can check the different status labels on the [DocuSign website](https://support.docusign.com/en/guides/ndse-user-guide-document-status).
+You can check the different status labels on the DocuSign website.
 
 1. Open the _Site Menu_ (![Site Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-menu.png)) → _Content & Data_ → _Digital Signature_ to see a list of created envelopes.
 2. You can also create an envelope directly from this screen using the ![Add Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png). You’re shown the envelope’s screen to enter its information.
@@ -68,18 +68,18 @@ You can check the different status labels on the [DocuSign website](https://supp
 
     ![Organize documents through Filter and Order, or the Search Bar.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/enabling-docusign-digital-signatures/images/07.png)
 
-### [Downloading Documents](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/enabling-docusign-digital-signatures#downloading-documents) <a href="#downloading-documents" id="downloading-documents"></a>
+### Downloading Documents <a href="#downloading-documents" id="downloading-documents"></a>
 
 1.  Click the envelope’s name to see its details. You can download the document by clicking the _Download_ button or by clicking the _Actions Button_ ![Actions Button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png) from the Digital Signature screen.
 
     IMPORTANT
 
-    Clicking _Download_ fetches the document from DocuSign not from Liferay, since Liferay does not store signed documents. Whether a document is partially or fully signed, the download button retrieves the latest state.
+    Clicking _Download_ fetches the document from DocuSign not from the portal, since the portal does not store signed documents. Whether a document is partially or fully signed, the download button retrieves the latest state.
 
-    ![You can view the details of your envelopes from inside Liferay.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/enabling-docusign-digital-signatures/images/08.png)
+    ![You can view the details of your envelopes from inside the portal.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/enabling-docusign-digital-signatures/images/08.png)
 
 WARNING
 
-Disabling the Digital Signature Configuration removes all reference to DocuSign, including the Digital Signature module in the Control Panel. If you disable the feature in Liferay, all envelopes are still visible in DocuSign. If you re-enable digital signatures, the list appears again.
+Disabling the Digital Signature Configuration removes all reference to DocuSign, including the Digital Signature module in the Control Panel. If you disable the feature in the portal, all envelopes are still visible in DocuSign. If you re-enable digital signatures, the list appears again.
 
 \

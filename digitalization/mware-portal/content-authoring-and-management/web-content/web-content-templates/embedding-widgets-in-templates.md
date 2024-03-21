@@ -8,7 +8,7 @@ You can embed widgets in web content templates: it doesn’t matter whether they
 
 To begin embedding widgets in your web content templates, follow these steps:
 
-1. Navigate to your Site’s (the default DXP site in this example) _Site Administration_.
+1. Navigate to your Site’s (the default site in this example) _Site Administration_.
 2. Click _Content & Data_ → _Web Content_.
 3.  Click on the _Templates_ tab.
 
@@ -25,9 +25,9 @@ To begin embedding widgets in your web content templates, follow these steps:
 
 IMPORTANT
 
-The `theme` variable is no longer injected into the FreeMarker context. For more information about why the theme variable was removed for DXP 7.0 and suggestions for updating your code, visit the [Taglibs Are No Longer Accessible via the theme Variable in FreeMarker](https://help.liferay.com/hc/articles/360017892092-Introduction-to-Breaking-Changes-#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker) breaking change entry.
+The `theme` variable is no longer injected into the FreeMarker context. For more information about why the theme variable was removed for version 7.0 and suggestions for updating your code, visit the Taglibs Are No Longer Accessible via the theme Variable in FreeMarker breaking change entry.
 
-### [Embedding Other Templates](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-templates/embedding-widgets-in-templates#embedding-other-templates) <a href="#embedding-other-templates" id="embedding-other-templates"></a>
+### Embedding Other Templates <a href="#embedding-other-templates" id="embedding-other-templates"></a>
 
 In addition to embedding widgets in templates, you can embed a template within another template. This allows for reusable code, JavaScript library imports, scripts, or macros.
 

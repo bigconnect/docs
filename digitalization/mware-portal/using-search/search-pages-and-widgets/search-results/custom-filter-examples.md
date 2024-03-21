@@ -2,21 +2,21 @@
 
 The Custom Filter widget is a powerful aid to your search tuning efforts. Without deploying custom code, you can exert control over the query sent to the search engine. Some common use cases are presented here to help you understand how to approach the Custom Filter widget:
 
-* [Excluding Content from Search Results](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#excluding-certain-content)
-* [Boosting Content in Search Results](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#boosting-fields)
-* [Filtering by multiple Site IDs](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#filtering-by-site-id)
-* [Using Elasticsearch’s Query String query](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#complex-filter-with-query-string)
-* [Boosting Matches to Nested Fields](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#boosting-matches-to-nested-fields)
+* Excluding Content from Search Results
+* Boosting Content in Search Results
+* Filtering by multiple Site IDs
+* Using Elasticsearch’s Query String query
+* Boosting Matches to Nested Fields
 
-See [Using the Custom Filter Widget](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/using-the-custom-filter-widget) for a detailed explanation of the Custom Filter widget.
+See Using the Custom Filter Widget for a detailed explanation of the Custom Filter widget.
 
-### [Excluding Certain Content](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#excluding-certain-content) <a href="#excluding-certain-content" id="excluding-certain-content"></a>
+### Excluding Certain Content <a href="#excluding-certain-content" id="excluding-certain-content"></a>
 
 When used with a `must_not` Occur configuration, the Custom Filter can catch and exclude documents from the Search Results.
 
-#### [Excluding Certain Documents and Media Content](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#excluding-certain-documents-and-media-content) <a href="#excluding-certain-documents-and-media-content" id="excluding-certain-documents-and-media-content"></a>
+#### Excluding Certain Documents and Media Content <a href="#excluding-certain-documents-and-media-content" id="excluding-certain-documents-and-media-content"></a>
 
-Sometimes, you may want to exclude certain types of content from appearing in the Search Results. To exclude Documents and Media file entries that are only present in the system to be added to Web Content, you must first distinguish the particular files to exclude, in a way that they can be identified in the search index. You can tag them with something that declares their purpose (`wconly` perhaps), or you can put them into a dedicated [Documents and Media Folder](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/using-folders). To configure a Custom Filter to exclude a Documents and Media Folder, use these settings:
+Sometimes, you may want to exclude certain types of content from appearing in the Search Results. To exclude Documents and Media file entries that are only present in the system to be added to Web Content, you must first distinguish the particular files to exclude, in a way that they can be identified in the search index. You can tag them with something that declares their purpose (`wconly` perhaps), or you can put them into a dedicated Documents and Media Folder. To configure a Custom Filter to exclude a Documents and Media Folder, use these settings:
 
 **Filter Query Type:** `Match`
 
@@ -28,7 +28,7 @@ Sometimes, you may want to exclude certain types of content from appearing in th
 
 This configuration ensures that search documents containing a `folderId` field with the value `41103` are not returned in the search results.
 
-#### [Excluding Content with Certain Extensions](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#excluding-content-with-certain-extensions) <a href="#excluding-content-with-certain-extensions" id="excluding-content-with-certain-extensions"></a>
+#### Excluding Content with Certain Extensions <a href="#excluding-content-with-certain-extensions" id="excluding-content-with-certain-extensions"></a>
 
 Perhaps you must exclude GIF files the search results. Configure a Custom Filter like this:
 
@@ -40,15 +40,15 @@ Perhaps you must exclude GIF files the search results. Configure a Custom Filter
 
 **Occur:** `must_not`
 
-This configuration leverages the presence of the `extension` field indexed from the Documents and Media [`DLFileEntry` model](https://github.com/liferay/liferay-portal/blob/7.4.3.112-ga112/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/spi/model/index/contributor/DLFileEntryModelDocumentContributor.java). It ensures that search documents containing an `extension` field with the value `gif` are not returned in the search results.
+This configuration leverages the presence of the `extension` field indexed from the Documents and Media `DLFileEntry` model. It ensures that search documents containing an `extension` field with the value `gif` are not returned in the search results.
 
-### [Boosting Fields](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#boosting-fields) <a href="#boosting-fields" id="boosting-fields"></a>
+### Boosting Fields <a href="#boosting-fields" id="boosting-fields"></a>
 
 Boosting certain documents based on specific fields is a common need, and it’s readily accomplished with the Custom Filter widget. The boost value often needs tuning to meet your needs. Use the Search Insights widget with _Enable Score Explanation_ enabled to inspect how the documents are being scored and to fine-tune your boost values.
 
-#### [Boosting Results by Date Range](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#boosting-results-by-date-range) <a href="#boosting-results-by-date-range" id="boosting-results-by-date-range"></a>
+#### Boosting Results by Date Range <a href="#boosting-results-by-date-range" id="boosting-results-by-date-range"></a>
 
-The Date Range query option in the [Custom Filter widget’s configuration form](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/using-the-custom-filter-widget#custom-filter-configuration) corresponds to the [Elasticsearch Range query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html). To boost results created within the last year add a Custom Filter to a page and configure it like this:
+The Date Range query option in the Custom Filter widget’s configuration form corresponds to the [Elasticsearch Range query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html). To boost results created within the last year add a Custom Filter to a page and configure it like this:
 
 **Filter Field:** `createDate`
 
@@ -62,12 +62,12 @@ The Date Range query option in the [Custom Filter widget’s configuration form]
 
 Results created in the last year are boosted as a result of this Custom Filter. To see this in action create two blogs about three minutes apart with the following title and content:
 
-| Blog 1                 | Blog 2               |
-| ---------------------- | -------------------- |
-| Title: `liferay dxp`   | Title: `liferay dxp` |
-| Content: `liferay dxp` | Content: `liferay`   |
+| Blog 1                  | Blog 2                |
+| ----------------------- | --------------------- |
+| Title: `portal mware`   | Title: `portal mware` |
+| Content: `portal mware` | Content: `portal`     |
 
-When you search for `dxp` the earlier blog will be higher in the Search Results because it has the searched keyword more frequently, and both were created in the last year so they were boosted equally.
+When you search for `mware` the earlier blog will be higher in the Search Results because it has the searched keyword more frequently, and both were created in the last year so they were boosted equally.
 
 Immediately after creating the second blog post, configure the Custom Filter’s Filter Value with `[now-2m now]`–this value may need to be adjusted.
 
@@ -75,7 +75,7 @@ Search again, and the order of the blogs in Search Results will now show the lat
 
 See the [Elasticsearch date-math documentation](https://www.elastic.co/guide/en/elasticsearch/reference/8.8/common-options.html#date-math) to understand more about how to specify the ranges.
 
-#### [Boosting Matches to Designated Fields](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#boosting-matches-to-designated-fields) <a href="#boosting-matches-to-designated-fields" id="boosting-matches-to-designated-fields"></a>
+#### Boosting Matches to Designated Fields <a href="#boosting-matches-to-designated-fields" id="boosting-matches-to-designated-fields"></a>
 
 To boost a document with certain fields that match the searched keywords, configure a Custom Filter like this:
 
@@ -93,7 +93,7 @@ This configuration boosts matching documents if the English (United States) titl
 
 The Multi Match query can match multiple fields at once. Otherwise you’d need to configure a Custom Filter for each separate field, even if the rest of the configuration values are identical.
 
-#### [Boosting by a Field’s Presence](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#boosting-by-a-fields-presence) <a href="#boosting-by-a-fields-presence" id="boosting-by-a-fields-presence"></a>
+#### Boosting by a Field’s Presence <a href="#boosting-by-a-fields-presence" id="boosting-by-a-fields-presence"></a>
 
 To boost any content that’s tagged, regardless of what the tag value is, configure a Custom Filter like this:
 
@@ -107,9 +107,9 @@ To boost any content that’s tagged, regardless of what the tag value is, confi
 
 If a document matching the query is tagged, it contains a `assetTagNames` field. The Exists query matches on any value for the field.
 
-### [Filtering by Site ID](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#filtering-by-site-id) <a href="#filtering-by-site-id" id="filtering-by-site-id"></a>
+### Filtering by Site ID <a href="#filtering-by-site-id" id="filtering-by-site-id"></a>
 
-There’s no configuration for searching multiple Sites on one Search Page without searching all of them. To include results from the current Site and all [child Sites](https://learn.liferay.com/web/guest/w/dxp/site-building/sites/site-hierarchies) you must configure the Search Bar’s Scope, setting it to _Everything_. After that, you’ll use one parent Custom Filter with a Bool query that can collect child query clauses, each of which is contributed by a Custom Filter widget with a term query for matching the `groupId` of a Site to include in the search results. The Site’s ID is the `groupId` field in the search document.
+There’s no configuration for searching multiple Sites on one Search Page without searching all of them. To include results from the current Site and all child Sites you must configure the Search Bar’s Scope, setting it to _Everything_. After that, you’ll use one parent Custom Filter with a Bool query that can collect child query clauses, each of which is contributed by a Custom Filter widget with a term query for matching the `groupId` of a Site to include in the search results. The Site’s ID is the `groupId` field in the search document.
 
 1.  Create 3 Sites:
 
@@ -119,7 +119,7 @@ There’s no configuration for searching multiple Sites on one Search Page witho
     TIP
 
     To find the Group ID of a Site, in the site menu navigate to Configuration > Settings. The displayed `Site ID` is the `groupId` you can use to filter the Site.
-2. Create at least one piece of content in each Site (a Blogs Entry), and include the word _Liferay_ in each.
+2. Create at least one piece of content in each Site (a Blogs Entry), and include the word _portal_ in each.
 3.  Set the Search Bar scope to _Everything_.
 
     > **Checkpoint:** Search and see that content from all the sites is returned
@@ -152,9 +152,9 @@ There’s no configuration for searching multiple Sites on one Search Page witho
 
 Importantly, the filters by `groupId` declare the `SiteBoolQuery` as the parent query. The _should_ Occur clauses in the child Term queries (for each Site) act as an OR operator, so that if any of the `groupId`s are matched, their content can be displayed in the Search Results widget.
 
-### [Complex Filter with Query String](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#complex-filter-with-query-string) <a href="#complex-filter-with-query-string" id="complex-filter-with-query-string"></a>
+### Complex Filter with Query String <a href="#complex-filter-with-query-string" id="complex-filter-with-query-string"></a>
 
-Sometimes you can avoid the need for multiple queries (as in the [Filtering by Site ID](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#filtering-by-site-id) example), by using the [Query String query](https://www.elastic.co/guide/en/elasticsearch/reference/8.8/query-dsl-query-string-query.html). The below configuration demonstrates how you can use only one Custom Filter widget to constrain the search to
+Sometimes you can avoid the need for multiple queries (as in the Filtering by Site ID example), by using the [Query String query](https://www.elastic.co/guide/en/elasticsearch/reference/8.8/query-dsl-query-string-query.html). The below configuration demonstrates how you can use only one Custom Filter widget to constrain the search to
 
 * Match Documents and Media files with `pdf` or `jpg` extensions OR
 * Match Web Content Articles
@@ -175,15 +175,15 @@ WARNING
 
 The Query String query should not be used if the value being passed is coming from the search bar (as demonstrated in `Boosting Matches to Designated Fields`\_. If the Search Bar’s user enters a keyword containing invalid syntax, an error is returned.
 
-### [Boosting Matches to Nested Fields](https://learn.liferay.com/web/guest/w/dxp/using-search/search-pages-and-widgets/search-results/custom-filter-examples#boosting-matches-to-nested-fields) <a href="#boosting-matches-to-nested-fields" id="boosting-matches-to-nested-fields"></a>
+### Boosting Matches to Nested Fields <a href="#boosting-matches-to-nested-fields" id="boosting-matches-to-nested-fields"></a>
 
-Available 7.2 FP10+, 7.3 FP1+, 7.4 (all updates)
+Available 7.2 +, 7.3 +, 7.4 (all updates)
 
-Using a [nested field](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/reference/7-3-breaking-changes#dynamic-data-mapping-fields-in-elasticsearch-have-changed-to-a-nested-document) in a Custom Filter configuration requires three Custom Filter widgets on the search page. A [Nested query](https://www.elastic.co/guide/en/elasticsearch/reference/8.8/query-dsl-nested-query.html) that wraps the required child queries is added in one of the widgets: one child query matches the field’s name, the other the value.
+Using a nested field in a Custom Filter configuration requires three Custom Filter widgets on the search page. A Nested query that wraps the required child queries is added in one of the widgets: one child query matches the field’s name, the other the value.
 
 This example demonstrates adding a boost for matches to a certain DDM Structure field.
 
-1.  Create a [Structure](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/creating-structures):
+1.  Create a Structure:
 
     * In the Site menu, go to Content & Data → Web Content.
     * Click the _Structures_ tab, then the Add button ![Add](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png).

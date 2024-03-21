@@ -6,7 +6,7 @@ Follow these steps to create a structure:
 2. Select the _Structures_ tab.
 3. Click _Add_ ( ![Add icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png) ) to create a new structure.
 4. Enter the title of your new structure.
-5. Drag and drop the [available fields](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/creating-structures#structure-fields) onto the structure and [configure their settings](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/configuring-structure-fields#configurable-settings) to create the structure.
+5. Drag and drop the available fields onto the structure and configure their settings to create the structure.
 6. Optionally, add a _Description_ for your structure.
 7. Click _Save_.
 
@@ -18,9 +18,9 @@ Due to import/export operations, it’s possible to have both a global and a sit
 
 TIP
 
-To discover additional configuration options for web content and structures (e.g., [enable setting a custom structure key](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/whats-new-with-web-content-structures-in-7-4#setting-the-web-content-structure-key)), look in System Settings → Content and Data → Web Content → Administration.
+To discover additional configuration options for web content and structures (e.g., enable setting a custom structure key), look in System Settings → Content and Data → Web Content → Administration.
 
-### [Structure Fields](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/creating-structures#structure-fields) <a href="#structure-fields" id="structure-fields"></a>
+### Structure Fields <a href="#structure-fields" id="structure-fields"></a>
 
 You can place these fields on a structure:
 
@@ -62,9 +62,9 @@ If you upload an image from your computer, the image is only available for that 
 
 **Web Content:** A selector to include an existing web content article.
 
-See [Configuring Structure Fields](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/configuring-structure-fields) for more information on configuring and editing Structure fields.
+See Configuring Structure Fields for more information on configuring and editing Structure fields.
 
-### [Translating a Structure](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/web-content/web-content-structures/creating-structures#translating-a-structure) <a href="#translating-a-structure" id="translating-a-structure"></a>
+### Translating a Structure <a href="#translating-a-structure" id="translating-a-structure"></a>
 
 You can add a translation for the structure, either while creating it or later.
 

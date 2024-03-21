@@ -1,6 +1,6 @@
 # Audit Event Types Reference
 
-The [`EventTypes`](https://github.com/liferay/liferay-portal/blob/7.4.3.112-ga112/modules/apps/portal-security-audit/portal-security-audit-event-generators-api/src/main/java/com/liferay/portal/security/audit/event/generators/constants/EventTypes.java) class lists the different event categories logged by the audit framework. It specifies the action performed on the resource listed in the audit application. There are 10 event types logged by the audit framework.
+The `EventTypes` class lists the different event categories logged by the audit framework. It specifies the action performed on the resource listed in the audit application. There are 10 event types logged by the audit framework.
 
 | Event Type     | Supported Resources                                   | Description                                                                               |
 | -------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------- |
