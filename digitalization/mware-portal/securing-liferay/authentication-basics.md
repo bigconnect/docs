@@ -8,13 +8,14 @@ The Sign In widget appears on the default home page at `http[s]://[server-name:p
 
 ![The default Liferay home page](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/authentication-basics/images/01.png)
 
-You can configure other methods of authenticating users and/or applications:
+You can configure other methods of authenticating users and/or applications and services:
 
 * LDAP
-* SAML
+* SAML 1.0, 1.1, 2.0
 * Kerberos
-* OpenID Connect
+* OpenID Connect 1.0
 * Token-Based solutions
+* WS-Federation
 * OAuth 2.0
 
 [Authentication Verifiers](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/using-authentication-verifiers) can manage authentication for remote applications, and [Authentication Pipelines](https://learn.liferay.com/web/guest/w/dxp/building-applications) define the ways users are validated by one or several systems.
