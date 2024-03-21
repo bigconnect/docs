@@ -10,12 +10,12 @@ The Sign In widget appears on the default home page at `http[s]://[server-name:p
 
 You can configure other methods of authenticating users and/or applications:
 
-* [LDAP](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/connecting-to-a-user-directory/connecting-to-an-ldap-directory)
-* [SAML](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-authentication-process-overview)
-* [Kerberos](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-kerberos)
-* [OpenID Connect](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/using-openid-connect)
-* [Token-Based solutions](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/token-based-authentication)
-* [OAuth 2.0](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2)
+* LDAP
+* SAML
+* Kerberos
+* OpenID Connect
+* Token-Based solutions
+* OAuth 2.0
 
 [Authentication Verifiers](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/using-authentication-verifiers) can manage authentication for remote applications, and [Authentication Pipelines](https://learn.liferay.com/web/guest/w/dxp/building-applications) define the ways users are validated by one or several systems.
 
