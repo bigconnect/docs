@@ -1,18 +1,18 @@
 # npm Bundler
 
-The liferay-npm-bundler is a bundler (like [Webpack](https://webpack.github.io/) or [Browserify](http://browserify.org/)) that targets MWARE Portal as a platform and assumes you’re using your npm packages from widgets (as opposed to typical web applications).
+The npm-bundler is a bundler (like [Webpack](https://webpack.github.io/) or [Browserify](http://browserify.org/)) that targets MWARE Portal as a platform and assumes you’re using your npm packages from widgets (as opposed to typical web applications).
 
-The workflow for running npm packages inside widgets is slightly different from standard bundlers. Instead of bundling the JavaScript in a single file, you must _link_ all packages together in the browser when the full web page is assembled. Widgets can then share common versions of modules rather than each loading its own copy. The liferay-npm-bundler handles this for you.
+The workflow for running npm packages inside widgets is slightly different from standard bundlers. Instead of bundling the JavaScript in a single file, you must _link_ all packages together in the browser when the full web page is assembled. Widgets can then share common versions of modules rather than each loading its own copy. The npm-bundler handles this for you.
 
 NOTE
 
-You can also find information for the liferay-npm-bundler in the [project’s Wiki](https://github.com/liferay/liferay-npm-build-tools/wiki).
+You can also find information for the npm-bundler in the project’s Wiki.
 
-### [How the Liferay npm Bundler Works Internally](https://learn.liferay.com/web/guest/w/dxp/building-applications/tooling/other-tools/liferay-npm-bundler/liferay-npm-bundler-intro#how-the-liferay-npm-bundler-works-internally) <a href="#how-the-liferay-npm-bundler-works-internally" id="how-the-liferay-npm-bundler-works-internally"></a>
+### How the npm Bundler Works Internally <a href="#how-the-liferay-npm-bundler-works-internally" id="how-the-liferay-npm-bundler-works-internally"></a>
 
-The liferay-npm-bundler takes a widget project and outputs its files (including npm packages) to a build folder, so the standard widget build (Gradle) can produce an OSGi bundle. You can learn more about the build folder’s structure in [OSGi Bundles and npm Package Structure](https://learn.liferay.com/web/guest/w/dxp/building-applications/tooling/other-tools/liferay-npm-bundler/the-structure-of-osgi-bundles-containing-npm-packages) reference.
+The npm-bundler takes a widget project and outputs its files (including npm packages) to a build folder, so the standard widget build (Gradle) can produce an OSGi bundle. You can learn more about the build folder’s structure in OSGi Bundles and npm Package Structure reference.
 
-The liferay-npm-bundler uses the process below to create the OSGi bundle:
+The npm-bundler uses the process below to create the OSGi bundle:
 
 1. Copy the project’s `package.json` file to the output directory.
 2. Traverse the project’s dependency tree to determine its dependencies.
@@ -37,10 +37,10 @@ The liferay-npm-bundler uses the process below to create the OSGi bundle:
 
     e. Post-process the npm package with any configured plugins.
 
-The only difference between the pre-process and post-process steps are when they are run (before or after Babel is run, respectively). During this workflow, liferay-npm-bundler calls all the configured plugins so they can perform transformations on the npm packages (for instance, modifying their `package.json` files or deleting or moving files).
+The only difference between the pre-process and post-process steps are when they are run (before or after Babel is run, respectively). During this workflow, npm-bundler calls all the configured plugins so they can perform transformations on the npm packages (for instance, modifying their `package.json` files or deleting or moving files).
 
 NOTE
 
-The pre, post, and Babel phases were designed for the old mode of operation (See the [Migrating Your Project to Use the New Mode](https://learn.liferay.com/web/guest/w/dxp/building-applications/tooling/other-tools/liferay-npm-bundler/bundler-migration-guide/migrating-to-the-new-mode) for more information) and they will gradually be replaced with rules for the new mode.
+The pre, post, and Babel phases were designed for the old mode of operation (See the Migrating Your Project to Use the New Mode for more information) and they will gradually be replaced with rules for the new mode.
 
-This reference covers the liferay-npm-bundler’s configuration, default presets, format, and more.
+This reference covers the npm-bundler’s configuration, default presets, format, and more.

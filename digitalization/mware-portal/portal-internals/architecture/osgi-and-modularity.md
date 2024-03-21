@@ -1,20 +1,20 @@
 # OSGi and Modularity
 
-Modularity makes writing software, especially as a team, fun! Here are some benefits to modular development on Liferay:
+Modularity makes writing software, especially as a team, fun! Here are some benefits to modular development on the portal:
 
-* Liferay’s runtime framework is lightweight, fast, and secure.
+* The portal’s runtime framework is lightweight, fast, and secure.
 * The framework uses the [OSGi](https://www.osgi.org/resources/what-is-osgi/) standard. If you have experience using OSGi with other projects, you can apply your existing knowledge.
 * Modules publish services to and consume services from a service registry. Service contracts are loosely coupled from service providers and consumers, and the registry manages the contracts automatically.
 * Modules’ dependencies are managed automatically by the container, dynamically (no restart required).
-* The container manages [module life cycles](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/architecture/module-lifecycle) dynamically. Modules can be installed, started, updated, stopped, and uninstalled while Liferay is running, making deployment a snap.
-* Only a module’s classes whose packages are explicitly [exported](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/fundamentals/exporting-packages) are publicly visible; OSGi hides all other classes by default.
-* Modules and packages are [semantically versioned](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/fundamentals/semantic-versioning) and declare dependencies on specific versions of other packages. This allows two applications that depend on different versions of the same packages to each depend on their own versions of the packages.
+* The container manages module life cycles dynamically. Modules can be installed, started, updated, stopped, and uninstalled while the portal is running, making deployment a snap.
+* Only a module’s classes whose packages are explicitly exported are publicly visible; OSGi hides all other classes by default.
+* Modules and packages are semantically versioned and declare dependencies on specific versions of other packages. This allows two applications that depend on different versions of the same packages to each depend on their own versions of the packages.
 * Team members can develop, test, and improve modules in parallel.
 * You can use your existing developer tools and environment to develop modules.
 
 There are many benefits to modular software development with OSGi, and we can only scratch the surface here. Once you start developing modules, you might find it hard to go back to developing any other way.
 
-Liferay commonly uses three kinds of modules:
+The portal commonly uses three kinds of modules:
 
 1. **API** modules define interfaces.
 2. **Implementation** modules provide concrete classes that implement interfaces.
@@ -24,17 +24,17 @@ You’ll learn how to create each one by developing a simple command in [Gogo Sh
 
 ![Gogo shell command that greets users.](https://resources.learn.liferay.com/images/dxp/latest/en/liferay-internals/architecture/osgi-and-modularity/images/01.png)
 
-It’s time to see what module projects look like and see Liferay’s modular development features in action.
+It’s time to see what module projects look like and see the portal’s modular development features in action.
 
-### [Deploy the Gogo Shell Command Example](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/architecture/osgi-and-modularity#deploy-the-gogo-shell-command-example) <a href="#deploy-the-gogo-shell-command-example" id="deploy-the-gogo-shell-command-example"></a>
+### Deploy the Gogo Shell Command Example <a href="#deploy-the-gogo-shell-command-example" id="deploy-the-gogo-shell-command-example"></a>
 
-Start a new Liferay instance by running
+Start a new  portal instance by running
 
 ```bash
 docker run -it -m 8g -p 8080:8080 liferay/portal:7.4.3.112-ga112
 ```
 
-Sign in to Liferay at [http://localhost:8080](http://localhost:8080/). Use the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
+Sign in to the portal at [http://localhost:8080](http://localhost:8080/). Use the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
 
 Then, follow these steps to deploy the example:
 
@@ -63,7 +63,7 @@ Then, follow these steps to deploy the example:
     STARTED com.acme.r9u2.impl_1.0.0
     STARTED com.acme.r9u2.osgi.commands_1.0.0
     ```
-4. Open the [Gogo Shell](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/fundamentals/using-the-gogo-shell).
+4. Open the Gogo Shell.
 5.  In the Gogo Shell command field, enter a `r9u2:greet` command to generate a greeting.
 
     ```groovy
@@ -77,7 +77,7 @@ Then, follow these steps to deploy the example:
 
 The example’s client module leverages API and implementation modules to produce the content returned from the `r9u2:greet` Gogo Shell command. Examine each module next.
 
-### [API](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/architecture/osgi-and-modularity#api) <a href="#api" id="api"></a>
+### API <a href="#api" id="api"></a>
 
 The API module is first. It defines the contract that a provider implements and a consumer uses. Here is its structure:
 
@@ -114,7 +114,7 @@ dependencies {
 }
 ```
 
-It depends on one artifact: the Liferay release API JAR. It is a large JAR packed with Liferay, Bnd, and OSGi artifacts associated with the Liferay product release.
+It depends on one artifact: the portal release API JAR. It is a large JAR packed with the portal, Bnd, and OSGi artifacts associated with the product release.
 
 The module’s name is _Acme R9U2 API_. Its symbolic name—a name that ensures uniqueness—is `com.acme.r9u2.api`. Its semantic version is declared next, and its package is _exported_, which means it’s made available to other modules. This module’s package is just an API other modules can implement.
 
@@ -133,7 +133,7 @@ The interface’s `@ProviderType` annotation tells the service registry that any
 
 That’s it! As you can see, creating modules is not very different from creating other Java projects.
 
-### [Implementation](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/architecture/osgi-and-modularity#implementation) <a href="#implementation" id="implementation"></a>
+### Implementation <a href="#implementation" id="implementation"></a>
 
 An interface only defines an API; to do something, it must be implemented. This is what the implementation (or provider) module is for. Here’s what an implementation module for the Greeter API looks like:
 
@@ -194,9 +194,9 @@ It includes a compile-time dependency on the `r9u2-api` module project because i
 
 That’s all there is to an implementation module.
 
-### [Client](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/architecture/osgi-and-modularity#client) <a href="#client" id="client"></a>
+### Client <a href="#client" id="client"></a>
 
-The consumer or client uses the API that the API module defines and the implementation module implements. Liferay has many different kinds of consumer modules. [Portlets](https://learn.liferay.com/web/guest/w/dxp/building-applications/developing-a-java-web-application/reference/portlets) are the most common consumer module type, but since they are a topic all by themselves, this example stays simple by creating an command for the Apache Felix Gogo shell. Note that consumers can, of course, consume many different APIs to provide functionality.
+The consumer or client uses the API that the API module defines and the implementation module implements. The portal has many different kinds of consumer modules. [Portlets](https://learn.liferay.com/web/guest/w/dxp/building-applications/developing-a-java-web-application/reference/portlets) are the most common consumer module type, but since they are a topic all by themselves, this example stays simple by creating an command for the Apache Felix Gogo shell. Note that consumers can, of course, consume many different APIs to provide functionality.
 
 A consumer module has the same structure as the other module types:
 
@@ -258,9 +258,9 @@ The `R9U2OSGiCommands` class provides an OSGi service of its own type. The two p
 
 This most basic of examples should make it clear that module-based development is easy and straightforward. The API-Provider-Consumer contract fosters loose coupling, making your software easy to manage, enhance, and support.
 
-### [A Typical Liferay Application](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/architecture/osgi-and-modularity#a-typical-liferay-application) <a href="#a-typical-liferay-application" id="a-typical-liferay-application"></a>
+### A Typical portal Application <a href="#a-typical-liferay-application" id="a-typical-liferay-application"></a>
 
-If you look at a typical application from Liferay’s source, you’ll generally find at least four modules:
+If you look at a typical application from the portal’s source, you’ll generally find at least four modules:
 
 * API module
 * Service (provider) module
@@ -269,7 +269,7 @@ If you look at a typical application from Liferay’s source, you’ll generally
 
 This is exactly what you’ll find for some smaller applications, like the Mentions application that lets users mention other users with the `@username` nomenclature in comments, blogs, or other applications. Larger applications like the Documents and Media library have more modules. In the case of the Documents and Media library, there are separate modules for different document storage back-ends. In the case of the Wiki, there are separate modules for different Wiki engines.
 
-Encapsulating capability variations as modules facilitates extensibility. If you have a document storage back-end that Liferay doesn’t yet support, you can implement Liferay’s document storage API for your solution by developing a module for it and thus extend Liferay’s Documents and Media library. If there’s a Wiki dialect that you like better than what Liferay’s wiki provides, you can write a module for it and extend Liferay’s wiki.
+Encapsulating capability variations as modules facilitates extensibility. If you have a document storage back-end that the portal doesn’t yet support, you can implement the portal’s document storage API for your solution by developing a module for it and thus extend the portal’s Documents and Media library. If there’s a Wiki dialect that you like better than what the portal’s wiki provides, you can write a module for it and extend the portal’s wiki.
 
 Are you excited yet? Are you ready to start developing? Here are some resources for you to learn more.
 

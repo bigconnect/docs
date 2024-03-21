@@ -12,7 +12,7 @@ The portal architecture has three parts:
 
 You can use the UI and services together or focus solely on using services via REST APIs or GraphQL APIs.
 
-![Sites contain content and widgets. DXP can also be used headless---without the UI.](https://resources.learn.liferay.com/images/dxp/latest/en/liferay-internals/architecture/images/01.png)
+![Sites contain content and widgets. The portal can also be used headless---without the UI.](https://resources.learn.liferay.com/images/dxp/latest/en/liferay-internals/architecture/images/01.png)
 
 The architecture satisfies these requirements:
 
@@ -72,7 +72,7 @@ The runtime environment supports adding, replacing, and customizing components o
 
 **Customization:** The `PortletA Filter` intercepts and modifies requests to and responses from `PortletA`, affecting the content `PortletA` displays.
 
-Component WAR and module JAR projects install as OSGi bundles (modules). Liferay’s OSGi framework defines the module life cycle, enforces dependencies, defines the class loading structure, and provides an API and CLI (Felix Gogo Shell) for managing modules and components. The Core is configured via Portal Properties files and System Settings.
+Component WAR and module JAR projects install as OSGi bundles (modules). The portal’s OSGi framework defines the module life cycle, enforces dependencies, defines the class loading structure, and provides an API and CLI (Felix Gogo Shell) for managing modules and components. The Core is configured via Portal Properties files and System Settings.
 
 The service components provide business functionality.
 
@@ -80,7 +80,7 @@ The service components provide business functionality.
 
 Business logic is implemented in services deployed to the component runtime environment. Built-in Core services and framework services operate on models such as Users, Roles, Web Content, Documents and Media, and more. You can introduce new models and functionality through custom services. Service components can access each other via dependency injection.
 
-Front-end applications invoke the services to do work. You can deploy Java-based applications that call services directly using the Java APIs. Any web-based (Java and non-Java) application, whether deployed on DXP or not, can use the web APIs, including REST APIs that conform to the [OpenAPI](https://swagger.io/docs/specification/about/) standard, GraphQL APIs, and plain web/REST services. The following figure shows applications and external clients invoking portal services.
+Front-end applications invoke the services to do work. You can deploy Java-based applications that call services directly using the Java APIs. Any web-based (Java and non-Java) application can use the web APIs, including REST APIs that conform to the [OpenAPI](https://swagger.io/docs/specification/about/) standard, GraphQL APIs, and plain web/REST services. The following figure shows applications and external clients invoking portal services.
 
 ![Local and remote applications can invoke services via REST web APIs. Java-based portlets can also invoke services via Java APIs.](https://resources.learn.liferay.com/images/dxp/latest/en/liferay-internals/architecture/images/03.png)
 

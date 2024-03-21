@@ -31,29 +31,29 @@ The spacecraft and its modules exemplified these modularity characteristics:
 
 NASA used modularity to complete over a dozen missions to the moon successfully. Can modularity benefit software too? Yes!
 
-### [Modularity Benefits for Software](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/architecture/the-benefits-of-modularity#modularity-benefits-for-software) <a href="#modularity-benefits-for-software" id="modularity-benefits-for-software"></a>
+### Modularity Benefits for Software <a href="#modularity-benefits-for-software" id="modularity-benefits-for-software"></a>
 
 Java applications have been predominantly monolithic: they’re developed in large code bases. In a monolith, it’s difficult to avoid tight coupling of classes—changes to one class often require changes to other classes. Modular application design, conversely, facilitates loose coupling, making the code easier to maintain. It’s much easier and more fun to develop small amounts of cohesive code in modules. Here are some key benefits of developing modular software.
 
-#### [Distinct Functionality](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/architecture/the-benefits-of-modularity#distinct-functionality) <a href="#distinct-functionality" id="distinct-functionality"></a>
+#### Distinct Functionality <a href="#distinct-functionality" id="distinct-functionality"></a>
 
 It’s natural to focus on developing one piece of software at a time. In a module, you work on a small set of classes to define and implement the module’s function. Keeping scope small facilitates writing high quality, elegant code. The more cohesive the code, the easier it is to test, debug, and maintain. Modules can be combined to provide a new function, distinguishable from each module’s function.
 
-#### [Encapsulation](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/architecture/the-benefits-of-modularity#encapsulation) <a href="#encapsulation" id="encapsulation"></a>
+#### Encapsulation <a href="#encapsulation" id="encapsulation"></a>
 
 A module encapsulates a function (capability). Module implementations are hidden from consumers, so you can create and modify them as you like. Throughout a module’s lifetime, you can fix and improve the implementation or swap in an entirely new one. You make the changes behind the scenes, transparent to consumers. A module’s contract defines its capability and interface, making the module easy to understand and use.
 
-#### [Dependencies](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/architecture/the-benefits-of-modularity#dependencies) <a href="#dependencies" id="dependencies"></a>
+#### Dependencies <a href="#dependencies" id="dependencies"></a>
 
 Modules have requirements and capabilities. The interaction between modules is a function of the capability of one satisfying the requirement of another and so on. Modules are published to artifact repositories, such as Maven Central. Module versioning schemes enable dependencies on particular module versions or version ranges.
 
-#### [Reusability](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/architecture/the-benefits-of-modularity#reusability) <a href="#reusability" id="reusability"></a>
+#### Reusability <a href="#reusability" id="reusability"></a>
 
 Modules that do their job well are reusable across projects, for different purposes. As you discover helpful reliable modules, you’ll use them again and again.
 
 It’s time to design a modular application.
 
-### [Example: Designing a Modular Application](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/architecture/the-benefits-of-modularity#example-designing-a-modular-application) <a href="#example-designing-a-modular-application" id="example-designing-a-modular-application"></a>
+### Example: Designing a Modular Application <a href="#example-designing-a-modular-application" id="example-designing-a-modular-application"></a>
 
 Application design often starts out simple but gets more complex as you determine an application’s functionality. If a third party library already provides a capability, you can [deploy it with your app](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/fundamentals/configuring-dependencies/resolving-third-party-library-package-dependencies). You can otherwise implement the capability yourself.
 

@@ -2,7 +2,7 @@
 
 ## Configuration Framework
 
-You can use Liferay’s configuration framework to add a settings UI for a MVC Portlet.
+You can use the portal’s configuration framework to add a settings UI for a MVC Portlet.
 
 ### Creating the Configuration Interface <a href="#creating-the-configuration-interface" id="creating-the-configuration-interface"></a>
 
@@ -104,13 +104,13 @@ Redeploy the example module.
 
 Now the font family attribute is a dropdown selection.
 
-### ConfigurationBeanDeclaration with Previous Versions of Liferay <a href="#configurationbeandeclaration-with-previous-versions-of-liferay" id="configurationbeandeclaration-with-previous-versions-of-liferay"></a>
+### ConfigurationBeanDeclaration with Previous Versions of the portal <a href="#configurationbeandeclaration-with-previous-versions-of-liferay" id="configurationbeandeclaration-with-previous-versions-of-liferay"></a>
 
 IMPORTANT
 
 For version 7.4 +, a `ConfigurationBeanDeclaration` class is not required. The configration interface is registered with the Configuration Provider API automatically.
 
-On Liferay versions before 7.4 Update/GA 51, the configuration class must be registered with a `ConfigurationBeanDeclaration` to use it with the Configuration Provider API. The `ConfigurationBeanDeclaration` class has one method that returns the configuration interface class. This helps the system keep track of configuration changes as they happen. For example, for the N2F3 portlet, create a class like this:
+On versions before 7.4, the configuration class must be registered with a `ConfigurationBeanDeclaration` to use it with the Configuration Provider API. The `ConfigurationBeanDeclaration` class has one method that returns the configuration interface class. This helps the system keep track of configuration changes as they happen. For example, for the N2F3 portlet, create a class like this:
 
 ```java
 @Component(service = ConfigurationBeanDeclaration.class)
@@ -141,22 +141,22 @@ As an added bonus, the portal provides OSGi CDI integration. It lets you publish
 
 ## Localization <a href="#localization" id="localization"></a>
 
-Liferay currently supports about 50 languages out-of-the-box. Translation is complete for many of these languages and some are still in the translation process. Each language has its own language properties file containing keys for its language. But there are more than 6000 languages in the world. If you must add an additional language, here’s how.
+The portal currently supports about 50 languages out-of-the-box. Translation is complete for many of these languages and some are still in the translation process. Each language has its own language properties file containing keys for its language. But there are more than 6000 languages in the world. If you must add an additional language, here’s how.
 
 ### Adding A New Language <a href="#adding-a-new-language" id="adding-a-new-language"></a>
 
-By default, the `portal.properties` file specifies all languages available in Liferay. To add a new language that is not specified,
+By default, the `portal.properties` file specifies all languages available in the portal. To add a new language that is not specified,
 
 1. Take note of the [ISO 639-1 standard code](http://www.loc.gov/standards/iso639-2/php/code\_list.php) for your language (e.g. the ISO code for Amharic would be `am`).
 2. Take note of the [ISO 3166-1 alpha-2 two-letter country code](https://www.iso.org/iso-3166-country-codes.html) for your language. (e.g. the ISO code for Ethiopia would be `ET`).
-3.  Modify and replace the `web.xml` file found in your Liferay installation: `[HOME]/tomcat<version>/webapps/ROOT/WEB-INF/`. Add your new language under the `<web-resource-name`> section. For example,
+3.  Modify and replace the `web.xml` file found in your portal installation: `[HOME]/tomcat<version>/webapps/ROOT/WEB-INF/`. Add your new language under the `<web-resource-name`> section. For example,
 
     ```xml
     	<url-pattern>/am/c/portal/protected</url-pattern>
     	<url-pattern>/am-ET/c/portal/protected</url-pattern>
     	<url-pattern>/am_ET/c/portal/protected</url-pattern>
     ```
-4.  Modify and replace the `shielded-container-web.xml` file found in your Liferay installation: `[HOME]/tomcat<version>/webapps/ROOT/WEB-INF/`. Add your new language under the `<servlet-mapping`> section. For example,
+4.  Modify and replace the `shielded-container-web.xml` file found in your portal installation: `[HOME]/tomcat<version>/webapps/ROOT/WEB-INF/`. Add your new language under the `<servlet-mapping`> section. For example,
 
     ```xml
     	<servlet-mapping>
@@ -197,7 +197,7 @@ By default, the `portal.properties` file specifies all languages available in Li
     ![Save your new language to the list of current languages.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/core-frameworks/localization/adding-a-language/images/01.png)
 9.  Change your default language to the new language and click _Save_. The new language is now used by the portal instance.
 
-    ![Select and use the new language for your Liferay instance.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/core-frameworks/localization/adding-a-language/images/02.png)
+    ![Select and use the new language for your portal instance.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/core-frameworks/localization/adding-a-language/images/02.png)
 
 
 
@@ -278,7 +278,7 @@ public class WikiEditPortletProvider
 
 `WikiEditPortletProvider` extends `BasePortletProvider`, inheriting its `getPortletURL` methods. `WikiEditPortletProvider` must, however, implement `PortletProvider`’s `getPortletName` method, which returns the portlet’s name `WikiPortletKeys.WIKI`.
 
-**Note:** If you’re creating a Portlet Provider for one of Liferay’s portlets, your `getPortletName` method should return the portlet name from that portlet’s `*PortletKeys` class, if such a class exists.
+**Note:** If you’re creating a Portlet Provider for one of the portal’s portlets, your `getPortletName` method should return the portlet name from that portlet’s `*PortletKeys` class, if such a class exists.
 
 The `@Component` annotation for `WikiEditPortletProvider` specifies these elements and properties:
 

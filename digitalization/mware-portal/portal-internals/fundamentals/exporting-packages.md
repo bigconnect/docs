@@ -1,6 +1,6 @@
 # Exporting Packages
 
-In OSGi, packages are private by default. You must explicitly exporting a package so other modules can [import](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/fundamentals/importing-packages) and use them.
+In OSGi, packages are private by default. You must explicitly exporting a package so other modules can import and use them.
 
 Here’s how to export packages:
 
@@ -12,7 +12,7 @@ Here’s how to export packages:
     Export-Package: com.liferay.petra.io,com.liferay.petra.io.unsync
     ```
 
-[Workspace](https://learn.liferay.com/web/guest/w/dxp/building-applications/tooling/liferay-workspace/what-is-liferay-workspace)-based projects created using [Blade CLI](https://learn.liferay.com/web/guest/w/dxp/building-applications/tooling/blade-cli/generating-projects-with-blade-cli) or Liferay Developer Studio have [Bnd](http://bnd.bndtools.org/). Bnd propagates OSGi headers from the `bnd.bnd` file to the module JAR `META-INF/MANIFEST.MF` file.
+Workspace-based projects created using Blade CLI or Developer Studio have [Bnd](http://bnd.bndtools.org/). Bnd propagates OSGi headers from the `bnd.bnd` file to the module JAR `META-INF/MANIFEST.MF` file.
 
 IMPORTANT
 

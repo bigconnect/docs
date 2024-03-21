@@ -4,7 +4,7 @@ The Role Change Request App starts with the employee submitting a request form. 
 
 ![The Role Change Request object flows through several steps in this Workflow Powered App.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/reference/app-builder/creating-the-role-change-request-object/images/01.png)
 
-Before proceeding, create the backing object, form views, and table views. See [Creating the Role Change Request Object](https://learn.liferay.com/web/guest/w/dxp/building-applications/reference/app-builder/creating-the-role-change-request-object) for details. Here, you’ll create the Workflow Powered App based the backing object presented there.
+Before proceeding, create the backing object, form views, and table views. See Creating the Role Change Request Object for details. Here, you’ll create the Workflow Powered App based the backing object presented there.
 
 A Standard app can be created from within the Object Control Panel entry, but not a Workflow Powered app. Instead use the _Apps_ Control Panel Entry:
 
@@ -61,17 +61,17 @@ A Standard app can be created from within the Object Control Panel entry, but no
 
     * Leave the action named _Submit_.
 
-### [Deploying the App](https://learn.liferay.com/web/guest/w/dxp/building-applications/reference/app-builder/creating-the-role-change-request-app#deploying-the-app) <a href="#deploying-the-app" id="deploying-the-app"></a>
+### Deploying the App <a href="#deploying-the-app" id="deploying-the-app"></a>
 
-Now the app is ready for use. It just needs to be [deployed](https://learn.liferay.com/web/guest/w/dxp/building-applications/reference/app-builder/creating-a-standard-application#deploying-the-application) so its users can begin sending data.
+Now the app is ready for use. It just needs to be deployed so its users can begin sending data.
 
-The Role Change Request app can be deployed as a standalone app with a dedicated link. This is the type of app that should be used after reading some procedures, perhaps in a [Wiki](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/collaboration-and-social-overview#wiki) or a company’s employee handbook [document](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media). Keeping the link there ensures that employees read the appropriate documentation before kicking off a Role Change Request.
+The Role Change Request app can be deployed as a standalone app with a dedicated link. This is the type of app that should be used after reading some procedures, perhaps in a [Wiki](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/collaboration-and-social-overview#wiki) or a company’s employee handbook document. Keeping the link there ensures that employees read the appropriate documentation before kicking off a Role Change Request.
 
-### [Using the App](https://learn.liferay.com/web/guest/w/dxp/building-applications/reference/app-builder/creating-the-role-change-request-app#using-the-app) <a href="#using-the-app" id="using-the-app"></a>
+### Using the App <a href="#using-the-app" id="using-the-app"></a>
 
 As with any workflow item, the task must be assigned to a User to fill out and submit the form. The way you do this depends on how you access the workflow task.
 
-Once the Employee Request form is submitted, the Role assigned to the next step receives a [notification](https://learn.liferay.com/web/guest/w/dxp/collaboration-and-social/notifications-and-requests/user-guide/managing-notifications-and-requests). Click on it to see the next form view, Review: Current Manager. Assign the task to a User by clicking the Change icon (![Change](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-change.png)).
+Once the Employee Request form is submitted, the Role assigned to the next step receives a notification. Click on it to see the next form view, Review: Current Manager. Assign the task to a User by clicking the Change icon (![Change](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-change.png)).
 
 ![Each form of the app can be accessed via User Notification.](https://resources.learn.liferay.com/images/dxp/latest/en/building-applications/reference/app-builder/creating-a-workflow-powered-application/images/03.png)
 
@@ -83,13 +83,13 @@ To assign the task to a User, use the _Assign To_ menu item. After that you can 
 
 NOTE
 
-You cannot use the [My Workflow Tasks](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/using-workflows/reviewing-assets#assigning-the-review-task) app to manage the steps of a Workflow Powered App.
+You cannot use the My Workflow Tasks app to manage the steps of a Workflow Powered App.
 
-### [Going Further with the Role Change Request App](https://learn.liferay.com/web/guest/w/dxp/building-applications/reference/app-builder/creating-the-role-change-request-app#going-further-with-the-role-change-request-app) <a href="#going-further-with-the-role-change-request-app" id="going-further-with-the-role-change-request-app"></a>
+### Going Further with the Role Change Request App <a href="#going-further-with-the-role-change-request-app" id="going-further-with-the-role-change-request-app"></a>
 
 Add enhancements to make the Role Change Request app fully functional:
 
-1. [Create Roles](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/understanding-roles-and-permissions) for the managers and HR. Assign the appropriate steps to each Role, rather than using the Administrator Role.
+1. Create Roles for the managers and HR. Assign the appropriate steps to each Role, rather than using the Administrator Role.
 2. Create a Standard app so those with proper permissions can see the master list table from the Role Change Request object. Administrators can also kick off a form for an employee since they can access the first form, _Employee Request_.
 
 \

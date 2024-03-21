@@ -4,7 +4,7 @@ In OSGi, all components, Java classes, resources, and descriptors are deployed v
 
 Since a module’s contents depend on its activation, consider the activation steps:
 
-1. _Installation_: Copying the module JAR into the `[Liferay Home]/deploy` folder installs the module to the OSGi framework, marking the module `INSTALLED`.
+1. _Installation_: Copying the module JAR into the `[Home]/deploy` folder installs the module to the OSGi framework, marking the module `INSTALLED`.
 2. _Resolution_: Once all the module’s requirements are met (e.g., all packages it imports are available), the framework publishes the module’s exported packages and marks the module `RESOLVED`.
 3.  _Activation_: Modules are activated _eagerly_ by default. That is, they’re started in the framework and marked `ACTIVE` on resolution. An active module’s components are enabled. If a module specifies a `lazy` activation policy, as shown in the manifest header below, it’s activated only after another module requests one of its classes.
 
@@ -16,7 +16,7 @@ The figure below illustrates the module life cycle.
 
 ![This state diagram illustrates the module life cycle.](https://resources.learn.liferay.com/images/dxp/latest/en/liferay-internals/architecture/module-lifecycle/images/01.png)
 
-You can manage the life cycle with the [Apache Felix Gogo Shell](https://learn.liferay.com/web/guest/w/dxp/liferay-internals/fundamentals/using-the-gogo-shell). You can install/uninstall modules and start/stop them. You can update a module and notify dependent modules to use the update. Liferay’s tools, including [Liferay Workspace](https://learn.liferay.com/web/guest/w/dxp/building-applications/tooling/liferay-workspace/what-is-liferay-workspace), [Blade CLI](https://learn.liferay.com/web/guest/w/dxp/building-applications/tooling/blade-cli/installing-and-updating-blade-cli), and [Liferay Dev Studio](https://liferay.dev/-/ide) offer similar shell commands that use the OSGi Admin API.
+You can manage the life cycle with the Apache Felix Gogo Shell. You can install/uninstall modules and start/stop them. You can update a module and notify dependent modules to use the update. The portal’s tools, including Workspace, Blade CLI, and Dev Studio offer similar shell commands that use the OSGi Admin API.
 
 On activating a module, its components are enabled. But only _activated_ components can be used. Component activation requires all referenced services be satisfied. That is, all services a component references must be registered. The highest ranked service that matches a reference is bound to the component. When the container finds and binds all the services the component references, it registers the component. It’s now ready for activation.
 

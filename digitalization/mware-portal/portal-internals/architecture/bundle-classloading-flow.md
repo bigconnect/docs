@@ -1,6 +1,6 @@
 # Bundle Classloading Flow
 
-The OSGi container searches several places for imported classes. It’s important to know where it looks and in what order. Liferay DXP’s classloading flow for OSGi bundles follows the OSGi Core specification. It’s straightforward, but complex. The figure below illustrates the flow and this article walks you through it.
+The OSGi container searches several places for imported classes. It’s important to know where it looks and in what order. The portal’s classloading flow for OSGi bundles follows the OSGi Core specification. It’s straightforward, but complex. The figure below illustrates the flow and this article walks you through it.
 
 ![Figure 1: This flow chart illustrates classloading in a bundle.](https://resources.learn.liferay.com/images/dxp/latest/en/liferay-internals/architecture/bundle-classloading-flow/images/01.png)
 
@@ -14,4 +14,4 @@ Here is the algorithm for classloading in a bundle:
 6. If the class is in the bundle’s fragments classpath, the bundle’s classloader loads it.
 7. If the class is in a package that’s dynamically imported using `DynamicImport-Package` and a wire is established with the exporting bundle, the exporting bundle’s classloader loads it Otherwise, the class isn’t found.
 
-Congratulations! Now you know how Liferay DXP finds and loads classes for OSGi bundles.
+Congratulations! Now you know how the portal finds and loads classes for OSGi bundles.

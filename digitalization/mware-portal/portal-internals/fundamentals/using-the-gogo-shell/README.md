@@ -18,7 +18,7 @@ The control panel is the safest, most secure way to access Gogo shell:
 
     NOTE
 
-    In DXP 7.2, open the Control Panel and navigate to _Configuration_ → _Gogo Shell_
+    In version 7.2, open the Control Panel and navigate to _Configuration_ → _Gogo Shell_
 3.  Enter a Gogo shell command in the _g!_ text field. For example, enter `lb | grep "Liferay Announcements API"` to list information about the Announcements API bundle.
 
     NOTE
@@ -32,6 +32,6 @@ The control panel is the safest, most secure way to access Gogo shell:
 
 WARNING
 
-The Gogo shell is extremely powerful and can manipulate the platform’s core functionality. Only grant Gogo shell access to trusted administrators. Please see [Understanding Roles and Permissions](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/roles-and-permissions/understanding-roles-and-permissions) for more information.
+The Gogo shell is extremely powerful and can manipulate the platform’s core functionality. Only grant Gogo shell access to trusted administrators. Please see Understanding Roles and Permissions for more information.
 
 \

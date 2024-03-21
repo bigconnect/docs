@@ -4,8 +4,8 @@ Workflow Powered Applications require data from multiple stakeholders. These pro
 
 To create an example application, read
 
-* [Creating the Role Change Request Object](https://learn.liferay.com/web/guest/w/dxp/building-applications/reference/app-builder/creating-the-role-change-request-object)
-* [Creating the Role Change Request App](https://learn.liferay.com/web/guest/w/dxp/building-applications/reference/app-builder/creating-the-role-change-request-app)
+* Creating the Role Change Request Object
+* Creating the Role Change Request App
 
 Workflow Powered Apps are designed by thinking about the steps the object’s forms must pass through before being considered complete.
 
@@ -20,9 +20,9 @@ Each step has configuration options depending on its stage in the workflow:
 | Additional Numbered Steps (e.g., Step 2, 3, 4, etc.) | Same as for step 1, plus the _Add New Action_ option                      | Additional steps can do everything that Step 1 can do, plus create a new action that transitions back to the previous workflow step, if necessary.                                                                                                                                             |
 | End (Final Step)                                     | Step Name                                                                 | Name the last step in the workflow process                                                                                                                                                                                                                                                     |
 
-### [App Versions](https://learn.liferay.com/web/guest/w/dxp/building-applications/reference/app-builder/creating-a-workflow-powered-application#app-versions) <a href="#app-versions" id="app-versions"></a>
+### App Versions <a href="#app-versions" id="app-versions"></a>
 
-Workflow Powered Apps are versioned, because [workflow processes are versioned](https://learn.liferay.com/web/guest/w/dxp/process-automation/workflow/designing-and-managing-workflows/managing-workflows#viewing-and-restoring-workflow-revisions). A new version of the app is created when you
+Workflow Powered Apps are versioned, because workflow processes are versioned. A new version of the app is created when you
 
 * Add, edit, or remove steps or transitions in the workflow process (actions that generate a new version of the workflow process).
 * Add, update, or remove a form view in one of the workflow steps.
