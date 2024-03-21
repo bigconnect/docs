@@ -30,7 +30,7 @@ users.update.last.login=false
 
 ### [Import](https://learn.liferay.com/web/guest/w/dxp/users-and-permissions/connecting-to-a-user-directory/ldap-configuration-reference#import) <a href="#import" id="import"></a>
 
-You can import user data from LDAP directories using the following options:
+You can import real-time user data from LDAP directories using the following options:
 
 **Enable Import:** Check this box to do a mass import from your LDAP directories. Otherwise, Users are imported as they log in.
 

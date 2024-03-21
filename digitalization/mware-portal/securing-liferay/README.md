@@ -12,7 +12,7 @@ Here you’ll learn the basic elements to secure the portal. This includes confi
 
 IMPORTANT
 
-Customers are advised to deploy security patches as they are released. For community and CE installations, we recommend always using the latest community release, which contains all previous security patches.
+Customers are advised to deploy security patches as they are released.&#x20;
 
 ### Authentication <a href="#authentication" id="authentication"></a>
 
@@ -27,7 +27,7 @@ To learn more, see [Authentication Basics](https://app.gitbook.com/o/-LvB5aUmu6F
 
 ### Permissions <a href="#permissions" id="permissions"></a>
 
-The portal has a robust role-based access control (RBAC) system. Users can be assigned to Sites, Teams, User Groups, or Organizations. Custom Roles can be created, permissions can be assigned to these Roles, and those Roles can be assigned to Users. Roles are scoped to apply only in a specific context, such as a Site, Organization, or globally. See [Roles and Permissions](../users-and-permissions/roles-and-permissions/) for more information.
+The portal has a robust role-based access control (RBAC) system. Users can be assigned to Sites, Teams, User Groups, or Organizations. Custom Roles can be created, permissions can be assigned to these Roles, and those Roles can be assigned to Users. Roles are scoped to apply only in a specific context, such as a Site, Organization, or globally. See Roles and Permissions for more information.
 
 ### Securing Web Services <a href="#securing-web-services" id="securing-web-services"></a>
 
@@ -51,7 +51,9 @@ There are many ways to fine-tune or disable additional security features:
 These features can be configured using portal properties.
 
 {% hint style="warning" %}
-The Portal’s philosophy is “secure by default.” Please exercise significant caution when modifying security-specific defaults or white-lists. Such actions may lead to security misconfiguration and an insecure deployment.
+The Portal’s philosophy is “secure by default”, with SSL enabled by default.
+
+&#x20;Please exercise significant caution when modifying security-specific defaults or white-lists. Such actions may lead to security misconfiguration and an insecure deployment.
 {% endhint %}
 
 \
