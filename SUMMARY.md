@@ -803,6 +803,7 @@
     * [Data Sets](digitalization/mware-portal/building-applications/data-sets.md)
     * [Blade CLI](digitalization/mware-portal/building-applications/blade-cli.md)
     * [CLI Tool](digitalization/mware-portal/building-applications/liferay-cli-tool.md)
+    * [Portlets](digitalization/mware-portal/building-applications/portlets.md)
     * [npm Bundler](digitalization/mware-portal/building-applications/liferay-npm-bundler.md)
     * [App Builder](digitalization/mware-portal/building-applications/app-builder/README.md)
       * [Creating a Standard Application](digitalization/mware-portal/building-applications/app-builder/creating-a-standard-application.md)
