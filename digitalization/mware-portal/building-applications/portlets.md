@@ -30,4 +30,4 @@ Portlet window states control the amount of space a portlet takes on a page. Win
 * **Maximized:** The portlet takes up an entire page.
 * **Minimized:** Only the portlet’s title bar shows.
 
-All of the ways to develop web front-ends on MWARE Portal involve portlets. The JavaScript-based widgets use Liferay’s JS Portlet Extender behind the scenes and the Java-based web front-ends are explicitly portlets. All of the web front-end types vary in their support of Portlet 3.0, dependency injection (DI), Model View Controller (MVC), and modularity, giving you plenty of good options for developing portlets.
+All of the ways to develop web front-ends on MWARE Portal involve portlets. They are deployed as OSGI packaes and don't require the portal to be stopped to load, reload, deploy or undeoloy portlets. The JavaScript-based widgets use Liferay’s JS Portlet Extender behind the scenes and the Java-based web front-ends are explicitly portlets. All of the web front-end types vary in their support of Portlet 3.0, dependency injection (DI), Model View Controller (MVC), and modularity, giving you plenty of good options for developing portlets.
