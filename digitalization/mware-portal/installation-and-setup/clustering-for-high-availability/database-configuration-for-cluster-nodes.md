@@ -1,24 +1,24 @@
 # Database Configuration for Cluster Nodes
 
-At minimum, nodes in a DXP cluster must be [configured to share the same database](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/example-creating-a-simple-dxp-cluster#configure-cluster-link-and-the-other-server-connections) (or database cluster) in order to function. Optimizations discussed here can further improve database performance for a DXP cluster and should be considered with consideration for your usage of DXP and expected transaction volume.
+At minimum, nodes in a portal system cluster must be configured to share the same database (or database cluster) in order to function. Optimizations discussed here can further improve database performance for a portal cluster and should be considered with consideration for your usage of the portal and expected transaction volume.
 
 WARNING
 
 Clustering will not work with the embedded HSQL database.
 
-### [Read-Writer Database Configuration](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/database-configuration-for-cluster-nodes#read-writer-database-configuration) <a href="#read-writer-database-configuration" id="read-writer-database-configuration"></a>
+### Read-Writer Database Configuration <a href="#read-writer-database-configuration" id="read-writer-database-configuration"></a>
 
-To improve database performance, you can use a read-writer database configuration. Instead of using the same data source for read and read-write operations, this strategy uses a separate data source for each operation type. DXP’s Aspect Oriented Programming (AOP) transaction infrastructure directs read transactions to the read data source and read-write transactions to the write data source.
+To improve database performance, you can use a read-writer database configuration. Instead of using the same data source for read and read-write operations, this strategy uses a separate data source for each operation type. The portal’s Aspect Oriented Programming (AOP) transaction infrastructure directs read transactions to the read data source and read-write transactions to the write data source.
 
 ![Read-Writer Database Interaction](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/database-configuration-for-cluster-nodes/images/01.png)
 
-Connections to separate read and read-write [data sources](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#JDBC) are configured using JDBC or JNDI [Portal Properties](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/portal-properties) (e.g., in a [`portal-ext.properties` file](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/portal-properties)), as explained in the following sections. The data sources should use separate instances of the DXP database, where the read-write database instance is replicated to the read database instance.
+Connections to separate read and read-write [data sources](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#JDBC) are configured using JDBC or JNDI Portal Properties (e.g., in a `portal-ext.properties` file), as explained in the following sections. The data sources should use separate instances of the portal database, where the read-write database instance is replicated to the read database instance.
 
-#### [JDBC](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/database-configuration-for-cluster-nodes#jdbc) <a href="#jdbc" id="jdbc"></a>
+#### JDBC <a href="#jdbc" id="jdbc"></a>
 
-Follow these steps to edit your `portal-ext.properties` file to connect directly to separate read and write data sources using [JDBC](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/installing-liferay/configuring-a-database):
+Follow these steps to edit your `portal-ext.properties` file to connect directly to separate read and write data sources using JDBC:
 
-1.  Configure JDBC connections to separate read and write data sources. See the [JDBC properties reference](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#JDBC) for more information. Here’s an example:
+1.  Configure JDBC connections to separate read and write data sources. See the JDBC properties reference for more information. Here’s an example:
 
     ```properties
     jdbc.read.driverClassName=[place your driver name here]
@@ -34,9 +34,9 @@ Follow these steps to edit your `portal-ext.properties` file to connect directly
 
     NOTE
 
-    Liferay uses HikariCP as the connection pool provider.
+    The portal uses HikariCP as the connection pool provider.
 
-    For example JDBC connection values, please see [Database Templates](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/database-templates).
+    For example JDBC connection values, please see Database Templates.
 2.  Configure the read and write pool timeouts and size settings
 
     ```properties
@@ -54,13 +54,13 @@ Follow these steps to edit your `portal-ext.properties` file to connect directly
     jdbc.write.minimumIdle=10
     jdbc.write.registerMbeans=true
     ```
-3.  **(This step is only necessary for DXP 7.4 U69 and below)** Configure DXP to use the write data source (the data source whose prefix is `jdbc.write.`) to create the [Counter](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#Counter) data source. A separate data source is always dedicated to the counter.
+3.  **(This step is only necessary for version 7.4 U69 and below)** Configure the portal to use the write data source (the data source whose prefix is `jdbc.write.`) to create the Counter data source. A separate data source is always dedicated to the counter.
 
     ```properties
     counter.jdbc.prefix=jdbc.write.
     ```
 4. Optionally validate the data connections to make sure bad connections are handled gracefully.
-5.  **(This step is only necessary for DXP 7.3 U22, DXP 7.4 U65 and below)** Enable the read-writer database configuration by copying the default [`spring.infrastructure.configs` Portal Properties](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#Spring) to your `portal-ext.properties` file and adding the following Spring configuration file paths to them.
+5.  **(This step is only necessary for version 7.3 U22, 7.4 U65 and below)** Enable the read-writer database configuration by copying the default `spring.infrastructure.configs` Portal Properties to your `portal-ext.properties` file and adding the following Spring configuration file paths to them.
 
     Add to `spring.infrastructure.configs`:
 
@@ -68,9 +68,9 @@ Follow these steps to edit your `portal-ext.properties` file to connect directly
     META-INF/dynamic-data-source-infrastructure-spring.xml
     ```
 
-    For more information, see the [Spring configuration Portal Properties](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#Spring).
+    For more information, see the Spring configuration Portal Properties.
 
-#### [JNDI](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/database-configuration-for-cluster-nodes#jndi) <a href="#jndi" id="jndi"></a>
+#### JNDI <a href="#jndi" id="jndi"></a>
 
 Edit your `portal-ext.properties` file following these steps to connect to your read and write data sources on your app server using JNDI:
 
@@ -104,13 +104,13 @@ Edit your `portal-ext.properties` file following these steps to connect to your 
     jdbc.write.minimumIdle=10
     jdbc.write.registerMbeans=true
     ```
-3.  **(This step is only necessary for DXP 7.4 U69 and below)** Configure DXP to use the write data source (the data source whose prefix is `jdbc.write.`) to create the [Counter](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#Counter) data source. A separate data source is always dedicated to the counter.
+3.  **(This step is only necessary for version 7.4 U69 and below)** Configure the portal to use the write data source (the data source whose prefix is `jdbc.write.`) to create the [Counter](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#Counter) data source. A separate data source is always dedicated to the counter.
 
     ```properties
     counter.jdbc.prefix=jdbc.write.
     ```
 4. Optionally validate the data connections to make sure bad connections are handled gracefully.
-5.  **(This step is only necessary for DXP 7.4 U65 and below or DXP 7.3 U22 and below)** Enable the read-writer database configuration by copying the default [`spring.infrastructure.configs` Portal Properties](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#Spring) to your `portal-ext.properties` file and adding the following Spring configuration file paths to them.
+5.  **(This step is only necessary for version 7.4 U65 and below or 7.3 U22 and below)** Enable the read-writer database configuration by copying the default `spring.infrastructure.configs` Portal Properties to your `portal-ext.properties` file and adding the following Spring configuration file paths to them.
 
     Add to `spring.infrastructure.configs`:
 
@@ -118,12 +118,12 @@ Edit your `portal-ext.properties` file following these steps to connect to your 
     META-INF/dynamic-data-source-infrastructure-spring.xml
     ```
 
-    For more information, see the [Spring configuration Portal Properties](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#Spring).
+    For more information, see the Spring configuration Portal Properties.
 
-DXP uses a read data source, a write data source, and a counter data source the next time it starts.
+The portal uses a read data source, a write data source, and a counter data source the next time it starts.
 
-### [Database Replication](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/database-configuration-for-cluster-nodes#database-replication) <a href="#database-replication" id="database-replication"></a>
+### Database Replication <a href="#database-replication" id="database-replication"></a>
 
-Using a database cluster improves fault tolerance and DXP performance. Database cluster instances must be stay in sync. Replication is the process of copying changed data and changed schema from one database instance to another. All [supported databases](https://help.liferay.com/hc/en-us/articles/360049238151) support replication. If you’re using a database cluster, set up the databases for replication by following the database vendor’s instructions.
+Using a database cluster improves fault tolerance and the portal performance. Database cluster instances must be stay in sync. Replication is the process of copying changed data and changed schema from one database instance to another. All supported databases support replication. If you’re using a database cluster, set up the databases for replication by following the database vendor’s instructions.
 
 \

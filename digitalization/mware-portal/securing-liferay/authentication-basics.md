@@ -6,7 +6,7 @@ NOTE
 
 The Sign In widget appears on the default home page at `http[s]://[server-name:port]/web/guest/home`. If the Sign In widget is unavailable on any page, it can be accessed directly via its URL: `http[s]://[server-name:port]/c/portal/login`.
 
-![The default Liferay home page](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/authentication-basics/images/01.png)
+![The default home page](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/authentication-basics/images/01.png)
 
 You can configure other methods of authenticating users and/or applications and services:
 

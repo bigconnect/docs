@@ -1,16 +1,16 @@
 # Using OAuth2 to Authorize Users
 
-You can create applications that access Liferay’s headless REST APIs using the OAuth 2.0 authorization protocol. The provided sample React app demonstrates three different OAuth2 token-based authentication flows: authorization code flow, client credentials flow, and password flow. For more details on the OAuth2 Administration panel see [Creating an OAuth2 Application](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/creating-oauth2-applications)
+You can create applications that access the portal’s headless REST APIs using the OAuth 2.0 authorization protocol. The provided sample React app demonstrates three different OAuth2 token-based authentication flows: authorization code flow, client credentials flow, and password flow. For more details on the OAuth2 Administration panel see Creating an OAuth2 Application
 
-### [Set Up Liferay DXP](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/using-oauth2-to-authorize-users#set-up-liferay-dxp) <a href="#set-up-liferay-dxp" id="set-up-liferay-dxp"></a>
+### Set Up the portal <a href="#set-up-liferay-dxp" id="set-up-liferay-dxp"></a>
 
-Start a new Liferay DXP instance by running
+Start a new portal instance by running
 
 ```bash
 docker run -it -m 8g -p 8080:8080 liferay/dxp:2024.q1.1
 ```
 
-Sign in to Liferay at [http://localhost:8080](http://localhost:8080/) using the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
+Sign in to the portal at [http://localhost:8080](http://localhost:8080/) using the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
 
 1. Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)) and navigate to _Control Panel_ → _Security_ → _OAuth 2 Administration_.
 2. Click _Add_ (![Add Icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) to create a new OAuth2 application.
@@ -29,7 +29,7 @@ Sign in to Liferay at [http://localhost:8080](http://localhost:8080/) using the 
 7. Go to the _Portal Cross-Origin Resource Sharing (CORS)_ tab and click _Default Portal CORS Configuration_.
 8. Add a _URL Pattern_ with the value `/o/headless-admin-user/*` and click _Save_. This enables CORS for the `headless-admin-user` category of APIs.
 
-### [Deploy the Sample React App](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/using-oauth2-to-authorize-users#deploy-the-sample-react-app) <a href="#deploy-the-sample-react-app" id="deploy-the-sample-react-app"></a>
+### Deploy the Sample React App <a href="#deploy-the-sample-react-app" id="deploy-the-sample-react-app"></a>
 
 1.  Download and unzip the [OAuth2 React App](https://resources.learn.liferay.com/dxp/latest/en/headless-delivery/using-oauth2/liferay-c2b6.zip).
 
@@ -59,31 +59,31 @@ Sign in to Liferay at [http://localhost:8080](http://localhost:8080/) using the 
     yarn install && yarn start
     ```
 
-#### [Authorization Code Flow](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/using-oauth2-to-authorize-users#authorization-code-flow) <a href="#authorization-code-flow" id="authorization-code-flow"></a>
+#### Authorization Code Flow <a href="#authorization-code-flow" id="authorization-code-flow"></a>
 
 The authorization code flow requires users to log in with their credentials and approve authorization before permission is granted to the app. This additional step is avoided with the other flows.
 
 1. Open the React app running at [http://localhost:3000](http://localhost:3000/), then click _Authorization Code Flow_ at the top of the page.
-2. Enter `http://localhost:8080/o/oauth2/authorize` for the Liferay authorize URL. Paste the client ID from your clipboard. Click _Authorize_.
-3.  If you’re not already logged in, you are redirected to the Liferay login page before being sent to the authorization page. Enter your username and password (e.g. _test@liferay.com:learn_) and click _Sign In_. On the authorization page, click _Authorize_. If you are already logged in, you are sent directly to the authorization page.
+2. Enter `http://localhost:8080/o/oauth2/authorize` for the portalauthorize URL. Paste the client ID from your clipboard. Click _Authorize_.
+3.  If you’re not already logged in, you are redirected to the portal login page before being sent to the authorization page. Enter your username and password (e.g. _test@liferay.com:learn_) and click _Sign In_. On the authorization page, click _Authorize_. If you are already logged in, you are sent directly to the authorization page.
 
     ![Click Authorizez to authorize the application.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/using-oauth2/using-oauth2-to-authorize-users/images/03.png)
 
     You are redirected back to the React app. Note the authorization code that is used to make the next API call appears.
-4. Enter `http://localhost:8080/o/oauth2/token` for the Liferay token URL. Paste the client ID and client secret from your clipboard. Click _Get Token_. Note the authorization token that can be used to make future REST API calls appears.
-5.  Enter `http://localhost:8080/o/headless-admin-user/v1.0/user-accounts` for the Liferay get user URL. Click _Get Data_. The React app makes a REST API call to Liferay using token-based authentication and returns a list of Liferay users.
+4. Enter `http://localhost:8080/o/oauth2/token` for the portal token URL. Paste the client ID and client secret from your clipboard. Click _Get Token_. Note the authorization token that can be used to make future REST API calls appears.
+5.  Enter `http://localhost:8080/o/headless-admin-user/v1.0/user-accounts` for the portal get user URL. Click _Get Data_. The React app makes a REST API call to the portal using token-based authentication and returns a list of portal users.
 
-    ![A list of Liferay users appears.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/using-oauth2/using-oauth2-to-authorize-users/images/04.png)
+    ![A list of the portal users appears.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/using-oauth2/using-oauth2-to-authorize-users/images/04.png)
 
-#### [Client Credentials Flow](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/using-oauth2-to-authorize-users#client-credentials-flow) <a href="#client-credentials-flow" id="client-credentials-flow"></a>
+#### Client Credentials Flow <a href="#client-credentials-flow" id="client-credentials-flow"></a>
 
 The client credentials flow is used typically for server to server interaction and does not involve any users.
 
 1. Open the React app running at [http://localhost:3000](http://localhost:3000/), then click _Client Credentials Flow_ at the top of the page.
-2. Enter `http://localhost:8080/o/oauth2/token` for the Liferay token URL. Paste the client ID and client secret from your clipboard. Click _Get Token_. Note the authorization token that can be used to make future REST API calls appears.
-3. Enter `http://localhost:8080/o/headless-admin-user/v1.0/user-accounts` for the Liferay get user URL. Click _Get Data_. The React app makes a REST API call to Liferay using token-based authentication and returns a list of Liferay users.
+2. Enter `http://localhost:8080/o/oauth2/token` for the portal  token URL. Paste the client ID and client secret from your clipboard. Click _Get Token_. Note the authorization token that can be used to make future REST API calls appears.
+3. Enter `http://localhost:8080/o/headless-admin-user/v1.0/user-accounts` for the portal get user URL. Click _Get Data_. The React app makes a REST API call to the portal using token-based authentication and returns a list of the portal users.
 
-#### [Password Flow](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/using-oauth2-to-authorize-users#password-flow) <a href="#password-flow" id="password-flow"></a>
+#### Password Flow <a href="#password-flow" id="password-flow"></a>
 
 In the password flow authorization, the React app passes the username and password directly in the request.
 
@@ -92,13 +92,13 @@ WARNING
 In a password flow, the username and password are directly exposed to the application. Thus the user must trust the application. Passing the username and password in the API request also carries risk. Using password flow is not recommended.
 
 1. Open the React app running at [http://localhost:3000](http://localhost:3000/), then click _Password Flow_ at the top of the page.
-2. Enter `http://localhost:8080/o/oauth2/token` for the Liferay token URL.
+2. Enter `http://localhost:8080/o/oauth2/token` for the portal token URL.
 3. Paste the client ID and client secret from your clipboard.
 4. Enter your username and password (e.g. _test@liferay.com:learn_).
 5. Click _Get Token_. Note the authorization token that can be used to make future REST API calls appears.
-6. Enter `http://localhost:8080/o/headless-admin-user/v1.0/user-accounts` for the Liferay get user URL. Click _Get Data_. The React app makes a REST API call to Liferay using token-based authentication and returns a list of Liferay users.
+6. Enter `http://localhost:8080/o/headless-admin-user/v1.0/user-accounts` for the portal get user URL. Click _Get Data_. The React app makes a REST API call to the portal using token-based authentication and returns a list of the portal users.
 
-### [Examine the Code](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/using-oauth2-to-authorize-users#examine-the-code) <a href="#examine-the-code" id="examine-the-code"></a>
+### Examine the Code <a href="#examine-the-code" id="examine-the-code"></a>
 
 The React app’s `components` folder defines the UI elements and logic for handling the events fired by clicking buttons. For example, the `Authorize.js` file redirects to the authorization page, `Token.js` fetches the access token, and `Users.js` fetches the list of users. Each authorization flow uses some or all of these components.
 
@@ -123,7 +123,7 @@ src
 └── index.js
 ```
 
-#### [Authorization Grant Type](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/using-oauth2-to-authorize-users#authorization-grant-type) <a href="#authorization-grant-type" id="authorization-grant-type"></a>
+#### Authorization Grant Type <a href="#authorization-grant-type" id="authorization-grant-type"></a>
 
 The `AuthorizationCode.js` file of the `grant-type-authorization-code` flow uses all three components (`Authorize.js`, `Token.js`, and `Users.js`)
 
@@ -323,7 +323,7 @@ function Token({handleToken, grantType}) {
 }
 ```
 
-In the `Token.js` component, the parameters `client_id`, `client_secret`, `code`, `grant_type`, and `redirect_uri` are sent in this API request. If the parameters are valid, Liferay returns a JSON response containing the access token.
+In the `Token.js` component, the parameters `client_id`, `client_secret`, `code`, `grant_type`, and `redirect_uri` are sent in this API request. If the parameters are valid, the portal returns a JSON response containing the access token.
 
 Example response:
 
@@ -340,7 +340,7 @@ The `Users.js` component parses the response for the `access_token`.
 
 Finally, clicking _Get Data_ calls the `getUsers` function in the `Requests.js` file.
 
-#### [Client Credentials Grant Type](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/using-oauth2-to-authorize-users#client-credentials-grant-type) <a href="#client-credentials-grant-type" id="client-credentials-grant-type"></a>
+#### Client Credentials Grant Type <a href="#client-credentials-grant-type" id="client-credentials-grant-type"></a>
 
 The `ClientCredentials.js` file of the `grant-type-client-credentials` flow uses two components (i.e. `Token.js` and `Users.js`).
 
@@ -373,13 +373,13 @@ function ClientCredentials() {
 }
 ```
 
-In the `Token.js` component, the parameters `client_id`, `client_secret`, and `grant_type` are sent in the API request. If the parameters are valid, Liferay returns a JSON response containing the access token.
+In the `Token.js` component, the parameters `client_id`, `client_secret`, and `grant_type` are sent in the API request. If the parameters are valid, the portal returns a JSON response containing the access token.
 
 The `Users.js` component parses the response for the `access_token`.
 
 Finally, clicking _Get Data_ calls the `getUsers` function in the `Requests.js` file.
 
-#### [Password Grant Type](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/using-oauth2-to-authorize-users#password-grant-type) <a href="#password-grant-type" id="password-grant-type"></a>
+#### Password Grant Type <a href="#password-grant-type" id="password-grant-type"></a>
 
 The `Password.js` file of the `grant-type-password` flow uses two components (i.e. `Token.js` and `Users.js`).
 
@@ -412,7 +412,7 @@ function Password() {
 }
 ```
 
-In the `Token.js` component, the parameters `client_id`, `client_secret`, `grant_type`, `password`, and `username` are sent as parameters in the API request. If the parameters are valid, the Liferay server returns a JSON response containing the access token.
+In the `Token.js` component, the parameters `client_id`, `client_secret`, `grant_type`, `password`, and `username` are sent as parameters in the API request. If the parameters are valid, the portal server returns a JSON response containing the access token.
 
 The `Users.js` component parses the response for the `access_token`.
 

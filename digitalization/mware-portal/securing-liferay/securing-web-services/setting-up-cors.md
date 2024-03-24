@@ -2,20 +2,20 @@
 
 CORS stands for Cross-Origin Resource Sharing. An Origin is a web server at a different domain, and a Resource is some asset stored on the server, like an image, PDF, or HTML file. Sometimes you must request resources stored on another origin. This is called a cross-origin request, and web servers have policies to allow or deny such requests.
 
-For example, browsers themselves don’t allow cross-origin AJAX-style requests from scripts to help mitigate [cross-site scripting](https://en.wikipedia.org/wiki/Cross-site\_scripting) attacks. These APIs follow a _same origin_ policy. But for certain resources, it can be convenient to allow Liferay DXP to serve them to different origins.
+For example, browsers themselves don’t allow cross-origin AJAX-style requests from scripts to help mitigate [cross-site scripting](https://en.wikipedia.org/wiki/Cross-site\_scripting) attacks. These APIs follow a _same origin_ policy. But for certain resources, it can be convenient to allow the portal to serve them to different origins.
 
-For example, if you manage images in Docs & Media, you may want to allow cross-origin requests for them. You can enable CORS for matching URLs in Liferay Portal or for JAX-RS application resources.
+For example, if you manage images in Docs & Media, you may want to allow cross-origin requests for them. You can enable CORS for matching URLs in the portal or for JAX-RS application resources.
 
-### [Enabling CORS for Liferay DXP Services](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/setting-up-cors#enabling-cors-for-liferay-dxp-services) <a href="#enabling-cors-for-liferay-dxp-services" id="enabling-cors-for-liferay-dxp-services"></a>
+### Enabling CORS for the portal Services <a href="#enabling-cors-for-liferay-dxp-services" id="enabling-cors-for-liferay-dxp-services"></a>
 
 You’ll find the settings in Configuration → System Settings → Security → Security Tools → Portal Cross Resource Origin Sharing (CORS):
 
 1. Click _Add_ to create a configuration entry.
 2.  Fill out the fields on the form. When finished, click _Save_.
 
-    ![Figure 1: The CORS system settings provide a way to configure CORS headers for Liferay services.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/securing-web-services/setting-up-cors/images/01.png)
+    ![Figure 1: The CORS system settings provide a way to configure CORS headers for the portal Services.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/securing-web-services/setting-up-cors/images/01.png)
 
-#### [Portal CORS Configuration Reference](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/setting-up-cors#portal-cors-configuration-reference) <a href="#portal-cors-configuration-reference" id="portal-cors-configuration-reference"></a>
+#### Portal CORS Configuration Reference <a href="#portal-cors-configuration-reference" id="portal-cors-configuration-reference"></a>
 
 | Configuration             | Description                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -26,7 +26,7 @@ You’ll find the settings in Configuration → System Settings → Security →
 
 You can also use a configuration file to configure CORS.
 
-### [Enabling CORS for JAX-RS Applications](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/setting-up-cors#enabling-cors-for-jax-rs-applications) <a href="#enabling-cors-for-jax-rs-applications" id="enabling-cors-for-jax-rs-applications"></a>
+### Enabling CORS for JAX-RS Applications <a href="#enabling-cors-for-jax-rs-applications" id="enabling-cors-for-jax-rs-applications"></a>
 
 You’ll find the settings in Configuration → System Settings → Security → Security Tools → Web Contexts Resource Origin Sharing (CORS):
 
@@ -35,7 +35,7 @@ You’ll find the settings in Configuration → System Settings → Security →
 
     ![Figure 2: There's a separate system settings category for CORS web contexts.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/securing-web-services/setting-up-cors/images/02.png)
 
-#### [JAX-RS CORS Configuration Reference](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/setting-up-cors#jax-rs-cors-configuration-reference) <a href="#jax-rs-cors-configuration-reference" id="jax-rs-cors-configuration-reference"></a>
+#### JAX-RS CORS Configuration Reference <a href="#jax-rs-cors-configuration-reference" id="jax-rs-cors-configuration-reference"></a>
 
 | Configuration                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

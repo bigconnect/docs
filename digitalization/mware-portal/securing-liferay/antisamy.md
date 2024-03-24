@@ -1,14 +1,14 @@
 # AntiSamy
 
-Liferay DXP includes an [AntiSamy](https://www.owasp.org/index.php/Category:OWASP\_AntiSamy\_Project) module that protects against user-entered malicious code. If your site allows users to post content in message boards, blogs, or other applications, these posts could include malicious code. The AntiSamy module filters HTML/CSS fragments and removes suspect JavaScript code from them.
+The portal includes an [AntiSamy](https://www.owasp.org/index.php/Category:OWASP\_AntiSamy\_Project) module that protects against user-entered malicious code. If your site allows users to post content in message boards, blogs, or other applications, these posts could include malicious code. The AntiSamy module filters HTML/CSS fragments and removes suspect JavaScript code from them.
 
-The module leverages the powerful [OWASP AntiSamy library](https://www.owasp.org/index.php/Category:OWASP\_AntiSamy\_Project) to enforce a content policy that’s been effective for the auction site [eBay](https://www.ebay.com/). The AntiSamy module adds an OWASP AntiSamy implementation to your installation’s list of existing sanitizer implementations. Liferay DXP uses the AntiSamy sanitizer and any existing configured sanitizers to scrub user input to blogs entries, calendar events, Message Boards posts, Wiki pages, and Web Content articles.
+The module leverages the powerful [OWASP AntiSamy library](https://www.owasp.org/index.php/Category:OWASP\_AntiSamy\_Project) to enforce a content policy that’s been effective for the auction site [eBay](https://www.ebay.com/). The AntiSamy module adds an OWASP AntiSamy implementation to your installation’s list of existing sanitizer implementations. The portal uses the AntiSamy sanitizer and any existing configured sanitizers to scrub user input to blogs entries, calendar events, Message Boards posts, Wiki pages, and Web Content articles.
 
 AntiSamy is enabled by default.
 
-![Liferay DXP's AntiSamy configuration options include both a blacklist and a whitelist.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/using-antisamy/images/01.png)
+![The portal's AntiSamy configuration options include both a blacklist and a whitelist.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/using-antisamy/images/01.png)
 
-### [Configuring AntiSamy](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/using-antisamy#configuring-antisamy) <a href="#configuring-antisamy" id="configuring-antisamy"></a>
+### Configuring AntiSamy <a href="#configuring-antisamy" id="configuring-antisamy"></a>
 
 AntiSamy uses both a blacklist and a whitelist, so you can define subsets of entities that should be sanitized or not sanitized. The whitelist prevents content of that type from being filtered, and the blacklist filters content of that type.
 
@@ -23,7 +23,7 @@ By default, everything is sanitized except for `JournalArticle`, `BlogsEntry`, a
 7. If you want to remove a package path from the configuration, click the minus (-) icon.
 8. When finished, click _Save_.
 
-### [Using Wildcards](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/using-antisamy#using-wildcards) <a href="#using-wildcards" id="using-wildcards"></a>
+### Using Wildcards <a href="#using-wildcards" id="using-wildcards"></a>
 
 You can use wildcards in the configuration. For example, if you only want to sanitize message board posts and nothing else, you can
 
@@ -34,8 +34,8 @@ The whitelist and the blacklist work together. Without the blacklist, the above 
 
 Use AntiSamy to ensure user-generated content stays safe for other users to view.
 
-### [AntiSamy Sanitizer by Class Name](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/using-antisamy#antisamy-sanitizer-by-class-name) <a href="#antisamy-sanitizer-by-class-name" id="antisamy-sanitizer-by-class-name"></a>
+### AntiSamy Sanitizer by Class Name <a href="#antisamy-sanitizer-by-class-name" id="antisamy-sanitizer-by-class-name"></a>
 
-You may notice another way to configure AntiSamy called _AntiSamy Sanitizer by Class Name_. This is a way for developers to create a more nuanced AntiSamy configuration by specifying an AntiSamy configuration XML file for each model class name. At this time, however, it requires developers to provide AntiSamy configuration files by inserting them into the Liferay AntiSamy module (and then re-deploying it), or by creating a fragment bundle project.
+You may notice another way to configure AntiSamy called _AntiSamy Sanitizer by Class Name_. This is a way for developers to create a more nuanced AntiSamy configuration by specifying an AntiSamy configuration XML file for each model class name. At this time, however, it requires developers to provide AntiSamy configuration files by inserting them into the AntiSamy module (and then re-deploying it), or by creating a fragment bundle project.
 
-A tutorial is forthcoming for this, but for now you can find more information in the [developer ticket](https://issues.liferay.com/browse/LPS-112978).
+A tutorial is forthcoming for this, but for now you can find more information in the developer ticket.

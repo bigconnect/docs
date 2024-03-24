@@ -1,26 +1,26 @@
 # Consuming REST Services
 
-Liferay DXP contains REST services for most of its applications. These services are fully [OpenAPI](https://app.swaggerhub.com/apis/liferayinc/headless-delivery) compliant. Here, you’ll learn how to consume them. This takes only three steps:
+The portal contains REST services for most of its applications. These services are fully [OpenAPI](https://app.swaggerhub.com/apis/liferayinc/headless-delivery) compliant. Here, you’ll learn how to consume them. This takes only three steps:
 
 1. Identify the service you wish to consume.
 2. Identify the site containing the data you need.
 3. Make the service call using credentials that have access to the data.
 
-This example uses Docker image with a fresh install of Liferay DXP.
+This example uses Docker image with a fresh install of the portal.
 
-### [Identify the Service to Consume](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#identify-the-service-to-consume) <a href="#identify-the-service-to-consume" id="identify-the-service-to-consume"></a>
+### Identify the Service to Consume <a href="#identify-the-service-to-consume" id="identify-the-service-to-consume"></a>
 
-You need a running Liferay DXP to call its REST services.
+You need a running the portal to call its REST services.
 
-Start a new Liferay instance by running
+Start a new portal instance by running
 
 ```bash
 docker run -it -m 8g -p 8080:8080 liferay/portal:7.4.3.112-ga112
 ```
 
-Sign in to Liferay at [http://localhost:8080](http://localhost:8080/). Use the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
+Sign in to the portal at [http://localhost:8080](http://localhost:8080/). Use the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
 
-To view the various API endpoints, use your browser and access Liferay’s API Explorer at `[server]:[port]/o/api`. For example, in your Docker instance, you can find them here:
+To view the various API endpoints, use your browser and access the portal’s API Explorer at `[server]:[port]/o/api`. For example, in your Docker instance, you can find them here:
 
 ```log
 http://localhost:8080/o/api
@@ -34,23 +34,23 @@ APIs are divided into several categories. This example uses the `BlogPosting` se
 
 ![The schema browser makes it convenient to find and call the service you want.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/consuming-apis/consuming-rest-services/images/01.png)
 
-### [Identify the Site Containing the Data](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#identify-the-site-containing-the-data) <a href="#identify-the-site-containing-the-data" id="identify-the-site-containing-the-data"></a>
+### Identify the Site Containing the Data <a href="#identify-the-site-containing-the-data" id="identify-the-site-containing-the-data"></a>
 
 Now you must find the default Site ID:
 
 1. Open the Site menu (![Site menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-menu.png)) and go to _Configuration_ → _Site Settings_.
-2. Under the Platform section, click _Site Configuration_. For Liferay DXP versions 7.3 and earlier, click the _General_ tab.
+2. Under the Platform section, click _Site Configuration_. For versions 7.3 and earlier, click the _General_ tab.
 3.  Find the Site identifier under Site ID.
 
     ![Identify the Site Id under the Site Settings and Site Configuration option.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/consuming-apis/consuming-rest-services/images/03.png)
 
-### [Make the Service Call Using Credentials with Access to the Data](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#make-the-service-call-using-credentials-with-access-to-the-data) <a href="#make-the-service-call-using-credentials-with-access-to-the-data" id="make-the-service-call-using-credentials-with-access-to-the-data"></a>
+### Make the Service Call Using Credentials with Access to the Data <a href="#make-the-service-call-using-credentials-with-access-to-the-data" id="make-the-service-call-using-credentials-with-access-to-the-data"></a>
 
-Now you have everything you need to make the call. All web services must be accessed using credentials that have access to the data you’re requesting. The simplest way is to use Basic Auth, which passes credential data in the URL. Since this is insecure, you should only use this method during development. For production, your application should authorize users via [OAuth2](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2).
+Now you have everything you need to make the call. All web services must be accessed using credentials that have access to the data you’re requesting. The simplest way is to use Basic Auth, which passes credential data in the URL. Since this is insecure, you should only use this method during development. For production, your application should authorize users via OAuth2.
 
 The examples below use [cURL](https://curl.haxx.se/).
 
-#### [Calling a Service Using Basic Auth (During Development Only)](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#calling-a-service-using-basic-auth-during-development-only) <a href="#calling-a-service-using-basic-auth-during-development-only" id="calling-a-service-using-basic-auth-during-development-only"></a>
+#### Calling a Service Using Basic Auth (During Development Only) <a href="#calling-a-service-using-basic-auth-during-development-only" id="calling-a-service-using-basic-auth-during-development-only"></a>
 
 To call a service using Basic Auth, provide the credentials in the URL:
 
@@ -58,15 +58,15 @@ To call a service using Basic Auth, provide the credentials in the URL:
 curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20122/blog-postings/" -u 'test@liferay.com:learn'
 ```
 
-#### [Calling a Service Using OAuth2](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#calling-a-service-using-oauth2) <a href="#calling-a-service-using-oauth2" id="calling-a-service-using-oauth2"></a>
+#### Calling a Service Using OAuth2 <a href="#calling-a-service-using-oauth2" id="calling-a-service-using-oauth2"></a>
 
-For production, create an [OAuth2 application](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/creating-oauth2-applications) and use the OAuth2 process to get an authorization token. Once you have the token, provide it in the HTTP header:
+For production, create an OAuth2 application and use the OAuth2 process to get an authorization token. Once you have the token, provide it in the HTTP header:
 
 ```bash
 curl -H "Authorization: Bearer d5571ff781dc555415c478872f0755c773fa159" http://localhost:8080/o/headless-delivery/v1.0/sites/20122/blog-postings
 ```
 
-### [Getting and Posting Data](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#getting-and-posting-data) <a href="#getting-and-posting-data" id="getting-and-posting-data"></a>
+### Getting and Posting Data <a href="#getting-and-posting-data" id="getting-and-posting-data"></a>
 
 If you run the query above to get all blog postings, you’ll see there aren’t any:
 
@@ -96,11 +96,11 @@ If you run the query above to get all blog postings, you’ll see there aren’t
 
 First, you’ll post a blog entry.
 
-#### [Posting a Blog Entry](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#posting-a-blog-entry) <a href="#posting-a-blog-entry" id="posting-a-blog-entry"></a>
+#### Posting a Blog Entry <a href="#posting-a-blog-entry" id="posting-a-blog-entry"></a>
 
 You can use the schema browser to learn how to post a blog entry.
 
-![The schema for any service is published on your Liferay DXP instance.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/consuming-apis/consuming-rest-services/images/02.png)
+![The schema for any service is published on your portal instance.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/consuming-apis/consuming-rest-services/images/02.png)
 
 1. Go back to your browser tab containing the schema browser. On the right side, click the `BlogPosting` entry to display its schema (see above). This shows the whole data structure for a `BlogPosting`, but there are only two required fields:
    * `articleBody`
@@ -119,7 +119,7 @@ You can use the schema browser to learn how to post a blog entry.
     curl --header "Content-Type: application/json" --request POST --data '{ "headline": "Test Blog Entry from REST Services", "articleBody": "This article was posted via REST services provided by Liferay DXP." }' http://localhost:8080/o/headless-delivery/v1.0/sites/20122/blog-postings -u test@liferay.com:learn
     ```
 
-Liferay DXP returns the full JSON representation of your blog entry:
+The portal returns the full JSON representation of your blog entry:
 
 ```json
 {
@@ -169,7 +169,7 @@ Liferay DXP returns the full JSON representation of your blog entry:
 }
 ```
 
-#### [Getting All Blog Entries](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#getting-all-blog-entries) <a href="#getting-all-blog-entries" id="getting-all-blog-entries"></a>
+#### Getting All Blog Entries <a href="#getting-all-blog-entries" id="getting-all-blog-entries"></a>
 
 Now you can repeat the first query you did to see that the blog entry you posted is there:
 
@@ -247,9 +247,9 @@ This returns a list of blog entries. The entry you added is the only one in the 
 }
 ```
 
-#### [Getting a Single Blog Entry](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#getting-a-single-blog-entry) <a href="#getting-a-single-blog-entry" id="getting-a-single-blog-entry"></a>
+#### Getting a Single Blog Entry <a href="#getting-a-single-blog-entry" id="getting-a-single-blog-entry"></a>
 
-Each time you’ve made a request, Liferay DXP has returned other possible endpoints. One of these is to get a single blog entry by its ID. If you know your entry’s ID, you can retrieve it:
+Each time you’ve made a request, the portal has returned other possible endpoints. One of these is to get a single blog entry by its ID. If you know your entry’s ID, you can retrieve it:
 
 ```bash
 curl "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/35215" -u test@liferay.com:learn
@@ -257,7 +257,7 @@ curl "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/35215" -u tes
 
 This returns the same blog entry.
 
-#### [Deleting a Blog Entry](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-rest-services#deleting-a-blog-entry) <a href="#deleting-a-blog-entry" id="deleting-a-blog-entry"></a>
+#### Deleting a Blog Entry <a href="#deleting-a-blog-entry" id="deleting-a-blog-entry"></a>
 
 If you know its ID, you can also delete your blog entry:
 
@@ -271,7 +271,7 @@ In this case, nothing is returned, but you can verify your entry is gone by requ
 curl "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/35215" -u test@liferay.com:learn
 ```
 
-Liferay DXP then returns this JSON document in response:
+The portal then returns this JSON document in response:
 
 ```json
 {
@@ -280,4 +280,4 @@ Liferay DXP then returns this JSON document in response:
 }
 ```
 
-Congratulations! You’ve now learned how to call Liferay DXP’s REST services. Remember that the examples above use Basic Auth: for production, use OAuth2 to call services in a secure way.
+Congratulations! You’ve now learned how to call the portal’s REST services. Remember that the examples above use Basic Auth: for production, use OAuth2 to call services in a secure way.

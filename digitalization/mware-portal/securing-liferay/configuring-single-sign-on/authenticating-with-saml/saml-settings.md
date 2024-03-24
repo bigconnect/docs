@@ -16,23 +16,23 @@ Many of the same fields appear in both the Service Provider and the Identity Pro
 
 **Metadata:** Provide a URL to the Service Provider metadata XML file or manually upload the Service Provider metadata XML file. If you provide a URL, the XML file is retrieved and periodically polled for updates. The update interval can be configured in System Settings with the Runtime Metadata Refresh Interval (`saml.metadata.refresh.interval` if using a `config` file) property which specifies a number of seconds. If fetching the metadata XML file by URL fails, you can’t enable the Service Provider connection. If the Identity Provider server cannot access the metadata via URL, you can upload the XML file manually. In this case, the metadata XML file is not updated automatically.
 
-**Name Identifier:** Choose a Name Identifier Format from the available options in section 8.3 of the [SAML specification](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf). Set this according to what the Service Provider expects to receive. For Liferay Service Providers, any selection other than email address indicates that the Name Identifier refers to screen name. The formats don’t have any special meaning to Liferay Identity Providers. The `NameID` value is defined by the Name Identifier attribute.
+**Name Identifier:** Choose a Name Identifier Format from the available options in section 8.3 of the [SAML specification](http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf). Set this according to what the Service Provider expects to receive. For the portal Service Providers, any selection other than email address indicates that the Name Identifier refers to screen name. The formats don’t have any special meaning to the portal Identity Providers. The `NameID` value is defined by the Name Identifier attribute.
 
 **User Resolution:** Choose from No Matching, Match a User Field Chosen Dynamically Based on Name ID Format, or Match Using a Specific SAML Attribute Mapping. This algorithm determines how users are found or provisioned. For example, if you choose based on Name ID Format and the Name ID Format is email address, the algorithm matches by email address.
 
-**Attribute Mapping:** Choose a field from Liferay to match to a SAML attribute. You can choose several fields from Liferay’s User object or custom fields you have created for the User object. These attributes are updated from the SAML assertion when a user logs into the system. By default the `NameID` and Service Provider are bound to a user after the `emailAddress` is matched at least once. Bindings are preferred and checked before user matching is conducted, so users whose email addresses have changed don’t lose their ability to log in, and email addresses can be corrected through SAML attribute mappings.
+**Attribute Mapping:** Choose a field from the portal to match to a SAML attribute. You can choose several fields from the portal’s User object or custom fields you have created for the User object. These attributes are updated from the SAML assertion when a user logs into the system. By default the `NameID` and Service Provider are bound to a user after the `emailAddress` is matched at least once. Bindings are preferred and checked before user matching is conducted, so users whose email addresses have changed don’t lose their ability to log in, and email addresses can be corrected through SAML attribute mappings.
 
-**Keep Alive:** If users are logged into several Liferay SP instances via a Liferay IdP, their sessions can be kept alive as long as they keep a browser window open to one of them. Configure this only if the SP is Liferay DXP. The URL is `https://[SP host name]/c/portal/saml/keep_alive`.
+**Keep Alive:** If users are logged into several portal SP instances via a portal IdP, their sessions can be kept alive as long as they keep a browser window open to one of them. Configure this only if the SP is the portal. The URL is `https://[SP host name]/c/portal/saml/keep_alive`.
 
-### [OSGi Configuration Properties](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-settings#osgi-configuration-properties) <a href="#osgi-configuration-properties" id="osgi-configuration-properties"></a>
+### OSGi Configuration Properties <a href="#osgi-configuration-properties" id="osgi-configuration-properties"></a>
 
-You can configure SAML outside the UI through [OSGi configuration files](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/configuration-files-and-factories/using-configuration-files) and by uploading metadata XML to configure how connections are negotiated.
+You can configure SAML outside the UI through OSGi configuration files and by uploading metadata XML to configure how connections are negotiated.
 
-As noted previously, anything related to configuring SP connections must be done through the SAML Admin UI where configurations are saved to Liferay’s database.
+As noted previously, anything related to configuring SP connections must be done through the SAML Admin UI where configurations are saved to the portal’s database.
 
 NOTE
 
-Don’t use OSGi `.config` files or Liferay DXP’s System Settings Control Panel application to configure SAML providers (IdP or SP). The System Settings UI is auto-generated, and is for advanced administrators. It does not perform the enhanced validation on the fields that the SAML Admin UI performs, so administrators could create invalid configurations.
+Don’t use OSGi `.config` files or the portal’s System Settings Control Panel application to configure SAML providers (IdP or SP). The System Settings UI is auto-generated, and is for advanced administrators. It does not perform the enhanced validation on the fields that the SAML Admin UI performs, so administrators could create invalid configurations.
 
 This is a portal instance-scoped configuration which can be managed via OSGi Configuration Admin. The affected properties are those in the `SAMLProviderConfiguration` metatype:
 
@@ -57,7 +57,7 @@ The SAML Admin UI remains the place for creating the portal instance scoped conf
 
 Note that there is also a system wide configuration, represented by the `SamlConfiguration` metatype.
 
-If you used Liferay 6.2, please note that the following system wide properties were removed:
+If you used version 6.2, please note that the following system wide properties were removed:
 
 * `saml.metadata.paths` (served no purpose after removal of SP connection defaults)
 * `saml.runtime.metadata.max.refresh.delay`
@@ -65,7 +65,7 @@ If you used Liferay 6.2, please note that the following system wide properties w
 
 The latter two properties were replaced with the single property `com.liferay.saml.runtime.configuration.SamlConfiguration.getMetadataRefreshInterval()`.
 
-Note also the introduction of the _SAML KeyStoreManager Implementation Configuration_ in _Control Panel_ → _System Settings_ → Security → SSO. The options for this configuration are explained above in [Configuring SAML at the System Level](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/configuring-saml-at-the-system-level).
+Note also the introduction of the _SAML KeyStoreManager Implementation Configuration_ in _Control Panel_ → _System Settings_ → Security → SSO. The options for this configuration are explained above in Configuring SAML at the System Level.
 
 In recent versions, `SHA256` is the default encryption algorithm used in the configuration and to generate keys. The default configuration tries `SHA256`, then `SHA384`, then `SHA512` before falling back to `SHA1`. Because `SHA1` is potentially vulnerable, you can blacklist it using this property:
 
@@ -87,7 +87,7 @@ com.liferay.saml.opensaml.integration.internal.bootstrap.SecurityConfigurationBo
 
 There’s a lot more granularity in how connections are negotiated if you configure the metadata XML.
 
-### [Configuring Negotiation Via metadata.xml](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-settings#configuring-negotiation-via-metadataxml) <a href="#configuring-negotiation-via-metadataxml" id="configuring-negotiation-via-metadataxml"></a>
+### Configuring Negotiation Via metadata.xml <a href="#configuring-negotiation-via-metadataxml" id="configuring-negotiation-via-metadataxml"></a>
 
 If the default negotiation configuration doesn’t work for you, you can craft your own configuration and upload it. Before doing this, visit your host’s metadata URL and save a copy of the configuration in case you need it later:
 

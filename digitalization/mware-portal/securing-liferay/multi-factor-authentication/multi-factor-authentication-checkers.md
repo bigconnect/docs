@@ -1,12 +1,12 @@
 # Multi-Factor Authentication Checkers
 
-Liferay DXP 7.4 ships with two additional factor checkers for Multi-Factor Authentication. Both of them are disabled by default, because they’re only useful in particular circumstances. Once Multi-Factor Authentication is enabled, however, you can configure them.
+Version 7.4 ships with two additional factor checkers for Multi-Factor Authentication. Both of them are disabled by default, because they’re only useful in particular circumstances. Once Multi-Factor Authentication is enabled, however, you can configure them.
 
 ![When you enable Multi-Factor Authentication, the other factor checkers appear.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/multi-factor-authentication/multi-factor-authentication-checkers/images/01.png)
 
-### [IP Address MFA Checker](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/multi-factor-authentication/multi-factor-authentication-checkers#ip-address-mfa-checker) <a href="#ip-address-mfa-checker" id="ip-address-mfa-checker"></a>
+### IP Address MFA Checker <a href="#ip-address-mfa-checker" id="ip-address-mfa-checker"></a>
 
-The IP Address checker is useful when Liferay DXP serves a group of users from an internal network or connecting through a VPN. When you enable this checker, users’ IP addresses are compared with allowed IP address masks. If they match, users can bypass the other checkers and log in. This essentially defines trusted networks as the extra factor in authenticating. Note that by default, only the first IP Address and mask pictured below are enabled.
+The IP Address checker is useful when the portal serves a group of users from an internal network or connecting through a VPN. When you enable this checker, users’ IP addresses are compared with allowed IP address masks. If they match, users can bypass the other checkers and log in. This essentially defines trusted networks as the extra factor in authenticating. Note that by default, only the first IP Address and mask pictured below are enabled.
 
 ![The IP Address factor checker by default checks for private networks.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/multi-factor-authentication/multi-factor-authentication-checkers/images/02.png)
 
@@ -16,7 +16,7 @@ You can add any number of IP address masks to your configuration: _Control Panel
 
 **Allowed IP Address and Network Mask**: Add allowed IP address ranges and network masks. Defaults to `127.0.0.1/255.0.0.0, ::1/128, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, fc00::/7`.
 
-### [Time-Based One-Time Password MFA Checker](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/multi-factor-authentication/multi-factor-authentication-checkers#time-based-one-time-password-mfa-checker) <a href="#time-based-one-time-password-mfa-checker" id="time-based-one-time-password-mfa-checker"></a>
+### Time-Based One-Time Password MFA Checker <a href="#time-based-one-time-password-mfa-checker" id="time-based-one-time-password-mfa-checker"></a>
 
 The Time-Based One-Time Password checker provides an additional checker based on the [Google App Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2).
 

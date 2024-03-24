@@ -1,8 +1,8 @@
 # Authorizing Account Access with OAuth2
 
-Once you have an application registered, you can start authorizing users. To do that, you must construct the URL to the authorization server (Liferay DXP). The authorization server asks users to authorize the requested permissions to their resources, defined as you saw in the previous tutorial as scopes.
+Once you have an application registered, you can start authorizing users. To do that, you must construct the URL to the authorization server. The authorization server asks users to authorize the requested permissions to their resources, defined as you saw in the previous tutorial as scopes.
 
-### [Authorization Code Flow](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/authorizing-account-access-with-oauth2#authorization-code-flow) <a href="#authorization-code-flow" id="authorization-code-flow"></a>
+### Authorization Code Flow <a href="#authorization-code-flow" id="authorization-code-flow"></a>
 
 The most common OAuth flow is the Authorization Code flow, used for web applications. The URL for this requires the following request parameters:
 
@@ -53,7 +53,7 @@ In the body of HTTP response to this request, you receive JSON like this:
 
 From this you should extract and persist the access token. If you intend to use the token for an indefinite amount of time (beyond 600 seconds from the above example) you also need the refresh token. This can be used in conjunction with the Refresh Token Flow to obtain a new access token with the same permissions, without further user authorization. The authorization server only issues Refresh Tokens if your application registration is registered for this flow.
 
-### [PKCE Extended Authorization Code Flow](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/authorizing-account-access-with-oauth2#pkce-extended-authorization-code-flow) <a href="#pkce-extended-authorization-code-flow" id="pkce-extended-authorization-code-flow"></a>
+### PKCE Extended Authorization Code Flow <a href="#pkce-extended-authorization-code-flow" id="pkce-extended-authorization-code-flow"></a>
 
 This flow is the same as above with the addition of the Proof Key for Code Exchange (PKCE). It requires another request parameter: `code_challenge`. This flow is for clients like smartphone applications that may not have sole access to the URL (and thus the request parameters) redirected to by the authorization server after the user authorization. It protects against a malicious application on the same system authorizing itself by reading the response code. To do this, the client application sends a _code challenge_ with the authorization request: a string it has generated and which it only knows. To generate this string it must first create another secret string known as the _Code Verifier_, and then apply a transformation to it. After authorization, the code verifier is sent with the authorization code, validating the client.
 
@@ -87,9 +87,9 @@ https://[hostname]/o/oauth2/token?grant_type=password&client_id=[client ID]&clie
 
 Users are prompted for their passwords, and upon successful log in, receive an authorization code.
 
-### [Token Use](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/authorizing-account-access-with-oauth2#token-use) <a href="#token-use" id="token-use"></a>
+### Token Use <a href="#token-use" id="token-use"></a>
 
-All flows above result in an access token that’s sent by the authorization server (Liferay) to the client application. This token is sent in the response for the client application to store and send along with any future request for data.
+All flows above result in an access token that’s sent by the authorization server to the client application. This token is sent in the response for the client application to store and send along with any future request for data.
 
 For example, say the authorization code `946856e2b5ddf0928f6fc55f657bab73` was sent to the client application. When the client requests data, this code must be sent in each request header. Using a command line HTTP client such as Curl, you could send a request like this:
 
@@ -99,7 +99,7 @@ curl -H 'Authorization: Bearer 946856e2b5ddf0928f6fc55f657bab73' 'https://[hostn
 
 OAuth 2.0 provides a convenient way for client applications to be granted access to particular services (scopes) by users without sharing credential information.
 
-### [Revoking Access](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/authorizing-account-access-with-oauth2#revoking-access) <a href="#revoking-access" id="revoking-access"></a>
+### Revoking Access <a href="#revoking-access" id="revoking-access"></a>
 
 Once access is granted, users or administrators are free to revoke access whenever they wish. If this happens to a client, the token becomes invalid and the client must ask the user for authorization again. This puts users in control of what has access to their data, and they can exercise this control at any time.
 
@@ -115,6 +115,6 @@ Administrators can view the authorizations in the Authorizations tab of any app 
 
 Clicking the _Revoke_ button on any listed authorization revokes that application’s access to that user’s account.
 
-### [Summary](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/authorizing-account-access-with-oauth2#summary) <a href="#summary" id="summary"></a>
+### Summary <a href="#summary" id="summary"></a>
 
 OAuth 2.0 provides a complete and secure authorization flow for users, without their having to share any credential information. Once applications are created in the system, secure tokens provide access to particular scopes of information, and this access can be revoked at any time, making OAuth 2.0 a convenient method for users and developers alike to access the information they need.

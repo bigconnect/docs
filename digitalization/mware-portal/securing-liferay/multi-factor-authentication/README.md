@@ -2,9 +2,9 @@
 
 Multi-Factor Authentication (MFA) provides better security by requiring users to prove their identity in multiple ways, or _factors_. The basic user name/password combination is augmented with one or more further, configurable factors. These include the default One Time Password (OTP) and configurable IP address, time-based OTP, [FIDO2-compliant](https://fidoalliance.org/fido2) devices, and because the system is extensible, any factor you wish to write.
 
-## [Using Multi-Factor Authentication](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/multi-factor-authentication/using-multi-factor-authentication#using-multi-factor-authentication) <a href="#using-multi-factor-authentication" id="using-multi-factor-authentication"></a>
+## Using Multi-Factor Authentication <a href="#using-multi-factor-authentication" id="using-multi-factor-authentication"></a>
 
-To enhance your installation’s security, you should disable less secure, one-factor forms of authentication, such as Basic Auth, Digest Auth, and WebDAV. You can do this by configuring their [Authentication Verifiers](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/using-authentication-verifiers). Note that if you disable WebDAV, this also disables features you might be using:
+To enhance your installation’s security, you should disable less secure, one-factor forms of authentication, such as Basic Auth, Digest Auth, and WebDAV. You can do this by configuring their Authentication Verifiers. Note that if you disable WebDAV, this also disables features you might be using:
 
 * Accessing Documents and Media via desktop computers
 * Accessing Web Content via desktop computers
@@ -13,7 +13,7 @@ To enhance your installation’s security, you should disable less secure, one-f
 
 Ready to get started configuring Multi-Factor Authentication? There are some prerequisites to handle first.
 
-### [Prerequisites](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/multi-factor-authentication/using-multi-factor-authentication#prerequisites) <a href="#prerequisites" id="prerequisites"></a>
+### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
 Enabling Multi-Factor Authentication implies enabling the default one-time password factor. The OTP factor requires a working mail configuration on your server, as it sends the one-time password to users via email. _If your server can’t send email and you enable MFA, you will lock yourself and everybody else out of the system._
 
@@ -21,13 +21,13 @@ Another prerequisite is to communicate with your users before enabling MFA, to r
 
 With those prerequisites out of the way, you’re ready to enable multi-factor authentication.
 
-### [Enabling Multi-Factor Authentication](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/multi-factor-authentication/using-multi-factor-authentication#enabling-multi-factor-authentication) <a href="#enabling-multi-factor-authentication" id="enabling-multi-factor-authentication"></a>
+### Enabling Multi-Factor Authentication <a href="#enabling-multi-factor-authentication" id="enabling-multi-factor-authentication"></a>
 
 By default, Multi-Factor Authentication is _available_ to be enabled at the system level. If you go to the Control Panel → System Settings → Security → Multi-Factor Authentication, you’ll see that you can disable it system-wide. The easiest way to prevent MFA from being used is to disable it here.
 
 ![You can disable MFA system-wide.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/multi-factor-authentication/using-multi-factor-authentication/images/02.png)
 
-The default state has it enabled system-wide, but _disabled_ on the default instance. In effect, this means MFA is disabled on default Liferay DXP installations. Enabling it takes only two steps:
+The default state has it enabled system-wide, but _disabled_ on the default instance. In effect, this means MFA is disabled on default portal installations. Enabling it takes only two steps:
 
 1. Go to _Control Panel_ → _Instance Settings_ → _Security_ → _Multi-Factor Authentication_ → _Multi-Factor Authentication and Email One-Time Password Configuration_.
 2. Check the _Enabled_ box, scroll to the bottom, and click the _Update_ button.
@@ -50,7 +50,7 @@ The options on this screen configure the email one-time password factor:
 
 **Retry Timeout:** Delay further attempts to verify one-time passwords by this time period in seconds. The default value of `-1` disables the retry timeout.
 
-### [Logging In Using MFA](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/multi-factor-authentication/using-multi-factor-authentication#logging-in-using-mfa) <a href="#logging-in-using-mfa" id="logging-in-using-mfa"></a>
+### Logging In Using MFA <a href="#logging-in-using-mfa" id="logging-in-using-mfa"></a>
 
 Enabling Multi-Factor Authentication causes the Sign-In widget to behave differently. After users supply their passwords, they’re asked to generate a one-time password.
 
@@ -58,6 +58,6 @@ Enabling Multi-Factor Authentication causes the Sign-In widget to behave differe
 
 Once they click the button, a countdown begins (the Resend Email Timeout described above). Users must retrieve the one-time password from their email, enter it into the field, and click _Submit_ before the time runs out. Once they do this, they’re authenticated.
 
-### [Further Configuration](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/multi-factor-authentication/using-multi-factor-authentication#further-configuration) <a href="#further-configuration" id="further-configuration"></a>
+### Further Configuration <a href="#further-configuration" id="further-configuration"></a>
 
 Out-of-the-box, two other authentication factors are included, and there are extension points for developing your own.

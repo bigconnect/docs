@@ -1,13 +1,13 @@
 # OAuth 2 Scopes
 
-In OAuth 2.0, applications are granted access to limited subsets of user data. These are called _scopes_ (not to be confused with Liferay scopes). You can create them in two ways:
+In OAuth 2.0, applications are granted access to limited subsets of user data. These are called _scopes_ (not to be confused with the portal scopes). You can create them in two ways:
 
 * Administrators can create a Service Access Policy for the scope.
 * Developers can create a JAX-RS endpoint. By default, the JAX-RS endpoint generates scopes based on the HTTP verbs it supports. A special annotation overrides this behavior and registers specific scopes.
 
-### [Creating a Scope for a JSONWS Service](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/oauth2-scopes#creating-a-scope-for-a-jsonws-service) <a href="#creating-a-scope-for-a-jsonws-service" id="creating-a-scope-for-a-jsonws-service"></a>
+### Creating a Scope for a JSONWS Service <a href="#creating-a-scope-for-a-jsonws-service" id="creating-a-scope-for-a-jsonws-service"></a>
 
-The most common way to create a scope is to create a [Service Access Policy](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/setting-service-access-policies) prefixed with the name `OAUTH2_`. This naming convention causes the policy to appear in the OAuth application configuration screen as a scope.
+The most common way to create a scope is to create a Service Access Policy prefixed with the name `OAUTH2_`. This naming convention causes the policy to appear in the OAuth application configuration screen as a scope.
 
 For example, say the application needs access to a user’s profile information to retrieve the email address. To grant the application access to this,
 
@@ -36,9 +36,9 @@ For example, say the application needs access to a user’s profile information 
 
 NOTE
 
-There’s another scope called _read your personal user data_. This is one of the many out-of-the-box scopes that comes with Liferay.
+There’s another scope called _read your personal user data_. This is one of the many out-of-the-box scopes that comes with the portal.
 
-### [Creating the Authorization Page](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/oauth2-scopes#creating-the-authorization-page) <a href="#creating-the-authorization-page" id="creating-the-authorization-page"></a>
+### Creating the Authorization Page <a href="#creating-the-authorization-page" id="creating-the-authorization-page"></a>
 
 This step is optional. Users need an interface to authorize access to their accounts, and one is provided automatically. If, however, you want to customize the page, you can create an authorization page in your Site.
 
@@ -53,7 +53,7 @@ This step is optional. Users need an interface to authorize access to their acco
 
     NOTE
 
-    For Liferay DXP 7.3 and earlier, create a Private Page. Only authenticated users can access Private Pages.
+    For version 7.3 and earlier, create a Private Page. Only authenticated users can access Private Pages.
 5. Choose the _Full Page Application_ type.
 6. Give the page the same name you configured in step 2.
 7. Turn the _Hidden from Navigation Menu Widget_ switch on. You don’t want this page showing up in your Site navigation.

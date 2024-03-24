@@ -1,8 +1,8 @@
 # Configuring Unicast over TCP
 
-If your network configuration or the geographical distance between cluster nodes prevents you from using [UDP Multicast clustering](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/configuring-cluster-link#using-multicast-over-udp), you can configure TCP Unicast. You must use this if you have a firewall separating any of your nodes or if your nodes are in different geographical locations.
+If your network configuration or the geographical distance between cluster nodes prevents you from using UDP Multicast clustering, you can configure TCP Unicast. You must use this if you have a firewall separating any of your nodes or if your nodes are in different geographical locations.
 
-### [Unicast Configurations](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/configuring-unicast-over-tcp#unicast-configurations) <a href="#unicast-configurations" id="unicast-configurations"></a>
+### Unicast Configurations <a href="#unicast-configurations" id="unicast-configurations"></a>
 
 Use the following steps to configure Unicast:
 
@@ -20,14 +20,14 @@ Use the following steps to configure Unicast:
     * `S3_Ping`
     * `Rackspace_Ping`
 
-    If you aren’t sure which one to choose, use TCPPing. The rest of these steps use TCPPing. See [Alternative Discovery Protocols](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/configuring-unicast-over-tcp#alternative-discovery-protocols) for more information on the others.
+    If you aren’t sure which one to choose, use TCPPing. The rest of these steps use TCPPing. See Alternative Discovery Protocols for more information on the others.
 3.  Extract the `tcp.xml` file from `$LIFERAY.HOME/osgi/marketplace/Liferay Foundation - Liferay Portal - Impl.lpkg/com​.​liferay​.​portal​.​cluster​.​multiple​-​[version].​jar/lib​/​jgroups​-​[version].​Final​.​jar/tcp.xml` to a location accessible to DXP, such as a folder called `jgroups` in the DXP web application’s `WEB-INF/classes` folder.
 
     ```log
     WEB-INF/classes/jgroups/tcp.xml
     ```
 
-    Note, this `tcp.xml` configuration file is used for both the cluster link’s control channel and transport channel. To use separate configuration files, see [Using Different Control and Transport Channel Ports](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/configuring-unicast-over-tcp#using-different-control-and-transport-channel-ports).
+    Note, this `tcp.xml` configuration file is used for both the cluster link’s control channel and transport channel. To use separate configuration files, see Using Different Control and Transport Channel Ports.
 4.  In the `tcp.xml` file, set the TCP bind port to an unused port on your node. Here’s an example:
 
     ```xml
@@ -62,7 +62,7 @@ Use the following steps to configure Unicast:
         initial_hosts="${jgroups.tcpping.initial_hosts:192.168.224.154[7800],192.168.224.155[7800]}"
         port_range="1"/>
     ```
-7.  Modify the [Cluster Link properties](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#Cluster%20Link) in each node’s [`portal-ext.properties` file](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/portal-properties) to enable Cluster Link and point to the TCP XML file for each Cluster Link channel:
+7.  Modify the Cluster Link properties in each node’s `portal-ext.properties` file to enable Cluster Link and point to the TCP XML file for each Cluster Link channel:
 
     ```properties
     cluster.link.enabled=true
@@ -74,17 +74,17 @@ The JGroups configuration demonstrated above is typically all that Unicast over 
 
 NOTE
 
-The `singleton_name` TCP attribute was deprecated in JGroups v4.0.0 and has therefore been removed since Liferay DXP 7.2 SP1 and Liferay Portal GA2 which use JGroups v 4.1.1-Final.
+The `singleton_name` TCP attribute was deprecated in JGroups v4.0.0 and has therefore been removed since version 7.2 SP1 which use JGroups v 4.1.1-Final.
 
 You’re now set up for Unicast over TCP clustering!
 
-### [Alternative Discovery Protocols](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/configuring-unicast-over-tcp#alternative-discovery-protocols) <a href="#alternative-discovery-protocols" id="alternative-discovery-protocols"></a>
+### Alternative Discovery Protocols <a href="#alternative-discovery-protocols" id="alternative-discovery-protocols"></a>
 
 TCP Ping is the default discovery protocol you can use to fit a majority of use cases. However, you can also use other discovery protocols which are described below.
 
-#### [JDBC Ping](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/configuring-unicast-over-tcp#jdbc-ping) <a href="#jdbc-ping" id="jdbc-ping"></a>
+#### JDBC Ping <a href="#jdbc-ping" id="jdbc-ping"></a>
 
-Rather than use TCP Ping to discover cluster members, you can use a central database accessible by all the nodes to help them find each other. Cluster members write their own and read the other members’ addresses from this database. To enable this configuration, replace the `TCPPING` tag referenced in the [Unicast Configuration](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/configuring-unicast-over-tcp#unicast-configurations) steps with the corresponding `JDBC_PING` tag:
+Rather than use TCP Ping to discover cluster members, you can use a central database accessible by all the nodes to help them find each other. Cluster members write their own and read the other members’ addresses from this database. To enable this configuration, replace the `TCPPING` tag referenced in the Unicast Configuration steps with the corresponding `JDBC_PING` tag:
 
 ```xml
 <JDBC_PING
@@ -96,11 +96,11 @@ Rather than use TCP Ping to discover cluster members, you can use a central data
 
 For example JDBC connection values, please see [Database Templates](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/database-templates). For further information about JDBC Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual4/index.html#DiscoveryProtocols).
 
-#### [S3 Ping](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/configuring-unicast-over-tcp#s3-ping) <a href="#s3-ping" id="s3-ping"></a>
+#### S3 Ping <a href="#s3-ping" id="s3-ping"></a>
 
 Amazon S3 Ping can be used for servers running on Amazon’s EC2 cloud service. Each node uploads a small file to an S3 bucket, and all the other nodes read the files from this bucket to discover the other nodes. When a node leaves, its file is deleted.
 
-To configure S3 Ping, replace the `TCPPING` tag in the [Unicast Configuration](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/configuring-unicast-over-tcp#unicast-configurations) steps with the corresponding `S3_PING` tag:
+To configure S3 Ping, replace the `TCPPING` tag in the Unicast Configuration steps with the corresponding `S3_PING` tag:
 
 ```xml
 <S3_PING
@@ -111,11 +111,11 @@ To configure S3 Ping, replace the `TCPPING` tag in the [Unicast Configuration](h
 
 Supply your Amazon keys as values for the parameters above. For further information about S3 Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual4/index.html#\_s3\_ping).
 
-#### [Other Pings](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/configuring-unicast-over-tcp#other-pings) <a href="#other-pings" id="other-pings"></a>
+#### Other Pings <a href="#other-pings" id="other-pings"></a>
 
 JGroups supplies other means for cluster members to discover each other, including Rackspace Ping, BPing, File Ping, and others. Please see the [JGroups Documentation](http://www.jgroups.org/manual4/index.html#DiscoveryProtocols) for information about these discovery methods.
 
-### [Using Different Control and Transport Channel Ports](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/configuring-unicast-over-tcp#using-different-control-and-transport-channel-ports) <a href="#using-different-control-and-transport-channel-ports" id="using-different-control-and-transport-channel-ports"></a>
+### Using Different Control and Transport Channel Ports <a href="#using-different-control-and-transport-channel-ports" id="using-different-control-and-transport-channel-ports"></a>
 
 The control and transport channels can be configured to use different ports. Using separate control and transport channel ports lets you monitor control and transport traffic and helps you isolate information to diagnose problems.
 
@@ -130,7 +130,7 @@ The following steps use Unicast over TCPPing to demonstrate the approach.
 3. Make a copy of the `tcp.xml` in the same location and rename both files, designating one for the control channel and the other for the transport channel. For example, you could use these file names:
    * `tcp-control.xml`
    * `tcp-transport.xml`
-4.  Modify the [Cluster Link properties](https://learn.liferay.com/reference/latest/en/dxp/propertiesdoc/portal.properties.html#Cluster%20Link) in the node’s [`portal-ext.properties` file](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/reference/portal-properties) to enable Cluster Link and point to the TCP XML file for each Cluster Link channel:
+4.  Modify the Cluster Link properties in the node’s `portal-ext.properties` file to enable Cluster Link and point to the TCP XML file for each Cluster Link channel:
 
     ```properties
     cluster.link.enabled=true
@@ -188,5 +188,5 @@ Here are example TCP and TCPPing elements using the bind ports on nodes running 
     port_range="0"/>
 ```
 
-If you have added entities that can be cached or you want to tune the cache configuration for your system, you can do so using a module. For information on configuring cache, please see [Cache Configuration](https://help.liferay.com/hc/en-us/articles/360035581451-Introduction-to-Cache-Configuration).
+If you have added entities that can be cached or you want to tune the cache configuration for your system, you can do so using a module. For information on configuring cache, please see Cache Configuration.
 

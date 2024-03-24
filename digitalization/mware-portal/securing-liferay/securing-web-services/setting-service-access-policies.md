@@ -1,10 +1,10 @@
 # Setting Service Access Policies
 
-_Service Access Policies_ define what services or service methods can be invoked remotely. You can apply many of them at once to produce a combined effect. They are the [second layer of security](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services) (after IP permissions) for web services. Custom service access policies can be created by portal administrators. They are applied by the portal’s token authenticator (OAuth 2).
+_Service Access Policies_ define what services or service methods can be invoked remotely. You can apply many of them at once to produce a combined effect. They are the second layer of security (after IP permissions) for web services. Custom service access policies can be created by portal administrators. They are applied by the portal’s token authenticator (OAuth 2).
 
 Service Access Policies define a whitelist for methods exposed via web service invocation. You can use wildcards to define classes and methods that are whitelisted. Note that Service Access Policies respect the permissions system. If a policy grants a user access to a remote service, that user must still have the appropriate permissions to invoke that service.
 
-### [Default Service Access Policies](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/setting-service-access-policies#default-service-access-policies) <a href="#default-service-access-policies" id="default-service-access-policies"></a>
+### Default Service Access Policies <a href="#default-service-access-policies" id="default-service-access-policies"></a>
 
 To view and manage Service Access Policies, go to _Control Panel_ → _Configuration_ → _Service Access Policy_.
 
@@ -28,12 +28,12 @@ The other seven policies have to do with OAuth and JSON web services:
 
 | Service Access Policy                                   | Description                                                                                                                                                                                                                                                                                                                                 | Enabled by Default |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| **OAUTH2\_analytics.read/write**                        | Integrates with [Liferay Analytics Cloud](https://www.liferay.com/products/analytics-cloud), allowing it access to JSON web services.                                                                                                                                                                                                       | ✔                  |
+| **OAUTH2\_analytics.read/write**                        | Integrates with the portal Analytics Cloud, allowing it access to JSON web services.                                                                                                                                                                                                                                                        | ✔                  |
 | **OAUTH2\_everything/read/documents/userprofile/write** | The Everything policies grant access to all the JSON web services for various reasons. Everything is everything: all JSON web services (matches `*`). The others match method signatures appropriate to their description. For example, OAUTH2\_everything.read matches all methods starting with `fetch`, `get`, `has`, `is`, or `search`. | ✔                  |
 
 The default configuration makes available corresponding scopes that provide access to all web services shipped with the system. The scopes must be assigned to OAuth 1 or 2 applications before they become usable. Administrators should review the ones you want to use and disable the others.
 
-### [Understanding Service Access Policies](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/setting-service-access-policies#understanding-service-access-policies) <a href="#understanding-service-access-policies" id="understanding-service-access-policies"></a>
+### Understanding Service Access Policies <a href="#understanding-service-access-policies" id="understanding-service-access-policies"></a>
 
 When creating or editing service access policies, keep these points in mind:
 
@@ -55,7 +55,7 @@ com.liferay.portal.kernel.service.UserService
 com.liferay.document.library.kernel.service.DLAppService#get*
 ```
 
-### [Creating a Service Access Policy](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/setting-service-access-policies#creating-a-service-access-policy) <a href="#creating-a-service-access-policy" id="creating-a-service-access-policy"></a>
+### Creating a Service Access Policy <a href="#creating-a-service-access-policy" id="creating-a-service-access-policy"></a>
 
 To create a new Service Access Policy:
 
@@ -78,20 +78,20 @@ TIP
 
 If you know all the method signatures ahead of time, you can click _Switch to Advanced Mode_ and enter them all in one field on separate lines.
 
-Liferay applications can declare their own default policies. This policy can then be changed or disabled by administrators. In this case, the plugin can still verify that the policy exists so there is no need to redefine or update it.
+Applications can declare their own default policies. This policy can then be changed or disabled by administrators. In this case, the plugin can still verify that the policy exists so there is no need to redefine or update it.
 
-By default, Liferay’s tunneling servlet uses the `SYSTEM_USER_PASSWORD` service access policy. You can, however, create your own policy for the tunneling servlet and use the property `service.access.policy.name` for the `TunnelingServletAuthVerifier` to specify that your policy should be used instead.
+By default, the portal’s tunneling servlet uses the `SYSTEM_USER_PASSWORD` service access policy. You can, however, create your own policy for the tunneling servlet and use the property `service.access.policy.name` for the `TunnelingServletAuthVerifier` to specify that your policy should be used instead.
 
-### [Understanding the Service Access Policy Module](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/setting-service-access-policies#understanding-the-service-access-policy-module) <a href="#understanding-the-service-access-policy-module" id="understanding-the-service-access-policy-module"></a>
+### Understanding the Service Access Policy Module <a href="#understanding-the-service-access-policy-module" id="understanding-the-service-access-policy-module"></a>
 
-Liferay’s service access policy functionality is provided by the Service Access Policy module. This module includes the following important classes:
+The portal’s service access policy functionality is provided by the Service Access Policy module. This module includes the following important classes:
 
 * `com.liferay.portal.kernel.security.service.access.policy.ServiceAccessPolicy`: defines the public interface for `ServiceAccessPolicy`.
 * `com.liferay.portal.kernel.security.service.access.policy.ServiceAccessPolicyManager`: defines the public interface for retrieving instances of `ServiceAccessPolicy`.
-* `com.liferay.portal.kernel.security.service.access.policy.ServiceAccessPolicyManagerUtil`: bridges service access policy functionality to the parts of Liferay’s core that have not yet been modularized.
+* `com.liferay.portal.kernel.security.service.access.policy.ServiceAccessPolicyManagerUtil`: bridges service access policy functionality to the parts of the portal’s core that have not yet been modularized.
 * `com.liferay.portal.kernel.security.service.access.policy.ServiceAccessPolicyThreadLocal`: makes `ServiceAccessPolicy` instances active.
 
-Liferay’s Service Access Policy module resides in the `modules/apps/service-access-policy` folder in the source code. When running, these three bundles provide the service access policy functionality (they’re in the `[Liferay Home]/osgi/modules` folder):
+Service Access Policy module resides in the `modules/apps/service-access-policy` folder in the source code. When running, these three bundles provide the service access policy functionality (they’re in the `[Home]/osgi/modules` folder):
 
 * `com.liferay.service.access.policy.api.jar`
 * `com.liferay.service.access.policy.service.jar`
@@ -99,7 +99,7 @@ Liferay’s Service Access Policy module resides in the `modules/apps/service-ac
 
 These modules provide the service access policy management UI that’s accessible from the Control Panel. They also provide the interface and default implementation for `ServiceAccessPolicy`.
 
-### [Configuring the Service Access Policy Module](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/setting-service-access-policies#configuring-the-service-access-policy-module) <a href="#configuring-the-service-access-policy-module" id="configuring-the-service-access-policy-module"></a>
+### Configuring the Service Access Policy Module <a href="#configuring-the-service-access-policy-module" id="configuring-the-service-access-policy-module"></a>
 
 1.  Navigate to _Control Panel_ → _System Settings_ → _API Authentication_.
 

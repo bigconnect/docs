@@ -1,6 +1,6 @@
 # Configuring Content Security Policy Headers
 
-Modern browsers use [Content Security Policy](https://content-security-policy.com/) HTTP response headers to enhance web pages’ security to mitigate certain types of attacks (like Cross-Site Scripting or data injection). You can enable CSP on Liferay to send the configured headers on each HTTP request.
+Modern browsers use [Content Security Policy](https://content-security-policy.com/) HTTP response headers to enhance web pages’ security to mitigate certain types of attacks (like Cross-Site Scripting or data injection). You can enable CSP on the portal to send the configured headers on each HTTP request.
 
 CSP policies have many options. It is best to understand your users’ needs and come up with a policy to suit their requirements. After enabling CSP headers, they’re enforced by the browsers. Visit the links below to learn more about how browsers handle CSP headers:
 
@@ -11,7 +11,7 @@ WARNING
 
 This feature is currently behind a beta feature flag. See [Beta Feature Flags](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/feature-flags#beta-feature-flags) for more information. Configuring an unsupported content security policy can cause your instance to malfunction.
 
-### [Content Security Policy Directives and Values](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/configuring-content-security-policy-headers#content-security-policy-directives-and-values) <a href="#content-security-policy-directives-and-values" id="content-security-policy-directives-and-values"></a>
+### Content Security Policy Directives and Values <a href="#content-security-policy-directives-and-values" id="content-security-policy-directives-and-values"></a>
 
 Content Security Policies take the form of key-value pairs. The keys are directives, and they can have values. Using directives and values, you can form a robust policy to protect web applications against a variety of threats.
 
@@ -38,19 +38,19 @@ Content Security Policies take the form of key-value pairs. The keys are directi
 | `strict-dynamic` | Allows execution of scripts from trusted sources. Scripts included by loaders from a trusted script are not blocked. |
 | `none`           | Blocks execution of the specified directive from all sources.                                                        |
 
-It’s important to note that while `unsafe-eval` and `unsafe-inline` provide flexibility in terms of code execution and styling, they come with increased security risks. Liferay currently cannot support a fully `unsafe-` free CSP due to certain limitations. See [Current Limitations of CSP](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/configuring-content-security-policy-headers#current-limitations-of-csp) for more information.
+It’s important to note that while `unsafe-eval` and `unsafe-inline` provide flexibility in terms of code execution and styling, they come with increased security risks. The portal currently cannot support a fully `unsafe-` free CSP due to certain limitations. See Current Limitations of CSP for more information.
 
 WARNING
 
 While `strict-dynamic` simplifies CSP configuration and reduces the need for nonce propagation, it may enlarge the attack surface by allowing any script loaded by trusted scripts to execute.
 
-Alternatively, you can send nonces from the server to the client, ensuring that dynamically loaded scripts have the necessary nonce attribute for compliance with CSP. This approach involves proprietary mechanisms, managed by Liferay, to propagate nonces from the server to the client.
+Alternatively, you can send nonces from the server to the client, ensuring that dynamically loaded scripts have the necessary nonce attribute for compliance with CSP. This approach involves proprietary mechanisms, managed by the portal, to propagate nonces from the server to the client.
 
 This approach provides more granular control over script loading and may be preferable in scenarios where strict control over script execution is essential. However, it requires proprietary mechanisms for nonce propagation, which may be more complex.
 
 The choice between `strict-dynamic` and nonce propagation depends on factors such as the specific threat model, risk tolerance, and operational requirements. Consider the pros and cons before implementing it in your CSP.
 
-### [Configuring a Sample Content Security Policy](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/configuring-content-security-policy-headers#configuring-a-sample-content-security-policy) <a href="#configuring-a-sample-content-security-policy" id="configuring-a-sample-content-security-policy"></a>
+### Configuring a Sample Content Security Policy <a href="#configuring-a-sample-content-security-policy" id="configuring-a-sample-content-security-policy"></a>
 
 1.  Open the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)) and navigate to _Control Panel_ → _Instance Settings_ → _Security_ → _Content Security Policy_.
 
@@ -74,16 +74,16 @@ NOTE
 
 CSP configuration is available at all scopes. For the system scope, go to _Control Panel_ → _System Settings_ → _Security_ → _Content Security Policy_. For the site scope, open the site menu and go to _Configuration_ → _Site Settings_ → _Security_ → _Content Security Policy_.
 
-### [Current Limitations of CSP](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/configuring-content-security-policy-headers#current-limitations-of-csp) <a href="#current-limitations-of-csp" id="current-limitations-of-csp"></a>
+### Current Limitations of CSP <a href="#current-limitations-of-csp" id="current-limitations-of-csp"></a>
 
 This feature is still in beta and has the following limitations.
 
-* Your `script-src` directive must have the `unsafe-eval` and `unsafe-inline` values defined. The first is to support [Webpack](https://webpack.js.org/), because Liferay uses it to bundle code, and the second is to support CKEditor 4, which is the only supported WYSIWYG editor.
-* Your `style-src` directive must have the `unsafe-inline` value, because Liferay has both inline style attributes and also adds stylesheets to the `<head>` tag using scripts.
-* Your `script-src-attr` directive must have the `unsafe-inline` value, because Liferay contains inline event listeners within HTML elements.
+* Your `script-src` directive must have the `unsafe-eval` and `unsafe-inline` values defined. The first is to support [Webpack](https://webpack.js.org/), because the portal uses it to bundle code, and the second is to support CKEditor 4, which is the only supported WYSIWYG editor.
+* Your `style-src` directive must have the `unsafe-inline` value, because the portal has both inline style attributes and also adds stylesheets to the `<head>` tag using scripts.
+* Your `script-src-attr` directive must have the `unsafe-inline` value, because the portal contains inline event listeners within HTML elements.
 
 NOTE
 
-Content Security Policies work best with SPA disabled. To disable it, add `javascript.single.page.application.enabled=false` to your [portal-ext.properties file](https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/reference/portal-properties.html). Site level configuration panel and common pages (such as the 404 page) belong to the instance, so they use the instance level CSP headers.
+Content Security Policies work best with SPA disabled. To disable it, add `javascript.single.page.application.enabled=false` to your portal-ext.properties file. Site level configuration panel and common pages (such as the 404 page) belong to the instance, so they use the instance level CSP headers.
 
 \

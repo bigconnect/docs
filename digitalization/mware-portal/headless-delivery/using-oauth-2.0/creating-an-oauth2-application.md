@@ -1,16 +1,16 @@
 # Creating an OAuth2 Application
 
-When you have an application that can use OAuth 2.0 for authorization, you must register that application so Liferay can recognize it. Do this by accessing _Control Panel_ → _Security_ → _OAuth2 Administration_:
+When you have an application that can use OAuth 2.0 for authorization, you must register that application so the portal can recognize it. Do this by accessing _Control Panel_ → _Security_ → _OAuth2 Administration_:
 
 1. Click the _Add_ (![add](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) button.
-2. Fill out the form ([description below](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/creating-oauth2-applications#oauth2-administration-reference)).
+2. Fill out the form (description below).
 3.  Click _Save_ to save the application.
 
     ![Adding an application registers it so users can authorize access to their data.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/using-oauth2/creating-oauth2-applications/images/01.png)
 
-Excellent! Now you know how to add OAuth2 authorization for your application to Liferay Portal! Next, you must define scopes of user data the application can access.
+Excellent! Now you know how to add OAuth2 authorization for your application to MWARE Portal! Next, you must define scopes of user data the application can access.
 
-### [OAuth2 Administration Reference](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/creating-oauth2-applications#oauth2-administration-reference) <a href="#oauth2-administration-reference" id="oauth2-administration-reference"></a>
+### OAuth2 Administration Reference <a href="#oauth2-administration-reference" id="oauth2-administration-reference"></a>
 
 **Name:** Give the application a recognizable title.
 

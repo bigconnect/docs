@@ -1,6 +1,6 @@
 # Making Unauthenticated Requests
 
-By default, Liferay DXP restricts API access for the sake of security, requiring authentication in order to get a valid response. However, in certain cases it may make sense to open up an API for guest access.
+By default, the portal restricts API access for the sake of security, requiring authentication in order to get a valid response. However, in certain cases it may make sense to open up an API for guest access.
 
 Making an API request without passing credentials generally leads to an error response:
 
@@ -16,9 +16,9 @@ curl localhost:8080/o/headless-admin-user/v1.0/sites/20122
 
 If you need access to an API without credentials, then grant unrestricted access via a Service Access Policy.
 
-### [Relaxing API Restrictions via Service Access Policy](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/making-unauthenticated-requests#relaxing-api-restrictions-via-service-access-policy) <a href="#relaxing-api-restrictions-via-service-access-policy" id="relaxing-api-restrictions-via-service-access-policy"></a>
+### Relaxing API Restrictions via Service Access Policy <a href="#relaxing-api-restrictions-via-service-access-policy" id="relaxing-api-restrictions-via-service-access-policy"></a>
 
-You can use [Service Access Policies](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/securing-web-services/setting-service-access-policies) to define API access at a granular level.
+You can use Service Access Policies to define API access at a granular level.
 
 1. Visit your site with your browser at `http://localhost:8080`.
 2.  Sign in using the default credentials:
@@ -36,13 +36,13 @@ You can use [Service Access Policies](https://learn.liferay.com/web/guest/w/dxp/
 
 NOTE
 
-Make sure to use Liferay’s external headless API classes instead of Liferay’s internal service layer classes in your policies.
+Make sure to use the portal’s external headless API classes instead of the portal’s internal service layer classes in your policies.
 
 ![Service Access Policies define rules for access to APIs.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/consuming-apis/making-unauthenticated-requests/images/01.png)
 
 Your Service Access Policy is now active, granting Guests access to the Sites API.
 
-### [Confirming Access](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/making-unauthenticated-requests#confirming-access) <a href="#confirming-access" id="confirming-access"></a>
+### Confirming Access <a href="#confirming-access" id="confirming-access"></a>
 
 Now that the Service Access Policy change is applied, the API call that previously failed now succeeds:
 

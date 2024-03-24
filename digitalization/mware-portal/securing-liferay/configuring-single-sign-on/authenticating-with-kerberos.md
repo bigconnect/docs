@@ -1,45 +1,45 @@
 # Authenticating with Kerberos
 
-You can use Kerberos to authenticate Microsoft Windows™ accounts with Liferay DXP. This is done by using a combination of Liferay DXP’s LDAP support and a web server that supports the Kerberos protocol.
+You can use Kerberos to authenticate Microsoft Windows™ accounts with the portal. This is done by using a combination of the portal’s LDAP support and a web server that supports the Kerberos protocol.
 
-Note that this configuration is preferred above [NTLM](https://portal.liferay.dev/docs/7-1/deploy/-/knowledge\_base/d/ntlm-single-sign-on-authentication) because security vulnerabilities persist.
+Note that this configuration is preferred above NTLM because security vulnerabilities persist.
 
-### [Prerequisites](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-kerberos#prerequisites) <a href="#prerequisites" id="prerequisites"></a>
+### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-While it’s beyond the scope of this article to explain how to set up Kerberos and Active Directory on a Windows™ server, we can describe the minimum prerequisites for setting up Liferay authentication:
+While it’s beyond the scope of this article to explain how to set up Kerberos and Active Directory on a Windows™ server, we can describe the minimum prerequisites for setting up the portal authentication:
 
-1. A Windows™ server with Active Directory and DNS set up so the AD server and Liferay DXP can resolve each other on the network. In other words, they must be able to ping each other _by name_.
-2. An administrative user in AD Liferay DXP can use to bind to AD.
-3. A Kerberos keytab file exported via the `ktpass` command containing the cryptographic information the Liferay DXP server needs to bind to AD.
-4. A web server in front of Liferay DXP that supports Kerberos, such as Apache, NGNIX, or IIS. The web server must also support injecting a header to be used as a token in the Liferay DXP configuration (see below).
-5. A Liferay DXP installation that can also resolve by name the other servers. It should never run on the same server as the Active Directory server.
+1. A Windows™ server with Active Directory and DNS set up so the AD server and the portal can resolve each other on the network. In other words, they must be able to ping each other _by name_.
+2. An administrative user in AD the portal can use to bind to AD.
+3. A Kerberos keytab file exported via the `ktpass` command containing the cryptographic information the portal server needs to bind to AD.
+4. A web server in front of the portal that supports Kerberos, such as Apache, NGNIX, or IIS. The web server must also support injecting a header to be used as a token in the portal configuration (see below).
+5. A portal installation that can also resolve by name the other servers. It should never run on the same server as the Active Directory server.
 
 When you have all of these prerequisites in place, you’re ready to configure Kerberos authentication.
 
-### [How Kerberos Authentication Works](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-kerberos#how-kerberos-authentication-works) <a href="#how-kerberos-authentication-works" id="how-kerberos-authentication-works"></a>
+### How Kerberos Authentication Works <a href="#how-kerberos-authentication-works" id="how-kerberos-authentication-works"></a>
 
 From the prerequisites, you may be able to guess that there are several moving parts to how SSO works with Kerberos.
 
-![Kerberos authentication requires a web server in front of your Liferay DXP server.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-kerberos/images/01.png)
+![Kerberos authentication requires a web server in front of your portal server.](https://resources.learn.liferay.com/images/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-kerberos/images/01.png)
 
 First, a properly configured web browser sends a negotiate request using encrypted Windows user data. To configure this, the browser must recognize the site as a trusted site (explained below). The web server’s Kerberos module uses the keytab file to bind over the Kerberos protocol to AD and verify the user information. If this works, the AD server confirms the connection with a valid response.
 
-The web server you choose must support both the Kerberos protocol and the injection of a custom header into the request that Liferay DXP can later read. When the web server forwards the request to Liferay DXP, it reads the header to obtain the user data and authenticate the user.
+The web server you choose must support both the Kerberos protocol and the injection of a custom header into the request that the portal can later read. When the web server forwards the request to the portal, it reads the header to obtain the user data and authenticate the user.
 
 Next, you’ll learn how to get all of this working.
 
-### [Configuring Kerberos Authentication](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-kerberos#configuring-kerberos-authentication) <a href="#configuring-kerberos-authentication" id="configuring-kerberos-authentication"></a>
+### Configuring Kerberos Authentication <a href="#configuring-kerberos-authentication" id="configuring-kerberos-authentication"></a>
 
 There are four components to configure:
 
 1. A user keytab from Active Directory
 2. A web server in front of your application server
-3. Liferay DXP
+3. MWARE Portal
 4. Your Windows™ clients.
 
-#### [Step 1: Creating the User Keytab](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-kerberos#step-1-creating-the-user-keytab) <a href="#step-1-creating-the-user-keytab" id="step-1-creating-the-user-keytab"></a>
+#### Step 1: Creating the User Keytab <a href="#step-1-creating-the-user-keytab" id="step-1-creating-the-user-keytab"></a>
 
-1. Create a user so Liferay DXP can bind to Active Directory.
+1. Create a user so the portal can bind to Active Directory.
 2.  Generate a Kerberos keytab file using `ktpass`:
 
     ```bash
@@ -53,7 +53,7 @@ There are four components to configure:
     ```
 3. Ensure that the AD domain controller and the web server can see each other on the network via DNS configuration or `hosts` file.
 
-#### [Step 2: Configuring Your Web Server](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-kerberos#step-2-configuring-your-web-server) <a href="#step-2-configuring-your-web-server" id="step-2-configuring-your-web-server"></a>
+#### Step 2: Configuring Your Web Server <a href="#step-2-configuring-your-web-server" id="step-2-configuring-your-web-server"></a>
 
 1.  Configure Kerberos authentication. On Linux, this involves installing `krb5` and configuring it to match your realm that’s already configured for Active Directory. The example domain for the user configured in step two above would look like this:
 
@@ -117,12 +117,12 @@ There are four components to configure:
     Listen 10080
     ```
 
-The last line is commented out based on user preference. If you want the domain removed from the user name when saved in Liferay DXP, uncomment it. Otherwise, leave it commented out to store the domain with the user name.
+The last line is commented out based on user preference. If you want the domain removed from the user name when saved in the portal, uncomment it. Otherwise, leave it commented out to store the domain with the user name.
 
-#### [Step 3: Connecting Liferay DXP to Active Directory over LDAP](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-kerberos#step-3-connecting-liferay-dxp-to-active-directory-over-ldap) <a href="#step-3-connecting-liferay-dxp-to-active-directory-over-ldap" id="step-3-connecting-liferay-dxp-to-active-directory-over-ldap"></a>
+#### Step 3: Connecting the portal to Active Directory over LDAP <a href="#step-3-connecting-liferay-dxp-to-active-directory-over-ldap" id="step-3-connecting-liferay-dxp-to-active-directory-over-ldap"></a>
 
-1. Finally, configure Liferay DXP to access Active Directory via the LDAP protocol. Change authentication to be by Screen Name by selecting it in Configuration → Instance Settings → Authentication → General.
-2.  Connect Liferay DXP to AD over LDAP by going to Configuration → Instance Settings → Authentication → LDAP and adding an LDAP server. Provide the information appropriate to your installation:
+1. Finally, configure the portal to access Active Directory via the LDAP protocol. Change authentication to be by Screen Name by selecting it in Configuration → Instance Settings → Authentication → General.
+2.  Connect the portal to AD over LDAP by going to Configuration → Instance Settings → Authentication → LDAP and adding an LDAP server. Provide the information appropriate to your installation:
 
     | Configuration                    | Description                                                                                                              |
     | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
@@ -131,7 +131,7 @@ The last line is commented out based on user preference. If you want the domain 
     | **Principal/Credentials**        | Supply the credentials for the user exported to the keytab file.                                                         |
     | **Authentication Search Filter** | Supply the appropriate search filter to return user objects. For example, `(&(objectCategory=person)(sAMAccountName=*))` |
     | **UUID**                         | Supply what uniquely identifies a user, such as `sAMAccountName`.                                                        |
-    | **Screen Name**                  | Supply the field that should be mapped to Liferay DXP’s screen name field, such as `sAMAccountName`.                     |
+    | **Screen Name**                  | Supply the field that should be mapped to the portal’s screen name field, such as `sAMAccountName`.                      |
     | **Password**                     | Supply the field that contains the user’s password, such as `userPassword`.                                              |
 3. Test the connection, save, and enable the configuration.
 4.  Finally, configure the token for single sign-on at Configuration → System Settings → Security → SSO → Token Based SSO. Make sure the User Token Name matches _exactly_ the token you configured in your web server. Click the _Enabled_ and _Import from LDAP_ boxes and click _Save_.
@@ -140,17 +140,17 @@ The last line is commented out based on user preference. If you want the domain 
 
 Excellent! You’ve configured your servers. All that’s left is to configure your clients.
 
-#### [Step 4: Configuring your Clients](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-kerberos#step-4-configuring-your-clients) <a href="#step-4-configuring-your-clients" id="step-4-configuring-your-clients"></a>
+#### Step 4: Configuring your Clients <a href="#step-4-configuring-your-clients" id="step-4-configuring-your-clients"></a>
 
-You must do two things: make your computer log into the domain and configure your Liferay DXP server as a trusted Internet site.
+You must do two things: make your computer log into the domain and configure your portal server as a trusted Internet site.
 
 1. Join your computer to your domain. In keeping with the example above, you’d make your computer a member of the `INTDOMAIN.LOCAL` domain.
 2. Log in as a user in that domain.
-3. Internet Explorer, Edge, and Chrome use the Windows™ settings for trusted sites. If you use these browsers, go to Internet Options → Security → Local Intranet Sites and add your Liferay DXP server’s URL. For example, add `http://mywebserver.intdomain.local:10080`.
-4. Firefox can be configured by typing `about:config` in its address bar. Search for the below two preferences and add the Liferay DXP server’s URL as the value for both:
+3. Internet Explorer, Edge, and Chrome use the Windows™ settings for trusted sites. If you use these browsers, go to Internet Options → Security → Local Intranet Sites and add your portal server’s URL. For example, add `http://mywebserver.intdomain.local:10080`.
+4. Firefox can be configured by typing `about:config` in its address bar. Search for the below two preferences and add the portal server’s URL as the value for both:
    * `network.negotiate-auth.delegation-uris`
    * `network.negotiate-auth.trusted-uris`
 
-After configuring these things, test your configuration by accessing Liferay DXP through the web server’s URL. Since you are already logged into your client machine, you should be automatically logged into Liferay DXP without a user/password prompt.
+After configuring these things, test your configuration by accessing the portal through the web server’s URL. Since you are already logged into your client machine, you should be automatically logged into the portal without a user/password prompt.
 
-Congratulations on configuring Kerberos with Liferay DXP!
+Congratulations on configuring Kerberos with the portal!

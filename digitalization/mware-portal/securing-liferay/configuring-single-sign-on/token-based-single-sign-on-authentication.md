@@ -1,6 +1,6 @@
 # Token-based Single Sign On Authentication
 
-Token-based SSO authentication was introduced in Liferay Portal 7.0 to standardize support for Shibboleth, SiteMinder, Oracle OAM, and any SSO product that works by propagating a token via one of the following mechanisms:
+Token-based SSO authentication was introduced in version 7.0 to standardize support for Shibboleth, SiteMinder, Oracle OAM, and any SSO product that works by propagating a token via one of the following mechanisms:
 
 * HTTP request parameter
 * HTTP request header
@@ -9,7 +9,7 @@ Token-based SSO authentication was introduced in Liferay Portal 7.0 to standardi
 
 Since these providers have a built-in web server module that reads and sets these parameters, headers, cookies, or attributes, you should use the Token SSO configuration.
 
-The authentication token contains the User’s screen name or email address, whichever has been configured to use for the particular company (portal instance). Liferay Portal supports three authentication methods:
+The authentication token contains the User’s screen name or email address, whichever has been configured to use for the particular company (portal instance). The portal supports three authentication methods:
 
 * By email address
 * By screen name
@@ -21,7 +21,7 @@ Token-based authentication only supports email address and screen name. If user 
 Incompatible setting for: company.security.auth.type
 ```
 
-Furthermore, you must use a security mechanism external to Liferay Portal, such as a fronting web server like Apache with a module or plugin for the authentication mechanism. Having a reverse proxy prevents malicious User impersonation that otherwise might be possible by sending HTTP requests directly to Liferay Portal’s app server from the client’s web browser.
+Furthermore, you must use a security mechanism external to the portal, such as a fronting web server like Apache with a module or plugin for the authentication mechanism. Having a reverse proxy prevents malicious User impersonation that otherwise might be possible by sending HTTP requests directly to the portal’s app server from the client’s web browser.
 
 ### Configuring Token Based Authentication <a href="#configuring-token-based-authentication" id="configuring-token-based-authentication"></a>
 
@@ -38,13 +38,13 @@ Here are the configuration options for the Token-Based SSO module:
 | **User token name**        | Set equal to the name of the token. This is retrieved from the specified location. (Example: `SM_USER`)         |
 | **Token location**         | Set this to the type of user token: HTTP request parameter, HTTP request header, HTTP cookie, Session attribute |
 | **Authentication cookies** | Set this to the cookie names that must be removed after logout. (Example: `SMIDENTITY`, `SMSESSION`)            |
-| **Logout redirect URL**    | When user logs out of Liferay Portal, the user is redirected to this URL.                                       |
+| **Logout redirect URL**    | When user logs out of the portal, the user is redirected to this URL.                                           |
 
 Remember to click _Save_ to activate Token Based SSO.
 
 ### Required SiteMinder Configuration <a href="#required-siteminder-configuration" id="required-siteminder-configuration"></a>
 
-If you use SiteMinder, note that Liferay Portal sometimes uses the tilde character in its URLs. By default, SiteMinder treats the tilde character (and others) as bad characters and returns an HTTP 500 error if it processes a URL containing any of them. To avoid this issue, change this default setting in the SiteMinder configuration to this one:
+If you use SiteMinder, note that the portal sometimes uses the tilde character in its URLs. By default, SiteMinder treats the tilde character (and others) as bad characters and returns an HTTP 500 error if it processes a URL containing any of them. To avoid this issue, change this default setting in the SiteMinder configuration to this one:
 
 ```log
 BadUrlChars       //,./,/.,/*,*.,\,%00-%1f,%7f-%ff,%25
@@ -54,4 +54,4 @@ The configuration above is the same as the default except without the `~` charac
 
 ### Summary <a href="#summary" id="summary"></a>
 
-Liferay Portal’s token-based SSO authentication mechanism is highly flexible and compatible with any SSO solution that provides it with a valid Liferay Portal user’s screen name or email address. These include Shibboleth and SiteMinder.
+The portal’s token-based SSO authentication mechanism is highly flexible and compatible with any SSO solution that provides it with a valid user’s screen name or email address. These include Shibboleth and SiteMinder.

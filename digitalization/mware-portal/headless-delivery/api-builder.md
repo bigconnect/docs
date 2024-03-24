@@ -1,14 +1,14 @@
 # API Builder
 
-The API builder makes it easy for you to create custom API applications in Liferay. Create API schemas and endpoints that meet your exact needs.
+The API builder makes it easy for you to create custom API applications in the portal. Create API schemas and endpoints that meet your exact needs.
 
-### [Using the API Builder](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#using-the-api-builder) <a href="#using-the-api-builder" id="using-the-api-builder"></a>
+### Using the API Builder <a href="#using-the-api-builder" id="using-the-api-builder"></a>
 
-Each API application can house multiple endpoints and schemas. This is similar to Liferay’s out-of-the-box API applications. For example, the `headless-admin-user` API application houses endpoints for `accounts`, `organizations`, `roles`, `user-accounts`, etc.
+Each API application can house multiple endpoints and schemas. This is similar to the portal’s out-of-the-box API applications. For example, the `headless-admin-user` API application houses endpoints for `accounts`, `organizations`, `roles`, `user-accounts`, etc.
 
 NOTE
 
-The API Builder is configured at an instance-level scope. Create different API applications that are unique to each virtual instance. To re-create an API application in another instance, use the [data migration center](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/data-migration-center).
+The API Builder is configured at an instance-level scope. Create different API applications that are unique to each virtual instance. To re-create an API application in another instance, use the data migration center.
 
 To access the API Builder application,
 
@@ -19,47 +19,47 @@ To access the API Builder application,
 
     ![See a list of your custom API applications.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/api-builder/images/01.png)
 
-From the API Builder, you can also [create](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-custom-api-applications) and [manage](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#managing-custom-api-applications) custom API applications.
+From the API Builder, you can also create and manage custom API applications.
 
-#### [Creating Custom API Applications](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-custom-api-applications) <a href="#creating-custom-api-applications" id="creating-custom-api-applications"></a>
+#### Creating Custom API Applications <a href="#creating-custom-api-applications" id="creating-custom-api-applications"></a>
 
-1. While in the [API Builder](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#using-the-api-builder), click _Add_ (![Add button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) and fill in the requested information.
+1. While in the API Builder, click _Add_ (![Add button](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)) and fill in the requested information.
 2.  Add the Title, the URL, and (optionally) a description for your API.
 
     The URL has a limit of 255 characters, and it must contain only numbers, letters, or dashes.
 3. Click _Create_.
 
-#### [Managing Custom API Applications](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#managing-custom-api-applications) <a href="#managing-custom-api-applications" id="managing-custom-api-applications"></a>
+#### Managing Custom API Applications <a href="#managing-custom-api-applications" id="managing-custom-api-applications"></a>
 
-While in the [API Builder](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#using-the-api-builder), use the Actions menu (![Actions menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) next to the API application to manage it. Select an available option:
+While in the API Builder, use the Actions menu (![Actions menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) next to the API application to manage it. Select an available option:
 
 **Edit**: Edit your API application.
 
 You can also click on the API application’s name to edit it.
 
-While editing an API application, you can create new [endpoints](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-and-managing-endpoints) and [schemas](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-and-managing-schemas) that work like Liferay’s out-of-the-box API applications.
+While editing an API application, you can create new endpoints and schemas that work like the portal’s out-of-the-box API applications.
 
 **Delete**: Delete your API application.
 
 **Change Publication Status**: Change your publication status from published to unpublished or vice versa.
 
-An API application must be published before use. Once published, the generated APIs have the same set of features as Liferay’s out-of-the-box APIs (i.e. pagination, filtering, sorting, etc.)
+An API application must be published before use. Once published, the generated APIs have the same set of features as the portal’s out-of-the-box APIs (i.e. pagination, filtering, sorting, etc.)
 
-### [Creating and Managing Endpoints](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-and-managing-endpoints) <a href="#creating-and-managing-endpoints" id="creating-and-managing-endpoints"></a>
+### Creating and Managing Endpoints <a href="#creating-and-managing-endpoints" id="creating-and-managing-endpoints"></a>
 
-Liferay DXP 2024.Q1+ U112
+Version 2024.Q1+
 
-[Beta Feature](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/feature-flags#beta-feature-flags)
+Beta Feature
 
 IMPORTANT
 
-This feature is currently behind a [beta feature flag](https://learn.liferay.com/web/guest/w/dxp/system-administration/configuring-liferay/feature-flags#beta-feature-flags) (LPS-178642). API endpoints currently support retrieving and creating collections of entities.
+This feature is currently behind a beta feature flag (LPS-178642). API endpoints currently support retrieving and creating collections of entities.
 
 API endpoints are the specific URL locations that accept requests.
 
 To see, manage, and create endpoints,
 
-1.  Start [editing your API application](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#managing-custom-api-applications) and select the _Endpoints_ tab to see a list of your custom endpoints.
+1.  Start editing your API application and select the _Endpoints_ tab to see a list of your custom endpoints.
 
     The method, URL path, description, and last update are shown for each endpoint.
 
@@ -72,7 +72,7 @@ To create a new endpoint,
 
     Once the endpoint is created, you can configure it using the Configuration tab.
 
-    There are different configurations depending on the selected method. See [Creating a GET Method Endpoint](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-a-get-method-endpoint) and [Creating a POST Method Endpoint](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-a-post-method-endpoint) for more information.
+    There are different configurations depending on the selected method. See Creating a GET Method Endpoint and Creating a POST Method Endpoint for more information.
 
 To manage endpoints, use the Actions menu (![Actions menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) next to the endpoint and select an available option:
 
@@ -84,13 +84,13 @@ You can also click on the endpoint’s path to edit it.
 
 **Delete**: Delete your endpoint.
 
-#### [Creating a GET Method Endpoint](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-a-get-method-endpoint) <a href="#creating-a-get-method-endpoint" id="creating-a-get-method-endpoint"></a>
+#### Creating a GET Method Endpoint <a href="#creating-a-get-method-endpoint" id="creating-a-get-method-endpoint"></a>
 
 The GET method requests and retrieves data from a specified source. Using the GET method you can retrieve information from a collection or a single element (i.e. you can retrieve a list of products, or you can retrieve information from a single product).
 
 To create an endpoint using the GET method,
 
-1. While [creating an endpoint](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-and-managing-endpoints), select the GET method.
+1. While creating an endpoint, select the GET method.
 2.  Select the _Retrieve Type_. Retrieve a Collection or a Single Element.
 
     Depending on the type you selected, there are different configurations for the Path and in the Configurations tab.
@@ -103,7 +103,7 @@ To create an endpoint using the GET method,
 
 Once the endpoint is created, select the _Configuration_ tab for additional settings. Depending on the Retrieve Type you chose, different settings appear. In the configuration tab,
 
-1. Select the _Response Body Schema_. [Create a Schema](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-and-managing-schemas) and apply it to the endpoint to define the structure and format of the data that is returned by the API in response to a client’s request.
+1. Select the _Response Body Schema_. Create a Schema and apply it to the endpoint to define the structure and format of the data that is returned by the API in response to a client’s request.
 
 If you selected Collection as your Retrieve Type,
 
@@ -114,7 +114,7 @@ If you selected Collection as your Retrieve Type,
 
     JSON sorting can be incorporated. For example `sort=firstName:asc` could be used to sort the entries alphabetically by first name.
 
-    See [API query parameters](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/api-query-parameters) to learn more about filtering and sorting.
+    See API query parameters to learn more about filtering and sorting.
 3. Click _Publish_.
 
 ![Configure the endpoint using the GET method and a Collection as the Retrieve Type.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/api-builder/images/03.png)
@@ -129,13 +129,13 @@ If you selected Single Element as your Retrieve Type,
 
 Once the endpoint is created, you can see it on your API explorer page `http://localhost:8080/o/api`.
 
-#### [Creating a POST Method Endpoint](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-a-post-method-endpoint) <a href="#creating-a-post-method-endpoint" id="creating-a-post-method-endpoint"></a>
+#### Creating a POST Method Endpoint <a href="#creating-a-post-method-endpoint" id="creating-a-post-method-endpoint"></a>
 
-In the API Builder, the POST method is used to create [object](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/creating-objects) entries.
+In the API Builder, the POST method is used to create object entries.
 
 To create an endpoint using the POST method,
 
-1. While [creating an endpoint](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-and-managing-endpoints), select the POST method.
+1. While creating an endpoint, select the POST method.
 2. Select the _Scope_ for your endpoint based on your object’s scope. Endpoints can be scoped for the instance (Company) or a site.
 3. Enter the _Path_ you want to use in your endpoint.
 4. (Optional) Add a _Description_ to your endpoint.
@@ -143,7 +143,7 @@ To create an endpoint using the POST method,
 
 Once the endpoint is created, select the _Configuration_ tab for additional settings. In the configuration tab,
 
-1.  Select the _Request Body Schema_. [Create a Schema](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-and-managing-schemas) and apply it to the endpoint to define the structure and format of the data that the client should include in the request body when creating a resource on the server.
+1.  Select the _Request Body Schema_. Create a Schema and apply it to the endpoint to define the structure and format of the data that the client should include in the request body when creating a resource on the server.
 
     The request body must contain all mandatory properties from the main object, and it can only contain properties from the main object.
 
@@ -154,13 +154,13 @@ Once the endpoint is created, select the _Configuration_ tab for additional sett
     You can use relationship-type properties in your schema to define relationships between entities. The created entities can be related to existing object entries through their ID.
 
     Although you can define related entities as properties, the values provided for these related entities in the POST request are ignored. Therefore, it’s not possible to create related entities when creating a new entry using the POST method.
-2.  (Optional) Select the _Response Body Schema_. [Create a Schema](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-and-managing-schemas) and apply it to the endpoint to define the structure and format of the data that the server sends back to the client in response to the POST request.
+2.  (Optional) Select the _Response Body Schema_. Create a Schema and apply it to the endpoint to define the structure and format of the data that the server sends back to the client in response to the POST request.
 
     If you don’t select a response body schema, an empty response is returned when the API is executed successfully.
 
 Once the endpoint is created, you can see it on your API explorer page `http://localhost:8080/o/api`.
 
-#### [Creating a POST Method Endpoint Through an API Call](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-a-post-method-endpoint-through-an-api-call) <a href="#creating-a-post-method-endpoint-through-an-api-call" id="creating-a-post-method-endpoint-through-an-api-call"></a>
+#### Creating a POST Method Endpoint Through an API Call <a href="#creating-a-post-method-endpoint-through-an-api-call" id="creating-a-post-method-endpoint-through-an-api-call"></a>
 
 If you are creating the POST endpoint through API calls, keep these points in mind:
 
@@ -239,13 +239,13 @@ This section specifies the data sent in the request body. In this case, a JSON p
 
 `"scope"`: Defines the endpoint’s scope.
 
-### [Creating and Managing Schemas](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-and-managing-schemas) <a href="#creating-and-managing-schemas" id="creating-and-managing-schemas"></a>
+### Creating and Managing Schemas <a href="#creating-and-managing-schemas" id="creating-and-managing-schemas"></a>
 
 API schemas specify what entities are returned (or received) by your API.
 
 To see, manage, and create schemas,
 
-1.  Start [editing your API application](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#managing-custom-api-applications) and select the _Schemas_ tab to see a list of your schemas.
+1.  Start editing your API application and select the _Schemas_ tab to see a list of your schemas.
 
     The name, description, and last update are shown for each schema.
 
@@ -258,7 +258,7 @@ To create a new schema,
     ![Select an object definition to create a new schema.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/api-builder/images/05.png)
 2.  Click _Create_.
 
-    Once the schema is created, you can [configure its properties](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#configuring-and-managing-schema-properties) using the Properties tab.
+    Once the schema is created, you can configure its properties using the Properties tab.
 
 To manage schemas, use the Actions menu (![Actions menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) next to the schema and select an available option:
 
@@ -268,14 +268,14 @@ You can also click on the schema’s name to edit it.
 
 **Delete**: delete your schema.
 
-#### [Configuring and Managing Schema Properties](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#configuring-and-managing-schema-properties) <a href="#configuring-and-managing-schema-properties" id="configuring-and-managing-schema-properties"></a>
+#### Configuring and Managing Schema Properties <a href="#configuring-and-managing-schema-properties" id="configuring-and-managing-schema-properties"></a>
 
-1. To configure the schema properties, start [editing a schema](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/api-builder#creating-and-managing-schemas) and select the _Properties_ tab.
+1. To configure the schema properties, start editing a schema and select the _Properties_ tab.
 2.  Select the entities you want to include in your schema.
 
     To add an entity to the schema, click the entity’s name or the _Add_ icon (![Add icon](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add-app.png)) next to it.
 
-    Select entities available from your [Liferay object](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects). If the object has [object relationships](https://learn.liferay.com/web/guest/w/dxp/building-applications/objects/creating-and-managing-objects/relationships), the entities from those objects can be selected also.
+    Select entities available from your portal object. If the object has object relationships, the entities from those objects can be selected also.
 
     You can use the search bar to find entities.
 3.  Manage the entities. You can rearrange, rename, or exclude them.

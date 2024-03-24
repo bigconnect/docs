@@ -4,23 +4,23 @@ REST Builder is a code generation tool that makes it easy for you to take your l
 
 REST Builder uses the configuration you define in `rest-config.yaml` and `rest-openapi.yaml` files to generate most of the code necessary for your API to work all at once. You configure class names and where to put the code, and REST Builder generates all of the necessary files. Then you add your implementation logic.
 
-You run REST Builder using the Gradle task `buildREST` from your `impl` module in a Liferay workspace. Once configured, it generates all the scaffolding code, interfaces, and even resource classes ready for implementation.
+You run REST Builder using the Gradle task `buildREST` from your `impl` module in a workspace. Once configured, it generates all the scaffolding code, interfaces, and even resource classes ready for implementation.
 
 ## Producing and Implementing APIs with REST Builder
 
 With REST Builder, you can define the API you want to build, and REST Builder provides the framework and endpoints for you.
 
-### [Deploy an Example REST API](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/apis-with-rest-builder/producing-and-implementing-apis-with-rest-builder#deploy-an-example-rest-api) <a href="#deploy-an-example-rest-api" id="deploy-an-example-rest-api"></a>
+### Deploy an Example REST API <a href="#deploy-an-example-rest-api" id="deploy-an-example-rest-api"></a>
 
 To see REST Builder in action, you can deploy an example API that retrieves a dummy product by its ID in a catalog. Once you understand how this simple example works, you can create APIs for your own applications.
 
-Start a new Liferay instance by running
+Start a new portal instance by running
 
 ```bash
 docker run -it -m 8g -p 8080:8080 liferay/portal:7.4.3.112-ga112
 ```
 
-Sign in to Liferay at [http://localhost:8080](http://localhost:8080/). Use the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
+Sign in to the portal at [http://localhost:8080](http://localhost:8080/). Use the email address _test@liferay.com_ and the password _test_. When prompted, change the password to _learn_.
 
 Then, follow these steps:
 
@@ -78,9 +78,9 @@ Congratulations, you’ve successfully deployed and used a new REST API.
 
 Now that you’ve seen an API generated with REST Builder, it’s time to understand how it works.
 
-### [Initial Setup](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/apis-with-rest-builder/producing-and-implementing-apis-with-rest-builder#initial-setup) <a href="#initial-setup" id="initial-setup"></a>
+### Initial Setup <a href="#initial-setup" id="initial-setup"></a>
 
-Begin by creating `impl` and `api` modules in your Liferay workspace project. Your `impl` module’s `build.gradle` file must install and apply REST Builder as a plugin:
+Begin by creating `impl` and `api` modules in your workspace project. Your `impl` module’s `build.gradle` file must install and apply REST Builder as a plugin:
 
 ```log
 buildscript {
@@ -105,11 +105,11 @@ dependencies {
 
 Your `build.gradle` files in both modules must also declare dependencies on the portal release.
 
-### [YAML configuration](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/apis-with-rest-builder/producing-and-implementing-apis-with-rest-builder#yaml-configuration) <a href="#yaml-configuration" id="yaml-configuration"></a>
+### YAML configuration <a href="#yaml-configuration" id="yaml-configuration"></a>
 
 Your first step is to create the REST Builder configuration files. In the `impl` module’s root folder, add two files: `rest-config.yaml` and `rest-openapi.yaml`. These files must contain all the information necessary for REST Builder to generate the scaffolding code for your API.
 
-#### [Add REST Builder Configuration](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/apis-with-rest-builder/producing-and-implementing-apis-with-rest-builder#add-rest-builder-configuration) <a href="#add-rest-builder-configuration" id="add-rest-builder-configuration"></a>
+#### Add REST Builder Configuration <a href="#add-rest-builder-configuration" id="add-rest-builder-configuration"></a>
 
 REST Builder configuration belongs in the `rest-config.yaml` file. It defines the following fields:
 
@@ -137,7 +137,7 @@ clientDir: "../headless-r3b2-client/src/main/java"
 testDir: "../headless-r3b2-test/src/testIntegration/java"
 ```
 
-#### [Add an Information Block to the OpenAPI Configuration](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/apis-with-rest-builder/producing-and-implementing-apis-with-rest-builder#add-an-information-block-to-the-openapi-configuration) <a href="#add-an-information-block-to-the-openapi-configuration" id="add-an-information-block-to-the-openapi-configuration"></a>
+#### Add an Information Block to the OpenAPI Configuration <a href="#add-an-information-block-to-the-openapi-configuration" id="add-an-information-block-to-the-openapi-configuration"></a>
 
 Next, open the `rest-openapi.yaml` file to begin configuring your APIs.
 
@@ -157,9 +157,9 @@ openapi: 3.0.1
 
 IMPORTANT
 
-The `version` field defined here becomes part of the URL when your API paths are exposed within your Liferay instance.
+The `version` field defined here becomes part of the URL when your API paths are exposed within your portal instance.
 
-#### [Define the Necessary Schemas](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/apis-with-rest-builder/producing-and-implementing-apis-with-rest-builder#define-the-necessary-schemas) <a href="#define-the-necessary-schemas" id="define-the-necessary-schemas"></a>
+#### Define the Necessary Schemas <a href="#define-the-necessary-schemas" id="define-the-necessary-schemas"></a>
 
 Next, in the `components` block, define schemas for your entities. REST Builder uses what you define here to create corresponding Java beans to represent these entities.
 
@@ -196,7 +196,7 @@ In this example, a schema called `Foo` represents the important data for the use
 
 Your schema definition determines the names of the classes REST Builder generates, including the scaffolding and templates in the resources files. Because the above schemas are called `Foo` and `Bar`, the implementation logic belongs in the `FooResourceImpl` and `GooResourceImpl` classes.
 
-#### [Define Your APIs](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/apis-with-rest-builder/producing-and-implementing-apis-with-rest-builder#define-your-apis) <a href="#define-your-apis" id="define-your-apis"></a>
+#### Define Your APIs <a href="#define-your-apis" id="define-your-apis"></a>
 
 Finally, add the `paths` block. This must include all APIs that you plan to implement with REST Builder. Here’s a small snippet of the paths block:
 
@@ -262,7 +262,7 @@ See the `rest-openapi.yaml` file you downloaded earlier for a complete reference
 
 There’s also a `Goo` object to show how you might do relationships: Goos are related to Foos in the sense that they are associated with a `fooId`.
 
-### [Run REST Builder](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/apis-with-rest-builder/producing-and-implementing-apis-with-rest-builder#run-rest-builder) <a href="#run-rest-builder" id="run-rest-builder"></a>
+### Run REST Builder <a href="#run-rest-builder" id="run-rest-builder"></a>
 
 Now that you have added all of the configuration necessary for REST Builder to do most of the work, run the following command from within your `impl` module to run the `buildREST` Gradle task:
 
@@ -274,7 +274,7 @@ REST Builder uses your configuration and populates both your `api` and `impl` cl
 
 GraphQL endpoint code and JAX-RS application code are both generated in the `graphql` and `jaxrs` packages, respectively. Your own API implementation is added into the appropriate `*ResourceImpl` class in the `resource` package.
 
-### [Add Your Implementation Logic](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/apis-with-rest-builder/producing-and-implementing-apis-with-rest-builder#add-your-implementation-logic) <a href="#add-your-implementation-logic" id="add-your-implementation-logic"></a>
+### Add Your Implementation Logic <a href="#add-your-implementation-logic" id="add-your-implementation-logic"></a>
 
 The last step is to define the logic for each API you have defined. Within your `impl` module, find the Java resource class where your implementation goes, based on the schema name you defined in `rest-openapi.yaml` (in this example, `FooResourceImpl.java` and `GooResourceImpl.java`).
 
@@ -322,13 +322,13 @@ The `Goo` logic is similar, except in this case multiple `Goo`s are returned bec
 	}
 ```
 
-### [Add a GraphQL Namespace](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/apis-with-rest-builder/producing-and-implementing-apis-with-rest-builder#add-a-graphql-namespace) <a href="#add-a-graphql-namespace" id="add-a-graphql-namespace"></a>
+### Add a GraphQL Namespace <a href="#add-a-graphql-namespace" id="add-a-graphql-namespace"></a>
 
-Liferay supports namespace configuration for your GraphQL applications. You can use namespaces to group queries, mutations, and types for a given application. Specifying namespaces also allows you to use duplicate schemas in different applications.
+The portal supports namespace configuration for your GraphQL applications. You can use namespaces to group queries, mutations, and types for a given application. Specifying namespaces also allows you to use duplicate schemas in different applications.
 
 INFO
 
-See [Consuming GraphQL APIs](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/consuming-apis/consuming-graphql-apis) for more information on using GraphQL for Liferay applications.
+See Consuming GraphQL APIs for more information on using GraphQL for applications.
 
 To add and use a GraphQL namespace, follow these steps:
 
@@ -366,6 +366,6 @@ public class MyGraphQLContributor implements GraphQLContributor {
 
 Namespaces are disabled by default in GraphQL extensions.
 
-### [Conclusion](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/apis-with-rest-builder/producing-and-implementing-apis-with-rest-builder#conclusion) <a href="#conclusion" id="conclusion"></a>
+### Conclusion <a href="#conclusion" id="conclusion"></a>
 
 Congratulations! You now know the basics of implementing a new API with REST Builder and have added a new API to DXP.

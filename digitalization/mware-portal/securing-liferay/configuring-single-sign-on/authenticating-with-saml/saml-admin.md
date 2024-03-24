@@ -4,7 +4,7 @@ The SAML Admin panel is the best place to configure your SAML instance. Use it i
 
 You can configure an Identity Provider (IdP), a Service Provider, and Service Provider connections using SAML Admin. To access it, click the _Global Menu_ (![Global Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-applications-menu.png)) → _Control Panel_ → _SAML Admin_.
 
-### [General Tab](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-admin#general-tab) <a href="#general-tab" id="general-tab"></a>
+### General Tab <a href="#general-tab" id="general-tab"></a>
 
 The General tab shows options that apply to SAML regardless of its role:
 
@@ -14,7 +14,7 @@ The General tab shows options that apply to SAML regardless of its role:
 
 **Entity ID:** The unique identifier for this SAML entity (IdP or SP). It can be up to 1024 characters long.
 
-The Certificate and Private Key section displays the key generated when you set up your key store here or in [system settings](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/configuring-saml-at-the-system-level). Here, you can replace the certificate by generating a new certificate or importing one you created elsewhere, and you can also download the certificate to import elsewhere.
+The Certificate and Private Key section displays the key generated when you set up your key store here or in system settings. Here, you can replace the certificate by generating a new certificate or importing one you created elsewhere, and you can also download the certificate to import elsewhere.
 
 If you must replace the auto-generated certificate, it’s easy:
 
@@ -24,7 +24,7 @@ If you must replace the auto-generated certificate, it’s easy:
 
 Your new key’s details are now displayed.
 
-If you’ve already generated a key, that key must be stored in a [PKCS #12](https://en.wikipedia.org/wiki/PKCS\_12) archive to be imported into Liferay DXP:
+If you’ve already generated a key, that key must be stored in a [PKCS #12](https://en.wikipedia.org/wiki/PKCS\_12) archive to be imported into the portal:
 
 1. Click _Replace Certificate_.
 2. Click the _Import Certificate_ tab.
@@ -32,7 +32,7 @@ If you’ve already generated a key, that key must be stored in a [PKCS #12](htt
 
 Your key is now imported.
 
-### [Service Provider](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-admin#service-provider) <a href="#service-provider" id="service-provider"></a>
+### Service Provider <a href="#service-provider" id="service-provider"></a>
 
 1. Choose the _Service Provider_ role from the SAML Role field.
 2.  The Certificate and Private Key section is for creating a keystore for SAML. Click _Create Certificate_ and enter the following information:
@@ -57,25 +57,25 @@ Your key is now imported.
 
     **Identity Provider Connection**: This tab manages connections to the IdP. There can be multiple IdP connections.
 4. You can also generate an encryption certificate. This is a separate key for encrypting assertions. If you want assertions encrypted, you must generate a key for this. The procedure is exactly the same as generating your certificate in step 2 above.
-5.  Next, you must configure an Identity Provider connection. Click on the _Identity Provider Connections_ tab. Enter a name for the Identity Provider, enter its entity ID, and enter its metadata URL. If you have already configured a separate Liferay DXP installation as an Identify provider, you’d enter the following information:
+5.  Next, you must configure an Identity Provider connection. Click on the _Identity Provider Connections_ tab. Enter a name for the Identity Provider, enter its entity ID, and enter its metadata URL. If you have already configured a separate portal installation as an Identify provider, you’d enter the following information:
 
-    * Name: _Liferay IdP_
+    * Name: _IdP_
     * Entity ID: \[ID of IdP]
     * Clock Skew: Set the tolerance in milliseconds between SP and IdP.
     * Force Authn: Whether the IdP should force re-authentication regardless of context.
     * Metadata URL: `http://localhost:8080/c/portal/saml/metadata` (test this URL first)
-    * Name Identifier Format: See [settings](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-settings).
-    * Attribute Mapping: See [settings](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-settings).
-    * Keep Alive URL: See [settings](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-settings).
+    * Name Identifier Format: See settings.
+    * Attribute Mapping: See settings.
+    * Keep Alive URL: See settings.
 
     IMPORTANT
 
-    The Liferay Connector to SAML 2.0 app supports using _either_ a URL to a SAML IdP metadata file _or_ an actual (uploaded) SAML metadata XML file. The value entered in the _Metadata URL_ field is persisted to the database only when there a metadata URL and there is no specified metadata XML file. Otherwise, Liferay DXP keeps the original metadata URL in its database. This behavior ensures that once a metadata URL has been specified, there is always a metadata URL saved in the database. This way, if you forget the previously entered metadata URL or its format, you can look at the displayed metadata URL and choose to modify the displayed metadata URL or overwrite the previously saved metadata URL by specifying a metadata XML file.
-6. Finally, after you save your certificate and private key information and configure an Identity Provider connection, check the _Enabled_ box at the top of the General tab and click _Save_. Liferay is now a SAML Service Provider!
+    The Connector to SAML 2.0 app supports using _either_ a URL to a SAML IdP metadata file _or_ an actual (uploaded) SAML metadata XML file. The value entered in the _Metadata URL_ field is persisted to the database only when there a metadata URL and there is no specified metadata XML file. Otherwise, the portal keeps the original metadata URL in its database. This behavior ensures that once a metadata URL has been specified, there is always a metadata URL saved in the database. This way, if you forget the previously entered metadata URL or its format, you can look at the displayed metadata URL and choose to modify the displayed metadata URL or overwrite the previously saved metadata URL by specifying a metadata XML file.
+6. Finally, after you save your certificate and private key information and configure an Identity Provider connection, check the _Enabled_ box at the top of the General tab and click _Save_. The portal is now a SAML Service Provider!
 
 Note that the SAML Service Provider session is tied to the normal session on the application server. Session expiration on the application server terminates the session on the Service Provider but does not initiate single logout.
 
-### [Configuring the Service Provider](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-admin#configuring-the-service-provider) <a href="#configuring-the-service-provider" id="configuring-the-service-provider"></a>
+### Configuring the Service Provider <a href="#configuring-the-service-provider" id="configuring-the-service-provider"></a>
 
 The Service Provider tab shows several configuration options:
 
@@ -91,34 +91,34 @@ The Service Provider tab shows several configuration options:
 
 **SSL Required:** Check this box to require SSL for the transfer of all SAML messages. All URLs in metadata sent to peers become prefixed with the `https` protocol.
 
-**Allow showing the login portlet:** Allow the login portlet to appear when no SAML IdP is matched to the login request. Users in this scenario log in locally to Liferay DXP.
+**Allow showing the login portlet:** Allow the login portlet to appear when no SAML IdP is matched to the login request. Users in this scenario log in locally to the portal.
 
 IMPORTANT
 
 Individual assertions need not be signed as long as the SAML response itself is signed. The SP and IdP should always communicate over `https` to have encryption at the transport level.
 
-Liferay DXP requires signed SAML responses. If you believe man-in-the-middle attacks are possible and the information in the assertions is sensitive, you can both sign and encrypt them.
+The portal requires signed SAML responses. If you believe man-in-the-middle attacks are possible and the information in the assertions is sensitive, you can both sign and encrypt them.
 
 You can add multiple IdP connections. To add another Identity Provider, click _Add Identity Provider_ again and enter the details for the other provider. When users log in, they are asked to choose an identity provider, so be sure to name the providers so users can recognize them.
 
-### [Setting Up Liferay DXP as a SAML Service Provider in a Clustered Environment](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-admin#setting-up-liferay-dxp-as-a-saml-service-provider-in-a-clustered-environment) <a href="#setting-up-liferay-dxp-as-a-saml-service-provider-in-a-clustered-environment" id="setting-up-liferay-dxp-as-a-saml-service-provider-in-a-clustered-environment"></a>
+### Setting Up the portal as a SAML Service Provider in a Clustered Environment <a href="#setting-up-liferay-dxp-as-a-saml-service-provider-in-a-clustered-environment" id="setting-up-liferay-dxp-as-a-saml-service-provider-in-a-clustered-environment"></a>
 
-You can use the Liferay Connector to SAML 2.0 app as an SSO solution for a clustered environment. If your multi-node cluster is behind a load balancer, you must enable all the nodes as SPs, and they must share the same keystore manager.
+You can use the portal Connector to SAML 2.0 app as an SSO solution for a clustered environment. If your multi-node cluster is behind a load balancer, you must enable all the nodes as SPs, and they must share the same keystore manager.
 
 If using the Filesystem Keystore Manager (the default):
 
-1. Configure each node of your [Liferay cluster](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability) as a SAML service provider as above.
-2. Copy the keystore file (`[Liferay Home]/data/keystore.jks`, by default) from the first node to the remaining nodes. This file is the Java keystore that’s created by the SAML Provider app. The keystore contains the valid or self-signed certificate managed by the SAML connector app.
+1. Configure each node of your portal cluster as a SAML service provider as above.
+2. Copy the keystore file (`[Home]/data/keystore.jks`, by default) from the first node to the remaining nodes. This file is the Java keystore that’s created by the SAML Provider app. The keystore contains the valid or self-signed certificate managed by the SAML connector app.
 3. Verify that the service provider metadata has been generated to be used either as a URL or an XML file. The metadata is the same for all nodes because of the same database back-end. The IdP’s request goes through the load balancer.
-4. At this point, all nodes have the same SAML SP configuration and each of them can respond to web requests and handle the SAML protocol. To test your SSO solution, sign into Liferay via your load balancer, navigate to a few pages of a few different sites, and then log out.
+4. At this point, all nodes have the same SAML SP configuration and each of them can respond to web requests and handle the SAML protocol. To test your SSO solution, sign into the portal via your load balancer, navigate to a few pages of a few different sites, and then log out.
 
 If using the Document Library Keystore Manager, skip step 2 because the keystore file is stored in the database shared by all the nodes.
 
-Now you know how to configure Liferay DXP either as a SAML identity provider or a service provider. You also know how to configure SAML in a clustered environment.
+Now you know how to configure the portal either as a SAML identity provider or a service provider. You also know how to configure SAML in a clustered environment.
 
-### [Identity Provider](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-admin#identity-provider) <a href="#identity-provider" id="identity-provider"></a>
+### Identity Provider <a href="#identity-provider" id="identity-provider"></a>
 
-If you chose a SAML role of Identity Provider (IdP), you can configure it here. These fields correspond to similar fields in [instance settings](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/configuring-saml-at-the-instance-level) where you can configure the same things.
+If you chose a SAML role of Identity Provider (IdP), you can configure it here. These fields correspond to similar fields in instance settings where you can configure the same things.
 
 **Sign Metadata?:** Sign the metadata sent to peer SAML entities.
 
@@ -130,7 +130,7 @@ If you chose a SAML role of Identity Provider (IdP), you can configure it here. 
 
 **Session Idle Timeout:** The amount of time in seconds an idle session lasts before it expires.
 
-### [Service Provider Connection](https://learn.liferay.com/web/guest/w/dxp/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml/saml-admin#service-provider-connection) <a href="#service-provider-connection" id="service-provider-connection"></a>
+### Service Provider Connection <a href="#service-provider-connection" id="service-provider-connection"></a>
 
 You can use this interface to configure one or more Service Provider connections. To get started click _Add Service Provider_. Fill out the form, and when done, click _Save_.
 
@@ -146,9 +146,9 @@ You can use this interface to configure one or more Service Provider connections
 
 **Metadata:** Provide a URL to the Service Provider metadata XML file or manually upload the Service Provider metadata XML file. If you provide a URL, the XML file is retrieved and periodically polled for updates. The update interval can be configured in System Settings with the Runtime Metadata Refresh Interval (`saml.metadata.refresh.interval` if using a `config` file) property which specifies a number of seconds. If fetching the metadata XML file by URL fails, you can’t enable the Service Provider connection. If the Identity Provider server cannot access the metadata via URL, you can upload the XML file manually. In this case, the metadata XML file is not updated automatically.
 
-**Name Identifier Format:** Choose the Name Identifier Format used in the SAML Response. Set this according to what the Service Provider expects to receive. For Liferay Service Providers, any selection other than email address indicates that the Name Identifier refers to screen name. The formats don’t have any special meaning to Liferay Identity Providers. The `NameID` value is defined by the Name Identifier attribute. See the next option.
+**Name Identifier Format:** Choose the Name Identifier Format used in the SAML Response. Set this according to what the Service Provider expects to receive. For the portal Service Providers, any selection other than email address indicates that the Name Identifier refers to screen name. The formats don’t have any special meaning to Identity Providers. The `NameID` value is defined by the Name Identifier attribute. See the next option.
 
-**Name Identifier Attribute Name:** This specifies which attribute of the Liferay `User` object to use as the `NameID` value. Possible values include `emailAddress`, `screenName` and `uuid`. You can prefix the name with `static:` or `expando:`. If you use the prefix `static`, the value is whatever comes after `static:`. If you use the prefix `expando`, the value is whatever custom field is specified after `expando:`. For example, `expando:SSN` would look up the `User` custom field with the name `SSN`.
+**Name Identifier Attribute Name:** This specifies which attribute of the the portal`User` object to use as the `NameID` value. Possible values include `emailAddress`, `screenName` and `uuid`. You can prefix the name with `static:` or `expando:`. If you use the prefix `static`, the value is whatever comes after `static:`. If you use the prefix `expando`, the value is whatever custom field is specified after `expando:`. For example, `expando:SSN` would look up the `User` custom field with the name `SSN`.
 
 **Attributes Enabled:** Include and resolve assertion attributes.
 
@@ -166,4 +166,4 @@ organizations organizationRoles roles siteRoles userGroups static:[attributeName
 
 Note that the full namespace depends on the attribute name. Attribute namespaces can be useful. Use them when attribute names from different namespaces might conflict. For example, `expando:user` vs `urn:liferay:roles:user`.
 
-**Keep Alive URL:** If users are logged into several Liferay SP instances via a Liferay IdP, their sessions can be kept alive as long as they keep a browser window open to one of them. Configure this only if the SP is Liferay DXP. The URL is `https://[SP host name]/c/portal/saml/keep_alive`.
+**Keep Alive URL:** If users are logged into several portal instances via a portal IdP, their sessions can be kept alive as long as they keep a browser window open to one of them. Configure this only if the SP is the portal. The URL is `https://[SP host name]/c/portal/saml/keep_alive`.

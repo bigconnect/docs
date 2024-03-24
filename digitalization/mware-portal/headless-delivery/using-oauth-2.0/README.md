@@ -1,14 +1,14 @@
 # Using OAuth 2.0
 
-OAuth 2.0 is an industry-standard authorization protocol. Users can seamlessly share select credentials from your Liferay-based website with various clients. OAuth 2.0 works by authorizing password-less access to portions of user-owned resources (such as an email address, a user profile picture, or something else from your account) and other permissioned resources. OAuth 2.0’s design encrypts all authorization transport through HTTPS, which prevents data passed between the systems from being intercepted.
+OAuth 2.0 is an industry-standard authorization protocol. Users can seamlessly share select credentials from your website with various clients. OAuth 2.0 works by authorizing password-less access to portions of user-owned resources (such as an email address, a user profile picture, or something else from your account) and other permissioned resources. OAuth 2.0’s design encrypts all authorization transport through HTTPS, which prevents data passed between the systems from being intercepted.
 
 You can jump into creating OAuth 2.0 apps or continue reading to learn how it works.
 
-1. [Creating an OAuth 2.0 Application](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/creating-oauth2-applications)
-2. [Defining Scopes](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/oauth2-scopes)
-3. [Authorizing Account Access](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2/authorizing-account-access-with-oauth2)
+1. Creating an OAuth 2.0 Application
+2. Defining Scopes
+3. Authorizing Account Access
 
-### [Flow of OAuth 2.0](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2#flow-of-oauth-20) <a href="#flow-of-oauth-20" id="flow-of-oauth-20"></a>
+### Flow of OAuth 2.0 <a href="#flow-of-oauth-20" id="flow-of-oauth-20"></a>
 
 OAuth 2.0 takes advantage of web standards wherever possible: transport is encrypted with HTTPS; tokens are implemented as HTTP headers; data is passed via web services.
 
@@ -16,16 +16,16 @@ Here’s how OAuth 2.0 works:
 
 ![OAuth 2.0 takes advantage of web standards.](https://resources.learn.liferay.com/images/dxp/latest/en/headless-delivery/using-oauth2/images/01.png)
 
-1. A user accesses a third-party application that supports authorization via credentials from a Liferay-based website. In the application (web or mobile), the user requests authorization via OAuth, sending the browser or app to the Liferay-based website. When using _PKCE_ (explained below), the application also generates a code verifier and sends a code challenge that is created by applying a transformation to it.
-2. The user authenticates and is shown the resources the application wants permission to access. When the user gives permission by clicking _Allow_, Liferay generates an authorization code that’s sent to the application over HTTPS.
+1. A user accesses a third-party application that supports authorization via credentials from a website. In the application (web or mobile), the user requests authorization via OAuth, sending the browser or app to the website. When using _PKCE_ (explained below), the application also generates a code verifier and sends a code challenge that is created by applying a transformation to it.
+2. The user authenticates and is shown the resources the application wants permission to access. When the user gives permission by clicking _Allow_, the portal generates an authorization code that’s sent to the application over HTTPS.
 3. The application then requests a more permanent authorization token and sends the code with the request (along with the _PKCE_ code verifier).
-4. If the authorization code matches (and the transformed _PKCE_ code verifier matches the previously sent code challenge), Liferay cryptographically generates an authorization token for this user and application combination. It sends the token to the application over HTTPS. Initial authorization is now complete!
+4. If the authorization code matches (and the transformed _PKCE_ code verifier matches the previously sent code challenge), The portal cryptographically generates an authorization token for this user and application combination. It sends the token to the application over HTTPS. Initial authorization is now complete!
 5. When the application must retrieve data, it sends the token with the request to prove it’s authorized to have that data.
-6. Provided the token matches what Liferay has for that user and application, access is granted to retrieve the data.
+6. Provided the token matches what the portal has for that user and application, access is granted to retrieve the data.
 
 That description throws around a lot of terms. Definitions provided below.
 
-### [OAuth 2.0 Terminology](https://learn.liferay.com/web/guest/w/dxp/headless-delivery/using-oauth2#oauth-20-terminology) <a href="#oauth-20-terminology" id="oauth-20-terminology"></a>
+### OAuth 2.0 Terminology <a href="#oauth-20-terminology" id="oauth-20-terminology"></a>
 
 **Authentication:** Providing credentials so a system can verify who you are by matching those credentials with what it has stored. OAuth is not an authentication protocol.
 
@@ -45,6 +45,6 @@ That description throws around a lot of terms. Definitions provided below.
 
 **Scope:** A list of items that define what the application wants to access. This list is sent during the initial authorization request (or otherwise defaults to scopes selected in the application registration) so users can grant or deny access to their resources.
 
-**Callback URI:** Also called a Redirection Endpoint URI. After authorization is complete, the authorization server (i.e., Liferay) sends the client to this location.
+**Callback URI:** Also called a Redirection Endpoint URI. After authorization is complete, the authorization server sends the client to this location.
 
 \
