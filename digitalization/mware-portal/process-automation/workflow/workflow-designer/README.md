@@ -2,7 +2,7 @@
 
 The Process Builder’s workflow designer is a graphical interface for creating workflow process definitions. The convenient drag and drop interface makes workflow design easier than writing XML definitions by hand. It’s accessed in the Control Panel → Workflow → Process Builder.
 
-<figure><img src="../../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 The workflow designer supports all workflow node types:
 
