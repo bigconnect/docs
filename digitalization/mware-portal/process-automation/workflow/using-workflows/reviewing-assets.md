@@ -33,13 +33,16 @@ In order to begin reviewing an asset, you must assign the task to yourself. Note
 
 Once you have assigned to task to yourself, you can approve or reject the submission.
 
-1.  Click the name of the asset to review the asset. Here, there is a preview of the asset (a _Wiki Page_) and the review status.
+1. Click the name of the asset to review the asset. Here, there is a preview of the asset (a _Wiki Page_) and the review status.
 
-    ![Review the asset.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/workflow/using-workflows/reviewing-assets/images/05.png)
-2.  Click the _Actions_ button (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Approve_ or _Reject_.
+<figure><img src="../../../../../.gitbook/assets/image (1073).png" alt=""><figcaption></figcaption></figure>
+
+![Review the asset.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/workflow/using-workflows/reviewing-assets/images/05.png)
+
+1.  Click the _Actions_ button (![Actions](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-actions.png)) and select _Approve_ or _Reject_.
 
     ![Approve or reject the asset.](https://resources.learn.liferay.com/images/dxp/latest/en/process-automation/workflow/using-workflows/reviewing-assets/images/06.png)
-3. Enter an optional comment and click _Done_.
+2. Enter an optional comment and click _Done_.
 
 Once a task is complete, one of several things happens:
 
