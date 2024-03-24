@@ -4,6 +4,7 @@ MWARE Portal has Liferay DXP at its core as the underlying technology, meaning t
 
 * A powerful new [BPM engine](../../mware-bpm/) with support for [BPMN 2.0](../../mware-bpm/bpm-designer/process-editor.md),  [CMMN](../../mware-bpm/bpm-designer/case-editor.md), [Forms](../../mware-bpm/bpm-designer/decision-editor.md), [Decision Tables](../../mware-bpm/bpm-designer/decision-editor.md) and [Workflow Applications](../../mware-bpm/bpm-designer/app-editor.md), Task List and much more
 * [Professional, pixel-perfect forms](../process-automation/advanced-forms/) with avanced features like digial signatures, export/import [PDF forms](../process-automation/advanced-forms/form-runner/features/pdf-production/), 1D/2D barcodes, analytics and much more
+* Privacy-preserving [traffic monitoring and analytics](../system-administration/monitoring-traffic/)
 * Native Single Sign-On integration with [MWARE Identity & Access Management](../../mware-iam.md)
 * Seamless deployment and clustering with [MWARE Application Server](../../mware-application-server/)
 * Performance tuning and optimizations that enable high concurrency and low latency in handling user requests

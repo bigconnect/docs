@@ -549,6 +549,7 @@
           * [TIFF production](digitalization/mware-portal/process-automation/advanced-forms/form-runner/features/tiff-production.md)
           * [Versioning](digitalization/mware-portal/process-automation/advanced-forms/form-runner/features/versioning.md)
           * [Wizard view](digitalization/mware-portal/process-automation/advanced-forms/form-runner/features/wizard-view.md)
+          * [Analytics](digitalization/mware-portal/process-automation/advanced-forms/form-runner/features/analytics.md)
         * [Persistence](digitalization/mware-portal/process-automation/advanced-forms/form-runner/persistence/README.md)
           * [Using a relational database](digitalization/mware-portal/process-automation/advanced-forms/form-runner/persistence/using-a-relational-database.md)
           * [Purging old data using SQL](digitalization/mware-portal/process-automation/advanced-forms/form-runner/persistence/purging-old-data-using-sql.md)
