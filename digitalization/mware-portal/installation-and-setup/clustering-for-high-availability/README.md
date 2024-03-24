@@ -8,18 +8,19 @@ MWARE Portal works well in clusters of multiple machines (horizontal cluster) or
 
 ### Clustering Requirements <a href="#clustering-requirements" id="clustering-requirements"></a>
 
-Here is what’s required to create an effectively functional DXP cluster.
+Here is what’s required to create an effectively functional portal cluster.
 
-1. MWARE Portal installed on separate application server nodes
-2. A database or database cluster that’s accessible to all nodes
-3. A File Store that’s accessible to all nodes
-4. A search engine (running outside of the portal) that is optionally clustered
-5. Cluster Link configured to enable communication and cache replication across all nodes
+1. MWARE Portal installed on separate MWARE Application Server server nodes
+2. Load-balacing using the web server from MWARE Application Server
+3. A database or database cluster that’s accessible to all nodes
+4. A File Store that’s accessible to all nodes
+5. A search engine (running outside of the portal) that is optionally clustered
+6. Cluster Link configured to enable communication and cache replication across all nodes
 
 NOTE
 
 To ensure there are no concurrency issues and that the master node is selected correctly, start your nodes sequentially.
 
-After you’ve configured your portal cluster, you can deploy applications to it and continue improving user experiences. Please see Maintaining Clustered Installations for more information.
+After you’ve configured your portal cluster, you can deploy applications to it and continue improving user experiences.&#x20;
 
 \
