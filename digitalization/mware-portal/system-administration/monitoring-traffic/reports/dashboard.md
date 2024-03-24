@@ -83,7 +83,7 @@ The actual dashboards are made up of widgets which are typically self-contained 
 
 Matomo comes with approximately 100 widgets by default, and they are all displayed in an interactive card format. Widgets can also be added via plugins if you are using Matomo On-Premise or Matomo for WordPress. The screenshot below shows a typical dashboard with several different styles of widget within the white boxes. These provide a high-level overview of key stats for your website.
 
-<figure><img src="../../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## KPI Metric Widget
 
