@@ -355,7 +355,7 @@ Then:
 
 #### Captcha visibility <a href="#captcha-visibility" id="captcha-visibility"></a>
 
-When the captcha is enabled, you can control its visibility with the following property. The default value is `true` (shown below), and you can use a [value template](https://doc.orbeon.com/xforms/core/attribute-value-templates), to make it dynamic. For instance, you can have the captcha only show on the last page of the wizard by setting the above location property to `inside-wizard`, and this `visible` property to `{fr:is-wizard-last-page()}`.
+When the captcha is enabled, you can control its visibility with the following property. The default value is `true` (shown below), and you can use a value template, to make it dynamic. For instance, you can have the captcha only show on the last page of the wizard by setting the above location property to `inside-wizard`, and this `visible` property to `{fr:is-wizard-last-page()}`.
 
 Even when not visible according this property (i.e. your value template returns `false`), as long as the captcha is enabled, solving it is required; so this property isn't intended to be used to dynamically decide whether to have a captcha on a page or not, but it is to decide at what point during the form filling process you want the captcha to show.
 
@@ -413,7 +413,7 @@ _NOTE: When running in the background, only the `new` and `edit` modes are suppo
 
 When data is _unsafe_, meaning that is has been modified but not saved yet, Form Runner by default shows a warning when attempting to navigate away from the current page or to close the current browser tab or window.
 
-![](https://doc.orbeon.com/\~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LPcE34SsQKZNyuHx1sM%252F-LPcEBRtt44POZiqUWHf%252Fchrome-leave-site.png%3Fgeneration=1540420853900178%26alt=media\&width=300\&dpr=4\&quality=100\&sign=0e097cac348155fa4d0b85e86410c7b11309c2779dd751e8b72a46a31aff51fa)
+<figure><img src="https://doc.orbeon.com/~gitbook/image?url=https:%2F%2F4129616727-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-LEkBiSDvlXs3VWiO0Zu%252F-LPcE34SsQKZNyuHx1sM%252F-LPcEBRtt44POZiqUWHf%252Fchrome-leave-site.png%3Fgeneration=1540420853900178%26alt=media&#x26;width=300&#x26;dpr=4&#x26;quality=100&#x26;sign=0e097cac348155fa4d0b85e86410c7b11309c2779dd751e8b72a46a31aff51fa" alt=""><figcaption></figcaption></figure>
 
 In some cases, in particular when embedding a form, this can be an inconvenience. The following property allows disabling this behavior.
 

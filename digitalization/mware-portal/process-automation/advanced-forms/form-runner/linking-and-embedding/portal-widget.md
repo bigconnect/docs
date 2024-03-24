@@ -6,7 +6,7 @@ Log into the portal, go to the Add menu and create a new page. Then go to the Ap
 
 The Advanced Forms home page will show:
 
-<figure><img src="../../../../../.gitbook/assets/image (1) (1).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../../.gitbook/assets/image (1) (1).jpg" alt=""><figcaption></figcaption></figure>
 
 ### Accessing portal users and roles <a href="#accessing-liferay-users-and-roles" id="accessing-liferay-users-and-roles"></a>
 
