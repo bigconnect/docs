@@ -559,6 +559,7 @@
         * [Linking and Embedding](digitalization/mware-portal/process-automation/advanced-forms/form-runner/linking-and-embedding/README.md)
           * [Linking](digitalization/mware-portal/process-automation/advanced-forms/form-runner/linking-and-embedding/linking.md)
           * [Portal Widget](digitalization/mware-portal/process-automation/advanced-forms/form-runner/linking-and-embedding/portal-widget.md)
+        * [Permissions](digitalization/mware-portal/process-automation/advanced-forms/form-runner/permissions.md)
     * [Workflow](digitalization/mware-portal/process-automation/workflow.md)
       * [Designing and Managing Workflows](digitalization/mware-portal/process-automation/workflow/designing-and-managing-workflows.md)
       * [Workflow Designer](digitalization/mware-portal/process-automation/workflow/workflow-designer/README.md)
