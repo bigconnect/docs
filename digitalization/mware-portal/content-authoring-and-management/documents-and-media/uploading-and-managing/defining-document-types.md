@@ -40,15 +40,14 @@ Follow these steps to define a custom Document Type.
 8.  (Optional) Click on the _Permissions_ tab, and configure who can view, edit, and manage the new Document Type.
 
     ![Configure permission for the Document Type in the Permissions tab](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-document-types/images/08.png)
-9. Click on _Save_.
+9. Configure ID generation
+10. Click on _Save_.
 
 Once saved, the new Document Type can now be accessed in the Documents and Media tab, where you can use it to start a new upload.
 
 ![Use the Document Type to start a new upload.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/documents-and-media/uploading-and-managing/managing-metadata/defining-document-types/images/09.png)
 
-When the Document Type is selected, users see your configured metadata fields. See [Uploading Files](https://learn.liferay.com/web/guest/w/dxp/content-authoring-and-management/documents-and-media/uploading-and-managing/uploading-files) for more information.
-
-### For 7.3.x and Earlier Versions <a href="#for-liferay-73x-and-earlier-versions" id="for-liferay-73x-and-earlier-versions"></a>
+When the Document Type is selected, users see your configured metadata fields.&#x20;
 
 1. Open the _Product Menu_ (![Product Menu](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-product-menu.png)) then click the compass icon (![Compass](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-compass.png)) on the _Site Administration_ menu.
 2. Select the site where the form will be created.
