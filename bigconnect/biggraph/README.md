@@ -9,6 +9,7 @@ High-level features:
 * Dynamic data model (concepts, relations, properties, tables), multivalued properties and property metadata support
 * Authorizations and visibilities for rows and columns
 * Indexing for fast search: full-text, fuzzy, spatial, aggregations
+* Powerful streaming engine for data enrichment, events and notifications
 * Async distributed processing pipeline for applying custom logic on import/update/delete operationg
 * Full [Cypher ](cypher/)query language support
 * Extensible and modular

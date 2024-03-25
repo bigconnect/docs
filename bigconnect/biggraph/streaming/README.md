@@ -8,4 +8,8 @@ Data change events are things like:
 * Property value changes
 * Metadata value changes
 
-The Kafka broker is enhanced to be able to query and aggregate data events as soon as they come in.
+BigConnect Core extends Kafka with some enterprise-level features as follows:
+
+* Encrypting data at rest
+* [User Interface](https://docs.kafka-ui.provectus.io/overview/features) to mage Kafka clusters
+* [ksqlDB](https://github.com/confluentinc/ksql) for building stream processing applications on top of Apache Kafka
