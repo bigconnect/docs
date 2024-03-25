@@ -13,6 +13,7 @@ In standalone pipelines, you can use the following origins:
 * [**Azure Data Lake Storage Gen1**](azure-data-lake-storage-gen1.md) - Reads data from Microsoft Azure Data Lake Storage Gen1. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * [**Azure Data Lake Storage Gen2**](azure-data-lake-storage-gen2.md) - Reads data from Microsoft Azure Data Lake Storage Gen2. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * [**Azure IoT/Event Hub Consumer**](azure-iot-event-hub-consumer.md) - Reads data from Microsoft Azure Event Hub. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
+* [BigConnect Cypher](https://app.gitbook.com/o/-LvB5aUmu6FceBG17Ndx/s/-Lv6YU\_27lR-b2ZLvWS\_/\~/changes/950/bigconnect/pipelines/pipelines-studio/origins/bigconnect-cypher) - Reads data from BigConnect Core using Cypher queries.
 * [**CoAP Server**](coap-server.md) - Listens on a CoAP endpoint and processes the contents of all authorized CoAP requests. Creates multiple threads to enable parallel processing in a multithreaded pipeline.
 * [**Cron Scheduler**](cron-scheduler.md) - Generates a record with the current datetime as scheduled by a cron expression.
 * [**Directory**](directory.md) - Reads fully-written files from a directory. Creates multiple threads to enable parallel processing in a multithreaded pipeline.

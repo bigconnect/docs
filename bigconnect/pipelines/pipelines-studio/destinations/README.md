@@ -21,6 +21,8 @@ In standalone or cluster pipelines, you can use the following destinations:
 * [Azure Data Lake Storage Gen2](azure-data-lake-storage-gen2.md) - Writes data to Azure Data Lake Storage Gen2.
 * [Azure Event Hub Producer](azure-event-hub-producer.md) - Writes data to Azure Event Hub.
 * [Azure IoT Hub Producer](azure-iot-hub-producer.md) - Writes data to Microsoft Azure IoT Hub.
+* [BigConnect Cypher](https://app.gitbook.com/o/-LvB5aUmu6FceBG17Ndx/s/-Lv6YU\_27lR-b2ZLvWS\_/\~/changes/950/bigconnect/pipelines/pipelines-studio/destinations/bigconnect-cypher) - Writes data to BigConnect Core using Cypher queries
+* [BigConnect Graph Engine](https://app.gitbook.com/o/-LvB5aUmu6FceBG17Ndx/s/-Lv6YU\_27lR-b2ZLvWS\_/\~/changes/950/bigconnect/pipelines/pipelines-studio/destinations/bigconnect-graph-engine) - Writes data directly to BigConnect Graph Engine tables for massive data loading
 * [Cassandra](cassandra.md) - Writes data to a Cassandra cluster.
 * [Databricks Delta Lake](databricks-delta-lake.md) - Writes data to the Databricks Delta Lake
 * [Elasticsearch](elasticsearch.md) - Writes data to an Elasticsearch cluster.

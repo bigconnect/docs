@@ -16,6 +16,7 @@ In standalone or cluster pipelines, you can use the following processors:
 
 * [Base64 Field Decoder](base64-field-decoder.md) - Decodes Base64 encoded data to binary data.
 * [Base64 Field Encoder](base64-field-encoder.md) - Encodes binary data using Base64.
+* [BigConnect Cypher ](https://app.gitbook.com/o/-LvB5aUmu6FceBG17Ndx/s/-Lv6YU\_27lR-b2ZLvWS\_/\~/changes/950/bigconnect/pipelines/pipelines-studio/processors/bigconnect-cypher)- Execute Cypher queries for each row
 * [Data Generator](data-generator.md) - Serializes a record into a field using the specified data format.
 * [Data Parser](data-parser.md) - Parses NetFlow or syslog data embedded in a field.
 * [Delay](delay.md) - Delays passing a batch to the rest of the pipeline.
