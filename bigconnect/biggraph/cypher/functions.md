@@ -226,6 +226,12 @@ These functions are used to specify 2D or 3D points in a geographic or cartesian
 | contains()             | Returns true if the point() - Cartesian 2D is contained in another 2D geometry                             |
 | intersects()           | Returns true if the point() - Cartesian 2D intersects another 2D geometry                                  |
 
+## **Graph Algorithm functions**
+
+Graph algorithms are used to compute metrics for graphs, nodes, or relationships.
+
+<table><thead><tr><th width="374">Function</th><th>Description</th></tr></thead><tbody><tr><td>betweenness()</td><td>Betweenness centrality is a way of detecting the amount of influence a node has over the flow of information in a graph. It is often used to find nodes that serve as a bridge from one part of a graph to another.</td></tr><tr><td>closeness()</td><td>Closeness centrality is a way of detecting nodes that are able to spread information very efficiently through a graph.</td></tr><tr><td>degree()</td><td>The Degree Centrality algorithm can be used to find popular nodes within a graph. Degree centrality measures the number of incoming or outgoing (or both) relationships from a node, depending on the orientation of a relationship projection.</td></tr><tr><td>pageRank()</td><td>he PageRank algorithm measures the importance of each node within the graph, based on the number incoming relationships and the importance of the corresponding source nodes.</td></tr><tr><td>shortestPath()</td><td>The A* (pronounced "A-Star") Shortest Path algorithm computes the shortest path between two nodes. A* is an informed search algorithm as it uses a heuristic function to guide the graph traversal</td></tr><tr><td>adamicAdar()</td><td><a href="https://en.wikipedia.org/wiki/Adamic/Adar_index">Adamic Adar</a> is a measure used to compute the closeness of nodes based on their shared neighbors.</td></tr></tbody></table>
+
 ## **User-defined functions**
 
 User-defined functions are written in Java, deployed into the database and are called in the same way as any other Cypher function. There are two main types of functions that can be developed and used:
