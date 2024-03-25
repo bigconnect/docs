@@ -1620,6 +1620,7 @@
     * [AutoML](bigconnect/tetra/tetraml-algorithms/tetraml-automl.md)
     * [Cox Proportional Hazards (CoxPH)](bigconnect/tetra/tetraml-algorithms/tetraml-coxph.md)
   * [AI Models](bigconnect/tetra/ai.md)
+  * [CodeLab](bigconnect/tetra/codelab.md)
   * [Label Studio](bigconnect/tetra/label-studio.md)
 * [BigConnect Sponge](bigconnect/sponge/README.md)
   * [Using Sponge](bigconnect/sponge/using-sponge.md)
