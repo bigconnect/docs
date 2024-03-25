@@ -1,10 +1,11 @@
 # BigConnect Core
 
-BigConnect Core is a massively scalable graph store designed for holding and querying vast amounts of raw data. It can store objects and links with multi-valued properties and raw data, fast queries, aggregations, distributed data processing pipelines and super-strong security (row and property-level).
+BigConnect Core is a massively scalable Data Lake designed for holding and querying vast amounts of raw data. It can store objects and links with multi-valued properties and raw data, fast queries, aggregations, distributed data processing pipelines and super-strong security (row and property-level).
 
 High-level features:
 
-* Massively distributed Big Data store based on Hadoop, Accumulo, Zookeeper
+* Massively distributed Big Data store based on [Hadoop](https://hadoop.apache.org/docs/stable/)
+* Distributed OLTP database for high-performance computing with in-memory speed built on [Apache Ignite](https://ignite.apache.org/)
 * Fully containerized Docker architecture for fast horizontal and vertical scalability in Kubernetes or Docker Swarm clusters
 * Ridiculously fast data ingestion (25k objects / sec. on average hardware)
 * Dynamic data model (concepts, relations, properties, tables), multivalued properties and property metadata support
