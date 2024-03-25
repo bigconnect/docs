@@ -2,7 +2,7 @@
 
 All of our examples will continue with the graph example we have been using in the previous guides. Below is an image of the graph to familiarize yourself with the nodes and relationships used throughout this page.
 
-![](<../../../.gitbook/assets/image (247) (1).png>)
+![](<../../../../.gitbook/assets/image (247) (1).png>)
 
 Helpful aggregation operations, such as calculating averages, sums, percentiles, minimum/maximum, and counts are available in Cypher. You may find many of these have similar syntax to other query language operations, but Cypher does work slightly differently with aggregation.
 
@@ -34,15 +34,15 @@ RETURN count(*)
 
 Query1 Results:
 
-![](<../../../.gitbook/assets/image (679).png>)
+![](<../../../../.gitbook/assets/image (679).png>)
 
 Query2 Results:
 
-![](<../../../.gitbook/assets/image (634).png>)
+![](<../../../../.gitbook/assets/image (634).png>)
 
 Query3 Results:
 
-![](<../../../.gitbook/assets/image (714).png>)
+![](<../../../../.gitbook/assets/image (714).png>)
 
 ### Aggregating Values
 
@@ -55,7 +55,7 @@ MATCH (p:Person)-[:IS_FRIENDS_WITH]->(friend:Person)
 RETURN p.name, collect(friend.name) AS friend
 ```
 
-![](<../../../.gitbook/assets/image (868).png>)
+![](<../../../../.gitbook/assets/image (868).png>)
 
 ### Counting Values in a List
 
@@ -76,7 +76,7 @@ Query5 Results:
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (768).png" alt="">
+<img src="../../../../.gitbook/assets/image (768).png" alt="">
 
 </div>
 
@@ -84,7 +84,7 @@ Query6 Results:
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (663).png" alt="">
+<img src="../../../../.gitbook/assets/image (663).png" alt="">
 
 </div>
 
@@ -117,7 +117,7 @@ Query7 Results:
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (629).png" alt="">
+<img src="../../../../.gitbook/assets/image (629).png" alt="">
 
 </div>
 
@@ -125,7 +125,7 @@ Query8 Results:
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (680).png" alt="">
+<img src="../../../../.gitbook/assets/image (680).png" alt="">
 
 </div>
 
@@ -160,7 +160,7 @@ Query9 Results:
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (672).png" alt="">
+<img src="../../../../.gitbook/assets/image (672).png" alt="">
 
 </div>
 
@@ -168,7 +168,7 @@ Query10 Results:
 
 <div align="left">
 
-<img src="../../../.gitbook/assets/image (864).png" alt="">
+<img src="../../../../.gitbook/assets/image (864).png" alt="">
 
 </div>
 
@@ -197,11 +197,11 @@ RETURN p.name, p.yearsExp ORDER BY p.yearsExp DESC
 
 Query11 Results:
 
-![](<../../../.gitbook/assets/image (681).png>)
+![](<../../../../.gitbook/assets/image (681).png>)
 
 Query12 Results:
 
-![](<../../../.gitbook/assets/image (676).png>)
+![](<../../../../.gitbook/assets/image (676).png>)
 
 Notice that our first query has to order by `Person` name before collecting the values into a list. If you do not sort first (put the `ORDER BY` after the `RETURN`), you will sort based on the size of the list and not by the first letter of the values in the list. We also sort on two values – technology, then person. This allows us to sort our technology so that all the persons that like a technology are listed together.
 
@@ -249,7 +249,7 @@ WHERE t.type IN ['Graphs','Query Languages']
 RETURN DISTINCT user.name
 ```
 
-![](<../../../.gitbook/assets/image (653).png>)
+![](<../../../../.gitbook/assets/image (653).png>)
 
 For Query13, our use case is that we are launching a new Twitter account for tips and tricks on Cypher, and we want to notify users who have a Twitter account and who like graphs or query languages. The first two lines of the query look for `Person` nodes who have a Twitter handle. Then, we use `WITH` to pass those users over to the next `MATCH`, where we find out if the person likes graphs or query languages. Notice that running this statement without the `DISTINCT` keyword will result in “Melissa” shown twice. This is because she likes graphs, and she also likes query languages. When we use `DISTINCT`, we only retrieve unique users.
 
@@ -267,6 +267,6 @@ ORDER BY numberOfFriends DESC
 LIMIT 3
 ```
 
-![](<../../../.gitbook/assets/image (631).png>)
+![](<../../../../.gitbook/assets/image (631).png>)
 
 Our query pulls persons and the friends they are connected to and returns the person name and count of their friends. We could run just that much of the query and return a messy list of names and friend counts, but we probably want to order the list based on the number of friends each person has starting with the biggest number at the top (`DESC`). You could also run that much of the query to see the friends and counts all in order, but we only want to pull the top 3 people with the most friends. The `LIMIT` pulls the top results from our ordered list.

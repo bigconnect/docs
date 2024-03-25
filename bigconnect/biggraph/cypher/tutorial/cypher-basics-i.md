@@ -2,7 +2,7 @@
 
 Since Cypher is designed to be human-readable, it’s construct is based on English prose and iconography to make syntax visual and easily understood. For example, take a look at the simple graph data in the image below. How would you represent this data in English? _NOTE: the answer is in the paragraph below_
 
-![](<../../../.gitbook/assets/image (378) (1).png>)
+![](<../../../../.gitbook/assets/image (378) (1).png>)
 
 Jennifer likes Graphs. Jennifer is friends with Michael. Jennifer works for Neo4j.
 
@@ -18,7 +18,7 @@ This is especially helpful to use in the Cypher Lab when saving queries. If you 
 
 Since Cypher uses ASCII-Art for patterns, we need a visual way to represent each component of our pattern above. We know that the main components of the property graph model are nodes and relationships. Remember that nodes are the data entities in your graph and that you can often identify nodes by finding the nouns or objects in your data model. In our example, `Jennifer`, `Michael`, `Graphs`, and `Neo4j` are our nodes.
 
-![](<../../../.gitbook/assets/image (639).png>)
+![](<../../../../.gitbook/assets/image (639).png>)
 
 To depict nodes in Cypher, we surround the node with parentheses, e.g. `(node)`. Notice how the parentheses look similar to the circles that the visual representation uses for nodes in our data model.
 
@@ -55,7 +55,7 @@ To fully utilize the power of a graph database, we also need to express the rela
 
 In our example, the lines with `LIKES`, `IS_FRIENDS_WITH`, and `WORKS_FOR` between nodes are our relationships.
 
-![](<../../../.gitbook/assets/image (779).png>)
+![](<../../../../.gitbook/assets/image (779).png>)
 
 Undirected relationships are represented with no arrow and just two dashes `--`. This means that the relationship can be traversed in either direction. While a direction **must** be inserted to the database, it can be matched with an undirected relationship where Cypher ignores any particular direction and retrieves the relationship and connected nodes, no matter what the physical direction is. This allows the queries to be flexible and not force the user to know the physical direction of the relationship stored in the database.
 
@@ -71,6 +71,10 @@ MATCH (p:Person)<-[:LIKES]-(t:Technology)
 //better to query with undirected relationship unless sure of direction
 MATCH (p:Person)-[:LIKES]-(t:Technology)
 ```
+
+{% hint style="info" %}
+There is no limit on the depth you choose to query relationships
+{% endhint %}
 
 #### Relationship Types
 
@@ -103,7 +107,7 @@ To represent these in Cypher, we can use curly braces within the parentheses of 
 * Node property: `(p:Person {name: 'Jennifer'})`
 * Relationship property: `-[rel:IS_FRIENDS_WITH {since: 2018}]->`
 
-![](<../../../.gitbook/assets/image (669).png>)
+![](<../../../../.gitbook/assets/image (669).png>)
 
 Properties can have values with a variety of data types_._
 
@@ -143,11 +147,11 @@ Let us look at some examples of the syntax we have learned so far using `MATCH` 
 
 **Example 1:** Find the labeled `Person` nodes in the graph. Note that we must use a variable like `p` for the `Person` node if we want retrieve the node in the `RETURN` clause.
 
-![](<../../../.gitbook/assets/image (687).png>)
+![](<../../../../.gitbook/assets/image (687).png>)
 
 **Example 2:** Find `Person` nodes in the graph that have a name of ‘Jennifer’. Remember that we can name our variable anything we want, as long as we reference that same name later.
 
-![](<../../../.gitbook/assets/image (745).png>)
+![](<../../../../.gitbook/assets/image (745).png>)
 
 **Example 3:** Find which `Company` Jennifer works for.
 
@@ -158,7 +162,7 @@ MATCH (:Person {name: 'Jennifer'})-[:WORKS_FOR]->(company:Company)
 RETURN company
 ```
 
-![](<../../../.gitbook/assets/image (810).png>)
+![](<../../../../.gitbook/assets/image (810).png>)
 
 **Example 4:** Find which `Company` Jennifer works for, but this time, return only the name of the company.
 
@@ -169,7 +173,7 @@ MATCH (:Person {name: 'Jennifer'})-[:WORKS_FOR]->(company:Company)
 RETURN company.name
 ```
 
-![](<../../../.gitbook/assets/image (637).png>)
+![](<../../../../.gitbook/assets/image (637).png>)
 
 ### Aliasing Return Values
 
@@ -190,11 +194,11 @@ RETURN order.orderId AS OrderID, order.orderDate AS `Purchase Date`,
 
 Results Without Aliases:
 
-![](<../../../.gitbook/assets/image (646).png>)
+![](<../../../../.gitbook/assets/image (646).png>)
 
 Results With Aliases:
 
-![](<../../../.gitbook/assets/image (860).png>)
+![](<../../../../.gitbook/assets/image (860).png>)
 
 {% hint style="info" %}
 You can specify return aliases that have spaces by using the backtick character before and after the alias (order.orderDate AS `Purchase Date`). If you do not have an alias that contains spaces, then you do not need to use backticks.

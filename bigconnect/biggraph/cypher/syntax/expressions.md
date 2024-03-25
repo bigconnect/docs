@@ -1,0 +1,233 @@
+# Expressions
+
+### Expressions in general <a href="#cypher-expressions-general" id="cypher-expressions-general"></a>
+
+Most expressions in Cypher evaluate to `null` if any of their inner expressions are `null`. Notable exceptions are the operators `IS NULL` and `IS NOT NULL`.
+
+An expression in Cypher can be:
+
+* A decimal (integer or float) literal: `13`, `-40000`, `3.14`, `6.022E23`.
+* A hexadecimal integer literal (starting with `0x`): `0x13zf`, `0xFC3A9`, `-0x66eff`.
+* An octal integer literal (starting with `0`): `01372`, `02127`, `-05671`.
+* A string literal: `'Hello'`, `"World"`.
+* A boolean literal: `true`, `false`, `TRUE`, `FALSE`.
+* A variable: `n`, `x`, `rel`, `myFancyVariable`, `` `A name with weird stuff in it[]!` ``.
+* A property: `n.prop`, `x.prop`, `rel.thisProperty`, `` myFancyVariable.`(weird property name)` ``.
+* A dynamic property: `n["prop"]`, `rel[n.city + n.zip]`, `map[coll[0]]`.
+* A parameter: `$param`, `$0`
+* A list of expressions: `['a', 'b']`, `[1, 2, 3]`, `['a', 2, n.property, $param]`, `[ ]`.
+* A function call: `length(p)`, `nodes(p)`.
+* An aggregate function: `avg(x.prop)`, `count(*)`.
+* A path-pattern: `(a)-->()<--(b)`.
+* An operator application: `1 + 2` and `3 < 4`.
+* A predicate expression is an expression that returns true or false: `a.prop = 'Hello'`, `length(p) > 10`, `exists(a.name)`.
+* A regular expression: `a.name =~ 'Tim.*'`
+* A case-sensitive string matching expression: `a.surname STARTS WITH 'Sven'`, `a.surname ENDS WITH 'son'` or `a.surname CONTAINS 'son'`
+* A `CASE` expression.
+
+### Note on string literals
+
+String literals can contain the following escape sequences:
+
+| Escape sequence | Character                                                     |
+| --------------- | ------------------------------------------------------------- |
+| `\t`            | Tab                                                           |
+| `\b`            | Backspace                                                     |
+| `\n`            | Newline                                                       |
+| `\r`            | Carriage return                                               |
+| `\f`            | Form feed                                                     |
+| `\'`            | Single quote                                                  |
+| `\"`            | Double quote                                                  |
+| `\\`            | Backslash                                                     |
+| `\uxxxx`        | Unicode UTF-16 code point (4 hex digits must follow the `\u`) |
+| `\Uxxxxxxxx`    | Unicode UTF-32 code point (8 hex digits must follow the `\U`) |
+
+### `CASE` expressions
+
+Generic conditional expressions may be expressed using the well-known `CASE` construct. Two variants of `CASE` exist within Cypher: the simple form, which allows an expression to be compared against multiple values, and the generic form, which allows multiple conditional statements to be expressed.
+
+The following graph is used for the examples below:
+
+Graph
+
+```
+  N0 [
+    label = "{A|name = \'Alice\'\leyes = \'brown\'\lage = 38\l}"
+  ]
+  N0 -> N2 [
+    color = "#2e3436"
+    fontcolor = "#2e3436"
+    label = "KNOWS\n"
+  ]
+  N0 -> N1 [
+    color = "#2e3436"
+    fontcolor = "#2e3436"
+    label = "KNOWS\n"
+  ]
+  N1 [
+    label = "{B|name = \'Bob\'\leyes = \'blue\'\lage = 25\l}"
+  ]
+  N1 -> N4 [
+    color = "#4e9a06"
+    fontcolor = "#4e9a06"
+    label = "MARRIED\n"
+  ]
+  N1 -> N3 [
+    color = "#2e3436"
+    fontcolor = "#2e3436"
+    label = "KNOWS\n"
+  ]
+  N2 [
+    label = "{C|name = \'Charlie\'\leyes = \'green\'\lage = 53\l}"
+  ]
+  N2 -> N3 [
+    color = "#2e3436"
+    fontcolor = "#2e3436"
+    label = "KNOWS\n"
+  ]
+  N3 [
+    label = "{D|name = \'Daniel\'\leyes = \'brown\'\l}"
+  ]
+  N4 [
+    label = "{E|array = \[\'one\', \'two\', \'three\'\]\lname = \'Eskil\'\leyes = \'blue\'\lage = 41\l}"
+  ]
+```
+
+#### Simple `CASE` form: comparing an expression against multiple values
+
+The expression is calculated, and compared in order with the `WHEN` clauses until a match is found. If no match is found, the expression in the `ELSE` clause is returned. However, if there is no `ELSE` case and no match is found, `null` will be returned.
+
+**Syntax:**
+
+```cypher
+CASE test
+ WHEN value THEN result
+  [WHEN ...]
+  [ELSE default]
+END
+```
+
+**Arguments:**
+
+| Name      | Description                                                          |
+| --------- | -------------------------------------------------------------------- |
+| `test`    | A valid expression.                                                  |
+| `value`   | An expression whose result will be compared to `test`.               |
+| `result`  | This is the expression returned as output if `value` matches `test`. |
+| `default` | If no match is found, `default` is returned.                         |
+
+Query
+
+```cypher
+MATCH (n)
+RETURN
+CASE n.eyes
+WHEN 'blue'
+THEN 1
+WHEN 'brown'
+THEN 2
+ELSE 3 END AS result
+```
+
+| result |
+| ------ |
+| `2`    |
+| `1`    |
+| `3`    |
+| `2`    |
+| `1`    |
+| 5 rows |
+
+#### Generic `CASE` form: allowing for multiple conditionals to be expressed
+
+The predicates are evaluated in order until a `true` value is found, and the result value is used. If no match is found, the expression in the `ELSE` clause is returned. However, if there is no `ELSE` case and no match is found, `null` will be returned.
+
+**Syntax:**
+
+```cypher
+CASE
+WHEN predicate THEN result
+  [WHEN ...]
+  [ELSE default]
+END
+```
+
+**Arguments:**
+
+| Name        | Description                                                                   |
+| ----------- | ----------------------------------------------------------------------------- |
+| `predicate` | A predicate that is tested to find a valid alternative.                       |
+| `result`    | This is the expression returned as output if `predicate` evaluates to `true`. |
+| `default`   | If no match is found, `default` is returned.                                  |
+
+Query
+
+```cypher
+MATCH (n)
+RETURN
+CASE
+WHEN n.eyes = 'blue'
+THEN 1
+WHEN n.age < 40
+THEN 2
+ELSE 3 END AS result
+```
+
+| result |
+| ------ |
+| `2`    |
+| `1`    |
+| `3`    |
+| `3`    |
+| `1`    |
+| 5 rows |
+
+#### Distinguishing between when to use the simple and generic `CASE` forms
+
+Owing to the close similarity between the syntax of the two forms, sometimes it may not be clear at the outset as to which form to use. We illustrate this scenario by means of the following query, in which there is an expectation that `age_10_years_ago` is `-1` if `n.age` is `null`:
+
+Query
+
+```cypher
+MATCH (n)
+RETURN n.name,
+CASE n.age
+WHEN n.age IS NULL THEN -1
+ELSE n.age - 10 END AS age_10_years_ago
+```
+
+However, as this query is written using the simple `CASE` form, instead of `age_10_years_ago` being `-1` for the node named `Daniel`, it is `null`. This is because a comparison is made between `n.age` and `n.age IS NULL`. As `n.age IS NULL` is a boolean value, and `n.age` is an integer value, the `WHEN n.age IS NULL THEN -1` branch is never taken. This results in the `ELSE n.age - 10` branch being taken instead, returning `null`.
+
+| n.name      | age\_10\_years\_ago |
+| ----------- | ------------------- |
+| `"Alice"`   | `28`                |
+| `"Bob"`     | `15`                |
+| `"Charlie"` | `43`                |
+| `"Daniel"`  | `<null>`            |
+| `"Eskil"`   | `31`                |
+| 5 rows      |                     |
+
+The corrected query, behaving as expected, is given by the following generic `CASE` form:
+
+Query
+
+```cypher
+MATCH (n)
+RETURN n.name,
+CASE
+WHEN n.age IS NULL THEN -1
+ELSE n.age - 10 END AS age_10_years_ago
+```
+
+We now see that the `age_10_years_ago` correctly returns `-1` for the node named `Daniel`.
+
+| n.name      | age\_10\_years\_ago |
+| ----------- | ------------------- |
+| `"Alice"`   | `28`                |
+| `"Bob"`     | `15`                |
+| `"Charlie"` | `43`                |
+| `"Daniel"`  | `-1`                |
+| `"Eskil"`   | `31`                |
+| 5 rows      |                     |
+
+\
