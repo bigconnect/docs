@@ -15,7 +15,7 @@ High-level features:
 * Async distributed processing pipeline for applying custom logic on import/update/delete operationg
 * Full [Cypher ](cypher/)query language support
 * Extensible and modular
-* SQL language support using [Trino ](trino/)to allow rich reporting on graph objects
+* SQL language support using [Trino](https://trino.io/docs/current/) to allow rich reporting on graph objects
 * Machine Learning and parallel data processing using [Apache Spark](https://spark.apache.org/docs/latest/)
 
 {% content-ref url="biggraph-architecture-and-concepts.md" %}
