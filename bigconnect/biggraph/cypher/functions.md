@@ -223,6 +223,8 @@ These functions are used to specify 2D or 3D points in a geographic or cartesian
 | point() - Cartesian 3D | Returns a 3D point object, given three coordinate values in the Cartesian coordinate system.               |
 | point() - WGS 84 2D    | Returns a 2D point object, given two coordinate values in the WGS 84 geographic coordinate system.         |
 | point() - WGS 84 3D    | Returns a 3D point object, given three coordinate values in the WGS 84 geographic coordinate system.       |
+| contains()             | Returns true if the point() - Cartesian 2D is contained in another 2D geometry                             |
+| intersects()           | Returns true if the point() - Cartesian 2D intersects another 2D geometry                                  |
 
 ## **User-defined functions**
 
