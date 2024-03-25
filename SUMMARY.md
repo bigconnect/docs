@@ -1015,7 +1015,7 @@
     * [RocksDB](bigconnect/biggraph/data-store/rocksdb.md)
     * [Memory](bigconnect/biggraph/data-store/memory.md)
   * [Indexing](bigconnect/biggraph/indexing.md)
-  * [Streaming](bigconnect/biggraph/streaming/README.md)
+  * [Streaming](bigconnect/biggraph/streaming.md)
     * [Message Encryption](bigconnect/biggraph/streaming/message-encryption.md)
   * [Enrichment](bigconnect/biggraph/enrichment.md)
   * [Security](bigconnect/biggraph/security.md)

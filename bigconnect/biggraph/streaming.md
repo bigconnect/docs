@@ -10,6 +10,6 @@ Data change events are things like:
 
 BigConnect Core extends Kafka with some enterprise-level features as follows:
 
-* Encrypting data at rest
-* [User Interface](https://docs.kafka-ui.provectus.io/overview/features) to mage Kafka clusters
+* [Encrypting data at rest](streaming/message-encryption.md)
+* [User Interface](https://docs.kafka-ui.provectus.io/overview/features) to mage Kafka clusters&#x20;
 * [ksqlDB](https://github.com/confluentinc/ksql) for building stream processing applications on top of Apache Kafka
