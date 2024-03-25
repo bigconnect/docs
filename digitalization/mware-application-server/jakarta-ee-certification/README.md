@@ -1,6 +1,6 @@
 # Jakarta EE Certification
 
-Payara Server is a certified [Jakarta EE](https://jakarta.ee/) implementation. The following specifications are fully certified:
+MWARE AS is a certified [Jakarta EE](https://jakarta.ee/) implementation. The following specifications are fully certified:
 
 * Jakarta EE 9
 * Jakarta EE 10

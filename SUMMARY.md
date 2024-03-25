@@ -916,6 +916,7 @@
     * [DMN 1.1 Introduction](digitalization/mware-bpm/dmn-developer-guide/dmn-1.1-introduction.md)
     * [REST API](digitalization/mware-bpm/dmn-developer-guide/rest-api.md)
 * [MWARE Application Server](digitalization/mware-application-server/README.md)
+  * [Supported Platforms](digitalization/mware-application-server/supported-platforms.md)
   * [App Server Documentation](digitalization/mware-application-server/app-server-documentation/README.md)
     * [Server Configuration And Management](digitalization/mware-application-server/app-server-documentation/server-configuration-and-management/README.md)
       * [Admin Console Enhancements](digitalization/mware-application-server/app-server-documentation/server-configuration-and-management/admin-console-enhancements/README.md)

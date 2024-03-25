@@ -19,6 +19,8 @@ A Deployment Group is a loose grouping of MWARE AS instances that can be used as
 
 Deployment Groups can also be used to manage the lifecycle of the instances in the group. All instances can be started, re-started and stopped using the deployment group. Restarting all the instances in the deployment group performs a rolling restart whereby each instance is restarted in turn to ensure that any data grid held data is retained across the group restart.
 
+Together with the HTTP Server, instances can be configured for high availability in active-active or active-passive topologies.
+
 ### Creating a Deployment Group
 
 A deployment group can be created in both the administration console and via Asadmin
