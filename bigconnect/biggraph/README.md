@@ -5,6 +5,7 @@ BigConnect Core is a massively scalable graph store designed for holding and que
 High-level features:
 
 * Massively distributed Big Data store based on Hadoop, Accumulo, Zookeeper
+* Fully containerized Docker architecture for fast horizontal and vertical scalability in Kubernetes or Docker Swarm clusters
 * Ridiculously fast data ingestion (25k objects / sec. on average hardware)
 * Dynamic data model (concepts, relations, properties, tables), multivalued properties and property metadata support
 * Authorizations and visibilities for rows and columns
@@ -14,7 +15,6 @@ High-level features:
 * Full [Cypher ](cypher/)query language support
 * Extensible and modular
 * SQL language support using [Trino ](trino/)to allow rich reporting on graph objects
-* Integrated with [BigConnect Data Pipelines](../pipelines/) for data ingestion and manipulation
 
 {% content-ref url="biggraph-architecture-and-concepts.md" %}
 [biggraph-architecture-and-concepts.md](biggraph-architecture-and-concepts.md)

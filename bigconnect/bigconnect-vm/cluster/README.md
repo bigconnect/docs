@@ -47,3 +47,9 @@ These sections list the available PCI devices and physical disks on the node.&#x
 Here you'll find details about the node's configuration as part of the cluster. You can view the role, set the availability status of the node, view the current status and apply labels to the node.
 
 ![](<../../../.gitbook/assets/image (351).png>)
+
+The availability status of the node can be one of the following:
+
+* **Active**: the scheduler can assign tasks to the node.
+* **Drain**: the scheduler doesn't assign new tasks to the node. The scheduler shuts down any existing tasks and schedules them on an available node. Use this mode to take a node down for maintenance.
+* **Pause**: the scheduler doesn't assign new tasks to the node, but existing tasks remain running.

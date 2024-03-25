@@ -1236,6 +1236,7 @@
     * [Add a new secret](bigconnect/bigconnect-vm/secrets/add-a-new-secret.md)
     * [Remove a secret](bigconnect/bigconnect-vm/secrets/remove-a-secret.md)
   * [Cluster](bigconnect/bigconnect-vm/cluster/README.md)
+    * [Setup](bigconnect/bigconnect-vm/cluster/setup.md)
     * [Cluster visualizer](bigconnect/bigconnect-vm/cluster/cluster-visualizer.md)
     * [Registries](bigconnect/bigconnect-vm/cluster/registries.md)
   * [Account settings](bigconnect/bigconnect-vm/account-settings.md)
