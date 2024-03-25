@@ -1,0 +1,14 @@
+# Enrichment
+
+Data enrichment is the process of combining data from internal sources with disparate data from other internal systems or third party data from external sources. Enriched data is a valuable asset for any organization because it becomes more useful and insightful. A majority of brands conduct data enrichment on their raw data so that they can use it to make informed decisions. In 2018, data enrichment grew by 80% and is projected to grow even more this year.
+
+Customer data begins in raw form regardless of the source, whether site traffic, social media or email lists. When customer data is collected, it’s stored in a central data store and is largely useless. Raw data is cleaned and structured, before being enriched with external data to add additional useful information. Data enrichment makes the data more useful by adding value to it. It helps brands to better understand their customers and gain deeper insights into their lives. There are many ways of enriching data. An excellent example of data enrichment would be to enrich internal sales data with third party advertisement data to get a better understanding of advertising effectiveness.
+
+Like other data wrangling processes, data enrichment is not something you perform once and forget about it. Customer data is always changing no matter how detailed it is. For example, income levels are constantly rising and falling while marital status changes regularly. People relocate from one place to another regularly and thus changing customers physical addresses. Given these possibilities for change, it is essential that organizations conduct data enrichment continuously. When brands overlook continuous data enrichment, they provide customers with irrelevant information and offers. Rather than enriching data manually, technology has made the process easier and faster through data preparation tools and software.
+
+A well-functioning data enrichment process is a fundamental ingredient to the success of a brand operating in the modern data-centric world. For data to benefit a business, it needs to be actionable, value-adding, and easy to understand—exactly what data enrichment offers. As you implement a data enrichment strategy, it is important to note that businesses benefit from data enrichment in different ways.&#x20;
+
+BigConnect Core provides an amazing data enrichment framework. Combined with the Streaming engine, this framework can augment your stored data in unimaginable ways using Artificial Intelligence or data from other internal or external systems.&#x20;
+
+Data enrichment creates new knowledge. Whether your information is textual, image, video, audio, structured or unstructured, the data enrichment framework will try to generate new insights attributes that can be specific to an object or correlated with data stored in the system.
+
