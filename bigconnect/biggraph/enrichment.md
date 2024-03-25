@@ -10,5 +10,5 @@ A well-functioning data enrichment process is a fundamental ingredient to the su
 
 BigConnect Core provides an amazing data enrichment framework. Combined with the Streaming engine, this framework can augment your stored data in unimaginable ways using Artificial Intelligence or data from other internal or external systems.&#x20;
 
-Data enrichment creates new knowledge. Whether your information is textual, image, video, audio, structured or unstructured, the data enrichment framework will try to generate new insights attributes that can be specific to an object or correlated with data stored in the system.
+Data enrichment creates new knowledge. Whether your information is textual, image, video, audio, structured or unstructured, the data enrichment framework will try to generate new insights, objects, relationships and attributes that can be specific to an object or correlated with data stored in the system.
 
