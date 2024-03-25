@@ -1015,7 +1015,7 @@
     * [RocksDB](bigconnect/biggraph/data-store/rocksdb.md)
     * [Memory](bigconnect/biggraph/data-store/memory.md)
   * [Indexing](bigconnect/biggraph/indexing.md)
-  * [Enrichment](bigconnect/biggraph/enrichment.md)
+  * [Enrichment & Streaming](bigconnect/biggraph/enrichment-and-streaming.md)
   * [Security](bigconnect/biggraph/security.md)
   * [Backup](bigconnect/biggraph/backup.md)
   * [Cypher](bigconnect/biggraph/cypher/README.md)
