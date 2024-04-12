@@ -1,0 +1,571 @@
+# PostgreSQL connector
+
+The PostgreSQL connector allows querying and creating tables in an external [PostgreSQL](https://www.postgresql.org/) database. This can be used to join data between different systems like PostgreSQL and Hive, or between different PostgreSQL instances.
+
+### Requirements[#](https://trino.io/docs/current/connector/postgresql.html#requirements) <a href="#requirements" id="requirements"></a>
+
+To connect to PostgreSQL, you need:
+
+* PostgreSQL 11.x or higher.
+* Network access from the Trino coordinator and workers to PostgreSQL. Port 5432 is the default port.
+
+### Configuration[#](https://trino.io/docs/current/connector/postgresql.html#configuration) <a href="#configuration" id="configuration"></a>
+
+The connector can query a database on a PostgreSQL server. Create a catalog properties file that specifies the PostgreSQL connector by setting the `connector.name` to `postgresql`.
+
+For example, to access a database as the `example` catalog, create the file `etc/catalog/example.properties`. Replace the connection properties as appropriate for your setup:
+
+```
+connector.name=postgresql
+connection-url=jdbc:postgresql://example.net:5432/database
+connection-user=root
+connection-password=secret
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+The `connection-url` defines the connection information and parameters to pass to the PostgreSQL JDBC driver. The parameters for the URL are available in the [PostgreSQL JDBC driver documentation](https://jdbc.postgresql.org/documentation/use/#connecting-to-the-database). Some parameters can have adverse effects on the connector behavior or not work with the connector.
+
+The `connection-user` and `connection-password` are typically required and determine the user credentials for the connection, often a service user. You can use [secrets](https://trino.io/docs/current/security/secrets.html) to avoid actual values in the catalog properties files.
+
+#### Access to system tables[#](https://trino.io/docs/current/connector/postgresql.html#access-to-system-tables) <a href="#access-to-system-tables" id="access-to-system-tables"></a>
+
+The PostgreSQL connector supports reading [PostgreSQ catalog tables](https://www.postgresql.org/docs/current/catalogs.html), such as `pg_namespace`. The functionality is turned off by default, and can be enabled using the `postgresql.include-system-tables` configuration property.
+
+You can see more details in the `pg_catalog` schema in the `example` catalog, for example about the `pg_namespace` system table:
+
+```
+SHOW TABLES FROM example.pg_catalog;
+SELECT * FROM example.pg_catalog.pg_namespace;
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+#### Connection security[#](https://trino.io/docs/current/connector/postgresql.html#connection-security) <a href="#connection-security" id="connection-security"></a>
+
+If you have TLS configured with a globally-trusted certificate installed on your data source, you can enable TLS between your cluster and the data source by appending a parameter to the JDBC connection string set in the `connection-url` catalog configuration property.
+
+For example, with version 42 of the PostgreSQL JDBC driver, enable TLS by appending the `ssl=true` parameter to the `connection-url` configuration property:
+
+```
+connection-url=jdbc:postgresql://example.net:5432/database?ssl=true
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+For more information on TLS configuration options, see the [PostgreSQL JDBC driver documentation](https://jdbc.postgresql.org/documentation/use/#connecting-to-the-database).
+
+#### Data source authentication[#](https://trino.io/docs/current/connector/postgresql.html#data-source-authentication) <a href="#data-source-authentication" id="data-source-authentication"></a>
+
+The connector can provide credentials for the data source connection in multiple ways:
+
+* inline, in the connector configuration file
+* in a separate properties file
+* in a key store file
+* as extra credentials set when connecting to Trino
+
+You can use [secrets](https://trino.io/docs/current/security/secrets.html) to avoid storing sensitive values in the catalog properties files.
+
+The following table describes configuration properties for connection credentials:
+
+| Property name                           | Description                                                                                                                                                                                            |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `credential-provider.type`              | Type of the credential provider. Must be one of `INLINE`, `FILE`, or `KEYSTORE`; defaults to `INLINE`.                                                                                                 |
+| `connection-user`                       | Connection user name.                                                                                                                                                                                  |
+| `connection-password`                   | Connection password.                                                                                                                                                                                   |
+| `user-credential-name`                  | Name of the extra credentials property, whose value to use as the user name. See `extraCredentials` in [Parameter reference](https://trino.io/docs/current/client/jdbc.html#jdbc-parameter-reference). |
+| `password-credential-name`              | Name of the extra credentials property, whose value to use as the password.                                                                                                                            |
+| `connection-credential-file`            | Location of the properties file where credentials are present. It must contain the `connection-user` and `connection-password` properties.                                                             |
+| `keystore-file-path`                    | The location of the Java Keystore file, from which to read credentials.                                                                                                                                |
+| `keystore-type`                         | File format of the keystore file, for example `JKS` or `PEM`.                                                                                                                                          |
+| `keystore-password`                     | Password for the key store.                                                                                                                                                                            |
+| `keystore-user-credential-name`         | Name of the key store entity to use as the user name.                                                                                                                                                  |
+| `keystore-user-credential-password`     | Password for the user name key store entity.                                                                                                                                                           |
+| `keystore-password-credential-name`     | Name of the key store entity to use as the password.                                                                                                                                                   |
+| `keystore-password-credential-password` | Password for the password key store entity.                                                                                                                                                            |
+
+#### Multiple PostgreSQL databases or servers[#](https://trino.io/docs/current/connector/postgresql.html#multiple-postgresql-databases-or-servers) <a href="#multiple-postgresql-databases-or-servers" id="multiple-postgresql-databases-or-servers"></a>
+
+The PostgreSQL connector can only access a single database within a PostgreSQL server. Thus, if you have multiple PostgreSQL databases, or want to connect to multiple PostgreSQL servers, you must configure multiple instances of the PostgreSQL connector.
+
+To add another catalog, simply add another properties file to `etc/catalog` with a different name, making sure it ends in `.properties`. For example, if you name the property file `sales.properties`, Trino creates a catalog named `sales` using the configured connector.
+
+#### General configuration properties[#](https://trino.io/docs/current/connector/postgresql.html#general-configuration-properties) <a href="#general-configuration-properties" id="general-configuration-properties"></a>
+
+The following table describes general catalog configuration properties for the connector:
+
+| Property name                                               | Description                                                                                                                                                                                                                                                                                                                                                               |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `case-insensitive-name-matching`                            | Support case insensitive schema and table names. Defaults to `false`.                                                                                                                                                                                                                                                                                                     |
+| `case-insensitive-name-matching.cache-ttl`                  | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which case insensitive schema and table names are cached. Defaults to `1m`.                                                                                                                                                                                                        |
+| `case-insensitive-name-matching.config-file`                | Path to a name mapping configuration file in JSON format that allows Trino to disambiguate between schemas and tables with similar names in different cases. Defaults to `null`.                                                                                                                                                                                          |
+| `case-insensitive-name-matching.config-file.refresh-period` | Frequency with which Trino checks the name matching configuration file for changes. The [duration value](https://trino.io/docs/current/admin/properties.html#prop-type-duration) defaults to `0s` (refresh disabled).                                                                                                                                                     |
+| `metadata.cache-ttl`                                        | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which metadata, including table and column statistics, is cached. Defaults to `0s` (caching disabled).                                                                                                                                                                             |
+| `metadata.cache-missing`                                    | Cache the fact that metadata, including table and column statistics, is not available. Defaults to `false`.                                                                                                                                                                                                                                                               |
+| `metadata.schemas.cache-ttl`                                | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which schema metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                    |
+| `metadata.tables.cache-ttl`                                 | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which table metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                     |
+| `metadata.statistics.cache-ttl`                             | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which tables statistics are cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                 |
+| `metadata.cache-maximum-size`                               | Maximum number of objects stored in the metadata cache. Defaults to `10000`.                                                                                                                                                                                                                                                                                              |
+| `write.batch-size`                                          | Maximum number of statements in a batched execution. Do not change this setting from the default. Non-default values may negatively impact performance. Defaults to `1000`.                                                                                                                                                                                               |
+| `dynamic-filtering.enabled`                                 | Push down dynamic filters into JDBC queries. Defaults to `true`.                                                                                                                                                                                                                                                                                                          |
+| `dynamic-filtering.wait-timeout`                            | Maximum [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which Trino waits for dynamic filters to be collected from the build side of joins before starting a JDBC query. Using a large timeout can potentially result in more detailed dynamic filters. However, it can also increase latency for some queries. Defaults to `20s`. |
+
+#### Appending query metadata[#](https://trino.io/docs/current/connector/postgresql.html#appending-query-metadata) <a href="#appending-query-metadata" id="appending-query-metadata"></a>
+
+The optional parameter `query.comment-format` allows you to configure a SQL comment that is sent to the datasource with each query. The format of this comment can contain any characters and the following metadata:
+
+* `$QUERY_ID`: The identifier of the query.
+* `$USER`: The name of the user who submits the query to Trino.
+* `$SOURCE`: The identifier of the client tool used to submit the query, for example `trino-cli`.
+* `$TRACE_TOKEN`: The trace token configured with the client tool.
+
+The comment can provide more context about the query. This additional information is available in the logs of the datasource. To include environment variables from the Trino cluster with the comment , use the `${ENV:VARIABLE-NAME}` syntax.
+
+The following example sets a simple comment that identifies each query sent by Trino:
+
+```
+query.comment-format=Query sent by Trino.
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+With this configuration, a query such as `SELECT * FROM example_table;` is sent to the datasource with the comment appended:
+
+```
+SELECT * FROM example_table; /*Query sent by Trino.*/
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+The following example improves on the preceding example by using metadata:
+
+```
+query.comment-format=Query $QUERY_ID sent by user $USER from Trino.
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+If `Jane` sent the query with the query identifier `20230622_180528_00000_bkizg`, the following comment string is sent to the datasource:
+
+```
+SELECT * FROM example_table; /*Query 20230622_180528_00000_bkizg sent by user Jane from Trino.*/
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+Note
+
+Certain JDBC driver settings and logging configurations might cause the comment to be removed.
+
+#### Domain compaction threshold[#](https://trino.io/docs/current/connector/postgresql.html#domain-compaction-threshold) <a href="#domain-compaction-threshold" id="domain-compaction-threshold"></a>
+
+Pushing down a large list of predicates to the data source can compromise performance. Trino compacts large predicates into a simpler range predicate by default to ensure a balance between performance and predicate pushdown. If necessary, the threshold for this compaction can be increased to improve performance when the data source is capable of taking advantage of large predicates. Increasing this threshold may improve pushdown of large [dynamic filters](https://trino.io/docs/current/admin/dynamic-filtering.html). The `domain-compaction-threshold` catalog configuration property or the `domain_compaction_threshold` [catalog session property](https://trino.io/docs/current/sql/set-session.html#session-properties-definition) can be used to adjust the default value of `32` for this threshold.
+
+#### Procedures[#](https://trino.io/docs/current/connector/postgresql.html#procedures) <a href="#procedures" id="procedures"></a>
+
+*   `system.flush_metadata_cache()`
+
+    Flush JDBC metadata caches. For example, the following system call flushes the metadata caches for all schemas in the `example` catalog
+
+    ```
+    USE example.example_schema;
+    CALL system.flush_metadata_cache();
+    ```
+
+    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+#### Case insensitive matching[#](https://trino.io/docs/current/connector/postgresql.html#case-insensitive-matching) <a href="#case-insensitive-matching" id="case-insensitive-matching"></a>
+
+When `case-insensitive-name-matching` is set to `true`, Trino is able to query non-lowercase schemas and tables by maintaining a mapping of the lowercase name to the actual name in the remote system. However, if two schemas and/or tables have names that differ only in case (such as “customers” and “Customers”) then Trino fails to query them due to ambiguity.
+
+In these cases, use the `case-insensitive-name-matching.config-file` catalog configuration property to specify a configuration file that maps these remote schemas/tables to their respective Trino schemas/tables:
+
+```
+{
+  "schemas": [
+    {
+      "remoteSchema": "CaseSensitiveName",
+      "mapping": "case_insensitive_1"
+    },
+    {
+      "remoteSchema": "cASEsENSITIVEnAME",
+      "mapping": "case_insensitive_2"
+    }],
+  "tables": [
+    {
+      "remoteSchema": "CaseSensitiveName",
+      "remoteTable": "tablex",
+      "mapping": "table_1"
+    },
+    {
+      "remoteSchema": "CaseSensitiveName",
+      "remoteTable": "TABLEX",
+      "mapping": "table_2"
+    }]
+}
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+Queries against one of the tables or schemes defined in the `mapping` attributes are run against the corresponding remote entity. For example, a query against tables in the `case_insensitive_1` schema is forwarded to the CaseSensitiveName schema and a query against `case_insensitive_2` is forwarded to the `cASEsENSITIVEnAME` schema.
+
+At the table mapping level, a query on `case_insensitive_1.table_1` as configured above is forwarded to `CaseSensitiveName.tablex`, and a query on `case_insensitive_1.table_2` is forwarded to `CaseSensitiveName.TABLEX`.
+
+By default, when a change is made to the mapping configuration file, Trino must be restarted to load the changes. Optionally, you can set the `case-insensitive-name-mapping.refresh-period` to have Trino refresh the properties without requiring a restart:
+
+```
+case-insensitive-name-mapping.refresh-period=30s
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+#### Non-transactional INSERT[#](https://trino.io/docs/current/connector/postgresql.html#non-transactional-insert) <a href="#non-transactional-insert" id="non-transactional-insert"></a>
+
+The connector supports adding rows using [INSERT statements](https://trino.io/docs/current/sql/insert.html). By default, data insertion is performed by writing data to a temporary table. You can skip this step to improve performance and write directly to the target table. Set the `insert.non-transactional-insert.enabled` catalog property or the corresponding `non_transactional_insert` catalog session property to `true`.
+
+Note that with this property enabled, data can be corrupted in rare cases where exceptions occur during the insert operation. With transactions disabled, no rollback can be performed.
+
+### Type mapping[#](https://trino.io/docs/current/connector/postgresql.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+
+Because Trino and PostgreSQL each support types that the other does not, this connector [modifies some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
+
+#### PostgreSQL type to Trino type mapping[#](https://trino.io/docs/current/connector/postgresql.html#postgresql-type-to-trino-type-mapping) <a href="#postgresql-type-to-trino-type-mapping" id="postgresql-type-to-trino-type-mapping"></a>
+
+The connector maps PostgreSQL types to the corresponding Trino types following this table:
+
+| PostgreSQL type  | Trino type                    | Notes                                                                                                                                                                                       |
+| ---------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `BIT`            | `BOOLEAN`                     |                                                                                                                                                                                             |
+| `BOOLEAN`        | `BOOLEAN`                     |                                                                                                                                                                                             |
+| `SMALLINT`       | `SMALLINT`                    |                                                                                                                                                                                             |
+| `INTEGER`        | `INTEGER`                     |                                                                                                                                                                                             |
+| `BIGINT`         | `BIGINT`                      |                                                                                                                                                                                             |
+| `REAL`           | `REAL`                        |                                                                                                                                                                                             |
+| `DOUBLE`         | `DOUBLE`                      |                                                                                                                                                                                             |
+| `NUMERIC(p, s)`  | `DECIMAL(p, s)`               | `DECIMAL(p, s)` is an alias of `NUMERIC(p, s)`. See [Decimal type handling](https://trino.io/docs/current/connector/postgresql.html#postgresql-decimal-type-handling) for more information. |
+| `CHAR(n)`        | `CHAR(n)`                     |                                                                                                                                                                                             |
+| `VARCHAR(n)`     | `VARCHAR(n)`                  |                                                                                                                                                                                             |
+| `ENUM`           | `VARCHAR`                     |                                                                                                                                                                                             |
+| `BYTEA`          | `VARBINARY`                   |                                                                                                                                                                                             |
+| `DATE`           | `DATE`                        |                                                                                                                                                                                             |
+| `TIME(n)`        | `TIME(n)`                     |                                                                                                                                                                                             |
+| `TIMESTAMP(n)`   | `TIMESTAMP(n)`                |                                                                                                                                                                                             |
+| `TIMESTAMPTZ(n)` | `TIMESTAMP(n) WITH TIME ZONE` |                                                                                                                                                                                             |
+| `MONEY`          | `VARCHAR`                     |                                                                                                                                                                                             |
+| `UUID`           | `UUID`                        |                                                                                                                                                                                             |
+| `JSON`           | `JSON`                        |                                                                                                                                                                                             |
+| `JSONB`          | `JSON`                        |                                                                                                                                                                                             |
+| `HSTORE`         | `MAP(VARCHAR, VARCHAR)`       |                                                                                                                                                                                             |
+| `ARRAY`          | Disabled, `ARRAY`, or `JSON`  | See [Array type handling](https://trino.io/docs/current/connector/postgresql.html#postgresql-array-type-handling) for more information.                                                     |
+
+No other types are supported.
+
+#### Trino type to PostgreSQL type mapping[#](https://trino.io/docs/current/connector/postgresql.html#trino-type-to-postgresql-type-mapping) <a href="#trino-type-to-postgresql-type-mapping" id="trino-type-to-postgresql-type-mapping"></a>
+
+The connector maps Trino types to the corresponding PostgreSQL types following this table:
+
+| Trino type                    | PostgreSQL type  | Notes                                                                                                                                                                                       |
+| ----------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `BOOLEAN`                     | `BOOLEAN`        |                                                                                                                                                                                             |
+| `SMALLINT`                    | `SMALLINT`       |                                                                                                                                                                                             |
+| `TINYINT`                     | `SMALLINT`       |                                                                                                                                                                                             |
+| `INTEGER`                     | `INTEGER`        |                                                                                                                                                                                             |
+| `BIGINT`                      | `BIGINT`         |                                                                                                                                                                                             |
+| `DOUBLE`                      | `DOUBLE`         |                                                                                                                                                                                             |
+| `DECIMAL(p, s)`               | `NUMERIC(p, s)`  | `DECIMAL(p, s)` is an alias of `NUMERIC(p, s)`. See [Decimal type handling](https://trino.io/docs/current/connector/postgresql.html#postgresql-decimal-type-handling) for more information. |
+| `CHAR(n)`                     | `CHAR(n)`        |                                                                                                                                                                                             |
+| `VARCHAR(n)`                  | `VARCHAR(n)`     |                                                                                                                                                                                             |
+| `VARBINARY`                   | `BYTEA`          |                                                                                                                                                                                             |
+| `DATE`                        | `DATE`           |                                                                                                                                                                                             |
+| `TIME(n)`                     | `TIME(n)`        |                                                                                                                                                                                             |
+| `TIMESTAMP(n)`                | `TIMESTAMP(n)`   |                                                                                                                                                                                             |
+| `TIMESTAMP(n) WITH TIME ZONE` | `TIMESTAMPTZ(n)` |                                                                                                                                                                                             |
+| `UUID`                        | `UUID`           |                                                                                                                                                                                             |
+| `JSON`                        | `JSONB`          |                                                                                                                                                                                             |
+| `ARRAY`                       | `ARRAY`          | See [Array type handling](https://trino.io/docs/current/connector/postgresql.html#postgresql-array-type-handling) for more information.                                                     |
+
+No other types are supported.
+
+#### Decimal type handling[#](https://trino.io/docs/current/connector/postgresql.html#decimal-type-handling) <a href="#decimal-type-handling" id="decimal-type-handling"></a>
+
+`DECIMAL` types with unspecified precision or scale are ignored unless the `decimal-mapping` configuration property or the `decimal_mapping` session property is set to `allow_overflow`. Then such types are mapped to a Trino `DECIMAL` with a default precision of 38 and default scale of 0. To change the scale of the resulting type, use the `decimal-default-scale` configuration property or the `decimal_default_scale` session property. The precision is always 38.
+
+By default, values that require rounding or truncation to fit will cause a failure at runtime. This behavior is controlled via the `decimal-rounding-mode` configuration property or the `decimal_rounding_mode` session property, which can be set to `UNNECESSARY` (the default), `UP`, `DOWN`, `CEILING`, `FLOOR`, `HALF_UP`, `HALF_DOWN`, or `HALF_EVEN` (see [RoundingMode](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/RoundingMode.html#enum.constant.summary)).
+
+#### Array type handling[#](https://trino.io/docs/current/connector/postgresql.html#array-type-handling) <a href="#array-type-handling" id="array-type-handling"></a>
+
+The PostgreSQL array implementation does not support fixed dimensions whereas Trino support only arrays with fixed dimensions. You can configure how the PostgreSQL connector handles arrays with the `postgresql.array-mapping` configuration property in your catalog file or the `array_mapping` session property. The following values are accepted for this property:
+
+* `DISABLED` (default): array columns are skipped.
+* `AS_ARRAY`: array columns are interpreted as Trino `ARRAY` type, for array columns with fixed dimensions.
+* `AS_JSON`: array columns are interpreted as Trino `JSON` type, with no constraint on dimensions.
+
+#### Type mapping configuration properties[#](https://trino.io/docs/current/connector/postgresql.html#type-mapping-configuration-properties) <a href="#type-mapping-configuration-properties" id="type-mapping-configuration-properties"></a>
+
+The following properties can be used to configure how data types from the connected data source are mapped to Trino data types and how the metadata is cached in Trino.
+
+| Property name                  | Description                                                                                                                                                                                                                                                                                                              | Default value |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
+| `unsupported-type-handling`    | <p>Configure how unsupported column data types are handled:</p><ul><li><code>IGNORE</code>, column is not accessible.</li><li><code>CONVERT_TO_VARCHAR</code>, column is converted to unbounded <code>VARCHAR</code>.</li></ul><p>The respective catalog session property is <code>unsupported_type_handling</code>.</p> | `IGNORE`      |
+| `jdbc-types-mapped-to-varchar` | Allow forced mapping of comma separated lists of data types to convert to unbounded `VARCHAR`                                                                                                                                                                                                                            |               |
+
+### Querying PostgreSQL[#](https://trino.io/docs/current/connector/postgresql.html#querying-postgresql) <a href="#querying-postgresql" id="querying-postgresql"></a>
+
+The PostgreSQL connector provides a schema for every PostgreSQL schema. You can see the available PostgreSQL schemas by running `SHOW SCHEMAS`:
+
+```
+SHOW SCHEMAS FROM example;
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+If you have a PostgreSQL schema named `web`, you can view the tables in this schema by running `SHOW TABLES`:
+
+```
+SHOW TABLES FROM example.web;
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+You can see a list of the columns in the `clicks` table in the `web` database using either of the following:
+
+```
+DESCRIBE example.web.clicks;
+SHOW COLUMNS FROM example.web.clicks;
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+Finally, you can access the `clicks` table in the `web` schema:
+
+```
+SELECT * FROM example.web.clicks;
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+If you used a different name for your catalog properties file, use that catalog name instead of `example` in the above examples.
+
+### SQL support[#](https://trino.io/docs/current/connector/postgresql.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+
+The connector provides read access and write access to data and metadata in PostgreSQL. In addition to the [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements, the connector supports the following features:
+
+* [INSERT](https://trino.io/docs/current/sql/insert.html)
+* [UPDATE](https://trino.io/docs/current/sql/update.html)
+* [DELETE](https://trino.io/docs/current/sql/delete.html)
+* [TRUNCATE](https://trino.io/docs/current/sql/truncate.html)
+* [Schema and table management](https://trino.io/docs/current/language/sql-support.html#sql-schema-table-management)
+
+#### UPDATE[#](https://trino.io/docs/current/connector/postgresql.html#update) <a href="#update" id="update"></a>
+
+Only `UPDATE` statements with constant assignments and predicates are supported. For example, the following statement is supported because the values assigned are constants:
+
+```
+UPDATE table SET col1 = 1 WHERE col3 = 1
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+Arithmetic expressions, function calls, and other non-constant `UPDATE` statements are not supported. For example, the following statement is not supported because arithmetic expressions cannot be used with the `SET` command:
+
+```
+UPDATE table SET col1 = col2 + 2 WHERE col3 = 1
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+The `=`, `!=`, `>`, `<`, `>=`, `<=`, `IN`, `NOT IN` operators are supported in predicates. The following statement is not supported because the `AND` operator cannot be used in predicates:
+
+```
+UPDATE table SET col1 = 1 WHERE col3 = 1 AND col2 = 3
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+All column values of a table row cannot be updated simultaneously. For a three column table, the following statement is not supported:
+
+```
+UPDATE table SET col1 = 1, col2 = 2, col3 = 3 WHERE col3 = 1
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+#### SQL DELETE[#](https://trino.io/docs/current/connector/postgresql.html#sql-delete) <a href="#sql-delete" id="sql-delete"></a>
+
+If a `WHERE` clause is specified, the `DELETE` operation only works if the predicate in the clause can be fully pushed down to the data source.
+
+#### ALTER TABLE RENAME TO[#](https://trino.io/docs/current/connector/postgresql.html#alter-table-rename-to) <a href="#alter-table-rename-to" id="alter-table-rename-to"></a>
+
+The connector does not support renaming tables across multiple schemas. For example, the following statement is supported:
+
+```
+ALTER TABLE example.schema_one.table_one RENAME TO example.schema_one.table_two
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+The following statement attempts to rename a table across schemas, and therefore is not supported:
+
+```
+ALTER TABLE example.schema_one.table_one RENAME TO example.schema_two.table_two
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+#### ALTER SCHEMA[#](https://trino.io/docs/current/connector/postgresql.html#alter-schema) <a href="#alter-schema" id="alter-schema"></a>
+
+The connector supports renaming a schema with the `ALTER SCHEMA RENAME` statement. `ALTER SCHEMA SET AUTHORIZATION` is not supported.
+
+### Fault-tolerant execution support[#](https://trino.io/docs/current/connector/postgresql.html#fault-tolerant-execution-support) <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
+
+The connector supports [Fault-tolerant execution](https://trino.io/docs/current/admin/fault-tolerant-execution.html) of query processing. Read and write operations are both supported with any retry policy.
+
+### Table functions[#](https://trino.io/docs/current/connector/postgresql.html#table-functions) <a href="#table-functions" id="table-functions"></a>
+
+The connector provides specific [table functions](https://trino.io/docs/current/functions/table.html) to access PostgreSQL.
+
+#### `query(varchar) -> table`[#](https://trino.io/docs/current/connector/postgresql.html#query-varchar-table) <a href="#query-varchar-table" id="query-varchar-table"></a>
+
+The `query` function allows you to query the underlying database directly. It requires syntax native to PostgreSQL, because the full query is pushed down and processed in PostgreSQL. This can be useful for accessing native features which are not available in Trino or for improving query performance in situations where running a query natively may be faster.
+
+The native query passed to the underlying data source is required to return a table as a result set. Only the data source performs validation or security checks for these queries using its own configuration. Trino does not perform these tasks. Only use passthrough queries to read data.
+
+As a simple example, query the `example` catalog and select an entire table:
+
+```
+SELECT
+  *
+FROM
+  TABLE(
+    example.system.query(
+      query => 'SELECT
+        *
+      FROM
+        tpch.nation'
+    )
+  );
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+As a practical example, you can leverage [frame exclusion from PostgresQL](https://www.postgresql.org/docs/current/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS) when using window functions:
+
+```
+SELECT
+  *
+FROM
+  TABLE(
+    example.system.query(
+      query => 'SELECT
+        *,
+        array_agg(week) OVER (
+          ORDER BY
+            week
+          ROWS
+            BETWEEN 2 PRECEDING
+            AND 2 FOLLOWING
+            EXCLUDE GROUP
+        ) AS week,
+        array_agg(week) OVER (
+          ORDER BY
+            day
+          ROWS
+            BETWEEN 2 PRECEDING
+            AND 2 FOLLOWING
+            EXCLUDE GROUP
+        ) AS all
+      FROM
+        test.time_data'
+    )
+  );
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+Note
+
+The query engine does not preserve the order of the results of this function. If the passed query contains an `ORDER BY` clause, the function result may not be ordered as expected.
+
+### Performance[#](https://trino.io/docs/current/connector/postgresql.html#performance) <a href="#performance" id="performance"></a>
+
+The connector includes a number of performance improvements, detailed in the following sections.
+
+#### Table statistics[#](https://trino.io/docs/current/connector/postgresql.html#table-statistics) <a href="#table-statistics" id="table-statistics"></a>
+
+The PostgreSQL connector can use [table and column statistics](https://trino.io/docs/current/optimizer/statistics.html) for [cost based optimizations](https://trino.io/docs/current/optimizer/cost-based-optimizations.html), to improve query processing performance based on the actual data in the data source.
+
+The statistics are collected by PostgreSQL and retrieved by the connector.
+
+To collect statistics for a table, execute the following statement in PostgreSQL.
+
+```
+ANALYZE table_schema.table_name;
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+Refer to PostgreSQL documentation for additional `ANALYZE` options.
+
+#### Pushdown[#](https://trino.io/docs/current/connector/postgresql.html#pushdown) <a href="#pushdown" id="pushdown"></a>
+
+The connector supports pushdown for a number of operations:
+
+* [Join pushdown](https://trino.io/docs/current/optimizer/pushdown.html#join-pushdown)
+* [Limit pushdown](https://trino.io/docs/current/optimizer/pushdown.html#limit-pushdown)
+* [Top-N pushdown](https://trino.io/docs/current/optimizer/pushdown.html#topn-pushdown)
+
+[Aggregate pushdown](https://trino.io/docs/current/optimizer/pushdown.html#aggregation-pushdown) for the following functions:
+
+* [`avg()`](https://trino.io/docs/current/functions/aggregate.html#avg)
+* [`count()`](https://trino.io/docs/current/functions/aggregate.html#count)
+* [`max()`](https://trino.io/docs/current/functions/aggregate.html#max)
+* [`min()`](https://trino.io/docs/current/functions/aggregate.html#min)
+* [`sum()`](https://trino.io/docs/current/functions/aggregate.html#sum)
+* [`stddev()`](https://trino.io/docs/current/functions/aggregate.html#stddev)
+* [`stddev_pop()`](https://trino.io/docs/current/functions/aggregate.html#stddev\_pop)
+* [`stddev_samp()`](https://trino.io/docs/current/functions/aggregate.html#stddev\_samp)
+* [`variance()`](https://trino.io/docs/current/functions/aggregate.html#variance)
+* [`var_pop()`](https://trino.io/docs/current/functions/aggregate.html#var\_pop)
+* [`var_samp()`](https://trino.io/docs/current/functions/aggregate.html#var\_samp)
+* [`covar_pop()`](https://trino.io/docs/current/functions/aggregate.html#covar\_pop)
+* [`covar_samp()`](https://trino.io/docs/current/functions/aggregate.html#covar\_samp)
+* [`corr()`](https://trino.io/docs/current/functions/aggregate.html#corr)
+* [`regr_intercept()`](https://trino.io/docs/current/functions/aggregate.html#regr\_intercept)
+* [`regr_slope()`](https://trino.io/docs/current/functions/aggregate.html#regr\_slope)
+
+Note
+
+The connector performs pushdown where performance may be improved, but in order to preserve correctness an operation may not be pushed down. When pushdown of an operation may result in better performance but risks correctness, the connector prioritizes correctness.
+
+**Cost-based join pushdown**[**#**](https://trino.io/docs/current/connector/postgresql.html#cost-based-join-pushdown)
+
+The connector supports cost-based [Join pushdown](https://trino.io/docs/current/optimizer/pushdown.html#join-pushdown) to make intelligent decisions about whether to push down a join operation to the data source.
+
+When cost-based join pushdown is enabled, the connector only pushes down join operations if the available [Table statistics](https://trino.io/docs/current/optimizer/statistics.html) suggest that doing so improves performance. Note that if no table statistics are available, join operation pushdown does not occur to avoid a potential decrease in query performance.
+
+The following table describes catalog configuration properties for join pushdown:
+
+| Property name            | Description                                                                                                                                                                                                                                                                                                                                                                                         | Default value |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `join-pushdown.enabled`  | Enable [join pushdown](https://trino.io/docs/current/optimizer/pushdown.html#join-pushdown). Equivalent [catalog session property](https://trino.io/docs/current/sql/set-session.html#session-properties-definition) is `join_pushdown_enabled`.                                                                                                                                                    | `true`        |
+| `join-pushdown.strategy` | Strategy used to evaluate whether join operations are pushed down. Set to `AUTOMATIC` to enable cost-based join pushdown, or `EAGER` to push down joins whenever possible. Note that `EAGER` can push down joins even when table statistics are unavailable, which may result in degraded query performance. Because of this, `EAGER` is only recommended for testing and troubleshooting purposes. | `AUTOMATIC`   |
+
+#### Predicate pushdown support[#](https://trino.io/docs/current/connector/postgresql.html#predicate-pushdown-support) <a href="#predicate-pushdown-support" id="predicate-pushdown-support"></a>
+
+Predicates are pushed down for most types, including `UUID` and temporal types, such as `DATE`.
+
+The connector does not support pushdown of range predicates, such as `>`, `<`, or `BETWEEN`, on columns with [character string types](https://trino.io/docs/current/language/types.html#string-data-types) like `CHAR` or `VARCHAR`. Equality predicates, such as `IN` or `=`, and inequality predicates, such as `!=` on columns with textual types are pushed down. This ensures correctness of results since the remote data source may sort strings differently than Trino.
+
+In the following example, the predicate of the first query is not pushed down since `name` is a column of type `VARCHAR` and `>` is a range predicate. The other queries are pushed down.
+
+```
+-- Not pushed down
+SELECT * FROM nation WHERE name > 'CANADA';
+-- Pushed down
+SELECT * FROM nation WHERE name != 'CANADA';
+SELECT * FROM nation WHERE name = 'CANADA';
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+There is experimental support to enable pushdown of range predicates on columns with character string types which can be enabled by setting the `postgresql.experimental.enable-string-pushdown-with-collate` catalog configuration property or the corresponding `enable_string_pushdown_with_collate` session property to `true`. Enabling this configuration will make the predicate of all the queries in the above example get pushed down.

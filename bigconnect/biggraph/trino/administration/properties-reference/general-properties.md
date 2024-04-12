@@ -1,0 +1,42 @@
+# General properties
+
+### `join-distribution-type`[#](https://trino.io/docs/current/admin/properties-general.html#join-distribution-type) <a href="#join-distribution-type" id="join-distribution-type"></a>
+
+* **Type:** string
+* **Allowed values:** `AUTOMATIC`, `PARTITIONED`, `BROADCAST`
+* **Default value:** `AUTOMATIC`
+* **Session property:** `join_distribution_type`
+
+The type of distributed join to use. When set to `PARTITIONED`, Trino uses hash distributed joins. When set to `BROADCAST`, it broadcasts the right table to all nodes in the cluster that have data from the left table. Partitioned joins require redistributing both tables using a hash of the join key. This can be slower, sometimes substantially, than broadcast joins, but allows much larger joins. In particular broadcast joins are faster, if the right table is much smaller than the left. However, broadcast joins require that the tables on the right side of the join after filtering fit in memory on each node, whereas distributed joins only need to fit in distributed memory across all nodes. When set to `AUTOMATIC`, Trino makes a cost based decision as to which distribution type is optimal. It considers switching the left and right inputs to the join. In `AUTOMATIC` mode, Trino defaults to hash distributed joins if no cost could be computed, such as if the tables do not have statistics.
+
+### `redistribute-writes`[#](https://trino.io/docs/current/admin/properties-general.html#redistribute-writes) <a href="#redistribute-writes" id="redistribute-writes"></a>
+
+* **Type:** boolean
+* **Default value:** `true`
+* **Session property:** `redistribute_writes`
+
+This property enables redistribution of data before writing. This can eliminate the performance impact of data skew when writing by hashing it across nodes in the cluster. It can be disabled, when it is known that the output data set is not skewed, in order to avoid the overhead of hashing and redistributing all the data across the network.
+
+### `protocol.v1.alternate-header-name`[#](https://trino.io/docs/current/admin/properties-general.html#protocol-v1-alternate-header-name) <a href="#protocol-v1-alternate-header-name" id="protocol-v1-alternate-header-name"></a>
+
+**Type:** `string`
+
+The 351 release of Trino changes the HTTP client protocol headers to start with `X-Trino-`. Clients for versions 350 and lower expect the HTTP headers to start with `X-Presto-`, while newer clients expect `X-Trino-`. You can support these older clients by setting this property to `Presto`.
+
+The preferred approach to migrating from versions earlier than 351 is to update all clients together with the release, or immediately afterwards, and then remove usage of this property.
+
+Ensure to use this only as a temporary measure to assist in your migration efforts.
+
+### `protocol.v1.prepared-statement-compression.length-threshold`[#](https://trino.io/docs/current/admin/properties-general.html#protocol-v1-prepared-statement-compression-length-threshold) <a href="#protocol-v1-prepared-statement-compression-length-threshold" id="protocol-v1-prepared-statement-compression-length-threshold"></a>
+
+* **Type:** integer
+* **Default value:** `2048`
+
+Prepared statements that are submitted to Trino for processing, and are longer than the value of this property, are compressed for transport via the HTTP header to improve handling, and to avoid failures due to hitting HTTP header size limits.
+
+### `protocol.v1.prepared-statement-compression.min-gain`[#](https://trino.io/docs/current/admin/properties-general.html#protocol-v1-prepared-statement-compression-min-gain) <a href="#protocol-v1-prepared-statement-compression-min-gain" id="protocol-v1-prepared-statement-compression-min-gain"></a>
+
+* **Type:** integer
+* **Default value:** `512`
+
+Prepared statement compression is not applied if the size gain is less than the configured value. Smaller statements do not benefit from compression, and are left uncompressed.

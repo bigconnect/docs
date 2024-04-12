@@ -1,6 +1,6 @@
 # Developer Guide
 
-BigGraph is mainly a big library providing services to handle most of the aspects of data storage, search, data model, collaboration, cypher queries, data worker runners, long running process runners and much more.
+BigGraph is mainly a big l?ibrary providing services to handle most of the aspects of data storage, search, data model, collaboration, cypher queries, data worker runners, long running process runners and much more.
 
 Secondly, BigGraph can also run by itself, featuring a Bolt Server to execute Cypher queries, the [CypherLab](cypher/cypherlab/) and runners for Data Worker plugins, Long Running Process plugins and External Worker plugins. See the [Architecture and Concepts](biggraph-architecture-and-concepts.md#the-graph-engine) page for details regarding what these mean.
 

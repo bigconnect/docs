@@ -1,0 +1,51 @@
+# SET SESSION
+
+### Synopsis[#](https://trino.io/docs/current/sql/set-session.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+
+```
+SET SESSION name = expression
+SET SESSION catalog.name = expression
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+### Description[#](https://trino.io/docs/current/sql/set-session.html#description) <a href="#description" id="description"></a>
+
+Set a session property value or a catalog session property.
+
+### Session properties[#](https://trino.io/docs/current/sql/set-session.html#session-properties) <a href="#session-properties" id="session-properties"></a>
+
+A session property is a [configuration property](https://trino.io/docs/current/admin/properties.html) that can be temporarily modified by a user for the duration of the current connection session to the Trino cluster. Many configuration properties have a corresponding session property that accepts the same values as the config property.
+
+There are two types of session properties:
+
+* **System session properties** apply to the whole cluster. Most session properties are system session properties unless specified otherwise.
+* **Catalog session properties** are connector-defined session properties that can be set on a per-catalog basis. These properties must be set separately for each catalog by including the catalog name as a prefix, such as `catalogname.property_name`.
+
+Session properties are tied to the current session, so a user can have multiple connections to a cluster that each have different values for the same session properties. Once a session ends, either by disconnecting or creating a new session, any changes made to session properties during the previous session are lost.
+
+### Examples[#](https://trino.io/docs/current/sql/set-session.html#examples) <a href="#examples" id="examples"></a>
+
+The following example sets a system session property to enable optimized hash generation:
+
+```
+SET SESSION optimize_hash_generation = true;
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+The following example sets the `optimize_locality_enabled` catalog session property for an [Accumulo catalog](https://trino.io/docs/current/connector/accumulo.html) named `acc01`:
+
+```
+SET SESSION acc01.optimize_locality_enabled = false;
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+The example `acc01.optimize_locality_enabled` catalog session property does not apply to any other catalog, even if another catalog also uses the Accumulo connector.
+
+### See also[#](https://trino.io/docs/current/sql/set-session.html#see-also) <a href="#see-also" id="see-also"></a>
+
+[RESET SESSION](https://trino.io/docs/current/sql/reset-session.html), [SHOW SESSION](https://trino.io/docs/current/sql/show-session.html)
+
+\

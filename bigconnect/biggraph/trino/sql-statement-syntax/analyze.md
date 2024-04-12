@@ -1,0 +1,65 @@
+# ANALYZE
+
+### Synopsis[#](https://trino.io/docs/current/sql/analyze.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+
+```
+ANALYZE table_name [ WITH ( property_name = expression [, ...] ) ]
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+### Description[#](https://trino.io/docs/current/sql/analyze.html#description) <a href="#description" id="description"></a>
+
+Collects table and column statistics for a given table.
+
+The optional `WITH` clause can be used to provide connector-specific properties. To list all available properties, run the following query:
+
+```
+SELECT * FROM system.metadata.analyze_properties
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+### Examples[#](https://trino.io/docs/current/sql/analyze.html#examples) <a href="#examples" id="examples"></a>
+
+Analyze table `web` to collect table and column statistics:
+
+```
+ANALYZE web;
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+Analyze table `stores` in catalog `hive` and schema `default`:
+
+```
+ANALYZE hive.default.stores;
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+Analyze partitions `'1992-01-01', '1992-01-02'` from a Hive partitioned table `sales`:
+
+```
+ANALYZE hive.default.sales WITH (partitions = ARRAY[ARRAY['1992-01-01'], ARRAY['1992-01-02']]);
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+Analyze partitions with complex partition key (`state` and `city` columns) from a Hive partitioned table `customers`:
+
+```
+ANALYZE hive.default.customers WITH (partitions = ARRAY[ARRAY['CA', 'San Francisco'], ARRAY['NY', 'NY']]);
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
+Analyze only columns `department` and `product_id` for partitions `'1992-01-01', '1992-01-02'` from a Hive partitioned table `sales`:
+
+```
+ANALYZE hive.default.sales WITH (
+    partitions = ARRAY[ARRAY['1992-01-01'], ARRAY['1992-01-02']],
+    columns = ARRAY['department', 'product_id']);
+```
+
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)\
