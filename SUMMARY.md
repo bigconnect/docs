@@ -1002,7 +1002,15 @@
     * [6.2023.10 Core TCK Results](digitalization/mware-application-server/jakarta-ee-certification/6.2023.10-core-tck-results.md)
     * [6.2023.10 (Web Profile) Core TCK Results](digitalization/mware-application-server/jakarta-ee-certification/6.2023.10-web-profile-core-tck-results.md)
   * [Eclipse MicroProfile Certification](digitalization/mware-application-server/eclipse-microprofile-certification.md)
-* [MWARE ESB](digitalization/mware-esb.md)
+* [MWARE ESB](digitalization/mware-esb/README.md)
+  * [Siddhi](digitalization/mware-esb/siddhi/README.md)
+    * [Features](digitalization/mware-esb/siddhi/features.md)
+    * [Quick Start](digitalization/mware-esb/siddhi/quick-start.md)
+    * [Tooling](digitalization/mware-esb/siddhi/tooling.md)
+    * [Query Guide](digitalization/mware-esb/siddhi/query-guide.md)
+    * [Siddhi APIs](digitalization/mware-esb/siddhi/siddhi-apis.md)
+    * [Extensions](digitalization/mware-esb/siddhi/extensions.md)
+    * [Java library](digitalization/mware-esb/siddhi/java-library.md)
 * [MWARE Identity & Access Management](digitalization/mware-iam.md)
 
 ## The BigConnect Platform <a href="#bigconnect" id="bigconnect"></a>

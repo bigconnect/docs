@@ -2,7 +2,7 @@
 
 To start managing people, click on the **gear** icon > **Admin settings** > **People**. You’ll see a list of all the people in your organization.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Creating an account
 
@@ -41,7 +41,7 @@ To deactivate someone’s account, click on the three dots icon on the right of 
 
 If you’re using SSO, you should deactivate the account in Answers as well as your IdP (that is, deactivation doesn’t get applied from Answers to your IdP, and vice versa).
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 To reactivate a deactivated account, click the **Deactivated** radio button at the top of the people list to see the list of deactivated accounts. Click on the icon on the far right to reactivate that account, allowing them to log in to Answers again.
 
@@ -113,7 +113,7 @@ To determine who has access to what, you’ll need to
 
 To view and manage your groups, go to the **Admin Panel** > **People** tab, and then click on **Groups** from the side menu.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Special default groups
 
