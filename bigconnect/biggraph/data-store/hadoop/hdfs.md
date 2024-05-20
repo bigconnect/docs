@@ -219,4 +219,54 @@ So file test1 goes to Trash and file test2 is deleted permanently.
 
 When the replication factor of a file is reduced, the NameNode selects excess replicas that can be deleted. The next Heartbeat transfers this information to the DataNode. The DataNode then removes the corresponding blocks and the corresponding free space appears in the cluster. Once again, there might be a time delay between the completion of the setReplication API call and the appearance of free space in the cluster.
 
-\
+## Centralized Cache Management
+
+### Overview
+
+_Centralized cache management_ in HDFS is an explicit caching mechanism that allows users to specify _paths_ to be cached by HDFS. The NameNode will communicate with DataNodes that have the desired blocks on disk, and instruct them to cache the blocks in off-heap caches.
+
+Centralized cache management in HDFS has many significant advantages.
+
+1. Explicit pinning prevents frequently used data from being evicted from memory. This is particularly important when the size of the working set exceeds the size of main memory, which is common for many HDFS workloads.
+2. Because DataNode caches are managed by the NameNode, applications can query the set of cached block locations when making task placement decisions. Co-locating a task with a cached block replica improves read performance.
+3. When block has been cached by a DataNode, clients can use a new , more-efficient, zero-copy read API. Since checksum verification of cached data is done once by the DataNode, clients can incur essentially zero overhead when using this new API.
+4. Centralized caching can improve overall cluster memory utilization. When relying on the OS buffer cache at each DataNode, repeated reads of a block will result in all _n_ replicas of the block being pulled into buffer cache. With centralized cache management, a user can explicitly pin only _m_ of the _n_ replicas, saving _n-m_ memory.
+5. HDFS supports non-volatile storage class memory (SCM, also known as persistent memory) cache in Linux platform. User can enable either DRAM cache or SCM cache for a DataNode. DRAM cache and SCM cache can coexist among DataNodes. In addition, cache persistence is supported by SCM cache. The status of cache persisted in SCM will be recovered during the start of DataNode if `dfs.datanode.pmem.cache.recovery` is set to true. Otherwise, previously persisted cache will be dropped and data need to be re-cached.
+
+### Use Cases <a href="#use_cases" id="use_cases"></a>
+
+Centralized cache management is useful for files that accessed repeatedly. For example, a small _fact table_ in Hive which is often used for joins is a good candidate for caching. On the other hand, caching the input of a _one year reporting query_ is probably less useful, since the historical data might only be read once.
+
+Centralized cache management is also useful for mixed workloads with performance SLAs. Caching the working set of a high-priority workload insures that it does not contend for disk I/O with a low-priority workload.
+
+### Architecture <a href="#architecture" id="architecture"></a>
+
+![Caching Architecture](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/images/caching.png)
+
+In this architecture, the NameNode is responsible for coordinating all the DataNode off-heap caches in the cluster. The NameNode periodically receives a _cache report_ from each DataNode which describes all the blocks cached on a given DN. The NameNode manages DataNode caches by piggybacking cache and uncache commands on the DataNode heartbeat.
+
+The NameNode queries its set of _cache directives_ to determine which paths should be cached. Cache directives are persistently stored in the fsimage and edit log, and can be added, removed, and modified via Java and command-line APIs. The NameNode also stores a set of _cache pools_, which are administrative entities used to group cache directives together for resource management and enforcing permissions.
+
+The NameNode periodically rescans the namespace and active cache directives to determine which blocks need to be cached or uncached and assign caching work to DataNodes. Rescans can also be triggered by user actions like adding or removing a cache directive or removing a cache pool.
+
+We do not currently cache blocks which are under construction, corrupt, or otherwise incomplete. If a cache directive covers a symlink, the symlink target is not cached.
+
+Caching is currently done on the file or directory-level. Block and sub-block caching is an item of future work.
+
+### Concepts <a href="#concepts" id="concepts"></a>
+
+#### Cache directive <a href="#cache_directive" id="cache_directive"></a>
+
+A _cache directive_ defines a path that should be cached. Paths can be either directories or files. Directories are cached non-recursively, meaning only files in the first-level listing of the directory.
+
+Directives also specify additional parameters, such as the cache replication factor and expiration time. The replication factor specifies the number of block replicas to cache. If multiple cache directives refer to the same file, the maximum cache replication factor is applied.
+
+The expiration time is specified on the command line as a _time-to-live (TTL)_, a relative expiration time in the future. After a cache directive expires, it is no longer considered by the NameNode when making caching decisions.
+
+#### Cache pool <a href="#cache_pool" id="cache_pool"></a>
+
+A _cache pool_ is an administrative entity used to manage groups of cache directives. Cache pools have UNIX-like _permissions_, which restrict which users and groups have access to the pool. Write permissions allow users to add and remove cache directives to the pool. Read permissions allow users to list the cache directives in a pool, as well as additional metadata. Execute permissions are unused.
+
+Cache pools are also used for resource management. Pools can enforce a maximum _limit_, which restricts the number of bytes that can be cached in aggregate by directives in the pool. Normally, the sum of the pool limits will approximately equal the amount of aggregate memory reserved for HDFS caching on the cluster. Cache pools also track a number of statistics to help cluster users determine what is and should be cached.
+
+Pools also can enforce a maximum time-to-live. This restricts the maximum expiration time of directives being added to the pool.
