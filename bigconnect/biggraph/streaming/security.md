@@ -1,6 +1,6 @@
 # Security
 
-## 7.1 Security Overview
+## Security Overview
 
 In release 0.9.0.0, the Kafka community added a number of features that, used either separately or together, increases security in a Kafka cluster. The following security measures are currently supported:
 
