@@ -20,4 +20,12 @@ Perform Exploratory Data Analysis (EDA) on petabyte-scale data without having to
 
 Train machine learning algorithms on a laptop and use the same code to scale to fault-tolerant clusters of thousands of machines.
 
+### Language support
+
+* Scala
+* Java
+* Python
+* R
+* SQL
+
 This tutorial provides a quick introduction to using Spark. We will first introduce the API through Spark’s interactive shell (in Python or Scala), then show how to write applications in Java, Scala, and Python.
