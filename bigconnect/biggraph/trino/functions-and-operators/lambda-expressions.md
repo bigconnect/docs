@@ -26,7 +26,7 @@ Most SQL expressions can be used in a lambda body, with a few exceptions:
 
 ### Examples[#](https://trino.io/docs/current/functions/lambda.html#examples) <a href="#examples" id="examples"></a>
 
-Obtain the squared elements of an array column with [`transform()`](https://trino.io/docs/current/functions/array.html#transform):
+Obtain the squared elements of an array column with `transform()`:
 
 ```
 SELECT numbers,
@@ -52,7 +52,7 @@ FROM (
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-The function [`transform()`](https://trino.io/docs/current/functions/array.html#transform) can be also employed to safely cast the elements of an array to strings:
+The function `transform()` can be also employed to safely cast the elements of an array to strings:
 
 ```
 SELECT transform(prices, n -> TRY_CAST(n AS VARCHAR) || '$') as price_tags
@@ -75,7 +75,7 @@ FROM (
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Besides the array column being manipulated, other columns can be captured as well within the lambda expression. The following statement provides a showcase of this feature for calculating the value of the linear function `f(x) = ax + b` with [`transform()`](https://trino.io/docs/current/functions/array.html#transform):
+Besides the array column being manipulated, other columns can be captured as well within the lambda expression. The following statement provides a showcase of this feature for calculating the value of the linear function `f(x) = ax + b` with `transform()`:
 
 ```
 SELECT xvalues,
@@ -101,7 +101,7 @@ FROM (
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Find the array elements containing at least one value greater than `100` with [`any_match()`](https://trino.io/docs/current/functions/array.html#any\_match):
+Find the array elements containing at least one value greater than `100` with `any_match()`:
 
 ```
 SELECT numbers
@@ -117,7 +117,7 @@ WHERE any_match(numbers, n ->  COALESCE(n, 0) > 100);
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Capitalize the first word in a string via [`regexp_replace()`](https://trino.io/docs/current/functions/regexp.html#regexp\_replace):
+Capitalize the first word in a string via `regexp_replace()`:
 
 ```
 SELECT regexp_replace('once upon a time ...', '^(\w)(\w*)(\s+.*)$',x -> upper(x[1]) || x[2] || x[3]);
@@ -126,7 +126,7 @@ SELECT regexp_replace('once upon a time ...', '^(\w)(\w*)(\s+.*)$',x -> upper(x[
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Lambda expressions can be also applied in aggregation functions. Following statement is a sample the overly complex calculation of the sum of all elements of a column by making use of [`reduce_agg()`](https://trino.io/docs/current/functions/aggregate.html#reduce\_agg):
+Lambda expressions can be also applied in aggregation functions. Following statement is a sample the overly complex calculation of the sum of all elements of a column by making use of `reduce_agg()`:
 
 ```
 SELECT reduce_agg(value, 0, (a, b) -> a + b, (a, b) -> a + b) sum_values

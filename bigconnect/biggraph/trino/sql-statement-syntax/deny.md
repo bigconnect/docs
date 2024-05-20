@@ -48,8 +48,8 @@ DENY SELECT ON orders TO ROLE PUBLIC;
 
 The system access controls as well as the connectors provided by default in Trino have no support for `DENY`.
 
-### See also[#](https://trino.io/docs/current/sql/deny.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[GRANT privilege](https://trino.io/docs/current/sql/grant.html), [REVOKE privilege](https://trino.io/docs/current/sql/revoke.html), [SHOW GRANTS](https://trino.io/docs/current/sql/show-grants.html)
+GRANT privilege, REVOKE privilege, SHOW GRANTS
 
 \

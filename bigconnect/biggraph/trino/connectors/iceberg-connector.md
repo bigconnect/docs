@@ -15,8 +15,8 @@ Since Iceberg stores the paths to data files in the metadata files, it only cons
 To use Iceberg, you need:
 
 * Network access from the Trino coordinator and workers to the distributed object storage.
-* Access to a [Hive metastore service (HMS)](https://trino.io/docs/current/object-storage/metastores.html#hive-thrift-metastore), an [AWS Glue catalog](https://trino.io/docs/current/object-storage/metastores.html#iceberg-glue-catalog), a [JDBC catalog](https://trino.io/docs/current/object-storage/metastores.html#iceberg-jdbc-catalog), a [REST catalog](https://trino.io/docs/current/object-storage/metastores.html#iceberg-rest-catalog), or a [Nessie server](https://trino.io/docs/current/object-storage/metastores.html#iceberg-nessie-catalog).
-* Data files stored in the file formats [ORC](https://trino.io/docs/current/object-storage/file-formats.html#hive-orc-configuration) or [Parquet](https://trino.io/docs/current/object-storage/file-formats.html#hive-parquet-configuration) (default) on a [supported file system](https://trino.io/docs/current/connector/iceberg.html#iceberg-file-system-configuration).
+* Access to a Hive metastore service (HMS), an AWS Glue catalog, a JDBC catalog, a REST catalog, or a Nessie server.
+* Data files stored in the file formats ORC or Parquet (default) on a supported file system.
 
 ### General configuration[#](https://trino.io/docs/current/connector/iceberg.html#general-configuration) <a href="#general-configuration" id="general-configuration"></a>
 
@@ -28,56 +28,54 @@ iceberg.catalog.type=hive_metastore
 hive.metastore.uri=thrift://example.net:9083
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-Other metadata catalog types as listed in the requirements section of this topic are available. Each metastore type has specific configuration properties along with [general metastore configuration properties](https://trino.io/docs/current/object-storage/metastores.html#general-metastore-properties).
+Other metadata catalog types as listed in the requirements section of this topic are available. Each metastore type has specific configuration properties along with general metastore configuration properties.
 
 The following configuration properties are independent of which catalog implementation is used:
 
-| Property name                                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Default   |
-| ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| `iceberg.catalog.type`                          | <p>Define the metastore type to use. Possible values are:</p><ul><li><code>hive_metastore</code></li><li><code>glue</code></li><li><code>jdbc</code></li><li><code>rest</code></li><li><code>nessie</code></li></ul>                                                                                                                                                                                                                                           |           |
-| `iceberg.file-format`                           | <p>Define the data storage file format for Iceberg tables. Possible values are:</p><ul><li><code>PARQUET</code></li><li><code>ORC</code></li><li><code>AVRO</code></li></ul>                                                                                                                                                                                                                                                                                   | `PARQUET` |
-| `iceberg.compression-codec`                     | <p>The compression codec used when writing files. Possible values are:</p><ul><li><code>NONE</code></li><li><code>SNAPPY</code></li><li><code>LZ4</code></li><li><code>ZSTD</code></li><li><code>GZIP</code></li></ul>                                                                                                                                                                                                                                         | `ZSTD`    |
-| `iceberg.use-file-size-from-metadata`           | Read file sizes from metadata instead of file system. This property must only be used as a workaround for [this issue](https://github.com/apache/iceberg/issues/1980). The problem was fixed in Iceberg version 0.11.0.                                                                                                                                                                                                                                        | `true`    |
-| `iceberg.max-partitions-per-writer`             | Maximum number of partitions handled per writer.                                                                                                                                                                                                                                                                                                                                                                                                               | `100`     |
-| `iceberg.target-max-file-size`                  | Target maximum size of written files; the actual size may be larger.                                                                                                                                                                                                                                                                                                                                                                                           | `1GB`     |
-| `iceberg.unique-table-location`                 | Use randomized, unique table locations.                                                                                                                                                                                                                                                                                                                                                                                                                        | `true`    |
-| `iceberg.dynamic-filtering.wait-timeout`        | Maximum duration to wait for completion of dynamic filters during split generation.                                                                                                                                                                                                                                                                                                                                                                            | `0s`      |
-| `iceberg.delete-schema-locations-fallback`      | Whether schema locations are deleted when Trino can’t determine whether they contain external files.                                                                                                                                                                                                                                                                                                                                                           | `false`   |
-| `iceberg.minimum-assigned-split-weight`         | A decimal value in the range `(0, 1]` used as a minimum for weights assigned to each split. A low value may improve performance on tables with small files. A higher value may improve performance for queries with highly skewed aggregations or joins.                                                                                                                                                                                                       | 0.05      |
-| `iceberg.table-statistics-enabled`              | Enable [Table statistics](https://trino.io/docs/current/optimizer/statistics.html). The equivalent [catalog session property](https://trino.io/docs/current/sql/set-session.html) is `statistics_enabled` for session specific use. Set to `false` to disable statistics. Disabling statistics means that [Cost-based optimizations](https://trino.io/docs/current/optimizer/cost-based-optimizations.html) cannot make better decisions about the query plan. | `true`    |
-| `iceberg.extended-statistics.enabled`           | Enable statistics collection with [ANALYZE](https://trino.io/docs/current/sql/analyze.html) and use of extended statistics. The equivalent catalog session property is `extended_statistics_enabled`.                                                                                                                                                                                                                                                          | `true`    |
-| `iceberg.extended-statistics.collect-on-write`  | Enable collection of extended statistics for write operations. The equivalent catalog session property is `collect_extended_statistics_on_write`.                                                                                                                                                                                                                                                                                                              | `true`    |
-| `iceberg.projection-pushdown-enabled`           | Enable [projection pushdown](https://trino.io/docs/current/optimizer/pushdown.html)                                                                                                                                                                                                                                                                                                                                                                            | `true`    |
-| `iceberg.hive-catalog-name`                     | Catalog to redirect to when a Hive table is referenced.                                                                                                                                                                                                                                                                                                                                                                                                        |           |
-| `iceberg.materialized-views.storage-schema`     | Schema for creating materialized views storage tables. When this property is not configured, storage tables are created in the same schema as the materialized view definition. When the `storage_schema` materialized view property is specified, it takes precedence over this catalog property.                                                                                                                                                             | Empty     |
-| `iceberg.materialized-views.hide-storage-table` | Hide the information about the storage table backing the materialized view in the metastore.                                                                                                                                                                                                                                                                                                                                                                   | `true`    |
-| `iceberg.register-table-procedure.enabled`      | Enable to allow user to call `register_table` procedure.                                                                                                                                                                                                                                                                                                                                                                                                       | `false`   |
-| `iceberg.query-partition-filter-required`       | Set to `true` to force a query to use a partition filter. You can use the `query_partition_filter_required` catalog session property for temporary, catalog specific use.                                                                                                                                                                                                                                                                                      | `false`   |
+| Property name                                   | Description                                                                                                                                                                                                                                                                                                                                                                           | Default   |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| `iceberg.catalog.type`                          | <p>Define the metastore type to use. Possible values are:</p><ul><li><code>hive_metastore</code></li><li><code>glue</code></li><li><code>jdbc</code></li><li><code>rest</code></li><li><code>nessie</code></li></ul>                                                                                                                                                                  |           |
+| `iceberg.file-format`                           | <p>Define the data storage file format for Iceberg tables. Possible values are:</p><ul><li><code>PARQUET</code></li><li><code>ORC</code></li><li><code>AVRO</code></li></ul>                                                                                                                                                                                                          | `PARQUET` |
+| `iceberg.compression-codec`                     | <p>The compression codec used when writing files. Possible values are:</p><ul><li><code>NONE</code></li><li><code>SNAPPY</code></li><li><code>LZ4</code></li><li><code>ZSTD</code></li><li><code>GZIP</code></li></ul>                                                                                                                                                                | `ZSTD`    |
+| `iceberg.use-file-size-from-metadata`           | Read file sizes from metadata instead of file system. This property must only be used as a workaround for [this issue](https://github.com/apache/iceberg/issues/1980). The problem was fixed in Iceberg version 0.11.0.                                                                                                                                                               | `true`    |
+| `iceberg.max-partitions-per-writer`             | Maximum number of partitions handled per writer.                                                                                                                                                                                                                                                                                                                                      | `100`     |
+| `iceberg.target-max-file-size`                  | Target maximum size of written files; the actual size may be larger.                                                                                                                                                                                                                                                                                                                  | `1GB`     |
+| `iceberg.unique-table-location`                 | Use randomized, unique table locations.                                                                                                                                                                                                                                                                                                                                               | `true`    |
+| `iceberg.dynamic-filtering.wait-timeout`        | Maximum duration to wait for completion of dynamic filters during split generation.                                                                                                                                                                                                                                                                                                   | `0s`      |
+| `iceberg.delete-schema-locations-fallback`      | Whether schema locations are deleted when Trino can’t determine whether they contain external files.                                                                                                                                                                                                                                                                                  | `false`   |
+| `iceberg.minimum-assigned-split-weight`         | A decimal value in the range `(0, 1]` used as a minimum for weights assigned to each split. A low value may improve performance on tables with small files. A higher value may improve performance for queries with highly skewed aggregations or joins.                                                                                                                              | 0.05      |
+| `iceberg.table-statistics-enabled`              | Enable [Table statistics](https://trino.io/docs/current/optimizer/statistics.html). The equivalent [catalog session property](https://trino.io/docs/current/sql/set-session.html) is `statistics_enabled` for session specific use. Set to `false` to disable statistics. Disabling statistics means that Cost-based optimizations cannot make better decisions about the query plan. | `true`    |
+| `iceberg.extended-statistics.enabled`           | Enable statistics collection with ANALYZE and use of extended statistics. The equivalent catalog session property is `extended_statistics_enabled`.                                                                                                                                                                                                                                   | `true`    |
+| `iceberg.extended-statistics.collect-on-write`  | Enable collection of extended statistics for write operations. The equivalent catalog session property is `collect_extended_statistics_on_write`.                                                                                                                                                                                                                                     | `true`    |
+| `iceberg.projection-pushdown-enabled`           | Enable projection pushdown                                                                                                                                                                                                                                                                                                                                                            | `true`    |
+| `iceberg.hive-catalog-name`                     | Catalog to redirect to when a Hive table is referenced.                                                                                                                                                                                                                                                                                                                               |           |
+| `iceberg.materialized-views.storage-schema`     | Schema for creating materialized views storage tables. When this property is not configured, storage tables are created in the same schema as the materialized view definition. When the `storage_schema` materialized view property is specified, it takes precedence over this catalog property.                                                                                    | Empty     |
+| `iceberg.materialized-views.hide-storage-table` | Hide the information about the storage table backing the materialized view in the metastore.                                                                                                                                                                                                                                                                                          | `true`    |
+| `iceberg.register-table-procedure.enabled`      | Enable to allow user to call `register_table` procedure.                                                                                                                                                                                                                                                                                                                              | `false`   |
+| `iceberg.query-partition-filter-required`       | Set to `true` to force a query to use a partition filter. You can use the `query_partition_filter_required` catalog session property for temporary, catalog specific use.                                                                                                                                                                                                             | `false`   |
 
 ### File system access configuration[#](https://trino.io/docs/current/connector/iceberg.html#file-system-access-configuration) <a href="#file-system-access-configuration" id="file-system-access-configuration"></a>
 
 The connector supports native, high-performance file system access to object storage systems:
 
-* [Object storage](https://trino.io/docs/current/object-storage.html)
-* [Azure Storage file system support](https://trino.io/docs/current/object-storage/file-system-azure.html)
-* [Google Cloud Storage file system support](https://trino.io/docs/current/object-storage/file-system-gcs.html)
-* [S3 file system support](https://trino.io/docs/current/object-storage/file-system-s3.html)
+* Object storage
+* Azure Storage file system support
+* Google Cloud Storage file system support
+* S3 file system support
 
-You must enable and configure the specific native file system access. If none is activated, the [legacy support](https://trino.io/docs/current/object-storage.html#file-system-legacy) is used and must be configured.
+You must enable and configure the specific native file system access. If none is activated, the legacy support is used and must be configured.
 
 ### Type mapping[#](https://trino.io/docs/current/connector/iceberg.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
 
 The connector reads and writes data into the supported data file formats Avro, ORC, and Parquet, following the Iceberg specification.
 
-Because Trino and Iceberg each support types that the other does not, this connector [modifies some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
+Because Trino and Iceberg each support types that the other does not, this connector modifies some types when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
 The Iceberg specification includes supported data types and the mapping to the formating in the Avro, ORC, or Parquet files:
 
-* [Iceberg to Avro](https://iceberg.apache.org/spec/#avro)
-* [Iceberg to ORC](https://iceberg.apache.org/spec/#orc)
-* [Iceberg to Parquet](https://iceberg.apache.org/spec/#parquet)
+* Iceberg to Avro
+* Iceberg to ORC
+* Iceberg to Parquet
 
 #### Iceberg to Trino type mapping[#](https://trino.io/docs/current/connector/iceberg.html#iceberg-to-trino-type-mapping) <a href="#iceberg-to-trino-type-mapping" id="iceberg-to-trino-type-mapping"></a>
 
@@ -134,7 +132,7 @@ No other types are supported.
 
 #### Kerberos authentication[#](https://trino.io/docs/current/connector/iceberg.html#kerberos-authentication) <a href="#kerberos-authentication" id="kerberos-authentication"></a>
 
-The Iceberg connector supports Kerberos authentication for the Hive metastore and HDFS and is configured using the same parameters as the Hive connector. Find more information in the [Hive connector security configuration](https://trino.io/docs/current/connector/hive-security.html) section.
+The Iceberg connector supports Kerberos authentication for the Hive metastore and HDFS and is configured using the same parameters as the Hive connector. Find more information in the Hive connector security configuration section.
 
 #### Authorization[#](https://trino.io/docs/current/connector/iceberg.html#authorization) <a href="#authorization" id="authorization"></a>
 
@@ -142,28 +140,28 @@ The Iceberg connector allows you to choose one of several means of providing aut
 
 You can enable authorization checks for the connector by setting the `iceberg.security` property in the catalog properties file. This property must be one of the following values:
 
-| Property value | Description                                                                                                                                                                                                                                                                                                                                                                                 |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ALLOW_ALL`    | No authorization checks are enforced.                                                                                                                                                                                                                                                                                                                                                       |
-| `SYSTEM`       | The connector relies on system-level access control.                                                                                                                                                                                                                                                                                                                                        |
-| `READ_ONLY`    | Operations that read data or metadata, such as [SELECT](https://trino.io/docs/current/sql/select.html) are permitted. No operations that write data or metadata, such as [CREATE TABLE](https://trino.io/docs/current/sql/create-table.html), [INSERT](https://trino.io/docs/current/sql/insert.html), or [DELETE](https://trino.io/docs/current/sql/delete.html) are allowed.              |
-| `FILE`         | Authorization checks are enforced using a catalog-level access control configuration file whose path is specified in the `security.config-file` catalog configuration property. See [Catalog-level access control files](https://trino.io/docs/current/security/file-system-access-control.html#catalog-file-based-access-control) for information on the authorization configuration file. |
+| Property value | Description                                                                                                                                                                                                                                                                   |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ALLOW_ALL`    | No authorization checks are enforced.                                                                                                                                                                                                                                         |
+| `SYSTEM`       | The connector relies on system-level access control.                                                                                                                                                                                                                          |
+| `READ_ONLY`    | Operations that read data or metadata, such as SELECT are permitted. No operations that write data or metadata, such as CREATE TABLE, INSERT, or DELETE are allowed.                                                                                                          |
+| `FILE`         | Authorization checks are enforced using a catalog-level access control configuration file whose path is specified in the security.config-file catalog configuration property. See Catalog-level access control files for information on the authorization configuration file. |
 
-### SQL support[#](https://trino.io/docs/current/connector/iceberg.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
-This connector provides read access and write access to data and metadata in Iceberg. In addition to the [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements, the connector supports the following features:
+This connector provides read access and write access to data and metadata in Iceberg. In addition to the globally available and read operation statements, the connector supports the following features:
 
-* [Write operations](https://trino.io/docs/current/language/sql-support.html#sql-write-operations):
-  * [Schema and table management](https://trino.io/docs/current/connector/iceberg.html#iceberg-schema-table-management) and [Partitioned tables](https://trino.io/docs/current/connector/iceberg.html#iceberg-tables)
-  * [Data management](https://trino.io/docs/current/connector/iceberg.html#iceberg-data-management)
-  * [View management](https://trino.io/docs/current/language/sql-support.html#sql-view-management)
-  * [Materialized view management](https://trino.io/docs/current/language/sql-support.html#sql-materialized-view-management), see also [Materialized views](https://trino.io/docs/current/connector/iceberg.html#iceberg-materialized-views)
+* Write operations:
+  * Schema and table management and Partitioned tables
+  * Data management
+  * View management
+  * Materialized view management, see also Materialized views
 
-#### Basic usage examples[#](https://trino.io/docs/current/connector/iceberg.html#basic-usage-examples) <a href="#basic-usage-examples" id="basic-usage-examples"></a>
+#### Basic usage examples# <a href="#basic-usage-examples" id="basic-usage-examples"></a>
 
 The connector supports creating schemas. You can create a schema with or without a specified location.
 
-You can create a schema with the [CREATE SCHEMA](https://trino.io/docs/current/sql/create-schema.html) statement and the `location` schema property. The tables in this schema, which have no explicit `location` set in [CREATE TABLE](https://trino.io/docs/current/sql/create-table.html) statement, are located in a subdirectory under the directory corresponding to the schema location.
+You can create a schema with the CREATE SCHEMA statement and the `location` schema property. The tables in this schema, which have no explicit `location` set in CREATE TABLE statement, are located in a subdirectory under the directory corresponding to the schema location.
 
 Create a schema on S3:
 
@@ -172,16 +170,12 @@ CREATE SCHEMA example.example_s3_schema
 WITH (location = 's3://my-bucket/a/path/');
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Create a schema on an S3-compatible object storage such as MinIO:
 
 ```
 CREATE SCHEMA example.example_s3a_schema
 WITH (location = 's3a://my-bucket/a/path/');
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 Create a schema on HDFS:
 
@@ -190,17 +184,13 @@ CREATE SCHEMA example.example_hdfs_schema
 WITH (location='hdfs://hadoop-master:9000/user/hive/warehouse/a/path/');
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Optionally, on HDFS, the location can be omitted:
 
 ```
 CREATE SCHEMA example.example_hdfs_schema;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-The Iceberg connector supports creating tables using the [CREATE TABLE](https://trino.io/docs/current/sql/create-table.html) syntax. Optionally, specify the [table properties](https://trino.io/docs/current/connector/iceberg.html#iceberg-table-properties) supported by this connector:
+The Iceberg connector supports creating tables using the CREATE TABLE syntax. Optionally, specify the table properties supported by this connector:
 
 ```
 CREATE TABLE example_table (
@@ -216,11 +206,9 @@ WITH (
 );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 When the `location` table property is omitted, the content of the table is stored in a subdirectory under the directory corresponding to the schema location.
 
-The Iceberg connector supports creating tables using the [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html) with [SELECT](https://trino.io/docs/current/sql/select.html) syntax:
+The Iceberg connector supports creating tables using the CREATE TABLE AS with SELECT syntax:
 
 ```
 CREATE TABLE tiny_nation
@@ -233,9 +221,7 @@ AS
     WHERE nationkey < 10;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-Another flavor of creating tables with [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html) is with [VALUES](https://trino.io/docs/current/sql/values.html) syntax:
+Another flavor of creating tables with CREATE TABLE AS is with VALUES syntax:
 
 ```
 CREATE TABLE yearly_clicks (
@@ -250,17 +236,13 @@ AS VALUES
     (2022, 20000);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 #### Procedures[#](https://trino.io/docs/current/connector/iceberg.html#procedures) <a href="#procedures" id="procedures"></a>
 
-Use the [CALL](https://trino.io/docs/current/sql/call.html) statement to perform data manipulation or administrative tasks. Procedures are available in the system schema of each catalog. The following code snippet displays how to call the `example_procedure` in the `examplecatalog` catalog:
+Use the CALL statement to perform data manipulation or administrative tasks. Procedures are available in the system schema of each catalog. The following code snippet displays how to call the `example_procedure` in the `examplecatalog` catalog:
 
 ```
 CALL examplecatalog.system.example_procedure()
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 **Register table**[**#**](https://trino.io/docs/current/connector/iceberg.html#register-table)
 
@@ -272,15 +254,11 @@ The procedure `system.register_table` allows the caller to register an existing 
 CALL example.system.register_table(schema_name => 'testdb', table_name => 'customer_orders', table_location => 'hdfs://hadoop-master:9000/user/hive/warehouse/customer_orders-581fad8517934af6be1857a903559d44')
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 In addition, you can provide a file name to register a table with specific metadata. This may be used to register the table with some specific table state, or may be necessary if the connector cannot automatically figure out the metadata version to use:
 
 ```
 CALL example.system.register_table(schema_name => 'testdb', table_name => 'customer_orders', table_location => 'hdfs://hadoop-master:9000/user/hive/warehouse/customer_orders-581fad8517934af6be1857a903559d44', metadata_file_name => '00003-409702ba-4735-4645-8f14-09537cc0b2c8.metadata.json')
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 To prevent unauthorized users from accessing data, this procedure is disabled by default. The procedure is enabled only when `iceberg.register-table-procedure.enabled` is set to `true`.
 
@@ -293,8 +271,6 @@ The procedure `system.unregister_table` allows the caller to unregister an exist
 ```
 CALL example.system.unregister_table(schema_name => 'testdb', table_name => 'customer_orders')
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 **Migrate table**[**#**](https://trino.io/docs/current/connector/iceberg.html#migrate-table)
 
@@ -310,8 +286,6 @@ CALL example.system.migrate(
     table_name => 'customer_orders')
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Migrate fails if any table partition uses an unsupported file format.
 
 In addition, you can provide a `recursive_directory` argument to migrate a Hive table that contains subdirectories:
@@ -323,24 +297,20 @@ CALL example.system.migrate(
     recursive_directory => 'true')
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The default value is `fail`, which causes the migrate procedure to throw an exception if subdirectories are found. Set the value to `true` to migrate nested directories, or `false` to ignore them.
 
 #### Data management[#](https://trino.io/docs/current/connector/iceberg.html#data-management) <a href="#data-management" id="data-management"></a>
 
-The [Data management](https://trino.io/docs/current/language/sql-support.html#sql-data-management) functionality includes support for `INSERT`, `UPDATE`, `DELETE`, and `MERGE` statements.
+The Data management functionality includes support for `INSERT`, `UPDATE`, `DELETE`, and `MERGE` statements.
 
-**Deletion by partition**[**#**](https://trino.io/docs/current/connector/iceberg.html#deletion-by-partition)
+**Deletion by partition#**
 
-For partitioned tables, the Iceberg connector supports the deletion of entire partitions if the `WHERE` clause specifies filters only on the identity-transformed partitioning columns, that can match entire partitions. Given the table definition from [Partitioned Tables](https://trino.io/docs/current/connector/iceberg.html#iceberg-tables) section, the following SQL statement deletes all partitions for which `country` is `US`:
+For partitioned tables, the Iceberg connector supports the deletion of entire partitions if the `WHERE` clause specifies filters only on the identity-transformed partitioning columns, that can match entire partitions. Given the table definition from Partitioned Tables section, the following SQL statement deletes all partitions for which `country` is `US`:
 
 ```
 DELETE FROM example.testdb.customer_orders
 WHERE country = 'US'
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 A partition delete is performed if the `WHERE` clause meets these conditions.
 
@@ -350,18 +320,18 @@ Tables using v2 of the Iceberg specification support deletion of individual rows
 
 #### Schema and table management[#](https://trino.io/docs/current/connector/iceberg.html#schema-and-table-management) <a href="#schema-and-table-management" id="schema-and-table-management"></a>
 
-The [Schema and table management](https://trino.io/docs/current/language/sql-support.html#sql-schema-table-management) functionality includes support for:
+The Schema and table management functionality includes support for:
 
-* [CREATE SCHEMA](https://trino.io/docs/current/sql/create-schema.html)
-* [DROP SCHEMA](https://trino.io/docs/current/sql/drop-schema.html)
-* [ALTER SCHEMA](https://trino.io/docs/current/sql/alter-schema.html)
-* [CREATE TABLE](https://trino.io/docs/current/sql/create-table.html)
-* [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html)
-* [DROP TABLE](https://trino.io/docs/current/sql/drop-table.html)
-* [ALTER TABLE](https://trino.io/docs/current/sql/alter-table.html)
-* [COMMENT](https://trino.io/docs/current/sql/comment.html)
+* CREATE SCHEMA
+* DROP SCHEMA
+* ALTER SCHEMA
+* CREATE TABLE
+* CREATE TABLE AS
+* DROP TABLE
+* ALTER TABLE
+* COMMENT
 
-**Schema evolution**[**#**](https://trino.io/docs/current/connector/iceberg.html#schema-evolution)
+**Schema evolution#**
 
 Iceberg supports schema evolution, with safe column add, drop, reorder, and rename operations, including in nested structures.
 
@@ -375,7 +345,7 @@ Partitioning can also be changed and the connector can still query data created 
 
 **ALTER TABLE EXECUTE**[**#**](https://trino.io/docs/current/connector/iceberg.html#alter-table-execute)
 
-The connector supports the following commands for use with [ALTER TABLE EXECUTE](https://trino.io/docs/current/sql/alter-table.html#alter-table-execute).
+The connector supports the following commands for use with ALTER TABLE EXECUTE.
 
 **OPTIMIZE**[**#**](https://trino.io/docs/current/connector/iceberg.html#optimize)
 
@@ -387,15 +357,11 @@ All files with a size below the optional `file_size_threshold` parameter (defaul
 ALTER TABLE test_table EXECUTE optimize
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The following statement merges files in a table that are under 128 megabytes in size:
 
 ```
 ALTER TABLE test_table EXECUTE optimize(file_size_threshold => '128MB')
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 You can use a `WHERE` clause with the columns used to partition the table to filter which partitions are optimized:
 
@@ -404,16 +370,12 @@ ALTER TABLE test_partitioned_table EXECUTE optimize
 WHERE partition_key = 1
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 You can use a more complex `WHERE` clause to narrow down the scope of the `optimize` procedure. The following example casts the timestamp values to dates, and uses a comparison to only optimize partitions with data from the year 2022 or newer:
 
 ```
 ALTER TABLE test_table EXECUTE optimize
 WHERE CAST(timestamp_tz AS DATE) > DATE '2021-12-31'
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 **EXPIRE\_SNAPSHOTS**[**#**](https://trino.io/docs/current/connector/iceberg.html#expire-snapshots)
 
@@ -424,8 +386,6 @@ The `expire_snapshots` command removes all snapshots and all related metadata an
 ```
 ALTER TABLE test_table EXECUTE expire_snapshots(retention_threshold => '7d')
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The value for `retention_threshold` must be higher than or equal to `iceberg.expire_snapshots.min-retention` in the catalog, otherwise the procedure fails with a similar message: `Retention specified (1.00d) is shorter than the minimum retention configured in the system (7.00d)`. The default value for this property is `7d`.
 
@@ -439,8 +399,6 @@ The `remove_orphan_files` command removes all files from a table’s data direct
 ALTER TABLE test_table EXECUTE remove_orphan_files(retention_threshold => '7d')
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The value for `retention_threshold` must be higher than or equal to `iceberg.remove_orphan_files.min-retention` in the catalog otherwise the procedure fails with a similar message: `Retention specified (1.00d) is shorter than the minimum retention configured in the system (7.00d)`. The default value for this property is `7d`.
 
 **DROP\_EXTENDED\_STATS**[**#**](https://trino.io/docs/current/connector/iceberg.html#drop-extended-stats)
@@ -453,11 +411,9 @@ The `drop_extended_stats` command removes all extended statistics information fr
 ALTER TABLE test_table EXECUTE drop_extended_stats
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 **ALTER TABLE SET PROPERTIES**[**#**](https://trino.io/docs/current/connector/iceberg.html#alter-table-set-properties)
 
-The connector supports modifying the properties on existing tables using [ALTER TABLE SET PROPERTIES](https://trino.io/docs/current/sql/alter-table.html#alter-table-set-properties).
+The connector supports modifying the properties on existing tables using ALTER TABLE SET PROPERTIES.
 
 The following table properties can be updated after a table is created:
 
@@ -480,13 +436,11 @@ Or to set the column `my_new_partition_column` as a partition column on a table:
 ALTER TABLE table_name SET PROPERTIES partitioning = ARRAY[<existing partition columns>, 'my_new_partition_column'];
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-The current values of a table’s properties can be shown using [SHOW CREATE TABLE](https://trino.io/docs/current/sql/show-create-table.html).
+The current values of a table’s properties can be shown using SHOW CREATE TABLE.
 
 **TABLE PROPERTIES**[**#**](https://trino.io/docs/current/connector/iceberg.html#table-properties)
 
-Table properties supply or set metadata for the underlying tables. This is key for [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html) statements. Table properties are passed to the connector using a [WITH](https://trino.io/docs/current/sql/create-table-as.html) clause.
+Table properties supply or set metadata for the underlying tables. This is key for CREATE TABLE AS statements. Table properties are passed to the connector using a WITH clause.
 
 | Property name              | Description                                                                                                                                                                                              |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -510,8 +464,6 @@ WITH (
     location = '/var/example_tables/test_table')
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The table definition below specifies to use ORC files, bloom filter index by columns `c1` and `c2`, fpp is 0.05, and a file system location of `/var/example_tables/test_table`:
 
 ```
@@ -526,8 +478,6 @@ WITH (
     orc_bloom_filter_fpp = 0.05)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 **Metadata tables**[**#**](https://trino.io/docs/current/connector/iceberg.html#metadata-tables)
 
 The connector exposes several metadata tables for each Iceberg table. These metadata tables contain information about the internal structure of the Iceberg table. You can query each metadata table by appending the metadata table name to the table name:
@@ -535,8 +485,6 @@ The connector exposes several metadata tables for each Iceberg table. These meta
 ```
 SELECT * FROM "test_table$properties"
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 **`$PROPERTIES` TABLE**[**#**](https://trino.io/docs/current/connector/iceberg.html#properties-table)
 
@@ -548,15 +496,11 @@ You can retrieve the properties of the current snapshot of the Iceberg table `te
 SELECT * FROM "test_table$properties"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  key                   | value    |
 -----------------------+----------+
 write.format.default   | PARQUET  |
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 **`$HISTORY` TABLE**[**#**](https://trino.io/docs/current/connector/iceberg.html#history-table)
 
@@ -568,16 +512,12 @@ You can retrieve the changelog of the Iceberg table `test_table` by using the fo
 SELECT * FROM "test_table$history"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  made_current_at                  | snapshot_id          | parent_id            | is_current_ancestor
 ----------------------------------+----------------------+----------------------+--------------------
 2022-01-10 08:11:20 Europe/Vienna | 8667764846443717831  |  <null>              |  true
 2022-01-10 08:11:34 Europe/Vienna | 7860805980949777961  | 8667764846443717831  |  true
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The output of the query has the following columns:
 
@@ -598,16 +538,12 @@ You can retrieve the information about the metadata log entries of the Iceberg t
 SELECT * FROM "test_table$metadata_log_entries"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
              timestamp                 |                                                              file                                                          | latest_snapshot_id  | latest_schema_id | latest_sequence_number
 ---------------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------------------+------------------+------------------------
  2024-01-16 15:55:31.172 Europe/Vienna | hdfs://hadoop-master:9000/user/hive/warehouse/test_table/metadata/00000-39174715-be2a-48fa-9949-35413b8b736e.metadata.json | 1221802298419195590 |                0 |                      1
  2024-01-16 17:19:56.118 Europe/Vienna | hdfs://hadoop-master:9000/user/hive/warehouse/test_table/metadata/00001-e40178c9-271f-4a96-ad29-eed5e7aef9b0.metadata.json | 7124386610209126943 |                0 |                      2
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The output of the query has the following columns:
 
@@ -629,16 +565,12 @@ You can retrieve the information about the snapshots of the Iceberg table `test_
 SELECT * FROM "test_table$snapshots"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  committed_at                      | snapshot_id          | parent_id            | operation          |  manifest_list                                                                                                                           |   summary
 ----------------------------------+----------------------+----------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 2022-01-10 08:11:20 Europe/Vienna | 8667764846443717831  |  <null>              |  append            |   hdfs://hadoop-master:9000/user/hive/warehouse/test_table/metadata/snap-8667764846443717831-1-100cf97e-6d56-446e-8961-afdaded63bc4.avro | {changed-partition-count=0, total-equality-deletes=0, total-position-deletes=0, total-delete-files=0, total-files-size=0, total-records=0, total-data-files=0}
 2022-01-10 08:11:34 Europe/Vienna | 7860805980949777961  | 8667764846443717831  |  append            |   hdfs://hadoop-master:9000/user/hive/warehouse/test_table/metadata/snap-7860805980949777961-1-faa19903-1455-4bb8-855a-61a1bbafbaa7.avro | {changed-partition-count=1, added-data-files=1, total-equality-deletes=0, added-records=1, total-position-deletes=0, added-files-size=442, total-delete-files=0, total-files-size=442, total-records=1, total-data-files=1}
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The output of the query has the following columns:
 
@@ -661,15 +593,11 @@ You can retrieve the information about the manifests of the Iceberg table `test_
 SELECT * FROM "test_table$manifests"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  path                                                                                                           | length          | partition_spec_id    | added_snapshot_id     | added_data_files_count  | added_rows_count | existing_data_files_count   | existing_rows_count | deleted_data_files_count    | deleted_rows_count | partitions
 ----------------------------------------------------------------------------------------------------------------+-----------------+----------------------+-----------------------+-------------------------+------------------+-----------------------------+---------------------+-----------------------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
  hdfs://hadoop-master:9000/user/hive/warehouse/test_table/metadata/faa19903-1455-4bb8-855a-61a1bbafbaa7-m0.avro |  6277           |   0                  | 7860805980949777961   | 1                       | 100              | 0                           | 0                   | 0                           | 0                  | {{contains_null=false, contains_nan= false, lower_bound=1, upper_bound=1},{contains_null=false, contains_nan= false, lower_bound=2021-01-12, upper_bound=2021-01-12}}
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The output of the query has the following columns:
 
@@ -697,16 +625,12 @@ You can retrieve the information about the partitions of the Iceberg table `test
 SELECT * FROM "test_table$partitions"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  partition             | record_count  | file_count    | total_size    |  data
 -----------------------+---------------+---------------+---------------+------------------------------------------------------
 {c1=1, c2=2021-01-12}  |  2            | 2             |  884          | {c3={min=1.0, max=2.0, null_count=0, nan_count=NULL}}
 {c1=1, c2=2021-01-13}  |  1            | 1             |  442          | {c3={min=1.0, max=1.0, null_count=0, nan_count=NULL}}
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The output of the query has the following columns:
 
@@ -728,15 +652,11 @@ To retrieve the information about the data files of the Iceberg table `test_tabl
 SELECT * FROM "test_table$files"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  content  | file_path                                                                                                                     | record_count    | file_format   | file_size_in_bytes   |  column_sizes        |  value_counts     |  null_value_counts | nan_value_counts  | lower_bounds                |  upper_bounds               |  key_metadata  | split_offsets  |  equality_ids
 ----------+-------------------------------------------------------------------------------------------------------------------------------+-----------------+---------------+----------------------+----------------------+-------------------+--------------------+-------------------+-----------------------------+-----------------------------+----------------+----------------+---------------
  0        | hdfs://hadoop-master:9000/user/hive/warehouse/test_table/data/c1=3/c2=2021-01-14/af9872b2-40f3-428f-9c87-186d2750d84e.parquet |  1              |  PARQUET      |  442                 | {1=40, 2=40, 3=44}   |  {1=1, 2=1, 3=1}  |  {1=0, 2=0, 3=0}   | <null>            |  {1=3, 2=2021-01-14, 3=1.3} |  {1=3, 2=2021-01-14, 3=1.3} |  <null>        | <null>         |   <null>
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The output of the query has the following columns:
 
@@ -767,16 +687,12 @@ You can retrieve the references of the Iceberg table `test_table` by using the f
 SELECT * FROM "test_table$refs"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
 name            | type   | snapshot_id | max_reference_age_in_ms | min_snapshots_to_keep | max_snapshot_age_in_ms |
 ----------------+--------+-------------+-------------------------+-----------------------+------------------------+
 example_tag     | TAG    | 10000000000 | 10000                   | null                  | null                   |
 example_branch  | BRANCH | 20000000000 | 20000                   | 2                     | 30000                  |
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The output of the query has the following columns:
 
@@ -803,8 +719,6 @@ SELECT *, "$path", "$file_modified_time"
 FROM example.web.page_views;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Retrieve all records that belong to a specific file using `"$path"` filter:
 
 ```
@@ -813,8 +727,6 @@ FROM example.web.page_views
 WHERE "$path" = '/usr/iceberg/table/web.page_views/data/file_01.parquet'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Retrieve all records that belong to a specific file using `"$file_modified_time"` filter:
 
 ```
@@ -822,8 +734,6 @@ SELECT *
 FROM example.web.page_views
 WHERE "$file_modified_time" = CAST('2022-07-01 01:02:03.456 UTC' AS TIMESTAMP WITH TIME ZONE)
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 **DROP TABLE**[**#**](https://trino.io/docs/current/connector/iceberg.html#drop-table)
 
@@ -838,13 +748,13 @@ The Iceberg connector supports setting comments on the following objects:
 * table columns
 * materialized view columns
 
-The `COMMENT` option is supported on both the table and the table columns for the [CREATE TABLE](https://trino.io/docs/current/sql/create-table.html) operation.
+The `COMMENT` option is supported on both the table and the table columns for the CREATE TABLE operation.
 
-The `COMMENT` option is supported for adding table columns through the [ALTER TABLE](https://trino.io/docs/current/sql/alter-table.html) operations.
+The `COMMENT` option is supported for adding table columns through the ALTER TABLE operations.
 
-The connector supports the command [COMMENT](https://trino.io/docs/current/sql/comment.html) for setting comments on existing entities.
+The connector supports the command COMMENT for setting comments on existing entities.
 
-**Partitioned tables**[**#**](https://trino.io/docs/current/connector/iceberg.html#partitioned-tables)
+**Partitioned tables#**
 
 Iceberg supports partitioning by specifying transforms over the table columns. A partition is created for each unique tuple value produced by the transforms. Identity transforms are simply the column name. Other transforms are:
 
@@ -869,8 +779,6 @@ CREATE TABLE example.testdb.customer_orders (
 WITH (partitioning = ARRAY['month(order_date)', 'bucket(account_number, 10)', 'country'])
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 **Sorted tables**[**#**](https://trino.io/docs/current/connector/iceberg.html#sorted-tables)
 
 The connector supports sorted files as a performance improvement. Data is sorted during writes within each file based on the specified array of one or more columns.
@@ -889,8 +797,6 @@ CREATE TABLE example.customers.orders (
 WITH (sorted_by = ARRAY['order_date'])
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Sorting can be combined with partitioning on the same column. For example:
 
 ```
@@ -906,8 +812,6 @@ WITH (
 )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 You can disable sorted writing with the session property `sorted_writing_enabled` set to `false`.
 
 **Using snapshots**[**#**](https://trino.io/docs/current/connector/iceberg.html#using-snapshots)
@@ -921,8 +825,6 @@ SELECT snapshot_id
 FROM example.testdb."customer_orders$snapshots"
 ORDER BY committed_at DESC
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 **Replacing tables**[**#**](https://trino.io/docs/current/connector/iceberg.html#replacing-tables)
 
@@ -944,8 +846,6 @@ WITH (sorted_by = ARRAY['a'])
 AS SELECT * from another_table;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Earlier snapshots can be retrieved through Iceberg’s [time travel](https://trino.io/docs/current/connector/iceberg.html#iceberg-time-travel).
 
 **TIME TRAVEL QUERIES**[**#**](https://trino.io/docs/current/connector/iceberg.html#time-travel-queries)
@@ -959,16 +859,12 @@ SELECT *
 FROM example.testdb.customer_orders FOR VERSION AS OF 8954597067493422955
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 A different approach of retrieving historical data is to specify a point in time in the past, such as a day or week ago. The latest snapshot of the table taken before or at the specified timestamp in the query is internally used for providing the previous state of the table:
 
 ```
 SELECT *
 FROM example.testdb.customer_orders FOR TIMESTAMP AS OF TIMESTAMP '2022-03-23 09:59:29.803 Europe/Vienna'
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The connector allows to create a new snapshot through Iceberg’s [replace table](https://trino.io/docs/current/connector/iceberg.html#iceberg-create-or-replace).
 
@@ -977,8 +873,6 @@ CREATE OR REPLACE TABLE example.testdb.customer_orders AS
 SELECT *
 FROM example.testdb.customer_orders FOR TIMESTAMP AS OF TIMESTAMP '2022-03-23 09:59:29.803 Europe/Vienna'
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 You can use a date to specify a point a time in the past for using a snapshot of a table in a query. Assuming that the session time zone is `Europe/Vienna` the following queries are equivalent:
 
@@ -1001,8 +895,6 @@ SELECT *
 FROM example.testdb.customer_orders FOR TIMESTAMP AS OF TIMESTAMP '2022-03-23 00:00:00.000 Europe/Vienna'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Iceberg supports named references of snapshots via branches and tags. Time travel can be performed to branches and tags in the table.
 
 ```
@@ -1012,8 +904,6 @@ FROM example.testdb.customer_orders FOR VERSION AS OF 'historical-tag'
 SELECT *
 FROM example.testdb.customer_orders FOR VERSION AS OF 'test-branch'
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 **ROLLING BACK TO A PREVIOUS SNAPSHOT**[**#**](https://trino.io/docs/current/connector/iceberg.html#rolling-back-to-a-previous-snapshot)
 
@@ -1025,15 +915,11 @@ FROM example.testdb."customer_orders$snapshots"
 ORDER BY committed_at DESC LIMIT 1
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The procedure `system.rollback_to_snapshot` allows the caller to roll back the state of the table to a previous snapshot id:
 
 ```
 CALL example.system.rollback_to_snapshot('testdb', 'customer_orders', 8954597067493422955)
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 **`NOT NULL` column constraint**[**#**](https://trino.io/docs/current/connector/iceberg.html#not-null-column-constraint)
 
@@ -1050,35 +936,31 @@ CREATE TABLE example_table (
 );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 When trying to insert/update data in the table, the query fails if trying to set `NULL` value on a column having the `NOT NULL` constraint.
 
 #### Materialized views[#](https://trino.io/docs/current/connector/iceberg.html#materialized-views) <a href="#materialized-views" id="materialized-views"></a>
 
-The Iceberg connector supports [Materialized view management](https://trino.io/docs/current/language/sql-support.html#sql-materialized-view-management). In the underlying system, each materialized view consists of a view definition and an Iceberg storage table. The storage table name is stored as a materialized view property. The data is stored in that storage table.
+The Iceberg connector supports Materialized view management. In the underlying system, each materialized view consists of a view definition and an Iceberg storage table. The storage table name is stored as a materialized view property. The data is stored in that storage table.
 
-You can use the [Table properties](https://trino.io/docs/current/connector/iceberg.html#iceberg-table-properties) to control the created storage table and therefore the layout and performance. For example, you can use the following clause with [CREATE MATERIALIZED VIEW](https://trino.io/docs/current/sql/create-materialized-view.html) to use the ORC format for the data files and partition the storage per day using the column `event_date`:
+You can use the Table properties to control the created storage table and therefore the layout and performance. For example, you can use the following clause with CREATE MATERIALIZED VIEW to use the ORC format for the data files and partition the storage per day using the column `event_date`:
 
 ```
 WITH ( format = 'ORC', partitioning = ARRAY['event_date'] )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 By default, the storage table is created in the same schema as the materialized view definition. The `iceberg.materialized-views.storage-schema` catalog configuration property or `storage_schema` materialized view property can be used to specify the schema where the storage table is created.
 
-Creating a materialized view does not automatically populate it with data. You must run [REFRESH MATERIALIZED VIEW](https://trino.io/docs/current/sql/refresh-materialized-view.html) to populate data in the materialized view.
+Creating a materialized view does not automatically populate it with data. You must run REFRESH MATERIALIZED VIEW to populate data in the materialized view.
 
 Updating the data in the materialized view with `REFRESH MATERIALIZED VIEW` deletes the data from the storage table, and inserts the data that is the result of executing the materialized view query into the existing table. Data is replaced atomically, so users can continue to query the materialized view while it is being refreshed. Refreshing a materialized view also stores the snapshot-ids of all Iceberg tables that are part of the materialized view’s query in the materialized view metadata. When the materialized view is queried, the snapshot-ids are used to check if the data in the storage table is up to date.
 
-Materialized views that use non-Iceberg tables in the query show the [default behavior around grace periods](https://trino.io/docs/current/sql/create-materialized-view.html#mv-grace-period). If all tables are Iceberg tables, the connector can determine if the data has not changed and continue to use the data from the storage tables, even after the grace period expired.
+Materialized views that use non-Iceberg tables in the query show the default behavior around grace periods. If all tables are Iceberg tables, the connector can determine if the data has not changed and continue to use the data from the storage tables, even after the grace period expired.
 
-Dropping a materialized view with [DROP MATERIALIZED VIEW](https://trino.io/docs/current/sql/drop-materialized-view.html) removes the definition and the storage table.
+Dropping a materialized view with DROP MATERIALIZED VIEW removes the definition and the storage table.
 
-### Fault-tolerant execution support[#](https://trino.io/docs/current/connector/iceberg.html#fault-tolerant-execution-support) <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
+### Fault-tolerant execution support# <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
 
-The connector supports [Fault-tolerant execution](https://trino.io/docs/current/admin/fault-tolerant-execution.html) of query processing. Read and write operations are both supported with any retry policy.
+The connector supports Fault-tolerant execution of query processing. Read and write operations are both supported with any retry policy.
 
 ### Performance[#](https://trino.io/docs/current/connector/iceberg.html#performance) <a href="#performance" id="performance"></a>
 
@@ -1086,17 +968,15 @@ The connector includes a number of performance improvements, detailed in the fol
 
 #### Table statistics[#](https://trino.io/docs/current/connector/iceberg.html#table-statistics) <a href="#table-statistics" id="table-statistics"></a>
 
-The Iceberg connector can collect column statistics using [ANALYZE](https://trino.io/docs/current/sql/analyze.html) statement. This can be disabled using `iceberg.extended-statistics.enabled` catalog configuration property, or the corresponding `extended_statistics_enabled` session property.
+The Iceberg connector can collect column statistics using ANALYZE statement. This can be disabled using `iceberg.extended-statistics.enabled` catalog configuration property, or the corresponding `extended_statistics_enabled` session property.
 
-**Updating table statistics**[**#**](https://trino.io/docs/current/connector/iceberg.html#updating-table-statistics)
+**Updating table statistics#**
 
-If your queries are complex and include joining large data sets, running [ANALYZE](https://trino.io/docs/current/sql/analyze.html) on tables may improve query performance by collecting statistical information about the data:
+If your queries are complex and include joining large data sets, running ANALYZE on tables may improve query performance by collecting statistical information about the data:
 
 ```
 ANALYZE table_name
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 This query collects statistics for all columns.
 
@@ -1106,17 +986,15 @@ On wide tables, collecting statistics for all columns can be expensive. It is al
 ANALYZE table_name WITH (columns = ARRAY['col_1', 'col_2'])
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 This query collects statistics for columns `col_1` and `col_2`.
 
-Note that if statistics were previously collected for all columns, they must be dropped using the [drop\_extended\_stats](https://trino.io/docs/current/connector/iceberg.html#drop-extended-stats) command before re-analyzing.
+Note that if statistics were previously collected for all columns, they must be dropped using the drop\_extended\_stats command before re-analyzing.
 
 #### Table redirection[#](https://trino.io/docs/current/connector/iceberg.html#table-redirection) <a href="#table-redirection" id="table-redirection"></a>
 
 Trino offers the possibility to transparently redirect operations on an existing table to the appropriate catalog based on the format of the table and catalog configuration.
 
-In the context of connectors which depend on a metastore service (for example, [Hive connector](https://trino.io/docs/current/connector/hive.html), [Iceberg connector](https://trino.io/docs/current/connector/iceberg.html) and [Delta Lake connector](https://trino.io/docs/current/connector/delta-lake.html)), the metastore (Hive metastore service, [AWS Glue Data Catalog](https://aws.amazon.com/glue/)) can be used to accustom tables with different table formats. Therefore, a metastore database can hold a variety of tables with different table formats.
+In the context of connectors which depend on a metastore service (for example, Hive connector, Iceberg connector and Delta Lake connector), the metastore (Hive metastore service, AWS Glue Data Catalog) can be used to accustom tables with different table formats. Therefore, a metastore database can hold a variety of tables with different table formats.
 
 As a concrete example, let’s use the following simple scenario which makes use of table redirection:
 
@@ -1126,7 +1004,7 @@ USE example.example_schema;
 EXPLAIN SELECT * FROM example_table;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
                                Query Plan
@@ -1139,7 +1017,7 @@ Fragment 0 [SOURCE]
             ...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The output of the `EXPLAIN` statement points out the actual catalog which is handling the `SELECT` query over the table `example_table`.
 
@@ -1149,7 +1027,7 @@ The table redirection functionality works also when using fully qualified names 
 EXPLAIN SELECT * FROM example.example_schema.example_table;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
                                Query Plan
@@ -1162,24 +1040,24 @@ Fragment 0 [SOURCE]
             ...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Trino offers table redirection support for the following operations:
 
 * Table read operations
-  * [SELECT](https://trino.io/docs/current/sql/select.html)
-  * [DESCRIBE](https://trino.io/docs/current/sql/describe.html)
-  * [SHOW STATS](https://trino.io/docs/current/sql/show-stats.html)
-  * [SHOW CREATE TABLE](https://trino.io/docs/current/sql/show-create-table.html)
+  * SELECT
+  * DESCRIBE
+  * SHOW STATS
+  * SHOW CREATE TABLE
 * Table write operations
-  * [INSERT](https://trino.io/docs/current/sql/insert.html)
-  * [UPDATE](https://trino.io/docs/current/sql/update.html)
-  * [MERGE](https://trino.io/docs/current/sql/merge.html)
-  * [DELETE](https://trino.io/docs/current/sql/delete.html)
+  * INSERT
+  * UPDATE
+  * MERGE
+  * DELETE
 * Table management operations
-  * [ALTER TABLE](https://trino.io/docs/current/sql/alter-table.html)
-  * [DROP TABLE](https://trino.io/docs/current/sql/drop-table.html)
-  * [COMMENT](https://trino.io/docs/current/sql/comment.html)
+  * ALTER TABLE
+  * DROP TABLE
+  * COMMENT
 
 Trino does not offer view redirection support.
 
@@ -1187,6 +1065,6 @@ The connector supports redirection from Iceberg tables to Hive tables with the `
 
 #### File system cache[#](https://trino.io/docs/current/connector/iceberg.html#file-system-cache) <a href="#file-system-cache" id="file-system-cache"></a>
 
-The connector supports configuring and using [file system caching](https://trino.io/docs/current/object-storage/file-system-cache.html).
+The connector supports configuring and using file system caching.
 
 \

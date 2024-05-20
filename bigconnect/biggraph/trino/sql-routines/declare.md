@@ -46,9 +46,9 @@ DECLARE start_time timestamp(3) with time zone DEFAULT now();
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Further examples of varying complexity that cover usage of the `DECLARE` statement in combination with other statements are available in the [SQL routines examples documentation](https://trino.io/docs/current/routines/examples.html).
+Further examples of varying complexity that cover usage of the `DECLARE` statement in combination with other statements are available in the SQL routines examples documentation.
 
-### See also[#](https://trino.io/docs/current/routines/declare.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-* [Introduction to SQL routines](https://trino.io/docs/current/routines/introduction.html)
-* [Data types](https://trino.io/docs/current/language/types.html)
+* Introduction to SQL routines
+* Data types

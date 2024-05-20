@@ -20,7 +20,7 @@ where `row` is a single expression or
 
 Defines a literal inline table.
 
-`VALUES` can be used anywhere a query can be used (e.g., the `FROM` clause of a [SELECT](https://trino.io/docs/current/sql/select.html), an [INSERT](https://trino.io/docs/current/sql/insert.html), or even at the top level). `VALUES` creates an anonymous table without column names, but the table and columns can be named using an `AS` clause with column aliases.
+`VALUES` can be used anywhere a query can be used (e.g., the `FROM` clause of a SELECT, an INSERT, or even at the top level). `VALUES` creates an anonymous table without column names, but the table and columns can be named using an `AS` clause with column aliases.
 
 ### Examples[#](https://trino.io/docs/current/sql/values.html#examples) <a href="#examples" id="examples"></a>
 
@@ -70,6 +70,6 @@ SELECT * FROM (
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/values.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[INSERT](https://trino.io/docs/current/sql/insert.html), [SELECT](https://trino.io/docs/current/sql/select.html)
+INSERT, SELECT

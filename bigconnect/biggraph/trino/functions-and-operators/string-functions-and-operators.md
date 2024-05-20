@@ -4,17 +4,17 @@
 
 The `||` operator performs concatenation.
 
-The `LIKE` statement can be used for pattern matching and is documented in [Pattern comparison: LIKE](https://trino.io/docs/current/functions/comparison.html#like-operator).
+The `LIKE` statement can be used for pattern matching and is documented in Pattern comparison: LIKE.
 
 ### String functions[#](https://trino.io/docs/current/functions/string.html#string-functions) <a href="#string-functions" id="string-functions"></a>
 
 Note
 
-These functions assume that the input strings contain valid UTF-8 encoded Unicode code points. There are no explicit checks for valid UTF-8 and the functions may return incorrect results on invalid UTF-8. Invalid UTF-8 data can be corrected with [`from_utf8()`](https://trino.io/docs/current/functions/string.html#from\_utf8).
+These functions assume that the input strings contain valid UTF-8 encoded Unicode code points. There are no explicit checks for valid UTF-8 and the functions may return incorrect results on invalid UTF-8. Invalid UTF-8 data can be corrected with `from_utf8()`.
 
 Additionally, the functions operate on Unicode code points and not user visible _characters_ (or _grapheme clusters_). Some languages combine multiple code points into a single user-perceived _character_, the basic unit of a writing system for a language, but the functions will treat each code point as a separate unit.
 
-The [`lower()`](https://trino.io/docs/current/functions/string.html#lower) and [`upper()`](https://trino.io/docs/current/functions/string.html#upper) functions do not perform locale-sensitive, context-sensitive, or one-to-many mappings required for some languages. Specifically, this will return incorrect results for Lithuanian, Turkish and Azeri.
+The `lower()` and `upper()` functions do not perform locale-sensitive, context-sensitive, or one-to-many mappings required for some languages. Specifically, this will return incorrect results for Lithuanian, Turkish and Azeri.
 
 chr(_n_) → varchar[#](https://trino.io/docs/current/functions/string.html#chr)
 
@@ -38,7 +38,7 @@ Returns the concatenation of elements in the array using `string0` as a separato
 
 format(_format_, _args..._) → varchar
 
-See [`format()`](https://trino.io/docs/current/functions/conversion.html#format).
+See `format()`.
 
 hamming\_distance(_string1_, _string2_) → bigint[#](https://trino.io/docs/current/functions/string.html#hamming\_distance)
 
@@ -92,7 +92,7 @@ Returns the starting position of the first instance of `substring` in `string`. 
 
 Note
 
-This SQL-standard function has special syntax and uses the `IN` keyword for the arguments. See also [`strpos()`](https://trino.io/docs/current/functions/string.html#strpos).
+This SQL-standard function has special syntax and uses the `IN` keyword for the arguments. See also `strpos()`.
 
 replace(_string_, _search_) → varchar[#](https://trino.io/docs/current/functions/string.html#replace)
 
@@ -163,7 +163,7 @@ Tests whether `substring` is a prefix of `string`.
 
 substr(_string_, _start_) → varchar[#](https://trino.io/docs/current/functions/string.html#substr)
 
-This is an alias for [`substring()`](https://trino.io/docs/current/functions/string.html#substring).
+This is an alias for `substring()`.
 
 substring(_string_, _start_) → varchar[#](https://trino.io/docs/current/functions/string.html#substring)
 
@@ -171,7 +171,7 @@ Returns the rest of `string` from the starting position `start`. Positions start
 
 substr(_string_, _start_, _length_) → varchar
 
-This is an alias for [`substring()`](https://trino.io/docs/current/functions/string.html#substring).
+This is an alias for `substring()`.
 
 substring(_string_, _start_, _length_) → varchar
 

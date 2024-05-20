@@ -4,11 +4,11 @@ The SQL standard describes functions and operators to process JSON data. They al
 
 Importantly, the SQL standard imposes that there is no dedicated data type to represent JSON data in SQL. Instead, JSON data is represented as character or binary strings. Although Trino supports `JSON` type, it is not used or produced by the following functions.
 
-Trino supports three functions for querying JSON data: [json\_exists](https://trino.io/docs/current/functions/json.html#json-exists), [json\_query](https://trino.io/docs/current/functions/json.html#json-query), and [json\_value](https://trino.io/docs/current/functions/json.html#json-value). Each of them is based on the same mechanism of exploring and processing JSON input using JSON path.
+Trino supports three functions for querying JSON data: json\_exists, json\_query, and json\_value. Each of them is based on the same mechanism of exploring and processing JSON input using JSON path.
 
-Trino also supports two functions for generating JSON data – [json\_array](https://trino.io/docs/current/functions/json.html#json-array), and [json\_object](https://trino.io/docs/current/functions/json.html#json-object).
+Trino also supports two functions for generating JSON data – json\_array, and json\_object.
 
-### JSON path language[#](https://trino.io/docs/current/functions/json.html#json-path-language) <a href="#json-path-language" id="json-path-language"></a>
+### JSON path language# <a href="#json-path-language" id="json-path-language"></a>
 
 The JSON path language is a special language, used exclusively by certain SQL operators to specify the query to perform on the JSON input. Although JSON path expressions are embedded in SQL queries, their syntax significantly differs from SQL. The semantics of predicates, operators, etc. in JSON path expressions generally follow the semantics of SQL. The JSON path language is case-sensitive for keywords and identifiers.
 
@@ -54,7 +54,7 @@ true, false
 
 *   null literal
 
-    It has the semantics of the JSON null, not of SQL null. See [Comparison rules](https://trino.io/docs/current/functions/json.html#json-comparison-rules).
+    It has the semantics of the JSON null, not of SQL null. See Comparison rules.
 
 ```
 null
@@ -755,7 +755,7 @@ The returned value is a JSON item returned by the path. By default, it is repres
 
 `json_input` is a character string or a binary string. It should contain a single JSON item. For a binary string, you can specify encoding.
 
-`json_path` is a string literal, containing the path mode specification, and the path expression, following the syntax rules described in [JSON path syntax and semantics](https://trino.io/docs/current/functions/json.html#json-path-syntax-and-semantics).
+`json_path` is a string literal, containing the path mode specification, and the path expression, following the syntax rules described in JSON path syntax and semantics.
 
 ```
 'strict $.keyvalue()?(@.name == $cust_id)'
@@ -944,7 +944,7 @@ The returned value is the SQL scalar returned by the path. By default, it is con
 
 `json_input` is a character string or a binary string. It should contain a single JSON item. For a binary string, you can specify encoding.
 
-`json_path` is a string literal, containing the path mode specification, and the path expression, following the syntax rules described in [JSON path syntax and semantics](https://trino.io/docs/current/functions/json.html#json-path-syntax-and-semantics).
+`json_path` is a string literal, containing the path mode specification, and the path expression, following the syntax rules described in JSON path syntax and semantics.
 
 ```
 'strict $.price + $tax'
@@ -1387,9 +1387,9 @@ Additionally, `ARRAY`, `MAP`, and `ROW` types can be cast to JSON when the follo
 
 Note
 
-Cast operations with supported [character string types](https://trino.io/docs/current/language/types.html#string-data-types) treat the input as a string, not validated as JSON. This means that a cast operation with a string-type input of invalid JSON results in a succesful cast to invalid JSON.
+Cast operations with supported character string types treat the input as a string, not validated as JSON. This means that a cast operation with a string-type input of invalid JSON results in a succesful cast to invalid JSON.
 
-Instead, consider using the [`json_parse()`](https://trino.io/docs/current/functions/json.html#json\_parse) function to create validated JSON from a string.
+Instead, consider using the `json_parse()` function to create validated JSON from a string.
 
 The following examples show the behavior of casting to JSON with these types:
 
@@ -1571,11 +1571,11 @@ SELECT json_extract(json, '$.store["book name"]');
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-The [json\_query function](https://trino.io/docs/current/functions/json.html#json-query) provides a more powerful and feature-rich alternative to parse and extract JSON data.
+The json\_query function provides a more powerful and feature-rich alternative to parse and extract JSON data.
 
-json\_extract\_scalar(_json_, _json\_path_) → varchar[#](https://trino.io/docs/current/functions/json.html#json\_extract\_scalar)
+json\_extract\_scalar(_json_, _json\_path_) → varchar#
 
-Like [`json_extract()`](https://trino.io/docs/current/functions/json.html#json\_extract), but returns the result value as a string (as opposed to being encoded as JSON). The value referenced by `json_path` must be a scalar (boolean, number or string).
+Like `json_extract()`, but returns the result value as a string (as opposed to being encoded as JSON). The value referenced by `json_path` must be a scalar (boolean, number or string).
 
 ```
 SELECT json_extract_scalar('[1, 2, 3]', '$[2]');
@@ -1584,7 +1584,7 @@ SELECT json_extract_scalar(json, '$.store.book[0].author');
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)json\_format(_json_) → varchar[#](https://trino.io/docs/current/functions/json.html#json\_format)
 
-Returns the JSON text serialized from the input JSON value. This is inverse function to [`json_parse()`](https://trino.io/docs/current/functions/json.html#json\_parse).
+Returns the JSON text serialized from the input JSON value. This is inverse function to `json_parse()`.
 
 ```
 SELECT json_format(JSON '[1, 2, 3]'); -- '[1,2,3]'
@@ -1595,9 +1595,9 @@ SELECT json_format(JSON '"a"');       -- '"a"'
 
 Note
 
-[`json_format()`](https://trino.io/docs/current/functions/json.html#json\_format) and `CAST(json AS VARCHAR)` have completely different semantics.
+`json_format()` and `CAST(json AS VARCHAR)` have completely different semantics.
 
-[`json_format()`](https://trino.io/docs/current/functions/json.html#json\_format) serializes the input JSON value to JSON text conforming to [**RFC 7159**](https://datatracker.ietf.org/doc/html/rfc7159.html). The JSON value can be a JSON object, a JSON array, a JSON string, a JSON number, `true`, `false` or `null`.
+`json_format()` serializes the input JSON value to JSON text conforming to [**RFC 7159**](https://datatracker.ietf.org/doc/html/rfc7159.html). The JSON value can be a JSON object, a JSON array, a JSON string, a JSON number, `true`, `false` or `null`.
 
 ```
 SELECT json_format(JSON '{"a": 1, "b": 2}'); -- '{"a":1,"b":2}'
@@ -1623,7 +1623,7 @@ SELECT CAST(JSON 'null' AS VARCHAR);             -- NULL
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)json\_parse(_string_) → json[#](https://trino.io/docs/current/functions/json.html#json\_parse)
 
-Returns the JSON value deserialized from the input JSON text. This is inverse function to [`json_format()`](https://trino.io/docs/current/functions/json.html#json\_format):
+Returns the JSON value deserialized from the input JSON text. This is inverse function to `json_format()`:
 
 ```
 SELECT json_parse('[1, 2, 3]');   -- JSON '[1,2,3]'
@@ -1634,9 +1634,9 @@ SELECT json_parse('"abc"');       -- JSON '"abc"'
 
 Note
 
-[`json_parse()`](https://trino.io/docs/current/functions/json.html#json\_parse) and `CAST(string AS JSON)` have completely different semantics.
+`json_parse()` and `CAST(string AS JSON)` have completely different semantics.
 
-[`json_parse()`](https://trino.io/docs/current/functions/json.html#json\_parse) expects a JSON text conforming to [**RFC 7159**](https://datatracker.ietf.org/doc/html/rfc7159.html), and returns the JSON value deserialized from the JSON text. The JSON value can be a JSON object, a JSON array, a JSON string, a JSON number, `true`, `false` or `null`.
+`json_parse()` expects a JSON text conforming to [**RFC 7159**](https://datatracker.ietf.org/doc/html/rfc7159.html), and returns the JSON value deserialized from the JSON text. The JSON value can be a JSON object, a JSON array, a JSON string, a JSON number, `true`, `false` or `null`.
 
 ```
 SELECT json_parse('not_json');         -- ERROR!
@@ -1662,9 +1662,9 @@ SELECT CAST('true' AS JSON);             -- JSON '"true"'
 SELECT CAST('null' AS JSON);             -- JSON '"null"'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)json\_size(_json_, _json\_path_) → bigint[#](https://trino.io/docs/current/functions/json.html#json\_size)
+![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)json\_size(_json_, _json\_path_) → bigint#
 
-Like [`json_extract()`](https://trino.io/docs/current/functions/json.html#json\_extract), but returns the size of the value. For objects or arrays, the size is the number of members, and the size of a scalar value is zero.
+Like `json_extract()`, but returns the size of the value. For objects or arrays, the size is the number of members, and the size of a scalar value is zero.
 
 ```
 SELECT json_size('{"x": {"a": 1, "b": 2}}', '$.x');   -- 2

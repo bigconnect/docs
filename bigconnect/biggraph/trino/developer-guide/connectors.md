@@ -2,15 +2,15 @@
 
 Connectors are the source of all data for queries in Trino. Even if your data source doesn’t have underlying tables backing it, as long as you adapt your data source to the API expected by Trino, you can write queries against this data.
 
-### ConnectorFactory[#](https://trino.io/docs/current/develop/connectors.html#connectorfactory) <a href="#connectorfactory" id="connectorfactory"></a>
+### ConnectorFactory <a href="#connectorfactory" id="connectorfactory"></a>
 
 Instances of your connector are created by a `ConnectorFactory` instance which is created when Trino calls `getConnectorFactory()` on the plugin. The connector factory is a simple interface responsible for providing the connector name and creating an instance of a `Connector` object. A basic connector implementation that only supports reading, but not writing data, should return instances of the following services:
 
-* [ConnectorMetadata](https://trino.io/docs/current/develop/connectors.html#connector-metadata)
-* [ConnectorSplitManager](https://trino.io/docs/current/develop/connectors.html#connector-split-manager)
-* [ConnectorRecordSetProvider](https://trino.io/docs/current/develop/connectors.html#connector-record-set-provider) or [ConnectorPageSourceProvider](https://trino.io/docs/current/develop/connectors.html#connector-page-source-provider)
+* ConnectorMetadata
+* ConnectorSplitManager
+* ConnectorRecordSetProvider or ConnectorPageSourceProvider
 
-#### Configuration[#](https://trino.io/docs/current/develop/connectors.html#configuration) <a href="#configuration" id="configuration"></a>
+#### Configuration# <a href="#configuration" id="configuration"></a>
 
 The `create()` method of the connector factory receives a `config` map, containing all properties from the catalog properties file. It can be used to configure the connector, but because all the values are strings, they might require additional processing if they represent other data types. It also doesn’t validate if all the provided properties are known. This can lead to the connector behaving differently than expected when a connector ignores a property due to the user making a mistake in typing the name of the property.
 
@@ -146,7 +146,7 @@ A basic read-only connector should implement the following methods:
 * `getColumnHandles`
 * `getColumnMetadata`
 
-If you are interested in seeing strategies for implementing more methods, look at the [Example HTTP connector](https://trino.io/docs/current/develop/example-http.html) and the Cassandra connector. If your underlying data source supports schemas, tables, and columns, this interface should be straightforward to implement. If you are attempting to adapt something that isn’t a relational database, as the Example HTTP connector does, you may need to get creative about how you map your data source to Trino’s schema, table, and column concepts.
+If you are interested in seeing strategies for implementing more methods, look at the Example HTTP connector and the Cassandra connector. If your underlying data source supports schemas, tables, and columns, this interface should be straightforward to implement. If you are attempting to adapt something that isn’t a relational database, as the Example HTTP connector does, you may need to get creative about how you map your data source to Trino’s schema, table, and column concepts.
 
 The connector metadata interface allows to also implement other connector features, like:
 
@@ -162,15 +162,15 @@ The connector metadata interface allows to also implement other connector featur
   * and creating tables from query results.
 * Role and grant management.
 * Pushing down:
-  * [Limit and Top N - limit with sort items](https://trino.io/docs/current/develop/connectors.html#connector-limit-pushdown)
-  * [Predicates](https://trino.io/docs/current/develop/connectors.html#dev-predicate-pushdown)
+  * Limit and Top N - limit with sort items
+  * Predicates
   * Projections
   * Sampling
   * Aggregations
   * Joins
   * Table function invocation
 
-Note that data modification also requires implementing a [ConnectorPageSinkProvider](https://trino.io/docs/current/develop/connectors.html#connector-page-sink-provider).
+Note that data modification also requires implementing a ConnectorPageSinkProvider.
 
 When Trino receives a `SELECT` query, it parses it into an Intermediate Representation (IR). Then, during optimization, it checks if connectors can handle operations related to SQL clauses by calling one of the following methods of the `ConnectorMetadata` service:
 

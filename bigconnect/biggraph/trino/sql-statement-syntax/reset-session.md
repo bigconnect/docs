@@ -11,7 +11,7 @@ RESET SESSION catalog.name
 
 ### Description[#](https://trino.io/docs/current/sql/reset-session.html#description) <a href="#description" id="description"></a>
 
-Reset a [session property](https://trino.io/docs/current/sql/set-session.html#session-properties-definition) value to the default value.
+Reset a session property value to the default value.
 
 ### Examples[#](https://trino.io/docs/current/sql/reset-session.html#examples) <a href="#examples" id="examples"></a>
 
@@ -22,8 +22,8 @@ RESET SESSION hive.optimized_reader_enabled;
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/reset-session.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[SET SESSION](https://trino.io/docs/current/sql/set-session.html), [SHOW SESSION](https://trino.io/docs/current/sql/show-session.html)
+SET SESSION, SHOW SESSION
 
 \

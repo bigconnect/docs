@@ -8,7 +8,7 @@ To connect to MongoDB, you need:
 
 * MongoDB 4.2 or higher.
 * Network access from the Trino coordinator and workers to MongoDB. Port 27017 is the default port.
-* Write access to the [schema information collection](https://trino.io/docs/current/connector/mongodb.html#table-definition-label) in MongoDB.
+* Write access to the schema information collection in MongoDB.
 
 ### Configuration[#](https://trino.io/docs/current/connector/mongodb.html#configuration) <a href="#configuration" id="configuration"></a>
 
@@ -19,7 +19,7 @@ connector.name=mongodb
 mongodb.connection-url=mongodb://user:pass@sample.host:27017/
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### Multiple MongoDB clusters[#](https://trino.io/docs/current/connector/mongodb.html#multiple-mongodb-clusters) <a href="#multiple-mongodb-clusters" id="multiple-mongodb-clusters"></a>
 
@@ -55,19 +55,19 @@ The following configuration properties are available:
 
 A connection string containing the protocol, credential, and host info for use inconnection to your MongoDB deployment.
 
-For example, the connection string may use the format `mongodb://<user>:<pass>@<host>:<port>/?<options>` or `mongodb+srv://<user>:<pass>@<host>/?<options>`, depending on the protocol used. The user/pass credentials must be for a user with write access to the [schema information collection](https://trino.io/docs/current/connector/mongodb.html#table-definition-label).
+For example, the connection string may use the format `mongodb://<user>:<pass>@<host>:<port>/?<options>` or `mongodb+srv://<user>:<pass>@<host>/?<options>`, depending on the protocol used. The user/pass credentials must be for a user with write access to the schema information collection.
 
-See the [MongoDB Connection URI](https://docs.mongodb.com/drivers/java/sync/current/fundamentals/connection/#connection-uri) for more information.
+See the MongoDB Connection URI for more information.
 
 This property is required; there is no default. A connection URL must be provided to connect to a MongoDB deployment.
 
 #### `mongodb.schema-collection`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-schema-collection) <a href="#mongodb-schema-collection" id="mongodb-schema-collection"></a>
 
-As MongoDB is a document database, there is no fixed schema information in the system. So a special collection in each MongoDB database should define the schema of all tables. Please refer the [Table definition](https://trino.io/docs/current/connector/mongodb.html#table-definition-label) section for the details.
+As MongoDB is a document database, there is no fixed schema information in the system. So a special collection in each MongoDB database should define the schema of all tables. Please refer the Table definition section for the details.
 
-At startup, the connector tries to guess the data type of fields based on the [type mapping](https://trino.io/docs/current/connector/mongodb.html#mongodb-type-mapping).
+At startup, the connector tries to guess the data type of fields based on the type mapping.
 
-The initial guess can be incorrect for your specific collection. In that case, you need to modify it manually. Please refer the [Table definition](https://trino.io/docs/current/connector/mongodb.html#table-definition-label) section for the details.
+The initial guess can be incorrect for your specific collection. In that case, you need to modify it manually. Please refer the Table definition section for the details.
 
 Creating new tables using `CREATE TABLE` and `CREATE TABLE AS SELECT` automatically create an entry for you.
 
@@ -121,15 +121,15 @@ This flag enables TLS connections to MongoDB servers.
 
 This property is optional; the default is `false`.
 
-#### `mongodb.tls.keystore-path`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-tls-keystore-path) <a href="#mongodb-tls-keystore-path" id="mongodb-tls-keystore-path"></a>
+#### `mongodb.tls.keystore-path`# <a href="#mongodb-tls-keystore-path" id="mongodb-tls-keystore-path"></a>
 
-The path to the [PEM](https://trino.io/docs/current/security/inspect-pem.html) or [JKS](https://trino.io/docs/current/security/inspect-jks.html) key store.
+The path to the PEM or JKS key store.
 
 This property is optional.
 
-#### `mongodb.tls.truststore-path`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-tls-truststore-path) <a href="#mongodb-tls-truststore-path" id="mongodb-tls-truststore-path"></a>
+#### `mongodb.tls.truststore-path`# <a href="#mongodb-tls-truststore-path" id="mongodb-tls-truststore-path"></a>
 
-The path to [PEM](https://trino.io/docs/current/security/inspect-pem.html) or [JKS](https://trino.io/docs/current/security/inspect-jks.html) trust store.
+The path to PEM or JKS trust store.
 
 This property is optional.
 
@@ -167,7 +167,7 @@ The required replica set name. With this option set, the MongoClient instance pe
 #. Refuse to service any requests, if authenticated user is not part of a replica set with the required name.
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This property is optional; no default value.
 
@@ -210,7 +210,7 @@ A schema collection consists of a MongoDB document for a table.
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The connector quotes the fields for a row type when auto-generating the schema; however, the auto-generated schema must be corrected manually in the collection to match the information in the tables.
 
@@ -231,7 +231,7 @@ Each field definition:
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 | Field    | Required | Type    | Description                                                                        |
 | -------- | -------- | ------- | ---------------------------------------------------------------------------------- |
@@ -258,7 +258,7 @@ INSERT INTO orders VALUES(2, 'good', 100.0, current_date);
 SELECT _id, * FROM orders;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
                  _id                 | orderkey | orderstatus | totalprice | orderdate
@@ -268,13 +268,13 @@ SELECT _id, * FROM orders;
 (2 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 SELECT _id, * FROM orders WHERE _id = ObjectId('55b151633864d6438c61a9ce');
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
                  _id                 | orderkey | orderstatus | totalprice | orderdate
@@ -283,7 +283,7 @@ SELECT _id, * FROM orders WHERE _id = ObjectId('55b151633864d6438c61a9ce');
 (1 row)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can render the `_id` field to readable values with a cast to `VARCHAR`:
 
@@ -291,7 +291,7 @@ You can render the `_id` field to readable values with a cast to `VARCHAR`:
 SELECT CAST(_id AS VARCHAR), * FROM orders WHERE _id = ObjectId('55b151633864d6438c61a9ce');
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
            _id             | orderkey | orderstatus | totalprice | orderdate
@@ -300,7 +300,7 @@ SELECT CAST(_id AS VARCHAR), * FROM orders WHERE _id = ObjectId('55b151633864d64
 (1 row)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### ObjectId timestamp functions[#](https://trino.io/docs/current/connector/mongodb.html#objectid-timestamp-functions) <a href="#objectid-timestamp-functions" id="objectid-timestamp-functions"></a>
 
@@ -315,7 +315,7 @@ SELECT objectid_timestamp(ObjectId('507f191e810c19729de860ea'));
 -- 2012-10-17 20:46:22.000 UTC
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)timestamp\_objectid(_timestamp_) → ObjectId[#](https://trino.io/docs/current/connector/mongodb.html#timestamp\_objectid)
+timestamp\_objectid(_timestamp_) → ObjectId[#](https://trino.io/docs/current/connector/mongodb.html#timestamp\_objectid)
 
 Creates an ObjectId from a TIMESTAMP WITH TIME ZONE:
 
@@ -324,7 +324,7 @@ SELECT timestamp_objectid(TIMESTAMP '2021-08-07 17:51:36 +00:00');
 -- 61 0e c8 28 00 00 00 00 00 00 00 00
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In MongoDB, you can filter all the documents created after `2021-08-07 17:51:36` with a query like this:
 
@@ -332,7 +332,7 @@ In MongoDB, you can filter all the documents created after `2021-08-07 17:51:36`
 db.collection.find({"_id": {"$gt": ObjectId("610ec8280000000000000000")}})
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In Trino, the same can be achieved with this query:
 
@@ -342,7 +342,7 @@ FROM collection
 WHERE _id > timestamp_objectid(TIMESTAMP '2021-08-07 17:51:36 +00:00');
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ### Type mapping[#](https://trino.io/docs/current/connector/mongodb.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
 
@@ -388,33 +388,33 @@ The connector maps Trino types to the corresponding MongoDB types following this
 
 No other types are supported.
 
-### SQL support[#](https://trino.io/docs/current/connector/mongodb.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support# <a href="#sql-support" id="sql-support"></a>
 
-The connector provides read and write access to data and metadata in MongoDB. In addition to the [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements, the connector supports the following features:
+The connector provides read and write access to data and metadata in MongoDB. In addition to the globally available and read operation statements, the connector supports the following features:
 
-* [INSERT](https://trino.io/docs/current/sql/insert.html)
-* [DELETE](https://trino.io/docs/current/sql/delete.html)
-* [CREATE TABLE](https://trino.io/docs/current/sql/create-table.html)
-* [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html)
-* [DROP TABLE](https://trino.io/docs/current/sql/drop-table.html)
-* [ALTER TABLE](https://trino.io/docs/current/sql/alter-table.html)
-* [CREATE SCHEMA](https://trino.io/docs/current/sql/create-schema.html)
-* [DROP SCHEMA](https://trino.io/docs/current/sql/drop-schema.html)
-* [COMMENT](https://trino.io/docs/current/sql/comment.html)
+* INSERT
+* DELETE
+* CREATE TABLE
+* CREATE TABLE AS
+* DROP TABLE
+* ALTER TABLE
+* CREATE SCHEMA
+* DROP SCHEMA
+* COMMENT
 
-#### ALTER TABLE[#](https://trino.io/docs/current/connector/mongodb.html#alter-table) <a href="#alter-table" id="alter-table"></a>
+#### ALTER TABLE# <a href="#alter-table" id="alter-table"></a>
 
 The connector supports `ALTER TABLE RENAME TO`, `ALTER TABLE ADD COLUMN` and `ALTER TABLE DROP COLUMN` operations. Other uses of `ALTER TABLE` are not supported.
 
 ### Fault-tolerant execution support[#](https://trino.io/docs/current/connector/mongodb.html#fault-tolerant-execution-support) <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
 
-The connector supports [Fault-tolerant execution](https://trino.io/docs/current/admin/fault-tolerant-execution.html) of query processing. Read and write operations are both supported with any retry policy.
+The connector supports Fault-tolerant execution of query processing. Read and write operations are both supported with any retry policy.
 
-### Table functions[#](https://trino.io/docs/current/connector/mongodb.html#table-functions) <a href="#table-functions" id="table-functions"></a>
+### Table functions# <a href="#table-functions" id="table-functions"></a>
 
-The connector provides specific [table functions](https://trino.io/docs/current/functions/table.html) to access MongoDB.
+The connector provides specific table functions to access MongoDB.
 
-#### `query(database, collection, filter) -> table`[#](https://trino.io/docs/current/connector/mongodb.html#query-database-collection-filter-table) <a href="#query-database-collection-filter-table" id="query-database-collection-filter-table"></a>
+#### `query(database, collection, filter) -> table`# <a href="#query-database-collection-filter-table" id="query-database-collection-filter-table"></a>
 
 The `query` function allows you to query the underlying MongoDB directly. It requires syntax native to MongoDB, because the full query is pushed down and processed by MongoDB. This can be useful for accessing native features which are not available in Trino or for improving query performance in situations where running a query natively may be faster.
 

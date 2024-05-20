@@ -33,7 +33,7 @@ Warning
 
 Access to the Trino coordinator must be secured e.g., using Kerberos or password authentication, when using Kerberos authentication to Hadoop services. Failure to secure access to the Trino coordinator could result in unauthorized access to sensitive data on the Hadoop cluster. Refer to [Security](https://trino.io/docs/current/security.html) for further information.
 
-See [Kerberos authentication](https://trino.io/docs/current/security/kerberos.html) for information on setting up Kerberos authentication.
+See Kerberos authentication for information on setting up Kerberos authentication.
 
 **Keytab files**[**#**](https://trino.io/docs/current/connector/hive-security.html#keytab-files)
 
@@ -51,11 +51,11 @@ In order to use impersonation, the Hadoop cluster must be configured to allow th
 
 ### Authentication[#](https://trino.io/docs/current/connector/hive-security.html#authentication) <a href="#authentication" id="authentication"></a>
 
-The default security configuration of the [Hive connector](https://trino.io/docs/current/connector/hive.html) does not use authentication when connecting to a Hadoop cluster. All queries are executed as the user who runs the Trino process, regardless of which user submits the query.
+The default security configuration of the Hive connector does not use authentication when connecting to a Hadoop cluster. All queries are executed as the user who runs the Trino process, regardless of which user submits the query.
 
-The Hive connector provides additional security options to support Hadoop clusters that have been configured to use [Kerberos](https://trino.io/docs/current/connector/hive-security.html#hive-security-kerberos-support).
+The Hive connector provides additional security options to support Hadoop clusters that have been configured to use Kerberos.
 
-When accessing HDFS, Trino can [impersonate](https://trino.io/docs/current/connector/hive-security.html#hive-security-impersonation) the end user who is running the query. This can be used with HDFS permissions and ACLs to provide additional security for data.
+When accessing HDFS, Trino can impersonate the end user who is running the query. This can be used with HDFS permissions and ACLs to provide additional security for data.
 
 #### HDFS authentication[#](https://trino.io/docs/current/connector/hive-security.html#hdfs-authentication) <a href="#hdfs-authentication" id="hdfs-authentication"></a>
 
@@ -79,8 +79,6 @@ The following sections describe the configuration properties and values needed f
 hive.hdfs.authentication.type=NONE
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The default authentication type for HDFS is `NONE`. When the authentication type is `NONE`, Trino connects to HDFS using Hadoop’s simple authentication mechanism. Kerberos is not used.
 
 **`NONE` AUTHENTICATION WITH IMPERSONATION**[**#**](https://trino.io/docs/current/connector/hive-security.html#none-authentication-with-impersonation)
@@ -89,8 +87,6 @@ The default authentication type for HDFS is `NONE`. When the authentication type
 hive.hdfs.authentication.type=NONE
 hive.hdfs.impersonation.enabled=true
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 When using `NONE` authentication with impersonation, Trino impersonates the user who is running the query when accessing HDFS. The user Trino is running as must be allowed to impersonate this user, as discussed in the section [Impersonation in Hadoop](https://trino.io/docs/current/connector/hive-security.html#configuring-hadoop-impersonation). Kerberos is not used.
 
@@ -102,13 +98,11 @@ hive.hdfs.trino.principal=hdfs@EXAMPLE.COM
 hive.hdfs.trino.keytab=/etc/trino/hdfs.keytab
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 When the authentication type is `KERBEROS`, Trino accesses HDFS as the principal specified by the `hive.hdfs.trino.principal` property. Trino authenticates this principal using the keytab specified by the `hive.hdfs.trino.keytab` keytab.
 
 Keytab files must be distributed to every node in the cluster that runs Trino.
 
-[Additional Information About Keytab Files.](https://trino.io/docs/current/connector/hive-security.html#hive-security-additional-keytab)
+Additional Information About Keytab Files.
 
 **`KERBEROS` AUTHENTICATION WITH IMPERSONATION**[**#**](https://trino.io/docs/current/connector/hive-security.html#kerberos-authentication-with-impersonation)
 
@@ -119,10 +113,6 @@ hive.hdfs.trino.principal=trino@EXAMPLE.COM
 hive.hdfs.trino.keytab=/etc/trino/hdfs.keytab
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-When using `KERBEROS` authentication with impersonation, Trino impersonates the user who is running the query when accessing HDFS. The principal specified by the `hive.hdfs.trino.principal` property must be allowed to impersonate the current Trino user, as discussed in the section [Impersonation in Hadoop](https://trino.io/docs/current/connector/hive-security.html#configuring-hadoop-impersonation). Trino authenticates `hive.hdfs.trino.principal` using the keytab specified by `hive.hdfs.trino.keytab`.
+When using `KERBEROS` authentication with impersonation, Trino impersonates the user who is running the query when accessing HDFS. The principal specified by the `hive.hdfs.trino.principal` property must be allowed to impersonate the current Trino user, as discussed in the section Impersonation in Hadoop. Trino authenticates `hive.hdfs.trino.principal` using the keytab specified by `hive.hdfs.trino.keytab`.
 
 Keytab files must be distributed to every node in the cluster that runs Trino.
-
-[Additional Information About Keytab Files.](https://trino.io/docs/current/connector/hive-security.html#hive-security-additional-keytab)

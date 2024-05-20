@@ -23,7 +23,7 @@ SELECT * FROM nation;
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Prepare a select query that includes parameters. The values to compare with `regionkey` and `nationkey` will be filled in with the [EXECUTE](https://trino.io/docs/current/sql/execute.html) statement:
+Prepare a select query that includes parameters. The values to compare with `regionkey` and `nationkey` will be filled in with the EXECUTE statement:
 
 ```
 PREPARE my_select2 FROM
@@ -41,6 +41,6 @@ INSERT INTO cities VALUES (1, 'San Francisco');
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/prepare.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[EXECUTE](https://trino.io/docs/current/sql/execute.html), [DEALLOCATE PREPARE](https://trino.io/docs/current/sql/deallocate-prepare.html), [EXECUTE IMMEDIATE](https://trino.io/docs/current/sql/execute-immediate.html), [DESCRIBE INPUT](https://trino.io/docs/current/sql/describe-input.html), [DESCRIBE OUTPUT](https://trino.io/docs/current/sql/describe-output.html)
+EXECUTE, DEALLOCATE PREPARE, EXECUTE IMMEDIATE, DESCRIBE INPUT, DESCRIBE OUTPUT

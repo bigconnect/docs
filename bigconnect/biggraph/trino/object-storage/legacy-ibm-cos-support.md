@@ -1,6 +1,6 @@
 # Legacy IBM COS support
 
-Configure the [Hive connector](https://trino.io/docs/current/connector/hive.html) to support [IBM Cloud Object Storage COS](https://www.ibm.com/cloud/object-storage) access.
+Configure the Hive connector to support IBM Cloud Object Storage COS access.
 
 ### Configuration[#](https://trino.io/docs/current/object-storage/legacy-cos.html#configuration) <a href="#configuration" id="configuration"></a>
 

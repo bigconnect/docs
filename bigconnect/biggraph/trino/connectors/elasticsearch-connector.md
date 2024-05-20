@@ -28,13 +28,13 @@ The following table details all general configuration properties:
 | `elasticsearch.port`                   | Port to use to connecto to Elasticsearch.                                                                                                                                                                                                 | `9200`    |
 | `elasticsearch.default-schema-name`    | The schema that contains all tables defined without a qualifying schema name.                                                                                                                                                             | `default` |
 | `elasticsearch.scroll-size`            | Sets the maximum number of hits that can be returned with each [Elasticsearch scroll request](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-scroll.html#scroll-search-context).                          | `1000`    |
-| `elasticsearch.scroll-timeout`         | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for Elasticsearch to keep the search context alive for scroll requests.                                                                                | `1m`      |
-| `elasticsearch.request-timeout`        | Timeout [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for all Elasticsearch requests.                                                                                                                | `10s`     |
-| `elasticsearch.connect-timeout`        | Timeout [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for all Elasticsearch connection attempts.                                                                                                     | `1s`      |
+| `elasticsearch.scroll-timeout`         | Duration for Elasticsearch to keep the search context alive for scroll requests.                                                                                                                                                          | `1m`      |
+| `elasticsearch.request-timeout`        | Timeout duration for all Elasticsearch requests.                                                                                                                                                                                          | `10s`     |
+| `elasticsearch.connect-timeout`        | Timeout duration for all Elasticsearch connection attempts.                                                                                                                                                                               | `1s`      |
 | `elasticsearch.backoff-init-delay`     | The minimum [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) between backpressure retry attempts for a single request to Elasticsearch. Setting it too low can overwhelm an already struggling cluster. | `500ms`   |
-| `elasticsearch.backoff-max-delay`      | The maximum [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) between backpressure retry attempts for a single request to Elasticsearch.                                                                 | `20s`     |
-| `elasticsearch.max-retry-time`         | The maximum [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) across all retry attempts for a single request to Elasticsearch.                                                                           | `30s`     |
-| `elasticsearch.node-refresh-interval`  | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) between requests to refresh the list of available Elasticsearch nodes.                                                                                 | `1m`      |
+| `elasticsearch.backoff-max-delay`      | The maximum duration between backpressure retry attempts for a single request to Elasticsearch.                                                                                                                                           | `20s`     |
+| `elasticsearch.max-retry-time`         | The maximum duration across all retry attempts for a single request to Elasticsearch.                                                                                                                                                     | `30s`     |
+| `elasticsearch.node-refresh-interval`  | Duration between requests to refresh the list of available Elasticsearch nodes.                                                                                                                                                           | `1m`      |
 | `elasticsearch.ignore-publish-address` | Disable using the address published by the Elasticsearch API to connect for queries. Some deployments map Elasticsearch ports to a random public port and enabling this property can help in these cases.                                 | `false`   |
 
 #### Authentication[#](https://trino.io/docs/current/connector/elasticsearch.html#authentication) <a href="#authentication" id="authentication"></a>
@@ -66,18 +66,18 @@ If your cluster has globally-trusted certificates, you should only need to enabl
 
 The available configuration values are listed in the following table:
 
-| Property name                           | Description                                                                                                                                                 |
-| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `elasticsearch.tls.enabled`             | Enables TLS security.                                                                                                                                       |
-| `elasticsearch.tls.keystore-path`       | The path to the [PEM](https://trino.io/docs/current/security/inspect-pem.html) or [JKS](https://trino.io/docs/current/security/inspect-jks.html) key store. |
-| `elasticsearch.tls.truststore-path`     | The path to [PEM](https://trino.io/docs/current/security/inspect-pem.html) or [JKS](https://trino.io/docs/current/security/inspect-jks.html) trust store.   |
-| `elasticsearch.tls.keystore-password`   | The key password for the key store specified by `elasticsearch.tls.keystore-path`.                                                                          |
-| `elasticsearch.tls.truststore-password` | The key password for the trust store specified by `elasticsearch.tls.truststore-path`.                                                                      |
-| `elasticsearch.tls.verify-hostnames`    | Flag to determine if the hostnames in the certificates must be verified. Defaults to `true`.                                                                |
+| Property name                           | Description                                                                                                                                               |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `elasticsearch.tls.enabled`             | Enables TLS security.                                                                                                                                     |
+| `elasticsearch.tls.keystore-path`       | The path to the PEM or JKS key store.                                                                                                                     |
+| `elasticsearch.tls.truststore-path`     | The path to [PEM](https://trino.io/docs/current/security/inspect-pem.html) or [JKS](https://trino.io/docs/current/security/inspect-jks.html) trust store. |
+| `elasticsearch.tls.keystore-password`   | The key password for the key store specified by `elasticsearch.tls.keystore-path`.                                                                        |
+| `elasticsearch.tls.truststore-password` | The key password for the trust store specified by `elasticsearch.tls.truststore-path`.                                                                    |
+| `elasticsearch.tls.verify-hostnames`    | Flag to determine if the hostnames in the certificates must be verified. Defaults to `true`.                                                              |
 
 ### Type mapping[#](https://trino.io/docs/current/connector/elasticsearch.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
 
-Because Trino and Elasticsearch each support types that the other does not, this connector [maps some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading data.
+Because Trino and Elasticsearch each support types that the other does not, this connector maps some types when reading data.
 
 #### Elasticsearch type to Trino type mapping[#](https://trino.io/docs/current/connector/elasticsearch.html#elasticsearch-type-to-trino-type-mapping) <a href="#elasticsearch-type-to-trino-type-mapping" id="elasticsearch-type-to-trino-type-mapping"></a>
 
@@ -246,15 +246,15 @@ SELECT * FROM "tweets: +trino SQL^2"
 
 ### SQL support[#](https://trino.io/docs/current/connector/elasticsearch.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements to access data and metadata in the Elasticsearch catalog.
+The connector provides globally available and read operation statements to access data and metadata in the Elasticsearch catalog.
 
-### Table functions[#](https://trino.io/docs/current/connector/elasticsearch.html#table-functions) <a href="#table-functions" id="table-functions"></a>
+### Table functions# <a href="#table-functions" id="table-functions"></a>
 
-The connector provides specific [table functions](https://trino.io/docs/current/functions/table.html) to access Elasticsearch.
+The connector provides specific table functions to access Elasticsearch.
 
 #### `raw_query(varchar) -> table`[#](https://trino.io/docs/current/connector/elasticsearch.html#raw-query-varchar-table) <a href="#raw-query-varchar-table" id="raw-query-varchar-table"></a>
 
-The `raw_query` function allows you to query the underlying database directly. This function requires [Elastic Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html) syntax. The full DSL query is pushed down and processed in Elasticsearch. This can be useful for accessing native features which are not available in Trino or for improving query performance in situations where running a query natively may be faster.
+The `raw_query` function allows you to query the underlying database directly. This function requires Elastic Query DSL syntax. The full DSL query is pushed down and processed in Elasticsearch. This can be useful for accessing native features which are not available in Trino or for improving query performance in situations where running a query natively may be faster.
 
 The native query passed to the underlying data source is required to return a table as a result set. Only the data source performs validation or security checks for these queries using its own configuration. Trino does not perform these tasks. Only use passthrough queries to read data.
 
@@ -303,7 +303,7 @@ The connector requests data from multiple nodes of the Elasticsearch cluster for
 
 #### Predicate push down[#](https://trino.io/docs/current/connector/elasticsearch.html#predicate-push-down) <a href="#predicate-push-down" id="predicate-push-down"></a>
 
-The connector supports [predicate push down](https://trino.io/docs/current/optimizer/pushdown.html#predicate-pushdown) for the following data types:
+The connector supports predicate push down for the following data types:
 
 | Elasticsearch | Trino       |
 | ------------- | ----------- |

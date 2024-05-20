@@ -6,7 +6,7 @@ MinHash is used to quickly estimate the [Jaccard similarity coefficient](https:/
 
 It is commonly used in data mining to detect near-duplicate web pages at scale. By using this information, the search engines efficiently avoid showing within the search results two pages that are nearly identical.
 
-The following example showcases how the Set Digest functions can be used to naively estimate the similarity between texts. The input texts are split by using the function [`ngrams()`](https://trino.io/docs/current/functions/array.html#ngrams) to [4-shingles](https://wikipedia.org/wiki/W-shingling) which are used as input for creating a set digest of each initial text. The set digests are compared to each other to get an approximation of the similarity of their corresponding initial texts:
+The following example showcases how the Set Digest functions can be used to naively estimate the similarity between texts. The input texts are split by using the function `ngrams()` to 4-shingles which are used as input for creating a set digest of each initial text. The set digests are compared to each other to get an approximation of the similarity of their corresponding initial texts:
 
 ```
 WITH text_input(id, text) AS (
@@ -68,8 +68,8 @@ One may argue that the text with the id `2` is somewhat similar to the texts wit
 
 Trino implements Set Digest data sketches by encapsulating the following components:
 
-* [HyperLogLog](https://wikipedia.org/wiki/HyperLogLog)
-* [MinHash with a single hash function](https://wikipedia.org/wiki/MinHash#Variant\_with\_a\_single\_hash\_function)
+* HyperLogLog
+* MinHash with a single hash function
 
 The HyperLogLog structure is used for the approximation of the distinct elements in the original set.
 

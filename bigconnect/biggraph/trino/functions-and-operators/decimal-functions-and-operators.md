@@ -41,7 +41,7 @@ When operating on decimal types with different scale and precision, the values a
 
 ### Comparison operators[#](https://trino.io/docs/current/functions/decimal.html#comparison-operators) <a href="#comparison-operators" id="comparison-operators"></a>
 
-All standard [Comparison functions and operators](https://trino.io/docs/current/functions/comparison.html) work for the decimal type.
+All standard Comparison functions and operators work for the decimal type.
 
 ### Unary decimal operators[#](https://trino.io/docs/current/functions/decimal.html#unary-decimal-operators) <a href="#unary-decimal-operators" id="unary-decimal-operators"></a>
 

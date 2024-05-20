@@ -12,7 +12,7 @@ Trino Geospatial functions support the Well-Known Text (WKT) and Well-Known Bina
 * `MULTIPOLYGON (((0 0, 4 0, 4 4, 0 4, 0 0), (1 1, 2 1, 2 2, 1 2, 1 1)), ((-1 -1, -1 -2, -2 -2, -2 -1, -1 -1)))`
 * `GEOMETRYCOLLECTION (POINT(2 3), LINESTRING (2 3, 3 4))`
 
-Use [`ST_GeometryFromText()`](https://trino.io/docs/current/functions/geospatial.html#ST\_GeometryFromText) and [`ST_GeomFromBinary()`](https://trino.io/docs/current/functions/geospatial.html#ST\_GeomFromBinary) functions to create geometry objects from WKT or WKB.
+Use `ST_GeometryFromText()` and `ST_GeomFromBinary()` functions to create geometry objects from WKT or WKB.
 
 The `SphericalGeography` type provides native support for spatial features represented on _geographic_ coordinates (sometimes called _geodetic_ coordinates, or _lat/lon_, or _lon/lat_). Geographic coordinates are spherical coordinates expressed in angular units (degrees).
 
@@ -20,9 +20,9 @@ The basis for the `Geometry` type is a plane. The shortest path between two poin
 
 The basis for the `SphericalGeography` type is a sphere. The shortest path between two points on the sphere is a great circle arc. That means that calculations on geographies (areas, distances, lengths, intersections, etc) must be calculated on the sphere, using more complicated mathematics. More accurate measurements that take the actual spheroidal shape of the world into account are not supported.
 
-Values returned by the measurement functions `ST_Distance()` and [`ST_Length()`](https://trino.io/docs/current/functions/geospatial.html#ST\_Length) are in the unit of meters; values returned by [`ST_Area()`](https://trino.io/docs/current/functions/geospatial.html#ST\_Area) are in square meters.
+Values returned by the measurement functions `ST_Distance()` and `ST_Length()` are in the unit of meters; values returned by `ST_Area()` are in square meters.
 
-Use [`to_spherical_geography()`](https://trino.io/docs/current/functions/geospatial.html#to\_spherical\_geography) function to convert a geometry object to geography object.
+Use `to_spherical_geography()` function to convert a geometry object to geography object.
 
 For example, `ST_Distance(ST_Point(-71.0882, 42.3607), ST_Point(-74.1197, 40.6976))` returns `3.4577` in the unit of the passed-in values on the euclidean plane, while `ST_Distance(to_spherical_geography(ST_Point(-71.0882, 42.3607)), to_spherical_geography(ST_Point(-74.1197, 40.6976)))` returns `312822.179` in meters.
 
@@ -122,7 +122,7 @@ Returns the points on each geometry nearest the other. If either geometry is emp
 
 geometry\_union(_array(Geometry)_) → Geometry[#](https://trino.io/docs/current/functions/geospatial.html#geometry\_union)
 
-Returns a geometry that represents the point set union of the input geometries. Performance of this function, in conjunction with [`array_agg()`](https://trino.io/docs/current/functions/aggregate.html#array\_agg) to first aggregate the input geometries, may be better than [`geometry_union_agg()`](https://trino.io/docs/current/functions/geospatial.html#geometry\_union\_agg), at the expense of higher memory utilization.
+Returns a geometry that represents the point set union of the input geometries. Performance of this function, in conjunction with `array_agg()` to first aggregate the input geometries, may be better than `geometry_union_agg()`, at the expense of higher memory utilization.
 
 ST\_Boundary(_Geometry_) → Geometry[#](https://trino.io/docs/current/functions/geospatial.html#ST\_Boundary)
 
@@ -160,9 +160,9 @@ ST\_Union(Geometry, Geometry) -> Geometry
 
 Returns a geometry that represents the point set union of the input geometries.
 
-See also: [`geometry_union()`](https://trino.io/docs/current/functions/geospatial.html#geometry\_union), [`geometry_union_agg()`](https://trino.io/docs/current/functions/geospatial.html#geometry\_union\_agg)
+See also: `geometry_union()`, `geometry_union_agg()`
 
-### Accessors[#](https://trino.io/docs/current/functions/geospatial.html#accessors) <a href="#accessors" id="accessors"></a>
+### Accessors# <a href="#accessors" id="accessors"></a>
 
 ST\_Area(_Geometry_) → double[#](https://trino.io/docs/current/functions/geospatial.html#ST\_Area)
 
@@ -200,21 +200,21 @@ Returns the great-circle distance in meters between two SphericalGeography point
 
 ST\_GeometryN(_Geometry_, _index_) → Geometry[#](https://trino.io/docs/current/functions/geospatial.html#ST\_GeometryN)
 
-Returns the geometry element at a given index (indices start at 1). If the geometry is a collection of geometries (e.g., GEOMETRYCOLLECTION or MULTI\*), returns the geometry at a given index. If the given index is less than 1 or greater than the total number of elements in the collection, returns `NULL`. Use [`ST_NumGeometries()`](https://trino.io/docs/current/functions/geospatial.html#ST\_NumGeometries) to find out the total number of elements. Singular geometries (e.g., POINT, LINESTRING, POLYGON), are treated as collections of one element. Empty geometries are treated as empty collections.
+Returns the geometry element at a given index (indices start at 1). If the geometry is a collection of geometries (e.g., GEOMETRYCOLLECTION or MULTI\*), returns the geometry at a given index. If the given index is less than 1 or greater than the total number of elements in the collection, returns `NULL`. Use `ST_NumGeometries()` to find out the total number of elements. Singular geometries (e.g., POINT, LINESTRING, POLYGON), are treated as collections of one element. Empty geometries are treated as empty collections.
 
-ST\_InteriorRingN(_Geometry_, _index_) → Geometry[#](https://trino.io/docs/current/functions/geospatial.html#ST\_InteriorRingN)
+ST\_InteriorRingN(_Geometry_, _index_) → Geometry#
 
-Returns the interior ring element at the specified index (indices start at 1). If the given index is less than 1 or greater than the total number of interior rings in the input geometry, returns `NULL`. The input geometry must be a polygon. Use [`ST_NumInteriorRing()`](https://trino.io/docs/current/functions/geospatial.html#ST\_NumInteriorRing) to find out the total number of elements.
+Returns the interior ring element at the specified index (indices start at 1). If the given index is less than 1 or greater than the total number of interior rings in the input geometry, returns `NULL`. The input geometry must be a polygon. Use `ST_NumInteriorRing()` to find out the total number of elements.
 
-ST\_GeometryType(_Geometry_) → varchar[#](https://trino.io/docs/current/functions/geospatial.html#ST\_GeometryType)
+ST\_GeometryType(_Geometry_) → varchar#
 
 Returns the type of the geometry.
 
-ST\_IsClosed(_Geometry_) → boolean[#](https://trino.io/docs/current/functions/geospatial.html#ST\_IsClosed)
+ST\_IsClosed(_Geometry_) → boolean#
 
 Returns `true` if the linestring’s start and end points are coincident.
 
-ST\_IsEmpty(_Geometry_) → boolean[#](https://trino.io/docs/current/functions/geospatial.html#ST\_IsEmpty)
+ST\_IsEmpty(_Geometry_) → boolean#
 
 Returns `true` if this Geometry is an empty geometrycollection, polygon, point etc.
 
@@ -228,9 +228,9 @@ Returns `true` if and only if the line is closed and simple.
 
 ST\_IsValid(_Geometry_) → boolean[#](https://trino.io/docs/current/functions/geospatial.html#ST\_IsValid)
 
-Returns `true` if and only if the input geometry is well formed. Use [`geometry_invalid_reason()`](https://trino.io/docs/current/functions/geospatial.html#geometry\_invalid\_reason) to determine why the geometry is not well formed.
+Returns `true` if and only if the input geometry is well formed. Use `geometry_invalid_reason()` to determine why the geometry is not well formed.
 
-ST\_Length(_Geometry_) → double[#](https://trino.io/docs/current/functions/geospatial.html#ST\_Length)
+ST\_Length(_Geometry_) → double#
 
 Returns the length of a linestring or multi-linestring using Euclidean measurement on a two dimensional plane (based on spatial ref) in projected units.
 
@@ -240,7 +240,7 @@ Returns the length of a linestring or multi-linestring on a spherical model of t
 
 ST\_PointN(_LineString_, _index_) → Point[#](https://trino.io/docs/current/functions/geospatial.html#ST\_PointN)
 
-Returns the vertex of a linestring at a given index (indices start at 1). If the given index is less than 1 or greater than the total number of elements in the collection, returns `NULL`. Use [`ST_NumPoints()`](https://trino.io/docs/current/functions/geospatial.html#ST\_NumPoints) to find out the total number of elements.
+Returns the vertex of a linestring at a given index (indices start at 1). If the given index is less than 1 or greater than the total number of elements in the collection, returns `NULL`. Use `ST_NumPoints()` to find out the total number of elements.
 
 ST\_Points(_Geometry_)[#](https://trino.io/docs/current/functions/geospatial.html#ST\_Points)
 

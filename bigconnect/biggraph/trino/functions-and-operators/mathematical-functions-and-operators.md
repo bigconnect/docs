@@ -22,7 +22,7 @@ Returns the cube root of `x`.
 
 ceil(_x_) → \[same as input][#](https://trino.io/docs/current/functions/math.html#ceil)
 
-This is an alias for [`ceiling()`](https://trino.io/docs/current/functions/math.html#ceiling).
+This is an alias for `ceiling()`.
 
 ceiling(_x_) → \[same as input][#](https://trino.io/docs/current/functions/math.html#ceiling)
 
@@ -70,7 +70,7 @@ Returns the constant Pi.
 
 pow(_x_, _p_) → double[#](https://trino.io/docs/current/functions/math.html#pow)
 
-This is an alias for [`power()`](https://trino.io/docs/current/functions/math.html#power).
+This is an alias for `power()`.
 
 power(_x_, _p_) → double[#](https://trino.io/docs/current/functions/math.html#power)
 
@@ -122,7 +122,7 @@ Returns the bin number of `x` according to the bins specified by the array `bins
 
 rand() → double[#](https://trino.io/docs/current/functions/math.html#rand)
 
-This is an alias for [`random()`](https://trino.io/docs/current/functions/math.html#random).
+This is an alias for `random()`.
 
 random() → double[#](https://trino.io/docs/current/functions/math.html#random)
 
@@ -138,9 +138,9 @@ Returns a pseudo-random number between m and n (exclusive).
 
 ### Trigonometric functions[#](https://trino.io/docs/current/functions/math.html#trigonometric-functions) <a href="#trigonometric-functions" id="trigonometric-functions"></a>
 
-All trigonometric function arguments are expressed in radians. See unit conversion functions [`degrees()`](https://trino.io/docs/current/functions/math.html#degrees) and [`radians()`](https://trino.io/docs/current/functions/math.html#radians).
+All trigonometric function arguments are expressed in radians. See unit conversion functions `degrees()` and `radians()`.
 
-acos(_x_) → double[#](https://trino.io/docs/current/functions/math.html#acos)
+acos(_x_) → double#
 
 Returns the arc cosine of `x`.
 

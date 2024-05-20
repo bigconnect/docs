@@ -40,4 +40,4 @@ COMMENT ON COLUMN users.name IS 'full name';
 
 ### See also[#](https://trino.io/docs/current/sql/comment.html#see-also) <a href="#see-also" id="see-also"></a>
 
-[Comments](https://trino.io/docs/current/language/comments.html)
+Comments

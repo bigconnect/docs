@@ -60,4 +60,4 @@ Trino supports all data types used within the TPCH schemas so no mapping is requ
 
 ### SQL support[#](https://trino.io/docs/current/connector/tpch.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements to access data and metadata in the TPC-H dataset.
+The connector provides globally available and read operation statements to access data and metadata in the TPC-H dataset.

@@ -8,17 +8,15 @@
 END LOOP
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ### Description[#](https://trino.io/docs/current/routines/loop.html#description) <a href="#description" id="description"></a>
 
-The `LOOP` statement is an optional construct in [SQL routines](https://trino.io/docs/current/routines/introduction.html) to allow processing of a block of statements repeatedly.
+The `LOOP` statement is an optional construct in SQL routines to allow processing of a block of statements repeatedly.
 
 The block of `statements` is processed until an explicit use of `LEAVE` causes processing to exit the loop. If processing reaches `END LOOP`, another iteration of processing from the beginning starts. `LEAVE` statements are typically wrapped in an `IF` statement that declares a condition to stop the loop.
 
-The optional `label` before the `LOOP` keyword can be used to [name the block](https://trino.io/docs/current/routines/introduction.html#routine-label).
+The optional `label` before the `LOOP` keyword can be used to name the block.
 
-### Examples[#](https://trino.io/docs/current/routines/loop.html#examples) <a href="#examples" id="examples"></a>
+### Examples# <a href="#examples" id="examples"></a>
 
 The following function counts up to `100` in a loop starting from the input value `i` and returns the number of incremental steps in the loop to get to `100`.
 
@@ -40,11 +38,11 @@ FUNCTION to_one_hundred(i int)
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Further examples of varying complexity that cover usage of the `LOOP` statement in combination with other statements are available in the [SQL routines examples documentation](https://trino.io/docs/current/routines/examples.html).
+Further examples of varying complexity that cover usage of the `LOOP` statement in combination with other statements are available in the SQL routines examples documentation.
 
-### See also[#](https://trino.io/docs/current/routines/loop.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-* [Introduction to SQL routines](https://trino.io/docs/current/routines/introduction.html)
-* [LEAVE](https://trino.io/docs/current/routines/leave.html)
+* Introduction to SQL routines
+* LEAVE
 
 \

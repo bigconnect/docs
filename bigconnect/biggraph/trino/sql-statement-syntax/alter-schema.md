@@ -39,6 +39,6 @@ ALTER SCHEMA web SET AUTHORIZATION ROLE PUBLIC
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See Also[#](https://trino.io/docs/current/sql/alter-schema.html#see-also) <a href="#see-also" id="see-also"></a>
+### See Also# <a href="#see-also" id="see-also"></a>
 
-[CREATE SCHEMA](https://trino.io/docs/current/sql/create-schema.html)
+CREATE SCHEMA

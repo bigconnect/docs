@@ -799,6 +799,6 @@ SELECT * FROM lineitem WHERE shipdate = '2020-02-01' AND quantity > 10;
 
 ### See also[#](https://trino.io/docs/current/sql/explain.html#see-also) <a href="#see-also" id="see-also"></a>
 
-[EXPLAIN ANALYZE](https://trino.io/docs/current/sql/explain-analyze.html)
+EXPLAIN ANALYZE
 
 \

@@ -13,7 +13,7 @@ AS query
 
 ### Description[#](https://trino.io/docs/current/sql/create-view.html#description) <a href="#description" id="description"></a>
 
-Create a new view of a [SELECT](https://trino.io/docs/current/sql/select.html) query. The view is a logical table that can be referenced by future queries. Views do not contain any data. Instead, the query stored by the view is executed every time the view is referenced by another query.
+Create a new view of a SELECT query. The view is a logical table that can be referenced by future queries. Views do not contain any data. Instead, the query stored by the view is executed every time the view is referenced by another query.
 
 The optional `OR REPLACE` clause causes the view to be replaced if it already exists rather than raising an error.
 
@@ -70,6 +70,6 @@ FROM orders
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/create-view.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[DROP VIEW](https://trino.io/docs/current/sql/drop-view.html), [SHOW CREATE VIEW](https://trino.io/docs/current/sql/show-create-view.html)
+DROP VIEW, SHOW CREATE VIEW

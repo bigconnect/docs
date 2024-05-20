@@ -67,7 +67,7 @@ Prometheus can be setup to require a Authorization header with every query. The 
 
 ### Type mapping[#](https://trino.io/docs/current/connector/prometheus.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
 
-Because Trino and Prometheus each support types that the other does not, this connector [modifies some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading data.
+Because Trino and Prometheus each support types that the other does not, this connector modifies some types when reading data.
 
 The connector returns fixed columns that have a defined mapping to Trino types according to the following table:
 
@@ -99,4 +99,4 @@ SELECT * FROM example.default.up;
 
 ### SQL support[#](https://trino.io/docs/current/connector/prometheus.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements to access data and metadata in Prometheus.
+The connector provides globally available and read operation statements to access data and metadata in Prometheus.

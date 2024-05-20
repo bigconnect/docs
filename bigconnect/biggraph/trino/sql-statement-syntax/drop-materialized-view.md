@@ -32,10 +32,10 @@ DROP MATERIALIZED VIEW IF EXISTS orders_by_date;
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/drop-materialized-view.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-* [CREATE MATERIALIZED VIEW](https://trino.io/docs/current/sql/create-materialized-view.html)
-* [SHOW CREATE MATERIALIZED VIEW](https://trino.io/docs/current/sql/show-create-materialized-view.html)
-* [REFRESH MATERIALIZED VIEW](https://trino.io/docs/current/sql/refresh-materialized-view.html)
+* CREATE MATERIALIZED VIEW
+* SHOW CREATE MATERIALIZED VIEW
+* REFRESH MATERIALIZED VIEW
 
 \

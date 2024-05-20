@@ -384,6 +384,6 @@ The schema evolution behavior is as follows:
 
 ### SQL support[#](https://trino.io/docs/current/connector/kinesis.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements to access data and metadata from Kinesis streams.
+The connector provides globally available and read operation statements to access data and metadata from Kinesis streams.
 
 \

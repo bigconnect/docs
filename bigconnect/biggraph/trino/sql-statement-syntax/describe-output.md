@@ -92,4 +92,4 @@ DESCRIBE OUTPUT my_create;
 
 ### See also[#](https://trino.io/docs/current/sql/describe-output.html#see-also) <a href="#see-also" id="see-also"></a>
 
-[PREPARE](https://trino.io/docs/current/sql/prepare.html)
+PREPARE

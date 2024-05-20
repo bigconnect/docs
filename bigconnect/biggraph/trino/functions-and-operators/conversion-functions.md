@@ -12,7 +12,7 @@ Explicitly cast a value as a type. This can be used to cast a varchar to a numer
 
 try\_cast(_value AS type_) → type[#](https://trino.io/docs/current/functions/conversion.html#try\_cast)
 
-Like [`cast()`](https://trino.io/docs/current/functions/conversion.html#cast), but returns null if the cast fails.
+Like `cast()`, but returns null if the cast fails.
 
 ### Formatting[#](https://trino.io/docs/current/functions/conversion.html#formatting) <a href="#formatting" id="formatting"></a>
 
@@ -43,7 +43,7 @@ SELECT format('%1$tA, %1$tB %1$te, %1$tY', date '2006-07-04');
 -- 'Tuesday, July 4, 2006'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)format\_number(_number_) → varchar[#](https://trino.io/docs/current/functions/conversion.html#format\_number)
+format\_number(_number_) → varchar[#](https://trino.io/docs/current/functions/conversion.html#format\_number)
 
 Returns a formatted string using a unit symbol:
 
@@ -52,7 +52,7 @@ SELECT format_number(123456); -- '123K'
 SELECT format_number(1000000); -- '1M'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ### Data size[#](https://trino.io/docs/current/functions/conversion.html#data-size) <a href="#data-size" id="data-size"></a>
 

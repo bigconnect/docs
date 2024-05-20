@@ -51,7 +51,7 @@ TABLE (table_function_invocation) [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-For description of table functions usage, see [table functions](https://trino.io/docs/current/functions/table.html).
+For description of table functions usage, see table functions.
 
 and `join_type` is one of
 
@@ -101,9 +101,9 @@ SELECT hello('Finn') || ' and ' || bye('Joe');
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Find further information about routines in general, inline routines, all supported statements, and examples in [SQL routines](https://trino.io/docs/current/routines.html).
+Find further information about routines in general, inline routines, all supported statements, and examples in SQL routines.
 
-### WITH clause[#](https://trino.io/docs/current/sql/select.html#with-clause) <a href="#with-clause" id="with-clause"></a>
+### WITH clause# <a href="#with-clause" id="with-clause"></a>
 
 The `WITH` clause defines named relations for use within a query. It allows flattening nested queries or simplifying subqueries. For example, the following queries are equivalent:
 
@@ -191,7 +191,7 @@ The following limitations apply as a result of following the SQL standard and du
 * usage of outer joins, set operations, limit clause, and others is not always allowed in the step relation
 * recursion depth is fixed, defaults to `10`, and doesn’t depend on the actual query results
 
-You can adjust the recursion depth with the [session property](https://trino.io/docs/current/sql/set-session.html) `max_recursion_depth`. When changing the value consider that the size of the query plan growth is quadratic with the recursion depth.
+You can adjust the recursion depth with the session property `max_recursion_depth`. When changing the value consider that the size of the query plan growth is quadratic with the recursion depth.
 
 ### SELECT clause[#](https://trino.io/docs/current/sql/select.html#select-clause) <a href="#select-clause" id="select-clause"></a>
 
@@ -891,7 +891,7 @@ FROM some_table
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-More background information and details can be found in [a blog post about this optimization](https://trino.io/blog/2019/06/03/redundant-order-by.html).
+More background information and details can be found in a blog post about this optimization.
 
 ### OFFSET clause[#](https://trino.io/docs/current/sql/select.html#offset-clause) <a href="#offset-clause" id="offset-clause"></a>
 

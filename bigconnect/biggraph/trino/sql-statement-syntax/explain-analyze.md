@@ -115,4 +115,4 @@ WHERE orderdate > date '1995-01-01';
 
 ### See also[#](https://trino.io/docs/current/sql/explain-analyze.html#see-also) <a href="#see-also" id="see-also"></a>
 
-[EXPLAIN](https://trino.io/docs/current/sql/explain.html)
+EXPLAIN

@@ -1,8 +1,8 @@
 # Introduction to SQL routines
 
-A SQL routine is a custom, user-defined function authored by a user of Trino and written in the SQL routine language. You can declare the routine body within a [FUNCTION](https://trino.io/docs/current/routines/function.html) block as [inline routines](https://trino.io/docs/current/routines/introduction.html#routine-inline) or [catalog routines](https://trino.io/docs/current/routines/introduction.html#routine-catalog).
+A SQL routine is a custom, user-defined function authored by a user of Trino and written in the SQL routine language. You can declare the routine body within a FUNCTION block as inline routines or catalog routines.
 
-### Inline routines[#](https://trino.io/docs/current/routines/introduction.html#inline-routines) <a href="#inline-routines" id="inline-routines"></a>
+### Inline routines# <a href="#inline-routines" id="inline-routines"></a>
 
 An inline routine declares and uses the routine within a query processing context. The routine is declared in a `WITH` block before the query:
 
@@ -18,7 +18,7 @@ SELECT abc(21);
 
 Inline routine names must follow SQL identifier naming conventions, and cannot contain `.` characters.
 
-The routine declaration is only valid within the context of the query. A separate later invocation of the routine is not possible. If this is desired, use a [catalog routine](https://trino.io/docs/current/routines/introduction.html#routine-catalog).
+The routine declaration is only valid within the context of the query. A separate later invocation of the routine is not possible. If this is desired, use a catalog routine.
 
 Multiple inline routine declarations are comma-separated, and can include routines calling each other, as long as a called routine is declared before the first invocation.
 
@@ -51,14 +51,14 @@ SELECT abs(-10); -- -20, not 10!
 
 You can store a routine in the context of a catalog, if the connector used in the catalog supports routine storage. The following connectors support catalog routine storage:
 
-* [Hive connector](https://trino.io/docs/current/connector/hive.html)
-* [Memory connector](https://trino.io/docs/current/connector/memory.html)
+* Hive connector
+* Memory connector
 
 In this scenario, the following commands can be used:
 
-* [CREATE FUNCTION](https://trino.io/docs/current/sql/create-function.html) to create and store a routine.
-* [DROP FUNCTION](https://trino.io/docs/current/sql/drop-function.html) to remove a routine.
-* [SHOW FUNCTIONS](https://trino.io/docs/current/sql/show-functions.html) to display a list of routines in a catalog.
+* CREATE FUNCTION to create and store a routine.
+* DROP FUNCTION to remove a routine.
+* SHOW FUNCTIONS to display a list of routines in a catalog.
 
 Catalog routines must use a name that combines the catalog name and schema name with the routine name, such as `example.default.power` for the `power` routine in the `default` schema of the `example` catalog.
 
@@ -66,35 +66,35 @@ Invocation must use the fully qualified name, such as `example.default.power`.
 
 ### SQL environment configuration[#](https://trino.io/docs/current/routines/introduction.html#sql-environment-configuration) <a href="#sql-environment-configuration" id="sql-environment-configuration"></a>
 
-Configuration of the `sql.default-function-catalog` and `sql.default-function-schema` [SQL environment properties](https://trino.io/docs/current/admin/properties-sql-environment.html) allows you to set the default storage for SQL routines. The catalog and schema must be added to the `sql.path` as well. This enables users to call SQL routines and perform all [SQL routine management](https://trino.io/docs/current/language/sql-support.html#sql-routine-management) without specifying the full path to the routine.
+Configuration of the `sql.default-function-catalog` and `sql.default-function-schema` SQL environment properties allows you to set the default storage for SQL routines. The catalog and schema must be added to the `sql.path` as well. This enables users to call SQL routines and perform all SQL routine management without specifying the full path to the routine.
 
 Note
 
-Use the [Memory connector](https://trino.io/docs/current/connector/memory.html) in a catalog for simple storing and testing of your SQL routines.
+Use the Memory connector in a catalog for simple storing and testing of your SQL routines.
 
-### Routine declaration[#](https://trino.io/docs/current/routines/introduction.html#routine-declaration) <a href="#routine-declaration" id="routine-declaration"></a>
+### Routine declaration# <a href="#routine-declaration" id="routine-declaration"></a>
 
-Refer to the documentation for the [FUNCTION](https://trino.io/docs/current/routines/function.html) keyword for more details about declaring the routine overall. The routine body is composed with statements from the following list:
+Refer to the documentation for the FUNCTION keyword for more details about declaring the routine overall. The routine body is composed with statements from the following list:
 
-* [BEGIN](https://trino.io/docs/current/routines/begin.html)
-* [CASE](https://trino.io/docs/current/routines/case.html)
-* [DECLARE](https://trino.io/docs/current/routines/declare.html)
-* [IF](https://trino.io/docs/current/routines/if.html)
-* [ITERATE](https://trino.io/docs/current/routines/iterate.html)
-* [LEAVE](https://trino.io/docs/current/routines/leave.html)
-* [LOOP](https://trino.io/docs/current/routines/loop.html)
-* [REPEAT](https://trino.io/docs/current/routines/repeat.html)
-* [RETURN](https://trino.io/docs/current/routines/return.html)
-* [SET](https://trino.io/docs/current/routines/set.html)
-* [WHILE](https://trino.io/docs/current/routines/while.html)
+* BEGIN
+* CASE
+* DECLARE
+* IF
+* ITERATE
+* LEAVE
+* LOOP
+* REPEAT
+* RETURN
+* SET
+* WHILE
 
-Statements can also use [built-in functions and operators](https://trino.io/docs/current/functions.html) as well as other routines, although recursion is not supported for routines.
+Statements can also use built-in functions and operators as well as other routines, although recursion is not supported for routines.
 
 Find simple examples in each statement documentation, and refer to the [example documentation](https://trino.io/docs/current/routines/examples.html) for more complex use cases that combine multiple statements.
 
 Note
 
-User-defined functions can alternatively be written in Java and deployed as a plugin. Details are available in the [developer guide](https://trino.io/docs/current/develop/functions.html).
+User-defined functions can alternatively be written in Java and deployed as a plugin. Details are available in the developer guide.
 
 ### Labels[#](https://trino.io/docs/current/routines/introduction.html#labels) <a href="#labels" id="labels"></a>
 
@@ -128,8 +128,8 @@ Labels can be used with the `ITERATE` and `LEAVE` statements to continue process
 Processing routines can potentially be resource intensive on the cluster in terms of memory and processing. Take the following considerations into account when writing and running SQL routines:
 
 * Some checks for the runtime behavior of routines are in place. For example, routines that take longer to process than a hardcoded threshold are automatically terminated.
-* Avoid creation of arrays in a looping construct. Each iteration creates a separate new array with all items and copies the data for each modification, leaving the prior array in memory for automated clean up later. Use a [lambda expression](https://trino.io/docs/current/functions/lambda.html) instead of the loop.
-* Avoid concatenating strings in a looping construct. Each iteration creates a separate new string and copying the old string for each modification, leaving the prior string in memory for automated clean up later. Use a [lambda expression](https://trino.io/docs/current/functions/lambda.html) instead of the loop.
+* Avoid creation of arrays in a looping construct. Each iteration creates a separate new array with all items and copies the data for each modification, leaving the prior array in memory for automated clean up later. Use a lambda expression instead of the loop.
+* Avoid concatenating strings in a looping construct. Each iteration creates a separate new string and copying the old string for each modification, leaving the prior string in memory for automated clean up later. Use a lambda expression instead of the loop.
 * Most routines should declare the `RETURNS NULL ON NULL INPUT` characteristics unless the code has some special handling for null values. You must declare this explicitly since `CALLED ON NULL INPUT` is the default characteristic.
 
 ### Limitations[#](https://trino.io/docs/current/routines/introduction.html#limitations) <a href="#limitations" id="limitations"></a>

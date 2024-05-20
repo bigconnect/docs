@@ -2,14 +2,14 @@
 
 The MariaDB connector allows querying and creating tables in an external MariaDB database.
 
-### Requirements[#](https://trino.io/docs/current/connector/mariadb.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To connect to MariaDB, you need:
 
 * MariaDB version 10.10 or higher.
 * Network access from the Trino coordinator and workers to MariaDB. Port 3306 is the default port.
 
-### Configuration[#](https://trino.io/docs/current/connector/mariadb.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the MariaDB connector, create a catalog properties file in `etc/catalog` named, for example, `example.properties`, to mount the MariaDB connector as the `example` catalog. Create the file with the following contents, replacing the connection properties as appropriate for your setup:
 
@@ -19,8 +19,6 @@ connection-url=jdbc:mariadb://example.net:3306
 connection-user=root
 connection-password=secret
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The `connection-user` and `connection-password` are typically required and determine the user credentials for the connection, often a service user. You can use [secrets](https://trino.io/docs/current/security/secrets.html) to avoid actual values in the catalog properties files.
 
@@ -33,7 +31,7 @@ The connector can provide credentials for the data source connection in multiple
 * in a key store file
 * as extra credentials set when connecting to Trino
 
-You can use [secrets](https://trino.io/docs/current/security/secrets.html) to avoid storing sensitive values in the catalog properties files.
+You can use secrets to avoid storing sensitive values in the catalog properties files.
 
 The following table describes configuration properties for connection credentials:
 
@@ -57,27 +55,27 @@ The following table describes configuration properties for connection credential
 
 The following table describes general catalog configuration properties for the connector:
 
-| Property name                                               | Description                                                                                                                                                                                                                                                                                                                                                               |
-| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `case-insensitive-name-matching`                            | Support case insensitive schema and table names. Defaults to `false`.                                                                                                                                                                                                                                                                                                     |
-| `case-insensitive-name-matching.cache-ttl`                  | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which case insensitive schema and table names are cached. Defaults to `1m`.                                                                                                                                                                                                        |
-| `case-insensitive-name-matching.config-file`                | Path to a name mapping configuration file in JSON format that allows Trino to disambiguate between schemas and tables with similar names in different cases. Defaults to `null`.                                                                                                                                                                                          |
-| `case-insensitive-name-matching.config-file.refresh-period` | Frequency with which Trino checks the name matching configuration file for changes. The [duration value](https://trino.io/docs/current/admin/properties.html#prop-type-duration) defaults to `0s` (refresh disabled).                                                                                                                                                     |
-| `metadata.cache-ttl`                                        | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which metadata, including table and column statistics, is cached. Defaults to `0s` (caching disabled).                                                                                                                                                                             |
-| `metadata.cache-missing`                                    | Cache the fact that metadata, including table and column statistics, is not available. Defaults to `false`.                                                                                                                                                                                                                                                               |
-| `metadata.schemas.cache-ttl`                                | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which schema metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                    |
-| `metadata.tables.cache-ttl`                                 | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which table metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                     |
-| `metadata.statistics.cache-ttl`                             | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which tables statistics are cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                 |
-| `metadata.cache-maximum-size`                               | Maximum number of objects stored in the metadata cache. Defaults to `10000`.                                                                                                                                                                                                                                                                                              |
-| `write.batch-size`                                          | Maximum number of statements in a batched execution. Do not change this setting from the default. Non-default values may negatively impact performance. Defaults to `1000`.                                                                                                                                                                                               |
-| `dynamic-filtering.enabled`                                 | Push down dynamic filters into JDBC queries. Defaults to `true`.                                                                                                                                                                                                                                                                                                          |
-| `dynamic-filtering.wait-timeout`                            | Maximum [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which Trino waits for dynamic filters to be collected from the build side of joins before starting a JDBC query. Using a large timeout can potentially result in more detailed dynamic filters. However, it can also increase latency for some queries. Defaults to `20s`. |
+| Property name                                               | Description                                                                                                                                                                                                                                                                                     |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `case-insensitive-name-matching`                            | Support case insensitive schema and table names. Defaults to `false`.                                                                                                                                                                                                                           |
+| `case-insensitive-name-matching.cache-ttl`                  | Duration for which case insensitive schema and table names are cached. Defaults to `1m`.                                                                                                                                                                                                        |
+| `case-insensitive-name-matching.config-file`                | Path to a name mapping configuration file in JSON format that allows Trino to disambiguate between schemas and tables with similar names in different cases. Defaults to `null`.                                                                                                                |
+| `case-insensitive-name-matching.config-file.refresh-period` | Frequency with which Trino checks the name matching configuration file for changes. The duration value defaults to `0s` (refresh disabled).                                                                                                                                                     |
+| `metadata.cache-ttl`                                        | Duration for which metadata, including table and column statistics, is cached. Defaults to `0s` (caching disabled).                                                                                                                                                                             |
+| `metadata.cache-missing`                                    | Cache the fact that metadata, including table and column statistics, is not available. Defaults to `false`.                                                                                                                                                                                     |
+| `metadata.schemas.cache-ttl`                                | Duration for which schema metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                    |
+| `metadata.tables.cache-ttl`                                 | Duration for which table metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                     |
+| `metadata.statistics.cache-ttl`                             | Duration for which tables statistics are cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                 |
+| `metadata.cache-maximum-size`                               | Maximum number of objects stored in the metadata cache. Defaults to `10000`.                                                                                                                                                                                                                    |
+| `write.batch-size`                                          | Maximum number of statements in a batched execution. Do not change this setting from the default. Non-default values may negatively impact performance. Defaults to `1000`.                                                                                                                     |
+| `dynamic-filtering.enabled`                                 | Push down dynamic filters into JDBC queries. Defaults to `true`.                                                                                                                                                                                                                                |
+| `dynamic-filtering.wait-timeout`                            | Maximum duration for which Trino waits for dynamic filters to be collected from the build side of joins before starting a JDBC query. Using a large timeout can potentially result in more detailed dynamic filters. However, it can also increase latency for some queries. Defaults to `20s`. |
 
 #### Domain compaction threshold[#](https://trino.io/docs/current/connector/mariadb.html#domain-compaction-threshold) <a href="#domain-compaction-threshold" id="domain-compaction-threshold"></a>
 
-Pushing down a large list of predicates to the data source can compromise performance. Trino compacts large predicates into a simpler range predicate by default to ensure a balance between performance and predicate pushdown. If necessary, the threshold for this compaction can be increased to improve performance when the data source is capable of taking advantage of large predicates. Increasing this threshold may improve pushdown of large [dynamic filters](https://trino.io/docs/current/admin/dynamic-filtering.html). The `domain-compaction-threshold` catalog configuration property or the `domain_compaction_threshold` [catalog session property](https://trino.io/docs/current/sql/set-session.html#session-properties-definition) can be used to adjust the default value of `32` for this threshold.
+Pushing down a large list of predicates to the data source can compromise performance. Trino compacts large predicates into a simpler range predicate by default to ensure a balance between performance and predicate pushdown. If necessary, the threshold for this compaction can be increased to improvperformance when the data source is capable of taking advantage of large predicates. Increasing this threshold may improve pushdown of large dynamic filters. The `domain-compaction-threshold` catalog configuration property or the `domain_compaction_threshold` catalog session property can be used to adjust the default value of `32` for this threshold.
 
-#### Case insensitive matching[#](https://trino.io/docs/current/connector/mariadb.html#case-insensitive-matching) <a href="#case-insensitive-matching" id="case-insensitive-matching"></a>
+#### Case insensitive matching# <a href="#case-insensitive-matching" id="case-insensitive-matching"></a>
 
 When `case-insensitive-name-matching` is set to `true`, Trino is able to query non-lowercase schemas and tables by maintaining a mapping of the lowercase name to the actual name in the remote system. However, if two schemas and/or tables have names that differ only in case (such as “customers” and “Customers”) then Trino fails to query them due to ambiguity.
 
@@ -108,8 +106,6 @@ In these cases, use the `case-insensitive-name-matching.config-file` catalog con
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Queries against one of the tables or schemes defined in the `mapping` attributes are run against the corresponding remote entity. For example, a query against tables in the `case_insensitive_1` schema is forwarded to the CaseSensitiveName schema and a query against `case_insensitive_2` is forwarded to the `cASEsENSITIVEnAME` schema.
 
 At the table mapping level, a query on `case_insensitive_1.table_1` as configured above is forwarded to `CaseSensitiveName.tablex`, and a query on `case_insensitive_1.table_2` is forwarded to `CaseSensitiveName.TABLEX`.
@@ -119,8 +115,6 @@ By default, when a change is made to the mapping configuration file, Trino must 
 ```
 case-insensitive-name-mapping.refresh-period=30s
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 #### Non-transactional INSERT[#](https://trino.io/docs/current/connector/mariadb.html#non-transactional-insert) <a href="#non-transactional-insert" id="non-transactional-insert"></a>
 
@@ -136,15 +130,11 @@ The MariaDB connector provides a schema for every MariaDB _database_. You can se
 SHOW SCHEMAS FROM example;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 If you have a MariaDB database named `web`, you can view the tables in this database by running `SHOW TABLES`:
 
 ```
 SHOW TABLES FROM example.web;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 You can see a list of the columns in the `clicks` table in the `web` database using either of the following:
 
@@ -153,21 +143,17 @@ DESCRIBE example.web.clicks;
 SHOW COLUMNS FROM example.web.clicks;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Finally, you can access the `clicks` table in the `web` database:
 
 ```
 SELECT * FROM example.web.clicks;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 If you used a different name for your catalog properties file, use that catalog name instead of `example` in the above examples.
 
 ### Type mapping[#](https://trino.io/docs/current/connector/mariadb.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
 
-Because Trino and MariaDB each support types that the other does not, this connector [modifies some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
+Because Trino and MariaDB each support types that the other does not, this connector modifies some types when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
 #### MariaDB type to Trino type mapping[#](https://trino.io/docs/current/connector/mariadb.html#mariadb-type-to-trino-type-mapping) <a href="#mariadb-type-to-trino-type-mapping" id="mariadb-type-to-trino-type-mapping"></a>
 
@@ -205,7 +191,7 @@ The connector maps MariaDB types to the corresponding Trino types according to t
 
 No other types are supported.
 
-#### Trino type mapping to MariaDB type mapping[#](https://trino.io/docs/current/connector/mariadb.html#trino-type-mapping-to-mariadb-type-mapping) <a href="#trino-type-mapping-to-mariadb-type-mapping" id="trino-type-mapping-to-mariadb-type-mapping"></a>
+#### Trino type mapping to MariaDB type mapping <a href="#trino-type-mapping-to-mariadb-type-mapping" id="trino-type-mapping-to-mariadb-type-mapping"></a>
 
 The connector maps Trino types to the corresponding MariaDB types according to the following table:
 
@@ -244,20 +230,20 @@ The following properties can be used to configure how data types from the connec
 
 ### SQL support[#](https://trino.io/docs/current/connector/mariadb.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides read access and write access to data and metadata in a MariaDB database. In addition to the [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements, the connector supports the following features:
+The connector provides read access and write access to data and metadata in a MariaDB database. In addition to the globally available and read operation statements, the connector supports the following features:
 
-* [INSERT](https://trino.io/docs/current/sql/insert.html)
-* [UPDATE](https://trino.io/docs/current/sql/update.html)
-* [DELETE](https://trino.io/docs/current/sql/delete.html)
-* [TRUNCATE](https://trino.io/docs/current/sql/truncate.html)
-* [CREATE TABLE](https://trino.io/docs/current/sql/create-table.html)
-* [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html)
-* [DROP TABLE](https://trino.io/docs/current/sql/drop-table.html)
-* [ALTER TABLE](https://trino.io/docs/current/sql/alter-table.html)
-* [CREATE SCHEMA](https://trino.io/docs/current/sql/create-schema.html)
-* [DROP SCHEMA](https://trino.io/docs/current/sql/drop-schema.html)
+* INSERT
+* UPDATE
+* DELETE
+* TRUNCATE
+* CREATE TABLE
+* CREATE TABLE AS
+* DROP TABLE
+* ALTER TABLE
+* CREATE SCHEMA
+* DROP SCHEMA
 
-#### UPDATE[#](https://trino.io/docs/current/connector/mariadb.html#update) <a href="#update" id="update"></a>
+#### UPDATE# <a href="#update" id="update"></a>
 
 Only `UPDATE` statements with constant assignments and predicates are supported. For example, the following statement is supported because the values assigned are constants:
 
@@ -297,7 +283,7 @@ If a `WHERE` clause is specified, the `DELETE` operation only works if the predi
 
 ### Table functions[#](https://trino.io/docs/current/connector/mariadb.html#table-functions) <a href="#table-functions" id="table-functions"></a>
 
-The connector provides specific [table functions](https://trino.io/docs/current/functions/table.html) to access MariaDB.
+The connector provides specific table functions to access MariaDB.
 
 #### `query(varchar) -> table`[#](https://trino.io/docs/current/connector/mariadb.html#query-varchar-table) <a href="#query-varchar-table" id="query-varchar-table"></a>
 
@@ -337,7 +323,7 @@ The connector includes a number of performance improvements, detailed in the fol
 
 #### Table statistics[#](https://trino.io/docs/current/connector/mariadb.html#table-statistics) <a href="#table-statistics" id="table-statistics"></a>
 
-The MariaDB connector can use [table and column statistics](https://trino.io/docs/current/optimizer/statistics.html) for [cost based optimizations](https://trino.io/docs/current/optimizer/cost-based-optimizations.html) to improve query processing performance based on the actual data in the data source.
+The MariaDB connector can use table and column statistics for cost based optimizations to improve query processing performance based on the actual data in the data source.
 
 The statistics are collected by MariaDB and retrieved by the connector.
 
@@ -349,29 +335,29 @@ ANALYZE TABLE table_name;
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Refer to [MariaDB documentation](https://mariadb.com/kb/en/analyze-table/) for additional information.
+Refer to MariaDB documentation for additional information.
 
-#### Pushdown[#](https://trino.io/docs/current/connector/mariadb.html#pushdown) <a href="#pushdown" id="pushdown"></a>
+#### Pushdown# <a href="#pushdown" id="pushdown"></a>
 
 The connector supports pushdown for a number of operations:
 
-* [Join pushdown](https://trino.io/docs/current/optimizer/pushdown.html#join-pushdown)
-* [Limit pushdown](https://trino.io/docs/current/optimizer/pushdown.html#limit-pushdown)
-* [Top-N pushdown](https://trino.io/docs/current/optimizer/pushdown.html#topn-pushdown)
+* Join pushdown
+* Limit pushdown
+* Top-N pushdown
 
-[Aggregate pushdown](https://trino.io/docs/current/optimizer/pushdown.html#aggregation-pushdown) for the following functions:
+Aggregate pushdown for the following functions:
 
-* [`avg()`](https://trino.io/docs/current/functions/aggregate.html#avg)
-* [`count()`](https://trino.io/docs/current/functions/aggregate.html#count)
-* [`max()`](https://trino.io/docs/current/functions/aggregate.html#max)
-* [`min()`](https://trino.io/docs/current/functions/aggregate.html#min)
-* [`sum()`](https://trino.io/docs/current/functions/aggregate.html#sum)
-* [`stddev()`](https://trino.io/docs/current/functions/aggregate.html#stddev)
-* [`stddev_pop()`](https://trino.io/docs/current/functions/aggregate.html#stddev\_pop)
-* [`stddev_samp()`](https://trino.io/docs/current/functions/aggregate.html#stddev\_samp)
-* [`variance()`](https://trino.io/docs/current/functions/aggregate.html#variance)
-* [`var_pop()`](https://trino.io/docs/current/functions/aggregate.html#var\_pop)
-* [`var_samp()`](https://trino.io/docs/current/functions/aggregate.html#var\_samp)
+* `avg()`
+* `count()`
+* `max()`
+* `min()`
+* `sum()`
+* `stddev()`
+* `stddev_pop()`
+* `stddev_samp()`
+* `variance()`
+* `var_pop()`
+* `var_samp()`
 
 Note
 

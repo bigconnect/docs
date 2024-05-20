@@ -91,7 +91,7 @@ FROM tpch.sf1.orders;
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-SQL routines can use [`IF` statements](https://trino.io/docs/current/routines/if.html) that use a slightly different syntax from `IF` expressions. Specifically note the requirement for terminating each clause with a semicolon `;` and the usage of `END IF`.
+SQL routines can use `IF` statements that use a slightly different syntax from `IF` expressions. Specifically note the requirement for terminating each clause with a semicolon `;` and the usage of `END IF`.
 
 ### COALESCE[#](https://trino.io/docs/current/functions/conditional.html#coalesce) <a href="#coalesce" id="coalesce"></a>
 

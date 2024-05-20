@@ -135,6 +135,6 @@ SELECT "timestamp", "uptime" FROM example.history."java.lang:type=runtime";
 
 ### SQL support[#](https://trino.io/docs/current/connector/jmx.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements to access JMX information on your Trino nodes.
+The connector provides globally available and read operation statements to access JMX information on your Trino nodes.
 
 \

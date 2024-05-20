@@ -40,7 +40,7 @@ SELECT map(ARRAY[1,3], ARRAY[2,4]);
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-See also [`map_agg()`](https://trino.io/docs/current/functions/aggregate.html#map\_agg) and [`multimap_agg()`](https://trino.io/docs/current/functions/aggregate.html#multimap\_agg) for creating a map as an aggregation.
+See also `map_agg()` and `multimap_agg()` for creating a map as an aggregation.
 
 map\_from\_entries(_array(row(K_, _V))) -> map(K_, _V_)[#](https://trino.io/docs/current/functions/map.html#map\_from\_entries)
 

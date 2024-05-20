@@ -2,7 +2,7 @@
 
 Trino can map user names onto groups for easier access control management. This mapping is performed by a `GroupProvider` implementation.
 
-### Implementation[#](https://trino.io/docs/current/develop/group-provider.html#implementation) <a href="#implementation" id="implementation"></a>
+### Implementation <a href="#implementation" id="implementation"></a>
 
 `GroupProviderFactory` is responsible for creating a `GroupProvider` instance. It also defines the name of the group provider as used in the configuration file.
 
@@ -10,7 +10,7 @@ Trino can map user names onto groups for easier access control management. This 
 
 The implementation of `GroupProvider` and its corresponding `GroupProviderFactory` must be wrapped as a Trino plugin and installed on the cluster.
 
-### Configuration[#](https://trino.io/docs/current/develop/group-provider.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 After a plugin that implements `GroupProviderFactory` has been installed on the coordinator, it is configured using an `etc/group-provider.properties` file. All of the properties other than `group-provider.name` are specific to the `GroupProviderFactory` implementation.
 

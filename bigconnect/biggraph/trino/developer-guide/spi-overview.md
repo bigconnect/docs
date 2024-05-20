@@ -4,16 +4,16 @@ When you implement a new Trino plugin, you implement interfaces and override met
 
 Plugins can provide additional:
 
-* [Connectors](https://trino.io/docs/current/develop/connectors.html),
+* Connectors,
 * block encodings,
-* [Types](https://trino.io/docs/current/develop/types.html),
-* [Functions](https://trino.io/docs/current/develop/functions.html),
-* [System access control](https://trino.io/docs/current/develop/system-access-control.html),
-* [Group provider](https://trino.io/docs/current/develop/group-provider.html),
-* [Password authenticator](https://trino.io/docs/current/develop/password-authenticator.html),
-* [Header authenticator](https://trino.io/docs/current/develop/header-authenticator.html),
-* [Certificate authenticator](https://trino.io/docs/current/develop/certificate-authenticator.html),
-* [Event listener](https://trino.io/docs/current/develop/event-listener.html),
+* Types,
+* Functions,
+* System access control,
+* Group provider,
+* Password authenticator,
+* Header authenticator,
+* Certificate authenticator,
+* Event listener,
 * resource group configuration managers,
 * session property configuration managers,
 * and exchange managers.

@@ -27,7 +27,7 @@ connection-password=secret
 
 The `connection-url` defines the connection information and parameters to pass to the JDBC driver. The Oracle connector uses the Oracle JDBC Thin driver, and the syntax of the URL may be different depending on your Oracle configuration. For example, the connection URL is different if you are connecting to an Oracle SID or an Oracle service name. See the [Oracle Database JDBC driver documentation](https://docs.oracle.com/en/database/oracle/oracle-database/19/jjdbc/data-sources-and-URLs.html) for more information.
 
-The `connection-user` and `connection-password` are typically required and determine the user credentials for the connection, often a service user. You can use [secrets](https://trino.io/docs/current/security/secrets.html) to avoid actual values in the catalog properties files.
+The `connection-user` and `connection-password` are typically required and determine the user credentials for the connection, often a service user. You can use secrets to avoid actual values in the catalog properties files.
 
 Note
 
@@ -60,7 +60,7 @@ The connector can provide credentials for the data source connection in multiple
 * in a key store file
 * as extra credentials set when connecting to Trino
 
-You can use [secrets](https://trino.io/docs/current/security/secrets.html) to avoid storing sensitive values in the catalog properties files.
+You can use secrets to avoid storing sensitive values in the catalog properties files.
 
 The following table describes configuration properties for connection credentials:
 
@@ -93,14 +93,14 @@ The following table describes general catalog configuration properties for the c
 | Property name                                               | Description                                                                                                                                                                                                                                                                                                                                                               |
 | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `case-insensitive-name-matching`                            | Support case insensitive schema and table names. Defaults to `false`.                                                                                                                                                                                                                                                                                                     |
-| `case-insensitive-name-matching.cache-ttl`                  | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which case insensitive schema and table names are cached. Defaults to `1m`.                                                                                                                                                                                                        |
+| `case-insensitive-name-matching.cache-ttl`                  | Duration for which case insensitive schema and table names are cached. Defaults to `1m`.                                                                                                                                                                                                                                                                                  |
 | `case-insensitive-name-matching.config-file`                | Path to a name mapping configuration file in JSON format that allows Trino to disambiguate between schemas and tables with similar names in different cases. Defaults to `null`.                                                                                                                                                                                          |
-| `case-insensitive-name-matching.config-file.refresh-period` | Frequency with which Trino checks the name matching configuration file for changes. The [duration value](https://trino.io/docs/current/admin/properties.html#prop-type-duration) defaults to `0s` (refresh disabled).                                                                                                                                                     |
-| `metadata.cache-ttl`                                        | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which metadata, including table and column statistics, is cached. Defaults to `0s` (caching disabled).                                                                                                                                                                             |
+| `case-insensitive-name-matching.config-file.refresh-period` | Frequency with which Trino checks the name matching configuration file for changes. The duration value defaults to `0s` (refresh disabled).                                                                                                                                                                                                                               |
+| `metadata.cache-ttl`                                        | Duration for which metadata, including table and column statistics, is cached. Defaults to `0s` (caching disabled).                                                                                                                                                                                                                                                       |
 | `metadata.cache-missing`                                    | Cache the fact that metadata, including table and column statistics, is not available. Defaults to `false`.                                                                                                                                                                                                                                                               |
-| `metadata.schemas.cache-ttl`                                | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which schema metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                    |
-| `metadata.tables.cache-ttl`                                 | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which table metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                     |
-| `metadata.statistics.cache-ttl`                             | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which tables statistics are cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                 |
+| `metadata.schemas.cache-ttl`                                | Duration for which schema metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                                                                                              |
+| `metadata.tables.cache-ttl`                                 | Duration for which table metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                                                                                               |
+| `metadata.statistics.cache-ttl`                             | Duration for which tables statistics are cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                                                                                           |
 | `metadata.cache-maximum-size`                               | Maximum number of objects stored in the metadata cache. Defaults to `10000`.                                                                                                                                                                                                                                                                                              |
 | `write.batch-size`                                          | Maximum number of statements in a batched execution. Do not change this setting from the default. Non-default values may negatively impact performance. Defaults to `1000`.                                                                                                                                                                                               |
 | `dynamic-filtering.enabled`                                 | Push down dynamic filters into JDBC queries. Defaults to `true`.                                                                                                                                                                                                                                                                                                          |
@@ -155,7 +155,7 @@ Certain JDBC driver settings and logging configurations might cause the comment 
 
 #### Domain compaction threshold[#](https://trino.io/docs/current/connector/oracle.html#domain-compaction-threshold) <a href="#domain-compaction-threshold" id="domain-compaction-threshold"></a>
 
-Pushing down a large list of predicates to the data source can compromise performance. Trino compacts large predicates into a simpler range predicate by default to ensure a balance between performance and predicate pushdown. If necessary, the threshold for this compaction can be increased to improve performance when the data source is capable of taking advantage of large predicates. Increasing this threshold may improve pushdown of large [dynamic filters](https://trino.io/docs/current/admin/dynamic-filtering.html). The `domain-compaction-threshold` catalog configuration property or the `domain_compaction_threshold` [catalog session property](https://trino.io/docs/current/sql/set-session.html#session-properties-definition) can be used to adjust the default value of `32` for this threshold.
+Pushing down a large list of predicates to the data source can compromise performance. Trino compacts large predicates into a simpler range predicate by default to ensure a balance between performance and predicate pushdown. If necessary, the threshold for this compaction can be increased to improve performance when the data source is capable of taking advantage of large predicates. Increasing this threshold may improve pushdown of large dynamic filters. The `domain-compaction-threshold` catalog configuration property or the `domain_compaction_threshold` catalog session property can be used to adjust the default value of `32` for this threshold.
 
 #### Procedures[#](https://trino.io/docs/current/connector/oracle.html#procedures) <a href="#procedures" id="procedures"></a>
 
@@ -165,10 +165,8 @@ Pushing down a large list of predicates to the data source can compromise perfor
 
     ```
     USE example.example_schema;
-    CALL system.flush_metadata_cache();
+    CALL system.flush_metadata_cache()
     ```
-
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 #### Case insensitive matching[#](https://trino.io/docs/current/connector/oracle.html#case-insensitive-matching) <a href="#case-insensitive-matching" id="case-insensitive-matching"></a>
 
@@ -201,7 +199,7 @@ In these cases, use the `case-insensitive-name-matching.config-file` catalog con
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Queries against one of the tables or schemes defined in the `mapping` attributes are run against the corresponding remote entity. For example, a query against tables in the `case_insensitive_1` schema is forwarded to the CaseSensitiveName schema and a query against `case_insensitive_2` is forwarded to the `cASEsENSITIVEnAME` schema.
 
@@ -213,7 +211,7 @@ By default, when a change is made to the mapping configuration file, Trino must 
 case-insensitive-name-mapping.refresh-period=30s
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### Non-transactional INSERT[#](https://trino.io/docs/current/connector/oracle.html#non-transactional-insert) <a href="#non-transactional-insert" id="non-transactional-insert"></a>
 
@@ -231,7 +229,7 @@ Run `SHOW SCHEMAS` to see the available Oracle databases:
 SHOW SCHEMAS FROM example;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If you used a different name for your catalog properties file, use that catalog name instead of `example`.
 
@@ -247,7 +245,7 @@ If you have an Oracle database named `web`, run `SHOW TABLES` to see the tables 
 SHOW TABLES FROM example.web;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 To see a list of the columns in the `clicks` table in the `web` database, run either of the following:
 
@@ -256,7 +254,7 @@ DESCRIBE example.web.clicks;
 SHOW COLUMNS FROM example.web.clicks;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 To access the clicks table in the web database, run the following:
 
@@ -264,35 +262,35 @@ To access the clicks table in the web database, run the following:
 SELECT * FROM example.web.clicks;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ### Type mapping[#](https://trino.io/docs/current/connector/oracle.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
 
-Because Trino and Oracle each support types that the other does not, this connector [modifies some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
+Because Trino and Oracle each support types that the other does not, this connector modifies some types when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
 #### Oracle to Trino type mapping[#](https://trino.io/docs/current/connector/oracle.html#oracle-to-trino-type-mapping) <a href="#oracle-to-trino-type-mapping" id="oracle-to-trino-type-mapping"></a>
 
 Trino supports selecting Oracle database types. This table shows the Oracle to Trino data type mapping:
 
-| Oracle database type          | Trino type                 | Notes                                                                                                     |
-| ----------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `NUMBER(p, s)`                | `DECIMAL(p, s)`            | See [Mapping numeric types](https://trino.io/docs/current/connector/oracle.html#oracle-number-mapping)    |
-| `NUMBER(p)`                   | `DECIMAL(p, 0)`            | See [Mapping numeric types](https://trino.io/docs/current/connector/oracle.html#oracle-number-mapping)    |
-| `FLOAT[(p)]`                  | `DOUBLE`                   |                                                                                                           |
-| `BINARY_FLOAT`                | `REAL`                     |                                                                                                           |
-| `BINARY_DOUBLE`               | `DOUBLE`                   |                                                                                                           |
-| `VARCHAR2(n CHAR)`            | `VARCHAR(n)`               |                                                                                                           |
-| `VARCHAR2(n BYTE)`            | `VARCHAR(n)`               |                                                                                                           |
-| `NVARCHAR2(n)`                | `VARCHAR(n)`               |                                                                                                           |
-| `CHAR(n)`                     | `CHAR(n)`                  |                                                                                                           |
-| `NCHAR(n)`                    | `CHAR(n)`                  |                                                                                                           |
-| `CLOB`                        | `VARCHAR`                  |                                                                                                           |
-| `NCLOB`                       | `VARCHAR`                  |                                                                                                           |
-| `RAW(n)`                      | `VARBINARY`                |                                                                                                           |
-| `BLOB`                        | `VARBINARY`                |                                                                                                           |
-| `DATE`                        | `TIMESTAMP(0)`             | See [Mapping datetime types](https://trino.io/docs/current/connector/oracle.html#oracle-datetime-mapping) |
-| `TIMESTAMP(p)`                | `TIMESTAMP(p)`             | See [Mapping datetime types](https://trino.io/docs/current/connector/oracle.html#oracle-datetime-mapping) |
-| `TIMESTAMP(p) WITH TIME ZONE` | `TIMESTAMP WITH TIME ZONE` | See [Mapping datetime types](https://trino.io/docs/current/connector/oracle.html#oracle-datetime-mapping) |
+| Oracle database type          | Trino type                 | Notes                      |
+| ----------------------------- | -------------------------- | -------------------------- |
+| `NUMBER(p, s)`                | `DECIMAL(p, s)`            | See Mapping numeric types  |
+| `NUMBER(p)`                   | `DECIMAL(p, 0)`            | See Mapping numeric types  |
+| `FLOAT[(p)]`                  | `DOUBLE`                   |                            |
+| `BINARY_FLOAT`                | `REAL`                     |                            |
+| `BINARY_DOUBLE`               | `DOUBLE`                   |                            |
+| `VARCHAR2(n CHAR)`            | `VARCHAR(n)`               |                            |
+| `VARCHAR2(n BYTE)`            | `VARCHAR(n)`               |                            |
+| `NVARCHAR2(n)`                | `VARCHAR(n)`               |                            |
+| `CHAR(n)`                     | `CHAR(n)`                  |                            |
+| `NCHAR(n)`                    | `CHAR(n)`                  |                            |
+| `CLOB`                        | `VARCHAR`                  |                            |
+| `NCLOB`                       | `VARCHAR`                  |                            |
+| `RAW(n)`                      | `VARBINARY`                |                            |
+| `BLOB`                        | `VARBINARY`                |                            |
+| `DATE`                        | `TIMESTAMP(0)`             | See Mapping datetime types |
+| `TIMESTAMP(p)`                | `TIMESTAMP(p)`             | See Mapping datetime types |
+| `TIMESTAMP(p) WITH TIME ZONE` | `TIMESTAMP WITH TIME ZONE` | See Mapping datetime types |
 
 No other types are supported.
 
@@ -304,22 +302,22 @@ Note
 
 For types not listed in the table below, Trino can’t perform the `CREATE TABLE <table> AS SELECT` operations. When data is inserted into existing tables, `Oracle to Trino` type mapping is used.
 
-| Trino type                 | Oracle database type          | Notes                                                                                                       |
-| -------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `TINYINT`                  | `NUMBER(3)`                   |                                                                                                             |
-| `SMALLINT`                 | `NUMBER(5)`                   |                                                                                                             |
-| `INTEGER`                  | `NUMBER(10)`                  |                                                                                                             |
-| `BIGINT`                   | `NUMBER(19)`                  |                                                                                                             |
-| `DECIMAL(p, s)`            | `NUMBER(p, s)`                |                                                                                                             |
-| `REAL`                     | `BINARY_FLOAT`                |                                                                                                             |
-| `DOUBLE`                   | `BINARY_DOUBLE`               |                                                                                                             |
-| `VARCHAR`                  | `NCLOB`                       |                                                                                                             |
-| `VARCHAR(n)`               | `VARCHAR2(n CHAR)` or `NCLOB` | See [Mapping character types](https://trino.io/docs/current/connector/oracle.html#oracle-character-mapping) |
-| `CHAR(n)`                  | `CHAR(n CHAR)` or `NCLOB`     | See [Mapping character types](https://trino.io/docs/current/connector/oracle.html#oracle-character-mapping) |
-| `VARBINARY`                | `BLOB`                        |                                                                                                             |
-| `DATE`                     | `DATE`                        | See [Mapping datetime types](https://trino.io/docs/current/connector/oracle.html#oracle-datetime-mapping)   |
-| `TIMESTAMP`                | `TIMESTAMP(3)`                | See [Mapping datetime types](https://trino.io/docs/current/connector/oracle.html#oracle-datetime-mapping)   |
-| `TIMESTAMP WITH TIME ZONE` | `TIMESTAMP(3) WITH TIME ZONE` | See [Mapping datetime types](https://trino.io/docs/current/connector/oracle.html#oracle-datetime-mapping)   |
+| Trino type                 | Oracle database type          | Notes                       |
+| -------------------------- | ----------------------------- | --------------------------- |
+| `TINYINT`                  | `NUMBER(3)`                   |                             |
+| `SMALLINT`                 | `NUMBER(5)`                   |                             |
+| `INTEGER`                  | `NUMBER(10)`                  |                             |
+| `BIGINT`                   | `NUMBER(19)`                  |                             |
+| `DECIMAL(p, s)`            | `NUMBER(p, s)`                |                             |
+| `REAL`                     | `BINARY_FLOAT`                |                             |
+| `DOUBLE`                   | `BINARY_DOUBLE`               |                             |
+| `VARCHAR`                  | `NCLOB`                       |                             |
+| `VARCHAR(n)`               | `VARCHAR2(n CHAR)` or `NCLOB` | See Mapping character types |
+| `CHAR(n)`                  | `CHAR(n CHAR)` or `NCLOB`     | See Mapping character types |
+| `VARBINARY`                | `BLOB`                        |                             |
+| `DATE`                     | `DATE`                        | See Mapping character types |
+| `TIMESTAMP`                | `TIMESTAMP(3)`                | See Mapping character types |
+| `TIMESTAMP WITH TIME ZONE` | `TIMESTAMP(3) WITH TIME ZONE` | See Mapping character types |
 
 No other types are supported.
 
@@ -360,7 +358,7 @@ INSERT INTO vals (col) VALUES (CAST('BB' as CHAR(2001)));
 SELECT LENGTH(col) FROM vals;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
  _col0
@@ -370,7 +368,7 @@ SELECT LENGTH(col) FROM vals;
 (2 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Attempting to write a `CHAR` that doesn’t fit in the column’s actual size fails. This is also true for the equivalent `VARCHAR` types.
 
@@ -392,19 +390,19 @@ The following properties can be used to configure how data types from the connec
 
 ### SQL support[#](https://trino.io/docs/current/connector/oracle.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides read access and write access to data and metadata in Oracle. In addition to the [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements, the connector supports the following statements:
+The connector provides read access and write access to data and metadata in Oracle. In addition to the globally available and read operation statements, the connector supports the following statements:
 
-* [INSERT](https://trino.io/docs/current/sql/insert.html)
-* [UPDATE](https://trino.io/docs/current/sql/update.html)
-* [DELETE](https://trino.io/docs/current/sql/delete.html)
-* [TRUNCATE](https://trino.io/docs/current/sql/truncate.html)
-* [CREATE TABLE](https://trino.io/docs/current/sql/create-table.html)
-* [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html)
-* [DROP TABLE](https://trino.io/docs/current/sql/drop-table.html)
-* [ALTER TABLE](https://trino.io/docs/current/sql/alter-table.html)
-* [COMMENT](https://trino.io/docs/current/sql/comment.html)
+* INSERT
+* UPDATE
+* DELETE
+* TRUNCATE
+* CREATE TABLE
+* CREATE TABLE AS
+* DROP TABLE
+* ALTER TABLE
+* COMMENT
 
-#### UPDATE[#](https://trino.io/docs/current/connector/oracle.html#update) <a href="#update" id="update"></a>
+#### UPDATE# <a href="#update" id="update"></a>
 
 Only `UPDATE` statements with constant assignments and predicates are supported. For example, the following statement is supported because the values assigned are constants:
 
@@ -462,11 +460,11 @@ ALTER TABLE example.schema_one.table_one RENAME TO example.schema_two.table_two
 
 ### Fault-tolerant execution support[#](https://trino.io/docs/current/connector/oracle.html#fault-tolerant-execution-support) <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
 
-The connector supports [Fault-tolerant execution](https://trino.io/docs/current/admin/fault-tolerant-execution.html) of query processing. Read and write operations are both supported with any retry policy.
+The connector supports Fault-tolerant execution of query processing. Read and write operations are both supported with any retry policy.
 
 ### Table functions[#](https://trino.io/docs/current/connector/oracle.html#table-functions) <a href="#table-functions" id="table-functions"></a>
 
-The connector provides specific [table functions](https://trino.io/docs/current/functions/table.html) to access Oracle.
+The connector provides specific table functions to access Oracle.
 
 #### `query(varchar) -> table`[#](https://trino.io/docs/current/connector/oracle.html#query-varchar-table) <a href="#query-varchar-table" id="query-varchar-table"></a>
 
@@ -549,29 +547,29 @@ oracle.synonyms.enabled=true
 
 The connector supports pushdown for a number of operations:
 
-* [Join pushdown](https://trino.io/docs/current/optimizer/pushdown.html#join-pushdown)
-* [Limit pushdown](https://trino.io/docs/current/optimizer/pushdown.html#limit-pushdown)
-* [Top-N pushdown](https://trino.io/docs/current/optimizer/pushdown.html#topn-pushdown)
+* Join pushdown
+* Limit pushdown
+* Top-N pushdown
 
-In addition, the connector supports [Aggregation pushdown](https://trino.io/docs/current/optimizer/pushdown.html#aggregation-pushdown) for the following functions:
+In addition, the connector supports Aggregation pushdown for the following functions:
 
-* [`avg()`](https://trino.io/docs/current/functions/aggregate.html#avg)
-* [`count()`](https://trino.io/docs/current/functions/aggregate.html#count), also `count(distinct x)`
-* [`max()`](https://trino.io/docs/current/functions/aggregate.html#max)
-* [`min()`](https://trino.io/docs/current/functions/aggregate.html#min)
-* [`sum()`](https://trino.io/docs/current/functions/aggregate.html#sum)
+* `avg()`
+* `count()`, also `count(distinct x)`
+* `max()`
+* `min()`
+* `sum()`
 
 Pushdown is only supported for `DOUBLE` type columns with the following functions:
 
-* [`stddev()`](https://trino.io/docs/current/functions/aggregate.html#stddev) and [`stddev_samp()`](https://trino.io/docs/current/functions/aggregate.html#stddev\_samp)
-* [`stddev_pop()`](https://trino.io/docs/current/functions/aggregate.html#stddev\_pop)
-* [`var_pop()`](https://trino.io/docs/current/functions/aggregate.html#var\_pop)
-* [`variance()`](https://trino.io/docs/current/functions/aggregate.html#variance) and [`var_samp()`](https://trino.io/docs/current/functions/aggregate.html#var\_samp)
+* `stddev()` and `stddev_samp()`
+* `stddev_pop()`
+* `var_pop()`
+* `variance()` and `var_samp()`
 
 Pushdown is only supported for `REAL` or `DOUBLE` type column with the following functions:
 
-* [`covar_samp()`](https://trino.io/docs/current/functions/aggregate.html#covar\_samp)
-* [`covar_pop()`](https://trino.io/docs/current/functions/aggregate.html#covar\_pop)
+* `covar_samp()`
+* `covar_pop()`
 
 Note
 
@@ -579,7 +577,7 @@ The connector performs pushdown where performance may be improved, but in order 
 
 **Join pushdown**[**#**](https://trino.io/docs/current/connector/oracle.html#join-pushdown)
 
-The `join-pushdown.enabled` catalog configuration property or `join_pushdown_enabled` [catalog session property](https://trino.io/docs/current/sql/set-session.html#session-properties-definition) control whether the connector pushes down join operations. The property defaults to `false`, and enabling join pushdowns may negatively impact performance for some queries.
+The `join-pushdown.enabled` catalog configuration property or `join_pushdown_enabled` catalog session property control whether the connector pushes down join operations. The property defaults to `false`, and enabling join pushdowns may negatively impact performance for some queries.
 
 **Predicate pushdown support**[**#**](https://trino.io/docs/current/connector/oracle.html#predicate-pushdown-support)
 

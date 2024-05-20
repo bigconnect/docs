@@ -182,7 +182,7 @@ A table definition file consists of a JSON definition for a table. The name of t
 | `key`        | optional | JSON object | Field definitions for data columns mapped to the value key.                       |
 | `value`      | optional | JSON object | Field definitions for data columns mapped to the value itself.                    |
 
-Please refer to the [Kafka connector](https://trino.io/docs/current/connector/kafka.html) page for the description of the `dataFormat` as well as various available decoders.
+Please refer to the Kafka connector page for the description of the `dataFormat` as well as various available decoders.
 
 In addition to the above Kafka types, the Redis connector supports `hash` type for the `value` field which represent data stored in the Redis hash.
 
@@ -335,7 +335,7 @@ To convert values from JSON objects to Trino `DATE`, `TIME`, `TIME WITH TIME ZON
 
 * `iso8601` - Text based, parses a text field as an ISO 8601 timestamp.
 * `rfc2822` - Text based, parses a text field as an [**RFC 2822**](https://datatracker.ietf.org/doc/html/rfc2822.html) timestamp.
-* `custom-date-time` - Text based, parses a text field according to Joda format pattern specified via `formatHint` attribute. The format pattern should conform to [https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html](https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html).
+* `custom-date-time` - Text based, parses a text field according to Joda format pattern specified via `formatHint` attribute. The format pattern should conform to https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html.
 * `milliseconds-since-epoch` - Number-based, interprets a text or number as number of milliseconds since the epoch.
 * `seconds-since-epoch` - Number-based, interprets a text or number as number of milliseconds since the epoch.
 
@@ -380,7 +380,7 @@ The schema evolution behavior is as follows:
 
 ### SQL support[#](https://trino.io/docs/current/connector/redis.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements to access data and metadata in Redis.
+The connector provides globally available and read operation statements to access data and metadata in Redis.
 
 ### Performance[#](https://trino.io/docs/current/connector/redis.html#performance) <a href="#performance" id="performance"></a>
 

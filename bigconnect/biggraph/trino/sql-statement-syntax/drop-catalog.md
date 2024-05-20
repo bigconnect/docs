@@ -14,11 +14,11 @@ Drops an existing catalog. Dropping a catalog does not interrupt any running que
 
 Warning
 
-Some connectors are known not to release all resources when dropping a catalog that uses such connector. This includes all connectors that can read data from HDFS, S3, GCS, or Azure, which are [Hive connector](https://trino.io/docs/current/connector/hive.html), [Iceberg connector](https://trino.io/docs/current/connector/iceberg.html), [Delta Lake connector](https://trino.io/docs/current/connector/delta-lake.html), and [Hudi connector](https://trino.io/docs/current/connector/hudi.html).
+Some connectors are known not to release all resources when dropping a catalog that uses such connector. This includes all connectors that can read data from HDFS, S3, GCS, or Azure, which are Hive connector, Iceberg connector, Delta Lake connector, and Hudi connector.
 
 Note
 
-This command requires the [catalog management type](https://trino.io/docs/current/admin/properties-catalog.html) to be set to `dynamic`.
+This command requires the catalog management type to be set to `dynamic`.
 
 ### Examples[#](https://trino.io/docs/current/sql/drop-catalog.html#examples) <a href="#examples" id="examples"></a>
 
@@ -30,7 +30,7 @@ DROP CATALOG example;
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/drop-catalog.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-* [CREATE CATALOG](https://trino.io/docs/current/sql/create-catalog.html)
-* [Catalog management properties](https://trino.io/docs/current/admin/properties-catalog.html)
+* CREATE CATALOG
+* Catalog management properties

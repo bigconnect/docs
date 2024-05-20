@@ -17,12 +17,12 @@ The connectors all support a variety of protocols and formats used on these obje
 
 Use the following properties to control the support for different file systems in a catalog. Each catalog can only use one file system.
 
-| Property                  | Description                                                                                                                                                                                                                                                               |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `fs.hadoop.enabled`       | Activate the [legacy libraries and implementation based on the Hadoop](https://trino.io/docs/current/object-storage.html#file-system-legacy) ecosystem. Defaults to `true`.                                                                                               |
-| `fs.native-azure.enabled` | Activate the [native implementation for Azure Storage support](https://trino.io/docs/current/object-storage/file-system-azure.html), and deactivate all [legacy support](https://trino.io/docs/current/object-storage.html#file-system-legacy). Defaults to `false`.      |
-| `fs.native-gcs.enabled`   | Activate the [native implementation for Google Cloud Storage support](https://trino.io/docs/current/object-storage/file-system-gcs.html), and deactivate all [legacy support](https://trino.io/docs/current/object-storage.html#file-system-legacy). Defaults to `false`. |
-| `fs.native-s3.enabled`    | Activate the [native implementation for S3 storage support](https://trino.io/docs/current/object-storage/file-system-s3.html), and deactivate all [legacy support](https://trino.io/docs/current/object-storage.html#file-system-legacy) . Defaults to `false`.           |
+| Property                  | Description                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `fs.hadoop.enabled`       | Activate the legacy libraries and implementation based on the Hadoop ecosystem. Defaults to `true`.                          |
+| `fs.native-azure.enabled` | Activate the native implementation for Azure Storage support, and deactivate all legacy support. Defaults to `false`.        |
+| `fs.native-gcs.enabled`   | Activate the native implementation for Google Cloud Storage support, and deactivate all legacy support. Defaults to `false`. |
+| `fs.native-s3.enabled`    | Activate the native implementation for S3 storage support, and deactivate all legacy support . Defaults to `false`.          |
 
 ### Native file system support[#](https://trino.io/docs/current/object-storage.html#native-file-system-support) <a href="#native-file-system-support" id="native-file-system-support"></a>
 

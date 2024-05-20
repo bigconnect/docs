@@ -109,7 +109,7 @@ SELECT regexp_replace('1a 2b 14m', '(\d+)([ab]) ', '3c$2 '); -- '3ca 3cb 14m'
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)regexp\_replace(_string_, _pattern_, _function_) → varchar
 
-Replaces every instance of the substring matched by the regular expression `pattern` in `string` using `function`. The [lambda expression](https://trino.io/docs/current/functions/lambda.html) `function` is invoked for each match with the [capturing groups](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Pattern.html#cg) passed as an array. Capturing group numbers start at one; there is no group for the entire match (if you need this, surround the entire expression with parenthesis).
+Replaces every instance of the substring matched by the regular expression `pattern` in `string` using `function`. The lambda expression `function` is invoked for each match with the capturing groups passed as an array. Capturing group numbers start at one; there is no group for the entire match (if you need this, surround the entire expression with parenthesis).
 
 ```
 SELECT regexp_replace('new york', '(\w)(\w*)', x -> upper(x[1]) || lower(x[2])); --'New York'

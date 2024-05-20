@@ -22,6 +22,6 @@ DEALLOCATE PREPARE my_query;
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/deallocate-prepare.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[PREPARE](https://trino.io/docs/current/sql/prepare.html), [EXECUTE](https://trino.io/docs/current/sql/execute.html), [EXECUTE IMMEDIATE](https://trino.io/docs/current/sql/execute-immediate.html)
+PREPARE, EXECUTE, EXECUTE IMMEDIATE

@@ -42,9 +42,9 @@ FROM
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/set-path.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-* [USE](https://trino.io/docs/current/sql/use.html)
-* [SQL environment properties](https://trino.io/docs/current/admin/properties-sql-environment.html)
+* USE
+* SQL environment properties
 
 \

@@ -2,11 +2,11 @@
 
 Aggregate functions operate on a set of values to compute a single result.
 
-Except for [`count()`](https://trino.io/docs/current/functions/aggregate.html#count), [`count_if()`](https://trino.io/docs/current/functions/aggregate.html#count\_if), [`max_by()`](https://trino.io/docs/current/functions/aggregate.html#max\_by), [`min_by()`](https://trino.io/docs/current/functions/aggregate.html#min\_by) and [`approx_distinct()`](https://trino.io/docs/current/functions/aggregate.html#approx\_distinct), all of these aggregate functions ignore null values and return null for no input rows or when all values are null. For example, [`sum()`](https://trino.io/docs/current/functions/aggregate.html#sum) returns null rather than zero and [`avg()`](https://trino.io/docs/current/functions/aggregate.html#avg) does not include null values in the count. The `coalesce` function can be used to convert null into zero.
+Except for `count()`, `count_if()`, `max_by()`, `min_by()` and `approx_distinct()`, all of these aggregate functions ignore null values and return null for no input rows or when all values are null. For example, `sum()` returns null rather than zero and `avg()` does not include null values in the count. The `coalesce` function can be used to convert null into zero.
 
 ### Ordering during aggregation[#](https://trino.io/docs/current/functions/aggregate.html#ordering-during-aggregation) <a href="#ordering-during-aggregation" id="ordering-during-aggregation"></a>
 
-Some aggregate functions such as [`array_agg()`](https://trino.io/docs/current/functions/aggregate.html#array\_agg) produce different results depending on the order of input values. This ordering can be specified by writing an [ORDER BY clause](https://trino.io/docs/current/sql/select.html#order-by-clause) within the aggregate function:
+Some aggregate functions such as `array_agg()` produce different results depending on the order of input values. This ordering can be specified by writing an ORDER BY clause within the aggregate function:
 
 ```
 array_agg(x ORDER BY y DESC)
@@ -157,7 +157,7 @@ Returns the number of `TRUE` input values. This function is equivalent to `count
 
 every(_boolean_) → boolean[#](https://trino.io/docs/current/functions/aggregate.html#every)
 
-This is an alias for [`bool_and()`](https://trino.io/docs/current/functions/aggregate.html#bool\_and).
+This is an alias for `bool_and()`.
 
 geometric\_mean(_x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#geometric\_mean)
 
@@ -243,7 +243,7 @@ results in:
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-This aggregation function supports [filtering during aggregation](https://trino.io/docs/current/functions/aggregate.html#aggregate-function-filtering-during-aggregation) for scenarios where the aggregation for the data not matching the filter condition still needs to show up in the output:
+This aggregation function supports filtering during aggregation for scenarios where the aggregation for the data not matching the filter condition still needs to show up in the output:
 
 ```
 SELECT 
@@ -413,25 +413,25 @@ Returns the approximate weighed percentile for all input values of `x` using the
 
 approx\_set(_x_) → HyperLogLog
 
-See [HyperLogLog functions](https://trino.io/docs/current/functions/hyperloglog.html).
+See HyperLogLog functions.
 
 merge(_x_) → HyperLogLog
 
-See [HyperLogLog functions](https://trino.io/docs/current/functions/hyperloglog.html).
+See HyperLogLog functions.
 
 merge(_qdigest(T)) -> qdigest(T_)
 
-See [Quantile digest functions](https://trino.io/docs/current/functions/qdigest.html).
+See Quantile digest functions.
 
 merge(_tdigest_) → tdigest
 
-See [T-Digest functions](https://trino.io/docs/current/functions/tdigest.html).
+See T-Digest functions.
 
 numeric\_histogram(_buckets_, _value_) → map\<double, double>
 
-Computes an approximate histogram with up to `buckets` number of buckets for all `value`s. This function is equivalent to the variant of [`numeric_histogram()`](https://trino.io/docs/current/functions/aggregate.html#numeric\_histogram) that takes a `weight`, with a per-item weight of `1`.
+Computes an approximate histogram with up to `buckets` number of buckets for all `value`s. This function is equivalent to the variant of `numeric_histogram()` that takes a `weight`, with a per-item weight of `1`.
 
-numeric\_histogram(_buckets_, _value_, _weight_) → map\<double, double>[#](https://trino.io/docs/current/functions/aggregate.html#numeric\_histogram)
+numeric\_histogram(_buckets_, _value_, _weight_) → map\<double, double>#
 
 Computes an approximate histogram with up to `buckets` number of buckets for all `value`s with a per-item weight of `weight`. The algorithm is based loosely on:
 
@@ -446,23 +446,23 @@ J. Machine Learning Research 11 (2010), pp. 849--872.
 
 qdigest\_agg(_x) -> qdigest(\[same as x]_)
 
-See [Quantile digest functions](https://trino.io/docs/current/functions/qdigest.html).
+See Quantile digest functions.
 
 qdigest\_agg(_x, w) -> qdigest(\[same as x]_)
 
-See [Quantile digest functions](https://trino.io/docs/current/functions/qdigest.html).
+See Quantile digest functions.
 
 qdigest\_agg(_x, w, accuracy) -> qdigest(\[same as x]_)
 
-See [Quantile digest functions](https://trino.io/docs/current/functions/qdigest.html).
+See Quantile digest functions.
 
 tdigest\_agg(_x_) → tdigest
 
-See [T-Digest functions](https://trino.io/docs/current/functions/tdigest.html).
+See T-Digest functions.
 
 tdigest\_agg(_x_, _w_) → tdigest
 
-See [T-Digest functions](https://trino.io/docs/current/functions/tdigest.html).
+See T-Digest functions.
 
 ### Statistical aggregate functions[#](https://trino.io/docs/current/functions/aggregate.html#statistical-aggregate-functions) <a href="#statistical-aggregate-functions" id="statistical-aggregate-functions"></a>
 
@@ -500,25 +500,25 @@ Returns the Fisher’s moment coefficient of [skewness](https://wikipedia.org/wi
 
 stddev(_x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#stddev)
 
-This is an alias for [`stddev_samp()`](https://trino.io/docs/current/functions/aggregate.html#stddev\_samp).
+This is an alias for `stddev_samp()`.
 
-stddev\_pop(_x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#stddev\_pop)
+stddev\_pop(_x_) → double#
 
 Returns the population standard deviation of all input values.
 
-stddev\_samp(_x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#stddev\_samp)
+stddev\_samp(_x_) → double#
 
 Returns the sample standard deviation of all input values.
 
-variance(_x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#variance)
+variance(_x_) → double#
 
-This is an alias for [`var_samp()`](https://trino.io/docs/current/functions/aggregate.html#var\_samp).
+This is an alias for `var_samp()`.
 
-var\_pop(_x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#var\_pop)
+var\_pop(_x_) → double#
 
 Returns the population variance of all input values.
 
-var\_samp(_x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#var\_samp)
+var\_samp(_x_) → double#
 
 Returns the sample variance of all input values.
 

@@ -9,7 +9,7 @@ CREATE [OR REPLACE] FUNCTION
 
 ### Description[#](https://trino.io/docs/current/sql/create-function.html#description) <a href="#description" id="description"></a>
 
-Create or replace a [Catalog routines](https://trino.io/docs/current/routines/introduction.html#routine-catalog). The `routine_definition` is composed of the usage of [FUNCTION](https://trino.io/docs/current/routines/function.html) and nested statements. The name of the routine must be fully qualified with catalog and schema location, unless the [default SQL routine storage catalog and schema](https://trino.io/docs/current/admin/properties-sql-environment.html) are configured. The connector used in the catalog must support routine storage.
+Create or replace a Catalog routines. The `routine_definition` is composed of the usage of FUNCTION and nested statements. The name of the routine must be fully qualified with catalog and schema location, unless the default SQL routine storage catalog and schema are configured. The connector used in the catalog must support routine storage.
 
 The optional `OR REPLACE` clause causes the routine to be replaced if it already exists rather than raising an error.
 
@@ -35,11 +35,11 @@ CREATE FUNCTION meaning_of_life() RETURNS bigint RETURN 42;
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Further examples of varying complexity that cover usage of the `FUNCTION` statement in combination with other statements are available in the [SQL routines examples documentation](https://trino.io/docs/current/routines/examples.html).
+Further examples of varying complexity that cover usage of the `FUNCTION` statement in combination with other statements are available in the SQL routines examples documentation.
 
-### See also[#](https://trino.io/docs/current/sql/create-function.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-* [DROP FUNCTION](https://trino.io/docs/current/sql/drop-function.html)
-* [SHOW FUNCTIONS](https://trino.io/docs/current/sql/show-functions.html)
-* [Introduction to SQL routines](https://trino.io/docs/current/routines/introduction.html)
-* [SQL environment properties](https://trino.io/docs/current/admin/properties-sql-environment.html)
+* DROP FUNCTION
+* SHOW FUNCTIONS
+* Introduction to SQL routines
+* SQL environment properties

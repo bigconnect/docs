@@ -14,6 +14,6 @@ Show the SQL statement that creates the specified view.
 
 ### See also[#](https://trino.io/docs/current/sql/show-create-view.html#see-also) <a href="#see-also" id="see-also"></a>
 
-[CREATE VIEW](https://trino.io/docs/current/sql/create-view.html)
+CREATE VIEW
 
 \

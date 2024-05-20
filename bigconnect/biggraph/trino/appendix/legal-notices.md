@@ -10,7 +10,7 @@ Source code is available at [https://github.com/trinodb](https://github.com/trin
 
 ### Governance[#](https://trino.io/docs/current/appendix/legal-notices.html#governance) <a href="#governance" id="governance"></a>
 
-The project is run by volunteer contributions and supported by the [Trino Software Foundation](https://trino.io/foundation.html).
+The project is run by volunteer contributions and supported by the Trino Software Foundation.
 
 ### Trademarks[#](https://trino.io/docs/current/appendix/legal-notices.html#trademarks) <a href="#trademarks" id="trademarks"></a>
 

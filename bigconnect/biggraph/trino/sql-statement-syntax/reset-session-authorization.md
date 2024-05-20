@@ -14,6 +14,6 @@ Resets the current authorization user back to the original user. The original us
 
 ### See also[#](https://trino.io/docs/current/sql/reset-session-authorization.html#see-also) <a href="#see-also" id="see-also"></a>
 
-[SET SESSION AUTHORIZATION](https://trino.io/docs/current/sql/set-session-authorization.html)
+SET SESSION AUTHORIZATION
 
 \

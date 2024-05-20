@@ -84,6 +84,6 @@ CREATE SCHEMA web AUTHORIZATION ROLE PUBLIC WITH ( LOCATION = '/hive/data/web' )
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/create-schema.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[ALTER SCHEMA](https://trino.io/docs/current/sql/alter-schema.html), [DROP SCHEMA](https://trino.io/docs/current/sql/drop-schema.html)
+ALTER SCHEMA, DROP SCHEMA

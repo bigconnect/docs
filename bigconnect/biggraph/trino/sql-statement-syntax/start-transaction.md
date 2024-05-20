@@ -33,8 +33,8 @@ START TRANSACTION READ WRITE, ISOLATION LEVEL SERIALIZABLE;
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/start-transaction.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[COMMIT](https://trino.io/docs/current/sql/commit.html), [ROLLBACK](https://trino.io/docs/current/sql/rollback.html)
+COMMIT, ROLLBACK
 
 \

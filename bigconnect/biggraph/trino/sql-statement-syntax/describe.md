@@ -10,4 +10,4 @@ DESCRIBE table_name
 
 ### Description[#](https://trino.io/docs/current/sql/describe.html#description) <a href="#description" id="description"></a>
 
-`DESCRIBE` is an alias for [SHOW COLUMNS](https://trino.io/docs/current/sql/show-columns.html).
+`DESCRIBE` is an alias for SHOW COLUMNS.

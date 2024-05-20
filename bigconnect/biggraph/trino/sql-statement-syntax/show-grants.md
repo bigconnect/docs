@@ -6,8 +6,6 @@
 SHOW GRANTS [ ON [ TABLE ] table_name ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ### Description[#](https://trino.io/docs/current/sql/show-grants.html#description) <a href="#description" id="description"></a>
 
 List the grants for the current user on the specified table in the current catalog.
@@ -28,8 +26,6 @@ List the grants for the current user on table `orders`:
 SHOW GRANTS ON TABLE orders;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 List the grants for the current user on all the tables in all schemas of the current catalog:
 
 ```
@@ -42,8 +38,8 @@ SHOW GRANTS;
 
 Some connectors have no support for `SHOW GRANTS`. See connector documentation for more details.
 
-### See also[#](https://trino.io/docs/current/sql/show-grants.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[GRANT privilege](https://trino.io/docs/current/sql/grant.html), [REVOKE privilege](https://trino.io/docs/current/sql/revoke.html)
+GRANT privilege, REVOKE privilege
 
 \

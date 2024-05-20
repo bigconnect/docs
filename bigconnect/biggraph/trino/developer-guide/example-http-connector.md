@@ -18,8 +18,6 @@ public Iterable<ConnectorFactory> getConnectorFactories()
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Note that the `ImmutableList` class is a utility class from Guava.
 
 As with all connectors, this plugin overrides the `getConnectorFactories()` method and returns an `ExampleConnectorFactory`.
@@ -38,8 +36,6 @@ public String getName()
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The real work in a connector factory happens in the `create()` method. In the `ExampleConnectorFactory` class, the `create()` method configures the connector and then asks Guice to create the object. This is the meat of the `create()` method without parameter validation and exception handling:
 
 ```
@@ -55,8 +51,6 @@ Injector injector = app
 
 return injector.getInstance(ExampleConnector.class);
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 #### Connector: ExampleConnector[#](https://trino.io/docs/current/develop/example-http.html#connector-exampleconnector) <a href="#connector-exampleconnector" id="connector-exampleconnector"></a>
 

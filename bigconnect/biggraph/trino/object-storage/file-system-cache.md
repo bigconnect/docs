@@ -4,13 +4,13 @@ Trino accesses files directly on object storage and remote file system storage. 
 
 Trino includes support for caching these files with the help of the open source [Alluxio](https://github.com/Alluxio/alluxio) libraries with catalogs using the following connectors:
 
-* [Delta Lake connector](https://trino.io/docs/current/connector/delta-lake.html)
-* [Hive connector](https://trino.io/docs/current/connector/hive.html)
-* [Iceberg connector](https://trino.io/docs/current/connector/iceberg.html)
+* Delta Lake connector
+* Hive connector
+* Iceberg connector
 
 ### Distributed caching[#](https://trino.io/docs/current/object-storage/file-system-cache.html#distributed-caching) <a href="#distributed-caching" id="distributed-caching"></a>
 
-File system caching is distributed in Trino as part of the mechanism of any other query processing. Query processing, detailed more in [Trino concepts](https://trino.io/docs/current/overview/concepts.html) is broken up into different stages, where tasks and splits are processed by different nodes in the cluster. The lowest level splits retrieve data from the data source with the help of the connector of the specific catalog. For file system caching, these splits result in the retrieval of files from object storage.
+File system caching is distributed in Trino as part of the mechanism of any other query processing. Query processing, detailed more in Trino concepts is broken up into different stages, where tasks and splits are processed by different nodes in the cluster. The lowest level splits retrieve data from the data source with the help of the connector of the specific catalog. For file system caching, these splits result in the retrieval of files from object storage.
 
 Different nodes process splits with data from objects storage randomly over time, but with preference for using a fixed set of nodes for a given file. If the preferred nodes are too busy, the split, and hence the caching, takes place on a non-preferred, less busy node. File system caching keeps copies of the retrieved files on a local cache storage, separate for each node. Over time the same files from object storage are cached on any nodes that require the data file for processing a specific task. Each cache on each node is managed separately, following the TTL and size configuration, and cached files are evicted from the cache.
 
@@ -49,14 +49,14 @@ Use the properties from the following table in your catalog properties files to 
 | `fs.cache.max-sizes`                  | Optional, comma-separated list of maximum [data sizes](https://trino.io/docs/current/admin/properties.html#prop-type-data-size) for each caching directory. Order of values must be identical to the directories list. Can not be used together with `fs.cache.max-disk-usage-percentages`.                                                                                                                                                                                                                                                                                                       |
 | `fs.cache.max-disk-usage-percentages` | Optional, comma-separated list of maximum percentage values of the used disk for each directory. Each value is an integer between 1 and 100. Order of values must be identical to the directories list. If multiple directories use the same disk, ensure that total percentages per drive remains below 100 percent. Can not be used together with `fs.cache.max-sizes`.                                                                                                                                                                                                                         |
 | `fs.cache.ttl`                        | The maximum [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for objects to remain in the cache before eviction. Defaults to `7d`. The minimum value of `0s` means that caching is effectively turned off.                                                                                                                                                                                                                                                                                                                                                      |
-| `fs.cache.preferred-hosts-count`      | The number of preferred nodes for caching files. Defaults to 2. Processing identifies and subsequently prefers using specific nodes. If the preferred nodes identified for caching a split are unavailable or too busy, then an available node is chosen at random from the cluster. More information in [Distributed caching](https://trino.io/docs/current/object-storage/file-system-cache.html#fs-cache-distributed).                                                                                                                                                                         |
+| `fs.cache.preferred-hosts-count`      | The number of preferred nodes for caching files. Defaults to 2. Processing identifies and subsequently prefers using specific nodes. If the preferred nodes identified for caching a split are unavailable or too busy, then an available node is chosen at random from the cluster. More information in Distributed caching.                                                                                                                                                                                                                                                                     |
 | `fs.cache.page-size`                  | The page [data size](https://trino.io/docs/current/admin/properties.html#prop-type-data-size) used for caching data. Each transfer of files uses at least this amount of data. Defaults to `1MB`. Values must be between `64kB` and `15MB`. Larger value potentially result in too much data transfer smaller values are less efficient since they result in more individual downloads.                                                                                                                                                                                                           |
 
 ### Monitoring[#](https://trino.io/docs/current/object-storage/file-system-cache.html#monitoring) <a href="#monitoring" id="monitoring"></a>
 
 The cache exposes the [Alluxio JMX client metrics](https://docs.alluxio.io/ee-da/user/stable/en/reference/Metrics-List.html#client-metrics) under the `org.alluxio` package, and metrics on external reads and cache reads under `io.trino.filesystem.alluxio.AlluxioCacheStats`.
 
-The cache code uses [OpenTelemetry tracing](https://trino.io/docs/current/admin/opentelemetry.html).
+The cache code uses OpenTelemetry tracing.
 
 ### Recommendations[#](https://trino.io/docs/current/object-storage/file-system-cache.html#recommendations) <a href="#recommendations" id="recommendations"></a>
 

@@ -49,7 +49,7 @@ Returns the current timestamp with time zone as of the start of the query, with 
 
 current\_timestamp(_p_)
 
-Returns the current [timestamp with time zone](https://trino.io/docs/current/language/types.html#timestamp-with-time-zone-data-type) as of the start of the query, with `p` digits of subsecond precision:
+Returns the current timestamp with time zone as of the start of the query, with `p` digits of subsecond precision:
 
 ```
 SELECT current_timestamp(6);
@@ -83,7 +83,7 @@ SELECT from_iso8601_timestamp('2020-05-11T11:15:05.055+01:00');
 -- 2020-05-11 11:15:05.055 +01:00
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)from\_iso8601\_timestamp\_nanos(_string_) → timestamp(9) with time zone[#](https://trino.io/docs/current/functions/datetime.html#from\_iso8601\_timestamp\_nanos)
+from\_iso8601\_timestamp\_nanos(_string_) → timestamp(9) with time zone[#](https://trino.io/docs/current/functions/datetime.html#from\_iso8601\_timestamp\_nanos)
 
 Parses the ISO 8601 formatted date and time `string`. The time zone defaults to the session time zone:
 
@@ -95,7 +95,7 @@ SELECT from_iso8601_timestamp_nanos('2020-05-11T11:15:05.123456789+01:00');
 -- 2020-05-11 11:15:05.123456789 +01:00
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)from\_iso8601\_date(_string_) → date[#](https://trino.io/docs/current/functions/datetime.html#from\_iso8601\_date)
+from\_iso8601\_date(_string_) → date[#](https://trino.io/docs/current/functions/datetime.html#from\_iso8601\_date)
 
 Parses the ISO 8601 formatted date `string` into a `date`. The date can be a calendar date, a week date using ISO week numbering, or year and day of year combined:
 
@@ -110,7 +110,7 @@ SELECT from_iso8601_date('2020-123');
 -- 2020-05-02
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)at\_timezone(_timestamp(p)_, _zone_) → timestamp(p) with time zone[#](https://trino.io/docs/current/functions/datetime.html#at\_timezone)
+at\_timezone(_timestamp(p)_, _zone_) → timestamp(p) with time zone[#](https://trino.io/docs/current/functions/datetime.html#at\_timezone)
 
 Returns the timestamp specified in `timestamp` with the time zone converted from the session time zone to the time zone specified in `zone` with precision `p`. In the following example, the session time zone is set to `America/New_York`, which is three hours ahead of `America/Los_Angeles`:
 
@@ -122,7 +122,7 @@ SELECT at_timezone(TIMESTAMP '2022-11-01 09:08:07.321', 'America/Los_Angeles')
 -- 2022-11-01 06:08:07.321 America/Los_Angeles
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)with\_timezone(_timestamp(p)_, _zone_) → timestamp(p) with time zone[#](https://trino.io/docs/current/functions/datetime.html#with\_timezone)
+with\_timezone(_timestamp(p)_, _zone_) → timestamp(p) with time zone[#](https://trino.io/docs/current/functions/datetime.html#with\_timezone)
 
 Returns the timestamp specified in `timestamp` with the time zone specified in `zone` with precision `p`:
 
@@ -134,7 +134,7 @@ SELECT with_timezone(TIMESTAMP '2022-11-01 09:08:07.321', 'America/Los_Angeles')
 -- 2022-11-01 09:08:07.321 America/Los_Angeles
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)from\_unixtime(_unixtime_) → timestamp(3) with time zone[#](https://trino.io/docs/current/functions/datetime.html#from\_unixtime)
+from\_unixtime(_unixtime_) → timestamp(3) with time zone[#](https://trino.io/docs/current/functions/datetime.html#from\_unixtime)
 
 Returns the UNIX timestamp `unixtime` as a timestamp with time zone. `unixtime` is the number of seconds since `1970-01-01 00:00:00 UTC`.
 
@@ -164,7 +164,7 @@ SELECT from_unixtime_nanos(DECIMAL '-1234');
 -- 1969-12-31 23:59:59.999998766 UTC
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)localtime[#](https://trino.io/docs/current/functions/datetime.html#localtime)
+localtime[#](https://trino.io/docs/current/functions/datetime.html#localtime)
 
 Returns the current time as of the start of the query.
 
@@ -174,7 +174,7 @@ Returns the current timestamp as of the start of the query, with `3` digits of s
 
 localtimestamp(_p_)
 
-Returns the current [timestamp](https://trino.io/docs/current/language/types.html#timestamp-data-type) as of the start of the query, with `p` digits of subsecond precision:
+Returns the current timestamp as of the start of the query, with `p` digits of subsecond precision:
 
 ```
 SELECT localtimestamp(6);
@@ -273,7 +273,7 @@ SELECT date_add('day', -1, TIMESTAMP '2020-03-01 00:00:00 UTC');
 -- 2020-02-29 00:00:00.000 UTC
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)date\_diff(_unit_, _timestamp1_, _timestamp2_) → bigint[#](https://trino.io/docs/current/functions/datetime.html#date\_diff)
+date\_diff(_unit_, _timestamp1_, _timestamp2_) → bigint[#](https://trino.io/docs/current/functions/datetime.html#date\_diff)
 
 Returns `timestamp2 - timestamp1` expressed in terms of `unit`:
 
@@ -325,7 +325,7 @@ SELECT parse_duration('5m');
 -- 0 00:05:00.000
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)human\_readable\_seconds(_double_) → varchar[#](https://trino.io/docs/current/functions/datetime.html#human\_readable\_seconds)
+human\_readable\_seconds(_double_) → varchar[#](https://trino.io/docs/current/functions/datetime.html#human\_readable\_seconds)
 
 Formats the double value of `seconds` into a human readable string containing `weeks`, `days`, `hours`, `minutes`, and `seconds`:
 
@@ -340,47 +340,47 @@ SELECT human_readable_seconds(56363463);
 -- 93 weeks, 1 day, 8 hours, 31 minutes, 3 seconds
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ### MySQL date functions[#](https://trino.io/docs/current/functions/datetime.html#mysql-date-functions) <a href="#mysql-date-functions" id="mysql-date-functions"></a>
 
 The functions in this section use a format string that is compatible with the MySQL `date_parse` and `str_to_date` functions. The following table, based on the MySQL manual, describes the format specifiers:
 
-| Specifier | Description                                                                                                                                                                                                                                      |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `%a`      | Abbreviated weekday name (`Sun` .. `Sat`)                                                                                                                                                                                                        |
-| `%b`      | Abbreviated month name (`Jan` .. `Dec`)                                                                                                                                                                                                          |
-| `%c`      | Month, numeric (`1` .. `12`), this specifier does not support `0` as a month.                                                                                                                                                                    |
-| `%D`      | Day of the month with English suffix (`0th`, `1st`, `2nd`, `3rd`, …)                                                                                                                                                                             |
-| `%d`      | Day of the month, numeric (`01` .. `31`), this specifier does not support `0` as a month or day.                                                                                                                                                 |
-| `%e`      | Day of the month, numeric (`1` .. `31`), this specifier does not support `0` as a day.                                                                                                                                                           |
-| `%f`      | Fraction of second (6 digits for printing: `000000` .. `999000`; 1 - 9 digits for parsing: `0` .. `999999999`), timestamp is truncated to milliseconds.                                                                                          |
-| `%H`      | Hour (`00` .. `23`)                                                                                                                                                                                                                              |
-| `%h`      | Hour (`01` .. `12`)                                                                                                                                                                                                                              |
-| `%I`      | Hour (`01` .. `12`)                                                                                                                                                                                                                              |
-| `%i`      | Minutes, numeric (`00` .. `59`)                                                                                                                                                                                                                  |
-| `%j`      | Day of year (`001` .. `366`)                                                                                                                                                                                                                     |
-| `%k`      | Hour (`0` .. `23`)                                                                                                                                                                                                                               |
-| `%l`      | Hour (`1` .. `12`)                                                                                                                                                                                                                               |
-| `%M`      | Month name (`January` .. `December`)                                                                                                                                                                                                             |
-| `%m`      | Month, numeric (`01` .. `12`), this specifier does not support `0` as a month.                                                                                                                                                                   |
-| `%p`      | `AM` or `PM`                                                                                                                                                                                                                                     |
-| `%r`      | Time of day, 12-hour (equivalent to `%h:%i:%s %p`)                                                                                                                                                                                               |
-| `%S`      | Seconds (`00` .. `59`)                                                                                                                                                                                                                           |
-| `%s`      | Seconds (`00` .. `59`)                                                                                                                                                                                                                           |
-| `%T`      | Time of day, 24-hour (equivalent to `%H:%i:%s`)                                                                                                                                                                                                  |
-| `%U`      | Week (`00` .. `53`), where Sunday is the first day of the week                                                                                                                                                                                   |
-| `%u`      | Week (`00` .. `53`), where Monday is the first day of the week                                                                                                                                                                                   |
-| `%V`      | Week (`01` .. `53`), where Sunday is the first day of the week; used with `%X`                                                                                                                                                                   |
-| `%v`      | Week (`01` .. `53`), where Monday is the first day of the week; used with `%x`                                                                                                                                                                   |
-| `%W`      | Weekday name (`Sunday` .. `Saturday`)                                                                                                                                                                                                            |
-| `%w`      | Day of the week (`0` .. `6`), where Sunday is the first day of the week, this specifier is not supported,consider using [`day_of_week()`](https://trino.io/docs/current/functions/datetime.html#day\_of\_week) (it uses `1-7` instead of `0-6`). |
-| `%X`      | Year for the week where Sunday is the first day of the week, numeric, four digits; used with `%V`                                                                                                                                                |
-| `%x`      | Year for the week, where Monday is the first day of the week, numeric, four digits; used with `%v`                                                                                                                                               |
-| `%Y`      | Year, numeric, four digits                                                                                                                                                                                                                       |
-| `%y`      | Year, numeric (two digits), when parsing, two-digit year format assumes range `1970` .. `2069`, so “70” will result in year `1970` but “69” will produce `2069`.                                                                                 |
-| `%%`      | A literal `%` character                                                                                                                                                                                                                          |
-| `%x`      | `x`, for any `x` not listed above                                                                                                                                                                                                                |
+| Specifier | Description                                                                                                                                                               |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `%a`      | Abbreviated weekday name (`Sun` .. `Sat`)                                                                                                                                 |
+| `%b`      | Abbreviated month name (`Jan` .. `Dec`)                                                                                                                                   |
+| `%c`      | Month, numeric (`1` .. `12`), this specifier does not support `0` as a month.                                                                                             |
+| `%D`      | Day of the month with English suffix (`0th`, `1st`, `2nd`, `3rd`, …)                                                                                                      |
+| `%d`      | Day of the month, numeric (`01` .. `31`), this specifier does not support `0` as a month or day.                                                                          |
+| `%e`      | Day of the month, numeric (`1` .. `31`), this specifier does not support `0` as a day.                                                                                    |
+| `%f`      | Fraction of second (6 digits for printing: `000000` .. `999000`; 1 - 9 digits for parsing: `0` .. `999999999`), timestamp is truncated to milliseconds.                   |
+| `%H`      | Hour (`00` .. `23`)                                                                                                                                                       |
+| `%h`      | Hour (`01` .. `12`)                                                                                                                                                       |
+| `%I`      | Hour (`01` .. `12`)                                                                                                                                                       |
+| `%i`      | Minutes, numeric (`00` .. `59`)                                                                                                                                           |
+| `%j`      | Day of year (`001` .. `366`)                                                                                                                                              |
+| `%k`      | Hour (`0` .. `23`)                                                                                                                                                        |
+| `%l`      | Hour (`1` .. `12`)                                                                                                                                                        |
+| `%M`      | Month name (`January` .. `December`)                                                                                                                                      |
+| `%m`      | Month, numeric (`01` .. `12`), this specifier does not support `0` as a month.                                                                                            |
+| `%p`      | `AM` or `PM`                                                                                                                                                              |
+| `%r`      | Time of day, 12-hour (equivalent to `%h:%i:%s %p`)                                                                                                                        |
+| `%S`      | Seconds (`00` .. `59`)                                                                                                                                                    |
+| `%s`      | Seconds (`00` .. `59`)                                                                                                                                                    |
+| `%T`      | Time of day, 24-hour (equivalent to `%H:%i:%s`)                                                                                                                           |
+| `%U`      | Week (`00` .. `53`), where Sunday is the first day of the week                                                                                                            |
+| `%u`      | Week (`00` .. `53`), where Monday is the first day of the week                                                                                                            |
+| `%V`      | Week (`01` .. `53`), where Sunday is the first day of the week; used with `%X`                                                                                            |
+| `%v`      | Week (`01` .. `53`), where Monday is the first day of the week; used with `%x`                                                                                            |
+| `%W`      | Weekday name (`Sunday` .. `Saturday`)                                                                                                                                     |
+| `%w`      | Day of the week (`0` .. `6`), where Sunday is the first day of the week, this specifier is not supported,consider using `day_of_week()` (it uses `1-7` instead of `0-6`). |
+| `%X`      | Year for the week where Sunday is the first day of the week, numeric, four digits; used with `%V`                                                                         |
+| `%x`      | Year for the week, where Monday is the first day of the week, numeric, four digits; used with `%v`                                                                        |
+| `%Y`      | Year, numeric, four digits                                                                                                                                                |
+| `%y`      | Year, numeric (two digits), when parsing, two-digit year format assumes range `1970` .. `2069`, so “70” will result in year `1970` but “69” will produce `2069`.          |
+| `%%`      | A literal `%` character                                                                                                                                                   |
+| `%x`      | `x`, for any `x` not listed above                                                                                                                                         |
 
 Warning
 
@@ -395,7 +395,7 @@ SELECT date_format(TIMESTAMP '2022-10-20 05:10:00', '%m-%d-%Y %H');
 -- 10-20-2022 05
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)date\_parse(_string_, _format) → timestamp(3_)[#](https://trino.io/docs/current/functions/datetime.html#date\_parse)
+date\_parse(_string_, _format) → timestamp(3_)[#](https://trino.io/docs/current/functions/datetime.html#date\_parse)
 
 Parses `string` into a timestamp using `format`:
 
@@ -404,7 +404,7 @@ SELECT date_parse('2022/10/20/05', '%Y/%m/%d/%H');
 -- 2022-10-20 05:00:00.000
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ### Java date functions[#](https://trino.io/docs/current/functions/datetime.html#java-date-functions) <a href="#java-date-functions" id="java-date-functions"></a>
 
@@ -422,25 +422,25 @@ Parses `string` into a timestamp with time zone using `format`.
 
 The `extract` function supports the following fields:
 
-| Field             | Description                                                                                   |
-| ----------------- | --------------------------------------------------------------------------------------------- |
-| `YEAR`            | [`year()`](https://trino.io/docs/current/functions/datetime.html#year)                        |
-| `QUARTER`         | [`quarter()`](https://trino.io/docs/current/functions/datetime.html#quarter)                  |
-| `MONTH`           | [`month()`](https://trino.io/docs/current/functions/datetime.html#month)                      |
-| `WEEK`            | [`week()`](https://trino.io/docs/current/functions/datetime.html#week)                        |
-| `DAY`             | [`day()`](https://trino.io/docs/current/functions/datetime.html#day)                          |
-| `DAY_OF_MONTH`    | [`day()`](https://trino.io/docs/current/functions/datetime.html#day)                          |
-| `DAY_OF_WEEK`     | [`day_of_week()`](https://trino.io/docs/current/functions/datetime.html#day\_of\_week)        |
-| `DOW`             | [`day_of_week()`](https://trino.io/docs/current/functions/datetime.html#day\_of\_week)        |
-| `DAY_OF_YEAR`     | [`day_of_year()`](https://trino.io/docs/current/functions/datetime.html#day\_of\_year)        |
-| `DOY`             | [`day_of_year()`](https://trino.io/docs/current/functions/datetime.html#day\_of\_year)        |
-| `YEAR_OF_WEEK`    | [`year_of_week()`](https://trino.io/docs/current/functions/datetime.html#year\_of\_week)      |
-| `YOW`             | [`year_of_week()`](https://trino.io/docs/current/functions/datetime.html#year\_of\_week)      |
-| `HOUR`            | [`hour()`](https://trino.io/docs/current/functions/datetime.html#hour)                        |
-| `MINUTE`          | [`minute()`](https://trino.io/docs/current/functions/datetime.html#minute)                    |
-| `SECOND`          | [`second()`](https://trino.io/docs/current/functions/datetime.html#second)                    |
-| `TIMEZONE_HOUR`   | [`timezone_hour()`](https://trino.io/docs/current/functions/datetime.html#timezone\_hour)     |
-| `TIMEZONE_MINUTE` | [`timezone_minute()`](https://trino.io/docs/current/functions/datetime.html#timezone\_minute) |
+| Field             | Description         |
+| ----------------- | ------------------- |
+| `YEAR`            | `year()`            |
+| `QUARTER`         | `quarter()`         |
+| `MONTH`           | `month()`           |
+| `WEEK`            | `week()`            |
+| `DAY`             | `day()`             |
+| `DAY_OF_MONTH`    | `day()`             |
+| `DAY_OF_WEEK`     | `day_of_week()`     |
+| `DOW`             | `day_of_week()`     |
+| `DAY_OF_YEAR`     | `day_of_year()`     |
+| `DOY`             | `day_of_year()`     |
+| `YEAR_OF_WEEK`    | `year_of_week()`    |
+| `YOW`             | `year_of_week()`    |
+| `HOUR`            | `hour()`            |
+| `MINUTE`          | `minute()`          |
+| `SECOND`          | `second()`          |
+| `TIMEZONE_HOUR`   | `timezone_hour()`   |
+| `TIMEZONE_MINUTE` | `timezone_minute()` |
 
 The types supported by the `extract` function vary depending on the field to be extracted. Most fields support all date and time types.
 
@@ -453,7 +453,7 @@ SELECT extract(YEAR FROM TIMESTAMP '2022-10-20 05:10:00');
 -- 2022
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note
 
@@ -467,7 +467,7 @@ Returns the day of the month from `x`.
 
 day\_of\_month(_x_) → bigint[#](https://trino.io/docs/current/functions/datetime.html#day\_of\_month)
 
-This is an alias for [`day()`](https://trino.io/docs/current/functions/datetime.html#day).
+This is an alias for `day()`.
 
 day\_of\_week(_x_) → bigint[#](https://trino.io/docs/current/functions/datetime.html#day\_of\_week)
 
@@ -479,11 +479,11 @@ Returns the day of the year from `x`. The value ranges from `1` to `366`.
 
 dow(_x_) → bigint[#](https://trino.io/docs/current/functions/datetime.html#dow)
 
-This is an alias for [`day_of_week()`](https://trino.io/docs/current/functions/datetime.html#day\_of\_week).
+This is an alias for `day_of_week()`.
 
 doy(_x_) → bigint[#](https://trino.io/docs/current/functions/datetime.html#doy)
 
-This is an alias for [`day_of_year()`](https://trino.io/docs/current/functions/datetime.html#day\_of\_year).
+This is an alias for `day_of_year()`.
 
 hour(_x_) → bigint[#](https://trino.io/docs/current/functions/datetime.html#hour)
 
@@ -519,11 +519,11 @@ Returns the minute of the time zone offset from `timestamp`.
 
 week(_x_) → bigint[#](https://trino.io/docs/current/functions/datetime.html#week)
 
-Returns the [ISO week](https://wikipedia.org/wiki/ISO\_week\_date) of the year from `x`. The value ranges from `1` to `53`.
+Returns the ISO week of the year from `x`. The value ranges from `1` to `53`.
 
 week\_of\_year(_x_) → bigint[#](https://trino.io/docs/current/functions/datetime.html#week\_of\_year)
 
-This is an alias for [`week()`](https://trino.io/docs/current/functions/datetime.html#week).
+This is an alias for `week()`.
 
 year(_x_) → bigint[#](https://trino.io/docs/current/functions/datetime.html#year)
 
@@ -535,4 +535,4 @@ Returns the year of the [ISO week](https://wikipedia.org/wiki/ISO\_week\_date) f
 
 yow(_x_) → bigint[#](https://trino.io/docs/current/functions/datetime.html#yow)
 
-This is an alias for [`year_of_week()`](https://trino.io/docs/current/functions/datetime.html#year\_of\_week).
+This is an alias for `year_of_week()`.

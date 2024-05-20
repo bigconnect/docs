@@ -15,7 +15,7 @@ FROM ( user | USER user | ROLE role )
 
 Revokes the specified privileges from the specified grantee.
 
-Specifying `ALL PRIVILEGES` revokes [DELETE](https://trino.io/docs/current/sql/delete.html), [INSERT](https://trino.io/docs/current/sql/insert.html) and [SELECT](https://trino.io/docs/current/sql/select.html) privileges.
+Specifying `ALL PRIVILEGES` revokes DELETE, INSERT and SELECT privileges.
 
 Specifying `ROLE PUBLIC` revokes privileges from the `PUBLIC` role. Users will retain privileges assigned to them directly or via other roles.
 
@@ -65,8 +65,8 @@ REVOKE ALL PRIVILEGES ON test FROM alice;
 
 Some connectors have no support for `REVOKE`. See connector documentation for more details.
 
-### See also[#](https://trino.io/docs/current/sql/revoke.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[DENY](https://trino.io/docs/current/sql/deny.html), [GRANT privilege](https://trino.io/docs/current/sql/grant.html), [SHOW GRANTS](https://trino.io/docs/current/sql/show-grants.html)
+DENY, GRANT privilege, SHOW GRANTS
 
 \

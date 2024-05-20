@@ -1,6 +1,6 @@
 # Azure Storage file system support
 
-Trino includes a native implementation to access [Azure Storage](https://learn.microsoft.com/en-us/azure/storage/) with a catalog using the Delta Lake, Hive, Hudi, or Iceberg connectors.
+Trino includes a native implementation to access Azure Storage with a catalog using the Delta Lake, Hive, Hudi, or Iceberg connectors.
 
 Enable the native implementation with `fs.native-azure.enabled=true` in your catalog properties file.
 
@@ -8,14 +8,14 @@ Enable the native implementation with `fs.native-azure.enabled=true` in your cat
 
 Use the following properties to configure general aspects of Azure Storage file system support:
 
-| Property                       | Description                                                                                                                                                                                                                                                                                                                                                                                            |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `fs.native-azure.enabled`      | Activate the native implementation for Azure Storage support, and deactivate all [legacy support](https://trino.io/docs/current/object-storage.html#file-system-legacy). Defaults to `false`. Must be set to `true` for all other properties be used.                                                                                                                                                  |
-| `azure.auth-type`              | Authentication type to use for Azure Storage access. Defaults no authentication used with `NONE`. Use `ACCESS_KEY` for [Access key authentication](https://trino.io/docs/current/object-storage/file-system-azure.html#azure-access-key-authentication) or and `OAUTH` for [OAuth 2.0 authentication](https://trino.io/docs/current/object-storage/file-system-azure.html#azure-oauth-authentication). |
-| `azure.read-block-size`        | [Data size](https://trino.io/docs/current/admin/properties.html#prop-type-data-size) for blocks during read operations. Defaults to `4MB`.                                                                                                                                                                                                                                                             |
-| `azure.write-block-size`       | [Data size](https://trino.io/docs/current/admin/properties.html#prop-type-data-size) for blocks during write operations. Defaults to `4MB`.                                                                                                                                                                                                                                                            |
-| `azure.max-write-concurrency`  | Maximum number of concurrent write operations. Defaults to 8.                                                                                                                                                                                                                                                                                                                                          |
-| `azure.max-single-upload-size` | [Data size](https://trino.io/docs/current/admin/properties.html#prop-type-data-size) Defaults to `4MB`.                                                                                                                                                                                                                                                                                                |
+| Property                       | Description                                                                                                                                                                                   |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fs.native-azure.enabled`      | Activate the native implementation for Azure Storage support, and deactivate all legacy support. Defaults to `false`. Must be set to `true` for all other properties be used.                 |
+| `azure.auth-type`              | Authentication type to use for Azure Storage access. Defaults no authentication used with `NONE`. Use `ACCESS_KEY` for Access key authentication or and `OAUTH` for OAuth 2.0 authentication. |
+| `azure.read-block-size`        | Data size for blocks during read operations. Defaults to `4MB`.                                                                                                                               |
+| `azure.write-block-size`       | Data size for blocks during write operations. Defaults to `4MB`.                                                                                                                              |
+| `azure.max-write-concurrency`  | Maximum number of concurrent write operations. Defaults to 8.                                                                                                                                 |
+| `azure.max-single-upload-size` | Data size Defaults to `4MB`.                                                                                                                                                                  |
 
 ### Access key authentication[#](https://trino.io/docs/current/object-storage/file-system-azure.html#access-key-authentication) <a href="#access-key-authentication" id="access-key-authentication"></a>
 

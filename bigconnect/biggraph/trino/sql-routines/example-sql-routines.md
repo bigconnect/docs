@@ -1,16 +1,16 @@
 # Example SQL routines
 
-After learning about [SQL routines from the introduction](https://trino.io/docs/current/routines/introduction.html), the following sections show numerous examples of valid SQL routines. The routines are suitable as [inline routines](https://trino.io/docs/current/routines/introduction.html#routine-inline) or [catalog routines](https://trino.io/docs/current/routines/introduction.html#routine-catalog), after adjusting the name and adjusting the example invocations.
+After learning about SQL routines from the introduction, the following sections show numerous examples of valid SQL routines. The routines are suitable as inline routines or catalog routines, after adjusting the name and adjusting the example invocations.
 
 The examples combine numerous supported statements. Refer to the specific statement documentation for further details:
 
-* [FUNCTION](https://trino.io/docs/current/routines/function.html) for general SQL routine declaration
-* [BEGIN](https://trino.io/docs/current/routines/begin.html) and [DECLARE](https://trino.io/docs/current/routines/declare.html) for routine blocks
-* [SET](https://trino.io/docs/current/routines/set.html) for assigning values to variables
-* [RETURN](https://trino.io/docs/current/routines/return.html) for returning routine results
-* [CASE](https://trino.io/docs/current/routines/case.html) and [IF](https://trino.io/docs/current/routines/if.html) for conditional flows
-* [LOOP](https://trino.io/docs/current/routines/loop.html), [REPEAT](https://trino.io/docs/current/routines/repeat.html), and [WHILE](https://trino.io/docs/current/routines/while.html) for looping constructs
-* [ITERATE](https://trino.io/docs/current/routines/iterate.html) and [LEAVE](https://trino.io/docs/current/routines/leave.html) for flow control
+* FUNCTION for general SQL routine declaration
+* BEGIN and DECLARE for routine blocks
+* SET for assigning values to variables
+* RETURN for returning routine results
+* CASE and IF for conditional flows
+* LOOP, REPEAT, and WHILE for looping constructs
+* ITERATE and LEAVE for flow control
 
 A very simple routine that returns a static value without requiring any input:
 

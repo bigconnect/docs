@@ -6,8 +6,6 @@
 EXECUTE statement_name [ USING parameter1 [ , parameter2, ... ] ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ### Description[#](https://trino.io/docs/current/sql/execute.html#description) <a href="#description" id="description"></a>
 
 Executes a prepared statement with the name `statement_name`. Parameter values are defined in the `USING` clause.
@@ -52,6 +50,6 @@ SELECT name FROM nation WHERE regionkey = 1 AND nationkey < 3;
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/execute.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[PREPARE](https://trino.io/docs/current/sql/prepare.html), [DEALLOCATE PREPARE](https://trino.io/docs/current/sql/deallocate-prepare.html), [EXECUTE IMMEDIATE](https://trino.io/docs/current/sql/execute-immediate.html)
+PREPARE, DEALLOCATE PREPARE, EXECUTE IMMEDIATE

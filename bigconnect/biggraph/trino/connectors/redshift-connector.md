@@ -46,25 +46,25 @@ The connector can provide credentials for the data source connection in multiple
 * in a key store file
 * as extra credentials set when connecting to Trino
 
-You can use [secrets](https://trino.io/docs/current/security/secrets.html) to avoid storing sensitive values in the catalog properties files.
+You can use secrets to avoid storing sensitive values in the catalog properties files.
 
 The following table describes configuration properties for connection credentials:
 
-| Property name                           | Description                                                                                                                                                                                            |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `credential-provider.type`              | Type of the credential provider. Must be one of `INLINE`, `FILE`, or `KEYSTORE`; defaults to `INLINE`.                                                                                                 |
-| `connection-user`                       | Connection user name.                                                                                                                                                                                  |
-| `connection-password`                   | Connection password.                                                                                                                                                                                   |
-| `user-credential-name`                  | Name of the extra credentials property, whose value to use as the user name. See `extraCredentials` in [Parameter reference](https://trino.io/docs/current/client/jdbc.html#jdbc-parameter-reference). |
-| `password-credential-name`              | Name of the extra credentials property, whose value to use as the password.                                                                                                                            |
-| `connection-credential-file`            | Location of the properties file where credentials are present. It must contain the `connection-user` and `connection-password` properties.                                                             |
-| `keystore-file-path`                    | The location of the Java Keystore file, from which to read credentials.                                                                                                                                |
-| `keystore-type`                         | File format of the keystore file, for example `JKS` or `PEM`.                                                                                                                                          |
-| `keystore-password`                     | Password for the key store.                                                                                                                                                                            |
-| `keystore-user-credential-name`         | Name of the key store entity to use as the user name.                                                                                                                                                  |
-| `keystore-user-credential-password`     | Password for the user name key store entity.                                                                                                                                                           |
-| `keystore-password-credential-name`     | Name of the key store entity to use as the password.                                                                                                                                                   |
-| `keystore-password-credential-password` | Password for the password key store entity.                                                                                                                                                            |
+| Property name                           | Description                                                                                                                                |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `credential-provider.type`              | Type of the credential provider. Must be one of `INLINE`, `FILE`, or `KEYSTORE`; defaults to `INLINE`.                                     |
+| `connection-user`                       | Connection user name.                                                                                                                      |
+| `connection-password`                   | Connection password.                                                                                                                       |
+| `user-credential-name`                  | Name of the extra credentials property, whose value to use as the user name. See `extraCredentials` in Parameter reference.                |
+| `password-credential-name`              | Name of the extra credentials property, whose value to use as the password.                                                                |
+| `connection-credential-file`            | Location of the properties file where credentials are present. It must contain the `connection-user` and `connection-password` properties. |
+| `keystore-file-path`                    | The location of the Java Keystore file, from which to read credentials.                                                                    |
+| `keystore-type`                         | File format of the keystore file, for example `JKS` or `PEM`.                                                                              |
+| `keystore-password`                     | Password for the key store.                                                                                                                |
+| `keystore-user-credential-name`         | Name of the key store entity to use as the user name.                                                                                      |
+| `keystore-user-credential-password`     | Password for the user name key store entity.                                                                                               |
+| `keystore-password-credential-name`     | Name of the key store entity to use as the password.                                                                                       |
+| `keystore-password-credential-password` | Password for the password key store entity.                                                                                                |
 
 #### Multiple Redshift databases or clusters[#](https://trino.io/docs/current/connector/redshift.html#multiple-redshift-databases-or-clusters) <a href="#multiple-redshift-databases-or-clusters" id="multiple-redshift-databases-or-clusters"></a>
 
@@ -76,21 +76,21 @@ To add another catalog, simply add another properties file to `etc/catalog` with
 
 The following table describes general catalog configuration properties for the connector:
 
-| Property name                                               | Description                                                                                                                                                                                                                                                                                                                                                               |
-| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `case-insensitive-name-matching`                            | Support case insensitive schema and table names. Defaults to `false`.                                                                                                                                                                                                                                                                                                     |
-| `case-insensitive-name-matching.cache-ttl`                  | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which case insensitive schema and table names are cached. Defaults to `1m`.                                                                                                                                                                                                        |
-| `case-insensitive-name-matching.config-file`                | Path to a name mapping configuration file in JSON format that allows Trino to disambiguate between schemas and tables with similar names in different cases. Defaults to `null`.                                                                                                                                                                                          |
-| `case-insensitive-name-matching.config-file.refresh-period` | Frequency with which Trino checks the name matching configuration file for changes. The [duration value](https://trino.io/docs/current/admin/properties.html#prop-type-duration) defaults to `0s` (refresh disabled).                                                                                                                                                     |
-| `metadata.cache-ttl`                                        | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which metadata, including table and column statistics, is cached. Defaults to `0s` (caching disabled).                                                                                                                                                                             |
-| `metadata.cache-missing`                                    | Cache the fact that metadata, including table and column statistics, is not available. Defaults to `false`.                                                                                                                                                                                                                                                               |
-| `metadata.schemas.cache-ttl`                                | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which schema metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                    |
-| `metadata.tables.cache-ttl`                                 | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which table metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                     |
-| `metadata.statistics.cache-ttl`                             | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which tables statistics are cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                 |
-| `metadata.cache-maximum-size`                               | Maximum number of objects stored in the metadata cache. Defaults to `10000`.                                                                                                                                                                                                                                                                                              |
-| `write.batch-size`                                          | Maximum number of statements in a batched execution. Do not change this setting from the default. Non-default values may negatively impact performance. Defaults to `1000`.                                                                                                                                                                                               |
-| `dynamic-filtering.enabled`                                 | Push down dynamic filters into JDBC queries. Defaults to `true`.                                                                                                                                                                                                                                                                                                          |
-| `dynamic-filtering.wait-timeout`                            | Maximum [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which Trino waits for dynamic filters to be collected from the build side of joins before starting a JDBC query. Using a large timeout can potentially result in more detailed dynamic filters. However, it can also increase latency for some queries. Defaults to `20s`. |
+| Property name                                               | Description                                                                                                                                                                                                                                                                                     |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `case-insensitive-name-matching`                            | Support case insensitive schema and table names. Defaults to `false`.                                                                                                                                                                                                                           |
+| `case-insensitive-name-matching.cache-ttl`                  | Duration for which case insensitive schema and table names are cached. Defaults to `1m`.                                                                                                                                                                                                        |
+| `case-insensitive-name-matching.config-file`                | Path to a name mapping configuration file in JSON format that allows Trino to disambiguate between schemas and tables with similar names in different cases. Defaults to `null`.                                                                                                                |
+| `case-insensitive-name-matching.config-file.refresh-period` | Frequency with which Trino checks the name matching configuration file for changes. The duration value defaults to `0s` (refresh disabled).                                                                                                                                                     |
+| `metadata.cache-ttl`                                        | Duration for which metadata, including table and column statistics, is cached. Defaults to `0s` (caching disabled).                                                                                                                                                                             |
+| `metadata.cache-missing`                                    | Cache the fact that metadata, including table and column statistics, is not available. Defaults to `false`.                                                                                                                                                                                     |
+| `metadata.schemas.cache-ttl`                                | Duration for which schema metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                    |
+| `metadata.tables.cache-ttl`                                 | Duration for which table metadata is cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                     |
+| `metadata.statistics.cache-ttl`                             | Duration for which tables statistics are cached. Defaults to the value of `metadata.cache-ttl`.                                                                                                                                                                                                 |
+| `metadata.cache-maximum-size`                               | Maximum number of objects stored in the metadata cache. Defaults to `10000`.                                                                                                                                                                                                                    |
+| `write.batch-size`                                          | Maximum number of statements in a batched execution. Do not change this setting from the default. Non-default values may negatively impact performance. Defaults to `1000`.                                                                                                                     |
+| `dynamic-filtering.enabled`                                 | Push down dynamic filters into JDBC queries. Defaults to `true`.                                                                                                                                                                                                                                |
+| `dynamic-filtering.wait-timeout`                            | Maximum duration for which Trino waits for dynamic filters to be collected from the build side of joins before starting a JDBC query. Using a large timeout can potentially result in more detailed dynamic filters. However, it can also increase latency for some queries. Defaults to `20s`. |
 
 #### Appending query metadata[#](https://trino.io/docs/current/connector/redshift.html#appending-query-metadata) <a href="#appending-query-metadata" id="appending-query-metadata"></a>
 
@@ -141,7 +141,7 @@ Certain JDBC driver settings and logging configurations might cause the comment 
 
 #### Domain compaction threshold[#](https://trino.io/docs/current/connector/redshift.html#domain-compaction-threshold) <a href="#domain-compaction-threshold" id="domain-compaction-threshold"></a>
 
-Pushing down a large list of predicates to the data source can compromise performance. Trino compacts large predicates into a simpler range predicate by default to ensure a balance between performance and predicate pushdown. If necessary, the threshold for this compaction can be increased to improve performance when the data source is capable of taking advantage of large predicates. Increasing this threshold may improve pushdown of large [dynamic filters](https://trino.io/docs/current/admin/dynamic-filtering.html). The `domain-compaction-threshold` catalog configuration property or the `domain_compaction_threshold` [catalog session property](https://trino.io/docs/current/sql/set-session.html#session-properties-definition) can be used to adjust the default value of `32` for this threshold.
+Pushing down a large list of predicates to the data source can compromise performance. Trino compacts large predicates into a simpler range predicate by default to ensure a balance between performance and predicate pushdown. If necessary, the threshold for this compaction can be increased to improve performance when the data source is capable of taking advantage of large predicates. Increasing this threshold may improve pushdown of large dynamic filters. The `domain-compaction-threshold` catalog configuration property or the `domain_compaction_threshold` catalog session property can be used to adjust the default value of `32` for this threshold.
 
 #### Procedures[#](https://trino.io/docs/current/connector/redshift.html#procedures) <a href="#procedures" id="procedures"></a>
 
@@ -203,7 +203,7 @@ case-insensitive-name-mapping.refresh-period=30s
 
 #### Non-transactional INSERT[#](https://trino.io/docs/current/connector/redshift.html#non-transactional-insert) <a href="#non-transactional-insert" id="non-transactional-insert"></a>
 
-The connector supports adding rows using [INSERT statements](https://trino.io/docs/current/sql/insert.html). By default, data insertion is performed by writing data to a temporary table. You can skip this step to improve performance and write directly to the target table. Set the `insert.non-transactional-insert.enabled` catalog property or the corresponding `non_transactional_insert` catalog session property to `true`.
+The connector supports adding rows using INSERT statements. By default, data insertion is performed by writing data to a temporary table. You can skip this step to improve performance and write directly to the target table. Set the `insert.non-transactional-insert.enabled` catalog property or the corresponding `non_transactional_insert` catalog session property to `true`.
 
 Note that with this property enabled, data can be corrupted in rare cases where exceptions occur during the insert operation. With transactions disabled, no rollback can be performed.
 
@@ -257,15 +257,15 @@ The following properties can be used to configure how data types from the connec
 
 ### SQL support[#](https://trino.io/docs/current/connector/redshift.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides read access and write access to data and metadata in Redshift. In addition to the [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements, the connector supports the following features:
+The connector provides read access and write access to data and metadata in Redshift. In addition to the globally available and read operation statements, the connector supports the following features:
 
-* [INSERT](https://trino.io/docs/current/sql/insert.html)
-* [UPDATE](https://trino.io/docs/current/sql/update.html)
-* [DELETE](https://trino.io/docs/current/sql/delete.html)
-* [TRUNCATE](https://trino.io/docs/current/sql/truncate.html)
-* [Schema and table management](https://trino.io/docs/current/language/sql-support.html#sql-schema-table-management)
+* INSERT
+* UPDATE
+* DELETE
+* TRUNCATE
+* Schema and table management
 
-#### UPDATE[#](https://trino.io/docs/current/connector/redshift.html#update) <a href="#update" id="update"></a>
+#### UPDATE# <a href="#update" id="update"></a>
 
 Only `UPDATE` statements with constant assignments and predicates are supported. For example, the following statement is supported because the values assigned are constants:
 
@@ -327,11 +327,11 @@ The connector supports renaming a schema with the `ALTER SCHEMA RENAME` statemen
 
 ### Fault-tolerant execution support[#](https://trino.io/docs/current/connector/redshift.html#fault-tolerant-execution-support) <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
 
-The connector supports [Fault-tolerant execution](https://trino.io/docs/current/admin/fault-tolerant-execution.html) of query processing. Read and write operations are both supported with any retry policy.
+The connector supports Fault-tolerant execution of query processing. Read and write operations are both supported with any retry policy.
 
 ### Table functions[#](https://trino.io/docs/current/connector/redshift.html#table-functions) <a href="#table-functions" id="table-functions"></a>
 
-The connector provides specific [table functions](https://trino.io/docs/current/functions/table.html) to access Redshift.
+The connector provides specific table functions to access Redshift.
 
 #### `query(varchar) -> table`[#](https://trino.io/docs/current/connector/redshift.html#query-varchar-table) <a href="#query-varchar-table" id="query-varchar-table"></a>
 

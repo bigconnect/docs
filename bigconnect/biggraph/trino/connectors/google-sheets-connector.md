@@ -93,13 +93,13 @@ No other types are supported.
 
 ### SQL support[#](https://trino.io/docs/current/connector/googlesheets.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-In addition to the [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements, this connector supports the following features:
+In addition to the globally available and read operation statements, this connector supports the following features:
 
-* [INSERT](https://trino.io/docs/current/sql/insert.html)
+* INSERT
 
-### Table functions[#](https://trino.io/docs/current/connector/googlesheets.html#table-functions) <a href="#table-functions" id="table-functions"></a>
+### Table functions# <a href="#table-functions" id="table-functions"></a>
 
-The connector provides specific [Table functions](https://trino.io/docs/current/functions/table.html) to access Google Sheets.
+The connector provides specific Table functions to access Google Sheets.
 
 #### `sheet(id, range) -> table`[#](https://trino.io/docs/current/connector/googlesheets.html#sheet-id-range-table) <a href="#sheet-id-range-table" id="sheet-id-range-table"></a>
 

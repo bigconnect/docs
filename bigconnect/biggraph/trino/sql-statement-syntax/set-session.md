@@ -44,8 +44,8 @@ SET SESSION acc01.optimize_locality_enabled = false;
 
 The example `acc01.optimize_locality_enabled` catalog session property does not apply to any other catalog, even if another catalog also uses the Accumulo connector.
 
-### See also[#](https://trino.io/docs/current/sql/set-session.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[RESET SESSION](https://trino.io/docs/current/sql/reset-session.html), [SHOW SESSION](https://trino.io/docs/current/sql/show-session.html)
+RESET SESSION, SHOW SESSION
 
 \

@@ -9,15 +9,13 @@ UNTIL condition
 END REPEAT
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ### Description[#](https://trino.io/docs/current/routines/repeat.html#description) <a href="#description" id="description"></a>
 
-The `REPEAT UNTIL` statement is an optional construct in [SQL routines](https://trino.io/docs/current/routines/introduction.html) to allow processing of a block of statements as long as a condition is met. The condition is validated as a last step of each iteration.
+The `REPEAT UNTIL` statement is an optional construct in SQL routines to allow processing of a block of statements as long as a condition is met. The condition is validated as a last step of each iteration.
 
 The block of statements is processed at least once. After the first, and every subsequent processing the expression `condidtion` is validated. If the result is `true`, processing moves to `END REPEAT` and continues with the next statement in the function. If the result is `false`, the statements are processed again.
 
-The optional `label` before the `REPEAT` keyword can be used to [name the block](https://trino.io/docs/current/routines/introduction.html#routine-label).
+The optional `label` before the `REPEAT` keyword can be used to name the block.
 
 Note that a `WHILE` statement is very similar, with the difference that for `REPEAT` the statements are processed at least once, and for `WHILE` blocks the statements might not be processed at all.
 
@@ -55,10 +53,10 @@ SELECT test_repeat(12); -- 13
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Further examples of varying complexity that cover usage of the `REPEAT` statement in combination with other statements are available in the [SQL routines examples documentation](https://trino.io/docs/current/routines/examples.html).
+Further examples of varying complexity that cover usage of the `REPEAT` statement in combination with other statements are available in the SQL routines examples documentation.
 
-### See also[#](https://trino.io/docs/current/routines/repeat.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-* [Introduction to SQL routines](https://trino.io/docs/current/routines/introduction.html)
-* [LOOP](https://trino.io/docs/current/routines/loop.html)
-* [WHILE](https://trino.io/docs/current/routines/while.html)
+* Introduction to SQL routines
+* LOOP
+* WHILE

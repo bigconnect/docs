@@ -21,7 +21,7 @@ table_name (
 
 ### Description[#](https://trino.io/docs/current/sql/create-table.html#description) <a href="#description" id="description"></a>
 
-Create a new, empty table with the specified columns. Use [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html) to create a table with data.
+Create a new, empty table with the specified columns. Use CREATE TABLE AS to create a table with data.
 
 The optional `OR REPLACE` clause causes an existing table with the specified name to be replaced with the new table definition. Support for table replacement varies across connectors. Refer to the connector documentation for details.
 
@@ -91,6 +91,6 @@ CREATE TABLE bigger_orders (
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/create-table.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[ALTER TABLE](https://trino.io/docs/current/sql/alter-table.html), [DROP TABLE](https://trino.io/docs/current/sql/drop-table.html), [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html), [SHOW CREATE TABLE](https://trino.io/docs/current/sql/show-create-table.html)
+ALTER TABLE, DROP TABLE, CREATE TABLE AS, SHOW CREATE TABLE

@@ -10,7 +10,7 @@ The machine learning functions are not optimized for distributed processing. The
 
 ### Feature vector[#](https://trino.io/docs/current/functions/ml.html#feature-vector) <a href="#feature-vector" id="feature-vector"></a>
 
-To solve a problem with the machine learning technique, especially as a supervised learning problem, it is necessary to represent the data set with the sequence of pairs of labels and feature vector. A label is a target value you want to predict from the unseen feature and a feature is a A N-dimensional vector whose elements are numerical values. In Trino, a feature vector is represented as a map-type value, whose key is an index of each feature, so that it can express a sparse vector. Since classifiers and regressors can recognize the map-type feature vector, there is a function to construct the feature from the existing numerical values, [`features()`](https://trino.io/docs/current/functions/ml.html#features):
+To solve a problem with the machine learning technique, especially as a supervised learning problem, it is necessary to represent the data set with the sequence of pairs of labels and feature vector. A label is a target value you want to predict from the unseen feature and a feature is a A N-dimensional vector whose elements are numerical values. In Trino, a feature vector is represented as a map-type value, whose key is an index of each feature, so that it can express a sparse vector. Since classifiers and regressors can recognize the map-type feature vector, there is a function to construct the feature from the existing numerical values, `features()`:
 
 ```
 SELECT features(1.0, 2.0, 3.0) AS features;
@@ -26,9 +26,9 @@ SELECT features(1.0, 2.0, 3.0) AS features;
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-The output from [`features()`](https://trino.io/docs/current/functions/ml.html#features) can be directly passed to ML functions.
+The output from `features()` can be directly passed to ML functions.
 
-### Classification[#](https://trino.io/docs/current/functions/ml.html#classification) <a href="#classification" id="classification"></a>
+### Classification# <a href="#classification" id="classification"></a>
 
 Classification is a type of supervised learning problem to predict the distinct label from the given feature vector. The interface looks similar to the construction of the SVM model from the sequence of pairs of labels and features implemented in Teradata Aster or [BigQuery ML](https://cloud.google.com/bigquery-ml/docs/bigqueryml-intro). The function to train a classification model looks like as follows:
 
@@ -55,7 +55,7 @@ It returns the trained model in a serialized format.
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-[`classify()`](https://trino.io/docs/current/functions/ml.html#classify) returns the predicted label by using the trained model. The trained model can not be saved natively, and needs to be passed in the format of a nested query:
+`classify()` returns the predicted label by using the trained model. The trained model can not be saved natively, and needs to be passed in the format of a nested query:
 
 ```
 SELECT
@@ -78,9 +78,9 @@ FROM (
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-As a result you need to run the training process at the same time when predicting values. Internally, the model is trained by [libsvm](https://www.csie.ntu.edu.tw/\~cjlin/libsvm/). You can use [`learn_libsvm_classifier()`](https://trino.io/docs/current/functions/ml.html#learn\_libsvm\_classifier) to control the internal parameters of the model.
+As a result you need to run the training process at the same time when predicting values. Internally, the model is trained by libsvm. You can use `learn_libsvm_classifier()` to control the internal parameters of the model.
 
-### Regression[#](https://trino.io/docs/current/functions/ml.html#regression) <a href="#regression" id="regression"></a>
+### Regression# <a href="#regression" id="regression"></a>
 
 Regression is another type of supervised learning problem, predicting continuous value, unlike the classification problem. The target must be numerical values that can be described as `double`.
 
@@ -117,7 +117,7 @@ FROM (
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Internally, the model is trained by [libsvm](https://www.csie.ntu.edu.tw/\~cjlin/libsvm/). [`learn_libsvm_regressor()`](https://trino.io/docs/current/functions/ml.html#learn\_libsvm\_regressor) provides you a way to control the training process.
+Internally, the model is trained by [libsvm](https://www.csie.ntu.edu.tw/\~cjlin/libsvm/). `learn_libsvm_regressor()` provides you a way to control the training process.
 
 ### Machine learning functions[#](https://trino.io/docs/current/functions/ml.html#id1) <a href="#id1" id="id1"></a>
 

@@ -142,7 +142,7 @@ ALL ROWS PER MATCH WITH UNMATCHED ROWS
 
 shows empty matches and produces additional output row for each unmatched row.
 
-There are special rules for computing row pattern measures for empty matches and unmatched rows. They are explained in [Evaluating expressions in empty matches and unmatched rows](https://trino.io/docs/current/sql/match-recognize.html#empty-matches-and-unmatched-rows).
+There are special rules for computing row pattern measures for empty matches and unmatched rows. They are explained in Evaluating expressions in empty matches and unmatched rows.
 
 Unmatched rows can only occur when the pattern does not allow an empty match. Otherwise, they are considered as starting rows of empty matches. The option `ALL ROWS PER MATCH WITH UNMATCHED ROWS` is recommended when pattern recognition is expected to pass all input rows, and it is not certain whether the pattern allows an empty match.
 
@@ -234,7 +234,7 @@ It is equivalent to alternation of all permutations of its components. All compo
 (A B C)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### partition start anchor[#](https://trino.io/docs/current/sql/match-recognize.html#partition-start-anchor) <a href="#partition-start-anchor" id="partition-start-anchor"></a>
 
@@ -242,7 +242,7 @@ It is equivalent to alternation of all permutations of its components. All compo
 ^
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### partition end anchor[#](https://trino.io/docs/current/sql/match-recognize.html#partition-end-anchor) <a href="#partition-end-anchor" id="partition-end-anchor"></a>
 
@@ -258,7 +258,7 @@ $
 ()
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### exclusion syntax[#](https://trino.io/docs/current/sql/match-recognize.html#exclusion-syntax) <a href="#exclusion-syntax" id="exclusion-syntax"></a>
 
@@ -266,7 +266,7 @@ $
 {- row_pattern -}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Exclusion syntax is used to specify portions of the match to exclude from the output. It is useful in combination with the `ALL ROWS PER MATCH` option, when only certain sections of the match are interesting.
 
@@ -284,7 +284,7 @@ Pattern quantifiers allow to specify the desired number of repetitions of a sub-
 (A | B)*
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 There are following row pattern quantifiers:
 
@@ -294,7 +294,7 @@ There are following row pattern quantifiers:
 *
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 * one or more repetitions:
 
@@ -302,7 +302,7 @@ There are following row pattern quantifiers:
 +
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 * zero or one repetition:
 
@@ -310,7 +310,7 @@ There are following row pattern quantifiers:
 ?
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 * exact number of repetitions, specified by a non-negative integer number:
 
@@ -318,7 +318,7 @@ There are following row pattern quantifiers:
 {n}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 * number of repetitions ranging between bounds, specified by non-negative integer numbers:
 
@@ -326,7 +326,7 @@ There are following row pattern quantifiers:
 {m, n}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Specifying bounds is optional. If the left bound is omitted, it defaults to `0`. So, `{, 5}` can be described as “between zero and five repetitions”. If the right bound is omitted, the number of accepted repetitions is unbounded. So, `{5, }` can be described as “at least five repetitions”. Also, `{,}` is equivalent to `*`.
 
@@ -340,7 +340,7 @@ As explained in [Row pattern syntax](https://trino.io/docs/current/sql/match-rec
 SUBSET U = (C, D), ...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In the preceding example, union variable `U` is defined as union of primary variables `C` and `D`. Union variables are useful in `MEASURES`, `DEFINE` and `AFTER MATCH SKIP` clauses. They allow you to refer to set of rows matched to either primary variable from a subset.
 
@@ -364,11 +364,11 @@ The mechanism of matching variables to rows shows the difference between pattern
 
 It is not required that every primary variable has a definition in the `DEFINE` clause. Variables not mentioned in the `DEFINE` clause are implicitly associated with `true` condition, which means that they can be matched to every row.
 
-Boolean expressions in the `DEFINE` clause allow the same special syntax as expressions in the `MEASURES` clause. Details are explained in [Row pattern recognition expressions](https://trino.io/docs/current/sql/match-recognize.html#pattern-recognition-expressions).
+Boolean expressions in the `DEFINE` clause allow the same special syntax as expressions in the `MEASURES` clause. Details are explained in Row pattern recognition expressions.
 
 ### Row pattern recognition expressions[#](https://trino.io/docs/current/sql/match-recognize.html#row-pattern-recognition-expressions) <a href="#row-pattern-recognition-expressions" id="row-pattern-recognition-expressions"></a>
 
-Expressions in [MEASURES](https://trino.io/docs/current/sql/match-recognize.html#row-pattern-measures) and [DEFINE](https://trino.io/docs/current/sql/match-recognize.html#row-pattern-variable-definitions) clauses are scalar expressions evaluated over rows of the input table. They support special syntax, specific to pattern recognition context. They can combine input information with the information about the current match. Special syntax allows to access pattern variables assigned to rows, browse rows based on how they are matched, and refer to the sequential number of the match.
+Expressions in MEASURES and DEFINE clauses are scalar expressions evaluated over rows of the input table. They support special syntax, specific to pattern recognition context. They can combine input information with the information about the current match. Special syntax allows to access pattern variables assigned to rows, browse rows based on how they are matched, and refer to the sequential number of the match.
 
 #### pattern variable references[#](https://trino.io/docs/current/sql/match-recognize.html#pattern-variable-references) <a href="#pattern-variable-references" id="pattern-variable-references"></a>
 
@@ -380,7 +380,7 @@ U.orderdate
 orderstatus
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 A column name prefixed with a pattern variable refers to values of this column in all rows matched to this variable, or to any variable from the subset in case of union variable. If a column name is not prefixed, it is considered as prefixed with the `universal pattern variable`, defined as union of all primary pattern variables. In other words, a non-prefixed column name refers to all rows of the current match.
 
@@ -396,7 +396,7 @@ CLASSIFIER(A)
 CLASSIFIER(U)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `classifier` function returns the primary pattern variable associated with the row. The return type is `varchar`. The optional argument is a pattern variable. It limits the rows of interest, the same way as with prefixed column references. The `classifier` function is particularly useful with a union variable as the argument. It allows you to determine which variable from the subset actually matched.
 
@@ -406,7 +406,7 @@ The `classifier` function returns the primary pattern variable associated with t
 MATCH_NUMBER()
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `match_number` function returns the sequential number of the match within partition, starting from `1`. Empty matches are assigned sequential numbers as well as non-empty matches. The return type is `bigint`.
 
@@ -416,7 +416,7 @@ The `match_number` function returns the sequential number of the match within pa
 FIRST(A.totalprice, 2)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In the above example, the `first` function navigates to the first row matched to pattern variable `A`, and then searches forward until it finds two more occurrences of variable `A` within the match. The result is the value of the `totalprice` column in that row.
 
@@ -424,7 +424,7 @@ In the above example, the `first` function navigates to the first row matched to
 LAST(A.totalprice, 2)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In the above example, the `last` function navigates to the last row matched to pattern variable `A`, and then searches backwards until it finds two more occurrences of variable `A` within the match. The result is the value of the `totalprice` column in that row.
 
@@ -438,7 +438,7 @@ The second argument is optional. The default value is `0`, which means that by d
 PREV(A.totalprice, 2)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In the above example, the `prev` function navigates to the last row matched to pattern variable `A`, and then searches two rows backward. The result is the value of the `totalprice` column in that row.
 
@@ -446,7 +446,7 @@ In the above example, the `prev` function navigates to the last row matched to p
 NEXT(A.totalprice, 2)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In the above example, the `next` function navigates to the last row matched to pattern variable `A`, and then searches two rows forward. The result is the value of the `totalprice` column in that row.
 
@@ -462,7 +462,7 @@ It is possible to nest logical navigation functions within physical navigation f
 PREV(FIRST(A.totalprice, 3), 2)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In case of nesting, first the logical navigation is performed. It establishes the starting row for the physical navigation. When both navigation operations succeed, the value is retrieved from the designated row.
 
@@ -474,7 +474,7 @@ LAST("pattern_variable_" || CLASSIFIER())
 NEXT(U.totalprice + 10)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This is incorrect:
 
@@ -482,7 +482,7 @@ This is incorrect:
 LAST(1)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 It is also required that all column references and all `classifier` calls inside a pattern navigation function are consistent in referred pattern variables. They must all refer either to the same primary variable, the same union variable, or to the implicit universal pattern variable. The following examples are correct:
 
@@ -492,7 +492,7 @@ LAST(CLASSIFIER() = 'A' OR totalprice > 10) /* universal pattern variable */
 LAST(CLASSIFIER(U) = 'A' OR U.totalprice > 10) /* pattern variable U */
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This is incorrect:
 
@@ -500,7 +500,7 @@ This is incorrect:
 LAST(A.totalprice + B.totalprice)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### Aggregate functions[#](https://trino.io/docs/current/sql/match-recognize.html#aggregate-functions) <a href="#aggregate-functions" id="aggregate-functions"></a>
 
@@ -512,7 +512,7 @@ The following expression returns the average value of the `totalprice` column fo
 avg(A.totalprice)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following expression returns the average value of the `totalprice` column for all rows matched to pattern variables from subset `U`:
 
@@ -520,7 +520,7 @@ The following expression returns the average value of the `totalprice` column fo
 avg(U.totalprice)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following expression returns the average value of the `totalprice` column for all rows of the match:
 
@@ -528,7 +528,7 @@ The following expression returns the average value of the `totalprice` column fo
 avg(totalprice)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 **Aggregation arguments**[**#**](https://trino.io/docs/current/sql/match-recognize.html#aggregation-arguments)
 
@@ -540,7 +540,7 @@ max_by(totalprice, tax) /* aggregate over all rows of the match */
 max_by(CLASSIFIER(A), A.tax) /* aggregate over all rows matched to A */
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This is incorrect:
 
@@ -550,7 +550,7 @@ max_by(A.totalprice, tax)
 max_by(A.totalprice, A.tax + B.tax)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If an aggregate argument does not contain any column reference or `classifier` function, it does not refer to any pattern variable. In such a case other aggregate arguments determine the set of rows to aggregate over. If none of the arguments contains a pattern variable reference, the universal row pattern variable is implicit. This means that the aggregate function applies to all rows of the match:
 
@@ -568,7 +568,7 @@ min_by(A.totalprice, 1) /* aggregate over all rows matched to A */
 max_by(1, A.totalprice) /* aggregate over all rows matched to A */
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 **Nesting of aggregate functions**[**#**](https://trino.io/docs/current/sql/match-recognize.html#nesting-of-aggregate-functions)
 
@@ -582,7 +582,7 @@ It is allowed to use the `classifier` and `match_number` functions in aggregate 
 array_agg(CLASSIFIER())
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This is particularly useful in combination with the option `ONE ROW PER MATCH`. It allows to get all the components of the match while keeping the output size reduced.
 
@@ -600,7 +600,7 @@ count(A.totalprice) /* count non-null values of the totalprice column
                        in all rows matched to A */
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `count` function in a row pattern recognition context allows special syntax to support the `count(*)` behavior over a limited set of rows:
 
@@ -610,7 +610,7 @@ count(A.*) /* count rows matched to A */
 count(U.*) /* count rows matched to pattern variables from subset U */
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### `RUNNING` and `FINAL` semantics[#](https://trino.io/docs/current/sql/match-recognize.html#running-and-final-semantics) <a href="#running-and-final-semantics" id="running-and-final-semantics"></a>
 
@@ -632,7 +632,7 @@ RUNNING avg(A.totalprice)
 FINAL count(A.*)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `running` semantics is default in `MEASURES` and `DEFINE` clauses. `FINAL` can only be specified in the `MEASURES` clause.
 
@@ -646,7 +646,7 @@ An empty match occurs when the row pattern is successfully matched, but no patte
 PATTERN(())
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 When evaluating row pattern measures for an empty match:
 
@@ -656,6 +656,6 @@ When evaluating row pattern measures for an empty match:
 * `match_number` function returns the sequential number of the match
 * all aggregate functions are evaluated over an empty set of rows
 
-Like every match, an empty match has its starting row. All input values which are to be output along with the measures (as explained in [Rows per match](https://trino.io/docs/current/sql/match-recognize.html#rows-per-match)), are the values from the starting row.
+Like every match, an empty match has its starting row. All input values which are to be output along with the measures (as explained in Rows per match), are the values from the starting row.
 
-An unmatched row is a row that is neither part of any non-empty match nor the starting row of an empty match. With the option `ALL ROWS PER MATCH WITH UNMATCHED ROWS`, a single output row is produced. In that row, all row pattern measures are `null`. All input values which are to be output along with the measures (as explained in [Rows per match](https://trino.io/docs/current/sql/match-recognize.html#rows-per-match)), are the values from the unmatched row. Using the `match_number` function as a measure can help differentiate between an empty match and unmatched row.
+An unmatched row is a row that is neither part of any non-empty match nor the starting row of an empty match. With the option `ALL ROWS PER MATCH WITH UNMATCHED ROWS`, a single output row is produced. In that row, all row pattern measures are `null`. All input values which are to be output along with the measures (as explained in Rows per match), are the values from the unmatched row. Using the `match_number` function as a measure can help differentiate between an empty match and unmatched row.

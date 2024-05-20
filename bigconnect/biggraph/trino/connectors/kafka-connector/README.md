@@ -6,7 +6,7 @@ Topics can be live. Rows appear as data arrives, and disappear as segments get d
 
 The connector reads and writes message data from Kafka topics in parallel across workers to achieve a significant performance gain. The size of data sets for this parallelization is configurable and can therefore be adapted to your specific needs.
 
-See the [Kafka connector tutorial](https://trino.io/docs/current/connector/kafka-tutorial.html).
+See the Kafka connector tutorial.
 
 ### Requirements[#](https://trino.io/docs/current/connector/kafka.html#requirements) <a href="#requirements" id="requirements"></a>
 
@@ -15,7 +15,7 @@ To connect to Kafka, you need:
 * Kafka broker version 0.10.0 or higher.
 * Network access from the Trino coordinator and workers to the Kafka nodes. Port 9092 is the default port.
 
-When using Protobuf decoder with the [Confluent table description supplier](https://trino.io/docs/current/connector/kafka.html#confluent-table-description-supplier), the following additional steps must be taken:
+When using Protobuf decoder with the Confluent table description supplier, the following additional steps must be taken:
 
 * Copy the `kafka-protobuf-provider` and `kafka-protobuf-types` JAR files from [Confluent](https://packages.confluent.io/maven/io/confluent/) for Confluent version 7.3.1 to the Kafka connector plugin directory (`<install directory>/plugin/kafka`) on all nodes in the cluster. The plugin directory depends on the [Installation](https://trino.io/docs/current/installation.html) method.
 * By copying those JARs and using them, you agree to the terms of the [Confluent Community License Agreement](https://github.com/confluentinc/schema-registry/blob/master/LICENSE-ConfluentCommunity) under which Confluent makes them available.
@@ -76,7 +76,7 @@ The following configuration properties are available:
 | `kafka.ssl.endpoint-identification-algorithm`         | Endpoint identification algorithm used by clients to validate server host name; defaults to `https`.                                                                                                                        |
 | `kafka.config.resources`                              | A comma-separated list of Kafka client configuration files. These files must exist on the machines running Trino. Only specify this if absolutely necessary to access Kafka. Example: `/etc/kafka-configuration.properties` |
 
-In addition, you must configure [table schema and schema registry usage](https://trino.io/docs/current/connector/kafka.html#kafka-table-schema-registry) with the relevant properties.
+In addition, you must configure table schema and schema registry usage with the relevant properties.
 
 #### `kafka.default-schema`[#](https://trino.io/docs/current/connector/kafka.html#kafka-default-schema) <a href="#kafka-default-schema" id="kafka-default-schema"></a>
 
@@ -226,7 +226,7 @@ Kafka maintains topics only as byte messages and leaves it to producers and cons
 
 Note
 
-For textual topics that contain JSON data, it is entirely possible to not use any table definition files, but instead use the Trino [JSON functions and operators](https://trino.io/docs/current/functions/json.html) to parse the `_message` column which contains the bytes mapped into a UTF-8 string. This is cumbersome and makes it difficult to write SQL queries. This only works when reading data.
+For textual topics that contain JSON data, it is entirely possible to not use any table definition files, but instead use the Trino JSON functions and operators to parse the `_message` column which contains the bytes mapped into a UTF-8 string. This is cumbersome and makes it difficult to write SQL queries. This only works when reading data.
 
 A table definition file consists of a JSON definition for a table. The name of the file can be arbitrary but must end in `.json`. Place the file in the directory configured with the `kafka.table-description-dir` property. The table definition file must be accessible from all Trino nodes.
 
@@ -311,7 +311,7 @@ The benefits of using the Confluent table description supplier over the file tab
 * There is no need to define tables manually.
 * Some Protobuf specific types like `oneof` and `any` are supported and mapped to JSON.
 
-When using Protobuf decoder with the Confluent table description supplier, some additional steps are necessary. For details, refer to [Requirements](https://trino.io/docs/current/connector/kafka.html#kafka-requirements).
+When using Protobuf decoder with the Confluent table description supplier, some additional steps are necessary. For details, refer to Requirements.
 
 Set `kafka.table-description-supplier` to `CONFLUENT` to use the schema registry. You must also configure the additional properties in the following table:
 
@@ -336,7 +336,7 @@ To manually specify the key and value subjects, append to the topic name, for ex
 
 **Protobuf-specific type handling in Confluent table description supplier**[**#**](https://trino.io/docs/current/connector/kafka.html#protobuf-specific-type-handling-in-confluent-table-description-supplier)
 
-When using the Confluent table description supplier, the following Protobuf specific types are supported in addition to the [normally supported types](https://trino.io/docs/current/connector/kafka.html#kafka-protobuf-decoding):
+When using the Confluent table description supplier, the following Protobuf specific types are supported in addition to the normally supported types:
 
 **ONEOF**[**#**](https://trino.io/docs/current/connector/kafka.html#oneof)
 
@@ -367,13 +367,13 @@ In the above example, if the Protobuf message has the `test_oneof_column` contai
 
 ### Kafka inserts[#](https://trino.io/docs/current/connector/kafka.html#kafka-inserts) <a href="#kafka-inserts" id="kafka-inserts"></a>
 
-The Kafka connector supports the use of [INSERT](https://trino.io/docs/current/sql/insert.html) statements to write data to a Kafka topic. Table column data is mapped to Kafka messages as defined in the [table definition file](https://trino.io/docs/current/connector/kafka.html#table-definition-files). There are five supported data formats for key and message encoding:
+The Kafka connector supports the use of INSERT statements to write data to a Kafka topic. Table column data is mapped to Kafka messages as defined in the table definition file. There are five supported data formats for key and message encoding:
 
-* [raw format](https://trino.io/docs/current/connector/kafka.html#raw-encoder)
-* [CSV format](https://trino.io/docs/current/connector/kafka.html#csv-encoder)
-* [JSON format](https://trino.io/docs/current/connector/kafka.html#json-encoder)
-* [Avro format](https://trino.io/docs/current/connector/kafka.html#avro-encoder)
-* [Protobuf format](https://trino.io/docs/current/connector/kafka.html#kafka-protobuf-encoding)
+* raw format
+* CSV format
+* JSON format
+* Avro format
+* Protobuf format
 
 These data formats each have an encoder that maps column values into bytes to be sent to a Kafka topic.
 
@@ -381,29 +381,29 @@ Trino supports at-least-once delivery for Kafka producers. This means that messa
 
 The Kafka connector does not allow the user to define which partition will be used as the target for a message. If a message includes a key, the producer will use a hash algorithm to choose the target partition for the message. The same key will always be assigned the same partition.
 
-### Type mapping[#](https://trino.io/docs/current/connector/kafka.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping# <a href="#type-mapping" id="type-mapping"></a>
 
-Because Trino and Kafka each support types that the other does not, this connector [maps some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading ([decoding](https://trino.io/docs/current/connector/kafka.html#kafka-row-decoding)) or writing ([encoding](https://trino.io/docs/current/connector/kafka.html#kafka-row-encoding)) data. Type mapping depends on the format (Raw, Avro, JSON, CSV).
+Because Trino and Kafka each support types that the other does not, this connector maps some types when reading (decoding) or writing (encoding) data. Type mapping depends on the format (Raw, Avro, JSON, CSV).
 
-#### Row encoding[#](https://trino.io/docs/current/connector/kafka.html#row-encoding) <a href="#row-encoding" id="row-encoding"></a>
+#### Row encoding# <a href="#row-encoding" id="row-encoding"></a>
 
 Encoding is required to allow writing data; it defines how table columns in Trino map to Kafka keys and message data.
 
 The Kafka connector contains the following encoders:
 
-* [raw encoder](https://trino.io/docs/current/connector/kafka.html#raw-encoder) - Table columns are mapped to a Kafka message as raw bytes.
-* [CSV encoder](https://trino.io/docs/current/connector/kafka.html#csv-encoder) - Kafka message is formatted as a comma-separated value.
-* [JSON encoder](https://trino.io/docs/current/connector/kafka.html#json-encoder) - Table columns are mapped to JSON fields.
-* [Avro encoder](https://trino.io/docs/current/connector/kafka.html#avro-encoder) - Table columns are mapped to Avro fields based on an Avro schema.
-* [Protobuf encoder](https://trino.io/docs/current/connector/kafka.html#kafka-protobuf-encoding) - Table columns are mapped to Protobuf fields based on a Protobuf schema.
+* raw encoder - Table columns are mapped to a Kafka message as raw bytes.
+* CSV encoder - Kafka message is formatted as a comma-separated value.
+* JSON encoder - Table columns are mapped to JSON fields.
+* Avro encoder - Table columns are mapped to Avro fields based on an Avro schema.
+* Protobuf encoder - Table columns are mapped to Protobuf fields based on a Protobuf schema.
 
 Note
 
-A [table definition file](https://trino.io/docs/current/connector/kafka.html#table-definition-files) must be defined for the encoder to work.
+A table definition file must be defined for the encoder to work.
 
-**Raw encoder**[**#**](https://trino.io/docs/current/connector/kafka.html#raw-encoder)
+**Raw encoder#**
 
-The raw encoder formats the table columns as raw bytes using the mapping information specified in the [table definition file](https://trino.io/docs/current/connector/kafka.html#table-definition-files).
+The raw encoder formats the table columns as raw bytes using the mapping information specified in the table definition file.
 
 The following field attributes are supported:
 
@@ -1158,8 +1158,8 @@ The schema evolution behavior is as follows:
 
 ### SQL support[#](https://trino.io/docs/current/connector/kafka.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides read and write access to data and metadata in Trino tables populated by Kafka topics. See [Row decoding](https://trino.io/docs/current/connector/kafka.html#kafka-row-decoding) for more information.
+The connector provides read and write access to data and metadata in Trino tables populated by Kafka topics. See Row decoding for more information.
 
-In addition to the [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements, the connector supports the following features:
+In addition to the globally available and read operation statements, the connector supports the following features:
 
-* [INSERT](https://trino.io/docs/current/sql/insert.html), encoded to a specified data format. See also [Kafka inserts](https://trino.io/docs/current/connector/kafka.html#kafka-sql-inserts).
+* INSERT, encoded to a specified data format. See also Kafka inserts.

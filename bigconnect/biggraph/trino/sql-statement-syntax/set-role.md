@@ -25,8 +25,8 @@ The optional `IN catalog` clause sets the role in a catalog as opposed to a syst
 
 Some connectors do not support role management. See connector documentation for more details.
 
-### See also[#](https://trino.io/docs/current/sql/set-role.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[CREATE ROLE](https://trino.io/docs/current/sql/create-role.html), [DROP ROLE](https://trino.io/docs/current/sql/drop-role.html), [GRANT role](https://trino.io/docs/current/sql/grant-roles.html), [REVOKE role](https://trino.io/docs/current/sql/revoke-roles.html)
+CREATE ROLE, DROP ROLE, GRANT role, REVOKE role
 
 \

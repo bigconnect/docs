@@ -124,11 +124,11 @@ bitwise\_right\_shift\_arithmetic(_value_, _shift_) → \[same as value][#](http
 
 Returns the arithmetic right shifted value of `value`.
 
-Returns the same values as [`bitwise_right_shift()`](https://trino.io/docs/current/functions/bitwise.html#bitwise\_right\_shift) when shifting by less than `64` bits. Shifting by `64` or more bits results in `0` for a positive and `-1` for a negative `value`:
+Returns the same values as `bitwise_right_shift()` when shifting by less than `64` bits. Shifting by `64` or more bits results in `0` for a positive and `-1` for a negative `value`:
 
 ```
 SELECT bitwise_right_shift_arithmetic( 12, 64); --  0
 SELECT bitwise_right_shift_arithmetic(-45, 64); -- -1
 ```
 
-See also [`bitwise_and_agg()`](https://trino.io/docs/current/functions/aggregate.html#bitwise\_and\_agg) and [`bitwise_or_agg()`](https://trino.io/docs/current/functions/aggregate.html#bitwise\_or\_agg).
+See also `bitwise_and_agg()` and `bitwise_or_agg()`.

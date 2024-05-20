@@ -34,4 +34,4 @@ DROP VIEW IF EXISTS orders_by_date
 
 ### See also[#](https://trino.io/docs/current/sql/drop-view.html#see-also) <a href="#see-also" id="see-also"></a>
 
-[CREATE VIEW](https://trino.io/docs/current/sql/create-view.html)
+CREATE VIEW

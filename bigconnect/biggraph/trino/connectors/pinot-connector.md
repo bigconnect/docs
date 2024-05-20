@@ -75,7 +75,7 @@ If `pinot.controller-urls` uses `https` scheme then TLS is enabled for all conne
 
 For more Apache Pinot TLS configurations, please also refer to [Configuring TLS/SSL](https://docs.pinot.apache.org/operators/tutorials/configuring-tls-ssl).
 
-You can use [secrets](https://trino.io/docs/current/security/secrets.html) to avoid actual values in the catalog properties files.
+You can use secrets to avoid actual values in the catalog properties files.
 
 ### Querying Pinot tables[#](https://trino.io/docs/current/connector/pinot.html#querying-pinot-tables) <a href="#querying-pinot-tables" id="querying-pinot-tables"></a>
 
@@ -179,16 +179,16 @@ The connector provides [globally available](https://trino.io/docs/current/langua
 
 The connector supports pushdown for a number of operations:
 
-* [Limit pushdown](https://trino.io/docs/current/optimizer/pushdown.html#limit-pushdown)
+* Limit pushdown
 
-[Aggregate pushdown](https://trino.io/docs/current/optimizer/pushdown.html#aggregation-pushdown) for the following functions:
+Aggregate pushdown for the following functions:
 
-* [`avg()`](https://trino.io/docs/current/functions/aggregate.html#avg)
-* [`approx_distinct()`](https://trino.io/docs/current/functions/aggregate.html#approx\_distinct)
-* `count(*)` and `count(distinct)` variations of [`count()`](https://trino.io/docs/current/functions/aggregate.html#count)
-* [`max()`](https://trino.io/docs/current/functions/aggregate.html#max)
-* [`min()`](https://trino.io/docs/current/functions/aggregate.html#min)
-* [`sum()`](https://trino.io/docs/current/functions/aggregate.html#sum)
+* `avg()`
+* `approx_distinct()`
+* `count(*)` and `count(distinct)` variations of `count()`
+* `max()`
+* `min()`
+* `sum()`
 
 Aggregate function pushdown is enabled by default, but can be disabled with the catalog property `pinot.aggregation-pushdown.enabled` or the catalog session property `aggregation_pushdown_enabled`.
 

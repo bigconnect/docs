@@ -111,4 +111,4 @@ Trino supports all data types used within the System schemas so no mapping is re
 
 ### SQL support[#](https://trino.io/docs/current/connector/system.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements to access Trino system data and metadata.
+The connector provides globally available and read operation statements to access Trino system data and metadata.

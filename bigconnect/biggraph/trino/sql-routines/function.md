@@ -20,11 +20,11 @@ FUNCTION name ( [ parameter_name data_type [, ...] ] )
 
 Declare a SQL routine.
 
-The `name` of the routine. [Inline routines](https://trino.io/docs/current/routines/introduction.html#routine-inline) can use a simple string. [Catalog routines](https://trino.io/docs/current/routines/introduction.html#routine-catalog) must qualify the name of the catalog and schema, delimited by `.`, to store the routine or rely on the [default catalog and schema for routine storage](https://trino.io/docs/current/admin/properties-sql-environment.html).
+The `name` of the routine. Inline routines can use a simple string. Catalog routines must qualify the name of the catalog and schema, delimited by `.`, to store the routine or rely on the default catalog and schema for routine storage.
 
-The list of parameters is a comma-separated list of names `parameter_name` and data types `data_type`, see [data type](https://trino.io/docs/current/language/types.html). An empty list, specified as `()` is also valid.
+The list of parameters is a comma-separated list of names `parameter_name` and data types `data_type`, see data type. An empty list, specified as `()` is also valid.
 
-The `type` value after the `RETURNS` keyword identifies the [data type](https://trino.io/docs/current/language/types.html) of the routine output.
+The `type` value after the `RETURNS` keyword identifies the data type of the routine output.
 
 The optional `LANGUAGE` characteristic identifies the language used for the routine definition with `language`. Only `SQL` is supported.
 
@@ -73,11 +73,11 @@ SELECT meaning_of_life();
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Further examples of varying complexity that cover usage of the `FUNCTION` statement in combination with other statements are available in the [SQL routines examples documentation](https://trino.io/docs/current/routines/examples.html).
+Further examples of varying complexity that cover usage of the `FUNCTION` statement in combination with other statements are available in the SQL routines examples documentation.
 
-### See also[#](https://trino.io/docs/current/routines/function.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-* [Introduction to SQL routines](https://trino.io/docs/current/routines/introduction.html)
-* [BEGIN](https://trino.io/docs/current/routines/begin.html)
-* [RETURN](https://trino.io/docs/current/routines/return.html)
-* [CREATE FUNCTION](https://trino.io/docs/current/sql/create-function.html)
+* Introduction to SQL routines
+* BEGIN
+* RETURN
+* CREATE FUNCTION

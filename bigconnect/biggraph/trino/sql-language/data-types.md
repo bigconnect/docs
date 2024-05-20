@@ -8,10 +8,10 @@ Connectors to data sources are not required to support all Trino data types desc
 
 Depending on the connector and the data source, type mapping may apply in either direction as follows:
 
-* **Data source to Trino** mapping applies to any operation where columns in the data source are read by Trino, such as a [SELECT](https://trino.io/docs/current/sql/select.html) statement, and the underlying source data type needs to be represented by a Trino data type.
-* **Trino to data source** mapping applies to any operation where the columns or expressions in Trino need to be translated into data types or expressions compatible with the underlying data source. For example, [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html) statements specify Trino types that are then mapped to types on the remote data source. Predicates like `WHERE` also use these mappings in order to ensure that the predicate is translated to valid syntax on the remote data source.
+* **Data source to Trino** mapping applies to any operation where columns in the data source are read by Trino, such as a SELECT statement, and the underlying source data type needs to be represented by a Trino data type.
+* **Trino to data source** mapping applies to any operation where the columns or expressions in Trino need to be translated into data types or expressions compatible with the underlying data source. For example, CREATE TABLE AS statements specify Trino types that are then mapped to types on the remote data source. Predicates like `WHERE` also use these mappings in order to ensure that the predicate is translated to valid syntax on the remote data source.
 
-Data type support and mappings vary depending on the connector. Refer to the [connector documentation](https://trino.io/docs/current/connector.html) for more information.
+Data type support and mappings vary depending on the connector. Refer to the connector documentation for more information.
 
 ### Boolean[#](https://trino.io/docs/current/language/types.html#boolean) <a href="#boolean" id="boolean"></a>
 
@@ -137,7 +137,7 @@ JSON value type, which can be a JSON object, a JSON array, a JSON number, a JSON
 
 ### Date and time[#](https://trino.io/docs/current/language/types.html#date-and-time) <a href="#date-and-time" id="date-and-time"></a>
 
-See also [Date and time functions and operators](https://trino.io/docs/current/functions/datetime.html)
+See also Date and time functions and operators
 
 #### `DATE`[#](https://trino.io/docs/current/language/types.html#date) <a href="#date" id="date"></a>
 
@@ -176,7 +176,7 @@ Calendar date and time of day without a time zone with `P` digits of precision f
 
 `TIMESTAMP(P) WITHOUT TIME ZONE` is an equivalent name.
 
-Timestamp values can be constructed with the `TIMESTAMP` literal expression. Alternatively, language constructs such as `localtimestamp(p)`, or a number of [date and time functions and operators](https://trino.io/docs/current/functions/datetime.html) can return timestamp values.
+Timestamp values can be constructed with the `TIMESTAMP` literal expression. Alternatively, language constructs such as `localtimestamp(p)`, or a number of date and time functions and operators can return timestamp values.
 
 Casting to lower precision causes the value to be rounded, and not truncated. Casting to higher precision appends zeros for the additional digits.
 
@@ -291,15 +291,15 @@ Example: `UUID '12151fd2-7586-11e9-8f9e-2a86e4085a59'`
 
 ### HyperLogLog[#](https://trino.io/docs/current/language/types.html#hyperloglog) <a href="#hyperloglog" id="hyperloglog"></a>
 
-Calculating the approximate distinct count can be done much more cheaply than an exact count using the [HyperLogLog](https://wikipedia.org/wiki/HyperLogLog) data sketch. See [HyperLogLog functions](https://trino.io/docs/current/functions/hyperloglog.html).
+Calculating the approximate distinct count can be done much more cheaply than an exact count using the [HyperLogLog](https://wikipedia.org/wiki/HyperLogLog) data sketch. See HyperLogLog functions.
 
 #### `HyperLogLog`[#](https://trino.io/docs/current/language/types.html#hyperloglog-type) <a href="#hyperloglog-type" id="hyperloglog-type"></a>
 
-A HyperLogLog sketch allows efficient computation of [`approx_distinct()`](https://trino.io/docs/current/functions/aggregate.html#approx\_distinct). It starts as a sparse representation, switching to a dense representation when it becomes more efficient.
+A HyperLogLog sketch allows efficient computation of `approx_distinct()`. It starts as a sparse representation, switching to a dense representation when it becomes more efficient.
 
-#### `P4HyperLogLog`[#](https://trino.io/docs/current/language/types.html#p4hyperloglog) <a href="#p4hyperloglog" id="p4hyperloglog"></a>
+#### `P4HyperLogLog`# <a href="#p4hyperloglog" id="p4hyperloglog"></a>
 
-A P4HyperLogLog sketch is similar to [HyperLogLog](https://trino.io/docs/current/language/types.html#hyperloglog-type), but it starts (and remains) in the dense representation.
+A P4HyperLogLog sketch is similar to HyperLogLog, but it starts (and remains) in the dense representation.
 
 ### SetDigest[#](https://trino.io/docs/current/language/types.html#setdigest) <a href="#setdigest" id="setdigest"></a>
 
@@ -309,8 +309,8 @@ A SetDigest (setdigest) is a data sketch structure used in calculating [Jaccard 
 
 SetDigest encapsulates the following components:
 
-* [HyperLogLog](https://wikipedia.org/wiki/HyperLogLog)
-* [MinHash with a single hash function](https://wikipedia.org/wiki/MinHash#Variant\_with\_a\_single\_hash\_function)
+* HyperLogLog
+* MinHash with a single hash function
 
 The HyperLogLog structure is used for the approximation of the distinct elements in the original set.
 

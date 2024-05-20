@@ -210,21 +210,21 @@ The connector maps Trino types to the corresponding Kudu types following this ta
 
 No other types are supported.
 
-### SQL support[#](https://trino.io/docs/current/connector/kudu.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support# <a href="#sql-support" id="sql-support"></a>
 
-The connector provides read and write access to data and metadata in Kudu. In addition to the [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements, the connector supports the following features:
+The connector provides read and write access to data and metadata in Kudu. In addition to the globally available and read operation statements, the connector supports the following features:
 
-* [INSERT](https://trino.io/docs/current/sql/insert.html), see also [Inserting into tables](https://trino.io/docs/current/connector/kudu.html#kudu-insert)
-* [DELETE](https://trino.io/docs/current/sql/delete.html)
-* [MERGE](https://trino.io/docs/current/sql/merge.html)
-* [CREATE TABLE](https://trino.io/docs/current/sql/create-table.html), see also [Creating a table](https://trino.io/docs/current/connector/kudu.html#kudu-create-table)
-* [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html)
-* [DROP TABLE](https://trino.io/docs/current/sql/drop-table.html)
-* [ALTER TABLE](https://trino.io/docs/current/sql/alter-table.html), see also [Changing tables](https://trino.io/docs/current/connector/kudu.html#kudu-alter-table)
-* [CREATE SCHEMA](https://trino.io/docs/current/sql/create-schema.html), see also [Creating schemas](https://trino.io/docs/current/connector/kudu.html#kudu-create-schema)
-* [DROP SCHEMA](https://trino.io/docs/current/sql/drop-schema.html), see also [Dropping schemas](https://trino.io/docs/current/connector/kudu.html#kudu-drop-schema)
+* INSERT, see also Inserting into tables
+* DELETE
+* MERGE
+* CREATE TABLE, see also Creating a table
+* CREATE TABLE AS
+* DROP TABLE
+* ALTER TABLE, see also Changing tables
+* CREATE SCHEMA, see also Creating schemas
+* DROP SCHEMA, see also Dropping schemas
 
-#### Inserting into tables[#](https://trino.io/docs/current/connector/kudu.html#inserting-into-tables) <a href="#inserting-into-tables" id="inserting-into-tables"></a>
+#### Inserting into tables# <a href="#inserting-into-tables" id="inserting-into-tables"></a>
 
 `INSERT INTO ... values` and `INSERT INTO ... select` behave like `UPSERT`.
 
@@ -234,11 +234,11 @@ If a `WHERE` clause is specified, the `DELETE` operation only works if the predi
 
 #### Creating schemas[#](https://trino.io/docs/current/connector/kudu.html#creating-schemas) <a href="#creating-schemas" id="creating-schemas"></a>
 
-`CREATE SCHEMA` is only allowed if schema emulation is enabled. See the [Behavior with schema emulation](https://trino.io/docs/current/connector/kudu.html#behavior-with-schema-emulation) section.
+`CREATE SCHEMA` is only allowed if schema emulation is enabled. See the Behavior with schema emulation section.
 
 #### Dropping schemas[#](https://trino.io/docs/current/connector/kudu.html#dropping-schemas) <a href="#dropping-schemas" id="dropping-schemas"></a>
 
-`DROP SCHEMA` is only allowed if schema emulation is enabled. See the [Behavior with schema emulation](https://trino.io/docs/current/connector/kudu.html#behavior-with-schema-emulation) section.
+`DROP SCHEMA` is only allowed if schema emulation is enabled. See the Behavior with schema emulation section.
 
 #### Creating a table[#](https://trino.io/docs/current/connector/kudu.html#creating-a-table) <a href="#creating-a-table" id="creating-a-table"></a>
 
@@ -269,18 +269,18 @@ The table property `number_of_replicas` is optional. It defines the number of ta
 
 Kudu supports two different kinds of partitioning: hash and range partitioning. Hash partitioning distributes rows by hash value into one of many buckets. Range partitions distributes rows using a totally-ordered range partition key. The concrete range partitions must be created explicitly. Kudu also supports multi-level partitioning. A table must have at least one partitioning, either hash or range. It can have at most one range partitioning, but multiple hash partitioning ‘levels’.
 
-For more details see [Partitioning design](https://trino.io/docs/current/connector/kudu.html#kudu-partitioning-design).
+For more details see Partitioning design.
 
 #### Column properties[#](https://trino.io/docs/current/connector/kudu.html#column-properties) <a href="#column-properties" id="column-properties"></a>
 
 Besides column name and type, you can specify some more properties of a column.
 
-| Column property name | Type      | Description                                                                                                                                                                                                                                                                                                                                                                                         |
-| -------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `primary_key`        | `BOOLEAN` | If `true`, the column belongs to primary key columns. The Kudu primary key enforces a uniqueness constraint. Inserting a second row with the same primary key results in updating the existing row (‘UPSERT’). See also [Primary Key Design](http://kudu.apache.org/docs/schema\_design.html#primary-keys) in the Kudu documentation.                                                               |
-| `nullable`           | `BOOLEAN` | If `true`, the value can be null. Primary key columns must not be nullable.                                                                                                                                                                                                                                                                                                                         |
-| `encoding`           | `VARCHAR` | The column encoding can help to save storage space and to improve query performance. Kudu uses an auto encoding depending on the column type if not specified. Valid values are: `'auto'`, `'plain'`, `'bitshuffle'`, `'runlength'`, `'prefix'`, `'dictionary'`, `'group_varint'`. See also [Column encoding](https://kudu.apache.org/docs/schema\_design.html#encoding) in the Kudu documentation. |
-| `compression`        | `VARCHAR` | The encoded column values can be compressed. Kudu uses a default compression if not specified. Valid values are: `'default'`, `'no'`, `'lz4'`, `'snappy'`, `'zlib'`. See also [Column compression](https://kudu.apache.org/docs/schema\_design.html#compression) in the Kudu documentation.                                                                                                         |
+| Column property name | Type      | Description                                                                                                                                                                                                                                                                                                                            |
+| -------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `primary_key`        | `BOOLEAN` | If `true`, the column belongs to primary key columns. The Kudu primary key enforces a uniqueness constraint. Inserting a second row with the same primary key results in updating the existing row (‘UPSERT’). See also Primary Key Design in the Kudu documentation.                                                                  |
+| `nullable`           | `BOOLEAN` | If `true`, the value can be null. Primary key columns must not be nullable.                                                                                                                                                                                                                                                            |
+| `encoding`           | `VARCHAR` | The column encoding can help to save storage space and to improve query performance. Kudu uses an auto encoding depending on the column type if not specified. Valid values are: `'auto'`, `'plain'`, `'bitshuffle'`, `'runlength'`, `'prefix'`, `'dictionary'`, `'group_varint'`. See also Column encoding in the Kudu documentation. |
+| `compression`        | `VARCHAR` | The encoded column values can be compressed. Kudu uses a default compression if not specified. Valid values are: `'default'`, `'no'`, `'lz4'`, `'snappy'`, `'zlib'`. See also Column compression in the Kudu documentation.                                                                                                            |
 
 Example:
 
@@ -307,7 +307,7 @@ ALTER TABLE example_table ADD COLUMN extraInfo VARCHAR WITH (nullable = true, en
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-See also [Column properties](https://trino.io/docs/current/connector/kudu.html#kudu-column-properties).
+See also Column properties.
 
 `ALTER TABLE ... RENAME COLUMN` is only allowed if not part of a primary key.
 
@@ -315,12 +315,12 @@ See also [Column properties](https://trino.io/docs/current/connector/kudu.html#k
 
 ### Procedures[#](https://trino.io/docs/current/connector/kudu.html#procedures) <a href="#procedures" id="procedures"></a>
 
-* `CALL example.system.add_range_partition` see [Managing range partitions](https://trino.io/docs/current/connector/kudu.html#managing-range-partitions)
-* `CALL example.system.drop_range_partition` see [Managing range partitions](https://trino.io/docs/current/connector/kudu.html#managing-range-partitions)
+* `CALL example.system.add_range_partition` see Managing range partitions
+* `CALL example.system.drop_range_partition` see Managing range partitions
 
 #### Partitioning design[#](https://trino.io/docs/current/connector/kudu.html#partitioning-design) <a href="#partitioning-design" id="partitioning-design"></a>
 
-A table must have at least one partitioning (either hash or range). It can have at most one range partitioning, but multiple hash partitioning ‘levels’. For more details see Apache Kudu documentation: [Partitioning](https://kudu.apache.org/docs/schema\_design.html#partitioning).
+A table must have at least one partitioning (either hash or range). It can have at most one range partitioning, but multiple hash partitioning ‘levels’. For more details see Apache Kudu documentation: Partitioning.
 
 If you create a Kudu table in Trino, the partitioning design is given by several table properties.
 

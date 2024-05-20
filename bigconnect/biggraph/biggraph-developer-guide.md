@@ -118,7 +118,7 @@ The recommended way to use Cypher is to start from a single node (eg. match by i
 
 ## SQL
 
-SQL queries are run against the datastore using [Trino](broken-reference). They are usually faster than Cypher queries for specific tasks because Trino pushes down WHERE filters to Elasticsearch shards. The more Trino workers and Elasticsearch shards and replicas you have, the faster your queries will be.
+SQL queries are run against the datastore using Trino. They are usually faster than Cypher queries for specific tasks because Trino pushes down WHERE filters to Elasticsearch shards. The more Trino workers and Elasticsearch shards and replicas you have, the faster your queries will be.
 
 Normally all SQL statements supported by Trino should work.&#x20;
 

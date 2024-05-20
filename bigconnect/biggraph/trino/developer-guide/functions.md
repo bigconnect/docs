@@ -22,7 +22,7 @@ public class ExampleFunctionsPlugin
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note that the `ImmutableSet` class is a utility class from Guava. The `getFunctions()` method contains all of the classes for the functions that we will implement below in this tutorial.
 
@@ -46,7 +46,7 @@ public class ExampleNullFunction
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The function `is_null` takes a single `VARCHAR` argument and returns a `BOOLEAN` indicating if the argument was `NULL`. Note that the argument to the function is of type `Slice`. `VARCHAR` uses `Slice`, which is essentially a wrapper around `byte[]`, rather than `String` for its native container type.
 
@@ -54,7 +54,7 @@ The `deterministic` argument indicates that a function has no side effects and, 
 
 In Trino, deterministic functions don’t rely on any changing state and don’t modify any state. The `deterministic` flag is optional and defaults to `true`.
 
-For example, the function [`shuffle()`](https://trino.io/docs/current/functions/array.html#shuffle) is non-deterministic, since it uses random values. On the other hand, [`now()`](https://trino.io/docs/current/functions/datetime.html#now) is deterministic, because subsequent calls in a single query return the same timestamp.
+For example, the function `shuffle()` is non-deterministic, since it uses random values. On the other hand, `now()` is deterministic, because subsequent calls in a single query return the same timestamp.
 
 Any function with non-deterministic behavior is required to set `deterministic = false` to avoid unexpected results.
 
@@ -99,7 +99,7 @@ public final class IsNullFunction
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 *   `@TypeParameter`:
 
@@ -133,7 +133,7 @@ public final class IsEqualOrNullFunction
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ### Another scalar function example[#](https://trino.io/docs/current/develop/functions.html#another-scalar-function-example) <a href="#another-scalar-function-example" id="another-scalar-function-example"></a>
 
@@ -153,7 +153,7 @@ public class ExampleStringFunction
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note that for most common string functions, including converting a string to lower case, the Slice library also provides implementations that work directly on the underlying `byte[]`, which have much better performance. This function has no `@SqlNullable` annotations, meaning that if the argument is `NULL`, the result will automatically be `NULL` (the function will not be called).
 
@@ -204,7 +204,7 @@ public class AverageAggregation
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The average has two parts: the sum of the `DOUBLE` in each row of the column and the `LONG` count of the number of rows seen. `LongAndDoubleState` is an interface which extends `AccumulatorState`:
 
@@ -222,7 +222,7 @@ public interface LongAndDoubleState
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 As stated above, for simple `AccumulatorState` objects, it is sufficient to just to define the interface with the getters and setters, and the framework will generate the implementation for you.
 

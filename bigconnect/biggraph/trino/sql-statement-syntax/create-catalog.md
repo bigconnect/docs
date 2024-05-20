@@ -15,7 +15,7 @@ USING connector_name
 
 Create a new catalog using the specified connector.
 
-The optional `WITH` clause is used to set properties on the newly created catalog. Property names can be double quoted, which is required if they contain special characters, like `-`. Refer to the [connectors documentation](https://trino.io/docs/current/connector.html) to learn about all available properties. All property values must be varchars (single quoted), including numbers and boolean values.
+The optional `WITH` clause is used to set properties on the newly created catalog. Property names can be double quoted, which is required if they contain special characters, like `-`. Refer to the connectors documentation to learn about all available properties. All property values must be varchars (single quoted), including numbers and boolean values.
 
 The query fails in the following circumstances:
 
@@ -53,7 +53,7 @@ WITH ("memory.max-data-per-node" = '128MB');
 
 Notice that the connector property contains dashes (`-`) and needs to quoted using a double quote (`"`). The value `128MB` is quoted using single quotes, because it is a string literal.
 
-Create a new catalog called `example` using the [PostgreSQL connector](https://trino.io/docs/current/connector/postgresql.html):
+Create a new catalog called `example` using the PostgreSQL connector:
 
 ```
 CREATE CATALOG example USING postgresql
@@ -69,7 +69,7 @@ WITH (
 
 This example assumes that the `POSTGRES_USER` and `POSTGRES_PASSWORD` environmental variables are set as [secrets](https://trino.io/docs/current/security/secrets.html) on all nodes of the cluster.
 
-### See also[#](https://trino.io/docs/current/sql/create-catalog.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-* [DROP CATALOG](https://trino.io/docs/current/sql/drop-catalog.html)
-* [Catalog management properties](https://trino.io/docs/current/admin/properties-catalog.html)
+* DROP CATALOG
+* Catalog management properties

@@ -15,7 +15,7 @@ TO ( user | USER user | ROLE role )
 
 Grants the specified privileges to the specified grantee.
 
-Specifying `ALL PRIVILEGES` grants [DELETE](https://trino.io/docs/current/sql/delete.html), [INSERT](https://trino.io/docs/current/sql/insert.html), [UPDATE](https://trino.io/docs/current/sql/update.html) and [SELECT](https://trino.io/docs/current/sql/select.html) privileges.
+Specifying `ALL PRIVILEGES` grants DELETE, INSERT, UPDATE and SELECT privileges.
 
 Specifying `ROLE PUBLIC` grants privileges to the `PUBLIC` role and hence to all users.
 
@@ -65,6 +65,6 @@ GRANT SELECT ON orders TO ROLE PUBLIC;
 
 Some connectors have no support for `GRANT`. See connector documentation for more details.
 
-### See also[#](https://trino.io/docs/current/sql/grant.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[DENY](https://trino.io/docs/current/sql/deny.html), [REVOKE privilege](https://trino.io/docs/current/sql/revoke.html), [SHOW GRANTS](https://trino.io/docs/current/sql/show-grants.html)
+DENY, REVOKE privilege, SHOW GRANTS

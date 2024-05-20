@@ -8,9 +8,9 @@ char2hexint(_string_) → varchar[#](https://trino.io/docs/current/functions/ter
 
 Returns the hexadecimal representation of the UTF-16BE encoding of the string.
 
-index(_string_, _substring_) → bigint[#](https://trino.io/docs/current/functions/teradata.html#index)
+index(_string_, _substring_) → bigint#
 
-Alias for [`strpos()`](https://trino.io/docs/current/functions/string.html#strpos) function.
+Alias for `strpos()` function.
 
 ### Date functions[#](https://trino.io/docs/current/functions/teradata.html#date-functions) <a href="#date-functions" id="date-functions"></a>
 

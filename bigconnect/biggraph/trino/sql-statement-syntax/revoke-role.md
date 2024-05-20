@@ -47,8 +47,8 @@ REVOKE ADMIN OPTION FOR bar, foo FROM USER baz, ROLE qux;
 
 Some connectors do not support role management. See connector documentation for more details.
 
-### See also[#](https://trino.io/docs/current/sql/revoke-roles.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[CREATE ROLE](https://trino.io/docs/current/sql/create-role.html), [DROP ROLE](https://trino.io/docs/current/sql/drop-role.html), [SET ROLE](https://trino.io/docs/current/sql/set-role.html), [GRANT role](https://trino.io/docs/current/sql/grant-roles.html)
+CREATE ROLE, DROP ROLE, SET ROLE, GRANT role
 
 \

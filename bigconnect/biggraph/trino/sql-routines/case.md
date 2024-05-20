@@ -55,9 +55,9 @@ FUNCTION simple_case(a bigint)
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Further examples of varying complexity that cover usage of the `CASE` statement in combination with other statements are available in the [SQL routines examples documentation](https://trino.io/docs/current/routines/examples.html).
+Further examples of varying complexity that cover usage of the `CASE` statement in combination with other statements are available in the SQL routines examples documentation.
 
-### See also[#](https://trino.io/docs/current/routines/case.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-* [Introduction to SQL routines](https://trino.io/docs/current/routines/introduction.html)
-* [Conditional expressions using `CASE`](https://trino.io/docs/current/functions/conditional.html#case-expression)
+* Introduction to SQL routines
+* Conditional expressions using `CASE`

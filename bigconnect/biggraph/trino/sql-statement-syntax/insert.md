@@ -61,6 +61,6 @@ VALUES (26, 'POLAND', 3);
 
 ### See also[#](https://trino.io/docs/current/sql/insert.html#see-also) <a href="#see-also" id="see-also"></a>
 
-[VALUES](https://trino.io/docs/current/sql/values.html)
+VALUES
 
 \

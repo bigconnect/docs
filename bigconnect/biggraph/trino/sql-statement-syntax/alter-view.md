@@ -33,4 +33,4 @@ ALTER VIEW people SET AUTHORIZATION alice
 
 ### See also[#](https://trino.io/docs/current/sql/alter-view.html#see-also) <a href="#see-also" id="see-also"></a>
 
-[CREATE VIEW](https://trino.io/docs/current/sql/create-view.html)
+CREATE VIEW

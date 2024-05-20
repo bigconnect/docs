@@ -1,6 +1,6 @@
 # SHOW ROLE GRANTS
 
-### Synopsis[#](https://trino.io/docs/current/sql/show-role-grants.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 SHOW ROLE GRANTS [ FROM catalog ]

@@ -12,13 +12,13 @@ The row type of the returned table can depend on the arguments passed with invoc
 
 Polymorphic table functions allow you to dynamically invoke custom logic from within the SQL query. They can be used for working with external systems as well as for enhancing Trino with capabilities going beyond the SQL standard.
 
-For the list of built-in table functions available in Trino, see [built in table functions](https://trino.io/docs/current/functions/table.html#built-in-table-functions).
+For the list of built-in table functions available in Trino, see built in table functions.
 
-Trino supports adding custom table functions. They are declared by connectors through implementing dedicated interfaces. For guidance on adding new table functions, see the [developer guide](https://trino.io/docs/current/develop/table-functions.html).
+Trino supports adding custom table functions. They are declared by connectors through implementing dedicated interfaces. For guidance on adding new table functions, see the developer guide.
 
-Connectors offer support for different functions on a per-connector basis. For more information about supported table functions, refer to the [connector documentation](https://trino.io/docs/current/connector.html).
+Connectors offer support for different functions on a per-connector basis. For more information about supported table functions, refer to the connector documentation.
 
-### Built-in table functions[#](https://trino.io/docs/current/functions/table.html#built-in-table-functions) <a href="#built-in-table-functions" id="built-in-table-functions"></a>
+### Built-in table functions# <a href="#built-in-table-functions" id="built-in-table-functions"></a>
 
 exclude\_columns(_input => table_, _columns => descriptor_) → table[#](https://trino.io/docs/current/functions/table.html#exclude\_columns)
 
@@ -122,7 +122,7 @@ data => TABLE(SELECT * FROM region, nation WHERE region.regionkey = nation.regio
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-If the table argument is declared as [set semantics](https://trino.io/docs/current/develop/table-functions.html#tf-set-or-row-semantics), you can specify partitioning and ordering. Each partition is processed independently by the table function. If you do not specify partitioning, the argument is processed as a single partition. You can also specify `PRUNE WHEN EMPTY` or `KEEP WHEN EMPTY`. With `PRUNE WHEN EMPTY` you declare that you are not interested in the function result if the argument is empty. This information is used by the Trino engine to optimize the query. The `KEEP WHEN EMPTY` option indicates that the function should be executed even if the table argument is empty. By specifying `KEEP WHEN EMPTY` or `PRUNE WHEN EMPTY`, you override the property set for the argument by the function author.
+If the table argument is declared as set semantics, you can specify partitioning and ordering. Each partition is processed independently by the table function. If you do not specify partitioning, the argument is processed as a single partition. You can also specify `PRUNE WHEN EMPTY` or `KEEP WHEN EMPTY`. With `PRUNE WHEN EMPTY` you declare that you are not interested in the function result if the argument is empty. This information is used by the Trino engine to optimize the query. The `KEEP WHEN EMPTY` option indicates that the function should be executed even if the table argument is empty. By specifying `KEEP WHEN EMPTY` or `PRUNE WHEN EMPTY`, you override the property set for the argument by the function author.
 
 The following example shows how the table argument properties should be ordered:
 

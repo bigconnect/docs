@@ -10,18 +10,18 @@ Trino only uses the first two components: the data and the metadata. It does not
 
 ### Requirements[#](https://trino.io/docs/current/connector/hive.html#requirements) <a href="#requirements" id="requirements"></a>
 
-The Hive connector requires a [Hive metastore service](https://trino.io/docs/current/object-storage/metastores.html#hive-thrift-metastore) (HMS), or a compatible implementation of the Hive metastore, such as [AWS Glue](https://trino.io/docs/current/object-storage/metastores.html#hive-glue-metastore).
+The Hive connector requires a Hive metastore service (HMS), or a compatible implementation of the Hive metastore, such as AWS Glue.
 
 Apache Hadoop HDFS 2.x and 3.x are supported.
 
-Many [distributed storage systems](https://trino.io/docs/current/connector/hive.html#hive-file-system-configuration) can be queried with the Hive connector.
+Many distributed storage systems can be queried with the Hive connector.
 
 The coordinator and all workers must have network access to the Hive metastore and the storage system. Hive metastore access with the Thrift protocol defaults to using port 9083.
 
 Data files must be in a supported file format. Some file formats can be configured using file format configuration properties per catalog:
 
-* [ORC](https://trino.io/docs/current/object-storage/file-formats.html#hive-orc-configuration)
-* [Parquet](https://trino.io/docs/current/object-storage/file-formats.html#hive-parquet-configuration)
+* ORC
+* Parquet
 * Avro
 * RCText (RCFile using ColumnarSerDe)
 * RCBinary (RCFile using LazyBinaryColumnarSerDe)
@@ -39,18 +39,14 @@ connector.name=hive
 hive.metastore.uri=thrift://example.net:9083
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-If you are using [AWS Glue](https://trino.io/docs/current/object-storage/metastores.html#hive-glue-metastore) as your metastore, you must instead set `hive.metastore` to `glue`:
+If you are using AWS Glue as your metastore, you must instead set `hive.metastore` to `glue`:
 
 ```
 connector.name=hive
 hive.metastore=glue
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-Each metastore type has specific configuration properties along with [general metastore configuration properties](https://trino.io/docs/current/object-storage/metastores.html#general-metastore-properties).
+Each metastore type has specific configuration properties along with general metastore configuration properties.
 
 #### Multiple Hive clusters[#](https://trino.io/docs/current/connector/hive.html#multiple-hive-clusters) <a href="#multiple-hive-clusters" id="multiple-hive-clusters"></a>
 
@@ -63,8 +59,6 @@ For basic setups, Trino configures the HDFS client automatically and does not re
 ```
 hive.config.resources=/etc/hadoop/conf/core-site.xml,/etc/hadoop/conf/hdfs-site.xml
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 Only specify additional configuration files if necessary for your setup. We recommend reducing the configuration files to have the minimum set of required properties, as additional properties may cause problems.
 
@@ -79,8 +73,6 @@ When not using Kerberos with HDFS, Trino accesses HDFS using the OS user of the 
 ```
 -DHADOOP_USER_NAME=hdfs_user
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The `hive` user generally works, since Hive is often started with the `hive` user and this user has access to the Hive warehouse.
 
@@ -113,7 +105,7 @@ The following table lists general configuration properties for the Hive connecto
 | `security.config-file`                                     | Path of config file to use when `hive.security=file`. See [Catalog-level access control files](https://trino.io/docs/current/security/file-system-access-control.html#catalog-file-based-access-control) for details.                                                                                                                                                                                                                                                                                                  |                       |
 | `hive.non-managed-table-writes-enabled`                    | Enable writes to non-managed (external) Hive tables.                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `false`               |
 | `hive.non-managed-table-creates-enabled`                   | Enable creating non-managed (external) Hive tables.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `true`                |
-| `hive.collect-column-statistics-on-write`                  | Enables automatic column level statistics collection on write. See [Table statistics](https://trino.io/docs/current/connector/hive.html#hive-table-statistics) for details.                                                                                                                                                                                                                                                                                                                                            | `true`                |
+| `hive.collect-column-statistics-on-write`                  | Enables automatic column level statistics collection on write. See Table statistics for details.                                                                                                                                                                                                                                                                                                                                                                                                                       | `true`                |
 | `hive.file-status-cache-tables`                            | <p>Cache directory listing for specific tables. Examples:</p><ul><li><code>fruit.apple,fruit.orange</code> to cache listings only for tables <code>apple</code> and <code>orange</code> in schema <code>fruit</code></li><li><code>fruit.*,vegetable.*</code> to cache listings for all tables in schemas <code>fruit</code> and <code>vegetable</code></li><li><code>*</code> to cache listings for all tables in all schemas</li></ul>                                                                               |                       |
 | `hive.file-status-cache.max-retained-size`                 | Maximum retained size of cached file status entries.                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `1GB`                 |
 | `hive.file-status-cache-expire-time`                       | How long a cached directory listing is considered valid.                                                                                                                                                                                                                                                                                                                                                                                                                                                               | `1m`                  |
@@ -122,14 +114,14 @@ The following table lists general configuration properties for the Hive connecto
 | `hive.timestamp-precision`                                 | Specifies the precision to use for Hive columns of type `TIMESTAMP`. Possible values are `MILLISECONDS`, `MICROSECONDS` and `NANOSECONDS`. Values with higher precision than configured are rounded.                                                                                                                                                                                                                                                                                                                   | `MILLISECONDS`        |
 | `hive.temporary-staging-directory-enabled`                 | Controls whether the temporary staging directory configured at `hive.temporary-staging-directory-path` is used for write operations. Temporary staging directory is never used for writes to non-sorted tables on S3, encrypted HDFS or external location. Writes to sorted tables will utilize this path for staging temporary files during sorting operation. When disabled, the target storage will be used for staging while writing sorted tables which can be inefficient when writing to object stores like S3. | `true`                |
 | `hive.temporary-staging-directory-path`                    | Controls the location of temporary staging directory that is used for write operations. The `${USER}` placeholder can be used to use a different location for each user.                                                                                                                                                                                                                                                                                                                                               | `/tmp/presto-${USER}` |
-| `hive.hive-views.enabled`                                  | Enable translation for [Hive views](https://trino.io/docs/current/connector/hive.html#hive-views).                                                                                                                                                                                                                                                                                                                                                                                                                     | `false`               |
-| `hive.hive-views.legacy-translation`                       | Use the legacy algorithm to translate [Hive views](https://trino.io/docs/current/connector/hive.html#hive-views). You can use the `hive_views_legacy_translation` catalog session property for temporary, catalog specific use.                                                                                                                                                                                                                                                                                        | `false`               |
+| `hive.hive-views.enabled`                                  | Enable translation for Hive views.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `false`               |
+| `hive.hive-views.legacy-translation`                       | Use the legacy algorithm to translate Hive views. You can use the `hive_views_legacy_translation` catalog session property for temporary, catalog specific use.                                                                                                                                                                                                                                                                                                                                                        | `false`               |
 | `hive.parallel-partitioned-bucketed-writes`                | Improve parallelism of partitioned and bucketed table writes. When disabled, the number of writing threads is limited to number of buckets.                                                                                                                                                                                                                                                                                                                                                                            | `true`                |
 | `hive.fs.new-directory-permissions`                        | Controls the permissions set on new directories created for tables. It must be either ‘skip’ or an octal number, with a leading 0. If set to `skip`, permissions of newly created directories will not be set by Trino.                                                                                                                                                                                                                                                                                                | `0777`                |
 | `hive.fs.cache.max-size`                                   | Maximum number of cached file system objects.                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | 1000                  |
 | `hive.query-partition-filter-required`                     | Set to `true` to force a query to use a partition filter. You can use the `query_partition_filter_required` catalog session property for temporary, catalog specific use.                                                                                                                                                                                                                                                                                                                                              | `false`               |
-| `hive.table-statistics-enabled`                            | Enables [Table statistics](https://trino.io/docs/current/optimizer/statistics.html). The equivalent [catalog session property](https://trino.io/docs/current/sql/set-session.html) is `statistics_enabled` for session specific use. Set to `false` to disable statistics. Disabling statistics means that [Cost-based optimizations](https://trino.io/docs/current/optimizer/cost-based-optimizations.html) can not make smart decisions about the query plan.                                                        | `true`                |
-| `hive.auto-purge`                                          | Set the default value for the auto\_purge table property for managed tables. See the [Table properties](https://trino.io/docs/current/connector/hive.html#hive-table-properties) for more information on auto\_purge.                                                                                                                                                                                                                                                                                                  | `false`               |
+| `hive.table-statistics-enabled`                            | Enables Table statistics. The equivalent catalog session property is `statistics_enabled` for session specific use. Set to `false` to disable statistics. Disabling statistics means that Cost-based optimizations can not make smart decisions about the query plan.                                                                                                                                                                                                                                                  | `true`                |
+| `hive.auto-purge`                                          | Set the default value for the auto\_purge table property for managed tables. See the Table properties for more information on auto\_purge.                                                                                                                                                                                                                                                                                                                                                                             | `false`               |
 | `hive.partition-projection-enabled`                        | Enables Athena partition projection support                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | `false`               |
 | `hive.max-partition-drops-per-query`                       | Maximum number of partitions to drop in a single query.                                                                                                                                                                                                                                                                                                                                                                                                                                                                | 100,000               |
 | `hive.single-statement-writes`                             | Enables auto-commit for all writes. This can be used to disallow multi-statement write transactions.                                                                                                                                                                                                                                                                                                                                                                                                                   | `false`               |
@@ -138,12 +130,12 @@ The following table lists general configuration properties for the Hive connecto
 
 The connector supports native, high-performance file system access to object storage systems:
 
-* [Object storage](https://trino.io/docs/current/object-storage.html)
-* [Azure Storage file system support](https://trino.io/docs/current/object-storage/file-system-azure.html)
-* [Google Cloud Storage file system support](https://trino.io/docs/current/object-storage/file-system-gcs.html)
-* [S3 file system support](https://trino.io/docs/current/object-storage/file-system-s3.html)
+* Object storage
+* Azure Storage file system support
+* Google Cloud Storage file system support
+* S3 file system support
 
-You must enable and configure the specific native file system access. If none is activated, the [legacy support](https://trino.io/docs/current/object-storage.html#file-system-legacy) is used and must be configured.
+You must enable and configure the specific native file system access. If none is activated, the legacy support is used and must be configured.
 
 ### Security[#](https://trino.io/docs/current/connector/hive.html#security) <a href="#security" id="security"></a>
 
@@ -155,12 +147,12 @@ In addition, the following security-related features are supported.
 
 You can enable authorization checks by setting the `hive.security` property in the catalog properties file. This property must be one of the following values:
 
-| Property value              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `allow-all` (default value) | No authorization checks are enforced.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `read-only`                 | Operations that read data or metadata, such as `SELECT`, are permitted, but none of the operations that write data or metadata, such as `CREATE`, `INSERT` or `DELETE`, are allowed.                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| `file`                      | Authorization checks are enforced using a catalog-level access control configuration file whose path is specified in the `security.config-file` catalog configuration property. See [Catalog-level access control files](https://trino.io/docs/current/security/file-system-access-control.html#catalog-file-based-access-control) for details.                                                                                                                                                                                                                                                                                    |
-| `sql-standard`              | <p>Users are permitted to perform the operations as long as they have the required privileges as per the SQL standard. In this mode, Trino enforces the authorization checks for queries based on the privileges defined in Hive metastore. To alter these privileges, use the <a href="https://trino.io/docs/current/sql/grant.html">GRANT privilege</a> and <a href="https://trino.io/docs/current/sql/revoke.html">REVOKE privilege</a> commands.</p><p>See the <a href="https://trino.io/docs/current/connector/hive.html#hive-sql-standard-based-authorization">SQL standard based authorization</a> section for details.</p> |
+| Property value              | Description                                                                                                                                                                                                                                                                                                                            |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `allow-all` (default value) | No authorization checks are enforced.                                                                                                                                                                                                                                                                                                  |
+| `read-only`                 | Operations that read data or metadata, such as `SELECT`, are permitted, but none of the operations that write data or metadata, such as `CREATE`, `INSERT` or `DELETE`, are allowed.                                                                                                                                                   |
+| `file`                      | Authorization checks are enforced using a catalog-level access control configuration file whose path is specified in the `security.config-file` catalog configuration property. See Catalog-level access control files for details.                                                                                                    |
+| `sql-standard`              | <p>Users are permitted to perform the operations as long as they have the required privileges as per the SQL standard. In this mode, Trino enforces the authorization checks for queries based on the privileges defined in Hive metastore. To alter these privileges, use the  and  commands.</p><p>See the  section for details.</p> |
 
 #### SQL standard based authorization[#](https://trino.io/docs/current/connector/hive.html#sql-standard-based-authorization) <a href="#sql-standard-based-authorization" id="sql-standard-based-authorization"></a>
 
@@ -182,17 +174,17 @@ Since Trino’s `ROLE` syntax support matches the SQL standard, and Hive does no
 
 The connector provides read access and write access to data and metadata in the configured object storage system and metadata stores:
 
-* [Globally available statements](https://trino.io/docs/current/language/sql-support.html#sql-globally-available); see also [Globally available statements](https://trino.io/docs/current/connector/hive.html#hive-procedures)
-* [Read operations](https://trino.io/docs/current/language/sql-support.html#sql-read-operations)
-* [Write operations](https://trino.io/docs/current/language/sql-support.html#sql-write-operations):
-  * [Data management](https://trino.io/docs/current/language/sql-support.html#sql-data-management); see also [Hive-specific data management](https://trino.io/docs/current/connector/hive.html#hive-data-management)
-  * [Schema and table management](https://trino.io/docs/current/language/sql-support.html#sql-schema-table-management); see also [Hive-specific schema and table management](https://trino.io/docs/current/connector/hive.html#hive-schema-and-table-management)
-  * [View management](https://trino.io/docs/current/language/sql-support.html#sql-view-management); see also [Hive-specific view management](https://trino.io/docs/current/connector/hive.html#hive-sql-view-management)
-* [Routine management](https://trino.io/docs/current/language/sql-support.html#sql-routine-management)
-* [Security operations](https://trino.io/docs/current/language/sql-support.html#sql-security-operations): see also [SQL standard-based authorization for object storage](https://trino.io/docs/current/connector/hive.html#hive-sql-standard-based-authorization)
-* [Transactions](https://trino.io/docs/current/language/sql-support.html#sql-transactions)
+* Globally available statements; see also Globally available statements
+* Read operations
+* Write operations:
+  * Data management; see also Hive-specific data management
+  * Schema and table management; see also Hive-specific schema and table management
+  * View management; see also Hive-specific view management
+* Routine management
+* Security operations: see also SQL standard-based authorization for object storage
+* Transactions
 
-Refer to [the migration guide](https://trino.io/docs/current/appendix/from-hive.html) for practical advice on migrating from Hive to Trino.
+Refer to the migration guide for practical advice on migrating from Hive to Trino.
 
 The following sections provide Hive-specific information regarding SQL support.
 
@@ -227,15 +219,11 @@ CREATE SCHEMA example.web
 WITH (location = 's3://my-bucket/')
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Drop a schema:
 
 ```
 DROP SCHEMA example.web
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 Drop a partition from the `page_views` table:
 
@@ -245,23 +233,17 @@ WHERE ds = DATE '2016-08-09'
   AND country = 'US'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Query the `page_views` table:
 
 ```
 SELECT * FROM example.web.page_views
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 List the partitions of the `page_views` table:
 
 ```
 SELECT * FROM example.web."page_views$partitions"
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 Create an external Hive table named `request_logs` that points at existing data in S3:
 
@@ -278,8 +260,6 @@ WITH (
 )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Collect statistics for the `request_logs` table:
 
 ```
@@ -294,9 +274,7 @@ Drop the external table `request_logs`. This only drops the metadata for the tab
 DROP TABLE example.web.request_logs
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-*   [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html) can be used to create transactional tables in ORC format like this:
+*   CREATE TABLE AS can be used to create transactional tables in ORC format like this:
 
     ```
     CREATE TABLE <name>
@@ -306,8 +284,6 @@ DROP TABLE example.web.request_logs
     )
     AS <query>
     ```
-
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 Add an empty partition to the `page_views` table:
 
@@ -319,8 +295,6 @@ CALL system.create_empty_partition(
     partition_values => ARRAY['2016-08-09', 'US']);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Drop stats for a partition of the `page_views` table:
 
 ```
@@ -330,17 +304,13 @@ CALL system.drop_stats(
     partition_values => ARRAY[ARRAY['2016-08-09', 'US']]);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 #### Procedures[#](https://trino.io/docs/current/connector/hive.html#procedures) <a href="#procedures" id="procedures"></a>
 
-Use the [CALL](https://trino.io/docs/current/sql/call.html) statement to perform data manipulation or administrative tasks. Procedures must include a qualified catalog name, if your Hive catalog is called `web`:
+Use the CALL statement to perform data manipulation or administrative tasks. Procedures must include a qualified catalog name, if your Hive catalog is called `web`:
 
 ```
 CALL web.system.example_procedure()
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The following procedures are available:
 
@@ -367,19 +337,19 @@ The following procedures are available:
 
     Due to security reasons, the procedure is enabled only when `hive.allow-register-partition-procedure` is set to `true`.
 
-#### Data management[#](https://trino.io/docs/current/connector/hive.html#data-management) <a href="#data-management" id="data-management"></a>
+#### Data management# <a href="#data-management" id="data-management"></a>
 
-Some [data management](https://trino.io/docs/current/language/sql-support.html#sql-data-management) statements may be affected by the Hive catalog’s authorization check policy. In the default `legacy` policy, some statements are disabled by default. See [Hive connector security configuration](https://trino.io/docs/current/connector/hive-security.html) for more information.
+Some data management statements may be affected by the Hive catalog’s authorization check policy. In the default `legacy` policy, some statements are disabled by default. See Hive connector security configuration for more information.
 
-The [Data management](https://trino.io/docs/current/language/sql-support.html#sql-data-management) functionality includes support for `INSERT`, `UPDATE`, `DELETE`, and `MERGE` statements, with the exact support depending on the storage system, file format, and metastore.
+The Data management functionality includes support for `INSERT`, `UPDATE`, `DELETE`, and `MERGE` statements, with the exact support depending on the storage system, file format, and metastore.
 
 When connecting to a Hive metastore version 3.x, the Hive connector supports reading from and writing to insert-only and ACID tables, with full support for partitioning and bucketing.
 
-[DELETE](https://trino.io/docs/current/sql/delete.html) applied to non-transactional tables is only supported if the table is partitioned and the `WHERE` clause matches entire partitions. Transactional Hive tables with ORC format support “row-by-row” deletion, in which the `WHERE` clause may match arbitrary sets of rows.
+DELETE applied to non-transactional tables is only supported if the table is partitioned and the `WHERE` clause matches entire partitions. Transactional Hive tables with ORC format support “row-by-row” deletion, in which the `WHERE` clause may match arbitrary sets of rows.
 
-[UPDATE](https://trino.io/docs/current/sql/update.html) is only supported for transactional Hive tables with format ORC. `UPDATE` of partition or bucket columns is not supported.
+UPDATE is only supported for transactional Hive tables with format ORC. `UPDATE` of partition or bucket columns is not supported.
 
-[MERGE](https://trino.io/docs/current/sql/merge.html) is only supported for ACID tables.
+MERGE is only supported for ACID tables.
 
 ACID tables created with [Hive Streaming Ingest](https://cwiki.apache.org/confluence/display/Hive/Streaming+Data+Ingest) are not supported.
 
@@ -438,8 +408,6 @@ WITH (
 )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The columns listed in the DDL (`id` in the above example) is ignored if `avro_schema_url` is specified. The table schema matches the schema in the Avro schema file. Before any read operation, the Avro schema is accessed so the query result reflects any changes in schema. Thus Trino takes advantage of Avro’s backward compatibility abilities.
 
 If the schema of the table changes in the Avro schema file, the new schema can still be used to read old data. Newly added/renamed fields _must_ have a default value in the Avro schema file.
@@ -473,15 +441,11 @@ All files with a size below the optional `file_size_threshold` parameter (defaul
 ALTER TABLE test_table EXECUTE optimize
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The following statement merges files in a table that are under 128 megabytes in size:
 
 ```
 ALTER TABLE test_table EXECUTE optimize(file_size_threshold => '128MB')
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 You can use a `WHERE` clause with the columns used to partition the table to filter which partitions are optimized:
 
@@ -490,8 +454,6 @@ ALTER TABLE test_partitioned_table EXECUTE optimize
 WHERE partition_key = 1
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 You can use a more complex `WHERE` clause to narrow down the scope of the `optimize` procedure. The following example casts the timestamp values to dates, and uses a comparison to only optimize partitions with data from the year 2022 or newer:
 
 ```
@@ -499,15 +461,11 @@ ALTER TABLE test_table EXECUTE optimize
 WHERE CAST(timestamp_tz AS DATE) > DATE '2021-12-31'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The `optimize` command is disabled by default, and can be enabled for a catalog with the `<catalog-name>.non_transactional_optimize_enabled` session property:
 
 ```
 SET SESSION <catalog_name>.non_transactional_optimize_enabled=true
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 Warning
 
@@ -525,8 +483,6 @@ CREATE TABLE tablename
 WITH (format='CSV',
       csv_escape = '"')
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 | Property name                            | Description                                                                                                                                                                                                                                                                                       | Default                               |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
@@ -569,15 +525,11 @@ You can inspect the property names and values with a simple query:
 SELECT * FROM example.web."page_views$properties";
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
        stats_generated_via_stats_task        | auto.purge |       trino_query_id       | trino_version | transactional
 ---------------------------------------------+------------+-----------------------------+---------------+---------------
  workaround for potential lack of HIVE-12730 | false      | 20230705_152456_00001_nfugi | 434           | false
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 **`$PARTITIONS` TABLE**[**#**](https://trino.io/docs/current/connector/hive.html#partitions-table)
 
@@ -589,8 +541,6 @@ The following example query returns all partition values from the `page_views` t
 SELECT * FROM example.web."page_views$partitions";
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
      day    | country
 ------------+---------
@@ -600,8 +550,6 @@ SELECT * FROM example.web."page_views$partitions";
  2023-03-01 | USA
  2023-03-02 | USA
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 **Column properties**[**#**](https://trino.io/docs/current/connector/hive.html#column-properties)
 
@@ -632,8 +580,6 @@ SELECT *, "$path", "$file_size", "$partition"
 FROM example.web.page_views;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Retrieve all records that belong to files stored in the partition `ds=2016-08-09/country=US`:
 
 ```
@@ -641,8 +587,6 @@ SELECT *, "$path", "$file_size"
 FROM example.web.page_views
 WHERE "$partition" = 'ds=2016-08-09/country=US'
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 #### View management[#](https://trino.io/docs/current/connector/hive.html#view-management) <a href="#view-management" id="view-management"></a>
 
@@ -708,7 +652,7 @@ Keep in mind that numerous features are not yet implemented when experimenting w
 
 ### Fault-tolerant execution support[#](https://trino.io/docs/current/connector/hive.html#fault-tolerant-execution-support) <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
 
-The connector supports [Fault-tolerant execution](https://trino.io/docs/current/admin/fault-tolerant-execution.html) of query processing. Read and write operations are both supported with any retry policy on non-transactional tables.
+The connector supports Fault-tolerant execution of query processing. Read and write operations are both supported with any retry policy on non-transactional tables.
 
 Read operations are supported with any retry policy on transactional tables. Write operations and `CREATE TABLE ... AS` operations are not supported with any retry policy on transactional tables.
 
@@ -718,7 +662,7 @@ The connector includes a number of performance improvements, detailed in the fol
 
 #### Table statistics[#](https://trino.io/docs/current/connector/hive.html#table-statistics) <a href="#table-statistics" id="table-statistics"></a>
 
-The Hive connector supports collecting and managing [table statistics](https://trino.io/docs/current/optimizer/statistics.html) to improve query processing performance.
+The Hive connector supports collecting and managing table statistics to improve query processing performance.
 
 When writing data, the Hive connector always collects basic statistics (`numFiles`, `numRows`, `rawDataSize`, `totalSize`) and by default will also collect column level statistics:
 
@@ -740,7 +684,7 @@ When writing data, the Hive connector always collects basic statistics (`numFile
 
 **Updating table and partition statistics**[**#**](https://trino.io/docs/current/connector/hive.html#updating-table-and-partition-statistics)
 
-If your queries are complex and include joining large data sets, running [ANALYZE](https://trino.io/docs/current/sql/analyze.html) on tables/partitions may improve query performance by collecting statistical information about the data.
+If your queries are complex and include joining large data sets, running ANALYZE on tables/partitions may improve query performance by collecting statistical information about the data.
 
 When analyzing a partitioned table, the partitions to analyze can be specified via the optional `partitions` property, which is an array containing the values of the partition keys in the order they are declared in the table schema:
 
@@ -750,8 +694,6 @@ ANALYZE table_name WITH (
         ARRAY['p1_value1', 'p1_value2'],
         ARRAY['p2_value1', 'p2_value2']])
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 This query will collect statistics for two partitions with keys `p1_value1, p1_value2` and `p2_value1, p2_value2`.
 
@@ -763,8 +705,6 @@ ANALYZE table_name WITH (
     columns = ARRAY['col_1', 'col_2'])
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 This query collects statistics for columns `col_1` and `col_2` for the partition with keys `p2_value1, p2_value2`.
 
 Note that if statistics were previously collected for all columns, they must be dropped before re-analyzing just a subset:
@@ -772,8 +712,6 @@ Note that if statistics were previously collected for all columns, they must be 
 ```
 CALL system.drop_stats('schema_name', 'table_name')
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 You can also drop statistics for selected partitions only:
 
@@ -783,8 +721,6 @@ CALL system.drop_stats(
     table_name => 'table',
     partition_values => ARRAY[ARRAY['p2_value1', 'p2_value2']])
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 #### Dynamic filtering[#](https://trino.io/docs/current/connector/hive.html#dynamic-filtering) <a href="#dynamic-filtering" id="dynamic-filtering"></a>
 
@@ -802,7 +738,7 @@ For the Hive connector, a table scan can be delayed for a configured amount of t
 
 Trino offers the possibility to transparently redirect operations on an existing table to the appropriate catalog based on the format of the table and catalog configuration.
 
-In the context of connectors which depend on a metastore service (for example, [Hive connector](https://trino.io/docs/current/connector/hive.html), [Iceberg connector](https://trino.io/docs/current/connector/iceberg.html) and [Delta Lake connector](https://trino.io/docs/current/connector/delta-lake.html)), the metastore (Hive metastore service, [AWS Glue Data Catalog](https://aws.amazon.com/glue/)) can be used to accustom tables with different table formats. Therefore, a metastore database can hold a variety of tables with different table formats.
+In the context of connectors which depend on a metastore service (for example, Hive connector, Iceberg connector and Delta Lake connector), the metastore (Hive metastore service, AWS Glue Data Catalog) can be used to accustom tables with different table formats. Therefore, a metastore database can hold a variety of tables with different table formats.
 
 As a concrete example, let’s use the following simple scenario which makes use of table redirection:
 
@@ -812,8 +748,6 @@ USE example.example_schema;
 EXPLAIN SELECT * FROM example_table;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
                                Query Plan
 -------------------------------------------------------------------------
@@ -824,8 +758,6 @@ Fragment 0 [SOURCE]
      └─ TableScan[table = another_catalog:example_schema:example_table]
             ...
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The output of the `EXPLAIN` statement points out the actual catalog which is handling the `SELECT` query over the table `example_table`.
 
@@ -835,8 +767,6 @@ The table redirection functionality works also when using fully qualified names 
 EXPLAIN SELECT * FROM example.example_schema.example_table;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
                                Query Plan
 -------------------------------------------------------------------------
@@ -848,37 +778,35 @@ Fragment 0 [SOURCE]
             ...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Trino offers table redirection support for the following operations:
 
 * Table read operations
-  * [SELECT](https://trino.io/docs/current/sql/select.html)
-  * [DESCRIBE](https://trino.io/docs/current/sql/describe.html)
-  * [SHOW STATS](https://trino.io/docs/current/sql/show-stats.html)
-  * [SHOW CREATE TABLE](https://trino.io/docs/current/sql/show-create-table.html)
+  * SELECT
+  * DESCRIBE
+  * SHOW STATS
+  * SHOW CREATE TABLE
 * Table write operations
-  * [INSERT](https://trino.io/docs/current/sql/insert.html)
-  * [UPDATE](https://trino.io/docs/current/sql/update.html)
-  * [MERGE](https://trino.io/docs/current/sql/merge.html)
-  * [DELETE](https://trino.io/docs/current/sql/delete.html)
+  * INSERT
+  * UPDATE
+  * MERGE
+  * DELETE
 * Table management operations
-  * [ALTER TABLE](https://trino.io/docs/current/sql/alter-table.html)
-  * [DROP TABLE](https://trino.io/docs/current/sql/drop-table.html)
-  * [COMMENT](https://trino.io/docs/current/sql/comment.html)
+  * ALTER TABLE
+  * DROP TABLE
+  * COMMENT
 
 Trino does not offer view redirection support.
 
 The connector supports redirection from Hive tables to Iceberg and Delta Lake tables with the following catalog configuration properties:
 
-* `hive.iceberg-catalog-name` for redirecting the query to [Iceberg connector](https://trino.io/docs/current/connector/iceberg.html)
-* `hive.delta-lake-catalog-name` for redirecting the query to [Delta Lake connector](https://trino.io/docs/current/connector/delta-lake.html)
+* `hive.iceberg-catalog-name` for redirecting the query to Iceberg connector
+* `hive.delta-lake-catalog-name` for redirecting the query to Delta Lake connector
 
 #### File system cache[#](https://trino.io/docs/current/connector/hive.html#file-system-cache) <a href="#file-system-cache" id="file-system-cache"></a>
 
-The connector supports configuring and using [file system caching](https://trino.io/docs/current/object-storage/file-system-cache.html).
+The connector supports configuring and using file system caching.
 
-#### Performance tuning configuration properties[#](https://trino.io/docs/current/connector/hive.html#performance-tuning-configuration-properties) <a href="#performance-tuning-configuration-properties" id="performance-tuning-configuration-properties"></a>
+#### Performance tuning configuration properties# <a href="#performance-tuning-configuration-properties" id="performance-tuning-configuration-properties"></a>
 
 The following table describes performance tuning properties for the Hive connector.
 
@@ -899,5 +827,5 @@ Performance tuning configuration properties are considered expert-level features
 
 * For security reasons, the `sys` system catalog is not accessible.
 * Hive’s `timestamp with local zone` data type is mapped to `timestamp with time zone` with UTC timezone. It only supports reading values - writing to tables with columns of this type is not supported.
-* Due to Hive issues [HIVE-21002](https://issues.apache.org/jira/browse/HIVE-21002) and [HIVE-22167](https://issues.apache.org/jira/browse/HIVE-22167), Trino does not correctly read `TIMESTAMP` values from Parquet, RCBinary, or Avro file formats created by Hive 3.1 or later. When reading from these file formats, Trino returns different results than Hive.
-* Trino does not support gathering table statistics for Hive transactional tables. You must use Hive to gather table statistics with [ANALYZE statement](https://cwiki.apache.org/confluence/display/hive/statsdev#StatsDev-ExistingTables%E2%80%93ANALYZE) after table creation.
+* Due to Hive issues HIVE-21002 and HIVE-22167, Trino does not correctly read `TIMESTAMP` values from Parquet, RCBinary, or Avro file formats created by Hive 3.1 or later. When reading from these file formats, Trino returns different results than Hive.
+* Trino does not support gathering table statistics for Hive transactional tables. You must use Hive to gather table statistics with ANALYZE statement after table creation.

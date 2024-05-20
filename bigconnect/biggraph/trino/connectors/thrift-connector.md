@@ -9,7 +9,7 @@ In order to use the Thrift connector with an external system, you need to implem
 To connect to your custom servers with the Thrift protocol, you need:
 
 * Network access from the Trino coordinator and workers to the Thrift servers.
-* A [TrinoThriftService implementation](https://trino.io/docs/current/connector/thrift.html#trino-thrift-service) for your system.
+* A TrinoThriftService implementation for your system.
 
 ### Configuration[#](https://trino.io/docs/current/connector/thrift.html#configuration) <a href="#configuration" id="configuration"></a>
 
@@ -454,4 +454,4 @@ The Thrift service defines data type support and mappings to Trino data types.
 
 ### SQL support[#](https://trino.io/docs/current/connector/thrift.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements to access data and metadata in your Thrift service.
+The connector provides globally available and read operation statements to access data and metadata in your Thrift service.

@@ -64,4 +64,4 @@ Escapes `value` by encoding it so that it can be safely included in URL query pa
 
 url\_decode(_value_) → varchar[#](https://trino.io/docs/current/functions/url.html#url\_decode)
 
-Unescapes the URL encoded `value`. This function is the inverse of [`url_encode()`](https://trino.io/docs/current/functions/url.html#url\_encode).
+Unescapes the URL encoded `value`. This function is the inverse of `url_encode()`.

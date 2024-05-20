@@ -18,24 +18,24 @@ opensearch.port=9200
 opensearch.default-schema-name=default
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following table details all general configuration properties:
 
-| Property name                       | Description                                                                                                                                                                                                                            | Default   |
-| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| `opensearch.host`                   | The comma-separated list of host names of the OpenSearch cluster. This property is required.                                                                                                                                           |           |
-| `opensearch.port`                   | Port to use to connect to OpenSearch.                                                                                                                                                                                                  | `9200`    |
-| `opensearch.default-schema-name`    | The schema that contains all tables defined without a qualifying schema name.                                                                                                                                                          | `default` |
-| `opensearch.scroll-size`            | Sets the maximum number of hits that can be returned with each [OpenSearch scroll request](https://opensearch.org/docs/latest/api-reference/scroll/).                                                                                  | `1000`    |
-| `opensearch.scroll-timeout`         | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for OpenSearch to keep the search context alive for scroll requests.                                                                                | `1m`      |
-| `opensearch.request-timeout`        | Timeout [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for all OpenSearch requests.                                                                                                                | `10s`     |
-| `opensearch.connect-timeout`        | Timeout [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for all OpenSearch connection attempts.                                                                                                     | `1s`      |
-| `opensearch.backoff-init-delay`     | The minimum [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) between backpressure retry attempts for a single request to OpenSearch. Setting it too low can overwhelm an already struggling cluster. | `500ms`   |
-| `opensearch.backoff-max-delay`      | The maximum [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) between backpressure retry attempts for a single request.                                                                               | `20s`     |
-| `opensearch.max-retry-time`         | The maximum [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) across all retry attempts for a single request.                                                                                         | `30s`     |
-| `opensearch.node-refresh-interval`  | [Duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) between requests to refresh the list of available OpenSearch nodes.                                                                                 | `1m`      |
-| `opensearch.ignore-publish-address` | Disable using the address published by the OpenSearch API to connect for queries. Some deployments map OpenSearch ports to a random public port and enabling this property can help in these cases.                                    | `false`   |
+| Property name                       | Description                                                                                                                                                                                         | Default   |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| `opensearch.host`                   | The comma-separated list of host names of the OpenSearch cluster. This property is required.                                                                                                        |           |
+| `opensearch.port`                   | Port to use to connect to OpenSearch.                                                                                                                                                               | `9200`    |
+| `opensearch.default-schema-name`    | The schema that contains all tables defined without a qualifying schema name.                                                                                                                       | `default` |
+| `opensearch.scroll-size`            | Sets the maximum number of hits that can be returned with each OpenSearch scroll request.                                                                                                           | `1000`    |
+| `opensearch.scroll-timeout`         | Duration for OpenSearch to keep the search context alive for scroll requests.                                                                                                                       | `1m`      |
+| `opensearch.request-timeout`        | Timeout duration for all OpenSearch requests.                                                                                                                                                       | `10s`     |
+| `opensearch.connect-timeout`        | Timeout duration for all OpenSearch connection attempts.                                                                                                                                            | `1s`      |
+| `opensearch.backoff-init-delay`     | The minimum duration between backpressure retry attempts for a single request to OpenSearch. Setting it too low can overwhelm an already struggling cluster.                                        | `500ms`   |
+| `opensearch.backoff-max-delay`      | The maximum duration between backpressure retry attempts for a single request.                                                                                                                      | `20s`     |
+| `opensearch.max-retry-time`         | The maximum duration across all retry attempts for a single request.                                                                                                                                | `30s`     |
+| `opensearch.node-refresh-interval`  | Duration between requests to refresh the list of available OpenSearch nodes.                                                                                                                        | `1m`      |
+| `opensearch.ignore-publish-address` | Disable using the address published by the OpenSearch API to connect for queries. Some deployments map OpenSearch ports to a random public port and enabling this property can help in these cases. | `false`   |
 
 #### Authentication[#](https://trino.io/docs/current/connector/opensearch.html#authentication) <a href="#authentication" id="authentication"></a>
 
@@ -67,42 +67,42 @@ If your cluster uses globally-trusted certificates, you only need to enable TLS.
 
 The available configuration values are listed in the following table:
 
-| Property name                        | Description                                                                                                                                                 |
-| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `opensearch.tls.enabled`             | Enable TLS security. Defaults to `false`.                                                                                                                   |
-| `opensearch.tls.keystore-path`       | The path to the [PEM](https://trino.io/docs/current/security/inspect-pem.html) or [JKS](https://trino.io/docs/current/security/inspect-jks.html) key store. |
-| `opensearch.tls.truststore-path`     | The path to [PEM](https://trino.io/docs/current/security/inspect-pem.html) or [JKS](https://trino.io/docs/current/security/inspect-jks.html) trust store.   |
-| `opensearch.tls.keystore-password`   | The password for the key store specified by `opensearch.tls.keystore-path`.                                                                                 |
-| `opensearch.tls.truststore-password` | The password for the trust store specified by `opensearch.tls.truststore-path`.                                                                             |
-| `opensearch.tls.verify-hostnames`    | Flag to determine if the hostnames in the certificates must be verified. Defaults to `true`.                                                                |
+| Property name                        | Description                                                                                  |
+| ------------------------------------ | -------------------------------------------------------------------------------------------- |
+| `opensearch.tls.enabled`             | Enable TLS security. Defaults to `false`.                                                    |
+| `opensearch.tls.keystore-path`       | The path to the PEM or JKS key store.                                                        |
+| `opensearch.tls.truststore-path`     | The path to PEM or JKS trust store.                                                          |
+| `opensearch.tls.keystore-password`   | The password for the key store specified by `opensearch.tls.keystore-path`.                  |
+| `opensearch.tls.truststore-password` | The password for the trust store specified by `opensearch.tls.truststore-path`.              |
+| `opensearch.tls.verify-hostnames`    | Flag to determine if the hostnames in the certificates must be verified. Defaults to `true`. |
 
 ### Type mapping[#](https://trino.io/docs/current/connector/opensearch.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
 
-Because Trino and OpenSearch each support types that the other does not, the connector [maps some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading data.
+Because Trino and OpenSearch each support types that the other does not, the connector maps some types when reading data.
 
 #### OpenSearch type to Trino type mapping[#](https://trino.io/docs/current/connector/opensearch.html#opensearch-type-to-trino-type-mapping) <a href="#opensearch-type-to-trino-type-mapping" id="opensearch-type-to-trino-type-mapping"></a>
 
 The connector maps OpenSearch types to the corresponding Trino types according to the following table:
 
-| OpenSearch type | Trino type  | Notes                                                                                                                  |
-| --------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `BOOLEAN`       | `BOOLEAN`   |                                                                                                                        |
-| `DOUBLE`        | `DOUBLE`    |                                                                                                                        |
-| `FLOAT`         | `REAL`      |                                                                                                                        |
-| `BYTE`          | `TINYINT`   |                                                                                                                        |
-| `SHORT`         | `SMALLINT`  |                                                                                                                        |
-| `INTEGER`       | `INTEGER`   |                                                                                                                        |
-| `LONG`          | `BIGINT`    |                                                                                                                        |
-| `KEYWORD`       | `VARCHAR`   |                                                                                                                        |
-| `TEXT`          | `VARCHAR`   |                                                                                                                        |
-| `DATE`          | `TIMESTAMP` | For more information, see [Date types](https://trino.io/docs/current/connector/opensearch.html#opensearch-date-types). |
-| `IPADDRESS`     | `IP`        |                                                                                                                        |
+| OpenSearch type | Trino type  | Notes                                 |
+| --------------- | ----------- | ------------------------------------- |
+| `BOOLEAN`       | `BOOLEAN`   |                                       |
+| `DOUBLE`        | `DOUBLE`    |                                       |
+| `FLOAT`         | `REAL`      |                                       |
+| `BYTE`          | `TINYINT`   |                                       |
+| `SHORT`         | `SMALLINT`  |                                       |
+| `INTEGER`       | `INTEGER`   |                                       |
+| `LONG`          | `BIGINT`    |                                       |
+| `KEYWORD`       | `VARCHAR`   |                                       |
+| `TEXT`          | `VARCHAR`   |                                       |
+| `DATE`          | `TIMESTAMP` | For more information, see Date types. |
+| `IPADDRESS`     | `IP`        |                                       |
 
 No other types are supported.
 
 #### Array types[#](https://trino.io/docs/current/connector/opensearch.html#array-types) <a href="#array-types" id="array-types"></a>
 
-Fields in OpenSearch can contain [zero or more values](https://opensearch.org/docs/latest/field-types/supported-field-types/date/#custom-formats), but there is no dedicated array type. To indicate a field contains an array, it can be annotated in a Trino-specific structure in the [\_meta](https://opensearch.org/docs/latest/field-types/index/#get-a-mapping) section of the index mapping in OpenSearch.
+Fields in OpenSearch can contain zero or more values, but there is no dedicated array type. To indicate a field contains an array, it can be annotated in a Trino-specific structure in the \_meta section of the index mapping in OpenSearch.
 
 For example, you can have an OpenSearch index that contains documents with the following structure:
 
@@ -119,7 +119,7 @@ For example, you can have an OpenSearch index that contains documents with the f
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The array fields of this structure can be defined by using the following command to add the field property definition to the `_meta.trino` property of the target index mapping with OpenSearch available at `search.example.com:9200`:
 
@@ -144,7 +144,7 @@ curl --request PUT \
 }'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note
 
@@ -152,7 +152,7 @@ It is not allowed to use `asRawJson` and `isArray` flags simultaneously for the 
 
 #### Date types[#](https://trino.io/docs/current/connector/opensearch.html#date-types) <a href="#date-types" id="date-types"></a>
 
-The OpenSearch connector supports only the default `date` type. All other OpenSearch [date](https://opensearch.org/docs/latest/field-types/supported-field-types/date/) formats including [built-in date formats](https://opensearch.org/docs/latest/field-types/supported-field-types/date/#custom-formats) and [custom date formats](https://opensearch.org/docs/latest/field-types/supported-field-types/date/#custom-formats) are not supported. Dates with the [format](https://opensearch.org/docs/latest/query-dsl/term/range/#format) property are ignored.
+The OpenSearch connector supports only the default `date` type. All other OpenSearch date formats including built-in date formats and custom date formats are not supported. Dates with the format property are ignored.
 
 #### Raw JSON transform[#](https://trino.io/docs/current/connector/opensearch.html#raw-json-transform) <a href="#raw-json-transform" id="raw-json-transform"></a>
 
@@ -174,7 +174,7 @@ curl --request PUT \
 }'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 All the following documents are legal for OpenSearch with `array_string_field` mapping:
 
@@ -195,7 +195,7 @@ All the following documents are legal for OpenSearch with `array_string_field` m
 ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 See the [OpenSearch array documentation](https://opensearch.org/docs/latest/field-types/supported-field-types/index/#arrays) for more details.
 
@@ -217,9 +217,9 @@ curl --request PUT \
 }'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-The preceding configuration causes Trino to return the `array_string_field` field as a `VARCHAR` containing raw JSON. You can parse these fields with the [built-in JSON functions](https://trino.io/docs/current/functions/json.html).
+
+The preceding configuration causes Trino to return the `array_string_field` field as a `VARCHAR` containing raw JSON. You can parse these fields with the built-in JSON functions.
 
 Note
 
@@ -237,11 +237,11 @@ The following hidden columns are available:
 
 ### SQL support[#](https://trino.io/docs/current/connector/opensearch.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements to access data and metadata in the OpenSearch catalog.
+The connector provides globally available and read operation statements to access data and metadata in the OpenSearch catalog.
 
 ### Table functions[#](https://trino.io/docs/current/connector/opensearch.html#table-functions) <a href="#table-functions" id="table-functions"></a>
 
-The connector provides specific [table functions](https://trino.io/docs/current/functions/table.html) to access OpenSearch.
+The connector provides specific table functions to access OpenSearch.
 
 #### `raw_query(varchar) -> table`[#](https://trino.io/docs/current/connector/opensearch.html#raw-query-varchar-table) <a href="#raw-query-varchar-table" id="raw-query-varchar-table"></a>
 
@@ -278,7 +278,7 @@ FROM
   );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note
 
@@ -294,7 +294,7 @@ The connector requests data from multiple nodes of the OpenSearch cluster for qu
 
 #### Predicate push down[#](https://trino.io/docs/current/connector/opensearch.html#predicate-push-down) <a href="#predicate-push-down" id="predicate-push-down"></a>
 
-The connector supports [predicate push down](https://trino.io/docs/current/optimizer/pushdown.html#predicate-pushdown) for the following data types:
+The connector supports predicate push down for the following data types:
 
 | OpenSearch | Trino       |
 | ---------- | ----------- |

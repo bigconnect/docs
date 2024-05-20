@@ -2,11 +2,11 @@
 
 ### Introduction[#](https://trino.io/docs/current/connector/kafka-tutorial.html#introduction) <a href="#introduction" id="introduction"></a>
 
-The [Kafka connector](https://trino.io/docs/current/connector/kafka.html) for Trino allows access to live topic data from Apache Kafka using Trino. This tutorial shows how to set up topics, and how to create the topic description files that back Trino tables.
+The Kafka connector for Trino allows access to live topic data from Apache Kafka using Trino. This tutorial shows how to set up topics, and how to create the topic description files that back Trino tables.
 
 ### Installation[#](https://trino.io/docs/current/connector/kafka-tutorial.html#installation) <a href="#installation" id="installation"></a>
 
-This tutorial assumes familiarity with Trino and a working local Trino installation (see [Deploying Trino](https://trino.io/docs/current/installation/deployment.html)). It focuses on setting up Apache Kafka and integrating it with Trino.
+This tutorial assumes familiarity with Trino and a working local Trino installation (see Deploying Trino). It focuses on setting up Apache Kafka and integrating it with Trino.
 
 #### Step 1: Install Apache Kafka[#](https://trino.io/docs/current/connector/kafka-tutorial.html#step-1-install-apache-kafka) <a href="#step-1-install-apache-kafka" id="step-1-install-apache-kafka"></a>
 

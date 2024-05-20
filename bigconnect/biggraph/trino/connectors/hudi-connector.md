@@ -10,7 +10,7 @@ To use the Hudi connector, you need:
 * Network access from the Trino coordinator and workers to the Hudi storage.
 * Access to a Hive metastore service (HMS).
 * Network access from the Trino coordinator to the HMS.
-* Data files stored in the [Parquet file format](https://trino.io/docs/current/object-storage/file-formats.html#hive-parquet-configuration) on a [supported file system](https://trino.io/docs/current/connector/hudi.html#hudi-file-system-configuration).
+* Data files stored in the Parquet file format on a supported file system.
 
 ### General configuration[#](https://trino.io/docs/current/connector/hudi.html#general-configuration) <a href="#general-configuration" id="general-configuration"></a>
 
@@ -21,9 +21,7 @@ connector.name=hudi
 hive.metastore.uri=thrift://example.net:9083
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-There are [HMS configuration properties](https://trino.io/docs/current/object-storage/metastores.html#general-metastore-properties) available for use with the Hudi connector. The connector recognizes Hudi tables synced to the metastore by the [Hudi sync tool](https://hudi.apache.org/docs/syncing\_metastore).
+There are HMS configuration properties available for use with the Hudi connector. The connector recognizes Hudi tables synced to the metastore by the Hudi sync tool.
 
 Additionally, following configuration properties can be set depending on the use-case:
 
@@ -45,20 +43,20 @@ Additionally, following configuration properties can be set depending on the use
 
 The connector supports native, high-performance file system access to object storage systems:
 
-* [Object storage](https://trino.io/docs/current/object-storage.html)
-* [Azure Storage file system support](https://trino.io/docs/current/object-storage/file-system-azure.html)
-* [Google Cloud Storage file system support](https://trino.io/docs/current/object-storage/file-system-gcs.html)
-* [S3 file system support](https://trino.io/docs/current/object-storage/file-system-s3.html)
+* Object storage
+* Azure Storage file system support
+* Google Cloud Storage file system support
+* S3 file system support
 
-You must enable and configure the specific native file system access. If none is activated, the [legacy support](https://trino.io/docs/current/object-storage.html#file-system-legacy) is used and must be configured.
+You must enable and configure the specific native file system access. If none is activated, the legacy support is used and must be configured.
 
-### SQL support[#](https://trino.io/docs/current/connector/hudi.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
-The connector provides read access to data in the Hudi table that has been synced to Hive metastore. The [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements are supported.
+The connector provides read access to data in the Hudi table that has been synced to Hive metastore. The globally available and read operation statements are supported.
 
-#### Basic usage examples[#](https://trino.io/docs/current/connector/hudi.html#basic-usage-examples) <a href="#basic-usage-examples" id="basic-usage-examples"></a>
+#### Basic usage examples <a href="#basic-usage-examples" id="basic-usage-examples"></a>
 
-In the following example queries, `stock_ticks_cow` is the Hudi copy-on-write table referred to in the Hudi [quickstart guide](https://hudi.apache.org/docs/docker\_demo/).
+In the following example queries, `stock_ticks_cow` is the Hudi copy-on-write table referred to in the Hudi quickstart guide.
 
 ```
 USE example.example_schema;
@@ -69,8 +67,6 @@ GROUP BY symbol
 HAVING symbol = 'GOOG';
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
   symbol   |        _col1         |
 -----------+----------------------+
@@ -78,15 +74,11 @@ HAVING symbol = 'GOOG';
 (1 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
 SELECT dt, symbol
 FROM stock_ticks_cow
 WHERE symbol = 'GOOG';
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
     dt      | symbol |
@@ -95,15 +87,11 @@ WHERE symbol = 'GOOG';
 (1 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
 SELECT dt, count(*)
 FROM stock_ticks_cow
 GROUP BY dt;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
     dt      | _col1 |
@@ -112,11 +100,9 @@ GROUP BY dt;
 (1 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 #### Schema and table management[#](https://trino.io/docs/current/connector/hudi.html#schema-and-table-management) <a href="#schema-and-table-management" id="schema-and-table-management"></a>
 
-Hudi supports [two types of tables](https://hudi.apache.org/docs/table\_types) depending on how the data is indexed and laid out on the file system. The following table displays a support matrix of tables types and query types for the connector:
+Hudi supports two types of tables depending on how the data is indexed and laid out on the file system. The following table displays a support matrix of tables types and query types for the connector:
 
 | Table type    | Supported query type   |
 | ------------- | ---------------------- |
@@ -131,8 +117,6 @@ The connector exposes a metadata table for each Hudi table. The metadata table c
 SELECT * FROM "test_table$timeline"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 **`$TIMELINE` TABLE**[**#**](https://trino.io/docs/current/connector/hudi.html#timeline-table)
 
 The `$timeline` table provides a detailed view of meta-data instants in the Hudi table. Instants are specific points in time.
@@ -143,16 +127,12 @@ You can retrieve the information about the timeline of the Hudi table `test_tabl
 SELECT * FROM "test_table$timeline"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  timestamp          | action  | state
 --------------------+---------+-----------
 8667764846443717831 | commit  | COMPLETED
 7860805980949777961 | commit  | COMPLETED
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The output of the query has the following columns:
 

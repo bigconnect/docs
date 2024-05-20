@@ -10,8 +10,6 @@ To configure the local file connector, create a catalog properties file under `e
 connector.name=localfile
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ### Configuration properties[#](https://trino.io/docs/current/connector/localfile.html#configuration-properties) <a href="#configuration-properties" id="configuration-properties"></a>
 
 | Property name                          | Description                                                                                |
@@ -26,8 +24,6 @@ The local file connector provides a single schema named `logs`. You can see all 
 ```
 SHOW TABLES FROM example.logs;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 #### `http_request_log`[#](https://trino.io/docs/current/connector/localfile.html#http-request-log) <a href="#http-request-log" id="http-request-log"></a>
 

@@ -11,8 +11,6 @@ SELECT my_array[CARDINALITY(my_array)] as last_element
 FROM ...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ### Avoid out of bounds access of arrays[#](https://trino.io/docs/current/appendix/from-hive.html#avoid-out-of-bounds-access-of-arrays) <a href="#avoid-out-of-bounds-access-of-arrays" id="avoid-out-of-bounds-access-of-arrays"></a>
 
 Accessing out of bounds elements of an array will result in an exception. You can avoid this with an `if` as follows:
@@ -21,8 +19,6 @@ Accessing out of bounds elements of an array will result in an exception. You ca
 SELECT IF(CARDINALITY(my_array) >= 3, my_array[3], NULL)
 FROM ...
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ### Use ANSI SQL syntax for arrays[#](https://trino.io/docs/current/appendix/from-hive.html#use-ansi-sql-syntax-for-arrays) <a href="#use-ansi-sql-syntax-for-arrays" id="use-ansi-sql-syntax-for-arrays"></a>
 
@@ -33,15 +29,11 @@ SELECT my_array[1] AS first_element
 FROM ...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Construct arrays with ANSI syntax:
 
 ```
 SELECT ARRAY[1, 2, 3] AS my_array
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ### Use ANSI SQL syntax for identifiers and strings[#](https://trino.io/docs/current/appendix/from-hive.html#use-ansi-sql-syntax-for-identifiers-and-strings) <a href="#use-ansi-sql-syntax-for-identifiers-and-strings" id="use-ansi-sql-syntax-for-identifiers-and-strings"></a>
 
@@ -53,8 +45,6 @@ FROM "7day_active"
 WHERE name = 'foo'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ### Quote identifiers that start with numbers[#](https://trino.io/docs/current/appendix/from-hive.html#quote-identifiers-that-start-with-numbers) <a href="#quote-identifiers-that-start-with-numbers" id="quote-identifiers-that-start-with-numbers"></a>
 
 Identifiers that start with numbers are not legal in ANSI SQL and must be quoted using double quotes:
@@ -64,8 +54,6 @@ SELECT *
 FROM "7day_active"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ### Use the standard string concatenation operator[#](https://trino.io/docs/current/appendix/from-hive.html#use-the-standard-string-concatenation-operator) <a href="#use-the-standard-string-concatenation-operator" id="use-the-standard-string-concatenation-operator"></a>
 
 Use the ANSI SQL string concatenation operator:
@@ -74,8 +62,6 @@ Use the ANSI SQL string concatenation operator:
 SELECT a || b || c
 FROM ...
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ### Use standard types for CAST targets[#](https://trino.io/docs/current/appendix/from-hive.html#use-standard-types-for-cast-targets) <a href="#use-standard-types-for-cast-targets" id="use-standard-types-for-cast-targets"></a>
 
@@ -90,8 +76,6 @@ SELECT
 FROM ...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 In particular, use `VARCHAR` instead of `STRING`.
 
 ### Use CAST when dividing integers[#](https://trino.io/docs/current/appendix/from-hive.html#use-cast-when-dividing-integers) <a href="#use-cast-when-dividing-integers" id="use-cast-when-dividing-integers"></a>
@@ -101,8 +85,6 @@ Trino follows the standard behavior of performing integer division when dividing
 ```
 SELECT CAST(5 AS DOUBLE) / 2
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ### Use WITH for complex expressions or queries[#](https://trino.io/docs/current/appendix/from-hive.html#use-with-for-complex-expressions-or-queries) <a href="#use-with-for-complex-expressions-or-queries" id="use-with-for-complex-expressions-or-queries"></a>
 
@@ -118,11 +100,11 @@ FROM a
 WHERE x = 'foo'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ### Use UNNEST to expand arrays and maps[#](https://trino.io/docs/current/appendix/from-hive.html#use-unnest-to-expand-arrays-and-maps) <a href="#use-unnest-to-expand-arrays-and-maps" id="use-unnest-to-expand-arrays-and-maps"></a>
 
-Trino supports [UNNEST](https://trino.io/docs/current/sql/select.html#unnest) for expanding arrays and maps. Use `UNNEST` instead of `LATERAL VIEW explode()`.
+Trino supports UNNEST for expanding arrays and maps. Use `UNNEST` instead of `LATERAL VIEW explode()`.
 
 Hive query:
 
@@ -178,7 +160,7 @@ datediff(string enddate, string startdate)  -> integer
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-The equivalent Trino function [date\_diff](https://trino.io/docs/current/functions/datetime.html#datetime-interval-functions) uses a reverse order for the two date parameters and requires a unit. This has to be taken into account when migrating:
+The equivalent Trino function date\_diff uses a reverse order for the two date parameters and requires a unit. This has to be taken into account when migrating:
 
 Hive query:
 

@@ -6,8 +6,6 @@
 EXECUTE IMMEDIATE `statement` [ USING parameter1 [ , parameter2, ... ] ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ### Description[#](https://trino.io/docs/current/sql/execute-immediate.html#description) <a href="#description" id="description"></a>
 
 Executes a statement without the need to prepare or deallocate the statement. Parameter values are defined in the `USING` clause.
@@ -21,7 +19,7 @@ EXECUTE IMMEDIATE
 'SELECT name FROM nation';
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Execute a query with two parameters:
 
@@ -31,7 +29,7 @@ EXECUTE IMMEDIATE
 USING 1, 3;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This is equivalent to:
 
@@ -43,6 +41,6 @@ DEALLOCATE PREPARE statement_name
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/execute-immediate.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[EXECUTE](https://trino.io/docs/current/sql/execute.html), [PREPARE](https://trino.io/docs/current/sql/prepare.html), [DEALLOCATE PREPARE](https://trino.io/docs/current/sql/deallocate-prepare.html)
+EXECUTE, PREPARE, DEALLOCATE PREPARE

@@ -57,24 +57,24 @@ Trino supports all data types used within the Memory schemas so no mapping is re
 
 ### SQL support[#](https://trino.io/docs/current/connector/memory.html#sql-support) <a href="#sql-support" id="sql-support"></a>
 
-The connector provides read and write access to temporary data and metadata stored in memory. In addition to the [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements, the connector supports the following features:
+The connector provides read and write access to temporary data and metadata stored in memory. In addition to the globally available and read operation statements, the connector supports the following features:
 
-* [INSERT](https://trino.io/docs/current/sql/insert.html)
-* [CREATE TABLE](https://trino.io/docs/current/sql/create-table.html)
-* [CREATE TABLE AS](https://trino.io/docs/current/sql/create-table-as.html)
-* [DROP TABLE](https://trino.io/docs/current/sql/drop-table.html)
-* [CREATE SCHEMA](https://trino.io/docs/current/sql/create-schema.html)
-* [DROP SCHEMA](https://trino.io/docs/current/sql/drop-schema.html)
-* [COMMENT](https://trino.io/docs/current/sql/comment.html)
-* [Routine management](https://trino.io/docs/current/language/sql-support.html#sql-routine-management)
+* INSERT
+* CREATE TABLE
+* CREATE TABLE AS
+* DROP TABLE
+* CREATE SCHEMA
+* DROP SCHEMA
+* COMMENT
+* Routine management
 
-#### DROP TABLE[#](https://trino.io/docs/current/connector/memory.html#drop-table) <a href="#drop-table" id="drop-table"></a>
+#### DROP TABLE# <a href="#drop-table" id="drop-table"></a>
 
 Upon execution of a `DROP TABLE` operation, memory is not released immediately. It is instead released after the next write operation to the catalog.
 
-### Dynamic filtering[#](https://trino.io/docs/current/connector/memory.html#dynamic-filtering) <a href="#dynamic-filtering" id="dynamic-filtering"></a>
+### Dynamic filtering# <a href="#dynamic-filtering" id="dynamic-filtering"></a>
 
-The Memory connector supports the [dynamic filtering](https://trino.io/docs/current/admin/dynamic-filtering.html) optimization. Dynamic filters are pushed into local table scan on worker nodes for broadcast joins.
+The Memory connector supports the dynamic filtering optimization. Dynamic filters are pushed into local table scan on worker nodes for broadcast joins.
 
 #### Delayed execution for dynamic filters[#](https://trino.io/docs/current/connector/memory.html#delayed-execution-for-dynamic-filters) <a href="#delayed-execution-for-dynamic-filters" id="delayed-execution-for-dynamic-filters"></a>
 

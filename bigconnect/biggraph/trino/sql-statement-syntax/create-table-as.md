@@ -14,7 +14,7 @@ AS query
 
 ### Description[#](https://trino.io/docs/current/sql/create-table-as.html#description) <a href="#description" id="description"></a>
 
-Create a new table containing the result of a [SELECT](https://trino.io/docs/current/sql/select.html) query. Use [CREATE TABLE](https://trino.io/docs/current/sql/create-table.html) to create an empty table.
+Create a new table containing the result of a SELECT query. Use CREATE TABLE to create an empty table.
 
 The optional `OR REPLACE` clause causes an existing table with the specified name to be replaced with the new table definition. Support for table replacement varies across connectors. Refer to the connector documentation for details.
 
@@ -79,6 +79,6 @@ WITH NO DATA
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/create-table-as.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also# <a href="#see-also" id="see-also"></a>
 
-[CREATE TABLE](https://trino.io/docs/current/sql/create-table.html), [SELECT](https://trino.io/docs/current/sql/select.html)
+CREATE TABLE, SELECT

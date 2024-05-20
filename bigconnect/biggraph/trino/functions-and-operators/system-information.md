@@ -1,6 +1,6 @@
 # System information
 
-Functions providing information about the Trino cluster system environment. More information is available by querying the various schemas and tables exposed by the [System connector](https://trino.io/docs/current/connector/system.html).
+Functions providing information about the Trino cluster system environment. More information is available by querying the various schemas and tables exposed by the System connector.
 
 version() → varchar[#](https://trino.io/docs/current/functions/system.html#version)
 
