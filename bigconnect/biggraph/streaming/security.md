@@ -1502,7 +1502,7 @@ The architecture has the advantage that neither broker nor client need to be mod
 
 The diagram below depicts the main components, illustrating clients sending and receiving plaintext messages while the proxy exchanges ciphertext messages with the broker:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 One core component, the _Encryption Module_, provides the encryption functionality. A second core component, the _Proxy_, intercepts Kafka connections and delegates message processing to the Encryption Module.
 

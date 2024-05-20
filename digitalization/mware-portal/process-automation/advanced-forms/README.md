@@ -8,13 +8,13 @@ With Advanced Forms, you can manage large numbers of complex forms, give access 
 
 One important component of Advanced Forms is Form Builder, a web app which allows you to visually design forms. With Form Builder, you can create and deploy forms in minutes, right from a web browser. There is no need for any additional client software or plugins.
 
-<figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Your web forms, accessible anywhere
 
 The forms you create in Form Builder are web forms. They are implemented using standard web technologies and can be accessed from desktops, laptops and mobile devices.
 
-<figure><img src="../../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Validation, visibility, calculations, dependent fields, and branching
 

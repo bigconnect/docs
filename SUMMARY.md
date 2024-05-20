@@ -1023,6 +1023,7 @@
     * [Security](bigconnect/biggraph/streaming/security.md)
     * [Kafka Connect](bigconnect/biggraph/streaming/kafka-connect.md)
     * [Kafka Streams](bigconnect/biggraph/streaming/kafka-streams.md)
+    * [Kafka UI](bigconnect/biggraph/streaming/kafka-ui.md)
   * [Enrichment](bigconnect/biggraph/enrichment.md)
   * [Security](bigconnect/biggraph/security.md)
   * [Backup](bigconnect/biggraph/backup.md)
