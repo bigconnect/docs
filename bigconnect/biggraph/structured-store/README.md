@@ -1,4 +1,4 @@
-# Structured store
+# Structured Store
 
 The structured store is implemented on top of a distributed database for high-performance computing with in-memory speed called **Ignite**.
 
