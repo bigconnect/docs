@@ -954,6 +954,7 @@
         * [Protocols](digitalization/mware-application-server/app-server-documentation/server-configuration-and-management/http-service/protocols.md)
         * [Virtual Servers](digitalization/mware-application-server/app-server-documentation/server-configuration-and-management/http-service/virtual-servers.md)
         * [mod\_ssl](digitalization/mware-application-server/app-server-documentation/server-configuration-and-management/http-service/mod\_ssl.md)
+        * [mod\_proxy](digitalization/mware-application-server/app-server-documentation/server-configuration-and-management/http-service/mod\_proxy.md)
       * [JDBC Resource Management](digitalization/mware-application-server/app-server-documentation/server-configuration-and-management/jdbc-resource-management/README.md)
         * [JDBC](digitalization/mware-application-server/app-server-documentation/server-configuration-and-management/jdbc-resource-management/jdbc.md)
         * [SQL](digitalization/mware-application-server/app-server-documentation/server-configuration-and-management/jdbc-resource-management/sql.md)
