@@ -1002,7 +1002,7 @@
     * [6.2023.10 Core TCK Results](digitalization/mware-application-server/jakarta-ee-certification/6.2023.10-core-tck-results.md)
     * [6.2023.10 (Web Profile) Core TCK Results](digitalization/mware-application-server/jakarta-ee-certification/6.2023.10-web-profile-core-tck-results.md)
   * [Eclipse MicroProfile Certification](digitalization/mware-application-server/eclipse-microprofile-certification.md)
-* [MWARE ESB](digitalization/mware-esb/README.md)
+* [MWARE ESB](digitalization/mware-esb.md)
   * [Siddhi](digitalization/mware-esb/siddhi/README.md)
     * [Features](digitalization/mware-esb/siddhi/features.md)
     * [Quick Start](digitalization/mware-esb/siddhi/quick-start.md)

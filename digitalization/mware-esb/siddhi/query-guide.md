@@ -1034,7 +1034,7 @@ insert expired events into DelayedTempStream
 
 Note
 
-This is just to illustrate how expired events work, it is recommended to use [delay](https://siddhi.io/en/v5.0/docs/api/latest/#delay-window) window for usecases where we need to delay events by a given time period.
+This is just to illustrate how expired events work, it is recommended to use delay window for usecases where we need to delay events by a given time period.
 
 #### Aggregate Function <a href="#aggregate-function" id="aggregate-function"></a>
 
