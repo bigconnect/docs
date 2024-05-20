@@ -1,6 +1,6 @@
 # SELECT
 
-### Synopsis[#](https://trino.io/docs/current/sql/select.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 [ WITH FUNCTION sql_routines ]
@@ -18,30 +18,22 @@ SELECT [ ALL | DISTINCT ] select_expression [, ...]
 [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } { ONLY | WITH TIES } ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 where `from_item` is one of
 
 ```
 table_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
 from_item join_type from_item
   [ ON join_condition | USING ( join_column [, ...] ) ]
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
 table_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
   MATCH_RECOGNIZE pattern_recognition_specification
     [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 For detailed description of `MATCH_RECOGNIZE` clause, see [pattern recognition in FROM clause](https://trino.io/docs/current/sql/match-recognize.html).
 
@@ -63,7 +55,7 @@ FULL [ OUTER ] JOIN
 CROSS JOIN
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 and `grouping_element` is one of
 
@@ -75,13 +67,13 @@ CUBE ( column [, ...] )
 ROLLUP ( column [, ...] )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/select.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 Retrieve rows from zero or more tables.
 
-### WITH FUNCTION clause[#](https://trino.io/docs/current/sql/select.html#with-function-clause) <a href="#with-function-clause" id="with-function-clause"></a>
+### WITH FUNCTION clause <a href="#with-function-clause" id="with-function-clause"></a>
 
 The `WITH FUNCTION` clause allows you to define a list of inline SQL routines that are available for use in the rest of the query.
 
@@ -99,11 +91,11 @@ SELECT hello('Finn') || ' and ' || bye('Joe');
 -- Hello Finn! and Bye Joe!
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Find further information about routines in general, inline routines, all supported statements, and examples in SQL routines.
 
-### WITH clause# <a href="#with-clause" id="with-clause"></a>
+### WITH clause <a href="#with-clause" id="with-clause"></a>
 
 The `WITH` clause defines named relations for use within a query. It allows flattening nested queries or simplifying subqueries. For example, the following queries are equivalent:
 
@@ -117,8 +109,6 @@ WITH x AS (SELECT a, MAX(b) AS b FROM t GROUP BY a)
 SELECT a, b FROM x;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 This also works with multiple subqueries:
 
 ```
@@ -130,8 +120,6 @@ FROM t1
 JOIN t2 ON t1.a = t2.a;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Additionally, the relations within a `WITH` clause can chain:
 
 ```
@@ -142,17 +130,17 @@ WITH
 SELECT c FROM z;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Warning
+
+**Warning**
 
 Currently, the SQL for the `WITH` clause will be inlined anywhere the named relation is used. This means that if the relation is used more than once and the query is non-deterministic, the results may be different each time.
 
-### WITH RECURSIVE clause[#](https://trino.io/docs/current/sql/select.html#with-recursive-clause) <a href="#with-recursive-clause" id="with-recursive-clause"></a>
+### WITH RECURSIVE clause <a href="#with-recursive-clause" id="with-recursive-clause"></a>
 
 The `WITH RECURSIVE` clause is a variant of the `WITH` clause. It defines a list of queries to process, including recursive processing of suitable queries.
 
-Warning
+**Warning**
 
 This feature is experimental only. Proceed to use it only if you understand potential query failures and the impact of the recursion processing on your workload.
 
@@ -168,8 +156,6 @@ WITH RECURSIVE t(n) AS (
 )
 SELECT sum(n) FROM t;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 In the preceding query the simple assignment `VALUES (1)` defines the recursion base relation. `SELECT n + 1 FROM t WHERE n < 4` defines the recursion step relation. The recursion processing performs these steps:
 
@@ -193,7 +179,7 @@ The following limitations apply as a result of following the SQL standard and du
 
 You can adjust the recursion depth with the session property `max_recursion_depth`. When changing the value consider that the size of the query plan growth is quadratic with the recursion depth.
 
-### SELECT clause[#](https://trino.io/docs/current/sql/select.html#select-clause) <a href="#select-clause" id="select-clause"></a>
+### SELECT clause <a href="#select-clause" id="select-clause"></a>
 
 The `SELECT` clause specifies the output of the query. Each `select_expression` defines a column or columns to be included in the result.
 
@@ -201,11 +187,9 @@ The `SELECT` clause specifies the output of the query. Each `select_expression` 
 SELECT [ ALL | DISTINCT ] select_expression [, ...]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The `ALL` and `DISTINCT` quantifiers determine whether duplicate rows are included in the result set. If the argument `ALL` is specified, all rows are included. If the argument `DISTINCT` is specified, only unique rows are included in the result set. In this case, each output column must be of a type that allows comparison. If neither argument is specified, the behavior defaults to `ALL`.
 
-#### Select expressions[#](https://trino.io/docs/current/sql/select.html#select-expressions) <a href="#select-expressions" id="select-expressions"></a>
+#### Select expressions <a href="#select-expressions" id="select-expressions"></a>
 
 Each `select_expression` must be in one of the following forms:
 
@@ -213,25 +197,17 @@ Each `select_expression` must be in one of the following forms:
 expression [ [ AS ] column_alias ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
 row_expression.* [ AS ( column_alias [, ...] ) ]
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
 relation.*
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
 *
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 In the case of `expression [ [ AS ] column_alias ]`, a single output column is defined.
 
@@ -249,8 +225,6 @@ If column aliases are specified, they override any preexisting column or row fie
 SELECT (CAST(ROW(1, true) AS ROW(field1 bigint, field2 boolean))).* AS (alias1, alias2);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  alias1 | alias2
 --------+--------
@@ -258,15 +232,11 @@ SELECT (CAST(ROW(1, true) AS ROW(field1 bigint, field2 boolean))).* AS (alias1, 
 (1 row)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Otherwise, the existing names are used:
 
 ```
 SELECT (CAST(ROW(1, true) AS ROW(field1 bigint, field2 boolean))).*;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
  field1 | field2
@@ -275,15 +245,11 @@ SELECT (CAST(ROW(1, true) AS ROW(field1 bigint, field2 boolean))).*;
 (1 row)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 and in their absence, anonymous columns are produced:
 
 ```
 SELECT (ROW(1, true)).*;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
  _col0 | _col1
@@ -292,9 +258,7 @@ SELECT (ROW(1, true)).*;
 (1 row)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-### GROUP BY clause[#](https://trino.io/docs/current/sql/select.html#group-by-clause) <a href="#group-by-clause" id="group-by-clause"></a>
+### GROUP BY clause <a href="#group-by-clause" id="group-by-clause"></a>
 
 The `GROUP BY` clause divides the output of a `SELECT` statement into groups of rows containing matching values. A simple `GROUP BY` clause may contain any expression composed of input columns or it may be an ordinal number selecting an output column by position (starting at one).
 
@@ -306,15 +270,11 @@ SELECT count(*), nationkey FROM customer GROUP BY 2;
 SELECT count(*), nationkey FROM customer GROUP BY nationkey;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 `GROUP BY` clauses can group output by input column names not appearing in the output of a select statement. For example, the following query generates row counts for the `customer` table using the input column `mktsegment`:
 
 ```
 SELECT count(*) FROM customer GROUP BY mktsegment;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
  _col0
@@ -327,25 +287,21 @@ SELECT count(*) FROM customer GROUP BY mktsegment;
 (5 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 When a `GROUP BY` clause is used in a `SELECT` statement all output expressions must be either aggregate functions or columns present in the `GROUP BY` clause.
 
-#### Complex grouping operations[#](https://trino.io/docs/current/sql/select.html#complex-grouping-operations) <a href="#complex-grouping-operations" id="complex-grouping-operations"></a>
+#### Complex grouping operations <a href="#complex-grouping-operations" id="complex-grouping-operations"></a>
 
 Trino also supports complex aggregations using the `GROUPING SETS`, `CUBE` and `ROLLUP` syntax. This syntax allows users to perform analysis that requires aggregation on multiple sets of columns in a single query. Complex grouping operations do not support grouping on expressions composed of input columns. Only column names are allowed.
 
 Complex grouping operations are often equivalent to a `UNION ALL` of simple `GROUP BY` expressions, as shown in the following examples. This equivalence does not apply, however, when the source of data for the aggregation is non-deterministic.
 
-#### GROUPING SETS[#](https://trino.io/docs/current/sql/select.html#grouping-sets) <a href="#grouping-sets" id="grouping-sets"></a>
+#### GROUPING SETS <a href="#grouping-sets" id="grouping-sets"></a>
 
 Grouping sets allow users to specify multiple lists of columns to group on. The columns not part of a given sublist of grouping columns are set to `NULL`.
 
 ```
 SELECT * FROM shipping;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
  origin_state | origin_zip | destination_state | destination_zip | package_weight
@@ -359,8 +315,6 @@ SELECT * FROM shipping;
 (6 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 `GROUPING SETS` semantics are demonstrated by this example query:
 
 ```
@@ -371,8 +325,6 @@ GROUP BY GROUPING SETS (
     (origin_state, origin_zip),
     (destination_state));
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
  origin_state | origin_zip | destination_state | _col0
@@ -389,8 +341,6 @@ GROUP BY GROUPING SETS (
  NULL         | NULL       | Connecticut       |  1562
 (10 rows)
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The preceding query may be considered logically equivalent to a `UNION ALL` of multiple `GROUP BY` queries:
 
@@ -409,11 +359,9 @@ SELECT NULL, NULL, destination_state, sum(package_weight)
 FROM shipping GROUP BY destination_state;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 However, the query with the complex grouping syntax (`GROUPING SETS`, `CUBE` or `ROLLUP`) will only read from the underlying data source once, while the query with the `UNION ALL` reads the underlying data three times. This is why queries with a `UNION ALL` may produce inconsistent results when the data source is not deterministic.
 
-#### CUBE[#](https://trino.io/docs/current/sql/select.html#cube) <a href="#cube" id="cube"></a>
+#### CUBE <a href="#cube" id="cube"></a>
 
 The `CUBE` operator generates all possible grouping sets (i.e. a power set) for a given set of columns. For example, the query:
 
@@ -422,8 +370,6 @@ SELECT origin_state, destination_state, sum(package_weight)
 FROM shipping
 GROUP BY CUBE (origin_state, destination_state);
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 is equivalent to:
 
@@ -437,8 +383,6 @@ GROUP BY GROUPING SETS (
     ()
 );
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
  origin_state | destination_state | _col0
@@ -458,9 +402,7 @@ GROUP BY GROUPING SETS (
 (12 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### ROLLUP[#](https://trino.io/docs/current/sql/select.html#rollup) <a href="#rollup" id="rollup"></a>
+#### ROLLUP <a href="#rollup" id="rollup"></a>
 
 The `ROLLUP` operator generates all possible subtotals for a given set of columns. For example, the query:
 
@@ -469,8 +411,6 @@ SELECT origin_state, origin_zip, sum(package_weight)
 FROM shipping
 GROUP BY ROLLUP (origin_state, origin_zip);
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
  origin_state | origin_zip | _col2
@@ -486,8 +426,6 @@ GROUP BY ROLLUP (origin_state, origin_zip);
 (8 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 is equivalent to:
 
 ```
@@ -496,9 +434,7 @@ FROM shipping
 GROUP BY GROUPING SETS ((origin_state, origin_zip), (origin_state), ());
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### Combining multiple grouping expressions[#](https://trino.io/docs/current/sql/select.html#combining-multiple-grouping-expressions) <a href="#combining-multiple-grouping-expressions" id="combining-multiple-grouping-expressions"></a>
+#### Combining multiple grouping expressions <a href="#combining-multiple-grouping-expressions" id="combining-multiple-grouping-expressions"></a>
 
 Multiple grouping expressions in the same query are interpreted as having cross-product semantics. For example, the following query:
 
@@ -510,8 +446,6 @@ GROUP BY
     ROLLUP (origin_zip);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 which can be rewritten as:
 
 ```
@@ -521,8 +455,6 @@ GROUP BY
     GROUPING SETS ((origin_state, destination_state)),
     GROUPING SETS ((origin_zip), ());
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 is logically equivalent to:
 
@@ -534,8 +466,6 @@ GROUP BY GROUPING SETS (
     (origin_state, destination_state)
 );
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
  origin_state | destination_state | origin_zip | _col3
@@ -553,8 +483,6 @@ GROUP BY GROUPING SETS (
 (10 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The `ALL` and `DISTINCT` quantifiers determine whether duplicate grouping sets each produce distinct output rows. This is particularly useful when multiple complex grouping sets are combined in the same query. For example, the following query:
 
 ```
@@ -564,8 +492,6 @@ GROUP BY ALL
     CUBE (origin_state, destination_state),
     ROLLUP (origin_state, origin_zip);
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 is equivalent to:
 
@@ -588,8 +514,6 @@ GROUP BY GROUPING SETS (
 );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 However, if the query uses the `DISTINCT` quantifier for the `GROUP BY`:
 
 ```
@@ -599,8 +523,6 @@ GROUP BY DISTINCT
     CUBE (origin_state, destination_state),
     ROLLUP (origin_state, origin_zip);
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 only unique grouping sets are generated:
 
@@ -616,8 +538,6 @@ GROUP BY GROUPING SETS (
     ()
 );
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The default set quantifier is `ALL`.
 
@@ -640,8 +560,6 @@ GROUP BY GROUPING SETS (
 );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
 origin_state | origin_zip | destination_state | _col3 | _col4
 --------------+------------+-------------------+-------+-------
@@ -658,11 +576,9 @@ NULL         | NULL       | Colorado          |     5 |     6
 (10 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The first grouping in the above result only includes the `origin_state` column and excludes the `origin_zip` and `destination_state` columns. The bit set constructed for that grouping is `011` where the most significant bit represents `origin_state`.
 
-### HAVING clause[#](https://trino.io/docs/current/sql/select.html#having-clause) <a href="#having-clause" id="having-clause"></a>
+### HAVING clause <a href="#having-clause" id="having-clause"></a>
 
 The `HAVING` clause is used in conjunction with aggregate functions and the `GROUP BY` clause to control which groups are selected. A `HAVING` clause eliminates groups that do not satisfy the given conditions. `HAVING` filters groups after groups and aggregates are computed.
 
@@ -677,8 +593,6 @@ HAVING sum(acctbal) > 5700000
 ORDER BY totalbal DESC;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  _col0 | mktsegment | nationkey | totalbal
 -------+------------+-----------+----------
@@ -692,9 +606,7 @@ ORDER BY totalbal DESC;
 (7 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-### WINDOW clause[#](https://trino.io/docs/current/sql/select.html#window-clause) <a href="#window-clause" id="window-clause"></a>
+### WINDOW clause <a href="#window-clause" id="window-clause"></a>
 
 The `WINDOW` clause is used to define named window specifications. The defined named window specifications can be referred to in the `SELECT` and `ORDER BY` clauses of the enclosing query:
 
@@ -706,26 +618,22 @@ WINDOW w AS (PARTITION BY clerk ORDER BY totalprice DESC)
 ORDER BY count() OVER w, clerk, rnk
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The window definition list of `WINDOW` clause can contain one or multiple named window specifications of the form
 
 ```
 window_name AS (window_specification)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 A window specification has the following components:
 
 * The existing window name, which refers to a named window specification in the `WINDOW` clause. The window specification associated with the referenced name is the basis of the current specification.
 * The partition specification, which separates the input rows into different partitions. This is analogous to how the `GROUP BY` clause separates rows into different groups for aggregate functions.
 * The ordering specification, which determines the order in which input rows will be processed by the window function.
-* The window frame, which specifies a sliding window of rows to be processed by the function for a given row. If the frame is not specified, it defaults to `RANGE UNBOUNDED PRECEDING`, which is the same as `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`. This frame contains all rows from the start of the partition up to the last peer of the current row. In the absence of `ORDER BY`, all rows are considered peers, so `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` is equivalent to `BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`. The window frame syntax supports additional clauses for row pattern recognition. If the row pattern recognition clauses are specified, the window frame for a particular row consists of the rows matched by a pattern starting from that row. Additionally, if the frame specifies row pattern measures, they can be called over the window, similarly to window functions. For more details, see [Row pattern recognition in window structures](https://trino.io/docs/current/sql/pattern-recognition-in-window.html) .
+* The window frame, which specifies a sliding window of rows to be processed by the function for a given row. If the frame is not specified, it defaults to `RANGE UNBOUNDED PRECEDING`, which is the same as `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`. This frame contains all rows from the start of the partition up to the last peer of the current row. In the absence of `ORDER BY`, all rows are considered peers, so `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` is equivalent to `BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`. The window frame syntax supports additional clauses for row pattern recognition. If the row pattern recognition clauses are specified, the window frame for a particular row consists of the rows matched by a pattern starting from that row. Additionally, if the frame specifies row pattern measures, they can be called over the window, similarly to window functions.
 
 Each window component is optional. If a window specification does not specify window partitioning, ordering or frame, those components are obtained from the window specification referenced by the `existing window name`, or from another window specification in the reference chain. In case when there is no `existing window name` specified, or none of the referenced window specifications contains the component, the default value is used.
 
-### Set operations[#](https://trino.io/docs/current/sql/select.html#set-operations) <a href="#set-operations" id="set-operations"></a>
+### Set operations <a href="#set-operations" id="set-operations"></a>
 
 `UNION` `INTERSECT` and `EXCEPT` are all set operations. These clauses are used to combine the results of more than one select statement into a single result set:
 
@@ -733,25 +641,19 @@ Each window component is optional. If a window specification does not specify wi
 query UNION [ALL | DISTINCT] query
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
 query INTERSECT [ALL | DISTINCT] query
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
 query EXCEPT [ALL | DISTINCT] query
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The argument `ALL` or `DISTINCT` controls which rows are included in the final result set. If the argument `ALL` is specified all rows are included even if the rows are identical. If the argument `DISTINCT` is specified only unique rows are included in the combined result set. If neither is specified, the behavior defaults to `DISTINCT`.
 
 Multiple set operations are processed left to right, unless the order is explicitly specified via parentheses. Additionally, `INTERSECT` binds more tightly than `EXCEPT` and `UNION`. That means `A UNION B INTERSECT C EXCEPT D` is the same as `A UNION (B INTERSECT C) EXCEPT D`.
 
-#### UNION clause[#](https://trino.io/docs/current/sql/select.html#union-clause) <a href="#union-clause" id="union-clause"></a>
+#### UNION clause <a href="#union-clause" id="union-clause"></a>
 
 `UNION` combines all the rows that are in the result set from the first query with those that are in the result set for the second query. The following is an example of one of the simplest possible `UNION` clauses. It selects the value `13` and combines this result set with a second query that selects the value `42`:
 
@@ -761,8 +663,6 @@ UNION
 SELECT 42;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  _col0
 -------
@@ -770,8 +670,6 @@ SELECT 42;
     42
 (2 rows)
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The following query demonstrates the difference between `UNION` and `UNION ALL`. It selects the value `13` and combines this result set with a second query that selects the values `42` and `13`:
 
@@ -781,8 +679,6 @@ UNION
 SELECT * FROM (VALUES 42, 13);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  _col0
 -------
@@ -790,8 +686,6 @@ SELECT * FROM (VALUES 42, 13);
     42
 (2 rows)
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
 SELECT 13
@@ -810,9 +704,7 @@ SELECT * FROM (VALUES 42, 13);
 (2 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### INTERSECT clause[#](https://trino.io/docs/current/sql/select.html#intersect-clause) <a href="#intersect-clause" id="intersect-clause"></a>
+#### INTERSECT clause <a href="#intersect-clause" id="intersect-clause"></a>
 
 `INTERSECT` returns only the rows that are in the result sets of both the first and the second queries. The following is an example of one of the simplest possible `INTERSECT` clauses. It selects the values `13` and `42` and combines this result set with a second query that selects the value `13`. Since `42` is only in the result set of the first query, it is not included in the final results.:
 
@@ -822,8 +714,6 @@ INTERSECT
 SELECT 13;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  _col0
 -------
@@ -831,9 +721,7 @@ SELECT 13;
 (2 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### EXCEPT clause[#](https://trino.io/docs/current/sql/select.html#except-clause) <a href="#except-clause" id="except-clause"></a>
+#### EXCEPT clause <a href="#except-clause" id="except-clause"></a>
 
 `EXCEPT` returns the rows that are in the result set of the first query, but not the second. The following is an example of one of the simplest possible `EXCEPT` clauses. It selects the values `13` and `42` and combines this result set with a second query that selects the value `13`. Since `13` is also in the result set of the second query, it is not included in the final result.:
 
@@ -843,8 +731,6 @@ EXCEPT
 SELECT 13;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  _col0
 -------
@@ -852,17 +738,13 @@ SELECT 13;
 (2 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-### ORDER BY clause[#](https://trino.io/docs/current/sql/select.html#order-by-clause) <a href="#order-by-clause" id="order-by-clause"></a>
+### ORDER BY clause <a href="#order-by-clause" id="order-by-clause"></a>
 
 The `ORDER BY` clause is used to sort a result set by one or more output expressions:
 
 ```
 ORDER BY expression [ ASC | DESC ] [ NULLS { FIRST | LAST } ] [, ...]
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 Each expression may be composed of output columns, or it may be an ordinal number selecting an output column by position, starting at one. The `ORDER BY` clause is evaluated after any `GROUP BY` or `HAVING` clause, and before any `OFFSET`, `LIMIT` or `FETCH FIRST` clause. The default null ordering is `NULLS LAST`, regardless of the ordering direction.
 
@@ -876,8 +758,6 @@ SELECT * FROM another_table
 ORDER BY field;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Since tables in SQL are inherently unordered, and the `ORDER BY` clause in this case does not result in any difference, but negatively impacts performance of running the overall insert statement, Trino skips the sort operation.
 
 Another example where the `ORDER BY` clause is redundant, and does not affect the outcome of the overall statement, is a nested query:
@@ -889,11 +769,9 @@ FROM some_table
     ON some_table.key = u.key;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 More background information and details can be found in a blog post about this optimization.
 
-### OFFSET clause[#](https://trino.io/docs/current/sql/select.html#offset-clause) <a href="#offset-clause" id="offset-clause"></a>
+### OFFSET clause <a href="#offset-clause" id="offset-clause"></a>
 
 The `OFFSET` clause is used to discard a number of leading rows from the result set:
 
@@ -901,15 +779,11 @@ The `OFFSET` clause is used to discard a number of leading rows from the result 
 OFFSET count [ ROW | ROWS ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 If the `ORDER BY` clause is present, the `OFFSET` clause is evaluated over a sorted result set, and the set remains sorted after the leading rows are discarded:
 
 ```
 SELECT name FROM nation ORDER BY name OFFSET 22;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
       name
@@ -920,11 +794,9 @@ SELECT name FROM nation ORDER BY name OFFSET 22;
 (3 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Otherwise, it is arbitrary which rows are discarded. If the count specified in the `OFFSET` clause equals or exceeds the size of the result set, the final result is empty.
 
-### LIMIT or FETCH FIRST clause[#](https://trino.io/docs/current/sql/select.html#limit-or-fetch-first-clause) <a href="#limit-or-fetch-first-clause" id="limit-or-fetch-first-clause"></a>
+### LIMIT or FETCH FIRST clause <a href="#limit-or-fetch-first-clause" id="limit-or-fetch-first-clause"></a>
 
 The `LIMIT` or `FETCH FIRST` clause restricts the number of rows in the result set.
 
@@ -932,21 +804,15 @@ The `LIMIT` or `FETCH FIRST` clause restricts the number of rows in the result s
 LIMIT { count | ALL }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
 FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } { ONLY | WITH TIES }
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The following example queries a large table, but the `LIMIT` clause restricts the output to only have five rows (because the query lacks an `ORDER BY`, exactly which rows are returned is arbitrary):
 
 ```
 SELECT orderdate FROM orders LIMIT 5;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
  orderdate
@@ -959,8 +825,6 @@ SELECT orderdate FROM orders LIMIT 5;
 (5 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 `LIMIT ALL` is the same as omitting the `LIMIT` clause.
 
 The `FETCH FIRST` clause supports either the `FIRST` or `NEXT` keywords and the `ROW` or `ROWS` keywords. These keywords are equivalent and the choice of keyword has no effect on query execution.
@@ -971,8 +835,6 @@ If the count is not specified in the `FETCH FIRST` clause, it defaults to `1`:
 SELECT orderdate FROM orders FETCH FIRST ROW ONLY;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  orderdate
 ------------
@@ -980,15 +842,11 @@ SELECT orderdate FROM orders FETCH FIRST ROW ONLY;
 (1 row)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 If the `OFFSET` clause is present, the `LIMIT` or `FETCH FIRST` clause is evaluated after the `OFFSET` clause:
 
 ```
 SELECT * FROM (VALUES 5, 2, 4, 1, 3) t(x) ORDER BY x OFFSET 2 LIMIT 2;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
  x
@@ -997,8 +855,6 @@ SELECT * FROM (VALUES 5, 2, 4, 1, 3) t(x) ORDER BY x OFFSET 2 LIMIT 2;
  4
 (2 rows)
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 For the `FETCH FIRST` clause, the argument `ONLY` or `WITH TIES` controls which rows are included in the result set.
 
@@ -1012,8 +868,6 @@ FROM nation
 ORDER BY regionkey FETCH FIRST ROW WITH TIES;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
     name    | regionkey
 ------------+-----------
@@ -1025,9 +879,7 @@ ORDER BY regionkey FETCH FIRST ROW WITH TIES;
 (5 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-### TABLESAMPLE[#](https://trino.io/docs/current/sql/select.html#tablesample) <a href="#tablesample" id="tablesample"></a>
+### TABLESAMPLE <a href="#tablesample" id="tablesample"></a>
 
 There are multiple sample methods:
 
@@ -1043,7 +895,7 @@ This sampling method divides the table into logical segments of data and samples
 
 The rows selected in a system sampling will be dependent on which connector is used. For example, when used with Hive, it is dependent on how the data is laid out on HDFS. This method does not guarantee independent sampling probabilities.
 
-Note
+**Note**
 
 Neither of the two methods allow deterministic bounds on the number of rows returned.
 
@@ -1057,8 +909,6 @@ SELECT *
 FROM users TABLESAMPLE SYSTEM (75);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Using sampling with joins:
 
 ```
@@ -1068,17 +918,13 @@ JOIN lineitem i TABLESAMPLE BERNOULLI (40)
   ON o.orderkey = i.orderkey;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-### UNNEST[#](https://trino.io/docs/current/sql/select.html#unnest) <a href="#unnest" id="unnest"></a>
+### UNNEST <a href="#unnest" id="unnest"></a>
 
 `UNNEST` can be used to expand an [ARRAY](https://trino.io/docs/current/language/types.html#array-type) or [MAP](https://trino.io/docs/current/language/types.html#map-type) into a relation. Arrays are expanded into a single column:
 
 ```
 SELECT * FROM UNNEST(ARRAY[1,2]) AS t(number);
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
  number
@@ -1087,8 +933,6 @@ SELECT * FROM UNNEST(ARRAY[1,2]) AS t(number);
       2
 (2 rows)
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 Maps are expanded into two columns (key, value):
 
@@ -1103,8 +947,6 @@ SELECT * FROM UNNEST(
 ) AS t(language, first_appeared_year);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  language | first_appeared_year
 ----------+---------------------
@@ -1113,9 +955,7 @@ SELECT * FROM UNNEST(
 (2 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-`UNNEST` can be used in combination with an `ARRAY` of [ROW](https://trino.io/docs/current/language/types.html#row-type) structures for expanding each field of the `ROW` into a corresponding column:
+`UNNEST` can be used in combination with an `ARRAY` of ROW structures for expanding each field of the `ROW` into a corresponding column:
 
 ```
 SELECT *
@@ -1129,8 +969,6 @@ FROM UNNEST(
 ) as t(language,first_appeared_year,declarative);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  language | first_appeared_year | declarative
 ----------+---------------------+-------------
@@ -1138,8 +976,6 @@ FROM UNNEST(
  SQL      |                1974 | true
 (2 rows)
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 `UNNEST` can optionally have a `WITH ORDINALITY` clause, in which case an additional ordinality column is added to the end:
 
@@ -1151,8 +987,6 @@ FROM UNNEST (
      ) WITH ORDINALITY AS t(a, b, rownumber);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
   a   | b | rownumber
 ------+---+-----------
@@ -1162,15 +996,11 @@ FROM UNNEST (
 (3 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 `UNNEST` returns zero entries when the array/map is empty:
 
 ```
 SELECT * FROM UNNEST (ARRAY[]) AS t(value);
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
  value
@@ -1178,23 +1008,17 @@ SELECT * FROM UNNEST (ARRAY[]) AS t(value);
 (0 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 `UNNEST` returns zero entries when the array/map is null:
 
 ```
 SELECT * FROM UNNEST (CAST(null AS ARRAY(integer))) AS t(number);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  number
 --------
 (0 rows)
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 `UNNEST` is normally used with a `JOIN`, and can reference columns from relations on the left side of the join:
 
@@ -1208,8 +1032,6 @@ FROM (
 CROSS JOIN UNNEST(scores) AS t(score);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  student | score
 ---------+-------
@@ -1221,8 +1043,6 @@ CROSS JOIN UNNEST(scores) AS t(score);
  Mary    |     9
 (6 rows)
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 `UNNEST` can also be used with multiple arguments, in which case they are expanded into multiple columns, with as many rows as the highest cardinality argument (the other columns are padded with nulls):
 
@@ -1236,8 +1056,6 @@ FROM (
 CROSS JOIN UNNEST(numbers, animals) AS t (n, a);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
   numbers  |     animals      |  n   |  a
 -----------+------------------+------+------
@@ -1249,8 +1067,6 @@ CROSS JOIN UNNEST(numbers, animals) AS t (n, a);
  [7, 8, 9] | [cow, pig]       |    9 | NULL
 (6 rows)
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 `LEFT JOIN` is preferable in order to avoid losing the the row containing the array/map field in question when referenced columns from relations on the left side of the join can be empty or have `NULL` values:
 
@@ -1266,8 +1082,6 @@ FROM (
 LEFT JOIN UNNEST(checkpoints) AS t(checkpoint) ON TRUE;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 ```
  runner | checkpoint
 --------+------------
@@ -1281,15 +1095,13 @@ LEFT JOIN UNNEST(checkpoints) AS t(checkpoint) ON TRUE;
 (7 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Note that in case of using `LEFT JOIN` the only condition supported by the current implementation is `ON TRUE`.
 
-### Joins[#](https://trino.io/docs/current/sql/select.html#joins) <a href="#joins" id="joins"></a>
+### Joins <a href="#joins" id="joins"></a>
 
 Joins allow you to combine data from multiple relations.
 
-#### CROSS JOIN[#](https://trino.io/docs/current/sql/select.html#cross-join) <a href="#cross-join" id="cross-join"></a>
+#### CROSS JOIN <a href="#cross-join" id="cross-join"></a>
 
 A cross join returns the Cartesian product (all combinations) of two relations. Cross joins can either be specified using the explit `CROSS JOIN` syntax or by specifying multiple relations in the `FROM` clause.
 
@@ -1304,8 +1116,6 @@ SELECT *
 FROM nation, region;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The `nation` table contains 25 rows and the `region` table contains 5 rows, so a cross join between the two tables produces 125 rows:
 
 ```
@@ -1314,8 +1124,6 @@ FROM nation AS n
 CROSS JOIN region AS r
 ORDER BY 1, 2;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 ```
      nation     |   region
@@ -1331,9 +1139,7 @@ ORDER BY 1, 2;
 (125 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### LATERAL[#](https://trino.io/docs/current/sql/select.html#lateral) <a href="#lateral" id="lateral"></a>
+#### LATERAL <a href="#lateral" id="lateral"></a>
 
 Subqueries appearing in the `FROM` clause can be preceded by the keyword `LATERAL`. This allows them to reference columns provided by preceding `FROM` items.
 
@@ -1350,9 +1156,7 @@ CROSS JOIN LATERAL (SELECT name || ' :-' AS x)
 CROSS JOIN LATERAL (SELECT x || ')' AS y);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### Qualifying column names[#](https://trino.io/docs/current/sql/select.html#qualifying-column-names) <a href="#qualifying-column-names" id="qualifying-column-names"></a>
+#### Qualifying column names <a href="#qualifying-column-names" id="qualifying-column-names"></a>
 
 When two relations in a join have columns with the same name, the column references must be qualified using the relation alias (if the relation has an alias), or with the relation name:
 
@@ -1370,8 +1174,6 @@ FROM nation n
 CROSS JOIN region r;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The following query will fail with the error `Column 'name' is ambiguous`:
 
 ```
@@ -1380,9 +1182,7 @@ FROM nation
 CROSS JOIN region;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-### Subqueries[#](https://trino.io/docs/current/sql/select.html#subqueries) <a href="#subqueries" id="subqueries"></a>
+### Subqueries <a href="#subqueries" id="subqueries"></a>
 
 A subquery is an expression which is composed of a query. The subquery is correlated when it refers to columns outside of the subquery. Logically, the subquery will be evaluated for each row in the surrounding query. The referenced columns will thus be constant during any single evaluation of the subquery.
 
@@ -1390,7 +1190,7 @@ Note
 
 Support for correlated subqueries is limited. Not every standard form is supported.
 
-#### EXISTS[#](https://trino.io/docs/current/sql/select.html#exists) <a href="#exists" id="exists"></a>
+#### EXISTS <a href="#exists" id="exists"></a>
 
 The `EXISTS` predicate determines if a subquery returns any rows:
 
@@ -1404,9 +1204,7 @@ WHERE EXISTS (
 );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### IN[#](https://trino.io/docs/current/sql/select.html#in) <a href="#in" id="in"></a>
+#### IN <a href="#in" id="in"></a>
 
 The `IN` predicate determines if any values produced by the subquery are equal to the provided expression. The result of `IN` follows the standard rules for nulls. The subquery must produce exactly one column:
 
@@ -1420,9 +1218,7 @@ WHERE regionkey IN (
 );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### Scalar subquery[#](https://trino.io/docs/current/sql/select.html#scalar-subquery) <a href="#scalar-subquery" id="scalar-subquery"></a>
+#### Scalar subquery <a href="#scalar-subquery" id="scalar-subquery"></a>
 
 A scalar subquery is a non-correlated subquery that returns zero or one row. It is an error for the subquery to produce more than one row. The returned value is `NULL` if the subquery produces no rows:
 
@@ -1432,8 +1228,6 @@ FROM nation
 WHERE regionkey = (SELECT max(regionkey) FROM region);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-Note
+**Note**
 
 Currently only single column can be returned from the scalar subquery.
