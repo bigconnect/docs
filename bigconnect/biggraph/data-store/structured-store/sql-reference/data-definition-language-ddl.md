@@ -1,4 +1,4 @@
-# Page
+# Data Definition Language (DDL)
 
 ### CREATE TABLE
 

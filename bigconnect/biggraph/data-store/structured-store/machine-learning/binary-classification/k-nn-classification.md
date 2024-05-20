@@ -1,0 +1,41 @@
+# k-NN Classification
+
+The Ignite Machine Learning component provides two versions of the widely used k-NN (k-nearest neighbors) algorithm - one for classification tasks and the other for regression tasks.
+
+This documentation reviews k-NN as a solution for classification tasks.
+
+### Trainer and Model
+
+The k-NN algorithm is a non-parametric method whose input consists of the k-closest training examples in the feature space.
+
+Also, k-NN classification’s output represents a class membership. An object is classified by the majority votes of its neighbors. The object is assigned to a particular class that is most common among its k nearest neighbors. `k` is a positive integer, typically small. There is a special case when `k` is `1`, then the object is simply assigned to the class of that single nearest neighbor.
+
+Presently, Ignite supports a few parameters for k-NN classification algorithm:
+
+* `k` - a number of nearest neighbors
+* `distanceMeasure` - one of the distance metrics provided by the ML framework such as Euclidean, Hamming or Manhattan.
+* `isWeighted` - false by default, if true it enables a weighted KNN algorithm.
+* `dataCache` - holds a training set of objects for which the class is already known.
+* `indexType` - distributed spatial index, has three values: ARRAY, KD\_TREE, BALL\_TREE.
+
+```java
+// Create trainer
+KNNClassificationTrainer trainer = new KNNClassificationTrainer();
+
+// Create trainer
+KNNClassificationTrainer trainer = new KNNClassificationTrainer()
+  .withK(3)
+  .withIdxType(SpatialIndexType.BALL_TREE)
+  .withDistanceMeasure(new EuclideanDistance())
+  .withWeighted(true);
+
+// Train model.
+KNNClassificationModel knnMdl = trainer.fit(
+  ignite,
+  dataCache,
+  vectorizer
+);
+
+// Make a prediction.
+double prediction = knnMdl.predict(observation);
+```
