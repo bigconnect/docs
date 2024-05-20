@@ -6,9 +6,7 @@ For an introduction to using CGI scripts with Apache, see our tutorial on [Dynam
 
 When using a multi-threaded MPM under unix, the module `mod_cgid` should be used in place of this module. At the user level, the two modules are essentially identical.
 
-For backward-compatibility, the cgi-script handler will also be activated for any file with the mime-type `application/x-httpd-cgi`. The use of the magic mime-type is deprecated.
-
-[![Support Apache!](https://www.apache.org/images/SupportApache-small.png)](https://www.apache.org/foundation/contributing.html)
+For backward-compatibility, the cgi-script handler will also be activated for any file with the mime-type `application/x-httpd-cgi`. The use of the magic mime-type is deprecated
 
 #### Topics
 
