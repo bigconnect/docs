@@ -10,7 +10,7 @@ In this guide, we are going to walk you through the programming model and the AP
 
 ## Quick Example
 
-Let’s say you want to maintain a running word count of text data received from a data server listening on a TCP socket. Let’s see how you can express this using Structured Streaming. You can see the full code in [Scala](https://github.com/apache/spark/blob/v3.5.1/examples/src/main/scala/org/apache/spark/examples/sql/streaming/StructuredNetworkWordCount.scala)/[Java](https://github.com/apache/spark/blob/v3.5.1/examples/src/main/java/org/apache/spark/examples/sql/streaming/JavaStructuredNetworkWordCount.java)/[Python](https://github.com/apache/spark/blob/v3.5.1/examples/src/main/python/sql/streaming/structured\_network\_wordcount.py)/[R](https://github.com/apache/spark/blob/v3.5.1/examples/src/main/r/streaming/structured\_network\_wordcount.R). And if you download Spark, you can directly run the example. In any case, let’s walk through the example step-by-step and understand how it works. First, we have to import the necessary classes and create a local SparkSession, the starting point of all functionalities related to Spark.
+Let’s say you want to maintain a running word count of text data received from a data server listening on a TCP socket. Let’s see how you can express this using Structured Streaming. You can see the full code in Scala/Java/Python/R. And if you download Spark, you can directly run the example. In any case, let’s walk through the example step-by-step and understand how it works. First, we have to import the necessary classes and create a local SparkSession, the starting point of all functionalities related to Spark.
 
 * Python
 * Scala
@@ -172,7 +172,7 @@ The “Output” is defined as what gets written out to the external storage. Th
 
 Note that each mode is applicable on certain types of queries. This is discussed in detail [later](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-modes).
 
-To illustrate the use of this model, let’s understand the model in context of the [Quick Example](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#quick-example) above. The first `lines` DataFrame is the input table, and the final `wordCounts` DataFrame is the result table. Note that the query on streaming `lines` DataFrame to generate `wordCounts` is _exactly the same_ as it would be a static DataFrame. However, when this query is started, Spark will continuously check for new data from the socket connection. If there is new data, Spark will run an “incremental” query that combines the previous running counts with the new data to compute updated counts, as shown below.
+To illustrate the use of this model, let’s understand the model in context of the Quick Example above. The first `lines` DataFrame is the input table, and the final `wordCounts` DataFrame is the result table. Note that the query on streaming `lines` DataFrame to generate `wordCounts` is _exactly the same_ as it would be a static DataFrame. However, when this query is started, Spark will continuously check for new data from the socket connection. If there is new data, Spark will run an “incremental” query that combines the previous running counts with the new data to compute updated counts, as shown below.
 
 ![Model](https://spark.apache.org/docs/latest/img/structured-streaming-example-model.png)
 
@@ -192,7 +192,7 @@ Delivering end-to-end exactly-once semantics was one of key goals behind the des
 
 ## API using Datasets and DataFrames
 
-Since Spark 2.0, DataFrames and Datasets can represent static, bounded data, as well as streaming, unbounded data. Similar to static Datasets/DataFrames, you can use the common entry point `SparkSession` ([Scala](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/SparkSession.html)/[Java](https://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/SparkSession.html)/[Python](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.SparkSession.html#pyspark.sql.SparkSession)/[R](https://spark.apache.org/docs/latest/api/R/reference/sparkR.session.html) docs) to create streaming DataFrames/Datasets from streaming sources, and apply the same operations on them as static DataFrames/Datasets. If you are not familiar with Datasets/DataFrames, you are strongly advised to familiarize yourself with them using the DataFrame/Dataset Programming Guide.
+Since Spark 2.0, DataFrames and Datasets can represent static, bounded data, as well as streaming, unbounded data. Similar to static Datasets/DataFrames, you can use the common entry point `SparkSession` (Scala/Java/Python/R docs) to create streaming DataFrames/Datasets from streaming sources, and apply the same operations on them as static DataFrames/Datasets. If you are not familiar with Datasets/DataFrames, you are strongly advised to familiarize yourself with them using the DataFrame/Dataset Programming Guide.
 
 ### Creating streaming DataFrames and streaming Datasets
 
@@ -243,9 +243,9 @@ csvDF = spark \
     .csv("/path/to/directory")  # Equivalent to format("csv").load("/path/to/directory")
 ```
 
-These examples generate streaming DataFrames that are untyped, meaning that the schema of the DataFrame is not checked at compile time, only checked at runtime when the query is submitted. Some operations like `map`, `flatMap`, etc. need the type to be known at compile time. To do those, you can convert these untyped streaming DataFrames to typed streaming Datasets using the same methods as static DataFrame. See the [SQL Programming Guide](https://spark.apache.org/docs/latest/sql-programming-guide.html) for more details. Additionally, more details on the supported streaming sources are discussed later in the document.
+These examples generate streaming DataFrames that are untyped, meaning that the schema of the DataFrame is not checked at compile time, only checked at runtime when the query is submitted. Some operations like `map`, `flatMap`, etc. need the type to be known at compile time. To do those, you can convert these untyped streaming DataFrames to typed streaming Datasets using the same methods as static DataFrame. See the SQL Programming Guide for more details. Additionally, more details on the supported streaming sources are discussed later in the document.
 
-Since Spark 3.1, you can also create streaming DataFrames from tables with `DataStreamReader.table()`. See [Streaming Table APIs](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#streaming-table-apis) for more details.
+Since Spark 3.1, you can also create streaming DataFrames from tables with `DataStreamReader.table()`. See Streaming Table APIs for more details.
 
 #### Schema inference and partition of streaming DataFrames/Datasets
 
@@ -255,11 +255,11 @@ Partition discovery does occur when subdirectories that are named `/key=value/` 
 
 ### Operations on streaming DataFrames/Datasets
 
-You can apply all kinds of operations on streaming DataFrames/Datasets – ranging from untyped, SQL-like operations (e.g. `select`, `where`, `groupBy`), to typed RDD-like operations (e.g. `map`, `filter`, `flatMap`). See the [SQL programming guide](https://spark.apache.org/docs/latest/sql-programming-guide.html) for more details. Let’s take a look at a few example operations that you can use.
+You can apply all kinds of operations on streaming DataFrames/Datasets – ranging from untyped, SQL-like operations (e.g. `select`, `where`, `groupBy`), to typed RDD-like operations (e.g. `map`, `filter`, `flatMap`). See the SQL programming guide for more details. Let’s take a look at a few example operations that you can use.
 
 #### Basic Operations - Selection, Projection, Aggregation
 
-Most of the common operations on DataFrame/Dataset are supported for streaming. The few operations that are not supported are [discussed later](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#unsupported-operations) in this section.
+Most of the common operations on DataFrame/Dataset are supported for streaming. The few operations that are not supported are discussed later in this section.
 
 * Python
 * Scala
@@ -305,7 +305,7 @@ You may want to check the query plan of the query, as Spark could inject statefu
 
 Aggregations over a sliding event-time window are straightforward with Structured Streaming and are very similar to grouped aggregations. In a grouped aggregation, aggregate values (e.g. counts) are maintained for each unique value in the user-specified grouping column. In case of window-based aggregations, aggregate values are maintained for each window the event-time of a row falls into. Let’s understand this with an illustration.
 
-Imagine our [quick example](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#quick-example) is modified and the stream now contains lines along with the time when the line was generated. Instead of running word counts, we want to count words within 10 minute windows, updating every 5 minutes. That is, word counts in words received between 10 minute windows 12:00 - 12:10, 12:05 - 12:15, 12:10 - 12:20, etc. Note that 12:00 - 12:10 means data that arrived after 12:00 but before 12:10. Now, consider a word that was received at 12:07. This word should increment the counts corresponding to two windows 12:00 - 12:10 and 12:05 - 12:15. So the counts will be indexed by both, the grouping key (i.e. the word) and the window (can be calculated from the event-time).
+Imagine our quick example is modified and the stream now contains lines along with the time when the line was generated. Instead of running word counts, we want to count words within 10 minute windows, updating every 5 minutes. That is, word counts in words received between 10 minute windows 12:00 - 12:10, 12:05 - 12:15, 12:10 - 12:20, etc. Note that 12:00 - 12:10 means data that arrived after 12:00 but before 12:10. Now, consider a word that was received at 12:07. This word should increment the counts corresponding to two windows 12:00 - 12:10 and 12:05 - 12:15. So the counts will be indexed by both, the grouping key (i.e. the word) and the window (can be calculated from the event-time).
 
 The result tables would look something like the following.
 
@@ -523,7 +523,7 @@ streamingDf.join(staticDf, "type")  # inner equi-join with a static DF
 streamingDf.join(staticDf, "type", "left_outer")  # left outer join with a static DF
 ```
 
-Note that stream-static joins are not stateful, so no state management is necessary. However, a few types of stream-static outer joins are not yet supported. These are listed at the [end of this Join section](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#support-matrix-for-joins-in-streaming-queries).
+Note that stream-static joins are not stateful, so no state management is necessary. However, a few types of stream-static outer joins are not yet supported. These are listed at the end of this Join section.
 
 **Stream-stream Joins**
 
@@ -710,7 +710,7 @@ streamingDf \
   .dropDuplicates("guid", "eventTime")
 ```
 
-Specifically for streaming, you can deduplicate records in data streams using a unique identifier in the events, within the time range of watermark. For example, if you set the delay threshold of watermark as “1 hour”, duplicated events which occurred within 1 hour can be correctly deduplicated. (For more details, please refer to the API doc of [dropDuplicatesWithinWatermark](https://spark.apache.org/api/scala/org/apache/spark/sql/Dataset.html#dropDuplicatesWithinWatermark\(\):org.apache.spark.sql.Dataset\[T]).)
+Specifically for streaming, you can deduplicate records in data streams using a unique identifier in the events, within the time range of watermark. For example, if you set the delay threshold of watermark as “1 hour”, duplicated events which occurred within 1 hour can be correctly deduplicated. (For more details, please refer to the API doc of dropDuplicatesWithinWatermark.)
 
 This can be used to deal with use case where event time column cannot be a part of unique identifier, mostly due to the case where event times are somehow different for the same records. (E.g. non-idempotent writer where issuing event time happens at write)
 
@@ -843,7 +843,7 @@ Specifically for built-in HDFS state store provider, users can check the state s
 
 ### Starting Streaming Queries
 
-Once you have defined the final result DataFrame/Dataset, all that is left is for you to start the streaming computation. To do that, you have to use the `DataStreamWriter` ([Scala](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/streaming/DataStreamWriter.html)/[Java](https://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/streaming/DataStreamWriter.html)/[Python](https://spark.apache.org/docs/latest/api/python/reference/pyspark.ss/api/pyspark.sql.streaming.DataStreamWriter.html#pyspark.sql.streaming.DataStreamWriter) docs) returned through `Dataset.writeStream()`. You will have to specify one or more of the following in this interface.
+Once you have defined the final result DataFrame/Dataset, all that is left is for you to start the streaming computation. To do that, you have to use the `DataStreamWriter` (Scala/Java/Python docs) returned through `Dataset.writeStream()`. You will have to specify one or more of the following in this interface.
 
 * _Details of the output sink:_ Data format, location, etc.
 * _Output mode:_ Specify what gets written to the output sink.
@@ -1444,7 +1444,7 @@ As of Spark 2.4, only the following type of queries are supported in the continu
   * Memory sink: Good for debugging.
   * Console sink: Good for debugging. All options are supported. Note that the console will print every checkpoint interval that you have specified in the continuous trigger.
 
-See [Input Sources](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#input-sources) and [Output Sinks](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-sinks) sections for more details on them. While the console sink is good for testing, the end-to-end low-latency processing can be best observed with Kafka as the source and sink, as this allows the engine to process the data and make the results available in the output topic within milliseconds of the input data being available in the input topic.
+See Input Sources and Output Sinks sections for more details on them. While the console sink is good for testing, the end-to-end low-latency processing can be best observed with Kafka as the source and sink, as this allows the engine to process the data and make the results available in the output topic within milliseconds of the input data being available in the input topic.
 
 ### Caveats
 

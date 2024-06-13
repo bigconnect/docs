@@ -9,7 +9,7 @@ curl -v -X PUT -d '"SHUTTING_DOWN"' -H "Content-type: application/json" \
     http://worker:8081/v1/info/state
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 A successful invocation is logged with a `Shutdown requested` message at `INFO` level in the worker server log.
 
@@ -19,7 +19,7 @@ Keep the following aspects in mind:
 * If you have TLS/HTTPS enabled, you have to ensure the worker certificate is CA signed, or trusted by the server calling the shut down endpoint. Otherwise, you can make the call `--insecure`, but that isn’t recommended.
 * The `default` System access control does not allow graceful shutdowns. You can use the `allow-all` system access control, or configure system information rules with the `file` system access control. These configuration must be present on all workers.
 
-### Shutdown behavior# <a href="#shutdown-behavior" id="shutdown-behavior"></a>
+### Shutdown behavior <a href="#shutdown-behavior" id="shutdown-behavior"></a>
 
 Once the API is called, the worker performs the following steps:
 

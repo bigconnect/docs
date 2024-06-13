@@ -2,17 +2,17 @@
 
 These functions provide compatibility with Teradata SQL.
 
-### String functions[#](https://trino.io/docs/current/functions/teradata.html#string-functions) <a href="#string-functions" id="string-functions"></a>
+### String functions <a href="#string-functions" id="string-functions"></a>
 
-char2hexint(_string_) → varchar[#](https://trino.io/docs/current/functions/teradata.html#char2hexint)
+char2hexint(_string_) → varchar
 
 Returns the hexadecimal representation of the UTF-16BE encoding of the string.
 
-index(_string_, _substring_) → bigint#
+index(_string_, _substring_) → bigint
 
 Alias for `strpos()` function.
 
-### Date functions[#](https://trino.io/docs/current/functions/teradata.html#date-functions) <a href="#date-functions" id="date-functions"></a>
+### Date functions <a href="#date-functions" id="date-functions"></a>
 
 The functions in this section use a format string that is compatible with the Teradata datetime functions. The following table, based on the Teradata reference manual, describes the supported format specifiers:
 
@@ -32,14 +32,14 @@ Warning
 
 Case insensitivity is not currently supported. All specifiers must be lowercase.
 
-to\_char(_timestamp_, _format_) → varchar[#](https://trino.io/docs/current/functions/teradata.html#to\_char)
+to\_char(_timestamp_, _format_) → varchar
 
 Formats `timestamp` as a string using `format`.
 
-to\_timestamp(_string_, _format_) → timestamp[#](https://trino.io/docs/current/functions/teradata.html#to\_timestamp)
+to\_timestamp(_string_, _format_) → timestamp
 
 Parses `string` into a `TIMESTAMP` using `format`.
 
-to\_date(_string_, _format_) → date[#](https://trino.io/docs/current/functions/teradata.html#to\_date)
+to\_date(_string_, _format_) → date
 
 Parses `string` into a `DATE` using `format`.

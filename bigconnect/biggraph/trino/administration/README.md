@@ -13,7 +13,7 @@
 * Graceful shutdown
 * Fault-tolerant execution
 
-### Event listeners[#](https://trino.io/docs/current/admin.html#event-listeners) <a href="#event-listeners" id="event-listeners"></a>
+### Event listeners <a href="#event-listeners" id="event-listeners"></a>
 
 * HTTP event listener
 * MySQL event listener

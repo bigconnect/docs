@@ -1,6 +1,6 @@
 # Logical operators
 
-### Logical operators[#](https://trino.io/docs/current/functions/logical.html#id2) <a href="#id2" id="id2"></a>
+### Logical operators <a href="#id2" id="id2"></a>
 
 | Operator | Description                  | Example |
 | -------- | ---------------------------- | ------- |
@@ -8,7 +8,7 @@
 | `OR`     | True if either value is true | a OR b  |
 | `NOT`    | True if the value is false   | NOT a   |
 
-### Effect of NULL on logical operators[#](https://trino.io/docs/current/functions/logical.html#effect-of-null-on-logical-operators) <a href="#effect-of-null-on-logical-operators" id="effect-of-null-on-logical-operators"></a>
+### Effect of NULL on logical operators <a href="#effect-of-null-on-logical-operators" id="effect-of-null-on-logical-operators"></a>
 
 The result of an `AND` comparison may be `NULL` if one or both sides of the expression are `NULL`. If at least one side of an `AND` operator is `FALSE` the expression evaluates to `FALSE`:
 
@@ -20,7 +20,7 @@ SELECT CAST(null AS boolean) AND false; -- false
 SELECT CAST(null AS boolean) AND CAST(null AS boolean); -- null
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The result of an `OR` comparison may be `NULL` if one or both sides of the expression are `NULL`. If at least one side of an `OR` operator is `TRUE` the expression evaluates to `TRUE`:
 
@@ -32,7 +32,7 @@ SELECT CAST(null AS boolean) OR false; -- null
 SELECT CAST(null AS boolean) OR true; -- true
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following truth table demonstrates the handling of `NULL` in `AND` and `OR`:
 
@@ -54,7 +54,7 @@ The logical complement of `NULL` is `NULL` as shown in the following example:
 SELECT NOT CAST(null AS boolean); -- null
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following truth table demonstrates the handling of `NULL` in `NOT`:
 

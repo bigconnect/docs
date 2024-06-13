@@ -11,7 +11,7 @@ environment=production
 host=${ENV:HOSTNAME}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ### `log.format` <a href="#log-format" id="log-format"></a>
 

@@ -1,15 +1,15 @@
 # SHOW STATS
 
-### Synopsis[#](https://trino.io/docs/current/sql/show-stats.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 SHOW STATS FOR table
 SHOW STATS FOR ( query )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/show-stats.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 Returns approximated statistics for the named table or for the results of a query. Returns `NULL` for any statistics that are not populated or unavailable on the data source.
 

@@ -1,6 +1,6 @@
 # CREATE MATERIALIZED VIEW
 
-### Synopsis[#](https://trino.io/docs/current/sql/create-materialized-view.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 CREATE [ OR REPLACE ] MATERIALIZED VIEW
@@ -11,9 +11,7 @@ CREATE [ OR REPLACE ] MATERIALIZED VIEW
 AS query
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-### Description[#](https://trino.io/docs/current/sql/create-materialized-view.html#description) <a href="#description" id="description"></a>
+### Description <a href="#description" id="description"></a>
 
 Create and validate the definition of a new materialized view `view_name` of a SELECT `query`. You need to run the REFRESH MATERIALIZED VIEW statement after the creation to populate the materialized view with data. This materialized view is a physical manifestation of the query results at time of refresh. The data is stored, and can be referenced by future queries.
 
@@ -38,7 +36,7 @@ The optional `WITH` clause is used to define properties for the materialized vie
 
 After successful creation, all metadata about the materialized view is available in a system table.
 
-### Examples[#](https://trino.io/docs/current/sql/create-materialized-view.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 Create a simple materialized view `cancelled_orders` over the `orders` table that only includes cancelled orders. Note that `orderstatus` is a numeric value that is potentially meaningless to a consumer, yet the name of the view clarifies the content:
 
@@ -50,8 +48,6 @@ AS
     WHERE orderstatus = 3;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Create or replace a materialized view `order_totals_by_date` that summarizes `orders` across all orders from all customers:
 
 ```
@@ -61,8 +57,6 @@ AS
     FROM orders
     GROUP BY orderdate;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 Create a materialized view for a catalog using the Iceberg connector, with a comment and partitioning on two fields in the storage:
 
@@ -77,15 +71,11 @@ AS
     ON o.custkey = c.custkey;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Set multiple properties:
 
 ```
 WITH ( format = 'ORC', partitioning = ARRAY['_date'] )
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 Show defined materialized view properties for all catalogs:
 
@@ -93,17 +83,13 @@ Show defined materialized view properties for all catalogs:
 SELECT * FROM system.metadata.materialized_view_properties;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Show metadata about the materialized views in all catalogs:
 
 ```
 SELECT * FROM system.metadata.materialized_views;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 * DROP MATERIALIZED VIEW
 * SHOW CREATE MATERIALIZED VIEW

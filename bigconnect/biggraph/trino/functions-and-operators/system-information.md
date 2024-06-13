@@ -2,6 +2,6 @@
 
 Functions providing information about the Trino cluster system environment. More information is available by querying the various schemas and tables exposed by the System connector.
 
-version() → varchar[#](https://trino.io/docs/current/functions/system.html#version)
+version() → varchar
 
 Returns the Trino version used on the cluster. Equivalent to the value of the `node_version` column in the `system.runtime.nodes` table.

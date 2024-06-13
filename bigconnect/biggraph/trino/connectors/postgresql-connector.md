@@ -2,14 +2,14 @@
 
 The PostgreSQL connector allows querying and creating tables in an external [PostgreSQL](https://www.postgresql.org/) database. This can be used to join data between different systems like PostgreSQL and Hive, or between different PostgreSQL instances.
 
-### Requirements[#](https://trino.io/docs/current/connector/postgresql.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To connect to PostgreSQL, you need:
 
 * PostgreSQL 11.x or higher.
 * Network access from the Trino coordinator and workers to PostgreSQL. Port 5432 is the default port.
 
-### Configuration[#](https://trino.io/docs/current/connector/postgresql.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 The connector can query a database on a PostgreSQL server. Create a catalog properties file that specifies the PostgreSQL connector by setting the `connector.name` to `postgresql`.
 
@@ -22,7 +22,7 @@ connection-user=root
 connection-password=secret
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `connection-url` defines the connection information and parameters to pass to the PostgreSQL JDBC driver. The parameters for the URL are available in the [PostgreSQL JDBC driver documentation](https://jdbc.postgresql.org/documentation/use/#connecting-to-the-database). Some parameters can have adverse effects on the connector behavior or not work with the connector.
 
@@ -51,7 +51,7 @@ For example, with version 42 of the PostgreSQL JDBC driver, enable TLS by append
 connection-url=jdbc:postgresql://example.net:5432/database?ssl=true
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 For more information on TLS configuration options, see the [PostgreSQL JDBC driver documentation](https://jdbc.postgresql.org/documentation/use/#connecting-to-the-database).
 
@@ -64,25 +64,25 @@ The connector can provide credentials for the data source connection in multiple
 * in a key store file
 * as extra credentials set when connecting to Trino
 
-You can use [secrets](https://trino.io/docs/current/security/secrets.html) to avoid storing sensitive values in the catalog properties files.
+You can use secrets to avoid storing sensitive values in the catalog properties files.
 
 The following table describes configuration properties for connection credentials:
 
-| Property name                           | Description                                                                                                                                                                                            |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `credential-provider.type`              | Type of the credential provider. Must be one of `INLINE`, `FILE`, or `KEYSTORE`; defaults to `INLINE`.                                                                                                 |
-| `connection-user`                       | Connection user name.                                                                                                                                                                                  |
-| `connection-password`                   | Connection password.                                                                                                                                                                                   |
-| `user-credential-name`                  | Name of the extra credentials property, whose value to use as the user name. See `extraCredentials` in [Parameter reference](https://trino.io/docs/current/client/jdbc.html#jdbc-parameter-reference). |
-| `password-credential-name`              | Name of the extra credentials property, whose value to use as the password.                                                                                                                            |
-| `connection-credential-file`            | Location of the properties file where credentials are present. It must contain the `connection-user` and `connection-password` properties.                                                             |
-| `keystore-file-path`                    | The location of the Java Keystore file, from which to read credentials.                                                                                                                                |
-| `keystore-type`                         | File format of the keystore file, for example `JKS` or `PEM`.                                                                                                                                          |
-| `keystore-password`                     | Password for the key store.                                                                                                                                                                            |
-| `keystore-user-credential-name`         | Name of the key store entity to use as the user name.                                                                                                                                                  |
-| `keystore-user-credential-password`     | Password for the user name key store entity.                                                                                                                                                           |
-| `keystore-password-credential-name`     | Name of the key store entity to use as the password.                                                                                                                                                   |
-| `keystore-password-credential-password` | Password for the password key store entity.                                                                                                                                                            |
+| Property name                           | Description                                                                                                                                |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `credential-provider.type`              | Type of the credential provider. Must be one of `INLINE`, `FILE`, or `KEYSTORE`; defaults to `INLINE`.                                     |
+| `connection-user`                       | Connection user name.                                                                                                                      |
+| `connection-password`                   | Connection password.                                                                                                                       |
+| `user-credential-name`                  | Name of the extra credentials property, whose value to use as the user name. See `extraCredentials` in Parameter reference.                |
+| `password-credential-name`              | Name of the extra credentials property, whose value to use as the password.                                                                |
+| `connection-credential-file`            | Location of the properties file where credentials are present. It must contain the `connection-user` and `connection-password` properties. |
+| `keystore-file-path`                    | The location of the Java Keystore file, from which to read credentials.                                                                    |
+| `keystore-type`                         | File format of the keystore file, for example `JKS` or `PEM`.                                                                              |
+| `keystore-password`                     | Password for the key store.                                                                                                                |
+| `keystore-user-credential-name`         | Name of the key store entity to use as the user name.                                                                                      |
+| `keystore-user-credential-password`     | Password for the user name key store entity.                                                                                               |
+| `keystore-password-credential-name`     | Name of the key store entity to use as the password.                                                                                       |
+| `keystore-password-credential-password` | Password for the password key store entity.                                                                                                |
 
 #### Multiple PostgreSQL databases or servers[#](https://trino.io/docs/current/connector/postgresql.html#multiple-postgresql-databases-or-servers) <a href="#multiple-postgresql-databases-or-servers" id="multiple-postgresql-databases-or-servers"></a>
 
@@ -110,7 +110,7 @@ The following table describes general catalog configuration properties for the c
 | `dynamic-filtering.enabled`                                 | Push down dynamic filters into JDBC queries. Defaults to `true`.                                                                                                                                                                                                                                |
 | `dynamic-filtering.wait-timeout`                            | Maximum duration for which Trino waits for dynamic filters to be collected from the build side of joins before starting a JDBC query. Using a large timeout can potentially result in more detailed dynamic filters. However, it can also increase latency for some queries. Defaults to `20s`. |
 
-#### Appending query metadata[#](https://trino.io/docs/current/connector/postgresql.html#appending-query-metadata) <a href="#appending-query-metadata" id="appending-query-metadata"></a>
+#### Appending query metadata <a href="#appending-query-metadata" id="appending-query-metadata"></a>
 
 The optional parameter `query.comment-format` allows you to configure a SQL comment that is sent to the datasource with each query. The format of this comment can contain any characters and the following metadata:
 
@@ -219,17 +219,17 @@ case-insensitive-name-mapping.refresh-period=30s
 
 
 
-#### Non-transactional INSERT[#](https://trino.io/docs/current/connector/postgresql.html#non-transactional-insert) <a href="#non-transactional-insert" id="non-transactional-insert"></a>
+#### Non-transactional INSERT <a href="#non-transactional-insert" id="non-transactional-insert"></a>
 
 The connector supports adding rows using INSERT statements. By default, data insertion is performed by writing data to a temporary table. You can skip this step to improve performance and write directly to the target table. Set the `insert.non-transactional-insert.enabled` catalog property or the corresponding `non_transactional_insert` catalog session property to `true`.
 
 Note that with this property enabled, data can be corrupted in rare cases where exceptions occur during the insert operation. With transactions disabled, no rollback can be performed.
 
-### Type mapping[#](https://trino.io/docs/current/connector/postgresql.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 Because Trino and PostgreSQL each support types that the other does not, this connector modifies some types when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
-#### PostgreSQL type to Trino type mapping[#](https://trino.io/docs/current/connector/postgresql.html#postgresql-type-to-trino-type-mapping) <a href="#postgresql-type-to-trino-type-mapping" id="postgresql-type-to-trino-type-mapping"></a>
+#### PostgreSQL type to Trino type mapping <a href="#postgresql-type-to-trino-type-mapping" id="postgresql-type-to-trino-type-mapping"></a>
 
 The connector maps PostgreSQL types to the corresponding Trino types following this table:
 
@@ -260,7 +260,7 @@ The connector maps PostgreSQL types to the corresponding Trino types following t
 
 No other types are supported.
 
-#### Trino type to PostgreSQL type mapping[#](https://trino.io/docs/current/connector/postgresql.html#trino-type-to-postgresql-type-mapping) <a href="#trino-type-to-postgresql-type-mapping" id="trino-type-to-postgresql-type-mapping"></a>
+#### Trino type to PostgreSQL type mapping <a href="#trino-type-to-postgresql-type-mapping" id="trino-type-to-postgresql-type-mapping"></a>
 
 The connector maps Trino types to the corresponding PostgreSQL types following this table:
 
@@ -286,13 +286,13 @@ The connector maps Trino types to the corresponding PostgreSQL types following t
 
 No other types are supported.
 
-#### Decimal type handling[#](https://trino.io/docs/current/connector/postgresql.html#decimal-type-handling) <a href="#decimal-type-handling" id="decimal-type-handling"></a>
+#### Decimal type handling <a href="#decimal-type-handling" id="decimal-type-handling"></a>
 
 `DECIMAL` types with unspecified precision or scale are ignored unless the `decimal-mapping` configuration property or the `decimal_mapping` session property is set to `allow_overflow`. Then such types are mapped to a Trino `DECIMAL` with a default precision of 38 and default scale of 0. To change the scale of the resulting type, use the `decimal-default-scale` configuration property or the `decimal_default_scale` session property. The precision is always 38.
 
 By default, values that require rounding or truncation to fit will cause a failure at runtime. This behavior is controlled via the `decimal-rounding-mode` configuration property or the `decimal_rounding_mode` session property, which can be set to `UNNECESSARY` (the default), `UP`, `DOWN`, `CEILING`, `FLOOR`, `HALF_UP`, `HALF_DOWN`, or `HALF_EVEN` (see [RoundingMode](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/RoundingMode.html#enum.constant.summary)).
 
-#### Array type handling[#](https://trino.io/docs/current/connector/postgresql.html#array-type-handling) <a href="#array-type-handling" id="array-type-handling"></a>
+#### Array type handling <a href="#array-type-handling" id="array-type-handling"></a>
 
 The PostgreSQL array implementation does not support fixed dimensions whereas Trino support only arrays with fixed dimensions. You can configure how the PostgreSQL connector handles arrays with the `postgresql.array-mapping` configuration property in your catalog file or the `array_mapping` session property. The following values are accepted for this property:
 
@@ -300,7 +300,7 @@ The PostgreSQL array implementation does not support fixed dimensions whereas Tr
 * `AS_ARRAY`: array columns are interpreted as Trino `ARRAY` type, for array columns with fixed dimensions.
 * `AS_JSON`: array columns are interpreted as Trino `JSON` type, with no constraint on dimensions.
 
-#### Type mapping configuration properties[#](https://trino.io/docs/current/connector/postgresql.html#type-mapping-configuration-properties) <a href="#type-mapping-configuration-properties" id="type-mapping-configuration-properties"></a>
+#### Type mapping configuration properties <a href="#type-mapping-configuration-properties" id="type-mapping-configuration-properties"></a>
 
 The following properties can be used to configure how data types from the connected data source are mapped to Trino data types and how the metadata is cached in Trino.
 
@@ -309,7 +309,7 @@ The following properties can be used to configure how data types from the connec
 | `unsupported-type-handling`    | <p>Configure how unsupported column data types are handled:</p><ul><li><code>IGNORE</code>, column is not accessible.</li><li><code>CONVERT_TO_VARCHAR</code>, column is converted to unbounded <code>VARCHAR</code>.</li></ul><p>The respective catalog session property is <code>unsupported_type_handling</code>.</p> | `IGNORE`      |
 | `jdbc-types-mapped-to-varchar` | Allow forced mapping of comma separated lists of data types to convert to unbounded `VARCHAR`                                                                                                                                                                                                                            |               |
 
-### Querying PostgreSQL[#](https://trino.io/docs/current/connector/postgresql.html#querying-postgresql) <a href="#querying-postgresql" id="querying-postgresql"></a>
+### Querying PostgreSQL <a href="#querying-postgresql" id="querying-postgresql"></a>
 
 The PostgreSQL connector provides a schema for every PostgreSQL schema. You can see the available PostgreSQL schemas by running `SHOW SCHEMAS`:
 
@@ -346,7 +346,7 @@ SELECT * FROM example.web.clicks;
 
 If you used a different name for your catalog properties file, use that catalog name instead of `example` in the above examples.
 
-### SQL support[#](https://trino.io/docs/current/connector/postgresql.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides read access and write access to data and metadata in PostgreSQL. In addition to the globally available and read operation statements, the connector supports the following features:
 
@@ -356,7 +356,7 @@ The connector provides read access and write access to data and metadata in Post
 * TRUNCATE
 * Schema and table management
 
-#### UPDATE# <a href="#update" id="update"></a>
+#### UPDATE <a href="#update" id="update"></a>
 
 Only `UPDATE` statements with constant assignments and predicates are supported. For example, the following statement is supported because the values assigned are constants:
 
@@ -364,7 +364,7 @@ Only `UPDATE` statements with constant assignments and predicates are supported.
 UPDATE table SET col1 = 1 WHERE col3 = 1
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Arithmetic expressions, function calls, and other non-constant `UPDATE` statements are not supported. For example, the following statement is not supported because arithmetic expressions cannot be used with the `SET` command:
 
@@ -372,7 +372,7 @@ Arithmetic expressions, function calls, and other non-constant `UPDATE` statemen
 UPDATE table SET col1 = col2 + 2 WHERE col3 = 1
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `=`, `!=`, `>`, `<`, `>=`, `<=`, `IN`, `NOT IN` operators are supported in predicates. The following statement is not supported because the `AND` operator cannot be used in predicates:
 
@@ -380,7 +380,7 @@ The `=`, `!=`, `>`, `<`, `>=`, `<=`, `IN`, `NOT IN` operators are supported in p
 UPDATE table SET col1 = 1 WHERE col3 = 1 AND col2 = 3
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 All column values of a table row cannot be updated simultaneously. For a three column table, the following statement is not supported:
 
@@ -388,13 +388,13 @@ All column values of a table row cannot be updated simultaneously. For a three c
 UPDATE table SET col1 = 1, col2 = 2, col3 = 3 WHERE col3 = 1
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### SQL DELETE[#](https://trino.io/docs/current/connector/postgresql.html#sql-delete) <a href="#sql-delete" id="sql-delete"></a>
+
+#### SQL DELETE <a href="#sql-delete" id="sql-delete"></a>
 
 If a `WHERE` clause is specified, the `DELETE` operation only works if the predicate in the clause can be fully pushed down to the data source.
 
-#### ALTER TABLE RENAME TO[#](https://trino.io/docs/current/connector/postgresql.html#alter-table-rename-to) <a href="#alter-table-rename-to" id="alter-table-rename-to"></a>
+#### ALTER TABLE RENAME TO <a href="#alter-table-rename-to" id="alter-table-rename-to"></a>
 
 The connector does not support renaming tables across multiple schemas. For example, the following statement is supported:
 
@@ -402,7 +402,7 @@ The connector does not support renaming tables across multiple schemas. For exam
 ALTER TABLE example.schema_one.table_one RENAME TO example.schema_one.table_two
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following statement attempts to rename a table across schemas, and therefore is not supported:
 
@@ -410,21 +410,19 @@ The following statement attempts to rename a table across schemas, and therefore
 ALTER TABLE example.schema_one.table_one RENAME TO example.schema_two.table_two
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### ALTER SCHEMA[#](https://trino.io/docs/current/connector/postgresql.html#alter-schema) <a href="#alter-schema" id="alter-schema"></a>
+#### ALTER SCHEMA <a href="#alter-schema" id="alter-schema"></a>
 
 The connector supports renaming a schema with the `ALTER SCHEMA RENAME` statement. `ALTER SCHEMA SET AUTHORIZATION` is not supported.
 
-### Fault-tolerant execution support[#](https://trino.io/docs/current/connector/postgresql.html#fault-tolerant-execution-support) <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
+### Fault-tolerant execution support <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
 
 The connector supports Fault-tolerant execution of query processing. Read and write operations are both supported with any retry policy.
 
-### Table functions[#](https://trino.io/docs/current/connector/postgresql.html#table-functions) <a href="#table-functions" id="table-functions"></a>
+### Table functions <a href="#table-functions" id="table-functions"></a>
 
 The connector provides specific table functions to access PostgreSQL.
 
-#### `query(varchar) -> table`[#](https://trino.io/docs/current/connector/postgresql.html#query-varchar-table) <a href="#query-varchar-table" id="query-varchar-table"></a>
+#### `query(varchar) -> table` <a href="#query-varchar-table" id="query-varchar-table"></a>
 
 The `query` function allows you to query the underlying database directly. It requires syntax native to PostgreSQL, because the full query is pushed down and processed in PostgreSQL. This can be useful for accessing native features which are not available in Trino or for improving query performance in situations where running a query natively may be faster.
 
@@ -446,7 +444,7 @@ FROM
   );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 As a practical example, you can leverage [frame exclusion from PostgresQL](https://www.postgresql.org/docs/current/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS) when using window functions:
 
@@ -480,17 +478,17 @@ FROM
   );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note
 
 The query engine does not preserve the order of the results of this function. If the passed query contains an `ORDER BY` clause, the function result may not be ordered as expected.
 
-### Performance[#](https://trino.io/docs/current/connector/postgresql.html#performance) <a href="#performance" id="performance"></a>
+### Performance <a href="#performance" id="performance"></a>
 
 The connector includes a number of performance improvements, detailed in the following sections.
 
-#### Table statistics[#](https://trino.io/docs/current/connector/postgresql.html#table-statistics) <a href="#table-statistics" id="table-statistics"></a>
+#### Table statistics <a href="#table-statistics" id="table-statistics"></a>
 
 The PostgreSQL connector can use table and column statistics for cost based optimizations, to improve query processing performance based on the actual data in the data source.
 
@@ -502,11 +500,11 @@ To collect statistics for a table, execute the following statement in PostgreSQL
 ANALYZE table_schema.table_name;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Refer to PostgreSQL documentation for additional `ANALYZE` options.
 
-#### Pushdown[#](https://trino.io/docs/current/connector/postgresql.html#pushdown) <a href="#pushdown" id="pushdown"></a>
+#### Pushdown <a href="#pushdown" id="pushdown"></a>
 
 The connector supports pushdown for a number of operations:
 
@@ -537,7 +535,7 @@ Note
 
 The connector performs pushdown where performance may be improved, but in order to preserve correctness an operation may not be pushed down. When pushdown of an operation may result in better performance but risks correctness, the connector prioritizes correctness.
 
-**Cost-based join pushdown**[**#**](https://trino.io/docs/current/connector/postgresql.html#cost-based-join-pushdown)
+**Cost-based join pushdown**
 
 The connector supports cost-based Join pushdown to make intelligent decisions about whether to push down a join operation to the data source.
 
@@ -550,7 +548,7 @@ The following table describes catalog configuration properties for join pushdown
 | `join-pushdown.enabled`  | Enable join pushdown. Equivalent catalog session property is `join_pushdown_enabled`.                                                                                                                                                                                                                                                                                                               | `true`        |
 | `join-pushdown.strategy` | Strategy used to evaluate whether join operations are pushed down. Set to `AUTOMATIC` to enable cost-based join pushdown, or `EAGER` to push down joins whenever possible. Note that `EAGER` can push down joins even when table statistics are unavailable, which may result in degraded query performance. Because of this, `EAGER` is only recommended for testing and troubleshooting purposes. | `AUTOMATIC`   |
 
-#### Predicate pushdown support[#](https://trino.io/docs/current/connector/postgresql.html#predicate-pushdown-support) <a href="#predicate-pushdown-support" id="predicate-pushdown-support"></a>
+#### Predicate pushdown support <a href="#predicate-pushdown-support" id="predicate-pushdown-support"></a>
 
 Predicates are pushed down for most types, including `UUID` and temporal types, such as `DATE`.
 
@@ -566,6 +564,6 @@ SELECT * FROM nation WHERE name != 'CANADA';
 SELECT * FROM nation WHERE name = 'CANADA';
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 There is experimental support to enable pushdown of range predicates on columns with character string types which can be enabled by setting the `postgresql.experimental.enable-string-pushdown-with-collate` catalog configuration property or the corresponding `enable_string_pushdown_with_collate` session property to `true`. Enabling this configuration will make the predicate of all the queries in the above example get pushed down.

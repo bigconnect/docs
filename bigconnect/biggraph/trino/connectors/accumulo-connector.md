@@ -2,7 +2,7 @@
 
 The Accumulo connector supports reading and writing data from [Apache Accumulo](https://accumulo.apache.org/). Please read this page thoroughly to understand the capabilities and features of the connector.
 
-### Installing the iterator dependency[#](https://trino.io/docs/current/connector/accumulo.html#installing-the-iterator-dependency) <a href="#installing-the-iterator-dependency" id="installing-the-iterator-dependency"></a>
+### Installing the iterator dependency <a href="#installing-the-iterator-dependency" id="installing-the-iterator-dependency"></a>
 
 The Accumulo connector uses custom Accumulo iterators in order to push various information in SQL predicate clauses to Accumulo for server-side filtering, known as _predicate pushdown_. In order for the server-side iterators to work, you need to add the `trino-accumulo-iterators` JAR file to Accumulo’s `lib/ext` directory on each TabletServer node.
 
@@ -34,7 +34,7 @@ accumulo.password=password
 
 Replace the `accumulo.xxx` properties as required.
 
-### Configuration variables[#](https://trino.io/docs/current/connector/accumulo.html#configuration-variables) <a href="#configuration-variables" id="configuration-variables"></a>
+### Configuration variables <a href="#configuration-variables" id="configuration-variables"></a>
 
 | Property name                                | Default value     | Required | Description                                                                      |
 | -------------------------------------------- | ----------------- | -------- | -------------------------------------------------------------------------------- |
@@ -162,7 +162,7 @@ You can also drop tables using `DROP TABLE`. This command drops both metadata an
 DROP TABLE example_schema.scientists;
 ```
 
-### Indexing columns[#](https://trino.io/docs/current/connector/accumulo.html#indexing-columns) <a href="#indexing-columns" id="indexing-columns"></a>
+### Indexing columns <a href="#indexing-columns" id="indexing-columns"></a>
 
 Internally, the connector creates an Accumulo `Range` and packs it in a split. This split gets passed to a Trino Worker to read the data from the `Range` via a `BatchScanner`. When issuing a query that results in a full table scan, each Trino Worker gets a single `Range` that maps to a single tablet of the table. When issuing a query with a predicate (i.e. `WHERE x = 10` clause), Trino passes the values within the predicate (`10`) to the connector so it can use this information to scan less data. When the Accumulo row ID is used as part of the predicate clause, this narrows down the `Range` lookup to quickly retrieve a subset of data from Accumulo.
 
@@ -226,11 +226,11 @@ SELECT * FROM example_schema.scientists WHERE age = 109;
 (1 row)
 ```
 
-### Loading data[#](https://trino.io/docs/current/connector/accumulo.html#loading-data) <a href="#loading-data" id="loading-data"></a>
+### Loading data <a href="#loading-data" id="loading-data"></a>
 
 The Accumulo connector supports loading data via INSERT statements, however this method tends to be low-throughput and should not be relied on when throughput is a concern.
 
-### External tables[#](https://trino.io/docs/current/connector/accumulo.html#external-tables) <a href="#external-tables" id="external-tables"></a>
+### External tables <a href="#external-tables" id="external-tables"></a>
 
 By default, the tables created using SQL statements via Trino are _internal_ tables, that is both the Trino table metadata and the Accumulo tables are managed by Trino. When you create an internal table, the Accumulo table is created as well. You receive an error if the Accumulo table already exists. When an internal table is dropped via Trino, the Accumulo table, and any index tables, are dropped as well.
 
@@ -515,11 +515,11 @@ WITH (
 );
 ```
 
-### Type mapping[#](https://trino.io/docs/current/connector/accumulo.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 Because Trino and Accumulo each support types that the other does not, this connector modifies some types when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
-#### Accumulo type to Trino type mapping[#](https://trino.io/docs/current/connector/accumulo.html#accumulo-type-to-trino-type-mapping) <a href="#accumulo-type-to-trino-type-mapping" id="accumulo-type-to-trino-type-mapping"></a>
+#### Accumulo type to Trino type mapping <a href="#accumulo-type-to-trino-type-mapping" id="accumulo-type-to-trino-type-mapping"></a>
 
 The connector maps Accumulo types to the corresponding Trino types following this table:
 
@@ -540,7 +540,7 @@ The connector maps Accumulo types to the corresponding Trino types following thi
 
 No other types are supported.
 
-#### Trino type to Accumulo type mapping[#](https://trino.io/docs/current/connector/accumulo.html#trino-type-to-accumulo-type-mapping) <a href="#trino-type-to-accumulo-type-mapping" id="trino-type-to-accumulo-type-mapping"></a>
+#### Trino type to Accumulo type mapping <a href="#trino-type-to-accumulo-type-mapping" id="trino-type-to-accumulo-type-mapping"></a>
 
 The connector maps Trino types to the corresponding Trino type to Accumulo type mapping types following this table:
 
@@ -561,7 +561,7 @@ The connector maps Trino types to the corresponding Trino type to Accumulo type 
 
 No other types are supported
 
-### SQL support[#](https://trino.io/docs/current/connector/accumulo.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides read and write access to data and metadata in the Accumulo database. In addition to the globally available and read operation statements, the connector supports the following features:
 

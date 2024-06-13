@@ -4,7 +4,7 @@ Trino includes a native implementation to access [Google Cloud Storage (GCS)](ht
 
 Enable the native implementation with `fs.native-gcs.enabled=true` in your catalog properties file.
 
-### General configuration[#](https://trino.io/docs/current/object-storage/file-system-gcs.html#general-configuration) <a href="#general-configuration" id="general-configuration"></a>
+### General configuration <a href="#general-configuration" id="general-configuration"></a>
 
 Use the following properties to configure general aspects of Google Cloud Storage file system support:
 
@@ -22,7 +22,7 @@ Use the following properties to configure general aspects of Google Cloud Storag
 | `gcs.page-size`                   | Maximum number of blobs to return per page. Defaults to 100.                                                                                                                         |
 | `gcs.batch-size`                  | Number of blobs to delete per batch. Defaults to 100. [Recommended batch size](https://cloud.google.com/storage/docs/batch) is 100.                                                  |
 
-### Authentication[#](https://trino.io/docs/current/object-storage/file-system-gcs.html#authentication) <a href="#authentication" id="authentication"></a>
+### Authentication <a href="#authentication" id="authentication"></a>
 
 Use one of the following properties to configure the authentication to Google Cloud Storage:
 

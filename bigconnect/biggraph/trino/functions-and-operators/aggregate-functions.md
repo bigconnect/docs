@@ -4,7 +4,7 @@ Aggregate functions operate on a set of values to compute a single result.
 
 Except for `count()`, `count_if()`, `max_by()`, `min_by()` and `approx_distinct()`, all of these aggregate functions ignore null values and return null for no input rows or when all values are null. For example, `sum()` returns null rather than zero and `avg()` does not include null values in the count. The `coalesce` function can be used to convert null into zero.
 
-### Ordering during aggregation[#](https://trino.io/docs/current/functions/aggregate.html#ordering-during-aggregation) <a href="#ordering-during-aggregation" id="ordering-during-aggregation"></a>
+### Ordering during aggregation <a href="#ordering-during-aggregation" id="ordering-during-aggregation"></a>
 
 Some aggregate functions such as `array_agg()` produce different results depending on the order of input values. This ordering can be specified by writing an ORDER BY clause within the aggregate function:
 
@@ -13,9 +13,9 @@ array_agg(x ORDER BY y DESC)
 array_agg(x ORDER BY x, y, z)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Filtering during aggregation[#](https://trino.io/docs/current/functions/aggregate.html#filtering-during-aggregation) <a href="#filtering-during-aggregation" id="filtering-during-aggregation"></a>
+
+### Filtering during aggregation <a href="#filtering-during-aggregation" id="filtering-during-aggregation"></a>
 
 The `FILTER` keyword can be used to remove rows from aggregation processing with a condition expressed using a `WHERE` clause. This is evaluated for each row before it is used in the aggregation and is supported for all aggregate functions.
 
@@ -23,7 +23,7 @@ The `FILTER` keyword can be used to remove rows from aggregation processing with
 aggregate_function(...) FILTER (WHERE <condition>)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 A common and very useful example is to use `FILTER` to remove nulls from consideration when using `array_agg`:
 
@@ -32,7 +32,7 @@ SELECT array_agg(name) FILTER (WHERE name IS NOT NULL)
 FROM region;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 As another example, imagine you want to add a condition on the count for Iris flowers, modifying the following query:
 
@@ -43,7 +43,7 @@ FROM iris
 GROUP BY species;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 species    | count
@@ -53,7 +53,7 @@ virginica  |   50
 versicolor |   50
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If you just use a normal `WHERE` statement you lose information:
 
@@ -65,7 +65,7 @@ WHERE petal_length_cm > 4
 GROUP BY species;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 species    | count
@@ -74,7 +74,7 @@ virginica  |   50
 versicolor |   34
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Using a filter you retain all information:
 
@@ -85,7 +85,7 @@ FROM iris
 GROUP BY species;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 species    | count
@@ -95,11 +95,11 @@ setosa     |    0
 versicolor |   34
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### General aggregate functions[#](https://trino.io/docs/current/functions/aggregate.html#general-aggregate-functions) <a href="#general-aggregate-functions" id="general-aggregate-functions"></a>
 
-any\_value(_x_) → \[same as input][#](https://trino.io/docs/current/functions/aggregate.html#any\_value)
+### General aggregate functions <a href="#general-aggregate-functions" id="general-aggregate-functions"></a>
+
+any\_value(_x_) → \[same as input]
 
 Returns an arbitrary non-null value `x`, if one exists. `x` can be any valid expression. This allows you to return values from columns that are not directly part of the aggregation, inluding expressions using these columns, in a query.
 
@@ -115,15 +115,15 @@ GROUP BY c.custkey;
 ORDER BY spend;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)arbitrary(_x_) → \[same as input][#](https://trino.io/docs/current/functions/aggregate.html#arbitrary)
+arbitrary(_x_) → \[same as input]
 
-Returns an arbitrary non-null value of `x`, if one exists. Identical to [`any_value()`](https://trino.io/docs/current/functions/aggregate.html#any\_value).
+Returns an arbitrary non-null value of `x`, if one exists. Identical to `any_value()`.
 
 array\_agg(_x_) → array<\[same as input]>[#](https://trino.io/docs/current/functions/aggregate.html#array\_agg)
 
 Returns an array created from the input `x` elements.
 
-avg(_x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#avg)
+avg(_x_) → double
 
 Returns the average (arithmetic mean) of all input values.
 
@@ -131,19 +131,19 @@ avg(_time interval type_) → time interval type
 
 Returns the average interval length of all input values.
 
-bool\_and(_boolean_) → boolean[#](https://trino.io/docs/current/functions/aggregate.html#bool\_and)
+bool\_and(_boolean_) → boolean
 
 Returns `TRUE` if every input value is `TRUE`, otherwise `FALSE`.
 
-bool\_or(_boolean_) → boolean[#](https://trino.io/docs/current/functions/aggregate.html#bool\_or)
+bool\_or(_boolean_) → boolean
 
 Returns `TRUE` if any input value is `TRUE`, otherwise `FALSE`.
 
-checksum(_x_) → varbinary[#](https://trino.io/docs/current/functions/aggregate.html#checksum)
+checksum(_x_) → varbinary
 
 Returns an order-insensitive checksum of the given values.
 
-count(_\*_) → bigint[#](https://trino.io/docs/current/functions/aggregate.html#count)
+count(_\*_) → bigint
 
 Returns the number of input rows.
 
@@ -155,15 +155,15 @@ count\_if(_x_) → bigint[#](https://trino.io/docs/current/functions/aggregate.h
 
 Returns the number of `TRUE` input values. This function is equivalent to `count(CASE WHEN x THEN 1 END)`.
 
-every(_boolean_) → boolean[#](https://trino.io/docs/current/functions/aggregate.html#every)
+every(_boolean_) → boolean
 
 This is an alias for `bool_and()`.
 
-geometric\_mean(_x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#geometric\_mean)
+geometric\_mean(_x_) → double
 
 Returns the geometric mean of all input values.
 
-listagg(_x_, _separator_) → varchar[#](https://trino.io/docs/current/functions/aggregate.html#listagg)
+listagg(_x_, _separator_) → varchar
 
 Returns the concatenated input values, separated by the `separator` string.
 
@@ -174,8 +174,6 @@ LISTAGG( expression [, separator] [ON OVERFLOW overflow_behaviour])
     WITHIN GROUP (ORDER BY sort_item, [...]) [FILTER (WHERE condition)]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 If `separator` is not specified, the empty string will be used as `separator`.
 
 In its simplest form the function looks like:
@@ -185,8 +183,6 @@ SELECT listagg(value, ',') WITHIN GROUP (ORDER BY value) csv_value
 FROM (VALUES 'a', 'c', 'b') t(value);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 and results in:
 
 ```
@@ -195,8 +191,6 @@ csv_value
 'a,b,c'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The overflow behaviour is by default to throw an error in case that the length of the output of the function exceeds `1048576` bytes:
 
 ```
@@ -204,16 +198,12 @@ SELECT listagg(value, ',' ON OVERFLOW ERROR) WITHIN GROUP (ORDER BY value) csv_v
 FROM (VALUES 'a', 'b', 'c') t(value);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 There exists also the possibility to truncate the output `WITH COUNT` or `WITHOUT COUNT` of omitted non-null values in case that the length of the output of the function exceeds `1048576` bytes:
 
 ```
 SELECT listagg(value, ',' ON OVERFLOW TRUNCATE '.....' WITH COUNT) WITHIN GROUP (ORDER BY value)
 FROM (VALUES 'a', 'b', 'c') t(value);
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 If not specified, the truncation filler string is by default `'...'`.
 
@@ -230,8 +220,6 @@ GROUP BY id
 ORDER BY id;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 results in:
 
 ```
@@ -240,8 +228,6 @@ results in:
  100 | a
  200 | b,c
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 This aggregation function supports filtering during aggregation for scenarios where the aggregation for the data not matching the filter condition still needs to show up in the output:
 
@@ -262,8 +248,6 @@ GROUP BY country
 ORDER BY country;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 results in:
 
 ```
@@ -274,11 +258,9 @@ results in:
  Poland  | NULL
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 The current implementation of `listagg` function does not support window frames.
 
-max(_x_) → \[same as input][#](https://trino.io/docs/current/functions/aggregate.html#max)
+max(_x_) → \[same as input]
 
 Returns the maximum value of all input values.
 
@@ -286,7 +268,7 @@ max(_x_, _n_) → array<\[same as x]>
 
 Returns `n` largest values of all input values of `x`.
 
-max\_by(_x_, _y_) → \[same as x][#](https://trino.io/docs/current/functions/aggregate.html#max\_by)
+max\_by(_x_, _y_) → \[same as x]
 
 Returns the value of `x` associated with the maximum value of `y` over all input values.
 
@@ -294,7 +276,7 @@ max\_by(_x_, _y_, _n_) → array<\[same as x]>
 
 Returns `n` values of `x` associated with the `n` largest of all input values of `y` in descending order of `y`.
 
-min(_x_) → \[same as input][#](https://trino.io/docs/current/functions/aggregate.html#min)
+min(_x_) → \[same as input]
 
 Returns the minimum value of all input values.
 
@@ -310,31 +292,31 @@ min\_by(_x_, _y_, _n_) → array<\[same as x]>
 
 Returns `n` values of `x` associated with the `n` smallest of all input values of `y` in ascending order of `y`.
 
-sum(_x_) → \[same as input][#](https://trino.io/docs/current/functions/aggregate.html#sum)
+sum(_x_) → \[same as input]
 
 Returns the sum of all input values.
 
-### Bitwise aggregate functions[#](https://trino.io/docs/current/functions/aggregate.html#bitwise-aggregate-functions) <a href="#bitwise-aggregate-functions" id="bitwise-aggregate-functions"></a>
+### Bitwise aggregate functions <a href="#bitwise-aggregate-functions" id="bitwise-aggregate-functions"></a>
 
-bitwise\_and\_agg(_x_) → bigint[#](https://trino.io/docs/current/functions/aggregate.html#bitwise\_and\_agg)
+bitwise\_and\_agg(_x_) → bigint
 
 Returns the bitwise AND of all input values in 2’s complement representation.
 
-bitwise\_or\_agg(_x_) → bigint[#](https://trino.io/docs/current/functions/aggregate.html#bitwise\_or\_agg)
+bitwise\_or\_agg(_x_) → bigint
 
 Returns the bitwise OR of all input values in 2’s complement representation.
 
-### Map aggregate functions[#](https://trino.io/docs/current/functions/aggregate.html#map-aggregate-functions) <a href="#map-aggregate-functions" id="map-aggregate-functions"></a>
+### Map aggregate functions <a href="#map-aggregate-functions" id="map-aggregate-functions"></a>
 
-histogram(_x_) → map\<K,bigint>[#](https://trino.io/docs/current/functions/aggregate.html#histogram)
+histogram(_x_) → map\<K,bigint>
 
 Returns a map containing the count of the number of times each input value occurs.
 
-map\_agg(_key_, _value_) → map\<K,V>[#](https://trino.io/docs/current/functions/aggregate.html#map\_agg)
+map\_agg(_key_, _value_) → map\<K,V>
 
 Returns a map created from the input `key` / `value` pairs.
 
-map\_union(_x(K_, _V)_) → map\<K,V>[#](https://trino.io/docs/current/functions/aggregate.html#map\_union)
+map\_union(_x(K_, _V)_) → map\<K,V>
 
 Returns the union of all the input maps. If a key is found in multiple input maps, that key’s value in the resulting map comes from an arbitrary input map.
 
@@ -351,8 +333,6 @@ GROUP BY species;
 -- {1.0=50}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 You can combine these maps using `map_union`:
 
 ```
@@ -367,13 +347,13 @@ FROM (
 --{4.0=6, 5.0=2, 6.0=11, 1.0=50, 3.0=11}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)multimap\_agg(_key_, _value_) → map\<K,array(V)>[#](https://trino.io/docs/current/functions/aggregate.html#multimap\_agg)
+multimap\_agg(_key_, _value_) → map\<K,array(V)>
 
 Returns a multimap created from the input `key` / `value` pairs. Each key can be associated with multiple values.
 
-### Approximate aggregate functions[#](https://trino.io/docs/current/functions/aggregate.html#approximate-aggregate-functions) <a href="#approximate-aggregate-functions" id="approximate-aggregate-functions"></a>
+### Approximate aggregate functions <a href="#approximate-aggregate-functions" id="approximate-aggregate-functions"></a>
 
-approx\_distinct(_x_) → bigint[#](https://trino.io/docs/current/functions/aggregate.html#approx\_distinct)
+approx\_distinct(_x_) → bigint
 
 Returns the approximate number of distinct input values. This function provides an approximation of `count(DISTINCT x)`. Zero is returned if all input values are null.
 
@@ -395,7 +375,7 @@ The error of the function depends on the permutation of the values and its cardi
 
 The function uses the stream summary data structure proposed in the paper [Efficient Computation of Frequent and Top-k Elements in Data Streams](https://www.cse.ust.hk/\~raywong/comp5331/References/EfficientComputationOfFrequentAndTop-kElementsInDataStreams.pdf) by A. Metwalley, D. Agrawl and A. Abbadi.
 
-approx\_percentile(_x_, _percentage_) → \[same as x][#](https://trino.io/docs/current/functions/aggregate.html#approx\_percentile)
+approx\_percentile(_x_, _percentage_) → \[same as x]
 
 Returns the approximate percentile for all input values of `x` at the given `percentage`. The value of `percentage` must be between zero and one and must be constant for all input rows.
 
@@ -440,7 +420,7 @@ Yael Ben-Haim and Elad Tom-Tov, "A streaming parallel decision tree algorithm",
 J. Machine Learning Research 11 (2010), pp. 849--872.
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 `buckets` must be a `bigint`. `value` and `weight` must be numeric.
 
@@ -466,19 +446,19 @@ See T-Digest functions.
 
 ### Statistical aggregate functions[#](https://trino.io/docs/current/functions/aggregate.html#statistical-aggregate-functions) <a href="#statistical-aggregate-functions" id="statistical-aggregate-functions"></a>
 
-corr(_y_, _x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#corr)
+corr(_y_, _x_) → double
 
 Returns correlation coefficient of input values.
 
-covar\_pop(_y_, _x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#covar\_pop)
+covar\_pop(_y_, _x_) → double
 
 Returns the population covariance of input values.
 
-covar\_samp(_y_, _x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#covar\_samp)
+covar\_samp(_y_, _x_) → double
 
 Returns the sample covariance of input values.
 
-kurtosis(_x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#kurtosis)
+kurtosis(_x_) → double
 
 Returns the excess kurtosis of all input values. Unbiased estimate using the following expression:
 
@@ -486,35 +466,35 @@ Returns the excess kurtosis of all input values. Unbiased estimate using the fol
 kurtosis(x) = n(n+1)/((n-1)(n-2)(n-3))sum[(x_i-mean)^4]/stddev(x)^4-3(n-1)^2/((n-2)(n-3))
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)regr\_intercept(_y_, _x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#regr\_intercept)
+regr\_intercept(_y_, _x_) → double
 
 Returns linear regression intercept of input values. `y` is the dependent value. `x` is the independent value.
 
-regr\_slope(_y_, _x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#regr\_slope)
+regr\_slope(_y_, _x_) → double
 
 Returns linear regression slope of input values. `y` is the dependent value. `x` is the independent value.
 
-skewness(_x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#skewness)
+skewness(_x_) → double
 
 Returns the Fisher’s moment coefficient of [skewness](https://wikipedia.org/wiki/Skewness) of all input values.
 
-stddev(_x_) → double[#](https://trino.io/docs/current/functions/aggregate.html#stddev)
+stddev(_x_) → double
 
 This is an alias for `stddev_samp()`.
 
-stddev\_pop(_x_) → double#
+stddev\_pop(_x_) → double
 
 Returns the population standard deviation of all input values.
 
-stddev\_samp(_x_) → double#
+stddev\_samp(_x_) → double
 
 Returns the sample standard deviation of all input values.
 
-variance(_x_) → double#
+variance(_x_) → double
 
 This is an alias for `var_samp()`.
 
-var\_pop(_x_) → double#
+var\_pop(_x_) → double
 
 Returns the population variance of all input values.
 
@@ -522,7 +502,7 @@ var\_samp(_x_) → double#
 
 Returns the sample variance of all input values.
 
-### Lambda aggregate functions[#](https://trino.io/docs/current/functions/aggregate.html#lambda-aggregate-functions) <a href="#lambda-aggregate-functions" id="lambda-aggregate-functions"></a>
+### Lambda aggregate functions <a href="#lambda-aggregate-functions" id="lambda-aggregate-functions"></a>
 
 reduce\_agg(_inputValue T_, _initialState S_, _inputFunction(S_, _T_, _S)_, _combineFunction(S_, _S_, _S)_) → S[#](https://trino.io/docs/current/functions/aggregate.html#reduce\_agg)
 

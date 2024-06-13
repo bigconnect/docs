@@ -90,7 +90,7 @@ A type of data virtualization that provides a common access point and data model
 
 Secure Sockets Layer (SSL)
 
-Now superseded by [TLS](https://trino.io/docs/current/glossary.html#glosstls), but still recognized as the term for what TLS does.
+Now superseded by TLS, but still recognized as the term for what TLS does.
 
 Structured Query Language (SQL)
 
@@ -98,8 +98,8 @@ The standard language used with relational databases. For more information, see 
 
 Tarball
 
-A common abbreviation for [TAR file](https://wikipedia.org/wiki/Tar\_\(computing\)), which is a common software distribution mechanism. This file format is a collection of multiple files distributed as a single file, commonly compressed using [gzip](https://trino.io/docs/current/glossary.html#glossgzip) compression.
+A common abbreviation for [TAR file](https://wikipedia.org/wiki/Tar\_\(computing\)), which is a common software distribution mechanism. This file format is a collection of multiple files distributed as a single file, commonly compressed using gzip compression.
 
 Transport Layer Security (TLS)
 
-[TLS](https://wikipedia.org/wiki/Transport\_Layer\_Security) is a security protocol designed to provide secure communications over a network. It is the successor to [SSL](https://trino.io/docs/current/glossary.html#glossssl), and used in many applications like HTTPS, email, and Trino. These security topics use the term TLS to refer to both TLS and SSL.
+[TLS](https://wikipedia.org/wiki/Transport\_Layer\_Security) is a security protocol designed to provide secure communications over a network. It is the successor to SSL, and used in many applications like HTTPS, email, and Trino. These security topics use the term TLS to refer to both TLS and SSL.

@@ -9,14 +9,14 @@ Refer to the following sections for further details:
 
 In addition, Trino supports implementation of custom functions or custom table functions provided by a plugin, and creation of user-defined functions as SQL routines.
 
-### Functions by name[#](https://trino.io/docs/current/functions.html#functions-by-name) <a href="#functions-by-name" id="functions-by-name"></a>
+### Functions by name <a href="#functions-by-name" id="functions-by-name"></a>
 
 If you are looking for a specific function or operator by name use SHOW FUNCTIONS, or refer the to the following resources:
 
 * List of functions and operators
 * List of functions by topic
 
-### Functions per topic[#](https://trino.io/docs/current/functions.html#functions-per-topic) <a href="#functions-per-topic" id="functions-per-topic"></a>
+### Functions per topic <a href="#functions-per-topic" id="functions-per-topic"></a>
 
 * Aggregate
 * Array

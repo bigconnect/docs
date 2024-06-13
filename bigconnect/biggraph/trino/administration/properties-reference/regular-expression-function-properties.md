@@ -2,7 +2,7 @@
 
 These properties allow tuning the Regular expression functions.
 
-### `regex-library`[#](https://trino.io/docs/current/admin/properties-regexp-function.html#regex-library) <a href="#regex-library" id="regex-library"></a>
+### `regex-library` <a href="#regex-library" id="regex-library"></a>
 
 * **Type:** string
 * **Allowed values:** `JONI`, `RE2J`
@@ -10,7 +10,7 @@ These properties allow tuning the Regular expression functions.
 
 Which library to use for regular expression functions. `JONI` is generally faster for common usage, but can require exponential time for certain expression patterns. `RE2J` uses a different algorithm, which guarantees linear time, but is often slower.
 
-### `re2j.dfa-states-limit`[#](https://trino.io/docs/current/admin/properties-regexp-function.html#re2j-dfa-states-limit) <a href="#re2j-dfa-states-limit" id="re2j-dfa-states-limit"></a>
+### `re2j.dfa-states-limit` <a href="#re2j-dfa-states-limit" id="re2j-dfa-states-limit"></a>
 
 * **Type:** integer
 * **Minimum value:** `2`
@@ -18,7 +18,7 @@ Which library to use for regular expression functions. `JONI` is generally faste
 
 The maximum number of states to use when RE2J builds the fast, but potentially memory intensive, deterministic finite automaton (DFA) for regular expression matching. If the limit is reached, RE2J falls back to the algorithm that uses the slower, but less memory intensive non-deterministic finite automaton (NFA). Decreasing this value decreases the maximum memory footprint of a regular expression search at the cost of speed.
 
-### `re2j.dfa-retries`[#](https://trino.io/docs/current/admin/properties-regexp-function.html#re2j-dfa-retries) <a href="#re2j-dfa-retries" id="re2j-dfa-retries"></a>
+### `re2j.dfa-retries` <a href="#re2j-dfa-retries" id="re2j-dfa-retries"></a>
 
 * **Type:** integer
 * **Minimum value:** `0`

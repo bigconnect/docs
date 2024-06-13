@@ -1,6 +1,6 @@
 # CREATE TABLE
 
-### Synopsis[#](https://trino.io/docs/current/sql/create-table.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 CREATE [ OR REPLACE ] TABLE [ IF NOT EXISTS ]
@@ -17,9 +17,9 @@ table_name (
 [ WITH ( property_name = expression [, ...] ) ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/create-table.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 Create a new, empty table with the specified columns. Use CREATE TABLE AS to create a table with data.
 
@@ -35,7 +35,7 @@ The optional `WITH` clause can be used to set properties on the newly created ta
 SELECT * FROM system.metadata.table_properties
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 To list all available column properties, run the following query:
 
@@ -43,13 +43,13 @@ To list all available column properties, run the following query:
 SELECT * FROM system.metadata.column_properties
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `LIKE` clause can be used to include all the column definitions from an existing table in the new table. Multiple `LIKE` clauses may be specified, which allows copying the columns from multiple tables.
 
 If `INCLUDING PROPERTIES` is specified, all of the table properties are copied to the new table. If the `WITH` clause specifies the same property name as one of the copied properties, the value from the `WITH` clause will be used. The default behavior is `EXCLUDING PROPERTIES`. The `INCLUDING PROPERTIES` option maybe specified for at most one table.
 
-### Examples[#](https://trino.io/docs/current/sql/create-table.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 Create a new table `orders`:
 
@@ -63,7 +63,7 @@ CREATE TABLE orders (
 WITH (format = 'ORC')
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create the table `orders` if it does not already exist, adding a table comment and a column comment:
 
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS orders (
 COMMENT 'A table to keep track of orders.'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create the table `bigger_orders` using the columns from `orders` plus additional columns at the start and end:
 
@@ -89,8 +89,8 @@ CREATE TABLE bigger_orders (
 )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also# <a href="#see-also" id="see-also"></a>
+
+### See also <a href="#see-also" id="see-also"></a>
 
 ALTER TABLE, DROP TABLE, CREATE TABLE AS, SHOW CREATE TABLE

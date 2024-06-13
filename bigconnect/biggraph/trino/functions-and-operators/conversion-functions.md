@@ -4,19 +4,19 @@ Trino will implicitly convert numeric and character values to the correct type i
 
 When necessary, values can be explicitly cast to a particular type.
 
-### Conversion functions[#](https://trino.io/docs/current/functions/conversion.html#id1) <a href="#id1" id="id1"></a>
+### Conversion functions <a href="#id1" id="id1"></a>
 
-cast(_value AS type_) → type[#](https://trino.io/docs/current/functions/conversion.html#cast)
+cast(_value AS type_) → type
 
 Explicitly cast a value as a type. This can be used to cast a varchar to a numeric value type and vice versa.
 
-try\_cast(_value AS type_) → type[#](https://trino.io/docs/current/functions/conversion.html#try\_cast)
+try\_cast(_value AS type_) → type
 
 Like `cast()`, but returns null if the cast fails.
 
-### Formatting[#](https://trino.io/docs/current/functions/conversion.html#formatting) <a href="#formatting" id="formatting"></a>
+### Formatting <a href="#formatting" id="formatting"></a>
 
-format(_format_, _args..._) → varchar[#](https://trino.io/docs/current/functions/conversion.html#format)
+format(_format_, _args..._) → varchar
 
 Returns a formatted string using the specified [format string](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax) and arguments:
 
@@ -43,7 +43,7 @@ SELECT format('%1$tA, %1$tB %1$te, %1$tY', date '2006-07-04');
 -- 'Tuesday, July 4, 2006'
 ```
 
-format\_number(_number_) → varchar[#](https://trino.io/docs/current/functions/conversion.html#format\_number)
+format\_number(_number_) → varchar
 
 Returns a formatted string using a unit symbol:
 
@@ -54,7 +54,7 @@ SELECT format_number(1000000); -- '1M'
 
 
 
-### Data size[#](https://trino.io/docs/current/functions/conversion.html#data-size) <a href="#data-size" id="data-size"></a>
+### Data size <a href="#data-size" id="data-size"></a>
 
 The `parse_data_size` function supports the following units:
 
@@ -70,7 +70,7 @@ The `parse_data_size` function supports the following units:
 | `ZB` | Zettabytes  | 10247 |
 | `YB` | Yottabytes  | 10248 |
 
-parse\_data\_size(_string_)[#](https://trino.io/docs/current/functions/conversion.html#parse\_data\_size)
+parse\_data\_size(_string_)
 
 Parses `string` of format `value unit` into a number, where `value` is the fractional number of `unit` values:
 
@@ -81,11 +81,11 @@ SELECT parse_data_size('1MB'); -- 1048576
 SELECT parse_data_size('2.3MB'); -- 2411724
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Miscellaneous[#](https://trino.io/docs/current/functions/conversion.html#miscellaneous) <a href="#miscellaneous" id="miscellaneous"></a>
 
-typeof(_expr_) → varchar[#](https://trino.io/docs/current/functions/conversion.html#typeof)
+### Miscellaneous <a href="#miscellaneous" id="miscellaneous"></a>
+
+typeof(_expr_) → varchar
 
 Returns the name of the type of the provided expression:
 
@@ -93,6 +93,5 @@ Returns the name of the type of the provided expression:
 SELECT typeof(123); -- integer
 SELECT typeof('cat'); -- varchar(3)
 SELECT typeof(cos(2) + 1.5); -- double
-```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)\
+```

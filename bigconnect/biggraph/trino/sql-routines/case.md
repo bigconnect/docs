@@ -1,6 +1,6 @@
 # CASE
 
-### Synopsis[#](https://trino.io/docs/current/routines/case.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 Simple case:
 
@@ -12,7 +12,7 @@ CASE
 END CASE
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Searched case:
 
@@ -24,11 +24,11 @@ CASE expression
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/routines/case.html#description) <a href="#description" id="description"></a>
 
-The `CASE` statement is an optional construct to allow conditional processing in [SQL routines](https://trino.io/docs/current/routines/introduction.html).
+### Description <a href="#description" id="description"></a>
+
+The `CASE` statement is an optional construct to allow conditional processing in SQL routines.
 
 The `WHEN` clauses are evaluated sequentially, stopping after the first match, and therefore the order of the statements is significant. The statements of the `ELSE` clause are executed if none of the `WHEN` clauses match.
 
@@ -36,7 +36,7 @@ Unlike other languages like C or Java, SQL does not support case fall through, s
 
 One or more `WHEN` clauses can be used.
 
-### Examples[#](https://trino.io/docs/current/routines/case.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 The following example shows a simple `CASE` statement usage:
 
@@ -53,11 +53,11 @@ FUNCTION simple_case(a bigint)
   END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Further examples of varying complexity that cover usage of the `CASE` statement in combination with other statements are available in the SQL routines examples documentation.
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 * Introduction to SQL routines
 * Conditional expressions using `CASE`

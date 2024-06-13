@@ -2,7 +2,7 @@
 
 The Trino CLI provides a terminal-based, interactive shell for running queries. The CLI is a self-executing JAR file, which means it acts like a normal UNIX executable.
 
-### Requirements# <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 The CLI requires a Java virtual machine available on the path. It can be used with Java version 8 and higher.
 
@@ -10,7 +10,7 @@ The CLI uses the Trino client REST API over HTTP/HTTPS to communicate with the c
 
 The CLI version should be identical to the version of the Trino cluster, or newer. Older versions typically work, but only a subset is regularly tested. Versions before 350 are not supported.
 
-### Installation# <a href="#installation" id="installation"></a>
+### Installation <a href="#installation" id="installation"></a>
 
 Download trino-cli-444-executable.jar, rename it to `trino`, make it executable with `chmod +x`, and run it to show the version of the CLI:
 
@@ -18,7 +18,7 @@ Download trino-cli-444-executable.jar, rename it to `trino`, make it executable 
 ./trino --version
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Run the CLI with `--help` or `-h` to see all available options.
 
@@ -28,11 +28,11 @@ Windows users, and users unable to execute the preceeding steps, can use the equ
 java -jar trino-cli-*-executable.jar --version
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The syntax can be used for the examples in the following sections. In addition, using the `java` command allows you to add configuration options for the Java runtime with the `-D` syntax. You can use this for debugging and troubleshooting, such as when specifying additional Kerberos debug options.
 
-### Running the CLI# <a href="#running-the-cli" id="running-the-cli"></a>
+### Running the CLI <a href="#running-the-cli" id="running-the-cli"></a>
 
 The minimal command to start the CLI in interactive mode specifies the URL of the coordinator in the Trino cluster:
 
@@ -40,7 +40,7 @@ The minimal command to start the CLI in interactive mode specifies the URL of th
 ./trino http://trino.example.com:8080
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If successful, you will get a prompt to execute commands. Use the `help` command to see a list of supported commands. Use the `clear` command to clear the terminal. To stop and exit the CLI, run `exit` or `quit`.:
 
@@ -63,7 +63,7 @@ SHOW TABLES [FROM <schema>] [LIKE <pattern>]
 USE [<catalog>.]<schema>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can now run SQL statements. After processing, the CLI will show results and statistics.
 
@@ -80,7 +80,7 @@ Splits: 13 total, 13 done (100.00%)
 2.92 [25 rows, 0B] [8 rows/s, 0B/s]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 As part of starting the CLI, you can set the default catalog and schema. This allows you to query tables directly without specifying catalog and schema.
 
@@ -102,7 +102,7 @@ supplier
 (8 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can also set the default catalog and schema with the [USE](https://trino.io/docs/current/sql/use.html) statement.
 
@@ -112,7 +112,7 @@ USE
 trino:tiny>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Many other options are available to further configure the CLI in interactive mode:
 
@@ -147,9 +147,9 @@ Most of the options can also be set as parameters in the URL. This means a JDBC 
 ./trino 'https://trino.example.com?SSL=true&SSLVerification=FULL&clientInfo=extra'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### TLS/HTTPS[#](https://trino.io/docs/current/client/cli.html#tls-https) <a href="#tls-https" id="tls-https"></a>
+
+### TLS/HTTPS <a href="#tls-https" id="tls-https"></a>
 
 Trino is typically available with an HTTPS URL. This means that all network traffic between the CLI and Trino uses TLS. TLS configuration is common, since it is a requirement for any authentication.
 
@@ -159,7 +159,7 @@ Use the HTTPS URL to connect to the server:
 ./trino https://trino.example.com
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The recommended TLS implementation is to use a globally trusted certificate. In this case, no other options are necessary, since the JVM running the CLI recognizes these certificates.
 
@@ -180,7 +180,7 @@ Use the options from the following table to further configure TLS and certificat
 
 The Trino CLI supports many Authentication types detailed in the following sections:
 
-#### Username and password authentication# <a href="#username-and-password-authentication" id="username-and-password-authentication"></a>
+#### Username and password authentication <a href="#username-and-password-authentication" id="username-and-password-authentication"></a>
 
 Username and password authentication is typically configured in a cluster using the `PASSWORD` authentication type, for example with LDAP authentication or Password file authentication.
 
@@ -190,7 +190,7 @@ The following code example connects to the server, establishes your user name, a
 ./trino https://trino.example.com --user=exampleusername --password
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Alternatively, set the password as the value of the `TRINO_PASSWORD` environment variable. Typically use single quotes to avoid problems with special characters such as `$`:
 
@@ -198,7 +198,7 @@ Alternatively, set the password as the value of the `TRINO_PASSWORD` environment
 export TRINO_PASSWORD='LongSecurePassword123!@#'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If the `TRINO_PASSWORD` environment variable is set, you are not prompted to provide a password to connect with the CLI.
 
@@ -206,7 +206,7 @@ If the `TRINO_PASSWORD` environment variable is set, you are not prompted to pro
 ./trino https://trino.example.com --user=exampleusername --password
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### External authentication - SSO <a href="#external-authentication-sso" id="external-authentication-sso"></a>
 
@@ -255,7 +255,7 @@ Invoking the CLI with Kerberos support enabled requires a number of additional c
   --krb5-remote-service-name trino
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 When using Kerberos authentication, access to the Trino coordinator must be through TLS and HTTPS.
 
@@ -271,7 +271,7 @@ The following table lists the available options for Kerberos authentication:
 | `--krb5-remote-service-name`                              | Trino coordinator Kerberos service name.                                                                   |
 | `--krb5-service-principal-pattern`                        | Remote kerberos service principal pattern. Defaults to `${SERVICE}@${HOST}`.                               |
 
-**Additional Kerberos debugging information**[**#**](https://trino.io/docs/current/client/cli.html#additional-kerberos-debugging-information)
+**Additional Kerberos debugging information**
 
 You can enable additional Kerberos debugging information for the Trino CLI process by passing `-Dsun.security.krb5.debug=true`, `-Dtrino.client.debugKerberos=true`, and `-Djava.security.debug=gssloginconfig,configfile,configparser,logincontext` as a JVM argument when starting the CLI process:
 
@@ -288,27 +288,27 @@ java \
   --krb5-remote-service-name trino
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 For help with interpreting Kerberos debugging messages, see additional resources.
 
-### Pagination[#](https://trino.io/docs/current/client/cli.html#pagination) <a href="#pagination" id="pagination"></a>
+### Pagination <a href="#pagination" id="pagination"></a>
 
 By default, the results of queries are paginated using the `less` program which is configured with a carefully selected set of options. This behavior can be overridden by setting the `--pager` option or the `TRINO_PAGER` environment variable to the name of a different program such as `more` or [pspg](https://github.com/okbob/pspg), or it can be set to an empty value to completely disable pagination.
 
-### History[#](https://trino.io/docs/current/client/cli.html#history) <a href="#history" id="history"></a>
+### History <a href="#history" id="history"></a>
 
 The CLI keeps a history of your previously used commands. You can access your history by scrolling or searching. Use the up and down arrows to scroll and Control+S and Control+R to search. To execute a query again, press Enter.
 
 By default, you can locate the Trino history file in `~/.trino_history`. Use the `--history-file` option or the `` `TRINO_HISTORY_FILE `` environment variable to change the default.
 
-#### Auto suggestion[#](https://trino.io/docs/current/client/cli.html#auto-suggestion) <a href="#auto-suggestion" id="auto-suggestion"></a>
+#### Auto suggestion <a href="#auto-suggestion" id="auto-suggestion"></a>
 
 The CLI generates autocomplete suggestions based on command history.
 
 Press → to accept the suggestion and replace the current command line buffer. Press Ctrl+→ (Option+→ on Mac) to accept only the next keyword. Continue typing to reject the suggestion.
 
-### Configuration file[#](https://trino.io/docs/current/client/cli.html#configuration-file) <a href="#configuration-file" id="configuration-file"></a>
+### Configuration file <a href="#configuration-file" id="configuration-file"></a>
 
 The CLI can read default values for all options from a file. It uses the first file found from the ordered list of locations:
 
@@ -323,7 +323,7 @@ TRINO_CONFIG=kerberos-cli.properties trino https://first-cluster.example.com:844
 TRINO_CONFIG=ldap-cli.properties trino https://second-cluster.example.com:8443
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In the preceding example, the default configuration files are not used.
 
@@ -337,9 +337,9 @@ network-logging=BASIC
 krb5-disable-remote-service-hostname-canonicalization=true
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Batch mode[#](https://trino.io/docs/current/client/cli.html#batch-mode) <a href="#batch-mode" id="batch-mode"></a>
+
+### Batch mode <a href="#batch-mode" id="batch-mode"></a>
 
 Running the Trino CLI with the `--execute`, `--file`, or passing queries to the standard input uses the batch (non-interactive) mode. In this mode the CLI does not report progress, and exits after processing the supplied queries. Results are printed in `CSV` format by default. You can configure other formats and redirect the output to a file.
 
@@ -353,7 +353,7 @@ The following options are available to further configure the CLI in batch mode:
 | `--output-format=<format>` | Specify the [format](https://trino.io/docs/current/client/cli.html#cli-output-format) to use for printing query results. Defaults to `CSV`. |
 | `--progress`               | Show query progress in batch mode. It does not affect the output, which, for example can be safely redirected to a file.                    |
 
-#### Examples[#](https://trino.io/docs/current/client/cli.html#examples) <a href="#examples" id="examples"></a>
+#### Examples <a href="#examples" id="examples"></a>
 
 Consider the following command run as shown, or with the `--output-format=CSV` option, which is the default for non-interactive usage:
 
@@ -361,7 +361,7 @@ Consider the following command run as shown, or with the `--output-format=CSV` o
 trino --execute 'SELECT nationkey, name, regionkey FROM tpch.sf1.nation LIMIT 3'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The output is as follows:
 
@@ -371,7 +371,7 @@ The output is as follows:
 "2","BRAZIL","1"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The output with the `--output-format=JSON` option:
 
@@ -381,7 +381,7 @@ The output with the `--output-format=JSON` option:
 {"nationkey":2,"name":"BRAZIL","regionkey":1}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The output with the `--output-format=ALIGNED` option, which is the default for interactive usage:
 
@@ -393,7 +393,7 @@ nationkey |   name    | regionkey
         2 | BRAZIL    |         1
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The output with the `--output-format=VERTICAL` option:
 
@@ -412,7 +412,7 @@ name      | BRAZIL
 regionkey | 1
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The preceding command with `--output-format=NULL` produces no output. However, if you have an error in the query, such as incorrectly using `region` instead of `regionkey`, the command has an exit status of 1 and displays an error message (which is unaffected by the output format):
 
@@ -421,9 +421,9 @@ Query 20200707_170726_00030_2iup9 failed: line 1:25: Column 'region' cannot be r
 SELECT nationkey, name, region FROM tpch.sf1.nation LIMIT 3
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Output formats[#](https://trino.io/docs/current/client/cli.html#output-formats) <a href="#output-formats" id="output-formats"></a>
+
+### Output formats <a href="#output-formats" id="output-formats"></a>
 
 The Trino CLI provides the options `--output-format` and `--output-format-interactive` to control how the output is displayed. The available options shown in the following table must be entered in uppercase. The default value is `ALIGNED` in interactive mode, and `CSV` in non-interactive mode.
 
@@ -442,7 +442,7 @@ The Trino CLI provides the options `--output-format` and `--output-format-intera
 | `MARKDOWN`            | Output emitted as a Markdown table.                                                                                                                        |
 | `NULL`                | Suppresses normal query results. This can be useful during development to test a query’s shell return code or to see whether it results in error messages. |
 
-### Troubleshooting[#](https://trino.io/docs/current/client/cli.html#troubleshooting) <a href="#troubleshooting" id="troubleshooting"></a>
+### Troubleshooting <a href="#troubleshooting" id="troubleshooting"></a>
 
 If something goes wrong, you see an error message:
 
@@ -453,7 +453,7 @@ Query 20200804_201646_00003_f5f6c failed: line 1:22: Table 'tpch.tiny.nations' d
 select count(*) from tpch.tiny.nations
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 To view debug information, including the stack trace for failures, use the `--debug` option:
 

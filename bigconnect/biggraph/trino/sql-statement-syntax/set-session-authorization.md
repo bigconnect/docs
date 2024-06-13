@@ -40,7 +40,7 @@ Changing the session authorization without quotes:
 SET SESSION AUTHORIZATION John;
 ```
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 RESET SESSION AUTHORIZATION
 

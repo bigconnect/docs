@@ -6,7 +6,7 @@
 SHOW COLUMNS FROM table [ LIKE pattern ]
 ```
 
-### Description[#](https://trino.io/docs/current/sql/show-columns.html#description) <a href="#description" id="description"></a>
+### Description <a href="#description" id="description"></a>
 
 List the columns in a `table` along with their data type and other attributes:
 

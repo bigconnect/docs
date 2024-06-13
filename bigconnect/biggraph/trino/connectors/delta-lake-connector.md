@@ -2,7 +2,7 @@
 
 The Delta Lake connector allows querying data stored in the [Delta Lake](https://delta.io/) format, including [Databricks Delta Lake](https://docs.databricks.com/delta/index.html). The connector can natively read the Delta Lake transaction log and thus detect when external systems change data.
 
-### Requirements[#](https://trino.io/docs/current/connector/delta-lake.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To connect to Databricks Delta Lake, you need:
 
@@ -33,7 +33,7 @@ Each metastore type has specific configuration properties along with general met
 
 The connector recognizes Delta Lake tables created in the metastore by the Databricks runtime. If non-Delta Lake tables are present in the metastore as well, they are not visible to the connector.
 
-### File system access configuration[#](https://trino.io/docs/current/connector/delta-lake.html#file-system-access-configuration) <a href="#file-system-access-configuration" id="file-system-access-configuration"></a>
+### File system access configuration <a href="#file-system-access-configuration" id="file-system-access-configuration"></a>
 
 The connector supports native, high-performance file system access to object storage systems:
 
@@ -44,7 +44,7 @@ The connector supports native, high-performance file system access to object sto
 
 You must enable and configure the specific native file system access. If none is activated, the legacy support is used and must be configured.
 
-#### Delta Lake general configuration properties[#](https://trino.io/docs/current/connector/delta-lake.html#delta-lake-general-configuration-properties) <a href="#delta-lake-general-configuration-properties" id="delta-lake-general-configuration-properties"></a>
+#### Delta Lake general configuration properties <a href="#delta-lake-general-configuration-properties" id="delta-lake-general-configuration-properties"></a>
 
 The following configuration properties are all using reasonable, tested default values. Typical usage does not require you to configure them.
 
@@ -74,7 +74,7 @@ The following configuration properties are all using reasonable, tested default 
 | `delta.register-table-procedure.enabled`             | Enable to allow users to call the `register_table` procedure.                                                                                                                                                                                                                                 | `false`     |
 | `delta.vacuum.min-retention`                         | Minimum retention threshold for the files taken into account for removal by the VACUUM procedure. The equivalent catalog session property is `vacuum_min_retention`.                                                                                                                          | `7 DAYS`    |
 
-#### Catalog session properties[#](https://trino.io/docs/current/connector/delta-lake.html#catalog-session-properties) <a href="#catalog-session-properties" id="catalog-session-properties"></a>
+#### Catalog session properties <a href="#catalog-session-properties" id="catalog-session-properties"></a>
 
 The following table describes catalog session properties supported by the Delta Lake connector:
 
@@ -87,13 +87,13 @@ The following table describes catalog session properties supported by the Delta 
 | `parquet_writer_batch_size`       | Maximum number of rows processed by the Parquet writer in a batch.             | `10000` |
 | `projection_pushdown_enabled`     | Read only projected fields from row columns while performing `SELECT` queries. | `true`  |
 
-### Type mapping[#](https://trino.io/docs/current/connector/delta-lake.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 Because Trino and Delta Lake each support types that the other does not, this connector modifies some types when reading or writing data. Data types might not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
 See the Delta Transaction Log specification for more information about supported data types in the Delta Lake table format specification.
 
-#### Delta Lake to Trino type mapping[#](https://trino.io/docs/current/connector/delta-lake.html#delta-lake-to-trino-type-mapping) <a href="#delta-lake-to-trino-type-mapping" id="delta-lake-to-trino-type-mapping"></a>
+#### Delta Lake to Trino type mapping <a href="#delta-lake-to-trino-type-mapping" id="delta-lake-to-trino-type-mapping"></a>
 
 The connector maps Delta Lake types to the corresponding Trino types following this table:
 
@@ -118,7 +118,7 @@ The connector maps Delta Lake types to the corresponding Trino types following t
 
 No other types are supported.
 
-#### Trino to Delta Lake type mapping[#](https://trino.io/docs/current/connector/delta-lake.html#trino-to-delta-lake-type-mapping) <a href="#trino-to-delta-lake-type-mapping" id="trino-to-delta-lake-type-mapping"></a>
+#### Trino to Delta Lake type mapping <a href="#trino-to-delta-lake-type-mapping" id="trino-to-delta-lake-type-mapping"></a>
 
 The connector maps Trino types to the corresponding Delta Lake types following this table:
 
@@ -143,7 +143,7 @@ The connector maps Trino types to the corresponding Delta Lake types following t
 
 No other types are supported.
 
-### Delta Lake table features[#](https://trino.io/docs/current/connector/delta-lake.html#delta-lake-table-features) <a href="#delta-lake-table-features" id="delta-lake-table-features"></a>
+### Delta Lake table features <a href="#delta-lake-table-features" id="delta-lake-table-features"></a>
 
 The connector supports the following Delta Lake table features:
 
@@ -160,11 +160,11 @@ The connector supports the following Delta Lake table features:
 
 No other features are supported.
 
-### Security[#](https://trino.io/docs/current/connector/delta-lake.html#security) <a href="#security" id="security"></a>
+### Security <a href="#security" id="security"></a>
 
 The Delta Lake connector allows you to choose one of several means of providing authorization at the catalog level. You can select a different type of authorization check in different Delta Lake catalog files.
 
-#### Authorization checks[#](https://trino.io/docs/current/connector/delta-lake.html#authorization-checks) <a href="#authorization-checks" id="authorization-checks"></a>
+#### Authorization checks <a href="#authorization-checks" id="authorization-checks"></a>
 
 Enable authorization checks for the connector by setting the `delta.security` property in the catalog properties file. This property must be one of the security values in the following table:
 
@@ -175,7 +175,7 @@ Enable authorization checks for the connector by setting the `delta.security` pr
 | `READ_ONLY`                 | Operations that read data or metadata, such as SELECT are permitted. No operations that write data or metadata, such as CREATE TABLE, INSERT, or DELETE are allowed.                                                                                                                |
 | `FILE`                      | Authorization checks are enforced using a catalog-level access control configuration file whose path is specified in the `security.config-file` catalog configuration property. See Catalog-level access control files for information on the authorization configuration file. ::: |
 
-### SQL support[#](https://trino.io/docs/current/connector/delta-lake.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides read and write access to data and metadata in Delta Lake. In addition to the globally available and read operation statements, the connector supports the following features:
 
@@ -184,7 +184,7 @@ The connector provides read and write access to data and metadata in Delta Lake.
   * Schema and table management, see details for Delta Lake schema and table management
   * View management
 
-#### Procedures# <a href="#procedures" id="procedures"></a>
+#### Procedures <a href="#procedures" id="procedures"></a>
 
 Use the CALL statement to perform data manipulation or administrative tasks. Procedures are available in the system schema of each catalog. The following code snippet displays how to call the `example_procedure` in the `examplecatalog` catalog:
 
@@ -192,7 +192,7 @@ Use the CALL statement to perform data manipulation or administrative tasks. Pro
 CALL examplecatalog.system.example_procedure()
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 **Register table**
 
@@ -204,11 +204,11 @@ The `system.register_table` procedure allows the caller to register an existing 
 CALL example.system.register_table(schema_name => 'testdb', table_name => 'customer_orders', table_location => 's3://my-bucket/a/path')
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 To prevent unauthorized users from accessing data, this procedure is disabled by default. The procedure is enabled only when `delta.register-table-procedure.enabled` is set to `true`.
 
-**Unregister table**[**#**](https://trino.io/docs/current/connector/delta-lake.html#unregister-table)
+**Unregister table**
 
 The connector can unregister existing Delta Lake tables from the metastore.
 
@@ -220,7 +220,7 @@ CALL example.system.unregister_table(schema_name => 'testdb', table_name => 'cus
 
 ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**Flush metadata cache**[**#**](https://trino.io/docs/current/connector/delta-lake.html#flush-metadata-cache)
+**Flush metadata cache**
 
 *   `system.flush_metadata_cache()`
 
@@ -229,7 +229,7 @@ CALL example.system.unregister_table(schema_name => 'testdb', table_name => 'cus
 
     Flushes metadata cache entries of a specific table. Procedure requires passing named parameters.
 
-**`VACUUM`**[**#**](https://trino.io/docs/current/connector/delta-lake.html#vacuum)
+**`VACUUM`**
 
 The `VACUUM` procedure removes all old files that are not in the transaction log, as well as files that are not needed to read table snapshots newer than the current time minus the retention period defined by the `retention period` parameter.
 
@@ -239,7 +239,7 @@ Users with `INSERT` and `DELETE` permissions on a table can run `VACUUM` as foll
 CALL example.system.vacuum('exampleschemaname', 'exampletablename', '7d');
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 All parameters are required and must be presented in the following order:
 
@@ -249,7 +249,7 @@ All parameters are required and must be presented in the following order:
 
 The `delta.vacuum.min-retention` configuration property provides a safety measure to ensure that files are retained as expected. The minimum value for this property is `0s`. There is a minimum retention session property as well, `vacuum_min_retention`.
 
-#### Data management[#](https://trino.io/docs/current/connector/delta-lake.html#data-management) <a href="#data-management" id="data-management"></a>
+#### Data management <a href="#data-management" id="data-management"></a>
 
 You can use the connector to INSERT, DELETE, UPDATE, and MERGE data in Delta Lake tables.
 
@@ -262,7 +262,7 @@ Write operations are supported for tables stored on the following systems:
 
     Writes to Amazon S3 and S3-compatible storage must be enabled with the `delta.enable-non-concurrent-writes` property. Writes to S3 can safely be made from multiple Trino clusters; however, write collisions are not detected when writing concurrently from other Delta Lake engines. You must make sure that no concurrent data modifications are run to avoid data corruption.
 
-#### Schema and table management# <a href="#schema-and-table-management" id="schema-and-table-management"></a>
+#### Schema and table management <a href="#schema-and-table-management" id="schema-and-table-management"></a>
 
 The Schema and table management functionality includes support for:
 
@@ -284,7 +284,7 @@ CREATE SCHEMA example.example_schema
 WITH (location = 's3://my-bucket/a/path');
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Optionally, the location can be omitted. Tables in this schema must have a location included when you create them. The data files for these tables are not removed if the table is dropped:
 
@@ -292,7 +292,7 @@ Optionally, the location can be omitted. Tables in this schema must have a locat
 CREATE SCHEMA example.example_schema;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 When Delta Lake tables exist in storage but not in the metastore, Trino can be used to register the tables:
 
@@ -300,7 +300,7 @@ When Delta Lake tables exist in storage but not in the metastore, Trino can be u
 CALL example.system.register_table(schema_name => 'testdb', table_name => 'example_table', table_location => 's3://my-bucket/a/path')
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The table schema is read from the transaction log instead. If the schema is changed by an external system, Trino automatically uses the new schema.
 
@@ -314,17 +314,17 @@ If the specified location does not already contain a Delta table, the connector 
 CREATE TABLE example.default.new_table (id BIGINT, address VARCHAR);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The Delta Lake connector also supports creating tables using the CREATE TABLE AS syntax.
 
 The connector supports the following ALTER TABLE statements.
 
-**ALTER TABLE EXECUTE#**
+**ALTER TABLE EXECUTE**
 
 The connector supports the following commands for use with ALTER TABLE EXECUTE.
 
-**OPTIMIZE#**
+**OPTIMIZE**
 
 The `optimize` command is used for rewriting the content of the specified table so that it is merged into fewer but larger files. If the table is partitioned, the data compaction acts separately on each partition selected for optimization. This operation improves read performance.
 
@@ -361,7 +361,7 @@ The connector only supports the `ALTER TABLE RENAME TO` statement when met with 
 * The table type is external.
 * The table is backed by a metastore that does not perform object storage operations, for example, AWS Glue.
 
-**Table properties**[**#**](https://trino.io/docs/current/connector/delta-lake.html#table-properties)
+**Table properties**
 
 The following table properties are available for use:
 
@@ -387,7 +387,7 @@ WITH (
 AS SELECT name, comment, regionkey FROM tpch.tiny.nation;
 ```
 
-**Metadata tables**[**#**](https://trino.io/docs/current/connector/delta-lake.html#metadata-tables)
+**Metadata tables**
 
 The connector exposes several metadata tables for each Delta Lake table. These metadata tables contain information about the internal structure of the Delta Lake table. You can query each metadata table by appending the metadata table name to the table name:
 
@@ -395,7 +395,7 @@ The connector exposes several metadata tables for each Delta Lake table. These m
 SELECT * FROM "test_table$history"
 ```
 
-**`$HISTORY` TABLE**[**#**](https://trino.io/docs/current/connector/delta-lake.html#history-table)
+**`$HISTORY` TABLE**
 
 The `$history` table provides a log of the metadata changes performed on the Delta Lake table.
 
@@ -428,7 +428,7 @@ The output of the query has the following history columns:
 | `isolation_level`      | `VARCHAR`                     | The level of isolation used to perform the operation                      |
 | `is_blind_append`      | `BOOLEAN`                     | Whether or not the operation appended data                                |
 
-**`$PROPERTIES` TABLE**[**#**](https://trino.io/docs/current/connector/delta-lake.html#properties-table)
+**`$PROPERTIES` TABLE**
 
 The `$properties` table provides access to Delta Lake table configuration, table features and table properties. The table rows are key/value pairs.
 
@@ -447,7 +447,7 @@ delta.columnMapping.mode    | name            |
 delta.feature.columnMapping | supported       |
 ```
 
-**Metadata columns**[**#**](https://trino.io/docs/current/connector/delta-lake.html#metadata-columns)
+**Metadata columns**
 
 In addition to the defined columns, the Delta Lake connector automatically exposes metadata in a number of hidden columns in each table. You can use these columns in your SQL statements like any other column, e.g., they can be selected directly or used in conditional statements.
 
@@ -461,7 +461,7 @@ In addition to the defined columns, the Delta Lake connector automatically expos
 
     Size of the file for this row.
 
-### Fault-tolerant execution support[#](https://trino.io/docs/current/connector/delta-lake.html#fault-tolerant-execution-support) <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
+### Fault-tolerant execution support <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
 
 The connector supports Fault-tolerant execution of query processing. Read and write operations are both supported with any retry policy.
 
@@ -469,7 +469,7 @@ The connector supports Fault-tolerant execution of query processing. Read and wr
 
 The connector provides the following table functions:
 
-#### table\_changes[#](https://trino.io/docs/current/connector/delta-lake.html#table-changes) <a href="#table-changes" id="table-changes"></a>
+#### table\_changes <a href="#table-changes" id="table-changes"></a>
 
 Allows reading Change Data Feed (CDF) entries to expose row-level changes between two versions of a Delta Lake table. When the `change_data_feed_enabled` table property is set to `true` on a specific Delta Lake table, the connector records change events for all data changes on the table. This is how these changes can be read:
 
@@ -606,7 +606,7 @@ The connector includes a number of performance improvements detailed in the foll
 
 * Support for write partitioning.
 
-#### Table statistics# <a href="#table-statistics" id="table-statistics"></a>
+#### Table statistics <a href="#table-statistics" id="table-statistics"></a>
 
 Use ANALYZE statements in Trino to populate data size and number of distinct values (NDV) extended table statistics in Delta Lake. The minimum value, maximum value, value count, and null value count statistics are computed on the fly out of the transaction log of the Delta Lake table. The cost-based optimizer then uses these statistics to improve query performance.
 
@@ -628,7 +628,7 @@ There are two modes available `full_refresh` and `incremental`. The procedure us
 
 To gain the most benefit from cost-based optimizations, run periodic `ANALYZE` statements on every large table that is frequently queried.
 
-**Fine-tuning**[**#**](https://trino.io/docs/current/connector/delta-lake.html#fine-tuning)
+**Fine-tuning**
 
 The `files_modified_after` property is useful if you want to run the `ANALYZE` statement on a table that was previously analyzed. You can use it to limit the amount of data used to generate the table statistics:
 
@@ -649,7 +649,7 @@ To run `ANALYZE` with `columns` more than once, the next `ANALYZE` must run on t
 
 To broaden the set of `columns`, drop the statistics and reanalyze the table.
 
-**Disable and drop extended statistics**[**#**](https://trino.io/docs/current/connector/delta-lake.html#disable-and-drop-extended-statistics)
+**Disable and drop extended statistics**
 
 You can disable extended statistics with the catalog configuration property `delta.extended-statistics.enabled` set to `false`. Alternatively, you can disable it for a session, with the [catalog session property](https://trino.io/docs/current/sql/set-session.html) `extended_statistics_enabled` set to `false`.
 
@@ -661,13 +661,13 @@ Use the `system.drop_extended_stats` procedure in the catalog to drop the extend
 CALL example.system.drop_extended_stats('example_schema', 'example_table')
 ```
 
-#### Memory usage[#](https://trino.io/docs/current/connector/delta-lake.html#memory-usage) <a href="#memory-usage" id="memory-usage"></a>
+#### Memory usage <a href="#memory-usage" id="memory-usage"></a>
 
 The Delta Lake connector is memory intensive and the amount of required memory grows with the size of Delta Lake transaction logs of any accessed tables. It is important to take that into account when provisioning the coordinator.
 
 You must decrease memory usage by keeping the number of active data files in the table low by regularly running `OPTIMIZE` and `VACUUM` in Delta Lake.
 
-**Memory monitoring**[**#**](https://trino.io/docs/current/connector/delta-lake.html#memory-monitoring)
+**Memory monitoring**
 
 When using the Delta Lake connector, you must monitor memory usage on the coordinator. Specifically, monitor JVM heap utilization using standard tools as part of routine operation of the cluster.
 
@@ -694,7 +694,7 @@ object_name                             | io.trino.plugin.deltalake.transactionl
 
 In a healthy system, both `datafilemetadatacachestats.hitrate` and `metadatacachestats.hitrate` are close to `1.0`.
 
-#### Table redirection[#](https://trino.io/docs/current/connector/delta-lake.html#table-redirection) <a href="#table-redirection" id="table-redirection"></a>
+#### Table redirection <a href="#table-redirection" id="table-redirection"></a>
 
 Trino offers the possibility to transparently redirect operations on an existing table to the appropriate catalog based on the format of the table and catalog configuration.
 
@@ -759,7 +759,7 @@ Trino does not offer view redirection support.
 
 The connector supports redirection from Delta Lake tables to Hive tables with the `delta.hive-catalog-name` catalog configuration property.
 
-#### Performance tuning configuration properties[#](https://trino.io/docs/current/connector/delta-lake.html#performance-tuning-configuration-properties) <a href="#performance-tuning-configuration-properties" id="performance-tuning-configuration-properties"></a>
+#### Performance tuning configuration properties <a href="#performance-tuning-configuration-properties" id="performance-tuning-configuration-properties"></a>
 
 The following table describes performance tuning catalog properties specific to the Delta Lake connector.
 
@@ -777,6 +777,6 @@ Performance tuning configuration properties are considered expert-level features
 | `delta.projection-pushdown-enabled`     | Read only projected fields from row columns while performing `SELECT` queries                                                                                                                                                                                                                                                                                              | `true`              |
 | `delta.query-partition-filter-required` | Set to `true` to force a query to use a partition filter. You can use the `query_partition_filter_required` catalog session property for temporary, catalog specific use.                                                                                                                                                                                                  | `false`             |
 
-#### File system cache[#](https://trino.io/docs/current/connector/delta-lake.html#file-system-cache) <a href="#file-system-cache" id="file-system-cache"></a>
+#### File system cache <a href="#file-system-cache" id="file-system-cache"></a>
 
 The connector supports configuring and using file system caching.

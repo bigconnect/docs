@@ -9,13 +9,13 @@ session-property-config.configuration-manager=file
 session-property-manager.config-file=etc/session-property-config.json
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Change the value of `session-property-manager.config-file` to point to a JSON config file, which can be an absolute path, or a path relative to the Trino data directory.
 
 This configuration file consists of a list of match rules, each of which specify a list of conditions that the query must meet, and a list of session properties that should be applied by default. All matching rules contribute to constructing a list of session properties. Rules are applied in the order they are specified. Rules specified later in the file override values for properties that have been previously encountered.
 
-### Match rules[#](https://trino.io/docs/current/admin/session-property-managers.html#match-rules) <a href="#match-rules" id="match-rules"></a>
+### Match rules <a href="#match-rules" id="match-rules"></a>
 
 * `user` (optional): regex to match against user name.
 * `source` (optional): regex to match against source string.
@@ -30,7 +30,7 @@ This configuration file consists of a list of match rules, each of which specify
 * `group` (optional): regex to match against the fully qualified name of the resource group the query is routed to.
 * `sessionProperties`: map with string keys and values. Each entry is a system or catalog property name and corresponding value. Values must be specified as strings, no matter the actual data type.
 
-### Example[#](https://trino.io/docs/current/admin/session-property-managers.html#example) <a href="#example" id="example"></a>
+### Example <a href="#example" id="example"></a>
 
 Consider the following set of requirements:
 

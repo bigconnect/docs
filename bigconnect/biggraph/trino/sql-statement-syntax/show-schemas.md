@@ -1,14 +1,14 @@
 # SHOW SCHEMAS
 
-### Synopsis[#](https://trino.io/docs/current/sql/show-schemas.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 SHOW SCHEMAS [ FROM catalog ] [ LIKE pattern ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/show-schemas.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 List the schemas in `catalog` or in the current catalog.
 

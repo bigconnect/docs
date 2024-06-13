@@ -1,14 +1,14 @@
 # Kafka connector tutorial
 
-### Introduction[#](https://trino.io/docs/current/connector/kafka-tutorial.html#introduction) <a href="#introduction" id="introduction"></a>
+### Introduction <a href="#introduction" id="introduction"></a>
 
 The Kafka connector for Trino allows access to live topic data from Apache Kafka using Trino. This tutorial shows how to set up topics, and how to create the topic description files that back Trino tables.
 
-### Installation[#](https://trino.io/docs/current/connector/kafka-tutorial.html#installation) <a href="#installation" id="installation"></a>
+### Installation <a href="#installation" id="installation"></a>
 
 This tutorial assumes familiarity with Trino and a working local Trino installation (see Deploying Trino). It focuses on setting up Apache Kafka and integrating it with Trino.
 
-#### Step 1: Install Apache Kafka[#](https://trino.io/docs/current/connector/kafka-tutorial.html#step-1-install-apache-kafka) <a href="#step-1-install-apache-kafka" id="step-1-install-apache-kafka"></a>
+#### Step 1: Install Apache Kafka <a href="#step-1-install-apache-kafka" id="step-1-install-apache-kafka"></a>
 
 Download and extract [Apache Kafka](https://kafka.apache.org/).
 
@@ -24,7 +24,7 @@ $ bin/zookeeper-server-start.sh config/zookeeper.properties
 ...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 $ bin/kafka-server-start.sh config/server.properties
@@ -33,7 +33,7 @@ $ bin/kafka-server-start.sh config/server.properties
 ...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This starts Zookeeper on port `2181` and Kafka on port `9092`.
 
@@ -46,7 +46,7 @@ $ curl -o kafka-tpch https://repo1.maven.org/maven2/de/softwareforge/kafka_tpch_
 $ chmod 755 kafka-tpch
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Now run the `kafka-tpch` program to preload a number of topics with tpch data:
 
@@ -80,11 +80,11 @@ $ ./kafka-tpch load --brokers localhost:9092 --prefix tpch. --tpch-type tiny
 2014-07-28T17:17:13.877-0700     INFO    pool-1-thread-3    de.softwareforge.kafka.LoadCommand    Generated 60175 rows for table 'lineitem'.
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Kafka now has a number of topics that are preloaded with data to query.
 
-#### Step 3: Make the Kafka topics known to Trino[#](https://trino.io/docs/current/connector/kafka-tutorial.html#step-3-make-the-kafka-topics-known-to-trino) <a href="#step-3-make-the-kafka-topics-known-to-trino" id="step-3-make-the-kafka-topics-known-to-trino"></a>
+#### Step 3: Make the Kafka topics known to Trino <a href="#step-3-make-the-kafka-topics-known-to-trino" id="step-3-make-the-kafka-topics-known-to-trino"></a>
 
 In your Trino installation, add a catalog properties file `etc/catalog/kafka.properties` for the Kafka connector. This file lists the Kafka nodes and topics:
 
@@ -95,7 +95,7 @@ kafka.table-names=tpch.customer,tpch.orders,tpch.lineitem,tpch.part,tpch.partsup
 kafka.hide-internal-columns=false
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Now start Trino:
 
@@ -103,17 +103,17 @@ Now start Trino:
 $ bin/launcher start
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Because the Kafka tables all have the `tpch.` prefix in the configuration, the tables are in the `tpch` schema. The connector is mounted into the `kafka` catalog, because the properties file is named `kafka.properties`.
 
-Start the [Trino CLI](https://trino.io/docs/current/client/cli.html):
+Start the Trino CLI:
 
 ```
 $ ./trino --catalog kafka --schema tpch
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 List the tables to verify that things are working:
 
@@ -132,9 +132,9 @@ trino:tpch> SHOW TABLES;
 (8 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Step 4: Basic data querying[#](https://trino.io/docs/current/connector/kafka-tutorial.html#step-4-basic-data-querying) <a href="#step-4-basic-data-querying" id="step-4-basic-data-querying"></a>
+
+#### Step 4: Basic data querying <a href="#step-4-basic-data-querying" id="step-4-basic-data-querying"></a>
 
 Kafka data is unstructured, and it has no metadata to describe the format of the messages. Without further configuration, the Kafka connector can access the data, and map it in raw form. However there are no actual columns besides the built-in ones:
 
@@ -175,11 +175,11 @@ trino:tpch> SELECT sum(cast(json_extract_scalar(_message, '$.accountBalance') AS
 (1 row)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-The data from Kafka can be queried using Trino, but it is not yet in actual table shape. The raw data is available through the `_message` and `_key` columns, but it is not decoded into columns. As the sample data is in JSON format, the [JSON functions and operators](https://trino.io/docs/current/functions/json.html) built into Trino can be used to slice the data.
 
-#### Step 5: Add a topic description file[#](https://trino.io/docs/current/connector/kafka-tutorial.html#step-5-add-a-topic-description-file) <a href="#step-5-add-a-topic-description-file" id="step-5-add-a-topic-description-file"></a>
+The data from Kafka can be queried using Trino, but it is not yet in actual table shape. The raw data is available through the `_message` and `_key` columns, but it is not decoded into columns. As the sample data is in JSON format, the JSON functions and operators built into Trino can be used to slice the data.
+
+#### Step 5: Add a topic description file <a href="#step-5-add-a-topic-description-file" id="step-5-add-a-topic-description-file"></a>
 
 The Kafka connector supports topic description files to turn raw data into table format. These files are located in the `etc/kafka` folder in the Trino installation and must end with `.json`. It is recommended that the file name matches the table name, but this is not necessary.
 
@@ -204,7 +204,7 @@ Add the following file as `etc/kafka/tpch.customer.json` and restart Trino:
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The customer table now has an additional column: `kafka_key`.
 
@@ -240,11 +240,11 @@ trino:tpch> SELECT kafka_key FROM customer ORDER BY kafka_key LIMIT 10;
 (10 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The topic definition file maps the internal Kafka key, which is a raw long in eight bytes, onto a Trino `BIGINT` column.
 
-#### Step 6: Map all the values from the topic message onto columns[#](https://trino.io/docs/current/connector/kafka-tutorial.html#step-6-map-all-the-values-from-the-topic-message-onto-columns) <a href="#step-6-map-all-the-values-from-the-topic-message-onto-columns" id="step-6-map-all-the-values-from-the-topic-message-onto-columns"></a>
+#### Step 6: Map all the values from the topic message onto columns <a href="#step-6-map-all-the-values-from-the-topic-message-onto-columns" id="step-6-map-all-the-values-from-the-topic-message-onto-columns"></a>
 
 Update the `etc/kafka/tpch.customer.json` file to add fields for the message, and restart Trino. As the fields in the message are JSON, it uses the `JSON` data format. This is an example, where different data formats are used for the key and the message.
 
@@ -317,7 +317,7 @@ Update the `etc/kafka/tpch.customer.json` file to add fields for the message, an
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Now for all the fields in the JSON of the message, columns are defined and the sum query from earlier can operate on the `account_balance` column directly:
 
@@ -363,15 +363,15 @@ trino:tpch> SELECT sum(account_balance) FROM customer LIMIT 10;
 (1 row)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Now all the fields from the `customer` topic messages are available as Trino table columns.
 
-#### Step 7: Use live data[#](https://trino.io/docs/current/connector/kafka-tutorial.html#step-7-use-live-data) <a href="#step-7-use-live-data" id="step-7-use-live-data"></a>
+#### Step 7: Use live data <a href="#step-7-use-live-data" id="step-7-use-live-data"></a>
 
 Trino can query live data in Kafka as it arrives. To simulate a live feed of data, this tutorial sets up a feed of live tweets into Kafka.
 
-**Setup a live Twitter feed**[**#**](https://trino.io/docs/current/connector/kafka-tutorial.html#setup-a-live-twitter-feed)
+**Setup a live Twitter feed**
 
 * Download the twistr tool
 
@@ -393,7 +393,7 @@ twistr.consumer-secret=...
 twistr.kafka.brokers=localhost:9092
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 **Create a tweets table on Trino**[**#**](https://trino.io/docs/current/connector/kafka-tutorial.html#create-a-tweets-table-on-trino)
 
@@ -406,7 +406,7 @@ kafka.table-names=tpch.customer,tpch.orders,tpch.lineitem,tpch.part,tpch.partsup
 kafka.hide-internal-columns=false
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Add a topic definition file for the Twitter feed as `etc/kafka/tweets.json`:
 
@@ -485,11 +485,11 @@ Add a topic definition file for the Twitter feed as `etc/kafka/tweets.json`:
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 As this table does not have an explicit schema name, it is placed into the `default` schema.
 
-**Feed live data**[**#**](https://trino.io/docs/current/connector/kafka-tutorial.html#feed-live-data)
+**Feed live data**
 
 Start the twistr tool:
 
@@ -497,7 +497,7 @@ Start the twistr tool:
 $ java -Dness.config.location=file:$(pwd) -Dness.config=twistr -jar ./twistr
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 `twistr` connects to the Twitter API and feeds the “sample tweet” feed into a Kafka topic called `twitter_feed`.
 
@@ -540,11 +540,11 @@ trino:default> SELECT kafka_key, user_name, lang, created_at FROM tweets LIMIT 1
 (10 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 There is now a live feed into Kafka, which can be queried using Trino.
 
-#### Epilogue: Time stamps[#](https://trino.io/docs/current/connector/kafka-tutorial.html#epilogue-time-stamps) <a href="#epilogue-time-stamps" id="epilogue-time-stamps"></a>
+#### Epilogue: Time stamps <a href="#epilogue-time-stamps" id="epilogue-time-stamps"></a>
 
 The tweets feed, that was set up in the last step, contains a timestamp in RFC 2822 format as `created_at` attribute in each tweet.
 
@@ -561,7 +561,7 @@ trino:default> SELECT DISTINCT json_extract_scalar(_message, '$.created_at')) AS
 (5 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The topic definition file for the tweets table contains a mapping onto a timestamp using the `rfc2822` converter:
 
@@ -576,7 +576,7 @@ The topic definition file for the tweets table contains a mapping onto a timesta
 ...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This allows the raw data to be mapped onto a Trino TIMESTAMP column:
 
@@ -595,7 +595,7 @@ trino:default> SELECT created_at, raw_date FROM (
 (5 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The Kafka connector contains converters for ISO 8601, RFC 2822 text formats and for number-based timestamps using seconds or miilliseconds since the epoch. There is also a generic, text-based formatter, which uses Joda-Time format strings to parse text columns.
 

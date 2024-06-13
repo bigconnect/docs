@@ -1,16 +1,16 @@
 # LEAVE
 
-### Synopsis[#](https://trino.io/docs/current/routines/leave.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 LEAVE label
 ```
 
-### Description[#](https://trino.io/docs/current/routines/leave.html#description) <a href="#description" id="description"></a>
+### Description <a href="#description" id="description"></a>
 
 The `LEAVE` statement allows processing of blocks in SQL routines to move out of a specified context. Contexts are defined by a `label`. If no label is found, the functions fails with an error message.
 
-### Examples# <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 The following function includes a `LOOP` labelled `top`. The conditional `IF` statement inside the loop can cause the exit from processing the loop when the value for the parameter `p` is 1 or less. This can be the case if the value is passed in as 1 or less or after a number of iterations through the loop.
 
@@ -32,7 +32,7 @@ END
 
 Further examples of varying complexity that cover usage of the `LEAVE` statement in combination with other statements are available in the SQL routines examples documentation.
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 * Introduction to SQL routines
 * ITERATE

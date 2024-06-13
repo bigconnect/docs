@@ -4,7 +4,7 @@ Trino includes a native implementation to access [Amazon S3](https://aws.amazon.
 
 Enable the native implementation with `fs.native-s3.enabled=true` in your catalog properties file.
 
-### General configuration[#](https://trino.io/docs/current/object-storage/file-system-s3.html#general-configuration) <a href="#general-configuration" id="general-configuration"></a>
+### General configuration <a href="#general-configuration" id="general-configuration"></a>
 
 Use the following properties to configure general aspects of S3 file system support:
 
@@ -28,7 +28,7 @@ Use the following properties to configure general aspects of S3 file system supp
 | `s3.http-proxy`               | URL of a HTTP proxy server to use for connecting to S3.                                                                                                                                                                                                                                                                                                               |
 | `s3.http-proxy.secure`        | Set to `true` to enable HTTPS for the proxy server..                                                                                                                                                                                                                                                                                                                  |
 
-### Authentication[#](https://trino.io/docs/current/object-storage/file-system-s3.html#authentication) <a href="#authentication" id="authentication"></a>
+### Authentication <a href="#authentication" id="authentication"></a>
 
 Use the following properties to configure the authentication to S3 with access and secret keys, STS, or an IAM role:
 

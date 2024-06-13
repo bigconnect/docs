@@ -20,9 +20,9 @@ RETURNS BIGINT
 RETURN 42
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Inline and catalog routines[#](https://trino.io/docs/current/routines/examples.html#inline-and-catalog-routines) <a href="#inline-and-catalog-routines" id="inline-and-catalog-routines"></a>
+
+### Inline and catalog routines <a href="#inline-and-catalog-routines" id="inline-and-catalog-routines"></a>
 
 A full example of this routine as inline routine and usage in a string concatenation with a cast:
 
@@ -35,7 +35,7 @@ SELECT 'The answer is ' || CAST(answer() as varchar);
 -- The answer is 42
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Provided the catalog `example` supports routine storage in the `default` schema, you can use the following:
 
@@ -46,7 +46,7 @@ CREATE FUNCTION example.default.answer()
   RETURN 42;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 With the routine stored in the catalog, you can run the routine multiple times without repeated definition:
 
@@ -55,7 +55,7 @@ SELECT example.default.answer() + 1; -- 43
 SELECT 'The answer is' || CAST(example.default.answer() as varchar); -- The answer is 42
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Alternatively, you can configure the SQL environment in the [Config properties](https://trino.io/docs/current/installation/deployment.html#config-properties) to a catalog and schema that support SQL routine storage:
 
@@ -64,7 +64,7 @@ sql.default-function-catalog=example
 sql.default-function-schema=default
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Now you can manage SQL routines without the full path:
 
@@ -74,7 +74,7 @@ CREATE FUNCTION answer()
   RETURN 42;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 SQL routine invocation works without the full path:
 
@@ -82,9 +82,9 @@ SQL routine invocation works without the full path:
 SELECT answer() + 5; -- 47
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Declaration examples[#](https://trino.io/docs/current/routines/examples.html#declaration-examples) <a href="#declaration-examples" id="declaration-examples"></a>
+
+### Declaration examples <a href="#declaration-examples" id="declaration-examples"></a>
 
 The result of calling the routine `answer()` is always identical, so you can declare it as deterministic, and add some other information:
 
@@ -97,7 +97,7 @@ COMMENT 'Provide the answer to the question about life, the universe, and everyt
 RETURN 42
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The comment and other information about the routine is visible in the output of [SHOW FUNCTIONS](https://trino.io/docs/current/sql/show-functions.html).
 
@@ -109,7 +109,7 @@ RETURNS VARCHAR
 RETURN 'Hello, ' || fullname || '!'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Following is an example invocation:
 
@@ -117,7 +117,7 @@ Following is an example invocation:
 SELECT hello('Jane Doe'); -- Hello, Jane Doe!
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 A first example routine, that uses multiple statements in a `BEGIN` block. It calculates the result of a multiplication of the input integer with `99`. The `bigint` data type is used for all variables and values. The value of integer `99` is cast to `bigint` in the default value assignment for the variable `x`.
 
@@ -130,7 +130,7 @@ BEGIN
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Following is an example invocation:
 
@@ -138,9 +138,9 @@ Following is an example invocation:
 SELECT times_ninety_nine(CAST(2 as bigint)); -- 198
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Conditional flows[#](https://trino.io/docs/current/routines/examples.html#conditional-flows) <a href="#conditional-flows" id="conditional-flows"></a>
+
+### Conditional flows <a href="#conditional-flows" id="conditional-flows"></a>
 
 A first example of conditional flow control in a routine using the `CASE` statement. The simple `bigint` input value is compared to a number of values.
 
@@ -159,7 +159,7 @@ BEGIN
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Following are a couple of example invocations with result and explanation:
 
@@ -174,7 +174,7 @@ SELECT simple_case(100); -- other (from else clause)
 SELECT simple_case(null); -- null .. but really??
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 A second example of a routine with a `CASE` statement, this time with two parameters, showcasing the importance of the order of the conditions.
 
@@ -193,7 +193,7 @@ BEGIN
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Following are a couple of example invocations with result and explanation:
 
@@ -210,9 +210,9 @@ SELECT search_case(3,21); -- other
 SELECT simple_case(null,null); -- null .. but really??
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Fibonacci example[#](https://trino.io/docs/current/routines/examples.html#fibonacci-example) <a href="#fibonacci-example" id="fibonacci-example"></a>
+
+### Fibonacci example <a href="#fibonacci-example" id="fibonacci-example"></a>
 
 This routine calculates the `n`-th value in the Fibonacci series, in which each number is the sum of the two preceding ones. The two initial values are set to `1` as the defaults for `a` and `b`. The routine uses an `IF` statement condition to return `1` for all input values of `2` or less. The `WHILE` block then starts to calculate each number in the series, starting with `a=1` and `b=1` and iterates until it reaches the `n`-th position. In each iteration is sets `a` and `b` for the preceding to values, so it can calculate the sum, and finally return it. Note that processing the routine takes longer and longer with higher `n` values, and the result is deterministic.
 
@@ -235,7 +235,7 @@ BEGIN
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Following are a couple of example invocations with result and explanation:
 
@@ -252,9 +252,9 @@ SELECT fib(7); -- 13
 SELECT fib(8); -- 21
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Labels and loops[#](https://trino.io/docs/current/routines/examples.html#labels-and-loops) <a href="#labels-and-loops" id="labels-and-loops"></a>
+
+### Labels and loops <a href="#labels-and-loops" id="labels-and-loops"></a>
 
 This routine uses the `top` label to name the `WHILE` block, and then controls the flow with conditional statements, `ITERATE`, and `LEAVE`. For the values of `a=1` and `a=2` in the first two iterations of the loop the `ITERATE` call moves the flow up to `top` before `b` is ever increased. Then `b` is increased for the values `a=3`, `a=4`, `a=5`, `a=6`, and `a=7`, resulting in `b=5`. The `LEAVE` call then causes the exit of the block before a is increased further to `10` and therefore the result of the routine is `5`.
 
@@ -277,7 +277,7 @@ BEGIN
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This routine implements calculating the `n` to the power of `p` by repeated multiplication and keeping track of the number of multiplications performed. Note that this routine does not return the correct `0` for `p=0` since the `top` block is merely escaped and the value of `n` is returned. The same incorrect behavior happens for negative values of `p`:
 
@@ -297,7 +297,7 @@ RETURNS int
   END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Following are a couple of example invocations with result and explanation:
 
@@ -309,7 +309,7 @@ SELECT power(3, 0); -- 3, which is wrong
 SELECT power(3, -2); -- 3, which is wrong
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This routine returns `7` as a result of the increase of `b` in the loop from `a=3` to `a=10`:
 
@@ -331,7 +331,7 @@ BEGIN
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This routine returns `2` and shows that labels can be repeated and label usage within a block refers to the label of that block:
 
@@ -352,9 +352,9 @@ BEGIN
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Routines and built-in functions[#](https://trino.io/docs/current/routines/examples.html#routines-and-built-in-functions) <a href="#routines-and-built-in-functions" id="routines-and-built-in-functions"></a>
+
+### Routines and built-in functions <a href="#routines-and-built-in-functions" id="routines-and-built-in-functions"></a>
 
 This routine show that multiple data types and built-in functions like `length()` and `cardinality()` can be used in a routine. The two nested `BEGIN` blocks also show how variable names are local within these blocks `x`, but the global `r` from the top-level block can be accessed in the nested blocks:
 
@@ -375,9 +375,9 @@ BEGIN
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Optional parameter example[#](https://trino.io/docs/current/routines/examples.html#optional-parameter-example) <a href="#optional-parameter-example" id="optional-parameter-example"></a>
+
+### Optional parameter example <a href="#optional-parameter-example" id="optional-parameter-example"></a>
 
 Routines can invoke other routines and other functions. The full signature of a routine is composed of routine name and parameters, and determines the exact routine to use. You can declare multiple routines with the same name, but with different number of arguments or different argument types. One example use case is to implement an optional parameter.
 
@@ -394,7 +394,7 @@ BEGIN
 END;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Following are example invocations and output:
 
@@ -405,7 +405,7 @@ SELECT	dots('A short string',15);
 -- A short string
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If you want to provide a routine with the same name, but without the parameter for length, you can create another routine that invokes the preceding routine:
 
@@ -415,7 +415,7 @@ RETURNS varchar
 RETURN dots(input, 15);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can now use both routines. When the length parameter is omitted the default value from the second declaration is used.
 
@@ -428,9 +428,9 @@ SELECT dots('A long string that will be shortened',20);
 -- A long string tha...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Date string parsing example[#](https://trino.io/docs/current/routines/examples.html#date-string-parsing-example) <a href="#date-string-parsing-example" id="date-string-parsing-example"></a>
+
+### Date string parsing example <a href="#date-string-parsing-example" id="date-string-parsing-example"></a>
 
 This example routine parses a date string of type `VARCHAR` into `TIMESTAMP WITH TIME ZONE`. Date strings are commonly represented by ISO 8601 standard, such as `2023-12-01`, `2023-12-01T23`. Date strings are also often represented in the `YYYYmmdd` and `YYYYmmddHH` format, such as `20230101` and `2023010123`. Hive tables can use this format to represent day and hourly partitions, for example `/day=20230101`, `/hour=2023010123`.
 
@@ -453,7 +453,7 @@ BEGIN
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Following are a couple of example invocations with result and explanation:
 
@@ -467,18 +467,18 @@ SELECT from_date_string(NULL); -- NULL (handles NULL string)
 SELECT from_date_string('abc'); -- NULL (not matched to any format)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Human readable days[#](https://trino.io/docs/current/routines/examples.html#human-readable-days) <a href="#human-readable-days" id="human-readable-days"></a>
 
-Trino includes a built-in function called [`human_readable_seconds()`](https://trino.io/docs/current/functions/datetime.html#human\_readable\_seconds) that formats a number of seconds into a string:
+### Human readable days <a href="#human-readable-days" id="human-readable-days"></a>
+
+Trino includes a built-in function called `human_readable_seconds()` that formats a number of seconds into a string:
 
 ```
 SELECT human_readable_seconds(134823);
 -- 1 day, 13 hours, 27 minutes, 3 seconds
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The example routine `hrd` formats a number of days into a human readable text that provides the approximate number of years and months:
 
@@ -514,7 +514,7 @@ BEGIN
 END;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following examples show the output for a range of values under one month, under one year, and various larger values:
 
@@ -528,7 +528,7 @@ SELECT hrd(1100); -- About 3 years
 SELECT hrd(5000); -- About 13 years and 8 months
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Improvements of the routine could include the following modifications:
 
@@ -537,7 +537,7 @@ Improvements of the routine could include the following modifications:
 * Add weeks to the output.
 * Expand the cover decades, centuries, and millenia.
 
-### Truncating long strings[#](https://trino.io/docs/current/routines/examples.html#truncating-long-strings) <a href="#truncating-long-strings" id="truncating-long-strings"></a>
+### Truncating long strings <a href="#truncating-long-strings" id="truncating-long-strings"></a>
 
 This example routine `strtrunc` truncates strings longer than 60 characters, leaving the first 30 and the last 25 characters, and cutting out extra characters in the middle.
 
@@ -551,9 +551,9 @@ RETURN
     END;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-The preceding declaration is very compact and consists of only one complex statement with a [`CASE` expression](https://trino.io/docs/current/functions/conditional.html#case-expression) and multiple function calls. It can therefore define the complete logic in the `RETURN` clause.
+
+The preceding declaration is very compact and consists of only one complex statement with a `CASE` expression and multiple function calls. It can therefore define the complete logic in the `RETURN` clause.
 
 The following statement shows the same capability within the routine itself. Note the duplicate `RETURN` inside and outside the `CASE` statement and the required `END CASE;`. The second `RETURN` statement is required, because a routine must end with a `RETURN` statement. As a result the `ELSE` clause can be omitted.
 
@@ -571,7 +571,7 @@ BEGIN
 END;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The next example changes over from a `CASE` to an `IF` statement, and avoids the duplicate `RETURN`:
 
@@ -586,7 +586,7 @@ BEGIN
 END;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 All the preceding examples create the same output. Following is an example query which generates long strings to truncate:
 
@@ -603,7 +603,7 @@ FROM data
 ORDER BY data.value;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The preceding query produces the following output with all variants of the routine:
 
@@ -621,11 +621,11 @@ The preceding query produces the following output with all variants of the routi
  strtrunc truncates strings longer than 60 characters, leaving the prefix and suf | strtrunc truncates strings lon ... leaving the prefix and suf
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 A possible improvement is to introduce parameters for the total length.
 
-### Formatting bytes[#](https://trino.io/docs/current/routines/examples.html#formatting-bytes) <a href="#formatting-bytes" id="formatting-bytes"></a>
+### Formatting bytes <a href="#formatting-bytes" id="formatting-bytes"></a>
 
 Trino includes a built-in `format_number()` function. However it is using units that don’t work well with bytes. The following `format_data_size` routine can format large values of bytes into a human readable string.
 
@@ -681,7 +681,7 @@ RETURNS VARCHAR
   END;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Below is a query to show how it formats a wide range of values.
 
@@ -701,7 +701,7 @@ FROM data
 ORDER BY data.num;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The preceding query produces the following output:
 
@@ -747,9 +747,9 @@ The preceding query produces the following output:
   1000000000000000000 | 888PB
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Charts[#](https://trino.io/docs/current/routines/examples.html#charts) <a href="#charts" id="charts"></a>
+
+### Charts <a href="#charts" id="charts"></a>
 
 Trino already has a built-in `bar()` [color function](https://trino.io/docs/current/functions/color.html), but it’s using ANSI escape codes to output colors, and thus is only usable for displaying results in a terminal. The following example shows a similar routine, that only uses ASCII characters.
 
@@ -765,7 +765,7 @@ BEGIN
 END;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 It can be used to visualize a value.
 
@@ -785,7 +785,7 @@ FROM data
 ORDER BY data.x;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The preceding query produces the following output:
 
@@ -826,7 +826,7 @@ The preceding query produces the following output:
  3.1 | 0.0416 | ▋
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 It’s also possible to draw more compacted charts. Following is a routine drawing vertical bars:
 
@@ -836,7 +836,7 @@ RETURNS VARCHAR
 RETURN ARRAY[' ', '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'][cast(value * 8 + 1 as int)];
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 It can be used to draw a distribution of values, in a single column.
 
@@ -892,7 +892,7 @@ GROUP BY sensor_id
 ORDER BY sensor_id;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The preceding query produces the following output:
 
@@ -903,11 +903,11 @@ The preceding query produces the following output:
  B         | 2023-01-01 | 2023-01-11 |          7 |      1.00 |      4.00 |      2.39 |   ▄▆▅ ▆ █▃▂
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Top-N[#](https://trino.io/docs/current/routines/examples.html#top-n) <a href="#top-n" id="top-n"></a>
 
-Trino already has a built-in [aggregate function](https://trino.io/docs/current/functions/aggregate.html) called `approx_most_frequent()`, that can calculate most frequently occurring values. It returns a map with values as keys and number of occurrences as values. Maps are not ordered, so when displayed, the entries can change places on subsequent runs of the same query, and readers must still compare all frequencies to find the one most frequent value. The following is a routine returns ordered results as a string.
+### Top-N <a href="#top-n" id="top-n"></a>
+
+Trino already has a built-in aggregate function called `approx_most_frequent()`, that can calculate most frequently occurring values. It returns a map with values as keys and number of occurrences as values. Maps are not ordered, so when displayed, the entries can change places on subsequent runs of the same query, and readers must still compare all frequencies to find the one most frequent value. The following is a routine returns ordered results as a string.
 
 ```
 FUNCTION format_topn(input map<varchar, bigint>)
@@ -929,7 +929,7 @@ BEGIN
 END;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Following is an example query to count generated strings:
 

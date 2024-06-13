@@ -4,7 +4,7 @@ Trino supports statistics based optimizations for queries. For a query to take a
 
 Table statistics are provided to the query planner by connectors.
 
-### Available statistics[#](https://trino.io/docs/current/optimizer/statistics.html#available-statistics) <a href="#available-statistics" id="available-statistics"></a>
+### Available statistics <a href="#available-statistics" id="available-statistics"></a>
 
 The following statistics are available in Trino:
 

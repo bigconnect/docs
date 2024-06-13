@@ -41,7 +41,7 @@ For detailed description of `MATCH_RECOGNIZE` clause, see [pattern recognition i
 TABLE (table_function_invocation) [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 For description of table functions usage, see table functions.
 
@@ -693,7 +693,7 @@ UNION ALL
 SELECT * FROM (VALUES 42, 13);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
  _col0

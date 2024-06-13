@@ -1,14 +1,12 @@
 # DROP CATALOG
 
-### Synopsis[#](https://trino.io/docs/current/sql/drop-catalog.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 DROP CATALOG catalog_name
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-### Description[#](https://trino.io/docs/current/sql/drop-catalog.html#description) <a href="#description" id="description"></a>
+### Description <a href="#description" id="description"></a>
 
 Drops an existing catalog. Dropping a catalog does not interrupt any running queries that use it, but makes it unavailable to any new queries.
 
@@ -20,7 +18,7 @@ Note
 
 This command requires the catalog management type to be set to `dynamic`.
 
-### Examples[#](https://trino.io/docs/current/sql/drop-catalog.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 Drop the catalog `example`:
 
@@ -28,9 +26,9 @@ Drop the catalog `example`:
 DROP CATALOG example;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also# <a href="#see-also" id="see-also"></a>
+
+### See also <a href="#see-also" id="see-also"></a>
 
 * CREATE CATALOG
 * Catalog management properties

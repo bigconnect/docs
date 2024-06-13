@@ -1,6 +1,6 @@
 # Decimal functions and operators
 
-### Decimal literals[#](https://trino.io/docs/current/functions/decimal.html#decimal-literals) <a href="#decimal-literals" id="decimal-literals"></a>
+### Decimal literals <a href="#decimal-literals" id="decimal-literals"></a>
 
 Use the `DECIMAL 'xxxxxxx.yyyyyyy'` syntax to define a decimal literal.
 
@@ -12,37 +12,37 @@ The precision of a decimal type for a literal will be equal to the number of dig
 | `DECIMAL '12345'`                 | `DECIMAL(5)`      |
 | `DECIMAL '0000012345.1234500000'` | `DECIMAL(20, 10)` |
 
-### Binary arithmetic decimal operators[#](https://trino.io/docs/current/functions/decimal.html#binary-arithmetic-decimal-operators) <a href="#binary-arithmetic-decimal-operators" id="binary-arithmetic-decimal-operators"></a>
+### Binary arithmetic decimal operators <a href="#binary-arithmetic-decimal-operators" id="binary-arithmetic-decimal-operators"></a>
 
 Standard mathematical operators are supported. The table below explains precision and scale calculation rules for result. Assuming `x` is of type `DECIMAL(xp, xs)` and `y` is of type `DECIMAL(yp, ys)`.
 
-| Operation           | Result type precision                                                                                                                                                                  | Result type scale |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Operation           | Result type precision                                                                  | Result type scale |
+| ------------------- | -------------------------------------------------------------------------------------- | ----------------- |
 | `x + y` and `x - y` | <pre><code>min(38,
     1 +
     max(xs, ys) +
     max(xp - xs, yp - ys)
 )
-</code></pre><p><img src="https://trino.io/docs/current/_static/copy-button.svg" alt="Copy to clipboard"></p> | `max(xs, ys)`     |
+</code></pre> | `max(xs, ys)`     |
 | `x * y`             | <pre><code>min(38, xp + yp)
-</code></pre><p><img src="https://trino.io/docs/current/_static/copy-button.svg" alt="Copy to clipboard"></p>                                              | `xs + ys`         |
+</code></pre>                                              | `xs + ys`         |
 | `x / y`             | <pre><code>min(38,
     xp + ys-xs
     + max(0, ys-xs)
     )
-</code></pre><p><img src="https://trino.io/docs/current/_static/copy-button.svg" alt="Copy to clipboard"></p>              | `max(xs, ys)`     |
+</code></pre>              | `max(xs, ys)`     |
 | `x % y`             | <pre><code>min(xp - xs, yp - ys) +
 max(xs, bs)
-</code></pre><p><img src="https://trino.io/docs/current/_static/copy-button.svg" alt="Copy to clipboard"></p>                           | `max(xs, ys)`     |
+</code></pre>                           | `max(xs, ys)`     |
 
 If the mathematical result of the operation is not exactly representable with the precision and scale of the result data type, then an exception condition is raised: `Value is out of range`.
 
 When operating on decimal types with different scale and precision, the values are first coerced to a common super type. For types near the largest representable precision (38), this can result in Value is out of range errors when one of the operands doesn’t fit in the common super type. For example, the common super type of decimal(38, 0) and decimal(38, 1) is decimal(38, 1), but certain values that fit in decimal(38, 0) cannot be represented as a decimal(38, 1).
 
-### Comparison operators[#](https://trino.io/docs/current/functions/decimal.html#comparison-operators) <a href="#comparison-operators" id="comparison-operators"></a>
+### Comparison operators <a href="#comparison-operators" id="comparison-operators"></a>
 
 All standard Comparison functions and operators work for the decimal type.
 
-### Unary decimal operators[#](https://trino.io/docs/current/functions/decimal.html#unary-decimal-operators) <a href="#unary-decimal-operators" id="unary-decimal-operators"></a>
+### Unary decimal operators <a href="#unary-decimal-operators" id="unary-decimal-operators"></a>
 
 The `-` operator performs negation. The type of result is same as type of argument.

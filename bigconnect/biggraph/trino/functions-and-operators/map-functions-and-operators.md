@@ -1,6 +1,6 @@
 # Map functions and operators
 
-### Subscript operator: \[][#](https://trino.io/docs/current/functions/map.html#subscript-operator) <a href="#subscript-operator" id="subscript-operator"></a>
+### Subscript operator: \[] <a href="#subscript-operator" id="subscript-operator"></a>
 
 The `[]` operator is used to retrieve the value corresponding to a given key from a map. This operator throws an error if the key is not contained in the map. See also `element_at` function that returns `NULL` in such case.
 
@@ -8,9 +8,9 @@ The `[]` operator is used to retrieve the value corresponding to a given key fro
 SELECT name_to_age_map['Bob'] AS bob_age;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Map functions[#](https://trino.io/docs/current/functions/map.html#map-functions) <a href="#map-functions" id="map-functions"></a>
+
+### Map functions <a href="#map-functions" id="map-functions"></a>
 
 cardinality(_x_) → bigint
 
@@ -20,7 +20,7 @@ element\_at(_map(K_, _V)_, _key_) → V
 
 Returns value for given `key`, or `NULL` if the key is not contained in the map.
 
-map() → map\<unknown, unknown>[#](https://trino.io/docs/current/functions/map.html#map)
+map() → map\<unknown, unknown>
 
 Returns an empty map.
 
@@ -29,7 +29,7 @@ SELECT map();
 -- {}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)map(_array(K)_, _array(V)) -> map(K_, _V_)
+map(_array(K)_, _array(V)) -> map(K_, _V_)
 
 Returns a map created using the given key/value arrays.
 
@@ -38,11 +38,11 @@ SELECT map(ARRAY[1,3], ARRAY[2,4]);
 -- {1 -> 2, 3 -> 4}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 See also `map_agg()` and `multimap_agg()` for creating a map as an aggregation.
 
-map\_from\_entries(_array(row(K_, _V))) -> map(K_, _V_)[#](https://trino.io/docs/current/functions/map.html#map\_from\_entries)
+map\_from\_entries(_array(row(K_, _V))) -> map(K_, _V_)
 
 Returns a map created from the given array of entries.
 
@@ -51,7 +51,7 @@ SELECT map_from_entries(ARRAY[(1, 'x'), (2, 'y')]);
 -- {1 -> 'x', 2 -> 'y'}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)multimap\_from\_entries(_array(row(K_, _V))) -> map(K_, _array(V)_)[#](https://trino.io/docs/current/functions/map.html#multimap\_from\_entries)
+multimap\_from\_entries(_array(row(K_, _V))) -> map(K_, _array(V)_)
 
 Returns a multimap created from the given array of entries. Each key can be associated with multiple values.
 
@@ -60,7 +60,7 @@ SELECT multimap_from_entries(ARRAY[(1, 'x'), (2, 'y'), (1, 'z')]);
 -- {1 -> ['x', 'z'], 2 -> ['y']}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)map\_entries(_map(K_, _V)) -> array(row(K_, _V)_)[#](https://trino.io/docs/current/functions/map.html#map\_entries)
+map\_entries(_map(K_, _V)) -> array(row(K_, _V)_)
 
 Returns an array of all entries in the given map.
 
@@ -69,11 +69,11 @@ SELECT map_entries(MAP(ARRAY[1, 2], ARRAY['x', 'y']));
 -- [ROW(1, 'x'), ROW(2, 'y')]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)map\_concat(_map1(K_, _V)_, _map2(K_, _V)_, _..._, _mapN(K_, _V)) -> map(K_, _V_)[#](https://trino.io/docs/current/functions/map.html#map\_concat)
+map\_concat(_map1(K_, _V)_, _map2(K_, _V)_, _..._, _mapN(K_, _V)) -> map(K_, _V_)
 
 Returns the union of all the given maps. If a key is found in multiple given maps, that key’s value in the resulting map comes from the last one of those maps.
 
-map\_filter(_map(K_, _V)_, _function(K_, _V_, _boolean)) -> map(K_, _V_)[#](https://trino.io/docs/current/functions/map.html#map\_filter)
+map\_filter(_map(K_, _V)_, _function(K_, _V_, _boolean)) -> map(K_, _V_)
 
 Constructs a map from those entries of `map` for which `function` returns true:
 
@@ -90,15 +90,15 @@ SELECT map_filter(MAP(ARRAY['k1', 'k2', 'k3'], ARRAY[20, 3, 15]),
 -- {k1 -> 20, k3 -> 15}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)map\_keys(_x(K_, _V)) -> array(K_)[#](https://trino.io/docs/current/functions/map.html#map\_keys)
+map\_keys(_x(K_, _V)) -> array(K_)
 
 Returns all the keys in the map `x`.
 
-map\_values(_x(K_, _V)) -> array(V_)[#](https://trino.io/docs/current/functions/map.html#map\_values)
+map\_values(_x(K_, _V)) -> array(V_)
 
 Returns all the values in the map `x`.
 
-map\_zip\_with(_map(K_, _V1)_, _map(K_, _V2)_, _function(K_, _V1_, _V2_, _V3)) -> map(K_, _V3_)[#](https://trino.io/docs/current/functions/map.html#map\_zip\_with)
+map\_zip\_with(_map(K_, _V1)_, _map(K_, _V2)_, _function(K_, _V1_, _V2_, _V3)) -> map(K_, _V3_)
 
 Merges the two given maps into a single map by applying `function` to the pair of values with the same key. For keys only presented in one map, NULL will be passed as the value for the missing key.
 
@@ -119,7 +119,7 @@ SELECT map_zip_with(MAP(ARRAY['a', 'b', 'c'], ARRAY[1, 8, 27]),
 -- {a -> a1, b -> b4, c -> c9}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)transform\_keys(_map(K1_, _V)_, _function(K1_, _V_, _K2)) -> map(K2_, _V_)[#](https://trino.io/docs/current/functions/map.html#transform\_keys)
+transform\_keys(_map(K1_, _V)_, _function(K1_, _V_, _K2)) -> map(K2_, _V_)
 
 Returns a map that applies `function` to each entry of `map` and transforms the keys:
 
@@ -144,7 +144,7 @@ SELECT transform_keys(MAP(ARRAY [1, 2], ARRAY [1.0, 1.4]),
 -- {one -> 1.0, two -> 1.4}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)transform\_values(_map(K_, _V1)_, _function(K_, _V1_, _V2)) -> map(K_, _V2_)[#](https://trino.io/docs/current/functions/map.html#transform\_values)
+transform\_values(_map(K_, _V1)_, _function(K_, _V1_, _V2)) -> map(K_, _V2_)
 
 Returns a map that applies `function` to each entry of `map` and transforms the values:
 

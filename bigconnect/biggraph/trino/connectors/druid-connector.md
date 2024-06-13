@@ -2,14 +2,14 @@
 
 The Druid connector allows querying an Apache Druid database from Trino.
 
-### Requirements[#](https://trino.io/docs/current/connector/druid.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To connect to Druid, you need:
 
 * Druid version 0.18.0 or higher.
 * Network access from the Trino coordinator and workers to your Druid broker. Port 8082 is the default port.
 
-### Configuration[#](https://trino.io/docs/current/connector/druid.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 Create a catalog properties file that specifies the Druid connector by setting the `connector.name` to `druid` and configuring the `connection-url` with the JDBC string to connect to Druid.
 
@@ -20,7 +20,7 @@ connector.name=druid
 connection-url=jdbc:avatica:remote:url=http://BROKER:8082/druid/v2/sql/avatica/
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can add authentication details to connect to a Druid deployment that is secured by basic authentication by updating the URL and adding credentials:
 
@@ -34,7 +34,7 @@ Now you can access your Druid database in Trino with the `example` catalog name 
 
 The `connection-user` and `connection-password` are typically required and determine the user credentials for the connection, often a service user. You can use [secrets](https://trino.io/docs/current/security/secrets.html) to avoid actual values in the catalog properties files.
 
-#### Data source authentication[#](https://trino.io/docs/current/connector/druid.html#data-source-authentication) <a href="#data-source-authentication" id="data-source-authentication"></a>
+#### Data source authentication <a href="#data-source-authentication" id="data-source-authentication"></a>
 
 The connector can provide credentials for the data source connection in multiple ways:
 
@@ -63,7 +63,7 @@ The following table describes configuration properties for connection credential
 | `keystore-password-credential-name`     | Name of the key store entity to use as the password.                                                                                       |
 | `keystore-password-credential-password` | Password for the password key store entity.                                                                                                |
 
-#### General configuration properties[#](https://trino.io/docs/current/connector/druid.html#general-configuration-properties) <a href="#general-configuration-properties" id="general-configuration-properties"></a>
+#### General configuration properties <a href="#general-configuration-properties" id="general-configuration-properties"></a>
 
 The following table describes general catalog configuration properties for the connector:
 
@@ -83,7 +83,7 @@ The following table describes general catalog configuration properties for the c
 | `dynamic-filtering.enabled`                                 | Push down dynamic filters into JDBC queries. Defaults to `true`.                                                                                                                                                                                                                                |
 | `dynamic-filtering.wait-timeout`                            | Maximum duration for which Trino waits for dynamic filters to be collected from the build side of joins before starting a JDBC query. Using a large timeout can potentially result in more detailed dynamic filters. However, it can also increase latency for some queries. Defaults to `20s`. |
 
-#### Appending query metadata[#](https://trino.io/docs/current/connector/druid.html#appending-query-metadata) <a href="#appending-query-metadata" id="appending-query-metadata"></a>
+#### Appending query metadata <a href="#appending-query-metadata" id="appending-query-metadata"></a>
 
 The optional parameter `query.comment-format` allows you to configure a SQL comment that is sent to the datasource with each query. The format of this comment can contain any characters and the following metadata:
 
@@ -122,7 +122,7 @@ Note
 
 Certain JDBC driver settings and logging configurations might cause the comment to be removed.
 
-#### Domain compaction threshold[#](https://trino.io/docs/current/connector/druid.html#domain-compaction-threshold) <a href="#domain-compaction-threshold" id="domain-compaction-threshold"></a>
+#### Domain compaction threshold <a href="#domain-compaction-threshold" id="domain-compaction-threshold"></a>
 
 Pushing down a large list of predicates to the data source can compromise performance. Trino compacts large predicates into a simpler range predicate by default to ensure a balance between performance and predicate pushdown. If necessary, the threshold for this compaction can be increased to improve performance when the data source is capable of taking advantage of large predicates. Increasing this threshold may improve pushdown of large dynamic filters. The `domain-compaction-threshold` catalog configuration property or the `domain_compaction_threshold` catalog session property can be used to adjust the default value of `32` for this threshold.
 
@@ -137,7 +137,7 @@ Pushing down a large list of predicates to the data source can compromise perfor
     CALL system.flush_metadata_cache();
     ```
 
-#### Case insensitive matching[#](https://trino.io/docs/current/connector/druid.html#case-insensitive-matching) <a href="#case-insensitive-matching" id="case-insensitive-matching"></a>
+#### Case insensitive matching <a href="#case-insensitive-matching" id="case-insensitive-matching"></a>
 
 When `case-insensitive-name-matching` is set to `true`, Trino is able to query non-lowercase schemas and tables by maintaining a mapping of the lowercase name to the actual name in the remote system. However, if two schemas and/or tables have names that differ only in case (such as “customers” and “Customers”) then Trino fails to query them due to ambiguity.
 
@@ -178,11 +178,11 @@ By default, when a change is made to the mapping configuration file, Trino must 
 case-insensitive-name-mapping.refresh-period=30s
 ```
 
-### Type mapping[#](https://trino.io/docs/current/connector/druid.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
-Because Trino and Druid each support types that the other does not, this connector [modifies some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading data.
+Because Trino and Druid each support types that the other does not, this connector modifies some types when reading data.
 
-#### Druid type to Trino type mapping[#](https://trino.io/docs/current/connector/druid.html#druid-type-to-trino-type-mapping) <a href="#druid-type-to-trino-type-mapping" id="druid-type-to-trino-type-mapping"></a>
+#### Druid type to Trino type mapping <a href="#druid-type-to-trino-type-mapping" id="druid-type-to-trino-type-mapping"></a>
 
 The connector maps Druid types to the corresponding Trino types according to the following table:
 
@@ -198,7 +198,7 @@ No other data types are supported.
 
 Druid does not have a real `NULL` value for any data type. By default, Druid treats `NULL` as the default value for a data type. For example, `LONG` would be `0`, `DOUBLE` would be `0.0`, `STRING` would be an empty string `''`, and so forth.
 
-#### Type mapping configuration properties[#](https://trino.io/docs/current/connector/druid.html#type-mapping-configuration-properties) <a href="#type-mapping-configuration-properties" id="type-mapping-configuration-properties"></a>
+#### Type mapping configuration properties <a href="#type-mapping-configuration-properties" id="type-mapping-configuration-properties"></a>
 
 The following properties can be used to configure how data types from the connected data source are mapped to Trino data types and how the metadata is cached in Trino.
 
@@ -215,7 +215,7 @@ The connector provides globally available and read operation statements to acces
 
 The connector provides specific table functions to access Druid.
 
-#### `query(varchar) -> table`[#](https://trino.io/docs/current/connector/druid.html#query-varchar-table) <a href="#query-varchar-table" id="query-varchar-table"></a>
+#### `query(varchar) -> table` <a href="#query-varchar-table" id="query-varchar-table"></a>
 
 The `query` function allows you to query the underlying database directly. It requires syntax native to Druid, because the full query is pushed down and processed in Druid. This can be useful for accessing native features which are not available in Trino or for improving query performance in situations where running a query natively may be faster.
 

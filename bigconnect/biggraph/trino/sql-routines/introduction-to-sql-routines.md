@@ -2,7 +2,7 @@
 
 A SQL routine is a custom, user-defined function authored by a user of Trino and written in the SQL routine language. You can declare the routine body within a FUNCTION block as inline routines or catalog routines.
 
-### Inline routines# <a href="#inline-routines" id="inline-routines"></a>
+### Inline routines <a href="#inline-routines" id="inline-routines"></a>
 
 An inline routine declares and uses the routine within a query processing context. The routine is declared in a `WITH` block before the query:
 
@@ -14,7 +14,7 @@ WITH
 SELECT abc(21);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Inline routine names must follow SQL identifier naming conventions, and cannot contain `.` characters.
 
@@ -33,7 +33,7 @@ WITH
 SELECT xyz(21);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note that inline routines can mask and override the meaning of a built-in function:
 
@@ -45,9 +45,9 @@ WITH
 SELECT abs(-10); -- -20, not 10!
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Catalog routines[#](https://trino.io/docs/current/routines/introduction.html#catalog-routines) <a href="#catalog-routines" id="catalog-routines"></a>
+
+### Catalog routines <a href="#catalog-routines" id="catalog-routines"></a>
 
 You can store a routine in the context of a catalog, if the connector used in the catalog supports routine storage. The following connectors support catalog routine storage:
 
@@ -64,7 +64,7 @@ Catalog routines must use a name that combines the catalog name and schema name 
 
 Invocation must use the fully qualified name, such as `example.default.power`.
 
-### SQL environment configuration[#](https://trino.io/docs/current/routines/introduction.html#sql-environment-configuration) <a href="#sql-environment-configuration" id="sql-environment-configuration"></a>
+### SQL environment configuration <a href="#sql-environment-configuration" id="sql-environment-configuration"></a>
 
 Configuration of the `sql.default-function-catalog` and `sql.default-function-schema` SQL environment properties allows you to set the default storage for SQL routines. The catalog and schema must be added to the `sql.path` as well. This enables users to call SQL routines and perform all SQL routine management without specifying the full path to the routine.
 
@@ -72,7 +72,7 @@ Note
 
 Use the Memory connector in a catalog for simple storing and testing of your SQL routines.
 
-### Routine declaration# <a href="#routine-declaration" id="routine-declaration"></a>
+### Routine declaration <a href="#routine-declaration" id="routine-declaration"></a>
 
 Refer to the documentation for the FUNCTION keyword for more details about declaring the routine overall. The routine body is composed with statements from the following list:
 
@@ -96,7 +96,7 @@ Note
 
 User-defined functions can alternatively be written in Java and deployed as a plugin. Details are available in the developer guide.
 
-### Labels[#](https://trino.io/docs/current/routines/introduction.html#labels) <a href="#labels" id="labels"></a>
+### Labels <a href="#labels" id="labels"></a>
 
 Routines can contain labels as markers for a specific block in the declaration before the following keywords:
 
@@ -119,11 +119,11 @@ top: REPEAT
 END REPEAT;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Labels can be used with the `ITERATE` and `LEAVE` statements to continue processing the block or leave the block. This flow control is also supported for nested blocks and labels.
 
-### Recommendations[#](https://trino.io/docs/current/routines/introduction.html#recommendations) <a href="#recommendations" id="recommendations"></a>
+### Recommendations <a href="#recommendations" id="recommendations"></a>
 
 Processing routines can potentially be resource intensive on the cluster in terms of memory and processing. Take the following considerations into account when writing and running SQL routines:
 
@@ -132,7 +132,7 @@ Processing routines can potentially be resource intensive on the cluster in term
 * Avoid concatenating strings in a looping construct. Each iteration creates a separate new string and copying the old string for each modification, leaving the prior string in memory for automated clean up later. Use a lambda expression instead of the loop.
 * Most routines should declare the `RETURNS NULL ON NULL INPUT` characteristics unless the code has some special handling for null values. You must declare this explicitly since `CALLED ON NULL INPUT` is the default characteristic.
 
-### Limitations[#](https://trino.io/docs/current/routines/introduction.html#limitations) <a href="#limitations" id="limitations"></a>
+### Limitations <a href="#limitations" id="limitations"></a>
 
 The following limitations apply to SQL routines.
 

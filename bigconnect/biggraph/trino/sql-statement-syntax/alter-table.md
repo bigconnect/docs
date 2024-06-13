@@ -1,6 +1,6 @@
 # ALTER TABLE
 
-### Synopsis[#](https://trino.io/docs/current/sql/alter-table.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 ALTER TABLE [ IF EXISTS ] name RENAME TO new_name
@@ -17,9 +17,9 @@ ALTER TABLE name EXECUTE command [ ( parameter => expression [, ... ] ) ]
     [ WHERE expression ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/alter-table.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 Change the definition of an existing table.
 
@@ -29,7 +29,7 @@ The optional `IF EXISTS` (when used before the column name) clause causes the er
 
 The optional `IF NOT EXISTS` clause causes the error to be suppressed if the column already exists.
 
-#### SET PROPERTIES[#](https://trino.io/docs/current/sql/alter-table.html#set-properties) <a href="#set-properties" id="set-properties"></a>
+#### SET PROPERTIES <a href="#set-properties" id="set-properties"></a>
 
 The `ALTER TABLE SET PROPERTIES` statement followed by some number of `property_name` and `expression` pairs applies the specified properties and values to a table. Ommitting an already-set property from this statement leaves that property unchanged in the table.
 
@@ -37,7 +37,7 @@ A property in a `SET PROPERTIES` statement can be set to `DEFAULT`, which revert
 
 Support for `ALTER TABLE SET PROPERTIES` varies between connectors, as not all connectors support modifying table properties.
 
-#### EXECUTE[#](https://trino.io/docs/current/sql/alter-table.html#execute) <a href="#execute" id="execute"></a>
+#### EXECUTE <a href="#execute" id="execute"></a>
 
 The `ALTER TABLE EXECUTE` statement followed by a `command` and `parameters` modifies the table according to the specified command and parameters. `ALTER TABLE EXECUTE` supports different commands on a per-connector basis.
 
@@ -49,9 +49,9 @@ Executable commands are contributed by connectors, such as the `optimize` comman
 ALTER TABLE example.test.test_table EXECUTE optimize(file_size_threshold => '16MB')
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Examples[#](https://trino.io/docs/current/sql/alter-table.html#examples) <a href="#examples" id="examples"></a>
+
+### Examples <a href="#examples" id="examples"></a>
 
 Rename table `users` to `people`:
 
@@ -59,7 +59,7 @@ Rename table `users` to `people`:
 ALTER TABLE users RENAME TO people;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Rename table `users` to `people` if table `users` exists:
 
@@ -67,7 +67,7 @@ Rename table `users` to `people` if table `users` exists:
 ALTER TABLE IF EXISTS users RENAME TO people;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Add column `zip` to the `users` table:
 
@@ -75,7 +75,7 @@ Add column `zip` to the `users` table:
 ALTER TABLE users ADD COLUMN zip varchar;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Add column `zip` to the `users` table if table `users` exists and column `zip` not already exists:
 
@@ -83,7 +83,7 @@ Add column `zip` to the `users` table if table `users` exists and column `zip` n
 ALTER TABLE IF EXISTS users ADD COLUMN IF NOT EXISTS zip varchar;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Drop column `zip` from the `users` table:
 
@@ -91,7 +91,7 @@ Drop column `zip` from the `users` table:
 ALTER TABLE users DROP COLUMN zip;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Drop column `zip` from the `users` table if table `users` and column `zip` exists:
 
@@ -99,7 +99,7 @@ Drop column `zip` from the `users` table if table `users` and column `zip` exist
 ALTER TABLE IF EXISTS users DROP COLUMN IF EXISTS zip;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Rename column `id` to `user_id` in the `users` table:
 
@@ -107,7 +107,7 @@ Rename column `id` to `user_id` in the `users` table:
 ALTER TABLE users RENAME COLUMN id TO user_id;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Rename column `id` to `user_id` in the `users` table if table `users` and column `id` exists:
 
@@ -115,7 +115,7 @@ Rename column `id` to `user_id` in the `users` table if table `users` and column
 ALTER TABLE IF EXISTS users RENAME column IF EXISTS id to user_id;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Change type of column `id` to `bigint` in the `users` table:
 
@@ -123,7 +123,7 @@ Change type of column `id` to `bigint` in the `users` table:
 ALTER TABLE users ALTER COLUMN id SET DATA TYPE bigint;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Drop a not null constraint on `id` column in the `users` table:
 
@@ -131,7 +131,7 @@ Drop a not null constraint on `id` column in the `users` table:
 ALTER TABLE users ALTER COLUMN id DROP NOT NULL;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Change owner of table `people` to user `alice`:
 
@@ -139,7 +139,7 @@ Change owner of table `people` to user `alice`:
 ALTER TABLE people SET AUTHORIZATION alice
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Allow everyone with role public to drop and alter table `people`:
 
@@ -147,7 +147,7 @@ Allow everyone with role public to drop and alter table `people`:
 ALTER TABLE people SET AUTHORIZATION ROLE PUBLIC
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Set table properties (`x = y`) in table `people`:
 
@@ -155,7 +155,7 @@ Set table properties (`x = y`) in table `people`:
 ALTER TABLE people SET PROPERTIES x = 'y';
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Set multiple table properties (`foo = 123` and `foo bar = 456`) in table `people`:
 
@@ -163,7 +163,7 @@ Set multiple table properties (`foo = 123` and `foo bar = 456`) in table `people
 ALTER TABLE people SET PROPERTIES foo = 123, "foo bar" = 456;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Set table property `x` to its default value in table\`\`people\`\`:
 
@@ -171,8 +171,8 @@ Set table property `x` to its default value in table\`\`people\`\`:
 ALTER TABLE people SET PROPERTIES x = DEFAULT;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also# <a href="#see-also" id="see-also"></a>
+
+### See also <a href="#see-also" id="see-also"></a>
 
 CREATE TABLE

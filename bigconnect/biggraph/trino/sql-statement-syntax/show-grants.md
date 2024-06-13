@@ -1,12 +1,12 @@
 # SHOW GRANTS
 
-### Synopsis[#](https://trino.io/docs/current/sql/show-grants.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 SHOW GRANTS [ ON [ TABLE ] table_name ]
 ```
 
-### Description[#](https://trino.io/docs/current/sql/show-grants.html#description) <a href="#description" id="description"></a>
+### Description <a href="#description" id="description"></a>
 
 List the grants for the current user on the specified table in the current catalog.
 
@@ -18,7 +18,7 @@ Note
 
 Ensure that authentication has been enabled before running any of the authorization commands.
 
-### Examples[#](https://trino.io/docs/current/sql/show-grants.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 List the grants for the current user on table `orders`:
 
@@ -32,13 +32,13 @@ List the grants for the current user on all the tables in all schemas of the cur
 SHOW GRANTS;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Limitations[#](https://trino.io/docs/current/sql/show-grants.html#limitations) <a href="#limitations" id="limitations"></a>
+
+### Limitations <a href="#limitations" id="limitations"></a>
 
 Some connectors have no support for `SHOW GRANTS`. See connector documentation for more details.
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 GRANT privilege, REVOKE privilege
 

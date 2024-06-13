@@ -10,7 +10,7 @@ Trino uses any supplied trace identifiers from client tools across the cluster. 
 
 If you want to receive traces from data sources and other integrations, these tools must also support OpenTelemetry tracing and use the supplied identifiers from Trino to propagate the context. Tracing must be enabled separately on these tools.
 
-### Configuration[#](https://trino.io/docs/current/admin/opentelemetry.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 Use tracing with OpenTelemetry by enabling it and configuring the endpoint in the config.properties file:
 
@@ -19,11 +19,11 @@ tracing.enabled=true
 tracing.exporter.endpoint=http://observe.example.com:4317
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Tracing is not enabled by default. The exporter endpoint must specify a URL that is accessible from the coordinator and all workers of the cluster. The preceding example uses a observability platform deployment available by HTTP at the host `observe.example.com`, port `4317`.
 
-### Example use[#](https://trino.io/docs/current/admin/opentelemetry.html#example-use) <a href="#example-use" id="example-use"></a>
+### Example use <a href="#example-use" id="example-use"></a>
 
 The following steps provide a simple demo setup to run the open source observability platform [Jaeger](https://www.jaegertracing.io/) and Trino locally in Docker containers.
 
@@ -33,7 +33,7 @@ Create a shared network for both servers called `platform`:
 docker network create platform
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Start Jaeger in the background:
 
@@ -48,7 +48,7 @@ docker run -d \
   jaegertracing/all-in-one:latest
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The preceding command adds Jaeger to the `platform` network with the hostname `jaeger`. It also maps the endpoint and Jaeger UI ports.
 
@@ -62,7 +62,7 @@ tracing.enabled=true
 tracing.exporter.endpoint=http://jaeger:4317
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Start Trino in the background:
 
@@ -75,7 +75,7 @@ docker run -d \
   trinodb/trino:latest
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The preceding command adds Trino to the `platform` network. It also mounts the configuration file into the container so that tracing is enabled.
 
@@ -96,7 +96,7 @@ docker stop trino
 docker stop jaeger
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can start them again for further testing:
 
@@ -105,7 +105,7 @@ docker start jaeger
 docker start trino
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Use the following commands to completely remove the network and containers:
 

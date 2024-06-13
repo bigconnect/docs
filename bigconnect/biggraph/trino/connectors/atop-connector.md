@@ -2,11 +2,11 @@
 
 The Atop connector supports reading disk utilization statistics from the [Atop](https://www.atoptool.nl/) (Advanced System and Process Monitor) Linux server performance analysis tool.
 
-### Requirements[#](https://trino.io/docs/current/connector/atop.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 In order to use this connector, the host on which the Trino worker is running needs to have the `atop` tool installed locally.
 
-### Connector configuration[#](https://trino.io/docs/current/connector/atop.html#connector-configuration) <a href="#connector-configuration" id="connector-configuration"></a>
+### Connector configuration <a href="#connector-configuration" id="connector-configuration"></a>
 
 The connector can read disk utilization statistics on the Trino cluster. Create a catalog properties file that specifies the Atop connector by setting the `connector.name` to `atop`.
 
@@ -17,7 +17,7 @@ connector.name=atop
 atop.executable-path=/usr/bin/atop
 ```
 
-### Configuration properties[#](https://trino.io/docs/current/connector/atop.html#configuration-properties) <a href="#configuration-properties" id="configuration-properties"></a>
+### Configuration properties <a href="#configuration-properties" id="configuration-properties"></a>
 
 | Property name                      | Default value  | Required | Description                                                                                                                                                      |
 | ---------------------------------- | -------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -1,6 +1,6 @@
 # Array functions and operators
 
-### Subscript operator: \[][#](https://trino.io/docs/current/functions/array.html#subscript-operator) <a href="#subscript-operator" id="subscript-operator"></a>
+### Subscript operator: \[] <a href="#subscript-operator" id="subscript-operator"></a>
 
 The `[]` operator is used to access an element of an array and is indexed starting from one:
 
@@ -8,9 +8,9 @@ The `[]` operator is used to access an element of an array and is indexed starti
 SELECT my_array[1] AS first_element
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Concatenation operator: ||[#](https://trino.io/docs/current/functions/array.html#concatenation-operator) <a href="#concatenation-operator" id="concatenation-operator"></a>
+
+### Concatenation operator: || <a href="#concatenation-operator" id="concatenation-operator"></a>
 
 The `||` operator is used to concatenate an array with an array or an element of the same type:
 
@@ -25,35 +25,35 @@ SELECT 2 || ARRAY[1];
 -- [2, 1]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ### Array functions[#](https://trino.io/docs/current/functions/array.html#array-functions) <a href="#array-functions" id="array-functions"></a>
 
-all\_match(_array(T)_, _function(T_, _boolean)_) → boolean[#](https://trino.io/docs/current/functions/array.html#all\_match)
+all\_match(_array(T)_, _function(T_, _boolean)_) → boolean
 
 Returns whether all elements of an array match the given predicate. Returns `true` if all the elements match the predicate (a special case is when the array is empty); `false` if one or more elements don’t match; `NULL` if the predicate function returns `NULL` for one or more elements and `true` for all other elements.
 
-any\_match(_array(T)_, _function(T_, _boolean)_) → boolean[#](https://trino.io/docs/current/functions/array.html#any\_match)
+any\_match(_array(T)_, _function(T_, _boolean)_) → boolean
 
 Returns whether any elements of an array match the given predicate. Returns `true` if one or more elements match the predicate; `false` if none of the elements matches (a special case is when the array is empty); `NULL` if the predicate function returns `NULL` for one or more elements and `false` for all other elements.
 
-array\_distinct(_x_) → array[#](https://trino.io/docs/current/functions/array.html#array\_distinct)
+array\_distinct(_x_) → array
 
 Remove duplicate values from the array `x`.
 
-array\_intersect(_x_, _y_) → array[#](https://trino.io/docs/current/functions/array.html#array\_intersect)
+array\_intersect(_x_, _y_) → array
 
 Returns an array of the elements in the intersection of `x` and `y`, without duplicates.
 
-array\_union(_x_, _y_) → array[#](https://trino.io/docs/current/functions/array.html#array\_union)
+array\_union(_x_, _y_) → array
 
 Returns an array of the elements in the union of `x` and `y`, without duplicates.
 
-array\_except(_x_, _y_) → array[#](https://trino.io/docs/current/functions/array.html#array\_except)
+array\_except(_x_, _y_) → array
 
 Returns an array of elements in `x` but not in `y`, without duplicates.
 
-array\_histogram(_x_) → map\<K, bigint>[#](https://trino.io/docs/current/functions/array.html#array\_histogram)
+array\_histogram(_x_) → map\<K, bigint>
 
 Returns a map where the keys are the unique elements in the input array `x` and the values are the number of times that each element appears in `x`. Null values are ignored.
 
@@ -62,7 +62,7 @@ SELECT array_histogram(ARRAY[42, 7, 42, NULL]);
 -- {42=2, 7=1}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Returns an empty map if the input array has no non-null elements.
 
@@ -71,7 +71,7 @@ SELECT array_histogram(ARRAY[NULL, NULL]);
 -- {}
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)array\_join(_x_, _delimiter_) → varchar[#](https://trino.io/docs/current/functions/array.html#array\_join)
+array\_join(_x_, _delimiter_) → varchar
 
 Concatenates the elements of the given array using the delimiter. Null elements are omitted in the result.
 
@@ -79,23 +79,23 @@ array\_join(_x_, _delimiter_, _null\_replacement_) → varchar
 
 Concatenates the elements of the given array using the delimiter and an optional string to replace nulls.
 
-array\_max(_x_) → x[#](https://trino.io/docs/current/functions/array.html#array\_max)
+array\_max(_x_) → x
 
 Returns the maximum value of input array.
 
-array\_min(_x_) → x[#](https://trino.io/docs/current/functions/array.html#array\_min)
+array\_min(_x_) → x
 
 Returns the minimum value of input array.
 
-array\_position(_x_, _element_) → bigint[#](https://trino.io/docs/current/functions/array.html#array\_position)
+array\_position(_x_, _element_) → bigint
 
 Returns the position of the first occurrence of the `element` in array `x` (or 0 if not found).
 
-array\_remove(_x_, _element_) → array[#](https://trino.io/docs/current/functions/array.html#array\_remove)
+array\_remove(_x_, _element_) → array
 
 Remove all elements that equal `element` from array `x`.
 
-array\_sort(_x_) → array[#](https://trino.io/docs/current/functions/array.html#array\_sort)
+array\_sort(_x_) → array
 
 Sorts and returns the array `x`. The elements of `x` must be orderable. Null elements will be placed at the end of the returned array.
 
@@ -144,11 +144,11 @@ SELECT array_sort(ARRAY[ARRAY[2, 3, 1], ARRAY[4, 2, 1, 4], ARRAY[1, 2]],
 -- [[1, 2], [2, 3, 1], [4, 2, 1, 4]]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)arrays\_overlap(_x_, _y_) → boolean[#](https://trino.io/docs/current/functions/array.html#arrays\_overlap)
+arrays\_overlap(_x_, _y_) → boolean
 
 Tests if arrays `x` and `y` have any non-null elements in common. Returns null if there are no non-null elements in common but either array contains null.
 
-cardinality(_x_) → bigint[#](https://trino.io/docs/current/functions/array.html#cardinality)
+cardinality(_x_) → bigint
 
 Returns the cardinality (size) of the array `x`.
 
@@ -156,7 +156,7 @@ concat(_array1_, _array2_, _..._, _arrayN_) → array
 
 Concatenates the arrays `array1`, `array2`, `...`, `arrayN`. This function provides the same functionality as the SQL-standard concatenation operator (`||`).
 
-combinations(_array(T)_, _n) -> array(array(T)_)[#](https://trino.io/docs/current/functions/array.html#combinations)
+combinations(_array(T)_, _n) -> array(array(T)_)
 
 Returns n-element sub-groups of input array. If the input array has no duplicates, `combinations` returns n-element subsets.
 
@@ -171,7 +171,7 @@ SELECT combinations(ARRAY[1, 2, 2], 2);
 -- [[1, 2], [1, 2], [2, 2]]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Order of sub-groups is deterministic but unspecified. Order of elements within a sub-group deterministic but unspecified. `n` must be not be greater than 5, and the total size of sub-groups generated must be smaller than 100,000.
 
@@ -179,15 +179,15 @@ contains(_x_, _element_) → boolean[#](https://trino.io/docs/current/functions/
 
 Returns true if the array `x` contains the `element`.
 
-contains\_sequence(_x_, _seq_) → boolean[#](https://trino.io/docs/current/functions/array.html#contains\_sequence)
+contains\_sequence(_x_, _seq_) → boolean
 
 Return true if array `x` contains all of array `seq` as a subsequence (all values in the same consecutive order).
 
-element\_at(_array(E)_, _index_) → E[#](https://trino.io/docs/current/functions/array.html#element\_at)
+element\_at(_array(E)_, _index_) → E
 
 Returns element of `array` at given `index`. If `index` > 0, this function provides the same functionality as the SQL-standard subscript operator (`[]`), except that the function returns `NULL` when accessing an `index` larger than array length, whereas the subscript operator would fail in such a case. If `index` < 0, `element_at` accesses elements from the last to the first.
 
-filter(_array(T)_, _function(T_, _boolean)) -> array(T_)[#](https://trino.io/docs/current/functions/array.html#filter)
+filter(_array(T)_, _function(T_, _boolean)) -> array(T_)
 
 Constructs an array from those elements of `array` for which `function` returns true:
 
@@ -202,11 +202,11 @@ SELECT filter(ARRAY[5, NULL, 7, NULL], x -> x IS NOT NULL);
 -- [5, 7]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)flatten(_x_) → array[#](https://trino.io/docs/current/functions/array.html#flatten)
+flatten(_x_) → array
 
 Flattens an `array(array(T))` to an `array(T)` by concatenating the contained arrays.
 
-ngrams(_array(T)_, _n) -> array(array(T)_)[#](https://trino.io/docs/current/functions/array.html#ngrams)
+ngrams(_array(T)_, _n) -> array(array(T)_)
 
 Returns `n`-grams (sub-sequences of adjacent `n` elements) for the `array`. The order of the `n`-grams in the result is unspecified.
 
@@ -227,11 +227,11 @@ SELECT ngrams(ARRAY[1, 2, 3, 4], 2);
 -- [[1, 2], [2, 3], [3, 4]]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)none\_match(_array(T)_, _function(T_, _boolean)_) → boolean[#](https://trino.io/docs/current/functions/array.html#none\_match)
+none\_match(_array(T)_, _function(T_, _boolean)_) → boolean
 
 Returns whether no elements of an array match the given predicate. Returns `true` if none of the elements matches the predicate (a special case is when the array is empty); `false` if one or more elements match; `NULL` if the predicate function returns `NULL` for one or more elements and `false` for all other elements.
 
-reduce(_array(T)_, _initialState S_, _inputFunction(S_, _T_, _S)_, _outputFunction(S_, _R)_) → R[#](https://trino.io/docs/current/functions/array.html#reduce)
+reduce(_array(T)_, _initialState S_, _inputFunction(S_, _T_, _S)_, _outputFunction(S_, _R)_) → R
 
 Returns a single value reduced from `array`. `inputFunction` will be invoked for each element in `array` in order. In addition to taking the element, `inputFunction` takes the current state, initially `initialState`, and returns the new state. `outputFunction` will be invoked to turn the final state into the result value. It may be the identity function (`i -> i`).
 
@@ -275,7 +275,7 @@ SELECT reduce(ARRAY[5, 6, 10, 20],
 -- 10.25
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)repeat(_element_, _count_) → array[#](https://trino.io/docs/current/functions/array.html#repeat)
+repeat(_element_, _count_) → array
 
 Repeat `element` for `count` times.
 
@@ -283,7 +283,7 @@ reverse(_x_) → array
 
 Returns an array which has the reversed order of array `x`.
 
-sequence(_start_, _stop_)[#](https://trino.io/docs/current/functions/array.html#sequence)
+sequence(_start_, _stop_)
 
 Generate a sequence of integers from `start` to `stop`, incrementing by `1` if `start` is less than or equal to `stop`, otherwise `-1`.
 
@@ -303,11 +303,11 @@ sequence(_start_, _stop_, _step_)
 
 Generate a sequence of timestamps from `start` to `stop`, incrementing by `step`. The type of `step` can be either `INTERVAL DAY TO SECOND` or `INTERVAL YEAR TO MONTH`.
 
-shuffle(_x_) → array[#](https://trino.io/docs/current/functions/array.html#shuffle)
+shuffle(_x_) → array
 
 Generate a random permutation of the given array `x`.
 
-slice(_x_, _start_, _length_) → array[#](https://trino.io/docs/current/functions/array.html#slice)
+slice(_x_, _start_, _length_) → array
 
 Subsets array `x` starting from index `start` (or starting from the end if `start` is negative) with a length of `length`.
 
@@ -323,7 +323,7 @@ SELECT trim_array(ARRAY[1, 2, 3, 4], 2);
 -- [1, 2]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)transform(_array(T)_, _function(T_, _U)) -> array(U_)[#](https://trino.io/docs/current/functions/array.html#transform)
+transform(_array(T)_, _function(T_, _U)) -> array(U_)
 
 Returns an array that is the result of applying `function` to each element of `array`:
 
@@ -345,7 +345,7 @@ SELECT transform(ARRAY[ARRAY[1, NULL, 2], ARRAY[3, NULL]],
 -- [[1, 2], [3]]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)zip(_array1, array2\[, ...]) -> array(row_)[#](https://trino.io/docs/current/functions/array.html#zip)
+zip(_array1, array2\[, ...]) -> array(row_)
 
 Merges the given arrays, element-wise, into a single array of rows. The M-th element of the N-th argument will be the N-th field of the M-th output element. If the arguments have an uneven length, missing values are filled with `NULL`.
 
@@ -354,7 +354,7 @@ SELECT zip(ARRAY[1, 2], ARRAY['1b', null, '3b']);
 -- [ROW(1, '1b'), ROW(2, null), ROW(null, '3b')]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)zip\_with(_array(T)_, _array(U)_, _function(T_, _U_, _R)) -> array(R_)[#](https://trino.io/docs/current/functions/array.html#zip\_with)
+zip\_with(_array(T)_, _array(U)_, _function(T_, _U_, _R)) -> array(R_)
 
 Merges the two given arrays, element-wise, into a single array using `function`. If one array is shorter, nulls are appended at the end to match the length of the longer array, before applying `function`.
 

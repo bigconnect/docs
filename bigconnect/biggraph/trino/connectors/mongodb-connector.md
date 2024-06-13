@@ -2,7 +2,7 @@
 
 The `mongodb` connector allows the use of [MongoDB](https://www.mongodb.com/) collections as tables in Trino.
 
-### Requirements[#](https://trino.io/docs/current/connector/mongodb.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To connect to MongoDB, you need:
 
@@ -10,7 +10,7 @@ To connect to MongoDB, you need:
 * Network access from the Trino coordinator and workers to MongoDB. Port 27017 is the default port.
 * Write access to the schema information collection in MongoDB.
 
-### Configuration[#](https://trino.io/docs/current/connector/mongodb.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the MongoDB connector, create a catalog properties file `etc/catalog/example.properties` with the following contents, replacing the properties as appropriate:
 
@@ -21,11 +21,11 @@ mongodb.connection-url=mongodb://user:pass@sample.host:27017/
 
 
 
-#### Multiple MongoDB clusters[#](https://trino.io/docs/current/connector/mongodb.html#multiple-mongodb-clusters) <a href="#multiple-mongodb-clusters" id="multiple-mongodb-clusters"></a>
+#### Multiple MongoDB clusters <a href="#multiple-mongodb-clusters" id="multiple-mongodb-clusters"></a>
 
 You can have as many catalogs as you need, so if you have additional MongoDB clusters, simply add another properties file to `etc/catalog` with a different name, making sure it ends in `.properties`). For example, if you name the property file `sales.properties`, Trino will create a catalog named `sales` using the configured connector.
 
-### Configuration properties[#](https://trino.io/docs/current/connector/mongodb.html#configuration-properties) <a href="#configuration-properties" id="configuration-properties"></a>
+### Configuration properties <a href="#configuration-properties" id="configuration-properties"></a>
 
 The following configuration properties are available:
 
@@ -51,7 +51,7 @@ The following configuration properties are available:
 | `mongodb.cursor-batch-size`              | The number of elements to return in a batch                                |
 | `mongodb.allow-local-scheduling`         | Assign MongoDB splits to a specific worker                                 |
 
-#### `mongodb.connection-url`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-connection-url) <a href="#mongodb-connection-url" id="mongodb-connection-url"></a>
+#### `mongodb.connection-url` <a href="#mongodb-connection-url" id="mongodb-connection-url"></a>
 
 A connection string containing the protocol, credential, and host info for use inconnection to your MongoDB deployment.
 
@@ -61,7 +61,7 @@ See the MongoDB Connection URI for more information.
 
 This property is required; there is no default. A connection URL must be provided to connect to a MongoDB deployment.
 
-#### `mongodb.schema-collection`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-schema-collection) <a href="#mongodb-schema-collection" id="mongodb-schema-collection"></a>
+#### `mongodb.schema-collection` <a href="#mongodb-schema-collection" id="mongodb-schema-collection"></a>
 
 As MongoDB is a document database, there is no fixed schema information in the system. So a special collection in each MongoDB database should define the schema of all tables. Please refer the Table definition section for the details.
 
@@ -73,91 +73,91 @@ Creating new tables using `CREATE TABLE` and `CREATE TABLE AS SELECT` automatica
 
 This property is optional; the default is `_schema`.
 
-#### `mongodb.case-insensitive-name-matching`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-case-insensitive-name-matching) <a href="#mongodb-case-insensitive-name-matching" id="mongodb-case-insensitive-name-matching"></a>
+#### `mongodb.case-insensitive-name-matching` <a href="#mongodb-case-insensitive-name-matching" id="mongodb-case-insensitive-name-matching"></a>
 
 Match database and collection names case insensitively.
 
 This property is optional; the default is `false`.
 
-#### `mongodb.min-connections-per-host`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-min-connections-per-host) <a href="#mongodb-min-connections-per-host" id="mongodb-min-connections-per-host"></a>
+#### `mongodb.min-connections-per-host` <a href="#mongodb-min-connections-per-host" id="mongodb-min-connections-per-host"></a>
 
 The minimum number of connections per host for this MongoClient instance. Those connections are kept in a pool when idle, and the pool ensures over time that it contains at least this minimum number.
 
 This property is optional; the default is `0`.
 
-#### `mongodb.connections-per-host`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-connections-per-host) <a href="#mongodb-connections-per-host" id="mongodb-connections-per-host"></a>
+#### `mongodb.connections-per-host` <a href="#mongodb-connections-per-host" id="mongodb-connections-per-host"></a>
 
 The maximum number of connections allowed per host for this MongoClient instance. Those connections are kept in a pool when idle. Once the pool is exhausted, any operation requiring a connection blocks waiting for an available connection.
 
 This property is optional; the default is `100`.
 
-#### `mongodb.max-wait-time`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-max-wait-time) <a href="#mongodb-max-wait-time" id="mongodb-max-wait-time"></a>
+#### `mongodb.max-wait-time` <a href="#mongodb-max-wait-time" id="mongodb-max-wait-time"></a>
 
 The maximum wait time in milliseconds, that a thread may wait for a connection to become available. A value of `0` means that it does not wait. A negative value means to wait indefinitely for a connection to become available.
 
 This property is optional; the default is `120000`.
 
-#### `mongodb.max-connection-idle-time`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-max-connection-idle-time) <a href="#mongodb-max-connection-idle-time" id="mongodb-max-connection-idle-time"></a>
+#### `mongodb.max-connection-idle-time` <a href="#mongodb-max-connection-idle-time" id="mongodb-max-connection-idle-time"></a>
 
 The maximum idle time of a pooled connection in milliseconds. A value of `0` indicates no limit to the idle time. A pooled connection that has exceeded its idle time will be closed and replaced when necessary by a new connection.
 
 This property is optional; the default is `0`.
 
-#### `mongodb.connection-timeout`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-connection-timeout) <a href="#mongodb-connection-timeout" id="mongodb-connection-timeout"></a>
+#### `mongodb.connection-timeout` <a href="#mongodb-connection-timeout" id="mongodb-connection-timeout"></a>
 
 The connection timeout in milliseconds. A value of `0` means no timeout. It is used solely when establishing a new connection.
 
 This property is optional; the default is `10000`.
 
-#### `mongodb.socket-timeout`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-socket-timeout) <a href="#mongodb-socket-timeout" id="mongodb-socket-timeout"></a>
+#### `mongodb.socket-timeout` <a href="#mongodb-socket-timeout" id="mongodb-socket-timeout"></a>
 
 The socket timeout in milliseconds. It is used for I/O socket read and write operations.
 
 This property is optional; the default is `0` and means no timeout.
 
-#### `mongodb.tls.enabled`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-tls-enabled) <a href="#mongodb-tls-enabled" id="mongodb-tls-enabled"></a>
+#### `mongodb.tls.enabled` <a href="#mongodb-tls-enabled" id="mongodb-tls-enabled"></a>
 
 This flag enables TLS connections to MongoDB servers.
 
 This property is optional; the default is `false`.
 
-#### `mongodb.tls.keystore-path`# <a href="#mongodb-tls-keystore-path" id="mongodb-tls-keystore-path"></a>
+#### `mongodb.tls.keystore-path` <a href="#mongodb-tls-keystore-path" id="mongodb-tls-keystore-path"></a>
 
 The path to the PEM or JKS key store.
 
 This property is optional.
 
-#### `mongodb.tls.truststore-path`# <a href="#mongodb-tls-truststore-path" id="mongodb-tls-truststore-path"></a>
+#### `mongodb.tls.truststore-path` <a href="#mongodb-tls-truststore-path" id="mongodb-tls-truststore-path"></a>
 
 The path to PEM or JKS trust store.
 
 This property is optional.
 
-#### `mongodb.tls.keystore-password`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-tls-keystore-password) <a href="#mongodb-tls-keystore-password" id="mongodb-tls-keystore-password"></a>
+#### `mongodb.tls.keystore-password` <a href="#mongodb-tls-keystore-password" id="mongodb-tls-keystore-password"></a>
 
 The key password for the key store specified by `mongodb.tls.keystore-path`.
 
 This property is optional.
 
-#### `mongodb.tls.truststore-password`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-tls-truststore-password) <a href="#mongodb-tls-truststore-password" id="mongodb-tls-truststore-password"></a>
+#### `mongodb.tls.truststore-password` <a href="#mongodb-tls-truststore-password" id="mongodb-tls-truststore-password"></a>
 
 The key password for the trust store specified by `mongodb.tls.truststore-path`.
 
 This property is optional.
 
-#### `mongodb.read-preference`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-read-preference) <a href="#mongodb-read-preference" id="mongodb-read-preference"></a>
+#### `mongodb.read-preference` <a href="#mongodb-read-preference" id="mongodb-read-preference"></a>
 
 The read preference to use for queries, map-reduce, aggregation, and count. The available values are `PRIMARY`, `PRIMARY_PREFERRED`, `SECONDARY`, `SECONDARY_PREFERRED` and `NEAREST`.
 
 This property is optional; the default is `PRIMARY`.
 
-#### `mongodb.write-concern`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-write-concern) <a href="#mongodb-write-concern" id="mongodb-write-concern"></a>
+#### `mongodb.write-concern` <a href="#mongodb-write-concern" id="mongodb-write-concern"></a>
 
 The write concern to use. The available values are `ACKNOWLEDGED`, `JOURNALED`, `MAJORITY` and `UNACKNOWLEDGED`.
 
 This property is optional; the default is `ACKNOWLEDGED`.
 
-#### `mongodb.required-replica-set`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-required-replica-set) <a href="#mongodb-required-replica-set" id="mongodb-required-replica-set"></a>
+#### `mongodb.required-replica-set` <a href="#mongodb-required-replica-set" id="mongodb-required-replica-set"></a>
 
 The required replica set name. With this option set, the MongoClient instance performs the following actions:
 
@@ -171,7 +171,7 @@ The required replica set name. With this option set, the MongoClient instance pe
 
 This property is optional; no default value.
 
-#### `mongodb.cursor-batch-size`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-cursor-batch-size) <a href="#mongodb-cursor-batch-size" id="mongodb-cursor-batch-size"></a>
+#### `mongodb.cursor-batch-size` <a href="#mongodb-cursor-batch-size" id="mongodb-cursor-batch-size"></a>
 
 Limits the number of elements returned in one batch. A cursor typically fetches a batch of result objects and stores them locally. If batchSize is 0, Driver’s default are used. If batchSize is positive, it represents the size of each batch of objects retrieved. It can be adjusted to optimize performance and limit data transfer. If batchSize is negative, it limits the number of objects returned, that fit within the max batch size limit (usually 4MB), and the cursor is closed. For example if batchSize is -10, then the server returns a maximum of 10 documents, and as many as can fit in 4MB, then closes the cursor.
 
@@ -181,13 +181,13 @@ Do not use a batch size of `1`.
 
 This property is optional; the default is `0`.
 
-#### `mongodb.allow-local-scheduling`[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-allow-local-scheduling) <a href="#mongodb-allow-local-scheduling" id="mongodb-allow-local-scheduling"></a>
+#### `mongodb.allow-local-scheduling` <a href="#mongodb-allow-local-scheduling" id="mongodb-allow-local-scheduling"></a>
 
 Set the value of this property to `true` if Trino and MongoDB share the same cluster, and specific MongoDB splits should be processed on the same worker and MongoDB node. Note that a shared deployment is not recommended, and enabling this property can lead to resource contention.
 
 This property is optional, and defaults to false.
 
-### Table definition[#](https://trino.io/docs/current/connector/mongodb.html#table-definition) <a href="#table-definition" id="table-definition"></a>
+### Table definition <a href="#table-definition" id="table-definition"></a>
 
 MongoDB maintains table definitions on the special collection where `mongodb.schema-collection` configuration value specifies.
 
@@ -241,7 +241,7 @@ Each field definition:
 
 There is no limit on field descriptions for either key or message.
 
-### ObjectId[#](https://trino.io/docs/current/connector/mongodb.html#objectid) <a href="#objectid" id="objectid"></a>
+### ObjectId <a href="#objectid" id="objectid"></a>
 
 MongoDB collection has the special field `_id`. The connector tries to follow the same rules for this special field, so there will be hidden field `_id`.
 
@@ -302,7 +302,7 @@ SELECT CAST(_id AS VARCHAR), * FROM orders WHERE _id = ObjectId('55b151633864d64
 
 
 
-#### ObjectId timestamp functions[#](https://trino.io/docs/current/connector/mongodb.html#objectid-timestamp-functions) <a href="#objectid-timestamp-functions" id="objectid-timestamp-functions"></a>
+#### ObjectId timestamp functions <a href="#objectid-timestamp-functions" id="objectid-timestamp-functions"></a>
 
 The first four bytes of each [ObjectId](https://docs.mongodb.com/manual/reference/method/ObjectId) represent an embedded timestamp of its creation time. Trino provides a couple of functions to take advantage of this MongoDB feature.
 
@@ -344,11 +344,11 @@ WHERE _id > timestamp_objectid(TIMESTAMP '2021-08-07 17:51:36 +00:00');
 
 
 
-### Type mapping[#](https://trino.io/docs/current/connector/mongodb.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
-Because Trino and MongoDB each support types that the other does not, this connector [modifies some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
+Because Trino and MongoDB each support types that the other does not, this connector modifies some types when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
-#### MongoDB to Trino type mapping[#](https://trino.io/docs/current/connector/mongodb.html#mongodb-to-trino-type-mapping) <a href="#mongodb-to-trino-type-mapping" id="mongodb-to-trino-type-mapping"></a>
+#### MongoDB to Trino type mapping <a href="#mongodb-to-trino-type-mapping" id="mongodb-to-trino-type-mapping"></a>
 
 The connector maps MongoDB types to the corresponding Trino types following this table:
 
@@ -369,7 +369,7 @@ The connector maps MongoDB types to the corresponding Trino types following this
 
 No other types are supported.
 
-#### Trino to MongoDB type mapping[#](https://trino.io/docs/current/connector/mongodb.html#trino-to-mongodb-type-mapping) <a href="#trino-to-mongodb-type-mapping" id="trino-to-mongodb-type-mapping"></a>
+#### Trino to MongoDB type mapping <a href="#trino-to-mongodb-type-mapping" id="trino-to-mongodb-type-mapping"></a>
 
 The connector maps Trino types to the corresponding MongoDB types following this table:
 
@@ -388,7 +388,7 @@ The connector maps Trino types to the corresponding MongoDB types following this
 
 No other types are supported.
 
-### SQL support# <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides read and write access to data and metadata in MongoDB. In addition to the globally available and read operation statements, the connector supports the following features:
 
@@ -402,19 +402,19 @@ The connector provides read and write access to data and metadata in MongoDB. In
 * DROP SCHEMA
 * COMMENT
 
-#### ALTER TABLE# <a href="#alter-table" id="alter-table"></a>
+#### ALTER TABLE <a href="#alter-table" id="alter-table"></a>
 
 The connector supports `ALTER TABLE RENAME TO`, `ALTER TABLE ADD COLUMN` and `ALTER TABLE DROP COLUMN` operations. Other uses of `ALTER TABLE` are not supported.
 
-### Fault-tolerant execution support[#](https://trino.io/docs/current/connector/mongodb.html#fault-tolerant-execution-support) <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
+### Fault-tolerant execution support <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
 
 The connector supports Fault-tolerant execution of query processing. Read and write operations are both supported with any retry policy.
 
-### Table functions# <a href="#table-functions" id="table-functions"></a>
+### Table functions <a href="#table-functions" id="table-functions"></a>
 
 The connector provides specific table functions to access MongoDB.
 
-#### `query(database, collection, filter) -> table`# <a href="#query-database-collection-filter-table" id="query-database-collection-filter-table"></a>
+#### `query(database, collection, filter) -> table` <a href="#query-database-collection-filter-table" id="query-database-collection-filter-table"></a>
 
 The `query` function allows you to query the underlying MongoDB directly. It requires syntax native to MongoDB, because the full query is pushed down and processed by MongoDB. This can be useful for accessing native features which are not available in Trino or for improving query performance in situations where running a query natively may be faster.
 

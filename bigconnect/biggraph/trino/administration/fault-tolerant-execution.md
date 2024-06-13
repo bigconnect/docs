@@ -10,7 +10,7 @@ Fault tolerance does not apply to broken queries or other user error. For exampl
 
 For a step-by-step guide explaining how to configure a Trino cluster with fault-tolerant execution to improve query processing resilience, read Improve query processing resilience.
 
-### Configuration# <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 Fault-tolerant execution is disabled by default. To enable the feature, set the `retry-policy` configuration property to either `QUERY` or `TASK` depending on the desired retry policy.
 
@@ -45,11 +45,11 @@ The following configuration properties control the behavior of fault-tolerant ex
 
 Find further related properties in Properties reference, specifically in Resource management properties and Exchange properties.
 
-### Retry policy# <a href="#retry-policy" id="retry-policy"></a>
+### Retry policy <a href="#retry-policy" id="retry-policy"></a>
 
 The `retry-policy` configuration property designates whether Trino retries entire queries or a query’s individual tasks in the event of failure.
 
-#### QUERY[#](https://trino.io/docs/current/admin/fault-tolerant-execution.html#query) <a href="#query" id="query"></a>
+#### QUERY <a href="#query" id="query"></a>
 
 A `QUERY` retry policy instructs Trino to automatically retry a query in the event of an error occuring on a worker node. A `QUERY` retry policy is recommended when the majority of the Trino cluster’s workload consists of many small queries.
 
@@ -57,7 +57,7 @@ By default Trino does not implement fault tolerance for queries whose result set
 
 To enable fault-tolerant execution on queries with a larger result set, it is strongly recommended to configure an exchange manager that utilizes external storage for spooled data and therefore allows for storage of spilled data beyond the in-memory buffer size.
 
-#### TASK# <a href="#task" id="task"></a>
+#### TASK <a href="#task" id="task"></a>
 
 A `TASK` retry policy instructs Trino to retry individual query tasks in the event of failure. You must configure an exchange manager to use the task retry policy. This policy is recommended when executing large batch queries, as the cluster can more efficiently retry smaller tasks within the query rather than retry the whole query.
 
@@ -71,15 +71,15 @@ Note
 
 A `TASK` retry policy is best suited for large batch queries, but this policy can result in higher latency for short-running queries executed in high volume. As a best practice, it is recommended to run a dedicated cluster with a `TASK` retry policy for large batch queries, separate from another cluster that handles short queries.
 
-### Encryption[#](https://trino.io/docs/current/admin/fault-tolerant-execution.html#encryption) <a href="#encryption" id="encryption"></a>
+### Encryption <a href="#encryption" id="encryption"></a>
 
 Trino encrypts data before spooling it to storage. This prevents access to query data by anyone besides the Trino cluster that wrote it, including administrators of the storage system. A new encryption key is randomly generated for every query, and the key is discarded once a query is completed.
 
-### Advanced configuration[#](https://trino.io/docs/current/admin/fault-tolerant-execution.html#advanced-configuration) <a href="#advanced-configuration" id="advanced-configuration"></a>
+### Advanced configuration <a href="#advanced-configuration" id="advanced-configuration"></a>
 
 You can further configure fault-tolerant execution with the following configuration properties. The default values for these properties should work for most deployments, but you can change these values for testing or troubleshooting purposes.
 
-#### Retry limits[#](https://trino.io/docs/current/admin/fault-tolerant-execution.html#retry-limits) <a href="#retry-limits" id="retry-limits"></a>
+#### Retry limits <a href="#retry-limits" id="retry-limits"></a>
 
 The following configuration properties control the thresholds at which queries/tasks are no longer retried in the event of repeated failures:
 
@@ -113,7 +113,7 @@ Trino supports limited automatic task sizing. If issues are occurring during fau
 | `fault-tolerant-execution-hash-distribution-write-task-target-size`                      | Target input data size of writer tasks of hash distribution of fault-tolerant execution.                                                                                                                                                                                                                                                                                                                                                                                          | `4GB`         |
 | `fault-tolerant-execution-hash-distribution-write-task-target-max-count`                 | Soft upper bound on number of writer tasks in a stage of hash distribution of fault-tolerant execution.                                                                                                                                                                                                                                                                                                                                                                           | `2000`        |
 
-#### Node allocation[#](https://trino.io/docs/current/admin/fault-tolerant-execution.html#node-allocation) <a href="#node-allocation" id="node-allocation"></a>
+#### Node allocation <a href="#node-allocation" id="node-allocation"></a>
 
 With a `TASK` retry policy, nodes are allocated to tasks based on available memory and estimated memory usage. If task failure occurs due to exceeding available memory on a node, the task is restarted with a request to allocate the full node for its execution.
 
@@ -123,7 +123,7 @@ The initial task memory-requirements estimation is static and configured with th
 | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
 | `fault-tolerant-execution-task-memory` | Initial task memory data size estimation used for bin-packing when allocating nodes for tasks. May be overridden for the current session with the `fault_tolerant_execution_task_memory` session property. | `5GB`         |
 
-#### Other tuning[#](https://trino.io/docs/current/admin/fault-tolerant-execution.html#other-tuning) <a href="#other-tuning" id="other-tuning"></a>
+#### Other tuning <a href="#other-tuning" id="other-tuning"></a>
 
 The following additional configuration property can be used to manage fault-tolerant execution:
 
@@ -135,7 +135,7 @@ The following additional configuration property can be used to manage fault-tole
 | `fault-tolerant-execution-min-partition-count-for-write`      | Minimum number of partitions to use for distributed joins and aggregations in write queries, similar in function to the `query.min-hash-partition-count-for-write` query management property. May be overridden for the current session with the `fault_tolerant_execution_min_partition_count_for_write` session property.                                                                                                   | `50`                    | Only `TASK`  |
 | `max-tasks-waiting-for-node-per-stage`                        | Allow for up to configured number of tasks to wait for node allocation per stage, before pausing scheduling for other tasks from this stage.                                                                                                                                                                                                                                                                                  | 5                       | Only `TASK`  |
 
-### Exchange manager[#](https://trino.io/docs/current/admin/fault-tolerant-execution.html#exchange-manager) <a href="#exchange-manager" id="exchange-manager"></a>
+### Exchange manager <a href="#exchange-manager" id="exchange-manager"></a>
 
 Exchange spooling is responsible for storing and managing spooled data for fault-tolerant execution. You can configure a filesystem-based exchange manager that stores spooled data in a specified location, such as AWS S3 and S3-compatible systems, Azure Blob Storage, Google Cloud Storage, or HDFS.
 
@@ -171,7 +171,7 @@ The following table lists the available configuration properties for `exchange-m
 
 It is recommended to set the `exchange.compression-codec` property to `LZ4` in the cluster’s `config.properties` file, to reduce the exchange manager’s overall I/O load. It is also recommended to configure a bucket lifecycle rule to automatically expire abandoned objects in the event of a node crash.
 
-**AWS S3**[**#**](https://trino.io/docs/current/admin/fault-tolerant-execution.html#aws-s3)
+**AWS S3**
 
 The following example `exchange-manager.properties` configuration specifies an AWS S3 bucket as the spooling storage destination. Note that the destination does not have to be in AWS, but can be any S3-compatible storage system.
 
@@ -183,7 +183,7 @@ exchange.s3.aws-access-key=example-access-key
 exchange.s3.aws-secret-key=example-secret-key
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can configure multiple S3 buckets for the exchange manager to distribute spooled data across buckets, reducing the I/O load on any one bucket. If a query fails with the error message “software.amazon.awssdk.services.s3.model.S3Exception: Please reduce your request rate”, this indicates that the workload is I/O intensive, and you should specify multiple S3 buckets in `exchange.base-directories` to balance the load:
 
@@ -191,9 +191,9 @@ You can configure multiple S3 buckets for the exchange manager to distribute spo
 exchange.base-directories=s3://exchange-spooling-bucket-1,s3://exchange-spooling-bucket-2
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**Azure Blob Storage**[**#**](https://trino.io/docs/current/admin/fault-tolerant-execution.html#azure-blob-storage)
+
+**Azure Blob Storage**
 
 The following example `exchange-manager.properties` configuration specifies an Azure Blob Storage container as the spooling storage destination. You must use Azure Blob Storage, not Azure Data Lake Storage or any other hierarchical storage option in Azure.
 
@@ -203,9 +203,9 @@ exchange.base-directories=abfs://container_name@account_name.dfs.core.windows.ne
 exchange.azure.connection-string=connection-string
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**Google Cloud Storage**[**#**](https://trino.io/docs/current/admin/fault-tolerant-execution.html#google-cloud-storage)
+
+**Google Cloud Storage**
 
 To enable exchange spooling on GCS in Trino, change the request endpoint to the `https://storage.googleapis.com` Google storage URI, and configure your AWS access/secret keys to use the GCS HMAC keys. If you deploy Trino on GCP, you must either create a service account with access to your spooling bucket or configure the key path to your GCS credential file.
 
@@ -223,9 +223,9 @@ exchange.s3.endpoint=https://storage.googleapis.com
 exchange.gcs.json-key-file-path=/path/to/gcs_keyfile.json
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**HDFS**[**#**](https://trino.io/docs/current/admin/fault-tolerant-execution.html#hdfs)
+
+**HDFS**
 
 The following `exchange-manager.properties` configuration example specifies HDFS as the spooling storage destination.
 
@@ -235,9 +235,9 @@ exchange.base-directories=hadoop-master:9000/exchange-spooling-directory
 hdfs.config.resources=/usr/lib/hadoop/etc/hadoop/core-site.xml
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**Local filesystem storage**[**#**](https://trino.io/docs/current/admin/fault-tolerant-execution.html#local-filesystem-storage)
+
+**Local filesystem storage**
 
 The following example `exchange-manager.properties` configuration specifies a local directory, `/tmp/trino-exchange-manager`, as the spooling storage destination.
 

@@ -68,7 +68,7 @@ Trino supports several authentication providers. When setting up a new cluster, 
 * JSON Web Token (JWT) authentication
 * Kerberos authentication
 
-**User name management#**
+**User name management**
 
 Trino provides ways to map the user and group names from authentication providers to Trino user names.
 

@@ -1,6 +1,6 @@
 # GRANT privilege
 
-### Synopsis[#](https://trino.io/docs/current/sql/grant.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 GRANT ( privilege [, ...] | ( ALL PRIVILEGES ) )
@@ -9,9 +9,9 @@ TO ( user | USER user | ROLE role )
 [ WITH GRANT OPTION ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/grant.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 Grants the specified privileges to the specified grantee.
 
@@ -27,7 +27,7 @@ Grant on a table grants the specified privilege on all current and future column
 
 Grant on a schema grants the specified privilege on all current and future columns of all current and future tables of the schema.
 
-### Examples[#](https://trino.io/docs/current/sql/grant.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 Grant `INSERT` and `SELECT` privileges on the table `orders` to user `alice`:
 
@@ -35,7 +35,7 @@ Grant `INSERT` and `SELECT` privileges on the table `orders` to user `alice`:
 GRANT INSERT, SELECT ON orders TO alice;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Grant `DELETE` privilege on the schema `finance` to user `bob`:
 
@@ -43,7 +43,7 @@ Grant `DELETE` privilege on the schema `finance` to user `bob`:
 GRANT DELETE ON SCHEMA finance TO bob;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Grant `SELECT` privilege on the table `nation` to user `alice`, additionally allowing `alice` to grant `SELECT` privilege to others:
 
@@ -51,7 +51,7 @@ Grant `SELECT` privilege on the table `nation` to user `alice`, additionally all
 GRANT SELECT ON nation TO alice WITH GRANT OPTION;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Grant `SELECT` privilege on the table `orders` to everyone:
 
@@ -59,12 +59,12 @@ Grant `SELECT` privilege on the table `orders` to everyone:
 GRANT SELECT ON orders TO ROLE PUBLIC;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Limitations[#](https://trino.io/docs/current/sql/grant.html#limitations) <a href="#limitations" id="limitations"></a>
+
+### Limitations <a href="#limitations" id="limitations"></a>
 
 Some connectors have no support for `GRANT`. See connector documentation for more details.
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 DENY, REVOKE privilege, SHOW GRANTS

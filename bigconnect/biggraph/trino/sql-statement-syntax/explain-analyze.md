@@ -1,14 +1,14 @@
 # EXPLAIN ANALYZE
 
-### Synopsis[#](https://trino.io/docs/current/sql/explain-analyze.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 EXPLAIN ANALYZE [VERBOSE] statement
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/explain-analyze.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 Execute the statement and show the distributed execution plan of the statement along with the cost of each operation.
 
@@ -18,7 +18,7 @@ Note
 
 The stats may not be entirely accurate, especially for queries that complete quickly.
 
-### Examples[#](https://trino.io/docs/current/sql/explain-analyze.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 In the example below, you can see the CPU time spent in each stage, as well as the relative cost of each plan node in the stage. Note that the relative cost of the plan nodes is based on wall time, which may or may not be correlated to CPU time. For each plan node you can see some additional statistics (e.g: average input per node instance). Such statistics are useful when one wants to detect data anomalies for a query (e.g: skewness).
 
@@ -27,7 +27,7 @@ EXPLAIN ANALYZE SELECT count(*), clerk FROM orders
 WHERE orderdate > date '1995-01-01' GROUP BY clerk;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
                                           Query Plan
@@ -79,7 +79,7 @@ Fragment 2 [SOURCE]
            Input: 1500000 rows (18.17MB), Filtered: 45.46%, Physical Input: 4.51MB
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 When the `VERBOSE` option is used, some operators may report additional information. For example, the window function operator will output the following:
 
@@ -88,7 +88,7 @@ EXPLAIN ANALYZE VERBOSE SELECT count(clerk) OVER() FROM orders
 WHERE orderdate > date '1995-01-01';
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
                                           Query Plan
@@ -111,8 +111,8 @@ WHERE orderdate > date '1995-01-01';
  ...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/explain-analyze.html#see-also) <a href="#see-also" id="see-also"></a>
+
+### See also <a href="#see-also" id="see-also"></a>
 
 EXPLAIN

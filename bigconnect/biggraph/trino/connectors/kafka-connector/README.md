@@ -8,7 +8,7 @@ The connector reads and writes message data from Kafka topics in parallel across
 
 See the Kafka connector tutorial.
 
-### Requirements[#](https://trino.io/docs/current/connector/kafka.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To connect to Kafka, you need:
 
@@ -17,12 +17,12 @@ To connect to Kafka, you need:
 
 When using Protobuf decoder with the Confluent table description supplier, the following additional steps must be taken:
 
-* Copy the `kafka-protobuf-provider` and `kafka-protobuf-types` JAR files from [Confluent](https://packages.confluent.io/maven/io/confluent/) for Confluent version 7.3.1 to the Kafka connector plugin directory (`<install directory>/plugin/kafka`) on all nodes in the cluster. The plugin directory depends on the [Installation](https://trino.io/docs/current/installation.html) method.
+* Copy the `kafka-protobuf-provider` and `kafka-protobuf-types` JAR files from [Confluent](https://packages.confluent.io/maven/io/confluent/) for Confluent version 7.3.1 to the Kafka connector plugin directory (`<install directory>/plugin/kafka`) on all nodes in the cluster. The plugin directory depends on the Installation method.
 * By copying those JARs and using them, you agree to the terms of the [Confluent Community License Agreement](https://github.com/confluentinc/schema-registry/blob/master/LICENSE-ConfluentCommunity) under which Confluent makes them available.
 
 These steps are not required if you are not using Protobuf and Confluent table description supplier.
 
-### Configuration[#](https://trino.io/docs/current/connector/kafka.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the Kafka connector, create a catalog properties file `etc/catalog/example.properties` with the following content, replacing the properties as appropriate.
 
@@ -35,13 +35,13 @@ kafka.nodes=host1:port,host2:port
 kafka.config.resources=/etc/kafka-configuration.properties
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Multiple Kafka clusters[#](https://trino.io/docs/current/connector/kafka.html#multiple-kafka-clusters) <a href="#multiple-kafka-clusters" id="multiple-kafka-clusters"></a>
+
+#### Multiple Kafka clusters <a href="#multiple-kafka-clusters" id="multiple-kafka-clusters"></a>
 
 You can have as many catalogs as you need, so if you have additional Kafka clusters, simply add another properties file to `etc/catalog` with a different name (making sure it ends in `.properties`). For example, if you name the property file `sales.properties`, Trino creates a catalog named `sales` using the configured connector.
 
-#### Log levels[#](https://trino.io/docs/current/connector/kafka.html#log-levels) <a href="#log-levels" id="log-levels"></a>
+#### Log levels <a href="#log-levels" id="log-levels"></a>
 
 Kafka consumer logging can be verbose and pollute Trino logs. To lower the [log level](https://trino.io/docs/current/installation/deployment.html#log-levels), simply add the following to `etc/log.properties`:
 
@@ -49,9 +49,9 @@ Kafka consumer logging can be verbose and pollute Trino logs. To lower the [log 
 org.apache.kafka=WARN
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Configuration properties[#](https://trino.io/docs/current/connector/kafka.html#configuration-properties) <a href="#configuration-properties" id="configuration-properties"></a>
+
+### Configuration properties <a href="#configuration-properties" id="configuration-properties"></a>
 
 The following configuration properties are available:
 
@@ -78,13 +78,13 @@ The following configuration properties are available:
 
 In addition, you must configure table schema and schema registry usage with the relevant properties.
 
-#### `kafka.default-schema`[#](https://trino.io/docs/current/connector/kafka.html#kafka-default-schema) <a href="#kafka-default-schema" id="kafka-default-schema"></a>
+#### `kafka.default-schema` <a href="#kafka-default-schema" id="kafka-default-schema"></a>
 
 Defines the schema which contains all tables that were defined without a qualifying schema name.
 
 This property is optional; the default is `default`.
 
-#### `kafka.nodes`[#](https://trino.io/docs/current/connector/kafka.html#kafka-nodes) <a href="#kafka-nodes" id="kafka-nodes"></a>
+#### `kafka.nodes` <a href="#kafka-nodes" id="kafka-nodes"></a>
 
 A comma separated list of `hostname:port` pairs for the Kafka data nodes.
 
@@ -94,13 +94,13 @@ Note
 
 Trino must still be able to connect to all nodes of the cluster even if only a subset is specified here, as segment files may be located only on a specific node.
 
-#### `kafka.buffer-size`[#](https://trino.io/docs/current/connector/kafka.html#kafka-buffer-size) <a href="#kafka-buffer-size" id="kafka-buffer-size"></a>
+#### `kafka.buffer-size` <a href="#kafka-buffer-size" id="kafka-buffer-size"></a>
 
 Size of the internal data buffer for reading data from Kafka. The data buffer must be able to hold at least one message and ideally can hold many messages. There is one data buffer allocated per worker and data node.
 
 This property is optional; the default is `64kb`.
 
-#### `kafka.timestamp-upper-bound-force-push-down-enabled`[#](https://trino.io/docs/current/connector/kafka.html#kafka-timestamp-upper-bound-force-push-down-enabled) <a href="#kafka-timestamp-upper-bound-force-push-down-enabled" id="kafka-timestamp-upper-bound-force-push-down-enabled"></a>
+#### `kafka.timestamp-upper-bound-force-push-down-enabled` <a href="#kafka-timestamp-upper-bound-force-push-down-enabled" id="kafka-timestamp-upper-bound-force-push-down-enabled"></a>
 
 The upper bound predicate on `_timestamp` column is pushed down only for topics using `LogAppendTime` mode.
 
@@ -108,67 +108,67 @@ For topics using `CreateTime` mode, upper bound pushdown must be explicitly enab
 
 This property is optional; the default is `false`.
 
-#### `kafka.hide-internal-columns`[#](https://trino.io/docs/current/connector/kafka.html#kafka-hide-internal-columns) <a href="#kafka-hide-internal-columns" id="kafka-hide-internal-columns"></a>
+#### `kafka.hide-internal-columns` <a href="#kafka-hide-internal-columns" id="kafka-hide-internal-columns"></a>
 
 In addition to the data columns defined in a table description file, the connector maintains a number of additional columns for each table. If these columns are hidden, they can still be used in queries but do not show up in `DESCRIBE <table-name>` or `SELECT *`.
 
 This property is optional; the default is `true`.
 
-#### `kafka.security-protocol`[#](https://trino.io/docs/current/connector/kafka.html#kafka-security-protocol) <a href="#kafka-security-protocol" id="kafka-security-protocol"></a>
+#### `kafka.security-protocol` <a href="#kafka-security-protocol" id="kafka-security-protocol"></a>
 
 Protocol used to communicate with brokers. Valid values are: `PLAINTEXT`, `SSL`.
 
 This property is optional; default is `PLAINTEXT`.
 
-#### `kafka.ssl.keystore.location`[#](https://trino.io/docs/current/connector/kafka.html#kafka-ssl-keystore-location) <a href="#kafka-ssl-keystore-location" id="kafka-ssl-keystore-location"></a>
+#### `kafka.ssl.keystore.location` <a href="#kafka-ssl-keystore-location" id="kafka-ssl-keystore-location"></a>
 
 Location of the keystore file used for connection to Kafka cluster.
 
 This property is optional.
 
-#### `kafka.ssl.keystore.password`[#](https://trino.io/docs/current/connector/kafka.html#kafka-ssl-keystore-password) <a href="#kafka-ssl-keystore-password" id="kafka-ssl-keystore-password"></a>
+#### `kafka.ssl.keystore.password` <a href="#kafka-ssl-keystore-password" id="kafka-ssl-keystore-password"></a>
 
 Password for the keystore file used for connection to Kafka cluster.
 
 This property is optional, but required when `kafka.ssl.keystore.location` is given.
 
-#### `kafka.ssl.keystore.type`[#](https://trino.io/docs/current/connector/kafka.html#kafka-ssl-keystore-type) <a href="#kafka-ssl-keystore-type" id="kafka-ssl-keystore-type"></a>
+#### `kafka.ssl.keystore.type` <a href="#kafka-ssl-keystore-type" id="kafka-ssl-keystore-type"></a>
 
 File format of the keystore file. Valid values are: `JKS`, `PKCS12`.
 
 This property is optional; default is `JKS`.
 
-#### `kafka.ssl.truststore.location`[#](https://trino.io/docs/current/connector/kafka.html#kafka-ssl-truststore-location) <a href="#kafka-ssl-truststore-location" id="kafka-ssl-truststore-location"></a>
+#### `kafka.ssl.truststore.location` <a href="#kafka-ssl-truststore-location" id="kafka-ssl-truststore-location"></a>
 
 Location of the truststore file used for connection to Kafka cluster.
 
 This property is optional.
 
-#### `kafka.ssl.truststore.password`[#](https://trino.io/docs/current/connector/kafka.html#kafka-ssl-truststore-password) <a href="#kafka-ssl-truststore-password" id="kafka-ssl-truststore-password"></a>
+#### `kafka.ssl.truststore.password` <a href="#kafka-ssl-truststore-password" id="kafka-ssl-truststore-password"></a>
 
 Password for the truststore file used for connection to Kafka cluster.
 
 This property is optional, but required when `kafka.ssl.truststore.location` is given.
 
-#### `kafka.ssl.truststore.type`[#](https://trino.io/docs/current/connector/kafka.html#kafka-ssl-truststore-type) <a href="#kafka-ssl-truststore-type" id="kafka-ssl-truststore-type"></a>
+#### `kafka.ssl.truststore.type` <a href="#kafka-ssl-truststore-type" id="kafka-ssl-truststore-type"></a>
 
 File format of the truststore file. Valid values are: JKS, PKCS12.
 
 This property is optional; default is `JKS`.
 
-#### `kafka.ssl.key.password`[#](https://trino.io/docs/current/connector/kafka.html#kafka-ssl-key-password) <a href="#kafka-ssl-key-password" id="kafka-ssl-key-password"></a>
+#### `kafka.ssl.key.password` <a href="#kafka-ssl-key-password" id="kafka-ssl-key-password"></a>
 
 Password for the private key in the keystore file used for connection to Kafka cluster.
 
 This property is optional. This is required for clients only if two-way authentication is configured, i.e. `ssl.client.auth=required`.
 
-#### `kafka.ssl.endpoint-identification-algorithm`[#](https://trino.io/docs/current/connector/kafka.html#kafka-ssl-endpoint-identification-algorithm) <a href="#kafka-ssl-endpoint-identification-algorithm" id="kafka-ssl-endpoint-identification-algorithm"></a>
+#### `kafka.ssl.endpoint-identification-algorithm` <a href="#kafka-ssl-endpoint-identification-algorithm" id="kafka-ssl-endpoint-identification-algorithm"></a>
 
 The endpoint identification algorithm used by clients to validate server host name for connection to Kafka cluster. Kafka uses `https` as default. Use `disabled` to disable server host name validation.
 
 This property is optional; default is `https`.
 
-### Internal columns[#](https://trino.io/docs/current/connector/kafka.html#internal-columns) <a href="#internal-columns" id="internal-columns"></a>
+### Internal columns <a href="#internal-columns" id="internal-columns"></a>
 
 The internal column prefix is configurable by `kafka.internal-column-prefix` configuration property and defaults to `_`. A different prefix affects the internal column names in the following sections. For example, a value of `internal_` changes the partition ID column name from `_partition_id` to `internal_partition_id`.
 
@@ -192,7 +192,7 @@ For each defined table, the connector maintains the following columns:
 
 For tables without a table definition file, the `_key_corrupt` and `_message_corrupt` columns will always be `false`.
 
-### Table schema and schema registry usage[#](https://trino.io/docs/current/connector/kafka.html#table-schema-and-schema-registry-usage) <a href="#table-schema-and-schema-registry-usage" id="table-schema-and-schema-registry-usage"></a>
+### Table schema and schema registry usage <a href="#table-schema-and-schema-registry-usage" id="table-schema-and-schema-registry-usage"></a>
 
 The table schema for the messages can be supplied to the connector with a configuration file or a schema registry. It also provides a mechanism for the connector to discover tables.
 
@@ -200,13 +200,13 @@ You must configure the supplier with the `kafka.table-description-supplier` prop
 
 Refer to the following subsections for more detail. The `FILE` table description supplier is the default, and the value is case insensitive.
 
-#### File table description supplier[#](https://trino.io/docs/current/connector/kafka.html#file-table-description-supplier) <a href="#file-table-description-supplier" id="file-table-description-supplier"></a>
+#### File table description supplier <a href="#file-table-description-supplier" id="file-table-description-supplier"></a>
 
 In order to use the file-based table description supplier, the `kafka.table-description-supplier` must be set to `FILE`, which is the default.
 
 In addition, you must set `kafka.table-names` and `kafka.table-description-dir` as described in the following sections:
 
-**`kafka.table-names`**[**#**](https://trino.io/docs/current/connector/kafka.html#kafka-table-names)
+**`kafka.table-names`**
 
 Comma-separated list of all tables provided by this catalog. A table name can be unqualified (simple name), and is placed into the default schema (see below), or it can be qualified with a schema name (`<schema-name>.<table-name>`).
 
@@ -214,13 +214,13 @@ For each table defined here, a table description file (see below) may exist. If 
 
 This property is required; there is no default and at least one table must be defined.
 
-**`kafka.table-description-dir`**[**#**](https://trino.io/docs/current/connector/kafka.html#kafka-table-description-dir)
+**`kafka.table-description-dir`**
 
 References a folder within Trino deployment that holds one or more JSON files (must end with `.json`) which contain table description files.
 
 This property is optional; the default is `etc/kafka`.
 
-**Table definition files**[**#**](https://trino.io/docs/current/connector/kafka.html#table-definition-files)
+**Table definition files**
 
 Kafka maintains topics only as byte messages and leaves it to producers and consumers to define how a message should be interpreted. For Trino, this data must be mapped into columns to allow queries against the data.
 
@@ -250,7 +250,7 @@ A table definition file consists of a JSON definition for a table. The name of t
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 | Field        | Required | Type        | Description                                                               |
 | ------------ | -------- | ----------- | ------------------------------------------------------------------------- |
@@ -260,7 +260,7 @@ A table definition file consists of a JSON definition for a table. The name of t
 | `key`        | optional | JSON object | Field definitions for data columns mapped to the message key.             |
 | `message`    | optional | JSON object | Field definitions for data columns mapped to the message itself.          |
 
-**Key and message in Kafka**[**#**](https://trino.io/docs/current/connector/kafka.html#key-and-message-in-kafka)
+**Key and message in Kafka**
 
 Starting with Kafka 0.8, each message in a topic can have an optional key. A table definition file contains sections for both key and message to map the data onto table columns.
 
@@ -285,7 +285,7 @@ Each field definition is a JSON object:
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 | Field        | Required | Type    | Description                                                                                                          |
 | ------------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -326,7 +326,7 @@ Inserts are not supported, and the only data format supported is AVRO.
 | `kafka.empty-field-strategy`                        | <p>Avro allows empty struct fields, but this is not allowed in Trino. There are three strategies for handling empty struct fields:</p><ul><li><code>IGNORE</code> - Ignore structs with no fields. This propagates to parents. For example, an array of structs with no fields is ignored.</li><li><code>FAIL</code> - Fail the query if a struct with no fields is defined.</li><li><code>MARK</code> - Add a marker field named <code>$empty_field_marker</code>, which of type boolean with a null value. This may be desired if the struct represents a marker field.</li></ul><p>This can also be modified via the <code>empty_field_strategy</code> session property.</p> | `IGNORE`      |
 | `kafka.confluent-subjects-cache-refresh-interval`   | The interval used for refreshing the list of subjects and the definition of the schema for the subject in the subject’s cache.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `1s`          |
 
-**Confluent subject to table name mapping**[**#**](https://trino.io/docs/current/connector/kafka.html#confluent-subject-to-table-name-mapping)
+**Confluent subject to table name mapping**
 
 The [subject naming strategy](https://docs.confluent.io/platform/current/schema-registry/serdes-develop/index.html#sr-schemas-subject-name-strategy) determines how a subject is resolved from the table name.
 
@@ -338,7 +338,7 @@ To manually specify the key and value subjects, append to the topic name, for ex
 
 When using the Confluent table description supplier, the following Protobuf specific types are supported in addition to the normally supported types:
 
-**ONEOF**[**#**](https://trino.io/docs/current/connector/kafka.html#oneof)
+**ONEOF**
 
 Protobuf schemas containing `oneof` fields are mapped to a `JSON` field in Trino.
 
@@ -359,13 +359,13 @@ message schema {
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The corresponding Trino row is a `JSON` field `test_oneof_column` containing a JSON object with a single key. The value of the key matches the name of the `oneof` type that is present.
 
 In the above example, if the Protobuf message has the `test_oneof_column` containing `string_column` set to a value `Trino` then the corresponding Trino row includes a column named `test_oneof_column` with the value `JSON '{"string_column": "Trino"}'`.
 
-### Kafka inserts[#](https://trino.io/docs/current/connector/kafka.html#kafka-inserts) <a href="#kafka-inserts" id="kafka-inserts"></a>
+### Kafka inserts <a href="#kafka-inserts" id="kafka-inserts"></a>
 
 The Kafka connector supports the use of INSERT statements to write data to a Kafka topic. Table column data is mapped to Kafka messages as defined in the table definition file. There are five supported data formats for key and message encoding:
 
@@ -381,11 +381,11 @@ Trino supports at-least-once delivery for Kafka producers. This means that messa
 
 The Kafka connector does not allow the user to define which partition will be used as the target for a message. If a message includes a key, the producer will use a hash algorithm to choose the target partition for the message. The same key will always be assigned the same partition.
 
-### Type mapping# <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 Because Trino and Kafka each support types that the other does not, this connector maps some types when reading (decoding) or writing (encoding) data. Type mapping depends on the format (Raw, Avro, JSON, CSV).
 
-#### Row encoding# <a href="#row-encoding" id="row-encoding"></a>
+#### Row encoding <a href="#row-encoding" id="row-encoding"></a>
 
 Encoding is required to allow writing data; it defines how table columns in Trino map to Kafka keys and message data.
 
@@ -401,7 +401,7 @@ Note
 
 A table definition file must be defined for the encoder to work.
 
-**Raw encoder#**
+**Raw encoder**
 
 The raw encoder formats the table columns as raw bytes using the mapping information specified in the table definition file.
 
@@ -500,7 +500,7 @@ Example raw field definition in a [table definition file](https://trino.io/docs/
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Columns should be defined in the same order they are mapped. There can be no gaps or overlaps between column mappings. The width of the column as defined by the column mapping must be equivalent to the width of the `dataFormat` for all types except for variable width types.
 
@@ -511,7 +511,7 @@ INSERT INTO example_raw_table (field1, field2, field3, field4)
   VALUES (123456789, 123456, 1234, 'abcdef');
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note
 
@@ -543,7 +543,7 @@ No other types are supported.
 
 Column values are converted to strings before they are formatted as a CSV line.
 
-The following is an example CSV field definition in a [table definition file](https://trino.io/docs/current/connector/kafka.html#table-definition-files) for a Kafka message:
+The following is an example CSV field definition in a table definition file for a Kafka message:
 
 ```
 {
@@ -574,7 +574,7 @@ The following is an example CSV field definition in a [table definition file](ht
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Example insert query for the above table definition:
 
@@ -583,11 +583,11 @@ INSERT INTO example_csv_table (field1, field2, field3)
   VALUES (123456789, 'example text', TRUE);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**JSON encoder**[**#**](https://trino.io/docs/current/connector/kafka.html#json-encoder)
 
-The JSON encoder maps table columns to JSON fields defined in the [table definition file](https://trino.io/docs/current/connector/kafka.html#table-definition-files) according to [**RFC 4627**](https://datatracker.ietf.org/doc/html/rfc4627.html).
+**JSON encoder**
+
+The JSON encoder maps table columns to JSON fields defined in the table definition file according to [**RFC 4627**](https://datatracker.ietf.org/doc/html/rfc4627.html).
 
 For fields, the following attributes are supported:
 
@@ -667,7 +667,7 @@ The following is an example JSON field definition in a [table definition file](h
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following shows an example insert query for the preceding table definition:
 
@@ -676,9 +676,9 @@ INSERT INTO example_json_table (field1, field2, field3)
   VALUES (123456789, 'example text', TIMESTAMP '2020-07-15 01:02:03.456');
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**Avro encoder**[**#**](https://trino.io/docs/current/connector/kafka.html#avro-encoder)
+
+**Avro encoder**
 
 The Avro encoder serializes rows to Avro records as defined by the [Avro schema](https://avro.apache.org/docs/current/). Trino does not support schemaless Avro encoding.
 
@@ -748,7 +748,7 @@ The following example shows an Avro field definition in a [table definition file
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In the following example, an Avro schema definition for the preceding table definition is shown:
 
@@ -779,7 +779,7 @@ In the following example, an Avro schema definition for the preceding table defi
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following is an example insert query for the preceding table definition:
 
@@ -787,7 +787,7 @@ The following is an example insert query for the preceding table definition:
 >
 > VALUES (123456789, ‘example text’, FALSE);
 
-**Protobuf encoder**[**#**](https://trino.io/docs/current/connector/kafka.html#protobuf-encoder)
+**Protobuf encoder**
 
 The Protobuf encoder serializes rows to Protobuf DynamicMessages as defined by the [Protobuf schema](https://developers.google.com/protocol-buffers/docs/overview).
 
@@ -827,7 +827,7 @@ The following table lists supported Trino data types, which can be used in `type
 | `MAP`                    | `Map`                                              |
 | `TIMESTAMP`              | `Timestamp`, predefined in `timestamp.proto`       |
 
-The following example shows a Protobuf field definition in a [table definition file](https://trino.io/docs/current/connector/kafka.html#table-definition-files) for a Kafka message:
+The following example shows a Protobuf field definition in a table definition file for a Kafka message:
 
 ```
 {
@@ -861,7 +861,7 @@ The following example shows a Protobuf field definition in a [table definition f
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In the following example, a Protobuf schema definition for the preceding table definition is shown:
 
@@ -875,7 +875,7 @@ message schema {
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following is an example insert query for the preceding table definition:
 
@@ -884,9 +884,9 @@ INSERT INTO example_protobuf_table (field1, field2, field3)
   VALUES (123456789, 'example text', FALSE);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Row decoding[#](https://trino.io/docs/current/connector/kafka.html#row-decoding) <a href="#row-decoding" id="row-decoding"></a>
+
+#### Row decoding <a href="#row-decoding" id="row-decoding"></a>
 
 For key and message, a decoder is used to map message and key data onto table columns.
 
@@ -902,7 +902,7 @@ Note
 
 If no table definition file exists for a table, the `dummy` decoder is used, which does not expose any columns.
 
-**Raw decoder**[**#**](https://trino.io/docs/current/connector/kafka.html#raw-decoder)
+**Raw decoder**
 
 The raw decoder supports reading of raw byte-based values from Kafka message or key, and converting it into Trino columns.
 
@@ -962,7 +962,7 @@ Length of decoded byte sequence is implied by the `dataFormat`.
 
 For `VARCHAR` data type a sequence of bytes is interpreted according to UTF-8 encoding.
 
-**CSV decoder**[**#**](https://trino.io/docs/current/connector/kafka.html#csv-decoder)
+**CSV decoder**
 
 The CSV decoder converts the bytes representing a message or key into a string using UTF-8 encoding and then interprets the result as a CSV (comma-separated value) line.
 
@@ -984,7 +984,7 @@ Table below lists supported Trino types, which can be used in `type` and decodin
 
 No other types are supported.
 
-**JSON decoder**[**#**](https://trino.io/docs/current/connector/kafka.html#json-decoder)
+**JSON decoder**
 
 The JSON decoder converts the bytes representing a message or key into a JSON according to [**RFC 4627**](https://datatracker.ietf.org/doc/html/rfc4627.html). Note that the message or key _MUST_ convert into a JSON object, not an array or simple type.
 
@@ -1010,11 +1010,11 @@ The following table lists Trino data types, which can be used as in `type`, and 
 
 No other types are supported.
 
-**DEFAULT FIELD DECODER**[**#**](https://trino.io/docs/current/connector/kafka.html#default-field-decoder)
+**DEFAULT FIELD DECODER**
 
 This is the standard field decoder, supporting all the Trino physical data types. A field value is transformed under JSON conversion rules into boolean, long, double or string values. For non-date/time based columns, this decoder should be used.
 
-**DATE AND TIME DECODERS**[**#**](https://trino.io/docs/current/connector/kafka.html#date-and-time-decoders)
+**DATE AND TIME DECODERS**
 
 To convert values from JSON objects into Trino `DATE`, `TIME`, `TIME WITH TIME ZONE`, `TIMESTAMP` or `TIMESTAMP WITH TIME ZONE` columns, special decoders must be selected using the `dataFormat` attribute of a field definition.
 
@@ -1028,7 +1028,7 @@ To convert values from JSON objects into Trino `DATE`, `TIME`, `TIME WITH TIME Z
 
 For `TIMESTAMP WITH TIME ZONE` and `TIME WITH TIME ZONE` data types, if timezone information is present in decoded value, it will be used as Trino value. Otherwise result time zone will be set to `UTC`.
 
-**Avro decoder**[**#**](https://trino.io/docs/current/connector/kafka.html#avro-decoder)
+**Avro decoder**
 
 The Avro decoder converts the bytes representing a message or key in Avro format based on a schema. The message must have the Avro schema embedded. Trino does not support schemaless Avro decoding.
 
@@ -1054,7 +1054,7 @@ The following table lists the supported Trino types which can be used in `type` 
 
 No other types are supported.
 
-**AVRO SCHEMA EVOLUTION**[**#**](https://trino.io/docs/current/connector/kafka.html#avro-schema-evolution)
+**AVRO SCHEMA EVOLUTION**
 
 The Avro decoder supports schema evolution feature with backward compatibility. With backward compatibility, a newer schema can be used to read Avro data created with an older schema. Any change in the Avro schema must also be reflected in Trino’s topic definition file. Newly added/renamed fields _must_ have a default value in the Avro schema file.
 
@@ -1065,7 +1065,7 @@ The schema evolution behavior is as follows:
 * Column is renamed in the new schema: This is equivalent to removing the column and adding a new one, and data created with an older schema produces a _default_ value when table is using the new schema.
 * Changing type of column in the new schema: If the type coercion is supported by Avro, then the conversion happens. An error is thrown for incompatible types.
 
-**Protobuf decoder**[**#**](https://trino.io/docs/current/connector/kafka.html#protobuf-decoder)
+**Protobuf decoder**
 
 The Protobuf decoder converts the bytes representing a message or key in Protobuf formatted message based on a schema.
 
@@ -1094,7 +1094,7 @@ The following table lists the supported Trino types which can be used in `type` 
 | `TIMESTAMP`              | `Timestamp`, predefined in `timestamp.proto`       |
 | `JSON`                   | `oneof` (Confluent table supplier only), `Any`     |
 
-**ANY**[**#**](https://trino.io/docs/current/connector/kafka.html#any)
+**ANY**
 
 Message types with an [Any](https://protobuf.dev/programming-guides/proto3/#any) field contain an arbitrary serialized message as bytes and a type URL to resolve that message’s type with a scheme of `file://`, `http://`, or `https://`. The connector reads the contents of the URL to create the type descriptor for the `Any` message and convert the message to JSON. This behavior is enabled by setting `kafka.protobuf-any-support-enabled` to `true`.
 
@@ -1112,7 +1112,7 @@ message MyMessage {
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 And a separate schema which uses an `Any` type which is a packed message of the above type and a valid URL:
 
@@ -1126,7 +1126,7 @@ message schema {
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The corresponding Trino column is named `any_message` of type `JSON` containing a JSON-serialized representation of the Protobuf message:
 
@@ -1139,9 +1139,9 @@ The corresponding Trino column is named `any_message` of type `JSON` containing 
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**PROTOBUF SCHEMA EVOLUTION**[**#**](https://trino.io/docs/current/connector/kafka.html#protobuf-schema-evolution)
+
+**PROTOBUF SCHEMA EVOLUTION**
 
 The Protobuf decoder supports the schema evolution feature with backward compatibility. With backward compatibility, a newer schema can be used to read Protobuf data created with an older schema. Any change in the Protobuf schema _must_ also be reflected in the topic definition file.
 
@@ -1152,11 +1152,11 @@ The schema evolution behavior is as follows:
 * Column is renamed in the new schema: This is equivalent to removing the column and adding a new one, and data created with an older schema produces a _default_ value when table is using the new schema.
 * Changing type of column in the new schema: If the type coercion is supported by Protobuf, then the conversion happens. An error is thrown for incompatible types.
 
-**PROTOBUF LIMITATIONS**[**#**](https://trino.io/docs/current/connector/kafka.html#protobuf-limitations)
+**PROTOBUF LIMITATIONS**
 
 * Protobuf Timestamp has a nanosecond precision but Trino supports decoding/encoding at microsecond precision.
 
-### SQL support[#](https://trino.io/docs/current/connector/kafka.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides read and write access to data and metadata in Trino tables populated by Kafka topics. See Row decoding for more information.
 

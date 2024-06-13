@@ -1,6 +1,6 @@
 # Comparison functions and operators
 
-### Comparison operators[#](https://trino.io/docs/current/functions/comparison.html#comparison-operators) <a href="#comparison-operators" id="comparison-operators"></a>
+### Comparison operators <a href="#comparison-operators" id="comparison-operators"></a>
 
 | Operator | Description                                 |
 | -------- | ------------------------------------------- |
@@ -12,7 +12,7 @@
 | `<>`     | Not equal                                   |
 | `!=`     | Not equal (non-standard but popular syntax) |
 
-### Range operator: BETWEEN[#](https://trino.io/docs/current/functions/comparison.html#range-operator-between) <a href="#range-operator-between" id="range-operator-between"></a>
+### Range operator: BETWEEN <a href="#range-operator-between" id="range-operator-between"></a>
 
 The `BETWEEN` operator tests if a value is within a specified range. It uses the syntax `value BETWEEN min AND max`:
 
@@ -20,7 +20,7 @@ The `BETWEEN` operator tests if a value is within a specified range. It uses the
 SELECT 3 BETWEEN 2 AND 6;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The statement shown above is equivalent to the following statement:
 
@@ -28,7 +28,7 @@ The statement shown above is equivalent to the following statement:
 SELECT 3 >= 2 AND 3 <= 6;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 To test if a value does not fall within the specified range use `NOT BETWEEN`:
 
@@ -36,7 +36,7 @@ To test if a value does not fall within the specified range use `NOT BETWEEN`:
 SELECT 3 NOT BETWEEN 2 AND 6;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The statement shown above is equivalent to the following statement:
 
@@ -44,7 +44,7 @@ The statement shown above is equivalent to the following statement:
 SELECT 3 < 2 OR 3 > 6;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 A `NULL` in a `BETWEEN` or `NOT BETWEEN` statement is evaluated using the standard `NULL` evaluation rules applied to the equivalent expression above:
 
@@ -58,7 +58,7 @@ SELECT 2 BETWEEN 3 AND NULL; -- false
 SELECT 8 BETWEEN NULL AND 6; -- false
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `BETWEEN` and `NOT BETWEEN` operators can also be used to evaluate any orderable type. For example, a `VARCHAR`:
 
@@ -66,11 +66,11 @@ The `BETWEEN` and `NOT BETWEEN` operators can also be used to evaluate any order
 SELECT 'Paul' BETWEEN 'John' AND 'Ringo'; -- true
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note that the value, min, and max parameters to `BETWEEN` and `NOT BETWEEN` must be the same type. For example, Trino will produce an error if you ask it if John is between 2.3 and 35.2.
 
-### IS NULL and IS NOT NULL[#](https://trino.io/docs/current/functions/comparison.html#is-null-and-is-not-null) <a href="#is-null-and-is-not-null" id="is-null-and-is-not-null"></a>
+### IS NULL and IS NOT NULL <a href="#is-null-and-is-not-null" id="is-null-and-is-not-null"></a>
 
 The `IS NULL` and `IS NOT NULL` operators test whether a value is null (undefined). Both operators work for all data types.
 
@@ -80,7 +80,7 @@ Using `NULL` with `IS NULL` evaluates to true:
 select NULL IS NULL; -- true
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 But any other constant does not:
 
@@ -88,9 +88,9 @@ But any other constant does not:
 SELECT 3.0 IS NULL; -- false
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### IS DISTINCT FROM and IS NOT DISTINCT FROM[#](https://trino.io/docs/current/functions/comparison.html#is-distinct-from-and-is-not-distinct-from) <a href="#is-distinct-from-and-is-not-distinct-from" id="is-distinct-from-and-is-not-distinct-from"></a>
+
+### IS DISTINCT FROM and IS NOT DISTINCT FROM <a href="#is-distinct-from-and-is-not-distinct-from" id="is-distinct-from-and-is-not-distinct-from"></a>
 
 In SQL a `NULL` value signifies an unknown value, so any comparison involving a `NULL` will produce `NULL`. The `IS DISTINCT FROM` and `IS NOT DISTINCT FROM` operators treat `NULL` as a known value and both operators guarantee either a true or false outcome even in the presence of `NULL` input:
 
@@ -100,7 +100,7 @@ SELECT NULL IS DISTINCT FROM NULL; -- false
 SELECT NULL IS NOT DISTINCT FROM NULL; -- true
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In the example shown above, a `NULL` value is not considered distinct from `NULL`. When you are comparing values which may include `NULL` use these operators to guarantee either a `TRUE` or `FALSE` result.
 
@@ -113,21 +113,21 @@ The following truth table demonstrate the handling of `NULL` in `IS DISTINCT FRO
 | `1`    | `NULL` | `NULL`  | `NULL`  | `TRUE`       | `FALSE`          |
 | `NULL` | `NULL` | `NULL`  | `NULL`  | `FALSE`      | `TRUE`           |
 
-### GREATEST and LEAST[#](https://trino.io/docs/current/functions/comparison.html#greatest-and-least) <a href="#greatest-and-least" id="greatest-and-least"></a>
+### GREATEST and LEAST <a href="#greatest-and-least" id="greatest-and-least"></a>
 
 These functions are not in the SQL standard, but are a common extension. Like most other functions in Trino, they return null if any argument is null. Note that in some other databases, such as PostgreSQL, they only return null if all arguments are null.
 
 The following types are supported: `DOUBLE`, `BIGINT`, `VARCHAR`, `TIMESTAMP`, `TIMESTAMP WITH TIME ZONE`, `DATE`
 
-greatest(_value1_, _value2_, _..._, _valueN_) → \[same as input][#](https://trino.io/docs/current/functions/comparison.html#greatest)
+greatest(_value1_, _value2_, _..._, _valueN_) → \[same as input]
 
 Returns the largest of the provided values.
 
-least(_value1_, _value2_, _..._, _valueN_) → \[same as input][#](https://trino.io/docs/current/functions/comparison.html#least)
+least(_value1_, _value2_, _..._, _valueN_) → \[same as input]
 
 Returns the smallest of the provided values.
 
-### Quantified comparison predicates: ALL, ANY and SOME[#](https://trino.io/docs/current/functions/comparison.html#quantified-comparison-predicates-all-any-and-some) <a href="#quantified-comparison-predicates-all-any-and-some" id="quantified-comparison-predicates-all-any-and-some"></a>
+### Quantified comparison predicates: ALL, ANY and SOME <a href="#quantified-comparison-predicates-all-any-and-some" id="quantified-comparison-predicates-all-any-and-some"></a>
 
 The `ALL`, `ANY` and `SOME` quantifiers can be used together with comparison operators in the following way:
 
@@ -135,7 +135,7 @@ The `ALL`, `ANY` and `SOME` quantifiers can be used together with comparison ope
 expression operator quantifier ( subquery )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 For example:
 
@@ -147,7 +147,7 @@ SELECT 21 < ALL (VALUES 19, 20, 21); -- false
 SELECT 42 >= SOME (SELECT 41 UNION ALL SELECT 42 UNION ALL SELECT 43); -- true
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Here are the meanings of some quantifier and comparison operator combinations:
 
@@ -162,7 +162,7 @@ Here are the meanings of some quantifier and comparison operator combinations:
 
 `ANY` and `SOME` have the same meaning and can be used interchangeably.
 
-### Pattern comparison: LIKE[#](https://trino.io/docs/current/functions/comparison.html#pattern-comparison-like) <a href="#pattern-comparison-like" id="pattern-comparison-like"></a>
+### Pattern comparison: LIKE <a href="#pattern-comparison-like" id="pattern-comparison-like"></a>
 
 The `LIKE` operator can be used to compare values with a pattern:
 
@@ -170,7 +170,7 @@ The `LIKE` operator can be used to compare values with a pattern:
 ... column [NOT] LIKE 'pattern' ESCAPE 'character';
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Matching characters is case sensitive, and the pattern supports two symbols for matching:
 
@@ -184,7 +184,7 @@ SELECT * FROM (VALUES 'America', 'Asia', 'Africa', 'Europe', 'Australia', 'Antar
 WHERE continent LIKE 'E%';
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can negate the result by adding `NOT`, and get all other continents, all not starting with `E`:
 
@@ -193,7 +193,7 @@ SELECT * FROM (VALUES 'America', 'Asia', 'Africa', 'Europe', 'Australia', 'Antar
 WHERE continent NOT LIKE 'E%';
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If you only have one specific character to match, you can use the `_` symbol for each character. The following query uses two underscores and produces only `Asia` as result:
 
@@ -202,7 +202,7 @@ SELECT * FROM (VALUES 'America', 'Asia', 'Africa', 'Europe', 'Australia', 'Antar
 WHERE continent LIKE 'A__A';
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The wildcard characters `_` and `%` must be escaped to allow you to match them as literals. This can be achieved by specifying the `ESCAPE` character to use:
 
@@ -210,13 +210,13 @@ The wildcard characters `_` and `%` must be escaped to allow you to match them a
 SELECT 'South_America' LIKE 'South\_America' ESCAPE '\';
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The above query returns `true` since the escaped underscore symbol matches. If you need to match the used escape character as well, you can escape it.
 
 If you want to match for the chosen escape character, you simply escape itself. For example, you can use `\\` to match for `\`.
 
-### Row comparison: IN[#](https://trino.io/docs/current/functions/comparison.html#row-comparison-in) <a href="#row-comparison-in" id="row-comparison-in"></a>
+### Row comparison: IN <a href="#row-comparison-in" id="row-comparison-in"></a>
 
 The `IN` operator can be used in a `WHERE` clause to compare column values with a list of values. The list of values can be supplied by a subquery or directly as static values in an array:
 
@@ -225,7 +225,7 @@ The `IN` operator can be used in a `WHERE` clause to compare column values with 
 ... WHERE column [NOT] IN ( subquery );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Use the optional `NOT` keyword to negate the condition.
 
@@ -235,7 +235,7 @@ The following example shows a simple usage with a static array:
 SELECT * FROM region WHERE name IN ('AMERICA', 'EUROPE');
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The values in the clause are used for multiple comparisons that are combined as a logical `OR`. The preceding query is equivalent to the following query:
 
@@ -243,7 +243,7 @@ The values in the clause are used for multiple comparisons that are combined as 
 SELECT * FROM region WHERE name = 'AMERICA' OR name = 'EUROPE';
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can negate the comparisons by adding `NOT`, and get all other regions except the values in list:
 
@@ -251,7 +251,7 @@ You can negate the comparisons by adding `NOT`, and get all other regions except
 SELECT * FROM region WHERE name NOT IN ('AMERICA', 'EUROPE');
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 When using a subquery to determine the values to use in the comparison, the subquery must return a single column and one or more rows.
 

@@ -1,8 +1,8 @@
 # Deploying Trino
 
-### Requirements[#](https://trino.io/docs/current/installation/deployment.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
-#### Linux operating system[#](https://trino.io/docs/current/installation/deployment.html#linux-operating-system) <a href="#linux-operating-system" id="linux-operating-system"></a>
+#### Linux operating system <a href="#linux-operating-system" id="linux-operating-system"></a>
 
 * 64-bit required
 * newer release preferred, especially when running on containers
@@ -15,7 +15,7 @@
     trino hard nproc 128000
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### Java runtime environment[#](https://trino.io/docs/current/installation/deployment.html#java-runtime-environment) <a href="#java-runtime-environment" id="java-runtime-environment"></a>
 
@@ -28,7 +28,7 @@ We recommend using the Eclipse Temurin OpenJDK distribution from [Adoptium](http
 * version 2.6.x, 2.7.x, or 3.x
 * required by the `bin/launcher` script only
 
-### Installing Trino[#](https://trino.io/docs/current/installation/deployment.html#installing-trino) <a href="#installing-trino" id="installing-trino"></a>
+### Installing Trino <a href="#installing-trino" id="installing-trino"></a>
 
 Download the Trino server tarball, trino-server-443.tar.gz, and unpack it. The tarball contains a single top-level directory, `trino-server-443`, which we call the _installation_ directory.
 
@@ -38,7 +38,7 @@ We recommend creating a data directory outside of the installation directory, wh
 
 The user that runs the Trino process must have full read access to the installation directory, and read and write access to the data directory.
 
-### Configuring Trino# <a href="#configuring-trino" id="configuring-trino"></a>
+### Configuring Trino <a href="#configuring-trino" id="configuring-trino"></a>
 
 Create an `etc` directory inside the installation directory. This holds the following configuration:
 
@@ -47,7 +47,7 @@ Create an `etc` directory inside the installation directory. This holds the foll
 * Config Properties: configuration for the Trino server. See the Properties reference for available configuration properties.
 * Catalog Properties: configuration for Connectors (data sources). The available catalog configuration properties for a connector are described in the respective connector documentation.
 
-#### Node properties# <a href="#node-properties" id="node-properties"></a>
+#### Node properties <a href="#node-properties" id="node-properties"></a>
 
 The node properties file, `etc/node.properties`, contains configuration specific to each node. A _node_ is a single installed instance of Trino on a machine. This file is typically created by the deployment system when Trino is first installed. The following is a minimal `etc/node.properties`:
 
@@ -57,7 +57,7 @@ node.id=ffffffff-ffff-ffff-ffff-ffffffffffff
 node.data-dir=/var/trino/data
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The above properties are described below:
 
@@ -65,7 +65,7 @@ The above properties are described below:
 * `node.id`: The unique identifier for this installation of Trino. This must be unique for every node. This identifier should remain consistent across reboots or upgrades of Trino. If running multiple installations of Trino on a single machine (i.e. multiple nodes on the same machine), each installation must have a unique identifier. The identifier must start with an alphanumeric character and only contain alphanumeric, `-`, or `_` characters.
 * `node.data-dir`: The location (filesystem path) of the data directory. Trino stores logs and other data here.
 
-#### JVM config[#](https://trino.io/docs/current/installation/deployment.html#jvm-config) <a href="#jvm-config" id="jvm-config"></a>
+#### JVM config <a href="#jvm-config" id="jvm-config"></a>
 
 The JVM config file, `etc/jvm.config`, contains a list of command line options used for launching the Java Virtual Machine. The format of the file is a list of options, one per line. These options are not interpreted by the shell, so options containing spaces or other special characters should not be quoted.
 
@@ -94,7 +94,7 @@ The following provides a good starting point for creating `etc/jvm.config`:
 -XX:+EnableDynamicAgentLoading
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You must adjust the value for the memory used by Trino, specified with `-Xmx` to the available memory on your nodes. Typically, values representing 70 to 85 percent of the total available memory is recommended. For example, if all workers and the coordinator use nodes with 64GB of RAM, you can use `-Xmx54G`. Trino uses most of the allocated memory for processing, with a small percentage used by JVM-internal processes such as garbage collection.
 
@@ -110,7 +110,7 @@ The temporary directory used by the JVM must allow execution of code. Specifical
 
 We set GCLocker retry allocation count (`-XX:GCLockerRetryAllocationCount=32`) to avoid OOM too early (see JDK-8192647)
 
-#### Config properties[#](https://trino.io/docs/current/installation/deployment.html#config-properties) <a href="#config-properties" id="config-properties"></a>
+#### Config properties <a href="#config-properties" id="config-properties"></a>
 
 The config properties file, `etc/config.properties`, contains the configuration for the Trino server. Every Trino server can function as both a coordinator and a worker. A cluster is required to include one coordinator, and dedicating a machine to only perform coordination work provides the best performance on larger clusters. Scaling and parallelization is achieved by using many workers.
 
@@ -123,7 +123,7 @@ http-server.http.port=8080
 discovery.uri=http://example.net:8080
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 And this is a minimal configuration for the workers:
 
@@ -133,7 +133,7 @@ http-server.http.port=8080
 discovery.uri=http://example.net:8080
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Alternatively, if you are setting up a single machine for testing, that functions as both a coordinator and worker, use this configuration:
 
@@ -144,7 +144,7 @@ http-server.http.port=8080
 discovery.uri=http://example.net:8080
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 These properties require some explanation:
 
@@ -157,7 +157,7 @@ The above configuration properties are a _minimal set_ to help you get started. 
 
 The Properties reference provides a comprehensive list of the supported properties for topics such as General properties, Resource management properties, Query management properties, Web UI properties, and others.
 
-#### Log levels# <a href="#log-levels" id="log-levels"></a>
+#### Log levels <a href="#log-levels" id="log-levels"></a>
 
 The optional log levels file, `etc/log.properties`, allows setting the minimum log level for named logger hierarchies. Every logger has a name, which is typically the fully qualified name of the class that uses the logger. Loggers have a hierarchy based on the dots in the name, like Java packages. For example, consider the following log levels file:
 
@@ -165,11 +165,11 @@ The optional log levels file, `etc/log.properties`, allows setting the minimum l
 io.trino=INFO
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This would set the minimum level to `INFO` for both `io.trino.server` and `io.trino.plugin.hive`. The default minimum level is `INFO`, thus the above example does not actually change anything. There are four levels: `DEBUG`, `INFO`, `WARN` and `ERROR`.
 
-#### Catalog properties[#](https://trino.io/docs/current/installation/deployment.html#catalog-properties) <a href="#catalog-properties" id="catalog-properties"></a>
+#### Catalog properties <a href="#catalog-properties" id="catalog-properties"></a>
 
 Trino accesses data via _connectors_, which are mounted in catalogs. The connector provides all of the schemas and tables inside of the catalog. For example, the Hive connector maps each Hive database to a schema. If the Hive connector is mounted as the `hive` catalog, and Hive contains a table `clicks` in database `web`, that table can be accessed in Trino as `hive.web.clicks`.
 
@@ -179,11 +179,11 @@ Catalogs are registered by creating a catalog properties file in the `etc/catalo
 connector.name=jmx
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-See [Connectors](https://trino.io/docs/current/connector.html) for more information about configuring connectors.
 
-### Running Trino[#](https://trino.io/docs/current/installation/deployment.html#running-trino) <a href="#running-trino" id="running-trino"></a>
+See Connectors for more information about configuring connectors.
+
+### Running Trino <a href="#running-trino" id="running-trino"></a>
 
 The installation provides a `bin/launcher` script, which requires Python in the `PATH`. The script can be used manually or as a daemon startup script. It accepts the following commands:
 
@@ -206,7 +206,7 @@ Trino can be started as a daemon by running the following:
 bin/launcher start
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Use the status command with the verbose option for the pid and a list of configuration settings:
 
@@ -214,15 +214,11 @@ Use the status command with the verbose option for the pid and a list of configu
 bin/launcher -v status
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 Alternatively, it can be run in the foreground, with the logs and other output written to stdout/stderr. Both streams should be captured if using a supervision system like daemontools:
 
 ```
 bin/launcher run
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The launcher configures default values for the configuration directory `etc`, configuration files in `etc`, the data directory identical to the installation directory, the pid file as `var/run/launcher.pid` and log files in the `var/log` directory.
 

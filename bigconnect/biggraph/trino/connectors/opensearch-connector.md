@@ -2,12 +2,12 @@
 
 The OpenSearch connector allows access to [OpenSearch](https://opensearch.org/) data from Trino. This document describes how to configure a catalog with the OpenSearch connector to run SQL queries against OpenSearch.
 
-### Requirements[#](https://trino.io/docs/current/connector/opensearch.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 * OpenSearch 1.1.0 or higher.
 * Network access from the Trino coordinator and workers to the OpenSearch nodes.
 
-### Configuration[#](https://trino.io/docs/current/connector/opensearch.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the OpenSearch connector, create a catalog properties file `etc/catalog/example.properties` with the following content, replacing the properties as appropriate for your setup:
 
@@ -37,7 +37,7 @@ The following table details all general configuration properties:
 | `opensearch.node-refresh-interval`  | Duration between requests to refresh the list of available OpenSearch nodes.                                                                                                                        | `1m`      |
 | `opensearch.ignore-publish-address` | Disable using the address published by the OpenSearch API to connect for queries. Some deployments map OpenSearch ports to a random public port and enabling this property can help in these cases. | `false`   |
 
-#### Authentication[#](https://trino.io/docs/current/connector/opensearch.html#authentication) <a href="#authentication" id="authentication"></a>
+#### Authentication <a href="#authentication" id="authentication"></a>
 
 The connection to OpenSearch can use AWS or password authentication.
 
@@ -59,7 +59,7 @@ To enable password authentication, the `opensearch.security` option must be set 
 | `opensearch.auth.user`     | User name to use to connect to OpenSearch. |
 | `opensearch.auth.password` | Password to use to connect to OpenSearch.  |
 
-#### Connection security with TLS[#](https://trino.io/docs/current/connector/opensearch.html#connection-security-with-tls) <a href="#connection-security-with-tls" id="connection-security-with-tls"></a>
+#### Connection security with TLS <a href="#connection-security-with-tls" id="connection-security-with-tls"></a>
 
 The connector provides additional security options to connect to OpenSearch clusters with TLS enabled.
 
@@ -76,11 +76,11 @@ The available configuration values are listed in the following table:
 | `opensearch.tls.truststore-password` | The password for the trust store specified by `opensearch.tls.truststore-path`.              |
 | `opensearch.tls.verify-hostnames`    | Flag to determine if the hostnames in the certificates must be verified. Defaults to `true`. |
 
-### Type mapping[#](https://trino.io/docs/current/connector/opensearch.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 Because Trino and OpenSearch each support types that the other does not, the connector maps some types when reading data.
 
-#### OpenSearch type to Trino type mapping[#](https://trino.io/docs/current/connector/opensearch.html#opensearch-type-to-trino-type-mapping) <a href="#opensearch-type-to-trino-type-mapping" id="opensearch-type-to-trino-type-mapping"></a>
+#### OpenSearch type to Trino type mapping <a href="#opensearch-type-to-trino-type-mapping" id="opensearch-type-to-trino-type-mapping"></a>
 
 The connector maps OpenSearch types to the corresponding Trino types according to the following table:
 
@@ -100,7 +100,7 @@ The connector maps OpenSearch types to the corresponding Trino types according t
 
 No other types are supported.
 
-#### Array types[#](https://trino.io/docs/current/connector/opensearch.html#array-types) <a href="#array-types" id="array-types"></a>
+#### Array types <a href="#array-types" id="array-types"></a>
 
 Fields in OpenSearch can contain zero or more values, but there is no dedicated array type. To indicate a field contains an array, it can be annotated in a Trino-specific structure in the \_meta section of the index mapping in OpenSearch.
 
@@ -150,11 +150,11 @@ Note
 
 It is not allowed to use `asRawJson` and `isArray` flags simultaneously for the same column.
 
-#### Date types[#](https://trino.io/docs/current/connector/opensearch.html#date-types) <a href="#date-types" id="date-types"></a>
+#### Date types <a href="#date-types" id="date-types"></a>
 
 The OpenSearch connector supports only the default `date` type. All other OpenSearch date formats including built-in date formats and custom date formats are not supported. Dates with the format property are ignored.
 
-#### Raw JSON transform[#](https://trino.io/docs/current/connector/opensearch.html#raw-json-transform) <a href="#raw-json-transform" id="raw-json-transform"></a>
+#### Raw JSON transform <a href="#raw-json-transform" id="raw-json-transform"></a>
 
 Documents in OpenSearch can include more complex structures that are not represented in the mapping. For example, a single `keyword` field can have widely different content including a single `keyword` value, an array, or a multidimensional `keyword` array with any level of nesting.
 
@@ -225,7 +225,7 @@ Note
 
 It is not allowed to use `asRawJson` and `isArray` flags simultaneously for the same column.
 
-### Special columns[#](https://trino.io/docs/current/connector/opensearch.html#special-columns) <a href="#special-columns" id="special-columns"></a>
+### Special columns <a href="#special-columns" id="special-columns"></a>
 
 The following hidden columns are available:
 
@@ -235,15 +235,15 @@ The following hidden columns are available:
 | `_score`  | The document score returned by the OpenSearch query. |
 | `_source` | The source of the original document.                 |
 
-### SQL support[#](https://trino.io/docs/current/connector/opensearch.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides globally available and read operation statements to access data and metadata in the OpenSearch catalog.
 
-### Table functions[#](https://trino.io/docs/current/connector/opensearch.html#table-functions) <a href="#table-functions" id="table-functions"></a>
+### Table functions <a href="#table-functions" id="table-functions"></a>
 
 The connector provides specific table functions to access OpenSearch.
 
-#### `raw_query(varchar) -> table`[#](https://trino.io/docs/current/connector/opensearch.html#raw-query-varchar-table) <a href="#raw-query-varchar-table" id="raw-query-varchar-table"></a>
+#### `raw_query(varchar) -> table` <a href="#raw-query-varchar-table" id="raw-query-varchar-table"></a>
 
 The `raw_query` function allows you to query the underlying database directly using the [OpenSearch Query DSL](https://opensearch.org/docs/latest/query-dsl/index/) syntax. The full DSL query is pushed down and processed in OpenSearch. This can be useful for accessing native features which are not available in Trino, or for improving query performance in situations where running a query natively may be faster.
 
@@ -278,21 +278,19 @@ FROM
   );
 ```
 
-
-
 Note
 
 The query engine does not preserve the order of the results of this function. If the passed query contains an `ORDER BY` clause, the function result may not be ordered as expected.
 
-### Performance[#](https://trino.io/docs/current/connector/opensearch.html#performance) <a href="#performance" id="performance"></a>
+### Performance <a href="#performance" id="performance"></a>
 
 The connector includes a number of performance improvements, detailed in the following sections.
 
-#### Parallel data access[#](https://trino.io/docs/current/connector/opensearch.html#parallel-data-access) <a href="#parallel-data-access" id="parallel-data-access"></a>
+#### Parallel data access <a href="#parallel-data-access" id="parallel-data-access"></a>
 
 The connector requests data from multiple nodes of the OpenSearch cluster for query processing in parallel.
 
-#### Predicate push down[#](https://trino.io/docs/current/connector/opensearch.html#predicate-push-down) <a href="#predicate-push-down" id="predicate-push-down"></a>
+#### Predicate push down <a href="#predicate-push-down" id="predicate-push-down"></a>
 
 The connector supports predicate push down for the following data types:
 

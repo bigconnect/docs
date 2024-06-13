@@ -1,6 +1,6 @@
 # Optimizer properties
 
-### `optimizer.dictionary-aggregation`# <a href="#optimizer-dictionary-aggregation" id="optimizer-dictionary-aggregation"></a>
+### `optimizer.dictionary-aggregation` <a href="#optimizer-dictionary-aggregation" id="optimizer-dictionary-aggregation"></a>
 
 * **Type:** boolean
 * **Default value:** `false`
@@ -8,7 +8,7 @@
 
 Enables optimization for aggregations on dictionaries.
 
-### `optimizer.optimize-hash-generation`# <a href="#optimizer-optimize-hash-generation" id="optimizer-optimize-hash-generation"></a>
+### `optimizer.optimize-hash-generation` <a href="#optimizer-optimize-hash-generation" id="optimizer-optimize-hash-generation"></a>
 
 * **Type:** boolean
 * **Default value:** `false`
@@ -18,7 +18,7 @@ Compute hash codes for distribution, joins, and aggregations early during execut
 
 It is often helpful to disable this property, when using EXPLAIN in order to make the query plan easier to read.
 
-### `optimizer.optimize-metadata-queries`# <a href="#optimizer-optimize-metadata-queries" id="optimizer-optimize-metadata-queries"></a>
+### `optimizer.optimize-metadata-queries` <a href="#optimizer-optimize-metadata-queries" id="optimizer-optimize-metadata-queries"></a>
 
 * **Type:** boolean
 * **Default value:** `false`
@@ -27,7 +27,7 @@ Enable optimization of some aggregations by using values that are stored as meta
 
 The main drawback is that it can produce incorrect results, if the connector returns partition keys for partitions that have no rows. In particular, the Hive connector can return empty partitions, if they were created by other systems. Trino cannot create them.
 
-### `optimizer.mark-distinct-strategy`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-mark-distinct-strategy) <a href="#optimizer-mark-distinct-strategy" id="optimizer-mark-distinct-strategy"></a>
+### `optimizer.mark-distinct-strategy` <a href="#optimizer-mark-distinct-strategy" id="optimizer-mark-distinct-strategy"></a>
 
 * **Type:** string
 * **Allowed values:** `AUTOMATIC`, `ALWAYS`, `NONE`
@@ -36,7 +36,7 @@ The main drawback is that it can produce incorrect results, if the connector ret
 
 The mark distinct strategy to use for distinct aggregations. `NONE` does not use `MarkDistinct` operator. `ALWAYS` uses `MarkDistinct` for multiple distinct aggregations or for mix of distinct and non-distinct aggregations. `AUTOMATIC` limits the use of `MarkDistinct` only for cases with limited concurrency (global or small cardinality aggregations), where direct distinct aggregation implementation cannot utilize CPU efficiently.
 
-### `optimizer.push-aggregation-through-outer-join`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-push-aggregation-through-outer-join) <a href="#optimizer-push-aggregation-through-outer-join" id="optimizer-push-aggregation-through-outer-join"></a>
+### `optimizer.push-aggregation-through-outer-join` <a href="#optimizer-push-aggregation-through-outer-join" id="optimizer-push-aggregation-through-outer-join"></a>
 
 * **Type:** boolean
 * **Default value:** `true`
@@ -53,7 +53,7 @@ SELECT * FROM item i
 
 Enabling this optimization can substantially speed up queries by reducing the amount of data that needs to be processed by the join. However, it may slow down some queries that have very selective joins.
 
-### `optimizer.push-table-write-through-union`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-push-table-write-through-union) <a href="#optimizer-push-table-write-through-union" id="optimizer-push-table-write-through-union"></a>
+### `optimizer.push-table-write-through-union` <a href="#optimizer-push-table-write-through-union" id="optimizer-push-table-write-through-union"></a>
 
 * **Type:** boolean
 * **Default value:** `true`
@@ -61,7 +61,7 @@ Enabling this optimization can substantially speed up queries by reducing the am
 
 Parallelize writes when using `UNION ALL` in queries that write data. This improves the speed of writing output tables in `UNION ALL` queries, because these writes do not require additional synchronization when collecting results. Enabling this optimization can improve `UNION ALL` speed, when write speed is not yet saturated. However, it may slow down queries in an already heavily loaded system.
 
-### `optimizer.join-reordering-strategy`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-join-reordering-strategy) <a href="#optimizer-join-reordering-strategy" id="optimizer-join-reordering-strategy"></a>
+### `optimizer.join-reordering-strategy` <a href="#optimizer-join-reordering-strategy" id="optimizer-join-reordering-strategy"></a>
 
 * **Type:** string
 * **Allowed values:** `AUTOMATIC`, `ELIMINATE_CROSS_JOINS`, `NONE`
@@ -70,7 +70,7 @@ Parallelize writes when using `UNION ALL` in queries that write data. This impro
 
 The join reordering strategy to use. `NONE` maintains the order the tables are listed in the query. `ELIMINATE_CROSS_JOINS` reorders joins to eliminate cross joins, where possible, and otherwise maintains the original query order. When reordering joins, it also strives to maintain the original table order as much as possible. `AUTOMATIC` enumerates possible orders, and uses statistics-based cost estimation to determine the least cost order. If stats are not available, or if for any reason a cost could not be computed, the `ELIMINATE_CROSS_JOINS` strategy is used.
 
-### `optimizer.max-reordered-joins`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-max-reordered-joins) <a href="#optimizer-max-reordered-joins" id="optimizer-max-reordered-joins"></a>
+### `optimizer.max-reordered-joins` <a href="#optimizer-max-reordered-joins" id="optimizer-max-reordered-joins"></a>
 
 * **Type:** integer
 * **Default value:** `8`
@@ -81,21 +81,21 @@ Warning
 
 The number of possible join orders scales factorially with the number of relations, so increasing this value can cause serious performance issues.
 
-### `optimizer.optimize-duplicate-insensitive-joins`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-optimize-duplicate-insensitive-joins) <a href="#optimizer-optimize-duplicate-insensitive-joins" id="optimizer-optimize-duplicate-insensitive-joins"></a>
+### `optimizer.optimize-duplicate-insensitive-joins` <a href="#optimizer-optimize-duplicate-insensitive-joins" id="optimizer-optimize-duplicate-insensitive-joins"></a>
 
 * **Type:** boolean
 * **Default value:** `true`
 
 Reduces number of rows produced by joins when optimizer detects that duplicated join output rows can be skipped.
 
-### `optimizer.use-exact-partitioning`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-use-exact-partitioning) <a href="#optimizer-use-exact-partitioning" id="optimizer-use-exact-partitioning"></a>
+### `optimizer.use-exact-partitioning` <a href="#optimizer-use-exact-partitioning" id="optimizer-use-exact-partitioning"></a>
 
 * **Type:** boolean
 * **Default value:** `false`
 
 Re-partition data unless the partitioning of the upstream stage exactly matches what the downstream stage expects. This can also be specified using the `use_exact_partitioning` session property.
 
-### `optimizer.use-table-scan-node-partitioning`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-use-table-scan-node-partitioning) <a href="#optimizer-use-table-scan-node-partitioning" id="optimizer-use-table-scan-node-partitioning"></a>
+### `optimizer.use-table-scan-node-partitioning` <a href="#optimizer-use-table-scan-node-partitioning" id="optimizer-use-table-scan-node-partitioning"></a>
 
 * **Type:** boolean
 * **Default value:** `true`
@@ -104,14 +104,14 @@ Use connector provided table node partitioning when reading tables. For example,
 
 Partition reader assignments are distributed across workers for parallel processing. Use of table scan node partitioning can improve query performance by reducing query complexity. For example, cluster wide data reshuffling might not be needed when processing an aggregation query. However, query parallelism might be reduced when partition count is low compared to number of workers.
 
-### `optimizer.table-scan-node-partitioning-min-bucket-to-task-ratio`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-table-scan-node-partitioning-min-bucket-to-task-ratio) <a href="#optimizer-table-scan-node-partitioning-min-bucket-to-task-ratio" id="optimizer-table-scan-node-partitioning-min-bucket-to-task-ratio"></a>
+### `optimizer.table-scan-node-partitioning-min-bucket-to-task-ratio` <a href="#optimizer-table-scan-node-partitioning-min-bucket-to-task-ratio" id="optimizer-table-scan-node-partitioning-min-bucket-to-task-ratio"></a>
 
 * **Type:** double
 * **Default value:** `0.5`
 
 Specifies minimal bucket to task ratio that has to be matched or exceeded in order to use table scan node partitioning. When the table bucket count is small compared to the number of workers, then the table scan is distributed across all workers for improved parallelism.
 
-### `optimizer.colocated-joins-enabled`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-colocated-joins-enabled) <a href="#optimizer-colocated-joins-enabled" id="optimizer-colocated-joins-enabled"></a>
+### `optimizer.colocated-joins-enabled` <a href="#optimizer-colocated-joins-enabled" id="optimizer-colocated-joins-enabled"></a>
 
 * **Type:** boolean
 * **Default value:** `true`
@@ -119,7 +119,7 @@ Specifies minimal bucket to task ratio that has to be matched or exceeded in ord
 
 Use co-located joins when both sides of a join have the same table partitioning on the join keys and the conditions for `optimizer.use-table-scan-node-partitioning` are met. For example, a join on bucketed Hive tables with matching bucketing schemes can avoid exchanging data between workers using a co-located join to improve query performance.
 
-### `optimizer.filter-conjunction-independence-factor`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-filter-conjunction-independence-factor) <a href="#optimizer-filter-conjunction-independence-factor" id="optimizer-filter-conjunction-independence-factor"></a>
+### `optimizer.filter-conjunction-independence-factor` <a href="#optimizer-filter-conjunction-independence-factor" id="optimizer-filter-conjunction-independence-factor"></a>
 
 * **Type:** double
 * **Default value:** `0.75`
@@ -128,7 +128,7 @@ Use co-located joins when both sides of a join have the same table partitioning 
 
 Scales the strength of independence assumption for estimating the selectivity of the conjunction of multiple predicates. Lower values for this property will produce more conservative estimates by assuming a greater degree of correlation between the columns of the predicates in a conjunction. A value of `0` results in the optimizer assuming that the columns of the predicates are fully correlated and only the most selective predicate drives the selectivity of a conjunction of predicates.
 
-### `optimizer.join-multi-clause-independence-factor`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-join-multi-clause-independence-factor) <a href="#optimizer-join-multi-clause-independence-factor" id="optimizer-join-multi-clause-independence-factor"></a>
+### `optimizer.join-multi-clause-independence-factor` <a href="#optimizer-join-multi-clause-independence-factor" id="optimizer-join-multi-clause-independence-factor"></a>
 
 * **Type:** double
 * **Default value:** `0.25`
@@ -137,14 +137,14 @@ Scales the strength of independence assumption for estimating the selectivity of
 
 Scales the strength of independence assumption for estimating the output of a multi-clause join. Lower values for this property will produce more conservative estimates by assuming a greater degree of correlation between the columns of the clauses in a join. A value of `0` results in the optimizer assuming that the columns of the join clauses are fully correlated and only the most selective clause drives the selectivity of the join.
 
-### `optimizer.non-estimatable-predicate-approximation.enabled`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-non-estimatable-predicate-approximation-enabled) <a href="#optimizer-non-estimatable-predicate-approximation-enabled" id="optimizer-non-estimatable-predicate-approximation-enabled"></a>
+### `optimizer.non-estimatable-predicate-approximation.enabled` <a href="#optimizer-non-estimatable-predicate-approximation-enabled" id="optimizer-non-estimatable-predicate-approximation-enabled"></a>
 
 * **Type:** boolean
 * **Default value:** `true`
 
 Enables approximation of the output row count of filters whose costs cannot be accurately estimated even with complete statistics. This allows the optimizer to produce more efficient plans in the presence of filters which were previously not estimated.
 
-### `optimizer.join-partitioned-build-min-row-count`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-join-partitioned-build-min-row-count) <a href="#optimizer-join-partitioned-build-min-row-count" id="optimizer-join-partitioned-build-min-row-count"></a>
+### `optimizer.join-partitioned-build-min-row-count` <a href="#optimizer-join-partitioned-build-min-row-count" id="optimizer-join-partitioned-build-min-row-count"></a>
 
 * **Type:** integer
 * **Default value:** `1000000`
@@ -152,7 +152,7 @@ Enables approximation of the output row count of filters whose costs cannot be a
 
 The minimum number of join build side rows required to use partitioned join lookup. If the build side of a join is estimated to be smaller than the configured threshold, single threaded join lookup is used to improve join performance. A value of `0` disables this optimization.
 
-### `optimizer.min-input-size-per-task`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-min-input-size-per-task) <a href="#optimizer-min-input-size-per-task" id="optimizer-min-input-size-per-task"></a>
+### `optimizer.min-input-size-per-task` <a href="#optimizer-min-input-size-per-task" id="optimizer-min-input-size-per-task"></a>
 
 * **Type:** data size
 * **Default value:** `5GB`
@@ -161,7 +161,7 @@ The minimum number of join build side rows required to use partitioned join look
 
 The minimum input size required per task. This will help optimizer to determine hash partition count for joins and aggregations. Limiting hash partition count for small queries increases concurrency on large clusters where multiple small queries are running concurrently. The estimated value will always be between `min_hash_partition_count` and `max_hash_partition_count` session property. A value of `0MB` disables this optimization.
 
-### `optimizer.min-input-rows-per-task`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-min-input-rows-per-task) <a href="#optimizer-min-input-rows-per-task" id="optimizer-min-input-rows-per-task"></a>
+### `optimizer.min-input-rows-per-task` <a href="#optimizer-min-input-rows-per-task" id="optimizer-min-input-rows-per-task"></a>
 
 * **Type:** integer
 * **Default value:** `10000000`
@@ -170,7 +170,7 @@ The minimum input size required per task. This will help optimizer to determine 
 
 The minimum number of input rows required per task. This will help optimizer to determine hash partition count for joins and aggregations. Limiting hash partition count for small queries increases concurrency on large clusters where multiple small queries are running concurrently. The estimated value will always be between `min_hash_partition_count` and `max_hash_partition_count` session property. A value of `0` disables this optimization.
 
-### `optimizer.use-cost-based-partitioning`[#](https://trino.io/docs/current/admin/properties-optimizer.html#optimizer-use-cost-based-partitioning) <a href="#optimizer-use-cost-based-partitioning" id="optimizer-use-cost-based-partitioning"></a>
+### `optimizer.use-cost-based-partitioning` <a href="#optimizer-use-cost-based-partitioning" id="optimizer-use-cost-based-partitioning"></a>
 
 * **Type:** boolean
 * **Default value:** `true`

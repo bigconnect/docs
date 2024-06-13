@@ -2,7 +2,7 @@
 
 The Google Sheets connector allows reading and writing [Google Sheets](https://www.google.com/sheets/about/) spreadsheets as tables in Trino.
 
-### Configuration[#](https://trino.io/docs/current/connector/googlesheets.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 Create `etc/catalog/example.properties` to mount the Google Sheets connector as the `example` catalog, with the following contents:
 
@@ -12,9 +12,9 @@ gsheets.credentials-path=/path/to/google-sheets-credentials.json
 gsheets.metadata-sheet-id=exampleId
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Configuration properties[#](https://trino.io/docs/current/connector/googlesheets.html#configuration-properties) <a href="#configuration-properties" id="configuration-properties"></a>
+
+### Configuration properties <a href="#configuration-properties" id="configuration-properties"></a>
 
 The following configuration properties are available:
 
@@ -29,7 +29,7 @@ The following configuration properties are available:
 | `gsheets.read-timeout`        | Timeout when reading from Google Sheets API, defaults to `20s`   |
 | `gsheets.write-timeout`       | Timeout when writing to Google Sheets API, defaults to `20s`     |
 
-### Credentials[#](https://trino.io/docs/current/connector/googlesheets.html#credentials) <a href="#credentials" id="credentials"></a>
+### Credentials <a href="#credentials" id="credentials"></a>
 
 The connector requires credentials in order to access the Google Sheets API.
 
@@ -42,7 +42,7 @@ The key file needs to be available on the Trino coordinator and workers. Set the
 
 Alternatively, set the `gsheets.credentials-key` configuration property. It should contain the contents of the JSON file, encoded using base64.
 
-### Metadata sheet[#](https://trino.io/docs/current/connector/googlesheets.html#metadata-sheet) <a href="#metadata-sheet" id="metadata-sheet"></a>
+### Metadata sheet <a href="#metadata-sheet" id="metadata-sheet"></a>
 
 The metadata sheet is used to map table names to sheet IDs. Create a new metadata sheet. The first row must be a header row containing the following columns in this order:
 
@@ -57,7 +57,7 @@ The metadata sheet must be shared with the service account user, the one for whi
 
 Set the `gsheets.metadata-sheet-id` configuration property to the ID of this sheet.
 
-### Querying sheets[#](https://trino.io/docs/current/connector/googlesheets.html#querying-sheets) <a href="#querying-sheets" id="querying-sheets"></a>
+### Querying sheets <a href="#querying-sheets" id="querying-sheets"></a>
 
 The service account user must have access to the sheet in order for Trino to query it. Click the _Share_ button to share the sheet with the email address of the service account.
 
@@ -65,23 +65,23 @@ The sheet needs to be mapped to a Trino table name. Specify a table name (column
 
 The first row of the provided sheet range is used as the header and will determine the column names of the Trino table. For more details on sheet range syntax see the [google sheets docs](https://developers.google.com/sheets/api/guides/concepts).
 
-### Writing to sheets[#](https://trino.io/docs/current/connector/googlesheets.html#writing-to-sheets) <a href="#writing-to-sheets" id="writing-to-sheets"></a>
+### Writing to sheets <a href="#writing-to-sheets" id="writing-to-sheets"></a>
 
 The same way sheets can be queried, they can also be written by appending data to existing sheets. In this case the service account user must also have **Editor** permissions on the sheet.
 
-After data is written to a table, the table contents are removed from the cache described in [API usage limits](https://trino.io/docs/current/connector/googlesheets.html#gsheets-api-usage). If the table is accessed immediately after the write, querying the Google Sheets API may not reflect the change yet. In that case the old version of the table is read and cached for the configured amount of time, and it might take some time for the written changes to propagate properly.
+After data is written to a table, the table contents are removed from the cache described in API usage limits. If the table is accessed immediately after the write, querying the Google Sheets API may not reflect the change yet. In that case the old version of the table is read and cached for the configured amount of time, and it might take some time for the written changes to propagate properly.
 
 Keep in mind that the Google Sheets API has [usage limits](https://developers.google.com/sheets/api/limits), that limit the speed of inserting data. If you run into timeouts you can increase timeout times to avoid `503: The service is currently unavailable` errors.
 
-### API usage limits[#](https://trino.io/docs/current/connector/googlesheets.html#api-usage-limits) <a href="#api-usage-limits" id="api-usage-limits"></a>
+### API usage limits <a href="#api-usage-limits" id="api-usage-limits"></a>
 
 The Google Sheets API has [usage limits](https://developers.google.com/sheets/api/limits), that may impact the usage of this connector. Increasing the cache duration and/or size may prevent the limit from being reached. Running queries on the `information_schema.columns` table without a schema and table name filter may lead to hitting the limit, as this requires fetching the sheet data for every table, unless it is already cached.
 
-### Type mapping[#](https://trino.io/docs/current/connector/googlesheets.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
-Because Trino and Google Sheets each support types that the other does not, this connector [modifies some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading data.
+Because Trino and Google Sheets each support types that the other does not, this connector modifies some types when reading data.
 
-#### Google Sheets type to Trino type mapping[#](https://trino.io/docs/current/connector/googlesheets.html#google-sheets-type-to-trino-type-mapping) <a href="#google-sheets-type-to-trino-type-mapping" id="google-sheets-type-to-trino-type-mapping"></a>
+#### Google Sheets type to Trino type mapping <a href="#google-sheets-type-to-trino-type-mapping" id="google-sheets-type-to-trino-type-mapping"></a>
 
 The connector maps Google Sheets types to the corresponding Trino types following this table:
 
@@ -91,17 +91,17 @@ The connector maps Google Sheets types to the corresponding Trino types followin
 
 No other types are supported.
 
-### SQL support[#](https://trino.io/docs/current/connector/googlesheets.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 In addition to the globally available and read operation statements, this connector supports the following features:
 
 * INSERT
 
-### Table functions# <a href="#table-functions" id="table-functions"></a>
+### Table functions <a href="#table-functions" id="table-functions"></a>
 
 The connector provides specific Table functions to access Google Sheets.
 
-#### `sheet(id, range) -> table`[#](https://trino.io/docs/current/connector/googlesheets.html#sheet-id-range-table) <a href="#sheet-id-range-table" id="sheet-id-range-table"></a>
+#### `sheet(id, range) -> table` <a href="#sheet-id-range-table" id="sheet-id-range-table"></a>
 
 The `sheet` function allows you to query a Google Sheet directly without specifying it as a named table in the metadata sheet.
 
@@ -114,7 +114,7 @@ FROM
       id => 'googleSheetIdHere'));
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 A sheet range or named range can be provided as an optional `range` argument. The default sheet range is `$1:$10000` if one is not provided:
 

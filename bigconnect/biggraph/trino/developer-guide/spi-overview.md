@@ -20,11 +20,11 @@ Plugins can provide additional:
 
 In particular, connectors are the source of all data for queries in Trino: they back each catalog available to Trino.
 
-### Code[#](https://trino.io/docs/current/develop/spi-overview.html#code) <a href="#code" id="code"></a>
+### Code <a href="#code" id="code"></a>
 
 The SPI source can be found in the `core/trino-spi` directory in the Trino source tree.
 
-### Plugin metadata[#](https://trino.io/docs/current/develop/spi-overview.html#plugin-metadata) <a href="#plugin-metadata" id="plugin-metadata"></a>
+### Plugin metadata <a href="#plugin-metadata" id="plugin-metadata"></a>
 
 Each plugin identifies an entry point: an implementation of the `Plugin` interface. This class name is provided to Trino via the standard Java `ServiceLoader` interface: the classpath contains a resource file named `io.trino.spi.Plugin` in the `META-INF/services` directory. The content of this file is a single line listing the name of the plugin class:
 
@@ -32,7 +32,7 @@ Each plugin identifies an entry point: an implementation of the `Plugin` interfa
 com.example.plugin.ExamplePlugin
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 For a built-in plugin that is included in the Trino source code, this resource file is created whenever the `pom.xml` file of a plugin contains the following line:
 
@@ -40,13 +40,13 @@ For a built-in plugin that is included in the Trino source code, this resource f
 <packaging>trino-plugin</packaging>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Plugin[#](https://trino.io/docs/current/develop/spi-overview.html#plugin) <a href="#plugin" id="plugin"></a>
+
+### Plugin <a href="#plugin" id="plugin"></a>
 
 The `Plugin` interface is a good starting place for developers looking to understand the Trino SPI. It contains access methods to retrieve various classes that a Plugin can provide. For example, the `getConnectorFactories()` method is a top-level function that Trino calls to retrieve a `ConnectorFactory` when Trino is ready to create an instance of a connector to back a catalog. There are similar methods for `Type`, `ParametricType`, `Function`, `SystemAccessControl`, and `EventListenerFactory` objects.
 
-### Building plugins via Maven[#](https://trino.io/docs/current/develop/spi-overview.html#building-plugins-via-maven) <a href="#building-plugins-via-maven" id="building-plugins-via-maven"></a>
+### Building plugins via Maven <a href="#building-plugins-via-maven" id="building-plugins-via-maven"></a>
 
 Plugins depend on the SPI from Trino:
 
@@ -58,7 +58,7 @@ Plugins depend on the SPI from Trino:
 </dependency>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The plugin uses the Maven `provided` scope because Trino provides the classes from the SPI at runtime and thus the plugin should not include them in the plugin assembly.
 
@@ -68,7 +68,7 @@ All other dependencies are based on what the plugin needs for its own implementa
 
 For an example `pom.xml` file, see the example HTTP connector in the `plugin/trino-example-http` directory in the Trino source tree.
 
-### Deploying a custom plugin[#](https://trino.io/docs/current/develop/spi-overview.html#deploying-a-custom-plugin) <a href="#deploying-a-custom-plugin" id="deploying-a-custom-plugin"></a>
+### Deploying a custom plugin <a href="#deploying-a-custom-plugin" id="deploying-a-custom-plugin"></a>
 
 Because Trino plugins use the `trino-plugin` packaging type, building a plugin will create a ZIP file in the `target` directory. This file contains the plugin JAR and all its dependencies JAR files.
 

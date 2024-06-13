@@ -1,6 +1,6 @@
 # BEGIN
 
-### Synopsis[#](https://trino.io/docs/current/routines/begin.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 BEGIN
@@ -9,9 +9,9 @@ BEGIN
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/routines/begin.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 Marks the start and end of a block in a SQL routine. `BEGIN` can be used wherever a statement can be used to group multiple statements together and to declare variables local to the block. A typical use case is as first statement within a FUNCTION. Blocks can also be nested.
 
@@ -28,7 +28,7 @@ After the `BEGIN` keyword, you can add variable declarations using DECLARE state
 * WHILE
 * Nested BEGIN blocks
 
-### Examples# <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 The following example computes the value `42`:
 
@@ -42,11 +42,11 @@ FUNCTION meaning_of_life()
   END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Further examples of varying complexity that cover usage of the `BEGIN` statement in combination with other statements are available in the SQL routines examples documentation.
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 * Introduction to SQL routines
 * FUNCTION

@@ -10,7 +10,7 @@ This page discusses only how to prepare the Trino server for secure client conne
 
 See the Glossary to clarify unfamiliar terms.
 
-### Supported standards# <a href="#supported-standards" id="supported-standards"></a>
+### Supported standards <a href="#supported-standards" id="supported-standards"></a>
 
 When configured to use TLS, the Trino server responds to client connections using TLS 1.2 and TLS 1.3 certificates. The server rejects TLS 1.1, TLS 1.0, and all SSL format certificates.
 
@@ -23,7 +23,7 @@ echo "java.util.Arrays.asList(((javax.net.ssl.SSLServerSocketFactory) \
 javax.net.ssl.SSLServerSocketFactory.getDefault()).getSupportedCipherSuites()).forEach(System.out::println)" | jshell -
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The default Trino server specifies a set of regular expressions that exclude older cipher suites that do not support forward secrecy (FS).
 
@@ -34,7 +34,7 @@ http-server.https.included-cipher=TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_
 http-server.https.excluded-cipher=
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Specifying a different cipher suite is a complex issue that should only be considered in conjunction with your organization’s security managers. Using a different suite may require downloading and installing a different SunJCE implementation package. Some locales may have export restrictions on cipher suites. See the discussion in Java documentation that begins with Customizing the Encryption Algorithm Providers.
 
@@ -51,7 +51,7 @@ To configure Trino with TLS support, consider two alternative paths:
 * Use the load balancer or proxy at your site or cloud environment to terminate TLS/HTTPS. This approach is the simplest and strongly preferred solution.
 * Secure the Trino server directly. This requires you to obtain a valid certificate, and add it to the Trino coordinator’s configuration.
 
-### Use a load balancer to terminate TLS/HTTPS# <a href="#use-a-load-balancer-to-terminate-tls-https" id="use-a-load-balancer-to-terminate-tls-https"></a>
+### Use a load balancer to terminate TLS/HTTPS <a href="#use-a-load-balancer-to-terminate-tls-https" id="use-a-load-balancer-to-terminate-tls-https"></a>
 
 Your site or cloud environment may already have a load balancer or proxy server configured and running with a valid, globally trusted TLS certificate. In this case, you can work with your network administrators to set up your Trino server behind the load balancer. The load balancer or proxy server accepts TLS connections and forwards them to the Trino coordinator, which typically runs with default HTTP configuration on the default port, 8080.
 
@@ -65,15 +65,15 @@ However, to enable processing of such forwarded headers, the server’s config p
 http-server.process-forwarded=true
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This completes any necessary configuration for using HTTPS with a load balancer. Client tools can access Trino with the URL exposed by the load balancer.
 
-### Secure Trino directly[#](https://trino.io/docs/current/security/tls.html#secure-trino-directly) <a href="#secure-trino-directly" id="secure-trino-directly"></a>
+### Secure Trino directly <a href="#secure-trino-directly" id="secure-trino-directly"></a>
 
 Instead of the preferred mechanism of using an external load balancer, you can secure the Trino coordinator itself. This requires you to obtain and install a TLS certificate, and configure Trino to use it for client connections.
 
-#### Add a TLS certificate[#](https://trino.io/docs/current/security/tls.html#add-a-tls-certificate) <a href="#add-a-tls-certificate" id="add-a-tls-certificate"></a>
+#### Add a TLS certificate <a href="#add-a-tls-certificate" id="add-a-tls-certificate"></a>
 
 Obtain a TLS certificate file for use with your Trino server. Consider the following types of certificates:
 
@@ -87,13 +87,13 @@ Obtain a TLS certificate file for use with your Trino server. Consider the follo
 
 The most convenient option and strongly recommended option is a globally trusted certificate. It may require a little more work up front, but it is worth it to not have to configure every single client.
 
-#### Keys and certificates[#](https://trino.io/docs/current/security/tls.html#keys-and-certificates) <a href="#keys-and-certificates" id="keys-and-certificates"></a>
+#### Keys and certificates <a href="#keys-and-certificates" id="keys-and-certificates"></a>
 
 Trino can read certificates and private keys encoded in PEM encoded PKCS #1, PEM encoded PKCS #8, PKCS #12, and the legacy Java KeyStore (JKS) format. Certificates and private keys encoded in a binary format such as DER must be converted.
 
 Make sure you obtain a certificate that is validated by a recognized certificate authority.
 
-#### Inspect received certificates# <a href="#inspect-received-certificates" id="inspect-received-certificates"></a>
+#### Inspect received certificates <a href="#inspect-received-certificates" id="inspect-received-certificates"></a>
 
 Before installing your certificate, inspect and validate the received key and certificate files to make sure they reference the correct information to access your Trino server. Much unnecessary debugging time is saved by taking the time to validate your certificates before proceeding to configure the server.
 
@@ -101,11 +101,11 @@ Inspect PEM-encoded files as described in Inspect PEM files.
 
 Inspect PKCS # 12 and JKS keystores as described in Inspect JKS files.
 
-#### Invalid certificates# <a href="#invalid-certificates" id="invalid-certificates"></a>
+#### Invalid certificates <a href="#invalid-certificates" id="invalid-certificates"></a>
 
 If your certificate does not pass validation, or does not show the expected information on inspection, contact the group or vendor who provided it for a replacement.
 
-#### Place the certificate file[#](https://trino.io/docs/current/security/tls.html#place-the-certificate-file) <a href="#place-the-certificate-file" id="place-the-certificate-file"></a>
+#### Place the certificate file <a href="#place-the-certificate-file" id="place-the-certificate-file"></a>
 
 There are no location requirements for a certificate file as long as:
 
@@ -114,7 +114,7 @@ There are no location requirements for a certificate file as long as:
 
 You can place your file in the Trino coordinator’s `etc` directory, which allows you to use a relative path reference in configuration files. However, this location can require you to keep track of the certificate file, and move it to a new `etc` directory when you upgrade your Trino version.
 
-#### Configure the coordinator[#](https://trino.io/docs/current/security/tls.html#configure-the-coordinator) <a href="#configure-the-coordinator" id="configure-the-coordinator"></a>
+#### Configure the coordinator <a href="#configure-the-coordinator" id="configure-the-coordinator"></a>
 
 On the coordinator, add the following lines to the config properties file to enable TLS/HTTPS support for the server.
 
@@ -128,7 +128,7 @@ http-server.https.port=8443
 http-server.https.keystore.path=etc/clustercoord.pem
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Possible alternatives for the third line include:
 
@@ -137,7 +137,7 @@ http-server.https.keystore.path=etc/clustercoord.jks
 http-server.https.keystore.path=/usr/local/certs/clustercoord.p12
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Relative paths are relative to the Trino server’s root directory. In a `tar.gz` installation, the root directory is one level above `etc`.
 
@@ -147,7 +147,7 @@ JKS keystores always require a password, while PEM files with passwords are not 
 http-server.https.keystore.key=<keystore-password>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 It is possible for a key inside a keystore to have its own password, independent of the keystore’s password. In this case, specify the key’s password with the following property:
 
@@ -155,7 +155,7 @@ It is possible for a key inside a keystore to have its own password, independent
 http-server.https.keymanager.password=<key-password>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 When your Trino coordinator has an authenticator enabled along with HTTPS enabled, HTTP access is automatically disabled for all clients, including the Web UI. Although not recommended, you can re-enable it by setting:
 
@@ -163,9 +163,9 @@ When your Trino coordinator has an authenticator enabled along with HTTPS enable
 http-server.authentication.allow-insecure-over-http=true
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Verify configuration[#](https://trino.io/docs/current/security/tls.html#verify-configuration) <a href="#verify-configuration" id="verify-configuration"></a>
+
+#### Verify configuration <a href="#verify-configuration" id="verify-configuration"></a>
 
 To verify TLS/HTTPS configuration, log in to the Web UI, and send a query with the Trino CLI.
 
@@ -176,7 +176,7 @@ To verify TLS/HTTPS configuration, log in to the Web UI, and send a query with t
 ./trino --server https://trino.example.com:8443
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Send a query to test the connection:
 
@@ -193,9 +193,9 @@ Splits: 1 total, 1 done (100.00%)
 0.12 [0 rows, 0B] [0 rows/s, 0B/s]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Limitations of self-signed certificates[#](https://trino.io/docs/current/security/tls.html#limitations-of-self-signed-certificates) <a href="#limitations-of-self-signed-certificates" id="limitations-of-self-signed-certificates"></a>
+
+### Limitations of self-signed certificates <a href="#limitations-of-self-signed-certificates" id="limitations-of-self-signed-certificates"></a>
 
 It is possible to generate a self-signed certificate with the `openssl`, `keytool`, or on Linux, `certtool` commands. Self-signed certificates can be useful during development of a cluster for internal use only. We recommend never using a self-signed certificate for a production Trino server.
 

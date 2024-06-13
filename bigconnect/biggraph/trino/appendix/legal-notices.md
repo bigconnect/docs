@@ -1,18 +1,18 @@
 # Legal notices
 
-### License[#](https://trino.io/docs/current/appendix/legal-notices.html#license) <a href="#license" id="license"></a>
+### License <a href="#license" id="license"></a>
 
 Trino is open source software licensed under the [Apache License 2.0](https://github.com/trinodb/trino/blob/master/LICENSE).
 
-### Code[#](https://trino.io/docs/current/appendix/legal-notices.html#code) <a href="#code" id="code"></a>
+### Code <a href="#code" id="code"></a>
 
 Source code is available at [https://github.com/trinodb](https://github.com/trinodb).
 
-### Governance[#](https://trino.io/docs/current/appendix/legal-notices.html#governance) <a href="#governance" id="governance"></a>
+### Governance <a href="#governance" id="governance"></a>
 
 The project is run by volunteer contributions and supported by the Trino Software Foundation.
 
-### Trademarks[#](https://trino.io/docs/current/appendix/legal-notices.html#trademarks) <a href="#trademarks" id="trademarks"></a>
+### Trademarks <a href="#trademarks" id="trademarks"></a>
 
 Product names, other names, logos and other material used on this site are registered trademarks of various entities including, but not limited to, the following trademark owners and names:
 

@@ -4,7 +4,7 @@ A window structure can be defined in the `WINDOW` clause or in the `OVER` clause
 
 This section explains the details of row pattern recognition in window structures, and highlights the similarities and the differences between both pattern recognition mechanisms.
 
-### Window with row pattern recognition[#](https://trino.io/docs/current/sql/pattern-recognition-in-window.html#window-with-row-pattern-recognition) <a href="#window-with-row-pattern-recognition" id="window-with-row-pattern-recognition"></a>
+### Window with row pattern recognition <a href="#window-with-row-pattern-recognition" id="window-with-row-pattern-recognition"></a>
 
 **Window specification:**
 
@@ -17,7 +17,7 @@ This section explains the details of row pattern recognition in window structure
 )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 **Window frame:**
 
@@ -31,7 +31,7 @@ frame_extent
 [ DEFINE variable_definition [, ...] ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Generally, a window frame specifies the `frame_extent`, which defines the “sliding window” of rows to be processed by a window function. It can be defined in terms of `ROWS`, `RANGE` or `GROUPS`.
 
@@ -49,9 +49,9 @@ PATTERN ( row_pattern )
 DEFINE variable_definition [, ...]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description of the pattern recognition clauses[#](https://trino.io/docs/current/sql/pattern-recognition-in-window.html#description-of-the-pattern-recognition-clauses) <a href="#description-of-the-pattern-recognition-clauses" id="description-of-the-pattern-recognition-clauses"></a>
+
+### Description of the pattern recognition clauses <a href="#description-of-the-pattern-recognition-clauses" id="description-of-the-pattern-recognition-clauses"></a>
 
 The `frame_extent` with row pattern recognition must be defined in terms of `ROWS`. The frame start must be at the `CURRENT ROW`, which limits the allowed frame extent values to the following:
 
@@ -63,7 +63,7 @@ ROWS BETWEEN CURRENT ROW AND <expression> FOLLOWING
 ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 For every input row processed by the window, the portion of rows enclosed by the `frame_extent` limits the search area for row pattern recognition. Unlike in `MATCH_RECOGNIZE`, where the pattern search can explore all rows until the partition end, and all rows of the partition are available for computations, in window structures the pattern matching can neither match rows nor retrieve input values outside the frame.
 
@@ -92,7 +92,7 @@ SELECT cust_key, value OVER w, label OVER w
                 )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Measures defined in a window can be referenced in the `SELECT` clause and in the `ORDER BY` clause of the enclosing query.
 
@@ -108,7 +108,7 @@ The `SUBSET` clause is used to define union variables as sets of primary pattern
 SUBSET U = (A, B)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following expression returns the `total_price` value from the last row matched to either `A` or `B`:
 
@@ -116,7 +116,7 @@ The following expression returns the `total_price` value from the last row match
 LAST(U.total_price)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If you want to refer to all rows of the match, there is no need to define a `SUBSET` containing all pattern variables. There is an implicit _universal pattern variable_ applied to any non prefixed column name and any `CLASSIFIER` call without an argument. The following expression returns the `total_price` value from the last matched row:
 
@@ -124,7 +124,7 @@ If you want to refer to all rows of the match, there is no need to define a `SUB
 LAST(total_price)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following call returns the primary pattern variable of the first matched row:
 
@@ -132,11 +132,11 @@ The following call returns the primary pattern variable of the first matched row
 FIRST(CLASSIFIER())
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In window, unlike in `MATCH_RECOGNIZE`, you cannot specify `ONE ROW PER MATCH` or `ALL ROWS PER MATCH`. This is because all calls over window, whether they are regular window functions or measures, must comply with the window semantics. A call over window is supposed to produce exactly one output row for every input row. And so, the output mode of pattern recognition in window is a combination of `ONE ROW PER MATCH` and `WITH UNMATCHED ROWS`.
 
-### Processing input with row pattern recognition[#](https://trino.io/docs/current/sql/pattern-recognition-in-window.html#processing-input-with-row-pattern-recognition) <a href="#processing-input-with-row-pattern-recognition" id="processing-input-with-row-pattern-recognition"></a>
+### Processing input with row pattern recognition <a href="#processing-input-with-row-pattern-recognition" id="processing-input-with-row-pattern-recognition"></a>
 
 Pattern recognition in window processes input rows in two different cases:
 
@@ -146,14 +146,14 @@ Pattern recognition in window processes input rows in two different cases:
     some_measure OVER w
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 *   upon a window function call over the window:
 
     ```
     sum(total_price) OVER w
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The output row produced for each input row, consists of:
 
@@ -186,7 +186,7 @@ Processing the input can be described as the following sequence of steps:
     * For a window function, evaluate the function over a frame limited to the matched rows sequence and produce a one-row output
     * Evaluate the `AFTER MATCH SKIP` clause, and mark the ‘skipped’ rows
 
-### Empty matches and unmatched rows[#](https://trino.io/docs/current/sql/pattern-recognition-in-window.html#empty-matches-and-unmatched-rows) <a href="#empty-matches-and-unmatched-rows" id="empty-matches-and-unmatched-rows"></a>
+### Empty matches and unmatched rows <a href="#empty-matches-and-unmatched-rows" id="empty-matches-and-unmatched-rows"></a>
 
 If no match can be associated with a particular input row, the row is _unmatched_. This happens when no match can be found for the row. This also happens when no match is attempted for the row, because it is skipped by the `AFTER MATCH SKIP` clause of some preceding row. For an unmatched row, every row pattern measure is `null`. Every window function is evaluated over an empty frame.
 

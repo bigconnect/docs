@@ -1,18 +1,18 @@
 # ITERATE
 
-### Synopsis[#](https://trino.io/docs/current/routines/iterate.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 ITERATE label
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/routines/iterate.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 The `ITERATE` statement allows processing of blocks in SQL routines to move processing back to the start of a context block. Contexts are defined by a `label`. If no label is found, the functions fails with an error message.
 
-### Examples[#](https://trino.io/docs/current/routines/iterate.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 ```
 FUNCTION count()
@@ -30,11 +30,11 @@ BEGIN
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Further examples of varying complexity that cover usage of the `ITERATE` statement in combination with other statements are available in the SQL routines examples documentation.
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 * Introduction to SQL routines
 * LEAVE

@@ -8,7 +8,7 @@ Using TLS and a configured shared secret is required for LDAP authentication.
 
 ### Trino server configuration <a href="#trino-server-configuration" id="trino-server-configuration"></a>
 
-#### Trino coordinator node configuration[#](https://trino.io/docs/current/security/ldap.html#trino-coordinator-node-configuration) <a href="#trino-coordinator-node-configuration" id="trino-coordinator-node-configuration"></a>
+#### Trino coordinator node configuration <a href="#trino-coordinator-node-configuration" id="trino-coordinator-node-configuration"></a>
 
 Access to the Trino coordinator should be through HTTPS, configured as described on TLS and HTTPS.
 
@@ -28,7 +28,7 @@ http-server.https.keystore.path=/etc/trino/keystore.jks
 http-server.https.keystore.key=keystore_password
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 | Property                                                   | Description                                                                                                                                                                 |
 | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -52,7 +52,7 @@ ldap.ssl.truststore.path=/path/to/ldap_server.pem
 ldap.user-bind-pattern=<Refer below for usage>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 | Property                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -70,13 +70,13 @@ ldap.user-bind-pattern=<Refer below for usage>
 
 Based on the LDAP server implementation type, the property `ldap.user-bind-pattern` can be used as described below.
 
-**ACTIVE DIRECTORY**[**#**](https://trino.io/docs/current/security/ldap.html#active-directory)
+**ACTIVE DIRECTORY**
 
 ```
 ldap.user-bind-pattern=${USER}@<domain_name_of_the_server>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Example:
 
@@ -84,15 +84,15 @@ Example:
 ldap.user-bind-pattern=${USER}@corp.example.com
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**OPENLDAP**[**#**](https://trino.io/docs/current/security/ldap.html#openldap)
+
+**OPENLDAP**
 
 ```
 ldap.user-bind-pattern=uid=${USER},<distinguished_name_of_the_user>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Example:
 
@@ -100,9 +100,9 @@ Example:
 ldap.user-bind-pattern=uid=${USER},OU=America,DC=corp,DC=example,DC=com
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**Authorization based on LDAP group membership**[**#**](https://trino.io/docs/current/security/ldap.html#authorization-based-on-ldap-group-membership)
+
+**Authorization based on LDAP group membership**
 
 You can further restrict the set of users allowed to connect to the Trino coordinator, based on their group membership, by setting the optional `ldap.group-auth-pattern` and `ldap.user-base-dn` properties, in addition to the basic LDAP authentication properties.
 
@@ -113,7 +113,7 @@ You can further restrict the set of users allowed to connect to the Trino coordi
 
 Based on the LDAP server implementation type, the property `ldap.group-auth-pattern` can be used as described below.
 
-**Authorization using Trino LDAP service user**[**#**](https://trino.io/docs/current/security/ldap.html#authorization-using-trino-ldap-service-user)
+**Authorization using Trino LDAP service user**
 
 Trino server can use dedicated LDAP service user for doing user group membership queries. In such case Trino will first issue a group membership query for a Trino user that needs to be authenticated. A user distinguished name will be extracted from a group membership query result. Trino will then validate user password by creating LDAP context with user distinguished name and user password. In order to use this mechanism `ldap.bind-dn`, `ldap.bind-password` and `ldap.group-auth-pattern` properties need to be defined.
 
@@ -129,7 +129,7 @@ Trino server can use dedicated LDAP service user for doing user group membership
 ldap.group-auth-pattern=(&(objectClass=<objectclass_of_user>)(sAMAccountName=${USER})(memberof=<dn_of_the_authorized_group>))
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Example:
 
@@ -137,7 +137,7 @@ Example:
 ldap.group-auth-pattern=(&(objectClass=person)(sAMAccountName=${USER})(memberof=CN=AuthorizedGroup,OU=Asia,DC=corp,DC=example,DC=com))
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 **OPENLDAP**[**#**](https://trino.io/docs/current/security/ldap.html#id2)
 
@@ -145,7 +145,7 @@ ldap.group-auth-pattern=(&(objectClass=person)(sAMAccountName=${USER})(memberof=
 ldap.group-auth-pattern=(&(objectClass=<objectclass_of_user>)(uid=${USER})(memberof=<dn_of_the_authorized_group>))
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Example:
 
@@ -153,7 +153,7 @@ Example:
 ldap.group-auth-pattern=(&(objectClass=inetOrgPerson)(uid=${USER})(memberof=CN=AuthorizedGroup,OU=Asia,DC=corp,DC=example,DC=com))
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 For OpenLDAP, for this query to work, make sure you enable the `memberOf` [overlay](http://www.openldap.org/doc/admin24/overlays.html).
 
@@ -163,17 +163,17 @@ You can use this property for scenarios where you want to authorize a user based
 ldap.group-auth-pattern=(&(|(memberOf=CN=normal_group,DC=corp,DC=com)(memberOf=CN=another_group,DC=com))(objectClass=inetOrgPerson)(uid=${USER}))
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Trino CLI[#](https://trino.io/docs/current/security/ldap.html#trino-cli) <a href="#trino-cli" id="trino-cli"></a>
 
-#### Environment configuration[#](https://trino.io/docs/current/security/ldap.html#environment-configuration) <a href="#environment-configuration" id="environment-configuration"></a>
+### Trino CLI <a href="#trino-cli" id="trino-cli"></a>
 
-**TLS configuration**[**#**](https://trino.io/docs/current/security/ldap.html#tls-configuration)
+#### Environment configuration <a href="#environment-configuration" id="environment-configuration"></a>
+
+**TLS configuration**
 
 When using LDAP authentication, access to the Trino coordinator must be through TLS/HTTPS.
 
-#### Trino CLI execution[#](https://trino.io/docs/current/security/ldap.html#trino-cli-execution) <a href="#trino-cli-execution" id="trino-cli-execution"></a>
+#### Trino CLI execution <a href="#trino-cli-execution" id="trino-cli-execution"></a>
 
 In addition to the options that are required when connecting to a Trino coordinator that does not require LDAP authentication, invoking the CLI with LDAP support enabled requires a number of additional command line options. You can either use `--keystore-*` or `--truststore-*` properties to secure TLS connection. The simplest way to invoke the CLI is with a wrapper script.
 
@@ -192,13 +192,13 @@ In addition to the options that are required when connecting to a Trino coordina
 --password
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Find details on the options used in TLS/HTTPS and Username and password authentication.
 
-### Troubleshooting[#](https://trino.io/docs/current/security/ldap.html#troubleshooting) <a href="#troubleshooting" id="troubleshooting"></a>
+### Troubleshooting <a href="#troubleshooting" id="troubleshooting"></a>
 
-#### Java keystore file verification[#](https://trino.io/docs/current/security/ldap.html#java-keystore-file-verification) <a href="#java-keystore-file-verification" id="java-keystore-file-verification"></a>
+#### Java keystore file verification <a href="#java-keystore-file-verification" id="java-keystore-file-verification"></a>
 
 Verify the password for a keystore file and view its contents using Inspect and validate keystore.
 
@@ -210,9 +210,9 @@ If you need to debug issues with Trino communicating with the LDAP server, you c
 io.trino.plugin.password=DEBUG
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### TLS debugging for Trino CLI[#](https://trino.io/docs/current/security/ldap.html#tls-debugging-for-trino-cli) <a href="#tls-debugging-for-trino-cli" id="tls-debugging-for-trino-cli"></a>
+
+#### TLS debugging for Trino CLI <a href="#tls-debugging-for-trino-cli" id="tls-debugging-for-trino-cli"></a>
 
 If you encounter any TLS related errors when running the Trino CLI, you can run the CLI using the `-Djavax.net.debug=ssl` parameter for debugging. Use the Trino CLI executable JAR to enable this. For example:
 
@@ -224,9 +224,9 @@ trino-cli-<version>-executable.jar \
 <other_cli_arguments>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**Common TLS/SSL errors**[**#**](https://trino.io/docs/current/security/ldap.html#common-tls-ssl-errors)
+
+**Common TLS/SSL errors**
 
 **JAVA.SECURITY.CERT.CERTIFICATEEXCEPTION: NO SUBJECT ALTERNATIVE NAMES PRESENT**[**#**](https://trino.io/docs/current/security/ldap.html#java-security-cert-certificateexception-no-subject-alternative-names-present)
 
@@ -234,7 +234,7 @@ This error is seen when the Trino coordinator’s certificate is invalid, and do
 
 Adding a SAN to this certificate is required in cases where `https://` uses IP address in the URL, rather than the domain contained in the coordinator’s certificate, and the certificate does not contain the SAN parameter with the matching IP address as an alternative attribute.
 
-**Authentication or TLS errors with JDK upgrade**[**#**](https://trino.io/docs/current/security/ldap.html#authentication-or-tls-errors-with-jdk-upgrade)
+**Authentication or TLS errors with JDK upgrade**
 
 Starting with the JDK 8u181 release, to improve the robustness of LDAPS (secure LDAP over TLS) connections, endpoint identification algorithms were enabled by default. See release notes [from Oracle](https://www.oracle.com/technetwork/java/javase/8u181-relnotes-4479407.html#JDK-8200666.). The same LDAP server certificate on the Trino coordinator, running on JDK version >= 8u181, that was previously able to successfully connect to an LDAPS server, may now fail with the following error:
 
@@ -243,6 +243,6 @@ javax.naming.CommunicationException: simple bind failed: ldapserver:636
 [Root exception is javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No subject alternative DNS name matching ldapserver found.]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If you want to temporarily disable endpoint identification, you can add the property `-Dcom.sun.jndi.ldap.object.disableEndpointIdentification=true` to Trino’s `jvm.config` file. However, in a production environment, we suggest fixing the issue by regenerating the LDAP server certificate so that the certificate SAN or certificate subject name matches the LDAP server.

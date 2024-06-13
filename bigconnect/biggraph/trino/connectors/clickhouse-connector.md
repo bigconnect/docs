@@ -26,7 +26,7 @@ The `connection-url` defines the connection information and parameters to pass t
 
 The `connection-user` and `connection-password` are typically required and determine the user credentials for the connection, often a service user. You can use [secrets](https://trino.io/docs/current/security/secrets.html) to avoid actual values in the catalog properties files.
 
-#### Connection security[#](https://trino.io/docs/current/connector/clickhouse.html#connection-security) <a href="#connection-security" id="connection-security"></a>
+#### Connection security <a href="#connection-security" id="connection-security"></a>
 
 If you have TLS configured with a globally-trusted certificate installed on your data source, you can enable TLS between your cluster and the data source by appending a parameter to the JDBC connection string set in the `connection-url` catalog configuration property.
 
@@ -36,11 +36,11 @@ For example, with version 2.6.4 of the ClickHouse JDBC driver, enable TLS by app
 connection-url=jdbc:clickhouse://host1:8443/?ssl=true
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 For more information on TLS configuration options, see the Clickhouse JDBC driver documentation
 
-#### Data source authentication[#](https://trino.io/docs/current/connector/clickhouse.html#data-source-authentication) <a href="#data-source-authentication" id="data-source-authentication"></a>
+#### Data source authentication <a href="#data-source-authentication" id="data-source-authentication"></a>
 
 The connector can provide credentials for the data source connection in multiple ways:
 
@@ -69,7 +69,7 @@ The following table describes configuration properties for connection credential
 | `keystore-password-credential-name`     | Name of the key store entity to use as the password.                                                                                       |
 | `keystore-password-credential-password` | Password for the password key store entity.                                                                                                |
 
-#### Multiple ClickHouse servers[#](https://trino.io/docs/current/connector/clickhouse.html#multiple-clickhouse-servers) <a href="#multiple-clickhouse-servers" id="multiple-clickhouse-servers"></a>
+#### Multiple ClickHouse servers <a href="#multiple-clickhouse-servers" id="multiple-clickhouse-servers"></a>
 
 If you have multiple ClickHouse servers you need to configure one catalog for each server. To add another catalog:
 
@@ -78,7 +78,7 @@ If you have multiple ClickHouse servers you need to configure one catalog for ea
 
 For example, if you name the property file `sales.properties`, Trino uses the configured connector to create a catalog named `sales`.
 
-#### General configuration properties[#](https://trino.io/docs/current/connector/clickhouse.html#general-configuration-properties) <a href="#general-configuration-properties" id="general-configuration-properties"></a>
+#### General configuration properties <a href="#general-configuration-properties" id="general-configuration-properties"></a>
 
 The following table describes general catalog configuration properties for the connector:
 
@@ -98,7 +98,7 @@ The following table describes general catalog configuration properties for the c
 | `dynamic-filtering.enabled`                                 | Push down dynamic filters into JDBC queries. Defaults to `true`.                                                                                                                                                                                                                                |
 | `dynamic-filtering.wait-timeout`                            | Maximum duration for which Trino waits for dynamic filters to be collected from the build side of joins before starting a JDBC query. Using a large timeout can potentially result in more detailed dynamic filters. However, it can also increase latency for some queries. Defaults to `20s`. |
 
-#### Appending query metadata[#](https://trino.io/docs/current/connector/clickhouse.html#appending-query-metadata) <a href="#appending-query-metadata" id="appending-query-metadata"></a>
+#### Appending query metadata <a href="#appending-query-metadata" id="appending-query-metadata"></a>
 
 The optional parameter `query.comment-format` allows you to configure a SQL comment that is sent to the datasource with each query. The format of this comment can contain any characters and the following metadata:
 
@@ -152,7 +152,7 @@ Pushing down a large list of predicates to the data source can compromise perfor
     CALL system.flush_metadata_cache();
     ```
 
-#### Case insensitive matching[#](https://trino.io/docs/current/connector/clickhouse.html#case-insensitive-matching) <a href="#case-insensitive-matching" id="case-insensitive-matching"></a>
+#### Case insensitive matching <a href="#case-insensitive-matching" id="case-insensitive-matching"></a>
 
 When `case-insensitive-name-matching` is set to `true`, Trino is able to query non-lowercase schemas and tables by maintaining a mapping of the lowercase name to the actual name in the remote system. However, if two schemas and/or tables have names that differ only in case (such as “customers” and “Customers”) then Trino fails to query them due to ambiguity.
 
@@ -230,7 +230,7 @@ Note
 
 If you used a different name for your catalog properties file, use that catalog name instead of `example` in the above examples.
 
-### Table properties[#](https://trino.io/docs/current/connector/clickhouse.html#table-properties) <a href="#table-properties" id="table-properties"></a>
+### Table properties <a href="#table-properties" id="table-properties"></a>
 
 Table property usage example:
 
@@ -267,7 +267,7 @@ Currently the connector only supports `Log` and `MergeTree` table engines in cre
 
 Because Trino and ClickHouse each support types that the other does not, this connector modifies some types when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
-#### ClickHouse type to Trino type mapping[#](https://trino.io/docs/current/connector/clickhouse.html#clickhouse-type-to-trino-type-mapping) <a href="#clickhouse-type-to-trino-type-mapping" id="clickhouse-type-to-trino-type-mapping"></a>
+#### ClickHouse type to Trino type mapping <a href="#clickhouse-type-to-trino-type-mapping" id="clickhouse-type-to-trino-type-mapping"></a>
 
 The connector maps ClickHouse types to the corresponding Trino types according to the following table:
 
@@ -319,7 +319,7 @@ The connector maps Trino types to the corresponding ClickHouse types according t
 
 No other types are supported.
 
-#### Type mapping configuration properties[#](https://trino.io/docs/current/connector/clickhouse.html#type-mapping-configuration-properties) <a href="#type-mapping-configuration-properties" id="type-mapping-configuration-properties"></a>
+#### Type mapping configuration properties <a href="#type-mapping-configuration-properties" id="type-mapping-configuration-properties"></a>
 
 The following properties can be used to configure how data types from the connected data source are mapped to Trino data types and how the metadata is cached in Trino.
 
@@ -328,7 +328,7 @@ The following properties can be used to configure how data types from the connec
 | `unsupported-type-handling`    | <p>Configure how unsupported column data types are handled:</p><ul><li><code>IGNORE</code>, column is not accessible.</li><li><code>CONVERT_TO_VARCHAR</code>, column is converted to unbounded <code>VARCHAR</code>.</li></ul><p>The respective catalog session property is <code>unsupported_type_handling</code>.</p> | `IGNORE`      |
 | `jdbc-types-mapped-to-varchar` | Allow forced mapping of comma separated lists of data types to convert to unbounded `VARCHAR`                                                                                                                                                                                                                            |               |
 
-### SQL support[#](https://trino.io/docs/current/connector/clickhouse.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides read and write access to data and metadata in a ClickHouse catalog. In addition to the globally available and read operation statements, the connector supports the following features:
 
@@ -336,15 +336,15 @@ The connector provides read and write access to data and metadata in a ClickHous
 * TRUNCATE
 * Schema and table management
 
-#### ALTER SCHEMA# <a href="#alter-schema" id="alter-schema"></a>
+#### ALTER SCHEMA <a href="#alter-schema" id="alter-schema"></a>
 
 The connector supports renaming a schema with the `ALTER SCHEMA RENAME` statement. `ALTER SCHEMA SET AUTHORIZATION` is not supported.
 
-### Performance[#](https://trino.io/docs/current/connector/clickhouse.html#performance) <a href="#performance" id="performance"></a>
+### Performance <a href="#performance" id="performance"></a>
 
 The connector includes a number of performance improvements, detailed in the following sections.
 
-#### Pushdown[#](https://trino.io/docs/current/connector/clickhouse.html#pushdown) <a href="#pushdown" id="pushdown"></a>
+#### Pushdown <a href="#pushdown" id="pushdown"></a>
 
 The connector supports pushdown for a number of operations:
 
@@ -362,9 +362,9 @@ Note
 
 The connector performs pushdown where performance may be improved, but in order to preserve correctness an operation may not be pushed down. When pushdown of an operation may result in better performance but risks correctness, the connector prioritizes correctness.
 
-**Predicate pushdown support**[**#**](https://trino.io/docs/current/connector/clickhouse.html#predicate-pushdown-support)
+**Predicate pushdown support**
 
-The connector does not support pushdown of any predicates on columns with [textual types](https://trino.io/docs/current/language/types.html#string-data-types) like `CHAR` or `VARCHAR`. This ensures correctness of results since the data source may compare strings case-insensitively.
+The connector does not support pushdown of any predicates on columns with textual types like `CHAR` or `VARCHAR`. This ensures correctness of results since the data source may compare strings case-insensitively.
 
 In the following example, the predicate is not pushed down for either query since `name` is a column of type `VARCHAR`:
 

@@ -1,6 +1,6 @@
 # GRANT role
 
-### Synopsis[#](https://trino.io/docs/current/sql/grant-roles.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 GRANT role_name [, ...]
@@ -10,9 +10,9 @@ TO ( user | USER user_mame | ROLE role_name) [, ...]
 [ IN catalog ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/grant-roles.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 Grants the specified role(s) to the specified principal(s).
 
@@ -24,7 +24,7 @@ The optional `GRANTED BY` clause causes the role(s) to be granted with the speci
 
 The optional `IN catalog` clause grants the roles in a catalog as opposed to a system roles.
 
-### Examples[#](https://trino.io/docs/current/sql/grant-roles.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 Grant role `bar` to user `foo`
 
@@ -32,7 +32,7 @@ Grant role `bar` to user `foo`
 GRANT bar TO USER foo;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Grant roles `bar` and `foo` to user `baz` and role `qux` with admin option
 
@@ -40,13 +40,13 @@ Grant roles `bar` and `foo` to user `baz` and role `qux` with admin option
 GRANT bar, foo TO USER baz, ROLE qux WITH ADMIN OPTION;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Limitations[#](https://trino.io/docs/current/sql/grant-roles.html#limitations) <a href="#limitations" id="limitations"></a>
+
+### Limitations <a href="#limitations" id="limitations"></a>
 
 Some connectors do not support role management. See connector documentation for more details.
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 CREATE ROLE, DROP ROLE, SET ROLE, REVOKE role
 

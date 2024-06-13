@@ -4,14 +4,14 @@
 
 The fastest way to run Trino on Kubernetes is to use the [Trino Helm chart](https://github.com/trinodb/charts). [Helm](https://helm.sh/) is a package manager for Kubernetes applications that allows for simpler installation and versioning by templating Kubernetes configuration files. This allows you to prototype on your local or on-premise cluster and use the same deployment mechanism to deploy to the cloud to scale up.
 
-### Requirements[#](https://trino.io/docs/current/installation/kubernetes.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 * A Kubernetes cluster with a [supported version](https://kubernetes.io/releases/) of Kubernetes.
   * If you don’t have a Kubernetes cluster, you can run one locally using kind.
 * [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) with a version that adheres to the [Kubernetes version skew policy](https://kubernetes.io/releases/version-skew-policy/) installed on the machine managing the Kubernetes deployment.
 * [helm](https://helm.sh/) with a version that adheres to the [Helm version skew policy](https://helm.sh/docs/topics/version\_skew/) installed on the machine managing the Kubernetes deployment.
 
-### Running Trino using Helm[#](https://trino.io/docs/current/installation/kubernetes.html#running-trino-using-helm) <a href="#running-trino-using-helm" id="running-trino-using-helm"></a>
+### Running Trino using Helm <a href="#running-trino-using-helm" id="running-trino-using-helm"></a>
 
 Run the following commands from the system with `helm` and `kubectl` installed and configured to connect to your running Kubernetes cluster:
 
@@ -21,7 +21,7 @@ Run the following commands from the system with `helm` and `kubectl` installed a
     kubectl cluster-info
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     You should see output that shows the correct Kubernetes control plane address.
 2.  Add the Trino Helm chart repository to Helm if you haven’t done so already. This tells Helm where to find the Trino charts. You can name the repository whatever you want, `trino` is a good choice.
@@ -30,14 +30,14 @@ Run the following commands from the system with `helm` and `kubectl` installed a
     helm repo add trino https://trinodb.github.io/charts
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 3.  Install Trino on the Kubernetes cluster using the Helm chart. Start by running the `install` command to use all default values and create a cluster called `example-trino-cluster`.
 
     ```
     helm install example-trino-cluster trino/trino
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     This generates the Kubernetes configuration files by inserting properties into helm templates. The Helm chart contains [default values](https://trinodb.github.io/charts/charts/trino/) that can be overridden by a YAML file to update default settings.
 
@@ -47,7 +47,7 @@ Run the following commands from the system with `helm` and `kubectl` installed a
         helm install -f example.yaml example-trino-cluster trino/trino
         ```
 
-        ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     You should see output as follows:
 
@@ -65,7 +65,7 @@ Run the following commands from the system with `helm` and `kubectl` installed a
       kubectl port-forward $POD_NAME 8080:8080
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     This output depends on your configuration and cluster name. For example, the port `8080` is set by the `.service.port` in the `example.yaml`.
 4.  Run the following command to check that all pods, deployments, and services are running properly.
@@ -74,7 +74,7 @@ Run the following commands from the system with `helm` and `kubectl` installed a
     kubectl get all
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     You should expect to see output that shows running pods, deployments, and replica sets. A good indicator that everything is running properly is to see all pods are returning a ready status in the `READY` column.
 
@@ -96,7 +96,7 @@ Run the following commands from the system with `helm` and `kubectl` installed a
     replicaset.apps/example-trino-cluster-worker-76f6bf54d6       2         2         2       161m
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     The output shows running pods. These include the actual Trino containers. To better understand this output, check out the following resources:
 
@@ -109,7 +109,7 @@ Note
 
 Unlike some Kubernetes applications, where it’s better to have many small pods, Trino works best with fewer pods each having more resources available. We strongly recommend to avoid having multiple Trino pods on a single physical host to avoid contention for resources.
 
-### Executing queries[#](https://trino.io/docs/current/installation/kubernetes.html#executing-queries) <a href="#executing-queries" id="executing-queries"></a>
+### Executing queries <a href="#executing-queries" id="executing-queries"></a>
 
 The pods running the Trino containers are all running on a private network internal to Kubernetes. In order to access them, specifically the coordinator, you need to create a tunnel to the coordinator pod and your computer. You can do this by running the commands generated upon installation.
 
@@ -119,14 +119,14 @@ The pods running the Trino containers are all running on a private network inter
     POD_NAME=$(kubectl get pods -l "app=trino,release=example-trino-cluster,component=coordinator" -o name)
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 2.  Create the tunnel from the coordinator pod to the client.
 
     ```
     kubectl port-forward $POD_NAME 8080:8080
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     Now you can connect to the Trino coordinator at `http://localhost:8080`.
 3.  To connect to Trino, you can use the command-line interface, a JDBC client, or any of the other clients. For this example, install the command-line interface, and connect to Trino in a new console session.
@@ -135,7 +135,7 @@ The pods running the Trino containers are all running on a private network inter
     trino --server http://localhost:8080
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 4.  Using the sample data in the `tpch` catalog, type and execute a query on the `nation` table using the `tiny` schema:
 
     ```
@@ -150,17 +150,17 @@ The pods running the Trino containers are all running on a private network inter
     0:06 [25 rows, 0B] [4 rows/s, 0B/s]
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     Try other SQL queries to explore the data set and test your cluster.
 5. Once you are done with your exploration, enter the `quit` command in the CLI.
 6. Kill the tunnel to the coordinator pod. The is only available while the `kubectl` process is running, so you can just kill the `kubectl` process that’s forwarding the port. In most cases that means pressing `CTRL` + `C` in the terminal where the port-forward command is running.
 
-### Configuration[#](https://trino.io/docs/current/installation/kubernetes.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 The Helm chart uses the Trino container image. The Docker image already contains a default configuration to get started, and some catalogs to allow you to explore Trino. Kubernetes allows you to mimic a traditional deployment by supplying configuration in YAML files. It’s important to understand how files such as the Trino configuration, JVM, and various catalog properties are configured in Trino before updating the values.
 
-#### Creating your own YAML configuration[#](https://trino.io/docs/current/installation/kubernetes.html#creating-your-own-yaml-configuration) <a href="#creating-your-own-yaml-configuration" id="creating-your-own-yaml-configuration"></a>
+#### Creating your own YAML configuration <a href="#creating-your-own-yaml-configuration" id="creating-your-own-yaml-configuration"></a>
 
 When you use your own YAML Kubernetes configuration, you only override the values you specify. The remaining properties use their default values. Add an `example.yaml` with the following configuration:
 
@@ -177,18 +177,18 @@ worker:
     maxHeapSize: "8G"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 These values are higher than the defaults and allow Trino to use more memory and run more demanding queries. If the values are too high, Kubernetes might not be able to schedule some Trino pods, depending on other applications deployed in this cluster and the size of the cluster nodes.
 
 1. `.image.tag` is set to the current version, 443. Set this value if you need to use a specific version of Trino. The default is `latest`, which is not recommended. Using `latest` will publish a new version of Trino with each release and a following Kubernetes deployment.
 2. `.server.workers` is set to `3`. This value sets the number of workers, in this case, a coordinator and three worker nodes are deployed.
-3. `.coordinator.jvm.maxHeapSize` is set to `8GB`. This sets the maximum heap size in the JVM of the coordinator. See [JVM config](https://trino.io/docs/current/installation/deployment.html#jvm-config).
-4. `.worker.jvm.maxHeapSize` is set to `8GB`. This sets the maximum heap size in the JVM of the worker. See [JVM config](https://trino.io/docs/current/installation/deployment.html#jvm-config).
+3. `.coordinator.jvm.maxHeapSize` is set to `8GB`. This sets the maximum heap size in the JVM of the coordinator. See JVM config.
+4. `.worker.jvm.maxHeapSize` is set to `8GB`. This sets the maximum heap size in the JVM of the worker. See JVM config.
 
 Warning
 
-Some memory settings need to be tuned carefully as setting some values outside of the range of the maximum heap size will cause Trino startup to fail. See the warnings listed on [Resource management properties](https://trino.io/docs/current/admin/properties-resource-management.html).
+Some memory settings need to be tuned carefully as setting some values outside of the range of the maximum heap size will cause Trino startup to fail. See the warnings listed on Resource management properties.
 
 Reference [the full list of properties](https://trinodb.github.io/charts/charts/trino/) that can be overridden in the Helm chart.
 
@@ -196,7 +196,7 @@ Note
 
 Although `example.yaml` is used to refer to the Kubernetes configuration file in this document, you should use clear naming guidelines for the cluster and deployment you are managing. For example, `cluster-example-trino-etl.yaml` might refer to a Trino deployment for a cluster used primarily for extract-transform-load queries deployed on the `example` Kubernetes cluster. See [Configuration Best Practices](https://kubernetes.io/docs/concepts/configuration/overview/) for more tips on configuring Kubernetes deployments.
 
-#### Adding catalogs[#](https://trino.io/docs/current/installation/kubernetes.html#adding-catalogs) <a href="#adding-catalogs" id="adding-catalogs"></a>
+#### Adding catalogs <a href="#adding-catalogs" id="adding-catalogs"></a>
 
 A common use-case is to add custom catalogs. You can do this by adding values to the `additionalCatalogs` property in the `example.yaml` file.
 
@@ -212,11 +212,11 @@ additionalCatalogs:
     connection-password=secret
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This adds both `lakehouse` and `rdbms` catalogs to the Kubernetes deployment configuration.
 
-### Running a local Kubernetes cluster with kind[#](https://trino.io/docs/current/installation/kubernetes.html#running-a-local-kubernetes-cluster-with-kind) <a href="#running-a-local-kubernetes-cluster-with-kind" id="running-a-local-kubernetes-cluster-with-kind"></a>
+### Running a local Kubernetes cluster with kind <a href="#running-a-local-kubernetes-cluster-with-kind" id="running-a-local-kubernetes-cluster-with-kind"></a>
 
 For local deployments, you can use [kind (Kubernetes in Docker)](https://kind.sigs.k8s.io/). Follow the steps below to run `kind` on your system.
 
@@ -226,7 +226,7 @@ For local deployments, you can use [kind (Kubernetes in Docker)](https://kind.si
     docker --version
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     If this command fails, install Docker by following Docker installation instructions.
 2. Install `kind` by following the [kind installation instructions](https://kind.sigs.k8s.io/docs/user/quick-start/#installation).
@@ -236,7 +236,7 @@ For local deployments, you can use [kind (Kubernetes in Docker)](https://kind.si
     kind create cluster --name trino
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     Note
 
@@ -247,7 +247,7 @@ For local deployments, you can use [kind (Kubernetes in Docker)](https://kind.si
     kubectl cluster-info --context kind-trino
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     If you have multiple Kubernetes clusters already configured within `~/.kube/config`, you need to pass the `context` parameter to the `kubectl` commands to operate with the local `kind` cluster. `kubectl` uses the [default context](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-and-configuration) if this parameter isn’t supplied. Notice the context is the name of the cluster with the `kind-` prefix added. Now you can look at all the Kubernetes objects running on your `kind` cluster.
 5.  Set up Trino by folling the Running Trino using Helm steps. When running the `kubectl get all` command, add the `context` parameter.
@@ -256,7 +256,7 @@ For local deployments, you can use [kind (Kubernetes in Docker)](https://kind.si
     kubectl get all --context kind-trino
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 6. Run some queries by following the Executing queries steps.
 7.  Once you are done with the cluster using kind, you can delete the cluster.
 
@@ -264,9 +264,9 @@ For local deployments, you can use [kind (Kubernetes in Docker)](https://kind.si
     kind delete cluster -n trino
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Cleaning up[#](https://trino.io/docs/current/installation/kubernetes.html#cleaning-up) <a href="#cleaning-up" id="cleaning-up"></a>
+
+### Cleaning up <a href="#cleaning-up" id="cleaning-up"></a>
 
 To uninstall Trino from the Kubernetes cluster, run the following command:
 
@@ -274,7 +274,7 @@ To uninstall Trino from the Kubernetes cluster, run the following command:
 helm uninstall my-trino-cluster
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You should expect to see the following output:
 
@@ -282,7 +282,7 @@ You should expect to see the following output:
 release "my-trino-cluster" uninstalled
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 To validate that this worked, you can run this `kubectl` command to make sure there are no remaining Kubernetes objects related to the Trino cluster.
 

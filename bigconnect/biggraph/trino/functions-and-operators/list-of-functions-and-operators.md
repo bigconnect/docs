@@ -30,7 +30,7 @@
 
 ·        % mathematical operator
 
-A#
+A
 
 ·        abs()
 
@@ -94,7 +94,7 @@ A#
 
 ·        avg()
 
-B#
+B
 
 ·        bar()
 
@@ -140,7 +140,7 @@ B#
 
 ·        bool\_or()
 
-C#
+C
 
 ·        cardinality()
 
@@ -214,7 +214,7 @@ C#
 
 ·        current\_user
 
-D#
+D
 
 ·        date()
 
@@ -246,7 +246,7 @@ D#
 
 ·        doy()
 
-E#
+E
 
 ·        e()
 
@@ -264,7 +264,7 @@ E#
 
 ·        exp()
 
-F#
+F
 
 ·        features()
 
@@ -318,7 +318,7 @@ F#
 
 ·        from\_utf8()
 
-G#
+G
 
 ·        geometric\_mean()
 
@@ -338,7 +338,7 @@ G#
 
 ·        greatest()
 
-H#
+H
 
 ·        hamming\_distance()
 
@@ -358,7 +358,7 @@ H#
 
 ·        human\_readable\_seconds()
 
-I#
+I
 
 ·        if
 
@@ -388,7 +388,7 @@ I#
 
 ·        IS NULL
 
-J#
+J
 
 ·        jaccard\_index()
 
@@ -418,11 +418,11 @@ J#
 
 ·        json\_value()
 
-K#
+K
 
 ·        kurtosis()
 
-L#
+L
 
 ·        lag()
 
@@ -476,7 +476,7 @@ L#
 
 ·        luhn\_check()
 
-M#
+M
 
 ·        make\_set\_digest()
 
@@ -530,7 +530,7 @@ M#
 
 ·        murmur3()
 
-N#
+N
 
 ·        nan()
 
@@ -558,7 +558,7 @@ N#
 
 ·        numeric\_histogram()
 
-O#
+O
 
 ·        objectid
 
@@ -566,7 +566,7 @@ O#
 
 ·        OR
 
-P#
+P
 
 ·        parse\_datetime()
 
@@ -588,13 +588,13 @@ P#
 
 ·        prev
 
-Q#
+Q
 
 ·        qdigest\_agg()
 
 ·        quarter()
 
-R#
+R
 
 ·        radians()
 
@@ -646,7 +646,7 @@ R#
 
 ·        rtrim()
 
-S#
+S
 
 ·        second()
 
@@ -826,7 +826,7 @@ S#
 
 ·        sum()
 
-T#
+T
 
 ·        tan()
 
@@ -900,7 +900,7 @@ T#
 
 ·        typeof()
 
-U#
+U
 
 ·        upper()
 
@@ -924,7 +924,7 @@ U#
 
 ·        uuid()
 
-V#
+V
 
 ·        value\_at\_quantile()
 
@@ -938,7 +938,7 @@ V#
 
 ·        version()
 
-W#
+W
 
 ·        week()
 
@@ -954,11 +954,11 @@ W#
 
 ·        word\_stem()
 
-X#
+X
 
 ·        xxhash64()
 
-Y#
+Y
 
 ·        year()
 
@@ -966,7 +966,7 @@ Y#
 
 ·        yow()
 
-Z#
+Z
 
 ·        zip()
 

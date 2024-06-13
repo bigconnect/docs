@@ -2,7 +2,7 @@
 
 Trino supports header authentication over TLS via a custom header authenticator that extracts the principal from a predefined header(s), performs any validation it needs and creates an authenticated principal.
 
-### Implementation[#](https://trino.io/docs/current/develop/header-authenticator.html#implementation) <a href="#implementation" id="implementation"></a>
+### Implementation <a href="#implementation" id="implementation"></a>
 
 `HeaderAuthenticatorFactory` is responsible for creating a `HeaderAuthenticator` instance. It also defines the name of this authenticator which is used by the administrator in a Trino configuration.
 
@@ -10,7 +10,7 @@ Trino supports header authentication over TLS via a custom header authenticator 
 
 The implementation of `HeaderAuthenticatorFactory` must be wrapped as a plugin and installed on the Trino cluster.
 
-### Configuration[#](https://trino.io/docs/current/develop/header-authenticator.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 After a plugin that implements `HeaderAuthenticatorFactory` has been installed on the coordinator, it is configured using an `etc/header-authenticator.properties` file. All of the properties other than `header-authenticator.name` are specific to the `HeaderAuthenticatorFactory` implementation.
 

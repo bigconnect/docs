@@ -2,14 +2,14 @@
 
 The Open Policy Agent access control plugin enables the use of [Open Policy Agent (OPA)](https://www.openpolicyagent.org/) as authorization engine for fine-grained access control to catalogs, schemas, tables, and more in Trino. Policies are defined in OPA, and Trino checks access control privileges in OPA.
 
-### Requirements[#](https://trino.io/docs/current/security/opa-access-control.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 * A running [OPA deployment](https://www.openpolicyagent.org/docs/latest/#running-opa)
 * Network connectivity from the Trino cluster to the OPA server
 
 With the requirements fulfilled, you can proceed to set up Trino and OPA with your desired access control configuration.
 
-### Trino configuration[#](https://trino.io/docs/current/security/opa-access-control.html#trino-configuration) <a href="#trino-configuration" id="trino-configuration"></a>
+### Trino configuration <a href="#trino-configuration" id="trino-configuration"></a>
 
 To use only OPA for access control, create the file `etc/access-control.properties` with the following minimal configuration:
 
@@ -18,7 +18,7 @@ access-control.name=opa
 opa.policy.uri=https://your-opa-endpoint/v1/data/allow
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 To combine OPA access control with file-based or other access control systems, configure multiple access control configuration file paths in `etc/config.properties`:
 
@@ -26,7 +26,7 @@ To combine OPA access control with file-based or other access control systems, c
 access-control.config-files=etc/trino/file-based.properties,etc/trino/opa.properties
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Order the configuration files list in the desired order of the different systems for overall access control. Configure each access-control system in the specified files.
 
@@ -41,13 +41,13 @@ The following table lists the configuration properties for the OPA access contro
 | `opa.allow-permission-management` | Configure if permission management operations are allowed. Find more details in Permission management. Defaults to `false`.                                                                             |
 | `opa.http-client.*`               | Optional HTTP client configurations for the connection from Trino to OPA, for example `opa.http-client.http-proxy` for configuring the HTTP proxy. Find more details in HTTP client properties.         |
 
-#### Logging[#](https://trino.io/docs/current/security/opa-access-control.html#logging) <a href="#logging" id="logging"></a>
+#### Logging <a href="#logging" id="logging"></a>
 
 When request or response logging is enabled, details are logged at the `DEBUG` level under the `io.trino.plugin.opa.OpaHttpClient` logger. The Trino logging configuration must be updated to include this class, to ensure log entries are created.
 
 Note that enabling these options produces very large amounts of log data.
 
-#### Permission management[#](https://trino.io/docs/current/security/opa-access-control.html#permission-management) <a href="#permission-management" id="permission-management"></a>
+#### Permission management <a href="#permission-management" id="permission-management"></a>
 
 The following operations are allowed or denied based on the setting of `opa.allow-permission-management` If set to `true`, these operations are allowed. If set to `false`, they are denied. In both cases, no request is sent to OPA.
 
@@ -72,7 +72,7 @@ Additionally, users are always allowed to show information about roles (`SHOW RO
 * `ShowCurrentRoles`
 * `ShowRoleGrants`
 
-### OPA configuration[#](https://trino.io/docs/current/security/opa-access-control.html#opa-configuration) <a href="#opa-configuration" id="opa-configuration"></a>
+### OPA configuration <a href="#opa-configuration" id="opa-configuration"></a>
 
 The OPA access control in Trino contacts OPA for each query and issues an authorization request. OPA must return a response containing a boolean `allow` field, which determines whether the operation is permitted or not.
 
@@ -97,7 +97,7 @@ The `action` object contains information about what action is performed on what 
 
 Fields that are not applicable for a specific operation are set to null. Examples are an empty `targetResource` if not modifying a table or schema or catalog is modified, or an empty `grantee` if not granting permissions is set. Any null field is omitted altogether from the `action` object.
 
-#### Example requests to OPA[#](https://trino.io/docs/current/security/opa-access-control.html#example-requests-to-opa) <a href="#example-requests-to-opa" id="example-requests-to-opa"></a>
+#### Example requests to OPA <a href="#example-requests-to-opa" id="example-requests-to-opa"></a>
 
 Accessing a table results in a query similar to the following example:
 
@@ -130,7 +130,7 @@ Accessing a table results in a query similar to the following example:
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `targetResource` is used in cases where a new resource, distinct from the one in `resource` is created. For example, when renaming a table.
 
@@ -165,9 +165,9 @@ The `targetResource` is used in cases where a new resource, distinct from the on
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Batch mode[#](https://trino.io/docs/current/security/opa-access-control.html#batch-mode) <a href="#batch-mode" id="batch-mode"></a>
+
+### Batch mode <a href="#batch-mode" id="batch-mode"></a>
 
 A very powerful feature provided by OPA is its ability to respond to authorization queries with more complex answers than a `true` or `false` boolean value.
 

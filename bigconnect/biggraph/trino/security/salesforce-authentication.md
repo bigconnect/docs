@@ -10,7 +10,7 @@ This is _not_ a Salesforce connector, and does not allow users to query Salesfor
 
 Using TLS and a configured shared secret is required for Salesforce authentication.
 
-### Salesforce authenticator configuration# <a href="#salesforce-authenticator-configuration" id="salesforce-authenticator-configuration"></a>
+### Salesforce authenticator configuration <a href="#salesforce-authenticator-configuration" id="salesforce-authenticator-configuration"></a>
 
 To enable Salesfore authentication, set the password authentication type in `etc/config.properties`:
 
@@ -18,7 +18,7 @@ To enable Salesfore authentication, set the password authentication type in `etc
 http-server.authentication.type=PASSWORD
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In addition, create a `etc/password-authenticator.properties` file on the coordinator with the `salesforce` authenticator name:
 
@@ -27,7 +27,7 @@ password-authenticator.name=salesforce
 salesforce.allowed-organizations=<allowed-org-ids or all>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following configuration properties are available:
 
@@ -37,17 +37,17 @@ The following configuration properties are available:
 | `salesforce.cache-size`            | Maximum number of cached authenticated users. Defaults to `4096`.                                                                                                                                                                                    |
 | `salesforce.cache-expire-duration` | How long a cached authentication should be considered valid. Defaults to `2m`.                                                                                                                                                                       |
 
-### Salesforce concepts[#](https://trino.io/docs/current/security/salesforce.html#salesforce-concepts) <a href="#salesforce-concepts" id="salesforce-concepts"></a>
+### Salesforce concepts <a href="#salesforce-concepts" id="salesforce-concepts"></a>
 
 There are two Salesforce specific aspects to this authenticator. They are the use of the Salesforce security token, and configuration of one or more Salesforce.com Organization IDs.
 
-#### Security token[#](https://trino.io/docs/current/security/salesforce.html#security-token) <a href="#security-token" id="security-token"></a>
+#### Security token <a href="#security-token" id="security-token"></a>
 
 Credentials are a user’s Salesforce username and password if Trino is connecting from a whitelisted IP, or username and password/security token concatenation otherwise. For example, if Trino is _not_ whitelisted, and your password is `password` and security token is `token`, use `passwordtoken` to authenticate.
 
 You can configure a public IP for Trino as a trusted IP by whitelisting an IP range.
 
-#### Salesforce.com organization IDs# <a href="#salesforce-com-organization-ids" id="salesforce-com-organization-ids"></a>
+#### Salesforce.com organization IDs <a href="#salesforce-com-organization-ids" id="salesforce-com-organization-ids"></a>
 
 You can configure one or more Salesforce Organization IDs for additional security. When the user authenticates, the Salesforce API returns the _18 character_ Salesforce.com Organization ID for the user. The Trino Salesforce authenticator ensures that the ID matches one of the IDs configured in `salesforce.allowed-organizations`.
 

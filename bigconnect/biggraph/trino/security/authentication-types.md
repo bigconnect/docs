@@ -39,7 +39,7 @@ http-server.authentication.type=PASSWORD
 password-authenticator.config-files=etc/ldap1.properties,etc/ldap2.properties,etc/password.properties
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In the preceding example, the configuration files `ldap1.properties` and `ldap2.properties` are regular LDAP authenticator configuration files. The `password.properties` is a password file authenticator configuration file.
 
@@ -56,7 +56,7 @@ http-server.authentication.type=HEADER
 header-authenticator.config-files=etc/xfcc.properties,etc/azureAD.properties
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Relative paths to the installation directory or absolute paths can be used.
 

@@ -1,6 +1,6 @@
 # List of functions by topic
 
-Aggregate#
+Aggregate
 
 For more details, see Aggregate functions
 
@@ -90,7 +90,7 @@ For more details, see Aggregate functions
 
 ·        var\_samp()
 
-Array#
+Array
 
 For more details, see Array functions and operators
 
@@ -158,7 +158,7 @@ For more details, see Array functions and operators
 
 ·        zip\_with()
 
-Binary#
+Binary
 
 For more details, see Binary functions and operators
 
@@ -232,7 +232,7 @@ For more details, see Binary functions and operators
 
 ·        xxhash64()
 
-Bitwise#
+Bitwise
 
 For more details, see Bitwise functions
 
@@ -252,7 +252,7 @@ For more details, see Bitwise functions
 
 ·        bitwise\_xor()
 
-Color#
+Color
 
 For more details, see Color functions
 
@@ -264,7 +264,7 @@ For more details, see Color functions
 
 ·        rgb()
 
-Comparison#
+Comparison
 
 For more details, see Comparison functions and operators
 
@@ -272,7 +272,7 @@ For more details, see Comparison functions and operators
 
 ·        least()
 
-Conditional#
+Conditional
 
 For more details, see Conditional expressions
 
@@ -286,7 +286,7 @@ For more details, see Conditional expressions
 
 ·        try
 
-Conversion#
+Conversion
 
 For more details, see Conversion functions
 
@@ -298,7 +298,7 @@ For more details, see Conversion functions
 
 ·        typeof()
 
-Date and time#
+Date and time
 
 For more details, see Date and time functions and operators
 
@@ -354,7 +354,7 @@ For more details, see Date and time functions and operators
 
 ·        with\_timezone()
 
-Geospatial#
+Geospatial
 
 For more details, see Geospatial functions
 
@@ -518,7 +518,7 @@ For more details, see Geospatial functions
 
 ·        to\_spherical\_geography()
 
-HyperLogLog#
+HyperLogLog
 
 For more details, see HyperLogLog functions
 
@@ -530,7 +530,7 @@ For more details, see HyperLogLog functions
 
 ·        merge()
 
-JSON#
+JSON
 
 For more details, see JSON functions and operators
 
@@ -562,7 +562,7 @@ For more details, see JSON functions and operators
 
 ·        json\_value()
 
-Lambda#
+Lambda
 
 For more details, see Lambda expressions
 
@@ -574,7 +574,7 @@ For more details, see Lambda expressions
 
 ·        transform()
 
-Machine learning#
+Machine learning
 
 For more details, see Machine learning functions
 
@@ -592,7 +592,7 @@ For more details, see Machine learning functions
 
 ·        regress()
 
-Map#
+Map
 
 For more details, see Map functions and operators
 
@@ -622,7 +622,7 @@ For more details, see Map functions and operators
 
 ·        transform\_values()
 
-Math#
+Math
 
 For more details, see Mathematical functions and operators
 
@@ -716,7 +716,7 @@ For more details, see Mathematical functions and operators
 
 ·        wilson\_interval\_upper()
 
-Quantile digest#
+Quantile digest
 
 For more details, see Quantile digest functions
 
@@ -728,7 +728,7 @@ For more details, see Quantile digest functions
 
 ·        values\_at\_quantiles()
 
-Regular expression#
+Regular expression
 
 For more details, see Regular expression functions
 
@@ -746,7 +746,7 @@ For more details, see Regular expression functions
 
 ·        regexp\_split()
 
-Row pattern recognition expressions#
+Row pattern recognition expressions
 
 ·        classifier
 
@@ -762,7 +762,7 @@ Row pattern recognition expressions#
 
 ·        prev
 
-Session#
+Session
 
 For more details, see Session information
 
@@ -774,7 +774,7 @@ For more details, see Session information
 
 ·        current\_user
 
-Set Digest#
+Set Digest
 
 For more details, see Set Digest functions
 
@@ -790,7 +790,7 @@ For more details, see Set Digest functions
 
 ·        hash\_counts()
 
-String#
+String
 
 For more details, see String functions and operators
 
@@ -860,13 +860,13 @@ For more details, see String functions and operators
 
 ·        word\_stem()
 
-System#
+System
 
 For more details, see System information
 
 ·        version()
 
-Table#
+Table
 
 For more details, see Table functions
 
@@ -874,7 +874,7 @@ For more details, see Table functions
 
 ·        sequence()
 
-T-Digest#
+T-Digest
 
 For more details, see T-Digest functions
 
@@ -884,7 +884,7 @@ For more details, see T-Digest functions
 
 ·        value\_at\_quantile()
 
-Teradata#
+Teradata
 
 For more details, see Teradata functions
 
@@ -898,7 +898,7 @@ For more details, see Teradata functions
 
 ·        to\_date()
 
-URL#
+URL
 
 For more details, see URL functions
 

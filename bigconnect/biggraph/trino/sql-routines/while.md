@@ -18,7 +18,7 @@ The optional `label` before the `WHILE` keyword can be used to name the block.
 
 Note that a `WHILE` statement is very similar, with the difference that for `REPEAT` the statements are processed at least once, and for `WHILE` blocks the statements might not be processed at all.
 
-### Examples[#](https://trino.io/docs/current/routines/while.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 ```
 WHILE p > 1 DO
@@ -27,11 +27,11 @@ WHILE p > 1 DO
 END WHILE;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Further examples of varying complexity that cover usage of the `WHILE` statement in combination with other statements are available in the SQL routines examples documentation.
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 * Introduction to SQL routines
 * LOOP

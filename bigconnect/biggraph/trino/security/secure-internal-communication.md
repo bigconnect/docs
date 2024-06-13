@@ -2,7 +2,7 @@
 
 The Trino cluster can be configured to use secured communication with internal authentication of the nodes in the cluster, and to optionally use added security with TLS.
 
-### Configure shared secret[#](https://trino.io/docs/current/security/internal-communication.html#configure-shared-secret) <a href="#configure-shared-secret" id="configure-shared-secret"></a>
+### Configure shared secret <a href="#configure-shared-secret" id="configure-shared-secret"></a>
 
 Configure a shared secret to authenticate all communication between nodes of the cluster. Use this configuration under the following conditions:
 
@@ -15,7 +15,7 @@ Set the shared secret to the same value in config.properties on all nodes of the
 internal-communication.shared-secret=<secret>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 A large random key is recommended, and can be generated with the following Linux command:
 
@@ -23,9 +23,9 @@ A large random key is recommended, and can be generated with the following Linux
 openssl rand 512 | base64
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Verify configuration[#](https://trino.io/docs/current/security/internal-communication.html#verify-configuration) <a href="#verify-configuration" id="verify-configuration"></a>
+
+#### Verify configuration <a href="#verify-configuration" id="verify-configuration"></a>
 
 To verify shared secret configuration:
 
@@ -37,9 +37,9 @@ To verify shared secret configuration:
 6. Stop your Trino cluster, revert the value change on the worker, and restart your cluster.
 7. Confirm the number of `ACTIVE WORKERS` equals the number of nodes configured with your shared secret.
 
-### Configure internal TLS[#](https://trino.io/docs/current/security/internal-communication.html#configure-internal-tls) <a href="#configure-internal-tls" id="configure-internal-tls"></a>
+### Configure internal TLS <a href="#configure-internal-tls" id="configure-internal-tls"></a>
 
-You can optionally add an extra layer of security by configuring the cluster to encrypt communication between nodes with [TLS](https://trino.io/docs/current/glossary.html#glosstls).
+You can optionally add an extra layer of security by configuring the cluster to encrypt communication between nodes with TLS.
 
 You can configure the coordinator and all workers to encrypt all communication with each other using TLS. Every node in the cluster must be configured. Nodes that have not been configured, or are configured incorrectly, are not able to communicate with other nodes in the cluster.
 
@@ -54,14 +54,14 @@ Enable TLS for internal communication with the following configuration identical
     internal-communication.https.required=true
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 3.  Change the URI for the discovery service to use HTTPS and point to the IP address of the coordinator in `etc/config.properties`:
 
     ```
     discovery.uri=https://<coordinator ip address>:<https port>
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     Note that using hostnames or fully qualified domain names for the URI is not supported. The automatic certificate creation for internal TLS only supports IP addresses.
 4.  Enable the HTTPS endpoint on all workers.
@@ -71,7 +71,7 @@ Enable TLS for internal communication with the following configuration identical
     http-server.https.port=<https port>
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 5. Restart all nodes.
 
 Certificates are automatically created and used to ensure all communication inside the cluster is secured with TLS.
@@ -102,7 +102,7 @@ By default, TLS encryption uses the `/dev/urandom` system device as a source of 
 http-server.https.secure-random-algorithm=SHA1PRNG
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Be aware that this algorithm takes the initial seed from the blocking `/dev/random` device. For environments that do not have enough entropy to seed the `SHAPRNG` algorithm, the source can be changed to `/dev/urandom` by adding the `java.security.egd` property to `jvm.config`:
 

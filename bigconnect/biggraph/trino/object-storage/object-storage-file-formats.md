@@ -9,7 +9,7 @@ In the case of serializable formats, only specific [SerDes](https://www.wikipedi
 * JSON - `org.apache.hive.hcatalog.data.JsonSerDe`
 * CSV - `org.apache.hadoop.hive.serde2.OpenCSVSerde`
 
-### ORC format configuration properties[#](https://trino.io/docs/current/object-storage/file-formats.html#orc-format-configuration-properties) <a href="#orc-format-configuration-properties" id="orc-format-configuration-properties"></a>
+### ORC format configuration properties <a href="#orc-format-configuration-properties" id="orc-format-configuration-properties"></a>
 
 The following properties are used to configure the read and write operations with ORC files performed by supported object storage connectors:
 
@@ -20,7 +20,7 @@ The following properties are used to configure the read and write operations wit
 | `hive.orc.bloom-filters.enabled`     | Enable bloom filters for predicate pushdown.                                                                                                                                                         | `false`     |
 | `hive.orc.read-legacy-short-zone-id` | Allow reads on ORC files with short zone ID in the stripe footer.                                                                                                                                    | `false`     |
 
-### Parquet format configuration properties[#](https://trino.io/docs/current/object-storage/file-formats.html#parquet-format-configuration-properties) <a href="#parquet-format-configuration-properties" id="parquet-format-configuration-properties"></a>
+### Parquet format configuration properties <a href="#parquet-format-configuration-properties" id="parquet-format-configuration-properties"></a>
 
 The following properties are used to configure the read and write operations with Parquet files performed by supported object storage connectors:
 

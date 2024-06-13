@@ -12,25 +12,25 @@ These benefits often result in significant cost reduction.
 
 Support for pushdown is specific to each connector and the relevant underlying database or storage system.
 
-### Predicate pushdown[#](https://trino.io/docs/current/optimizer/pushdown.html#predicate-pushdown) <a href="#predicate-pushdown" id="predicate-pushdown"></a>
+### Predicate pushdown <a href="#predicate-pushdown" id="predicate-pushdown"></a>
 
 Predicate pushdown optimizes row-based filtering. It uses the inferred filter, typically resulting from a condition in a `WHERE` clause to omit unnecessary rows. The processing is pushed down to the data source by the connector and then processed by the data source.
 
 If predicate pushdown for a specific clause is succesful, the `EXPLAIN` plan for the query does not include a `ScanFilterProject` operation for that clause.
 
-### Projection pushdown[#](https://trino.io/docs/current/optimizer/pushdown.html#projection-pushdown) <a href="#projection-pushdown" id="projection-pushdown"></a>
+### Projection pushdown <a href="#projection-pushdown" id="projection-pushdown"></a>
 
 Projection pushdown optimizes column-based filtering. It uses the columns specified in the `SELECT` clause and other parts of the query to limit access to these columns. The processing is pushed down to the data source by the connector and then the data source only reads and returns the neccessary columns.
 
 If projection pushdown is succesful, the `EXPLAIN` plan for the query only accesses the relevant columns in the `Layout` of the `TableScan` operation.
 
-### Dereference pushdown[#](https://trino.io/docs/current/optimizer/pushdown.html#dereference-pushdown) <a href="#dereference-pushdown" id="dereference-pushdown"></a>
+### Dereference pushdown <a href="#dereference-pushdown" id="dereference-pushdown"></a>
 
 Projection pushdown and dereference pushdown limit access to relevant columns, except dereference pushdown is more selective. It limits access to only read the specified fields within a top level or nested `ROW` data type.
 
 For example, consider a table in the Hive connector that has a `ROW` type column with several fields. If a query only accesses one field, dereference pushdown allows the file reader to read only that single field within the row. The same applies to fields of a row nested within the top level row. This can result in significant savings in the amount of data read from the storage system.
 
-### Aggregation pushdown[#](https://trino.io/docs/current/optimizer/pushdown.html#aggregation-pushdown) <a href="#aggregation-pushdown" id="aggregation-pushdown"></a>
+### Aggregation pushdown <a href="#aggregation-pushdown" id="aggregation-pushdown"></a>
 
 Aggregation pushdown can take place provided the following conditions are satisfied:
 
@@ -38,7 +38,7 @@ Aggregation pushdown can take place provided the following conditions are satisf
 * If pushdown of the specific function or functions is supported by the connector.
 * If the query structure allows pushdown to take place.
 
-You can check if pushdown for a specific query is performed by looking at the [EXPLAIN plan](https://trino.io/docs/current/sql/explain.html) of the query. If an aggregate function is successfully pushed down to the connector, the explain plan does **not** show that `Aggregate` operator. The explain plan only shows the operations that are performed by Trino.
+You can check if pushdown for a specific query is performed by looking at the EXPLAIN plan of the query. If an aggregate function is successfully pushed down to the connector, the explain plan does **not** show that `Aggregate` operator. The explain plan only shows the operations that are performed by Trino.
 
 As an example, we loaded the TPCH data set into a PostgreSQL database and then queried it using the PostgreSQL connector:
 
@@ -48,7 +48,7 @@ FROM nation
 GROUP BY regionkey;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can get the explain plan by prepending the above query with `EXPLAIN`:
 
@@ -59,7 +59,7 @@ FROM nation
 GROUP BY regionkey;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The explain plan for this query does not show any `Aggregate` operator with the `count` function, as this operation is now performed by the connector. You can see the `count(*)` function as part of the PostgreSQL `TableScan` operator. This shows you that the pushdown was successful.
 
@@ -85,7 +85,7 @@ Fragment 1 [SOURCE]
         regionkey_0 := regionkey:bigint:int8
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 A number of factors can prevent a push down:
 
@@ -135,9 +135,9 @@ Fragment 2 [SOURCE]
               regionkey := tpch:regionkey
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Limitations[#](https://trino.io/docs/current/optimizer/pushdown.html#limitations) <a href="#limitations" id="limitations"></a>
+
+#### Limitations <a href="#limitations" id="limitations"></a>
 
 Aggregation pushdown does not support a number of more complex statements:
 
@@ -147,7 +147,7 @@ Aggregation pushdown does not support a number of more complex statements:
 * aggregations with ordering
 * aggregations with filter
 
-### Join pushdown# <a href="#join-pushdown" id="join-pushdown"></a>
+### Join pushdown <a href="#join-pushdown" id="join-pushdown"></a>
 
 Join pushdown allows the connector to delegate the table join operation to the underlying data source. This can result in performance gains, and allows Trino to perform the remaining query processing on a smaller amount of data.
 
@@ -164,8 +164,6 @@ You can verify if pushdown for a specific join is performed by looking at the [E
 EXPLAIN SELECT c.custkey, o.orderkey
 FROM orders o JOIN customer c ON c.custkey = o.custkey;
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 The following plan results from the PostgreSQL connector querying TPCH data in a PostgreSQL database. It does not show any `Join` operator as a result of the successful join push down.
 
@@ -189,11 +187,11 @@ Fragment 1 [SOURCE]
         custkey := custkey_1:bigint:int8
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 It is typically beneficial to push down a join. Pushing down a join can also increase the row count compared to the size of the input to the join. This may impact performance.
 
-### Limit pushdown# <a href="#limit-pushdown" id="limit-pushdown"></a>
+### Limit pushdown <a href="#limit-pushdown" id="limit-pushdown"></a>
 
 A LIMIT or FETCH FIRST clause reduces the number of returned records for a statement. Limit pushdown enables a connector to push processing of such queries of unsorted record to the underlying data source.
 
@@ -203,7 +201,7 @@ Queries include sections such as `LIMIT N` or `FETCH FIRST N ROWS`.
 
 Implementation and support is connector-specific since different data sources have varying capabilities.
 
-### Top-N pushdown# <a href="#top-n-pushdown" id="top-n-pushdown"></a>
+### Top-N pushdown <a href="#top-n-pushdown" id="top-n-pushdown"></a>
 
 The combination of a LIMIT or FETCH FIRST clause with an ORDER BY clause creates a small set of records to return out of a large sorted dataset. It relies on the order to determine which records need to be returned, and is therefore quite different to optimize compared to a Limit pushdown.
 

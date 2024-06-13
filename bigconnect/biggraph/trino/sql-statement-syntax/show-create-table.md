@@ -1,16 +1,16 @@
 # SHOW CREATE TABLE
 
-### Synopsis[#](https://trino.io/docs/current/sql/show-create-table.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 SHOW CREATE TABLE table_name
 ```
 
-### Description[#](https://trino.io/docs/current/sql/show-create-table.html#description) <a href="#description" id="description"></a>
+### Description <a href="#description" id="description"></a>
 
 Show the SQL statement that creates the specified table.
 
-### Examples[#](https://trino.io/docs/current/sql/show-create-table.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 Show the SQL that can be run to create the `orders` table:
 
@@ -34,7 +34,7 @@ SHOW CREATE TABLE sf1.orders;
 (1 row)
 ```
 
-### See also[#](https://trino.io/docs/current/sql/show-create-table.html#see-also) <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 CREATE TABLE
 

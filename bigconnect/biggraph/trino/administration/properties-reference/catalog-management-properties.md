@@ -2,7 +2,7 @@
 
 The following properties are used to configure catalog management with further controls for dynamic catalog management.
 
-### `catalog.management`# <a href="#catalog-management" id="catalog-management"></a>
+### `catalog.management` <a href="#catalog-management" id="catalog-management"></a>
 
 * **Type:** string
 * **Allowed values:** `static`, `dynamic`
@@ -22,7 +22,7 @@ Warning
 
 The complete `CREATE CATALOG` query is logged, and visible in the Web UI. This includes any sensitive properties, like passwords and other credentials. See Secrets.
 
-### `catalog.prune.update-interval`# <a href="#catalog-prune-update-interval" id="catalog-prune-update-interval"></a>
+### `catalog.prune.update-interval` <a href="#catalog-prune-update-interval" id="catalog-prune-update-interval"></a>
 
 * **Type:** duration
 * **Default value:** `5s`
@@ -38,20 +38,20 @@ Requires catalog.management to be set to `dynamic`. Interval for pruning dropped
 
 Requires catalog.management to be set to `dynamic`. When set to `file`, creating and dropping catalogs using the SQL commands adds and removes catalog property files on the coordinator node. Trino server process requires write access in the catalog configuration directory. Existing catalog files are also read on the coordinator startup. When set to `memory`, catalog configuration is only managed in memory, and any existing files are ignored on startup.
 
-### `catalog.config-dir`# <a href="#catalog-config-dir" id="catalog-config-dir"></a>
+### `catalog.config-dir` <a href="#catalog-config-dir" id="catalog-config-dir"></a>
 
 * **Type:** string
 * **Default value:** `etc/catalog/`
 
 Requires catalog.management to be set to `static` or catalog.store to be set to `file`. The directory with catalog property files.
 
-### `catalog.disabled-catalogs`# <a href="#catalog-disabled-catalogs" id="catalog-disabled-catalogs"></a>
+### `catalog.disabled-catalogs` <a href="#catalog-disabled-catalogs" id="catalog-disabled-catalogs"></a>
 
 * **Type:** string
 
 Requires catalog.management to be set to `static` or catalog.store to be set to `file`. Comma-separated list of catalogs to ignore on startup.
 
-### `catalog.read-only`# <a href="#catalog-read-only" id="catalog-read-only"></a>
+### `catalog.read-only` <a href="#catalog-read-only" id="catalog-read-only"></a>
 
 * **Type:** string
 * **Default value:** `false`

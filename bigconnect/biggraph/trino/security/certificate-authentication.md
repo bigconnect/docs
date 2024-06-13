@@ -10,7 +10,7 @@ This feature is not appropriate for sites that need to generate a set of client 
 
 Using TLS and a configured shared secret is required for certificate authentication.
 
-### Using certificate authentication# <a href="#using-certificate-authentication" id="using-certificate-authentication"></a>
+### Using certificate authentication <a href="#using-certificate-authentication" id="using-certificate-authentication"></a>
 
 All clients connecting with TLS/HTTPS go through the following initial steps:
 
@@ -31,7 +31,7 @@ Several rules emerge from these steps:
 * The trust stores used by the coordinator and clients do not need to be the same.
 * The certificate that verifies the coordinator does not need to be the same as the certificate verifying clients.
 
-Trino validates certificates based on the distinguished name (DN) from the X.509 `Subject` field. You can use [user mapping](https://trino.io/docs/current/security/user-mapping.html) to map the subject DN to a Trino user name.
+Trino validates certificates based on the distinguished name (DN) from the X.509 `Subject` field. You can use user mapping to map the subject DN to a Trino user name.
 
 There are three levels of client certificate support possible. From the point of view of the server:
 
@@ -41,7 +41,7 @@ There are three levels of client certificate support possible. From the point of
 
 Trino’s client certificate support is the middle type. It asks for a certificate but allows connection if another authentication method passes.
 
-### Certificate authentication configuration[#](https://trino.io/docs/current/security/certificate.html#certificate-authentication-configuration) <a href="#certificate-authentication-configuration" id="certificate-authentication-configuration"></a>
+### Certificate authentication configuration <a href="#certificate-authentication-configuration" id="certificate-authentication-configuration"></a>
 
 Enable certificate authentication by setting the Certificate authentication type in etc/config.properties:
 
@@ -49,7 +49,7 @@ Enable certificate authentication by setting the Certificate authentication type
 http-server.authentication.type=CERTIFICATE
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can specify certificate authentication along with another authenticaton method, such as `PASSWORD`. In this case, authentication is performed in the order of entries, and the first successful authentication results in access. For example, the following setting shows the use of two authentication types:
 
@@ -57,7 +57,7 @@ You can specify certificate authentication along with another authenticaton meth
 http-server.authentication.type=CERTIFICATE,PASSWORD
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following configuration properties are also available:
 
@@ -66,7 +66,7 @@ The following configuration properties are also available:
 | `http-server.authentication.certificate.user-mapping.pattern` | A regular expression pattern to map all user names for this authentication type to the format expected by Trino. |
 | `http-server.authentication.certificate.user-mapping.file`    | The path to a JSON file that contains a set of user mapping rules for this authentication type.                  |
 
-### Use certificate authentication with clients[#](https://trino.io/docs/current/security/certificate.html#use-certificate-authentication-with-clients) <a href="#use-certificate-authentication-with-clients" id="use-certificate-authentication-with-clients"></a>
+### Use certificate authentication with clients <a href="#use-certificate-authentication-with-clients" id="use-certificate-authentication-with-clients"></a>
 
 When using the Trino [CLI](https://trino.io/docs/current/client/cli.html), specify the `--keystore-path` and `--keystore-password` options as described in Certificate authentication.
 

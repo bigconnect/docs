@@ -1,6 +1,6 @@
 # CREATE TABLE AS
 
-### Synopsis[#](https://trino.io/docs/current/sql/create-table-as.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 CREATE [ OR REPLACE ] TABLE [ IF NOT EXISTS ] table_name [ ( column_alias, ... ) ]
@@ -10,9 +10,9 @@ AS query
 [ WITH [ NO ] DATA ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/create-table-as.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 Create a new table containing the result of a SELECT query. Use CREATE TABLE to create an empty table.
 
@@ -28,9 +28,9 @@ The optional `WITH` clause can be used to set properties on the newly created ta
 SELECT * FROM system.metadata.table_properties
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Examples[#](https://trino.io/docs/current/sql/create-table-as.html#examples) <a href="#examples" id="examples"></a>
+
+### Examples <a href="#examples" id="examples"></a>
 
 Create a new table `orders_column_aliased` with the results of a query and the given column names:
 
@@ -41,7 +41,7 @@ SELECT orderdate, totalprice
 FROM orders
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create a new table `orders_by_date` that summarizes `orders`:
 
@@ -55,7 +55,7 @@ FROM orders
 GROUP BY orderdate
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create the table `orders_by_date` if it does not already exist:
 
@@ -66,7 +66,7 @@ FROM orders
 GROUP BY orderdate
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create a new `empty_nation` table with the same schema as `nation` and no data:
 
@@ -77,8 +77,8 @@ FROM nation
 WITH NO DATA
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also# <a href="#see-also" id="see-also"></a>
+
+### See also <a href="#see-also" id="see-also"></a>
 
 CREATE TABLE, SELECT

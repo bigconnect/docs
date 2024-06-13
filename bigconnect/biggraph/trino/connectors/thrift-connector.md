@@ -4,14 +4,14 @@ The Thrift connector makes it possible to integrate with external storage system
 
 In order to use the Thrift connector with an external system, you need to implement the `TrinoThriftService` interface, found below. Next, you configure the Thrift connector to point to a set of machines, called Thrift servers, that implement the interface. As part of the interface implementation, the Thrift servers provide metadata, splits and data. The connector randomly chooses a server to talk to from the available instances for metadata calls, or for data calls unless the splits include a list of addresses. All requests are assumed to be idempotent and can be retried freely among any server.
 
-### Requirements[#](https://trino.io/docs/current/connector/thrift.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To connect to your custom servers with the Thrift protocol, you need:
 
 * Network access from the Trino coordinator and workers to the Thrift servers.
 * A TrinoThriftService implementation for your system.
 
-### Configuration[#](https://trino.io/docs/current/connector/thrift.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the Thrift connector, create a catalog properties file `etc/catalog/example.properties` with the following content, replacing the properties as appropriate:
 
@@ -20,13 +20,11 @@ connector.name=trino_thrift
 trino.thrift.client.addresses=host:port,host:port
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### Multiple Thrift systems[#](https://trino.io/docs/current/connector/thrift.html#multiple-thrift-systems) <a href="#multiple-thrift-systems" id="multiple-thrift-systems"></a>
+#### Multiple Thrift systems <a href="#multiple-thrift-systems" id="multiple-thrift-systems"></a>
 
 You can have as many catalogs as you need, so if you have additional Thrift systems to connect to, simply add another properties file to `etc/catalog` with a different name, making sure it ends in `.properties`.
 
-### Configuration properties[#](https://trino.io/docs/current/connector/thrift.html#configuration-properties) <a href="#configuration-properties" id="configuration-properties"></a>
+### Configuration properties <a href="#configuration-properties" id="configuration-properties"></a>
 
 The following configuration properties are available:
 
@@ -47,7 +45,7 @@ The following configuration properties are available:
 | `trino.thrift.client.transport`            | Thrift transport type (`UNFRAMED`, `FRAMED`, `HEADER`)   |
 | `trino.thrift.client.protocol`             | Thrift protocol type (`BINARY`, `COMPACT`, `FB_COMPACT`) |
 
-#### `trino.thrift.client.addresses`[#](https://trino.io/docs/current/connector/thrift.html#trino-thrift-client-addresses) <a href="#trino-thrift-client-addresses" id="trino-thrift-client-addresses"></a>
+#### `trino.thrift.client.addresses` <a href="#trino-thrift-client-addresses" id="trino-thrift-client-addresses"></a>
 
 Comma-separated list of thrift servers in the form of `host:port`. For example:
 
@@ -55,23 +53,21 @@ Comma-separated list of thrift servers in the form of `host:port`. For example:
 trino.thrift.client.addresses=192.0.2.3:7777,192.0.2.4:7779
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
 This property is required; there is no default.
 
-#### `trino-thrift.max-response-size`[#](https://trino.io/docs/current/connector/thrift.html#trino-thrift-max-response-size) <a href="#trino-thrift-max-response-size" id="trino-thrift-max-response-size"></a>
+#### `trino-thrift.max-response-size` <a href="#trino-thrift-max-response-size" id="trino-thrift-max-response-size"></a>
 
 Maximum size of a data response that the connector accepts. This value is sent by the connector to the Thrift server when requesting data, allowing it to size the response appropriately.
 
 This property is optional; the default is `16MB`.
 
-#### `trino-thrift.metadata-refresh-threads`[#](https://trino.io/docs/current/connector/thrift.html#trino-thrift-metadata-refresh-threads) <a href="#trino-thrift-metadata-refresh-threads" id="trino-thrift-metadata-refresh-threads"></a>
+#### `trino-thrift.metadata-refresh-threads` <a href="#trino-thrift-metadata-refresh-threads" id="trino-thrift-metadata-refresh-threads"></a>
 
 Number of refresh threads for metadata cache.
 
 This property is optional; the default is `1`.
 
-### TrinoThriftService implementation[#](https://trino.io/docs/current/connector/thrift.html#trinothriftservice-implementation) <a href="#trinothriftservice-implementation" id="trinothriftservice-implementation"></a>
+### TrinoThriftService implementation <a href="#trinothriftservice-implementation" id="trinothriftservice-implementation"></a>
 
 The following IDL describes the `TrinoThriftService` that must be implemented:
 
@@ -446,12 +442,10 @@ service TrinoThriftService {
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-### Type mapping[#](https://trino.io/docs/current/connector/thrift.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 The Thrift service defines data type support and mappings to Trino data types.
 
-### SQL support[#](https://trino.io/docs/current/connector/thrift.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides globally available and read operation statements to access data and metadata in your Thrift service.

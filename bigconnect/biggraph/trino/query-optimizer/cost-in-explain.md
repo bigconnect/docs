@@ -10,7 +10,7 @@ For example:
 EXPLAIN SELECT comment FROM tpch.sf1.nation WHERE nationkey > 3;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 - Output[comment] => [[comment]]
@@ -23,7 +23,7 @@ EXPLAIN SELECT comment FROM tpch.sf1.nation WHERE nationkey > 3;
                 comment := tpch:comment
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Generally, there is only one cost printed for each plan node. However, when a `Scan` operator is combined with a `Filter` and/or `Project` operator, then multiple cost structures are printed, each corresponding to an individual logical part of the combined operator. For example, three cost structures are printed for a `ScanFilterProject` operator, corresponding to the `Scan`, `Filter`, and `Project` parts of the operator, in that order.
 

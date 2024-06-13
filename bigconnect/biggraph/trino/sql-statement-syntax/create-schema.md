@@ -1,6 +1,6 @@
 # CREATE SCHEMA
 
-### Synopsis[#](https://trino.io/docs/current/sql/create-schema.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 CREATE SCHEMA [ IF NOT EXISTS ] schema_name
@@ -8,9 +8,9 @@ CREATE SCHEMA [ IF NOT EXISTS ] schema_name
 [ WITH ( property_name = expression [, ...] ) ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/create-schema.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 Create a new, empty schema. A schema is a container that holds tables, views and other database objects.
 
@@ -24,9 +24,9 @@ The optional `WITH` clause can be used to set properties on the newly created sc
 SELECT * FROM system.metadata.schema_properties
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Examples[#](https://trino.io/docs/current/sql/create-schema.html#examples) <a href="#examples" id="examples"></a>
+
+### Examples <a href="#examples" id="examples"></a>
 
 Create a new schema `web` in the current catalog:
 
@@ -34,7 +34,7 @@ Create a new schema `web` in the current catalog:
 CREATE SCHEMA web
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create a new schema `sales` in the `hive` catalog:
 
@@ -42,7 +42,7 @@ Create a new schema `sales` in the `hive` catalog:
 CREATE SCHEMA hive.sales
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create the schema `traffic` if it does not already exist:
 
@@ -50,7 +50,7 @@ Create the schema `traffic` if it does not already exist:
 CREATE SCHEMA IF NOT EXISTS traffic
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create a new schema `web` and set the owner to user `alice`:
 
@@ -58,7 +58,7 @@ Create a new schema `web` and set the owner to user `alice`:
 CREATE SCHEMA web AUTHORIZATION alice
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create a new schema `web`, set the `LOCATION` property to `/hive/data/web` and set the owner to user `alice`:
 
@@ -66,7 +66,7 @@ Create a new schema `web`, set the `LOCATION` property to `/hive/data/web` and s
 CREATE SCHEMA web AUTHORIZATION alice WITH ( LOCATION = '/hive/data/web' )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create a new schema `web` and allow everyone to drop schema and create tables in schema `web`:
 
@@ -74,7 +74,7 @@ Create a new schema `web` and allow everyone to drop schema and create tables in
 CREATE SCHEMA web AUTHORIZATION ROLE PUBLIC
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create a new schema `web`, set the `LOCATION` property to `/hive/data/web` and allow everyone to drop schema and create tables in schema `web`:
 
@@ -82,8 +82,8 @@ Create a new schema `web`, set the `LOCATION` property to `/hive/data/web` and a
 CREATE SCHEMA web AUTHORIZATION ROLE PUBLIC WITH ( LOCATION = '/hive/data/web' )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also# <a href="#see-also" id="see-also"></a>
+
+### See also <a href="#see-also" id="see-also"></a>
 
 ALTER SCHEMA, DROP SCHEMA

@@ -2,11 +2,11 @@
 
 The Example HTTP connector has a simple goal: it reads comma-separated data over HTTP. For example, if you have a large amount of data in a CSV format, you can point the example HTTP connector at this data and write a query to process it.
 
-### Code[#](https://trino.io/docs/current/develop/example-http.html#code) <a href="#code" id="code"></a>
+### Code <a href="#code" id="code"></a>
 
 The Example HTTP connector can be found in the [trino-example-http](https://github.com/trinodb/trino/tree/master/plugin/trino-example-http) directory within the Trino source tree.
 
-### Plugin implementation[#](https://trino.io/docs/current/develop/example-http.html#plugin-implementation) <a href="#plugin-implementation" id="plugin-implementation"></a>
+### Plugin implementation <a href="#plugin-implementation" id="plugin-implementation"></a>
 
 The plugin implementation in the Example HTTP connector looks very similar to other plugin implementations. Most of the implementation is devoted to handling optional configuration and the only function of interest is the following:
 
@@ -22,7 +22,7 @@ Note that the `ImmutableList` class is a utility class from Guava.
 
 As with all connectors, this plugin overrides the `getConnectorFactories()` method and returns an `ExampleConnectorFactory`.
 
-### ConnectorFactory implementation[#](https://trino.io/docs/current/develop/example-http.html#connectorfactory-implementation) <a href="#connectorfactory-implementation" id="connectorfactory-implementation"></a>
+### ConnectorFactory implementation <a href="#connectorfactory-implementation" id="connectorfactory-implementation"></a>
 
 In Trino, the primary object that handles the connection between Trino and a particular type of data source is the `Connector` object, which are created using `ConnectorFactory`.
 
@@ -52,20 +52,20 @@ Injector injector = app
 return injector.getInstance(ExampleConnector.class);
 ```
 
-#### Connector: ExampleConnector[#](https://trino.io/docs/current/develop/example-http.html#connector-exampleconnector) <a href="#connector-exampleconnector" id="connector-exampleconnector"></a>
+#### Connector: ExampleConnector <a href="#connector-exampleconnector" id="connector-exampleconnector"></a>
 
 This class allows Trino to obtain references to the various services provided by the connector.
 
-#### Metadata: ExampleMetadata[#](https://trino.io/docs/current/develop/example-http.html#metadata-examplemetadata) <a href="#metadata-examplemetadata" id="metadata-examplemetadata"></a>
+#### Metadata: ExampleMetadata <a href="#metadata-examplemetadata" id="metadata-examplemetadata"></a>
 
 This class is responsible for reporting table names, table metadata, column names, column metadata and other information about the schemas that are provided by this connector. `ConnectorMetadata` is also called by Trino to ensure that a particular connector can understand and handle a given table name.
 
 The `ExampleMetadata` implementation delegates many of these calls to `ExampleClient`, a class that implements much of the core functionality of the connector.
 
-#### Split manager: ExampleSplitManager[#](https://trino.io/docs/current/develop/example-http.html#split-manager-examplesplitmanager) <a href="#split-manager-examplesplitmanager" id="split-manager-examplesplitmanager"></a>
+#### Split manager: ExampleSplitManager <a href="#split-manager-examplesplitmanager" id="split-manager-examplesplitmanager"></a>
 
 The split manager partitions the data for a table into the individual chunks that Trino will distribute to workers for processing. In the case of the Example HTTP connector, each table contains one or more URIs pointing at the actual data. One split is created per URI.
 
-#### Record set provider: ExampleRecordSetProvider[#](https://trino.io/docs/current/develop/example-http.html#record-set-provider-examplerecordsetprovider) <a href="#record-set-provider-examplerecordsetprovider" id="record-set-provider-examplerecordsetprovider"></a>
+#### Record set provider: ExampleRecordSetProvider <a href="#record-set-provider-examplerecordsetprovider" id="record-set-provider-examplerecordsetprovider"></a>
 
 The record set provider creates a record set which in turn creates a record cursor that returns the actual data to Trino. `ExampleRecordCursor` reads data from a URI via HTTP. Each line corresponds to a single row. Lines are split on comma into individual field values which are then returned to Trino.

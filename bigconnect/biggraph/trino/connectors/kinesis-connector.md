@@ -16,9 +16,9 @@ kinesis.access-key=XXXXXX
 kinesis.secret-key=XXXXXX
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Configuration properties[#](https://trino.io/docs/current/connector/kinesis.html#configuration-properties) <a href="#configuration-properties" id="configuration-properties"></a>
+
+### Configuration properties <a href="#configuration-properties" id="configuration-properties"></a>
 
 The following configuration properties are available:
 
@@ -38,7 +38,7 @@ The following configuration properties are available:
 | `kinesis.iterator-from-timestamp`            | Begin iterating from a given timestamp instead of the trim horizon    |
 | `kinesis.iterator-offset-seconds`            | Number of seconds before current time to start iterating              |
 
-#### `kinesis.access-key`[#](https://trino.io/docs/current/connector/kinesis.html#kinesis-access-key) <a href="#kinesis-access-key" id="kinesis-access-key"></a>
+#### `kinesis.access-key` <a href="#kinesis-access-key" id="kinesis-access-key"></a>
 
 Defines the access key ID for AWS root account or IAM roles, which is used to sign programmatic requests to AWS Kinesis.
 
@@ -49,13 +49,13 @@ This property is optional; if not defined, the connector tries to follow `Defaul
 * Profile Credentials File: Load from file typically located at `~/.aws/credentials`.
 * Instance profile credentials: These credentials can be used on EC2 instances, and are delivered through the Amazon EC2 metadata service.
 
-#### `kinesis.secret-key`[#](https://trino.io/docs/current/connector/kinesis.html#kinesis-secret-key) <a href="#kinesis-secret-key" id="kinesis-secret-key"></a>
+#### `kinesis.secret-key` <a href="#kinesis-secret-key" id="kinesis-secret-key"></a>
 
 Defines the secret key for AWS root account or IAM roles, which together with Access Key ID, is used to sign programmatic requests to AWS Kinesis.
 
 This property is optional; if not defined, connector will try to follow `Default-Credential-Provider-Chain` same as above.
 
-#### `kinesis.aws-region`[#](https://trino.io/docs/current/connector/kinesis.html#kinesis-aws-region) <a href="#kinesis-aws-region" id="kinesis-aws-region"></a>
+#### `kinesis.aws-region` <a href="#kinesis-aws-region" id="kinesis-aws-region"></a>
 
 Defines AWS Kinesis regional endpoint. Selecting appropriate region may reduce latency in fetching data.
 
@@ -63,13 +63,13 @@ This field is optional; The default region is `us-east-1` referring to end point
 
 See [Kinesis Data Streams regions](https://docs.aws.amazon.com/general/latest/gr/rande.html#ak\_region) for a current list of available regions.
 
-#### `kinesis.default-schema`[#](https://trino.io/docs/current/connector/kinesis.html#kinesis-default-schema) <a href="#kinesis-default-schema" id="kinesis-default-schema"></a>
+#### `kinesis.default-schema` <a href="#kinesis-default-schema" id="kinesis-default-schema"></a>
 
 Defines the schema which contains all tables that were defined without a qualifying schema name.
 
 This property is optional; the default is `default`.
 
-#### `kinesis.table-description-location`[#](https://trino.io/docs/current/connector/kinesis.html#kinesis-table-description-location) <a href="#kinesis-table-description-location" id="kinesis-table-description-location"></a>
+#### `kinesis.table-description-location` <a href="#kinesis-table-description-location" id="kinesis-table-description-location"></a>
 
 References an S3 URL or a folder within Trino deployment that holds one or more JSON files ending with `.json`, which contain table description files. The S3 bucket and folder will be checked every 10 minutes for updates and changed files.
 
@@ -81,47 +81,47 @@ This property controls how often the table description is refreshed from S3.
 
 This property is optional; the default is `10m`.
 
-#### `kinesis.batch-size`[#](https://trino.io/docs/current/connector/kinesis.html#kinesis-batch-size) <a href="#kinesis-batch-size" id="kinesis-batch-size"></a>
+#### `kinesis.batch-size` <a href="#kinesis-batch-size" id="kinesis-batch-size"></a>
 
 Defines the maximum number of records to return in one request to Kinesis Streams. Maximum limit is `10000` records.
 
 This field is optional; the default value is `10000`.
 
-#### `kinesis.max-batches`[#](https://trino.io/docs/current/connector/kinesis.html#kinesis-max-batches) <a href="#kinesis-max-batches" id="kinesis-max-batches"></a>
+#### `kinesis.max-batches` <a href="#kinesis-max-batches" id="kinesis-max-batches"></a>
 
 The maximum number of batches to read in a single query. The default value is `1000`.
 
-#### `kinesis.fetch-attempts`[#](https://trino.io/docs/current/connector/kinesis.html#kinesis-fetch-attempts) <a href="#kinesis-fetch-attempts" id="kinesis-fetch-attempts"></a>
+#### `kinesis.fetch-attempts` <a href="#kinesis-fetch-attempts" id="kinesis-fetch-attempts"></a>
 
 Defines the number of attempts made to read a batch from Kinesis Streams, when no records are returned and the _millis behind latest_ parameter shows we are not yet caught up. When records are returned no additional attempts are necessary. `GetRecords` has been observed to return no records even though the shard is not empty. That is why multiple attempts need to be made.
 
 This field is optional; the default value is `2`.
 
-#### `kinesis.sleep-time`[#](https://trino.io/docs/current/connector/kinesis.html#kinesis-sleep-time) <a href="#kinesis-sleep-time" id="kinesis-sleep-time"></a>
+#### `kinesis.sleep-time` <a href="#kinesis-sleep-time" id="kinesis-sleep-time"></a>
 
 Defines the duration for which a thread needs to sleep between `kinesis.fetch-attempts` made to fetch data.
 
 This field is optional; the default value is `1000ms`.
 
-#### `kinesis.iterator-from-timestamp`[#](https://trino.io/docs/current/connector/kinesis.html#kinesis-iterator-from-timestamp) <a href="#kinesis-iterator-from-timestamp" id="kinesis-iterator-from-timestamp"></a>
+#### `kinesis.iterator-from-timestamp` <a href="#kinesis-iterator-from-timestamp" id="kinesis-iterator-from-timestamp"></a>
 
 Use an initial shard iterator type of `AT_TIMESTAMP` starting `kinesis.iterator-offset-seconds` before the current time. When this is false, an iterator type of `TRIM_HORIZON` is used, meaning it starts from the oldest record in the stream.
 
 The default is true.
 
-#### `kinesis.iterator-offset-seconds`[#](https://trino.io/docs/current/connector/kinesis.html#kinesis-iterator-offset-seconds) <a href="#kinesis-iterator-offset-seconds" id="kinesis-iterator-offset-seconds"></a>
+#### `kinesis.iterator-offset-seconds` <a href="#kinesis-iterator-offset-seconds" id="kinesis-iterator-offset-seconds"></a>
 
 When `kinesis.iterator-from-timestamp` is true, the shard iterator starts at `kinesis.iterator-offset-seconds` before the current time.
 
 The default is `86400` seconds (24 hours).
 
-#### `kinesis.hide-internal-columns`[#](https://trino.io/docs/current/connector/kinesis.html#kinesis-hide-internal-columns) <a href="#kinesis-hide-internal-columns" id="kinesis-hide-internal-columns"></a>
+#### `kinesis.hide-internal-columns` <a href="#kinesis-hide-internal-columns" id="kinesis-hide-internal-columns"></a>
 
 In addition to the data columns defined in a table description file, the connector maintains a number of additional columns for each table. If these columns are hidden, they can still be used in queries, but they do not show up in `DESCRIBE <table-name>` or `SELECT *`.
 
 This property is optional; the default is true.
 
-### Internal columns[#](https://trino.io/docs/current/connector/kinesis.html#internal-columns) <a href="#internal-columns" id="internal-columns"></a>
+### Internal columns <a href="#internal-columns" id="internal-columns"></a>
 
 For each defined table, the connector maintains the following columns:
 
@@ -141,7 +141,7 @@ For each defined table, the connector maintains the following columns:
 
 For tables without a table definition file, the `_message_valid` column is always `true`.
 
-### Table definition[#](https://trino.io/docs/current/connector/kinesis.html#table-definition) <a href="#table-definition" id="table-definition"></a>
+### Table definition <a href="#table-definition" id="table-definition"></a>
 
 A table definition file consists of a JSON definition for a table, which corresponds to one stream in Kinesis. The name of the file can be arbitrary but must end in `.json`. The structure of the table definition is as follows:
 
@@ -159,7 +159,7 @@ A table definition file consists of a JSON definition for a table, which corresp
   }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 | Field        | Required | Type        | Description                                                                   |
 | ------------ | -------- | ----------- | ----------------------------------------------------------------------------- |
@@ -189,7 +189,7 @@ Each field definition is a JSON object. At a minimum, a name, type, and mapping 
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 | Field        | Required | Type    | Description                                                                                                          |
 | ------------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -205,11 +205,11 @@ The name field is exposed to Trino as the column name, while the mapping field i
 
 There is no limit on field descriptions for either key or message.
 
-### Type mapping[#](https://trino.io/docs/current/connector/kinesis.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
-Because Trino and Kinesis each support types that the other does not, this connector [maps some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading data. Type mapping depends on the RAW, CSV, JSON, and AVRO file formats.
+Because Trino and Kinesis each support types that the other does not, this connector maps some types when reading data. Type mapping depends on the RAW, CSV, JSON, and AVRO file formats.
 
-#### Row decoding[#](https://trino.io/docs/current/connector/kinesis.html#row-decoding) <a href="#row-decoding" id="row-decoding"></a>
+#### Row decoding <a href="#row-decoding" id="row-decoding"></a>
 
 A decoder is used to map data to table columns.
 
@@ -224,7 +224,7 @@ Note
 
 If no table definition file exists for a table, the `dummy` decoder is used, which does not expose any columns.
 
-**Raw decoder**[**#**](https://trino.io/docs/current/connector/kinesis.html#raw-decoder)
+**Raw decoder**
 
 The raw decoder supports reading of raw byte-based values from message or key, and converting it into Trino columns.
 
@@ -283,7 +283,7 @@ The length of a decoded byte sequence is implied by the `dataFormat`.
 
 For the `VARCHAR` data type, a sequence of bytes is interpreted according to UTF-8 encoding.
 
-**CSV decoder**[**#**](https://trino.io/docs/current/connector/kinesis.html#csv-decoder)
+**CSV decoder**
 
 The CSV decoder converts the bytes representing a message or key into a string using UTF-8 encoding, and interprets the result as a link of comma-separated values.
 
@@ -303,7 +303,7 @@ The `dataFormat` and `formatHint` attributes are not supported and must be omitt
 
 No other types are supported.
 
-**JSON decoder**[**#**](https://trino.io/docs/current/connector/kinesis.html#json-decoder)
+**JSON decoder**
 
 The JSON decoder converts the bytes representing a message or key into Javascript Object Notaion (JSON) according to [**RFC 4627**](https://datatracker.ietf.org/doc/html/rfc4627.html). The message or key must convert into a JSON object, not an array or simple type.
 
@@ -329,11 +329,11 @@ The following table lists Trino data types, which can be used in `type` and matc
 
 No other types are supported.
 
-**DEFAULT FIELD DECODER**[**#**](https://trino.io/docs/current/connector/kinesis.html#default-field-decoder)
+**DEFAULT FIELD DECODER**
 
 This is the standard field decoder. It supports all the Trino physical data types. A field value is transformed under JSON conversion rules into boolean, long, double, or string values. This decoder should be used for columns that are not date or time based.
 
-**DATE AND TIME DECODERS**[**#**](https://trino.io/docs/current/connector/kinesis.html#date-and-time-decoders)
+**DATE AND TIME DECODERS**
 
 To convert values from JSON objects to Trino `DATE`, `TIME`, `TIME WITH TIME ZONE`, `TIMESTAMP` or `TIMESTAMP WITH TIME ZONE` columns, select special decoders using the `dataFormat` attribute of a field definition.
 
@@ -345,7 +345,7 @@ To convert values from JSON objects to Trino `DATE`, `TIME`, `TIME WITH TIME ZON
 
 For `TIMESTAMP WITH TIME ZONE` and `TIME WITH TIME ZONE` data types, if timezone information is present in decoded value, it is used as a Trino value. Otherwise, the result time zone is set to `UTC`.
 
-**Avro decoder**[**#**](https://trino.io/docs/current/connector/kinesis.html#avro-decoder)
+**Avro decoder**
 
 The Avro decoder converts the bytes representing a message or key in Avro format based on a schema. The message must have the Avro schema embedded. Trino does not support schemaless Avro decoding.
 
@@ -371,7 +371,7 @@ The following table lists the supported Trino types that can be used in `type` f
 
 No other types are supported.
 
-**AVRO SCHEMA EVOLUTION**[**#**](https://trino.io/docs/current/connector/kinesis.html#avro-schema-evolution)
+**AVRO SCHEMA EVOLUTION**
 
 The Avro decoder supports schema evolution with backward compatibility. With backward compatibility, a newer schema can be used to read Avro data created with an older schema. Any change in the Avro schema must also be reflected in Trino’s topic definition file. Newly added or renamed fields must have a default value in the Avro schema file.
 
@@ -382,7 +382,7 @@ The schema evolution behavior is as follows:
 * Column is renamed in the new schema: This is equivalent to removing the column and adding a new one, and data created with an older schema produces a _default_ value when the table is using the new schema.
 * Changing type of column in the new schema: If the type coercion is supported by Avro, then the conversion happens. An error is thrown for incompatible types.
 
-### SQL support[#](https://trino.io/docs/current/connector/kinesis.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides globally available and read operation statements to access data and metadata from Kinesis streams.
 

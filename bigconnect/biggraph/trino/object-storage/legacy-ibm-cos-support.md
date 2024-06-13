@@ -2,7 +2,7 @@
 
 Configure the Hive connector to support IBM Cloud Object Storage COS access.
 
-### Configuration[#](https://trino.io/docs/current/object-storage/legacy-cos.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To use COS, you need to configure a catalog file to use the Hive connector. For example, create a file `etc/ibmcos.properties` and specify the path to the COS service config file with the `hive.cos.service-config` property.
 
@@ -11,7 +11,7 @@ connector.name=hive
 hive.cos.service-config=etc/cos-service.properties
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The service configuration file contains the access and secret keys, as well as the endpoints for one or multiple COS services:
 
@@ -24,7 +24,7 @@ service2.secret-key=<your-secret-key2>
 service2.endpoint=<endpoint2>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The endpoints property is optional. `service1` and `service2` are placeholders for unique COS service names. The granularity for providing access credentials is at the COS service level.
 
@@ -34,7 +34,7 @@ To use IBM COS service, specify the service name, for example: `service1` in the
 cos://example-bucket.service1/orders_tiny
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Trino translates the COS path, and uses the `service1` endpoint and credentials from `cos-service.properties` to access `cos://example-bucket.service1/object`.
 
@@ -71,9 +71,9 @@ The Hive Metastore (HMS) does not support the IBM COS filesystem, by default. Th
 </property>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Alternative configuration using S3 compatibility[#](https://trino.io/docs/current/object-storage/legacy-cos.html#alternative-configuration-using-s3-compatibility) <a href="#alternative-configuration-using-s3-compatibility" id="alternative-configuration-using-s3-compatibility"></a>
+
+### Alternative configuration using S3 compatibility <a href="#alternative-configuration-using-s3-compatibility" id="alternative-configuration-using-s3-compatibility"></a>
 
 Use the S3 properties for the Hive connector in the catalog file. If only one IBM Cloud Object Storage endpoint is used, then the configuration can be simplified:
 
@@ -83,7 +83,7 @@ hive.s3.aws-access-key=access-key
 hive.s3.aws-secret-key=secret-key
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Use `s3` protocol instead of `cos` for the table location:
 

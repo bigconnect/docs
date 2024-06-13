@@ -6,7 +6,7 @@ Password file authentication is very similar to LDAP authentication. Please see 
 
 Using TLS and a configured shared secret is required for password file authentication.
 
-### Password authenticator configuration# <a href="#password-authenticator-configuration" id="password-authenticator-configuration"></a>
+### Password authenticator configuration <a href="#password-authenticator-configuration" id="password-authenticator-configuration"></a>
 
 To enable password file authentication, set the password authentication type in `etc/config.properties`:
 
@@ -14,7 +14,7 @@ To enable password file authentication, set the password authentication type in 
 http-server.authentication.type=PASSWORD
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In addition, create a `etc/password-authenticator.properties` file on the coordinator with the `file` authenticator name:
 
@@ -23,7 +23,7 @@ password-authenticator.name=file
 file.password-file=/path/to/password.db
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following configuration properties are available:
 
@@ -33,9 +33,9 @@ The following configuration properties are available:
 | `file.refresh-period`            | How often to reload the password file. Defaults to `5s`.          |
 | `file.auth-token-cache.max-size` | Max number of cached authenticated passwords. Defaults to `1000`. |
 
-### Password files[#](https://trino.io/docs/current/security/password-file.html#password-files) <a href="#password-files" id="password-files"></a>
+### Password files <a href="#password-files" id="password-files"></a>
 
-#### File format[#](https://trino.io/docs/current/security/password-file.html#file-format) <a href="#file-format" id="file-format"></a>
+#### File format <a href="#file-format" id="file-format"></a>
 
 The password file contains a list of usernames and passwords, one per line, separated by a colon. Passwords must be securely hashed using bcrypt or PBKDF2.
 
@@ -45,7 +45,7 @@ bcrypt passwords start with `$2y$` and must use a minimum cost of `8`:
 test:$2y$10$BqTb8hScP5DfcpmHo5PeyugxHz5Ky/qf3wrpD7SNm8sWuA3VlGqsa
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 PBKDF2 passwords are composed of the iteration count, followed by the hex encoded salt and hash:
 
@@ -53,9 +53,9 @@ PBKDF2 passwords are composed of the iteration count, followed by the hex encode
 test:1000:5b4240333032306164:f38d165fce8ce42f59d366139ef5d9e1ca1247f0e06e503ee1a611dd9ec40876bb5edb8409f5abe5504aab6628e70cfb3d3a18e99d70357d295002c3d0a308a0
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Creating a password file# <a href="#creating-a-password-file" id="creating-a-password-file"></a>
+
+#### Creating a password file <a href="#creating-a-password-file" id="creating-a-password-file"></a>
 
 Password files utilizing the bcrypt format can be created using the htpasswd utility from the Apache HTTP Server. The cost must be specified, as Trino enforces a higher minimum cost than the default.
 
@@ -65,7 +65,7 @@ Create an empty password file to get started:
 touch password.db
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Add or update the password for the user `test`:
 
@@ -73,9 +73,9 @@ Add or update the password for the user `test`:
 htpasswd -B -C 10 password.db test
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Verify configuration[#](https://trino.io/docs/current/security/password-file.html#verify-configuration) <a href="#verify-configuration" id="verify-configuration"></a>
+
+#### Verify configuration <a href="#verify-configuration" id="verify-configuration"></a>
 
 To verify password file authentication, log in to the Web UI, and connect with the Trino [CLI](https://trino.io/docs/current/client/cli.html) to the cluster:
 
@@ -86,7 +86,7 @@ To verify password file authentication, log in to the Web UI, and connect with t
 ./trino --server https://trino.example.com:8443 --user test --password
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The above command quotes you for a password. Supply the password set for the user entered for the `--user` property to use the `trino>` prompt. Sucessful authentication allows you to run queries from the CLI.
 

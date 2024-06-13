@@ -26,7 +26,7 @@ Dynamic filtering is enabled by default. It can be disabled by setting either th
 
 Support for push down of dynamic filters is specific to each connector, and the relevant underlying database or storage system. The documentation for specific connectors with support for dynamic filtering includes further details, for example the Hive connector or the Memory connector.
 
-### Analysis and confirmation[#](https://trino.io/docs/current/admin/dynamic-filtering.html#analysis-and-confirmation) <a href="#analysis-and-confirmation" id="analysis-and-confirmation"></a>
+### Analysis and confirmation <a href="#analysis-and-confirmation" id="analysis-and-confirmation"></a>
 
 Dynamic filtering depends on a number of factors:
 
@@ -45,7 +45,7 @@ JOIN date_dim ON store_sales.ss_sold_date_sk = date_dim.d_date_sk
 WHERE d_following_holiday='Y' AND d_year = 2000;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The explain plan for this query shows `dynamicFilterAssignments` in the `InnerJoin` node with dynamic filter `df_370` collected from build symbol `d_date_sk`. You can also see the `dynamicFilter` predicate as part of the Hive `ScanFilterProject` operator where `df_370` is associated with probe symbol `ss_sold_date_sk`. This shows you that the planner is successful in pushing dynamic filters down to the connector in the query plan.
 
@@ -86,7 +86,7 @@ Fragment 2 [SOURCE]
         d_year := d_year:int:REGULAR
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 During execution of a query with dynamic filters, Trino populates statistics about dynamic filters in the QueryInfo JSON available through the Web UI. In the `queryStats` section, statistics about dynamic filters collected by the coordinator can be found in the `dynamicFiltersStats` structure.
 
@@ -104,7 +104,7 @@ During execution of a query with dynamic filters, Trino populates statistics abo
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Push down of dynamic filters into a table scan on the worker nodes can be verified by looking at the operator statistics for that table scan. `dynamicFilterSplitsProcessed` records the number of splits processed after a dynamic filter is pushed down to the table scan.
 
@@ -120,7 +120,7 @@ Push down of dynamic filters into a table scan on the worker nodes can be verifi
 "dynamicFilterSplitsProcessed" : 1,
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Dynamic filters are reported as a part of the EXPLAIN ANALYZE plan in the statistics for `ScanFilterProject` nodes.
 
@@ -149,9 +149,9 @@ Dynamic filters are reported as a part of the EXPLAIN ANALYZE plan in the statis
 ...
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Dynamic filter collection thresholds[#](https://trino.io/docs/current/admin/dynamic-filtering.html#dynamic-filter-collection-thresholds) <a href="#dynamic-filter-collection-thresholds" id="dynamic-filter-collection-thresholds"></a>
+
+### Dynamic filter collection thresholds <a href="#dynamic-filter-collection-thresholds" id="dynamic-filter-collection-thresholds"></a>
 
 In order for dynamic filtering to work, the smaller dimension table needs to be chosen as a join’s build side. The cost-based optimizer can automatically do this using table statistics provided by connectors. Therefore, it is recommended to keep table statistics up to date and rely on the CBO to correctly choose the smaller table on the build side of join.
 
@@ -165,13 +165,13 @@ The `dynamic-filtering.large.*` and `dynamic-filtering.small.*` limits are appli
 
 The properties based on `max-distinct-values-per-driver` and `max-size-per-driver` define thresholds for the size up to which dynamic filters are collected in a distinct values data structure. When the build side exceeds these thresholds, Trino switches to collecting min and max values per column to reduce overhead. This min-max filter has much lower granularity than the distinct values filter. However, it may still be beneficial in filtering some data from the probe side, especially when a range of values is selected from the build side of the join. The limits for min-max filters collection are defined by the properties based on `range-row-limit-per-driver`.
 
-### Dimension tables layout[#](https://trino.io/docs/current/admin/dynamic-filtering.html#dimension-tables-layout) <a href="#dimension-tables-layout" id="dimension-tables-layout"></a>
+### Dimension tables layout <a href="#dimension-tables-layout" id="dimension-tables-layout"></a>
 
 Dynamic filtering works best for dimension tables where table keys are correlated with columns.
 
 For example, a date dimension key column should be correlated with a date column, so the table keys monotonically increase with date values. An address dimension key can be composed of other columns such as `COUNTRY-STATE-ZIP-ADDRESS_ID` with an example value of `US-NY-10001-1234`. This usage allows dynamic filtering to succeed even with a large number of selected rows from the dimension table.
 
-### Limitations[#](https://trino.io/docs/current/admin/dynamic-filtering.html#limitations) <a href="#limitations" id="limitations"></a>
+### Limitations <a href="#limitations" id="limitations"></a>
 
 * Min-max dynamic filter collection is not supported for `DOUBLE`, `REAL` and unorderable data types.
 * Dynamic filtering is not supported for `DOUBLE` and `REAL` data types when using `IS NOT DISTINCT FROM` predicate.

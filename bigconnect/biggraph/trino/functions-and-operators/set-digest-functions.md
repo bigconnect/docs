@@ -48,7 +48,7 @@ FROM setdigest_side_by_side
 ORDER BY id1, id2;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
  id1 | id2 | intersection_cardinality | jaccard_index
@@ -58,13 +58,13 @@ ORDER BY id1, id2;
    2 |   3 |                        0 |           0.0
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The above result listing points out, as expected, that the texts with the id `1` and `3` are quite similar.
 
 One may argue that the text with the id `2` is somewhat similar to the texts with the id `1` and `3`. Due to the fact in the example above _4-shingles_ are taken into account for measuring the similarity of the texts, there are no intersections found for the text pairs `1` and `2`, respectively `3` and `2` and therefore there the similarity index for these text pairs is `0`.
 
-### Data structures[#](https://trino.io/docs/current/functions/setdigest.html#data-structures) <a href="#data-structures" id="data-structures"></a>
+### Data structures <a href="#data-structures" id="data-structures"></a>
 
 Trino implements Set Digest data sketches by encapsulating the following components:
 
@@ -77,13 +77,13 @@ The MinHash structure is used to store a low memory footprint signature of the o
 
 The Trino type for this data structure is called `setdigest`. Trino offers the ability to merge multiple Set Digest data sketches.
 
-### Serialization[#](https://trino.io/docs/current/functions/setdigest.html#serialization) <a href="#serialization" id="serialization"></a>
+### Serialization <a href="#serialization" id="serialization"></a>
 
 Data sketches can be serialized to and deserialized from `varbinary`. This allows them to be stored for later use.
 
-### Functions[#](https://trino.io/docs/current/functions/setdigest.html#functions) <a href="#functions" id="functions"></a>
+### Functions <a href="#functions" id="functions"></a>
 
-make\_set\_digest(_x_) → setdigest[#](https://trino.io/docs/current/functions/setdigest.html#make\_set\_digest)
+make\_set\_digest(_x_) → setdigest
 
 Composes all input values of `x` into a `setdigest`.
 
@@ -94,7 +94,7 @@ SELECT make_set_digest(value)
 FROM (VALUES 1, 2, 3) T(value);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create a `setdigest` corresponding to a `varchar` array:
 
@@ -103,7 +103,7 @@ SELECT make_set_digest(value)
 FROM (VALUES 'Trino', 'SQL', 'on', 'everything') T(value);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)merge\_set\_digest(_setdigest_) → setdigest[#](https://trino.io/docs/current/functions/setdigest.html#merge\_set\_digest)
+merge\_set\_digest(_setdigest_) → setdigest
 
 Returns the `setdigest` of the aggregate union of the individual `setdigest` Set Digest structures.
 
@@ -119,7 +119,7 @@ FROM (VALUES 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5) T(value);
 -- 5
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)intersection\_cardinality(_x_, _y_) → long[#](https://trino.io/docs/current/functions/setdigest.html#intersection\_cardinality)
+intersection\_cardinality(_x_, _y_) → long
 
 Returns the estimation for the cardinality of the intersection of the two set digests.
 
@@ -133,7 +133,7 @@ FROM (VALUES (1, 1), (NULL, 2), (2, 3), (3, 4)) T(v1, v2);
 -- 3
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)jaccard\_index(_x_, _y_) → double[#](https://trino.io/docs/current/functions/setdigest.html#jaccard\_index)
+jaccard\_index(_x_, _y_) → double
 
 Returns the estimation of [Jaccard index](https://wikipedia.org/wiki/Jaccard\_index) for the two set digests.
 
@@ -147,7 +147,7 @@ FROM (VALUES (1, 1), (NULL,2), (2, 3), (NULL, 4)) T(v1, v2);
 -- 0.5
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)hash\_counts(_x_)[#](https://trino.io/docs/current/functions/setdigest.html#hash\_counts)
+hash\_counts(_x_)
 
 Returns a map containing the [Murmur3Hash128](https://wikipedia.org/wiki/MurmurHash#MurmurHash3) hashed values and the count of their occurences within the internal `MinHash` structure belonging to `x`.
 

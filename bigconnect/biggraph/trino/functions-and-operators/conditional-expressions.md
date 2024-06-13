@@ -1,6 +1,6 @@
 # Conditional expressions
 
-### CASE[#](https://trino.io/docs/current/functions/conditional.html#case) <a href="#case" id="case"></a>
+### CASE <a href="#case" id="case"></a>
 
 The standard SQL `CASE` expression has two forms. The “simple” form searches each `value` expression from left to right until it finds one that equals `expression`:
 
@@ -12,7 +12,7 @@ CASE expression
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `result` for the matching `value` is returned. If no match is found, the `result` from the `ELSE` clause is returned if it exists, otherwise null is returned. Example:
 
@@ -25,7 +25,7 @@ SELECT a,
        END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The “searched” form evaluates each boolean `condition` from left to right until one is true and returns the matching `result`:
 
@@ -37,7 +37,7 @@ CASE
 END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If no conditions are true, the `result` from the `ELSE` clause is returned if it exists, otherwise null is returned. Example:
 
@@ -50,15 +50,15 @@ SELECT a, b,
        END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-SQL routines can use [`CASE` statements](https://trino.io/docs/current/routines/case.html) that use a slightly different syntax from the CASE expressions. Specifically note the requirements for terminating each clause with a semicolon `;` and the usage of `END CASE`.
 
-### IF[#](https://trino.io/docs/current/functions/conditional.html#if) <a href="#if" id="if"></a>
+SQL routines can use `CASE` statements that use a slightly different syntax from the CASE expressions. Specifically note the requirements for terminating each clause with a semicolon `;` and the usage of `END CASE`.
+
+### IF <a href="#if" id="if"></a>
 
 The `IF` expression has two forms, one supplying only a `true_value` and the other supplying both a `true_value` and a `false_value`:
 
-if(_condition_, _true\_value_)[#](https://trino.io/docs/current/functions/conditional.html#id0)
+if(_condition_, _true\_value_)
 
 Evaluates and returns `true_value` if `condition` is true, otherwise null is returned and `true_value` is not evaluated.
 
@@ -76,7 +76,7 @@ SELECT
 FROM tpch.sf1.orders;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 SELECT
@@ -89,25 +89,25 @@ SELECT
 FROM tpch.sf1.orders;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 SQL routines can use `IF` statements that use a slightly different syntax from `IF` expressions. Specifically note the requirement for terminating each clause with a semicolon `;` and the usage of `END IF`.
 
-### COALESCE[#](https://trino.io/docs/current/functions/conditional.html#coalesce) <a href="#coalesce" id="coalesce"></a>
+### COALESCE <a href="#coalesce" id="coalesce"></a>
 
 coalesce(_value1_, _value2_\[, _..._])[#](https://trino.io/docs/current/functions/conditional.html#id1)
 
 Returns the first non-null `value` in the argument list. Like a `CASE` expression, arguments are only evaluated if necessary.
 
-### NULLIF[#](https://trino.io/docs/current/functions/conditional.html#nullif) <a href="#nullif" id="nullif"></a>
+### NULLIF <a href="#nullif" id="nullif"></a>
 
-nullif(_value1_, _value2_)[#](https://trino.io/docs/current/functions/conditional.html#id2)
+nullif(_value1_, _value2_)
 
 Returns null if `value1` equals `value2`, otherwise returns `value1`.
 
-### TRY[#](https://trino.io/docs/current/functions/conditional.html#try) <a href="#try" id="try"></a>
+### TRY <a href="#try" id="try"></a>
 
-try(_expression_)[#](https://trino.io/docs/current/functions/conditional.html#id3)
+try(_expression_)
 
 Evaluate an expression and handle certain types of errors by returning `NULL`.
 
@@ -119,7 +119,7 @@ The following errors are handled by `TRY`:
 * Invalid cast or function argument
 * Numeric value out of range
 
-#### Examples[#](https://trino.io/docs/current/functions/conditional.html#examples) <a href="#examples" id="examples"></a>
+#### Examples <a href="#examples" id="examples"></a>
 
 Source table with some invalid data:
 
@@ -127,7 +127,7 @@ Source table with some invalid data:
 SELECT * FROM shipping;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
  origin_state | origin_zip | packages | total_cost
@@ -139,7 +139,7 @@ SELECT * FROM shipping;
 (4 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Query failure without `TRY`:
 
@@ -147,13 +147,13 @@ Query failure without `TRY`:
 SELECT CAST(origin_zip AS BIGINT) FROM shipping;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 Query failed: Cannot cast 'P332a' to BIGINT
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 `NULL` values with `TRY`:
 
@@ -161,7 +161,7 @@ Query failed: Cannot cast 'P332a' to BIGINT
 SELECT TRY(CAST(origin_zip AS BIGINT)) FROM shipping;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
  origin_zip
@@ -173,7 +173,7 @@ SELECT TRY(CAST(origin_zip AS BIGINT)) FROM shipping;
 (4 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Query failure without `TRY`:
 
@@ -181,13 +181,13 @@ Query failure without `TRY`:
 SELECT total_cost / packages AS per_package FROM shipping;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 Query failed: Division by zero
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Default values with `TRY` and `COALESCE`:
 
@@ -195,7 +195,7 @@ Default values with `TRY` and `COALESCE`:
 SELECT COALESCE(TRY(total_cost / packages), 0) AS per_package FROM shipping;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
  per_package

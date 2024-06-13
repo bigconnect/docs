@@ -39,13 +39,13 @@ The valid values are:
 > * `BROADCAST` - broadcast join distribution is used for all joins
 > * `PARTITIONED` - partitioned join distribution is used for all join
 
-#### Capping replicated table size[#](https://trino.io/docs/current/optimizer/cost-based-optimizations.html#capping-replicated-table-size) <a href="#capping-replicated-table-size" id="capping-replicated-table-size"></a>
+#### Capping replicated table size <a href="#capping-replicated-table-size" id="capping-replicated-table-size"></a>
 
 The join distribution type is automatically chosen when the join reordering strategy is set to `AUTOMATIC` or when the join distribution type is set to `AUTOMATIC`. In both cases, it is possible to cap the maximum size of the replicated table with the `join-max-broadcast-table-size` configuration property or with the `join_max_broadcast_table_size` session property. This allows you to improve cluster concurrency and prevent bad plans when the cost-based optimizer misestimates the size of the joined tables.
 
 By default, the replicated table size is capped to 100MB.
 
-### Syntactic join order[#](https://trino.io/docs/current/optimizer/cost-based-optimizations.html#syntactic-join-order) <a href="#syntactic-join-order" id="syntactic-join-order"></a>
+### Syntactic join order <a href="#syntactic-join-order" id="syntactic-join-order"></a>
 
 If not using cost-based optimization, Trino defaults to syntactic join ordering. While there is no formal way to optimize queries for this case, it is possible to take advantage of how Trino implements joins to make them more performant.
 
@@ -64,12 +64,12 @@ FROM
   LEFT JOIN small_table s ON s.user_id = l.user_id
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Warning
 
 This means of optimization is not a feature of Trino. It is an artifact of how joins are implemented, and therefore this behavior may change without notice.
 
-### Connector implementations[#](https://trino.io/docs/current/optimizer/cost-based-optimizations.html#connector-implementations) <a href="#connector-implementations" id="connector-implementations"></a>
+### Connector implementations <a href="#connector-implementations" id="connector-implementations"></a>
 
 In order for the Trino optimizer to use the cost based strategies, the connector implementation must provide Table statistics.

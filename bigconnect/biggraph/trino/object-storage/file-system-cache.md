@@ -8,7 +8,7 @@ Trino includes support for caching these files with the help of the open source 
 * Hive connector
 * Iceberg connector
 
-### Distributed caching[#](https://trino.io/docs/current/object-storage/file-system-cache.html#distributed-caching) <a href="#distributed-caching" id="distributed-caching"></a>
+### Distributed caching <a href="#distributed-caching" id="distributed-caching"></a>
 
 File system caching is distributed in Trino as part of the mechanism of any other query processing. Query processing, detailed more in Trino concepts is broken up into different stages, where tasks and splits are processed by different nodes in the cluster. The lowest level splits retrieve data from the data source with the help of the connector of the specific catalog. For file system caching, these splits result in the retrieval of files from object storage.
 
@@ -16,7 +16,7 @@ Different nodes process splits with data from objects storage randomly over time
 
 You can limit the number of hosts that are preferred to process these tasks with `fs.cache.preferred-hosts-count`. Query processing still uses all other nodes as required for the parallel processing of tasks, and therefore potentially caches files on more nodes than the preferred hosts only. A low setting, such as the default 2, can reduce the overall size of the cache because it can reduce how often the same file is cached on multiple nodes. A higher setting, up to the number of nodes in the cluster, distributes the workload across more workers by default, and leads to more resilience against node failures at the expense of effective cache size.
 
-### Benefits[#](https://trino.io/docs/current/object-storage/file-system-cache.html#benefits) <a href="#benefits" id="benefits"></a>
+### Benefits <a href="#benefits" id="benefits"></a>
 
 Enabling caching can result in the following significant benefits:
 
@@ -38,7 +38,7 @@ On the other hand, if your storage is already running at very high performance f
 
 A result of the reduced load on the storage, mentioned earlier, is significantly reduced network traffic and access to storage. Network traffic and access, often in the form of API access, are often a considerable cost factor, specifically also when hosted in public cloud provider systems.
 
-### Configuration[#](https://trino.io/docs/current/object-storage/file-system-cache.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 Use the properties from the following table in your catalog properties files to enable and configure caching for the specific catalogs.
 
@@ -52,13 +52,13 @@ Use the properties from the following table in your catalog properties files to 
 | `fs.cache.preferred-hosts-count`      | The number of preferred nodes for caching files. Defaults to 2. Processing identifies and subsequently prefers using specific nodes. If the preferred nodes identified for caching a split are unavailable or too busy, then an available node is chosen at random from the cluster. More information in Distributed caching.                                                                                                                                                                                                                                                                     |
 | `fs.cache.page-size`                  | The page [data size](https://trino.io/docs/current/admin/properties.html#prop-type-data-size) used for caching data. Each transfer of files uses at least this amount of data. Defaults to `1MB`. Values must be between `64kB` and `15MB`. Larger value potentially result in too much data transfer smaller values are less efficient since they result in more individual downloads.                                                                                                                                                                                                           |
 
-### Monitoring[#](https://trino.io/docs/current/object-storage/file-system-cache.html#monitoring) <a href="#monitoring" id="monitoring"></a>
+### Monitoring <a href="#monitoring" id="monitoring"></a>
 
 The cache exposes the [Alluxio JMX client metrics](https://docs.alluxio.io/ee-da/user/stable/en/reference/Metrics-List.html#client-metrics) under the `org.alluxio` package, and metrics on external reads and cache reads under `io.trino.filesystem.alluxio.AlluxioCacheStats`.
 
 The cache code uses OpenTelemetry tracing.
 
-### Recommendations[#](https://trino.io/docs/current/object-storage/file-system-cache.html#recommendations) <a href="#recommendations" id="recommendations"></a>
+### Recommendations <a href="#recommendations" id="recommendations"></a>
 
 The speed of the local cache storage is crucial to the performance of the cache. The most common and cost efficient approach is to attach high performance SSD disk or equivalents. Fast cache performance can be also be achieved with a RAM disk used as in-memory cache.
 

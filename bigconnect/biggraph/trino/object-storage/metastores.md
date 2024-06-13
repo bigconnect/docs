@@ -4,7 +4,7 @@ Object storage access is mediated through a _metastore_. Metastores provide info
 
 Additional configuration is required in order to access tables with Athena partition projection metadata or implement first class support for Avro tables. These requirements are discussed later in this topic.
 
-### General metastore configuration properties[#](https://trino.io/docs/current/object-storage/metastores.html#general-metastore-configuration-properties) <a href="#general-metastore-configuration-properties" id="general-metastore-configuration-properties"></a>
+### General metastore configuration properties <a href="#general-metastore-configuration-properties" id="general-metastore-configuration-properties"></a>
 
 The following table describes general metastore configuration properties, most of which are used with either metastore.
 
@@ -24,7 +24,7 @@ Additional configuration properties specific to the Thrift and Glue Metastores a
 | `hive.metastore-refresh-max-threads`    | Maximum threads used to refresh cached metastore data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `10`     |
 | `hive.hide-delta-lake-tables`           | Controls whether to hide Delta Lake tables in table listings. Currently applies only when using the AWS Glue metastore.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `false`  |
 
-### Thrift metastore configuration properties[#](https://trino.io/docs/current/object-storage/metastores.html#thrift-metastore-configuration-properties) <a href="#thrift-metastore-configuration-properties" id="thrift-metastore-configuration-properties"></a>
+### Thrift metastore configuration properties <a href="#thrift-metastore-configuration-properties" id="thrift-metastore-configuration-properties"></a>
 
 In order to use a Hive Thrift metastore, you must configure the metastore with `hive.metastore=thrift` and provide further details with the following properties:
 
@@ -73,7 +73,7 @@ In a Kerberized Hadoop cluster, Trino connects to the Hive metastore Thrift serv
 | Property value                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Default |
 | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | `hive.metastore.authentication.type`          | <p>Hive metastore authentication type. One of <code>NONE</code> or <code>KERBEROS</code>. When using the default value of <code>NONE</code>, Kerberos authentication is disabled, and no other properties must be configured.</p><p>When set to <code>KERBEROS</code> the Hive connector connects to the Hive metastore Thrift service using SASL and authenticate using Kerberos.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | `NONE`  |
-| `hive.metastore.thrift.impersonation.enabled` | Enable Hive metastore end user impersonation. See [KERBEROS authentication with impersonation](https://trino.io/docs/current/object-storage/metastores.html#hive-security-metastore-impersonation) for more information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `false` |
+| `hive.metastore.thrift.impersonation.enabled` | Enable Hive metastore end user impersonation. See KERBEROS authentication with impersonation for more information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | `false` |
 | `hive.metastore.service.principal`            | <p>The Kerberos principal of the Hive metastore service. The coordinator uses this to authenticate the Hive metastore.</p><p>The <code>_HOST</code> placeholder can be used in this property value. When connecting to the Hive metastore, the Hive connector substitutes in the hostname of the <strong>metastore</strong> server it is connecting to. This is useful if the metastore runs on multiple hosts.</p><p>Example: <code>hive/hive-server-host@EXAMPLE.COM</code> or <code>hive/_HOST@EXAMPLE.COM</code>.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |         |
 | `hive.metastore.client.principal`             | <p>The Kerberos principal that Trino uses when connecting to the Hive metastore service.</p><p>Example: <code>trino/trino-server-node@EXAMPLE.COM</code> or <code>trino/_HOST@EXAMPLE.COM</code>.</p><p>The <code>_HOST</code> placeholder can be used in this property value. When connecting to the Hive metastore, the Hive connector substitutes in the hostname of the <strong>worker</strong> node Trino is running on. This is useful if each worker node has its own Kerberos principal.</p><p>Unless KERBEROS authentication with impersonation is enabled, the principal specified by <code>hive.metastore.client.principal</code> must have sufficient privileges to remove files and directories within the <code>hive/warehouse</code> directory.</p><p><strong>Warning:</strong> If the principal does have sufficient permissions, only the metadata is removed, and the data continues to consume disk space. This occurs because the Hive metastore is responsible for deleting the internal table data. When the metastore is configured to use Kerberos authentication, all of the HDFS operations performed by the metastore are impersonated. Errors deleting data are silently ignored.</p> |         |
 | `hive.metastore.client.keytab`                | The path to the keytab file that contains a key for the principal specified by `hive.metastore.client.principal`. This file must be readable by the operating system user running Trino.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |         |
@@ -86,7 +86,7 @@ The following sections describe the configuration properties and values needed f
 hive.metastore.authentication.type=NONE
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The default authentication type for the Hive metastore is `NONE`. When the authentication type is `NONE`, Trino connects to an unsecured Hive metastore. Kerberos is not used.
 
@@ -100,7 +100,7 @@ hive.metastore.client.principal=trino@EXAMPLE.COM
 hive.metastore.client.keytab=/etc/trino/hive.keytab
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 When the authentication type for the Hive metastore Thrift service is `KERBEROS`, Trino connects as the Kerberos principal specified by the property `hive.metastore.client.principal`. Trino authenticates this principal using the keytab specified by the `hive.metastore.client.keytab` property, and verifies that the identity of the metastore matches `hive.metastore.service.principal`.
 
@@ -110,7 +110,7 @@ Keytab files must be distributed to every node in the Trino cluster.
 
 Additional information about Keytab Files.
 
-### AWS Glue catalog configuration properties[#](https://trino.io/docs/current/object-storage/metastores.html#aws-glue-catalog-configuration-properties) <a href="#aws-glue-catalog-configuration-properties" id="aws-glue-catalog-configuration-properties"></a>
+### AWS Glue catalog configuration properties <a href="#aws-glue-catalog-configuration-properties" id="aws-glue-catalog-configuration-properties"></a>
 
 In order to use an AWS Glue catalog, you must configure your catalog file as follows:
 
@@ -146,13 +146,13 @@ When using the Glue catalog, the Iceberg connector supports the same general Glu
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | `iceberg.glue.skip-archive` | Skip archiving an old table version when creating a new version in a commit. See [AWS Glue Skip Archive](https://iceberg.apache.org/docs/latest/aws/#skip-archive). | `true`  |
 
-### Iceberg-specific metastores[#](https://trino.io/docs/current/object-storage/metastores.html#iceberg-specific-metastores) <a href="#iceberg-specific-metastores" id="iceberg-specific-metastores"></a>
+### Iceberg-specific metastores <a href="#iceberg-specific-metastores" id="iceberg-specific-metastores"></a>
 
 The Iceberg table format manages most metadata in metadata files in the object storage itself. A small amount of metadata, however, still requires the use of a metastore. In the Iceberg ecosystem, these smaller metastores are called Iceberg metadata catalogs, or just catalogs.
 
 You can use a general metastore such as an HMS or AWS Glue, or you can use the Iceberg-specific REST, Nessie or JDBC metadata catalogs, as discussed in this section.
 
-#### REST catalog[#](https://trino.io/docs/current/object-storage/metastores.html#rest-catalog) <a href="#rest-catalog" id="rest-catalog"></a>
+#### REST catalog <a href="#rest-catalog" id="rest-catalog"></a>
 
 In order to use the Iceberg REST catalog, configure the catalog type with `iceberg.catalog.type=rest`, and provide further details with the following properties:
 
@@ -173,11 +173,11 @@ iceberg.catalog.type=rest
 iceberg.rest-catalog.uri=http://iceberg-with-rest:8181
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The REST catalog does not support view management or materialized view management.
 
-#### JDBC catalog[#](https://trino.io/docs/current/object-storage/metastores.html#jdbc-catalog) <a href="#jdbc-catalog" id="jdbc-catalog"></a>
+#### JDBC catalog <a href="#jdbc-catalog" id="jdbc-catalog"></a>
 
 The Iceberg JDBC catalog is supported for the Iceberg connector. At a minimum, `iceberg.jdbc-catalog.driver-class`, `iceberg.jdbc-catalog.connection-url` and `iceberg.jdbc-catalog.catalog-name` must be configured. When using any database besides PostgreSQL, a JDBC driver jar file must be placed in the plugin directory.
 
@@ -200,11 +200,11 @@ iceberg.jdbc-catalog.connection-password=test
 iceberg.jdbc-catalog.default-warehouse-dir=s3://bucket
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The JDBC catalog does not support view management or materialized view management.
 
-#### Nessie catalog# <a href="#nessie-catalog" id="nessie-catalog"></a>
+#### Nessie catalog <a href="#nessie-catalog" id="nessie-catalog"></a>
 
 In order to use a Nessie catalog, configure the catalog type with `iceberg.catalog.type=nessie` and provide further details with the following properties:
 
@@ -226,11 +226,11 @@ iceberg.nessie-catalog.uri=https://localhost:19120/api/v1
 iceberg.nessie-catalog.default-warehouse-dir=/tmp
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The Nessie catalog does not support view management or materialized view management.
 
-### Access tables with Athena partition projection metadata[#](https://trino.io/docs/current/object-storage/metastores.html#access-tables-with-athena-partition-projection-metadata) <a href="#access-tables-with-athena-partition-projection-metadata" id="access-tables-with-athena-partition-projection-metadata"></a>
+### Access tables with Athena partition projection metadata <a href="#access-tables-with-athena-partition-projection-metadata" id="access-tables-with-athena-partition-projection-metadata"></a>
 
 [Partition projection](https://docs.aws.amazon.com/athena/latest/ug/partition-projection.html) is a feature of AWS Athena often used to speed up query processing with highly partitioned tables when using the Hive connector.
 
@@ -240,7 +240,7 @@ If there are any compatibility issues blocking access to a requested table when 
 
 Refer to Table properties and Column properties for configuration of partition projection.
 
-### Configure metastore for Avro[#](https://trino.io/docs/current/object-storage/metastores.html#configure-metastore-for-avro) <a href="#configure-metastore-for-avro" id="configure-metastore-for-avro"></a>
+### Configure metastore for Avro <a href="#configure-metastore-for-avro" id="configure-metastore-for-avro"></a>
 
 For catalogs using the Hive connector, you must add the following property definition to the Hive metastore configuration file `hive-site.xml` and restart the metastore service to enable first-class support for Avro tables when using Hive 3.x:
 

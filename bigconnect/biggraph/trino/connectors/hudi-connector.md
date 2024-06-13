@@ -2,7 +2,7 @@
 
 The Hudi connector enables querying [Hudi](https://hudi.apache.org/docs/overview/) tables.
 
-### Requirements[#](https://trino.io/docs/current/connector/hudi.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To use the Hudi connector, you need:
 
@@ -12,7 +12,7 @@ To use the Hudi connector, you need:
 * Network access from the Trino coordinator to the HMS.
 * Data files stored in the Parquet file format on a supported file system.
 
-### General configuration[#](https://trino.io/docs/current/connector/hudi.html#general-configuration) <a href="#general-configuration" id="general-configuration"></a>
+### General configuration <a href="#general-configuration" id="general-configuration"></a>
 
 To configure the Hive connector, create a catalog properties file `etc/catalog/example.properties` that references the `hudi` connector and defines the HMS to use with the `hive.metastore.uri` configuration property:
 
@@ -39,7 +39,7 @@ Additionally, following configuration properties can be set depending on the use
 | `hudi.per-transaction-metastore-cache-maximum-size` | Maximum number of metastore data objects per transaction in the Hive metastore cache.                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `2000`              |
 | `hudi.query-partition-filter-required`              | Set to `true` to force a query to use a partition column in the filter condition. The equivalent catalog session property is `query_partition_filter_required`. Enabling this property causes query failures if the partition column used in the filter condition doesn’t effectively reduce the number of data files read. Example: Complex filter expressions such as `id = 1 OR part_key = '100'` or `CAST(part_key AS INTEGER) % 2 = 0` are not recognized as partition filters, and queries using such expressions fail if the property is set to `true`. | `false`             |
 
-### File system access configuration[#](https://trino.io/docs/current/connector/hudi.html#file-system-access-configuration) <a href="#file-system-access-configuration" id="file-system-access-configuration"></a>
+### File system access configuration <a href="#file-system-access-configuration" id="file-system-access-configuration"></a>
 
 The connector supports native, high-performance file system access to object storage systems:
 
@@ -100,7 +100,7 @@ GROUP BY dt;
 (1 rows)
 ```
 
-#### Schema and table management[#](https://trino.io/docs/current/connector/hudi.html#schema-and-table-management) <a href="#schema-and-table-management" id="schema-and-table-management"></a>
+#### Schema and table management <a href="#schema-and-table-management" id="schema-and-table-management"></a>
 
 Hudi supports two types of tables depending on how the data is indexed and laid out on the file system. The following table displays a support matrix of tables types and query types for the connector:
 
@@ -109,7 +109,7 @@ Hudi supports two types of tables depending on how the data is indexed and laid 
 | Copy on write | Snapshot queries       |
 | Merge on read | Read-optimized queries |
 
-**Metadata tables**[**#**](https://trino.io/docs/current/connector/hudi.html#metadata-tables)
+**Metadata tables**
 
 The connector exposes a metadata table for each Hudi table. The metadata table contains information about the internal structure of the Hudi table. You can query each metadata table by appending the metadata table name to the table name:
 
@@ -117,7 +117,7 @@ The connector exposes a metadata table for each Hudi table. The metadata table c
 SELECT * FROM "test_table$timeline"
 ```
 
-**`$TIMELINE` TABLE**[**#**](https://trino.io/docs/current/connector/hudi.html#timeline-table)
+**`$TIMELINE` TABLE**
 
 The `$timeline` table provides a detailed view of meta-data instants in the Hudi table. Instants are specific points in time.
 

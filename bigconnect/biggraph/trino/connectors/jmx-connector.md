@@ -4,7 +4,7 @@ The JMX connector provides the ability to query Java Management Extensions (JMX)
 
 This connector can be configured so that chosen JMX information is periodically dumped and stored in memory for later access.
 
-### Configuration[#](https://trino.io/docs/current/connector/jmx.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the JMX connector, create a catalog properties file `etc/catalog/example.properties` with the following contents:
 
@@ -12,7 +12,7 @@ To configure the JMX connector, create a catalog properties file `etc/catalog/ex
 connector.name=jmx
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 To enable periodical dumps, define the following properties:
 
@@ -23,7 +23,7 @@ jmx.dump-period=10s
 jmx.max-entries=86400
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 `dump-tables` is a comma separated list of Managed Beans (MBean). It specifies which MBeans are sampled and stored in memory every `dump-period`. You can configure the maximum number of history entries with `max-entries` and it defaults to `86400`. The time between dumps can be configured using `dump-period` and it defaults to `10s`.
 
@@ -34,7 +34,7 @@ connector.name=jmx
 jmx.dump-tables=trino.memory:name=general\\,type=memorypool,trino.memory:name=reserved\\,type=memorypool
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Double backslashes are required because a single backslash (`\`) is used to split the value across multiple lines in the following manner:
 
@@ -44,9 +44,9 @@ jmx.dump-tables=trino.memory:name=general\\,type=memorypool,\
     trino.memory:name=reserved\\,type=memorypool
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Querying JMX[#](https://trino.io/docs/current/connector/jmx.html#querying-jmx) <a href="#querying-jmx" id="querying-jmx"></a>
+
+### Querying JMX <a href="#querying-jmx" id="querying-jmx"></a>
 
 The JMX connector provides two schemas.
 
@@ -56,7 +56,7 @@ The first one is `current` that contains every MBean from every node in the Trin
 SHOW TABLES FROM example.current;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 MBean names map to non-standard table names, and must be quoted with double quotes when referencing them in a query. For example, the following query shows the JVM version of every node:
 
@@ -65,7 +65,7 @@ SELECT node, vmname, vmversion
 FROM example.current."java.lang:type=runtime";
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
                  node                 |              vmname               | vmversion
@@ -74,7 +74,7 @@ FROM example.current."java.lang:type=runtime";
 (1 row)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following query shows the open and maximum file descriptor counts for each node:
 
@@ -83,7 +83,7 @@ SELECT openfiledescriptorcount, maxfiledescriptorcount
 FROM example.current."java.lang:type=operatingsystem";
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
  openfiledescriptorcount | maxfiledescriptorcount
@@ -92,7 +92,7 @@ FROM example.current."java.lang:type=operatingsystem";
 (1 row)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The wildcard character `*` may be used with table names in the `current` schema. This allows matching several MBean objects within a single query. The following query returns information from the different Trino memory pools on each node:
 
@@ -101,7 +101,7 @@ SELECT freebytes, node, object_name
 FROM example.current."trino.memory:*type=memorypool*";
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
  freebytes  |  node   |                       object_name
@@ -112,7 +112,7 @@ FROM example.current."trino.memory:*type=memorypool*";
 (3 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `history` schema contains the list of tables configured in the connector properties file. The tables have the same columns as those in the current schema, but with an additional timestamp column that stores the time at which the snapshot was taken:
 
@@ -120,7 +120,7 @@ The `history` schema contains the list of tables configured in the connector pro
 SELECT "timestamp", "uptime" FROM example.history."java.lang:type=runtime";
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
         timestamp        | uptime
@@ -131,9 +131,9 @@ SELECT "timestamp", "uptime" FROM example.history."java.lang:type=runtime";
 (3 rows)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### SQL support[#](https://trino.io/docs/current/connector/jmx.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides globally available and read operation statements to access JMX information on your Trino nodes.
 

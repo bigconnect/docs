@@ -47,7 +47,7 @@ Note that there is no guarantee that Spark will choose the join strategy specifi
 spark.table("src").join(spark.table("records").hint("broadcast"), "key").show()
 ```
 
-For more details please refer to the documentation of [Join Hints](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-hints.html#join-hints).
+For more details please refer to the documentation of Join Hints.
 
 ### Coalesce Hints for SQL Queries
 
@@ -67,7 +67,7 @@ SELECT /*+ REBALANCE(c) */ * FROM t;
 SELECT /*+ REBALANCE(3, c) */ * FROM t;
 ```
 
-For more details please refer to the documentation of [Partitioning Hints](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-hints.html#partitioning-hints).
+For more details please refer to the documentation of Partitioning Hints.
 
 ### Adaptive Query Execution
 

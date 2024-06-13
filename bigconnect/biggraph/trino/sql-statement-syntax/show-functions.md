@@ -1,12 +1,12 @@
 # SHOW FUNCTIONS
 
-### Synopsis[#](https://trino.io/docs/current/sql/show-functions.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 SHOW FUNCTIONS [ FROM schema ] [ LIKE pattern ]
 ```
 
-### Description[#](https://trino.io/docs/current/sql/show-functions.html#description) <a href="#description" id="description"></a>
+### Description <a href="#description" id="description"></a>
 
 List functions in `schema` or all functions in the current session path. This can include built-in functions, functions from a custom plugin, and SQL routines.
 
@@ -23,7 +23,7 @@ Use the optional `FROM` keyword to only list functions in a specific catalog and
 
 Specify a pattern in the optional `LIKE` clause to filter the results to the desired subset.
 
-### Examples# <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 List all SQL routines and plugin functions in the `default` schema of the `example` catalog:
 
@@ -53,7 +53,7 @@ Example output:
  cf_getuser        | varchar     |                | scalar        | true          | Returns the current session's user
 ```
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 * Functions and operators
 * SQL routines

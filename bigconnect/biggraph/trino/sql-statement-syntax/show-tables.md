@@ -1,14 +1,14 @@
 # SHOW TABLES
 
-### Synopsis[#](https://trino.io/docs/current/sql/show-tables.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 SHOW TABLES [ FROM schema ] [ LIKE pattern ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description# <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 List the tables in `schema` or in the current schema.
 

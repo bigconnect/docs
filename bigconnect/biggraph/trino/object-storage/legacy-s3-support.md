@@ -1,10 +1,10 @@
 # Legacy S3 support
 
-The [Hive connector](https://trino.io/docs/current/connector/hive.html) can read and write tables that are stored in [Amazon S3](https://aws.amazon.com/s3/) or S3-compatible systems. This is accomplished by having a table or database location that uses an S3 prefix, rather than an HDFS prefix.
+The Hive connector can read and write tables that are stored in [Amazon S3](https://aws.amazon.com/s3/) or S3-compatible systems. This is accomplished by having a table or database location that uses an S3 prefix, rather than an HDFS prefix.
 
 Trino uses its own S3 filesystem for the URI prefixes `s3://`, `s3n://` and `s3a://`.
 
-### S3 configuration properties[#](https://trino.io/docs/current/object-storage/legacy-s3.html#s3-configuration-properties) <a href="#s3-configuration-properties" id="s3-configuration-properties"></a>
+### S3 configuration properties <a href="#s3-configuration-properties" id="s3-configuration-properties"></a>
 
 | Property name                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,17 +40,17 @@ Trino uses its own S3 filesystem for the URI prefixes `s3://`, `s3n://` and `s3a
 | `hive.s3.sts.endpoint`                  | Optional override for the sts endpoint given that IAM role based authentication via sts is used.                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `hive.s3.sts.region`                    | Optional override for the sts region given that IAM role based authentication via sts is used.                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
-### S3 credentials[#](https://trino.io/docs/current/object-storage/legacy-s3.html#s3-credentials) <a href="#s3-credentials" id="s3-credentials"></a>
+### S3 credentials <a href="#s3-credentials" id="s3-credentials"></a>
 
 If you are running Trino on Amazon EC2, using EMR or another facility, it is recommended that you use IAM Roles for EC2 to govern access to S3. To enable this, your EC2 instances need to be assigned an IAM Role which grants appropriate access to the data stored in the S3 bucket(s) you wish to use. It is also possible to configure an IAM role with `hive.s3.iam-role` that is used for accessing any S3 bucket. This is much cleaner than setting AWS access and secret keys in the `hive.s3.aws-access-key` and `hive.s3.aws-secret-key` settings, and also allows EC2 to automatically rotate credentials on a regular basis without any additional work on your part.
 
-### Custom S3 credentials provider[#](https://trino.io/docs/current/object-storage/legacy-s3.html#custom-s3-credentials-provider) <a href="#custom-s3-credentials-provider" id="custom-s3-credentials-provider"></a>
+### Custom S3 credentials provider <a href="#custom-s3-credentials-provider" id="custom-s3-credentials-provider"></a>
 
 You can configure a custom S3 credentials provider by setting the configuration property `trino.s3.credentials-provider` to the fully qualified class name of a custom AWS credentials provider implementation. The property must be set in the Hadoop configuration files referenced by the `hive.config.resources` Hive connector property.
 
 The class must implement the [AWSCredentialsProvider](http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/auth/AWSCredentialsProvider.html) interface and provide a two-argument constructor that takes a `java.net.URI` and a Hadoop `org.apache.hadoop.conf.Configuration` as arguments. A custom credentials provider can be used to provide temporary credentials from STS (using `STSSessionCredentialsProvider`), IAM role-based credentials (using `STSAssumeRoleSessionCredentialsProvider`), or credentials for a specific use case (e.g., bucket/user specific credentials).
 
-### S3 security mapping[#](https://trino.io/docs/current/object-storage/legacy-s3.html#s3-security-mapping) <a href="#s3-security-mapping" id="s3-security-mapping"></a>
+### S3 security mapping <a href="#s3-security-mapping" id="s3-security-mapping"></a>
 
 Trino supports flexible security mapping for S3, allowing for separate credentials or IAM roles for specific users or buckets/paths. The IAM role for a specific query can be selected from a list of allowed roles by providing it as an _extra credential_.
 
@@ -134,7 +134,7 @@ Example JSON configuration:
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 | Property name                                         | Description                                                                                                                                                                                                                                                                                        |
 | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -145,7 +145,7 @@ Example JSON configuration:
 | `hive.s3.security-mapping.refresh-period`             | How often to refresh the security mapping configuration.                                                                                                                                                                                                                                           |
 | `hive.s3.security-mapping.colon-replacement`          | The character or characters to be used in place of the colon (`:`) character when specifying an IAM role name as an extra credential. Any instances of this replacement value in the extra credential value will be converted to a colon. Choose a value that is not used in any of your IAM ARNs. |
 
-### Tuning properties[#](https://trino.io/docs/current/object-storage/legacy-s3.html#tuning-properties) <a href="#tuning-properties" id="tuning-properties"></a>
+### Tuning properties <a href="#tuning-properties" id="tuning-properties"></a>
 
 The following tuning properties affect the behavior of the client used by the Trino S3 filesystem when communicating with S3. Most of these parameters affect settings on the `ClientConfiguration` object associated with the `AmazonS3Client`.
 
@@ -162,7 +162,7 @@ The following tuning properties affect the behavior of the client used by the Tr
 | `hive.s3.multipart.min-file-size` | Minimum file size before multi-part upload to S3 is used.                                         | `16 MB`                    |
 | `hive.s3.multipart.min-part-size` | Minimum multi-part upload part size.                                                              | `5 MB`                     |
 
-### S3 data encryption[#](https://trino.io/docs/current/object-storage/legacy-s3.html#s3-data-encryption) <a href="#s3-data-encryption" id="s3-data-encryption"></a>
+### S3 data encryption <a href="#s3-data-encryption" id="s3-data-encryption"></a>
 
 Trino supports reading and writing encrypted data in S3 using both server-side encryption with S3 managed keys and client-side encryption using either the Amazon KMS or a software plugin to manage AES encryption keys.
 

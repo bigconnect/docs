@@ -2,14 +2,14 @@
 
 The Kudu connector allows querying, inserting and deleting data in [Apache Kudu](https://kudu.apache.org/).
 
-### Requirements[#](https://trino.io/docs/current/connector/kudu.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To connect to Kudu, you need:
 
 * Kudu version 1.13.0 or higher.
 * Network access from the Trino coordinator and workers to Kudu. Port 7051 is the default port.
 
-### Configuration[#](https://trino.io/docs/current/connector/kudu.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the Kudu connector, create a catalog properties file `etc/catalog/kudu.properties` with the following contents, replacing the properties as appropriate:
 
@@ -51,9 +51,9 @@ kudu.client.master-addresses=localhost
 #kudu.allow-local-scheduling = false
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Kerberos support[#](https://trino.io/docs/current/connector/kudu.html#kerberos-support) <a href="#kerberos-support" id="kerberos-support"></a>
+
+### Kerberos support <a href="#kerberos-support" id="kerberos-support"></a>
 
 In order to connect to a kudu cluster that uses `kerberos` authentication, you need to configure the following kudu properties:
 
@@ -75,13 +75,13 @@ kudu.authentication.config = /path/to/kerberos/krb5.conf
 kudu.authentication.server.principal.primary = kudu
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Querying data[#](https://trino.io/docs/current/connector/kudu.html#querying-data) <a href="#querying-data" id="querying-data"></a>
+
+### Querying data <a href="#querying-data" id="querying-data"></a>
 
 Apache Kudu does not support schemas, i.e. namespaces for tables. The connector can optionally emulate schemas by table naming conventions.
 
-#### Default behaviour (without schema emulation)[#](https://trino.io/docs/current/connector/kudu.html#default-behaviour-without-schema-emulation) <a href="#default-behaviour-without-schema-emulation" id="default-behaviour-without-schema-emulation"></a>
+#### Default behaviour (without schema emulation) <a href="#default-behaviour-without-schema-emulation" id="default-behaviour-without-schema-emulation"></a>
 
 The emulation of schemas is disabled by default. In this case all Kudu tables are part of the `default` schema.
 
@@ -89,7 +89,7 @@ For example, a Kudu table named `orders` can be queried in Trino with `SELECT * 
 
 Table names can contain any characters in Kudu. In this case, use double quotes. E.g. To query a Kudu table named `special.table!` use `SELECT * FROM example.default."special.table!"`.
 
-**Example**[**#**](https://trino.io/docs/current/connector/kudu.html#example)
+**Example**
 
 *   Create a users table in the default schema:
 
@@ -104,16 +104,16 @@ Table names can contain any characters in Kudu. In this case, use double quotes.
     );
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-    On creating a Kudu table you must/can specify additional information about the primary key, encoding, and compression of columns and hash or range partitioning. For details see the [Creating a table](https://trino.io/docs/current/connector/kudu.html#kudu-create-table) section.
+
+    On creating a Kudu table you must/can specify additional information about the primary key, encoding, and compression of columns and hash or range partitioning. For details see the Creating a table section.
 *   Describe the table:
 
     ```
     DESCRIBE example.default.users;
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     ```
        Column   |  Type   |                      Extra                      | Comment
@@ -131,16 +131,14 @@ Table names can contain any characters in Kudu. In this case, use double quotes.
     INSERT INTO example.default.users VALUES (1, 'Donald', 'Duck'), (2, 'Mickey', 'Mouse');
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 *   Select the inserted data:
 
     ```
     SELECT * FROM example.default.users;
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### Behavior with schema emulation[#](https://trino.io/docs/current/connector/kudu.html#behavior-with-schema-emulation) <a href="#behavior-with-schema-emulation" id="behavior-with-schema-emulation"></a>
+#### Behavior with schema emulation <a href="#behavior-with-schema-emulation" id="behavior-with-schema-emulation"></a>
 
 If schema emulation has been enabled in the connector properties, i.e. `etc/catalog/example.properties`, tables are mapped to schemas depending on some conventions.
 
@@ -165,11 +163,11 @@ If schema emulation has been enabled in the connector properties, i.e. `etc/cata
 
     As schemas are not directly supported by Kudu, a special table named `presto::$schemas` is created for managing the schemas.
 
-### Type mapping[#](https://trino.io/docs/current/connector/kudu.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
-Because Trino and Kudu each support types that the other does not, this connector [modifies some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
+Because Trino and Kudu each support types that the other does not, this connector modifies some types when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
-#### Kudu type to Trino type mapping[#](https://trino.io/docs/current/connector/kudu.html#kudu-type-to-trino-type-mapping) <a href="#kudu-type-to-trino-type-mapping" id="kudu-type-to-trino-type-mapping"></a>
+#### Kudu type to Trino type mapping <a href="#kudu-type-to-trino-type-mapping" id="kudu-type-to-trino-type-mapping"></a>
 
 The connector maps Kudu types to the corresponding Trino types following this table:
 
@@ -189,7 +187,7 @@ The connector maps Kudu types to the corresponding Trino types following this ta
 
 No other types are supported.
 
-#### Trino type to Kudu type mapping[#](https://trino.io/docs/current/connector/kudu.html#trino-type-to-kudu-type-mapping) <a href="#trino-type-to-kudu-type-mapping" id="trino-type-to-kudu-type-mapping"></a>
+#### Trino type to Kudu type mapping <a href="#trino-type-to-kudu-type-mapping" id="trino-type-to-kudu-type-mapping"></a>
 
 The connector maps Trino types to the corresponding Kudu types following this table:
 
@@ -210,7 +208,7 @@ The connector maps Trino types to the corresponding Kudu types following this ta
 
 No other types are supported.
 
-### SQL support# <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides read and write access to data and metadata in Kudu. In addition to the globally available and read operation statements, the connector supports the following features:
 
@@ -224,7 +222,7 @@ The connector provides read and write access to data and metadata in Kudu. In ad
 * CREATE SCHEMA, see also Creating schemas
 * DROP SCHEMA, see also Dropping schemas
 
-#### Inserting into tables# <a href="#inserting-into-tables" id="inserting-into-tables"></a>
+#### Inserting into tables <a href="#inserting-into-tables" id="inserting-into-tables"></a>
 
 `INSERT INTO ... values` and `INSERT INTO ... select` behave like `UPSERT`.
 
@@ -232,15 +230,15 @@ The connector provides read and write access to data and metadata in Kudu. In ad
 
 If a `WHERE` clause is specified, the `DELETE` operation only works if the predicate in the clause can be fully pushed down to the data source.
 
-#### Creating schemas[#](https://trino.io/docs/current/connector/kudu.html#creating-schemas) <a href="#creating-schemas" id="creating-schemas"></a>
+#### Creating schemas <a href="#creating-schemas" id="creating-schemas"></a>
 
 `CREATE SCHEMA` is only allowed if schema emulation is enabled. See the Behavior with schema emulation section.
 
-#### Dropping schemas[#](https://trino.io/docs/current/connector/kudu.html#dropping-schemas) <a href="#dropping-schemas" id="dropping-schemas"></a>
+#### Dropping schemas <a href="#dropping-schemas" id="dropping-schemas"></a>
 
 `DROP SCHEMA` is only allowed if schema emulation is enabled. See the Behavior with schema emulation section.
 
-#### Creating a table[#](https://trino.io/docs/current/connector/kudu.html#creating-a-table) <a href="#creating-a-table" id="creating-a-table"></a>
+#### Creating a table <a href="#creating-a-table" id="creating-a-table"></a>
 
 On creating a Kudu table, you need to provide the columns and their types, of course, but Kudu needs information about partitioning and optionally for column encoding and compression.
 
@@ -259,7 +257,7 @@ CREATE TABLE user_events (
 );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The primary key consists of `user_id` and `event_name`. The table is partitioned into five partitions by hash values of the column `user_id`, and the `number_of_replicas` is explicitly set to 3.
 
@@ -271,7 +269,7 @@ Kudu supports two different kinds of partitioning: hash and range partitioning. 
 
 For more details see Partitioning design.
 
-#### Column properties[#](https://trino.io/docs/current/connector/kudu.html#column-properties) <a href="#column-properties" id="column-properties"></a>
+#### Column properties <a href="#column-properties" id="column-properties"></a>
 
 Besides column name and type, you can specify some more properties of a column.
 
@@ -293,9 +291,9 @@ CREATE TABLE example_table (
 ) WITH (...);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Changing tables[#](https://trino.io/docs/current/connector/kudu.html#changing-tables) <a href="#changing-tables" id="changing-tables"></a>
+
+#### Changing tables <a href="#changing-tables" id="changing-tables"></a>
 
 Adding a column to an existing table uses the SQL statement `ALTER TABLE ... ADD COLUMN ...`. You can specify the same column properties as on creating a table.
 
@@ -305,7 +303,7 @@ Example:
 ALTER TABLE example_table ADD COLUMN extraInfo VARCHAR WITH (nullable = true, encoding = 'plain')
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 See also Column properties.
 
@@ -313,18 +311,18 @@ See also Column properties.
 
 `ALTER TABLE ... DROP COLUMN` is only allowed if not part of a primary key.
 
-### Procedures[#](https://trino.io/docs/current/connector/kudu.html#procedures) <a href="#procedures" id="procedures"></a>
+### Procedures <a href="#procedures" id="procedures"></a>
 
 * `CALL example.system.add_range_partition` see Managing range partitions
 * `CALL example.system.drop_range_partition` see Managing range partitions
 
-#### Partitioning design[#](https://trino.io/docs/current/connector/kudu.html#partitioning-design) <a href="#partitioning-design" id="partitioning-design"></a>
+#### Partitioning design <a href="#partitioning-design" id="partitioning-design"></a>
 
 A table must have at least one partitioning (either hash or range). It can have at most one range partitioning, but multiple hash partitioning ‘levels’. For more details see Apache Kudu documentation: Partitioning.
 
 If you create a Kudu table in Trino, the partitioning design is given by several table properties.
 
-**Hash partitioning**[**#**](https://trino.io/docs/current/connector/kudu.html#hash-partitioning)
+**Hash partitioning**
 
 You can provide the first hash partition group with two table properties:
 
@@ -343,7 +341,7 @@ CREATE TABLE example_table (
 )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This defines a hash partitioning with the columns `col1` and `col2` distributed over 4 partitions.
 
@@ -364,11 +362,11 @@ CREATE TABLE example_table (
 )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This defines a two-level hash partitioning, with the first hash partition group over the column `col1` distributed over 2 buckets, and the second hash partition group over the column `col2` distributed over 3 buckets. As a result you have table with 2 x 3 = 6 partitions.
 
-**Range partitioning**[**#**](https://trino.io/docs/current/connector/kudu.html#range-partitioning)
+**Range partitioning**
 
 You can provide at most one range partitioning in Apache Kudu. The columns are defined with the table property `partition_by_range_columns`. The ranges themselves are given either in the table property `range_partitions` on creating the table. Or alternatively, the procedures `kudu.system.add_range_partition` and `kudu.system.drop_range_partition` can be used to manage range partitions for existing tables. For both ways see below for more details.
 
@@ -391,11 +389,11 @@ CREATE TABLE events (
 )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This defines a tree-level partitioning with two hash partition groups and one range partitioning on the `event_time` column. Two range partitions are created with a split at “2018-01-01T00:00:00”.
 
-#### Table property `range_partitions`[#](https://trino.io/docs/current/connector/kudu.html#table-property-range-partitions) <a href="#table-property-range-partitions" id="table-property-range-partitions"></a>
+#### Table property `range_partitions` <a href="#table-property-range-partitions" id="table-property-range-partitions"></a>
 
 With the `range_partitions` table property you specify the concrete range partitions to be created. The range partition definition itself must be given in the table property `partition_design` separately.
 
@@ -416,7 +414,7 @@ CREATE TABLE events (
 );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This creates a table with a hash partition on column `serialno` with 4 buckets and range partitioning on column `event_time`. Additionally, three range partitions are created:
 
@@ -426,7 +424,7 @@ This creates a table with a hash partition on column `serialno` with 4 buckets a
 
 This means any attempt to add rows with `event_time` of year 2018 or greater fails, as no partition is defined. The next section shows how to define a new range partition for an existing table.
 
-**Managing range partitions**[**#**](https://trino.io/docs/current/connector/kudu.html#managing-range-partitions)
+**Managing range partitions**
 
 For existing tables, there are procedures to add and drop a range partition.
 
@@ -436,14 +434,14 @@ For existing tables, there are procedures to add and drop a range partition.
     CALL example.system.add_range_partition(<schema>, <table>, <range_partition_as_json_string>)
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 *   dropping a range partition
 
     ```
     CALL example.system.drop_range_partition(<schema>, <table>, <range_partition_as_json_string>)
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     * `<schema>`: schema of the table
     * `<table>`: table names
@@ -468,13 +466,13 @@ Example:
 CALL example.system.add_range_partition('example_schema', 'events', '{"lower": "2018-01-01", "upper": "2018-06-01"}')
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This adds a range partition for a table `events` in the schema `example_schema` with the lower bound `2018-01-01`, more exactly `2018-01-01T00:00:00.000`, and the upper bound `2018-07-01`.
 
 Use the SQL statement `SHOW CREATE TABLE` to query the existing range partitions (they are shown in the table property `range_partitions`).
 
-### Limitations[#](https://trino.io/docs/current/connector/kudu.html#limitations) <a href="#limitations" id="limitations"></a>
+### Limitations <a href="#limitations" id="limitations"></a>
 
 * Only lower case table and column names in Kudu are supported.
 

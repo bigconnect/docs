@@ -1,6 +1,6 @@
 # IF
 
-### Synopsis[#](https://trino.io/docs/current/routines/if.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 IF condition
@@ -11,15 +11,15 @@ IF condition
 END IF
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/routines/if.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 The `IF THEN` statement is an optional construct to allow conditional processing in SQL routines. Each `condition` following an `IF` or `ELSEIF` must evaluate to a boolean. The result of processing the expression must result in a boolean `true` value to process the `statements` in the `THEN` block. A result of `false` results in skipping the `THEN` block and moving to evaluate the next `ELSEIF` and `ELSE` blocks in order.
 
 The `ELSEIF` and `ELSE` segments are optional.
 
-### Examples[#](https://trino.io/docs/current/routines/if.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 ```
 FUNCTION simple_if(a bigint)
@@ -35,11 +35,11 @@ FUNCTION simple_if(a bigint)
   END
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Further examples of varying complexity that cover usage of the `IF` statement in combination with other statements are available in the SQL routines examples documentation.
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 * Introduction to SQL routines
 * Conditional expressions using `IF`

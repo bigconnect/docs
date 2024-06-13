@@ -4,7 +4,7 @@ Trino separates the concept of the principal who authenticates to the coordinato
 
 By default, the Trino coordinator allows any principal to run queries as any Trino user. In a secure environment, this is probably not desirable behavior and likely requires customization.
 
-### Implementation[#](https://trino.io/docs/current/develop/system-access-control.html#implementation) <a href="#implementation" id="implementation"></a>
+### Implementation <a href="#implementation" id="implementation"></a>
 
 `SystemAccessControlFactory` is responsible for creating a `SystemAccessControl` instance. It also defines a `SystemAccessControl` name which is used by the administrator in a Trino configuration.
 
@@ -16,7 +16,7 @@ By default, the Trino coordinator allows any principal to run queries as any Tri
 
 The implementation of `SystemAccessControl` and `SystemAccessControlFactory` must be wrapped as a plugin and installed on the Trino cluster.
 
-### Configuration[#](https://trino.io/docs/current/develop/system-access-control.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 After a plugin that implements `SystemAccessControl` and `SystemAccessControlFactory` has been installed on the coordinator, it is configured using the file(s) specified by the `access-control.config-files` property (the default is a single `etc/access-control.properties` file). All of the properties other than `access-control.name` are specific to the `SystemAccessControl` implementation.
 

@@ -38,11 +38,11 @@ When spill encryption is enabled (`spill-encryption-enabled` property in Spillin
 
 Not all operations support spilling to disk, and each handles spilling differently. Currently, the mechanism is implemented for the following operations.
 
-#### Joins[#](https://trino.io/docs/current/admin/spill.html#joins) <a href="#joins" id="joins"></a>
+#### Joins <a href="#joins" id="joins"></a>
 
 During the join operation, one of the tables being joined is stored in memory. This table is called the build table. The rows from the other table stream through and are passed onto the next operation, if they match rows in the build table. The most memory-intensive part of the join is this build table.
 
-When the task concurrency is greater than one, the build table is partitioned. The number of partitions is equal to the value of the `task.concurrency` configuration parameter (see [Task properties](https://trino.io/docs/current/admin/properties-task.html)).
+When the task concurrency is greater than one, the build table is partitioned. The number of partitions is equal to the value of the `task.concurrency` configuration parameter (see Task properties).
 
 When the build table is partitioned, the spill-to-disk mechanism can decrease the peak memory usage needed by the join operation. When a query approaches the memory limit, a subset of the partitions of the build table gets spilled to disk, along with rows from the other table that fall into those same partitions. The number of partitions, that get spilled, influences the amount of disk space needed.
 

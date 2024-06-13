@@ -2,14 +2,14 @@
 
 The Oracle connector allows querying and creating tables in an external Oracle database. Connectors let Trino join data provided by different databases, like Oracle and Hive, or different Oracle database instances.
 
-### Requirements[#](https://trino.io/docs/current/connector/oracle.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To connect to Oracle, you need:
 
 * Oracle 19 or higher.
 * Network access from the Trino coordinator and workers to Oracle. Port 1521 is the default port.
 
-### Configuration[#](https://trino.io/docs/current/connector/oracle.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the Oracle connector as the `example` catalog, create a file named `example.properties` in `etc/catalog`. Include the following connection properties in the file:
 
@@ -23,7 +23,7 @@ connection-user=root
 connection-password=secret
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `connection-url` defines the connection information and parameters to pass to the JDBC driver. The Oracle connector uses the Oracle JDBC Thin driver, and the syntax of the URL may be different depending on your Oracle configuration. For example, the connection URL is different if you are connecting to an Oracle SID or an Oracle service name. See the [Oracle Database JDBC driver documentation](https://docs.oracle.com/en/database/oracle/oracle-database/19/jjdbc/data-sources-and-URLs.html) for more information.
 
@@ -41,7 +41,7 @@ oracle.connection-pool.min-size=1
 oracle.connection-pool.inactive-timeout=20m
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 To disable connection pooling, update properties to include the following:
 
@@ -49,7 +49,7 @@ To disable connection pooling, update properties to include the following:
 oracle.connection-pool.enabled=false
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### Data source authentication[#](https://trino.io/docs/current/connector/oracle.html#data-source-authentication) <a href="#data-source-authentication" id="data-source-authentication"></a>
 
@@ -64,29 +64,29 @@ You can use secrets to avoid storing sensitive values in the catalog properties 
 
 The following table describes configuration properties for connection credentials:
 
-| Property name                           | Description                                                                                                                                                                                            |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `credential-provider.type`              | Type of the credential provider. Must be one of `INLINE`, `FILE`, or `KEYSTORE`; defaults to `INLINE`.                                                                                                 |
-| `connection-user`                       | Connection user name.                                                                                                                                                                                  |
-| `connection-password`                   | Connection password.                                                                                                                                                                                   |
-| `user-credential-name`                  | Name of the extra credentials property, whose value to use as the user name. See `extraCredentials` in [Parameter reference](https://trino.io/docs/current/client/jdbc.html#jdbc-parameter-reference). |
-| `password-credential-name`              | Name of the extra credentials property, whose value to use as the password.                                                                                                                            |
-| `connection-credential-file`            | Location of the properties file where credentials are present. It must contain the `connection-user` and `connection-password` properties.                                                             |
-| `keystore-file-path`                    | The location of the Java Keystore file, from which to read credentials.                                                                                                                                |
-| `keystore-type`                         | File format of the keystore file, for example `JKS` or `PEM`.                                                                                                                                          |
-| `keystore-password`                     | Password for the key store.                                                                                                                                                                            |
-| `keystore-user-credential-name`         | Name of the key store entity to use as the user name.                                                                                                                                                  |
-| `keystore-user-credential-password`     | Password for the user name key store entity.                                                                                                                                                           |
-| `keystore-password-credential-name`     | Name of the key store entity to use as the password.                                                                                                                                                   |
-| `keystore-password-credential-password` | Password for the password key store entity.                                                                                                                                                            |
+| Property name                           | Description                                                                                                                                |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `credential-provider.type`              | Type of the credential provider. Must be one of `INLINE`, `FILE`, or `KEYSTORE`; defaults to `INLINE`.                                     |
+| `connection-user`                       | Connection user name.                                                                                                                      |
+| `connection-password`                   | Connection password.                                                                                                                       |
+| `user-credential-name`                  | Name of the extra credentials property, whose value to use as the user name. See `extraCredentials` in Parameter reference.                |
+| `password-credential-name`              | Name of the extra credentials property, whose value to use as the password.                                                                |
+| `connection-credential-file`            | Location of the properties file where credentials are present. It must contain the `connection-user` and `connection-password` properties. |
+| `keystore-file-path`                    | The location of the Java Keystore file, from which to read credentials.                                                                    |
+| `keystore-type`                         | File format of the keystore file, for example `JKS` or `PEM`.                                                                              |
+| `keystore-password`                     | Password for the key store.                                                                                                                |
+| `keystore-user-credential-name`         | Name of the key store entity to use as the user name.                                                                                      |
+| `keystore-user-credential-password`     | Password for the user name key store entity.                                                                                               |
+| `keystore-password-credential-name`     | Name of the key store entity to use as the password.                                                                                       |
+| `keystore-password-credential-password` | Password for the password key store entity.                                                                                                |
 
-#### Multiple Oracle servers[#](https://trino.io/docs/current/connector/oracle.html#multiple-oracle-servers) <a href="#multiple-oracle-servers" id="multiple-oracle-servers"></a>
+#### Multiple Oracle servers <a href="#multiple-oracle-servers" id="multiple-oracle-servers"></a>
 
 If you want to connect to multiple Oracle servers, configure another instance of the Oracle connector as a separate catalog.
 
 To add another Oracle catalog, create a new properties file. For example, if you name the property file `sales.properties`, Trino creates a catalog named `sales`.
 
-#### General configuration properties[#](https://trino.io/docs/current/connector/oracle.html#general-configuration-properties) <a href="#general-configuration-properties" id="general-configuration-properties"></a>
+#### General configuration properties <a href="#general-configuration-properties" id="general-configuration-properties"></a>
 
 The following table describes general catalog configuration properties for the connector:
 
@@ -106,7 +106,7 @@ The following table describes general catalog configuration properties for the c
 | `dynamic-filtering.enabled`                                 | Push down dynamic filters into JDBC queries. Defaults to `true`.                                                                                                                                                                                                                                                                                                          |
 | `dynamic-filtering.wait-timeout`                            | Maximum [duration](https://trino.io/docs/current/admin/properties.html#prop-type-duration) for which Trino waits for dynamic filters to be collected from the build side of joins before starting a JDBC query. Using a large timeout can potentially result in more detailed dynamic filters. However, it can also increase latency for some queries. Defaults to `20s`. |
 
-#### Appending query metadata[#](https://trino.io/docs/current/connector/oracle.html#appending-query-metadata) <a href="#appending-query-metadata" id="appending-query-metadata"></a>
+#### Appending query metadata <a href="#appending-query-metadata" id="appending-query-metadata"></a>
 
 The optional parameter `query.comment-format` allows you to configure a SQL comment that is sent to the datasource with each query. The format of this comment can contain any characters and the following metadata:
 
@@ -123,7 +123,7 @@ The following example sets a simple comment that identifies each query sent by T
 query.comment-format=Query sent by Trino.
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 With this configuration, a query such as `SELECT * FROM example_table;` is sent to the datasource with the comment appended:
 
@@ -131,7 +131,7 @@ With this configuration, a query such as `SELECT * FROM example_table;` is sent 
 SELECT * FROM example_table; /*Query sent by Trino.*/
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following example improves on the preceding example by using metadata:
 
@@ -139,7 +139,7 @@ The following example improves on the preceding example by using metadata:
 query.comment-format=Query $QUERY_ID sent by user $USER from Trino.
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If `Jane` sent the query with the query identifier `20230622_180528_00000_bkizg`, the following comment string is sent to the datasource:
 
@@ -147,17 +147,17 @@ If `Jane` sent the query with the query identifier `20230622_180528_00000_bkizg`
 SELECT * FROM example_table; /*Query 20230622_180528_00000_bkizg sent by user Jane from Trino.*/
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note
 
 Certain JDBC driver settings and logging configurations might cause the comment to be removed.
 
-#### Domain compaction threshold[#](https://trino.io/docs/current/connector/oracle.html#domain-compaction-threshold) <a href="#domain-compaction-threshold" id="domain-compaction-threshold"></a>
+#### Domain compaction threshold <a href="#domain-compaction-threshold" id="domain-compaction-threshold"></a>
 
 Pushing down a large list of predicates to the data source can compromise performance. Trino compacts large predicates into a simpler range predicate by default to ensure a balance between performance and predicate pushdown. If necessary, the threshold for this compaction can be increased to improve performance when the data source is capable of taking advantage of large predicates. Increasing this threshold may improve pushdown of large dynamic filters. The `domain-compaction-threshold` catalog configuration property or the `domain_compaction_threshold` catalog session property can be used to adjust the default value of `32` for this threshold.
 
-#### Procedures[#](https://trino.io/docs/current/connector/oracle.html#procedures) <a href="#procedures" id="procedures"></a>
+#### Procedures <a href="#procedures" id="procedures"></a>
 
 *   `system.flush_metadata_cache()`
 
@@ -168,7 +168,7 @@ Pushing down a large list of predicates to the data source can compromise perfor
     CALL system.flush_metadata_cache()
     ```
 
-#### Case insensitive matching[#](https://trino.io/docs/current/connector/oracle.html#case-insensitive-matching) <a href="#case-insensitive-matching" id="case-insensitive-matching"></a>
+#### Case insensitive matching <a href="#case-insensitive-matching" id="case-insensitive-matching"></a>
 
 When `case-insensitive-name-matching` is set to `true`, Trino is able to query non-lowercase schemas and tables by maintaining a mapping of the lowercase name to the actual name in the remote system. However, if two schemas and/or tables have names that differ only in case (such as “customers” and “Customers”) then Trino fails to query them due to ambiguity.
 
@@ -213,13 +213,13 @@ case-insensitive-name-mapping.refresh-period=30s
 
 
 
-#### Non-transactional INSERT[#](https://trino.io/docs/current/connector/oracle.html#non-transactional-insert) <a href="#non-transactional-insert" id="non-transactional-insert"></a>
+#### Non-transactional INSERT <a href="#non-transactional-insert" id="non-transactional-insert"></a>
 
-The connector supports adding rows using [INSERT statements](https://trino.io/docs/current/sql/insert.html). By default, data insertion is performed by writing data to a temporary table. You can skip this step to improve performance and write directly to the target table. Set the `insert.non-transactional-insert.enabled` catalog property or the corresponding `non_transactional_insert` catalog session property to `true`.
+The connector supports adding rows using INSERT statements. By default, data insertion is performed by writing data to a temporary table. You can skip this step to improve performance and write directly to the target table. Set the `insert.non-transactional-insert.enabled` catalog property or the corresponding `non_transactional_insert` catalog session property to `true`.
 
 Note that with this property enabled, data can be corrupted in rare cases where exceptions occur during the insert operation. With transactions disabled, no rollback can be performed.
 
-### Querying Oracle[#](https://trino.io/docs/current/connector/oracle.html#querying-oracle) <a href="#querying-oracle" id="querying-oracle"></a>
+### Querying Oracle <a href="#querying-oracle" id="querying-oracle"></a>
 
 The Oracle connector provides a schema for every Oracle database.
 
@@ -264,11 +264,11 @@ SELECT * FROM example.web.clicks;
 
 
 
-### Type mapping[#](https://trino.io/docs/current/connector/oracle.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 Because Trino and Oracle each support types that the other does not, this connector modifies some types when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
-#### Oracle to Trino type mapping[#](https://trino.io/docs/current/connector/oracle.html#oracle-to-trino-type-mapping) <a href="#oracle-to-trino-type-mapping" id="oracle-to-trino-type-mapping"></a>
+#### Oracle to Trino type mapping <a href="#oracle-to-trino-type-mapping" id="oracle-to-trino-type-mapping"></a>
 
 Trino supports selecting Oracle database types. This table shows the Oracle to Trino data type mapping:
 
@@ -294,7 +294,7 @@ Trino supports selecting Oracle database types. This table shows the Oracle to T
 
 No other types are supported.
 
-#### Trino to Oracle type mapping[#](https://trino.io/docs/current/connector/oracle.html#trino-to-oracle-type-mapping) <a href="#trino-to-oracle-type-mapping" id="trino-to-oracle-type-mapping"></a>
+#### Trino to Oracle type mapping <a href="#trino-to-oracle-type-mapping" id="trino-to-oracle-type-mapping"></a>
 
 Trino supports creating tables with the following types in an Oracle database. The table shows the mappings from Trino to Oracle data types:
 
@@ -321,7 +321,7 @@ For types not listed in the table below, Trino can’t perform the `CREATE TABLE
 
 No other types are supported.
 
-#### Mapping numeric types[#](https://trino.io/docs/current/connector/oracle.html#mapping-numeric-types) <a href="#mapping-numeric-types" id="mapping-numeric-types"></a>
+#### Mapping numeric types <a href="#mapping-numeric-types" id="mapping-numeric-types"></a>
 
 An Oracle `NUMBER(p, s)` maps to Trino’s `DECIMAL(p, s)` except in these conditions:
 
@@ -334,7 +334,7 @@ If `s` is negative, `NUMBER(p, s)` maps to `DECIMAL(p + s, 0)`.
 
 For Oracle `NUMBER` (without precision and scale), you can change `oracle.number.default-scale=s` and map the column to `DECIMAL(38, s)`.
 
-#### Mapping datetime types[#](https://trino.io/docs/current/connector/oracle.html#mapping-datetime-types) <a href="#mapping-datetime-types" id="mapping-datetime-types"></a>
+#### Mapping datetime types <a href="#mapping-datetime-types" id="mapping-datetime-types"></a>
 
 Writing a timestamp with fractional second precision (`p`) greater than 9 rounds the fractional seconds to nine digits.
 
@@ -344,7 +344,7 @@ Warning
 
 Due to date and time differences in the libraries used by Trino and the Oracle JDBC driver, attempting to insert or select a datetime value earlier than `1582-10-15` results in an incorrect date inserted.
 
-#### Mapping character types[#](https://trino.io/docs/current/connector/oracle.html#mapping-character-types) <a href="#mapping-character-types" id="mapping-character-types"></a>
+#### Mapping character types <a href="#mapping-character-types" id="mapping-character-types"></a>
 
 Trino’s `VARCHAR(n)` maps to `VARCHAR2(n CHAR)` if `n` is no greater than 4000. A larger or unbounded `VARCHAR` maps to `NCLOB`.
 
@@ -372,7 +372,7 @@ SELECT LENGTH(col) FROM vals;
 
 Attempting to write a `CHAR` that doesn’t fit in the column’s actual size fails. This is also true for the equivalent `VARCHAR` types.
 
-#### Type mapping configuration properties[#](https://trino.io/docs/current/connector/oracle.html#type-mapping-configuration-properties) <a href="#type-mapping-configuration-properties" id="type-mapping-configuration-properties"></a>
+#### Type mapping configuration properties <a href="#type-mapping-configuration-properties" id="type-mapping-configuration-properties"></a>
 
 The following properties can be used to configure how data types from the connected data source are mapped to Trino data types and how the metadata is cached in Trino.
 
@@ -388,7 +388,7 @@ The following properties can be used to configure how data types from the connec
 | `oracle.number.default-scale` | `number_default_scale` | Default Trino `DECIMAL` scale for Oracle `NUMBER` (without precision and scale) date type. When not set then such column is treated as not supported.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | not set       |
 | `oracle.number.rounding-mode` | `number_rounding_mode` | <p>Rounding mode for the Oracle <code>NUMBER</code> data type. This is useful when Oracle <code>NUMBER</code> data type specifies higher scale than is supported in Trino. Possible values are:</p><ul><li><code>UNNECESSARY</code> - Rounding mode to assert that the requested operation has an exact result, hence no rounding is necessary.</li><li><code>CEILING</code> - Rounding mode to round towards positive infinity.</li><li><code>FLOOR</code> - Rounding mode to round towards negative infinity.</li><li><code>HALF_DOWN</code> - Rounding mode to round towards <code>nearest neighbor</code> unless both neighbors are equidistant, in which case rounding down is used.</li><li><code>HALF_EVEN</code> - Rounding mode to round towards the <code>nearest neighbor</code> unless both neighbors are equidistant, in which case rounding towards the even neighbor is performed.</li><li><code>HALF_UP</code> - Rounding mode to round towards <code>nearest neighbor</code> unless both neighbors are equidistant, in which case rounding up is used</li><li><code>UP</code> - Rounding mode to round towards zero.</li><li><code>DOWN</code> - Rounding mode to round towards zero.</li></ul> | `UNNECESSARY` |
 
-### SQL support[#](https://trino.io/docs/current/connector/oracle.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides read access and write access to data and metadata in Oracle. In addition to the globally available and read operation statements, the connector supports the following statements:
 
@@ -402,7 +402,7 @@ The connector provides read access and write access to data and metadata in Orac
 * ALTER TABLE
 * COMMENT
 
-#### UPDATE# <a href="#update" id="update"></a>
+#### UPDATE <a href="#update" id="update"></a>
 
 Only `UPDATE` statements with constant assignments and predicates are supported. For example, the following statement is supported because the values assigned are constants:
 
@@ -410,7 +410,7 @@ Only `UPDATE` statements with constant assignments and predicates are supported.
 UPDATE table SET col1 = 1 WHERE col3 = 1
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Arithmetic expressions, function calls, and other non-constant `UPDATE` statements are not supported. For example, the following statement is not supported because arithmetic expressions cannot be used with the `SET` command:
 
@@ -418,7 +418,7 @@ Arithmetic expressions, function calls, and other non-constant `UPDATE` statemen
 UPDATE table SET col1 = col2 + 2 WHERE col3 = 1
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `=`, `!=`, `>`, `<`, `>=`, `<=`, `IN`, `NOT IN` operators are supported in predicates. The following statement is not supported because the `AND` operator cannot be used in predicates:
 
@@ -426,7 +426,7 @@ The `=`, `!=`, `>`, `<`, `>=`, `<=`, `IN`, `NOT IN` operators are supported in p
 UPDATE table SET col1 = 1 WHERE col3 = 1 AND col2 = 3
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 All column values of a table row cannot be updated simultaneously. For a three column table, the following statement is not supported:
 
@@ -434,13 +434,13 @@ All column values of a table row cannot be updated simultaneously. For a three c
 UPDATE table SET col1 = 1, col2 = 2, col3 = 3 WHERE col3 = 1
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### SQL DELETE[#](https://trino.io/docs/current/connector/oracle.html#sql-delete) <a href="#sql-delete" id="sql-delete"></a>
+
+#### SQL DELETE <a href="#sql-delete" id="sql-delete"></a>
 
 If a `WHERE` clause is specified, the `DELETE` operation only works if the predicate in the clause can be fully pushed down to the data source.
 
-#### ALTER TABLE RENAME TO[#](https://trino.io/docs/current/connector/oracle.html#alter-table-rename-to) <a href="#alter-table-rename-to" id="alter-table-rename-to"></a>
+#### ALTER TABLE RENAME TO <a href="#alter-table-rename-to" id="alter-table-rename-to"></a>
 
 The connector does not support renaming tables across multiple schemas. For example, the following statement is supported:
 
@@ -448,7 +448,7 @@ The connector does not support renaming tables across multiple schemas. For exam
 ALTER TABLE example.schema_one.table_one RENAME TO example.schema_one.table_two
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following statement attempts to rename a table across schemas, and therefore is not supported:
 
@@ -456,17 +456,17 @@ The following statement attempts to rename a table across schemas, and therefore
 ALTER TABLE example.schema_one.table_one RENAME TO example.schema_two.table_two
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ### Fault-tolerant execution support[#](https://trino.io/docs/current/connector/oracle.html#fault-tolerant-execution-support) <a href="#fault-tolerant-execution-support" id="fault-tolerant-execution-support"></a>
 
 The connector supports Fault-tolerant execution of query processing. Read and write operations are both supported with any retry policy.
 
-### Table functions[#](https://trino.io/docs/current/connector/oracle.html#table-functions) <a href="#table-functions" id="table-functions"></a>
+### Table functions <a href="#table-functions" id="table-functions"></a>
 
 The connector provides specific table functions to access Oracle.
 
-#### `query(varchar) -> table`[#](https://trino.io/docs/current/connector/oracle.html#query-varchar-table) <a href="#query-varchar-table" id="query-varchar-table"></a>
+#### `query(varchar) -> table` <a href="#query-varchar-table" id="query-varchar-table"></a>
 
 The `query` function allows you to query the underlying database directly. It requires syntax native to Oracle, because the full query is pushed down and processed in Oracle. This can be useful for accessing native features which are not available in Trino or for improving query performance in situations where running a query natively may be faster.
 
@@ -488,7 +488,7 @@ FROM
   );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 As a practical example, you can use the [MODEL clause from Oracle SQL](https://docs.oracle.com/cd/B19306\_01/server.102/b14223/sqlmodel.htm):
 
@@ -523,17 +523,17 @@ FROM
   );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note
 
 The query engine does not preserve the order of the results of this function. If the passed query contains an `ORDER BY` clause, the function result may not be ordered as expected.
 
-### Performance[#](https://trino.io/docs/current/connector/oracle.html#performance) <a href="#performance" id="performance"></a>
+### Performance <a href="#performance" id="performance"></a>
 
 The connector includes a number of performance improvements, detailed in the following sections.
 
-#### Synonyms[#](https://trino.io/docs/current/connector/oracle.html#synonyms) <a href="#synonyms" id="synonyms"></a>
+#### Synonyms <a href="#synonyms" id="synonyms"></a>
 
 Based on performance reasons, Trino disables support for Oracle `SYNONYM`. To include `SYNONYM`, add the following configuration property:
 
@@ -541,9 +541,9 @@ Based on performance reasons, Trino disables support for Oracle `SYNONYM`. To in
 oracle.synonyms.enabled=true
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Pushdown[#](https://trino.io/docs/current/connector/oracle.html#pushdown) <a href="#pushdown" id="pushdown"></a>
+
+#### Pushdown <a href="#pushdown" id="pushdown"></a>
 
 The connector supports pushdown for a number of operations:
 
@@ -575,11 +575,11 @@ Note
 
 The connector performs pushdown where performance may be improved, but in order to preserve correctness an operation may not be pushed down. When pushdown of an operation may result in better performance but risks correctness, the connector prioritizes correctness.
 
-**Join pushdown**[**#**](https://trino.io/docs/current/connector/oracle.html#join-pushdown)
+**Join pushdown**
 
 The `join-pushdown.enabled` catalog configuration property or `join_pushdown_enabled` catalog session property control whether the connector pushes down join operations. The property defaults to `false`, and enabling join pushdowns may negatively impact performance for some queries.
 
-**Predicate pushdown support**[**#**](https://trino.io/docs/current/connector/oracle.html#predicate-pushdown-support)
+**Predicate pushdown support**
 
 The connector does not support pushdown of any predicates on columns that use the `CLOB`, `NCLOB`, `BLOB`, or `RAW(n)` Oracle database types, or Trino data types that [map](https://trino.io/docs/current/connector/oracle.html#oracle-type-mapping) to these Oracle database types.
 
@@ -599,7 +599,7 @@ SELECT * FROM nation WHERE name > 'CANADA';
 SELECT * FROM nation WHERE name = 'CANADA';
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 In the following example, the predicate is pushed down for both queries since `name` is a column of type `VARCHAR(25)`, which maps to `VARCHAR2(25)` in Oracle:
 

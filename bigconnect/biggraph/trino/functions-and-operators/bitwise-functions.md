@@ -1,6 +1,6 @@
 # Bitwise functions
 
-bit\_count(_x_, _bits_) → bigint[#](https://trino.io/docs/current/functions/bitwise.html#bit\_count)
+bit\_count(_x_, _bits_) → bigint
 
 Count the number of bits set in `x` (treated as `bits`-bit signed integer) in 2’s complement representation:
 
@@ -11,7 +11,7 @@ SELECT bit_count(-7, 64); -- 62
 SELECT bit_count(-7, 8); -- 6
 ```
 
-bitwise\_and(_x_, _y_) → bigint[#](https://trino.io/docs/current/functions/bitwise.html#bitwise\_and)
+bitwise\_and(_x_, _y_) → bigint
 
 Returns the bitwise AND of `x` and `y` in 2’s complement representation.
 
@@ -21,7 +21,7 @@ Bitwise AND of `19` (binary: `10011`) and `25` (binary: `11001`) results in `17`
 SELECT bitwise_and(19,25); -- 17
 ```
 
-bitwise\_not(_x_) → bigint[#](https://trino.io/docs/current/functions/bitwise.html#bitwise\_not)
+bitwise\_not(_x_) → bigint
 
 Returns the bitwise NOT of `x` in 2’s complement representation (`NOT x = -x - 1`):
 
@@ -31,7 +31,7 @@ SELECT bitwise_not(19);  -- -20
 SELECT bitwise_not(25);  -- -26
 ```
 
-bitwise\_or(_x_, _y_) → bigint[#](https://trino.io/docs/current/functions/bitwise.html#bitwise\_or)
+bitwise\_or(_x_, _y_) → bigint
 
 Returns the bitwise OR of `x` and `y` in 2’s complement representation.
 
@@ -41,7 +41,7 @@ Bitwise OR of `19` (binary: `10011`) and `25` (binary: `11001`) results in `27` 
 SELECT bitwise_or(19,25); -- 27
 ```
 
-bitwise\_xor(_x_, _y_) → bigint[#](https://trino.io/docs/current/functions/bitwise.html#bitwise\_xor)
+bitwise\_xor(_x_, _y_) → bigint
 
 Returns the bitwise XOR of `x` and `y` in 2’s complement representation.
 
@@ -51,7 +51,7 @@ Bitwise XOR of `19` (binary: `10011`) and `25` (binary: `11001`) results in `10`
 SELECT bitwise_xor(19,25); -- 10
 ```
 
-bitwise\_left\_shift(_value_, _shift_) → \[same as value][#](https://trino.io/docs/current/functions/bitwise.html#bitwise\_left\_shift)
+bitwise\_left\_shift(_value_, _shift_) → \[same as value]
 
 Returns the left shifted value of `value`.
 
@@ -81,7 +81,7 @@ SELECT bitwise_left_shift(0, 1); -- 0
 SELECT bitwise_left_shift(0, 2); -- 0
 ```
 
-bitwise\_right\_shift(_value_, _shift_) → \[same as value][#](https://trino.io/docs/current/functions/bitwise.html#bitwise\_right\_shift)
+bitwise\_right\_shift(_value_, _shift_) → \[same as value]
 
 Returns the logical right shifted value of `value`.
 
@@ -97,7 +97,7 @@ Shifting `9` (binary: `1001`) by one bit results in `4` (binary: `100`):
 SELECT bitwise_right_shift(9, 1); -- 4
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Shifting a `value` by `0` always results in the original `value`:
 

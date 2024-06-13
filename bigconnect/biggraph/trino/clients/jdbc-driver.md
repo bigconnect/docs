@@ -2,7 +2,7 @@
 
 The Trino JDBC driver allows users to access Trino using Java-based applications, and other non-Java applications running in a JVM. Both desktop and server-side applications, such as those used for reporting and database development, use the JDBC driver.
 
-### Requirements[#](https://trino.io/docs/current/client/jdbc.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 The Trino JDBC driver has the following requirements:
 
@@ -11,7 +11,7 @@ The Trino JDBC driver has the following requirements:
 
 The JDBC driver version should be identical to the version of the Trino cluster, or newer. Older versions typically work, but only a subset is regularly tested. Versions before 350 are not supported.
 
-### Installing[#](https://trino.io/docs/current/client/jdbc.html#installing) <a href="#installing" id="installing"></a>
+### Installing <a href="#installing" id="installing"></a>
 
 Download [trino-jdbc-444.jar](https://repo1.maven.org/maven2/io/trino/trino-jdbc/444/trino-jdbc-444.jar) and add it to the classpath of your Java application.
 
@@ -25,7 +25,7 @@ The driver is also available from Maven Central:
 </dependency>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 We recommend using the latest version of the JDBC driver. A list of all available versions can be found in the Maven Central Repository. Navigate to the directory for the desired version, and select the `trino-jdbc-xxx.jar` file to download, where `xxx` is the version number.
 
@@ -35,13 +35,13 @@ After you have downloaded the JDBC driver and added it to your classpath, you’
 
 The CLI uses the HTTP protocol and the Trino client REST API to communicate with Trino.
 
-### Registering and configuring the driver[#](https://trino.io/docs/current/client/jdbc.html#registering-and-configuring-the-driver) <a href="#registering-and-configuring-the-driver" id="registering-and-configuring-the-driver"></a>
+### Registering and configuring the driver <a href="#registering-and-configuring-the-driver" id="registering-and-configuring-the-driver"></a>
 
 Drivers are commonly loaded automatically by applications once they are added to its classpath. If your application does not, such as is the case for some GUI-based SQL editors, read this section. The steps to register the JDBC driver in a UI or on the command line depend upon the specific application you are using. Please check your application’s documentation.
 
 Once registered, you must also configure the connection information as described in the following section.
 
-### Connecting[#](https://trino.io/docs/current/client/jdbc.html#connecting) <a href="#connecting" id="connecting"></a>
+### Connecting <a href="#connecting" id="connecting"></a>
 
 When your driver is loaded, registered and configured, you are ready to connect to Trino from your application. The following JDBC URL formats are supported:
 
@@ -51,7 +51,7 @@ jdbc:trino://host:port/catalog
 jdbc:trino://host:port/catalog/schema
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following is an example of a JDBC URL used to create a connection:
 
@@ -59,7 +59,7 @@ The following is an example of a JDBC URL used to create a connection:
 jdbc:trino://example.net:8080/hive/sales
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This example JDBC URL locates a Trino instance running on port `8080` on `example.net`, with the catalog `hive` and the schema `sales` defined.
 
@@ -67,7 +67,7 @@ Note
 
 Typically, the JDBC driver classname is configured automatically by your client. If it is not, use `io.trino.jdbc.TrinoDriver` wherever a driver classname is required.
 
-### Connection parameters[#](https://trino.io/docs/current/client/jdbc.html#connection-parameters) <a href="#connection-parameters" id="connection-parameters"></a>
+### Connection parameters <a href="#connection-parameters" id="connection-parameters"></a>
 
 The driver supports various parameters that may be set as URL parameters, or as properties passed to `DriverManager`. Both of the following examples are equivalent:
 
@@ -85,11 +85,11 @@ String url = "jdbc:trino://example.net:8443/hive/sales?user=test&password=secret
 Connection connection = DriverManager.getConnection(url);
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 These methods may be mixed; some parameters may be specified in the URL, while others are specified using properties. However, the same parameter may not be specified using both methods.
 
-### Parameter reference[#](https://trino.io/docs/current/client/jdbc.html#parameter-reference) <a href="#parameter-reference" id="parameter-reference"></a>
+### Parameter reference <a href="#parameter-reference" id="parameter-reference"></a>
 
 | Name                                                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

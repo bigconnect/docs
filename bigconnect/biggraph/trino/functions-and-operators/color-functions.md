@@ -1,6 +1,6 @@
 # Color functions
 
-bar(_x_, _width_) → varchar[#](https://trino.io/docs/current/functions/color.html#bar)
+bar(_x_, _width_) → varchar
 
 Renders a single bar in an ANSI bar chart using a default `low_color` of red and a `high_color` of green. For example, if `x` of 25% and width of 40 are passed to this function. A 10-character red bar will be drawn followed by 30 spaces to create a bar of 40 characters.
 
@@ -10,7 +10,7 @@ Renders a single line in an ANSI bar chart of the specified `width`. The paramet
 
 <figure><img src="https://trino.io/docs/current/_images/functions_color_bar.png" alt="../_images/functions_color_bar.png"><figcaption></figcaption></figure>
 
-color(_string_) → color[#](https://trino.io/docs/current/functions/color.html#color)
+color(_string_) → color
 
 Returns a color capturing a decoded RGB value from a 4-character string of the format “#000”. The input string should be varchar containing a CSS-style short rgb string or one of `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white`.
 
@@ -22,7 +22,7 @@ color(_x_, _low\_color_, _high\_color_) → color
 
 Returns a color interpolated between `low_color` and `high_color` according to the double argument `x` between 0 and 1. The parameter `x` is a double value between 0 and 1. Values of `x` that fall outside the range \[0, 1] will be truncated to either a 0 or a 1 value.
 
-render(_x_, _color_) → varchar[#](https://trino.io/docs/current/functions/color.html#render)
+render(_x_, _color_) → varchar
 
 Renders value `x` using the specific color using ANSI color codes. `x` can be either a double, bigint, or varchar.
 
@@ -30,6 +30,6 @@ render(_b_) → varchar
 
 Accepts boolean value `b` and renders a green true or a red false using ANSI color codes.
 
-rgb(_red_, _green_, _blue_) → color[#](https://trino.io/docs/current/functions/color.html#rgb)
+rgb(_red_, _green_, _blue_) → color
 
 Returns a color value capturing the RGB value of three component color values supplied as int parameters ranging from 0 to 255: `red`, `green`, `blue`.

@@ -4,13 +4,13 @@ Trino provides a web-based user interface (UI) for monitoring a Trino cluster an
 
 The Web UI can be disabled entirely with the `web-ui.enabled` property.
 
-### Authentication# <a href="#authentication" id="authentication"></a>
+### Authentication <a href="#authentication" id="authentication"></a>
 
 The Web UI requires users to authenticate. If Trino is not configured to require authentication, then any username can be used, and no password is required or allowed. Typically, users login with the same username that they use for running queries.
 
 If no system access control is installed, then all users are able to view and kill any query. This can be restricted by using query rules with the System access control. Users always have permission to view or kill their own queries.
 
-#### Password authentication# <a href="#password-authentication" id="password-authentication"></a>
+#### Password authentication <a href="#password-authentication" id="password-authentication"></a>
 
 Typically, a password-based authentication method such as LDAP or password file is used to secure both the Trino server and the Web UI. When the Trino server is configured to use a password authenticator, the Web UI authentication type is automatically set to `FORM`. In this case, the Web UI displays a login form that accepts a username and password.
 
@@ -18,7 +18,7 @@ Typically, a password-based authentication method such as LDAP or password file 
 
 If you require the Web UI to be accessible without authentication, you can set a fixed username that will be used for all Web UI access by setting the authentication type to `FIXED` and setting the username with the `web-ui.user` configuration property. If there is a system access control installed, this user must have permission to view (and possibly to kill) queries.
 
-#### Other authentication types[#](https://trino.io/docs/current/admin/web-interface.html#other-authentication-types) <a href="#other-authentication-types" id="other-authentication-types"></a>
+#### Other authentication types <a href="#other-authentication-types" id="other-authentication-types"></a>
 
 The following Web UI authentication types are also supported:
 
@@ -29,7 +29,7 @@ The following Web UI authentication types are also supported:
 
 For these authentication types, the username is defined by User mapping.
 
-### User interface overview# <a href="#user-interface-overview" id="user-interface-overview"></a>
+### User interface overview <a href="#user-interface-overview" id="user-interface-overview"></a>
 
 The main page has a list of queries along with information like unique query ID, query text, query state, percentage completed, username and source from which this query originated. The currently running queries are at the top of the page, followed by the most recently completed or failed queries.
 

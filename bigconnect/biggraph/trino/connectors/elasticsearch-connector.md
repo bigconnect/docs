@@ -2,12 +2,12 @@
 
 The Elasticsearch connector allows access to [Elasticsearch](https://www.elastic.co/products/elasticsearch) data from Trino. This document describes how to configure a catalog with the Elasticsearch connector to run SQL queries against Elasticsearch.
 
-### Requirements[#](https://trino.io/docs/current/connector/elasticsearch.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 * Elasticsearch 7.x or 8.x
 * Network access from the Trino coordinator and workers to the Elasticsearch nodes.
 
-### Configuration[#](https://trino.io/docs/current/connector/elasticsearch.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the Elasticsearch connector, create a catalog properties file `etc/catalog/example.properties` with the following contents, replacing the properties as appropriate for your setup:
 
@@ -18,7 +18,7 @@ elasticsearch.port=9200
 elasticsearch.default-schema-name=default
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following table details all general configuration properties:
 
@@ -37,7 +37,7 @@ The following table details all general configuration properties:
 | `elasticsearch.node-refresh-interval`  | Duration between requests to refresh the list of available Elasticsearch nodes.                                                                                                                                                           | `1m`      |
 | `elasticsearch.ignore-publish-address` | Disable using the address published by the Elasticsearch API to connect for queries. Some deployments map Elasticsearch ports to a random public port and enabling this property can help in these cases.                                 | `false`   |
 
-#### Authentication[#](https://trino.io/docs/current/connector/elasticsearch.html#authentication) <a href="#authentication" id="authentication"></a>
+#### Authentication <a href="#authentication" id="authentication"></a>
 
 The connection to Elasticsearch can use AWS or password authentication.
 
@@ -58,7 +58,7 @@ To enable password authentication, the `elasticsearch.security` option must be s
 | `elasticsearch.auth.user`     | User name to use to connect to Elasticsearch. |
 | `elasticsearch.auth.password` | Password to use to connect to Elasticsearch.  |
 
-#### Connection security with TLS[#](https://trino.io/docs/current/connector/elasticsearch.html#connection-security-with-tls) <a href="#connection-security-with-tls" id="connection-security-with-tls"></a>
+#### Connection security with TLS <a href="#connection-security-with-tls" id="connection-security-with-tls"></a>
 
 The connector provides additional security options to connect to Elasticsearch clusters with TLS enabled.
 
@@ -75,11 +75,11 @@ The available configuration values are listed in the following table:
 | `elasticsearch.tls.truststore-password` | The key password for the trust store specified by `elasticsearch.tls.truststore-path`.                                                                    |
 | `elasticsearch.tls.verify-hostnames`    | Flag to determine if the hostnames in the certificates must be verified. Defaults to `true`.                                                              |
 
-### Type mapping[#](https://trino.io/docs/current/connector/elasticsearch.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 Because Trino and Elasticsearch each support types that the other does not, this connector maps some types when reading data.
 
-#### Elasticsearch type to Trino type mapping[#](https://trino.io/docs/current/connector/elasticsearch.html#elasticsearch-type-to-trino-type-mapping) <a href="#elasticsearch-type-to-trino-type-mapping" id="elasticsearch-type-to-trino-type-mapping"></a>
+#### Elasticsearch type to Trino type mapping <a href="#elasticsearch-type-to-trino-type-mapping" id="elasticsearch-type-to-trino-type-mapping"></a>
 
 The connector maps Elasticsearch types to the corresponding Trino types according to the following table:
 
@@ -99,7 +99,7 @@ The connector maps Elasticsearch types to the corresponding Trino types accordin
 
 No other types are supported.
 
-#### Array types[#](https://trino.io/docs/current/connector/elasticsearch.html#array-types) <a href="#array-types" id="array-types"></a>
+#### Array types <a href="#array-types" id="array-types"></a>
 
 Fields in Elasticsearch can contain [zero or more values](https://www.elastic.co/guide/en/elasticsearch/reference/current/array.html), but there is no dedicated array type. To indicate a field contains an array, it can be annotated in a Trino-specific structure in the [\_meta](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-meta-field.html) section of the index mapping.
 
@@ -118,7 +118,7 @@ For example, you can have an Elasticsearch index that contains documents with th
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The array fields of this structure can be defined by using the following command to add the field property definition to the `_meta.trino` property of the target index mapping with Elasticsearch available at `search.example.com:9200`:
 
@@ -143,7 +143,7 @@ curl --request PUT \
 }'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note
 
@@ -153,7 +153,7 @@ It is not allowed to use `asRawJson` and `isArray` flags simultaneously for the 
 
 The Elasticsearch connector supports only the default `date` type. All other [date](https://www.elastic.co/guide/en/elasticsearch/reference/current/date.html) formats including [built-in date formats](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html#built-in-date-formats) and [custom date formats](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html#custom-date-formats) are not supported. Dates with the [format](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html#mapping-date-format) property are ignored.
 
-#### Raw JSON transform[#](https://trino.io/docs/current/connector/elasticsearch.html#raw-json-transform) <a href="#raw-json-transform" id="raw-json-transform"></a>
+#### Raw JSON transform <a href="#raw-json-transform" id="raw-json-transform"></a>
 
 Documents in Elasticsearch can include more complex structures that are not represented in the mapping. For example, a single `keyword` field can have widely different content including a single `keyword` value, an array, or a multidimensional `keyword` array with any level of nesting.
 
@@ -173,7 +173,7 @@ curl --request PUT \
 }'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 All the following documents are legal for Elasticsearch with `array_string_field` mapping:
 
@@ -194,7 +194,7 @@ All the following documents are legal for Elasticsearch with `array_string_field
 ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 See the [Elasticsearch array documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/array.html) for more details.
 
@@ -216,15 +216,15 @@ curl --request PUT \
 }'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-This preceding configuration causes Trino to return the `array_string_field` field as a `VARCHAR` containing raw JSON. You can parse these fields with the [built-in JSON functions](https://trino.io/docs/current/functions/json.html).
+
+This preceding configuration causes Trino to return the `array_string_field` field as a `VARCHAR` containing raw JSON. You can parse these fields with the built-in JSON functions.
 
 Note
 
 It is not allowed to use `asRawJson` and `isArray` flags simultaneously for the same column.
 
-### Special columns[#](https://trino.io/docs/current/connector/elasticsearch.html#special-columns) <a href="#special-columns" id="special-columns"></a>
+### Special columns <a href="#special-columns" id="special-columns"></a>
 
 The following hidden columns are available:
 
@@ -234,7 +234,7 @@ The following hidden columns are available:
 | `_score`  | The document score returned by the Elasticsearch query. |
 | `_source` | The source of the original document.                    |
 
-### Full text queries[#](https://trino.io/docs/current/connector/elasticsearch.html#full-text-queries) <a href="#full-text-queries" id="full-text-queries"></a>
+### Full text queries <a href="#full-text-queries" id="full-text-queries"></a>
 
 Trino SQL queries can be combined with Elasticsearch queries by providing the [full text query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax) as part of the table name, separated by a colon. For example:
 
@@ -242,17 +242,17 @@ Trino SQL queries can be combined with Elasticsearch queries by providing the [f
 SELECT * FROM "tweets: +trino SQL^2"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### SQL support[#](https://trino.io/docs/current/connector/elasticsearch.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides globally available and read operation statements to access data and metadata in the Elasticsearch catalog.
 
-### Table functions# <a href="#table-functions" id="table-functions"></a>
+### Table functions <a href="#table-functions" id="table-functions"></a>
 
 The connector provides specific table functions to access Elasticsearch.
 
-#### `raw_query(varchar) -> table`[#](https://trino.io/docs/current/connector/elasticsearch.html#raw-query-varchar-table) <a href="#raw-query-varchar-table" id="raw-query-varchar-table"></a>
+#### `raw_query(varchar) -> table` <a href="#raw-query-varchar-table" id="raw-query-varchar-table"></a>
 
 The `raw_query` function allows you to query the underlying database directly. This function requires Elastic Query DSL syntax. The full DSL query is pushed down and processed in Elasticsearch. This can be useful for accessing native features which are not available in Trino or for improving query performance in situations where running a query natively may be faster.
 
@@ -287,21 +287,21 @@ FROM
   );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note
 
 The query engine does not preserve the order of the results of this function. If the passed query contains an `ORDER BY` clause, the function result may not be ordered as expected.
 
-### Performance[#](https://trino.io/docs/current/connector/elasticsearch.html#performance) <a href="#performance" id="performance"></a>
+### Performance <a href="#performance" id="performance"></a>
 
 The connector includes a number of performance improvements, detailed in the following sections.
 
-#### Parallel data access[#](https://trino.io/docs/current/connector/elasticsearch.html#parallel-data-access) <a href="#parallel-data-access" id="parallel-data-access"></a>
+#### Parallel data access <a href="#parallel-data-access" id="parallel-data-access"></a>
 
 The connector requests data from multiple nodes of the Elasticsearch cluster for query processing in parallel.
 
-#### Predicate push down[#](https://trino.io/docs/current/connector/elasticsearch.html#predicate-push-down) <a href="#predicate-push-down" id="predicate-push-down"></a>
+#### Predicate push down <a href="#predicate-push-down" id="predicate-push-down"></a>
 
 The connector supports predicate push down for the following data types:
 

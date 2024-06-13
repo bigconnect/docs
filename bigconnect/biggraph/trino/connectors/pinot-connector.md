@@ -2,14 +2,14 @@
 
 The Pinot connector allows Trino to query data stored in [Apache Pinot™](https://pinot.apache.org/).
 
-### Requirements[#](https://trino.io/docs/current/connector/pinot.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To connect to Pinot, you need:
 
 * Pinot 0.11.0 or higher.
 * Network access from the Trino coordinator and workers to the Pinot controller nodes. Port 8098 is the default port.
 
-### Configuration[#](https://trino.io/docs/current/connector/pinot.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the Pinot connector, create a catalog properties file e.g. `etc/catalog/example.properties` with at least the following contents:
 
@@ -18,11 +18,11 @@ connector.name=pinot
 pinot.controller-urls=host1:8098,host2:8098
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Replace `host1:8098,host2:8098` with a comma-separated list of Pinot controller nodes. This can be the ip or the FDQN, the url scheme (`http://`) is optional.
 
-### Configuration properties[#](https://trino.io/docs/current/connector/pinot.html#configuration-properties) <a href="#configuration-properties" id="configuration-properties"></a>
+### Configuration properties <a href="#configuration-properties" id="configuration-properties"></a>
 
 #### General configuration properties[#](https://trino.io/docs/current/connector/pinot.html#general-configuration-properties) <a href="#general-configuration-properties" id="general-configuration-properties"></a>
 
@@ -56,7 +56,7 @@ If `pinot.broker.authentication.type` is set to `PASSWORD` then both `pinot.brok
 
 If `pinot.controller-urls` uses `https` scheme then TLS is enabled for all connections including brokers.
 
-#### gRPC configuration properties[#](https://trino.io/docs/current/connector/pinot.html#grpc-configuration-properties) <a href="#grpc-configuration-properties" id="grpc-configuration-properties"></a>
+#### gRPC configuration properties <a href="#grpc-configuration-properties" id="grpc-configuration-properties"></a>
 
 | Property name                         | Required | Description                                                          |
 | ------------------------------------- | -------- | -------------------------------------------------------------------- |
@@ -77,7 +77,7 @@ For more Apache Pinot TLS configurations, please also refer to [Configuring TLS/
 
 You can use secrets to avoid actual values in the catalog properties files.
 
-### Querying Pinot tables[#](https://trino.io/docs/current/connector/pinot.html#querying-pinot-tables) <a href="#querying-pinot-tables" id="querying-pinot-tables"></a>
+### Querying Pinot tables <a href="#querying-pinot-tables" id="querying-pinot-tables"></a>
 
 The Pinot connector automatically exposes all tables in the default schema of the catalog. You can list all tables in the pinot catalog with the following query:
 
@@ -85,7 +85,7 @@ The Pinot connector automatically exposes all tables in the default schema of th
 SHOW TABLES FROM example.default;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can list columns in the flight\_status table:
 
@@ -94,7 +94,7 @@ DESCRIBE example.default.flight_status;
 SHOW COLUMNS FROM example.default.flight_status;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Queries written with SQL are fully supported and can include filters and limits:
 
@@ -105,9 +105,9 @@ WHERE bar = 3 AND baz IN ('ONE', 'TWO', 'THREE')
 LIMIT 25000;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Dynamic tables[#](https://trino.io/docs/current/connector/pinot.html#dynamic-tables) <a href="#dynamic-tables" id="dynamic-tables"></a>
+
+### Dynamic tables <a href="#dynamic-tables" id="dynamic-tables"></a>
 
 To leverage Pinot’s fast aggregation, a Pinot query written in PQL can be used as the table name. Filters and limits in the outer query are pushed down to Pinot. Let’s look at an example query:
 
@@ -118,7 +118,7 @@ WHERE col3 IN ('FOO', 'BAR') AND col4 > 50
 LIMIT 30000
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Filtering and limit processing is pushed down to Pinot.
 
@@ -135,13 +135,13 @@ WHERE col3 IN('FOO', 'BAR') and col4 > 50
 TOP 30000
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Type mapping[#](https://trino.io/docs/current/connector/pinot.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 Because Trino and Pinot each support types that the other does not, this connector [maps some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading data.
 
-#### Pinot type to Trino type mapping[#](https://trino.io/docs/current/connector/pinot.html#pinot-type-to-trino-type-mapping) <a href="#pinot-type-to-trino-type-mapping" id="pinot-type-to-trino-type-mapping"></a>
+#### Pinot type to Trino type mapping <a href="#pinot-type-to-trino-type-mapping" id="pinot-type-to-trino-type-mapping"></a>
 
 The connector maps Pinot types to the corresponding Trino types according to the following table:
 
@@ -163,19 +163,19 @@ The connector maps Pinot types to the corresponding Trino types according to the
 
 No other types are supported.
 
-**Date Type**[**#**](https://trino.io/docs/current/connector/pinot.html#date-type)
+**Date Type**
 
 For Pinot `DateTimeFields`, if the `FormatSpec` is in days, then it is converted to a Trino `DATE` type. Pinot allows for `LONG` fields to have a `FormatSpec` of days as well, if the value is larger than `Integer.MAX_VALUE` then the conversion to Trino `DATE` fails.
 
-**Null Handling**[**#**](https://trino.io/docs/current/connector/pinot.html#null-handling)
+**Null Handling**
 
 If a Pinot TableSpec has `nullHandlingEnabled` set to true, then for numeric types the null value is encoded as `MIN_VALUE` for that type. For Pinot `STRING` type, the value `null` is interpreted as a `NULL` value.
 
-### SQL support[#](https://trino.io/docs/current/connector/pinot.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
-The connector provides [globally available](https://trino.io/docs/current/language/sql-support.html#sql-globally-available) and [read operation](https://trino.io/docs/current/language/sql-support.html#sql-read-operations) statements to access data and metadata in Pinot.
+The connector provides globally available and read operation statements to access data and metadata in Pinot.
 
-### Pushdown[#](https://trino.io/docs/current/connector/pinot.html#pushdown) <a href="#pushdown" id="pushdown"></a>
+### Pushdown <a href="#pushdown" id="pushdown"></a>
 
 The connector supports pushdown for a number of operations:
 

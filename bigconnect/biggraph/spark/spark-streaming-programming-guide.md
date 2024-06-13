@@ -616,13 +616,13 @@ See the full [source code](https://github.com/apache/spark/blob/v3.5.1/examples/
 
 You can also run SQL queries on tables defined on streaming data from a different thread (that is, asynchronous to the running StreamingContext). Just make sure that you set the StreamingContext to remember a sufficient amount of streaming data such that the query can run. Otherwise the StreamingContext, which is unaware of any of the asynchronous SQL queries, will delete off old streaming data before the query can complete. For example, if you want to query the last batch, but your query can take 5 minutes to run, then call `streamingContext.remember(Minutes(5))` (in Scala, or equivalent in other languages).
 
-See the [DataFrames and SQL](https://spark.apache.org/docs/latest/sql-programming-guide.html) guide to learn more about DataFrames.
+See the DataFrames and SQL guide to learn more about DataFrames.
 
 ***
 
 ### MLlib Operations
 
-You can also easily use machine learning algorithms provided by [MLlib](https://spark.apache.org/docs/latest/ml-guide.html). First of all, there are streaming machine learning algorithms (e.g. [Streaming Linear Regression](https://spark.apache.org/docs/latest/mllib-linear-methods.html#streaming-linear-regression), [Streaming KMeans](https://spark.apache.org/docs/latest/mllib-clustering.html#streaming-k-means), etc.) which can simultaneously learn from the streaming data as well as apply the model on the streaming data. Beyond these, for a much larger class of machine learning algorithms, you can learn a learning model offline (i.e. using historical data) and then apply the model online on streaming data. See the [MLlib](https://spark.apache.org/docs/latest/ml-guide.html) guide for more details.
+You can also easily use machine learning algorithms provided by MLlib. First of all, there are streaming machine learning algorithms (e.g. Streaming Linear Regression, Streaming KMeans, etc.) which can simultaneously learn from the streaming data as well as apply the model on the streaming data. Beyond these, for a much larger class of machine learning algorithms, you can learn a learning model offline (i.e. using historical data) and then apply the model online on streaming data. See the MLlib guide for more details.
 
 ***
 
@@ -703,7 +703,7 @@ Note that checkpointing of RDDs incurs the cost of saving to reliable storage. T
 
 ### Accumulators, Broadcast Variables, and Checkpoints
 
-[Accumulators](https://spark.apache.org/docs/latest/rdd-programming-guide.html#accumulators) and [Broadcast variables](https://spark.apache.org/docs/latest/rdd-programming-guide.html#broadcast-variables) cannot be recovered from checkpoint in Spark Streaming. If you enable checkpointing and use [Accumulators](https://spark.apache.org/docs/latest/rdd-programming-guide.html#accumulators) or [Broadcast variables](https://spark.apache.org/docs/latest/rdd-programming-guide.html#broadcast-variables) as well, you’ll have to create lazily instantiated singleton instances for [Accumulators](https://spark.apache.org/docs/latest/rdd-programming-guide.html#accumulators) and [Broadcast variables](https://spark.apache.org/docs/latest/rdd-programming-guide.html#broadcast-variables) so that they can be re-instantiated after the driver restarts on failure. This is shown in the following example.
+Accumulators and Broadcast variables cannot be recovered from checkpoint in Spark Streaming. If you enable checkpointing and use Accumulators or Broadcast variables as well, you’ll have to create lazily instantiated singleton instances for Accumulators and Broadcast variables so that they can be re-instantiated after the driver restarts on failure. This is shown in the following example.
 
 * Python
 * Scala

@@ -7,11 +7,11 @@ There are two types of file-based access control:
 * **System-level access control** uses the access control plugin with a single JSON file that specifies authorization rules for the whole cluster.
 * **Catalog-level access control** uses individual JSON files for each catalog for granular control over the data in that catalog, including column-level authorization.
 
-### System-level access control files[#](https://trino.io/docs/current/security/file-system-access-control.html#system-level-access-control-files) <a href="#system-level-access-control-files" id="system-level-access-control-files"></a>
+### System-level access control files <a href="#system-level-access-control-files" id="system-level-access-control-files"></a>
 
 The access control plugin allows you to specify authorization rules for the cluster in a single JSON file.
 
-#### Configuration[#](https://trino.io/docs/current/security/file-system-access-control.html#configuration) <a href="#configuration" id="configuration"></a>
+#### Configuration <a href="#configuration" id="configuration"></a>
 
 To use the access control plugin, add an `etc/access-control.properties` file containing two required properties: `access-control.name`, which must be set to `file`, and `security.config-file`, which must be set to the location of the config file. The configuration file location can either point to the local disc or to a http endpoint. For example, if a config file named `rules.json` resides in `etc`, add an `etc/access-control.properties` with the following contents:
 
@@ -20,7 +20,7 @@ access-control.name=file
 security.config-file=etc/rules.json
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If the config should be loaded via the http endpoint `http://trino-test/config` and is wrapped into a JSON object and available via the `data` key `etc/access-control.properties` should look like this:
 
@@ -30,11 +30,11 @@ security.config-file=http://trino-test/config
 security.json-pointer=/data
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The config file is specified in JSON format. It contains rules that define which users have access to which resources. The rules are read from top to bottom and the first matching rule is applied. If no rule matches, access is denied. A JSON pointer (RFC 6901) can be specified using the `security.json-pointer` property to specify a nested object inside the JSON content containing the rules. Per default, the file is assumed to contain a single object defining the rules rendering the specification of `security.json-pointer` unnecessary in that case.
 
-#### Refresh[#](https://trino.io/docs/current/security/file-system-access-control.html#refresh) <a href="#refresh" id="refresh"></a>
+#### Refresh <a href="#refresh" id="refresh"></a>
 
 By default, when a change is made to the JSON rules file, Trino must be restarted to load the changes. There is an optional property to refresh the properties without requiring a Trino restart. The refresh period is specified in the `etc/access-control.properties`:
 
@@ -42,9 +42,9 @@ By default, when a change is made to the JSON rules file, Trino must be restarte
 security.refresh-period=1s
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Catalog, schema, and table access[#](https://trino.io/docs/current/security/file-system-access-control.html#catalog-schema-and-table-access) <a href="#catalog-schema-and-table-access" id="catalog-schema-and-table-access"></a>
+
+#### Catalog, schema, and table access <a href="#catalog-schema-and-table-access" id="catalog-schema-and-table-access"></a>
 
 Access to catalogs, schemas, tables, and views is controlled by the catalog, schema, and table rules. The catalog rules are coarse-grained rules used to restrict all access or write access to catalogs. They do not explicitly grant any specific schema or table permissions. The table and schema rules are used to specify who can create, drop, alter, select, insert, delete, etc. for schemas and tables.
 
@@ -58,7 +58,7 @@ If no rules are provided at all, then access is granted. You can remove access g
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 At the catalog level you have to add a single “dummy” rule for each accessible catalog.
 
@@ -68,43 +68,43 @@ These rules do not apply to system-defined tables in the `information_schema` sc
 
 The following table summarizes the permissions required for each SQL command:
 
-| SQL command                      | Catalog   | Schema  | Table                 | Note                                                                                                                                |
-| -------------------------------- | --------- | ------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| SHOW CATALOGS                    |           |         |                       | Always allowed                                                                                                                      |
-| SHOW SCHEMAS                     | read-only | any\*   | any\*                 | Allowed if catalog is [visible](https://trino.io/docs/current/security/file-system-access-control.html#system-file-auth-visibility) |
-| SHOW TABLES                      | read-only | any\*   | any\*                 | Allowed if schema [visible](https://trino.io/docs/current/security/file-system-access-control.html#system-file-auth-visibility)     |
-| CREATE SCHEMA                    | read-only | owner   |                       |                                                                                                                                     |
-| DROP SCHEMA                      | all       | owner   |                       |                                                                                                                                     |
-| SHOW CREATE SCHEMA               | all       | owner   |                       |                                                                                                                                     |
-| ALTER SCHEMA … RENAME TO         | all       | owner\* |                       | Ownership is required on both old and new schemas                                                                                   |
-| ALTER SCHEMA … SET AUTHORIZATION | all       | owner   |                       |                                                                                                                                     |
-| CREATE TABLE                     | all       |         | owner                 |                                                                                                                                     |
-| DROP TABLE                       | all       |         | owner                 |                                                                                                                                     |
-| ALTER TABLE … RENAME TO          | all       |         | owner\*               | Ownership is required on both old and new tables                                                                                    |
-| ALTER TABLE … SET PROPERTIES     | all       |         | owner                 |                                                                                                                                     |
-| CREATE VIEW                      | all       |         | owner                 |                                                                                                                                     |
-| DROP VIEW                        | all       |         | owner                 |                                                                                                                                     |
-| ALTER VIEW … RENAME TO           | all       |         | owner\*               | Ownership is required on both old and new views                                                                                     |
-| REFRESH MATERIALIZED VIEW        | all       |         | update                |                                                                                                                                     |
-| COMMENT ON TABLE                 | all       |         | owner                 |                                                                                                                                     |
-| COMMENT ON COLUMN                | all       |         | owner                 |                                                                                                                                     |
-| ALTER TABLE … ADD COLUMN         | all       |         | owner                 |                                                                                                                                     |
-| ALTER TABLE … DROP COLUMN        | all       |         | owner                 |                                                                                                                                     |
-| ALTER TABLE … RENAME COLUMN      | all       |         | owner                 |                                                                                                                                     |
-| SHOW COLUMNS                     | all       |         | any                   |                                                                                                                                     |
-| SELECT FROM table                | read-only |         | select                |                                                                                                                                     |
-| SELECT FROM view                 | read-only |         | select, grant\_select |                                                                                                                                     |
-| INSERT INTO                      | all       |         | insert                |                                                                                                                                     |
-| DELETE FROM                      | all       |         | delete                |                                                                                                                                     |
-| UPDATE                           | all       |         | update                |                                                                                                                                     |
+| SQL command                      | Catalog   | Schema  | Table                 | Note                                              |
+| -------------------------------- | --------- | ------- | --------------------- | ------------------------------------------------- |
+| SHOW CATALOGS                    |           |         |                       | Always allowed                                    |
+| SHOW SCHEMAS                     | read-only | any\*   | any\*                 | Allowed if catalog is visible                     |
+| SHOW TABLES                      | read-only | any\*   | any\*                 | Allowed if schema visible                         |
+| CREATE SCHEMA                    | read-only | owner   |                       |                                                   |
+| DROP SCHEMA                      | all       | owner   |                       |                                                   |
+| SHOW CREATE SCHEMA               | all       | owner   |                       |                                                   |
+| ALTER SCHEMA … RENAME TO         | all       | owner\* |                       | Ownership is required on both old and new schemas |
+| ALTER SCHEMA … SET AUTHORIZATION | all       | owner   |                       |                                                   |
+| CREATE TABLE                     | all       |         | owner                 |                                                   |
+| DROP TABLE                       | all       |         | owner                 |                                                   |
+| ALTER TABLE … RENAME TO          | all       |         | owner\*               | Ownership is required on both old and new tables  |
+| ALTER TABLE … SET PROPERTIES     | all       |         | owner                 |                                                   |
+| CREATE VIEW                      | all       |         | owner                 |                                                   |
+| DROP VIEW                        | all       |         | owner                 |                                                   |
+| ALTER VIEW … RENAME TO           | all       |         | owner\*               | Ownership is required on both old and new views   |
+| REFRESH MATERIALIZED VIEW        | all       |         | update                |                                                   |
+| COMMENT ON TABLE                 | all       |         | owner                 |                                                   |
+| COMMENT ON COLUMN                | all       |         | owner                 |                                                   |
+| ALTER TABLE … ADD COLUMN         | all       |         | owner                 |                                                   |
+| ALTER TABLE … DROP COLUMN        | all       |         | owner                 |                                                   |
+| ALTER TABLE … RENAME COLUMN      | all       |         | owner                 |                                                   |
+| SHOW COLUMNS                     | all       |         | any                   |                                                   |
+| SELECT FROM table                | read-only |         | select                |                                                   |
+| SELECT FROM view                 | read-only |         | select, grant\_select |                                                   |
+| INSERT INTO                      | all       |         | insert                |                                                   |
+| DELETE FROM                      | all       |         | delete                |                                                   |
+| UPDATE                           | all       |         | update                |                                                   |
 
 Permissions required for executing functions:
 
-| SQL command         | Catalog | Function permission         | Note                                                                                                                     |
-| ------------------- | ------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `SELECT function()` |         | `execute`, `grant_execute*` | `grant_execute` is required when the function is used in a `SECURITY DEFINER` view.                                      |
-| `CREATE FUNCTION`   | `all`   | `ownership`                 | Not all connectors support [catalog routines](https://trino.io/docs/current/routines/introduction.html#routine-catalog). |
-| `DROP FUNCTION`     | `all`   | `ownership`                 | Not all connectors support [catalog routines](https://trino.io/docs/current/routines/introduction.html#routine-catalog). |
+| SQL command         | Catalog | Function permission         | Note                                                                                |
+| ------------------- | ------- | --------------------------- | ----------------------------------------------------------------------------------- |
+| `SELECT function()` |         | `execute`, `grant_execute*` | `grant_execute` is required when the function is used in a `SECURITY DEFINER` view. |
+| `CREATE FUNCTION`   | `all`   | `ownership`                 | Not all connectors support catalog routines.                                        |
+| `DROP FUNCTION`     | `all`   | `ownership`                 | Not all connectors support catalog routines.                                        |
 
 **Visibility**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#visibility)
 
@@ -114,7 +114,7 @@ For a catalog, schema, or table to be visible in a `SHOW` command, the user must
 * `schema`: Visible if the user is the owner of the schema, or has permissions on any nested table or function.
 * `table`: Visible if the user has any permissions on the table.
 
-**Catalog rules**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#catalog-rules)
+**Catalog rules**
 
 Each catalog rule is composed of the following fields:
 
@@ -170,11 +170,11 @@ For example, if you want to allow only the role `admin` to access the `mysql` an
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-For group-based rules to match, users need to be assigned to groups by a [Group provider](https://trino.io/docs/current/develop/group-provider.html).
 
-**Schema rules**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#schema-rules)
+For group-based rules to match, users need to be assigned to groups by a Group provider.
+
+**Schema rules**
 
 Each schema rule is composed of the following fields:
 
@@ -208,9 +208,9 @@ For example, to provide ownership of all schemas to role `admin`, treat all user
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**Table rules**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#table-rules)
+
+**Table rules**
 
 Each table rule is composed of the following fields:
 
@@ -225,7 +225,7 @@ Each table rule is composed of the following fields:
 * `filter` (optional): boolean filter expression for the table.
 * `filter_environment` (optional): environment use during filter evaluation.
 
-**Column constraint**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#column-constraint)
+**Column constraint**
 
 These constraints can be used to restrict access to column data.
 
@@ -234,7 +234,7 @@ These constraints can be used to restrict access to column data.
 * `mask` (optional): mask expression applied to column.
 * `mask_environment` (optional): environment use during mask evaluation.
 
-**Filter and mask environment**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#filter-and-mask-environment)
+**Filter and mask environment**
 
 * `user` (optional): username for checking permission of subqueries in mask.
 
@@ -295,9 +295,9 @@ The example below defines the following table access policy:
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**Function rules**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#function-rules)
+
+**Function rules**
 
 These rules control the ability of a user to create, drop, and execute functions.
 
@@ -343,9 +343,9 @@ The following example allows the `admin` user to execute `system.query` table fu
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**Procedure rules**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#procedure-rules)
+
+**Procedure rules**
 
 These rules control the ability of a user to execute procedures.
 
@@ -363,7 +363,7 @@ Each procedure rule is composed of the following fields:
 * `procedure` (optional): regular expression to match against procedure names. Defaults to `.*`.
 * `privileges` (required): zero or more of `EXECUTE`, `GRANT_EXECUTE`.
 
-The following example allows the `admin` user to execute and grant execution rights to call `register_table` and `unregister_table` in the `system` schema of a catalog called `delta`, that uses the [Delta Lake connector](https://trino.io/docs/current/connector/delta-lake.html). It allows all users to execute the `delta.sytem.vacuum` procedure.
+The following example allows the `admin` user to execute and grant execution rights to call `register_table` and `unregister_table` in the `system` schema of a catalog called `delta`, that uses the Delta Lake connector. It allows all users to execute the `delta.sytem.vacuum` procedure.
 
 ```
 {
@@ -390,9 +390,9 @@ The following example allows the `admin` user to execute and grant execution rig
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**Verify configuration**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#verify-configuration)
+
+**Verify configuration**
 
 To verify the system-access control file is configured properly, set the rules to completely block access to all users of the system:
 
@@ -407,7 +407,7 @@ To verify the system-access control file is configured properly, set the rules t
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Restart your cluster to activate the rules for your cluster. With the Trino [CLI](https://trino.io/docs/current/client/cli.html) run a query to test authorization:
 
@@ -416,11 +416,11 @@ trino> SELECT * FROM system.runtime.nodes;
 Query 20200824_183358_00000_c62aw failed: Access Denied: Cannot access catalog system
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Remove these rules and restart the Trino cluster.
 
-#### Session property rules[#](https://trino.io/docs/current/security/file-system-access-control.html#session-property-rules) <a href="#session-property-rules" id="session-property-rules"></a>
+#### Session property rules <a href="#session-property-rules" id="session-property-rules"></a>
 
 These rules control the ability of a user to set system and catalog session properties. The user is granted or denied access, based on the first matching rule, read from top to bottom. If no rules are specified, all users are allowed set any session property. If no rule matches, setting the session property is denied. System session property rules are composed of the following fields:
 
@@ -474,7 +474,7 @@ The example below defines the following table access policy:
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### Query rules[#](https://trino.io/docs/current/security/file-system-access-control.html#query-rules) <a href="#query-rules" id="query-rules"></a>
 
@@ -517,7 +517,7 @@ For example, if you want to allow the role `admin` full query access, allow the 
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 #### Impersonation rules[#](https://trino.io/docs/current/security/file-system-access-control.html#impersonation-rules) <a href="#impersonation-rules" id="impersonation-rules"></a>
 
@@ -561,13 +561,13 @@ The following example allows the `admin` role, to impersonate any user, except f
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Principal rules[#](https://trino.io/docs/current/security/file-system-access-control.html#principal-rules) <a href="#principal-rules" id="principal-rules"></a>
+
+#### Principal rules <a href="#principal-rules" id="principal-rules"></a>
 
 Warning
 
-Principal rules are deprecated. Instead, use [User mapping](https://trino.io/docs/current/security/user-mapping.html) which specifies how a complex authentication user name is mapped to a simple user name for Trino, and impersonation rules defined above.
+Principal rules are deprecated. Instead, use User mapping which specifies how a complex authentication user name is mapped to a simple user name for Trino, and impersonation rules defined above.
 
 These rules serve to enforce a specific matching between a principal and a specified user name. The principal is granted authorization as a user, based on the first matching rule read from top to bottom. If no rules are specified, no checks are performed. If no rule matches, user authorization is denied. Each rule is composed of the following fields:
 
@@ -599,7 +599,7 @@ The following implements an exact matching of the full principal name for LDAP a
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If you want to allow users to use the exact same name as their Kerberos principal name, and allow `alice` and `bob` to use a group principal named as `group@example.net`, you can use the following rules.
 
@@ -620,9 +620,9 @@ If you want to allow users to use the exact same name as their Kerberos principa
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### System information rules[#](https://trino.io/docs/current/security/file-system-access-control.html#system-information-rules) <a href="#system-information-rules" id="system-information-rules"></a>
+
+#### System information rules <a href="#system-information-rules" id="system-information-rules"></a>
 
 These rules specify which users can access the system information management interface. System information access includes the following aspects:
 
@@ -660,7 +660,7 @@ The following configuration provides and example:
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 * All users with the `admin` role have read and write access to system information. This includes the ability to trigger Graceful shutdown.
 * The user `alice` can read system information.
@@ -668,7 +668,7 @@ The following configuration provides and example:
 
 A fixed user can be set for management interfaces using the `management.user` configuration property. When this is configured, system information rules must still be set to authorize this user to read or write to management information. The fixed management user only applies to HTTP by default. To enable the fixed user over HTTPS, set the `management.user.https-enabled` configuration property.
 
-#### Authorization rules[#](https://trino.io/docs/current/security/file-system-access-control.html#authorization-rules) <a href="#authorization-rules" id="authorization-rules"></a>
+#### Authorization rules <a href="#authorization-rules" id="authorization-rules"></a>
 
 These rules control the ability of how owner of schema, table or view can be altered. These rules are applicable to commands like:
 
@@ -720,9 +720,9 @@ The following example allows the `admin` role, to change owner of any schema, ta
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Catalog-level access control files[#](https://trino.io/docs/current/security/file-system-access-control.html#catalog-level-access-control-files) <a href="#catalog-level-access-control-files" id="catalog-level-access-control-files"></a>
+
+### Catalog-level access control files <a href="#catalog-level-access-control-files" id="catalog-level-access-control-files"></a>
 
 You can create JSON files for individual catalogs that define authorization rules specific to that catalog. To enable catalog-level access control files, add a connector-specific catalog configuration property that sets the authorization type to `FILE` and the `security.config-file` catalog configuration property that specifies the JSON rules file.
 
@@ -733,7 +733,7 @@ iceberg.security=FILE
 security.config-file=etc/catalog/rules.json
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Catalog-level access control files are supported on a per-connector basis, refer to the connector documentation for more information.
 
@@ -751,7 +751,7 @@ The configuration file is specified in JSON format. This file is composed of the
 
 The user is granted the privileges from the first matching rule. All regexes default to `.*` if not specified.
 
-**Schema rules**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#id2)
+**Schema rules**
 
 These rules govern who is considered an owner of a schema.
 
@@ -760,7 +760,7 @@ These rules govern who is considered an owner of a schema.
 * `schema` (optional): regex to match against schema name.
 * `owner` (required): boolean indicating ownership.
 
-**Table rules**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#id3)
+**Table rules**
 
 These rules govern the privileges granted on specific tables.
 
@@ -773,7 +773,7 @@ These rules govern the privileges granted on specific tables.
 * `filter` (optional): boolean filter expression for the table.
 * `filter_environment` (optional): environment used during filter evaluation.
 
-**COLUMN CONSTRAINTS**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#column-constraints)
+**COLUMN CONSTRAINTS**
 
 These constraints can be used to restrict access to column data.
 
@@ -782,7 +782,7 @@ These constraints can be used to restrict access to column data.
 * `mask` (optional): mask expression applied to column.
 * `mask_environment` (optional): environment use during mask evaluation.
 
-**FILTER ENVIRONMENT AND MASK ENVIRONMENT**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#filter-environment-and-mask-environment)
+**FILTER ENVIRONMENT AND MASK ENVIRONMENT**
 
 These rules apply to `filter_environment` and `mask_environment`.
 
@@ -792,7 +792,7 @@ Note
 
 `mask` can contain conditional expressions such as `IF` or `CASE`, which achieves conditional masking.
 
-**Function rules**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#id4)
+**Function rules**
 
 These rules control the ability of a user to create, drop, and execute functions.
 
@@ -829,9 +829,9 @@ The following example allows the `admin` user to execute `system.query` table fu
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-**Session property rules**[**#**](https://trino.io/docs/current/security/file-system-access-control.html#id5)
+
+**Session property rules**
 
 These rules govern who may set session properties.
 
@@ -840,7 +840,7 @@ These rules govern who may set session properties.
 * `property` (optional): regex to match against session property name.
 * `allow` (required): boolean indicating whether this session property may be set.
 
-#### Example[#](https://trino.io/docs/current/security/file-system-access-control.html#example) <a href="#example" id="example"></a>
+#### Example <a href="#example" id="example"></a>
 
 ```
 {

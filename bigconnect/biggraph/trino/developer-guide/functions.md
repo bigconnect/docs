@@ -1,6 +1,6 @@
 # Functions
 
-### Plugin implementation[#](https://trino.io/docs/current/develop/functions.html#plugin-implementation) <a href="#plugin-implementation" id="plugin-implementation"></a>
+### Plugin implementation <a href="#plugin-implementation" id="plugin-implementation"></a>
 
 The function framework is used to implement SQL functions. Trino includes a number of built-in functions. In order to implement new functions, you can write a plugin that returns one or more functions from `getFunctions()`:
 
@@ -28,7 +28,7 @@ Note that the `ImmutableSet` class is a utility class from Guava. The `getFuncti
 
 For a full example in the codebase, see either the `trino-ml` module for machine learning functions or the `trino-teradata-functions` module for Teradata-compatible functions, both in the `plugin` directory of the Trino source.
 
-### Scalar function implementation[#](https://trino.io/docs/current/develop/functions.html#scalar-function-implementation) <a href="#scalar-function-implementation" id="scalar-function-implementation"></a>
+### Scalar function implementation <a href="#scalar-function-implementation" id="scalar-function-implementation"></a>
 
 The function framework uses annotations to indicate relevant information about functions, including name, description, return type and parameter types. Below is a sample function which implements `is_null`:
 
@@ -65,7 +65,7 @@ Any function with non-deterministic behavior is required to set `deterministic =
 
     The `@SqlNullable` annotation indicates that the argument may be `NULL`. Without this annotation the framework assumes that all functions return `NULL` if any of their arguments are `NULL`. When working with a `Type` that has a primitive native container type, such as `BigintType`, use the object wrapper for the native container type when using `@SqlNullable`. The method must be annotated with `@SqlNullable` if it can return `NULL` when the arguments are non-null.
 
-### Parametric scalar functions[#](https://trino.io/docs/current/develop/functions.html#parametric-scalar-functions) <a href="#parametric-scalar-functions" id="parametric-scalar-functions"></a>
+### Parametric scalar functions <a href="#parametric-scalar-functions" id="parametric-scalar-functions"></a>
 
 Scalar functions that have type parameters have some additional complexity. To make our previous example work with any type we need the following:
 
@@ -135,7 +135,7 @@ public final class IsEqualOrNullFunction
 
 
 
-### Another scalar function example[#](https://trino.io/docs/current/develop/functions.html#another-scalar-function-example) <a href="#another-scalar-function-example" id="another-scalar-function-example"></a>
+### Another scalar function example <a href="#another-scalar-function-example" id="another-scalar-function-example"></a>
 
 The `lowercaser` function takes a single `VARCHAR` argument and returns a `VARCHAR`, which is the argument converted to lower case:
 
@@ -157,7 +157,7 @@ public class ExampleStringFunction
 
 Note that for most common string functions, including converting a string to lower case, the Slice library also provides implementations that work directly on the underlying `byte[]`, which have much better performance. This function has no `@SqlNullable` annotations, meaning that if the argument is `NULL`, the result will automatically be `NULL` (the function will not be called).
 
-### Aggregation function implementation[#](https://trino.io/docs/current/develop/functions.html#aggregation-function-implementation) <a href="#aggregation-function-implementation" id="aggregation-function-implementation"></a>
+### Aggregation function implementation <a href="#aggregation-function-implementation" id="aggregation-function-implementation"></a>
 
 Aggregation functions use a similar framework to scalar functions, but are a bit more complex.
 
@@ -241,7 +241,7 @@ An in-depth look at the various annotations relevant to writing an aggregation f
 
     The `@InputFunction` is usually run on a different worker from the `@CombineFunction`, so the state objects are serialized and transported between these workers by the aggregation framework. `GroupedAccumulatorState` is used when performing a `GROUP BY` aggregation, and an implementation will be automatically generated for you, if you don’t specify a `AccumulatorStateFactory`
 
-### Deprecated function[#](https://trino.io/docs/current/develop/functions.html#deprecated-function) <a href="#deprecated-function" id="deprecated-function"></a>
+### Deprecated function <a href="#deprecated-function" id="deprecated-function"></a>
 
 The `@Deprecated` annotation has to be used on any function that should no longer be used. The annotation causes Trino to generate a warning whenever SQL statements use a deprecated function. When a function is deprecated, the `@Description` needs to be replaced with a note about the deprecation and the replacement function:
 

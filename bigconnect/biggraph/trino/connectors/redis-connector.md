@@ -6,14 +6,14 @@ Each Redis key/value pair is presented as a single row in Trino. Rows can be bro
 
 Currently, only Redis key of string and zset types are supported, only Redis value of string and hash types are supported.
 
-### Requirements[#](https://trino.io/docs/current/connector/redis.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 Requirements for using the connector in a catalog to connect to a Redis data source are:
 
 * Redis 2.8.0 or higher (Redis Cluster is not supported)
 * Network access, by default on port 6379, from the Trino coordinator and workers to Redis.
 
-### Configuration[#](https://trino.io/docs/current/connector/redis.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the Redis connector, create a catalog properties file `etc/catalog/example.properties` with the following content, replacing the properties as appropriate:
 
@@ -23,13 +23,11 @@ redis.table-names=schema1.table1,schema1.table2
 redis.nodes=host:port
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### Multiple Redis servers[#](https://trino.io/docs/current/connector/redis.html#multiple-redis-servers) <a href="#multiple-redis-servers" id="multiple-redis-servers"></a>
+#### Multiple Redis servers <a href="#multiple-redis-servers" id="multiple-redis-servers"></a>
 
 You can have as many catalogs as you need. If you have additional Redis servers, simply add another properties file to `etc/catalog` with a different name, making sure it ends in `.properties`.
 
-### Configuration properties[#](https://trino.io/docs/current/connector/redis.html#configuration-properties) <a href="#configuration-properties" id="configuration-properties"></a>
+### Configuration properties <a href="#configuration-properties" id="configuration-properties"></a>
 
 The following configuration properties are available:
 
@@ -57,13 +55,13 @@ For each table defined, a table description file (see below) may exist. If no ta
 
 This property is optional; the connector relies on the table description files specified in the `redis.table-description-dir` property.
 
-#### `redis.default-schema`[#](https://trino.io/docs/current/connector/redis.html#redis-default-schema) <a href="#redis-default-schema" id="redis-default-schema"></a>
+#### `redis.default-schema` <a href="#redis-default-schema" id="redis-default-schema"></a>
 
 Defines the schema which will contain all tables that were defined without a qualifying schema name.
 
 This property is optional; the default is `default`.
 
-#### `redis.nodes`[#](https://trino.io/docs/current/connector/redis.html#redis-nodes) <a href="#redis-nodes" id="redis-nodes"></a>
+#### `redis.nodes` <a href="#redis-nodes" id="redis-nodes"></a>
 
 The `hostname:port` pair for the Redis server.
 
@@ -71,7 +69,7 @@ This property is required; there is no default.
 
 Redis Cluster is not supported.
 
-#### `redis.scan-count`[#](https://trino.io/docs/current/connector/redis.html#redis-scan-count) <a href="#redis-scan-count" id="redis-scan-count"></a>
+#### `redis.scan-count` <a href="#redis-scan-count" id="redis-scan-count"></a>
 
 The internal COUNT parameter for the Redis SCAN command when connector is using SCAN to find keys for the data. This parameter can be used to tune performance of the Redis connector.
 
@@ -83,19 +81,19 @@ The internal number of keys for the Redis MGET command and Pipeline HGETALL comm
 
 This property is optional; the default is `100`.
 
-#### `redis.key-prefix-schema-table`[#](https://trino.io/docs/current/connector/redis.html#redis-key-prefix-schema-table) <a href="#redis-key-prefix-schema-table" id="redis-key-prefix-schema-table"></a>
+#### `redis.key-prefix-schema-table` <a href="#redis-key-prefix-schema-table" id="redis-key-prefix-schema-table"></a>
 
 If true, only keys prefixed with the `schema-name:table-name` are scanned for a table, and all other keys are filtered out. If false, all keys are scanned.
 
 This property is optional; the default is `false`.
 
-#### `redis.key-delimiter`[#](https://trino.io/docs/current/connector/redis.html#redis-key-delimiter) <a href="#redis-key-delimiter" id="redis-key-delimiter"></a>
+#### `redis.key-delimiter` <a href="#redis-key-delimiter" id="redis-key-delimiter"></a>
 
 The character used for separating `schema-name` and `table-name` when `redis.key-prefix-schema-table` is `true`
 
 This property is optional; the default is `:`.
 
-#### `redis.table-description-dir`[#](https://trino.io/docs/current/connector/redis.html#redis-table-description-dir) <a href="#redis-table-description-dir" id="redis-table-description-dir"></a>
+#### `redis.table-description-dir` <a href="#redis-table-description-dir" id="redis-table-description-dir"></a>
 
 References a folder within Trino deployment that holds one or more JSON files, which must end with `.json` and contain table description files.
 
@@ -103,37 +101,37 @@ Note that the table description files will only be used by the Trino coordinator
 
 This property is optional; the default is `etc/redis`.
 
-#### `redis.table-description-cache-ttl`[#](https://trino.io/docs/current/connector/redis.html#redis-table-description-cache-ttl) <a href="#redis-table-description-cache-ttl" id="redis-table-description-cache-ttl"></a>
+#### `redis.table-description-cache-ttl` <a href="#redis-table-description-cache-ttl" id="redis-table-description-cache-ttl"></a>
 
 The Redis connector dynamically loads the table description files after waiting for the time specified by this property. Therefore, there is no need to update the `redis.table-names` property and restart the Trino service when adding, updating, or deleting a file end with `.json` to `redis.table-description-dir` folder.
 
 This property is optional; the default is `5m`.
 
-#### `redis.hide-internal-columns`[#](https://trino.io/docs/current/connector/redis.html#redis-hide-internal-columns) <a href="#redis-hide-internal-columns" id="redis-hide-internal-columns"></a>
+#### `redis.hide-internal-columns` <a href="#redis-hide-internal-columns" id="redis-hide-internal-columns"></a>
 
 In addition to the data columns defined in a table description file, the connector maintains a number of additional columns for each table. If these columns are hidden, they can still be used in queries, but they do not show up in `DESCRIBE <table-name>` or `SELECT *`.
 
 This property is optional; the default is `true`.
 
-#### `redis.database-index`[#](https://trino.io/docs/current/connector/redis.html#redis-database-index) <a href="#redis-database-index" id="redis-database-index"></a>
+#### `redis.database-index` <a href="#redis-database-index" id="redis-database-index"></a>
 
 The Redis database to query.
 
 This property is optional; the default is `0`.
 
-#### `redis.user`[#](https://trino.io/docs/current/connector/redis.html#redis-user) <a href="#redis-user" id="redis-user"></a>
+#### `redis.user` <a href="#redis-user" id="redis-user"></a>
 
 The username for Redis server.
 
 This property is optional; the default is `null`.
 
-#### `redis.password`[#](https://trino.io/docs/current/connector/redis.html#redis-password) <a href="#redis-password" id="redis-password"></a>
+#### `redis.password` <a href="#redis-password" id="redis-password"></a>
 
 The password for password-protected Redis server.
 
 This property is optional; the default is `null`.
 
-### Internal columns[#](https://trino.io/docs/current/connector/redis.html#internal-columns) <a href="#internal-columns" id="internal-columns"></a>
+### Internal columns <a href="#internal-columns" id="internal-columns"></a>
 
 For each defined table, the connector maintains the following columns:
 
@@ -148,7 +146,7 @@ For each defined table, the connector maintains the following columns:
 
 For tables without a table definition file, the `_key_corrupt` and `_value_corrupt` columns are `false`.
 
-### Table definition files[#](https://trino.io/docs/current/connector/redis.html#table-definition-files) <a href="#table-definition-files" id="table-definition-files"></a>
+### Table definition files <a href="#table-definition-files" id="table-definition-files"></a>
 
 With the Redis connector it is possible to further reduce Redis key/value pairs into granular cells, provided the key/value string follows a particular format. This process defines new columns that can be further queried from Trino.
 
@@ -172,8 +170,6 @@ A table definition file consists of a JSON definition for a table. The name of t
     }
 }
 ```
-
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
 | Field        | Required | Type        | Description                                                                       |
 | ------------ | -------- | ----------- | --------------------------------------------------------------------------------- |
@@ -199,9 +195,9 @@ In addition to the above Kafka types, the Redis connector supports `hash` type f
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Type mapping[#](https://trino.io/docs/current/connector/redis.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 Because Trino and Redis each support types that the other does not, this connector [maps some types](https://trino.io/docs/current/language/types.html#type-mapping-overview) when reading data. Type mapping depends on the RAW, CSV, JSON, and AVRO file formats.
 
@@ -220,7 +216,7 @@ Note
 
 If no table definition file exists for a table, the `dummy` decoder is used, which does not expose any columns.
 
-**Raw decoder**[**#**](https://trino.io/docs/current/connector/redis.html#raw-decoder)
+**Raw decoder**
 
 The raw decoder supports reading of raw byte-based values from message or key, and converting it into Trino columns.
 
@@ -279,7 +275,7 @@ The length of a decoded byte sequence is implied by the `dataFormat`.
 
 For the `VARCHAR` data type, a sequence of bytes is interpreted according to UTF-8 encoding.
 
-**CSV decoder**[**#**](https://trino.io/docs/current/connector/redis.html#csv-decoder)
+**CSV decoder**
 
 The CSV decoder converts the bytes representing a message or key into a string using UTF-8 encoding, and interprets the result as a link of comma-separated values.
 
@@ -299,7 +295,7 @@ The `dataFormat` and `formatHint` attributes are not supported and must be omitt
 
 No other types are supported.
 
-**JSON decoder**[**#**](https://trino.io/docs/current/connector/redis.html#json-decoder)
+**JSON decoder**
 
 The JSON decoder converts the bytes representing a message or key into Javascript Object Notaion (JSON) according to [**RFC 4627**](https://datatracker.ietf.org/doc/html/rfc4627.html). The message or key must convert into a JSON object, not an array or simple type.
 
@@ -325,11 +321,11 @@ The following table lists Trino data types, which can be used in `type` and matc
 
 No other types are supported.
 
-**DEFAULT FIELD DECODER**[**#**](https://trino.io/docs/current/connector/redis.html#default-field-decoder)
+**DEFAULT FIELD DECODER**
 
 This is the standard field decoder. It supports all the Trino physical data types. A field value is transformed under JSON conversion rules into boolean, long, double, or string values. This decoder should be used for columns that are not date or time based.
 
-**DATE AND TIME DECODERS**[**#**](https://trino.io/docs/current/connector/redis.html#date-and-time-decoders)
+**DATE AND TIME DECODERS**
 
 To convert values from JSON objects to Trino `DATE`, `TIME`, `TIME WITH TIME ZONE`, `TIMESTAMP` or `TIMESTAMP WITH TIME ZONE` columns, select special decoders using the `dataFormat` attribute of a field definition.
 
@@ -341,7 +337,7 @@ To convert values from JSON objects to Trino `DATE`, `TIME`, `TIME WITH TIME ZON
 
 For `TIMESTAMP WITH TIME ZONE` and `TIME WITH TIME ZONE` data types, if timezone information is present in decoded value, it is used as a Trino value. Otherwise, the result time zone is set to `UTC`.
 
-**Avro decoder**[**#**](https://trino.io/docs/current/connector/redis.html#avro-decoder)
+**Avro decoder**
 
 The Avro decoder converts the bytes representing a message or key in Avro format based on a schema. The message must have the Avro schema embedded. Trino does not support schemaless Avro decoding.
 
@@ -367,7 +363,7 @@ The following table lists the supported Trino types that can be used in `type` f
 
 No other types are supported.
 
-**AVRO SCHEMA EVOLUTION**[**#**](https://trino.io/docs/current/connector/redis.html#avro-schema-evolution)
+**AVRO SCHEMA EVOLUTION**
 
 The Avro decoder supports schema evolution with backward compatibility. With backward compatibility, a newer schema can be used to read Avro data created with an older schema. Any change in the Avro schema must also be reflected in Trino’s topic definition file. Newly added or renamed fields must have a default value in the Avro schema file.
 
@@ -378,21 +374,21 @@ The schema evolution behavior is as follows:
 * Column is renamed in the new schema: This is equivalent to removing the column and adding a new one, and data created with an older schema produces a _default_ value when the table is using the new schema.
 * Changing type of column in the new schema: If the type coercion is supported by Avro, then the conversion happens. An error is thrown for incompatible types.
 
-### SQL support[#](https://trino.io/docs/current/connector/redis.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides globally available and read operation statements to access data and metadata in Redis.
 
-### Performance[#](https://trino.io/docs/current/connector/redis.html#performance) <a href="#performance" id="performance"></a>
+### Performance <a href="#performance" id="performance"></a>
 
 The connector includes a number of performance improvements, detailed in the following sections.
 
-#### Pushdown[#](https://trino.io/docs/current/connector/redis.html#pushdown) <a href="#pushdown" id="pushdown"></a>
+#### Pushdown <a href="#pushdown" id="pushdown"></a>
 
 Note
 
 The connector performs pushdown where performance may be improved, but in order to preserve correctness an operation may not be pushed down. When pushdown of an operation may result in better performance but risks correctness, the connector prioritizes correctness.
 
-**Predicate pushdown support**[**#**](https://trino.io/docs/current/connector/redis.html#predicate-pushdown-support)
+**Predicate pushdown support**
 
 The connector supports pushdown of keys of `string` type only, the `zset` type is not supported. Key pushdown is not supported when multiple key fields are defined in the table definition file.
 

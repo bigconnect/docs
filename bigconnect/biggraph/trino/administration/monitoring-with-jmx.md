@@ -9,7 +9,7 @@ jmx.rmiregistry.port=9080
 jmx.rmiserver.port=9081
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 * `jmx.rmiregistry.port`: Specifies the port for the JMX RMI registry. JMX clients should connect to this port.
 * `jmx.rmiserver.port`: Specifies the port for the JMX RMI server. Trino exports many metrics, that are useful for monitoring via JMX.
@@ -20,7 +20,7 @@ Additionally configure a Java system property in the jvm.config with the RMI ser
 -Dcom.sun.management.jmxremote.rmi.port=9081
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 JConsole (supplied with the JDK), [VisualVM](https://visualvm.github.io/), and many other tools can be used to access the metrics in a client application. Many monitoring solutions support JMX. You can also use the [JMX connector](https://trino.io/docs/current/connector/jmx.html) and query the metrics using SQL.
 
@@ -28,7 +28,7 @@ Many of these JMX metrics are a complex metric object such as a `CounterStat` th
 
 A small subset of the available metrics are described below.
 
-### JVM[#](https://trino.io/docs/current/admin/jmx.html#jvm) <a href="#jvm" id="jvm"></a>
+### JVM <a href="#jvm" id="jvm"></a>
 
 * Heap size: `java.lang:type=Memory:HeapMemoryUsage.used`
 * Thread count: `java.lang:type=Threading:ThreadCount`
@@ -39,7 +39,7 @@ A small subset of the available metrics are described below.
 * Free memory (general pool): `trino.memory:type=ClusterMemoryPool:name=general:FreeDistributedBytes`
 * Cumulative count (since Trino started) of queries that ran out of memory and were killed: `trino.memory:name=ClusterMemoryManager:QueriesKilledDueToOutOfMemory`
 
-### Trino queries[#](https://trino.io/docs/current/admin/jmx.html#trino-queries) <a href="#trino-queries" id="trino-queries"></a>
+### Trino queries <a href="#trino-queries" id="trino-queries"></a>
 
 * Active queries currently executing or queued: `trino.execution:name=QueryManager:RunningQueries`
 * Queries started: `trino.execution:name=QueryManager:StartedQueries.FiveMinute.Count`
@@ -50,11 +50,11 @@ A small subset of the available metrics are described below.
 * Execution latency (P50): `trino.execution:name=QueryManager:ExecutionTime.FiveMinutes.P50`
 * Input data rate (P90): `trino.execution:name=QueryManager:WallInputBytesRate.FiveMinutes.P90`
 
-### Trino tasks[#](https://trino.io/docs/current/admin/jmx.html#trino-tasks) <a href="#trino-tasks" id="trino-tasks"></a>
+### Trino tasks <a href="#trino-tasks" id="trino-tasks"></a>
 
 * Input data bytes: `trino.execution:name=SqlTaskManager:InputDataSize.FiveMinute.Count`
 * Input rows: `trino.execution:name=SqlTaskManager:InputPositions.FiveMinute.Count`
 
-### Connectors[#](https://trino.io/docs/current/admin/jmx.html#connectors) <a href="#connectors" id="connectors"></a>
+### Connectors <a href="#connectors" id="connectors"></a>
 
 Many connectors provide their own metrics. The metric names typically start with `trino.plugin`.

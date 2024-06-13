@@ -10,7 +10,7 @@ The categories of these different topics are related to read operations, write o
 
 Details of the support for specific statements is available with the documentation for each connector.
 
-### Globally available statements[#](https://trino.io/docs/current/language/sql-support.html#globally-available-statements) <a href="#globally-available-statements" id="globally-available-statements"></a>
+### Globally available statements <a href="#globally-available-statements" id="globally-available-statements"></a>
 
 The following statements are implemented in the core engine and available with any connector:
 
@@ -31,14 +31,14 @@ The following statements are implemented in the core engine and available with a
 * USE
 * VALUES
 
-#### Catalog management# <a href="#catalog-management" id="catalog-management"></a>
+#### Catalog management <a href="#catalog-management" id="catalog-management"></a>
 
 The following statements are used to manage dynamic catalogs:
 
 * CREATE CATALOG
 * DROP CATALOG
 
-### Read operations# <a href="#read-operations" id="read-operations"></a>
+### Read operations <a href="#read-operations" id="read-operations"></a>
 
 The following statements provide read access to data and meta data exposed by a connector accessing a data source. They are supported by all connectors:
 
@@ -56,11 +56,11 @@ The following statements provide read access to data and meta data exposed by a 
 * SHOW TABLES
 * SHOW STATS
 
-### Write operations[#](https://trino.io/docs/current/language/sql-support.html#write-operations) <a href="#write-operations" id="write-operations"></a>
+### Write operations <a href="#write-operations" id="write-operations"></a>
 
 The following statements provide write access to data and meta data exposed by a connector accessing a data source. Availability varies widely from connector to connector:
 
-#### Data management# <a href="#data-management" id="data-management"></a>
+#### Data management <a href="#data-management" id="data-management"></a>
 
 * INSERT
 * UPDATE
@@ -79,20 +79,20 @@ The following statements provide write access to data and meta data exposed by a
 * ALTER SCHEMA
 * COMMENT
 
-#### View management# <a href="#view-management" id="view-management"></a>
+#### View management <a href="#view-management" id="view-management"></a>
 
 * CREATE VIEW
 * DROP VIEW
 * ALTER VIEW
 
-#### Materialized view management# <a href="#materialized-view-management" id="materialized-view-management"></a>
+#### Materialized view management <a href="#materialized-view-management" id="materialized-view-management"></a>
 
 * CREATE MATERIALIZED VIEW
 * ALTER MATERIALIZED VIEW
 * DROP MATERIALIZED VIEW
 * REFRESH MATERIALIZED VIEW
 
-#### Routine management# <a href="#routine-management" id="routine-management"></a>
+#### Routine management <a href="#routine-management" id="routine-management"></a>
 
 The following statements are used to manage catalog routines:
 
@@ -100,7 +100,7 @@ The following statements are used to manage catalog routines:
 * DROP FUNCTION
 * SHOW FUNCTIONS
 
-### Security operations[#](https://trino.io/docs/current/language/sql-support.html#security-operations) <a href="#security-operations" id="security-operations"></a>
+### Security operations <a href="#security-operations" id="security-operations"></a>
 
 The following statements provide security-related operations to security configuration, data, and meta data exposed by a connector accessing a data source. Most connectors do not support these operations:
 
@@ -119,7 +119,7 @@ Grants management:
 * GRANT privilege
 * REVOKE privilege
 
-### Transactions# <a href="#transactions" id="transactions"></a>
+### Transactions <a href="#transactions" id="transactions"></a>
 
 The following statements manage transactions. Most connectors do not support transactions:
 

@@ -10,7 +10,7 @@ Instances of your connector are created by a `ConnectorFactory` instance which i
 * ConnectorSplitManager
 * ConnectorRecordSetProvider or ConnectorPageSourceProvider
 
-#### Configuration# <a href="#configuration" id="configuration"></a>
+#### Configuration <a href="#configuration" id="configuration"></a>
 
 The `create()` method of the connector factory receives a `config` map, containing all properties from the catalog properties file. It can be used to configure the connector, but because all the values are strings, they might require additional processing if they represent other data types. It also doesn’t validate if all the provided properties are known. This can lead to the connector behaving differently than expected when a connector ignores a property due to the user making a mistake in typing the name of the property.
 
@@ -62,7 +62,7 @@ public class ExampleConfig
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The preceding example defines two configuration properties and makes the connector more robust by:
 
@@ -95,7 +95,7 @@ public class ExampleModule
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 And then the module needs to be initialized in the connector factory, when creating a new instance of the connector:
 
@@ -114,7 +114,7 @@ public Connector create(String connectorName, Map<String, String> config, Connec
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note
 
@@ -130,9 +130,9 @@ FROM git.default.commits
 WHERE url = 'https://github.com/trinodb/trino.git'
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### ConnectorMetadata[#](https://trino.io/docs/current/develop/connectors.html#connectormetadata) <a href="#connectormetadata" id="connectormetadata"></a>
+
+### ConnectorMetadata <a href="#connectormetadata" id="connectormetadata"></a>
 
 The connector metadata interface allows Trino to get a lists of schemas, tables, columns, and other metadata about a particular data source.
 
@@ -153,7 +153,7 @@ The connector metadata interface allows to also implement other connector featur
 * Schema management, which is creating, altering and dropping schemas, tables, table columns, views, and materialized views.
 * Support for table and column comments, and properties.
 * Schema, table and view authorization.
-* Executing [Table functions](https://trino.io/docs/current/develop/table-functions.html).
+* Executing Table functions.
 * Providing table statistics used by the Cost Based Optimizer (CBO) and collecting statistics during writes and when analyzing selected tables.
 * Data modification, which is:
   * inserting, updating, and deleting rows in tables,
@@ -194,7 +194,7 @@ Otherwise, these methods return a result object containing a new table handle. T
 
 The returned table handle is later passed to other services that the connector implements, like the `ConnectorRecordSetProvider` or `ConnectorPageSourceProvider`.
 
-#### Limit and top-N pushdown[#](https://trino.io/docs/current/develop/connectors.html#limit-and-top-n-pushdown) <a href="#limit-and-top-n-pushdown" id="limit-and-top-n-pushdown"></a>
+#### Limit and top-N pushdown <a href="#limit-and-top-n-pushdown" id="limit-and-top-n-pushdown"></a>
 
 When executing a `SELECT` query with `LIMIT` or `ORDER BY` clauses, the query plan may contain a `Sort` or `Limit` operations.
 
@@ -210,7 +210,7 @@ The `applyTopN` is the only method that receives sort items from the `Sort` oper
 
 In a query, the `ORDER BY` section can include any column with any order. But the data source for the connector might only support limited combinations. Plugin authors have to decide if the connector should ignore the pushdown, return all the data and let the engine sort it, or throw an exception to inform the user that particular order isn’t supported, if fetching all the data would be too expensive or time consuming. When throwing an exception, use the `TrinoException` class with the `INVALID_ORDER_BY` error code and an actionable message, to let users know how to write a valid query.
 
-#### Predicate pushdown[#](https://trino.io/docs/current/develop/connectors.html#predicate-pushdown) <a href="#predicate-pushdown" id="predicate-pushdown"></a>
+#### Predicate pushdown <a href="#predicate-pushdown" id="predicate-pushdown"></a>
 
 When executing a query with a `WHERE` clause, the query plan can contain a `ScanFilterProject` plan node/node with a predicate constraint.
 
@@ -259,7 +259,7 @@ public Optional<ConstraintApplicationResult<ConnectorTableHandle>> applyFilter(
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The `TupleDomain` from the constraint is intersected with the `TupleDomain` already applied to the `TableHandle` to form `newDomain`. If filtering has not changed, an `Optional.empty()` result is returned to notify the planner that this optimization path has reached its end.
 
@@ -340,7 +340,7 @@ public Optional<ConstraintApplicationResult<ConnectorTableHandle>> applyFilter(
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This example illustrates implementing a base class for many JDBC connectors while handling the specific requirements of multiple JDBC-compliant data sources. It ensures that if a constraint gets pushed down, it works exactly the same in the underlying data source, and produces the same results as it would in Trino. For example, in databases where string comparisons are case-insensitive, pushdown does not work, as string comparison operations in Trino are case-sensitive.
 
@@ -461,11 +461,11 @@ public Optional<ConstraintApplicationResult<ConnectorTableHandle>> applyFilter(
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 `ConnectorExpression` is split similarly to `TupleDomain`. Each expression can be broken down into independent _conjuncts_. Conjuncts are smaller expressions which, if joined together using an `AND` operator, are equivalent to the original expression. Every conjunct can be handled individually. Each one is converted using connector-specific rules, as defined by the `JdbcClient` implementation, to be more flexible. Unconverted conjuncts are returned as `remainingExpression` and are evaluated by the Trino engine.
 
-### ConnectorSplitManager[#](https://trino.io/docs/current/develop/connectors.html#connectorsplitmanager) <a href="#connectorsplitmanager" id="connectorsplitmanager"></a>
+### ConnectorSplitManager <a href="#connectorsplitmanager" id="connectorsplitmanager"></a>
 
 The split manager partitions the data for a table into the individual chunks that Trino distributes to workers for processing. For example, the Hive connector lists the files for each Hive partition and creates one or more splits per file. For data sources that don’t have partitioned data, a good strategy here is to simply return a single split for the entire table. This is the strategy employed by the Example HTTP connector.
 
@@ -483,7 +483,7 @@ For simple connectors, where performance isn’t critical, the record set provid
 
 A `RecordCursor` implementation needs to keep track of the current record. It return values for columns by a numerical position, in the data type matching the column definition in the table. When the engine is done reading the current record it calls `advanceNextPosition` on the cursor.
 
-#### Type mapping[#](https://trino.io/docs/current/develop/connectors.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+#### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 The built-in SQL data types use different Java types as carrier types.
 
@@ -557,7 +557,7 @@ private Block encodeArray(List<String> names)
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following example creates a SqlMap object for a `map(varchar, varchar)` column:
 
@@ -585,9 +585,9 @@ private SqlMap encodeMap(Map<String, ?> map)
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### ConnectorPageSourceProvider[#](https://trino.io/docs/current/develop/connectors.html#connectorpagesourceprovider) <a href="#connectorpagesourceprovider" id="connectorpagesourceprovider"></a>
+
+### ConnectorPageSourceProvider <a href="#connectorpagesourceprovider" id="connectorpagesourceprovider"></a>
 
 Given a split, a table handle, and a list of columns, the page source provider is responsible for delivering data to the Trino execution engine. It creates a `ConnectorPageSource`, which in turn creates `Page` objects that are used by Trino to read the column values.
 
@@ -595,7 +595,7 @@ If not implemented, a default `RecordPageSourceProvider` is used. Given a record
 
 A connector should implement a page source provider instead of a record set provider when it’s possible to create pages directly. The conversion of individual records from a record set provider into pages adds overheads during query execution.
 
-### ConnectorPageSinkProvider[#](https://trino.io/docs/current/develop/connectors.html#connectorpagesinkprovider) <a href="#connectorpagesinkprovider" id="connectorpagesinkprovider"></a>
+### ConnectorPageSinkProvider <a href="#connectorpagesinkprovider" id="connectorpagesinkprovider"></a>
 
 Given an insert table handle, the page sink provider is responsible for consuming data from the Trino execution engine. It creates a `ConnectorPageSink`, which in turn accepts `Page` objects that contains the column values.
 

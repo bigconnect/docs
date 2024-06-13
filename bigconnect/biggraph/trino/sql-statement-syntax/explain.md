@@ -1,12 +1,12 @@
 # EXPLAIN
 
-### Synopsis[#](https://trino.io/docs/current/sql/explain.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 EXPLAIN [ ( option [, ...] ) ] statement
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 where `option` can be one of:
 
@@ -15,9 +15,9 @@ FORMAT { TEXT | GRAPHVIZ | JSON }
 TYPE { LOGICAL | DISTRIBUTED | VALIDATE | IO }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/explain.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 Show the logical or distributed execution plan of a statement, or validate the statement. The distributed plan is shown by default. Each plan fragment of the distributed plan is executed by a single or multiple Trino nodes. Fragments separation represent the data exchange between Trino nodes. Fragment type specifies how the fragment is executed by Trino nodes and how the data is distributed between fragments:
 
@@ -41,9 +41,9 @@ Fragment is executed on a fixed number of nodes with the input data broadcasted 
 
 Fragment is executed on nodes where input splits are accessed.
 
-### Examples[#](https://trino.io/docs/current/sql/explain.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
-#### EXPLAIN (TYPE LOGICAL)[#](https://trino.io/docs/current/sql/explain.html#explain-type-logical) <a href="#explain-type-logical" id="explain-type-logical"></a>
+#### EXPLAIN (TYPE LOGICAL) <a href="#explain-type-logical" id="explain-type-logical"></a>
 
 Process the supplied query statement and create a logical plan in text format:
 
@@ -51,7 +51,7 @@ Process the supplied query statement and create a logical plan in text format:
 EXPLAIN (TYPE LOGICAL) SELECT regionkey, count(*) FROM nation GROUP BY 1;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
                                                    Query Plan
@@ -87,9 +87,9 @@ EXPLAIN (TYPE LOGICAL) SELECT regionkey, count(*) FROM nation GROUP BY 1;
                           regionkey := tpch:regionkey
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### EXPLAIN (TYPE LOGICAL, FORMAT JSON)[#](https://trino.io/docs/current/sql/explain.html#explain-type-logical-format-json) <a href="#explain-type-logical-format-json" id="explain-type-logical-format-json"></a>
+
+#### EXPLAIN (TYPE LOGICAL, FORMAT JSON) <a href="#explain-type-logical-format-json" id="explain-type-logical-format-json"></a>
 
 Warning
 
@@ -101,7 +101,7 @@ Process the supplied query statement and create a logical plan in JSON format:
 EXPLAIN (TYPE LOGICAL, FORMAT JSON) SELECT regionkey, count(*) FROM nation GROUP BY 1;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 {
@@ -358,9 +358,9 @@ EXPLAIN (TYPE LOGICAL, FORMAT JSON) SELECT regionkey, count(*) FROM nation GROUP
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### EXPLAIN (TYPE DISTRIBUTED)[#](https://trino.io/docs/current/sql/explain.html#explain-type-distributed) <a href="#explain-type-distributed" id="explain-type-distributed"></a>
+
+#### EXPLAIN (TYPE DISTRIBUTED) <a href="#explain-type-distributed" id="explain-type-distributed"></a>
 
 Process the supplied query statement and create a distributed plan in text format. The distributed plan splits the logical plan into stages, and therefore explicitly shows the data exchange between workers:
 
@@ -368,7 +368,7 @@ Process the supplied query statement and create a distributed plan in text forma
 EXPLAIN (TYPE DISTRIBUTED) SELECT regionkey, count(*) FROM nation GROUP BY 1;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
                                               Query Plan
@@ -413,9 +413,9 @@ EXPLAIN (TYPE DISTRIBUTED) SELECT regionkey, count(*) FROM nation GROUP BY 1;
                regionkey := tpch:regionkey
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### EXPLAIN (TYPE DISTRIBUTED, FORMAT JSON)[#](https://trino.io/docs/current/sql/explain.html#explain-type-distributed-format-json) <a href="#explain-type-distributed-format-json" id="explain-type-distributed-format-json"></a>
+
+#### EXPLAIN (TYPE DISTRIBUTED, FORMAT JSON) <a href="#explain-type-distributed-format-json" id="explain-type-distributed-format-json"></a>
 
 Warning
 
@@ -427,7 +427,7 @@ Process the supplied query statement and create a distributed plan in JSON forma
 EXPLAIN (TYPE DISTRIBUTED, FORMAT JSON) SELECT regionkey, count(*) FROM nation GROUP BY 1;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 {
@@ -623,9 +623,9 @@ EXPLAIN (TYPE DISTRIBUTED, FORMAT JSON) SELECT regionkey, count(*) FROM nation G
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### EXPLAIN (TYPE VALIDATE)[#](https://trino.io/docs/current/sql/explain.html#explain-type-validate) <a href="#explain-type-validate" id="explain-type-validate"></a>
+
+#### EXPLAIN (TYPE VALIDATE) <a href="#explain-type-validate" id="explain-type-validate"></a>
 
 Validate the supplied query statement for syntactical and semantic correctness. Returns true if the statement is valid:
 
@@ -633,7 +633,7 @@ Validate the supplied query statement for syntactical and semantic correctness. 
 EXPLAIN (TYPE VALIDATE) SELECT regionkey, count(*) FROM nation GROUP BY 1;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
  Valid
@@ -641,7 +641,7 @@ EXPLAIN (TYPE VALIDATE) SELECT regionkey, count(*) FROM nation GROUP BY 1;
  true
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If the statement is not correct because a syntax error, such as an unknown keyword, is found the error message details the problem:
 
@@ -649,7 +649,7 @@ If the statement is not correct because a syntax error, such as an unknown keywo
 EXPLAIN (TYPE VALIDATE) SELET 1=0;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 Query 20220929_234840_00001_vjwxj failed: line 1:25: mismatched input 'SELET'.
@@ -660,7 +660,7 @@ Expecting: 'ALTER', 'ANALYZE', 'CALL', 'COMMENT', 'COMMIT', 'CREATE',
 <query>
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Similarly if semantic issues are detected, such as an invalid object name `nations` instead of `nation`, the error message returns useful information:
 
@@ -668,16 +668,16 @@ Similarly if semantic issues are detected, such as an invalid object name `natio
 EXPLAIN(TYPE VALIDATE) SELECT * FROM tpch.tiny.nations;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 Query 20220929_235059_00003_vjwxj failed: line 1:15: Table 'tpch.tiny.nations' does not exist
 SELECT * FROM tpch.tiny.nations
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### EXPLAIN (TYPE IO)[#](https://trino.io/docs/current/sql/explain.html#explain-type-io) <a href="#explain-type-io" id="explain-type-io"></a>
+
+#### EXPLAIN (TYPE IO) <a href="#explain-type-io" id="explain-type-io"></a>
 
 Process the supplied query statement and create a plan with input and output details about the accessed objects in JSON format:
 
@@ -686,7 +686,7 @@ EXPLAIN (TYPE IO, FORMAT JSON) INSERT INTO test_lineitem
 SELECT * FROM lineitem WHERE shipdate = '2020-02-01' AND quantity > 10;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
             Query Plan
@@ -795,9 +795,9 @@ SELECT * FROM lineitem WHERE shipdate = '2020-02-01' AND quantity > 10;
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### See also[#](https://trino.io/docs/current/sql/explain.html#see-also) <a href="#see-also" id="see-also"></a>
+
+### See also <a href="#see-also" id="see-also"></a>
 
 EXPLAIN ANALYZE
 

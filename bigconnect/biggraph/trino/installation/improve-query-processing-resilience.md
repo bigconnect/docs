@@ -4,11 +4,11 @@ You can configure Trino to be more resilient against failures during query proce
 
 When configured, the Trino cluster buffers data used by workers during query processing. If processing on a worker node fails for any reason, such as a network outage or running out of available resources, the coordinator reschedules processing of the failed piece of work on another worker. This allows query processing to continue using buffered data.
 
-### Architecture[#](https://trino.io/docs/current/installation/query-resiliency.html#architecture) <a href="#architecture" id="architecture"></a>
+### Architecture <a href="#architecture" id="architecture"></a>
 
 The coordinator node uses a configured exchange manager service that buffers data during query processing in an external location, such as an S3 object storage bucket. Worker nodes send data to the buffer as they execute their query tasks.
 
-### Best practices and considerations[#](https://trino.io/docs/current/installation/query-resiliency.html#best-practices-and-considerations) <a href="#best-practices-and-considerations" id="best-practices-and-considerations"></a>
+### Best practices and considerations <a href="#best-practices-and-considerations" id="best-practices-and-considerations"></a>
 
 A fault-tolerant cluster is best suited for large batch queries. Users may experience latency or similar behavior if they issue a high volume of short-running queries on a fault-tolerant cluster. As such, it is recommended to run a dedicated fault-tolerant cluster for handling batch operations, separate from a cluster that is designated for a higher query volume.
 
@@ -25,7 +25,7 @@ Catalogs using other connectors only support fault-tolerant execution of read op
 
 The exchange manager may send a large amount of data to the exchange storage, resulting in high I/O load on that storage. You can configure multiple storage locations for use by the exchange manager to help balance the I/O load between them.
 
-### Configuration[#](https://trino.io/docs/current/installation/query-resiliency.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 The following steps describe how to configure a Trino cluster for fault-tolerant execution with an S3-based exchange:
 
@@ -50,7 +50,7 @@ The following steps describe how to configure a Trino cluster for fault-tolerant
       s3.aws-secret-key=example-secret-key
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     In non-Kubernetes installations, the same properties must be defined in an `exchange-manager.properties` configuration file on the coordinator and all worker nodes.
 3.  Add the following configuration for fault-tolerant execution in the `additionalConfigProperties:` section of the Helm chart:
@@ -60,7 +60,7 @@ The following steps describe how to configure a Trino cluster for fault-tolerant
       retry-policy=TASK
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
     In non-Kubernetes installations, the same property must be defined in the `config.properties` file on the coordinator and all worker nodes.
 4. Re-deploy your instance of Trino or, for non-Kubernetes installations, restart the cluster.

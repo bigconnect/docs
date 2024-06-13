@@ -11,7 +11,7 @@ A single PEM file can contain either certificate or key pair information, or bot
 
 Follow the steps in this topic to inspect and validate key and certificate in PEM files. See Inspect and validate keystore to validate JKS keystores.
 
-### Inspect PEM file# <a href="#inspect-pem-file" id="inspect-pem-file"></a>
+### Inspect PEM file <a href="#inspect-pem-file" id="inspect-pem-file"></a>
 
 The file name extensions shown on this page are examples only; there is no extension naming standard.
 
@@ -21,7 +21,7 @@ You may receive a single file that includes a private key and its certificate, o
 cat clustercoord.key clustercoord.cert > clustercoord.pem
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Next, use the `cat` command to view this plain text file. For example:
 
@@ -29,7 +29,7 @@ Next, use the `cat` command to view this plain text file. For example:
 cat clustercoord.pem | less
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Make sure the PEM file shows at least one `KEY` and one `CERTIFICATE` section. A key section looks something like the following:
 
@@ -40,7 +40,7 @@ MIIEowIBAAKCAQEAwJL8CLeDFAHhZe3QOOF1vWt4Vuk9vyO38Y1y9SgBfB02b2jW
 -----END PRIVATE KEY-----
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If your key section reports `BEGIN ENCRYPTED PRIVATE KEY` instead, this means the key is encrypted and you must use the password to open or inspect the key. You may have specified the password when requesting the key, or the password could be assigned by your site’s network managers. Note that password protected PEM files are not supported by Trino.
 
@@ -61,7 +61,7 @@ MIIDwjCCAqoCCQCxyqwZ9GK50jANBgkqhkiG9w0BAQsFADCBojELMAkGA1UEBhMC
 
 The file can show a single certificate section, or more than one to express a chain of authorities, each certifying the previous.
 
-### Validate PEM key section[#](https://trino.io/docs/current/security/inspect-pem.html#validate-pem-key-section) <a href="#validate-pem-key-section" id="validate-pem-key-section"></a>
+### Validate PEM key section <a href="#validate-pem-key-section" id="validate-pem-key-section"></a>
 
 This page presumes your system provides the `openssl` command from OpenSSL 1.1 or later.
 
@@ -71,7 +71,7 @@ Test an RSA private key’s validity with the following command:
 openssl rsa -in clustercoord.pem -check -noout
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Look for the following confirmation message:
 
@@ -79,7 +79,7 @@ Look for the following confirmation message:
 RSA key ok
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note
 
@@ -93,7 +93,7 @@ Analyze the certificate section of your PEM file with the following `openssl` co
 openssl x509 -in clustercoord.pem -text -noout
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If your certificate was generated with a password, `openssl` prompts for it. Note that password protected PEM files are not supported by Trino.
 

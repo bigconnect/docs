@@ -1,6 +1,6 @@
 # CREATE CATALOG
 
-### Synopsis[#](https://trino.io/docs/current/sql/create-catalog.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 CREATE CATALOG
@@ -9,9 +9,7 @@ USING connector_name
 [ WITH ( property_name = expression [, ...] ) ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-### Description[#](https://trino.io/docs/current/sql/create-catalog.html#description) <a href="#description" id="description"></a>
+### Description <a href="#description" id="description"></a>
 
 Create a new catalog using the specified connector.
 
@@ -26,30 +24,30 @@ The query fails in the following circumstances:
 
 Warning
 
-The complete `CREATE CATALOG` query is logged, and visible in the [Web UI](https://trino.io/docs/current/admin/web-interface.html). This includes any sensitive properties, like passwords and other credentials. See [Secrets](https://trino.io/docs/current/security/secrets.html).
+The complete `CREATE CATALOG` query is logged, and visible in the Web UI. This includes any sensitive properties, like passwords and other credentials. See Secrets.
 
 Note
 
-This command requires the [catalog management type](https://trino.io/docs/current/admin/properties-catalog.html) to be set to `dynamic`.
+This command requires the catalog management type to be set to `dynamic`.
 
-### Examples[#](https://trino.io/docs/current/sql/create-catalog.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
-Create a new catalog called `tpch` using the [TPCH connector](https://trino.io/docs/current/connector/tpch.html):
+Create a new catalog called `tpch` using the TPCH connector:
 
 ```
 CREATE CATALOG tpch USING tpch;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-Create a new catalog called `brain` using the [Memory connector](https://trino.io/docs/current/connector/memory.html):
+
+Create a new catalog called `brain` using the Memory connector:
 
 ```
 CREATE CATALOG brain USING memory
 WITH ("memory.max-data-per-node" = '128MB');
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Notice that the connector property contains dashes (`-`) and needs to quoted using a double quote (`"`). The value `128MB` is quoted using single quotes, because it is a string literal.
 
@@ -65,11 +63,11 @@ WITH (
 );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 This example assumes that the `POSTGRES_USER` and `POSTGRES_PASSWORD` environmental variables are set as [secrets](https://trino.io/docs/current/security/secrets.html) on all nodes of the cluster.
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 * DROP CATALOG
 * Catalog management properties

@@ -18,7 +18,7 @@ The new API allows column filtering to only read the data you are interested in.
 
 The API rebalances records between readers until they all complete. This means that all Map phases will finish nearly concurrently. See this blog article on how dynamic sharding is similarly used in Google Cloud Dataflow.
 
-### Requirements[#](https://trino.io/docs/current/connector/bigquery.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To connect to BigQuery, you need:
 
@@ -44,21 +44,21 @@ connector.name=bigquery
 bigquery.project-id=<your Google Cloud Platform project id>
 ```
 
-#### Multiple GCP projects[#](https://trino.io/docs/current/connector/bigquery.html#multiple-gcp-projects) <a href="#multiple-gcp-projects" id="multiple-gcp-projects"></a>
+#### Multiple GCP projects <a href="#multiple-gcp-projects" id="multiple-gcp-projects"></a>
 
 The BigQuery connector can only access a single GCP project.Thus, if you have data in multiple GCP projects, You need to create several catalogs, each pointing to a different GCP project. For example, if you have two GCP projects, one for the sales and one for analytics, you can create two properties files in `etc/catalog` named `sales.properties` and `analytics.properties`, both having `connector.name=bigquery` but with different `project-id`. This will create the two catalogs, `sales` and `analytics` respectively.
 
-#### Configuring partitioning[#](https://trino.io/docs/current/connector/bigquery.html#configuring-partitioning) <a href="#configuring-partitioning" id="configuring-partitioning"></a>
+#### Configuring partitioning <a href="#configuring-partitioning" id="configuring-partitioning"></a>
 
 By default the connector creates one partition per 400MB in the table being read (before filtering). This should roughly correspond to the maximum number of readers supported by the BigQuery Storage API. This can be configured explicitly with the `bigquery.parallelism` property. BigQuery may limit the number of partitions based on server constraints.
 
-#### Arrow serialization support[#](https://trino.io/docs/current/connector/bigquery.html#arrow-serialization-support) <a href="#arrow-serialization-support" id="arrow-serialization-support"></a>
+#### Arrow serialization support <a href="#arrow-serialization-support" id="arrow-serialization-support"></a>
 
 This is an experimental feature which introduces support for using Apache Arrow as the serialization format when reading from BigQuery. Please note there are a few caveats:
 
-* Using Apache Arrow serialization is disabled by default. In order to enable it, set the `bigquery.experimental.arrow-serialization.enabled` configuration property to `true` and add `--add-opens=java.base/java.nio=ALL-UNNAMED` to the Trino [JVM config](https://trino.io/docs/current/installation/deployment.html#jvm-config).
+* Using Apache Arrow serialization is disabled by default. In order to enable it, set the `bigquery.experimental.arrow-serialization.enabled` configuration property to `true` and add `--add-opens=java.base/java.nio=ALL-UNNAMED` to the Trino JVM config.
 
-#### Reading from views[#](https://trino.io/docs/current/connector/bigquery.html#reading-from-views) <a href="#reading-from-views" id="reading-from-views"></a>
+#### Reading from views <a href="#reading-from-views" id="reading-from-views"></a>
 
 The connector has a preliminary support for reading from [BigQuery views](https://cloud.google.com/bigquery/docs/views-intro). Please note there are a few caveats:
 
@@ -67,40 +67,40 @@ The connector has a preliminary support for reading from [BigQuery views](https:
 * The materialization process can also incur additional costs to your BigQuery bill.
 * By default, the materialized views are created in the same project and dataset. Those can be configured by the optional `bigquery.view-materialization-project` and `bigquery.view-materialization-dataset` properties, respectively. The service account must have write permission to the project and the dataset in order to materialize the view.
 
-#### Configuration properties[#](https://trino.io/docs/current/connector/bigquery.html#configuration-properties) <a href="#configuration-properties" id="configuration-properties"></a>
+#### Configuration properties <a href="#configuration-properties" id="configuration-properties"></a>
 
-| Property                                            | Description                                                                                                                                                                                               | Default                                                                                                            |
-| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `bigquery.project-id`                               | The Google Cloud Project ID where the data reside                                                                                                                                                         | Taken from the service account                                                                                     |
-| `bigquery.parent-project-id`                        | The project ID Google Cloud Project to bill for the export                                                                                                                                                | Taken from the service account                                                                                     |
-| `bigquery.parallelism`                              | The number of partitions to split the data into                                                                                                                                                           | The number of executors                                                                                            |
-| `bigquery.views-enabled`                            | Enables the connector to read from views and not only tables. Please read [this section](https://trino.io/docs/current/connector/bigquery.html#bigquery-reading-from-views) before enabling this feature. | `false`                                                                                                            |
-| `bigquery.view-expire-duration`                     | Expire duration for the materialized view.                                                                                                                                                                | `24h`                                                                                                              |
-| `bigquery.view-materialization-project`             | The project where the materialized view is going to be created                                                                                                                                            | The view’s project                                                                                                 |
-| `bigquery.view-materialization-dataset`             | The dataset where the materialized view is going to be created                                                                                                                                            | The view’s dataset                                                                                                 |
-| `bigquery.skip-view-materialization`                | Use REST API to access views instead of Storage API. BigQuery `BIGNUMERIC` and `TIMESTAMP` types are unsupported.                                                                                         | `false`                                                                                                            |
-| `bigquery.views-cache-ttl`                          | Duration for which the materialization of a view will be cached and reused. Set to `0ms` to disable the cache.                                                                                            | `15m`                                                                                                              |
-| `bigquery.metadata.cache-ttl`                       | Duration for which metadata retrieved from BigQuery is cached and reused. Set to `0ms` to disable the cache.                                                                                              | `0ms`                                                                                                              |
-| `bigquery.max-read-rows-retries`                    | The number of retries in case of retryable server issues                                                                                                                                                  | `3`                                                                                                                |
-| `bigquery.credentials-key`                          | The base64 encoded credentials key                                                                                                                                                                        | None. See the [requirements](https://trino.io/docs/current/connector/bigquery.html#bigquery-requirements) section. |
-| `bigquery.credentials-file`                         | The path to the JSON credentials file                                                                                                                                                                     | None. See the [requirements](https://trino.io/docs/current/connector/bigquery.html#bigquery-requirements) section. |
-| `bigquery.case-insensitive-name-matching`           | Match dataset and table names case-insensitively                                                                                                                                                          | `false`                                                                                                            |
-| `bigquery.query-results-cache.enabled`              | Enable query results cache                                                                                                                                                                                | `false`                                                                                                            |
-| `bigquery.experimental.arrow-serialization.enabled` | Enable using Apache Arrow serialization when reading data from BigQuery. Please read this section before enabling this feature.                                                                           | `false`                                                                                                            |
-| `bigquery.rpc-proxy.enabled`                        | Use a proxy for communication with BigQuery.                                                                                                                                                              | `false`                                                                                                            |
-| `bigquery.rpc-proxy.uri`                            | Proxy URI to use if connecting through a proxy.                                                                                                                                                           |                                                                                                                    |
-| `bigquery.rpc-proxy.username`                       | Proxy user name to use if connecting through a proxy.                                                                                                                                                     |                                                                                                                    |
-| `bigquery.rpc-proxy.password`                       | Proxy password to use if connecting through a proxy.                                                                                                                                                      |                                                                                                                    |
-| `bigquery.rpc-proxy.keystore-path`                  | Keystore containing client certificates to present to proxy if connecting through a proxy. Only required if proxy uses mutual TLS.                                                                        |                                                                                                                    |
-| `bigquery.rpc-proxy.keystore-password`              | Password of the keystore specified by `bigquery.rpc-proxy.keystore-path`.                                                                                                                                 |                                                                                                                    |
-| `bigquery.rpc-proxy.truststore-path`                | Truststore containing certificates of the proxy server if connecting through a proxy.                                                                                                                     |                                                                                                                    |
-| `bigquery.rpc-proxy.truststore-password`            | Password of the truststore specified by `bigquery.rpc-proxy.truststore-path`.                                                                                                                             |                                                                                                                    |
+| Property                                            | Description                                                                                                                                                                                               | Default                             |
+| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| `bigquery.project-id`                               | The Google Cloud Project ID where the data reside                                                                                                                                                         | Taken from the service account      |
+| `bigquery.parent-project-id`                        | The project ID Google Cloud Project to bill for the export                                                                                                                                                | Taken from the service account      |
+| `bigquery.parallelism`                              | The number of partitions to split the data into                                                                                                                                                           | The number of executors             |
+| `bigquery.views-enabled`                            | Enables the connector to read from views and not only tables. Please read [this section](https://trino.io/docs/current/connector/bigquery.html#bigquery-reading-from-views) before enabling this feature. | `false`                             |
+| `bigquery.view-expire-duration`                     | Expire duration for the materialized view.                                                                                                                                                                | `24h`                               |
+| `bigquery.view-materialization-project`             | The project where the materialized view is going to be created                                                                                                                                            | The view’s project                  |
+| `bigquery.view-materialization-dataset`             | The dataset where the materialized view is going to be created                                                                                                                                            | The view’s dataset                  |
+| `bigquery.skip-view-materialization`                | Use REST API to access views instead of Storage API. BigQuery `BIGNUMERIC` and `TIMESTAMP` types are unsupported.                                                                                         | `false`                             |
+| `bigquery.views-cache-ttl`                          | Duration for which the materialization of a view will be cached and reused. Set to `0ms` to disable the cache.                                                                                            | `15m`                               |
+| `bigquery.metadata.cache-ttl`                       | Duration for which metadata retrieved from BigQuery is cached and reused. Set to `0ms` to disable the cache.                                                                                              | `0ms`                               |
+| `bigquery.max-read-rows-retries`                    | The number of retries in case of retryable server issues                                                                                                                                                  | `3`                                 |
+| `bigquery.credentials-key`                          | The base64 encoded credentials key                                                                                                                                                                        | None. See the requirements section. |
+| `bigquery.credentials-file`                         | The path to the JSON credentials file                                                                                                                                                                     | None. See the requirements section. |
+| `bigquery.case-insensitive-name-matching`           | Match dataset and table names case-insensitively                                                                                                                                                          | `false`                             |
+| `bigquery.query-results-cache.enabled`              | Enable query results cache                                                                                                                                                                                | `false`                             |
+| `bigquery.experimental.arrow-serialization.enabled` | Enable using Apache Arrow serialization when reading data from BigQuery. Please read this section before enabling this feature.                                                                           | `false`                             |
+| `bigquery.rpc-proxy.enabled`                        | Use a proxy for communication with BigQuery.                                                                                                                                                              | `false`                             |
+| `bigquery.rpc-proxy.uri`                            | Proxy URI to use if connecting through a proxy.                                                                                                                                                           |                                     |
+| `bigquery.rpc-proxy.username`                       | Proxy user name to use if connecting through a proxy.                                                                                                                                                     |                                     |
+| `bigquery.rpc-proxy.password`                       | Proxy password to use if connecting through a proxy.                                                                                                                                                      |                                     |
+| `bigquery.rpc-proxy.keystore-path`                  | Keystore containing client certificates to present to proxy if connecting through a proxy. Only required if proxy uses mutual TLS.                                                                        |                                     |
+| `bigquery.rpc-proxy.keystore-password`              | Password of the keystore specified by `bigquery.rpc-proxy.keystore-path`.                                                                                                                                 |                                     |
+| `bigquery.rpc-proxy.truststore-path`                | Truststore containing certificates of the proxy server if connecting through a proxy.                                                                                                                     |                                     |
+| `bigquery.rpc-proxy.truststore-password`            | Password of the truststore specified by `bigquery.rpc-proxy.truststore-path`.                                                                                                                             |                                     |
 
-### Type mapping[#](https://trino.io/docs/current/connector/bigquery.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 Because Trino and BigQuery each support types that the other does not, this connector modifies some types when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
-#### BigQuery type to Trino type mapping[#](https://trino.io/docs/current/connector/bigquery.html#bigquery-type-to-trino-type-mapping) <a href="#bigquery-type-to-trino-type-mapping" id="bigquery-type-to-trino-type-mapping"></a>
+#### BigQuery type to Trino type mapping <a href="#bigquery-type-to-trino-type-mapping" id="bigquery-type-to-trino-type-mapping"></a>
 
 The connector maps BigQuery types to the corresponding Trino types according to the following table:
 
@@ -124,7 +124,7 @@ The connector maps BigQuery types to the corresponding Trino types according to 
 
 No other types are supported.
 
-#### Trino type to BigQuery type mapping[#](https://trino.io/docs/current/connector/bigquery.html#trino-type-to-bigquery-type-mapping) <a href="#trino-type-to-bigquery-type-mapping" id="trino-type-to-bigquery-type-mapping"></a>
+#### Trino type to BigQuery type mapping <a href="#trino-type-to-bigquery-type-mapping" id="trino-type-to-bigquery-type-mapping"></a>
 
 The connector maps Trino types to the corresponding BigQuery types according to the following table:
 
@@ -225,8 +225,8 @@ Note
 
 The query engine does not preserve the order of the results of this function. If the passed query contains an `ORDER BY` clause, the function result may not be ordered as expected.
 
-### FAQ[#](https://trino.io/docs/current/connector/bigquery.html#faq) <a href="#faq" id="faq"></a>
+### FAQ <a href="#faq" id="faq"></a>
 
-#### What is the Pricing for the Storage API?[#](https://trino.io/docs/current/connector/bigquery.html#what-is-the-pricing-for-the-storage-api) <a href="#what-is-the-pricing-for-the-storage-api" id="what-is-the-pricing-for-the-storage-api"></a>
+#### What is the Pricing for the Storage API? <a href="#what-is-the-pricing-for-the-storage-api" id="what-is-the-pricing-for-the-storage-api"></a>
 
 See the [BigQuery pricing documentation](https://cloud.google.com/bigquery/pricing#storage-api).

@@ -1,6 +1,6 @@
 # Write partitioning properties
 
-### `use-preferred-write-partitioning`[#](https://trino.io/docs/current/admin/properties-write-partitioning.html#use-preferred-write-partitioning) <a href="#use-preferred-write-partitioning" id="use-preferred-write-partitioning"></a>
+### `use-preferred-write-partitioning` <a href="#use-preferred-write-partitioning" id="use-preferred-write-partitioning"></a>
 
 * **Type:** boolean
 * **Default value:** `true`

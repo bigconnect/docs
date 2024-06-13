@@ -1,6 +1,6 @@
 # MERGE
 
-### Synopsis[#](https://trino.io/docs/current/sql/merge.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 MERGE INTO target_table [ [ AS ]  target_alias ]
@@ -9,7 +9,7 @@ ON search_condition
 when_clause [...]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 where `when_clause` is one of
 
@@ -18,23 +18,23 @@ WHEN MATCHED [ AND condition ]
     THEN DELETE
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 WHEN MATCHED [ AND condition ]
     THEN UPDATE SET ( column = expression [, ...] )
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 ```
 WHEN NOT MATCHED [ AND condition ]
     THEN INSERT [ column_list ] VALUES (expression, ...)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/merge.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 Conditionally update and/or delete rows of a table and/or insert new rows into a table.
 
@@ -48,7 +48,7 @@ In `WHEN` clauses with `UPDATE` operations, the column value expressions can dep
 
 Typical usage of `MERGE` involves two tables with similar structure, containing different data. For example, the source table is part of a transactional usage in a production system, while the target table is located in a data warehouse used for analytics. Periodically, `MERGE` operations are run to combine recent production data with long-term data in the analytics warehouse. As long as you can define a search condition between the two tables, you can also use very different tables.
 
-### Examples[#](https://trino.io/docs/current/sql/merge.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 Delete all customers mentioned in the source table:
 
@@ -59,7 +59,7 @@ MERGE INTO accounts t USING monthly_accounts_update s
         THEN DELETE
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 For matching customer rows, increment the purchases, and if there is no match, insert the row from the source table:
 
@@ -73,7 +73,7 @@ MERGE INTO accounts t USING monthly_accounts_update s
               VALUES(s.customer, s.purchases, s.address)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 `MERGE` into the target table from the source table, deleting any matching target row for which the source address is `Centreville`. For all other matching rows, add the source purchases and set the address to the source address. If there is no match in the target table, insert the source table row:
 
@@ -90,8 +90,8 @@ MERGE INTO accounts t USING monthly_accounts_update s
               VALUES(s.customer, s.purchases, s.address)
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Limitations[#](https://trino.io/docs/current/sql/merge.html#limitations) <a href="#limitations" id="limitations"></a>
+
+### Limitations <a href="#limitations" id="limitations"></a>
 
 Any connector can be used as a source table for a `MERGE` statement. Only connectors which support the `MERGE` statement can be the target of a merge operation. See the connector documentation for more information.

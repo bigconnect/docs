@@ -2,14 +2,14 @@
 
 The Phoenix connector allows querying data stored in [Apache HBase](https://hbase.apache.org/) using [Apache Phoenix](https://phoenix.apache.org/).
 
-### Requirements[#](https://trino.io/docs/current/connector/phoenix.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To query HBase data through Phoenix, you need:
 
 * Network access from the Trino coordinator and workers to the ZooKeeper servers. The default port is 2181.
 * A compatible version of Phoenix: all 5.x versions starting from 5.1.0 are supported.
 
-### Configuration[#](https://trino.io/docs/current/connector/phoenix.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the Phoenix connector, create a catalog properties file `etc/catalog/example.properties` with the following contents, replacing `host1,host2,host3` with a comma-separated list of the ZooKeeper nodes used for discovery of the HBase cluster:
 
@@ -19,7 +19,7 @@ phoenix.connection-url=jdbc:phoenix:host1,host2,host3:2181:/hbase
 phoenix.config.resources=/path/to/hbase-site.xml
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The optional paths to Hadoop resource files, such as `hbase-site.xml` are used to load custom Phoenix client connection properties.
 
@@ -31,7 +31,7 @@ The following Phoenix-specific configuration properties are available:
 | `phoenix.config.resources`    | No       | Comma-separated list of configuration files (e.g. `hbase-site.xml`) to use for connection properties. These files must exist on the machines running Trino.                                                                                                                                                                                                                                        |
 | `phoenix.max-scans-per-split` | No       | Maximum number of HBase scans that will be performed in a single split. Default is 20. Lower values will lead to more splits in Trino. Can also be set via session propery `max_scans_per_split`. For details see: [https://phoenix.apache.org/update\_statistics.html](https://phoenix.apache.org/update\_statistics.html). (This setting has no effect when guideposts are disabled in Phoenix.) |
 
-#### General configuration properties[#](https://trino.io/docs/current/connector/phoenix.html#general-configuration-properties) <a href="#general-configuration-properties" id="general-configuration-properties"></a>
+#### General configuration properties <a href="#general-configuration-properties" id="general-configuration-properties"></a>
 
 The following table describes general catalog configuration properties for the connector:
 
@@ -51,7 +51,7 @@ The following table describes general catalog configuration properties for the c
 | `dynamic-filtering.enabled`                                 | Push down dynamic filters into JDBC queries. Defaults to `true`.                                                                                                                                                                                                                                |
 | `dynamic-filtering.wait-timeout`                            | Maximum duration for which Trino waits for dynamic filters to be collected from the build side of joins before starting a JDBC query. Using a large timeout can potentially result in more detailed dynamic filters. However, it can also increase latency for some queries. Defaults to `20s`. |
 
-#### Appending query metadata[#](https://trino.io/docs/current/connector/phoenix.html#appending-query-metadata) <a href="#appending-query-metadata" id="appending-query-metadata"></a>
+#### Appending query metadata <a href="#appending-query-metadata" id="appending-query-metadata"></a>
 
 The optional parameter `query.comment-format` allows you to configure a SQL comment that is sent to the datasource with each query. The format of this comment can contain any characters and the following metadata:
 
@@ -68,7 +68,7 @@ The following example sets a simple comment that identifies each query sent by T
 query.comment-format=Query sent by Trino.
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 With this configuration, a query such as `SELECT * FROM example_table;` is sent to the datasource with the comment appended:
 
@@ -76,7 +76,7 @@ With this configuration, a query such as `SELECT * FROM example_table;` is sent 
 SELECT * FROM example_table; /*Query sent by Trino.*/
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following example improves on the preceding example by using metadata:
 
@@ -84,7 +84,7 @@ The following example improves on the preceding example by using metadata:
 query.comment-format=Query $QUERY_ID sent by user $USER from Trino.
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If `Jane` sent the query with the query identifier `20230622_180528_00000_bkizg`, the following comment string is sent to the datasource:
 
@@ -92,17 +92,17 @@ If `Jane` sent the query with the query identifier `20230622_180528_00000_bkizg`
 SELECT * FROM example_table; /*Query 20230622_180528_00000_bkizg sent by user Jane from Trino.*/
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Note
 
 Certain JDBC driver settings and logging configurations might cause the comment to be removed.
 
-#### Domain compaction threshold[#](https://trino.io/docs/current/connector/phoenix.html#domain-compaction-threshold) <a href="#domain-compaction-threshold" id="domain-compaction-threshold"></a>
+#### Domain compaction threshold <a href="#domain-compaction-threshold" id="domain-compaction-threshold"></a>
 
 Pushing down a large list of predicates to the data source can compromise performance. Trino compacts large predicates into a simpler range predicate by default to ensure a balance between performance and predicate pushdown. If necessary, the threshold for this compaction can be increased to improve performance when the data source is capable of taking advantage of large predicates. Increasing this threshold may improve pushdown of large dynamic filters. The `domain-compaction-threshold` catalog configuration property or the `domain_compaction_threshold` catalog session property can be used to adjust the default value of `5000` for this threshold.
 
-#### Procedures[#](https://trino.io/docs/current/connector/phoenix.html#procedures) <a href="#procedures" id="procedures"></a>
+#### Procedures <a href="#procedures" id="procedures"></a>
 
 *   `system.flush_metadata_cache()`
 
@@ -113,9 +113,7 @@ Pushing down a large list of predicates to the data source can compromise perfor
     CALL system.flush_metadata_cache();
     ```
 
-    ![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
-
-#### Case insensitive matching[#](https://trino.io/docs/current/connector/phoenix.html#case-insensitive-matching) <a href="#case-insensitive-matching" id="case-insensitive-matching"></a>
+#### Case insensitive matching <a href="#case-insensitive-matching" id="case-insensitive-matching"></a>
 
 When `case-insensitive-name-matching` is set to `true`, Trino is able to query non-lowercase schemas and tables by maintaining a mapping of the lowercase name to the actual name in the remote system. However, if two schemas and/or tables have names that differ only in case (such as “customers” and “Customers”) then Trino fails to query them due to ambiguity.
 
@@ -146,7 +144,7 @@ In these cases, use the `case-insensitive-name-matching.config-file` catalog con
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Queries against one of the tables or schemes defined in the `mapping` attributes are run against the corresponding remote entity. For example, a query against tables in the `case_insensitive_1` schema is forwarded to the CaseSensitiveName schema and a query against `case_insensitive_2` is forwarded to the `cASEsENSITIVEnAME` schema.
 
@@ -158,15 +156,15 @@ By default, when a change is made to the mapping configuration file, Trino must 
 case-insensitive-name-mapping.refresh-period=30s
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-#### Non-transactional INSERT[#](https://trino.io/docs/current/connector/phoenix.html#non-transactional-insert) <a href="#non-transactional-insert" id="non-transactional-insert"></a>
 
-The connector supports adding rows using [INSERT statements](https://trino.io/docs/current/sql/insert.html). By default, data insertion is performed by writing data to a temporary table. You can skip this step to improve performance and write directly to the target table. Set the `insert.non-transactional-insert.enabled` catalog property or the corresponding `non_transactional_insert` catalog session property to `true`.
+#### Non-transactional INSERT <a href="#non-transactional-insert" id="non-transactional-insert"></a>
+
+The connector supports adding rows using INSERT statements. By default, data insertion is performed by writing data to a temporary table. You can skip this step to improve performance and write directly to the target table. Set the `insert.non-transactional-insert.enabled` catalog property or the corresponding `non_transactional_insert` catalog session property to `true`.
 
 Note that with this property enabled, data can be corrupted in rare cases where exceptions occur during the insert operation. With transactions disabled, no rollback can be performed.
 
-### Querying Phoenix tables[#](https://trino.io/docs/current/connector/phoenix.html#querying-phoenix-tables) <a href="#querying-phoenix-tables" id="querying-phoenix-tables"></a>
+### Querying Phoenix tables <a href="#querying-phoenix-tables" id="querying-phoenix-tables"></a>
 
 The default empty schema in Phoenix maps to a schema named `default` in Trino. You can see the available Phoenix schemas by running `SHOW SCHEMAS`:
 
@@ -174,7 +172,7 @@ The default empty schema in Phoenix maps to a schema named `default` in Trino. Y
 SHOW SCHEMAS FROM example;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If you have a Phoenix schema named `web`, you can view the tables in this schema by running `SHOW TABLES`:
 
@@ -182,7 +180,7 @@ If you have a Phoenix schema named `web`, you can view the tables in this schema
 SHOW TABLES FROM example.web;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 You can see a list of the columns in the `clicks` table in the `web` schema using either of the following:
 
@@ -191,7 +189,7 @@ DESCRIBE example.web.clicks;
 SHOW COLUMNS FROM example.web.clicks;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Finally, you can access the `clicks` table in the `web` schema:
 
@@ -199,15 +197,15 @@ Finally, you can access the `clicks` table in the `web` schema:
 SELECT * FROM example.web.clicks;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 If you used a different name for your catalog properties file, use that catalog name instead of `example` in the above examples.
 
-### Type mapping[#](https://trino.io/docs/current/connector/phoenix.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 Because Trino and Phoenix each support types that the other does not, this connector modifies some types when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
-#### Phoenix type to Trino type mapping[#](https://trino.io/docs/current/connector/phoenix.html#phoenix-type-to-trino-type-mapping) <a href="#phoenix-type-to-trino-type-mapping" id="phoenix-type-to-trino-type-mapping"></a>
+#### Phoenix type to Trino type mapping <a href="#phoenix-type-to-trino-type-mapping" id="phoenix-type-to-trino-type-mapping"></a>
 
 The connector maps Phoenix types to the corresponding Trino types following this table:
 
@@ -237,7 +235,7 @@ The connector maps Phoenix types to the corresponding Trino types following this
 
 No other types are supported.
 
-#### Trino type to Phoenix type mapping[#](https://trino.io/docs/current/connector/phoenix.html#trino-type-to-phoenix-type-mapping) <a href="#trino-type-to-phoenix-type-mapping" id="trino-type-to-phoenix-type-mapping"></a>
+#### Trino type to Phoenix type mapping <a href="#trino-type-to-phoenix-type-mapping" id="trino-type-to-phoenix-type-mapping"></a>
 
 The Phoenix fixed length `BINARY` data type is mapped to the Trino variable length `VARBINARY` data type. There is no way to create a Phoenix table in Trino that uses the `BINARY` data type, as Trino does not have an equivalent type.
 
@@ -262,13 +260,13 @@ The connector maps Trino types to the corresponding Phoenix types following this
 
 No other types are supported.
 
-#### Decimal type handling[#](https://trino.io/docs/current/connector/phoenix.html#decimal-type-handling) <a href="#decimal-type-handling" id="decimal-type-handling"></a>
+#### Decimal type handling <a href="#decimal-type-handling" id="decimal-type-handling"></a>
 
 `DECIMAL` types with unspecified precision or scale are ignored unless the `decimal-mapping` configuration property or the `decimal_mapping` session property is set to `allow_overflow`. Then such types are mapped to a Trino `DECIMAL` with a default precision of 38 and default scale of 0. To change the scale of the resulting type, use the `decimal-default-scale` configuration property or the `decimal_default_scale` session property. The precision is always 38.
 
 By default, values that require rounding or truncation to fit will cause a failure at runtime. This behavior is controlled via the `decimal-rounding-mode` configuration property or the `decimal_rounding_mode` session property, which can be set to `UNNECESSARY` (the default), `UP`, `DOWN`, `CEILING`, `FLOOR`, `HALF_UP`, `HALF_DOWN`, or `HALF_EVEN` (see [RoundingMode](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/RoundingMode.html#enum.constant.summary)).
 
-#### Type mapping configuration properties[#](https://trino.io/docs/current/connector/phoenix.html#type-mapping-configuration-properties) <a href="#type-mapping-configuration-properties" id="type-mapping-configuration-properties"></a>
+#### Type mapping configuration properties <a href="#type-mapping-configuration-properties" id="type-mapping-configuration-properties"></a>
 
 The following properties can be used to configure how data types from the connected data source are mapped to Trino data types and how the metadata is cached in Trino.
 
@@ -294,7 +292,7 @@ WITH (
 );
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following are supported Phoenix table properties from [https://phoenix.apache.org/language/index.html#options](https://phoenix.apache.org/language/index.html#options)
 
@@ -307,11 +305,11 @@ The following are supported Phoenix table properties from [https://phoenix.apach
 | `immutable_rows`        | false         | Declares whether this table has rows which are write-once, append-only.                                                |
 | `default_column_family` | `0`           | Default column family name to use for this table.                                                                      |
 
-#### `rowkeys`[#](https://trino.io/docs/current/connector/phoenix.html#rowkeys) <a href="#rowkeys" id="rowkeys"></a>
+#### `rowkeys` <a href="#rowkeys" id="rowkeys"></a>
 
 This is a comma-separated list of columns to be used as the table’s primary key. If not specified, a `BIGINT` primary key column named `ROWKEY` is generated , as well as a sequence with the same name as the table suffixed with `_seq` (i.e. `<schema>.<table>_seq`) , which is used to automatically populate the `ROWKEY` for each row during insertion.
 
-### Table properties - HBase[#](https://trino.io/docs/current/connector/phoenix.html#table-properties-hbase) <a href="#table-properties-hbase" id="table-properties-hbase"></a>
+### Table properties - HBase <a href="#table-properties-hbase" id="table-properties-hbase"></a>
 
 The following are the supported HBase table properties that are passed through by Phoenix during table creation. Use them in the same way as above: in the `WITH` clause of the `CREATE TABLE` statement.
 
@@ -324,7 +322,7 @@ The following are the supported HBase table properties that are passed through b
 | `ttl`                 | `FOREVER`     | Time To Live for each cell.                                                                                            |
 | `bloomfilter`         | `NONE`        | Bloomfilter to use. Valid values are `NONE` (default), `ROW`, or `ROWCOL`.                                             |
 
-### SQL support[#](https://trino.io/docs/current/connector/phoenix.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides read and write access to data and metadata in Phoenix. In addition to the globally available and read operation statements, the connector supports the following features:
 
@@ -337,6 +335,6 @@ The connector provides read and write access to data and metadata in Phoenix. In
 * CREATE SCHEMA
 * DROP SCHEMA
 
-#### SQL DELETE# <a href="#sql-delete" id="sql-delete"></a>
+#### SQL DELETE <a href="#sql-delete" id="sql-delete"></a>
 
 If a `WHERE` clause is specified, the `DELETE` operation only works if the predicate in the clause can be fully pushed down to the data source.

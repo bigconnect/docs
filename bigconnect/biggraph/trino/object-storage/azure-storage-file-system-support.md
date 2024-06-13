@@ -4,7 +4,7 @@ Trino includes a native implementation to access Azure Storage with a catalog us
 
 Enable the native implementation with `fs.native-azure.enabled=true` in your catalog properties file.
 
-### General configuration[#](https://trino.io/docs/current/object-storage/file-system-azure.html#general-configuration) <a href="#general-configuration" id="general-configuration"></a>
+### General configuration <a href="#general-configuration" id="general-configuration"></a>
 
 Use the following properties to configure general aspects of Azure Storage file system support:
 
@@ -17,7 +17,7 @@ Use the following properties to configure general aspects of Azure Storage file 
 | `azure.max-write-concurrency`  | Maximum number of concurrent write operations. Defaults to 8.                                                                                                                                 |
 | `azure.max-single-upload-size` | Data size Defaults to `4MB`.                                                                                                                                                                  |
 
-### Access key authentication[#](https://trino.io/docs/current/object-storage/file-system-azure.html#access-key-authentication) <a href="#access-key-authentication" id="access-key-authentication"></a>
+### Access key authentication <a href="#access-key-authentication" id="access-key-authentication"></a>
 
 Use the following properties to configure access key authentication to Azure Storage:
 
@@ -26,7 +26,7 @@ Use the following properties to configure access key authentication to Azure Sto
 | `azure.auth-type`  | Must be set to `ACCESS_KEY`.                                                                        |
 | `azure.access-key` | The decrypted access key for the Azure Storage account. Requires authentication type `ACCESSS_KEY`. |
 
-### OAuth 2.0 authentication[#](https://trino.io/docs/current/object-storage/file-system-azure.html#oauth-2-0-authentication) <a href="#oauth-2-0-authentication" id="oauth-2-0-authentication"></a>
+### OAuth 2.0 authentication <a href="#oauth-2-0-authentication" id="oauth-2-0-authentication"></a>
 
 Use the following properties to configure OAuth 2.0 authentication to Azure Storage:
 

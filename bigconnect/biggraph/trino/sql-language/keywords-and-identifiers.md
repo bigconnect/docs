@@ -1,6 +1,6 @@
 # Keywords and identifiers
 
-### Reserved keywords[#](https://trino.io/docs/current/language/reserved.html#reserved-keywords) <a href="#reserved-keywords" id="reserved-keywords"></a>
+### Reserved keywords <a href="#reserved-keywords" id="reserved-keywords"></a>
 
 The following table lists all of the keywords that are reserved in Trino, along with their status in the SQL standard. These reserved keywords must be quoted (using double quotes) in order to be used as an identifier.
 
@@ -89,7 +89,7 @@ The following table lists all of the keywords that are reserved in Trino, along 
 | `WHERE`             | reserved | reserved |
 | `WITH`              | reserved | reserved |
 
-### Identifiers[#](https://trino.io/docs/current/language/reserved.html#language-identifiers) <a href="#language-identifiers" id="language-identifiers"></a>
+### Identifiers <a href="#language-identifiers" id="language-identifiers"></a>
 
 Tokens that identify names of catalogs, schemas, tables, columns, functions, or other objects, are identifiers.
 
@@ -106,7 +106,7 @@ example_catalog.a_schema."table$partitions"
 "identifierWith""double""quotes"
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following identifiers are invalid in Trino and must be quoted when used:
 

@@ -10,7 +10,7 @@ You can use a file-based or a database-based resource group manager:
 * Set the `resource-groups.configuration-manager` property to `file` or `db`
 * Add further configuration properties for the desired manager.
 
-### File resource group manager[#](https://trino.io/docs/current/admin/resource-groups.html#file-resource-group-manager) <a href="#file-resource-group-manager" id="file-resource-group-manager"></a>
+### File resource group manager <a href="#file-resource-group-manager" id="file-resource-group-manager"></a>
 
 The file resource group manager reads a JSON configuration file, specified with `resource-groups.config-file`:
 
@@ -19,11 +19,11 @@ resource-groups.configuration-manager=file
 resource-groups.config-file=etc/resource-groups.json
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The path to the JSON file can be an absolute path, or a path relative to the Trino data directory. The JSON file only needs to be present on the coordinator.
 
-### Database resource group manager[#](https://trino.io/docs/current/admin/resource-groups.html#database-resource-group-manager) <a href="#database-resource-group-manager" id="database-resource-group-manager"></a>
+### Database resource group manager <a href="#database-resource-group-manager" id="database-resource-group-manager"></a>
 
 The database resource group manager loads the configuration from a relational database. The supported databases are MySQL, PostgreSQL, and Oracle.
 
@@ -34,7 +34,7 @@ resource-groups.config-db-user=username
 resource-groups.config-db-password=password
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The resource group configuration must be populated through tables `resource_groups_global_properties`, `resource_groups`, and `selectors`. If any of the tables do not exist when Trino starts, they will be created automatically.
 
@@ -53,7 +53,7 @@ The configuration is reloaded from the database every second, and the changes ar
 | `resource-groups.refresh-interval`             | How often the cluster reloads from the database                                                                                                                                                                                                                                                                                           | `1s`          |
 | `resource-groups.exact-match-selector-enabled` | Setting this flag enables usage of an additional `exact_match_source_selectors` table to configure resource group selection rules defined exact name based matches for source, environment and query type. By default, the rules are only loaded from the `selectors` table, with a regex-based filter for `source`, among other filters. | `false`       |
 
-### Resource group properties[#](https://trino.io/docs/current/admin/resource-groups.html#resource-group-properties) <a href="#resource-group-properties" id="resource-group-properties"></a>
+### Resource group properties <a href="#resource-group-properties" id="resource-group-properties"></a>
 
 * `name` (required): name of the group. May be a template (see below).
 * `maxQueued` (required): maximum number of queued queries. Once this limit is reached new queries are rejected.
@@ -71,7 +71,7 @@ The configuration is reloaded from the database every second, and the changes ar
 * `jmxExport` (optional): If true, group statistics are exported to JMX for monitoring. Defaults to `true`.
 * `subGroups` (optional): list of sub-groups.
 
-#### Scheduling weight example[#](https://trino.io/docs/current/admin/resource-groups.html#scheduling-weight-example) <a href="#scheduling-weight-example" id="scheduling-weight-example"></a>
+#### Scheduling weight example <a href="#scheduling-weight-example" id="scheduling-weight-example"></a>
 
 Schedule weighting is a method of assigning a priority to a resource. Sub-groups with a higher scheduling weight are given higher priority. For example, to ensure timely execution of scheduled pipelines queries, weight them higher than adhoc queries.
 
@@ -90,9 +90,9 @@ In the following example, pipeline queries are weighted with a value of `350`, w
 }
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Selector rules[#](https://trino.io/docs/current/admin/resource-groups.html#selector-rules) <a href="#selector-rules" id="selector-rules"></a>
+
+### Selector rules <a href="#selector-rules" id="selector-rules"></a>
 
 The selector rules for pattern matching use Java’s regular expression capabilities. Java implements regular expressions through the `java.util.regex` package. For more information, see the Java documentation.
 
@@ -115,11 +115,11 @@ All rules within a single selector are combined using a logical `AND`. Therefore
 
 Selectors are processed sequentially and the first one that matches will be used.
 
-### Global properties[#](https://trino.io/docs/current/admin/resource-groups.html#global-properties) <a href="#global-properties" id="global-properties"></a>
+### Global properties <a href="#global-properties" id="global-properties"></a>
 
 * `cpuQuotaPeriod` (optional): the period in which cpu quotas are enforced.
 
-### Providing selector properties[#](https://trino.io/docs/current/admin/resource-groups.html#providing-selector-properties) <a href="#providing-selector-properties" id="providing-selector-properties"></a>
+### Providing selector properties <a href="#providing-selector-properties" id="providing-selector-properties"></a>
 
 The source name can be set as follows:
 
@@ -133,7 +133,7 @@ Client tags can be set as follows:
 * JDBC driver when used in client apps: add the `clientTags` property to the connection configuration and set the value when using a Java application that uses the JDBC Driver.
 * JDBC driver used with Java programs: add a property with the key `clientTags` and the value on the `Connection` instance as shown in the example.
 
-### Example# <a href="#example" id="example"></a>
+### Example <a href="#example" id="example"></a>
 
 In the example configuration below, there are several resource groups, some of which are templates. Templates allow administrators to construct resource group trees dynamically. For example, in the `pipeline_${USER}` group, `${USER}` is expanded to the name of the user that submitted the query. `${SOURCE}` is also supported, which is expanded to the source that submitted the query. You may also use custom named variables in the `source` and `user` regular expressions.
 
@@ -158,7 +158,7 @@ For the remaining users:
 * For BI tools, each tool can run up to 10 concurrent queries, and each user can run up to 3. If the total demand exceeds the limit of 10, the user with the fewest running queries gets the next concurrency slot. This policy results in fairness when under contention.
 * All remaining queries are placed into a per-user group under `global.adhoc.other` that behaves similarly.
 
-#### File resource group manager[#](https://trino.io/docs/current/admin/resource-groups.html#id1) <a href="#id1" id="id1"></a>
+#### File resource group manager <a href="#id1" id="id1"></a>
 
 ```
 {
@@ -277,7 +277,7 @@ For the remaining users:
 }
 ```
 
-#### Database resource group manager[#](https://trino.io/docs/current/admin/resource-groups.html#id2) <a href="#id2" id="id2"></a>
+#### Database resource group manager <a href="#id2" id="id2"></a>
 
 This example is for a MySQL database.
 

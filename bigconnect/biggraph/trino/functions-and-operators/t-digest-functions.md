@@ -1,10 +1,10 @@
 # T-Digest functions
 
-### Data structures[#](https://trino.io/docs/current/functions/tdigest.html#data-structures) <a href="#data-structures" id="data-structures"></a>
+### Data structures <a href="#data-structures" id="data-structures"></a>
 
 A T-digest is a data sketch which stores approximate percentile information. The Trino type for this data structure is called `tdigest`. T-digests can be merged, and for storage and retrieval they can be cast to and from `VARBINARY`.
 
-### Functions[#](https://trino.io/docs/current/functions/tdigest.html#functions) <a href="#functions" id="functions"></a>
+### Functions <a href="#functions" id="functions"></a>
 
 merge(_tdigest_) → tdigest
 

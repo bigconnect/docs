@@ -1,6 +1,6 @@
 # CREATE ROLE
 
-### Synopsis[#](https://trino.io/docs/current/sql/create-role.html#synopsis) <a href="#synopsis" id="synopsis"></a>
+### Synopsis <a href="#synopsis" id="synopsis"></a>
 
 ```
 CREATE ROLE role_name
@@ -8,9 +8,9 @@ CREATE ROLE role_name
 [ IN catalog ]
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Description[#](https://trino.io/docs/current/sql/create-role.html#description) <a href="#description" id="description"></a>
+
+### Description <a href="#description" id="description"></a>
 
 `CREATE ROLE` creates the specified role.
 
@@ -18,7 +18,7 @@ The optional `WITH ADMIN` clause causes the role to be created with the specifie
 
 The optional `IN catalog` clause creates the role in a catalog as opposed to a system role.
 
-### Examples[#](https://trino.io/docs/current/sql/create-role.html#examples) <a href="#examples" id="examples"></a>
+### Examples <a href="#examples" id="examples"></a>
 
 Create role `admin`
 
@@ -26,7 +26,7 @@ Create role `admin`
 CREATE ROLE admin;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 Create role `moderator` with admin `bob`:
 
@@ -34,12 +34,12 @@ Create role `moderator` with admin `bob`:
 CREATE ROLE moderator WITH ADMIN USER bob;
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
 
-### Limitations[#](https://trino.io/docs/current/sql/create-role.html#limitations) <a href="#limitations" id="limitations"></a>
+
+### Limitations <a href="#limitations" id="limitations"></a>
 
 Some connectors do not support role management. See connector documentation for more details.
 
-### See also# <a href="#see-also" id="see-also"></a>
+### See also <a href="#see-also" id="see-also"></a>
 
 DROP ROLE, SET ROLE, GRANT role, REVOKE role

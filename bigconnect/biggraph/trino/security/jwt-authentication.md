@@ -23,7 +23,7 @@ A typical use for JWT authentication is to support administrators at large sites
 
 Using TLS and a configured shared secret is required for JWT authentication.
 
-### Using JWT authentication[#](https://trino.io/docs/current/security/jwt.html#using-jwt-authentication) <a href="#using-jwt-authentication" id="using-jwt-authentication"></a>
+### Using JWT authentication <a href="#using-jwt-authentication" id="using-jwt-authentication"></a>
 
 Trino supports Base64 encoded JWTs, but not encrypted JWTs.
 
@@ -34,7 +34,7 @@ There are two ways to get the encryption key necessary to validate the JWT signa
 
 A JWKS endpoint is a read-only service that contains public key information in [JWK](https://datatracker.ietf.org/doc/html/rfc7517) format. These public keys are the counterpart of the private keys that sign JSON web tokens.
 
-### JWT authentication configuration[#](https://trino.io/docs/current/security/jwt.html#jwt-authentication-configuration) <a href="#jwt-authentication-configuration" id="jwt-authentication-configuration"></a>
+### JWT authentication configuration <a href="#jwt-authentication-configuration" id="jwt-authentication-configuration"></a>
 
 Enable JWT authentication by setting the JWT authentication type in etc/config.properties, and specifying a URL or path to a key file:
 
@@ -43,7 +43,7 @@ http-server.authentication.type=JWT
 http-server.authentication.jwt.key-file=https://cluster.example.net/.well-known/jwks.json
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 JWT authentication is typically used in addition to other authentication methods:
 
@@ -52,7 +52,7 @@ http-server.authentication.type=PASSWORD,JWT
 http-server.authentication.jwt.key-file=https://cluster.example.net/.well-known/jwks.json
 ```
 
-![Copy to clipboard](https://trino.io/docs/current/\_static/copy-button.svg)
+
 
 The following configuration properties are available:
 
@@ -74,13 +74,13 @@ Use the `http-server.authentication.jwt.key-file` property to specify either:
     The Trino server also accepts JWKS URLs that begin with `http://`, but using this protocol results in a severe security risk. Only use this protocol for short-term testing during development of your cluster.
 * The path to a local file in PEM or HMAC format that contains a single key. If the file path contains `$KEYID`, then Trino interpolates the `keyid` from the JWT into the file path before loading this key. This enables support for setups with multiple keys.
 
-### Using JWTs with clients[#](https://trino.io/docs/current/security/jwt.html#using-jwts-with-clients) <a href="#using-jwts-with-clients" id="using-jwts-with-clients"></a>
+### Using JWTs with clients <a href="#using-jwts-with-clients" id="using-jwts-with-clients"></a>
 
 When using the Trino CLI, specify a JWT as described in JWT authentication.
 
 When using the Trino JDBC driver, specify a JWT with the `accessToken` parameter.
 
-### Resources# <a href="#resources" id="resources"></a>
+### Resources <a href="#resources" id="resources"></a>
 
 The following resources may prove useful in your work with JWTs and JWKs.
 

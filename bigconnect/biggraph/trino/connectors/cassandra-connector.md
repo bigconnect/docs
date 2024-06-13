@@ -2,14 +2,14 @@
 
 The Cassandra connector allows querying data stored in Apache Cassandra.
 
-### Requirements[#](https://trino.io/docs/current/connector/cassandra.html#requirements) <a href="#requirements" id="requirements"></a>
+### Requirements <a href="#requirements" id="requirements"></a>
 
 To connect to Cassandra, you need:
 
 * Cassandra version 3.0 or higher.
 * Network access from the Trino coordinator and workers to Cassandra. Port 9042 is the default port.
 
-### Configuration[#](https://trino.io/docs/current/connector/cassandra.html#configuration) <a href="#configuration" id="configuration"></a>
+### Configuration <a href="#configuration" id="configuration"></a>
 
 To configure the Cassandra connector, create a catalog properties file `etc/catalog/example.properties` with the following contents, replacing `host1,host2` with a comma-separated list of the Cassandra nodes, used to discovery the cluster topology:
 
@@ -69,7 +69,7 @@ The following advanced configuration properties are available:
 | `cassandra.tls.keystore-password`                          | Password for the key store.                                                                                                                                                                                                                                                                                                                                                                    |
 | `cassandra.tls.truststore-password`                        | Password for the trust store.                                                                                                                                                                                                                                                                                                                                                                  |
 
-### Querying Cassandra tables[#](https://trino.io/docs/current/connector/cassandra.html#querying-cassandra-tables) <a href="#querying-cassandra-tables" id="querying-cassandra-tables"></a>
+### Querying Cassandra tables <a href="#querying-cassandra-tables" id="querying-cassandra-tables"></a>
 
 The `users` table is an example Cassandra table from the Cassandra [Getting Started](https://cassandra.apache.org/doc/latest/cassandra/getting\_started/index.html) guide. It can be created along with the `example_keyspace` keyspace using Cassandra’s cqlsh (CQL interactive terminal):
 
@@ -105,11 +105,11 @@ This table can then be queried in Trino:
 SELECT * FROM example.example_keyspace.users;
 ```
 
-### Type mapping[#](https://trino.io/docs/current/connector/cassandra.html#type-mapping) <a href="#type-mapping" id="type-mapping"></a>
+### Type mapping <a href="#type-mapping" id="type-mapping"></a>
 
 Because Trino and Cassandra each support types that the other does not, this connector modifies some types when reading or writing data. Data types may not map the same way in both directions between Trino and the data source. Refer to the following sections for type mapping in each direction.
 
-#### Cassandra type to Trino type mapping[#](https://trino.io/docs/current/connector/cassandra.html#cassandra-type-to-trino-type-mapping) <a href="#cassandra-type-to-trino-type-mapping" id="cassandra-type-to-trino-type-mapping"></a>
+#### Cassandra type to Trino type mapping <a href="#cassandra-type-to-trino-type-mapping" id="cassandra-type-to-trino-type-mapping"></a>
 
 The connector maps Cassandra types to the corresponding Trino types according to the following table:
 
@@ -181,13 +181,13 @@ Partition keys can only be of the following types:
 * UUID
 * TIMEUUID
 
-### Limitations[#](https://trino.io/docs/current/connector/cassandra.html#limitations) <a href="#limitations" id="limitations"></a>
+### Limitations <a href="#limitations" id="limitations"></a>
 
 * Queries without filters containing the partition key result in fetching all partitions. This causes a full scan of the entire data set, and is therefore much slower compared to a similar query with a partition key as a filter.
 * `IN` list filters are only allowed on index (that is, partition key or clustering key) columns.
 * Range (`<` or `>` and `BETWEEN`) filters can be applied only to the partition keys.
 
-### SQL support[#](https://trino.io/docs/current/connector/cassandra.html#sql-support) <a href="#sql-support" id="sql-support"></a>
+### SQL support <a href="#sql-support" id="sql-support"></a>
 
 The connector provides read and write access to data and metadata in the Cassandra database. In addition to the globally available and read operation statements, the connector supports the following features:
 
@@ -198,11 +198,11 @@ The connector provides read and write access to data and metadata in the Cassand
 * CREATE TABLE AS
 * DROP TABLE
 
-### Table functions# <a href="#table-functions" id="table-functions"></a>
+### Table functions <a href="#table-functions" id="table-functions"></a>
 
 The connector provides specific table functions to access Cassandra. .. \_cassandra-query-function:
 
-#### `query(varchar) -> table`[#](https://trino.io/docs/current/connector/cassandra.html#query-varchar-table) <a href="#query-varchar-table" id="query-varchar-table"></a>
+#### `query(varchar) -> table` <a href="#query-varchar-table" id="query-varchar-table"></a>
 
 The `query` function allows you to query the underlying Cassandra directly. It requires syntax native to Cassandra, because the full query is pushed down and processed by Cassandra. This can be useful for accessing native features which are not available in Trino or for improving query performance in situations where running a query natively may be faster.
 
@@ -226,7 +226,7 @@ FROM
   );
 ```
 
-#### DROP TABLE[#](https://trino.io/docs/current/connector/cassandra.html#drop-table) <a href="#drop-table" id="drop-table"></a>
+#### DROP TABLE <a href="#drop-table" id="drop-table"></a>
 
 By default, `DROP TABLE` operations are disabled on Cassandra catalogs. To enable `DROP TABLE`, set the `cassandra.allow-drop-table` catalog configuration property to `true`:
 
@@ -234,6 +234,6 @@ By default, `DROP TABLE` operations are disabled on Cassandra catalogs. To enabl
 cassandra.allow-drop-table=true
 ```
 
-#### SQL delete limitation[#](https://trino.io/docs/current/connector/cassandra.html#sql-delete-limitation) <a href="#sql-delete-limitation" id="sql-delete-limitation"></a>
+#### SQL delete limitation <a href="#sql-delete-limitation" id="sql-delete-limitation"></a>
 
 `DELETE` is only supported if the `WHERE` clause matches entire partitions.
