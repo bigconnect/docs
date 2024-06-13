@@ -25,6 +25,8 @@ The following AI models are available as REST services:
 * Topic modeling
 * Image captioning
 
+Romanian and English language is available for all textual models.
+
 Each service has its own JSON input requirements for text, image, video or audio content. The actual content needs to be Base64 encoded and placed in an appropriate JSON property, as follows:
 
 {% tabs %}
