@@ -23,18 +23,6 @@ The following AI models are available as REST services:
 * Topic modeling
 * Image captioning
 
-The API endpoints are listed by each service in the URL section:
-
-![](<../../.gitbook/assets/image (409).png>)
-
-To make a call, prepend the service URL to the URL endpoint listed in each box. Example:
-
-`https://ai-170393591705357.cloud.bigconnect.io/<ENDPOINT>`
-
-{% hint style="success" %}
-The REST API expects JSON for the request body.
-{% endhint %}
-
 Each service has its own JSON input requirements for text, image, video or audio content. The actual content needs to be Base64 encoded and placed in an appropriate JSON property, as follows:
 
 {% tabs %}
