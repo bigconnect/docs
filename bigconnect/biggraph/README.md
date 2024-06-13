@@ -5,6 +5,7 @@ BigConnect Core is a massively scalable Data Lake designed for holding and query
 High-level features:
 
 * Massively distributed Big Data store based on [Hadoop](https://hadoop.apache.org/docs/stable/)
+* Stores structured, semi-structured and unstructured data
 * Distributed OLTP database for high-performance computing with in-memory speed built on [Apache Ignite](https://ignite.apache.org/)
 * Fully containerized Docker architecture for fast horizontal and vertical scalability in Kubernetes or Docker Swarm clusters
 * Ridiculously fast data ingestion (25k objects / sec. on average hardware)
