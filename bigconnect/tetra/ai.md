@@ -5,9 +5,12 @@ The AI Service contains a number of carefully chosen deep-learning models to ful
 The following AI models are available as REST services:
 
 * Named Entity Recognition
+* Sentiment Analysis
+* Language Detection
 * Text in the Wild & OCR
-* Personality Insights
-* Sentiment
+* Text summarization
+* Text classification
+* Sentence Similarity
 * Face detection
 * Face recognition
 * Face age detection
@@ -17,8 +20,7 @@ The following AI models are available as REST services:
 * Object detection
 * Location resolver
 * License Plate Recognition
-* Speech to Text (American English only)
-* Fraud detection
+* Speech-to-Text
 * Image Metadata extractor (EXIF)&#x20;
 * Topic modeling
 * Image captioning
