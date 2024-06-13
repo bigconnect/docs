@@ -7,7 +7,7 @@ BigConnect Core needs a search index to run queries and aggregations against pro
 
 The search index will index entities, relationships and properties which have been marked as searchable. See the [Data Model](https://docs.bigconnect.io/bigconnect/biggraph/data-model#concepts) page for more info about search properties. Upon indexing, these elements will be available for search.
 
-BigConnect Core has the following search capabilities:
+BigConnect Core offers the following search capabilities:
 
 * Full-Text searches
 * Spatial searchs
@@ -22,6 +22,14 @@ BigConnect Core has the following search capabilities:
 * Casing and diacritics
 * Sorting & Pagination
 * Saved Searches
+
+Besides searching, the index can also perform aggregations. BigConnect Core allows properties to be aggregated, mostly for providing search facets.
+
+The following index aggregations are supported:
+
+* Term
+* Histogram
+* GeoHash
 
 
 
