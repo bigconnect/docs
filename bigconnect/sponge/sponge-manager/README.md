@@ -150,10 +150,11 @@ The administration screen is only accessible to users with Admnistrator privileg
 
 Committers are destinations where Sponge stores scraped data. Out-of-the-box Sponge supports the following destinations:
 
-* XML Files (default) stored on the local disk or [BigConnect Object Store](broken-reference)
-* JSON Files stored on the local disk or [BigConnect Object Store](broken-reference)
+* XML Files (default) stored on the local disk
+* JSON Files stored on the local disk
 * SQL Databases
-* [Zion](broken-reference)
+* CSV, XLSX
+* HTML
 
 Adding or changing committers can be done from the **Administration -> Committers** page.
 
