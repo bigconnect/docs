@@ -12,13 +12,14 @@ Sponge identifies the unique relevant HTML landmarks (CSS classes, DOM component
 
 ### Features
 
-* Web UI for easy configuration
+* Web UI for easy configuration and website extraction
 * Multi-threaded
 * Job scheduling
 * Monitoring
 * Supports pages rendered with JavaScript.
 * Language detection
 * URL normalization
+* HTTP proxy with rotating IP addresses
 * Configurable crawling speed
 * Detects modified and deleted documents
 * Supports sitemap.xml
