@@ -206,32 +206,14 @@ The OS user that owns the Sponge Manager or Sponge Agent processes needs to have
 
 #### S3 JSON/XML File Committers
 
-Used for storing scraped data in JSON/XML files in a [BigConnect Object Store](broken-reference) instance.
+Used for storing scraped data in JSON/XML files in an S3-compatible instance.
 
 ![](<../../../.gitbook/assets/image (417).png>)
 
-* **Endpoint**: URL of a [BigConnect Object Store](broken-reference) instance \
-  (e.g. https://storage-3122463932808256.cloud.bigconnect.io)
+* **Endpoint**: URL of an S3 instance
 * **Access Key**: Tenant ID
 * **Secret Key**: secret key for the Object Store
 * **Bucket**: name of a bucket (a new one will be created if it doesn't exist)
-
-#### Zion Committer
-
-Used for storing scraped data as Documents in [Zion](broken-reference) (ie. entities with Concept Type = Document)
-
-![](<../../../.gitbook/assets/image (613).png>)
-
-* **Bolt URL** - The URL to a Zion Bolt server\
-  (e.g. bolt://core-170393591705357.cloud.bigconnect.io:10242)
-* **Username** - Zion user
-* **Password** - Zion password
-
-{% hint style="info" %}
-When choosing this connector in the Project details page, you will be prompted to perform concept and field mapping.
-
-The Zion instance needs to be available and accessible by Sponge.
-{% endhint %}
 
 ### Agent Configuration
 
