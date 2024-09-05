@@ -9,7 +9,7 @@ IMPORTANT
 
 ### Prerequisites <a href="#prerequisites" id="prerequisites"></a>
 
-To use _Workflow Metrics_, you must be using Elasticsearch to index your DXP data. To learn more, read the Installing Elasticsearch article.
+To use _Workflow Metrics_, you must be using Elasticsearch to index your portal data. To learn more, read the Installing Elasticsearch article.
 
 ### Adding SLAs <a href="#adding-slas" id="adding-slas"></a>
 

@@ -20,11 +20,9 @@ NOTE
 
 You can assign roles to user segments. See Assigning Roles to User Segments for more information.
 
-#### Tracking Behavior of User Segments with Analytics Cloud <a href="#tracking-behavior-of-user-segments-with-liferay-analytics-cloud" id="tracking-behavior-of-user-segments-with-liferay-analytics-cloud"></a>
+#### Tracking Behavior of User Segments <a href="#tracking-behavior-of-user-segments-with-liferay-analytics-cloud" id="tracking-behavior-of-user-segments-with-liferay-analytics-cloud"></a>
 
-Supercharge your segments by integrating your portal instance with Analytics Cloud. Analytics Cloud integrates DXP with Salesforce(tm) and other data sources to provide even more ways to understand your user base.
-
-Integration with Analytics Cloud provides in-depth, machine-learning powered, data analytics capabilities to help you understand user behavior and engagement for every page of your DXP site. Analytics Cloud enables you to see user behavior and interaction with both standard and targeted content. See Getting Analytics for User Segments for more information.
+This provides in-depth, machine-learning powered, data analytics capabilities to help you understand user behavior and engagement for every page of your portal site. It enables you to see user behavior and interaction with both standard and targeted content.&#x20;
 
 ![Site metrics using Analytics Cloud.](https://resources.learn.liferay.com/images/dxp/latest/en/site-building/personalizing-site-experience/images/02.png)
 

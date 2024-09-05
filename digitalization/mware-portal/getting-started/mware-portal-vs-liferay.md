@@ -1,6 +1,6 @@
 # MWARE Portal vs Liferay
 
-MWARE Portal has Liferay DXP at its core as the underlying technology, meaning that all Liferay DXP features are available in MWARE Portal. However, there are some notable changes that MWARE Portal has over Liferay DXP:
+MWARE Portal has Liferay  at its core as the underlying technology, meaning that all Liferay  features are available in MWARE Portal. However, there are some notable changes that MWARE Portal has over Liferay :
 
 * A powerful new [BPM engine](../../mware-bpm/) with support for [BPMN 2.0](../../mware-bpm/bpm-designer/process-editor.md),  [CMMN](../../mware-bpm/bpm-designer/case-editor.md), [Forms](../../mware-bpm/bpm-designer/decision-editor.md), [Decision Tables](../../mware-bpm/bpm-designer/decision-editor.md) and [Workflow Applications](../../mware-bpm/bpm-designer/app-editor.md), Task List and much more
 * [Professional, pixel-perfect forms](../process-automation/advanced-forms/) with avanced features like digial signatures, export/import [PDF forms](../process-automation/advanced-forms/form-runner/features/pdf-production/), 1D/2D barcodes, analytics and much more
@@ -14,4 +14,4 @@ MWARE Portal has Liferay DXP at its core as the underlying technology, meaning t
 
 We release frequently new versions of the portal that follow as close as possible the Liferay versioning system. However, due to the changes and features MWARE Portal brings to the Liferay platform, we need some time to analyze and adapt the features to the new Liferay version, in order to release a product that is stable, tested and enterprise ready.
 
-This documentation uses interchangeably the terms MWARE Portal, the portal, Liferay or DXP to refer to MWARE Portal.
+This documentation uses interchangeably the terms MWARE Portal, the portal, Liferay or  to refer to MWARE Portal.

@@ -20,13 +20,13 @@ This only applies to Virtual Instances that have been added to the system. The D
 
 ### Uploading a New Workflow Definition <a href="#uploading-a-new-workflow-definition" id="uploading-a-new-workflow-definition"></a>
 
-Workflow process definitions can be built in the portal or uploaded in `XML` format. DXP workflow definitions are written in `XML` format; see the Introduction to Crafting XML Workflow Definitions to learn more.
+Workflow process definitions can be built in the portal or uploaded in `XML` format. Portal workflow definitions are written in `XML` format; see the Introduction to Crafting XML Workflow Definitions to learn more.
 
 To upload a new definition:
 
 1. Navigate to the _Control Panel_ → _Workflow_ → _Process Builder_.
 2. Click the _New Workflow_ button (![Add](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-add.png)).
-3. If you have a local XML definition file based on an embedded workflow, you can upload it to DXP. Click the _Source_ tab.
+3. If you have a local XML definition file based on an embedded workflow, you can upload it to the Portal. Click the _Source_ tab.
 4. Enter a name for the new definition.
 5.  Copy the content of the XML file and and overwrite the sample code or click “_import a file_” to upload the file.
 
