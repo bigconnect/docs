@@ -22,16 +22,18 @@ MWARE Portal is an enhanced commercial version of Liferay, meaning that all Life
 
 **Restricted Use Licenses**
 
-| Feature                  | Licensing Information                                                                                                                                                                            |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| MWARE BPM                | A restricted use license for MWARE BPM is included with MWARE Portal, free of charge, for the purpose of creating custom workflows for your organization using the BPMN, CMMN and DMN standards. |
-| MWARE Application Server | A restricted use license for MWARE Application Server is included with MWARE Portal, free of charge, for the purpose of deploying and running MWARE Portal                                       |
+| Feature                  | Licensing Information                                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MWARE BPM                | <p>A restricted use license* for MWARE BPM is included with MWARE Portal, free of charge, for the purpose of creating custom workflows for your organization using the BPMN, CMMN and DMN standards.<br><br>MWARE BPM may be used only together with MWARE Portal or by applications that are integrated in the portal. Using the restricted use product outside the fully licensed product is prohibited.</p> |
+| MWARE Application Server | A restricted use license\* for MWARE Application Server is included with MWARE Portal, free of charge, for the purpose of deploying and running MWARE Portal or applications that are integrated in the portal.                                                                                                                                                                                                |
 
 **Open Source Licensed Software included in MWARE Portal:**
 
 | Provider | Component      | License |
 | -------- | -------------- | ------- |
 | Liferay  | Liferay Portal | LGPLv2  |
+
+\*) A _restricted use license_ limits the usage of the restricted use product only in conjuction with the fully licensed product.&#x20;
 
 ## MWARE BPM
 
