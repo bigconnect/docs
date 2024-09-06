@@ -2077,3 +2077,7 @@
     * [Filters](bigconnect/sponge/sponge-manager/sponge-filters.md)
     * [Splitters](bigconnect/sponge/sponge-manager/sponge-splitters.md)
   * [Sponge Annotator](bigconnect/sponge/sponge-annotator.md)
+
+## Licensing
+
+* [Licensing Information](licensing/licensing-information.md)
