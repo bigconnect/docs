@@ -2,7 +2,9 @@
 
 ## MWARE Portal
 
-Latest version: 7.4.3 Deployment options: On-premise, Cloud Licensing: commercial, perpetual, on-premise or cloud
+* Latest version: 7.4.3
+* Deployment options: On-premise, Cloud
+* Licensing: commercial, perpetual, on-premise or cloud
 
 MWARE Portal is an enhanced commercial version of Liferay, meaning that all Liferay features are available in MWARE Portal. However, there are some notable changes that MWARE Portal has over the vanilla Liferay:
 
@@ -10,6 +12,7 @@ MWARE Portal is an enhanced commercial version of Liferay, meaning that all Life
 * Professional, pixel-perfect forms with avanced features like digial signatures, export/import PDF forms, 1D/2D barcodes, analytics and much more
 * Privacy-preserving traffic monitoring and analytics
 * Native Single Sign-On integration with MWARE Identity & Access Management
+* Multi-factor authentication
 * Seamless deployment and clustering with MWARE Application Server
 * Performance tuning and optimizations that enable high concurrency and low latency in handling user requests
 * Production binaries released with ahead-of-time (AoT) compilation. These binaries are smaller, start up to 100x faster, provide peak performance with no warmup, and use less memory and CPU than applications running on a Java Virtual Machine (JVM).
@@ -32,7 +35,9 @@ MWARE Portal is an enhanced commercial version of Liferay, meaning that all Life
 
 ## MWARE BPM
 
-Latest version: 6.8.1 Deployment options: On-premise, Cloud Licensing: commercial, perpetual, on-premise or cloud
+* Latest version: 6.8.1&#x20;
+* Deployment options: On-premise, Cloud
+* &#x20;Licensing: commercial, perpetual, on-premise or cloud
 
 MWARE BPM is a commercial-grade, light-weight business process engine written in Java. The BPM process engine allows you to deploy BPMN 2.0 process definitions (an industry XML standard for defining processes), creating process instances of those process definitions, running queries, accessing active or historical process instances and related data, plus much more.
 
@@ -54,7 +59,9 @@ MWARE BPM started as a fork of Activiti, an open source BPM engine. Since then, 
 
 ## MWARE IAM
 
-Latest version: 7.0 Deployment options: On-premise, Cloud Licensing: commercial, perpetual, on-premise or cloud
+* Latest version: 7.0&#x20;
+* Deployment options: On-premise, Cloud
+* &#x20;Licensing: commercial, perpetual, on-premise or cloud
 
 MWARE IAM is a fork of WSO2 Identity Server with the following additional features:
 
@@ -70,7 +77,9 @@ MWARE IAM is a fork of WSO2 Identity Server with the following additional featur
 
 ## MWARE Application Server
 
-Latest version: 6.8 Deployment options: On-premise, Cloud Licensing: commercial, perpetual, on-premise or cloud
+* Latest version: 6.8
+* &#x20;Deployment options: On-premise, Cloud
+* &#x20;Licensing: commercial, perpetual, on-premise or cloud
 
 MWARE Application Server an application platform for mission-critical Jakarta EE production systems. It started as a fork of Eclipse GlassFish, but has diverged significantly from the original GlassFish, by adding significant improvements in the developer experience and performance:
 
@@ -92,7 +101,9 @@ MWARE Application Server an application platform for mission-critical Jakarta EE
 
 ## MWARE ESB
 
-Latest version: 5.3 Deployment options: On-premise, Cloud Licensing: commercial, perpetual, on-premise or cloud
+* Latest version: 5.3
+* &#x20;Deployment options: On-premise, Cloud
+* &#x20;Licensing: commercial, perpetual, on-premise or cloud
 
 MWARE ESB is an enterprise API management solution built on the WSO2 API Manager platform. It supports API designing, API publishing, lifecycle management, application development, API security, rate limiting, viewing statistics of APIs, as well as connecting APIs, API Products, and endpoints.
 
@@ -113,7 +124,9 @@ Compares to the WSO2 API Manager, MWARE ESB includes additional features and enh
 
 ## BigConnect Core
 
-Latest version: 4.2.2 Deployment options: On-premise, Cloud Licensing: commercial, perpetual, on-premise or cloud
+* Latest version: 4.2.2
+* &#x20;Deployment options: On-premise, Cloud
+* &#x20;Licensing: commercial, perpetual, on-premise or cloud
 
 BigConnect Core is a massively scalable Data Lake designed for storing and querying vast amounts of raw data. It can store raw data, objects and links with multi-valued properties, while providing fast queries, aggregations, distributed data processing pipelines and super-strong security (row and property-level).
 
@@ -135,7 +148,9 @@ Built from scratch by MWARE to serve mission-critical use cases, BigConnect Core
 
 ## BigConnect Answers
 
-Latest version: 5.24 Deployment options: On-premise, Cloud Licensing: commercial, perpetual, on-premise or cloud
+* Latest version: 5.24&#x20;
+* Deployment options: On-premise, Cloud&#x20;
+* Licensing: commercial, perpetual, on-premise or cloud
 
 BigConnect Answers is a data analytics platform built on top of Metabase. It allows you to connect to BigConnect Core and other data sources, query the data, and visualize the results.
 
@@ -152,9 +167,37 @@ Built onn top of Metabase, BigConnect Answers includes additional features and e
 | -------- | --------- | -------- |
 | Metabase | Metabase  | AGPL 2.0 |
 
+## BigConnect Explorer
+
+* Latest version: 5.24
+* &#x20;Deployment options: On-premise, Cloud
+* &#x20;Licensing: commercial, perpetual, on-premise or cloud
+
+BigConnect Explorer is a complete visual environment best suited for exploring and making sense of **unstructured data** store in BigConnect Core It can do a lot: data ingestion, data enrichment, discovery and analysis.
+
+It is completely extensible and can be extended with plugins to suit any use case, using common development languages like Java, JavaScript, React, CSS/LESS etc.
+
+**Open Source Licensed Software included in BigConnect Core:**
+
+NONE
+
+## BigConnect Sponge
+
+* Latest version: 2.21
+* &#x20;Deployment options: On-premise, Cloud
+* &#x20;Licensing: commercial, perpetual, on-premise or cloud
+
+Sponge helps you transform the limitless amount of unstructured content into valuable information that can be used everywhere. Whether is about web sites, blogs or forums, Sponge is a full-featured, flexible and extensible web crawler that runs on any platform and will help you crawl what you want, how you want.
+
+**Open Source Licensed Software included in BigConnect Core:**
+
+NONE
+
 ## BigConnect VM
 
-Latest version: 2.21 Deployment options: On-premise, Cloud Licensing: commercial, perpetual, on-premise or cloud
+* Latest version: 2.21
+* &#x20;Deployment options: On-premise, Cloud
+* &#x20;Licensing: commercial, perpetual, on-premise or cloud
 
 BigConnect VM is a fork of the popular Portainer platform with the following additions:
 
@@ -170,7 +213,9 @@ BigConnect VM is a fork of the popular Portainer platform with the following add
 
 ## BigConnect Pipelines
 
-Latest version: 4.22 Deployment options: On-premise, Cloud Licensing: commercial, perpetual, on-premise or cloud
+* Latest version: 4.22
+* &#x20;Deployment options: On-premise, Cloud
+* &#x20;Licensing: commercial, perpetual, on-premise or cloud
 
 BigConnect Pipelines started as an early fork of the Streamsets Data Collector platform, but has since diverged significantly from the original project:
 
@@ -187,7 +232,9 @@ BigConnect Pipelines started as an early fork of the Streamsets Data Collector p
 
 ## BigConnect TetraML
 
-Latest version: 4.3 Deployment options: On-premise, Cloud Licensing: commercial, perpetual, on-premise or cloud
+* Latest version: 4.3
+* &#x20;Deployment options: On-premise, Cloud
+* &#x20;Licensing: commercial, perpetual, on-premise or cloud
 
 BigConnect TetraML is an integrated development environment for AI and Machine Learning. It allows you to ;label, build, train, and deploy models using the most popular frameworks and libraries:
 
