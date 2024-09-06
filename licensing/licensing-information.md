@@ -52,7 +52,7 @@ MWARE BPM started as a fork of Activiti, an open source BPM engine. Since then, 
 | -------- | --------- | ---------- |
 | Alfresco | Activiti  | Apache 2.0 |
 
-## MWAE IAM
+## MWARE IAM
 
 Latest version: 7.0 Deployment options: On-premise, Cloud Licensing: commercial, perpetual, on-premise or cloud
 
