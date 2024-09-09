@@ -91,7 +91,7 @@ MWARE Application Server an application platform for mission-critical Jakarta EE
 * Support for enterprise-grade cluster topologies through the use of Hazelcast
 * Support for container-based deployments
 * Up-to-date Java and Jakarta EE standards
-* Apache HTTP Server is included as a Web Server, offering native support for HTTP/2, HTTP/3, WebSockets, load-balancing, virtual servers and more.
+* The included MWARE Web Server component offers native Apache HTTP Server integration with support for HTTP/2, HTTP/3, WebSockets, load-balancing, virtual servers and more.
 * Professional support
 
 **Open Source Licensed Software included in MWARE Application Server:**
