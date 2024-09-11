@@ -52,6 +52,11 @@ MWARE BPM started as a fork of Activiti, an open source BPM engine. Since then, 
 * Asynchronous processing of historical data
 * Utilization of abstract data source interfaces
 * Implementation of genuine parallel gateway functionality
+* Activity calendar
+* Web app for modelling
+* Process performance analysis
+* MWARE Portal integration
+* Professional support
 
 **Open Source Licensed Software included in MWARE BPM:**
 
@@ -68,7 +73,13 @@ MWARE BPM started as a fork of Activiti, an open source BPM engine. Since then, 
 MWARE IAM is a fork of WSO2 Identity Server with the following additional features:
 
 * Native Single Sign-On (SSO) integration with MWARE Portal, MWARE BPM, MWARE Application Server and the BigConnect platform
+* Ehanced UI with reporting, visual design of login flows and multitenancy
+* Decentralized authentication using an MPC network
+* Monitoring and audit
+* Production binaries released with ahead-of-time (AoT) compilation. These binaries are smaller, start up to 100x faster, provide peak performance with no warmup, and use less memory and CPU than applications running on a Java Virtual Machine (JVM).
+* G1 (Garbage-First) garbage collector as the default JVM garbage collector
 * Performance tuning and optimizations that enable high concurrency and low latency in handling user requests
+* MWARE Application Server integration
 * Professional support
 
 **Open Source Licensed Software included in MWARE Portal:**
@@ -85,12 +96,15 @@ MWARE IAM is a fork of WSO2 Identity Server with the following additional featur
 
 MWARE Application Server an application platform for mission-critical Jakarta EE production systems. It started as a fork of Eclipse GlassFish, but has diverged significantly from the original GlassFish, by adding significant improvements in the developer experience and performance:
 
+* A new admin console
 * Enhanced reporting and admin functions
 * Optimised for use in production
 * Security, monitoring and DevOps features like slow SQL Logging, healthchecks, asadmin recorder etc.
-* Support for enterprise-grade cluster topologies through the use of Hazelcast
+* Support for enterprise-grade cluster topologies through the use of JCache and Hazelcast
 * Support for container-based deployments
 * Up-to-date Java and Jakarta EE standards
+* Support for Java 17 LTS
+* Microservice support with the MicroProfile standard
 * The included MWARE Web Server component offers native Apache HTTP Server integration with support for HTTP/2, HTTP/3, WebSockets, load-balancing, virtual servers and more.
 * Professional support
 
@@ -112,10 +126,15 @@ MWARE ESB is an enterprise API management solution built on the WSO2 API Manager
 Compares to the WSO2 API Manager, MWARE ESB includes additional features and enhancements:
 
 * A new user interface with a modern and responsive design
+* Self service, low code portal for developers that wish to create their own APIs
 * Self-service portal for developers to register applications and APIs
 * API Marketplace for publishing APIs to a wider audience
+* API Versioning with publishing and withdrawal of a specific version
+* Manage API authentication methods: OAuth and API Keys
+* Manage API endpoint policies: add headers, query params, cookies, JWT tokens etc.
 * Visual Studio Code plugin for rapid API development with Generative AI capabilities
 * Professional support
+* High availability for the API Gateway
 * Native integration with MWARE IAM
 
 **Open Source Licensed Software included in MWARE ESB:**
@@ -162,6 +181,13 @@ Built onn top of Metabase, BigConnect Answers includes additional features and e
 * Integration with MWARE IAM for authentication using SSO
 * Support for embedding charts and dashboards in MWARE Portal
 * Support for more data sources: Trino, Cube.js, Dremio, DB2, Impala, Spark SQL, Teradata
+* Multi-tenancy
+* Caching for queries and dashboards
+* Row and column-level permissions
+* Audit of user actions
+* Persistence of models
+* Romanian language
+* Professional support
 
 **Open Source Licensed Software included in BigConnect Core:**
 
@@ -225,6 +251,10 @@ BigConnect Pipelines started as an early fork of the Streamsets Data Collector p
 * Support for BigConnect Core services and data sources
 * Pipeline Controller for orchestrating pipelines across multiple machines
 * Support for clustered deployment topologies
+* Containerized deployment with Docker and Kubernetes
+* Clustering
+* Updated connectors
+* Professional support
 
 **Open Source Licensed Software included in BigConnect Core:**
 
@@ -238,7 +268,7 @@ BigConnect Pipelines started as an early fork of the Streamsets Data Collector p
 * &#x20;Deployment options: On-premise, Cloud
 * &#x20;Licensing: commercial, perpetual, on-premise or cloud
 
-BigConnect TetraML is an integrated development environment for AI and Machine Learning. It allows you to ;label, build, train, and deploy models using the most popular frameworks and libraries:
+BigConnect TetraML is an integrated development environment for AI and Machine Learning. It allows you to label, build, train, and deploy models using the most popular frameworks and libraries:
 
 * Development environment build on Jupyter Lab
 * Integration with Label Studio for data labeling
@@ -246,6 +276,7 @@ BigConnect TetraML is an integrated development environment for AI and Machine L
 * Native integration with BigConnect Core for storing and querying data
 * A collection of pre-built AI models for common use-cases: Named Entity Recognition (NER), Sentiment Analysis, Text Classification, Face detection, License Plate Recognition (LPR), Optical Character Recognition (OCR), and more
 * Support for Generative AI frameworks and models like Llama, Mistral, GPT4, Claude, Gemini, and more
+* Professional support
 
 **Open Source Licensed Software included in BigConnect Core:**
 
