@@ -29,9 +29,9 @@ MWARE Portal is an enhanced commercial version of Liferay, meaning that all Life
 
 **Open Source Licensed Software included in MWARE Portal:**
 
-| Provider | Component      | License |
-| -------- | -------------- | ------- |
-| Liferay  | Liferay Portal | LGPLv2  |
+| Provider | Component      | License | Download link                                                                                                              |
+| -------- | -------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Liferay  | Liferay Portal | LGPLv2  | [Liferay 7.4.3.126-ga126](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/liferay-portal-7.4.3.126-ga126.zip) |
 
 \*) A _restricted use license_ limits the usage of the restricted use product only in conjuction with the fully licensed product.&#x20;
 
@@ -55,9 +55,9 @@ MWARE BPM started as a fork of Activiti, an open source BPM engine. Since then, 
 
 **Open Source Licensed Software included in MWARE BPM:**
 
-| Provider | Component | License    |
-| -------- | --------- | ---------- |
-| Alfresco | Activiti  | Apache 2.0 |
+| Provider | Component | License    | Download link                                                                                              |
+| -------- | --------- | ---------- | ---------------------------------------------------------------------------------------------------------- |
+| Alfresco | Activiti  | Apache 2.0 | [Activiti 5.22](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/Activiti-activiti-5.22.0.zip) |
 
 ## MWARE IAM
 
@@ -73,9 +73,9 @@ MWARE IAM is a fork of WSO2 Identity Server with the following additional featur
 
 **Open Source Licensed Software included in MWARE Portal:**
 
-| Provider | Component            | License    |
-| -------- | -------------------- | ---------- |
-| WSO2     | WSO2 Identity Server | Apache 2.0 |
+| Provider | Component            | License    | Download Link                                                                                                |
+| -------- | -------------------- | ---------- | ------------------------------------------------------------------------------------------------------------ |
+| WSO2     | WSO2 Identity Server | Apache 2.0 | [WSO Identity Server 7.0](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/product-is-7.0.0.zip) |
 
 ## MWARE Application Server
 
@@ -96,10 +96,10 @@ MWARE Application Server an application platform for mission-critical Jakarta EE
 
 **Open Source Licensed Software included in MWARE Application Server:**
 
-| Provider | Component          | License                        |
-| -------- | ------------------ | ------------------------------ |
-| Eclipse  | Glassfish          | Eclipse Public License - v 2.0 |
-| Apache   | Apache HTTP Server | Apache 2.0                     |
+| Provider | Component          | License                        | Download Link                                                                                               |
+| -------- | ------------------ | ------------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| Eclipse  | Glassfish          | Eclipse Public License - v 2.0 | [Eclipse GlassFish 6.2.5](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/glassfish-6.2.5.zip) |
+| Apache   | Apache HTTP Server | Apache 2.0                     | [Apache HTTP Server 2.4.52](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/httpd-2.4.52.zip)  |
 
 ## MWARE ESB
 
@@ -120,9 +120,9 @@ Compares to the WSO2 API Manager, MWARE ESB includes additional features and enh
 
 **Open Source Licensed Software included in MWARE ESB:**
 
-| Provider | Component   | License    |
-| -------- | ----------- | ---------- |
-| WSO2     | API Manager | Apache 2.0 |
+| Provider | Component   | License    | Download Link                                                                                                 |
+| -------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------- |
+| WSO2     | API Manager | Apache 2.0 | [WSO2 API Manager 4.3.0](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/product-apim-4.3.0.zip) |
 
 ## BigConnect Core
 
@@ -136,17 +136,17 @@ Built from scratch by MWARE to serve mission-critical use cases, BigConnect Core
 
 **Open Source Licensed Software included in BigConnect Core:**
 
-| Provider   | Component  | License    |
-| ---------- | ---------- | ---------- |
-| Apache     | HDFS       | Apache 2.0 |
-| Apache     | Accumulo   | Apache 2.0 |
-| Apache     | Ignite     | Apache 2.0 |
-| Apache     | Kafka      | Apache 2.0 |
-| Apache     | Spark      | Apache 2.0 |
-| Facebook   | RocksDB    | GPL 2.0    |
-| Trino      | Trino      | Apache 2.0 |
-| OpenSearch | OpenSearch | Apache 2.0 |
-| Neo4j      | Browser    | GPL-3.0    |
+| Provider   | Component  | License    | Download Link                                                                                               |
+| ---------- | ---------- | ---------- | ----------------------------------------------------------------------------------------------------------- |
+| Apache     | HDFS       | Apache 2.0 | [Hadoop 3.3.6](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/hadoop-rel-release-3.3.6.zip)   |
+| Apache     | Accumulo   | Apache 2.0 | [Accumulo 2.1.3](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/accumulo-rel-2.1.3.zip)       |
+| Apache     | Ignite     | Apache 2.0 | [Ignite 2.16.0](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/ignite-2.16.0.zip)             |
+| Apache     | Kafka      | Apache 2.0 | [Kafka 3.6.1](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/kafka-3.6.1.zip)                 |
+| Apache     | Spark      | Apache 2.0 | [Spark 3.4.3](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/spark-3.4.3.zip)                 |
+| Facebook   | RocksDB    | GPL 2.0    | [RocksDB 8.11.3](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/rocksdb-8.11.3.zip)           |
+| Trino      | Trino      | Apache 2.0 | [Trino 439](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/trino-439.zip)                     |
+| OpenSearch | OpenSearch | Apache 2.0 | [OpenSearch 2.12.0](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/OpenSearch-2.12.0.zip)     |
+| Neo4j      | Browser    | GPL-3.0    | [Neo4J Browser 3.2.6](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/neo4j-browser-3.2.6.zip) |
 
 ## BigConnect Answers
 
