@@ -165,9 +165,9 @@ Built onn top of Metabase, BigConnect Answers includes additional features and e
 
 **Open Source Licensed Software included in BigConnect Core:**
 
-| Provider | Component | License  |
-| -------- | --------- | -------- |
-| Metabase | Metabase  | AGPL 2.0 |
+| Provider | Component | License  | Download Link                                                                                         |
+| -------- | --------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| Metabase | Metabase  | AGPL 2.0 | [Metabase 0.50.18](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/metabase-0.50.18.zip) |
 
 ## BigConnect Explorer
 
@@ -209,9 +209,9 @@ BigConnect VM is a fork of the popular Portainer platform with the following add
 
 **Open Source Licensed Software included in BigConnect Core:**
 
-| Provider  | Component | License      |
-| --------- | --------- | ------------ |
-| Portainer | Portainer | zlib license |
+| Provider  | Component | License      | Download Link                                                                                         |
+| --------- | --------- | ------------ | ----------------------------------------------------------------------------------------------------- |
+| Portainer | Portainer | zlib license | [Portainer 2.20.1](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/portainer-2.20.1.zip) |
 
 ## BigConnect Pipelines
 
@@ -228,9 +228,9 @@ BigConnect Pipelines started as an early fork of the Streamsets Data Collector p
 
 **Open Source Licensed Software included in BigConnect Core:**
 
-| Provider   | Component      | License    |
-| ---------- | -------------- | ---------- |
-| Streamsets | Data Collector | Apache 2.0 |
+| Provider   | Component      | License    | Download Link                                                                                                      |
+| ---------- | -------------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
+| Streamsets | Data Collector | Apache 2.0 | [Data Collector 3.22.2](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/datacollector-oss-3.22.2.zip) |
 
 ## BigConnect TetraML
 
@@ -249,13 +249,13 @@ BigConnect TetraML is an integrated development environment for AI and Machine L
 
 **Open Source Licensed Software included in BigConnect Core:**
 
-| Provider    | Component    | License    |
-| ----------- | ------------ | ---------- |
-| Jupyter     | Jupyter Lab  | BSD        |
-| H2O         | H2O          | Apache 2.0 |
-| Apache      | Spark Mlib   | Apache 2.0 |
-| Apache      | MLFlow       | Apache 2.0 |
-| HumanSignal | Label Studio | Apache 2.0 |
+| Provider    | Component    | License    | Download Link                                                                                               |
+| ----------- | ------------ | ---------- | ----------------------------------------------------------------------------------------------------------- |
+| Jupyter     | Jupyter Lab  | BSD        | [Jupyter Lab 4.1.5](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/jupyterlab-4.1.5.zip)      |
+| H2O         | H2O          | Apache 2.0 | [H2O 3.46.0](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/h2o-3-jenkins-3.46.0.1.zip)       |
+| Apache      | Spark Mlib   | Apache 2.0 | [Spark 3.4.3](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/spark-3.4.3.zip)                 |
+| Apache      | MLFlow       | Apache 2.0 | [MLflow 2.11.3](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/mlflow-2.11.3.zip)             |
+| HumanSignal | Label Studio | Apache 2.0 | [Label Studio 1.12.0](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/label-studio-1.12.0.zip) |
 
 ## Written Offer for Source Code
 
