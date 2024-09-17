@@ -14,7 +14,7 @@ You can more detailed information in the [DMN standard](http://www.omg.org/spec/
 
 ## User Interface <a href="#user-interface" id="user-interface"></a>
 
-<figure><img src="../../../.gitbook/assets/410-decision-list-471da7134aae68b0de7a2b68edf5186a.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 The model list enables the following actions:
 
@@ -27,7 +27,7 @@ The following sections describe each feature in more detail.
 
 Click the button labeled `Create decision`, a dialog prompts you to enter basic information:
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * The display name of the action.
 * The action’s unique key.
@@ -39,7 +39,7 @@ By clicking `Create new decision model`, a new decision model is created and you
 
 Here, you see the **name**, **description**, **version**, **creator** and the **modification date** of the model as well as the current values of the properties that are used to define the model.
 
-<figure><img src="../../../.gitbook/assets/410-decision-details-b0e83cebb8b44c8a69b3f074b8f1be91.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 If you want to see an older version of your model, press on the `History` button and choose the version you are interested in viewing.
 
@@ -51,7 +51,7 @@ The Decision Editor interface is roughly divided into three areas:
 * The **inputs** on the left side
 * The **outputs** on the right side
 
-<figure><img src="../../../.gitbook/assets/410-decision-editor-6eac0ca7ff8a3536f7b920e2272cd817.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 The following sections describe each area in detail.
 
@@ -71,7 +71,7 @@ The example presented is a very simple use case: determining the discount percen
 
 Provide a decision table name and a unique decision table key and select the `Create new decision model` button.
 
-<figure><img src="../../../.gitbook/assets/420-decision-empty-112eb56ad8d0d62af30f6343f819c5c3.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 You are now ready to define your decision table. Let us describe what is presented within the editor.
 
@@ -120,17 +120,11 @@ Each rule consists of one or more input entries and one or more output entries. 
 The DMN specification defines an expression language: (S)-FEEL. Currently, we do not support this optional part of the specification. Within Flowable DMN, we use [Java Unified Expression Language (JUEL)](http://juel.sourceforge.net/) as the expression language.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/420-decision-rule0-5f657fb80ce961f4159a2f418f74a3b5.webp" alt=""><figcaption></figcaption></figure>
-
 To enter an expression, first select the condition that is applied to the input variable from the drop down box in the first column. Next double-click on the corresponding cell and enter `BRONZE`. Combined with the variable defined in the corresponding input expression (column header), this results at runtime in the full expression _customerCat == "BRONZE"_.
-
-<figure><img src="../../../.gitbook/assets/420-decision-rule1-ca4aab166d890f219b351ba9e03c4a6b.webp" alt=""><figcaption></figcaption></figure>
 
 To enter an output expression, double-click the corresponding cell. In this example, the expression `5` entered. This is actually more like an implicit assignment. The value 5 is assigned to the variable in the corresponding output entry (column) when all input entries of that rule are evaluated true.
 
 We can then continue completing the decision table by adding more rules (by selecting `Add rule below`).
-
-<figure><img src="../../../.gitbook/assets/420-decision-rules-27376d8d9e215c2611f824023995a7f2.webp" alt=""><figcaption></figcaption></figure>
 
 In our example, rule 4 has an empty input entry. The engine evaluates empty input entries as true. This means that if none of the other rules are valid, the outcome of rule 4 is the output of this decision table. In this case, variable **discountPerc** has the value **0**.
 

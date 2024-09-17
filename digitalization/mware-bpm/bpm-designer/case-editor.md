@@ -13,7 +13,7 @@ The Case Editor interface is roughly divided into four areas:
 * The **canvas** in the middle
 * The **attribute bar** on the right side
 
-<figure><img src="../../../.gitbook/assets/310-design-cmmn-editor-9dede5848476cf4b4dd858bd658b05da.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 The following sub-chapters describe each area in detail.
 

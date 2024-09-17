@@ -97,7 +97,7 @@ You can find widgets by clicking on the Dashboard button near the top of the Mat
 
 Custom reports are a powerful feature. They allow you to combine any of the dimensions and metrics collected by Matomo into a single custom report. Once created, it is also possible to add these custom reports to your dashboard. You can find your report widgets by clicking on the **Dashboard** button. Then click **Add a widget,** and finally a list will be shown under the **Custom Reports** sub-menu. Your custom report widgets can contain anything that can be compiled into a custom report. The example below shows how it might look with a custom report width showing three dimensions for events as described here.
 
-<figure><img src="../../../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## SEO Ranking Widget
 

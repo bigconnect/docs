@@ -879,7 +879,6 @@
     * [Case Editor](digitalization/mware-bpm/bpm-designer/case-editor.md)
     * [Decision Editor](digitalization/mware-bpm/bpm-designer/decision-editor.md)
     * [Form Editor](digitalization/mware-bpm/bpm-designer/form-editor.md)
-    * [Editing Other Models](digitalization/mware-bpm/bpm-designer/editing-other-models.md)
   * [BPMN Developer Guide](digitalization/mware-bpm/bpmn-developer-guide/README.md)
     * [Configuration](digitalization/mware-bpm/bpmn-developer-guide/configuration.md)
     * [The BPMN API](digitalization/mware-bpm/bpmn-developer-guide/the-bpmn-api.md)

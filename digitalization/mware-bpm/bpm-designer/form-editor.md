@@ -11,13 +11,7 @@ The Form Editor interface is roughly divided into four areas:
 * The **canvas** in the middle
 * The **attribute bar** on the right side
 
-<figure><img src="../../../.gitbook/assets/510-design-form-editor-d7b7a7db6fc592bd36570f025b113db8.webp" alt=""><figcaption></figcaption></figure>
-
-The following sections describe each area in detail.
-
-**Menu Bar**[**​**](https://documentation.flowable.com/latest/user/design/form-editor#menu-bar)
-
-The menu bar offers a number of actions, some of them only affecting the currently opened model while others have a more global impact.
+<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 **Drawing Area**[**​**](https://documentation.flowable.com/latest/user/design/form-editor#drawing-area)
 

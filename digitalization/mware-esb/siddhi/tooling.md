@@ -8,7 +8,7 @@ Siddhi provides tooling that supports following features to develop and test str
 * **Event Simulator and Debugger** to test Siddhi Applications.
 * **Graphical Query Editor** with drag and drop query building support.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Graphical Query Editor</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1075).png" alt=""><figcaption><p>Graphical Query Editor</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Text Query Editor</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Text Query Editor</p></figcaption></figure>
 

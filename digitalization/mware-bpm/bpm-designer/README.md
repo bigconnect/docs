@@ -8,27 +8,26 @@ This user guide leads you through the most important aspects of both, the applic
 
 To access the BPM Designer you need to type in the navigation URL into your browser. Once the page is loaded, the login page appears.&#x20;
 
-<figure><img src="../../../.gitbook/assets/110-design-login-ca40ae20f22e51c84c1e537482fc435d.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 In order to log in, you need to type in your login and password on the form and click on `Sign in`.
 
-**Navigation Bar**[**​**](https://documentation.flowable.com/latest/user/design/introduction#navigation-bar)
+After logging in, your are presented with a list of apps where your can manage various aspects of the product:
 
-The **navigation bar** offers a simple, tab-based navigation which allows you to open the different editors of BPM Designer.. By clicking on **Apps**, **Processes**, **Cases**, **Forms**, **Pages**, **Decisions** or **Others** you are brought to the respective editors.
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/120-design-bpmn-menu-bar-74db9843dfa7931d1fec1fbfdc67b784.webp" alt=""><figcaption></figcaption></figure>
+* **Task App**: Access your full task list and work on any tasks assigned to you from any process app. Also, start new processes and tasks.
+* **Modeler App**: Access a central place to model BPMN processes, Cases, DMN decision tables, Form definitions and create app definitions
+* **Admin Adpp**: Access the  Admin application.
+* **IDM App**: A central place to define users, groups and privileges..
 
-The **Design** tab is highlighted once you entered the **Design Mode** of an editor which you can do by clicking on the `Visual Editor` button of a specific model.
-
-On the right side, you can **sign out** of the application, **change your password**, or access the **user management** options of the BPM Designer.
-
-**User Management**[**​**](https://documentation.flowable.com/latest/user/design/introduction#user-management)
+**IDM App**[**​**](https://documentation.flowable.com/latest/user/design/introduction#user-management)
 
 Modeling business applications is often a collaborative effort. For that reason, the BPM Designer has its own built-in user system or can use other user management systems.
 
-To create, modify and delete users in the built-in system, click on your username in the top-right corner of the navigation bar. Select `User management` to navigate to the user overview.
+To create, modify and delete users in the built-in system, click on your username in the top-right corner of the navigation bar. Select `IDM App` to navigate to the user overview.
 
-<figure><img src="../../../.gitbook/assets/130-design-user-management-d00915aa839d09e64e6e12bb6f1dc8a0.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Click on `Create user` to add a new user to Flowable Design.
 
@@ -46,7 +45,7 @@ In total, there are seven model types in the BPM Designer: Apps, Processes, Case
 
 You can access your models by clicking on the respective link in the navigation bar. This brings you to an overview of all models of a that type.
 
-<figure><img src="../../../.gitbook/assets/140-design-item-overview-da8c4d612c920d666a0e3bb981bbb2d0.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 In this case, we clicked on the **Processes** tab which shows us all existing process models. Since the user interface of all model types is very similar, this provides a good overview of how to work with other model types.
 

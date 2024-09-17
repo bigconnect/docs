@@ -13,7 +13,7 @@ By design, Matomo ensures that your analytics data is only accessible to the Mat
 
 The majority of privacy settings within Matomo can be found by clicking the _**cog icon**_ ![Settings Cog Icon](https://m-img.org/spai/w\_50+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/settings-menu-item-e1659083453168.png) within the top menu while logged in as Super User, which takes you to the **Settings** page. On this page, there is a **Privacy** menu available in the main navigation along the left-hand side of the page.
 
-<figure><img src="../../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 1) Automatically Anonymise Visitor IPs and replace User IDs <a href="#step-1-automatically-anonymise-visitor-ips-and-replace-user-ids" id="step-1-automatically-anonymise-visitor-ips-and-replace-user-ids"></a>
 

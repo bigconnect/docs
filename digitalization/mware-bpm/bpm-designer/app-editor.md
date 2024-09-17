@@ -6,17 +6,13 @@ The App Editor is used to create a bundle of process and case models together th
 
 The App Editor allows the definition of an application bundle of processes, cases and other related models. An app, once defined, can be published (deployed) to the runtime engines and started by users.
 
-<figure><img src="../../../.gitbook/assets/610-design-app-editor-76b3df3067b826ebc3cacea98b60e62d.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 A list of the existing apps is displayed, ordered by date or name, with the ability to:
 
 * View and modify an app by clicking on its card
 * Create new apps
 * Import apps
-
-Clicking the `+` card opens a dialog that allows you to choose to create a new app or import an existing app definition.
-
-<figure><img src="../../../.gitbook/assets/image (896).png" alt=""><figcaption></figcaption></figure>
 
 ### Creating New Apps[​](https://documentation.flowable.com/latest/user/design/app-editor#creating-new-apps) <a href="#creating-new-apps" id="creating-new-apps"></a>
 
@@ -55,15 +51,7 @@ The options available are:
 
 In the header area, you can see the **name**, **description**, **version**, **creator** and the **modification date** of the app definition. The models that are already included in the app are also shown. It is always possible to return to this app view by clicking the app name in the top navigation menu.
 
-<figure><img src="../../../.gitbook/assets/610-app-editor-9548a034e986845388812e2bc3484c5c.webp" alt=""><figcaption></figcaption></figure>
-
-To add models to an app, click on the `+` card or `+ Create new` button. This opens a dialog that allows you to choose how you want to add a model to the app: by creating a new one from scratch, importing one from a file, or including a model already created.
-
-![610 app include](https://documentation.flowable.com/latest/assets/images/610-app-add-model-81a189facf0f5dcb00ee2197a44e6142.png)
-
-If you choose to create a new model, or import one from file, you then are prompted to select the type of model to import or create.
-
-![610 app include](https://documentation.flowable.com/latest/assets/images/610-app-add-which-11ad44564e8334d4709722a9c6aa232e.png)
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 If you chose to include existing models to your app, you will be shown a dialog with a list of available models. Simply click on any number of items in the list of models (a **+** icon will be added to each). These models then become part of the deployment that takes place when publishing this app.
 

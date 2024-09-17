@@ -32,7 +32,7 @@ While still in the Admin panel’s **Settings** section, click on **Authenticati
 
 On the card that says **JWT**, click the **Setup** button (you may have to scroll down to view the JWT card).
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### **Set JWT Identity provider URI**
 

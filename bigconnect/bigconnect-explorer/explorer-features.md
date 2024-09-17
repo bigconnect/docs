@@ -106,7 +106,7 @@ Objects can be copied and pasted from anywhere onto the graph, external files ca
 
 Finding how two objects are connected is quite easy as well. Just use the Find Path feature to find out.
 
-![BigConnect Explorer Find Path](<../../.gitbook/assets/image (11) (1).png>)
+![BigConnect Explorer Find Path](<../../.gitbook/assets/image (11) (1) (1).png>)
 
 #### Spatial Analysis
 
