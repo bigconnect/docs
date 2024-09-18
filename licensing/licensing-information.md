@@ -43,26 +43,23 @@ MWARE Portal is an enhanced commercial version of Liferay, meaning that all Life
 
 MWARE BPM is a commercial-grade, light-weight business process engine written in Java. The BPM process engine allows you to deploy BPMN 2.0 process definitions (an industry XML standard for defining processes), creating process instances of those process definitions, running queries, accessing active or historical process instances and related data, plus much more.
 
-MWARE BPM started as a fork of Activiti, an open source BPM engine. Since then, it has diverged significantly from Activiti and now includes additional features and enhancements:
+MWARE BPM started as a fork of Activiti and then Flowable,  open source BPM engines. Since then, it has diverged significantly from Activiti and now includes additional features and enhancements:
 
-* Support for Case Management Model and Notation (CMMN) implementation
-* Seamless integration with event streaming platforms
-* Direct execution of BPMN models without intermediary steps
-* Capability to inject processes dynamically at runtime
-* Asynchronous processing of historical data
-* Utilization of abstract data source interfaces
-* Implementation of genuine parallel gateway functionality
+* Integration with event streaming platforms like Kafka
+* A new task list with advanced capabilities
 * Activity calendar
-* Web app for modelling
+* Task delegation
+* Web app for modelling BPMN, CMMN, DMN, Forms and Apps
 * Process performance analysis
 * MWARE Portal integration
 * Professional support
 
 **Open Source Licensed Software included in MWARE BPM:**
 
-| Provider | Component | License    | Download link                                                                                              |
-| -------- | --------- | ---------- | ---------------------------------------------------------------------------------------------------------- |
-| Alfresco | Activiti  | Apache 2.0 | [Activiti 5.22](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/Activiti-activiti-5.22.0.zip) |
+| Provider | Component | License    | Download link                                                                                                     |
+| -------- | --------- | ---------- | ----------------------------------------------------------------------------------------------------------------- |
+| Alfresco | Activiti  | Apache 2.0 | [Activiti 7.12.0-rc.123](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/Activiti-7.12.0-rc.123.zip) |
+| Flowable | Flowable  | Apache 2.0 | [Flowable 7.0.1](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/flowable-engine-flowable-7.0.1.zip) |
 
 ## MWARE IAM
 
@@ -155,17 +152,17 @@ Built from scratch by MWARE to serve mission-critical use cases, BigConnect Core
 
 **Open Source Licensed Software included in BigConnect Core:**
 
-| Provider   | Component  | License    | Download Link                                                                                               |
-| ---------- | ---------- | ---------- | ----------------------------------------------------------------------------------------------------------- |
-| Apache     | HDFS       | Apache 2.0 | [Hadoop 3.3.6](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/hadoop-rel-release-3.3.6.zip)   |
-| Apache     | Accumulo   | Apache 2.0 | [Accumulo 2.1.3](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/accumulo-rel-2.1.3.zip)       |
-| Apache     | Ignite     | Apache 2.0 | [Ignite 2.16.0](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/ignite-2.16.0.zip)             |
-| Apache     | Kafka      | Apache 2.0 | [Kafka 3.6.1](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/kafka-3.6.1.zip)                 |
-| Apache     | Spark      | Apache 2.0 | [Spark 3.4.3](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/spark-3.4.3.zip)                 |
-| Facebook   | RocksDB    | GPL 2.0    | [RocksDB 8.11.3](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/rocksdb-8.11.3.zip)           |
-| Trino      | Trino      | Apache 2.0 | [Trino 439](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/trino-439.zip)                     |
-| OpenSearch | OpenSearch | Apache 2.0 | [OpenSearch 2.12.0](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/OpenSearch-2.12.0.zip)     |
-| Neo4j      | Browser    | GPL-3.0    | [Neo4J Browser 3.2.6](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/neo4j-browser-3.2.6.zip) |
+| Provider   | Component  | License    | Download Link                                                                                             |
+| ---------- | ---------- | ---------- | --------------------------------------------------------------------------------------------------------- |
+| Apache     | HDFS       | Apache 2.0 | [Hadoop 3.3.6](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/hadoop-rel-release-3.3.6.zip) |
+| Apache     | Accumulo   | Apache 2.0 | [Accumulo 2.1.3](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/accumulo-rel-2.1.3.zip)     |
+| Apache     | Ignite     | Apache 2.0 | [Ignite 2.16.0](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/ignite-2.16.0.zip)           |
+| Apache     | Kafka      | Apache 2.0 | [Kafka 3.6.1](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/kafka-3.6.1.zip)               |
+| Apache     | Spark      | Apache 2.0 | [Spark 3.4.3](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/spark-3.4.3.zip)               |
+| Facebook   | RocksDB    | GPL 2.0    | [RocksDB 8.11.3](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/rocksdb-8.11.3.zip)         |
+| Trino      | Trino      | Apache 2.0 | [Trino 439](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/trino-439.zip)                   |
+| OpenSearch | OpenSearch | Apache 2.0 | [OpenSearch 2.12.0](https://s3.eu-central-1.amazonaws.com/bits.bigconnect.io/oss/OpenSearch-2.12.0.zip)   |
+| BigConnect | Cypher Lab | GPL-3.0    | [Cypher Lab](https://github.com/mware-solutions/cypher-lab)                                               |
 
 ## BigConnect Answers
 
