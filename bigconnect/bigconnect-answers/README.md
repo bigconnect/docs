@@ -1,6 +1,8 @@
 # BigConnect Answers
 
-BigConnect Answers is a simple and powerful self service, drag & drop analytics tool which lets anyone learn and make decisions from their company’s data—no technical knowledge required.
+BigConnect Answers is a simple and powerful web self service, drag & drop analytics tool which lets anyone learn and make decisions from their company’s data—no technical knowledge required.
+
+It's a self-service, point-and-click solution that works on all major browsers and mobile devices through a fully-responsive user interface.
 
 ### The Home Page
 
