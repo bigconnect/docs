@@ -47,7 +47,7 @@ The last relationship we can model is arguably one of the most complexes but aga
 
 To create this in Budibase all we need to do is:
 
-1. Create the four tables, students, classes, teachers, and parking spots. In each of these, we will initially create a display text column and mark these as the _Display column -_ for example, N_ame_ or _Subject_.
+1. Create the four tables, students, classes, teachers, and parking spots. In each of these, we will initially create a display text column and mark these as the _Display column -_ for example, &#x4E;_&#x61;me_ or _Subject_.
 2. First, we will create the teacher to parking spot relationship, starting in the teacher table we create a relationship type column, call it `ParkingSpot` and set the table to parking spots - then name the column in the other table `Teacher`.
 3. Second, we create the teacher to classes relationship, hopefully, at this point, it should be clear how this is done. Simply create a relationship from the teacher table to the class table, name the column `Classes` and in the other table call the column `Teacher`.
 4. Lastly, we create the students to classes relationship, the same as before but set the relationship table to classes, call the column in the students table `Classes` and call the column in the other table `Students`.

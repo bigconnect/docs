@@ -30,11 +30,11 @@ Assuming you have setup the example database on a running Postgres instance, we 
 
 First create an app - no sample data needed.
 
-![](https://files.readme.io/c2a0ca2-Screenshot\_2023-02-07\_at\_15.47.10.png)
+![](https://files.readme.io/c2a0ca2-Screenshot_2023-02-07_at_15.47.10.png)
 
 Click `Add source`, select `PostgreSQL` and press `Continue`.
 
-![](https://files.readme.io/f70dc3d-1\_postgres.png)
+![](https://files.readme.io/f70dc3d-1_postgres.png)
 
 You will then be presented with a connection configuration modal. Fill in the correct connection details but press **Skip table fetch**. We want to manually fetch tables later so we can choose the tables we want to use in our app.
 
@@ -42,7 +42,7 @@ You will then be presented with a connection configuration modal. Fill in the co
 >
 > Note that if you are connecting to a database on `localhost`, your host should be set to `host.docker.internal`, or `172.17.0.1` if running on Linux.
 
-![](https://files.readme.io/3227724-Screenshot\_2023-02-07\_at\_16.09.03.png)
+![](https://files.readme.io/3227724-Screenshot_2023-02-07_at_16.09.03.png)
 
 Now we have the Postgres Datasource added, and the configuration page should be displayed.
 
@@ -83,11 +83,11 @@ This error is caused by the _Not NULL_ constraint on the **last\_update** column
 
 <figure><img src="https://files.readme.io/a139ff6-Screenshot_2023-02-07_at_16.34.22.png" alt="Setting last_update to nullable"><figcaption><p>Setting last_update to nullable</p></figcaption></figure>
 
-**Do the same for the **_**last\_update**_** column in the **_**film\_actor**_** table.**
+**Do the same for the&#x20;**_**last\_update**_**&#x20;column in the&#x20;**_**film\_actor**_**&#x20;table.**
 
 In addition, the **inventory** table is a through table that will need adjusted like so:
 
-![](https://files.readme.io/9d0ebd6-Screenshot\_2023-02-08\_at\_10.25.43.png)
+![](https://files.readme.io/9d0ebd6-Screenshot_2023-02-08_at_10.25.43.png)
 
 > ### 📘
 >

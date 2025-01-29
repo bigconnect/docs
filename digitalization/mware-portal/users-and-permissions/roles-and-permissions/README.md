@@ -20,7 +20,7 @@ To give Users the permissions they need to perform their intended function withi
 
 Using a _Message Boards Admin_ Role and a User _Jane Slaughter_ as an example, here are the steps you might follow:
 
-1. Determine the function needed: _Manage Message Boards in_ the portal_._
+1. Determine the function needed: _Manage Message Boards in_ the porta&#x6C;_._
 2. Determine the scope: _Throughout the Virtual Instance (globally)._
 3. Create the properly scoped Role, assigning the permissions that power the function: _Message Boards Admin (Regular Role)._
 4. Create the User collection: _a User Group called Message Boards Administrators._

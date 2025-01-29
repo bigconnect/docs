@@ -49,7 +49,7 @@ The monitoring console is organized in fully customisable pages. A page is a col
 
 To switch page use the drop-down menu at the top centre of the page.
 
-![Page Navigation](https://docs.payara.fish/community/docs/\_images/monitoring-console/mc\_page\_menu.png)
+![Page Navigation](https://docs.payara.fish/community/docs/_images/monitoring-console/mc_page_menu.png)
 
 Each page switch also updates the URL making the URL bookmarkable. URLs can be copied and shared with others to share particular pages with them.
 
@@ -99,7 +99,7 @@ To reset all pages and remove all user created pages clear the browser’s local
 
 Monitoring Console uses the browser’s local storage to store the page configuration (which includes the widgets placed on a page). This means by default changes to page configurations do not affect other users. To make pages available to others and to start from a common base configuration pages are explicitly synchronised with a persistent server page configuration.
 
-The chosen role controls the behaviour and available options for the page synchronisation. It is the _Administrator_'s role that is meant to manage the persistent server page configuration. The _Administrator_ pushes local changes to the server to update the base configuration. _User_s and _Guest_s pull the server configuration to update their local configuration with the base. The control remains with each user.
+The chosen role controls the behaviour and available options for the page synchronisation. It is the _Administrator_'s role that is meant to manage the persistent server page configuration. The _Administrator_ pushes local changes to the server to update the base configuration. _Use&#x72;_&#x73; and _Gues&#x74;_&#x73; pull the server configuration to update their local configuration with the base. The control remains with each user.
 
 The _Page Synchronisation_ dialogue shown when entering the console UI allows the user to pick the pages that should be updated (pulled).
 
@@ -116,13 +116,13 @@ This dialogue can also be opened from the _Global_ settings by clicking the _Upd
 
 <figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_setting_global_rolesync.png" alt=""><figcaption></figcaption></figure>
 
-_Administrator_s also find a button to _Update Remote Pages_ with any changes applied to local changes. This is only needed for pages that are not using \_auto\_matic updates.
+_Administrato&#x72;_&#x73; also find a button to _Update Remote Pages_ with any changes applied to local changes. This is only needed for pages that are not using \_auto\_matic updates.
 
 To share a page that so far is not part of the persistent remote configuration open the _Page_ settings and look for the _Sync_ property:
 
 <figure><img src="https://docs.payara.fish/community/docs/_images/monitoring-console/mc_setting_page_sync.png" alt=""><figcaption></figcaption></figure>
 
-_User_s and _Administrator_s can both _Push_ a page to update the persistent remote configuration and _Pull_ the remote configuration to update the local page. _Administrator_s can also enable or disable the _auto_matic page synchronisation. When enabled any local change done by an _Administrator_ is automatically pushed to the remote configuration and can be pulled by other users.
+_Use&#x72;_&#x73; and _Administrato&#x72;_&#x73; can both _Push_ a page to update the persistent remote configuration and _Pull_ the remote configuration to update the local page. _Administrato&#x72;_&#x73; can also enable or disable the _aut&#x6F;_&#x6D;atic page synchronisation. When enabled any local change done by an _Administrator_ is automatically pushed to the remote configuration and can be pulled by other users.
 
 **Changing User Role**
 

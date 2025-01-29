@@ -48,7 +48,7 @@ The graph is the main tool for creating new items: nodes and relationships.
 
 #### Nodes
 
-To create a new node, right-click in an empty area of the graph and choose **New Entity... (**or press Alt+N). A popup will be displayed asking the details of the new entity:
+To create a new node, right-click in an empty area of the graph and choose **New Entity... (**&#x6F;r press Alt+N). A popup will be displayed asking the details of the new entity:
 
 ![](<../../../../.gitbook/assets/image (606).png>)
 
@@ -103,9 +103,9 @@ A layout can be applied on all elements or on the currently selected elements.
 BigConnect Explorer provides some algorithms that can influence the size of a node:
 
 * [PageRank](https://ro.wikipedia.org/wiki/PageRank)
-* [Degree Centrality](https://en.wikipedia.org/wiki/Centrality#Degree\_centrality)
-* [Closeness Centrality](https://en.wikipedia.org/wiki/Closeness\_centrality)
-* [Betweenness Centrality](https://en.wikipedia.org/wiki/Betweenness\_centrality)
+* [Degree Centrality](https://en.wikipedia.org/wiki/Centrality#Degree_centrality)
+* [Closeness Centrality](https://en.wikipedia.org/wiki/Closeness_centrality)
+* [Betweenness Centrality](https://en.wikipedia.org/wiki/Betweenness_centrality)
 
 The can be accessed by right-clicking in an empty area of the graph and choosing the **Vertex Size** menu item.&#x20;
 
@@ -154,7 +154,7 @@ To do so, select the right-click on the source node and choose **Show Path** fro
 The shortest path is highlighted in light blue.
 
 {% hint style="info" %}
-The [A\* Search](https://en.wikipedia.org/wiki/A\*\_search\_algorithm) algorithm is used to find the shortest path between the selected nodes.
+The [A\* Search](https://en.wikipedia.org/wiki/A*_search_algorithm) algorithm is used to find the shortest path between the selected nodes.
 {% endhint %}
 
 ### Grouping elements

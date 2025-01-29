@@ -21,7 +21,7 @@ When writing a data connector, you need to define **two** things in your code:
 
 ### Tutorial: Creating a MySQL data connector
 
-Let's walk through an example. We are going to create a data connector for **MySQL**, the popular RDBMS**.**
+Let's walk through an example. We are going to create a data connector for **MySQL**, the popular RDBM&#x53;**.**
 
 #### Steps
 

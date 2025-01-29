@@ -109,7 +109,7 @@ To represent these in Cypher, we can use curly braces within the parentheses of 
 
 ![](<../../../../.gitbook/assets/image (669).png>)
 
-Properties can have values with a variety of data types_._
+Properties can have values with a variety of data type&#x73;_._
 
 ### Patterns in Cypher
 

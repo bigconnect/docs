@@ -43,7 +43,7 @@ This works the same way for **Improvements, Risks**, and **Incidents**.
 
 They can also carry out **Update** actions relating to certain fields.
 
-Specifically, they can use **Row Actions** to either **Approve** or **Reject** the row in question, updating its status attribute. At the same time, they can use a form UI to populate the **Feedback** column**.**
+Specifically, they can use **Row Actions** to either **Approve** or **Reject** the row in question, updating its status attribute. At the same time, they can use a form UI to populate the **Feedback** colum&#x6E;**.**
 
 If a submission is **Approved**, it can also be assigned to a specific **Improvement Project** for implementation by populating a relationship column.
 
@@ -87,7 +87,7 @@ Users with the **App User** role can primarily create submissions across our thr
 
 Roles are configured using Mware Application Development Framework’s visual RBAC editor. We can use branch UIs to define how roles relate to one another, including permission inheritance.
 
-![RBAC](https://files.readme.io/589a3b1728c81e8149fcf339b17ceb551280d7ce4f7f5d7a2b69eb030194d471-Risk\_Management\_Template\_4\_RBAC.png)
+![RBAC](https://files.readme.io/589a3b1728c81e8149fcf339b17ceb551280d7ce4f7f5d7a2b69eb030194d471-Risk_Management_Template_4_RBAC.png)
 
 We can use this to define which actions and data each role is permitted to access from within the data section, as we’ll see in the following section.
 

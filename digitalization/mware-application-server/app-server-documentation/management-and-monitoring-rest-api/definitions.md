@@ -16,8 +16,8 @@ API Key authentication using a session token. In order to retrieve a session tok
 | - | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 _Type_ : apiKey\
-_Name_ : gfresttoken\
-_In_ : COOKIE
+&#xNAN;_&#x4E;ame_ : gfresttoken\
+&#xNAN;_&#x49;n_ : COOKIE
 
 ### Command
 

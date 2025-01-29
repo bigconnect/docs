@@ -11,7 +11,7 @@ Answers supports two auth flows that can be used with JWT:
 
 Answers’s auth flows are custom workflows modelled after OAuth 2.0. You can use the auth flow with PKCE to incorporate random keys generated on demand.
 
-Currently, the only algorithm Answers supports is [HS256](https://en.wikipedia.org/wiki/JSON\_Web\_Token) ([HMAC](https://en.wikipedia.org/wiki/HMAC) + [SHA-256](https://en.wikipedia.org/wiki/SHA-2)).
+Currently, the only algorithm Answers supports is [HS256](https://en.wikipedia.org/wiki/JSON_Web_Token) ([HMAC](https://en.wikipedia.org/wiki/HMAC) + [SHA-256](https://en.wikipedia.org/wiki/SHA-2)).
 
 ## Typical flow for a JWT-based SSO interaction with Answers
 
@@ -62,7 +62,7 @@ Answers accounts created with an external identity provider login don’t have p
 
 ## Disabling password logins
 
-> **Avoid locking yourself out of your** Answers**!** This setting will apply to all Answers accounts, _including your Answers admin account_. We recommend that you keep password authentication **enabled**. This will safeguard you from getting locked out of Answers in case of any problems with SSO.
+> **Avoid locking yourself out of your** Answer&#x73;**!** This setting will apply to all Answers accounts, _including your Answers admin account_. We recommend that you keep password authentication **enabled**. This will safeguard you from getting locked out of Answers in case of any problems with SSO.
 
 To require people to log in with SSO, disable password authentication from **Admin settings** > **Authentication**.
 

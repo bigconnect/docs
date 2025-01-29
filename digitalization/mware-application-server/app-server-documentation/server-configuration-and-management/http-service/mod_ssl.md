@@ -85,7 +85,7 @@ REQUEST_URI            REMOTE_USER
 
 In these contexts, two special formats can also be used:
 
-`ENV:`_`variablename`_This will expand to the standard environment variable _variablename_.`HTTP:`_`headername`_This will expand to the value of the request header with name _headername_
+`ENV:`_`variablename`_&#x54;his will expand to the standard environment variable _variablename_.`HTTP:`_`headername`_&#x54;his will expand to the value of the request header with name _headername_
 
 ### Custom Log Formats
 
@@ -103,7 +103,7 @@ These formats even work without setting the `StdEnvVars` option of the `SSLOptio
 
 ### Request Notes
 
-`mod_ssl` sets "notes" for the request which can be used in logging with the `%{`_`name`_`}n` format string in [`mod_log_config`](https://httpd.apache.org/docs/2.4/mod/mod\_log\_config.html).
+`mod_ssl` sets "notes" for the request which can be used in logging with the `%{`_`name`_`}n` format string in [`mod_log_config`](https://httpd.apache.org/docs/2.4/mod/mod_log_config.html).
 
 The notes supported are as follows:
 
@@ -111,9 +111,9 @@ The notes supported are as follows:
 
 ### Expression Parser Extension
 
-When `mod_ssl` is built into Apache or at least loaded (under DSO situation) any variables provided by [`mod_ssl`](https://httpd.apache.org/docs/2.4/mod/mod\_ssl.html) can be used in expressions for the [ap\_expr Expression Parser](https://httpd.apache.org/docs/2.4/expr.html). The variables can be referenced using the syntax \`\``%{`_varname_`}`''. Starting with version 2.4.18 one can also use the [`mod_rewrite`](https://httpd.apache.org/docs/2.4/mod/mod\_rewrite.html) style syntax \`\``%{SSL:`_varname_`}`'' or the function style syntax \`\``ssl(`_varname_`)`''.
+When `mod_ssl` is built into Apache or at least loaded (under DSO situation) any variables provided by [`mod_ssl`](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html) can be used in expressions for the [ap\_expr Expression Parser](https://httpd.apache.org/docs/2.4/expr.html). The variables can be referenced using the syntax \`\``%{`_varname_`}`''. Starting with version 2.4.18 one can also use the [`mod_rewrite`](https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html) style syntax \`\``%{SSL:`_varname_`}`'' or the function style syntax \`\``ssl(`_varname_`)`''.
 
-#### Example (using [`mod_headers`](https://httpd.apache.org/docs/2.4/mod/mod\_headers.html))
+#### Example (using [`mod_headers`](https://httpd.apache.org/docs/2.4/mod/mod_headers.html))
 
 ```
 Header set X-SSL-PROTOCOL "expr=%{SSL_PROTOCOL}"
@@ -122,11 +122,11 @@ Header set X-SSL-CIPHER "expr=%{SSL:SSL_CIPHER}"
 
 This feature even works without setting the `StdEnvVars` option of the `SSLOptions` directive.
 
-[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod\_ssl.html#page-header)
+[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#page-header)
 
 ### Authorization providers for use with Require
 
-[`mod_ssl`](https://httpd.apache.org/docs/2.4/mod/mod\_ssl.html) provides a few authentication providers for use with [`mod_authz_core`](https://httpd.apache.org/docs/2.4/mod/mod\_authz\_core.html)'s [`Require`](https://httpd.apache.org/docs/2.4/mod/mod\_authz\_core.html#require) directive.
+[`mod_ssl`](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html) provides a few authentication providers for use with [`mod_authz_core`](https://httpd.apache.org/docs/2.4/mod/mod_authz_core.html)'s [`Require`](https://httpd.apache.org/docs/2.4/mod/mod_authz_core.html#require) directive.
 
 #### Require ssl
 
@@ -225,22 +225,22 @@ The files in this directory have to be PEM-encoded and are accessed through hash
 SSLCADNRequestPath "/usr/local/apache2/conf/ca-names.crt/"
 ```
 
-[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod\_ssl.html#page-header)
+[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#page-header)
 
 ### SSLCARevocationCheck Directive
 
-| [Description:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Description)     | Enable CRL-based revocation checking                       |
-| ----------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| [Syntax:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Syntax)               | `SSLCARevocationCheck chain\|leaf\|none [`_`flag`_`s ...]` |
-| [Default:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Default)             | `SSLCARevocationCheck none`                                |
-| [Context:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Context)             | server config, virtual host                                |
-| [Status:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Status)               | Extension                                                  |
-| [Module:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Module)               | mod\_ssl                                                   |
-| [Compatibility:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Compatibility) | Optional _flag_s available in httpd 2.4.21 or later        |
+| [Description:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Description)     | Enable CRL-based revocation checking                          |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [Syntax:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Syntax)               | `SSLCARevocationCheck chain\|leaf\|none [`_`flag`_`s ...]`    |
+| [Default:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Default)             | `SSLCARevocationCheck none`                                   |
+| [Context:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Context)             | server config, virtual host                                   |
+| [Status:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Status)               | Extension                                                     |
+| [Module:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Module)               | mod\_ssl                                                      |
+| [Compatibility:](https://httpd.apache.org/docs/2.4/mod/directive-dict.html#Compatibility) | Optional _fla&#x67;_&#x73; available in httpd 2.4.21 or later |
 
 Enables certificate revocation list (CRL) checking. At least one of `SSLCARevocationFile` or `SSLCARevocationPath` must be configured. When set to `chain` (recommended setting), CRL checks are applied to all certificates in the chain, while setting it to `leaf` limits the checks to the end-entity cert.
 
-The available _flag_s are:
+The available _fla&#x67;_&#x73; are:
 
 *   `no_crl_for_cert_ok`
 
@@ -323,7 +323,7 @@ But be careful: Providing the certificate chain works only if you are using a _s
 SSLCertificateChainFile "/usr/local/apache2/conf/ssl.crt/ca.crt"
 ```
 
-[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod\_ssl.html#page-header)
+[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#page-header)
 
 ### SSLCertificateFile Directive
 
@@ -347,7 +347,7 @@ As an alternative to storing certificates and private keys in files, a certifica
 
 #### DH parameter interoperability with primes > 1024 bit
 
-Beginning with version 2.4.7, mod\_ssl makes use of standardized DH parameters with prime lengths of 2048, 3072 and 4096 bits and with additional prime lengths of 6144 and 8192 bits beginning with version 2.4.10 (from [RFC 3526](http://www.ietf.org/rfc/rfc3526.txt)), and hands them out to clients based on the length of the certificate's RSA/DSA key. With Java-based clients in particular (Java 7 or earlier), this may lead to handshake failures - see this [FAQ answer](https://httpd.apache.org/docs/2.4/ssl/ssl\_faq.html#javadh) for working around such issues.
+Beginning with version 2.4.7, mod\_ssl makes use of standardized DH parameters with prime lengths of 2048, 3072 and 4096 bits and with additional prime lengths of 6144 and 8192 bits beginning with version 2.4.10 (from [RFC 3526](http://www.ietf.org/rfc/rfc3526.txt)), and hands them out to clients based on the length of the certificate's RSA/DSA key. With Java-based clients in particular (Java 7 or earlier), this may lead to handshake failures - see this [FAQ answer](https://httpd.apache.org/docs/2.4/ssl/ssl_faq.html#javadh) for working around such issues.
 
 #### Default DH parameters when using multiple certificates and OpenSSL versions prior to 1.0.2
 
@@ -410,7 +410,7 @@ Notice that this directive can be used both in per-server and per-directory cont
 
 If the SSL library supports TLSv1.3 (OpenSSL 1.1.1 and later), the protocol specifier "TLSv1.3" can be used to configure the cipher suites for that protocol. Since TLSv1.3 does not offer renegotiations, specifying ciphers for it in a directory context is not allowed.
 
-For a list of TLSv1.3 cipher names, see [the OpenSSL documentation](https://www.openssl.org/docs/manmaster/man3/SSL\_CTX\_set\_ciphersuites.html).
+For a list of TLSv1.3 cipher names, see [the OpenSSL documentation](https://www.openssl.org/docs/manmaster/man3/SSL_CTX_set_ciphersuites.html).
 
 An SSL cipher specification in _cipher-spec_ is composed of 4 major attributes plus a few extra minor ones:
 
@@ -423,7 +423,7 @@ An SSL cipher specification in _cipher-spec_ is composed of 4 major attributes p
 * _MAC Digest Algorithm_:\
   MD5, SHA or SHA1, SHA256, SHA384.
 
-An SSL cipher can also be an export cipher. SSLv2 ciphers are no longer supported. To specify which ciphers to use, one can either specify all the Ciphers, one at a time, or use aliases to specify the preference and order for the ciphers (see [Table 1](https://httpd.apache.org/docs/2.4/mod/mod\_ssl.html#table1)). The actually available ciphers and aliases depends on the used openssl version. Newer openssl versions may include additional ciphers.
+An SSL cipher can also be an export cipher. SSLv2 ciphers are no longer supported. To specify which ciphers to use, one can either specify all the Ciphers, one at a time, or use aliases to specify the preference and order for the ciphers (see [Table 1](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#table1)). The actually available ciphers and aliases depends on the used openssl version. Newer openssl versions may include additional ciphers.
 
 | Tag                          | Description                                                            |
 | ---------------------------- | ---------------------------------------------------------------------- |
@@ -497,7 +497,7 @@ PSK-RC4-SHA             SSLv3 Kx=PSK      Au=PSK  Enc=RC4(128)  Mac=SHA1
 KRB5-RC4-SHA            SSLv3 Kx=KRB5     Au=KRB5 Enc=RC4(128)  Mac=SHA1
 ```
 
-The complete list of particular RSA & DH ciphers for SSL is given in [Table 2](https://httpd.apache.org/docs/2.4/mod/mod\_ssl.html#table2).
+The complete list of particular RSA & DH ciphers for SSL is given in [Table 2](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#table2).
 
 #### Example
 
@@ -531,7 +531,7 @@ SSLCipherSuite RSA:!EXP:!NULL:+HIGH:+MEDIUM:-LOW
 | `EXP-ADH-DES-CBC-SHA`     | SSLv3    | DH(512)  | None  | DES(40)   | SHA1 | export |
 | `EXP-ADH-RC4-MD5`         | SSLv3    | DH(512)  | None  | RC4(40)   | MD5  | export |
 
-[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod\_ssl.html#page-header)
+[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#page-header)
 
 ### SSLCompression Directive
 
@@ -569,7 +569,7 @@ To discover which engine names are supported, run the command "`openssl engine`"
 SSLCryptoDevice ubsec
 ```
 
-[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod\_ssl.html#page-header)
+[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#page-header)
 
 ### SSLEngine Directive
 
@@ -608,7 +608,7 @@ This directive toggles the usage of the SSL library FIPS\_mode flag. It must be 
 
 If httpd was compiled against an SSL library which did not support the FIPS\_mode flag, `SSLFIPS on` will fail. Refer to the FIPS 140-2 Security Policy document of the SSL provider library for specific requirements to use mod\_ssl in a FIPS 140-2 approved mode of operation; note that mod\_ssl itself is not validated, but may be described as using FIPS 140-2 validated cryptographic module, when all components are assembled and operated under the guidelines imposed by the applicable Security Policy.
 
-[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod\_ssl.html#page-header)
+[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#page-header)
 
 ### SSLHonorCipherOrder Directive
 
@@ -666,7 +666,7 @@ The `SSL_SECURE_RENEG` environment variable can be used from an SSI or CGI scrip
 
 This option sets the default OCSP responder to use. If `SSLOCSPOverrideResponder` is not enabled, the URI given will be used only if no responder URI is specified in the certificate being verified.
 
-[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod\_ssl.html#page-header)
+[![top](https://httpd.apache.org/docs/2.4/images/up.gif)](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#page-header)
 
 ### SSLOCSPEnable Directive
 
@@ -802,7 +802,7 @@ This option determines whether queries to OCSP responders should contain a nonce
 
 This directive exposes OpenSSL's _SSL\_CONF_ API to mod\_ssl, allowing a flexible configuration of OpenSSL parameters without the need of implementing additional `mod_ssl` directives when new features are added to OpenSSL.
 
-The set of available `SSLOpenSSLConfCmd` commands depends on the OpenSSL version being used for `mod_ssl` (at least version 1.0.2 is required). For a list of supported command names, see the section _Supported configuration file commands_ in the [SSL\_CONF\_cmd(3)](http://www.openssl.org/docs/man1.0.2/ssl/SSL\_CONF\_cmd.html#SUPPORTED-CONFIGURATION-FILE-COMMANDS) manual page for OpenSSL.
+The set of available `SSLOpenSSLConfCmd` commands depends on the OpenSSL version being used for `mod_ssl` (at least version 1.0.2 is required). For a list of supported command names, see the section _Supported configuration file commands_ in the [SSL\_CONF\_cmd(3)](http://www.openssl.org/docs/man1.0.2/ssl/SSL_CONF_cmd.html#SUPPORTED-CONFIGURATION-FILE-COMMANDS) manual page for OpenSSL.
 
 Some of the `SSLOpenSSLConfCmd` commands can be used as an alternative to existing directives (such as `SSLCipherSuite` or `SSLProtocol`), though it should be noted that the syntax / allowable values for the parameters may sometimes differ.
 
@@ -828,7 +828,7 @@ SSLOpenSSLConfCmd SignatureAlgorithms RSA+SHA384:ECDSA+SHA25
 
 This directive can be used to control various run-time options on a per-directory basis. Normally, if multiple `SSLOptions` could apply to a directory, then the most specific one is taken completely; the options are not merged. However if _all_ the options on the `SSLOptions` directive are preceded by a plus (`+`) or minus (`-`) symbol, the options are merged. Any options preceded by a `+` are added to the options currently in force, and any options preceded by a `-` are removed from the options currently in force.
 
-The available _option_s are:
+The available _optio&#x6E;_&#x73; are:
 
 *   `StdEnvVars`
 
@@ -840,7 +840,7 @@ The available _option_s are:
 
     When this option is enabled, the Subject Distinguished Name (DN) of the Client X509 Certificate is translated into a HTTP Basic Authorization username. This means that the standard Apache authentication methods can be used for access control. The user name is just the Subject of the Client's X509 Certificate (can be determined by running OpenSSL's `openssl x509` command: `openssl x509 -noout -subject -in` _certificate_`.crt`). Note that no password is obtained from the user. Every entry in the user file needs this password: \`\``xxj31ZMTZzkVA`'', which is the DES-encrypted version of the word \``password`''. Those who live under MD5-based encryption (for instance under FreeBSD or BSD/OS, etc.) should use the following MD5 hash of the same word: \`\``$1$OXLyS...$Owx8s2/m9/gfkcRVXzgoE/`''.
 
-    Note that the [`AuthBasicFake`](https://httpd.apache.org/docs/2.4/mod/mod\_auth\_basic.html#authbasicfake) directive within [`mod_auth_basic`](https://httpd.apache.org/docs/2.4/mod/mod\_auth\_basic.html) can be used as a more general mechanism for faking basic authentication, giving control over the structure of both the username and password.
+    Note that the [`AuthBasicFake`](https://httpd.apache.org/docs/2.4/mod/mod_auth_basic.html#authbasicfake) directive within [`mod_auth_basic`](https://httpd.apache.org/docs/2.4/mod/mod_auth_basic.html) can be used as a more general mechanism for faking basic authentication, giving control over the structure of both the username and password.
 *   `StrictRequire`
 
     This _forces_ forbidden access when `SSLRequireSSL` or `SSLRequire` successfully decided that access should be forbidden. Usually the default is that in the case where a \`\``Satisfy any`'' directive is used, and other access restrictions are passed, denial of access due to `SSLRequireSSL` or `SSLRequire` is overridden (because that's how the Apache `Satisfy` mechanism should work.) But for strict access restriction you can use `SSLRequireSSL` and/or `SSLRequire` in combination with an \`\``SSLOptions +StrictRequire`''. Then an additional \`\``Satisfy Any`'' has no chance once mod\_ssl has decided to deny access.
@@ -908,7 +908,7 @@ SSLPassPhraseDialog "exec:/usr/local/apache/sbin/pp-filter
 
 This directive can be used to control which versions of the SSL/TLS protocol will be accepted in new connections.
 
-The available (case-insensitive) _protocol_s are:
+The available (case-insensitive) _protoco&#x6C;_&#x73; are:
 
 *   `SSLv3`
 
@@ -1128,7 +1128,7 @@ Equivalent to `SSLCipherSuite`, but for the proxy connection. Please refer to `S
 
 This directive toggles the usage of the SSL/TLS Protocol Engine for proxy. This is usually used inside a [`<VirtualHost>`](https://httpd.apache.org/docs/2.4/mod/core.html#virtualhost) section to enable SSL/TLS for proxy usage in a particular virtual host. By default the SSL/TLS Protocol Engine is disabled for proxy both for the main server and all configured virtual hosts.
 
-Note that the `SSLProxyEngine` directive should not, in general, be included in a virtual host that will be acting as a forward proxy (using [`<Proxy>`](https://httpd.apache.org/docs/2.4/mod/mod\_proxy.html#proxy) or [`ProxyRequests`](https://httpd.apache.org/docs/2.4/mod/mod\_proxy.html#proxyrequests) directives). `SSLProxyEngine` is not required to enable a forward proxy server to proxy SSL/TLS requests.
+Note that the `SSLProxyEngine` directive should not, in general, be included in a virtual host that will be acting as a forward proxy (using [`<Proxy>`](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#proxy) or [`ProxyRequests`](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#proxyrequests) directives). `SSLProxyEngine` is not required to enable a forward proxy server to proxy SSL/TLS requests.
 
 #### Example
 
@@ -1353,7 +1353,7 @@ SSLRenegBufferSize 26214
 
 #### SSLRequire is deprecated
 
-`SSLRequire` is deprecated and should in general be replaced by [Require expr](https://httpd.apache.org/docs/2.4/mod/mod\_authz\_core.html#reqexpr). The so called [ap\_expr](https://httpd.apache.org/docs/2.4/expr.html) syntax of `Require expr` is a superset of the syntax of `SSLRequire`, with the following exception:
+`SSLRequire` is deprecated and should in general be replaced by [Require expr](https://httpd.apache.org/docs/2.4/mod/mod_authz_core.html#reqexpr). The so called [ap\_expr](https://httpd.apache.org/docs/2.4/expr.html) syntax of `Require expr` is a superset of the syntax of `SSLRequire`, with the following exception:
 
 In `SSLRequire`, the comparison operators `<`, `<=`, ... are completely equivalent to the operators `lt`, `le`, ... and work in a somewhat peculiar way that first compares the length of two strings and then the lexical order. On the other hand, [ap\_expr](https://httpd.apache.org/docs/2.4/expr.html) has two sets of comparison operators: The operators `<`, `<=`, ... do lexical string comparison, while the operators `-lt`, `-le`, ... do integer comparison. For the latter, there are also aliases without the leading dashes: `lt`, `le`, ...
 
@@ -1393,7 +1393,7 @@ The _expression_ must match the following syntax (given as a BNF grammar notatio
 > </strong><strong>function ::= funcname "(" funcargs ")"
 > </strong></code></pre>
 
-For `varname` any of the variables described in [Environment Variables](https://httpd.apache.org/docs/2.4/mod/mod\_ssl.html#envvars) can be used. For `funcname` the available functions are listed in the [ap\_expr documentation](https://httpd.apache.org/docs/2.4/expr.html#functions).
+For `varname` any of the variables described in [Environment Variables](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#envvars) can be used. For `funcname` the available functions are listed in the [ap\_expr documentation](https://httpd.apache.org/docs/2.4/expr.html#functions).
 
 The _expression_ is parsed into an internal machine representation when the configuration is loaded, and then evaluated during request processing. In .htaccess context, the _expression_ is both parsed and executed each time the .htaccess file is encountered during request processing.
 
@@ -1451,7 +1451,7 @@ SSLRequireSS
 
 This configures the storage type of the global/inter-process SSL Session Cache. This cache is an optional facility which speeds up parallel request processing. For requests to the same server process (via HTTP keep-alive), OpenSSL already caches the SSL session information locally. But because modern clients request inlined images and other data via parallel requests (usually up to four parallel requests are common) those requests are served by _different_ pre-forked server processes. Here an inter-process cache helps to avoid unnecessary session handshakes.
 
-The following five storage _type_s are currently supported:
+The following five storage _typ&#x65;_&#x73; are currently supported:
 
 *   `none`
 
@@ -1461,13 +1461,13 @@ The following five storage _type_s are currently supported:
     This disables any global/inter-process Session Cache. However it does force OpenSSL to send a non-null session ID to accommodate buggy clients that require one.
 *   `dbm:/path/to/datafile`
 
-    This makes use of a DBM hashfile on the local disk to synchronize the local OpenSSL memory caches of the server processes. This session cache may suffer reliability issues under high load. To use this, ensure that [`mod_socache_dbm`](https://httpd.apache.org/docs/2.4/mod/mod\_socache\_dbm.html) is loaded.
+    This makes use of a DBM hashfile on the local disk to synchronize the local OpenSSL memory caches of the server processes. This session cache may suffer reliability issues under high load. To use this, ensure that [`mod_socache_dbm`](https://httpd.apache.org/docs/2.4/mod/mod_socache_dbm.html) is loaded.
 *   `shmcb:/path/to/datafile`\[`(`_size_`)`]
 
-    This makes use of a high-performance cyclic buffer (approx. _size_ bytes in size) inside a shared memory segment in RAM (established via `/path/to/datafile`) to synchronize the local OpenSSL memory caches of the server processes. This is the recommended session cache. To use this, ensure that [`mod_socache_shmcb`](https://httpd.apache.org/docs/2.4/mod/mod\_socache\_shmcb.html) is loaded.
+    This makes use of a high-performance cyclic buffer (approx. _size_ bytes in size) inside a shared memory segment in RAM (established via `/path/to/datafile`) to synchronize the local OpenSSL memory caches of the server processes. This is the recommended session cache. To use this, ensure that [`mod_socache_shmcb`](https://httpd.apache.org/docs/2.4/mod/mod_socache_shmcb.html) is loaded.
 *   `dc:UNIX:/path/to/socket`
 
-    This makes use of the [distcache](http://distcache.sourceforge.net/) distributed session caching libraries. The argument should specify the location of the server or proxy to be used using the distcache address syntax; for example, `UNIX:/path/to/socket` specifies a UNIX domain socket (typically a local dc\_client proxy); `IP:server.example.com:9001` specifies an IP address. To use this, ensure that [`mod_socache_dc`](https://httpd.apache.org/docs/2.4/mod/mod\_socache\_dc.html) is loaded.
+    This makes use of the [distcache](http://distcache.sourceforge.net/) distributed session caching libraries. The argument should specify the location of the server or proxy to be used using the distcache address syntax; for example, `UNIX:/path/to/socket` specifies a UNIX domain socket (typically a local dc\_client proxy); `IP:server.example.com:9001` specifies an IP address. To use this, ensure that [`mod_socache_dc`](https://httpd.apache.org/docs/2.4/mod/mod_socache_dc.html) is loaded.
 
 #### Examples
 

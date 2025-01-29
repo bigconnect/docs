@@ -4,7 +4,7 @@
 
 To set up a goal, visit the **Goals** section in Matomo and then click over to **Manage Goals**. This page will show any existing goals you have along with a large green button to **Add A New Goal**. Clicking this button will bring up the **Update Goal** view where you can add all of the required details.&#x20;
 
-![Matomo Goal Creator](https://m-img.org/spai/w\_890+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/matomo-goal-creator.png)
+![Matomo Goal Creator](https://m-img.org/spai/w_890+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/matomo-goal-creator.png)
 
 You should select a descriptive goal name that is easy to reference, for example _**New Job Application**_. It may also be useful to set up a specific naming convention if you will have many similar goals. For example, you might use a pattern such as, _**Click – Affiliate Link**_ and _**Click – Partner Site,**_ so you can easily find and reference similar goals. In the example above, you can tell at a glance that both Goals relate to link clicks on your site, as well as further detail on exactly what was clicked. You can also add a short description below the name field to help remember the more specific details or context of the goal.
 
@@ -23,15 +23,15 @@ Automatic triggers are the simplest method for setting up Goals. There are sever
 * Click on a Link to an external website
 * Stay for a certain amount of time
 
-![Goal Trigger Editor](https://m-img.org/spai/w\_890+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/goal-trigger-editor.png)
+![Goal Trigger Editor](https://m-img.org/spai/w_890+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/goal-trigger-editor.png)
 
 Each of the above methods will require you to define specific action that is required to fire the trigger for your goal. When using **Visit a given URL (page or group of pages)** as an example, you can select from the following options via the dropdown menu, then define your specific filters in the text box that follows:
 
 * **Contains** – This method triggers the goal when a visitor visits a page where the URL contains what you type in the text box. This option is especially useful when you want to match a range of options with a similar theme, such as all contact pages on your website. For example, typing _**contact**_ in the text box would make the Goal fire if a user visited either of the following pages on your site:\
-  _**https://example.com/contact.html**_\
-  _**https://example.com/support/contact/**_
+  &#xNAN;_**https://example.com/contact.html**_\
+  &#xNAN;_**https://example.com/support/contact/**_
 * **Is Exactly** – This method allows you to get really specific so the goal only fires on the exact URL that you enter, for example _**https://example.com/contact/submitted/**_ which might be a page shown once somebody has sent a message through a contact form.
-* **Matches The Expression** – Matching by expression is the most complex method. However, it also allows for the most advanced targeting options. It utilises something called _regular expressions_, or regEx for short, which can be difficult to understand when you first encounter it. If you are unfamiliar with regular expressions, we highly recommend you [learn about regex](https://matomo.org/faq/how-to/faq\_185/) before using it, and test your RegEx patterns extensively. The patterns you create would look a little something like this _**(.)\\/contact\\/(.)**_ which in this instance would match any page containing _**/contact/**_ in the URL, such as _**https://example.com/contact/**_
+* **Matches The Expression** – Matching by expression is the most complex method. However, it also allows for the most advanced targeting options. It utilises something called _regular expressions_, or regEx for short, which can be difficult to understand when you first encounter it. If you are unfamiliar with regular expressions, we highly recommend you [learn about regex](https://matomo.org/faq/how-to/faq_185/) before using it, and test your RegEx patterns extensively. The patterns you create would look a little something like this _**(.)\\/contact\\/(.)**_ which in this instance would match any page containing _**/contact/**_ in the URL, such as _**https://example.com/contact/**_
 
 All matching types based on the text patterns described above are followed by a checkbox so you can decide if you would like your trigger to be case sensitive. With case sensitivity turned on, a trigger set to check when users **Visit a given Page Title** which exactly matches the trigger, _**Contact Us,**_ would not match a page title of _**CONTACT US**_ due to the use of all uppercase letters.
 
@@ -57,44 +57,44 @@ For example, if you know that on average you sell one $1,000 service for every o
 
 Within the first section, you will notice an **Evolution over the period** graph, which is useful for discovering trends in your Goal completions over time. If you use the Annotations feature, you will also see those entries plotted along the bottom of the graph, so you can see what might have caused any significant changes to your Goal conversion numbers.
 
-![Historical Goal Data](https://m-img.org/spai/w\_890+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/historical-goal-data.png)
+![Historical Goal Data](https://m-img.org/spai/w_890+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/historical-goal-data.png)
 
-By default, you will see the number of conversions plotted in the graph. For more options, you can hover over the **line chart icon** ![Line Chart Icon](https://m-img.org/spai/w\_50+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/metrics-picker.png) at the top left of the graph. This will provide more metrics to help you drill down into the relationship between the different goals, revenue statistics, and conversion rates.
+By default, you will see the number of conversions plotted in the graph. For more options, you can hover over the **line chart icon** ![Line Chart Icon](https://m-img.org/spai/w_50+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/metrics-picker.png) at the top left of the graph. This will provide more metrics to help you drill down into the relationship between the different goals, revenue statistics, and conversion rates.
 
 The most important metric for your goals is usually the conversion rate. It allows you to compare whether the website is converting better or not. When you only look at the absolute number of conversions instead, you don’t see the full picture.
 
 For example, if one week, your website gets double the amount of visits, this would generally be a good thing. However, if you don’t get any more conversions, your conversion rate will have dropped, which actually represents worse performance towards your goals. Instead, you would want to see the number of conversions go up in line with the number of visits, which would maintain an almost consistent conversion rate, as shown below.
 
-![Goal Conversion History](https://m-img.org/spai/w\_890+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/goal-conversion-history.png)
+![Goal Conversion History](https://m-img.org/spai/w_890+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/goal-conversion-history.png)
 
 Close tracking of the conversion rate can help you ensure you aren’t wasting opportunities. While more conversions are always good, tracking the conversion rate as well can help you discover if traffic to your website is reaching its full potential. You may also want to segment your users and view conversion rate for different segments.
 
 ### Comparing Goal Metrics Over Time <a href="#comparing-goal-metrics-over-time" id="comparing-goal-metrics-over-time"></a>
 
-You can enable multiple metrics at the same time by clicking on the **metrics icon** ![Line Chart Icon](https://m-img.org/spai/w\_50+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/metrics-picker.png) at the top left of the Evolution Graph. In the example graph below, you can see that the number of clicks reported for two partner websites started increasing at the same time, but one reached much higher levels.
+You can enable multiple metrics at the same time by clicking on the **metrics icon** ![Line Chart Icon](https://m-img.org/spai/w_50+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/metrics-picker.png) at the top left of the Evolution Graph. In the example graph below, you can see that the number of clicks reported for two partner websites started increasing at the same time, but one reached much higher levels.
 
-![Historical Goal Comparison](https://m-img.org/spai/w\_890+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/historical-goal-comparison.png)
+![Historical Goal Comparison](https://m-img.org/spai/w_890+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/historical-goal-comparison.png)
 
 Without knowing the full context in the example image, it is hard to say for sure why more people are clicking on Liveaboard links over Agoda links. However, it might suggest the content recommending Liveaboard is more engaging. Or, it could simply be that there are less opportunities to click Agoda links on the website. As always with analytics; the underlying data will help reveal underlying trends, but you will likely need to correlate it back to your knowledge of your website and business activities to draw meaning from the results.
 
 You may also have noticed in the graph above there are four green icons in the bottom left of the graph, which provide further options for working with the data set. In order, these are:
 
-* **Change period (**_**Calendar Icon**_ ![Calendar Icon](https://m-img.org/spai/w\_50+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/calendar-icon.png)**)** – Select whether you would like data plotted by days, weeks, months, or years.
-* **Export this data in other formats (**_**Export Icon**_ ![Export Icon](https://m-img.org/spai/w\_50+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/export-icon.png)**)** – Available formats are: CSV, XML, PHP, RSS, TSV, JSON, and HTML
-* **Export as Image (**_**Image Icon**_ ![Image Icon](https://m-img.org/spai/w\_50+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/image-icon.png)**)** – This can be useful for sharing reports with clients or managers.
-* **View notes for this date range (**_**Annotation Icon**_ ![Annotation Icon](https://m-img.org/spai/w\_50+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/annotation-icon.png)**)** – This brings up relevant annotations in the selected reporting period.
+* **Change period (**_**Calendar Icon**_ ![Calendar Icon](https://m-img.org/spai/w_50+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/calendar-icon.png)**)** – Select whether you would like data plotted by days, weeks, months, or years.
+* **Export this data in other formats (**_**Export Icon**_ ![Export Icon](https://m-img.org/spai/w_50+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/export-icon.png)**)** – Available formats are: CSV, XML, PHP, RSS, TSV, JSON, and HTML
+* **Export as Image (**_**Image Icon**_ ![Image Icon](https://m-img.org/spai/w_50+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/image-icon.png)**)** – This can be useful for sharing reports with clients or managers.
+* **View notes for this date range (**_**Annotation Icon**_ ![Annotation Icon](https://m-img.org/spai/w_50+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/annotation-icon.png)**)** – This brings up relevant annotations in the selected reporting period.
 
 ### Goal Summaries <a href="#goal-summaries" id="goal-summaries"></a>
 
 Below the Evolution graph you should see a series of sparkline summary cards containing a line chart, alongside these are conversion numbers and rates for your goals. The first card provides a combined summary of your goal conversion data within the currently selected date range. These statistics are useful to get a general feel of the marketing performance of your website. Generally speaking the higher these numbers are, the better your website is doing.
 
-![Goal Sparkline Summaries](https://m-img.org/spai/w\_890+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/goal-sparkline-summaries.png)
+![Goal Sparkline Summaries](https://m-img.org/spai/w_890+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/goal-sparkline-summaries.png)
 
 Underneath the top sparkline summary card, you will find a further summary card for each of the goals on your site so you can review each individually. You can see the number of conversions and conversion rates for each goal on this page.
 
 If you would like to review any of the goals in more detail, simply click on the goal title and it will take you to a dedicated page for that goal with more detailed graphs and data.
 
-![Job Application Goal](https://m-img.org/spai/w\_890+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/job-application-goal.png)
+![Job Application Goal](https://m-img.org/spai/w_890+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/job-application-goal.png)
 
 ### Goals Breakdown Reports <a href="#goals-breakdown-reports" id="goals-breakdown-reports"></a>
 

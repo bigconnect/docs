@@ -15,4 +15,4 @@ Our binding editor will keep track of all of the outputs from previous steps but
 * You have a table that holds a list of salespeople, with a column for their email address called _EmailAddress_
 * An automation is created which triggers the creation of a new salesperson
 * You wish to send an email to the salesperson to welcome them to the system, in which case you would bind to the\
-  **\{{ trigger.record \}}** in your send email action and add the EmailAddress property yourself, so it appears as **\{{ trigger.record.EmailAddress \}}**
+  &#xNAN;**\{{ trigger.record \}}** in your send email action and add the EmailAddress property yourself, so it appears as **\{{ trigger.record.EmailAddress \}}**

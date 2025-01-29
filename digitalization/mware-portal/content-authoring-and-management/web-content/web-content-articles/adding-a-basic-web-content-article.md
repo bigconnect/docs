@@ -45,7 +45,7 @@ Only web content articles that have been published or saved as a draft can be pr
 You can preview web content using a display page template from any site or asset library.
 
 1. In the properties tab, select a site and display page to preview the web content article.
-2.  Click_Preview_ ( ![Preview](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-preview.png) ).
+2.  Clic&#x6B;_&#x50;review_ ( ![Preview](https://resources.learn.liferay.com/images/dxp/latest/en/images/icon-preview.png) ).
 
     ![When you've selected a display page template, use the preview button in the properties tab.](https://resources.learn.liferay.com/images/dxp/latest/en/content-authoring-and-management/web-content/web-content-articles/adding-a-basic-web-content-article/images/05.png)
 

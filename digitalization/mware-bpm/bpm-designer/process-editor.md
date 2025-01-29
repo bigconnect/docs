@@ -440,7 +440,7 @@ Sub-Processes have two major use cases:
 
 Using a Sub-Process does impose some constraints:
 
-A Sub-Process can only have **one **_**none start event**_; no other start event types are allowed. A Sub-Process must **at least have one **_**end event**_. Note that the BPMN 2.0 specification allows the omission of the start and end events in a Sub-Process, but the current Flowable implementation does not support this.
+A Sub-Process can only have **one&#x20;**_**none start event**_; no other start event types are allowed. A Sub-Process must **at least have one&#x20;**_**end event**_. Note that the BPMN 2.0 specification allows the omission of the start and end events in a Sub-Process, but the current Flowable implementation does not support this.
 
 **Sequence flows cannot cross Sub-Process boundaries**.
 

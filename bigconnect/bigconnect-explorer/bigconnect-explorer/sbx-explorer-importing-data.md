@@ -91,7 +91,7 @@ Click **Import** to continue and preview the file.
 
 ![](<../../../.gitbook/assets/image (407).png>)
 
-Now we need to tell BigConnect Explorer how to map the fields from the CSV file to our schema. This process is called mapping**.** Click on the green **Map Structured Data** button.
+Now we need to tell BigConnect Explorer how to map the fields from the CSV file to our schema. This process is called mappin&#x67;**.** Click on the green **Map Structured Data** button.
 
 ![](<../../../.gitbook/assets/image (464).png>)
 
@@ -173,7 +173,7 @@ exit
 
 
 
-Download the **bdldemo\_addresses.sql** script from: [https://raw.githubusercontent.com/bigconnect/demos/master/explorer/basics/bdldemo\_addresses.sql](https://raw.githubusercontent.com/bigconnect/demos/master/explorer/basics/bdldemo\_addresses.sql)
+Download the **bdldemo\_addresses.sql** script from: [https://raw.githubusercontent.com/bigconnect/demos/master/explorer/basics/bdldemo\_addresses.sql](https://raw.githubusercontent.com/bigconnect/demos/master/explorer/basics/bdldemo_addresses.sql)
 
 Connect to the mysql database with the **bdldemo** user and password and import the **addresses** table:
 
@@ -229,7 +229,7 @@ A preview of the data in the addresses table is be displayed. Click **Next** to 
 
 ![](<../../../.gitbook/assets/image (599).png>)
 
-Now we need to tell BigConnect Explorer how to map the fields from the SQL query  to our schema. This process is called data mapping**.** We need to take the columns one by one and tell the system how they should be mapped:
+Now we need to tell BigConnect Explorer how to map the fields from the SQL query  to our schema. This process is called data mappin&#x67;**.** We need to take the columns one by one and tell the system how they should be mapped:
 
 1 Click on the **id** column in the right table.
 

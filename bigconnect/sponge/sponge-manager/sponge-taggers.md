@@ -28,7 +28,7 @@ You can add one or more selectors to this tagger. Each selector has the followin
 
 ## CharacterCaseTagger
 
-Changes the character case of field values**.**
+Changes the character case of field value&#x73;**.**
 
 ![](<../../../.gitbook/assets/image (434).png>)
 

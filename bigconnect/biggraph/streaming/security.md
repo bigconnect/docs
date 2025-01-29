@@ -318,7 +318,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
 
         Kafka brokers need both these usages to be allowed, as for intra-cluster communication every broker will behave as both the client and the server towards other brokers. It is not uncommon for corporate CAs to have a signing profile for webservers and use this for Kafka as well, which will only contain the _serverAuth_ usage value and cause the SSL handshake to fail.
     2. Intermediate Certificates\
-       Corporate Root CAs are often kept offline for security reasons. To enable day-to-day usage, so called intermediate CAs are created, which are then used to sign the final certificates. When importing a certificate into the keystore that was signed by an intermediate CA it is necessary to provide the entire chain of trust up to the root CA. This can be done by simply _cat_ing the certificate files into one combined certificate file and then importing this with keytool.
+       Corporate Root CAs are often kept offline for security reasons. To enable day-to-day usage, so called intermediate CAs are created, which are then used to sign the final certificates. When importing a certificate into the keystore that was signed by an intermediate CA it is necessary to provide the entire chain of trust up to the root CA. This can be done by simply _ca&#x74;_&#x69;ng the certificate files into one combined certificate file and then importing this with keytool.
     3.  Failure to copy extension fields\
         CA operators are often hesitant to copy and requested extension fields from CSRs and prefer to specify these themselves as this makes it harder for a malicious party to obtain certificates with potentially misleading or fraudulent values. It is advisable to double check signed certificates, whether these contain all requested SAN fields to enable proper hostname verification. The following command can be used to print certificate details to the console, which should be compared with what was originally requested:
 
@@ -456,21 +456,21 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
 
         Note that ZooKeeper JAAS config may only be configured using static JAAS configuration.
 
-        See [GSSAPI (Kerberos)](https://kafka.apache.org/documentation/#security\_sasl\_kerberos\_brokerconfig), [PLAIN](https://kafka.apache.org/documentation/#security\_sasl\_plain\_brokerconfig), [SCRAM](https://kafka.apache.org/documentation/#security\_sasl\_scram\_brokerconfig) or [OAUTHBEARER](https://kafka.apache.org/documentation/#security\_sasl\_oauthbearer\_brokerconfig) for example broker configurations.
+        See [GSSAPI (Kerberos)](https://kafka.apache.org/documentation/#security_sasl_kerberos_brokerconfig), [PLAIN](https://kafka.apache.org/documentation/#security_sasl_plain_brokerconfig), [SCRAM](https://kafka.apache.org/documentation/#security_sasl_scram_brokerconfig) or [OAUTHBEARER](https://kafka.apache.org/documentation/#security_sasl_oauthbearer_brokerconfig) for example broker configurations.
     2.  **JAAS configuration for Kafka clients**
 
-        Clients may configure JAAS using the client configuration property [sasl.jaas.config](https://kafka.apache.org/documentation/#security\_client\_dynamicjaas) or using the [static JAAS config file](https://kafka.apache.org/documentation/#security\_client\_staticjaas) similar to brokers.
+        Clients may configure JAAS using the client configuration property [sasl.jaas.config](https://kafka.apache.org/documentation/#security_client_dynamicjaas) or using the [static JAAS config file](https://kafka.apache.org/documentation/#security_client_staticjaas) similar to brokers.
 
         1.  **JAAS configuration using client configuration property**
 
             Clients may specify JAAS configuration as a producer or consumer property without creating a physical configuration file. This mode also enables different producers and consumers within the same JVM to use different credentials by specifying different properties for each client. If both static JAAS configuration system property `java.security.auth.login.config` and client property `sasl.jaas.config` are specified, the client property will be used.
 
-            See [GSSAPI (Kerberos)](https://kafka.apache.org/documentation/#security\_sasl\_kerberos\_clientconfig), [PLAIN](https://kafka.apache.org/documentation/#security\_sasl\_plain\_clientconfig), [SCRAM](https://kafka.apache.org/documentation/#security\_sasl\_scram\_clientconfig) or [OAUTHBEARER](https://kafka.apache.org/documentation/#security\_sasl\_oauthbearer\_clientconfig) for example configurations.
+            See [GSSAPI (Kerberos)](https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig), [PLAIN](https://kafka.apache.org/documentation/#security_sasl_plain_clientconfig), [SCRAM](https://kafka.apache.org/documentation/#security_sasl_scram_clientconfig) or [OAUTHBEARER](https://kafka.apache.org/documentation/#security_sasl_oauthbearer_clientconfig) for example configurations.
         2.  **JAAS configuration using static config file**
 
             To configure SASL authentication on the clients using static JAAS config file:
 
-            1.  Add a JAAS config file with a client login section named `KafkaClient`. Configure a login module in `KafkaClient` for the selected mechanism as described in the examples for setting up [GSSAPI (Kerberos)](https://kafka.apache.org/documentation/#security\_sasl\_kerberos\_clientconfig), [PLAIN](https://kafka.apache.org/documentation/#security\_sasl\_plain\_clientconfig), [SCRAM](https://kafka.apache.org/documentation/#security\_sasl\_scram\_clientconfig) or [OAUTHBEARER](https://kafka.apache.org/documentation/#security\_sasl\_oauthbearer\_clientconfig). For example, [GSSAPI](https://kafka.apache.org/documentation/#security\_sasl\_gssapi\_clientconfig) credentials may be configured as:
+            1.  Add a JAAS config file with a client login section named `KafkaClient`. Configure a login module in `KafkaClient` for the selected mechanism as described in the examples for setting up [GSSAPI (Kerberos)](https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig), [PLAIN](https://kafka.apache.org/documentation/#security_sasl_plain_clientconfig), [SCRAM](https://kafka.apache.org/documentation/#security_sasl_scram_clientconfig) or [OAUTHBEARER](https://kafka.apache.org/documentation/#security_sasl_oauthbearer_clientconfig). For example, [GSSAPI](https://kafka.apache.org/documentation/#security_sasl_gssapi_clientconfig) credentials may be configured as:
 
                 ```
                 KafkaClient {
@@ -518,11 +518,11 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
 
         To configure SASL authentication on the clients, select a SASL mechanism that is enabled in the broker for client authentication and follow the steps to configure SASL for the selected mechanism.
 
-        Note: When establishing connections to brokers via SASL, clients may perform a reverse DNS lookup of the broker address. Due to how the JRE implements reverse DNS lookups, clients may observe slow SASL handshakes if fully qualified domain names are not used, for both the client's `bootstrap.servers` and a broker's [`advertised.listeners`](https://kafka.apache.org/documentation/#brokerconfigs\_advertised.listeners).
+        Note: When establishing connections to brokers via SASL, clients may perform a reverse DNS lookup of the broker address. Due to how the JRE implements reverse DNS lookups, clients may observe slow SASL handshakes if fully qualified domain names are not used, for both the client's `bootstrap.servers` and a broker's [`advertised.listeners`](https://kafka.apache.org/documentation/#brokerconfigs_advertised.listeners).
 3. **Authentication using SASL/Kerberos**
    1. **Prerequisites**
       1. Kerberos\
-         If your organization is already using a Kerberos server (for example, by using Active Directory), there is no need to install a new server just for Kafka. Otherwise you will need to install one, your Linux vendor likely has packages for Kerberos and a short guide on how to install and configure it ([Ubuntu](https://help.ubuntu.com/community/Kerberos), [Redhat](https://access.redhat.com/documentation/en-US/Red\_Hat\_Enterprise\_Linux/6/html/Managing\_Smart\_Cards/installing-kerberos.html)). Note that if you are using Oracle Java, you will need to download JCE policy files for your Java version and copy them to $JAVA\_HOME/jre/lib/security.
+         If your organization is already using a Kerberos server (for example, by using Active Directory), there is no need to install a new server just for Kafka. Otherwise you will need to install one, your Linux vendor likely has packages for Kerberos and a short guide on how to install and configure it ([Ubuntu](https://help.ubuntu.com/community/Kerberos), [Redhat](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Managing_Smart_Cards/installing-kerberos.html)). Note that if you are using Oracle Java, you will need to download JCE policy files for your Java version and copy them to $JAVA\_HOME/jre/lib/security.
       2.  Create Kerberos Principals\
           If you are using the organization's Kerberos or Active Directory server, ask your Kerberos administrator for a principal for each Kafka broker in your cluster and for every operating system user that will access Kafka with Kerberos authentication (via clients and tools).\
           If you have installed your own Kerberos, you will need to create these principals yourself using the following commands:
@@ -554,7 +554,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
           };
           ```
 
-          `KafkaServer` section in the JAAS file tells the broker which principal to use and the location of the keytab where this principal is stored. It allows the broker to login using the keytab specified in this section. See [notes](https://kafka.apache.org/documentation/#security\_jaas\_broker) for more details on Zookeeper SASL configuration.
+          `KafkaServer` section in the JAAS file tells the broker which principal to use and the location of the keytab where this principal is stored. It allows the broker to login using the keytab specified in this section. See [notes](https://kafka.apache.org/documentation/#security_jaas_broker) for more details on Zookeeper SASL configuration.
       2.  Pass the JAAS and optionally the krb5 file locations as JVM parameters to each Kafka broker (see [here](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jgss/tutorials/KerberosReq.html) for more details):
 
           ```bash
@@ -562,7 +562,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
           -Djava.security.auth.login.config=/etc/kafka/kafka_server_jaas.conf
           ```
       3. Make sure the keytabs configured in the JAAS file are readable by the operating system user who is starting kafka broker.
-      4.  Configure SASL port and SASL mechanisms in server.properties as described [here](https://kafka.apache.org/documentation/#security\_sasl\_brokerconfig). For example:
+      4.  Configure SASL port and SASL mechanisms in server.properties as described [here](https://kafka.apache.org/documentation/#security_sasl_brokerconfig). For example:
 
           ```
           listeners=SASL_PLAINTEXT://host.name:port
@@ -597,7 +597,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
                useTicketCache=true;
            ```
 
-           JAAS configuration for clients may alternatively be specified as a JVM parameter similar to brokers as described [here](https://kafka.apache.org/documentation/#security\_client\_staticjaas). Clients use the login section named `KafkaClient`. This option allows only one user for all client connections from a JVM.
+           JAAS configuration for clients may alternatively be specified as a JVM parameter similar to brokers as described [here](https://kafka.apache.org/documentation/#security_client_staticjaas). Clients use the login section named `KafkaClient`. This option allows only one user for all client connections from a JVM.
        2. Make sure the keytabs configured in the JAAS configuration are readable by the operating system user who is starting kafka client.
        3.  Optionally pass the krb5 file locations as JVM parameters to each client JVM (see [here](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jgss/tutorials/KerberosReq.html) for more details):
 
@@ -613,7 +613,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
            ```
 4.  **Authentication using SASL/PLAIN**
 
-    SASL/PLAIN is a simple username/password authentication mechanism that is typically used with TLS for encryption to implement secure authentication. Kafka supports a default implementation for SASL/PLAIN which can be extended for production use as described [here](https://kafka.apache.org/documentation/#security\_sasl\_plain\_production).
+    SASL/PLAIN is a simple username/password authentication mechanism that is typically used with TLS for encryption to implement secure authentication. Kafka supports a default implementation for SASL/PLAIN which can be extended for production use as described [here](https://kafka.apache.org/documentation/#security_sasl_plain_production).
 
     Under the default implementation of `principal.builder.class`, the username is used as the authenticated `Principal` for configuration of ACLs etc.
 
@@ -636,7 +636,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
            ```bash
            -Djava.security.auth.login.config=/etc/kafka/kafka_server_jaas.conf
            ```
-       3.  Configure SASL port and SASL mechanisms in server.properties as described [here](https://kafka.apache.org/documentation/#security\_sasl\_brokerconfig). For example:
+       3.  Configure SASL port and SASL mechanisms in server.properties as described [here](https://kafka.apache.org/documentation/#security_sasl_brokerconfig). For example:
 
            ```
            listeners=SASL_SSL://host.name:port
@@ -658,7 +658,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
 
             The options `username` and `password` are used by clients to configure the user for client connections. In this example, clients connect to the broker as user _alice_. Different clients within a JVM may connect as different users by specifying different user names and passwords in `sasl.jaas.config`.
 
-            JAAS configuration for clients may alternatively be specified as a JVM parameter similar to brokers as described [here](https://kafka.apache.org/documentation/#security\_client\_staticjaas). Clients use the login section named `KafkaClient`. This option allows only one user for all client connections from a JVM.
+            JAAS configuration for clients may alternatively be specified as a JVM parameter similar to brokers as described [here](https://kafka.apache.org/documentation/#security_client_staticjaas). Clients use the login section named `KafkaClient`. This option allows only one user for all client connections from a JVM.
         2.  Configure the following properties in producer.properties or consumer.properties:
 
             ```
@@ -667,7 +667,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
             ```
     3. **Use of SASL/PLAIN in production**
        * SASL/PLAIN should be used only with SSL as transport layer to ensure that clear passwords are not transmitted on the wire without encryption.
-       * The default implementation of SASL/PLAIN in Kafka specifies usernames and passwords in the JAAS configuration file as shown [here](https://kafka.apache.org/documentation/#security\_sasl\_plain\_brokerconfig). From Kafka version 2.0 onwards, you can avoid storing clear passwords on disk by configuring your own callback handlers that obtain username and password from an external source using the configuration options `sasl.server.callback.handler.class` and `sasl.client.callback.handler.class`.
+       * The default implementation of SASL/PLAIN in Kafka specifies usernames and passwords in the JAAS configuration file as shown [here](https://kafka.apache.org/documentation/#security_sasl_plain_brokerconfig). From Kafka version 2.0 onwards, you can avoid storing clear passwords on disk by configuring your own callback handlers that obtain username and password from an external source using the configuration options `sasl.server.callback.handler.class` and `sasl.client.callback.handler.class`.
        * In production systems, external authentication servers may implement password authentication. From Kafka version 2.0 onwards, you can plug in your own callback handlers that use external authentication servers for password verification by configuring `sasl.server.callback.handler.class`.
 5.  **Authentication using SASL/SCRAM**
 
@@ -719,7 +719,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
            ```bash
            -Djava.security.auth.login.config=/etc/kafka/kafka_server_jaas.conf
            ```
-       3.  Configure SASL port and SASL mechanisms in server.properties as described [here](https://kafka.apache.org/documentation/#security\_sasl\_brokerconfig). For example:
+       3.  Configure SASL port and SASL mechanisms in server.properties as described [here](https://kafka.apache.org/documentation/#security_sasl_brokerconfig). For example:
 
            ```
            listeners=SASL_SSL://host.name:port
@@ -741,7 +741,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
 
             The options `username` and `password` are used by clients to configure the user for client connections. In this example, clients connect to the broker as user _alice_. Different clients within a JVM may connect as different users by specifying different user names and passwords in `sasl.jaas.config`.
 
-            JAAS configuration for clients may alternatively be specified as a JVM parameter similar to brokers as described [here](https://kafka.apache.org/documentation/#security\_client\_staticjaas). Clients use the login section named `KafkaClient`. This option allows only one user for all client connections from a JVM.
+            JAAS configuration for clients may alternatively be specified as a JVM parameter similar to brokers as described [here](https://kafka.apache.org/documentation/#security_client_staticjaas). Clients use the login section named `KafkaClient`. This option allows only one user for all client connections from a JVM.
         2.  Configure the following properties in producer.properties or consumer.properties:
 
             ```
@@ -776,7 +776,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
            ```bash
            -Djava.security.auth.login.config=/etc/kafka/kafka_server_jaas.conf
            ```
-       3.  Configure SASL port and SASL mechanisms in server.properties as described [here](https://kafka.apache.org/documentation/#security\_sasl\_brokerconfig). For example:
+       3.  Configure SASL port and SASL mechanisms in server.properties as described [here](https://kafka.apache.org/documentation/#security_sasl_brokerconfig). For example:
 
            ```
            listeners=SASL_SSL://host.name:port (or SASL_PLAINTEXT if non-production)
@@ -797,7 +797,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
 
             The option `unsecuredLoginStringClaim_sub` is used by clients to configure the subject (`sub`) claim, which determines the user for client connections. In this example, clients connect to the broker as user _alice_. Different clients within a JVM may connect as different users by specifying different subject (`sub`) claims in `sasl.jaas.config`.
 
-            JAAS configuration for clients may alternatively be specified as a JVM parameter similar to brokers as described [here](https://kafka.apache.org/documentation/#security\_client\_staticjaas). Clients use the login section named `KafkaClient`. This option allows only one user for all client connections from a JVM.
+            JAAS configuration for clients may alternatively be specified as a JVM parameter similar to brokers as described [here](https://kafka.apache.org/documentation/#security_client_staticjaas). Clients use the login section named `KafkaClient`. This option allows only one user for all client connections from a JVM.
         2.  Configure the following properties in producer.properties or consumer.properties:
 
             ```
@@ -878,7 +878,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
        security.inter.broker.protocol=SASL_PLAINTEXT (or SASL_SSL)
        sasl.mechanism.inter.broker.protocol=GSSAPI (or one of the other enabled mechanisms)
        ```
-   4. Follow the mechanism-specific steps in [GSSAPI (Kerberos)](https://kafka.apache.org/documentation/#security\_sasl\_kerberos\_brokerconfig), [PLAIN](https://kafka.apache.org/documentation/#security\_sasl\_plain\_brokerconfig), [SCRAM](https://kafka.apache.org/documentation/#security\_sasl\_scram\_brokerconfig) and [OAUTHBEARER](https://kafka.apache.org/documentation/#security\_sasl\_oauthbearer\_brokerconfig) to configure SASL for the enabled mechanisms.
+   4. Follow the mechanism-specific steps in [GSSAPI (Kerberos)](https://kafka.apache.org/documentation/#security_sasl_kerberos_brokerconfig), [PLAIN](https://kafka.apache.org/documentation/#security_sasl_plain_brokerconfig), [SCRAM](https://kafka.apache.org/documentation/#security_sasl_scram_brokerconfig) and [OAUTHBEARER](https://kafka.apache.org/documentation/#security_sasl_oauthbearer_brokerconfig) to configure SASL for the enabled mechanisms.
 8.  **Modifying SASL mechanism in a Running Cluster**
 
     SASL mechanism can be modified in a running cluster using the following sequence:
@@ -942,7 +942,7 @@ Apache Kafka allows clients to use SSL for encryption of traffic as well as auth
         ```
     6.  **Token Authentication**
 
-        Delegation token authentication piggybacks on the current SASL/SCRAM authentication mechanism. We must enable SASL/SCRAM mechanism on Kafka cluster as described in [here](https://kafka.apache.org/documentation/#security\_sasl\_scram).
+        Delegation token authentication piggybacks on the current SASL/SCRAM authentication mechanism. We must enable SASL/SCRAM mechanism on Kafka cluster as described in [here](https://kafka.apache.org/documentation/#security_sasl_scram).
 
         Configuring Kafka Clients:
 
@@ -1025,7 +1025,7 @@ principal.builder.class=CustomizedPrincipalBuilderClass
 
 ### **Customizing SASL User Name**
 
-By default, the SASL user name will be the primary part of the Kerberos principal. One can change that by setting `sasl.kerberos.principal.to.local.rules` to a customized rule in server.properties. The format of `sasl.kerberos.principal.to.local.rules` is a list where each rule works in the same way as the auth\_to\_local in [Kerberos configuration file (krb5.conf)](https://web.mit.edu/Kerberos/krb5-latest/doc/admin/conf\_files/krb5\_conf.html). This also support additional lowercase/uppercase rule, to force the translated result to be all lowercase/uppercase. This is done by adding a "/L" or "/U" to the end of the rule. check below formats for syntax. Each rules starts with RULE: and contains an expression as the following formats. See the kerberos documentation for more details.
+By default, the SASL user name will be the primary part of the Kerberos principal. One can change that by setting `sasl.kerberos.principal.to.local.rules` to a customized rule in server.properties. The format of `sasl.kerberos.principal.to.local.rules` is a list where each rule works in the same way as the auth\_to\_local in [Kerberos configuration file (krb5.conf)](https://web.mit.edu/Kerberos/krb5-latest/doc/admin/conf_files/krb5_conf.html). This also support additional lowercase/uppercase rule, to force the translated result to be all lowercase/uppercase. This is done by adding a "/L" or "/U" to the end of the rule. check below formats for syntax. Each rules starts with RULE: and contains an expression as the following formats. See the kerberos documentation for more details.
 
 ```
 RULE:[n:string](regexp)s/pattern/replacement/
@@ -1387,7 +1387,7 @@ ZooKeeper mTLS authentication can be enabled with or without SASL authentication
 
 It is possible to use something other than the DN for the identity of mTLS clients by writing a class that extends `org.apache.zookeeper.server.auth.X509AuthenticationProvider` and overrides the method `protected String getClientId(X509Certificate clientCert)`. Choose a scheme name and set `authProvider.[scheme]` in ZooKeeper to be the fully-qualified class name of the custom implementation; then set `ssl.authProvider=[scheme]` to use it.
 
-Here is a sample (partial) ZooKeeper configuration for enabling TLS authentication. These configurations are described in the [ZooKeeper Admin Guide](https://zookeeper.apache.org/doc/r3.5.7/zookeeperAdmin.html#sc\_authOptions).
+Here is a sample (partial) ZooKeeper configuration for enabling TLS authentication. These configurations are described in the [ZooKeeper Admin Guide](https://zookeeper.apache.org/doc/r3.5.7/zookeeperAdmin.html#sc_authOptions).
 
 ```
 secureClientPort=2182
@@ -1466,7 +1466,7 @@ Run this to see the full list of parameters:
 
 It is also necessary to enable SASL and/or mTLS authentication on the ZooKeeper ensemble. To do it, we need to perform a rolling restart of the server and set a few properties. See above for mTLS information. Please refer to the ZooKeeper documentation for more detail:
 
-1. [Apache ZooKeeper documentation](https://zookeeper.apache.org/doc/r3.5.7/zookeeperProgrammers.html#sc\_ZooKeeperAccessControl)
+1. [Apache ZooKeeper documentation](https://zookeeper.apache.org/doc/r3.5.7/zookeeperProgrammers.html#sc_ZooKeeperAccessControl)
 2. [Apache ZooKeeper wiki](https://cwiki.apache.org/confluence/display/ZOOKEEPER/Zookeeper+and+SASL)
 
 ### **ZooKeeper Quorum Mutual TLS Authentication**
@@ -1494,7 +1494,7 @@ zookeeper.set.acl=true
 
 ## Message Encryption
 
-Although Kafka provides multiple authentication methods and encrypted communication over [TLS](https://en.wikipedia.org/wiki/Transport\_Layer\_Security), it does not encrypt data at rest. Yet Kafka is increasingly used as a store of data, not just as a means of transferring data from one location to another. This means that Kafka must conform to the same security and compliance requirements as conventional data storage systems such as relational databases. To compensate, Kafka service providers often use disk or file system encryption. This approach provides a degree of risk mitigation but also has well-known shortcomings, most notably the ability of anyone with appropriate file system permissions, such as system administrators, to read data. Security best practices and compliance standards therefore explicitly call for application- or database-level encryption to protect sensitive information against such exposures. Further, there should be a separation of duty between key management and system administration.
+Although Kafka provides multiple authentication methods and encrypted communication over [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security), it does not encrypt data at rest. Yet Kafka is increasingly used as a store of data, not just as a means of transferring data from one location to another. This means that Kafka must conform to the same security and compliance requirements as conventional data storage systems such as relational databases. To compensate, Kafka service providers often use disk or file system encryption. This approach provides a degree of risk mitigation but also has well-known shortcomings, most notably the ability of anyone with appropriate file system permissions, such as system administrators, to read data. Security best practices and compliance standards therefore explicitly call for application- or database-level encryption to protect sensitive information against such exposures. Further, there should be a separation of duty between key management and system administration.
 
 BigConnect Core aims to deliver topic encryption by intercepting the message stream between client and broker in a proxy.
 

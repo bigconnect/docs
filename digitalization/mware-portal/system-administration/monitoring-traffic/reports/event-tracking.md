@@ -18,7 +18,7 @@ If you have [Matomo Tag Manager](https://matomo.org/docs/tag-manager/) installed
    2. **Event Action:** Email Link Click
    3. **Event Name:** \{{ClickDestinationUrl\}}
    4.  **Event Value:**\
-       _**Note:**_ In the example above the Event Name is dynamically populated from a tag manager [_**Variable**_](https://matomo.org/docs/tag-manager/#variables) which pulls the data from the website itself. You can browse these from the square code icon next to the field.\
+       &#xNAN;_**Note:**_ In the example above the Event Name is dynamically populated from a tag manager [_**Variable**_](https://matomo.org/docs/tag-manager/#variables) which pulls the data from the website itself. You can browse these from the square code icon next to the field.\
 
 
        <figure><img src="https://m-img.org/spai/w_320+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2014/04/event-name-variable.png" alt=""><figcaption></figcaption></figure>
@@ -31,7 +31,7 @@ If you have [Matomo Tag Manager](https://matomo.org/docs/tag-manager/) installed
     4. Finalise the trigger by clicking the big green button to **Create New Trigger**.
 12. Now that the Trigger is attached to the Tag settings you can click to **Create New Tag**.
 13. Finally you will need to publish your container. You can do this from the success message that appears when you create a new tag or by selecting [**Publish**](https://matomo.org/docs/tag-manager/#publish) in the menu.\
-    ![Matomo Tag Created Successfully](https://m-img.org/spai/w\_848+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2014/04/Matomo-tag-created.png)
+    ![Matomo Tag Created Successfully](https://m-img.org/spai/w_848+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2014/04/Matomo-tag-created.png)
 14. Once your new event tracking tag is live, you should test that it is working. To do this, visit your site and click on an Email link. Then log in to Matomo, go to the **Visitors** section and click to view the **Visits Log**. This allows you to review visits in real-time and you should be able to see your visit with the event shown on the right-hand side.\
 
 

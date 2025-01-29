@@ -19,7 +19,7 @@ Because nodes need to talk to each-other, each node instance can connect to a Wo
 
 ## The StorageEngine
 
-Handles the persistence of data and provides operations for adding, updating, deleting and querying stored data. It provides a graph-like structure based on **Vertices**, **Edges** and _**multi-valued**_** Properties** that can be applied to Vertices or Edges.&#x20;
+Handles the persistence of data and provides operations for adding, updating, deleting and querying stored data. It provides a graph-like structure based on **Vertices**, **Edges** and _**multi-valued**_**&#x20;Properties** that can be applied to Vertices or Edges.&#x20;
 
 Property Graphs have been around for a while and the technology offering has grown consistently in the last years. BigConnect however brings two new important features: **multi-valued properties** and **fine-grained security**.
 
