@@ -4,7 +4,7 @@ Dashboards in Matomo offer you the ability to include various types of analytics
 
 You can create and customise as many dashboards as you need. Within each dashboard, it is possible to curate your own selection of widgets and arrange them into different layouts. The majority of these settings are available through the dashboard menu. You can access this menu while on any dashboard page by clicking the **Dashboard** button within the Data Selector area.
 
-![Dashboard Menu Button](https://m-img.org/spai/w\_251+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/matomo-dashboard-button.png)
+![Dashboard Menu Button](https://m-img.org/spai/w_251+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/matomo-dashboard-button.png)
 
 ### How to Create a New Dashboard <a href="#how-to-create-a-new-dashboard" id="how-to-create-a-new-dashboard"></a>
 
@@ -14,8 +14,8 @@ The steps for creating a new dashboard are as follows:
 
 1. Go to the **Dashboard** section in the main navigation.
 2. Click the **Dashboard** button.\
-   ![Dashboard Menu Button](https://m-img.org/spai/w\_251+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2013/09/matomo-dashboard-button.png)
-3. Click **Create new dashboard** to bring up the dashboard creation popup. ![Create New Dashboard](https://m-img.org/spai/w\_848+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2021/04/create-new-dashboard.png)
+   ![Dashboard Menu Button](https://m-img.org/spai/w_251+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2013/09/matomo-dashboard-button.png)
+3. Click **Create new dashboard** to bring up the dashboard creation popup. ![Create New Dashboard](https://m-img.org/spai/w_848+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2021/04/create-new-dashboard.png)
 4. Type a descriptive name in the field that pops up.
 5. Choose between an **Empty dashboard** (recommended) or the default dashboard.
 6. Click **OK** and then **Add A Widget** to load the widget selection menu and get started.
@@ -24,7 +24,7 @@ The steps for creating a new dashboard are as follows:
 
 When in the **Dashboard** section, click on the **Dashboard** button in the data selector area to bring up the **Dashboard menu**. At the top of this menu, you will see a section to **Add a widget**. This menu area lists all of the available widgets you can add to your dashboard.
 
-![Dashboard Menu Button](https://m-img.org/spai/w\_890+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2018/02/dashboard-menu-button.png)
+![Dashboard Menu Button](https://m-img.org/spai/w_890+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2018/02/dashboard-menu-button.png)
 
 You can add as many, or as few, widgets as you need. Generally, you should aim to add your most frequented statistics so you can keep track of them at a glance after logging in.
 
@@ -55,13 +55,13 @@ When you first add new widgets to your dashboard, they might not be in the most 
 
 While on your dashboard page, click the **Dashboard** button. This will bring up the dashboard menu where you will see a **Manage dashboard** section at the bottom. Within this section, there is a **change dashboard layout** button which allows you to alter the number and width of columns on the page. You can have anywhere between one and four columns of varying widths. It is generally easier to choose a layout after you have selected your dashboards widgets, so you know how much space you need for each.
 
-![Change Dashboard Layout](https://m-img.org/spai/w\_697+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2021/04/change-dashboard-layout.png)
+![Change Dashboard Layout](https://m-img.org/spai/w_697+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2021/04/change-dashboard-layout.png)
 
 #### How to reorder and move widgets within your dashboard <a href="#how-to-reorder-and-move-widgets-within-your-dashboard" id="how-to-reorder-and-move-widgets-within-your-dashboard"></a>
 
 After you have selected a layout, you can simply move things around with your mouse via drag and drop. Simply hover your mouse over the top part of the widget until the **crosshair icon** <img src="https://m-img.org/spai/w_50+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2021/04/crosshair-icon.png" alt="Crosshair Icon" data-size="line"> appears as shown below. Then click and hold your mouse whilst moving the widget into the desired position.
 
-![Reorder Matomo Widgets](https://m-img.org/spai/w\_732+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2021/04/reorder-matomo-widgets.gif)
+![Reorder Matomo Widgets](https://m-img.org/spai/w_732+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2021/04/reorder-matomo-widgets.gif)
 
 ### Removing, Renaming and Resetting a Dashboard <a href="#removing-renaming-and-resetting-a-dashboard" id="removing-renaming-and-resetting-a-dashboard"></a>
 
@@ -83,7 +83,7 @@ The actual dashboards are made up of widgets which are typically self-contained 
 
 Matomo comes with approximately 100 widgets by default, and they are all displayed in an interactive card format. Widgets can also be added via plugins if you are using Matomo On-Premise or Matomo for WordPress. The screenshot below shows a typical dashboard with several different styles of widget within the white boxes. These provide a high-level overview of key stats for your website.
 
-<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## KPI Metric Widget
 
@@ -107,4 +107,4 @@ Note: Previously this widget also reported on your Alexa ranking, which was a ra
 
 You can find this widget by clicking on the Dashboard button near the top of the Matomo user interface.
 
-![Matomo SEO Widget](https://m-img.org/spai/w\_807+q\_lossless+ret\_img+to\_webp/matomo.org/wp-content/uploads/2022/03/matomo-seo-widget.png)
+![Matomo SEO Widget](https://m-img.org/spai/w_807+q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2022/03/matomo-seo-widget.png)

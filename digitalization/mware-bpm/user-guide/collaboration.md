@@ -15,7 +15,7 @@ Mware BPM support collaboration. Here's how it works:
 
 * **Viewing Comment History:** Mware BPM maintains a history of all comments within a workflow instance. This allows users to see the evolution of the task and understand the decisions made.
 
-<figure><img src="../../../.gitbook/assets/image (1) (3).png" alt=""><figcaption><p>Communication history</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Communication history</p></figcaption></figure>
 
 * **Notifications:** When a comment is added, users involved in the workflow or those subscribed to specific events can be notified, ensuring timely communication and prompt action.
 * **Integration with Communication Tools:** Mware BPM offer integration with other communication tools like email or instant messaging platforms, further enhancing real-time collaboration.
