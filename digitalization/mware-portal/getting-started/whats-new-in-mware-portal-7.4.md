@@ -8,19 +8,19 @@ MWARE Portal 7.4 comes with enhanced functionality and exciting improvements tha
 
 You can now run AB tests on any element on the page. Before 7.4, you could only select buttons and links as a Click Goal. With MWARE Portal 7.4, you can now select any page element by including its element ID.
 
-![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 #### More Insightful Content Audit Tool
 
 In the Content Audit Tool in the Content Dashboard, you can now click on the bars to zoom in on the results; and content assigned to only one vocabulary category is now represented in the graph. Marketers can now easily spot miscategorized content using this new set of enhancements.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Content Audit Tool UX Improvements&#x20;
 
 We’ve also made several usability improvements to the Content Audit Tool in the Content Dashboard. For example, now it is much easier to select the vocabularies to be audited, and it is possible to flip the bar chart axes with a click.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Traffic Acquisition Channels in the Content Performance Tool
 

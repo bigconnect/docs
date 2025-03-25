@@ -83,7 +83,7 @@ The actual dashboards are made up of widgets which are typically self-contained 
 
 Matomo comes with approximately 100 widgets by default, and they are all displayed in an interactive card format. Widgets can also be added via plugins if you are using Matomo On-Premise or Matomo for WordPress. The screenshot below shows a typical dashboard with several different styles of widget within the white boxes. These provide a high-level overview of key stats for your website.
 
-<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## KPI Metric Widget
 
@@ -91,13 +91,13 @@ This widget focuses on just a single metric so you can reference its performance
 
 You can find widgets by clicking on the Dashboard button near the top of the Matomo interface. When you select the KPI Metric widget, it will load with Visits shown by default. Once it is on your dashboard, you can click on the **metrics picker icon** to reveal a comprehensive list of available metrics. You can repeat this as many times as necessary until you have all of your key metrics listed within your dashboard. The example screenshot below shows three separate instances of the widget, each with a different metric selected.
 
-<figure><img src="../../../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Custom Reports Widgets
 
 Custom reports are a powerful feature. They allow you to combine any of the dimensions and metrics collected by Matomo into a single custom report. Once created, it is also possible to add these custom reports to your dashboard. You can find your report widgets by clicking on the **Dashboard** button. Then click **Add a widget,** and finally a list will be shown under the **Custom Reports** sub-menu. Your custom report widgets can contain anything that can be compiled into a custom report. The example below shows how it might look with a custom report width showing three dimensions for events as described here.
 
-<figure><img src="../../../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## SEO Ranking Widget
 

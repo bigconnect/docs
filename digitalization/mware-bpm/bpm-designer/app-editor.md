@@ -6,7 +6,7 @@ The App Editor is used to create a bundle of process and case models together th
 
 The App Editor allows the definition of an application bundle of processes, cases and other related models. An app, once defined, can be published (deployed) to the runtime engines and started by users.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 A list of the existing apps is displayed, ordered by date or name, with the ability to:
 
@@ -51,7 +51,7 @@ The options available are:
 
 In the header area, you can see the **name**, **description**, **version**, **creator** and the **modification date** of the app definition. The models that are already included in the app are also shown. It is always possible to return to this app view by clicking the app name in the top navigation menu.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you chose to include existing models to your app, you will be shown a dialog with a list of available models. Simply click on any number of items in the list of models (a **+** icon will be added to each). These models then become part of the deployment that takes place when publishing this app.
 

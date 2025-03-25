@@ -8,13 +8,13 @@ This user guide leads you through the most important aspects of both, the applic
 
 To access the BPM Designer you need to type in the navigation URL into your browser. Once the page is loaded, the login page appears.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 In order to log in, you need to type in your login and password on the form and click on `Sign in`.
 
 After logging in, your are presented with a list of apps where your can manage various aspects of the product:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Task App**: Access your full task list and work on any tasks assigned to you from any process app. Also, start new processes and tasks.
 * **Modeler App**: Access a central place to model BPMN processes, Cases, DMN decision tables, Form definitions and create app definitions
@@ -27,7 +27,7 @@ Modeling business applications is often a collaborative effort. For that reason,
 
 To create, modify and delete users in the built-in system, click on your username in the top-right corner of the navigation bar. Select `IDM App` to navigate to the user overview.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Click on `Create user` to add a new user to Flowable Design.
 
@@ -45,7 +45,7 @@ In total, there are seven model types in the BPM Designer: Apps, Processes, Case
 
 You can access your models by clicking on the respective link in the navigation bar. This brings you to an overview of all models of a that type.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 In this case, we clicked on the **Processes** tab which shows us all existing process models. Since the user interface of all model types is very similar, this provides a good overview of how to work with other model types.
 

@@ -39,7 +39,7 @@ The Trend visualization is great for displaying how a single number has changed 
 
 The Detail visualization shows a single result record (row) in an easy-to-read, two-column display.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Progress bars
 
