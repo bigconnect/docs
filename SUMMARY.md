@@ -2343,3 +2343,4 @@
     * [Chatbots](surogate/user-guide/agents/chatbots.md)
     * [Embed into website](surogate/user-guide/agents/embed-into-website.md)
     * [Create a Text2SQL agent](surogate/user-guide/agents/create-a-text2sql-agent.md)
+  * [Files](surogate/user-guide/files.md)
