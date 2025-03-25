@@ -2321,3 +2321,14 @@
 ## Licensing
 
 * [Licensing Information](licensing/licensing-information.md)
+
+## SUROGATE
+
+* [Get Started](surogate/get-started.md)
+* [User Guide](surogate/user-guide/README.md)
+  * [Models](surogate/user-guide/models.md)
+  * [Datasets](surogate/user-guide/datasets/README.md)
+    * [Knowledge base](surogate/user-guide/datasets/knowledge-base.md)
+    * [Set metadata](surogate/user-guide/datasets/set-metadata.md)
+    * [Knowledge graph](surogate/user-guide/datasets/knowledge-graph.md)
+    * [Tag Sets](surogate/user-guide/datasets/tag-sets.md)
