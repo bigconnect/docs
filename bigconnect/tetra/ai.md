@@ -24,6 +24,7 @@ The following AI models are available as REST services:
 * Image Metadata extractor (EXIF)&#x20;
 * Topic modeling
 * Image captioning
+* Various LLMs for generic and agentic tasks
 
 Romanian and English language is available for all textual models.
 

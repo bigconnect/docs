@@ -8,8 +8,8 @@ Tetra’s REST API allows access to all the capabilities of Tetra from an extern
 
 The speed, quality, ease-of-use, and model-deployment for the various cutting edge Supervised and Unsupervised algorithms like Deep Learning, Tree Ensembles, and GLRM make Tetra a highly sought after API for big data data science.
 
-{% content-ref url="tetraml-algorithms/" %}
-[tetraml-algorithms](tetraml-algorithms/)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="using-tetraflow/" %}
