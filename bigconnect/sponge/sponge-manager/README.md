@@ -153,6 +153,7 @@ Committers are destinations where Sponge stores scraped data. Out-of-the-box Spo
 * XML Files (default) stored on the local disk
 * JSON Files stored on the local disk
 * SQL Databases
+* BigConnect Platform
 * CSV, XLSX
 * HTML
 
