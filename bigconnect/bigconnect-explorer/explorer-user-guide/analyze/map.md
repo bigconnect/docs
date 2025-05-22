@@ -26,3 +26,12 @@ Graph entities can be selected and filtered in two ways:
 * using the timeline
 
 <figure><img src="../../../../.gitbook/assets/image (1086).png" alt=""><figcaption></figcaption></figure>
+
+### Creating objects
+
+Users can create new entities directly on the map:
+
+* Right-click on the map and choose **Create...**
+* Choose the type of object: Point, Line, Polygon
+* Draw the object
+* Set the concept type and properties
