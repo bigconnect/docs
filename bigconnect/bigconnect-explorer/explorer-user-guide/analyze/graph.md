@@ -172,7 +172,10 @@ You can use various mouse gestures to navigate the graph:
 * Select
 * Drag & Drop
 
-### Semantic Model
+### Exporting the graph
 
-The semantic model can be altered using the Administration console. Administrators can add, remove and manage existing concepts, relationships and attributes.
+Users can choose various export options for the current state of the graph:
+
+* View-only exports: JPG, PNG, PDF, HTML.
+* Structured export as JSON with the ability to import it back later.
 
