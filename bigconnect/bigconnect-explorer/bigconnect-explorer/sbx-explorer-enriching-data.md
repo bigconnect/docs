@@ -10,7 +10,20 @@ Enriching is the process of deriving additional information about an existing it
 
 Enrichments can be applied both manually and automatically using **Data Workers**. A **Data Worker** is like an 'agent'  that looks at every piece of information in the system and does some work knowing the context of a piece of information.&#x20;
 
-BigConnect supplies some pre-built Data Workers for various enrichments like OCR, Object Tagging, Face Recognition, Speech-to-Text, Named Entity Recognition, Sentiment Analysis, Classification, Relationship Extraction etc, but you can easily build custom ones.
+BigConnect supplies some pre-built Data Workers for various enrichments like:
+
+* &#x20;OCR
+* Object Tagging
+* Face Recognition
+* Speech-to-Text
+* Named Entity Recognition
+* Sentiment Analysis
+* Classification
+* Relationship Extraction
+* Summarization
+* Similarity
+
+You can also easily build custom ones.
 
 Let's see how the process works for an image and a text document. First, download the following files:
 
