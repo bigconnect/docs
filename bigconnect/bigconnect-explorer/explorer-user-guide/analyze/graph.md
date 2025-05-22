@@ -172,6 +172,13 @@ You can use various mouse gestures to navigate the graph:
 * Select
 * Drag & Drop
 
+Graph entities can be selected and filtered in two ways:
+
+* selecting a number of items and then filtering them based on common property values
+* using the timeline
+
+<figure><img src="../../../../.gitbook/assets/image (1084).png" alt=""><figcaption></figcaption></figure>
+
 ### Exporting the graph
 
 Users can choose various export options for the current state of the graph:

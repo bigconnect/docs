@@ -20,7 +20,7 @@ The Data Model can be managed in the Administration console. Administrators can 
 
 For Concepts, Relationships and Attributes administrators can set the color and various display attributes, choose icons from an available library and change various configuration options that affect how the system works: field aggregations, formulas, visibilities, permissions etc.
 
-
+<figure><img src="../../../.gitbook/assets/image (1082).png" alt=""><figcaption></figcaption></figure>
 
 ## General Layout
 
