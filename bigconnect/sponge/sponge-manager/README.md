@@ -80,7 +80,7 @@ This is the most advanced part. Here you will configure how the crawler will han
 Before we get into details, you need to understand how the Sponge behaves when crawling a site:
 
 1. &#x20;The first thing is to download HTML/XML documents according to the specified Crawler rules mentioned in the previous section such as **Start URLs, Include Patterns, Max Depth, Filter Extensions** etc, along with their associated response headers. The source of the HTML/XML document and its response header values are stored as fields for the respective document.
-2. Next, Sponge will parse the content of the HTML/XML document to extract _\<meta>_ tags and store them also as fields for the document.
+2. Next, Sponge will parse the content of the HTML/XML document to extract _\<meta>_ tags and store them also as fields for the document. I automatically detects text, date and numeric fields.
 3. Next, Sponge will execute all **Behavior** items: **Taggers**, **Filters** and **Splitters** to compute additional  fields for the document, convert field values, exclude documents based on rules etc.
 4. Finally, Sponge will send the document and its fields to the **Committer** to store it somewhere.
 
