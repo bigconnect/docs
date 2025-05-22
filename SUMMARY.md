@@ -1914,6 +1914,7 @@
     * [Setup](bigconnect/bigconnect-vm/cluster/setup.md)
     * [Cluster visualizer](bigconnect/bigconnect-vm/cluster/cluster-visualizer.md)
     * [Registries](bigconnect/bigconnect-vm/cluster/registries.md)
+    * [Details](bigconnect/bigconnect-vm/cluster/details.md)
   * [Account settings](bigconnect/bigconnect-vm/account-settings.md)
   * [Users](bigconnect/bigconnect-vm/users/README.md)
     * [Teams](bigconnect/bigconnect-vm/users/teams.md)
