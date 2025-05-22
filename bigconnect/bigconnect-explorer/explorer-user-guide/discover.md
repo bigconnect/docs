@@ -242,6 +242,10 @@ By default, BigConnect Explorer performs searches in a case-insensitive manner. 
 
 Diacritics are reduced to normal characters as much as possible. Lucene converts alphabetic, numeric, and symbolic Unicode characters which are not in the first 127 ASCII characters (the "Basic Latin" Unicode block) into their ASCII equivalents, if one exists.
 
+### Stopwords
+
+By default, BigConnect Explorer bypasses stopwords when performing a search, ensuring the most relevant results are returned.
+
 ## Sorting
 
 Search results can be sorted by one or more properties. Select the desired properties from the dropdown and click on them afterwards to change the sort order.
