@@ -162,3 +162,12 @@ The [A\* Search](https://en.wikipedia.org/wiki/A*_search_algorithm) algorithm is
 The graph provides an option to merge multiple nodes into one. Select two or more nodes, right-click in an empty area of the graph and choose **Collapse**. The selected nodes and their relationships will be grouped together.&#x20;
 
 To un-collapse the group, right-click on it and select **Uncollapse**.
+
+### Navigating the graph
+
+You can use various mouse gestures to navigate the graph:
+
+* Pan
+* Zoom (mouse scroll)
+* Select
+* Drag & Drop
