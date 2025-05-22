@@ -171,3 +171,8 @@ You can use various mouse gestures to navigate the graph:
 * Zoom (mouse scroll)
 * Select
 * Drag & Drop
+
+### Semantic Model
+
+The semantic model can be altered using the Administration console. Administrators can add, remove and manage existing concepts, relationships and attributes.
+

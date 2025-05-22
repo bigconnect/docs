@@ -16,6 +16,12 @@ Concepts and relations can also have attributes. For a company these can be the 
 
 You can think of Concepts and Relations like database tables and their properties as table columns.
 
+The Data Model can be managed in the Administration console. Administrators can configure concepts. relationships between concepts and the attributes that apply.
+
+For Concepts, Relationships and Attributes administrators can set the color and various display attributes, choose icons from an available library and change various configuration options that affect how the system works: field aggregations, formulas, visibilities, permissions etc.
+
+
+
 ## General Layout
 
 BigConnect Explorer has a default layout comprised of the **Main Menu**, **Work Area** and a **Footer Widget**.
