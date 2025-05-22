@@ -6,7 +6,7 @@ description: Tutorial on how to import data in BigConnect Explorer
 
 There are multiple ways in which a user can bring new data into the system:
 
-* Drag & Drop on the Graph and Map
+* Drag & Drop on the Graph and Map. The following file types are supported: office documents(doc, docx, ppt, pptx, xls, xlsx, rtf, odt, txt), images (png, gif, jpg, tiff, bmp), video (mpg, avi, wmv) and audio files (mp3, wav, aac), PDF, HTML
 * Import CSV and XLS files using the Wizard
 * Import from a database using the Wizard
 * Import from a database using Cypher
