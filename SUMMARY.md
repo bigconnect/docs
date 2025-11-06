@@ -2123,6 +2123,7 @@
       * [PMML Evaluator](bigconnect/pipelines/pipelines-studio/processors/pmml-evaluator.md)
       * [PostgreSQL Metadata](bigconnect/pipelines/pipelines-studio/processors/postgresql-metadata.md)
       * [PGP Validator](bigconnect/pipelines/pipelines-studio/processors/pgp-validator.md)
+      * [PGP Signer](bigconnect/pipelines/pipelines-studio/processors/pgp-signer.md)
       * [Record Deduplicator](bigconnect/pipelines/pipelines-studio/processors/record-deduplicator.md)
       * [Redis Lookup](bigconnect/pipelines/pipelines-studio/processors/redis-lookup.md)
       * [Schema Generator](bigconnect/pipelines/pipelines-studio/processors/schema-generator.md)

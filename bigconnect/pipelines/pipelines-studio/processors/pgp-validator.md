@@ -6,11 +6,21 @@ To achieve thorough verification, the PGP Validator supports a range of signing 
 
 Integrating PGP Validator into your communication flow not only enhances security but also upholds data protection standards. This is especially critical in environments where sensitive information is exchanged, and the legitimacy of messages is paramount. By adopting PGP Validator for signature verification, users can maintain trust and ensure all communications are conducted with the highest level of security assurance.
 
-* Compressed: Verifies a compressed signature. Because the message is contained in the signature, this signature is used in place of the message.
-* Clear Signed: A clear signed message has the message intact and a signature attached under the clear message text. Verifying this message verifies the sender and the message integrity.
-* Detached Signature (MIME): Verifies a multipart MIME document where the message is in clear text and the signature is attached as a MIME part.
+### Signing Methods
 
-An example use case for this processor would be when files are sent over Secure Shell File Transfer Protocol (SFTP) in PGP signed format. PGP Validator can be used to verify the message, and. The clean files can be PGP signed again using the PGP Signer processor before being sent over SFTP to their target destination.
+#### 1. Compressed Signature
+
+This method compresses the message and generates a hash of the contents before signing. The message is encapsulated within the signature itself. As a result, the signature serves as a substitute for the message. This approach commonly yields a signature in printable ASCII format, also known as ASCII Armor output. You have the option to disable compression, resulting in a binary signature instead.
+
+#### 2. Clear Signed
+
+Clear signing maintains the message in its original form while appending the signature beneath the unaltered message text. This method allows for easy verification of both the message signature and its contents. The output in this case is categorized as application/pgp-signature, facilitating straightforward validation by recipients.
+
+#### 3. Detached Signature with MIME
+
+In this approach, the PGP Signer processor creates a multipart MIME document. The original message remains in clear text, while the signature is provided as an attached MIME part. This format is particularly suitable when the message content needs to be retained in its original state, separate from the signature.
+
+Each of these methods provides distinct advantages depending on the specific requirements and desired outcomes for message security. By utilizing the PGP Signer processor, organizations can ensure reliable verification and bolster the overall trustworthiness of their communications.
 
 ### Configuring the PGP Validator <a href="#ariaid-title2" id="ariaid-title2"></a>
 
