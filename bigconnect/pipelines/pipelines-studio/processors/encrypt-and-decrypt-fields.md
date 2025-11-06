@@ -6,7 +6,7 @@ You can use the processor to encrypt one or more fields in a record. You can als
 
 The Encrypt and Decrypt Fields processor uses the Amazon AWS Encryption SDK to encrypt and decrypt fields. When encrypting fields, the processor encrypts the data key and any additional encryption details, and stores the encrypted details along with the encrypted data. When decrypting fields, the processor extracts the encrypted data key and additional details, decrypts the key, and then uses it to decrypt the data.
 
-You can use Amazon AWS Key Management Service (KMS) as a key provider for the processor, or you can supply the data key in the processor configuration properties. When using Amazon AWS KMS, you specify the KMS Key Amazon Resource Name (ARN). You can use an instance profile or AWS access key pairs to connect to Amazon AWS. When using a user-supplied key, you specify a Base64 encoded key and can optionally configure a key ID.
+You can use Amazon AWS Key Management Service (KMS) as a key provider for the processor, or you can supply the data key or a custom provider in the processor configuration properties. When using Amazon AWS KMS, you specify the KMS Key Amazon Resource Name (ARN). You can use an instance profile or AWS access key pairs to connect to Amazon AWS. When using a user-supplied key, you specify a Base64 encoded key and can optionally configure a key ID.
 
 For both key provider types, you specify the cipher suite and frame size to use. When encrypting data, you can optionally define an encryption context and configure data key caching.
 
