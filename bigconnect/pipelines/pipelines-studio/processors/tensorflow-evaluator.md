@@ -1,6 +1,6 @@
 # TensorFlow Evaluator
 
-The TensorFlow Evaluator processor uses a TensorFlow machine learning model to generate predictions or classifications of data.&#x20;
+The TensorFlow Evaluator processor uses a TensorFlow or PyTorch  machine learning model to generate predictions or classifications of data.&#x20;
 
 Using the TensorFlow Evaluator processor, you can design pipelines that read data and then generate predictions or classifications of the data during the pipeline processing - producing data-driven insights in real time. For example, you can design pipelines that detect fraudulent transactions or that perform natural language processing as data passes through the pipeline.
 
@@ -18,7 +18,7 @@ Build and train the model in TensorFlowBuild and train the model in TensorFlow. 
 
 Save and store the trained model on the Data Pipelines machine.
 
-Save the trained model to file in [SavedModel format](https://www.tensorflow.org/guide/saved\_model). When you save a model in SavedModel format, TensorFlow creates a directory consisting of the following subdirectories and files:
+Save the trained model to file in [SavedModel format](https://www.tensorflow.org/guide/saved_model). When you save a model in SavedModel format, TensorFlow creates a directory consisting of the following subdirectories and files:
 
 ```
 assets/
