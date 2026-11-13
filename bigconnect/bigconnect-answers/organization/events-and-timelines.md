@@ -12,7 +12,7 @@ An event is basically a date + a title + a description + an icon. You can add ev
 
 You can group events into timelines, and associate those timelines with collections. For example, you may want to have a timeline that contains important email or sales dates, or an outages timeline that tracks downtime. You can move events between timelines, and move timelines from collection to collection.
 
-Collections can have timelines, and timelines can contain events. In practice what this means is that events you’ve added to a timeline will show up on time series questions stored in the same collection as that timeline. Events are invisible on dashboards
+Collections can have timelines, and timelines can contain events. In practice what this means is that events you’ve added to a timeline will show up on time series questions stored in the same collection as that timeline.&#x20;
 
 ## Event and timeline permissions
 
