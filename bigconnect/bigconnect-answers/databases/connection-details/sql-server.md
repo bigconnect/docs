@@ -97,3 +97,110 @@ Options are:
 * **Custom**.
 
 You can also set cache duration per questions. See Advanced caching controls.
+
+### Querying SQL Server Analysis Services (SSAS) data
+
+BigConnect Answers can query multidimensional and tabular models hosted in SQL Server Analysis Services (SSAS) through your SQL Server connection. SQL Server reaches the SSAS model through a **linked server**, runs an MDX or DAX query against it with `OPENQUERY`, and exposes the result as a regular view. Answers then reads that view like any other table: you can build questions, dashboards, filters, alerts and subscriptions on top of cube data.
+
+You don't need a separate driver. Everything below happens on the SQL Server side, using the SQL Server connection you set up above.
+
+{% hint style="info" %}
+This works with SSAS **Multidimensional** (cubes, queried with MDX) and SSAS **Tabular** (models, queried with DAX or MDX), and with every SQL Server edition that supports linked servers.
+{% endhint %}
+
+#### Prerequisites
+
+* The **Analysis Services OLE DB provider (MSOLAP)** is installed on the machine that runs SQL Server. It ships with the Analysis Services client libraries.
+* In SQL Server Management Studio, under **Server Objects** > **Linked Servers** > **Providers** > **MSOLAP** > **Properties**, the **Allow inprocess** option is turned on.
+* The account SQL Server uses to connect to SSAS has at least read access to the SSAS database (a role with **Read** permission on the cube or model). SSAS only accepts Windows authentication; the simplest setup is to grant the role to the SQL Server service account.
+* The SQL Server login that Answers uses has `SELECT` permission on the views you create in the next step
+
+#### Step 1: Create a linked server to SSAS
+
+Run the following on the SQL Server instance that Answers connects to. Replace the data source and catalog with your SSAS server and database.
+
+```sql
+EXEC master.dbo.sp_addlinkedserver
+    @server     = N'SSAS',            -- name you will use in OPENQUERY
+    @srvproduct = N'',
+    @provider   = N'MSOLAP',
+    @datasrc    = N'ssas-server\INSTANCE',
+    @catalog    = N'CustomsAnalytics';  -- SSAS database
+
+-- Connect to SSAS without impersonating the caller
+EXEC master.dbo.sp_addlinkedsrvlogin
+    @rmtsrvname = N'SSAS',
+    @useself    = N'FALSE',
+    @locallogin = NULL;
+```
+
+Test the connection:
+
+```sql
+SELECT * FROM OPENQUERY(SSAS, 'SELECT [Measures].DefaultMember ON 0 FROM [Excise]');
+```
+
+#### Step 2: Expose cube data as views
+
+Create a view for each result set you want to analyze in Answers. Choose the grain carefully: the MDX or DAX query runs inside SSAS, so aggregate there rather than pulling the lowest level of detail.
+
+**Multidimensional cube (MDX)**
+
+```sql
+CREATE VIEW analytics.v_excise_by_office_month AS
+SELECT
+    CAST("[Office].[Office Name].[Office Name].[MEMBER_CAPTION]" AS nvarchar(200)) AS office,
+    CAST("[Date].[Calendar].[Month].[MEMBER_CAPTION]"           AS nvarchar(50))  AS month,
+    CAST("[Measures].[Authorizations Issued]"                   AS int)           AS authorizations_issued,
+    CAST("[Measures].[Guarantee Amount]"                        AS decimal(18,2)) AS guarantee_amount
+FROM OPENQUERY(SSAS, '
+    SELECT
+        { [Measures].[Authorizations Issued], [Measures].[Guarantee Amount] } ON COLUMNS,
+        NON EMPTY [Office].[Office Name].[Office Name].Members
+                * [Date].[Calendar].[Month].Members ON ROWS
+    FROM [Excise]');
+```
+
+**Tabular model (DAX)**
+
+```sql
+CREATE VIEW analytics.v_eori_requests_by_status AS
+SELECT
+    CAST("Request[Status]"          AS nvarchar(50)) AS status,
+    CAST("Date[Year]"               AS int)          AS year,
+    CAST("[Requests]"               AS int)          AS requests
+FROM OPENQUERY(SSAS, '
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        Request[Status],
+        ''Date''[Year],
+        "Requests", [Request Count]
+    )');
+```
+
+Always alias and `CAST` the columns. SSAS returns column names such as `[Measures].[Guarantee Amount]` and generic data types; explicit names and types let Answers recognize numbers, dates and categories correctly.
+
+#### Step 3: Use the views in Answers
+
+1. In **Admin settings** > **Databases**, open the SQL Server connection and click **Sync database schema now**.
+2. The views appear under the schema you created them in (in the example, `analytics`). Add descriptions and semantic types in **Admin settings** > **Table metadata**, like for any table.
+3. Build questions with the query builder or in the native SQL editor, add them to dashboards, and use filters, drill-through, alerts and subscriptions as usual.
+
+You can also query SSAS directly from the native SQL editor:
+
+```sql
+SELECT *
+FROM OPENQUERY(SSAS, 'EVALUATE TOPN(100, ''Operator'')');
+```
+
+#### Permissions and security <a href="#user-content-permissions-and-security" id="user-content-permissions-and-security"></a>
+
+* SSAS sees every query as coming from the account configured on the linked server, not from the individual Answers user. Control who sees which cube data with Answers data and collection permissions on the views.
+* Any SQL Server login mapped to the linked server can run arbitrary MDX or DAX through `OPENQUERY`. To keep users on the curated views, don't grant **Native query editing** on this database in Answers, and map only the Answers login with `sp_addlinkedsrvlogin @locallogin = N'<answers_login>'` instead of `NULL`
+
+#### Limitations <a href="#user-content-limitations" id="user-content-limitations"></a>
+
+* Results come back as flat rows and columns. Cube hierarchies, member properties and formatting defined in SSAS are not carried over; recreate hierarchies with Answers drill-through and segments.
+* `OPENQUERY` takes a literal query string, so Answers filters on a view are applied by SQL Server after SSAS returns the result. Keep each view at the grain your dashboards need, or create parameterized stored procedures for very large cubes.
+* Writeback to SSAS is not supported through this path.
+* The SSAS server must be reachable from the SQL Server host, not from the Answers server.
