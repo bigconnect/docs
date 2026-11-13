@@ -19,6 +19,7 @@ Results can be downloaded as:
 * .csv
 * .xlsx
 * .json
+* .xml
 
 The maximum download size is 1 million rows. Exported .xlsx files preserve the formatting defined in the question: date and currency formats are kept throughout, as well as column ordering and visibility. Files names for the exported question will include a slug of the question title, so you can easily distinguish files when exporting multiple questions.
 
